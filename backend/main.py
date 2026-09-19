@@ -2,23 +2,27 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from routers import faculty
+from routers import genetic_algorithm
 
 
 app = FastAPI(
     title="CCS Faculty Scheduling System API",
-    description="Backend API for the Genetic Algorithm Faculty Scheduling Decision-Support System.",
-    version="1.0.0",
+    description=(
+        "Backend API for the Genetic Algorithm-based "
+        "Faculty Scheduling Decision-Support System."
+    ),
+    version="1.0.0"
 )
 
 
-# =========================================================
+# ---------------------------------------------------------
 # CORS
-# =========================================================
+# ---------------------------------------------------------
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",
+        "http://localhost:5173"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -26,25 +30,30 @@ app.add_middleware(
 )
 
 
-# =========================================================
-# ROUTERS
-# =========================================================
+# ---------------------------------------------------------
+# Routers
+# ---------------------------------------------------------
 
 app.include_router(faculty.router)
+app.include_router(genetic_algorithm.router)
 
 
-# =========================================================
-# BASIC ROUTES
-# =========================================================
+# ---------------------------------------------------------
+# Root
+# ---------------------------------------------------------
 
-@app.get("/")
+@app.get("/", tags=["System"])
 def root():
     return {
-        "message": "CCS Faculty Scheduling System API is running"
+        "message": "CCS Faculty Scheduling System API is running."
     }
 
 
-@app.get("/api/health")
+# ---------------------------------------------------------
+# Health Check
+# ---------------------------------------------------------
+
+@app.get("/api/health", tags=["System"])
 def health_check():
     return {
         "status": "ok"
