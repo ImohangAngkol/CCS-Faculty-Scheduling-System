@@ -28,17 +28,14 @@ router = APIRouter(
 
 
 # ============================================================
-# Prevent multiple GA runs from capturing stdout simultaneously
+# Prevent multiple streamed GA runs at the same time
 # ============================================================
 
 _ga_stream_lock = threading.Lock()
 
 
 # ============================================================
-# CUSTOM STDOUT WRITER
-#
-# This keeps normal terminal output while ALSO sending each
-# printed line to the frontend.
+# STDOUT CAPTURE
 # ============================================================
 
 class QueueWriter(io.TextIOBase):
@@ -68,18 +65,12 @@ class QueueWriter(io.TextIOBase):
             return 0
 
 
-        # ---------------------------------------------
         # Keep showing output in VS Code terminal
-        # ---------------------------------------------
-
         self.original_stdout.write(text)
         self.original_stdout.flush()
 
 
-        # ---------------------------------------------
         # Also send output to frontend
-        # ---------------------------------------------
-
         with self.lock:
 
             normalized = (
@@ -112,7 +103,6 @@ class QueueWriter(io.TextIOBase):
 
 
     def flush(self):
-
         self.original_stdout.flush()
 
 
@@ -133,7 +123,7 @@ class QueueWriter(io.TextIOBase):
 
 
 # ============================================================
-# STATUS
+# GA STATUS
 # ============================================================
 
 @router.get("/status")
@@ -148,7 +138,7 @@ def get_ga_status():
 
 
 # ============================================================
-# GENERATE INITIAL POPULATION
+# INITIAL POPULATION
 # ============================================================
 
 @router.post("/generate")
@@ -173,6 +163,7 @@ def generate_ga_schedule(
             "data": result,
         }
 
+
     except Exception as error:
 
         raise HTTPException(
@@ -182,9 +173,7 @@ def generate_ga_schedule(
 
 
 # ============================================================
-# NORMAL GA ENDPOINT
-#
-# We keep this so your existing tests/API still work.
+# NORMAL GA RUN
 # ============================================================
 
 @router.post("/run")
@@ -208,6 +197,11 @@ def run_ga(
         le=500,
     ),
 
+    baseline_mode: str = Query(
+        default="fresh",
+        pattern="^(fresh|saved|uploaded)$",
+    ),
+
 ):
 
     try:
@@ -216,12 +210,15 @@ def run_ga(
             population_size=population_size,
             generations=generations,
             fresh_chromosomes=fresh_chromosomes,
+            baseline_mode=baseline_mode,
         )
+
 
         return {
             "status": "success",
             "data": result,
         }
+
 
     except Exception as error:
 
@@ -256,11 +253,12 @@ def stream_ga(
         le=500,
     ),
 
-):
+    baseline_mode: str = Query(
+        default="fresh",
+        pattern="^(fresh|saved|uploaded)$",
+    ),
 
-    # --------------------------------------------------------
-    # Event generator
-    # --------------------------------------------------------
+):
 
     async def event_generator():
 
@@ -268,12 +266,11 @@ def stream_ga(
 
 
         # ====================================================
-        # BACKGROUND GA WORKER
+        # BACKGROUND WORKER
         # ====================================================
 
         def worker():
 
-            # Only one streamed GA run at a time
             acquired = (
                 _ga_stream_lock.acquire(
                     blocking=False
@@ -304,6 +301,7 @@ def stream_ga(
 
             original_stdout = sys.stdout
 
+
             writer = QueueWriter(
                 event_queue,
                 original_stdout,
@@ -312,14 +310,17 @@ def stream_ga(
 
             try:
 
+                # --------------------------------------------
+                # INITIAL LIVE LOG
+                # --------------------------------------------
+
                 event_queue.put(
                     {
                         "type": "log",
-                        "message": (
-                            "=" * 60
-                        ),
+                        "message": "=" * 60,
                     }
                 )
+
 
                 event_queue.put(
                     {
@@ -330,14 +331,14 @@ def stream_ga(
                     }
                 )
 
+
                 event_queue.put(
                     {
                         "type": "log",
-                        "message": (
-                            "=" * 60
-                        ),
+                        "message": "=" * 60,
                     }
                 )
+
 
                 event_queue.put(
                     {
@@ -349,6 +350,7 @@ def stream_ga(
                     }
                 )
 
+
                 event_queue.put(
                     {
                         "type": "log",
@@ -358,6 +360,7 @@ def stream_ga(
                         ),
                     }
                 )
+
 
                 event_queue.put(
                     {
@@ -369,6 +372,18 @@ def stream_ga(
                     }
                 )
 
+
+                event_queue.put(
+                    {
+                        "type": "log",
+                        "message": (
+                            f"Baseline Mode     : "
+                            f"{baseline_mode}"
+                        ),
+                    }
+                )
+
+
                 event_queue.put(
                     {
                         "type": "log",
@@ -378,14 +393,16 @@ def stream_ga(
 
 
                 # --------------------------------------------
-                # Capture existing print() messages from your
-                # current GA code.
+                # RUN GA AND CAPTURE print()
                 # --------------------------------------------
 
-                with redirect_stdout(writer):
+                with redirect_stdout(
+                    writer
+                ):
 
                     result = (
                         run_genetic_algorithm(
+
                             population_size=
                             population_size,
 
@@ -394,12 +411,20 @@ def stream_ga(
 
                             fresh_chromosomes=
                             fresh_chromosomes,
+
+                            baseline_mode=
+                            baseline_mode,
+
                         )
                     )
 
 
                 writer.flush_remaining()
 
+
+                # --------------------------------------------
+                # COMPLETE
+                # --------------------------------------------
 
                 event_queue.put(
                     {
@@ -408,14 +433,14 @@ def stream_ga(
                     }
                 )
 
+
                 event_queue.put(
                     {
                         "type": "log",
-                        "message": (
-                            "=" * 60
-                        ),
+                        "message": "=" * 60,
                     }
                 )
+
 
                 event_queue.put(
                     {
@@ -426,20 +451,16 @@ def stream_ga(
                     }
                 )
 
+
                 event_queue.put(
                     {
                         "type": "log",
-                        "message": (
-                            "=" * 60
-                        ),
+                        "message": "=" * 60,
                     }
                 )
 
 
-                # --------------------------------------------
-                # Send final GA result
-                # --------------------------------------------
-
+                # Send final result
                 event_queue.put(
                     {
                         "type": "result",
@@ -451,6 +472,7 @@ def stream_ga(
             except Exception as error:
 
                 writer.flush_remaining()
+
 
                 event_queue.put(
                     {
@@ -464,6 +486,7 @@ def stream_ga(
 
                 _ga_stream_lock.release()
 
+
                 event_queue.put(
                     {
                         "type": "done",
@@ -472,7 +495,7 @@ def stream_ga(
 
 
         # ====================================================
-        # START WORKER THREAD
+        # START THREAD
         # ====================================================
 
         thread = threading.Thread(
@@ -484,7 +507,7 @@ def stream_ga(
 
 
         # ====================================================
-        # STREAM QUEUE TO FRONTEND
+        # SEND EVENTS TO FRONTEND
         # ====================================================
 
         while True:
@@ -505,13 +528,13 @@ def stream_ga(
             )
 
 
-            if event.get("type") == "done":
+            if (
+                event.get("type")
+                ==
+                "done"
+            ):
                 break
 
-
-    # ========================================================
-    # STREAMING RESPONSE
-    # ========================================================
 
     return StreamingResponse(
 

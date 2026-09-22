@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from routers import faculty
 from routers import genetic_algorithm
 
+from routers import chromosomes
 
 app = FastAPI(
     title="CCS Faculty Scheduling System API",
@@ -36,6 +37,7 @@ app.add_middleware(
 
 app.include_router(faculty.router)
 app.include_router(genetic_algorithm.router)
+app.include_router(chromosomes.router)
 
 
 # ---------------------------------------------------------

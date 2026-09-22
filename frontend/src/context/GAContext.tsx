@@ -12,6 +12,7 @@ import {
 } from "../services/gaService";
 
 import type {
+  BaselineMode,
   GARunData,
 } from "../types/ga";
 
@@ -21,23 +22,30 @@ type GAContextType = {
   gaData:
     GARunData | null;
 
+
   loading:
     boolean;
+
 
   error:
     string | null;
 
+
   elapsedSeconds:
     number;
+
 
   logs:
     string[];
 
+
   populationSize:
     number;
 
+
   generations:
     number;
+
 
   freshChromosomes:
     number;
@@ -46,9 +54,18 @@ type GAContextType = {
   runGA: (
     populationSize?: number,
     generations?: number,
-    freshChromosomes?: number
+    freshChromosomes?: number,
+    baselineMode?: BaselineMode
   ) => Promise<void>;
 
+
+  loadChromosomeData: (
+    data: GARunData
+  ) => void;
+
+
+  clearGAData:
+    () => void;
 };
 
 
@@ -59,7 +76,8 @@ const GAContext =
 
 
 type GAProviderProps = {
-  children: ReactNode;
+  children:
+    ReactNode;
 };
 
 
@@ -164,11 +182,13 @@ export function GAProvider({
 
     };
 
-  }, [loading]);
+  }, [
+    loading,
+  ]);
 
 
   // =========================================================
-  // ADD LIVE LOG
+  // LOG
   // =========================================================
 
   function addLog(
@@ -184,8 +204,6 @@ export function GAProvider({
         ];
 
 
-        // Avoid keeping thousands and thousands
-        // of DOM lines in the browser.
         return updated.slice(
           -500
         );
@@ -203,7 +221,9 @@ export function GAProvider({
   async function runGA(
     newPopulationSize = 10,
     newGenerations = 2,
-    newFreshChromosomes = 2
+    newFreshChromosomes = 2,
+    baselineMode:
+      BaselineMode = "fresh"
   ) {
 
     if (
@@ -213,16 +233,19 @@ export function GAProvider({
     }
 
 
-    runningRef.current = true;
+    runningRef.current =
+      true;
 
 
     setPopulationSize(
       newPopulationSize
     );
 
+
     setGenerations(
       newGenerations
     );
+
 
     setFreshChromosomes(
       newFreshChromosomes
@@ -251,14 +274,28 @@ export function GAProvider({
 
           newFreshChromosomes,
 
-          addLog
+          addLog,
+
+          baselineMode
 
         );
 
 
-      setGaData(
-        result
-      );
+      /*
+       * Normal generated result.
+       */
+
+      setGaData({
+
+        ...result,
+
+        result_source:
+          "generated",
+
+        optimization_performed:
+          true,
+
+      });
 
 
     } catch (err) {
@@ -271,18 +308,22 @@ export function GAProvider({
           err.message
         );
 
+
         addLog(
           `ERROR: ${err.message}`
         );
+
 
       } else {
 
         const message =
           "An unexpected error occurred.";
 
+
         setError(
           message
         );
+
 
         addLog(
           `ERROR: ${message}`
@@ -303,6 +344,71 @@ export function GAProvider({
   }
 
 
+  // =========================================================
+  // LOAD EXISTING CHROMOSOME RESULT
+  //
+  // NO GA IS RUN HERE.
+  // =========================================================
+
+  function loadChromosomeData(
+    data: GARunData
+  ) {
+
+    setGaData(
+      data
+    );
+
+
+    setLoading(
+      false
+    );
+
+
+    setError(
+      null
+    );
+
+
+    setLogs(
+      []
+    );
+
+
+    setElapsedSeconds(
+      0
+    );
+
+  }
+
+
+  // =========================================================
+  // CLEAR RESULT
+  // =========================================================
+
+  function clearGAData() {
+
+    setGaData(
+      null
+    );
+
+
+    setError(
+      null
+    );
+
+
+    setLogs(
+      []
+    );
+
+
+    setElapsedSeconds(
+      0
+    );
+
+  }
+
+
   return (
 
     <GAContext.Provider
@@ -318,6 +424,10 @@ export function GAProvider({
         freshChromosomes,
 
         runGA,
+
+        loadChromosomeData,
+
+        clearGAData,
       }}
     >
 

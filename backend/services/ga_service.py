@@ -53,6 +53,12 @@ from genetic_algorithm.operators.BestChromosome import (
     best_chromosome_to_dataframe,
 )
 
+from services.chromosome_service import (
+    load_saved_best_payload,
+    load_uploaded_payload,
+    payload_to_chromosome,
+    save_best_if_better,
+)
 
 def generate_schedule(
     population_size: int = 10,
@@ -111,11 +117,12 @@ def generate_schedule(
     }
 
 def run_genetic_algorithm(
-    population_size: int = 20,
-    generations: int = 10,
-    fresh_chromosomes: int = 5,
-    mutation_attempts: int = 10,
-    max_restarts: int = 300,
+    population_size=20,
+    generations=5,
+    fresh_chromosomes=5,
+    baseline_mode="fresh",
+    mutation_attempts=100,
+    max_restarts=300,
 ):
     """
     Run the full Genetic Algorithm.
@@ -131,12 +138,196 @@ def run_genetic_algorithm(
     # 1. INITIAL POPULATION
     # =====================================================
 
-    population = generate_population(
-        population_size=population_size,
-        list_faculty=list_faculty,
-        list_subjects=list_subjects,
-        lst_rooms=lst_rooms,
-        max_restarts=max_restarts,
+    # population = generate_population(
+    #     population_size=population_size,
+    #     list_faculty=list_faculty,
+    #     list_subjects=list_subjects,
+    #     lst_rooms=lst_rooms,
+    #     max_restarts=max_restarts,
+    # )
+        # ========================================================
+    # OPTIONAL BASELINE CHROMOSOME
+    # ========================================================
+
+    baseline_mode = (
+        str(
+            baseline_mode
+        )
+        .strip()
+        .lower()
+    )
+
+
+    if baseline_mode not in {
+        "fresh",
+        "saved",
+        "uploaded",
+    }:
+
+        raise ValueError(
+            "baseline_mode must be "
+            "'fresh', 'saved', or 'uploaded'."
+        )
+
+
+    baseline_payload = None
+
+    baseline_chromosome = None
+
+    baseline_fitness = None
+
+    baseline_source = "fresh"
+
+
+    # --------------------------------------------------------
+    # USE AUTOMATICALLY SAVED BEST
+    # --------------------------------------------------------
+
+    if (
+        baseline_mode
+        ==
+        "saved"
+    ):
+
+        baseline_payload = (
+            load_saved_best_payload()
+        )
+
+
+        if baseline_payload is None:
+
+            raise ValueError(
+                "No saved best chromosome exists yet."
+            )
+
+
+        baseline_source = (
+            "saved"
+        )
+
+
+    # --------------------------------------------------------
+    # USE UPLOADED JSON
+    # --------------------------------------------------------
+
+    elif (
+        baseline_mode
+        ==
+        "uploaded"
+    ):
+
+        baseline_payload = (
+            load_uploaded_payload()
+        )
+
+
+        if baseline_payload is None:
+
+            raise ValueError(
+                "No uploaded baseline chromosome exists."
+            )
+
+
+        baseline_source = (
+            "uploaded"
+        )
+
+
+    # --------------------------------------------------------
+    # RECONSTRUCT BASELINE
+    # --------------------------------------------------------
+
+    if baseline_payload is not None:
+
+        baseline_chromosome = (
+            payload_to_chromosome(
+                baseline_payload,
+                list_subjects,
+                list_faculty,
+                lst_rooms,
+            )
+        )
+
+
+        baseline_fitness = (
+            faculty_preference_fitness(
+                baseline_chromosome,
+                df_faculty_pref,
+            )
+        )
+
+
+        print()
+        print("=" * 60)
+
+        print(
+            "BASELINE CHROMOSOME LOADED"
+        )
+
+        print("=" * 60)
+
+        print(
+            f"Source  : "
+            f"{baseline_source}"
+        )
+
+        print(
+            f"Fitness : "
+            f"{baseline_fitness}"
+        )
+
+
+    # ========================================================
+    # INITIAL POPULATION
+    # ========================================================
+
+    number_to_generate = (
+        population_size
+        -
+        (
+            1
+            if baseline_chromosome
+            is not None
+            else 0
+        )
+    )
+
+
+    population = (
+        generate_population(
+            number_to_generate,
+            list_faculty,
+            list_subjects,
+            lst_rooms,
+        )
+    )
+
+
+    # Seed baseline as chromosome #1.
+
+    if (
+        baseline_chromosome
+        is not None
+    ):
+
+        population.insert(
+            0,
+            baseline_chromosome,
+        )
+
+
+    if not population:
+
+        raise RuntimeError(
+            "Unable to create an initial population."
+        )
+
+
+    population = (
+        sort_population_by_fitness(
+            population,
+            df_faculty_pref,
+        )
     )
 
     if not population:
@@ -459,6 +650,29 @@ def run_genetic_algorithm(
         )
     )
         # ========================================================
+    # SAVE BEST CHROMOSOME TO DISK
+    # ========================================================
+
+    (
+        saved_best_updated,
+        saved_best_payload,
+    ) = save_best_if_better(
+        best_ever,
+        best_fitness,
+    )
+
+
+    saved_best_fitness = None
+
+
+    if saved_best_payload:
+
+        saved_best_fitness = (
+            saved_best_payload.get(
+                "best_fitness"
+            )
+        )
+        # ========================================================
     # PER-FACULTY ANALYSIS
     # ========================================================
 
@@ -493,4 +707,15 @@ def run_genetic_algorithm(
 
         "faculty_analysis":
             faculty_analysis,
+                "baseline_source":
+            baseline_source,
+
+        "starting_baseline_fitness":
+            baseline_fitness,
+
+        "saved_best_updated":
+            saved_best_updated,
+
+        "saved_best_fitness":
+            saved_best_fitness,
 }

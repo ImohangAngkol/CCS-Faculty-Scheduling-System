@@ -1,5 +1,7 @@
 import {
+  useEffect,
   useState,
+  type ChangeEvent,
 } from "react";
 
 import {
@@ -12,6 +14,27 @@ import {
 
 import GALiveConsole
   from "../../components/ga/GALiveConsole";
+
+import {
+  getSavedBestDownloadUrl,
+  getSavedBestStatus,
+  uploadBaselineChromosome,
+} from "../../services/gaService";
+
+import type {
+  BaselineMode,
+} from "../../types/ga";
+
+
+type SavedBestStatus = {
+  exists: boolean;
+
+  fitness:
+    number | null;
+
+  created_at:
+    string | null;
+};
 
 
 export default function GenerateSchedule() {
@@ -27,39 +50,318 @@ export default function GenerateSchedule() {
     elapsedSeconds,
     logs,
 
-    populationSize: runningPopulationSize,
-    generations: runningGenerations,
-    freshChromosomes: runningFreshChromosomes,
+    populationSize:
+      runningPopulationSize,
+
+    generations:
+      runningGenerations,
+
+    freshChromosomes:
+      runningFreshChromosomes,
 
     runGA,
   } = useGA();
 
 
+  // ==========================================================
+  // GA SETTINGS
+  // ==========================================================
+
   const [
     populationSize,
     setPopulationSize,
-  ] = useState(10);
+  ] =
+    useState(10);
 
 
   const [
     generations,
     setGenerations,
-  ] = useState(2);
+  ] =
+    useState(2);
 
 
   const [
     freshChromosomes,
     setFreshChromosomes,
-  ] = useState(2);
+  ] =
+    useState(2);
 
+
+  // ==========================================================
+  // BASELINE
+  // ==========================================================
+
+const [
+  baselineMode,
+  setBaselineMode,
+] =
+  useState<BaselineMode>(
+    () => {
+
+      const preferred =
+        window.sessionStorage.getItem(
+          "gaPreferredBaseline"
+        );
+
+
+      window.sessionStorage.removeItem(
+        "gaPreferredBaseline"
+      );
+
+
+      if (
+        preferred === "saved" ||
+        preferred === "uploaded"
+      ) {
+
+        return preferred;
+
+      }
+
+
+      return "fresh";
+
+    }
+  );
+
+
+  const [
+    uploadedBaseline,
+    setUploadedBaseline,
+  ] =
+    useState<unknown | null>(
+      null
+    );
+
+
+  const [
+    uploadedFileName,
+    setUploadedFileName,
+  ] =
+    useState("");
+
+
+  const [
+    savedBest,
+    setSavedBest,
+  ] =
+    useState<SavedBestStatus>({
+      exists: false,
+      fitness: null,
+      created_at: null,
+    });
+
+
+  const [
+    checkingSavedBest,
+    setCheckingSavedBest,
+  ] =
+    useState(true);
+
+
+  // ==========================================================
+  // CHECK WHETHER A SAVED BEST EXISTS
+  // ==========================================================
+
+  useEffect(() => {
+
+    async function checkSavedBest() {
+
+      try {
+
+        setCheckingSavedBest(
+          true
+        );
+
+
+        const response =
+          await getSavedBestStatus();
+
+
+        setSavedBest(
+          response.data
+        );
+
+
+      } catch {
+
+        setSavedBest({
+          exists: false,
+          fitness: null,
+          created_at: null,
+        });
+
+
+      } finally {
+
+        setCheckingSavedBest(
+          false
+        );
+
+      }
+
+    }
+
+
+    checkSavedBest();
+
+  }, [
+    gaData,
+  ]);
+
+
+  // ==========================================================
+  // READ UPLOADED JSON
+  // ==========================================================
+
+  async function handleBaselineFile(
+    event:
+      ChangeEvent<HTMLInputElement>
+  ) {
+
+    const file =
+      event
+        .target
+        .files?.[0];
+
+
+    if (!file) {
+      return;
+    }
+
+
+    try {
+
+      const text =
+        await file.text();
+
+
+      const parsed =
+        JSON.parse(
+          text
+        );
+
+
+      setUploadedBaseline(
+        parsed
+      );
+
+
+      setUploadedFileName(
+        file.name
+      );
+
+
+    } catch {
+
+      setUploadedBaseline(
+        null
+      );
+
+
+      setUploadedFileName(
+        ""
+      );
+
+
+      window.alert(
+        "The selected file is not a valid JSON chromosome."
+      );
+
+    }
+
+  }
+
+
+  // ==========================================================
+  // RUN
+  // ==========================================================
 
   async function handleGenerate() {
 
-    await runGA(
-      populationSize,
-      generations,
-      freshChromosomes
-    );
+    try {
+
+      // -------------------------------------------------------
+      // SAVED BASELINE VALIDATION
+      // -------------------------------------------------------
+
+      if (
+        baselineMode ===
+        "saved"
+        &&
+        !savedBest.exists
+      ) {
+
+        window.alert(
+          "No saved best chromosome exists yet. " +
+          "Run the Genetic Algorithm using Fresh Population first."
+        );
+
+        return;
+
+      }
+
+
+      // -------------------------------------------------------
+      // UPLOAD BASELINE FIRST
+      // -------------------------------------------------------
+
+      if (
+        baselineMode ===
+        "uploaded"
+      ) {
+
+        if (
+          !uploadedBaseline
+        ) {
+
+          window.alert(
+            "Please select a chromosome JSON file first."
+          );
+
+          return;
+
+        }
+
+
+        await uploadBaselineChromosome(
+          uploadedBaseline
+        );
+
+      }
+
+
+      // -------------------------------------------------------
+      // START GA
+      // -------------------------------------------------------
+
+      await runGA(
+
+        populationSize,
+
+        generations,
+
+        freshChromosomes,
+
+        baselineMode
+
+      );
+
+
+    } catch (runError) {
+
+      window.alert(
+        runError instanceof Error
+
+          ? runError.message
+
+          : (
+              "Unable to start the Genetic Algorithm."
+            )
+      );
+
+    }
 
   }
 
@@ -68,9 +370,9 @@ export default function GenerateSchedule() {
 
     <div className="space-y-6">
 
-      {/* ================================================= */}
+      {/* ==================================================== */}
       {/* PAGE HEADER */}
-      {/* ================================================= */}
+      {/* ==================================================== */}
 
       <div>
 
@@ -92,16 +394,16 @@ export default function GenerateSchedule() {
             text-slate-500
           "
         >
-          Configure and run the Genetic Algorithm
-          to generate a faculty schedule.
+          Configure the Genetic Algorithm and choose
+          how the starting population should be created.
         </p>
 
       </div>
 
 
-      {/* ================================================= */}
-      {/* SETTINGS */}
-      {/* ================================================= */}
+      {/* ==================================================== */}
+      {/* SETTINGS CARD */}
+      {/* ==================================================== */}
 
       <div
         className="
@@ -140,12 +442,476 @@ export default function GenerateSchedule() {
               text-slate-500
             "
           >
-            Adjust the parameters before
-            generating a schedule.
+            Choose a starting chromosome and
+            configure the optimization parameters.
           </p>
 
         </div>
 
+
+        {/* ================================================== */}
+        {/* BASELINE MODE */}
+        {/* ================================================== */}
+
+        <div
+          className="
+            mt-6
+            rounded-xl
+            border
+            border-teal-100
+            bg-[#F0FDFA]
+            p-5
+          "
+        >
+
+          <h3
+            className="
+              font-semibold
+              text-slate-900
+            "
+          >
+            Starting Population
+          </h3>
+
+
+          <p
+            className="
+              mt-1
+              text-sm
+              text-slate-500
+            "
+          >
+            Choose whether the Genetic Algorithm starts
+            completely fresh or uses an existing good
+            chromosome as part of the initial population.
+          </p>
+
+
+          <div
+            className="
+              mt-4
+              grid
+              gap-4
+              lg:grid-cols-3
+            "
+          >
+
+            {/* ================================================= */}
+            {/* FRESH */}
+            {/* ================================================= */}
+
+            <label
+              className={`
+                cursor-pointer
+                rounded-xl
+                border
+                bg-white
+                p-4
+                transition
+
+                ${
+                  baselineMode ===
+                  "fresh"
+
+                    ? (
+                        "border-[#0F766E] " +
+                        "ring-2 ring-[#0F766E]/10"
+                      )
+
+                    : (
+                        "border-slate-200 " +
+                        "hover:border-teal-300"
+                      )
+                }
+              `}
+            >
+
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-2
+                "
+              >
+
+                <input
+                  type="radio"
+                  name="baselineMode"
+                  checked={
+                    baselineMode ===
+                    "fresh"
+                  }
+                  disabled={loading}
+                  onChange={
+                    () =>
+                      setBaselineMode(
+                        "fresh"
+                      )
+                  }
+                />
+
+
+                <span
+                  className="
+                    font-semibold
+                    text-slate-900
+                  "
+                >
+                  Fresh Population
+                </span>
+
+              </div>
+
+
+              <p
+                className="
+                  mt-3
+                  text-xs
+                  leading-5
+                  text-slate-500
+                "
+              >
+                Generate every chromosome from scratch.
+                Use this when creating the first schedule
+                or when you want a completely new search.
+              </p>
+
+            </label>
+
+
+            {/* ================================================= */}
+            {/* SAVED BEST */}
+            {/* ================================================= */}
+
+            <label
+              className={`
+                rounded-xl
+                border
+                bg-white
+                p-4
+                transition
+
+                ${
+                  savedBest.exists
+                    ? "cursor-pointer"
+                    : "cursor-not-allowed opacity-60"
+                }
+
+                ${
+                  baselineMode ===
+                  "saved"
+
+                    ? (
+                        "border-[#0F766E] " +
+                        "ring-2 ring-[#0F766E]/10"
+                      )
+
+                    : (
+                        "border-slate-200"
+                      )
+                }
+              `}
+            >
+
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-2
+                "
+              >
+
+                <input
+                  type="radio"
+                  name="baselineMode"
+                  checked={
+                    baselineMode ===
+                    "saved"
+                  }
+                  disabled={
+                    loading ||
+                    !savedBest.exists
+                  }
+                  onChange={
+                    () =>
+                      setBaselineMode(
+                        "saved"
+                      )
+                  }
+                />
+
+
+                <span
+                  className="
+                    font-semibold
+                    text-slate-900
+                  "
+                >
+                  Saved Best
+                </span>
+
+              </div>
+
+
+              {checkingSavedBest ? (
+
+                <p
+                  className="
+                    mt-3
+                    text-xs
+                    text-slate-500
+                  "
+                >
+                  Checking saved chromosome...
+                </p>
+
+              ) : savedBest.exists ? (
+
+                <>
+
+                  <p
+                    className="
+                      mt-3
+                      text-xs
+                      leading-5
+                      text-slate-500
+                    "
+                  >
+                    Seed the population with the best
+                    chromosome previously discovered.
+                  </p>
+
+
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      font-bold
+                      text-[#115E59]
+                    "
+                  >
+                    Saved Fitness:{" "}
+                    {savedBest.fitness}
+                  </p>
+
+                </>
+
+              ) : (
+
+                <p
+                  className="
+                    mt-3
+                    text-xs
+                    leading-5
+                    text-slate-500
+                  "
+                >
+                  No saved chromosome yet.
+                  Generate a fresh schedule first.
+                </p>
+
+              )}
+
+            </label>
+
+
+            {/* ================================================= */}
+            {/* UPLOAD */}
+            {/* ================================================= */}
+
+            <label
+              className={`
+                cursor-pointer
+                rounded-xl
+                border
+                bg-white
+                p-4
+                transition
+
+                ${
+                  baselineMode ===
+                  "uploaded"
+
+                    ? (
+                        "border-[#0F766E] " +
+                        "ring-2 ring-[#0F766E]/10"
+                      )
+
+                    : (
+                        "border-slate-200 " +
+                        "hover:border-teal-300"
+                      )
+                }
+              `}
+            >
+
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-2
+                "
+              >
+
+                <input
+                  type="radio"
+                  name="baselineMode"
+                  checked={
+                    baselineMode ===
+                    "uploaded"
+                  }
+                  disabled={loading}
+                  onChange={
+                    () =>
+                      setBaselineMode(
+                        "uploaded"
+                      )
+                  }
+                />
+
+
+                <span
+                  className="
+                    font-semibold
+                    text-slate-900
+                  "
+                >
+                  Upload Baseline
+                </span>
+
+              </div>
+
+
+              <p
+                className="
+                  mt-3
+                  text-xs
+                  leading-5
+                  text-slate-500
+                "
+              >
+                Use a previously exported good chromosome
+                JSON file as the starting baseline.
+              </p>
+
+            </label>
+
+          </div>
+
+
+          {/* ================================================= */}
+          {/* UPLOAD FILE */}
+          {/* ================================================= */}
+
+          {baselineMode ===
+            "uploaded" && (
+
+            <div
+              className="
+                mt-5
+                rounded-lg
+                border
+                border-dashed
+                border-teal-300
+                bg-white
+                p-4
+              "
+            >
+
+              <label
+                className="
+                  block
+                  text-sm
+                  font-semibold
+                  text-slate-700
+                "
+              >
+                Baseline Chromosome JSON
+              </label>
+
+
+              <input
+                type="file"
+                accept=".json,application/json"
+                disabled={loading}
+                onChange={
+                  handleBaselineFile
+                }
+                className="
+                  mt-3
+                  block
+                  w-full
+                  text-sm
+                  text-slate-500
+                "
+              />
+
+
+              {uploadedFileName && (
+
+                <div
+                  className="
+                    mt-3
+                    rounded-lg
+                    bg-[#CCFBF1]
+                    px-3
+                    py-2
+                  "
+                >
+
+                  <p
+                    className="
+                      text-sm
+                      font-semibold
+                      text-[#115E59]
+                    "
+                  >
+                    ✓ {uploadedFileName}
+                  </p>
+
+                </div>
+
+              )}
+
+            </div>
+
+          )}
+
+
+          {/* ================================================= */}
+          {/* DOWNLOAD CURRENT BEST */}
+          {/* ================================================= */}
+
+          {savedBest.exists && (
+
+            <div
+              className="
+                mt-5
+                border-t
+                border-teal-100
+                pt-4
+              "
+            >
+
+              <a
+                href={
+                  getSavedBestDownloadUrl()
+                }
+                className="ccs-btn-secondary"
+              >
+                Download Saved Best Chromosome
+              </a>
+
+            </div>
+
+          )}
+
+        </div>
+
+
+        {/* ================================================== */}
+        {/* GA PARAMETERS */}
+        {/* ================================================== */}
 
         <div
           className="
@@ -156,7 +922,7 @@ export default function GenerateSchedule() {
           "
         >
 
-          {/* POPULATION SIZE */}
+          {/* POPULATION */}
 
           <div>
 
@@ -177,7 +943,6 @@ export default function GenerateSchedule() {
               max={500}
               value={populationSize}
               disabled={loading}
-
               onChange={
                 (event) =>
                   setPopulationSize(
@@ -186,7 +951,6 @@ export default function GenerateSchedule() {
                     )
                   )
               }
-
               className="
                 ccs-input
                 mt-2
@@ -194,11 +958,8 @@ export default function GenerateSchedule() {
                 rounded-lg
                 border
                 border-slate-300
-                bg-white
                 px-3
                 py-2.5
-                text-slate-900
-                disabled:cursor-not-allowed
                 disabled:bg-slate-100
               "
             />
@@ -238,7 +999,6 @@ export default function GenerateSchedule() {
               max={10000}
               value={generations}
               disabled={loading}
-
               onChange={
                 (event) =>
                   setGenerations(
@@ -247,7 +1007,6 @@ export default function GenerateSchedule() {
                     )
                   )
               }
-
               className="
                 ccs-input
                 mt-2
@@ -255,11 +1014,8 @@ export default function GenerateSchedule() {
                 rounded-lg
                 border
                 border-slate-300
-                bg-white
                 px-3
                 py-2.5
-                text-slate-900
-                disabled:cursor-not-allowed
                 disabled:bg-slate-100
               "
             />
@@ -299,7 +1055,6 @@ export default function GenerateSchedule() {
               max={500}
               value={freshChromosomes}
               disabled={loading}
-
               onChange={
                 (event) =>
                   setFreshChromosomes(
@@ -308,7 +1063,6 @@ export default function GenerateSchedule() {
                     )
                   )
               }
-
               className="
                 ccs-input
                 mt-2
@@ -316,11 +1070,8 @@ export default function GenerateSchedule() {
                 rounded-lg
                 border
                 border-slate-300
-                bg-white
                 px-3
                 py-2.5
-                text-slate-900
-                disabled:cursor-not-allowed
                 disabled:bg-slate-100
               "
             />
@@ -341,12 +1092,16 @@ export default function GenerateSchedule() {
         </div>
 
 
-        {/* GENERATE BUTTON */}
+        {/* ================================================== */}
+        {/* BUTTON */}
+        {/* ================================================== */}
 
         <div className="mt-6">
 
           <button
-            onClick={handleGenerate}
+            onClick={
+              handleGenerate
+            }
             disabled={loading}
             className="ccs-btn-primary"
           >
@@ -380,9 +1135,9 @@ export default function GenerateSchedule() {
       </div>
 
 
-      {/* ================================================= */}
-      {/* BIG LOADING PANEL */}
-      {/* ================================================= */}
+      {/* ==================================================== */}
+      {/* RUNNING */}
+      {/* ==================================================== */}
 
       {loading && (
 
@@ -397,12 +1152,9 @@ export default function GenerateSchedule() {
           "
         >
 
-          {/* TOP TEAL STRIP */}
-
           <div
             className="
               h-1.5
-              w-full
               bg-[#0F766E]
             "
           />
@@ -421,8 +1173,6 @@ export default function GenerateSchedule() {
               "
             >
 
-              {/* LEFT */}
-
               <div
                 className="
                   flex
@@ -431,14 +1181,11 @@ export default function GenerateSchedule() {
                 "
               >
 
-                {/* LARGE SPINNER */}
-
                 <div
                   className="
                     flex
                     h-16
                     w-16
-                    shrink-0
                     items-center
                     justify-center
                     rounded-full
@@ -463,43 +1210,22 @@ export default function GenerateSchedule() {
 
                 <div>
 
-                  <div
+                  <p
                     className="
-                      flex
-                      items-center
-                      gap-2
+                      text-xs
+                      font-bold
+                      uppercase
+                      tracking-wider
+                      text-[#0F766E]
                     "
                   >
-
-                    <span
-                      className="
-                        h-2.5
-                        w-2.5
-                        animate-pulse
-                        rounded-full
-                        bg-[#0F766E]
-                      "
-                    />
-
-
-                    <span
-                      className="
-                        text-xs
-                        font-bold
-                        uppercase
-                        tracking-wider
-                        text-[#0F766E]
-                      "
-                    >
-                      Running
-                    </span>
-
-                  </div>
+                    Running
+                  </p>
 
 
                   <h2
                     className="
-                      mt-2
+                      mt-1
                       text-xl
                       font-bold
                       text-slate-900
@@ -512,23 +1238,26 @@ export default function GenerateSchedule() {
                   <p
                     className="
                       mt-1
-                      max-w-2xl
                       text-sm
                       text-slate-500
                     "
                   >
-                    The system is generating populations,
-                    evaluating fitness, performing crossover
-                    and mutation, and searching for a better
-                    faculty schedule.
+                    Starting Mode:{" "}
+                    <strong>
+                      {
+                        baselineMode === "fresh"
+                          ? "Fresh Population"
+                          : baselineMode === "saved"
+                          ? "Saved Best Chromosome"
+                          : "Uploaded Baseline"
+                      }
+                    </strong>
                   </p>
 
                 </div>
 
               </div>
 
-
-              {/* ELAPSED TIME */}
 
               <div
                 className="
@@ -543,13 +1272,11 @@ export default function GenerateSchedule() {
                 <p
                   className="
                     text-xs
-                    font-semibold
                     uppercase
-                    tracking-wider
                     text-slate-500
                   "
                 >
-                  Elapsed Time
+                  Elapsed
                 </p>
 
 
@@ -571,8 +1298,6 @@ export default function GenerateSchedule() {
             </div>
 
 
-            {/* PARAMETERS */}
-
             <div
               className="
                 mt-6
@@ -583,7 +1308,7 @@ export default function GenerateSchedule() {
             >
 
               <RunningStat
-                label="Population Size"
+                label="Population"
                 value={
                   runningPopulationSize
                 }
@@ -607,38 +1332,6 @@ export default function GenerateSchedule() {
 
             </div>
 
-
-            {/* WAIT MESSAGE */}
-
-            <div
-              className="
-                mt-5
-                rounded-lg
-                border
-                border-[#EAB308]/30
-                bg-[#FEFCE8]
-                px-4
-                py-3
-              "
-            >
-
-              <p
-                className="
-                  text-sm
-                  text-slate-700
-                "
-              >
-                <strong>
-                  Please wait.
-                </strong>
-                {" "}
-                You may navigate to another Admin page
-                while the Genetic Algorithm continues
-                running in the background.
-              </p>
-
-            </div>
-
           </div>
 
         </div>
@@ -646,39 +1339,36 @@ export default function GenerateSchedule() {
       )}
 
 
-      {/* ================================================= */}
-      {/* LIVE GA CONSOLE */}
-      {/* ================================================= */}
+      {/* ==================================================== */}
+      {/* LIVE CONSOLE */}
+      {/* ==================================================== */}
 
       {(loading ||
         logs.length > 0) && (
 
         <div>
 
-          <div className="mb-3">
+          <h2
+            className="
+              mb-1
+              text-lg
+              font-semibold
+              text-slate-900
+            "
+          >
+            Genetic Algorithm Live Progress
+          </h2>
 
-            <h2
-              className="
-                text-lg
-                font-semibold
-                text-slate-900
-              "
-            >
-              Genetic Algorithm Live Progress
-            </h2>
 
-
-            <p
-              className="
-                mt-1
-                text-sm
-                text-slate-500
-              "
-            >
-              Live output from the Genetic Algorithm.
-            </p>
-
-          </div>
+          <p
+            className="
+              mb-3
+              text-sm
+              text-slate-500
+            "
+          >
+            Live output from the optimization process.
+          </p>
 
 
           <GALiveConsole
@@ -691,9 +1381,9 @@ export default function GenerateSchedule() {
       )}
 
 
-      {/* ================================================= */}
+      {/* ==================================================== */}
       {/* ERROR */}
-      {/* ================================================= */}
+      {/* ==================================================== */}
 
       {error && (
 
@@ -732,9 +1422,9 @@ export default function GenerateSchedule() {
       )}
 
 
-      {/* ================================================= */}
-      {/* COMPLETED RESULT */}
-      {/* ================================================= */}
+      {/* ==================================================== */}
+      {/* COMPLETED */}
+      {/* ==================================================== */}
 
       {gaData &&
         !loading && (
@@ -753,7 +1443,6 @@ export default function GenerateSchedule() {
           <div
             className="
               h-1.5
-              w-full
               bg-[#0F766E]
             "
           />
@@ -777,7 +1466,6 @@ export default function GenerateSchedule() {
                 <div
                   className="
                     inline-flex
-                    items-center
                     rounded-full
                     bg-[#CCFBF1]
                     px-3
@@ -810,8 +1498,7 @@ export default function GenerateSchedule() {
                     text-slate-500
                   "
                 >
-                  The best chromosome from the latest
-                  Genetic Algorithm run is ready for review.
+                  The best chromosome is ready for review.
                 </p>
 
               </div>
@@ -855,7 +1542,9 @@ export default function GenerateSchedule() {
             </div>
 
 
+            {/* ================================================= */}
             {/* RESULT SUMMARY */}
+            {/* ================================================= */}
 
             <div
               className="
@@ -892,6 +1581,136 @@ export default function GenerateSchedule() {
 
             </div>
 
+
+            {/* ================================================= */}
+            {/* BASELINE COMPARISON */}
+            {/* ================================================= */}
+
+            {gaData
+              .starting_baseline_fitness !=
+              null && (
+
+              <div
+                className="
+                  mt-6
+                  rounded-xl
+                  border
+                  border-teal-100
+                  bg-[#F0FDFA]
+                  p-5
+                "
+              >
+
+                <h3
+                  className="
+                    font-semibold
+                    text-slate-900
+                  "
+                >
+                  Baseline Improvement
+                </h3>
+
+
+                <p
+                  className="
+                    mt-1
+                    text-sm
+                    text-slate-500
+                  "
+                >
+                  Comparison between the chromosome
+                  used to seed this run and the final
+                  best chromosome.
+                </p>
+
+
+                <div
+                  className="
+                    mt-4
+                    grid
+                    gap-4
+                    sm:grid-cols-3
+                  "
+                >
+
+                  <BaselineResult
+                    label="Starting Fitness"
+                    value={
+                      gaData
+                        .starting_baseline_fitness
+                    }
+                  />
+
+
+                  <BaselineResult
+                    label="Final Fitness"
+                    value={
+                      gaData.best_fitness
+                    }
+                  />
+
+
+                  <BaselineResult
+                    label="Improvement"
+                    value={
+                      gaData
+                        .starting_baseline_fitness
+                      -
+                      gaData.best_fitness
+                    }
+                  />
+
+                </div>
+
+              </div>
+
+            )}
+
+
+            {/* ================================================= */}
+            {/* NEW BEST */}
+            {/* ================================================= */}
+
+            {gaData
+              .saved_best_updated && (
+
+              <div
+                className="
+                  mt-5
+                  rounded-lg
+                  border
+                  border-[#EAB308]/40
+                  bg-[#FEFCE8]
+                  p-4
+                "
+              >
+
+                <p
+                  className="
+                    font-semibold
+                    text-slate-800
+                  "
+                >
+                  ★ New Best Chromosome Saved
+                </p>
+
+
+                <p
+                  className="
+                    mt-1
+                    text-sm
+                    text-slate-600
+                  "
+                >
+                  This chromosome is now available as
+                  the Saved Best baseline for future
+                  Genetic Algorithm runs.
+                </p>
+
+              </div>
+
+            )}
+
           </div>
 
         </div>
@@ -905,9 +1724,9 @@ export default function GenerateSchedule() {
 }
 
 
-/* =========================================================
-   FORMAT TIMER
-========================================================= */
+/* ==========================================================
+   HELPERS
+========================================================== */
 
 function formatElapsedTime(
   seconds: number
@@ -924,7 +1743,9 @@ function formatElapsedTime(
 
 
   return (
-    `${String(minutes).padStart(
+    `${String(
+      minutes
+    ).padStart(
       2,
       "0"
     )}:` +
@@ -939,11 +1760,7 @@ function formatElapsedTime(
 }
 
 
-/* =========================================================
-   RUNNING PARAMETER CARD
-========================================================= */
-
-type RunningStatProps = {
+type CardProps = {
   label: string;
   value: number | string;
 };
@@ -952,7 +1769,7 @@ type RunningStatProps = {
 function RunningStat({
   label,
   value,
-}: RunningStatProps) {
+}: CardProps) {
 
   return (
 
@@ -970,7 +1787,6 @@ function RunningStat({
       <p
         className="
           text-xs
-          font-medium
           text-slate-500
         "
       >
@@ -996,14 +1812,10 @@ function RunningStat({
 }
 
 
-/* =========================================================
-   RESULT CARD
-========================================================= */
-
 function ResultCard({
   label,
   value,
-}: RunningStatProps) {
+}: CardProps) {
 
   return (
 
@@ -1042,6 +1854,49 @@ function ResultCard({
         className="
           mt-1
           text-2xl
+          font-bold
+          text-[#115E59]
+        "
+      >
+        {value}
+      </p>
+
+    </div>
+
+  );
+
+}
+
+
+function BaselineResult({
+  label,
+  value,
+}: CardProps) {
+
+  return (
+
+    <div
+      className="
+        rounded-lg
+        bg-white
+        p-4
+      "
+    >
+
+      <p
+        className="
+          text-xs
+          text-slate-500
+        "
+      >
+        {label}
+      </p>
+
+
+      <p
+        className="
+          mt-1
+          text-xl
           font-bold
           text-[#115E59]
         "

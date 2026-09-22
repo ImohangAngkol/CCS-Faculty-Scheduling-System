@@ -47,6 +47,11 @@ const adminItems = [
   },
 
   {
+    label: "Saved Chromosomes",
+    path: "/admin/chromosomes",
+  },
+
+  {
     label: "Schedules",
     path: "/admin/schedules",
   },
@@ -94,6 +99,9 @@ export default function AdminLayout() {
 
       case "/admin/generate":
         return "Generate Schedule";
+
+      case "/admin/chromosomes":
+        return "Saved Chromosomes";
 
       case "/admin/schedules":
         return "Generated Schedules";
@@ -143,10 +151,6 @@ export default function AdminLayout() {
           role="Admin"
         />
 
-
-        {/* ============================================ */}
-        {/* GLOBAL GA RUNNING BAR */}
-        {/* ============================================ */}
 
         {loading && (
 

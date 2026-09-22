@@ -19,17 +19,20 @@ import AdminDashboard
 import FacultyManagement
   from "../pages/admin/FacultyManagement";
 
+import RoomAssignments
+  from "../pages/admin/RoomAssignments";
+
 import GenerateSchedule
   from "../pages/admin/GenerateSchedule";
+
+import ChromosomeViewer
+  from "../pages/admin/ChromosomeViewer";
 
 import ScheduleView
   from "../pages/admin/ScheduleView";
 
 import FitnessAnalysis
   from "../pages/admin/FitnessAnalysis";
-
-import RoomAssignments
-  from "../pages/admin/RoomAssignments";
 
 
 function FacultyDashboard() {
@@ -95,9 +98,7 @@ export default function AppRoutes() {
 
       <Routes>
 
-        {/* ========================================= */}
         {/* ROOT */}
-        {/* ========================================= */}
 
         <Route
           path="/"
@@ -110,9 +111,9 @@ export default function AppRoutes() {
         />
 
 
-        {/* ========================================= */}
+        {/* ============================================= */}
         {/* ADMIN */}
-        {/* ========================================= */}
+        {/* ============================================= */}
 
         <Route
           path="/admin"
@@ -129,8 +130,6 @@ export default function AppRoutes() {
           />
 
 
-          {/* FACULTY WEEKLY SCHEDULE */}
-
           <Route
             path="faculty"
             element={
@@ -138,8 +137,6 @@ export default function AppRoutes() {
             }
           />
 
-
-          {/* SUBJECTS */}
 
           <Route
             path="subjects"
@@ -151,8 +148,6 @@ export default function AppRoutes() {
           />
 
 
-          {/* PREFERENCES */}
-
           <Route
             path="preferences"
             element={
@@ -163,8 +158,6 @@ export default function AppRoutes() {
           />
 
 
-          {/* ROOM WEEKLY SCHEDULE */}
-
           <Route
             path="rooms"
             element={
@@ -172,8 +165,6 @@ export default function AppRoutes() {
             }
           />
 
-
-          {/* GENERATE */}
 
           <Route
             path="generate"
@@ -183,7 +174,15 @@ export default function AppRoutes() {
           />
 
 
-          {/* COMPLETE GENERATED SCHEDULE */}
+          {/* NEW */}
+
+          <Route
+            path="chromosomes"
+            element={
+              <ChromosomeViewer />
+            }
+          />
+
 
           <Route
             path="schedules"
@@ -192,8 +191,6 @@ export default function AppRoutes() {
             }
           />
 
-
-          {/* GA ANALYSIS */}
 
           <Route
             path="analysis"
@@ -205,9 +202,9 @@ export default function AppRoutes() {
         </Route>
 
 
-        {/* ========================================= */}
+        {/* ============================================= */}
         {/* FACULTY */}
-        {/* ========================================= */}
+        {/* ============================================= */}
 
         <Route
           path="/faculty"
@@ -256,9 +253,7 @@ export default function AppRoutes() {
         </Route>
 
 
-        {/* ========================================= */}
         {/* FALLBACK */}
-        {/* ========================================= */}
 
         <Route
           path="*"

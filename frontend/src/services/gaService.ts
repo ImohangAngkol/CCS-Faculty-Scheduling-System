@@ -1,4 +1,5 @@
 import type {
+  BaselineMode,
   GARunData,
   GARunResponse,
 } from "../types/ga";
@@ -9,27 +10,38 @@ const API_BASE_URL =
 
 
 // ============================================================
-// NORMAL GA REQUEST
-//
-// Keep this because other parts of the frontend may use it.
+// NORMAL GA RUN
 // ============================================================
 
 export async function runGeneticAlgorithm(
   populationSize = 10,
   generations = 2,
-  freshChromosomes = 2
+  freshChromosomes = 2,
+  baselineMode:
+    BaselineMode = "fresh"
 ): Promise<GARunResponse> {
 
   const params =
     new URLSearchParams({
+
       population_size:
-        String(populationSize),
+        String(
+          populationSize
+        ),
 
       generations:
-        String(generations),
+        String(
+          generations
+        ),
 
       fresh_chromosomes:
-        String(freshChromosomes),
+        String(
+          freshChromosomes
+        ),
+
+      baseline_mode:
+        baselineMode,
+
     });
 
 
@@ -46,6 +58,7 @@ export async function runGeneticAlgorithm(
 
     const errorBody =
       await response.text();
+
 
     throw new Error(
       `GA request failed: ` +
@@ -95,26 +108,40 @@ type GAStreamEvent =
 
 
 // ============================================================
-// LIVE STREAMING GA REQUEST
+// LIVE GA STREAM
 // ============================================================
 
 export async function runGeneticAlgorithmStream(
   populationSize: number,
   generations: number,
   freshChromosomes: number,
-  onLog: (message: string) => void
+  onLog:
+    (message: string) => void,
+  baselineMode:
+    BaselineMode = "fresh"
 ): Promise<GARunData> {
 
   const params =
     new URLSearchParams({
+
       population_size:
-        String(populationSize),
+        String(
+          populationSize
+        ),
 
       generations:
-        String(generations),
+        String(
+          generations
+        ),
 
       fresh_chromosomes:
-        String(freshChromosomes),
+        String(
+          freshChromosomes
+        ),
+
+      baseline_mode:
+        baselineMode,
+
     });
 
 
@@ -125,7 +152,8 @@ export async function runGeneticAlgorithmStream(
         method: "POST",
 
         headers: {
-          Accept: "text/event-stream",
+          Accept:
+            "text/event-stream",
         },
       }
     );
@@ -135,6 +163,7 @@ export async function runGeneticAlgorithmStream(
 
     const errorBody =
       await response.text();
+
 
     throw new Error(
       `GA streaming request failed: ` +
@@ -157,19 +186,17 @@ export async function runGeneticAlgorithmStream(
   const reader =
     response.body.getReader();
 
+
   const decoder =
     new TextDecoder();
 
 
   let buffer = "";
 
+
   let finalResult:
     GARunData | null = null;
 
-
-  // ==========================================================
-  // PROCESS ONE SSE EVENT
-  // ==========================================================
 
   function processEvent(
     eventBlock: string
@@ -182,7 +209,9 @@ export async function runGeneticAlgorithmStream(
     const dataLines =
       lines.filter(
         (line) =>
-          line.startsWith("data:")
+          line.startsWith(
+            "data:"
+          )
       );
 
 
@@ -215,42 +244,46 @@ export async function runGeneticAlgorithmStream(
       ) as GAStreamEvent;
 
 
-    if (event.type === "log") {
+    if (
+      event.type ===
+      "log"
+    ) {
 
       onLog(
         event.message
       );
 
       return;
+
     }
 
 
     if (
-      event.type === "result"
+      event.type ===
+      "result"
     ) {
 
       finalResult =
         event.data;
 
       return;
+
     }
 
 
     if (
-      event.type === "error"
+      event.type ===
+      "error"
     ) {
 
       throw new Error(
         event.message
       );
+
     }
 
   }
 
-
-  // ==========================================================
-  // READ STREAM
-  // ==========================================================
 
   while (true) {
 
@@ -274,9 +307,10 @@ export async function runGeneticAlgorithmStream(
     }
 
 
-    // SSE events are separated by a blank line.
     let boundary =
-      buffer.indexOf("\n\n");
+      buffer.indexOf(
+        "\n\n"
+      );
 
 
     while (
@@ -316,7 +350,6 @@ export async function runGeneticAlgorithmStream(
   }
 
 
-  // Process any remaining data.
   if (
     buffer.trim()
   ) {
@@ -338,4 +371,172 @@ export async function runGeneticAlgorithmStream(
 
 
   return finalResult;
+}
+
+
+// ============================================================
+// UPLOAD CHROMOSOME
+// ============================================================
+
+export async function uploadBaselineChromosome(
+  payload: unknown
+) {
+
+  const response =
+    await fetch(
+      `${API_BASE_URL}/api/chromosomes/upload`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json",
+        },
+
+        body:
+          JSON.stringify(
+            payload
+          ),
+      }
+    );
+
+
+  if (!response.ok) {
+
+    const error =
+      await response
+        .json()
+        .catch(
+          () => null
+        );
+
+
+    throw new Error(
+      error?.detail ??
+      "Failed to upload chromosome."
+    );
+
+  }
+
+
+  return response.json();
+}
+
+
+// ============================================================
+// SAVED BEST STATUS
+// ============================================================
+
+export async function getSavedBestStatus() {
+
+  const response =
+    await fetch(
+      `${API_BASE_URL}/api/chromosomes/best`
+    );
+
+
+  if (!response.ok) {
+
+    throw new Error(
+      "Failed to check saved best chromosome."
+    );
+
+  }
+
+
+  return response.json();
+}
+
+
+// ============================================================
+// SAVED BEST DOWNLOAD
+// ============================================================
+
+export function getSavedBestDownloadUrl() {
+
+  return (
+    `${API_BASE_URL}` +
+    `/api/chromosomes/best/download`
+  );
+
+}
+
+
+// ============================================================
+// ANALYZE SAVED BEST ONLY
+//
+// DOES NOT RUN GENETIC ALGORITHM
+// ============================================================
+
+export async function analyzeSavedBestChromosome():
+  Promise<GARunResponse> {
+
+  const response =
+    await fetch(
+      `${API_BASE_URL}/api/chromosomes/best/analyze`,
+      {
+        method: "POST",
+      }
+    );
+
+
+  if (!response.ok) {
+
+    const error =
+      await response
+        .json()
+        .catch(
+          () => null
+        );
+
+
+    throw new Error(
+      error?.detail ??
+      "Failed to analyze saved chromosome."
+    );
+
+  }
+
+
+  return response.json();
+}
+
+
+// ============================================================
+// ANALYZE UPLOADED CHROMOSOME ONLY
+//
+// DOES NOT RUN GENETIC ALGORITHM
+// ============================================================
+
+export async function analyzeUploadedChromosome():
+  Promise<GARunResponse> {
+
+  const response =
+    await fetch(
+      `${API_BASE_URL}/api/chromosomes/uploaded/analyze`,
+      {
+        method: "POST",
+      }
+    );
+
+
+  if (!response.ok) {
+
+    const error =
+      await response
+        .json()
+        .catch(
+          () => null
+        );
+
+
+    throw new Error(
+      error?.detail ??
+      "Failed to analyze uploaded chromosome."
+    );
+
+  }
+
+
+  return response.json();
 }

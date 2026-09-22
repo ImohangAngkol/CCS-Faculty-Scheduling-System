@@ -102,3 +102,10 @@ __pycache__/
 # Private thesis input data
 backend/data/*.xlsx
 backend/data/*.csv
+
+
+# ============================================================
+# Runtime Genetic Algorithm Chromosomes
+# ============================================================
+
+backend/saved_chromosomes/*.json
