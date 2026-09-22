@@ -1,5 +1,9 @@
 import copy
 
+from services.faculty_analysis_service import (
+    build_faculty_analysis,
+)
+
 from genetic_algorithm.utils.Functions import (
     list_faculty,
     list_subjects,
@@ -454,6 +458,16 @@ def run_genetic_algorithm(
             return_breakdown=True,
         )
     )
+        # ========================================================
+    # PER-FACULTY ANALYSIS
+    # ========================================================
+
+    faculty_analysis = (
+        build_faculty_analysis(
+            best_ever,
+            df_faculty_pref,
+        )
+    )
 
     # =====================================================
     # 6. RETURN RESULT
@@ -461,9 +475,22 @@ def run_genetic_algorithm(
 
     return {
         "best_fitness": best_fitness,
-        "fitness_breakdown": fitness_breakdown,
-        "generations_completed": generations,
-        "population_size": population_size,
-        "history": history,
-        "schedule": schedule,
-    }
+
+        "fitness_breakdown":
+            fitness_breakdown,
+
+        "generations_completed":
+            generations,
+
+        "population_size":
+            population_size,
+
+        "history":
+            history,
+
+        "schedule":
+            schedule,
+
+        "faculty_analysis":
+            faculty_analysis,
+}

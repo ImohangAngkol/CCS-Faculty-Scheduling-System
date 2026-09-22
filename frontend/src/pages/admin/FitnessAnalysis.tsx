@@ -6,43 +6,48 @@ import {
   useGA,
 } from "../../context/GAContext";
 
+import {
+  formatFacultyName,
+} from "../../components/schedule/WeeklySchedule";
+
+import type {
+  FacultyAnalysisItem,
+  FacultyDailyLoad,
+} from "../../types/ga";
+
 
 export default function FitnessAnalysis() {
 
   const navigate =
     useNavigate();
 
+
   const {
     gaData,
   } = useGA();
 
 
+  // ==========================================================
+  // EMPTY
+  // ==========================================================
+
   if (!gaData) {
 
     return (
+
       <div className="space-y-6">
 
         <div>
-          <h1
-            className="
-              text-2xl
-              font-bold
-              text-slate-900
-            "
-          >
-            GA Analysis
+
+          <h1 className="text-2xl font-bold text-slate-900">
+            Genetic Algorithm Analysis
           </h1>
 
-          <p
-            className="
-              mt-1
-              text-sm
-              text-slate-500
-            "
-          >
-            Analyze Genetic Algorithm fitness
-            and optimization performance.
+          <p className="mt-1 text-sm text-slate-500">
+            Analyze the performance of the
+            generated faculty schedule.
           </p>
+
         </div>
 
 
@@ -93,21 +98,19 @@ export default function FitnessAnalysis() {
               text-slate-500
             "
           >
-            Run the Genetic Algorithm first
-            to generate analysis data.
+            Generate a schedule first to
+            view its analysis.
           </p>
 
 
           <button
-            onClick={() =>
-              navigate(
-                "/admin/generate"
-              )
+            onClick={
+              () =>
+                navigate(
+                  "/admin/generate"
+                )
             }
-            className="
-              ccs-btn-primary
-              mt-5
-            "
+            className="ccs-btn-primary mt-5"
           >
             Generate Schedule
           </button>
@@ -115,22 +118,42 @@ export default function FitnessAnalysis() {
         </div>
 
       </div>
+
     );
+
   }
 
 
-  const chartData =
-    (gaData.history ?? []).map(
+  const facultyAnalysis =
+    gaData.faculty_analysis;
+
+
+  const faculty =
+    facultyAnalysis?.faculty ?? [];
+
+
+  const dailyLoad =
+    facultyAnalysis?.daily_load ?? [];
+
+
+  // ==========================================================
+  // GENERATION DATA
+  // ==========================================================
+
+  const generationData =
+    gaData.history.map(
       (item) => {
 
         const generationBest =
           item.generation === 0
+
             ? (
                 item.best_fitness ??
                 item.generation_best_fitness ??
                 item.best_ever_fitness ??
                 0
               )
+
             : (
                 item.generation_best_fitness ??
                 item.best_fitness ??
@@ -141,7 +164,9 @@ export default function FitnessAnalysis() {
 
         const bestEver =
           item.generation === 0
+
             ? generationBest
+
             : (
                 item.best_ever_fitness ??
                 generationBest
@@ -162,111 +187,48 @@ export default function FitnessAnalysis() {
 
 
   const initialFitness =
-    chartData.length > 0
-      ? chartData[0].bestEver
+    generationData.length > 0
+
+      ? generationData[0]
+          .bestEver
+
       : gaData.best_fitness;
-
-
-  const finalFitness =
-    gaData.best_fitness;
 
 
   const fitnessImprovement =
     Math.max(
       0,
+
       initialFitness -
-        finalFitness
+      gaData.best_fitness
     );
 
 
-  const improvementPercentage =
+  const improvementPercent =
     initialFitness > 0
+
       ? (
           fitnessImprovement /
           initialFitness
         ) * 100
+
       : 0;
 
 
-  const fitnessBreakdown = [
-    {
-      label:
-        "Subject Preference",
-
-      value:
-        gaData
-          .fitness_breakdown
-          .subject_preference,
-    },
-
-    {
-      label:
-        "Time Preference",
-
-      value:
-        gaData
-          .fitness_breakdown
-          .time_preference,
-    },
-
-    {
-      label:
-        "Day Preference",
-
-      value:
-        gaData
-          .fitness_breakdown
-          .day_preference,
-    },
-
-    {
-      label:
-        "Number of Preparations",
-
-      value:
-        gaData
-          .fitness_breakdown
-          .number_of_preparations,
-    },
-
-    {
-      label:
-        "Teaching Load Balance",
-
-      value:
-        gaData
-          .fitness_breakdown
-          .teaching_load_balance,
-    },
-
-    {
-      label:
-        "Daily Teaching Load",
-
-      value:
-        gaData
-          .fitness_breakdown
-          .daily_teaching_load,
-    },
-  ];
-
-
-  const totalPenalty =
-    fitnessBreakdown.reduce(
-      (
-        total,
-        item
-      ) =>
-        total +
-        item.value,
-      0
-    );
+  const averageLoad =
+    facultyAnalysis
+      ?.summary
+      ?.average_teaching_load ??
+    0;
 
 
   return (
+
     <div className="space-y-6">
 
+      {/* ==================================================== */}
       {/* HEADER */}
+      {/* ==================================================== */}
 
       <div
         className="
@@ -280,6 +242,7 @@ export default function FitnessAnalysis() {
       >
 
         <div>
+
           <h1
             className="
               text-2xl
@@ -290,6 +253,7 @@ export default function FitnessAnalysis() {
             Genetic Algorithm Analysis
           </h1>
 
+
           <p
             className="
               mt-1
@@ -297,27 +261,32 @@ export default function FitnessAnalysis() {
               text-slate-500
             "
           >
-            Fitness performance and penalty analysis
-            of the latest GA run.
+            Faculty preference satisfaction,
+            workload distribution, and optimization
+            performance of the best chromosome.
           </p>
+
         </div>
 
 
         <button
-          onClick={() =>
-            navigate(
-              "/admin/schedules"
-            )
+          onClick={
+            () =>
+              navigate(
+                "/admin/schedules"
+              )
           }
           className="ccs-btn-primary"
         >
-          View Schedule
+          View Generated Schedule
         </button>
 
       </div>
 
 
-      {/* SUMMARY */}
+      {/* ==================================================== */}
+      {/* TOP CARDS */}
+      {/* ==================================================== */}
 
       <div
         className="
@@ -336,224 +305,345 @@ export default function FitnessAnalysis() {
           description="Lower is better"
         />
 
+
         <AnalysisCard
           label="Initial Fitness"
           value={
             initialFitness
           }
-          description="Starting best chromosome"
+          description="Initial best chromosome"
         />
 
+
         <AnalysisCard
-          label="Fitness Improvement"
+          label="Improvement"
           value={
             fitnessImprovement
           }
           description={
-            `${improvementPercentage.toFixed(
+            `${improvementPercent.toFixed(
               2
             )}% reduction`
           }
         />
 
+
         <AnalysisCard
-          label="Generations"
+          label="Average Teaching Load"
           value={
-            gaData
-              .generations_completed
+            Number(
+              averageLoad
+            ).toFixed(1)
           }
-          description="Completed generations"
+          description="Credit units"
         />
 
       </div>
 
 
-      {/* CHART */}
+      {/* ==================================================== */}
+      {/* OPTIMIZATION PROGRESS */}
+      {/* ==================================================== */}
 
-      <div
-        className="
-          rounded-xl
-          border
-          bg-white
-          p-6
-          shadow-sm
-        "
-      >
+      <section className="analysis-section">
 
-        <div
-          className="
-            border-l-4
-            border-[#0F766E]
-            pl-4
-          "
-        >
-
-          <h2
-            className="
-              text-lg
-              font-semibold
-              text-slate-900
-            "
-          >
-            Fitness Progress
-          </h2>
-
-          <p
-            className="
-              mt-1
-              text-sm
-              text-slate-500
-            "
-          >
-            Lower fitness represents
-            a better chromosome.
-          </p>
-
-        </div>
+        <SectionHeader
+          title="Optimization Progress"
+          description={
+            "Tracks how the best fitness changes across generations. Lower values indicate improvement."
+          }
+        />
 
 
         <div className="mt-6">
 
           <FitnessTrendChart
-            data={chartData}
+            data={
+              generationData
+            }
           />
 
         </div>
 
-      </div>
+      </section>
 
 
-      {/* BREAKDOWN */}
+      {/* ==================================================== */}
+      {/* PREFERENCE SATISFACTION */}
+      {/* ==================================================== */}
 
-      <div
-        className="
-          rounded-xl
-          border
-          bg-white
-          p-6
-          shadow-sm
-        "
-      >
+      <section className="analysis-section">
 
-        <h2
-          className="
-            text-lg
-            font-semibold
-            text-slate-900
-          "
-        >
-          Fitness Penalty Breakdown
-        </h2>
-
-        <p
-          className="
-            mt-1
-            text-sm
-            text-slate-500
-          "
-        >
-          Contribution of each soft constraint
-          to the final fitness score.
-        </p>
+        <SectionHeader
+          title="Faculty Preference Satisfaction"
+          description={
+            "These percentages are calculated by the existing Python faculty-analysis logic for the selected best chromosome."
+          }
+        />
 
 
         <div
           className="
             mt-6
-            space-y-5
+            space-y-6
           "
         >
 
-          {fitnessBreakdown.map(
+          {faculty.map(
+            (item) => (
+
+              <FacultyPreferenceRow
+                key={
+                  String(
+                    item.Faculty_Code
+                  )
+                }
+                item={item}
+              />
+
+            )
+          )}
+
+        </div>
+
+      </section>
+
+
+      {/* ==================================================== */}
+      {/* PREPARATIONS */}
+      {/* ==================================================== */}
+
+      <section className="analysis-section">
+
+        <SectionHeader
+          title="Number of Preparations per Faculty"
+          description={
+            "A preparation represents one unique subject assigned to a faculty member."
+          }
+        />
+
+
+        <div
+          className="
+            mt-6
+            grid
+            gap-3
+            sm:grid-cols-2
+            lg:grid-cols-3
+            xl:grid-cols-4
+          "
+        >
+
+          {faculty.map(
+            (item) => (
+
+              <div
+                key={
+                  String(
+                    item.Faculty_Code
+                  )
+                }
+                className="
+                  rounded-xl
+                  border
+                  border-slate-200
+                  bg-slate-50
+                  p-4
+                "
+              >
+
+                <p
+                  className="
+                    text-sm
+                    font-semibold
+                    text-slate-700
+                  "
+                >
+                  {formatFacultyName(
+                    String(
+                      item.Faculty_Code
+                    )
+                  )}
+                </p>
+
+
+                <p
+                  className="
+                    mt-2
+                    text-3xl
+                    font-bold
+                    text-[#115E59]
+                  "
+                >
+                  {item.Preparations}
+                </p>
+
+
+                <p
+                  className="
+                    mt-1
+                    text-xs
+                    text-slate-400
+                  "
+                >
+                  unique subjects
+                </p>
+
+              </div>
+
+            )
+          )}
+
+        </div>
+
+      </section>
+
+
+      {/* ==================================================== */}
+      {/* TEACHING LOAD */}
+      {/* ==================================================== */}
+
+      <section className="analysis-section">
+
+        <SectionHeader
+          title="Teaching Load Distribution"
+          description={
+            "Shows assigned credit units and each faculty member's deviation from the overall average."
+          }
+        />
+
+
+        <div
+          className="
+            mt-6
+            space-y-4
+          "
+        >
+
+          {faculty.map(
             (item) => {
 
-              const percentage =
-                totalPenalty > 0
-                  ? (
-                      item.value /
-                      totalPenalty
-                    ) * 100
-                  : 0;
+              const maxLoad =
+                Math.max(
+                  1,
+
+                  ...faculty.map(
+                    (facultyItem) =>
+                      Number(
+                        facultyItem.Teaching_Load ??
+                        0
+                      )
+                  )
+                );
+
+
+              const width =
+                (
+                  Number(
+                    item.Teaching_Load ??
+                    0
+                  ) /
+                  maxLoad
+                ) * 100;
 
 
               return (
+
                 <div
-                  key={item.label}
+                  key={
+                    String(
+                      item.Faculty_Code
+                    )
+                  }
                 >
 
                   <div
                     className="
                       mb-2
                       flex
-                      items-center
+                      items-end
                       justify-between
+                      gap-4
                     "
                   >
 
-                    <span
-                      className="
-                        text-sm
-                        font-medium
-                        text-slate-700
-                      "
-                    >
-                      {item.label}
-                    </span>
-
-
                     <div>
-                      <span
+
+                      <p
                         className="
                           text-sm
                           font-semibold
-                          text-[#115E59]
+                          text-slate-700
                         "
                       >
-                        {item.value}
-                      </span>
+                        {formatFacultyName(
+                          String(
+                            item.Faculty_Code
+                          )
+                        )}
+                      </p>
 
-                      <span
+
+                      <p
                         className="
-                          ml-2
                           text-xs
                           text-slate-400
                         "
                       >
-                        {percentage.toFixed(
-                          1
+                        Deviation from average:
+                        {" "}
+                        {formatSigned(
+                          item.Load_Deviation
                         )}
-                        %
-                      </span>
+                      </p>
+
                     </div>
+
+
+                    <p
+                      className="
+                        text-sm
+                        font-bold
+                        text-[#115E59]
+                      "
+                    >
+                      {
+                        Number(
+                          item.Teaching_Load ??
+                          0
+                        ).toFixed(1)
+                      }
+                      {" units"}
+                    </p>
 
                   </div>
 
 
                   <div
                     className="
-                      h-3
+                      h-5
                       overflow-hidden
-                      rounded-full
-                      bg-teal-50
+                      rounded-md
+                      bg-slate-100
                     "
                   >
 
                     <div
                       className="
                         h-full
-                        rounded-full
+                        rounded-md
                         bg-[#0F766E]
-                        transition-all
                       "
                       style={{
                         width:
-                          `${percentage}%`,
+                          `${width}%`,
                       }}
                     />
 
                   </div>
 
                 </div>
+
               );
 
             }
@@ -561,79 +651,370 @@ export default function FitnessAnalysis() {
 
         </div>
 
+      </section>
+
+
+      {/* ==================================================== */}
+      {/* DAILY LOAD */}
+      {/* ==================================================== */}
+
+      <section className="analysis-section">
+
+        <SectionHeader
+          title="Daily Teaching Load"
+          description={
+            "Scheduled teaching hours per day for each faculty member."
+          }
+        />
+
 
         <div
           className="
             mt-6
-            border-t
-            pt-4
+            overflow-x-auto
           "
         >
 
-          <div
+          <table
             className="
-              flex
-              items-center
-              justify-between
+              w-full
+              min-w-[850px]
+              text-left
+              text-sm
             "
           >
 
-            <span
+            <thead
               className="
-                text-sm
-                font-medium
-                text-slate-600
+                bg-[#115E59]
+                text-white
               "
             >
-              Total Penalty
-            </span>
 
-            <span
-              className="
-                text-xl
-                font-bold
-                text-[#115E59]
-              "
-            >
-              {totalPenalty}
-            </span>
+              <tr>
 
-          </div>
+                <th className="px-4 py-3">
+                  Faculty
+                </th>
+
+                <th className="px-4 py-3">
+                  Monday
+                </th>
+
+                <th className="px-4 py-3">
+                  Tuesday
+                </th>
+
+                <th className="px-4 py-3">
+                  Wednesday
+                </th>
+
+                <th className="px-4 py-3">
+                  Thursday
+                </th>
+
+                <th className="px-4 py-3">
+                  Friday
+                </th>
+
+                <th className="px-4 py-3">
+                  Saturday
+                </th>
+
+                <th className="px-4 py-3">
+                  Total
+                </th>
+
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+              {dailyLoad.map(
+                (item) => (
+
+                  <DailyLoadRow
+                    key={
+                      String(
+                        item.Faculty_Code
+                      )
+                    }
+                    item={item}
+                  />
+
+                )
+              )}
+
+            </tbody>
+
+          </table>
 
         </div>
 
-      </div>
+      </section>
 
 
-      {/* HISTORY */}
+      {/* ==================================================== */}
+      {/* FACULTY SUMMARY */}
+      {/* ==================================================== */}
 
-      <div
+      <section
         className="
+          overflow-hidden
           rounded-xl
           border
           bg-white
-          p-6
           shadow-sm
         "
       >
 
-        <h2
-          className="
-            text-lg
-            font-semibold
-            text-slate-900
-          "
-        >
-          Generation History
-        </h2>
+        <div className="p-6">
+
+          <SectionHeader
+            title="Faculty Performance Summary"
+            description={
+              "Combined preference satisfaction, preparations, load, and fitness penalty for the selected chromosome."
+            }
+          />
+
+        </div>
 
 
-        <div
-          className="
-            mt-5
-            overflow-x-auto
-          "
-        >
+        <div className="overflow-x-auto">
+
+          <table
+            className="
+              w-full
+              min-w-[1200px]
+              text-left
+              text-sm
+            "
+          >
+
+            <thead
+              className="
+                bg-[#115E59]
+                text-white
+              "
+            >
+
+              <tr>
+
+                <th className="px-4 py-3">
+                  Faculty
+                </th>
+
+                <th className="px-4 py-3">
+                  Priority
+                </th>
+
+                <th className="px-4 py-3">
+                  Subject %
+                </th>
+
+                <th className="px-4 py-3">
+                  Day %
+                </th>
+
+                <th className="px-4 py-3">
+                  Time %
+                </th>
+
+                <th className="px-4 py-3">
+                  Prep
+                </th>
+
+                <th className="px-4 py-3">
+                  Load
+                </th>
+
+                <th className="px-4 py-3">
+                  Load Δ
+                </th>
+
+                <th className="px-4 py-3">
+                  Subject Penalty
+                </th>
+
+                <th className="px-4 py-3">
+                  Day Penalty
+                </th>
+
+                <th className="px-4 py-3">
+                  Time Penalty
+                </th>
+
+                <th className="px-4 py-3">
+                  Prep Penalty
+                </th>
+
+                <th className="px-4 py-3">
+                  Total Penalty
+                </th>
+
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+              {faculty.map(
+                (item) => (
+
+                  <tr
+                    key={
+                      String(
+                        item.Faculty_Code
+                      )
+                    }
+                    className="
+                      border-b
+                      last:border-0
+                      hover:bg-[#F0FDFA]
+                    "
+                  >
+
+                    <td
+                      className="
+                        px-4
+                        py-3
+                        font-semibold
+                        text-[#115E59]
+                      "
+                    >
+                      {formatFacultyName(
+                        String(
+                          item.Faculty_Code
+                        )
+                      )}
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {formatNullable(
+                        item.Faculty_Priority
+                      )}
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {formatPercent(
+                        item.Subject_Satisfaction
+                      )}
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {formatPercent(
+                        item.Day_Satisfaction
+                      )}
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {formatPercent(
+                        item.Time_Satisfaction
+                      )}
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {item.Preparations}
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {
+                        Number(
+                          item.Teaching_Load ??
+                          0
+                        ).toFixed(1)
+                      }
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {formatSigned(
+                        item.Load_Deviation
+                      )}
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {item.Subject_Penalty}
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {item.Day_Penalty}
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {item.Time_Penalty}
+                    </td>
+
+
+                    <td className="px-4 py-3">
+                      {item.Preparation_Penalty}
+                    </td>
+
+
+                    <td
+                      className="
+                        px-4
+                        py-3
+                        font-bold
+                        text-[#9D174D]
+                      "
+                    >
+                      {item.Total_Penalty}
+                    </td>
+
+                  </tr>
+
+                )
+              )}
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+
+      {/* ==================================================== */}
+      {/* GENERATION HISTORY */}
+      {/* ==================================================== */}
+
+      <section
+        className="
+          overflow-hidden
+          rounded-xl
+          border
+          bg-white
+          shadow-sm
+        "
+      >
+
+        <div className="p-6">
+
+          <SectionHeader
+            title="Generation History"
+            description={
+              "Best chromosome fitness recorded during every generation."
+            }
+          />
+
+        </div>
+
+
+        <div className="overflow-x-auto">
 
           <table
             className="
@@ -645,12 +1026,13 @@ export default function FitnessAnalysis() {
 
             <thead
               className="
-                border-b
                 bg-[#115E59]
                 text-white
               "
             >
+
               <tr>
+
                 <th className="px-4 py-3">
                   Generation
                 </th>
@@ -663,93 +1045,51 @@ export default function FitnessAnalysis() {
                   Best Ever
                 </th>
 
-                <th className="px-4 py-3">
-                  Improvement
-                </th>
               </tr>
+
             </thead>
 
 
             <tbody>
 
-              {chartData.map(
-                (
-                  item,
-                  index
-                ) => {
+              {generationData.map(
+                (item) => (
 
-                  const previous =
-                    index === 0
-                      ? item.bestEver
-                      : chartData[
-                          index - 1
-                        ].bestEver;
+                  <tr
+                    key={
+                      item.generation
+                    }
+                    className="
+                      border-b
+                      last:border-0
+                      hover:bg-[#F0FDFA]
+                    "
+                  >
 
-
-                  const improvement =
-                    Math.max(
-                      0,
-                      previous -
-                        item.bestEver
-                    );
+                    <td className="px-4 py-3">
+                      {item.generation}
+                    </td>
 
 
-                  return (
-                    <tr
-                      key={item.generation}
+                    <td className="px-4 py-3">
+                      {item.generationBest}
+                    </td>
+
+
+                    <td
                       className="
-                        border-b
-                        last:border-0
-                        hover:bg-[#F0FDFA]
+                        px-4
+                        py-3
+                        font-semibold
+                        text-[#115E59]
                       "
                     >
+                      {item.bestEver}
+                    </td>
 
-                      <td className="px-4 py-3">
-                        {item.generation}
-                      </td>
+                  </tr>
 
-                      <td className="px-4 py-3">
-                        {item.generationBest}
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-3
-                          font-semibold
-                          text-[#115E59]
-                        "
-                      >
-                        {item.bestEver}
-                      </td>
-
-                      <td className="px-4 py-3">
-
-                        {improvement > 0 ? (
-                          <span
-                            className="
-                              font-semibold
-                              text-teal-700
-                            "
-                          >
-                            -{improvement}
-                          </span>
-                        ) : (
-                          <span
-                            className="
-                              text-slate-400
-                            "
-                          >
-                            —
-                          </span>
-                        )}
-
-                      </td>
-
-                    </tr>
-                  );
-
-                }
+                )
               )}
 
             </tbody>
@@ -758,12 +1098,319 @@ export default function FitnessAnalysis() {
 
         </div>
 
+      </section>
+
+    </div>
+
+  );
+
+}
+
+
+/* ==========================================================
+   PREFERENCE ROW
+========================================================== */
+
+function FacultyPreferenceRow({
+  item,
+}: {
+  item: FacultyAnalysisItem;
+}) {
+
+  return (
+
+    <div
+      className="
+        rounded-xl
+        border
+        border-slate-200
+        bg-slate-50
+        p-4
+      "
+    >
+
+      <div
+        className="
+          mb-4
+          flex
+          items-center
+          justify-between
+        "
+      >
+
+        <div>
+
+          <p
+            className="
+              font-semibold
+              text-slate-900
+            "
+          >
+            {formatFacultyName(
+              String(
+                item.Faculty_Code
+              )
+            )}
+          </p>
+
+
+          <p
+            className="
+              text-xs
+              text-slate-400
+            "
+          >
+            Priority{" "}
+            {formatNullable(
+              item.Faculty_Priority
+            )}
+          </p>
+
+        </div>
+
+
+        <div
+          className="
+            rounded-full
+            bg-white
+            px-3
+            py-1
+            text-xs
+            font-semibold
+            text-[#9D174D]
+          "
+        >
+          Penalty {item.Total_Penalty}
+        </div>
+
+      </div>
+
+
+      <PreferenceBar
+        label="Subject Preference"
+        value={
+          item.Subject_Satisfaction
+        }
+      />
+
+
+      <PreferenceBar
+        label="Day Preference"
+        value={
+          item.Day_Satisfaction
+        }
+      />
+
+
+      <PreferenceBar
+        label="Time Preference"
+        value={
+          item.Time_Satisfaction
+        }
+      />
+
+    </div>
+
+  );
+
+}
+
+
+/* ==========================================================
+   PREFERENCE BAR
+========================================================== */
+
+function PreferenceBar({
+  label,
+  value,
+}: {
+  label: string;
+  value: number | null;
+}) {
+
+  const safeValue =
+    value ?? 0;
+
+
+  return (
+
+    <div className="mb-3 last:mb-0">
+
+      <div
+        className="
+          mb-1
+          flex
+          justify-between
+          text-xs
+        "
+      >
+
+        <span className="text-slate-600">
+          {label}
+        </span>
+
+
+        <span
+          className="
+            font-semibold
+            text-[#115E59]
+          "
+        >
+          {formatPercent(
+            value
+          )}
+        </span>
+
+      </div>
+
+
+      <div
+        className="
+          h-2.5
+          overflow-hidden
+          rounded-full
+          bg-slate-200
+        "
+      >
+
+        <div
+          className="
+            h-full
+            rounded-full
+            bg-[#0F766E]
+          "
+          style={{
+            width:
+              `${Math.min(
+                100,
+                Math.max(
+                  0,
+                  safeValue
+                )
+              )}%`,
+          }}
+        />
+
       </div>
 
     </div>
+
   );
+
 }
 
+
+/* ==========================================================
+   DAILY LOAD ROW
+========================================================== */
+
+function DailyLoadRow({
+  item,
+}: {
+  item: FacultyDailyLoad;
+}) {
+
+  const total =
+    Number(item.Mon ?? 0) +
+    Number(item.Tue ?? 0) +
+    Number(item.Wed ?? 0) +
+    Number(item.Thu ?? 0) +
+    Number(item.Fri ?? 0) +
+    Number(item.Sat ?? 0);
+
+
+  return (
+
+    <tr
+      className="
+        border-b
+        last:border-0
+        hover:bg-[#F0FDFA]
+      "
+    >
+
+      <td
+        className="
+          px-4
+          py-3
+          font-semibold
+          text-[#115E59]
+        "
+      >
+        {formatFacultyName(
+          String(
+            item.Faculty_Code
+          )
+        )}
+      </td>
+
+
+      <DailyCell
+        value={item.Mon}
+      />
+
+      <DailyCell
+        value={item.Tue}
+      />
+
+      <DailyCell
+        value={item.Wed}
+      />
+
+      <DailyCell
+        value={item.Thu}
+      />
+
+      <DailyCell
+        value={item.Fri}
+      />
+
+      <DailyCell
+        value={item.Sat}
+      />
+
+
+      <td
+        className="
+          px-4
+          py-3
+          font-bold
+          text-slate-900
+        "
+      >
+        {total.toFixed(1)} hrs
+      </td>
+
+    </tr>
+
+  );
+
+}
+
+
+function DailyCell({
+  value,
+}: {
+  value: number;
+}) {
+
+  return (
+
+    <td className="px-4 py-3">
+      {Number(
+        value ?? 0
+      ).toFixed(1)}
+      {" hrs"}
+    </td>
+
+  );
+
+}
+
+
+/* ==========================================================
+   CARDS / HEADERS
+========================================================== */
 
 type AnalysisCardProps = {
   label: string;
@@ -779,6 +1426,7 @@ function AnalysisCard({
 }: AnalysisCardProps) {
 
   return (
+
     <div
       className="
         rounded-xl
@@ -799,6 +1447,7 @@ function AnalysisCard({
         "
       />
 
+
       <p
         className="
           text-sm
@@ -808,6 +1457,7 @@ function AnalysisCard({
       >
         {label}
       </p>
+
 
       <p
         className="
@@ -820,6 +1470,7 @@ function AnalysisCard({
         {value}
       </p>
 
+
       <p
         className="
           mt-1
@@ -831,11 +1482,63 @@ function AnalysisCard({
       </p>
 
     </div>
+
   );
+
 }
 
 
-type ChartItem = {
+function SectionHeader({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+
+  return (
+
+    <div
+      className="
+        border-l-4
+        border-[#0F766E]
+        pl-4
+      "
+    >
+
+      <h2
+        className="
+          text-lg
+          font-semibold
+          text-slate-900
+        "
+      >
+        {title}
+      </h2>
+
+
+      <p
+        className="
+          mt-1
+          text-sm
+          text-slate-500
+        "
+      >
+        {description}
+      </p>
+
+    </div>
+
+  );
+
+}
+
+
+/* ==========================================================
+   FITNESS TREND CHART
+========================================================== */
+
+type ChartData = {
   generation: number;
   generationBest: number;
   bestEver: number;
@@ -845,39 +1548,45 @@ type ChartItem = {
 function FitnessTrendChart({
   data,
 }: {
-  data: ChartItem[];
+  data: ChartData[];
 }) {
 
-  if (data.length === 0) {
+  if (
+    data.length === 0
+  ) {
+
     return (
+
       <div
         className="
           flex
-          h-64
+          h-60
           items-center
           justify-center
           rounded-lg
-          bg-[#F0FDFA]
+          bg-slate-50
           text-sm
           text-slate-500
         "
       >
         No generation history available.
       </div>
+
     );
+
   }
 
 
   const width = 1000;
   const height = 300;
 
-  const paddingLeft = 70;
-  const paddingRight = 30;
-  const paddingTop = 25;
-  const paddingBottom = 50;
+  const left = 70;
+  const right = 30;
+  const top = 30;
+  const bottom = 50;
 
 
-  const allValues =
+  const values =
     data.flatMap(
       (item) => [
         item.generationBest,
@@ -886,23 +1595,23 @@ function FitnessTrendChart({
     );
 
 
-  const maxFitness =
+  const maximum =
     Math.max(
-      ...allValues
+      ...values
     );
 
 
-  const minFitness =
+  const minimum =
     Math.min(
-      ...allValues
+      ...values
     );
 
 
   const range =
     Math.max(
       1,
-      maxFitness -
-        minFitness
+      maximum -
+      minimum
     );
 
 
@@ -910,55 +1619,65 @@ function FitnessTrendChart({
     index: number
   ) {
 
-    if (data.length === 1) {
+    if (
+      data.length === 1
+    ) {
       return width / 2;
     }
 
+
     return (
-      paddingLeft +
+      left +
       (
         index /
-        (data.length - 1)
+        (
+          data.length -
+          1
+        )
       ) *
       (
         width -
-        paddingLeft -
-        paddingRight
+        left -
+        right
       )
     );
+
   }
 
 
   function getY(
-    fitness: number
+    value: number
   ) {
 
     return (
-      paddingTop +
+      top +
       (
         (
-          maxFitness -
-          fitness
+          maximum -
+          value
         ) /
         range
       ) *
       (
         height -
-        paddingTop -
-        paddingBottom
+        top -
+        bottom
       )
     );
+
   }
 
 
-  const generationBestPoints =
+  const generationPoints =
     data
       .map(
         (
           item,
           index
         ) =>
-          `${getX(index)},${getY(
+          `${getX(
+            index
+          )},${getY(
             item.generationBest
           )}`
       )
@@ -972,7 +1691,9 @@ function FitnessTrendChart({
           item,
           index
         ) =>
-          `${getX(index)},${getY(
+          `${getX(
+            index
+          )},${getY(
             item.bestEver
           )}`
       )
@@ -980,223 +1701,233 @@ function FitnessTrendChart({
 
 
   return (
-    <div>
 
-      <div
+    <div
+      className="
+        overflow-x-auto
+        rounded-lg
+        border
+        bg-slate-50
+        p-3
+      "
+    >
+
+      <svg
+        viewBox={
+          `0 0 ${width} ${height}`
+        }
         className="
-          mb-4
-          flex
-          flex-wrap
-          gap-5
-          text-sm
-          text-slate-600
+          h-auto
+          min-w-[700px]
+          w-full
         "
       >
 
-        <div
-          className="
-            flex
-            items-center
-            gap-2
-          "
-        >
-          <span
-            className="
-              h-1
-              w-6
-              rounded
-              bg-[#94A3B8]
-            "
-          />
-
-          Generation Best
-        </div>
-
-
-        <div
-          className="
-            flex
-            items-center
-            gap-2
-          "
-        >
-          <span
-            className="
-              h-1
-              w-6
-              rounded
-              bg-[#0F766E]
-            "
-          />
-
-          Best Ever
-        </div>
-
-      </div>
-
-
-      <div
-        className="
-          overflow-x-auto
-          rounded-lg
-          border
-          bg-[#F0FDFA]
-          p-3
-        "
-      >
-
-        <svg
-          viewBox={
-            `0 0 ${width} ${height}`
+        <line
+          x1={left}
+          y1={top}
+          x2={left}
+          y2={
+            height -
+            bottom
           }
-          className="
-            h-auto
-            min-w-[700px]
-            w-full
-          "
-        >
-
-          <line
-            x1={paddingLeft}
-            y1={paddingTop}
-            x2={paddingLeft}
-            y2={
-              height -
-              paddingBottom
-            }
-            stroke="#CBD5E1"
-          />
+          stroke="#CBD5E1"
+        />
 
 
-          <line
-            x1={paddingLeft}
-            y1={
-              height -
-              paddingBottom
-            }
-            x2={
-              width -
-              paddingRight
-            }
-            y2={
-              height -
-              paddingBottom
-            }
-            stroke="#CBD5E1"
-          />
+        <line
+          x1={left}
+          y1={
+            height -
+            bottom
+          }
+          x2={
+            width -
+            right
+          }
+          y2={
+            height -
+            bottom
+          }
+          stroke="#CBD5E1"
+        />
 
 
-          <text
-            x={10}
-            y={
-              paddingTop + 5
-            }
-            fontSize="13"
-            fill="#64748B"
-          >
-            {maxFitness}
-          </text>
+        <polyline
+          points={
+            generationPoints
+          }
+          fill="none"
+          stroke="#94A3B8"
+          strokeWidth="3"
+        />
 
 
-          <text
-            x={10}
-            y={
-              height -
-              paddingBottom
-            }
-            fontSize="13"
-            fill="#64748B"
-          >
-            {minFitness}
-          </text>
+        <polyline
+          points={
+            bestEverPoints
+          }
+          fill="none"
+          stroke="#0F766E"
+          strokeWidth="4"
+        />
 
 
-          <polyline
-            points={
-              generationBestPoints
-            }
-            fill="none"
-            stroke="#94A3B8"
-            strokeWidth="3"
-            strokeLinejoin="round"
-            strokeLinecap="round"
-          />
+        {data.map(
+          (
+            item,
+            index
+          ) => (
+
+            <g
+              key={
+                item.generation
+              }
+            >
+
+              <circle
+                cx={
+                  getX(index)
+                }
+                cy={
+                  getY(
+                    item.bestEver
+                  )
+                }
+                r="5"
+                fill="#0F766E"
+              />
 
 
-          <polyline
-            points={
-              bestEverPoints
-            }
-            fill="none"
-            stroke="#0F766E"
-            strokeWidth="4"
-            strokeLinejoin="round"
-            strokeLinecap="round"
-          />
-
-
-          {data.map(
-            (
-              item,
-              index
-            ) => (
-
-              <g
-                key={item.generation}
+              <text
+                x={
+                  getX(index)
+                }
+                y={
+                  height - 20
+                }
+                textAnchor="middle"
+                fontSize="12"
+                fill="#64748B"
               >
+                {item.generation}
+              </text>
 
-                <circle
-                  cx={
-                    getX(index)
-                  }
-                  cy={
-                    getY(
-                      item.bestEver
-                    )
-                  }
-                  r="5"
-                  fill="#0F766E"
-                />
+            </g>
+
+          )
+        )}
 
 
-                <text
-                  x={
-                    getX(index)
-                  }
-                  y={
-                    height - 20
-                  }
-                  textAnchor="middle"
-                  fontSize="12"
-                  fill="#64748B"
-                >
-                  {item.generation}
-                </text>
-
-              </g>
-
-            )
-          )}
+        <text
+          x={10}
+          y={
+            top + 5
+          }
+          fontSize="12"
+          fill="#64748B"
+        >
+          {maximum}
+        </text>
 
 
-          <text
-            x={
-              width / 2
-            }
-            y={
-              height - 2
-            }
-            textAnchor="middle"
-            fontSize="13"
-            fill="#64748B"
-          >
-            Generation
-          </text>
+        <text
+          x={10}
+          y={
+            height -
+            bottom
+          }
+          fontSize="12"
+          fill="#64748B"
+        >
+          {minimum}
+        </text>
 
-        </svg>
-
-      </div>
+      </svg>
 
     </div>
+
   );
+
+}
+
+
+/* ==========================================================
+   FORMATTERS
+========================================================== */
+
+function formatPercent(
+  value:
+    number | null
+) {
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return "N/A";
+  }
+
+
+  return (
+    `${Number(
+      value
+    ).toFixed(0)}%`
+  );
+
+}
+
+
+function formatNullable(
+  value:
+    number | null
+) {
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return "—";
+  }
+
+
+  return value;
+
+}
+
+
+function formatSigned(
+  value:
+    number | null
+) {
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return "—";
+  }
+
+
+  const numericValue =
+    Number(value);
+
+
+  if (
+    numericValue > 0
+  ) {
+
+    return (
+      `+${numericValue.toFixed(
+        1
+      )}`
+    );
+
+  }
+
+
+  return numericValue.toFixed(
+    1
+  );
+
 }

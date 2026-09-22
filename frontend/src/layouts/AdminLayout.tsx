@@ -3,8 +3,11 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import Sidebar from "../components/common/Sidebar";
-import Topbar from "../components/common/Topbar";
+import Sidebar
+  from "../components/common/Sidebar";
+
+import Topbar
+  from "../components/common/Topbar";
 
 import {
   useGA,
@@ -12,34 +15,47 @@ import {
 
 
 const adminItems = [
+
   {
     label: "Dashboard",
     path: "/admin",
   },
+
   {
     label: "Faculty",
     path: "/admin/faculty",
   },
+
   {
     label: "Subjects",
     path: "/admin/subjects",
   },
+
   {
     label: "Preferences",
     path: "/admin/preferences",
   },
+
+  {
+    label: "Room Assignments",
+    path: "/admin/rooms",
+  },
+
   {
     label: "Generate Schedule",
     path: "/admin/generate",
   },
+
   {
     label: "Schedules",
     path: "/admin/schedules",
   },
+
   {
     label: "GA Analysis",
     path: "/admin/analysis",
   },
+
 ];
 
 
@@ -55,13 +71,11 @@ export default function AdminLayout() {
   } = useGA();
 
 
-  // =====================================================
-  // DYNAMIC PAGE TITLE
-  // =====================================================
-
   function getPageTitle() {
 
-    switch (location.pathname) {
+    switch (
+      location.pathname
+    ) {
 
       case "/admin":
         return "Admin Dashboard";
@@ -74,6 +88,9 @@ export default function AdminLayout() {
 
       case "/admin/preferences":
         return "Faculty Preferences";
+
+      case "/admin/rooms":
+        return "Room Assignments";
 
       case "/admin/generate":
         return "Generate Schedule";
@@ -102,20 +119,12 @@ export default function AdminLayout() {
       "
     >
 
-      {/* ================================================ */}
-      {/* SIDEBAR */}
-      {/* ================================================ */}
-
       <Sidebar
         title="CCS Faculty Scheduling"
         role="Admin"
         items={adminItems}
       />
 
-
-      {/* ================================================ */}
-      {/* MAIN AREA */}
-      {/* ================================================ */}
 
       <div
         className="
@@ -126,17 +135,17 @@ export default function AdminLayout() {
         "
       >
 
-        {/* TOPBAR */}
-
         <Topbar
-          pageTitle={getPageTitle()}
+          pageTitle={
+            getPageTitle()
+          }
           userName="Administrator"
           role="Admin"
         />
 
 
         {/* ============================================ */}
-        {/* GLOBAL GA RUNNING STATUS */}
+        {/* GLOBAL GA RUNNING BAR */}
         {/* ============================================ */}
 
         {loading && (
@@ -192,12 +201,9 @@ export default function AdminLayout() {
         )}
 
 
-        {/* ============================================ */}
-        {/* CURRENT PAGE */}
-        {/* ============================================ */}
-
         <main
           className="
+            min-w-0
             flex-1
             p-6
           "
@@ -212,4 +218,5 @@ export default function AdminLayout() {
     </div>
 
   );
+
 }

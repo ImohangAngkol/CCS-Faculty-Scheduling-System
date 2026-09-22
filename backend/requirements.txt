@@ -1,12 +1,9 @@
 fastapi
 uvicorn[standard]
-
 pandas
 numpy
 matplotlib
 openpyxl
-
 pydantic
-
 pytest
 httpx

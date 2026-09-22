@@ -129,3 +129,38 @@ Best-Ever Chromosome
         |
         v
 Next Generation
+
+
+## Current Frontend Features
+
+### Administrator
+
+- Dashboard for Genetic Algorithm results
+- Configurable schedule generation
+- Live Genetic Algorithm progress console
+- Generated schedule table with filters
+- Faculty weekly schedule viewer
+  - Faculty dropdown
+  - Monday-Sunday timetable
+  - Subject code and subject name
+  - Section, room, and class type
+- Room assignment viewer
+  - Room dropdown
+  - Weekly room timetable
+  - Subject, section, faculty, and class type
+- Genetic Algorithm analysis
+  - Best fitness
+  - Generation history
+  - Fitness improvement
+  - Soft-constraint penalty breakdown
+  - Faculty preference satisfaction
+  - Faculty preparations
+  - Teaching load distribution
+  - Daily teaching load
+  - Faculty performance summary
+
+### Faculty
+
+The Faculty portal structure is prepared. Faculty preference input,
+personal schedules, profiles, authentication, and database integration
+will be developed in later stages.

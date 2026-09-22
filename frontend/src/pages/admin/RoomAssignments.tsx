@@ -8,9 +8,8 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import WeeklySchedule, {
-  formatFacultyName,
-} from "../../components/schedule/WeeklySchedule";
+import WeeklySchedule
+  from "../../components/schedule/WeeklySchedule";
 
 import {
   useGA,
@@ -21,7 +20,7 @@ import type {
 } from "../../types/ga";
 
 
-export default function FacultyManagement() {
+export default function RoomAssignments() {
 
   const navigate =
     useNavigate();
@@ -38,10 +37,10 @@ export default function FacultyManagement() {
 
 
   /* =====================================================
-     FACULTY LIST
+     ROOM LIST
   ===================================================== */
 
-  const facultyOptions =
+  const roomOptions =
     useMemo(() => {
 
       return [
@@ -50,7 +49,7 @@ export default function FacultyManagement() {
             .map(
               (entry) =>
                 String(
-                  entry.faculty
+                  entry.room
                 )
             )
             .filter(Boolean)
@@ -75,94 +74,101 @@ export default function FacultyManagement() {
 
 
   const [
-    selectedFaculty,
-    setSelectedFaculty,
+    selectedRoom,
+    setSelectedRoom,
   ] = useState("");
 
 
   useEffect(() => {
 
     if (
-      facultyOptions.length === 0
+      roomOptions.length === 0
     ) {
 
-      setSelectedFaculty("");
+      setSelectedRoom("");
 
       return;
     }
 
 
     if (
-      !facultyOptions.includes(
-        selectedFaculty
+      !roomOptions.includes(
+        selectedRoom
       )
     ) {
 
-      setSelectedFaculty(
-        facultyOptions[0]
+      setSelectedRoom(
+        roomOptions[0]
       );
 
     }
 
   }, [
-    facultyOptions,
-    selectedFaculty,
+    roomOptions,
+    selectedRoom,
   ]);
 
 
   /* =====================================================
-     SELECTED FACULTY SCHEDULE
+     ROOM SCHEDULE
   ===================================================== */
 
-  const facultySchedule =
+  const roomSchedule =
     useMemo(
       () =>
         schedule.filter(
           (entry) =>
             String(
-              entry.faculty
+              entry.room
             ) ===
-            selectedFaculty
+            selectedRoom
         ),
       [
         schedule,
-        selectedFaculty,
+        selectedRoom,
       ]
     );
 
 
-  /* =====================================================
-     SUMMARY
-  ===================================================== */
-
   const uniqueSubjects =
     new Set(
-      facultySchedule.map(
+      roomSchedule.map(
         (entry) =>
           entry.subject
       )
     ).size;
 
 
-  const uniqueRooms =
+  const uniqueSections =
     new Set(
-      facultySchedule
+      roomSchedule
         .map(
           (entry) =>
-            entry.room
+            entry.section
         )
         .filter(Boolean)
     ).size;
 
 
-  const teachingHours =
+  const uniqueFaculty =
+    new Set(
+      roomSchedule
+        .map(
+          (entry) =>
+            entry.faculty
+        )
+        .filter(Boolean)
+    ).size;
+
+
+  const occupiedHours =
     calculateTotalHours(
-      facultySchedule
+      roomSchedule
     );
 
 
   /* =====================================================
-     NO GENERATED SCHEDULE
+     NO GA SCHEDULE
   ===================================================== */
 
   if (!gaData) {
@@ -198,7 +204,7 @@ export default function FacultyManagement() {
               text-xl
             "
           >
-            👨‍🏫
+            🏫
           </div>
 
 
@@ -210,7 +216,7 @@ export default function FacultyManagement() {
               text-slate-900
             "
           >
-            No faculty schedule available
+            No room assignments available
           </h2>
 
 
@@ -222,7 +228,7 @@ export default function FacultyManagement() {
             "
           >
             Generate a schedule first to view
-            each faculty member's weekly class schedule.
+            the weekly schedule assigned to each room.
           </p>
 
 
@@ -258,7 +264,7 @@ export default function FacultyManagement() {
 
 
       {/* ================================================= */}
-      {/* FACULTY SELECTOR */}
+      {/* ROOM SELECTOR */}
       {/* ================================================= */}
 
       <div
@@ -296,18 +302,18 @@ export default function FacultyManagement() {
                 text-slate-700
               "
             >
-              Select Faculty
+              Select Room
             </label>
 
 
             <select
               value={
-                selectedFaculty
+                selectedRoom
               }
 
               onChange={
                 (event) =>
-                  setSelectedFaculty(
+                  setSelectedRoom(
                     event.target.value
                   )
               }
@@ -327,16 +333,14 @@ export default function FacultyManagement() {
               "
             >
 
-              {facultyOptions.map(
-                (faculty) => (
+              {roomOptions.map(
+                (room) => (
 
                   <option
-                    key={faculty}
-                    value={faculty}
+                    key={room}
+                    value={room}
                   >
-                    {formatFacultyName(
-                      faculty
-                    )}
+                    {room}
                   </option>
 
                 )
@@ -366,7 +370,7 @@ export default function FacultyManagement() {
 
 
       {/* ================================================= */}
-      {/* SELECTED FACULTY */}
+      {/* SELECTED ROOM */}
       {/* ================================================= */}
 
       <div>
@@ -378,7 +382,7 @@ export default function FacultyManagement() {
             text-[#0F766E]
           "
         >
-          Selected Faculty
+          Selected Room
         </p>
 
 
@@ -390,9 +394,7 @@ export default function FacultyManagement() {
             text-slate-900
           "
         >
-          {formatFacultyName(
-            selectedFaculty
-          )}
+          {selectedRoom}
         </h2>
 
       </div>
@@ -414,13 +416,13 @@ export default function FacultyManagement() {
         <SummaryCard
           label="Class Meetings"
           value={
-            facultySchedule.length
+            roomSchedule.length
           }
         />
 
 
         <SummaryCard
-          label="Preparations"
+          label="Subjects"
           value={
             uniqueSubjects
           }
@@ -428,19 +430,22 @@ export default function FacultyManagement() {
 
 
         <SummaryCard
-          label="Teaching Hours"
+          label="Sections"
           value={
-            `${teachingHours.toFixed(
-              1
-            )} hrs`
+            uniqueSections
           }
         />
 
 
         <SummaryCard
-          label="Rooms Used"
+          label="Occupied Hours"
           value={
-            uniqueRooms
+            `${occupiedHours.toFixed(
+              1
+            )} hrs`
+          }
+          secondary={
+            `${uniqueFaculty} faculty`
           }
         />
 
@@ -448,7 +453,7 @@ export default function FacultyManagement() {
 
 
       {/* ================================================= */}
-      {/* WEEKLY SCHEDULE */}
+      {/* WEEKLY ROOM SCHEDULE */}
       {/* ================================================= */}
 
       <div>
@@ -469,7 +474,7 @@ export default function FacultyManagement() {
               text-slate-900
             "
           >
-            Weekly Class Schedule
+            Weekly Room Schedule
           </h2>
 
 
@@ -480,9 +485,9 @@ export default function FacultyManagement() {
               text-slate-500
             "
           >
-            Subject code, subject name, section,
-            room, and class type are shown inside
-            each scheduled block.
+            Shows every class assigned to {selectedRoom},
+            including subject name, section, faculty,
+            and class type.
           </p>
 
         </div>
@@ -490,10 +495,10 @@ export default function FacultyManagement() {
 
         <WeeklySchedule
           entries={
-            facultySchedule
+            roomSchedule
           }
-          viewMode="faculty"
-          emptyMessage="This faculty member has no scheduled classes."
+          viewMode="room"
+          emptyMessage="No classes are assigned to this room."
         />
 
       </div>
@@ -522,7 +527,7 @@ function PageHeader() {
           text-slate-900
         "
       >
-        Faculty Management
+        Room Assignments
       </h1>
 
 
@@ -533,8 +538,8 @@ function PageHeader() {
           text-slate-500
         "
       >
-        View the complete weekly teaching schedule
-        of each faculty member.
+        View the complete weekly class schedule
+        assigned to each room.
       </p>
 
     </div>
@@ -550,12 +555,14 @@ function PageHeader() {
 type SummaryCardProps = {
   label: string;
   value: number | string;
+  secondary?: string;
 };
 
 
 function SummaryCard({
   label,
   value,
+  secondary,
 }: SummaryCardProps) {
 
   return (
@@ -603,6 +610,21 @@ function SummaryCard({
         {value}
       </p>
 
+
+      {secondary && (
+
+        <p
+          className="
+            mt-1
+            text-xs
+            text-slate-400
+          "
+        >
+          {secondary}
+        </p>
+
+      )}
+
     </div>
 
   );
@@ -618,46 +640,37 @@ function calculateTotalHours(
   entries: ScheduleEntry[]
 ) {
 
-  const minutes =
-    entries.reduce(
-      (
-        total,
-        entry
-      ) => {
-
-        const start =
-          parseMinutes(
-            entry.start
-          );
-
-        const end =
-          parseMinutes(
-            entry.end
-          );
+  let minutes = 0;
 
 
-        if (
-          start === null ||
-          end === null ||
-          end <= start
-        ) {
+  for (
+    const entry of entries
+  ) {
 
-          return total;
+    const start =
+      parseMinutes(
+        entry.start
+      );
 
-        }
+    const end =
+      parseMinutes(
+        entry.end
+      );
 
 
-        return (
-          total +
-          (
-            end -
-            start
-          )
-        );
+    if (
+      start === null ||
+      end === null ||
+      end <= start
+    ) {
+      continue;
+    }
 
-      },
-      0
-    );
+
+    minutes +=
+      end - start;
+
+  }
 
 
   return (
@@ -706,9 +719,7 @@ function parseMinutes(
     period === "AM" &&
     hour === 12
   ) {
-
     hour = 0;
-
   }
 
 
@@ -716,9 +727,7 @@ function parseMinutes(
     period === "PM" &&
     hour !== 12
   ) {
-
     hour += 12;
-
   }
 
 

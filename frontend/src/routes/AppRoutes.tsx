@@ -1,21 +1,45 @@
 import {
   BrowserRouter,
-  Routes,
-  Route,
   Navigate,
+  Route,
+  Routes,
 } from "react-router-dom";
 
-import AdminLayout from "../layouts/AdminLayout";
-import FacultyLayout from "../layouts/FacultyLayout";
 
-import AdminDashboard from "../pages/admin/Dashboard";
-import GenerateSchedule from "../pages/admin/GenerateSchedule";
-import ScheduleView from "../pages/admin/ScheduleView";
-import FitnessAnalysis from "../pages/admin/FitnessAnalysis";
+import AdminLayout
+  from "../layouts/AdminLayout";
+
+import FacultyLayout
+  from "../layouts/FacultyLayout";
+
+
+import AdminDashboard
+  from "../pages/admin/Dashboard";
+
+import FacultyManagement
+  from "../pages/admin/FacultyManagement";
+
+import GenerateSchedule
+  from "../pages/admin/GenerateSchedule";
+
+import ScheduleView
+  from "../pages/admin/ScheduleView";
+
+import FitnessAnalysis
+  from "../pages/admin/FitnessAnalysis";
+
+import RoomAssignments
+  from "../pages/admin/RoomAssignments";
 
 
 function FacultyDashboard() {
-  return <div>Faculty Dashboard</div>;
+
+  return (
+    <div>
+      Faculty Dashboard
+    </div>
+  );
+
 }
 
 
@@ -24,23 +48,51 @@ function PlaceholderPage({
 }: {
   title: string;
 }) {
+
   return (
-    <div className="rounded-xl border bg-white p-6">
-      <h1 className="text-2xl font-bold text-slate-900">
+
+    <div
+      className="
+        rounded-xl
+        border
+        bg-white
+        p-6
+      "
+    >
+
+      <h1
+        className="
+          text-2xl
+          font-bold
+          text-slate-900
+        "
+      >
         {title}
       </h1>
 
-      <p className="mt-2 text-slate-500">
+
+      <p
+        className="
+          mt-2
+          text-slate-500
+        "
+      >
         This page will be built next.
       </p>
+
     </div>
+
   );
+
 }
 
 
 export default function AppRoutes() {
+
   return (
+
     <BrowserRouter>
+
       <Routes>
 
         {/* ========================================= */}
@@ -64,28 +116,31 @@ export default function AppRoutes() {
 
         <Route
           path="/admin"
-          element={<AdminLayout />}
+          element={
+            <AdminLayout />
+          }
         >
 
-          {/* DASHBOARD */}
           <Route
             index
-            element={<AdminDashboard />}
-          />
-
-
-          {/* FACULTY MANAGEMENT */}
-          <Route
-            path="faculty"
             element={
-              <PlaceholderPage
-                title="Faculty Management"
-              />
+              <AdminDashboard />
             }
           />
 
 
-          {/* SUBJECT MANAGEMENT */}
+          {/* FACULTY WEEKLY SCHEDULE */}
+
+          <Route
+            path="faculty"
+            element={
+              <FacultyManagement />
+            }
+          />
+
+
+          {/* SUBJECTS */}
+
           <Route
             path="subjects"
             element={
@@ -96,7 +151,8 @@ export default function AppRoutes() {
           />
 
 
-          {/* PREFERENCES REVIEW */}
+          {/* PREFERENCES */}
+
           <Route
             path="preferences"
             element={
@@ -107,24 +163,43 @@ export default function AppRoutes() {
           />
 
 
-          {/* GENERATE SCHEDULE */}
+          {/* ROOM WEEKLY SCHEDULE */}
+
           <Route
-            path="generate"
-            element={<GenerateSchedule />}
+            path="rooms"
+            element={
+              <RoomAssignments />
+            }
           />
 
 
-          {/* GENERATED SCHEDULE */}
+          {/* GENERATE */}
+
+          <Route
+            path="generate"
+            element={
+              <GenerateSchedule />
+            }
+          />
+
+
+          {/* COMPLETE GENERATED SCHEDULE */}
+
           <Route
             path="schedules"
-            element={<ScheduleView />}
+            element={
+              <ScheduleView />
+            }
           />
 
 
           {/* GA ANALYSIS */}
+
           <Route
             path="analysis"
-            element={<FitnessAnalysis />}
+            element={
+              <FitnessAnalysis />
+            }
           />
 
         </Route>
@@ -136,17 +211,19 @@ export default function AppRoutes() {
 
         <Route
           path="/faculty"
-          element={<FacultyLayout />}
+          element={
+            <FacultyLayout />
+          }
         >
 
-          {/* FACULTY DASHBOARD */}
           <Route
             index
-            element={<FacultyDashboard />}
+            element={
+              <FacultyDashboard />
+            }
           />
 
 
-          {/* MY PREFERENCES */}
           <Route
             path="preferences"
             element={
@@ -157,7 +234,6 @@ export default function AppRoutes() {
           />
 
 
-          {/* MY SCHEDULE */}
           <Route
             path="schedule"
             element={
@@ -168,7 +244,6 @@ export default function AppRoutes() {
           />
 
 
-          {/* PROFILE */}
           <Route
             path="profile"
             element={
@@ -196,6 +271,9 @@ export default function AppRoutes() {
         />
 
       </Routes>
+
     </BrowserRouter>
+
   );
+
 }
