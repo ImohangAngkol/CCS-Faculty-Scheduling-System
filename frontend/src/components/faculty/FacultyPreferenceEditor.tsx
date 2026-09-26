@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import type {
   FacultyPreferenceUpdate,
+  GapPreference,
 } from "../../api/preferences";
 
 import {
@@ -34,23 +35,32 @@ export default function FacultyPreferenceEditor({
 
   const [subjectInput, setSubjectInput] = useState("");
 
-  const [form, setForm] =
-    useState<FacultyPreferenceUpdate>({
-      faculty_priority: 1,
+const [form, setForm] =
+  useState<FacultyPreferenceUpdate>({
+    faculty_priority: 1,
 
-      preferred_subjects: [],
-      preferred_days: [],
+    preferred_subjects: [],
+    subject_importance: 3,
 
-      preferred_start_time: null,
-      preferred_end_time: null,
+    preferred_days: [],
+    day_importance: 3,
 
-      gap_preference: "No Preference",
+    preferred_start_time: null,
+    preferred_end_time: null,
+    time_importance: 3,
 
-      use_subject_preference: true,
-      use_day_preference: true,
-      use_time_preference: true,
-      use_gap_preference: false,
-    });
+    gap_preference: "No Preference",
+    gap_importance: 0,
+
+    lecture_lab_preference: "No Preference",
+    lecture_lab_importance: 0,
+
+    use_subject_preference: true,
+    use_day_preference: true,
+    use_time_preference: true,
+    use_gap_preference: false,
+    use_lecture_lab_preference: false,
+  });
 
 
   useEffect(() => {
@@ -71,38 +81,43 @@ export default function FacultyPreferenceEditor({
           facultyCode
         );
 
-      setForm({
-        faculty_priority:
-          data.faculty_priority,
+    setForm({
+    faculty_priority: data.faculty_priority,
 
-        preferred_subjects:
-          data.preferred_subjects,
+    preferred_subjects: data.preferred_subjects,
+    subject_importance: data.subject_importance,
 
-        preferred_days:
-          data.preferred_days,
+    preferred_days: data.preferred_days,
+    day_importance: data.day_importance,
 
-        preferred_start_time:
-          data.preferred_start_time,
+    preferred_start_time: data.preferred_start_time,
+    preferred_end_time: data.preferred_end_time,
+    time_importance: data.time_importance,
 
-        preferred_end_time:
-          data.preferred_end_time,
+    gap_preference: data.gap_preference,
+    gap_importance: data.gap_importance,
 
-        gap_preference:
-          data.gap_preference,
+    lecture_lab_preference:
+        data.lecture_lab_preference,
 
-        use_subject_preference:
-          data.use_subject_preference,
+    lecture_lab_importance:
+        data.lecture_lab_importance,
 
-        use_day_preference:
-          data.use_day_preference,
+    use_subject_preference:
+        data.use_subject_preference,
 
-        use_time_preference:
-          data.use_time_preference,
+    use_day_preference:
+        data.use_day_preference,
 
-        use_gap_preference:
-          data.use_gap_preference,
-      });
+    use_time_preference:
+        data.use_time_preference,
 
+    use_gap_preference:
+        data.use_gap_preference,
+
+    use_lecture_lab_preference:
+        data.use_lecture_lab_preference,
+    });
     } catch (error) {
 
       console.error(
@@ -813,8 +828,8 @@ export default function FacultyPreferenceEditor({
             setForm({
               ...form,
 
-              gap_preference:
-                event.target.value,
+             gap_preference:
+                event.target.value as GapPreference,
             })
           }
 
