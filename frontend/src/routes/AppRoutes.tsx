@@ -5,13 +5,15 @@ import {
   Routes,
 } from "react-router-dom";
 
+import PreferencesReview
+  from "../pages/admin/PreferencesReview";
+
 
 import AdminLayout
   from "../layouts/AdminLayout";
 
 import FacultyLayout
   from "../layouts/FacultyLayout";
-
 
 import AdminDashboard
   from "../pages/admin/Dashboard";
@@ -35,14 +37,20 @@ import FitnessAnalysis
   from "../pages/admin/FitnessAnalysis";
 
 
-function FacultyDashboard() {
+// =============================================
+// ADDED: REAL FACULTY PREFERENCES PAGE
+// =============================================
 
+import FacultyPreferences
+  from "../pages/faculty/Preferences";
+
+
+function FacultyDashboard() {
   return (
     <div>
       Faculty Dashboard
     </div>
   );
-
 }
 
 
@@ -53,7 +61,6 @@ function PlaceholderPage({
 }) {
 
   return (
-
     <div
       className="
         rounded-xl
@@ -73,7 +80,6 @@ function PlaceholderPage({
         {title}
       </h1>
 
-
       <p
         className="
           mt-2
@@ -84,9 +90,7 @@ function PlaceholderPage({
       </p>
 
     </div>
-
   );
-
 }
 
 
@@ -151,8 +155,7 @@ export default function AppRoutes() {
           <Route
             path="preferences"
             element={
-              <PlaceholderPage
-                title="Faculty Preferences"
+              <PreferencesReview 
               />
             }
           />
@@ -221,12 +224,14 @@ export default function AppRoutes() {
           />
 
 
+          {/* ============================================= */}
+          {/* CHANGED ONLY THIS ROUTE */}
+          {/* ============================================= */}
+
           <Route
             path="preferences"
             element={
-              <PlaceholderPage
-                title="My Preferences"
-              />
+              <FacultyPreferences />
             }
           />
 
@@ -270,5 +275,4 @@ export default function AppRoutes() {
     </BrowserRouter>
 
   );
-
 }

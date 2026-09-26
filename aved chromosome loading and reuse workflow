@@ -1,0 +1,15 @@
+ .gitignore                                      |    9 [32m+[m[31m-[m
+ backend/main.py                                 |    2 [32m+[m
+ backend/routers/chromosomes.py                  |  210 [32m++++[m
+ backend/routers/genetic_algorithm.py            |  121 [32m++[m[31m-[m
+ backend/services/chromosome_analysis_service.py |  143 [32m+++[m
+ backend/services/chromosome_service.py          | 1199 [32m+++++++++++++++++++++[m
+ backend/services/ga_service.py                  |  247 [32m++++[m[31m-[m
+ frontend/src/context/GAContext.tsx              |  134 [32m++[m[31m-[m
+ frontend/src/layouts/AdminLayout.tsx            |   12 [32m+[m[31m-[m
+ frontend/src/pages/admin/ChromosomeViewer.tsx   | 1086 [32m+++++++++++++++++++[m
+ frontend/src/pages/admin/GenerateSchedule.tsx   | 1307 [32m+++++++++++++++++++[m[31m----[m
+ frontend/src/routes/AppRoutes.tsx               |   43 [32m+[m[31m-[m
+ frontend/src/services/gaService.ts              |  257 [32m++++[m[31m-[m
+ frontend/src/types/ga.ts                        |  179 [32m+++[m[31m-[m
+ 14 files changed, 4545 insertions(+), 404 deletions(-)

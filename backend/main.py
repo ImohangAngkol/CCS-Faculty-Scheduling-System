@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from routers import faculty
 from routers import genetic_algorithm
-
+from routers import preferences
 from routers import chromosomes
 
 app = FastAPI(
@@ -15,6 +15,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
+app.include_router(
+    preferences.router
+)
 
 # ---------------------------------------------------------
 # CORS

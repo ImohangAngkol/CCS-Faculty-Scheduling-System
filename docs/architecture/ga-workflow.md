@@ -51,3 +51,7 @@ value, that chromosome becomes the new best solution.
 
 The best-ever chromosome is preserved so that later generations
 cannot cause the final solution to become worse.
+
+The current prototype stores the latest GA result in frontend application
+state. PostgreSQL integration is planned for persistent schedules, faculty
+information, preferences, room assignments, and authentication.

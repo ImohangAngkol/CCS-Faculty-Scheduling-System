@@ -1,0 +1,13 @@
+{
+    "subject_penalty": 70,
+    "time_penalty": 10,
+    "day_penalty": 5,
+    "preparation_penalty": 10,
+    "load_balance_penalty": 10,
+    "daily_load_penalty": 10,
+    "max_preparations": 3,
+    "target_teaching_load": 12,
+    "load_tolerance": 3,
+    "max_daily_teaching_minutes": 360,
+    "daily_load_step_minutes": 60
+}

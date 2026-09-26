@@ -59,6 +59,165 @@ from services.chromosome_service import (
     payload_to_chromosome,
     save_best_if_better,
 )
+import json
+from pathlib import Path
+
+import pandas as pd
+
+from genetic_algorithm.models.ga_setting import (
+    GASetting
+)
+
+
+BACKEND_DIR = (
+    Path(__file__)
+    .resolve()
+    .parents[1]
+)
+
+DATA_DIR = (
+    BACKEND_DIR
+    / "data"
+)
+
+FACULTY_PREFERENCES_FILE = (
+    DATA_DIR
+    / "faculty_preferences.json"
+)
+
+GA_SETTINGS_FILE = (
+    DATA_DIR
+    / "ga_settings.json"
+)
+
+
+def load_dashboard_preferences():
+
+    if not FACULTY_PREFERENCES_FILE.exists():
+
+        return []
+
+    try:
+
+        with open(
+            FACULTY_PREFERENCES_FILE,
+            "r",
+            encoding="utf-8"
+        ) as file:
+
+            return json.load(file)
+
+    except Exception:
+
+        return []
+
+
+def load_ga_settings():
+
+    if not GA_SETTINGS_FILE.exists():
+
+        return GASetting()
+
+    try:
+
+        with open(
+            GA_SETTINGS_FILE,
+            "r",
+            encoding="utf-8"
+        ) as file:
+
+            data = json.load(file)
+
+        return GASetting.from_dict(
+            data
+        )
+
+    except Exception:
+
+        return GASetting()
+
+
+def get_dashboard_preferences_dataframe():
+
+    preferences = (
+        load_dashboard_preferences()
+    )
+
+    if not preferences:
+
+        return pd.DataFrame()
+
+    rows = []
+
+    for preference in preferences:
+
+        rows.append({
+
+            "Faculty_Code":
+                preference["faculty_code"],
+
+            "Faculty_Prio":
+                preference.get(
+                    "faculty_priority",
+                    1
+                ),
+
+            "Preferred Subjects":
+                preference.get(
+                    "preferred_subjects",
+                    []
+                ),
+
+            "Preferred Day(s)":
+                preference.get(
+                    "preferred_days",
+                    []
+                ),
+
+            "Preferred Start Time":
+                preference.get(
+                    "preferred_start_time"
+                ),
+
+            "Preferred End Time":
+                preference.get(
+                    "preferred_end_time"
+                ),
+
+            "Gap Preference":
+                preference.get(
+                    "gap_preference",
+                    "No Preference"
+                ),
+
+            "Use Subject Preference":
+                preference.get(
+                    "use_subject_preference",
+                    True
+                ),
+
+            "Use Day Preference":
+                preference.get(
+                    "use_day_preference",
+                    True
+                ),
+
+            "Use Time Preference":
+                preference.get(
+                    "use_time_preference",
+                    True
+                ),
+
+            "Use Gap Preference":
+                preference.get(
+                    "use_gap_preference",
+                    False
+                ),
+        })
+
+    return pd.DataFrame(
+        rows
+    )
 
 def generate_schedule(
     population_size: int = 10,

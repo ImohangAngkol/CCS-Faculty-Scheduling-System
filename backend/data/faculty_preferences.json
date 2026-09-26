@@ -1,0 +1,22 @@
+[
+    {
+        "faculty_code": 0,
+        "faculty_priority": 1,
+        "preferred_subjects": [
+            "CCC101",
+            "CCC102",
+            "ITE153"
+        ],
+        "preferred_days": [
+            "Monday",
+            "Wednesday"
+        ],
+        "preferred_start_time": "08:00",
+        "preferred_end_time": "12:00",
+        "gap_preference": "Compact",
+        "use_subject_preference": true,
+        "use_day_preference": true,
+        "use_time_preference": true,
+        "use_gap_preference": false
+    }
+]
