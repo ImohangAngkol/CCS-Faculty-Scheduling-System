@@ -11,6 +11,14 @@ import {
   updateFacultyPreference,
 } from "../../api/preferences";
 
+import type {
+  AvailableSubject,
+} from "../../api/subjects";
+
+import {
+  getAvailableSubjects,
+} from "../../api/subjects";
+
 
 interface Props {
   facultyCode: number;
@@ -42,11 +50,17 @@ export default function FacultyPreferenceEditor({
 }: Props) {
 
   const [loading, setLoading] = useState(true);
+
   const [saving, setSaving] = useState(false);
 
   const [message, setMessage] = useState("");
 
   const [subjectInput, setSubjectInput] = useState("");
+
+  const [
+  availableSubjects,
+  setAvailableSubjects,
+] = useState<AvailableSubject[]>([]);
 
 
   const [form, setForm] =
@@ -79,8 +93,17 @@ export default function FacultyPreferenceEditor({
 
 
   useEffect(() => {
+
     loadPreferences();
+
   }, [facultyCode]);
+
+
+  useEffect(() => {
+
+    loadAvailableSubjects();
+
+  }, []);
 
 
   async function loadPreferences() {
@@ -88,6 +111,7 @@ export default function FacultyPreferenceEditor({
     try {
 
       setLoading(true);
+
 
       const data =
         await getFacultyPreference(
@@ -100,17 +124,20 @@ export default function FacultyPreferenceEditor({
         faculty_priority:
           data.faculty_priority,
 
+
         preferred_subjects:
           data.preferred_subjects,
 
         subject_importance:
           data.subject_importance,
 
+
         preferred_days:
           data.preferred_days,
 
         day_importance:
           data.day_importance,
+
 
         preferred_start_time:
           data.preferred_start_time,
@@ -121,17 +148,20 @@ export default function FacultyPreferenceEditor({
         time_importance:
           data.time_importance,
 
+
         gap_preference:
           data.gap_preference,
 
         gap_importance:
           data.gap_importance,
 
+
         lecture_lab_preference:
           data.lecture_lab_preference,
 
         lecture_lab_importance:
           data.lecture_lab_importance,
+
 
         use_subject_preference:
           data.use_subject_preference,
@@ -149,6 +179,7 @@ export default function FacultyPreferenceEditor({
           data.use_lecture_lab_preference,
       });
 
+
     } catch (error) {
 
       console.error(
@@ -156,14 +187,37 @@ export default function FacultyPreferenceEditor({
         error
       );
 
+
       setMessage(
         "Failed to load faculty preferences."
       );
+
 
     } finally {
 
       setLoading(false);
 
+    }
+  }
+
+
+  async function loadAvailableSubjects() {
+
+    try {
+
+      const subjects =
+        await getAvailableSubjects();
+
+      setAvailableSubjects(
+        subjects
+      );
+
+    } catch (error) {
+
+      console.error(
+        "Failed to load available subjects:",
+        error
+      );
     }
   }
 
@@ -179,7 +233,9 @@ export default function FacultyPreferenceEditor({
           day
         );
 
+
       return {
+
         ...previous,
 
         preferred_days: exists
@@ -202,9 +258,29 @@ export default function FacultyPreferenceEditor({
         .trim()
         .toUpperCase();
 
+
     if (!subject) {
       return;
     }
+
+
+    const exists =
+      availableSubjects.some(
+        (item) =>
+          item.subject_code.toUpperCase()
+          === subject
+      );
+
+
+    if (!exists) {
+
+      setMessage(
+        "Please select a valid available subject."
+      );
+
+      return;
+    }
+
 
     if (
       form.preferred_subjects.includes(
@@ -213,10 +289,13 @@ export default function FacultyPreferenceEditor({
     ) {
 
       setSubjectInput("");
+
       return;
     }
 
+
     setForm((previous) => ({
+
       ...previous,
 
       preferred_subjects: [
@@ -225,15 +304,18 @@ export default function FacultyPreferenceEditor({
       ],
     }));
 
-    setSubjectInput("");
-  }
 
+    setSubjectInput("");
+
+    setMessage("");
+  }
 
   function removeSubject(
     subject: string
   ) {
 
     setForm((previous) => ({
+
       ...previous,
 
       preferred_subjects:
@@ -244,21 +326,101 @@ export default function FacultyPreferenceEditor({
   }
 
 
+  function moveSubjectUp(
+    index: number
+  ) {
+
+    if (index <= 0) {
+      return;
+    }
+
+
+    setForm((previous) => {
+
+      const updatedSubjects = [
+        ...previous.preferred_subjects,
+      ];
+
+
+      [
+        updatedSubjects[index - 1],
+        updatedSubjects[index],
+      ] = [
+        updatedSubjects[index],
+        updatedSubjects[index - 1],
+      ];
+
+
+      return {
+
+        ...previous,
+
+        preferred_subjects:
+          updatedSubjects,
+      };
+    });
+  }
+
+
+  function moveSubjectDown(
+    index: number
+  ) {
+
+    setForm((previous) => {
+
+      if (
+        index >=
+        previous.preferred_subjects.length - 1
+      ) {
+
+        return previous;
+      }
+
+
+      const updatedSubjects = [
+        ...previous.preferred_subjects,
+      ];
+
+
+      [
+        updatedSubjects[index],
+        updatedSubjects[index + 1],
+      ] = [
+        updatedSubjects[index + 1],
+        updatedSubjects[index],
+      ];
+
+
+      return {
+
+        ...previous,
+
+        preferred_subjects:
+          updatedSubjects,
+      };
+    });
+  }
+
+
   async function savePreferences() {
 
     try {
 
       setSaving(true);
+
       setMessage("");
+
 
       await updateFacultyPreference(
         facultyCode,
         form
       );
 
+
       setMessage(
         "Preferences saved successfully."
       );
+
 
     } catch (error) {
 
@@ -267,9 +429,11 @@ export default function FacultyPreferenceEditor({
         error
       );
 
+
       setMessage(
         "Failed to save preferences."
       );
+
 
     } finally {
 
@@ -282,8 +446,11 @@ export default function FacultyPreferenceEditor({
   if (loading) {
 
     return (
+
       <div className="p-6">
+
         Loading preferences...
+
       </div>
     );
   }
@@ -301,6 +468,7 @@ export default function FacultyPreferenceEditor({
       "
     >
 
+
       {/* ========================================= */}
       {/* HEADER */}
       {/* ========================================= */}
@@ -314,8 +482,11 @@ export default function FacultyPreferenceEditor({
             text-gray-900
           "
         >
+
           Faculty Preferences
+
         </h2>
+
 
         <p
           className="
@@ -324,11 +495,14 @@ export default function FacultyPreferenceEditor({
             mt-1
           "
         >
+
           These preferences are used when
           generating optimized faculty schedules.
+
         </p>
 
       </div>
+
 
 
       {/* ========================================= */}
@@ -344,11 +518,16 @@ export default function FacultyPreferenceEditor({
             mb-2
           "
         >
+
           Faculty Priority
+
         </label>
 
+
         <input
+
           type="number"
+
           min={1}
 
           value={
@@ -357,6 +536,7 @@ export default function FacultyPreferenceEditor({
 
           onChange={(event) =>
             setForm({
+
               ...form,
 
               faculty_priority:
@@ -375,6 +555,7 @@ export default function FacultyPreferenceEditor({
           "
         />
 
+
         <p
           className="
             text-xs
@@ -382,11 +563,14 @@ export default function FacultyPreferenceEditor({
             mt-1
           "
         >
+
           Priority 1 receives the
           strongest preference weight.
+
         </p>
 
       </div>
+
 
 
       {/* ========================================= */}
@@ -407,8 +591,11 @@ export default function FacultyPreferenceEditor({
           <div>
 
             <h3 className="font-medium">
+
               Subject Preference
+
             </h3>
+
 
             <p
               className="
@@ -416,14 +603,18 @@ export default function FacultyPreferenceEditor({
                 text-gray-500
               "
             >
-              Subjects this faculty
-              prefers to teach.
+
+              Add subjects this faculty prefers
+              to teach. Subjects are ranked from
+              highest to lowest priority.
+
             </p>
 
           </div>
 
 
           <input
+
             type="checkbox"
 
             checked={
@@ -432,6 +623,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm({
+
                 ...form,
 
                 use_subject_preference:
@@ -445,10 +637,16 @@ export default function FacultyPreferenceEditor({
         </div>
 
 
+
+        {/* ADD SUBJECT */}
+
         <div className="flex gap-2">
 
           <input
+
             value={subjectInput}
+
+            list="available-subjects"
 
             onChange={(event) =>
               setSubjectInput(
@@ -468,7 +666,7 @@ export default function FacultyPreferenceEditor({
               }
             }}
 
-            placeholder="Example: ITE153"
+            placeholder="Search available subjects..."
 
             disabled={
               !form.use_subject_preference
@@ -484,8 +682,37 @@ export default function FacultyPreferenceEditor({
             "
           />
 
+          <datalist id="available-subjects">
+
+            {availableSubjects
+              .filter(
+                (subject) =>
+                  !form.preferred_subjects.includes(
+                    subject.subject_code
+                  )
+              )
+              .map((subject) => (
+
+                <option
+                  key={subject.subject_code}
+                  value={subject.subject_code}
+                >
+                  {
+                    subject.subject_title
+                      ? `${subject.subject_code} — ${subject.subject_title}`
+                      : subject.subject_code
+                  }
+                </option>
+
+              ))
+            }
+
+          </datalist>
+
+
 
           <button
+
             type="button"
 
             onClick={addSubject}
@@ -502,46 +729,210 @@ export default function FacultyPreferenceEditor({
               disabled:opacity-50
             "
           >
+
             Add
+
           </button>
 
         </div>
 
 
+
+        {/* ========================================= */}
+        {/* SUBJECT PRIORITY RANKING */}
+        {/* ========================================= */}
+
         <div
           className="
             flex
-            flex-wrap
+            flex-col
             gap-2
             mt-3
           "
         >
 
           {form.preferred_subjects.map(
-            (subject) => (
+            (subject, index) => (
 
-              <button
+              <div
+
                 key={subject}
 
-                type="button"
-
-                onClick={() =>
-                  removeSubject(
-                    subject
-                  )
-                }
-
                 className="
-                  bg-purple-100
-                  text-purple-800
+                  flex
+                  items-center
+                  gap-3
+                  rounded-lg
+                  border
+                  border-slate-200
+                  bg-slate-50
                   px-3
-                  py-1
-                  rounded-full
-                  text-sm
+                  py-2
+                  w-full
                 "
               >
-                {subject} ×
-              </button>
+
+
+                {/* PRIORITY NUMBER */}
+
+                <div
+                  className="
+                    flex
+                    h-8
+                    w-8
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-purple-100
+                    font-semibold
+                    text-purple-700
+                  "
+                >
+
+                  {index + 1}
+
+                </div>
+
+
+
+                {/* SUBJECT */}
+
+                <div className="flex-1">
+
+                  <div
+                    className="
+                      font-medium
+                      text-slate-900
+                    "
+                  >
+
+                    {subject}
+
+                  </div>
+
+
+                  <div
+                    className="
+                      text-xs
+                      text-slate-500
+                    "
+                  >
+
+                    Priority {index + 1}
+
+                  </div>
+
+                </div>
+
+
+
+                {/* MOVE UP */}
+
+                <button
+
+                  type="button"
+
+                  disabled={
+                    index === 0
+                    ||
+                    !form.use_subject_preference
+                  }
+
+                  onClick={() =>
+                    moveSubjectUp(
+                      index
+                    )
+                  }
+
+                  className="
+                    rounded
+                    border
+                    px-3
+                    py-1
+                    text-sm
+                    disabled:opacity-30
+                  "
+
+                  title="Move priority up"
+                >
+
+                  ↑
+
+                </button>
+
+
+
+                {/* MOVE DOWN */}
+
+                <button
+
+                  type="button"
+
+                  disabled={
+                    index ===
+                      form.preferred_subjects.length - 1
+                    ||
+                    !form.use_subject_preference
+                  }
+
+                  onClick={() =>
+                    moveSubjectDown(
+                      index
+                    )
+                  }
+
+                  className="
+                    rounded
+                    border
+                    px-3
+                    py-1
+                    text-sm
+                    disabled:opacity-30
+                  "
+
+                  title="Move priority down"
+                >
+
+                  ↓
+
+                </button>
+
+
+
+                {/* REMOVE */}
+
+                <button
+
+                  type="button"
+
+                  disabled={
+                    !form.use_subject_preference
+                  }
+
+                  onClick={() =>
+                    removeSubject(
+                      subject
+                    )
+                  }
+
+                  className="
+                    rounded
+                    border
+                    border-red-200
+                    px-3
+                    py-1
+                    text-sm
+                    text-red-600
+                    hover:bg-red-50
+                    disabled:opacity-30
+                  "
+                >
+
+                  Remove
+
+                </button>
+
+              </div>
 
             )
           )}
@@ -549,7 +940,10 @@ export default function FacultyPreferenceEditor({
         </div>
 
 
+
+        {/* ========================================= */}
         {/* SUBJECT IMPORTANCE */}
+        {/* ========================================= */}
 
         <div className="mt-4">
 
@@ -562,10 +956,14 @@ export default function FacultyPreferenceEditor({
               text-slate-700
             "
           >
+
             Importance
+
           </label>
 
+
           <select
+
             value={
               form.subject_importance
             }
@@ -576,6 +974,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm((current) => ({
+
                 ...current,
 
                 subject_importance:
@@ -600,12 +999,20 @@ export default function FacultyPreferenceEditor({
               (option) => (
 
                 <option
-                  key={option.value}
-                  value={option.value}
+
+                  key={
+                    option.value
+                  }
+
+                  value={
+                    option.value
+                  }
                 >
+
                   {option.value}
                   {" - "}
                   {option.label}
+
                 </option>
 
               )
@@ -616,6 +1023,7 @@ export default function FacultyPreferenceEditor({
         </div>
 
       </div>
+
 
 
       {/* ========================================= */}
@@ -635,8 +1043,11 @@ export default function FacultyPreferenceEditor({
           <div>
 
             <h3 className="font-medium">
+
               Preferred Teaching Days
+
             </h3>
+
 
             <p
               className="
@@ -644,14 +1055,16 @@ export default function FacultyPreferenceEditor({
                 text-gray-500
               "
             >
-              Select the days the
-              faculty prefers.
+
+              Select the days the faculty prefers.
+
             </p>
 
           </div>
 
 
           <input
+
             type="checkbox"
 
             checked={
@@ -660,6 +1073,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm({
+
                 ...form,
 
                 use_day_preference:
@@ -673,6 +1087,7 @@ export default function FacultyPreferenceEditor({
         </div>
 
 
+
         <div
           className="
             flex
@@ -684,7 +1099,10 @@ export default function FacultyPreferenceEditor({
           {DAYS.map((day) => (
 
             <label
-              key={day.code}
+
+              key={
+                day.code
+              }
 
               className="
                 flex
@@ -694,6 +1112,7 @@ export default function FacultyPreferenceEditor({
             >
 
               <input
+
                 type="checkbox"
 
                 disabled={
@@ -701,11 +1120,9 @@ export default function FacultyPreferenceEditor({
                 }
 
                 checked={
-                  form
-                    .preferred_days
-                    .includes(
-                      day.code
-                    )
+                  form.preferred_days.includes(
+                    day.code
+                  )
                 }
 
                 onChange={() =>
@@ -715,6 +1132,7 @@ export default function FacultyPreferenceEditor({
                 }
               />
 
+
               {day.label}
 
             </label>
@@ -722,6 +1140,7 @@ export default function FacultyPreferenceEditor({
           ))}
 
         </div>
+
 
 
         {/* DAY IMPORTANCE */}
@@ -737,10 +1156,14 @@ export default function FacultyPreferenceEditor({
               text-slate-700
             "
           >
+
             Importance
+
           </label>
 
+
           <select
+
             value={
               form.day_importance
             }
@@ -751,6 +1174,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm((current) => ({
+
                 ...current,
 
                 day_importance:
@@ -775,12 +1199,20 @@ export default function FacultyPreferenceEditor({
               (option) => (
 
                 <option
-                  key={option.value}
-                  value={option.value}
+
+                  key={
+                    option.value
+                  }
+
+                  value={
+                    option.value
+                  }
                 >
+
                   {option.value}
                   {" - "}
                   {option.label}
+
                 </option>
 
               )
@@ -791,6 +1223,7 @@ export default function FacultyPreferenceEditor({
         </div>
 
       </div>
+
 
 
       {/* ========================================= */}
@@ -810,8 +1243,11 @@ export default function FacultyPreferenceEditor({
           <div>
 
             <h3 className="font-medium">
+
               Preferred Teaching Time
+
             </h3>
+
 
             <p
               className="
@@ -819,14 +1255,16 @@ export default function FacultyPreferenceEditor({
                 text-gray-500
               "
             >
-              Preferred daily teaching
-              time range.
+
+              Preferred daily teaching time range.
+
             </p>
 
           </div>
 
 
           <input
+
             type="checkbox"
 
             checked={
@@ -835,6 +1273,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm({
+
                 ...form,
 
                 use_time_preference:
@@ -848,6 +1287,7 @@ export default function FacultyPreferenceEditor({
         </div>
 
 
+
         <div
           className="
             flex
@@ -857,6 +1297,7 @@ export default function FacultyPreferenceEditor({
         >
 
           <input
+
             type="time"
 
             disabled={
@@ -870,6 +1311,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm({
+
                 ...form,
 
                 preferred_start_time:
@@ -889,11 +1331,14 @@ export default function FacultyPreferenceEditor({
 
 
           <span>
+
             to
+
           </span>
 
 
           <input
+
             type="time"
 
             disabled={
@@ -907,6 +1352,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm({
+
                 ...form,
 
                 preferred_end_time:
@@ -927,6 +1373,7 @@ export default function FacultyPreferenceEditor({
         </div>
 
 
+
         {/* TIME IMPORTANCE */}
 
         <div className="mt-4">
@@ -940,10 +1387,14 @@ export default function FacultyPreferenceEditor({
               text-slate-700
             "
           >
+
             Importance
+
           </label>
 
+
           <select
+
             value={
               form.time_importance
             }
@@ -954,6 +1405,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm((current) => ({
+
                 ...current,
 
                 time_importance:
@@ -978,12 +1430,20 @@ export default function FacultyPreferenceEditor({
               (option) => (
 
                 <option
-                  key={option.value}
-                  value={option.value}
+
+                  key={
+                    option.value
+                  }
+
+                  value={
+                    option.value
+                  }
                 >
+
                   {option.value}
                   {" - "}
                   {option.label}
+
                 </option>
 
               )
@@ -994,6 +1454,7 @@ export default function FacultyPreferenceEditor({
         </div>
 
       </div>
+
 
 
       {/* ========================================= */}
@@ -1013,8 +1474,11 @@ export default function FacultyPreferenceEditor({
           <div>
 
             <h3 className="font-medium">
+
               Schedule Style
+
             </h3>
+
 
             <p
               className="
@@ -1022,15 +1486,17 @@ export default function FacultyPreferenceEditor({
                 text-gray-500
               "
             >
-              Choose whether the faculty
-              prefers compact or spaced
-              teaching periods.
+
+              Choose whether the faculty prefers
+              compact or spaced teaching periods.
+
             </p>
 
           </div>
 
 
           <input
+
             type="checkbox"
 
             checked={
@@ -1039,6 +1505,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm({
+
                 ...form,
 
                 use_gap_preference:
@@ -1052,7 +1519,9 @@ export default function FacultyPreferenceEditor({
         </div>
 
 
+
         <select
+
           disabled={
             !form.use_gap_preference
           }
@@ -1063,6 +1532,7 @@ export default function FacultyPreferenceEditor({
 
           onChange={(event) =>
             setForm({
+
               ...form,
 
              gap_preference: event.target.value as GapPreference,
@@ -1080,18 +1550,27 @@ export default function FacultyPreferenceEditor({
         >
 
           <option value="No Preference">
+
             No Preference
+
           </option>
+
 
           <option value="Compact">
+
             Compact
+
           </option>
 
+
           <option value="Scattered">
+
             Scattered
+
           </option>
 
         </select>
+
 
 
         {/* SCHEDULE STYLE IMPORTANCE */}
@@ -1107,10 +1586,14 @@ export default function FacultyPreferenceEditor({
               text-slate-700
             "
           >
+
             Importance
+
           </label>
 
+
           <select
+
             value={
               form.gap_importance
             }
@@ -1121,6 +1604,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm((current) => ({
+
                 ...current,
 
                 gap_importance:
@@ -1145,12 +1629,20 @@ export default function FacultyPreferenceEditor({
               (option) => (
 
                 <option
-                  key={option.value}
-                  value={option.value}
+
+                  key={
+                    option.value
+                  }
+
+                  value={
+                    option.value
+                  }
                 >
+
                   {option.value}
                   {" - "}
                   {option.label}
+
                 </option>
 
               )
@@ -1161,6 +1653,7 @@ export default function FacultyPreferenceEditor({
         </div>
 
       </div>
+
 
 
       {/* ========================================= */}
@@ -1181,8 +1674,11 @@ export default function FacultyPreferenceEditor({
           <div>
 
             <h3 className="font-medium">
+
               Lecture / Laboratory Day Preference
+
             </h3>
+
 
             <p
               className="
@@ -1190,16 +1686,19 @@ export default function FacultyPreferenceEditor({
                 text-gray-500
               "
             >
-              Choose whether the faculty
-              prefers the lecture and
-              laboratory of the same section
-              on the same day or different days.
+
+              Choose whether the faculty prefers
+              the lecture and laboratory of the
+              same section on the same day or
+              different days.
+
             </p>
 
           </div>
 
 
           <input
+
             type="checkbox"
 
             checked={
@@ -1208,6 +1707,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm({
+
                 ...form,
 
                 use_lecture_lab_preference:
@@ -1221,7 +1721,9 @@ export default function FacultyPreferenceEditor({
         </div>
 
 
+
         <select
+
           value={
             form.lecture_lab_preference
           }
@@ -1232,6 +1734,7 @@ export default function FacultyPreferenceEditor({
 
           onChange={(event) =>
             setForm({
+
               ...form,
 
               lecture_lab_preference:
@@ -1250,19 +1753,30 @@ export default function FacultyPreferenceEditor({
         >
 
           <option value="No Preference">
+
             No Preference
+
           </option>
+
 
           <option value="Same Day">
+
             Same Day
+
           </option>
 
+
           <option value="Different Day">
+
             Different Day
+
           </option>
 
         </select>
 
+
+
+        {/* LECTURE / LAB IMPORTANCE */}
 
         <div className="mt-4">
 
@@ -1275,10 +1789,14 @@ export default function FacultyPreferenceEditor({
               text-slate-700
             "
           >
+
             Importance
+
           </label>
 
+
           <select
+
             value={
               form.lecture_lab_importance
             }
@@ -1289,6 +1807,7 @@ export default function FacultyPreferenceEditor({
 
             onChange={(event) =>
               setForm((current) => ({
+
                 ...current,
 
                 lecture_lab_importance:
@@ -1313,12 +1832,20 @@ export default function FacultyPreferenceEditor({
               (option) => (
 
                 <option
-                  key={option.value}
-                  value={option.value}
+
+                  key={
+                    option.value
+                  }
+
+                  value={
+                    option.value
+                  }
                 >
+
                   {option.value}
                   {" - "}
                   {option.label}
+
                 </option>
 
               )
@@ -1329,6 +1856,7 @@ export default function FacultyPreferenceEditor({
         </div>
 
       </div>
+
 
 
       {/* ========================================= */}
@@ -1346,6 +1874,7 @@ export default function FacultyPreferenceEditor({
       >
 
         <button
+
           type="button"
 
           onClick={
@@ -1383,7 +1912,9 @@ export default function FacultyPreferenceEditor({
               text-gray-600
             "
           >
+
             {message}
+
           </span>
 
         )}
