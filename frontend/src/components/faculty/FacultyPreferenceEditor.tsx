@@ -3,12 +3,15 @@ import { useEffect, useState } from "react";
 import type {
   FacultyPreferenceUpdate,
   GapPreference,
+  LectureLabPreference,
 } from "../../api/preferences";
 
 import {
   getFacultyPreference,
   updateFacultyPreference,
 } from "../../api/preferences";
+
+
 interface Props {
   facultyCode: number;
 }
@@ -24,6 +27,16 @@ const DAYS = [
 ];
 
 
+const IMPORTANCE_OPTIONS = [
+  { value: 0, label: "Ignore" },
+  { value: 1, label: "Very Low" },
+  { value: 2, label: "Low" },
+  { value: 3, label: "Medium" },
+  { value: 4, label: "High" },
+  { value: 5, label: "Very High" },
+];
+
+
 export default function FacultyPreferenceEditor({
   facultyCode,
 }: Props) {
@@ -35,38 +48,38 @@ export default function FacultyPreferenceEditor({
 
   const [subjectInput, setSubjectInput] = useState("");
 
-const [form, setForm] =
-  useState<FacultyPreferenceUpdate>({
-    faculty_priority: 1,
 
-    preferred_subjects: [],
-    subject_importance: 3,
+  const [form, setForm] =
+    useState<FacultyPreferenceUpdate>({
 
-    preferred_days: [],
-    day_importance: 3,
+      faculty_priority: 1,
 
-    preferred_start_time: null,
-    preferred_end_time: null,
-    time_importance: 3,
+      preferred_subjects: [],
+      subject_importance: 3,
 
-    gap_preference: "No Preference",
-    gap_importance: 0,
+      preferred_days: [],
+      day_importance: 3,
 
-    lecture_lab_preference: "No Preference",
-    lecture_lab_importance: 0,
+      preferred_start_time: null,
+      preferred_end_time: null,
+      time_importance: 3,
 
-    use_subject_preference: true,
-    use_day_preference: true,
-    use_time_preference: true,
-    use_gap_preference: false,
-    use_lecture_lab_preference: false,
-  });
+      gap_preference: "No Preference",
+      gap_importance: 0,
+
+      lecture_lab_preference: "No Preference",
+      lecture_lab_importance: 0,
+
+      use_subject_preference: true,
+      use_day_preference: true,
+      use_time_preference: true,
+      use_gap_preference: false,
+      use_lecture_lab_preference: false,
+    });
 
 
   useEffect(() => {
-
     loadPreferences();
-
   }, [facultyCode]);
 
 
@@ -81,43 +94,61 @@ const [form, setForm] =
           facultyCode
         );
 
-    setForm({
-    faculty_priority: data.faculty_priority,
 
-    preferred_subjects: data.preferred_subjects,
-    subject_importance: data.subject_importance,
+      setForm({
 
-    preferred_days: data.preferred_days,
-    day_importance: data.day_importance,
+        faculty_priority:
+          data.faculty_priority,
 
-    preferred_start_time: data.preferred_start_time,
-    preferred_end_time: data.preferred_end_time,
-    time_importance: data.time_importance,
+        preferred_subjects:
+          data.preferred_subjects,
 
-    gap_preference: data.gap_preference,
-    gap_importance: data.gap_importance,
+        subject_importance:
+          data.subject_importance,
 
-    lecture_lab_preference:
-        data.lecture_lab_preference,
+        preferred_days:
+          data.preferred_days,
 
-    lecture_lab_importance:
-        data.lecture_lab_importance,
+        day_importance:
+          data.day_importance,
 
-    use_subject_preference:
-        data.use_subject_preference,
+        preferred_start_time:
+          data.preferred_start_time,
 
-    use_day_preference:
-        data.use_day_preference,
+        preferred_end_time:
+          data.preferred_end_time,
 
-    use_time_preference:
-        data.use_time_preference,
+        time_importance:
+          data.time_importance,
 
-    use_gap_preference:
-        data.use_gap_preference,
+        gap_preference:
+          data.gap_preference,
 
-    use_lecture_lab_preference:
-        data.use_lecture_lab_preference,
-    });
+        gap_importance:
+          data.gap_importance,
+
+        lecture_lab_preference:
+          data.lecture_lab_preference,
+
+        lecture_lab_importance:
+          data.lecture_lab_importance,
+
+        use_subject_preference:
+          data.use_subject_preference,
+
+        use_day_preference:
+          data.use_day_preference,
+
+        use_time_preference:
+          data.use_time_preference,
+
+        use_gap_preference:
+          data.use_gap_preference,
+
+        use_lecture_lab_preference:
+          data.use_lecture_lab_preference,
+      });
+
     } catch (error) {
 
       console.error(
@@ -137,7 +168,9 @@ const [form, setForm] =
   }
 
 
-  function toggleDay(day: string) {
+  function toggleDay(
+    day: string
+  ) {
 
     setForm((previous) => {
 
@@ -155,7 +188,7 @@ const [form, setForm] =
             )
           : [
               ...previous.preferred_days,
-              day
+              day,
             ],
       };
     });
@@ -268,6 +301,10 @@ const [form, setForm] =
       "
     >
 
+      {/* ========================================= */}
+      {/* HEADER */}
+      {/* ========================================= */}
+
       <div>
 
         <h2
@@ -287,17 +324,16 @@ const [form, setForm] =
             mt-1
           "
         >
-          These preferences are used
-          when generating optimized
-          faculty schedules.
+          These preferences are used when
+          generating optimized faculty schedules.
         </p>
 
       </div>
 
 
-      {/* ==================================
-          FACULTY PRIORITY
-      ================================== */}
+      {/* ========================================= */}
+      {/* FACULTY PRIORITY */}
+      {/* ========================================= */}
 
       <div>
 
@@ -353,9 +389,9 @@ const [form, setForm] =
       </div>
 
 
-      {/* ==================================
-          SUBJECT PREFERENCE
-      ================================== */}
+      {/* ========================================= */}
+      {/* SUBJECT PREFERENCE */}
+      {/* ========================================= */}
 
       <div>
 
@@ -403,10 +439,7 @@ const [form, setForm] =
               })
             }
 
-            className="
-              w-5
-              h-5
-            "
+            className="w-5 h-5"
           />
 
         </div>
@@ -515,12 +548,79 @@ const [form, setForm] =
 
         </div>
 
+
+        {/* SUBJECT IMPORTANCE */}
+
+        <div className="mt-4">
+
+          <label
+            className="
+              mb-2
+              block
+              text-sm
+              font-medium
+              text-slate-700
+            "
+          >
+            Importance
+          </label>
+
+          <select
+            value={
+              form.subject_importance
+            }
+
+            disabled={
+              !form.use_subject_preference
+            }
+
+            onChange={(event) =>
+              setForm((current) => ({
+                ...current,
+
+                subject_importance:
+                  Number(
+                    event.target.value
+                  ),
+              }))
+            }
+
+            className="
+              w-full
+              rounded-lg
+              border
+              border-slate-300
+              px-3
+              py-2
+              disabled:bg-gray-100
+            "
+          >
+
+            {IMPORTANCE_OPTIONS.map(
+              (option) => (
+
+                <option
+                  key={option.value}
+                  value={option.value}
+                >
+                  {option.value}
+                  {" - "}
+                  {option.label}
+                </option>
+
+              )
+            )}
+
+          </select>
+
+        </div>
+
       </div>
 
 
-      {/* ==================================
-          DAY PREFERENCE
-      ================================== */}
+      {/* ========================================= */}
+      {/* DAY PREFERENCE */}
+      {/* ========================================= */}
 
       <div>
 
@@ -623,12 +723,79 @@ const [form, setForm] =
 
         </div>
 
+
+        {/* DAY IMPORTANCE */}
+
+        <div className="mt-4">
+
+          <label
+            className="
+              mb-2
+              block
+              text-sm
+              font-medium
+              text-slate-700
+            "
+          >
+            Importance
+          </label>
+
+          <select
+            value={
+              form.day_importance
+            }
+
+            disabled={
+              !form.use_day_preference
+            }
+
+            onChange={(event) =>
+              setForm((current) => ({
+                ...current,
+
+                day_importance:
+                  Number(
+                    event.target.value
+                  ),
+              }))
+            }
+
+            className="
+              w-full
+              rounded-lg
+              border
+              border-slate-300
+              px-3
+              py-2
+              disabled:bg-gray-100
+            "
+          >
+
+            {IMPORTANCE_OPTIONS.map(
+              (option) => (
+
+                <option
+                  key={option.value}
+                  value={option.value}
+                >
+                  {option.value}
+                  {" - "}
+                  {option.label}
+                </option>
+
+              )
+            )}
+
+          </select>
+
+        </div>
+
       </div>
 
 
-      {/* ==================================
-          TIME PREFERENCE
-      ================================== */}
+      {/* ========================================= */}
+      {/* TIME PREFERENCE */}
+      {/* ========================================= */}
 
       <div>
 
@@ -697,9 +864,8 @@ const [form, setForm] =
             }
 
             value={
-              form
-                .preferred_start_time
-                ?? ""
+              form.preferred_start_time
+              ?? ""
             }
 
             onChange={(event) =>
@@ -717,11 +883,14 @@ const [form, setForm] =
               rounded-lg
               px-3
               py-2
+              disabled:bg-gray-100
             "
           />
 
 
-          <span>to</span>
+          <span>
+            to
+          </span>
 
 
           <input
@@ -732,9 +901,8 @@ const [form, setForm] =
             }
 
             value={
-              form
-                .preferred_end_time
-                ?? ""
+              form.preferred_end_time
+              ?? ""
             }
 
             onChange={(event) =>
@@ -752,17 +920,85 @@ const [form, setForm] =
               rounded-lg
               px-3
               py-2
+              disabled:bg-gray-100
             "
           />
+
+        </div>
+
+
+        {/* TIME IMPORTANCE */}
+
+        <div className="mt-4">
+
+          <label
+            className="
+              mb-2
+              block
+              text-sm
+              font-medium
+              text-slate-700
+            "
+          >
+            Importance
+          </label>
+
+          <select
+            value={
+              form.time_importance
+            }
+
+            disabled={
+              !form.use_time_preference
+            }
+
+            onChange={(event) =>
+              setForm((current) => ({
+                ...current,
+
+                time_importance:
+                  Number(
+                    event.target.value
+                  ),
+              }))
+            }
+
+            className="
+              w-full
+              rounded-lg
+              border
+              border-slate-300
+              px-3
+              py-2
+              disabled:bg-gray-100
+            "
+          >
+
+            {IMPORTANCE_OPTIONS.map(
+              (option) => (
+
+                <option
+                  key={option.value}
+                  value={option.value}
+                >
+                  {option.value}
+                  {" - "}
+                  {option.label}
+                </option>
+
+              )
+            )}
+
+          </select>
 
         </div>
 
       </div>
 
 
-      {/* ==================================
-          GAP / SCHEDULE STYLE
-      ================================== */}
+      {/* ========================================= */}
+      {/* SCHEDULE STYLE */}
+      {/* ========================================= */}
 
       <div>
 
@@ -786,8 +1022,9 @@ const [form, setForm] =
                 text-gray-500
               "
             >
-              Optional preference for
-              compact or spaced classes.
+              Choose whether the faculty
+              prefers compact or spaced
+              teaching periods.
             </p>
 
           </div>
@@ -828,8 +1065,7 @@ const [form, setForm] =
             setForm({
               ...form,
 
-             gap_preference:
-                event.target.value as GapPreference,
+             gap_preference: event.target.value as GapPreference,
             })
           }
 
@@ -838,29 +1074,266 @@ const [form, setForm] =
             rounded-lg
             px-3
             py-2
+            w-full
+            disabled:bg-gray-100
           "
         >
 
-          <option>
+          <option value="No Preference">
             No Preference
           </option>
 
-          <option>
+          <option value="Compact">
             Compact
           </option>
 
-          <option>
+          <option value="Scattered">
             Scattered
           </option>
 
         </select>
 
+
+        {/* SCHEDULE STYLE IMPORTANCE */}
+
+        <div className="mt-4">
+
+          <label
+            className="
+              mb-2
+              block
+              text-sm
+              font-medium
+              text-slate-700
+            "
+          >
+            Importance
+          </label>
+
+          <select
+            value={
+              form.gap_importance
+            }
+
+            disabled={
+              !form.use_gap_preference
+            }
+
+            onChange={(event) =>
+              setForm((current) => ({
+                ...current,
+
+                gap_importance:
+                  Number(
+                    event.target.value
+                  ),
+              }))
+            }
+
+            className="
+              w-full
+              rounded-lg
+              border
+              border-slate-300
+              px-3
+              py-2
+              disabled:bg-gray-100
+            "
+          >
+
+            {IMPORTANCE_OPTIONS.map(
+              (option) => (
+
+                <option
+                  key={option.value}
+                  value={option.value}
+                >
+                  {option.value}
+                  {" - "}
+                  {option.label}
+                </option>
+
+              )
+            )}
+
+          </select>
+
+        </div>
+
       </div>
 
 
-      {/* ==================================
-          SAVE
-      ================================== */}
+      {/* ========================================= */}
+      {/* LECTURE / LAB DAY PREFERENCE */}
+      {/* ========================================= */}
+
+      <div>
+
+        <div
+          className="
+            flex
+            justify-between
+            items-start
+            mb-3
+          "
+        >
+
+          <div>
+
+            <h3 className="font-medium">
+              Lecture / Laboratory Day Preference
+            </h3>
+
+            <p
+              className="
+                text-sm
+                text-gray-500
+              "
+            >
+              Choose whether the faculty
+              prefers the lecture and
+              laboratory of the same section
+              on the same day or different days.
+            </p>
+
+          </div>
+
+
+          <input
+            type="checkbox"
+
+            checked={
+              form.use_lecture_lab_preference
+            }
+
+            onChange={(event) =>
+              setForm({
+                ...form,
+
+                use_lecture_lab_preference:
+                  event.target.checked,
+              })
+            }
+
+            className="w-5 h-5"
+          />
+
+        </div>
+
+
+        <select
+          value={
+            form.lecture_lab_preference
+          }
+
+          disabled={
+            !form.use_lecture_lab_preference
+          }
+
+          onChange={(event) =>
+            setForm({
+              ...form,
+
+              lecture_lab_preference:
+                event.target.value as LectureLabPreference,
+            })
+          }
+
+          className="
+            border
+            rounded-lg
+            px-3
+            py-2
+            w-full
+            disabled:bg-gray-100
+          "
+        >
+
+          <option value="No Preference">
+            No Preference
+          </option>
+
+          <option value="Same Day">
+            Same Day
+          </option>
+
+          <option value="Different Day">
+            Different Day
+          </option>
+
+        </select>
+
+
+        <div className="mt-4">
+
+          <label
+            className="
+              mb-2
+              block
+              text-sm
+              font-medium
+              text-slate-700
+            "
+          >
+            Importance
+          </label>
+
+          <select
+            value={
+              form.lecture_lab_importance
+            }
+
+            disabled={
+              !form.use_lecture_lab_preference
+            }
+
+            onChange={(event) =>
+              setForm((current) => ({
+                ...current,
+
+                lecture_lab_importance:
+                  Number(
+                    event.target.value
+                  ),
+              }))
+            }
+
+            className="
+              w-full
+              rounded-lg
+              border
+              border-slate-300
+              px-3
+              py-2
+              disabled:bg-gray-100
+            "
+          >
+
+            {IMPORTANCE_OPTIONS.map(
+              (option) => (
+
+                <option
+                  key={option.value}
+                  value={option.value}
+                >
+                  {option.value}
+                  {" - "}
+                  {option.label}
+                </option>
+
+              )
+            )}
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      {/* ========================================= */}
+      {/* SAVE */}
+      {/* ========================================= */}
 
       <div
         className="
