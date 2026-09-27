@@ -13,6 +13,7 @@ from genetic_algorithm.models.ga_setting import (
 )
 
 
+
 # =========================================================
 # DATA FILES
 # =========================================================
@@ -148,6 +149,8 @@ def _legacy_preferences_to_map(
     prefs = (
         df_faculty_pref.copy()
     )
+    
+
 
     if isinstance(
         prefs.columns,
@@ -454,6 +457,56 @@ def _subject_components(subject):
     return components
 
 
+def _get_importance(
+    preference,
+    field_name,
+    default=1
+):
+    """Return a faculty preference importance clamped to 0..5."""
+
+    try:
+        value = int(
+            preference.get(
+                field_name,
+                default
+            )
+        )
+    except (
+        TypeError,
+        ValueError
+    ):
+        value = default
+
+    return max(
+        0,
+        min(
+            5,
+            value
+        )
+    )
+
+
+def _days_from_blocks(blocks):
+    """Return normalized day names used by a schedule block collection."""
+
+    days = set()
+
+    for entry in (
+        blocks
+        or []
+    ):
+        day, _ = _unpack_block(
+            entry
+        )
+
+        if day:
+            days.add(
+                day
+            )
+
+    return days
+
+
 # =========================================================
 # FITNESS FUNCTION
 # =========================================================
@@ -512,6 +565,7 @@ def faculty_preference_fitness(
         )
     )
 
+
     priorities = [
 
         int(
@@ -543,6 +597,10 @@ def faculty_preference_fitness(
 
         "day_preference": 0,
 
+        "schedule_style": 0,
+
+        "lecture_lab_preference": 0,
+
         "number_of_preparations": 0,
 
         "teaching_load_balance": 0,
@@ -557,6 +615,10 @@ def faculty_preference_fitness(
     faculty_weekly_loads = {}
 
     faculty_daily_intervals = {}
+
+    # One interval per lecture/laboratory component.
+    # This is used for Compact/Scattered preference scoring.
+    faculty_component_intervals = {}
 
 
     # =====================================================
@@ -679,6 +741,14 @@ def faculty_preference_fitness(
             False
         ):
 
+            subject_importance = (
+                _get_importance(
+                    preference,
+                    "subject_importance",
+                    default=1
+                )
+            )
+
             preferred_subjects = [
 
                 str(subject_name)
@@ -693,16 +763,47 @@ def faculty_preference_fitness(
             ]
 
             if (
-                preferred_subjects
-                and actual_subject
-                not in preferred_subjects
+                subject_importance > 0
+                and preferred_subjects
             ):
+
+                if actual_subject in preferred_subjects:
+
+                    rank_index = (
+                        preferred_subjects.index(
+                            actual_subject
+                        )
+                    )
+
+                    # Priority 1 = zero ranking penalty.
+                    # Lower-ranked preferred subjects receive
+                    # gradually larger penalties, while still
+                    # remaining better than an unlisted subject.
+                    rank_fraction = (
+                        rank_index
+                        /
+                        max(
+                            1,
+                            len(
+                                preferred_subjects
+                            )
+                        )
+                    )
+
+                else:
+
+                    # Qualified but not listed as preferred.
+                    rank_fraction = 1
 
                 breakdown[
                     "subject_preference"
                 ] += (
 
                     settings.subject_penalty
+
+                    * rank_fraction
+
+                    * subject_importance
 
                     * priority_weight
                 )
@@ -729,6 +830,8 @@ def faculty_preference_fitness(
             component_time_mismatch = (
                 False
             )
+
+            component_day_ranges = {}
 
             for entry in component_blocks:
 
@@ -792,6 +895,33 @@ def faculty_preference_fitness(
                                 start_minutes,
                                 end_minutes
                             )
+                        )
+
+                    current_range = (
+                        component_day_ranges.get(
+                            actual_day
+                        )
+                    )
+
+                    if current_range is None:
+
+                        component_day_ranges[
+                            actual_day
+                        ] = [
+                            start_minutes,
+                            end_minutes
+                        ]
+
+                    else:
+
+                        current_range[0] = min(
+                            current_range[0],
+                            start_minutes
+                        )
+
+                        current_range[1] = max(
+                            current_range[1],
+                            end_minutes
                         )
 
                 # ---------------------------------------
@@ -892,6 +1022,27 @@ def faculty_preference_fitness(
 
                 time_mismatch_count += 1
 
+            for (
+                component_day,
+                component_range
+            ) in component_day_ranges.items():
+
+                faculty_component_intervals\
+                    .setdefault(
+                        faculty_code,
+                        {}
+                    )\
+                    .setdefault(
+                        component_day,
+                        []
+                    )\
+                    .append(
+                        (
+                            component_range[0],
+                            component_range[1]
+                        )
+                    )
+
         # -----------------------------------------------
         # 2. TIME PREFERENCE
         # -----------------------------------------------
@@ -901,6 +1052,14 @@ def faculty_preference_fitness(
             False
         ):
 
+            time_importance = (
+                _get_importance(
+                    preference,
+                    "time_importance",
+                    default=1
+                )
+            )
+
             breakdown[
                 "time_preference"
             ] += (
@@ -908,6 +1067,8 @@ def faculty_preference_fitness(
                 settings.time_penalty
 
                 * time_mismatch_count
+
+                * time_importance
 
                 * priority_weight
             )
@@ -942,18 +1103,127 @@ def faculty_preference_fitness(
                 )
             ):
 
+                day_importance = (
+                    _get_importance(
+                        preference,
+                        "day_importance",
+                        default=1
+                    )
+                )
+
                 breakdown[
                     "day_preference"
                 ] += (
 
                     settings.day_penalty
 
+                    * day_importance
+
                     * priority_weight
                 )
+        # -----------------------------------------------
+        # 4. LECTURE / LAB DAY PREFERENCE
+        # -----------------------------------------------
+
+        if preference.get(
+            "use_lecture_lab_preference",
+            False
+        ):
+
+            lecture_lab_importance = (
+                _get_importance(
+                    preference,
+                    "lecture_lab_importance",
+                    default=1
+                )
+            )
+
+            lecture_lab_preference = (
+                str(
+                    preference.get(
+                        "lecture_lab_preference",
+                        "No Preference"
+                    )
+                )
+                .strip()
+                .lower()
+            )
+
+            lecture_days = (
+                _days_from_blocks(
+                    getattr(
+                        subject,
+                        "lecture_time_blocks",
+                        []
+                    )
+                )
+            )
+
+            laboratory_days = (
+                _days_from_blocks(
+                    getattr(
+                        subject,
+                        "laboratory_time_blocks",
+                        []
+                    )
+                )
+            )
+
+            if (
+                lecture_lab_importance > 0
+                and lecture_days
+                and laboratory_days
+            ):
+
+                same_day = bool(
+                    lecture_days
+                    & laboratory_days
+                )
+
+                mismatch = False
+
+                if (
+                    lecture_lab_preference
+                    == "same day"
+                ):
+
+                    mismatch = (
+                        not same_day
+                    )
+
+                elif (
+                    lecture_lab_preference
+                    == "different day"
+                ):
+
+                    mismatch = (
+                        same_day
+                    )
+
+                if mismatch:
+
+                    lecture_lab_base_penalty = (
+                        getattr(
+                            settings,
+                            "lecture_lab_penalty",
+                            settings.day_penalty
+                        )
+                    )
+
+                    breakdown[
+                        "lecture_lab_preference"
+                    ] += (
+
+                        lecture_lab_base_penalty
+
+                        * lecture_lab_importance
+
+                        * priority_weight
+                    )
 
 
     # =====================================================
-    # 4. NUMBER OF PREPARATIONS
+    # 5. NUMBER OF PREPARATIONS
     # =====================================================
 
     for faculty_code, subjects in (
@@ -993,7 +1263,7 @@ def faculty_preference_fitness(
 
 
     # =====================================================
-    # 5. LOAD BALANCE
+    # 6. LOAD BALANCE
     # =====================================================
 
     tolerance = max(
@@ -1042,7 +1312,7 @@ def faculty_preference_fitness(
 
 
     # =====================================================
-    # 6. DAILY TEACHING LOAD
+    # INTERVAL HELPER
     # =====================================================
 
     def merge_intervals(
@@ -1084,6 +1354,164 @@ def faculty_preference_fitness(
 
         return merged
 
+
+    # =====================================================
+    # 7. SCHEDULE STYLE (COMPACT / SCATTERED)
+    # =====================================================
+
+    for (
+        faculty_code,
+        day_map
+    ) in faculty_component_intervals.items():
+
+        preference = prefs.get(
+            faculty_code,
+            {}
+        )
+
+        if not preference.get(
+            "use_gap_preference",
+            False
+        ):
+            continue
+
+        gap_importance = (
+            _get_importance(
+                preference,
+                "gap_importance",
+                default=1
+            )
+        )
+
+        if gap_importance <= 0:
+            continue
+
+        gap_preference = (
+            str(
+                preference.get(
+                    "gap_preference",
+                    "No Preference"
+                )
+            )
+            .strip()
+            .lower()
+        )
+
+        if (
+            gap_preference
+            == "no preference"
+        ):
+            continue
+
+        priority_weight = (
+            faculty_priority_weights.get(
+                faculty_code,
+                1
+            )
+        )
+
+        gap_base_penalty = (
+            getattr(
+                settings,
+                "gap_penalty",
+                settings.time_penalty
+            )
+        )
+
+        for intervals in day_map.values():
+
+            if len(intervals) < 2:
+                continue
+
+            ordered = sorted(
+                intervals
+            )
+
+            gaps = []
+
+            previous_end = (
+                ordered[0][1]
+            )
+
+            for start, end in (
+                ordered[1:]
+            ):
+
+                gap_minutes = max(
+                    0,
+                    start
+                    - previous_end
+                )
+
+                gaps.append(
+                    gap_minutes
+                )
+
+                previous_end = max(
+                    previous_end,
+                    end
+                )
+
+            if (
+                gap_preference
+                == "compact"
+            ):
+
+                # Every 30 minutes of idle time
+                # between classes adds one step.
+                total_gap_minutes = sum(
+                    gaps
+                )
+
+                gap_steps = math.ceil(
+                    total_gap_minutes
+                    / 30
+                )
+
+                breakdown[
+                    "schedule_style"
+                ] += (
+
+                    gap_steps
+
+                    * gap_base_penalty
+
+                    * gap_importance
+
+                    * priority_weight
+                )
+
+            elif (
+                gap_preference
+                == "scattered"
+            ):
+
+                # Scattered does not reward huge gaps.
+                # It only penalizes classes that are
+                # immediately adjacent with no break.
+                adjacent_count = sum(
+                    1
+                    for gap in gaps
+                    if gap < 30
+                )
+
+                breakdown[
+                    "schedule_style"
+                ] += (
+
+                    adjacent_count
+
+                    * gap_base_penalty
+
+                    * gap_importance
+
+                    * priority_weight
+                )
+
+
+    # =====================================================
+    # 8. DAILY TEACHING LOAD
+    # =====================================================
 
     for (
         faculty_code,

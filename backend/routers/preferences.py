@@ -263,17 +263,41 @@ def update_faculty_preference(
     updated = FacultyPreference(
         faculty_code=faculty_code,
 
+        # -------------------------------------------------
+        # FACULTY PRIORITY
+        # -------------------------------------------------
+
         faculty_priority=(
             payload.faculty_priority
         ),
+
+        # -------------------------------------------------
+        # SUBJECT PREFERENCE
+        # -------------------------------------------------
 
         preferred_subjects=(
             payload.preferred_subjects
         ),
 
+        subject_importance=(
+            payload.subject_importance
+        ),
+
+        # -------------------------------------------------
+        # DAY PREFERENCE
+        # -------------------------------------------------
+
         preferred_days=(
             payload.preferred_days
         ),
+
+        day_importance=(
+            payload.day_importance
+        ),
+
+        # -------------------------------------------------
+        # TIME PREFERENCE
+        # -------------------------------------------------
 
         preferred_start_time=(
             payload.preferred_start_time
@@ -283,9 +307,37 @@ def update_faculty_preference(
             payload.preferred_end_time
         ),
 
+        time_importance=(
+            payload.time_importance
+        ),
+
+        # -------------------------------------------------
+        # SCHEDULE STYLE
+        # -------------------------------------------------
+
         gap_preference=(
             payload.gap_preference
         ),
+
+        gap_importance=(
+            payload.gap_importance
+        ),
+
+        # -------------------------------------------------
+        # LECTURE / LAB PREFERENCE
+        # -------------------------------------------------
+
+        lecture_lab_preference=(
+            payload.lecture_lab_preference
+        ),
+
+        lecture_lab_importance=(
+            payload.lecture_lab_importance
+        ),
+
+        # -------------------------------------------------
+        # ENABLE / DISABLE FLAGS
+        # -------------------------------------------------
 
         use_subject_preference=(
             payload.use_subject_preference
@@ -301,6 +353,10 @@ def update_faculty_preference(
 
         use_gap_preference=(
             payload.use_gap_preference
+        ),
+
+        use_lecture_lab_preference=(
+            payload.use_lecture_lab_preference
         ),
     )
 
