@@ -334,7 +334,6 @@ def _time_satisfaction(
         "use_time_preference",
         False
     ):
-
         return None
 
     importance = _get_importance(
@@ -347,58 +346,49 @@ def _time_satisfaction(
         importance <= 0
         or not subjects
     ):
-
         return None
 
-    preferred_start = (
-        _time_to_minutes(
-            preference.get(
-                "preferred_start_time"
-            )
+    preferred_start = _time_to_minutes(
+        preference.get(
+            "preferred_start_time"
         )
     )
 
-    preferred_end = (
-        _time_to_minutes(
-            preference.get(
-                "preferred_end_time"
-            )
+    preferred_end = _time_to_minutes(
+        preference.get(
+            "preferred_end_time"
         )
     )
+
+    # Dashboard JSON is authoritative. If the faculty has not
+    # configured a complete preferred time range, there is no
+    # time preference to evaluate. Do not fall back to legacy
+    # Faculty TimeBlocks.
+    if (
+        preferred_start is None
+        or preferred_end is None
+    ):
+        return None
 
     total = 0
     matches = 0
 
     for subject in subjects:
 
-        faculty = getattr(
-            subject,
-            "assigned_faculty",
-            None
-        )
-
-        if faculty is None:
-            continue
-
-        for component in (
-            _subject_components(
-                subject
-            )
+        for component in _subject_components(
+            subject
         ):
 
             if not component:
                 continue
 
             total += 1
-
             component_mismatch = False
 
             for entry in component:
 
-                actual_day, block = (
-                    _unpack_block(
-                        entry
-                    )
+                _, block = _unpack_block(
+                    entry
                 )
 
                 actual_start = getattr(
@@ -413,106 +403,24 @@ def _time_satisfaction(
                     None
                 )
 
-                start_minutes = (
-                    _time_to_minutes(
-                        actual_start
-                    )
+                start_minutes = _time_to_minutes(
+                    actual_start
                 )
 
-                end_minutes = (
-                    _time_to_minutes(
-                        actual_end
-                    )
+                end_minutes = _time_to_minutes(
+                    actual_end
                 )
-
-                # --------------------------------------------
-                # DASHBOARD TIME RANGE
-                # --------------------------------------------
 
                 if (
-                    preferred_start
-                    is not None
-                    and preferred_end
-                    is not None
-                    and start_minutes
-                    is not None
-                    and end_minutes
-                    is not None
+                    start_minutes is None
+                    or end_minutes is None
+                    or start_minutes < preferred_start
+                    or end_minutes > preferred_end
                 ):
-
-                    if not (
-                        start_minutes
-                        >= preferred_start
-
-                        and
-
-                        end_minutes
-                        <= preferred_end
-                    ):
-
-                        component_mismatch = True
-
-                # --------------------------------------------
-                # FALLBACK TO OLD FACULTY TIME BLOCKS
-                # --------------------------------------------
-
-                else:
-
-                    faculty_day_map = (
-
-                        faculty.get_day_map()
-
-                        if hasattr(
-                            faculty,
-                            "get_day_map"
-                        )
-
-                        else {}
-                    )
-
-                    matching = False
-
-                    for pref_block in (
-                        faculty_day_map.get(
-                            actual_day,
-                            []
-                        )
-                    ):
-
-                        if (
-                            str(
-                                pref_block.start_time
-                            )
-                            ==
-                            str(
-                                actual_start
-                            )
-
-                            and
-
-                            str(
-                                pref_block.end_time
-                            )
-                            ==
-                            str(
-                                actual_end
-                            )
-
-                            and
-
-                            pref_block.preferred
-                        ):
-
-                            matching = True
-
-                            break
-
-                    if not matching:
-
-                        component_mismatch = True
+                    component_mismatch = True
+                    break
 
             if not component_mismatch:
-
                 matches += 1
 
     if total == 0:

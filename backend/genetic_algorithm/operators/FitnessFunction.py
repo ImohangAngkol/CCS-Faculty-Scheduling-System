@@ -137,6 +137,16 @@ def _normalize_list(value):
 def _legacy_preferences_to_map(
     df_faculty_pref
 ):
+    """
+    Keep only system-level faculty priority from the legacy CSV.
+
+    Old CSV subject/day/time preferences are no longer used by
+    the current dashboard-based GA preference system.
+
+    This prevents legacy preferences from silently contributing
+    penalties when a faculty member has not yet configured the
+    new preference form.
+    """
 
     result = {}
 
@@ -146,17 +156,12 @@ def _legacy_preferences_to_map(
     ):
         return result
 
-    prefs = (
-        df_faculty_pref.copy()
-    )
-    
-
+    prefs = df_faculty_pref.copy()
 
     if isinstance(
         prefs.columns,
         pd.MultiIndex
     ):
-
         prefs.columns = (
             prefs.columns
             .get_level_values(0)
@@ -175,7 +180,6 @@ def _legacy_preferences_to_map(
     ):
 
         try:
-
             code = int(
                 faculty_code
             )
@@ -184,8 +188,11 @@ def _legacy_preferences_to_map(
             TypeError,
             ValueError
         ):
-
             continue
+
+        # ---------------------------------------------
+        # Keep legacy priority temporarily.
+        # ---------------------------------------------
 
         priority = 1
 
@@ -201,92 +208,33 @@ def _legacy_preferences_to_map(
                     values.iloc[0]
                 )
 
-        preferred_subjects = []
-
-        subject_column = None
-
-        if (
-            "Preferred Subjects"
-            in group.columns
-        ):
-
-            subject_column = (
-                "Preferred Subjects"
-            )
-
-        elif "Subject" in group.columns:
-
-            subject_column = "Subject"
-
-        if subject_column:
-
-            for value in (
-                group[subject_column]
-                .dropna()
-            ):
-
-                preferred_subjects.extend(
-                    _normalize_list(
-                        value
-                    )
-                )
-
-        preferred_subjects = list(
-            dict.fromkeys(
-                subject.upper()
-                for subject
-                in preferred_subjects
-            )
-        )
-
-        preferred_days = []
-
-        day_column = None
-
-        if (
-            "Preferred Day(s)"
-            in group.columns
-        ):
-
-            day_column = (
-                "Preferred Day(s)"
-            )
-
-        elif "Day(s)" in group.columns:
-
-            day_column = "Day(s)"
-
-        if day_column:
-
-            for value in (
-                group[day_column]
-                .dropna()
-            ):
-
-                preferred_days.extend(
-                    Faculty._normalize_days(
-                        value
-                    )
-                )
-
-        preferred_days = list(
-            dict.fromkeys(
-                preferred_days
-            )
-        )
+        # ---------------------------------------------
+        # IMPORTANT:
+        # All actual preference fields are NEUTRAL.
+        #
+        # Dashboard JSON is now the authoritative
+        # source for faculty preferences.
+        # ---------------------------------------------
 
         result[code] = {
 
-            "faculty_code": code,
+            "faculty_code":
+                code,
 
             "faculty_priority":
                 priority,
 
             "preferred_subjects":
-                preferred_subjects,
+                [],
+
+            "subject_importance":
+                0,
 
             "preferred_days":
-                preferred_days,
+                [],
+
+            "day_importance":
+                0,
 
             "preferred_start_time":
                 None,
@@ -294,36 +242,213 @@ def _legacy_preferences_to_map(
             "preferred_end_time":
                 None,
 
+            "time_importance":
+                0,
+
             "gap_preference":
                 "No Preference",
 
+            "gap_importance":
+                0,
+
+            "lecture_lab_preference":
+                "No Preference",
+
+            "lecture_lab_importance":
+                0,
+
             "use_subject_preference":
-                True,
+                False,
 
             "use_day_preference":
-                True,
+                False,
 
             "use_time_preference":
-                True,
+                False,
 
             "use_gap_preference":
+                False,
+
+            "use_lecture_lab_preference":
                 False,
         }
 
     return result
 
 
+def _normalize_dashboard_preference(
+    preference
+):
+    """
+    Normalize old and new dashboard preference records.
+
+    Missing importance values are treated as 0 (Ignore).
+    This keeps older JSON records consistent with the
+    current preference model.
+    """
+
+    preference = dict(
+        preference
+        or {}
+    )
+
+    return {
+
+        "faculty_code":
+            preference.get(
+                "faculty_code"
+            ),
+
+        "faculty_priority":
+            preference.get(
+                "faculty_priority",
+                1
+            ),
+
+        "preferred_subjects":
+            preference.get(
+                "preferred_subjects",
+                []
+            )
+            or [],
+
+        "subject_importance":
+            _get_importance(
+                preference,
+                "subject_importance",
+                default=0
+            ),
+
+        "preferred_days":
+            preference.get(
+                "preferred_days",
+                []
+            )
+            or [],
+
+        "day_importance":
+            _get_importance(
+                preference,
+                "day_importance",
+                default=0
+            ),
+
+        "preferred_start_time":
+            preference.get(
+                "preferred_start_time"
+            ),
+
+        "preferred_end_time":
+            preference.get(
+                "preferred_end_time"
+            ),
+
+        "time_importance":
+            _get_importance(
+                preference,
+                "time_importance",
+                default=0
+            ),
+
+        "gap_preference":
+            preference.get(
+                "gap_preference",
+                "No Preference"
+            )
+            or "No Preference",
+
+        "gap_importance":
+            _get_importance(
+                preference,
+                "gap_importance",
+                default=0
+            ),
+
+        "lecture_lab_preference":
+            preference.get(
+                "lecture_lab_preference",
+                "No Preference"
+            )
+            or "No Preference",
+
+        "lecture_lab_importance":
+            _get_importance(
+                preference,
+                "lecture_lab_importance",
+                default=0
+            ),
+
+        "use_subject_preference":
+            bool(
+                preference.get(
+                    "use_subject_preference",
+                    False
+                )
+            ),
+
+        "use_day_preference":
+            bool(
+                preference.get(
+                    "use_day_preference",
+                    False
+                )
+            ),
+
+        "use_time_preference":
+            bool(
+                preference.get(
+                    "use_time_preference",
+                    False
+                )
+            ),
+
+        "use_gap_preference":
+            bool(
+                preference.get(
+                    "use_gap_preference",
+                    False
+                )
+            ),
+
+        "use_lecture_lab_preference":
+            bool(
+                preference.get(
+                    "use_lecture_lab_preference",
+                    False
+                )
+            ),
+    }
+
+
 def _build_effective_preferences(
     df_faculty_pref
 ):
+    """
+    Build the effective preference map.
 
-    # Start with your OLD CSV preferences
-    result = _legacy_preferences_to_map(
-        df_faculty_pref
+    Legacy CSV:
+        Faculty priority only.
+
+    Dashboard JSON:
+        Authoritative source for all actual
+        faculty preference fields.
+    """
+
+    # ---------------------------------------------
+    # Start with faculty priority only.
+    # ---------------------------------------------
+
+    result = (
+        _legacy_preferences_to_map(
+            df_faculty_pref
+        )
     )
 
-    # Dashboard preferences OVERRIDE
-    # old CSV values.
+    # ---------------------------------------------
+    # Dashboard preference records override the
+    # neutral legacy records.
+    # ---------------------------------------------
+
     dashboard = (
         _load_dashboard_preferences()
     )
@@ -332,7 +457,30 @@ def _build_effective_preferences(
         dashboard.items()
     ):
 
-        result[code] = preference
+        normalized = (
+            _normalize_dashboard_preference(
+                preference
+            )
+        )
+
+        # Keep the legacy/system priority only if an
+        # old dashboard record does not contain one.
+        if (
+            "faculty_priority"
+            not in preference
+            and code in result
+        ):
+
+            normalized[
+                "faculty_priority"
+            ] = result[
+                code
+            ].get(
+                "faculty_priority",
+                1
+            )
+
+        result[code] = normalized
 
     return result
 
@@ -972,51 +1120,11 @@ def faculty_preference_fitness(
                                 True
                             )
 
-                    else:
-
-                        # FALLBACK to old Faculty
-                        # preferred TimeBlocks
-                        faculty_day_map = (
-                            faculty.get_day_map()
-                        )
-
-                        matching = False
-
-                        for pref_block in (
-                            faculty_day_map.get(
-                                actual_day,
-                                []
-                            )
-                        ):
-
-                            if (
-                                str(
-                                    pref_block.start_time
-                                )
-                                ==
-                                str(
-                                    actual_start
-                                )
-                                and
-                                str(
-                                    pref_block.end_time
-                                )
-                                ==
-                                str(
-                                    actual_end
-                                )
-                                and
-                                pref_block.preferred
-                            ):
-
-                                matching = True
-                                break
-
-                        if not matching:
-
-                            component_time_mismatch = (
-                                True
-                            )
+                    # If no dashboard time range is configured,
+                    # do not fall back to the old Faculty TimeBlocks.
+                    # Dashboard JSON is the authoritative preference source.
+                    # Missing start/end times therefore mean there is no
+                    # active time-range constraint to score.
 
             if component_time_mismatch:
 
