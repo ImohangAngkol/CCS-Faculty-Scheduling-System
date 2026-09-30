@@ -1,9 +1,21 @@
-fastapi
+# Web API
+fastapi==0.141.1
 uvicorn[standard]
-pandas
+
+# Data processing / analysis
 numpy
+pandas
 matplotlib
 openpyxl
+
+# Validation / settings
 pydantic
+
+# Database / migrations
+SQLAlchemy
+alembic==1.19.2
+psycopg2-binary==2.9.12
+
+# Testing
 pytest
 httpx

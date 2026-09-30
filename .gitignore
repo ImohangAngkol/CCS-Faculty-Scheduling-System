@@ -1,111 +1,143 @@
-# =========================================================
+# ============================================================
 # Python
-# =========================================================
+# ============================================================
+
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 *.so
 
+# Virtual environments
 .venv/
+.venv-*/
 venv/
 env/
 
+# Python cache / testing
 .pytest_cache/
 .coverage
 htmlcov/
+.mypy_cache/
+.ruff_cache/
 
-# =========================================================
+# Python build files
+build/
+dist/
+*.egg-info/
+
+
+# ============================================================
 # Jupyter
-# =========================================================
+# ============================================================
+
 .ipynb_checkpoints/
 
-# =========================================================
+
+# ============================================================
 # Environment / Secrets
-# =========================================================
+# ============================================================
+
 .env
 .env.*
 !.env.example
 
-# =========================================================
-# Node / React
-# =========================================================
+*.pem
+*.key
+
+
+# ============================================================
+# Node / React / Vite
+# ============================================================
+
 node_modules/
-dist/
-build/
+frontend/node_modules/
+
+frontend/dist/
+frontend/.vite/
+frontend/.cache/
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# =========================================================
+
+# ============================================================
 # VS Code / IDE
-# =========================================================
+# ============================================================
+
 .vscode/
 .idea/
+*.code-workspace
 
-# =========================================================
-# OS
-# =========================================================
+
+# ============================================================
+# Operating System
+# ============================================================
+
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# =========================================================
-# Databases
-# =========================================================
+
+# ============================================================
+# Local Databases
+# ============================================================
+
 *.db
 *.sqlite
 *.sqlite3
 
-# =========================================================
-# Python / GA generated outputs
-# =========================================================
-*.pkl
 
-Best_chromosome.csv
-Faculty_preferences.csv
+# ============================================================
+# Temporary Files
+# ============================================================
 
-# Old notebook GA output folders if generated locally
-backend/*_20*/
-notebooks/*_20*/
-
-# =========================================================
-# Temporary files
-# =========================================================
 *.tmp
 *.temp
 *.log
+*.bak
+*.swp
+*.swo
+~$*
 
-backend/data/*.csv
 
-# Private / local faculty datasets
-backend/data/*.csv
+# ============================================================
+# Genetic Algorithm Generated Outputs
+# ============================================================
 
-# Test artifacts
-.pytest_cache/
-.coverage
-htmlcov/
-
-# GA outputs
 *.pkl
+
 Best_chromosome.csv
 Faculty_preferences.csv
 
-# Python cache
-__pycache__/
-*.py[cod]
+# Old/generated GA output folders
+backend/*_20*/
+notebooks/*_20*/
 
-# Jupyter cache
-.ipynb_checkpoints/
 
-# Private thesis input data
-backend/data/*.xlsx
+# ============================================================
+# PRIVATE THESIS DATA
+# Do not push faculty/student/local scheduling datasets
+# ============================================================
+
 backend/data/*.csv
+backend/data/*.xlsx
 
 
 # ============================================================
 # Runtime Genetic Algorithm Chromosomes
+# Generated locally while running/testing the GA
 # ============================================================
 
 backend/saved_chromosomes/*.json
+
+
+# ============================================================
+# IMPORTANT PROJECT CONFIGURATION FILES
+# These are intentionally NOT ignored
+# ============================================================
+
+!backend/data/ga_settings.json
+!backend/data/faculty_preferences.json
