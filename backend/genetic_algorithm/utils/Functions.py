@@ -932,9 +932,12 @@ def assign_schedule_to_faculty(
       * the faculty is free for every required block;
       * a room of the correct type is free for every required block;
       * the subject's section is free for every required block;
-      * the faculty remains within max_teaching_load.
+      * the faculty remains within the absolute teaching-load ceiling.
 
-    This prevents faculty, room, and same-section schedule conflicts.
+    Overload above a faculty member's required teaching load is allowed
+    when necessary, but the absolute ceiling must never be exceeded.
+
+    This prevents faculty, room, same-section, and hard load-limit conflicts.
     """
     time_range, day_string = selected_schedule
 
@@ -957,8 +960,24 @@ def assign_schedule_to_faculty(
 
     is_new_subject_assignment = subject.assigned_faculty is None
     if is_new_subject_assignment:
-        projected_load = faculty.current_teaching_load + subject.credit_units
-        if projected_load > faculty.max_teaching_load:
+        projected_load = (
+            faculty.current_teaching_load
+            + subject.credit_units
+        )
+
+        absolute_max = getattr(
+            faculty,
+            "absolute_max_teaching_load",
+            getattr(
+                faculty,
+                "max_teaching_load",
+                40
+            )
+        )
+
+        # HARD CONSTRAINT:
+        # overload is allowed, but never beyond the absolute ceiling.
+        if projected_load > absolute_max:
             return False
 
     if not schedule_is_available(faculty, day_string, time_range):
@@ -1221,25 +1240,91 @@ def faculty_subject_preference_score(faculty, subject):
 
 
 def get_ranked_faculty_candidates(subject, list_faculty):
-    """Prioritize faculty members who have not yet reached minimum load."""
-    candidates = [
-        faculty
-        for faculty in list_faculty
-        if faculty.current_teaching_load + subject.credit_units
-        <= faculty.max_teaching_load
-    ]
+    """
+    Rank faculty candidates using the current workload model.
+
+    Priority order:
+      1. Faculty still below their required teaching load.
+      2. Larger remaining required-load deficit.
+      3. Lower current teaching load.
+      4. Existing subject-preference signal.
+      5. Seniority only as a small final tie-breaker.
+
+    Overload is allowed when necessary, but nobody may exceed the
+    absolute teaching-load ceiling.
+    """
+
+    candidates = []
+
+    for faculty in list_faculty:
+
+        projected_load = (
+            faculty.current_teaching_load
+            + subject.credit_units
+        )
+
+        absolute_max = getattr(
+            faculty,
+            "absolute_max_teaching_load",
+            getattr(
+                faculty,
+                "max_teaching_load",
+                40
+            )
+        )
+
+        if projected_load <= absolute_max:
+            candidates.append(
+                faculty
+            )
 
     random.shuffle(candidates)
+
+    def workload_rank(faculty):
+
+        required_load = getattr(
+            faculty,
+            "required_teaching_load",
+            getattr(
+                faculty,
+                "min_teaching_load",
+                18
+            )
+        )
+
+        current_load = (
+            faculty.current_teaching_load
+        )
+
+        deficit = max(
+            0,
+            required_load - current_load
+        )
+
+        below_required = (
+            current_load < required_load
+        )
+
+        return (
+            below_required,
+            deficit,
+            -current_load,
+            faculty_subject_preference_score(
+                faculty,
+                subject
+            ),
+            -getattr(
+                faculty,
+                "seniority_level",
+                0
+            ),
+        )
+
     candidates.sort(
-        key=lambda faculty: (
-            faculty.current_teaching_load < faculty.min_teaching_load,
-            max(0, faculty.min_teaching_load - faculty.current_teaching_load),
-            faculty_subject_preference_score(faculty, subject),
-            -faculty.current_teaching_load,
-            faculty.seniority_level,
-        ),
+        key=workload_rank,
         reverse=True
     )
+
     return candidates
 
 
@@ -1276,29 +1361,85 @@ def try_assign_complete_subject(subject, faculty, room_list=None):
     return True
 
 
-def validate_minimum_teaching_load(list_faculty, raise_error=True):
+def validate_minimum_teaching_load(
+    list_faculty,
+    raise_error=True
+):
+    """
+    Validate faculty teaching-load hard constraints.
+
+    Rules:
+      * current teaching load must reach the faculty-specific
+        required teaching load;
+      * overload is allowed when necessary;
+      * the absolute teaching-load ceiling must never be exceeded.
+    """
+
     violations = []
+
     for faculty in list_faculty:
+
+        required_load = getattr(
+            faculty,
+            "required_teaching_load",
+            getattr(
+                faculty,
+                "min_teaching_load",
+                18
+            )
+        )
+
+        absolute_max = getattr(
+            faculty,
+            "absolute_max_teaching_load",
+            getattr(
+                faculty,
+                "max_teaching_load",
+                40
+            )
+        )
+
+        current_load = (
+            faculty.current_teaching_load
+        )
+
         if not (
-            faculty.min_teaching_load
-            <= faculty.current_teaching_load
-            <= faculty.max_teaching_load
+            required_load
+            <= current_load
+            <= absolute_max
         ):
-            violations.append((
-                faculty.code,
-                faculty.current_teaching_load,
-                faculty.min_teaching_load,
-                faculty.max_teaching_load,
-            ))
+
+            violations.append(
+                (
+                    faculty.code,
+                    current_load,
+                    required_load,
+                    absolute_max,
+                )
+            )
 
     if violations and raise_error:
+
         details = ", ".join(
-            f"Faculty {code}: {load} units (required {minimum}-{maximum})"
-            for code, load, minimum, maximum in violations
+            (
+                f"Faculty {code}: "
+                f"{load} units "
+                f"(required at least {required}, "
+                f"absolute maximum {maximum})"
+            )
+            for (
+                code,
+                load,
+                required,
+                maximum
+            ) in violations
         )
+
         raise RuntimeError(
-            "Teaching-load constraint was not satisfied. " + details
+            "Teaching-load constraint was not satisfied. "
+            + details
         )
+
     return not violations
 
 
@@ -1360,37 +1501,165 @@ def validate_section_conflicts(list_subjects, raise_error=True):
     return not problems
 
 
-def check_minimum_load_feasibility(list_faculty, list_subjects):
-    total_available_units = sum(subject.credit_units for subject in list_subjects)
-    total_minimum_units = sum(f.min_teaching_load for f in list_faculty)
-    total_maximum_units = sum(f.max_teaching_load for f in list_faculty)
+def check_minimum_load_feasibility(
+    list_faculty,
+    list_subjects
+):
+    """
+    Check whether the available subject units can satisfy the workload rules
+    before the scheduler begins its restart loop.
+    """
 
-    if total_available_units < total_minimum_units:
-        raise ValueError(
-            f"Impossible minimum-load requirement: only {total_available_units} "
-            f"subject units are available, but {total_minimum_units} are required."
+    total_available_units = sum(
+        subject.credit_units
+        for subject in list_subjects
+    )
+
+    total_required_units = sum(
+        getattr(
+            faculty,
+            "required_teaching_load",
+            getattr(
+                faculty,
+                "min_teaching_load",
+                18
+            )
         )
-    if total_available_units > total_maximum_units:
+        for faculty in list_faculty
+    )
+
+    total_absolute_capacity = sum(
+        getattr(
+            faculty,
+            "absolute_max_teaching_load",
+            getattr(
+                faculty,
+                "max_teaching_load",
+                40
+            )
+        )
+        for faculty in list_faculty
+    )
+
+    if total_available_units < total_required_units:
+
         raise ValueError(
-            f"Impossible maximum-load requirement: {total_available_units} units "
-            f"must be assigned, but faculty can carry only {total_maximum_units}."
+            "Impossible required-load configuration: "
+            f"only {total_available_units} subject units are available, "
+            f"but faculty collectively require at least "
+            f"{total_required_units} teaching units. "
+            "Review the faculty Teaching Load values / release loads "
+            "or the semester subject offering."
+        )
+
+    if total_available_units > total_absolute_capacity:
+
+        raise ValueError(
+            "Impossible maximum-load configuration: "
+            f"{total_available_units} subject units must be assigned, "
+            f"but faculty can carry at most "
+            f"{total_absolute_capacity} units under the absolute ceiling."
         )
 
 
 def print_final_schedule(list_faculty):
-    """Compact final report including lecture/lab room assignments."""
-    print("\nFINAL FACULTY TEACHING LOADS AND ROOMS")
-    for faculty in sorted(list_faculty, key=lambda item: str(item.code)):
-        print(
-            f"\nFaculty {faculty.code}: {faculty.current_teaching_load} units "
-            f"(minimum={faculty.min_teaching_load}, maximum={faculty.max_teaching_load})"
+    """Compact final report including workload status and room assignments."""
+
+    print(
+        "\nFINAL FACULTY TEACHING LOADS AND ROOMS"
+    )
+
+    for faculty in sorted(
+        list_faculty,
+        key=lambda item: str(item.code)
+    ):
+
+        required_load = getattr(
+            faculty,
+            "required_teaching_load",
+            getattr(
+                faculty,
+                "min_teaching_load",
+                18
+            )
         )
-        for subject in faculty.subjects_assigned:
-            lec_room = getattr(getattr(subject, "lecture_room", None), "name", "-")
-            lab_room = getattr(getattr(subject, "laboratory_room", None), "name", "-")
+
+        absolute_max = getattr(
+            faculty,
+            "absolute_max_teaching_load",
+            getattr(
+                faculty,
+                "max_teaching_load",
+                40
+            )
+        )
+
+        overload_warning = getattr(
+            faculty,
+            "overload_warning_threshold",
+            30
+        )
+
+        current_load = (
+            faculty.current_teaching_load
+        )
+
+        if current_load < required_load:
+            workload_status = "UNDERLOAD"
+
+        elif current_load > overload_warning:
+            workload_status = "HEAVY OVERLOAD"
+
+        elif current_load > required_load:
+            workload_status = "OVERLOAD"
+
+        else:
+            workload_status = "REQUIRED LOAD MET"
+
+        print(
+            f"\nFaculty {faculty.code}: "
+            f"{current_load} teaching units "
+            f"(required={required_load}, "
+            f"absolute max={absolute_max}, "
+            f"status={workload_status})"
+        )
+
+        print(
+            "  Non-teaching load: "
+            f"admin={getattr(faculty, 'admin_load', 0)}, "
+            f"research={getattr(faculty, 'research_load', 0)}, "
+            f"extension={getattr(faculty, 'extension_load', 0)}"
+        )
+
+        for subject in (
+            faculty.subjects_assigned
+        ):
+
+            lec_room = getattr(
+                getattr(
+                    subject,
+                    "lecture_room",
+                    None
+                ),
+                "name",
+                "-"
+            )
+
+            lab_room = getattr(
+                getattr(
+                    subject,
+                    "laboratory_room",
+                    None
+                ),
+                "name",
+                "-"
+            )
+
             print(
-                f"  {subject.number}-{subject.section.code}: "
-                f"Lecture Room={lec_room}, Lab Room={lab_room}"
+                f"  {subject.number}-"
+                f"{subject.section.code}: "
+                f"Lecture Room={lec_room}, "
+                f"Lab Room={lab_room}"
             )
 
 
@@ -1401,7 +1670,12 @@ def create_schedule_with_minimum_load(
     max_restarts=MAX_RESTARTS
 ):
     """
-    Build a complete schedule satisfying faculty-load, room, AND section constraints.
+    Build a complete schedule satisfying faculty-specific required teaching
+    loads, the absolute teaching-load ceiling, room constraints, and section
+    constraints.
+
+    Overload above the required load is permitted when needed, up to the
+    absolute ceiling.
 
     Room rules:
       * Lecture -> ICT 3B, ICT 3A, ICT 3C

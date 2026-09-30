@@ -16,13 +16,71 @@ class Faculty:
     ):
         self.code = code
         self.seniority_level = seniority_level
+
+        # ============================================================
+        # FACULTY WORKLOAD MODEL
+        # ============================================================
+        #
+        # The CSV field currently passed as ``max_teaching_load`` is
+        # treated as the faculty-specific REQUIRED teaching load after
+        # administrative / research / extension load adjustments.
+        #
+        # Examples:
+        #   regular faculty                  -> required teaching = 18
+        #   faculty with release/admin load -> required teaching may be lower
+        #
+        # The institution-wide overload ceiling is handled separately.
+        # ============================================================
+
         self.current_teaching_load = 0
-        self.max_teaching_load = 18
-        self.min_teaching_load =  6
-        self.max_load = 30
-        self.admin_load = admin_load
-        self.extension_load = extension_load
-        self.research_load = research_load
+
+        self.admin_load = int(admin_load or 0)
+        self.extension_load = int(extension_load or 0)
+        self.research_load = int(research_load or 0)
+
+        # Regular faculty baseline.
+        self.normal_teaching_load = 18
+
+        # Faculty-specific teaching requirement loaded from the
+        # Admin/Research/Extension CSV. If the source has no usable
+        # teaching-load value, fall back to the regular 18-unit baseline.
+        try:
+            source_teaching_load = int(max_teaching_load or 0)
+        except (TypeError, ValueError):
+            source_teaching_load = 0
+
+        self.required_teaching_load = (
+            source_teaching_load
+            if source_teaching_load > 0
+            else self.normal_teaching_load
+        )
+
+        # ``min_teaching_load`` is kept for backward compatibility with
+        # the existing scheduler and validation functions.
+        self.min_teaching_load = self.required_teaching_load
+
+        # Overload is allowed when necessary, but this is the absolute
+        # teaching-load ceiling used by the scheduler.
+        self.absolute_max_teaching_load = 40
+
+        # Keep the old attribute name because Functions.py currently
+        # checks ``faculty.max_teaching_load`` when assigning subjects.
+        self.max_teaching_load = self.absolute_max_teaching_load
+
+        # Retain ``max_load`` for older code that may still reference it.
+        self.max_load = self.absolute_max_teaching_load
+
+        # Above this level, the schedule should be flagged as a heavy
+        # overload during analysis. This is not the hard ceiling.
+        self.overload_warning_threshold = 30
+
+        # Useful combined non-teaching load value for later workload
+        # reporting / analysis.
+        self.non_teaching_load = (
+            self.admin_load
+            + self.extension_load
+            + self.research_load
+        )
 
         self.subjects_assigned = (
             subjects_assigned

@@ -762,6 +762,11 @@ def faculty_preference_fitness(
 
     faculty_weekly_loads = {}
 
+    # Keep the actual Faculty object for each faculty code so the
+    # workload fitness can use that faculty member's own required
+    # teaching load (after admin/research/extension adjustments).
+    faculty_objects = {}
+
     faculty_daily_intervals = {}
 
     # One interval per lecture/laboratory component.
@@ -841,6 +846,10 @@ def faculty_preference_fitness(
         faculty_priority_weights[
             faculty_code
         ] = priority_weight
+
+        faculty_objects[
+            faculty_code
+        ] = faculty
 
         # -----------------------------------------------
         # WEEKLY LOAD
@@ -1371,18 +1380,74 @@ def faculty_preference_fitness(
 
 
     # =====================================================
-    # 6. LOAD BALANCE
+    # 6. FACULTY WORKLOAD
+    # =====================================================
+    #
+    # LOWER PENALTY = BETTER.
+    #
+    # Each faculty member is evaluated against their own
+    # ``required_teaching_load`` instead of one global
+    # 12-unit target.
+    #
+    # Rules:
+    #   * below required load -> underload penalty
+    #   * exactly required load -> no workload penalty
+    #   * above required load -> overload penalty
+    #   * above overload warning threshold -> heavier penalty
+    #   * absolute maximum remains a HARD scheduling rule and
+    #     is enforced by the scheduler/validator, not optimized
+    #     as a soft preference here.
     # =====================================================
 
-    tolerance = max(
-        0,
-        settings.load_tolerance
+    workload_step_units = max(
+        1,
+        int(
+            getattr(
+                settings,
+                "workload_step_units",
+                3
+            )
+        )
     )
 
-    step_units = (
-        tolerance
-        if tolerance > 0
-        else 1
+    underload_penalty = int(
+        getattr(
+            settings,
+            "underload_penalty",
+            settings.load_balance_penalty
+        )
+    )
+
+    overload_penalty = int(
+        getattr(
+            settings,
+            "overload_penalty",
+            settings.load_balance_penalty
+        )
+    )
+
+    heavy_overload_penalty = int(
+        getattr(
+            settings,
+            "heavy_overload_penalty",
+            overload_penalty
+        )
+    )
+
+    default_regular_load = int(
+        getattr(
+            settings,
+            "regular_teaching_load",
+            18
+        )
+    )
+
+    default_warning_threshold = int(
+        getattr(
+            settings,
+            "overload_warning_threshold",
+            30
+        )
     )
 
     for (
@@ -1390,32 +1455,137 @@ def faculty_preference_fitness(
         actual_load
     ) in faculty_weekly_loads.items():
 
-        difference = abs(
-            actual_load
-            - settings.target_teaching_load
+        faculty = faculty_objects.get(
+            faculty_code
         )
 
-        excess_difference = max(
+        # Faculty.py now stores the faculty-specific teaching
+        # requirement loaded from the admin/research/extension
+        # workload source. Fall back safely for older objects.
+        required_load = getattr(
+            faculty,
+            "required_teaching_load",
+            getattr(
+                faculty,
+                "min_teaching_load",
+                default_regular_load
+            )
+        )
+
+        try:
+            required_load = int(
+                required_load
+            )
+        except (
+            TypeError,
+            ValueError
+        ):
+            required_load = (
+                default_regular_load
+            )
+
+        required_load = max(
             0,
-
-            difference
-            - tolerance
+            required_load
         )
 
-        if excess_difference > 0:
+        warning_threshold = getattr(
+            faculty,
+            "overload_warning_threshold",
+            default_warning_threshold
+        )
 
-            load_steps = math.ceil(
-                excess_difference
-                / step_units
+        try:
+            warning_threshold = int(
+                warning_threshold
+            )
+        except (
+            TypeError,
+            ValueError
+        ):
+            warning_threshold = (
+                default_warning_threshold
+            )
+
+        warning_threshold = max(
+            required_load,
+            warning_threshold
+        )
+
+        # -----------------------------------------------
+        # UNDERLOAD
+        # -----------------------------------------------
+
+        if actual_load < required_load:
+
+            deficit_units = (
+                required_load
+                - actual_load
+            )
+
+            underload_steps = math.ceil(
+                deficit_units
+                / workload_step_units
             )
 
             breakdown[
                 "teaching_load_balance"
             ] += (
+                underload_steps
+                * underload_penalty
+            )
 
-                load_steps
+            continue
 
-                * settings.load_balance_penalty
+        # -----------------------------------------------
+        # NORMAL / OVERLOAD
+        # -----------------------------------------------
+
+        overload_units = max(
+            0,
+            min(
+                actual_load,
+                warning_threshold
+            )
+            - required_load
+        )
+
+        if overload_units > 0:
+
+            overload_steps = math.ceil(
+                overload_units
+                / workload_step_units
+            )
+
+            breakdown[
+                "teaching_load_balance"
+            ] += (
+                overload_steps
+                * overload_penalty
+            )
+
+        # -----------------------------------------------
+        # HEAVY OVERLOAD
+        # -----------------------------------------------
+
+        heavy_units = max(
+            0,
+            actual_load
+            - warning_threshold
+        )
+
+        if heavy_units > 0:
+
+            heavy_steps = math.ceil(
+                heavy_units
+                / workload_step_units
+            )
+
+            breakdown[
+                "teaching_load_balance"
+            ] += (
+                heavy_steps
+                * heavy_overload_penalty
             )
 
 
