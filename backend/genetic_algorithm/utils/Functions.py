@@ -1366,28 +1366,19 @@ def validate_minimum_teaching_load(
     raise_error=True
 ):
     """
-    Validate faculty teaching-load hard constraints.
+    Validate the HARD faculty workload constraint.
 
-    Rules:
-      * current teaching load must reach the faculty-specific
-        required teaching load;
-      * overload is allowed when necessary;
-      * the absolute teaching-load ceiling must never be exceeded.
+    Faculty-specific required teaching loads are targets and are
+    evaluated by the workload fitness function.
+
+    Underload does not invalidate an otherwise feasible schedule.
+
+    The absolute maximum teaching load remains a hard constraint.
     """
 
     violations = []
 
     for faculty in list_faculty:
-
-        required_load = getattr(
-            faculty,
-            "required_teaching_load",
-            getattr(
-                faculty,
-                "min_teaching_load",
-                18
-            )
-        )
 
         absolute_max = getattr(
             faculty,
@@ -1403,17 +1394,12 @@ def validate_minimum_teaching_load(
             faculty.current_teaching_load
         )
 
-        if not (
-            required_load
-            <= current_load
-            <= absolute_max
-        ):
+        if current_load > absolute_max:
 
             violations.append(
                 (
                     faculty.code,
                     current_load,
-                    required_load,
                     absolute_max,
                 )
             )
@@ -1424,24 +1410,21 @@ def validate_minimum_teaching_load(
             (
                 f"Faculty {code}: "
                 f"{load} units "
-                f"(required at least {required}, "
-                f"absolute maximum {maximum})"
+                f"(absolute maximum {maximum})"
             )
             for (
                 code,
                 load,
-                required,
                 maximum
             ) in violations
         )
 
         raise RuntimeError(
-            "Teaching-load constraint was not satisfied. "
+            "Absolute teaching-load constraint was exceeded. "
             + details
         )
 
     return not violations
-
 
 def validate_room_conflicts(room_list, raise_error=True):
     """
@@ -1506,8 +1489,18 @@ def check_minimum_load_feasibility(
     list_subjects
 ):
     """
-    Check whether the available subject units can satisfy the workload rules
-    before the scheduler begins its restart loop.
+    Check only whether all offered subject units can fit within
+    the faculty group's absolute teaching-load capacity.
+
+    Faculty-specific required teaching loads are optimization
+    targets, not generation-stopping constraints.
+
+    Underload is handled by FitnessFunction.py so the GA can
+    still generate the best possible schedule when the semester
+    does not contain enough teaching units for every faculty
+    member to reach their target.
+
+    The absolute teaching-load ceiling remains a hard constraint.
     """
 
     total_available_units = sum(
@@ -1541,16 +1534,44 @@ def check_minimum_load_feasibility(
         for faculty in list_faculty
     )
 
+    # ---------------------------------------------------------
+    # INFORMATION ONLY:
+    # Not enough offered units to satisfy all faculty targets.
+    #
+    # This is NOT fatal because underload is handled by the
+    # workload fitness penalty.
+    # ---------------------------------------------------------
+
     if total_available_units < total_required_units:
 
-        raise ValueError(
-            "Impossible required-load configuration: "
-            f"only {total_available_units} subject units are available, "
-            f"but faculty collectively require at least "
-            f"{total_required_units} teaching units. "
-            "Review the faculty Teaching Load values / release loads "
-            "or the semester subject offering."
+        print(
+            "\nWARNING: Faculty workload targets cannot all "
+            "be fully satisfied."
         )
+
+        print(
+            f"Available subject units : {total_available_units}"
+        )
+
+        print(
+            f"Target teaching units   : {total_required_units}"
+        )
+
+        print(
+            f"Unavoidable deficit     : "
+            f"{total_required_units - total_available_units}"
+        )
+
+        print(
+            "The Genetic Algorithm will continue and minimize "
+            "underload through the workload fitness penalty.\n"
+        )
+
+    # ---------------------------------------------------------
+    # HARD CONSTRAINT:
+    # The subjects must fit somewhere without exceeding the
+    # absolute faculty teaching-load ceiling.
+    # ---------------------------------------------------------
 
     if total_available_units > total_absolute_capacity:
 
@@ -1558,9 +1579,11 @@ def check_minimum_load_feasibility(
             "Impossible maximum-load configuration: "
             f"{total_available_units} subject units must be assigned, "
             f"but faculty can carry at most "
-            f"{total_absolute_capacity} units under the absolute ceiling."
+            f"{total_absolute_capacity} units under the "
+            "absolute teaching-load ceiling."
         )
 
+    return True
 
 def print_final_schedule(list_faculty):
     """Compact final report including workload status and room assignments."""
