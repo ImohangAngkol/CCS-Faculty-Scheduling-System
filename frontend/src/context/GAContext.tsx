@@ -8,6 +8,7 @@ import {
 } from "react";
 
 import {
+  getLatestGAResult,
   runGeneticAlgorithmStream,
 } from "../services/gaService";
 
@@ -147,6 +148,60 @@ export function GAProvider({
 
   const runningRef =
     useRef(false);
+
+
+  // =========================================================
+  // RESTORE LATEST COMPLETED RESULT
+  // =========================================================
+
+  useEffect(() => {
+
+    let cancelled = false;
+
+    async function restoreLatestResult() {
+
+      try {
+
+        const latest =
+          await getLatestGAResult();
+
+        if (
+          cancelled
+          || runningRef.current
+          || !latest
+        ) {
+          return;
+        }
+
+        setGaData(
+          latest
+        );
+
+        setError(
+          null
+        );
+
+      } catch (err) {
+
+        if (!cancelled) {
+
+          console.error(
+            "Failed to restore latest GA result:",
+            err
+          );
+
+        }
+
+      }
+    }
+
+    restoreLatestResult();
+
+    return () => {
+      cancelled = true;
+    };
+
+  }, []);
 
 
   // =========================================================

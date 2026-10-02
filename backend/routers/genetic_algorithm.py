@@ -4,6 +4,7 @@ import json
 import queue
 import sys
 import threading
+from pathlib import Path
 
 from contextlib import redirect_stdout
 
@@ -32,6 +33,58 @@ router = APIRouter(
 # ============================================================
 
 _ga_stream_lock = threading.Lock()
+
+
+# ============================================================
+# LATEST COMPLETED GA RESULT
+# ============================================================
+
+BACKEND_DIR = Path(__file__).resolve().parents[1]
+LATEST_RESULT_FILE = (
+    BACKEND_DIR / "saved_chromosomes" / "latest_ga_result.json"
+)
+
+
+def _save_latest_result(result):
+    """
+    Persist the latest completed GA result shown by the frontend.
+
+    This is intentionally separate from the saved-best chromosome:
+    latest result = most recent completed run
+    saved best    = best baseline chromosome across runs
+    """
+    LATEST_RESULT_FILE.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    with open(
+        LATEST_RESULT_FILE,
+        "w",
+        encoding="utf-8",
+    ) as file:
+        json.dump(
+            result,
+            file,
+            indent=2,
+            default=str,
+        )
+
+
+def _read_latest_result():
+    if not LATEST_RESULT_FILE.exists():
+        return None
+
+    try:
+        with open(
+            LATEST_RESULT_FILE,
+            "r",
+            encoding="utf-8",
+        ) as file:
+            return json.load(file)
+
+    except (json.JSONDecodeError, OSError):
+        return None
 
 
 # ============================================================
@@ -138,6 +191,26 @@ def get_ga_status():
 
 
 # ============================================================
+# LATEST COMPLETED GA RESULT
+# ============================================================
+
+@router.get("/latest")
+def get_latest_ga_result():
+    result = _read_latest_result()
+
+    if result is None:
+        raise HTTPException(
+            status_code=404,
+            detail="No completed GA result has been saved yet.",
+        )
+
+    return {
+        "status": "success",
+        "data": result,
+    }
+
+
+# ============================================================
 # INITIAL POPULATION
 # ============================================================
 
@@ -211,6 +284,10 @@ def run_ga(
             generations=generations,
             fresh_chromosomes=fresh_chromosomes,
             baseline_mode=baseline_mode,
+        )
+
+        _save_latest_result(
+            result
         )
 
 
@@ -459,6 +536,10 @@ def stream_ga(
                     }
                 )
 
+
+                _save_latest_result(
+                    result
+                )
 
                 # Send final result
                 event_queue.put(

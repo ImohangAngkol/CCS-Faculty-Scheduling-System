@@ -74,6 +74,35 @@ export async function runGeneticAlgorithm(
 
 
 // ============================================================
+// LATEST COMPLETED GA RESULT
+// ============================================================
+
+export async function getLatestGAResult():
+  Promise<GARunData | null> {
+
+  const response =
+    await fetch(
+      `${API_BASE_URL}/api/ga/latest`
+    );
+
+  if (response.status === 404) {
+    return null;
+  }
+
+  if (!response.ok) {
+    throw new Error(
+      "Failed to restore the latest generated schedule."
+    );
+  }
+
+  const payload =
+    await response.json() as GARunResponse;
+
+  return payload.data;
+}
+
+
+// ============================================================
 // STREAM EVENT TYPES
 // ============================================================
 

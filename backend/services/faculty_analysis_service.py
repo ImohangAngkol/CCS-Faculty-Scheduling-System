@@ -806,7 +806,11 @@ def build_faculty_analysis(
 
             ga_settings=settings,
 
-            return_breakdown=True
+            return_breakdown=True,
+
+            faculty_scope=[
+                faculty_code
+            ]
         )
 
 

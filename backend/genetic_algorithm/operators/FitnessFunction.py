@@ -966,6 +966,7 @@ def faculty_preference_fitness(
     df_faculty_pref=None,
     ga_settings=None,
     return_breakdown=False,
+    faculty_scope=None,
     **legacy_kwargs
 ):
 
@@ -1074,6 +1075,118 @@ def faculty_preference_fitness(
     # One interval per lecture/laboratory component.
     # This is used for Compact/Scattered preference scoring.
     faculty_component_intervals = {}
+
+
+    # =====================================================
+    # INITIALIZE ALL FACULTY LOADS
+    # =====================================================
+    #
+    # Important:
+    # The chromosome only references faculty who received at
+    # least one subject.  Without this initialization, faculty
+    # with zero assignments never enter faculty_weekly_loads
+    # and therefore escape the underload penalty completely.
+    #
+    # Import lazily here to avoid a module-level circular import.
+    # =====================================================
+
+    try:
+
+        from genetic_algorithm.utils.Functions import (
+            list_faculty as system_faculty
+        )
+
+    except Exception:
+
+        system_faculty = []
+
+
+    if faculty_scope is None:
+
+        scoped_codes = None
+
+    else:
+
+        scoped_codes = set()
+
+        for code in faculty_scope:
+
+            try:
+                scoped_codes.add(
+                    int(code)
+                )
+
+            except (
+                TypeError,
+                ValueError
+            ):
+                scoped_codes.add(
+                    code
+                )
+
+
+    for faculty in system_faculty:
+
+        try:
+
+            faculty_code = int(
+                faculty.code
+            )
+
+        except (
+            TypeError,
+            ValueError
+        ):
+
+            faculty_code = (
+                faculty.code
+            )
+
+
+        if (
+            scoped_codes is not None
+            and faculty_code not in scoped_codes
+        ):
+            continue
+
+
+        faculty_weekly_loads[
+            faculty_code
+        ] = 0
+
+
+        faculty_objects[
+            faculty_code
+        ] = faculty
+
+
+        if (
+            scoped_codes is not None
+            and faculty_code not in scoped_codes
+        ):
+            continue
+
+        preference = prefs.get(
+            faculty_code,
+            {}
+        )
+
+
+        priority = int(
+            preference.get(
+                "faculty_priority",
+                1
+            )
+        )
+
+
+        faculty_priority_weights[
+            faculty_code
+        ] = (
+            max_priority
+            - priority
+            + 1
+        )
 
 
     # =====================================================

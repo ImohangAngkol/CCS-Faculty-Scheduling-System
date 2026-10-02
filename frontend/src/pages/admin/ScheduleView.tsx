@@ -1,4 +1,5 @@
 import {
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -10,6 +11,11 @@ import {
 import {
   useGA,
 } from "../../context/GAContext";
+
+import {
+  getAllFaculty,
+  type FacultySummary,
+} from "../../api/faculty";
 
 
 export default function ScheduleView() {
@@ -47,14 +53,76 @@ export default function ScheduleView() {
   ] = useState("All");
 
 
+  const [
+    allFaculty,
+    setAllFaculty,
+  ] = useState<FacultySummary[]>([]);
+
+
   const schedule =
     gaData?.schedule ?? [];
 
 
+  useEffect(() => {
+
+    let cancelled = false;
+
+    async function loadFaculty() {
+
+      try {
+
+        const faculty =
+          await getAllFaculty();
+
+        if (!cancelled) {
+
+          setAllFaculty(
+            faculty
+          );
+
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Failed to load faculty list:",
+          error
+        );
+
+      }
+    }
+
+    loadFaculty();
+
+    return () => {
+      cancelled = true;
+    };
+
+  }, []);
+
+
   const facultyOptions =
     useMemo(
-      () =>
-        [
+      () => {
+
+        if (allFaculty.length > 0) {
+
+          return [
+            ...allFaculty
+          ]
+            .sort(
+              (a, b) =>
+                a.faculty_code
+                - b.faculty_code
+            )
+            .map(
+              (faculty) =>
+                `Faculty ${faculty.faculty_code}`
+            );
+
+        }
+
+        return [
           ...new Set(
             schedule
               .map(
@@ -63,8 +131,13 @@ export default function ScheduleView() {
               )
               .filter(Boolean)
           ),
-        ].sort(),
-      [schedule]
+        ].sort();
+
+      },
+      [
+        allFaculty,
+        schedule,
+      ]
     );
 
 
@@ -171,14 +244,16 @@ export default function ScheduleView() {
 
 
   const totalFaculty =
-    new Set(
-      schedule
-        .map(
-          (entry) =>
-            entry.faculty
-        )
-        .filter(Boolean)
-    ).size;
+    allFaculty.length > 0
+      ? allFaculty.length
+      : new Set(
+          schedule
+            .map(
+              (entry) =>
+                entry.faculty
+            )
+            .filter(Boolean)
+        ).size;
 
 
   const totalSections =
@@ -842,8 +917,14 @@ export default function ScheduleView() {
                       text-slate-500
                     "
                   >
-                    No schedule entries match
-                    the selected filters.
+                    {
+                      facultyFilter !== "All"
+                      && search.trim() === ""
+                      && dayFilter === "All"
+                      && sectionFilter === "All"
+                        ? `${facultyFilter} has no assigned classes in this generated schedule.`
+                        : "No schedule entries match the selected filters."
+                    }
                   </td>
                 </tr>
 
