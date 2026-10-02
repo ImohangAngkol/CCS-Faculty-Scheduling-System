@@ -14,6 +14,17 @@ export interface PreferenceCalendarSummary {
   preferredEndTime: string | null;
 }
 
+export interface PreferenceScheduleBlock {
+  id: string;
+  kind: PreferenceEventKind;
+  day: string;
+  start_time: string;
+  end_time: string;
+  subject_code?: string | null;
+  subject_title?: string | null;
+  component?: PreferenceComponent | null;
+}
+
 interface StoredPreferenceEvent {
   id: string;
   title: string;
@@ -32,6 +43,8 @@ interface Props {
   legacyPreferredDays: string[];
   legacyStartTime: string | null;
   legacyEndTime: string | null;
+  scheduleBlocks: PreferenceScheduleBlock[];
+  onScheduleBlocksChange: (blocks: PreferenceScheduleBlock[]) => void;
   onCalendarSummaryChange: (summary: PreferenceCalendarSummary) => void;
   onSetSubjectRank: (subjectCode: string, rank: number) => void;
 }
@@ -74,9 +87,6 @@ function eventDayName(event: StoredPreferenceEvent) {
   return DATE_TO_DAY[getDatePart(event.start)] ?? "";
 }
 
-function storageKey(facultyCode: number) {
-  return `faculty-preference-calendar-v1:${facultyCode}`;
-}
 
 function makeId() {
   return `pref-${Date.now()}-${Math.random().toString(36).slice(2)}`;
@@ -159,6 +169,40 @@ function formatSlotRange(date: Date) {
 }
 
 
+function blocksToEvents(blocks: PreferenceScheduleBlock[]): StoredPreferenceEvent[] {
+  return blocks
+    .filter((block) => Boolean(REFERENCE_DATES[block.day]))
+    .map((block) => ({
+      id: block.id,
+      title:
+        block.kind === "subject" && block.subject_code
+          ? `${block.subject_code.toUpperCase()} — ${block.component ?? "Lecture"}`
+          : "Preferred Teaching Time",
+      start: `${REFERENCE_DATES[block.day]}T${block.start_time}:00`,
+      end: `${REFERENCE_DATES[block.day]}T${block.end_time}:00`,
+      kind: block.kind,
+      subjectCode: block.subject_code ?? undefined,
+      subjectTitle: block.subject_title ?? undefined,
+      component: block.component ?? undefined,
+    }));
+}
+
+function eventsToBlocks(events: StoredPreferenceEvent[]): PreferenceScheduleBlock[] {
+  return events
+    .map((event) => ({
+      id: event.id,
+      kind: event.kind,
+      day: eventDayName(event),
+      start_time: getTimePart(event.start),
+      end_time: getTimePart(event.end),
+      subject_code: event.subjectCode ?? null,
+      subject_title: event.subjectTitle ?? null,
+      component: event.component ?? null,
+    }))
+    .filter((block) => Boolean(block.day));
+}
+
+
 export default function PreferenceCalendar({
   facultyCode,
   preferredSubjects,
@@ -166,11 +210,25 @@ export default function PreferenceCalendar({
   legacyPreferredDays,
   legacyStartTime,
   legacyEndTime,
+  scheduleBlocks,
+  onScheduleBlocksChange,
   onCalendarSummaryChange,
   onSetSubjectRank,
 }: Props) {
   const trayRef = useRef<HTMLDivElement | null>(null);
-  const [events, setEvents] = useState<StoredPreferenceEvent[]>([]);
+
+  const [events, setEvents] =
+    useState<StoredPreferenceEvent[]>(() => {
+      if (scheduleBlocks.length > 0) {
+        return blocksToEvents(scheduleBlocks);
+      }
+
+      return buildLegacyEvents(
+        legacyPreferredDays,
+        legacyStartTime,
+        legacyEndTime
+      );
+    });
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const [editDay, setEditDay] = useState("Monday");
   const [editStart, setEditStart] = useState("09:00");
@@ -190,42 +248,77 @@ export default function PreferenceCalendar({
   }, [availableSubjects]);
 
   useEffect(() => {
-    const saved = window.localStorage.getItem(storageKey(facultyCode));
-    let initialEvents: StoredPreferenceEvent[] = [];
+    if (scheduleBlocks.length > 0) {
+      setEvents(
+        blocksToEvents(scheduleBlocks)
+      );
+      return;
+    }
 
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed)) initialEvents = parsed;
-      } catch (error) {
-        console.error("Unable to read saved preference calendar:", error);
-      }
-    } else {
-      initialEvents = buildLegacyEvents(
+    setEvents(
+      buildLegacyEvents(
         legacyPreferredDays,
         legacyStartTime,
         legacyEndTime
-      );
-    }
-
-    setEvents(initialEvents);
-  }, [facultyCode, legacyPreferredDays, legacyStartTime, legacyEndTime]);
-
-  useEffect(() => {
-    const allowedSubjects = new Set(preferredSubjects.map((subject) => subject.toUpperCase()));
-    setEvents((current) =>
-      current.filter(
-        (event) =>
-          event.kind === "general" ||
-          (event.subjectCode && allowedSubjects.has(event.subjectCode.toUpperCase()))
       )
     );
+    // The calendar is keyed by facultyCode in the parent, so this
+    // effect is only a safety net for faculty switching.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [facultyCode]);
+
+  useEffect(() => {
+    const allowedSubjects = new Set(
+      preferredSubjects.map(
+        (subject) => subject.toUpperCase()
+      )
+    );
+
+    setEvents((current) => {
+      const filtered = current.filter(
+        (event) =>
+          event.kind === "general"
+          || (
+            event.subjectCode
+            && allowedSubjects.has(
+              event.subjectCode.toUpperCase()
+            )
+          )
+      );
+
+      if (filtered.length === current.length) {
+        return current;
+      }
+
+      return filtered;
+    });
   }, [preferredSubjects]);
 
   useEffect(() => {
-    window.localStorage.setItem(storageKey(facultyCode), JSON.stringify(events));
-    onCalendarSummaryChange(calculateGeneralSummary(events));
-  }, [facultyCode, events, onCalendarSummaryChange]);
+    const nextBlocks =
+      eventsToBlocks(events);
+
+    const nextSummary =
+      calculateGeneralSummary(events);
+
+    if (
+      JSON.stringify(nextBlocks)
+      !== JSON.stringify(scheduleBlocks)
+    ) {
+      onScheduleBlocksChange(
+        nextBlocks
+      );
+    }
+
+    onCalendarSummaryChange(
+      nextSummary
+    );
+  }, [
+    events,
+    scheduleBlocks,
+    onScheduleBlocksChange,
+    onCalendarSummaryChange,
+  ]);
 
   const usedSubjectComponents = useMemo(() => {
     const used = new Set<string>();

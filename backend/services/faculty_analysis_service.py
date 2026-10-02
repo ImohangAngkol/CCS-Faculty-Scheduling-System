@@ -17,6 +17,9 @@ from genetic_algorithm.operators.FitnessFunction import (
     _subject_components,
     _time_to_minutes,
     _unpack_block,
+    _normalize_schedule_day,
+    _subject_schedule_preference_blocks,
+    _component_intervals,
 )
 
 
@@ -141,6 +144,18 @@ def _subject_satisfaction(
     subjects,
     preference
 ):
+    """
+    Descriptive subject-preference satisfaction.
+
+    IMPORTANT:
+    Satisfaction is intentionally independent from the GA
+    importance weight.  Importance controls how strongly a
+    preference affects fitness; it should not hide the factual
+    comparison between requested and assigned subjects.
+
+    Returns None only when there is no usable subject preference
+    to compare or there are no assigned subjects to evaluate.
+    """
 
     if not preference.get(
         "use_subject_preference",
@@ -148,12 +163,6 @@ def _subject_satisfaction(
     ):
 
         return None
-
-    importance = _get_importance(
-        preference,
-        "subject_importance",
-        default=0
-    )
 
     preferred_subjects = [
 
@@ -169,8 +178,7 @@ def _subject_satisfaction(
     ]
 
     if (
-        importance <= 0
-        or not preferred_subjects
+        not preferred_subjects
         or not subjects
     ):
 
@@ -231,6 +239,192 @@ def _subject_satisfaction(
 
 
 # ============================================================
+# EXACT SUBJECT SCHEDULE SATISFACTION
+# ============================================================
+
+def _exact_schedule_satisfaction(
+    subjects,
+    preference
+):
+    """
+    Compare the faculty's draggable subject calendar blocks against
+    the generated chromosome.
+
+    Day %:
+        requested block day vs generated component day.
+
+    Time %:
+        requested start time vs generated component start time.
+
+    Exact %:
+        both day and start time match.
+
+    Importance is deliberately ignored here because this is
+    descriptive satisfaction, not fitness weighting.
+    """
+
+    preferred_blocks = [
+        block
+        for block in (
+            preference.get(
+                "preferred_schedule_blocks",
+                []
+            )
+            or []
+        )
+        if (
+            isinstance(block, dict)
+            and str(
+                block.get(
+                    "kind",
+                    ""
+                )
+            ).strip().lower()
+            == "subject"
+        )
+    ]
+
+    if not preferred_blocks:
+        return None
+
+    subject_map = {
+        str(
+            subject.number
+        ).strip().upper(): subject
+        for subject in subjects
+    }
+
+    total = len(
+        preferred_blocks
+    )
+
+    day_matches = 0
+    time_matches = 0
+    exact_matches = 0
+
+    for preferred_block in preferred_blocks:
+
+        subject_code = (
+            str(
+                preferred_block.get(
+                    "subject_code",
+                    ""
+                )
+            )
+            .strip()
+            .upper()
+        )
+
+        subject = subject_map.get(
+            subject_code
+        )
+
+        if subject is None:
+            continue
+
+        component_name = (
+            str(
+                preferred_block.get(
+                    "component",
+                    ""
+                )
+            )
+            .strip()
+            .lower()
+        )
+
+        if component_name == "lecture":
+            component_blocks = getattr(
+                subject,
+                "lecture_time_blocks",
+                []
+            )
+
+        elif component_name == "laboratory":
+            component_blocks = getattr(
+                subject,
+                "laboratory_time_blocks",
+                []
+            )
+
+        else:
+            component_blocks = []
+
+        actual_intervals = (
+            _component_intervals(
+                component_blocks
+            )
+        )
+
+        preferred_day = (
+            _normalize_schedule_day(
+                preferred_block.get(
+                    "day"
+                )
+            )
+        )
+
+        preferred_start = (
+            _time_to_minutes(
+                preferred_block.get(
+                    "start_time"
+                )
+            )
+        )
+
+        day_match = (
+            preferred_day is not None
+            and any(
+                day == preferred_day
+                for day, _, _
+                in actual_intervals
+            )
+        )
+
+        time_match = (
+            preferred_start is not None
+            and any(
+                start == preferred_start
+                for _, start, _
+                in actual_intervals
+            )
+        )
+
+        exact_match = (
+            preferred_day is not None
+            and preferred_start is not None
+            and any(
+                day == preferred_day
+                and start == preferred_start
+                for day, start, _
+                in actual_intervals
+            )
+        )
+
+        if day_match:
+            day_matches += 1
+
+        if time_match:
+            time_matches += 1
+
+        if exact_match:
+            exact_matches += 1
+
+    return {
+        "total": total,
+        "day_matches": day_matches,
+        "time_matches": time_matches,
+        "exact_matches": exact_matches,
+        "day_satisfaction":
+            100 * day_matches / total,
+        "time_satisfaction":
+            100 * time_matches / total,
+        "exact_satisfaction":
+            100 * exact_matches / total,
+    }
+
+
+# ============================================================
 # DAY SATISFACTION
 # ============================================================
 
@@ -238,6 +432,12 @@ def _day_satisfaction(
     subjects,
     preference
 ):
+    """
+    Descriptive preferred-day satisfaction.
+
+    This percentage is independent from day_importance.
+    Importance affects the GA penalty only.
+    """
 
     if not preference.get(
         "use_day_preference",
@@ -245,12 +445,6 @@ def _day_satisfaction(
     ):
 
         return None
-
-    importance = _get_importance(
-        preference,
-        "day_importance",
-        default=0
-    )
 
     preferred_days = set()
 
@@ -266,8 +460,7 @@ def _day_satisfaction(
         )
 
     if (
-        importance <= 0
-        or not preferred_days
+        not preferred_days
         or not subjects
     ):
 
@@ -329,6 +522,12 @@ def _time_satisfaction(
     subjects,
     preference
 ):
+    """
+    Descriptive preferred-time satisfaction.
+
+    This percentage is independent from time_importance.
+    Importance affects the GA penalty only.
+    """
 
     if not preference.get(
         "use_time_preference",
@@ -336,16 +535,7 @@ def _time_satisfaction(
     ):
         return None
 
-    importance = _get_importance(
-        preference,
-        "time_importance",
-        default=0
-    )
-
-    if (
-        importance <= 0
-        or not subjects
-    ):
+    if not subjects:
         return None
 
     preferred_start = _time_to_minutes(
@@ -700,20 +890,73 @@ def build_faculty_analysis(
         )
 
 
-        current[
-            "Day_Satisfaction"
-        ] = _day_satisfaction(
-            faculty_subjects,
-            preference
+        exact_schedule = (
+            _exact_schedule_satisfaction(
+                faculty_subjects,
+                preference
+            )
         )
 
 
-        current[
-            "Time_Satisfaction"
-        ] = _time_satisfaction(
-            faculty_subjects,
-            preference
-        )
+        if exact_schedule is not None:
+
+            current[
+                "Day_Satisfaction"
+            ] = exact_schedule[
+                "day_satisfaction"
+            ]
+
+            current[
+                "Time_Satisfaction"
+            ] = exact_schedule[
+                "time_satisfaction"
+            ]
+
+            current[
+                "Exact_Schedule_Satisfaction"
+            ] = exact_schedule[
+                "exact_satisfaction"
+            ]
+
+            current[
+                "Preferred_Schedule_Blocks"
+            ] = exact_schedule[
+                "total"
+            ]
+
+            current[
+                "Matched_Schedule_Blocks"
+            ] = exact_schedule[
+                "exact_matches"
+            ]
+
+        else:
+
+            current[
+                "Day_Satisfaction"
+            ] = _day_satisfaction(
+                faculty_subjects,
+                preference
+            )
+
+            current[
+                "Time_Satisfaction"
+            ] = _time_satisfaction(
+                faculty_subjects,
+                preference
+            )
+
+            current[
+                "Exact_Schedule_Satisfaction"
+            ] = None
+
+            current[
+                "Preferred_Schedule_Blocks"
+            ] = 0
+
+            current[
+                "Matched_Schedule_Blocks"
+            ] = 0
 
 
         # ====================================================

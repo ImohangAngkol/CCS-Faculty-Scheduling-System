@@ -13,6 +13,11 @@ class FacultyPreference:
     # We keep this for backward compatibility.
     faculty_priority: int = 1
 
+    # Exact draggable weekly calendar blocks.
+    preferred_schedule_blocks: list[dict] = field(
+        default_factory=list
+    )
+
 
     # =====================================================
     # SUBJECT PREFERENCE
@@ -118,6 +123,11 @@ class FacultyPreference:
             faculty_priority=data.get(
                 "faculty_priority",
                 1
+            ),
+
+            preferred_schedule_blocks=data.get(
+                "preferred_schedule_blocks",
+                []
             ),
 
             preferred_subjects=data.get(

@@ -19,10 +19,24 @@ export type LectureLabPreference =
   | "No Preference";
 
 
+
+export interface PreferenceScheduleBlock {
+  id: string;
+  kind: "general" | "subject";
+  day: string;
+  start_time: string;
+  end_time: string;
+  subject_code?: string | null;
+  subject_title?: string | null;
+  component?: "Lecture" | "Laboratory" | null;
+}
+
 export interface FacultyPreference {
   faculty_code: number;
 
   faculty_priority: number;
+
+  preferred_schedule_blocks: PreferenceScheduleBlock[];
 
   // Subject preference
   preferred_subjects: string[];
@@ -56,6 +70,8 @@ export interface FacultyPreference {
 
 export interface FacultyPreferenceUpdate {
   faculty_priority: number;
+
+  preferred_schedule_blocks: PreferenceScheduleBlock[];
 
   // Subject preference
   preferred_subjects: string[];

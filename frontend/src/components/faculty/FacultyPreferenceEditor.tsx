@@ -28,6 +28,7 @@ import PreferenceCalendar from "./PreferenceCalendar";
 
 import type {
   PreferenceCalendarSummary,
+  PreferenceScheduleBlock,
 } from "./PreferenceCalendar";
 
 
@@ -101,6 +102,8 @@ export default function FacultyPreferenceEditor({
 
       faculty_priority: 1,
 
+      preferred_schedule_blocks: [],
+
       preferred_subjects: [],
       subject_importance: 3,
 
@@ -150,6 +153,9 @@ export default function FacultyPreferenceEditor({
       setForm({
         faculty_priority:
           data.faculty_priority,
+
+        preferred_schedule_blocks:
+          data.preferred_schedule_blocks ?? [],
 
         preferred_subjects:
           data.preferred_subjects,
@@ -486,6 +492,27 @@ export default function FacultyPreferenceEditor({
                 && summary
                   .preferredEndTime
               ),
+          };
+        });
+      },
+      []
+    );
+
+
+  const handleScheduleBlocksChange =
+    useCallback(
+      (blocks: PreferenceScheduleBlock[]) => {
+        setForm((previous) => {
+          if (
+            JSON.stringify(previous.preferred_schedule_blocks)
+            === JSON.stringify(blocks)
+          ) {
+            return previous;
+          }
+
+          return {
+            ...previous,
+            preferred_schedule_blocks: blocks,
           };
         });
       },
@@ -1613,6 +1640,7 @@ export default function FacultyPreferenceEditor({
 
 
         <PreferenceCalendar
+          key={facultyCode}
           facultyCode={facultyCode}
 
           preferredSubjects={
@@ -1633,6 +1661,14 @@ export default function FacultyPreferenceEditor({
 
           legacyEndTime={
             form.preferred_end_time
+          }
+
+          scheduleBlocks={
+            form.preferred_schedule_blocks
+          }
+
+          onScheduleBlocksChange={
+            handleScheduleBlocksChange
           }
 
           onCalendarSummaryChange={

@@ -271,6 +271,11 @@ def update_faculty_preference(
             payload.faculty_priority
         ),
 
+        preferred_schedule_blocks=[
+            block.model_dump()
+            for block in payload.preferred_schedule_blocks
+        ],
+
         # -------------------------------------------------
         # SUBJECT PREFERENCE
         # -------------------------------------------------

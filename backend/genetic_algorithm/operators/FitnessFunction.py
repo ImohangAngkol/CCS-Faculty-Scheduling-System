@@ -305,6 +305,13 @@ def _normalize_dashboard_preference(
                 1
             ),
 
+        "preferred_schedule_blocks":
+            preference.get(
+                "preferred_schedule_blocks",
+                []
+            )
+            or [],
+
         "preferred_subjects":
             preference.get(
                 "preferred_subjects",
@@ -655,6 +662,301 @@ def _days_from_blocks(blocks):
     return days
 
 
+def _normalize_schedule_day(value):
+    """
+    Normalize a dashboard schedule-block day to the same lowercase
+    day names produced by _unpack_block().
+    """
+
+    if value is None:
+        return None
+
+    normalized = Faculty._normalize_days(
+        value
+    )
+
+    if normalized:
+        return str(
+            normalized[0]
+        ).strip().lower()
+
+    text = str(value).strip().lower()
+
+    return text or None
+
+
+def _subject_schedule_preference_blocks(
+    preference,
+    subject_code
+):
+    """
+    Return subject-specific draggable calendar blocks for one subject.
+
+    General preferred-time blocks continue to use the legacy
+    preferred_days/start/end summary and are not handled here.
+    """
+
+    actual_code = (
+        str(subject_code)
+        .strip()
+        .upper()
+    )
+
+    result = []
+
+    for block in preference.get(
+        "preferred_schedule_blocks",
+        []
+    ) or []:
+
+        if not isinstance(
+            block,
+            dict
+        ):
+            continue
+
+        if str(
+            block.get(
+                "kind",
+                ""
+            )
+        ).strip().lower() != "subject":
+            continue
+
+        preferred_code = (
+            str(
+                block.get(
+                    "subject_code",
+                    ""
+                )
+            )
+            .strip()
+            .upper()
+        )
+
+        if preferred_code != actual_code:
+            continue
+
+        result.append(block)
+
+    return result
+
+
+def _component_intervals(
+    component_blocks
+):
+    """
+    Convert one lecture/laboratory component into normalized
+    (day, start_minutes, end_minutes) intervals.
+    """
+
+    intervals = []
+
+    for entry in (
+        component_blocks
+        or []
+    ):
+
+        day, block = _unpack_block(
+            entry
+        )
+
+        start = _time_to_minutes(
+            getattr(
+                block,
+                "start_time",
+                None
+            )
+        )
+
+        end = _time_to_minutes(
+            getattr(
+                block,
+                "end_time",
+                None
+            )
+        )
+
+        if (
+            day
+            and start is not None
+            and end is not None
+            and end > start
+        ):
+
+            intervals.append(
+                (
+                    str(day)
+                    .strip()
+                    .lower(),
+                    start,
+                    end
+                )
+            )
+
+    return intervals
+
+
+def _score_exact_subject_schedule_blocks(
+    subject,
+    preference,
+    settings,
+    priority_weight
+):
+    """
+    Score exact subject calendar placements.
+
+    The current preference tray still creates one-hour blocks by
+    default because the subject endpoint does not yet expose the real
+    lecture/laboratory duration.  For this checkpoint, TIME matching
+    therefore compares the preferred START TIME rather than requiring
+    the generated class to fit inside the temporary one-hour block.
+
+    Day and time importance still control GA influence:
+      importance 0 -> descriptive only, no GA penalty.
+    """
+
+    actual_subject = (
+        str(subject.number)
+        .strip()
+        .upper()
+    )
+
+    preferred_blocks = (
+        _subject_schedule_preference_blocks(
+            preference,
+            actual_subject
+        )
+    )
+
+    if not preferred_blocks:
+        return {
+            "has_exact_blocks": False,
+            "day_penalty": 0,
+            "time_penalty": 0,
+        }
+
+    lecture_intervals = (
+        _component_intervals(
+            getattr(
+                subject,
+                "lecture_time_blocks",
+                []
+            )
+        )
+    )
+
+    laboratory_intervals = (
+        _component_intervals(
+            getattr(
+                subject,
+                "laboratory_time_blocks",
+                []
+            )
+        )
+    )
+
+    component_map = {
+        "lecture": lecture_intervals,
+        "laboratory": laboratory_intervals,
+    }
+
+    day_importance = _get_importance(
+        preference,
+        "day_importance",
+        default=0
+    )
+
+    time_importance = _get_importance(
+        preference,
+        "time_importance",
+        default=0
+    )
+
+    day_penalty = 0
+    time_penalty = 0
+
+    for preferred_block in preferred_blocks:
+
+        component_name = (
+            str(
+                preferred_block.get(
+                    "component",
+                    ""
+                )
+            )
+            .strip()
+            .lower()
+        )
+
+        actual_intervals = (
+            component_map.get(
+                component_name,
+                []
+            )
+        )
+
+        preferred_day = (
+            _normalize_schedule_day(
+                preferred_block.get(
+                    "day"
+                )
+            )
+        )
+
+        preferred_start = (
+            _time_to_minutes(
+                preferred_block.get(
+                    "start_time"
+                )
+            )
+        )
+
+        day_match = (
+            preferred_day is not None
+            and any(
+                day == preferred_day
+                for day, _, _
+                in actual_intervals
+            )
+        )
+
+        time_match = (
+            preferred_start is not None
+            and any(
+                start == preferred_start
+                for _, start, _
+                in actual_intervals
+            )
+        )
+
+        if (
+            not day_match
+            and day_importance > 0
+        ):
+            day_penalty += (
+                settings.day_penalty
+                * day_importance
+                * priority_weight
+            )
+
+        if (
+            not time_match
+            and time_importance > 0
+        ):
+            time_penalty += (
+                settings.time_penalty
+                * time_importance
+                * priority_weight
+            )
+
+    return {
+        "has_exact_blocks": True,
+        "day_penalty": day_penalty,
+        "time_penalty": time_penalty,
+    }
+
+
 # =========================================================
 # FITNESS FUNCTION
 # =========================================================
@@ -809,6 +1111,8 @@ def faculty_preference_fitness(
             {
                 "faculty_priority": 1,
 
+                "preferred_schedule_blocks": [],
+
                 "preferred_subjects": [],
 
                 "preferred_days": [],
@@ -888,6 +1192,31 @@ def faculty_preference_fitness(
         ).add(
             actual_subject
         )
+
+        exact_schedule_result = (
+            _score_exact_subject_schedule_blocks(
+                subject,
+                preference,
+                settings,
+                priority_weight
+            )
+        )
+
+        if exact_schedule_result[
+            "has_exact_blocks"
+        ]:
+
+            breakdown[
+                "day_preference"
+            ] += exact_schedule_result[
+                "day_penalty"
+            ]
+
+            breakdown[
+                "time_preference"
+            ] += exact_schedule_result[
+                "time_penalty"
+            ]
 
         # -----------------------------------------------
         # 1. SUBJECT PREFERENCE
@@ -1085,9 +1414,14 @@ def faculty_preference_fitness(
                 # DASHBOARD TIME PREFERENCE
                 # ---------------------------------------
 
-                if preference.get(
-                    "use_time_preference",
-                    False
+                if (
+                    not exact_schedule_result[
+                        "has_exact_blocks"
+                    ]
+                    and preference.get(
+                        "use_time_preference",
+                        False
+                    )
                 ):
 
                     pref_start = (
@@ -1164,9 +1498,14 @@ def faculty_preference_fitness(
         # 2. TIME PREFERENCE
         # -----------------------------------------------
 
-        if preference.get(
-            "use_time_preference",
-            False
+        if (
+            not exact_schedule_result[
+                "has_exact_blocks"
+            ]
+            and preference.get(
+                "use_time_preference",
+                False
+            )
         ):
 
             time_importance = (
@@ -1194,9 +1533,14 @@ def faculty_preference_fitness(
         # 3. DAY PREFERENCE
         # -----------------------------------------------
 
-        if preference.get(
-            "use_day_preference",
-            False
+        if (
+            not exact_schedule_result[
+                "has_exact_blocks"
+            ]
+            and preference.get(
+                "use_day_preference",
+                False
+            )
         ):
 
             preferred_days = set()

@@ -3,6 +3,18 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 
+class PreferenceScheduleBlock(BaseModel):
+    id: str
+    kind: Literal["general", "subject"]
+    day: str
+    start_time: str
+    end_time: str
+    subject_code: str | None = None
+    subject_title: str | None = None
+    component: Literal["Lecture", "Laboratory"] | None = None
+
+
+
 # =========================================================
 # FACULTY PREFERENCES
 # =========================================================
@@ -13,6 +25,10 @@ class FacultyPreferenceBase(BaseModel):
     faculty_priority: int = Field(
         default=1,
         ge=1
+    )
+
+    preferred_schedule_blocks: list[PreferenceScheduleBlock] = Field(
+        default_factory=list
     )
 
     # -----------------------------------------------------
