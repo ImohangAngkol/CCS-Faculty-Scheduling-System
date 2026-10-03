@@ -21,15 +21,25 @@ class Faculty:
         # FACULTY WORKLOAD MODEL
         # ============================================================
         #
-        # The CSV field currently passed as ``max_teaching_load`` is
-        # treated as the faculty-specific REQUIRED teaching load after
-        # administrative / research / extension load adjustments.
+        # CONFIRMED PROJECT RULE:
         #
-        # Examples:
-        #   regular faculty                  -> required teaching = 18
-        #   faculty with release/admin load -> required teaching may be lower
+        #     total workload target = 24 units
         #
-        # The institution-wide overload ceiling is handled separately.
+        # Therefore the faculty-specific teaching target is:
+        #
+        #     teaching target
+        #       = 24 - (admin + research + extension)
+        #
+        # Example:
+        #   NAGA -> 24 - (11 + 6 + 0) = 7 teaching units
+        #
+        # ``max_teaching_load`` is still accepted because Functions.py
+        # passes the legacy CSV "Teaching Load" column into this argument.
+        # It is retained only as source/reference data; the 24-unit rule
+        # below is the authoritative workload calculation.
+        #
+        # Underload is a SOFT optimization target. The absolute teaching
+        # ceiling is enforced separately as a HARD constraint.
         # ============================================================
 
         self.current_teaching_load = 0
@@ -38,25 +48,31 @@ class Faculty:
         self.extension_load = int(extension_load or 0)
         self.research_load = int(research_load or 0)
 
-        # Regular faculty baseline.
-        self.normal_teaching_load = 18
+        # Confirmed institutional/project total workload target.
+        self.total_workload_target = 24
 
-        # Faculty-specific teaching requirement loaded from the
-        # Admin/Research/Extension CSV. If the source has no usable
-        # teaching-load value, fall back to the regular 18-unit baseline.
-        try:
-            source_teaching_load = int(max_teaching_load or 0)
-        except (TypeError, ValueError):
-            source_teaching_load = 0
-
-        self.required_teaching_load = (
-            source_teaching_load
-            if source_teaching_load > 0
-            else self.normal_teaching_load
+        self.non_teaching_load = (
+            self.admin_load
+            + self.extension_load
+            + self.research_load
         )
 
-        # ``min_teaching_load`` is kept for backward compatibility with
-        # the existing scheduler and validation functions.
+        # Keep the source CSV teaching-load value for diagnostics only.
+        try:
+            self.source_teaching_load = int(max_teaching_load or 0)
+        except (TypeError, ValueError):
+            self.source_teaching_load = 0
+
+        # Authoritative teaching target under the confirmed 24-unit model.
+        self.required_teaching_load = max(
+            0,
+            self.total_workload_target - self.non_teaching_load
+        )
+
+        # Backward-compatible aliases used by older scheduler code.
+        # A faculty member with no release/non-teaching load has a
+        # 24-unit teaching target under this model.
+        self.normal_teaching_load = self.total_workload_target
         self.min_teaching_load = self.required_teaching_load
 
         # Overload is allowed when necessary, but this is the absolute
@@ -73,14 +89,6 @@ class Faculty:
         # Above this level, the schedule should be flagged as a heavy
         # overload during analysis. This is not the hard ceiling.
         self.overload_warning_threshold = 30
-
-        # Useful combined non-teaching load value for later workload
-        # reporting / analysis.
-        self.non_teaching_load = (
-            self.admin_load
-            + self.extension_load
-            + self.research_load
-        )
 
         self.subjects_assigned = (
             subjects_assigned

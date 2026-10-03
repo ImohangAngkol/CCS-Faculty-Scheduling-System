@@ -25,8 +25,14 @@ class GASetting:
     # FACULTY WORKLOAD MODEL
     # ============================================================
 
-    # Regular faculty teaching-load baseline.
-    regular_teaching_load: int = 18
+    # Confirmed total faculty workload target.
+    # Teaching target is calculated per faculty as:
+    # 24 - (admin + research + extension).
+    total_workload_target: int = 24
+
+    # Legacy compatibility alias. A faculty member with zero
+    # non-teaching/release load has a 24-unit teaching target.
+    regular_teaching_load: int = 24
 
     # Absolute hard ceiling. No generated schedule may exceed this.
     absolute_max_teaching_load: int = 40
@@ -134,9 +140,18 @@ class GASetting:
                 )
             ),
 
+            total_workload_target=int(
+                data.get(
+                    "total_workload_target",
+                    defaults.total_workload_target
+                )
+            ),
+
+            # Legacy field retained for compatibility. The confirmed
+            # total_workload_target above is authoritative.
             regular_teaching_load=int(
                 data.get(
-                    "regular_teaching_load",
+                    "total_workload_target",
                     defaults.regular_teaching_load
                 )
             ),

@@ -13,6 +13,10 @@ from genetic_algorithm.models.Student import Student
 BASE_DIR = Path(__file__).resolve().parents[2]
 DATA_DIR = BASE_DIR / "data"
 
+# Confirmed project workload model:
+# total faculty workload target = 24 units.
+DEFAULT_TOTAL_WORKLOAD_TARGET = 24
+
 
 df_subjects = pd.read_csv(
     DATA_DIR / "first_sem_bsit_subjects.csv"
@@ -1245,10 +1249,17 @@ def get_ranked_faculty_candidates(subject, list_faculty):
 
     Priority order:
       1. Faculty still below their required teaching load.
-      2. Larger remaining required-load deficit.
-      3. Lower current teaching load.
-      4. Existing subject-preference signal.
-      5. Seniority only as a small final tie-breaker.
+      2. LOWER proportional fulfillment of their teaching target.
+         Example: 0/7 (0%) is prioritized before 12/24 (50%).
+      3. Larger remaining required-load deficit.
+      4. Lower current teaching load.
+      5. Existing subject-preference signal.
+      6. Seniority only as a small final tie-breaker.
+
+    The proportional-fulfillment rule is important when the semester
+    contains fewer offered teaching units than the sum of all faculty
+    targets. It prevents low-target faculty from being starved simply
+    because their raw unit deficit is numerically smaller.
 
     Overload is allowed when necessary, but nobody may exceed the
     absolute teaching-load ceiling.
@@ -1288,7 +1299,7 @@ def get_ranked_faculty_candidates(subject, list_faculty):
             getattr(
                 faculty,
                 "min_teaching_load",
-                18
+                DEFAULT_TOTAL_WORKLOAD_TARGET
             )
         )
 
@@ -1305,8 +1316,27 @@ def get_ranked_faculty_candidates(subject, list_faculty):
             current_load < required_load
         )
 
+        # Compare faculty fairly relative to THEIR OWN teaching target.
+        #
+        # Examples:
+        #   0 / 7  = 0.00 fulfilled
+        #   9 / 19 = 0.47 fulfilled
+        #   12/24  = 0.50 fulfilled
+        #
+        # Lower fulfillment should receive the next available qualified
+        # assignment first, so negate the ratio because the candidate
+        # list is sorted with reverse=True below.
+        if required_load > 0:
+            fulfillment_ratio = (
+                current_load / required_load
+            )
+        else:
+            # A zero-target faculty member is already fully satisfied.
+            fulfillment_ratio = 1.0
+
         return (
             below_required,
+            -fulfillment_ratio,
             deficit,
             -current_load,
             faculty_subject_preference_score(
@@ -1515,7 +1545,7 @@ def check_minimum_load_feasibility(
             getattr(
                 faculty,
                 "min_teaching_load",
-                18
+                DEFAULT_TOTAL_WORKLOAD_TARGET
             )
         )
         for faculty in list_faculty
@@ -1603,7 +1633,7 @@ def print_final_schedule(list_faculty):
             getattr(
                 faculty,
                 "min_teaching_load",
-                18
+                DEFAULT_TOTAL_WORKLOAD_TARGET
             )
         )
 
@@ -1693,12 +1723,12 @@ def create_schedule_with_minimum_load(
     max_restarts=MAX_RESTARTS
 ):
     """
-    Build a complete schedule satisfying faculty-specific required teaching
-    loads, the absolute teaching-load ceiling, room constraints, and section
-    constraints.
+    Build a complete conflict-free schedule while optimizing toward each
+    faculty member's required teaching target under the confirmed 24-unit
+    total-workload model.
 
-    Overload above the required load is permitted when needed, up to the
-    absolute ceiling.
+    Underload is a soft optimization target. Overload above the required
+    teaching target is permitted when needed, up to the absolute ceiling.
 
     Room rules:
       * Lecture -> ICT 3B, ICT 3A, ICT 3C

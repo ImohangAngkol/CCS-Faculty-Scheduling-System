@@ -1843,17 +1843,26 @@ def faculty_preference_fitness(
     # LOWER PENALTY = BETTER.
     #
     # Each faculty member is evaluated against their own
-    # ``required_teaching_load`` instead of one global
-    # 12-unit target.
+    # ``required_teaching_load`` calculated from the confirmed
+    # 24-unit total workload model:
+    #
+    #     24 - (admin + research + extension)
     #
     # Rules:
-    #   * below required load -> underload penalty
+    #   * below required load -> PROPORTIONAL underload penalty
+    #     based on percentage of the faculty member's own target
     #   * exactly required load -> no workload penalty
     #   * above required load -> overload penalty
     #   * above overload warning threshold -> heavier penalty
     #   * absolute maximum remains a HARD scheduling rule and
     #     is enforced by the scheduler/validator, not optimized
     #     as a soft preference here.
+    #
+    # Why proportional underload?
+    # The current semester has fewer offered subject units than the
+    # combined faculty teaching targets. A raw-deficit-only penalty can
+    # favor high-target faculty and leave low-target faculty at zero.
+    # Percentage shortfall gives each faculty member comparable fairness.
     # =====================================================
 
     workload_step_units = max(
@@ -1891,11 +1900,19 @@ def faculty_preference_fitness(
         )
     )
 
+    # Fallback only for older/incomplete Faculty objects.
+    # The confirmed project model is 24 TOTAL workload units; a faculty
+    # member with no admin/research/extension release therefore has a
+    # 24-unit teaching target.
     default_regular_load = int(
         getattr(
             settings,
-            "regular_teaching_load",
-            18
+            "total_workload_target",
+            getattr(
+                settings,
+                "regular_teaching_load",
+                24
+            )
         )
     )
 
@@ -1980,10 +1997,37 @@ def faculty_preference_fitness(
                 - actual_load
             )
 
-            underload_steps = math.ceil(
-                deficit_units
-                / workload_step_units
-            )
+            # ---------------------------------------------------
+            # PROPORTIONAL FAIRNESS
+            # ---------------------------------------------------
+            # Score underload in 10 percentage bands rather than
+            # only raw unit deficit.
+            #
+            # Example:
+            #   Faculty target 7, actual 0
+            #       deficit ratio = 100% -> 10 steps
+            #
+            #   Faculty target 24, actual 12
+            #       deficit ratio = 50%  -> 5 steps
+            #
+            # This gives the GA a real incentive to avoid leaving a
+            # low-target faculty member completely unassigned.
+            # ---------------------------------------------------
+            if required_load > 0:
+
+                unfulfilled_ratio = (
+                    deficit_units
+                    / required_load
+                )
+
+                underload_steps = math.ceil(
+                    unfulfilled_ratio
+                    * 10
+                )
+
+            else:
+
+                underload_steps = 0
 
             breakdown[
                 "teaching_load_balance"
