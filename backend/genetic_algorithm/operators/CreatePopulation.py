@@ -13,7 +13,8 @@ from genetic_algorithm.utils.Functions import  (
     list_subjects,
     lst_rooms,
     create_schedule_with_minimum_load,
-    check_all_schedule_conflicts
+    check_all_schedule_conflicts,
+    validate_faculty_subject_eligibility,
 )
 
 
@@ -76,9 +77,16 @@ def generate_population(
             # Validate schedule
             # -----------------------------------------------
 
-            valid = check_all_schedule_conflicts(
+            no_conflicts = check_all_schedule_conflicts(
                 list_subjects
             )
+
+            valid_eligibility = validate_faculty_subject_eligibility(
+                list_subjects,
+                raise_error=False
+            )
+
+            valid = no_conflicts and valid_eligibility
 
             if valid:
 
@@ -162,9 +170,9 @@ def create_new_population(
         key=lambda x: x[1]
     )
 
-    # Keep only the best 180
+    # Keep the population size bounded.
     top_population = population_with_fitness[
-        :100000
+        :population_size
     ]
 
     # Extract chromosomes

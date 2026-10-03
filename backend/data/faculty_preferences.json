@@ -2,44 +2,82 @@
     {
         "faculty_code": 0,
         "faculty_priority": 1,
+        "preferred_schedule_blocks": [
+            {
+                "id": "pref-1790926085186-982wrjockn",
+                "kind": "subject",
+                "day": "Monday",
+                "start_time": "12:30",
+                "end_time": "13:30",
+                "subject_code": "ITE153",
+                "subject_title": "",
+                "component": "Lecture"
+            }
+        ],
         "preferred_subjects": [
-            "CCC101",
-            "CCC102",
-            "ITE153"
+            "ITE153",
+            "ITD100",
+            "ISY108"
         ],
-        "preferred_days": [
-            "Monday",
-            "Wednesday"
-        ],
-        "preferred_start_time": "08:00",
-        "preferred_end_time": "12:00",
-        "gap_preference": "Compact",
+        "subject_importance": 3,
+        "preferred_days": [],
+        "day_importance": 0,
+        "preferred_start_time": null,
+        "preferred_end_time": null,
+        "time_importance": 0,
+        "gap_preference": "Scattered",
+        "gap_importance": 0,
+        "lecture_lab_preference": "Different Day",
+        "lecture_lab_importance": 0,
         "use_subject_preference": true,
-        "use_day_preference": true,
-        "use_time_preference": true,
-        "use_gap_preference": false
+        "use_day_preference": false,
+        "use_time_preference": false,
+        "use_gap_preference": true,
+        "use_lecture_lab_preference": true
     },
     {
         "faculty_code": 1,
         "faculty_priority": 1,
-        "preferred_subjects": [],
-        "subject_importance": 3,
-        "preferred_days": [
-            "Monday",
-            "Thursday"
+        "preferred_schedule_blocks": [
+            {
+                "id": "pref-1790990207353-rx2kjkcjcrm",
+                "kind": "subject",
+                "day": "Saturday",
+                "start_time": "07:30",
+                "end_time": "08:30",
+                "subject_code": "CCC100",
+                "subject_title": "Fundamentals of Computing",
+                "component": "Lecture"
+            },
+            {
+                "id": "pref-1790990218845-y9deimlzfqk",
+                "kind": "subject",
+                "day": "Tuesday",
+                "start_time": "13:30",
+                "end_time": "14:30",
+                "subject_code": "CCC100",
+                "subject_title": "Fundamentals of Computing",
+                "component": "Laboratory"
+            }
         ],
+        "preferred_subjects": [
+            "CCC100",
+            "CCC101"
+        ],
+        "subject_importance": 5,
+        "preferred_days": [],
         "day_importance": 3,
-        "preferred_start_time": "10:00",
-        "preferred_end_time": "18:00",
+        "preferred_start_time": null,
+        "preferred_end_time": null,
         "time_importance": 3,
         "gap_preference": "Compact",
         "gap_importance": 0,
         "lecture_lab_preference": "No Preference",
         "lecture_lab_importance": 0,
         "use_subject_preference": true,
-        "use_day_preference": true,
-        "use_time_preference": true,
-        "use_gap_preference": true,
+        "use_day_preference": false,
+        "use_time_preference": false,
+        "use_gap_preference": false,
         "use_lecture_lab_preference": false
     },
     {
@@ -150,6 +188,48 @@
     {
         "faculty_code": 3,
         "faculty_priority": 1,
+        "preferred_subjects": [],
+        "subject_importance": 3,
+        "preferred_days": [],
+        "day_importance": 3,
+        "preferred_start_time": null,
+        "preferred_end_time": null,
+        "time_importance": 3,
+        "gap_preference": "No Preference",
+        "gap_importance": 0,
+        "lecture_lab_preference": "No Preference",
+        "lecture_lab_importance": 0,
+        "use_subject_preference": true,
+        "use_day_preference": true,
+        "use_time_preference": true,
+        "use_gap_preference": false,
+        "use_lecture_lab_preference": false
+    },
+    {
+        "faculty_code": 10,
+        "faculty_priority": 1,
+        "preferred_schedule_blocks": [],
+        "preferred_subjects": [],
+        "subject_importance": 3,
+        "preferred_days": [],
+        "day_importance": 3,
+        "preferred_start_time": null,
+        "preferred_end_time": null,
+        "time_importance": 3,
+        "gap_preference": "No Preference",
+        "gap_importance": 0,
+        "lecture_lab_preference": "No Preference",
+        "lecture_lab_importance": 0,
+        "use_subject_preference": true,
+        "use_day_preference": true,
+        "use_time_preference": true,
+        "use_gap_preference": false,
+        "use_lecture_lab_preference": false
+    },
+    {
+        "faculty_code": 6,
+        "faculty_priority": 1,
+        "preferred_schedule_blocks": [],
         "preferred_subjects": [],
         "subject_importance": 3,
         "preferred_days": [],

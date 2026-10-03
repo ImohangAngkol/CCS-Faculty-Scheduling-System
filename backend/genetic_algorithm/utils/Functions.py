@@ -33,6 +33,18 @@ df_preferences = pd.read_csv(
 df_faculty_loads = pd.read_csv(
     DATA_DIR / "Faculty Admin, Research and Extension.csv"
 )
+
+df_faculty_qualifications = pd.read_csv(
+    DATA_DIR / "faculty_qualifications.csv"
+)
+
+df_faculty_subject_eligibility = pd.read_csv(
+    DATA_DIR / "faculty_subject_eligibility.csv"
+)
+
+df_subject_domains = pd.read_csv(
+    DATA_DIR / "subject_domains.csv"
+)
 def _parse_fixed_section_days(day_string):
     """Parse schedule day codes from the consolidated section CSV.
 
@@ -201,6 +213,58 @@ dct_fac_name = {
     code: str(name).strip().upper()
     for name, code in dct_fac_code.items()
 }
+
+
+def _split_semicolon_values(value):
+    if pd.isna(value):
+        return []
+    return [
+        item.strip()
+        for item in str(value).split(";")
+        if item.strip()
+    ]
+
+
+dct_fac_specializations = {}
+for _, row in df_faculty_qualifications.iterrows():
+    try:
+        faculty_code = int(row["faculty_code"])
+    except (TypeError, ValueError, KeyError):
+        continue
+
+    dct_fac_specializations[faculty_code] = _split_semicolon_values(
+        row.get("specializations", "")
+    )
+
+
+dct_fac_eligible_subjects = {}
+for _, row in df_faculty_subject_eligibility.iterrows():
+    try:
+        faculty_code = int(row["faculty_code"])
+    except (TypeError, ValueError, KeyError):
+        continue
+
+    status = str(row.get("eligibility_status", "")).strip().lower()
+    if status != "eligible":
+        continue
+
+    course_no = str(row.get("course_no", "")).strip().upper()
+    if course_no:
+        dct_fac_eligible_subjects.setdefault(faculty_code, set()).add(course_no)
+
+
+dct_subject_domains = {}
+for _, row in df_subject_domains.iterrows():
+    course_no = str(row.get("course_no", "")).strip().upper()
+    if not course_no:
+        continue
+
+    dct_subject_domains[course_no] = {
+        "primary_domain": str(row.get("primary_domain", "")).strip(),
+        "secondary_domains": _split_semicolon_values(
+            row.get("secondary_domains", "")
+        ),
+    }
 # for i,u in zip(tmp['Faculty'],tmp['Faculty']):
 #     dct_fac_code[u] = i
 def get_code(x):
@@ -362,7 +426,9 @@ for faculty_code in dct_fac_subj.keys():
         admin_load=faculty_loads['admin_load'],
         extension_load=faculty_loads['extension_load'],
         research_load=faculty_loads['research_load'],
-        max_teaching_load=faculty_loads['max_teaching_load']
+        max_teaching_load=faculty_loads['max_teaching_load'],
+        specializations=dct_fac_specializations.get(faculty_code, []),
+        eligible_subjects=dct_fac_eligible_subjects.get(faculty_code, set())
     )
 
     faculty.set_preferred_time_blocks(
@@ -399,26 +465,61 @@ if fixed_section_schedule_warnings:
 
 
 list_subjects = []
+
+def _create_subject_with_domain(
+    course_no,
+    title,
+    units,
+    lec_hours,
+    lab_hours,
+    section,
+    year_level
+):
+    domain = dct_subject_domains.get(
+        str(course_no).strip().upper(),
+        {
+            "primary_domain": "",
+            "secondary_domains": []
+        }
+    )
+
+    return Subject(
+        course_no,
+        title,
+        units,
+        lec_hours,
+        lab_hours,
+        section,
+        year_level,
+        primary_domain=domain["primary_domain"],
+        secondary_domains=domain["secondary_domains"],
+    )
+
+
 for section in lst_sections:
-    for i,o,u,p,l,n in zip(df_subjects['course no.'], df_subjects['course title'],df_subjects['units'], df_subjects['num of lec hours/week'],df_subjects['num of lab hours/week'], df_subjects['year_level']):
-        # print(section.code)
+    for i,o,u,p,l,n in zip(
+        df_subjects['course no.'],
+        df_subjects['course title'],
+        df_subjects['units'],
+        df_subjects['num of lec hours/week'],
+        df_subjects['num of lab hours/week'],
+        df_subjects['year_level']
+    ):
         if str(section.year_level) == str(n):
             if i in ['ITN101','ITN102','ITN103','ITN111']:
-                if str(section.code) == '4B':
-                    list_subjects.append(Subject(i,o,u,p,l,section,n))
-                elif str(section.code) == '3B':
-                    list_subjects.append(Subject(i,o,u,p,l,section,n))
-                else:
-                    pass
+                if str(section.code) in {'4B', '3B'}:
+                    list_subjects.append(
+                        _create_subject_with_domain(i,o,u,p,l,section,n)
+                    )
             elif i in ['ITD100','ITD103','ITD104','ITD105']:
-                if str(section.code) == '4A':
-                    list_subjects.append(Subject(i,o,u,p,l,section,n))
-                elif str(section.code) == '3A':
-                    list_subjects.append(Subject(i,o,u,p,l,section,n))
-                else:
-                    pass
+                if str(section.code) in {'4A', '3A'}:
+                    list_subjects.append(
+                        _create_subject_with_domain(i,o,u,p,l,section,n)
+                    )
             else:
-                list_subjects.append(Subject(i,o,u,p,l,section,n))
+                list_subjects.append(
+                    _create_subject_with_domain(i,o,u,p,l,section,n)
+                )
 
 
 tmp = []
@@ -542,65 +643,41 @@ defined_three_lec_hours = [
 
 
 defined_three_lab_hours = [
-('7:30 - 10:30','M'), 
-('10:30 - 13:30','M'), 
-('13:30 - 16:30','M'), 
-('16:30 - 19:30','M'), 
-('16:30 - 19:30','T'), 
-('16:30 - 19:30','W'), 
-('16:30 - 19:30','TH'), 
-('16:30 - 19:30','F'), 
-('16:30 - 19:30','S'), 
+    # Monday
+    ('7:30 - 10:30', 'M'),
+    ('10:30 - 13:30', 'M'),
+    ('13:30 - 16:30', 'M'),
+    ('16:30 - 19:30', 'M'),
 
-('7:30 - 10:30','T'), 
-('10:30 - 13:30','T'), 
-('13:30 - 16:30','T'), 
+    # Tuesday
+    ('7:30 - 10:30', 'T'),
+    ('10:30 - 13:30', 'T'),
+    ('13:30 - 16:30', 'T'),
+    ('16:30 - 19:30', 'T'),
 
-('7:30 - 10:30','W'), 
-('10:30 - 13:30','W'), 
-('13:30 - 16:30','W'),  
+    # Wednesday
+    ('7:30 - 10:30', 'W'),
+    ('10:30 - 13:30', 'W'),
+    ('13:30 - 16:30', 'W'),
+    ('16:30 - 19:30', 'W'),
 
-('7:30 - 10:30','TH'), 
-('10:30 - 13:30','TH'), 
-('13:30 - 16:30','TH'), 
+    # Thursday
+    ('7:30 - 10:30', 'TH'),
+    ('10:30 - 13:30', 'TH'),
+    ('13:30 - 16:30', 'TH'),
+    ('16:30 - 19:30', 'TH'),
 
-('7:30 - 10:30','F'), 
-('10:30 - 13:30','F'), 
-('13:30 - 16:30','F'), 
+    # Friday
+    ('7:30 - 10:30', 'F'),
+    ('10:30 - 13:30', 'F'),
+    ('13:30 - 16:30', 'F'),
+    ('16:30 - 19:30', 'F'),
 
-('7:30 - 10:30','S'), 
-('10:30 - 13:30','S'), 
-('13:30 - 16:30','S'), 
-
-
-('7:30 - 9:00','MTH'),
-('9:00 - 10:30','MTH'),
-('10:30 - 12:00','MTH'),
-('12:00 - 13:30','MTH'),
-('13:30 - 15:00','MTH'),
-('15:00 - 16:30','MTH'),
-('16:30 - 18:00','MTH'),
-('18:00 - 19:30','MTH'),
-
-('7:30 - 9:00','TF'),
-('9:00 - 10:30','TF'),
-('10:30 - 12:00','TF'),
-('12:00 - 13:30','TF'),
-('13:30 - 15:00','TF'),
-('15:00 - 16:30','TF'),
-('16:30 - 18:00','TF'),
-('18:00 - 19:30','TF'),
-
-('7:30 - 9:00','WS'),
-('9:00 - 10:30','WS'),
-('10:30 - 12:00','WS'),
-('12:00 - 13:30','WS'),
-('13:30 - 15:00','WS'),
-('15:00 - 16:30','WS'),
-('16:30 - 18:00','WS'),
-('18:00 - 19:30','WS')
-
-    
+    # Saturday
+    ('7:30 - 10:30', 'S'),
+    ('10:30 - 13:30', 'S'),
+    ('13:30 - 16:30', 'S'),
+    ('16:30 - 19:30', 'S'),
 ]
 
 import random
@@ -1243,6 +1320,28 @@ def faculty_subject_preference_score(faculty, subject):
     return int(subject_number in preferred)
 
 
+def faculty_is_explicitly_eligible_for_subject(faculty, subject):
+    """
+    HARD qualification rule.
+
+    Specialization and subject domain are descriptive metadata only.
+    They do NOT automatically grant teaching eligibility.
+
+    Explicit course-level eligibility comes from
+    faculty_subject_eligibility.csv.
+    """
+    subject_number = str(
+        getattr(subject, "number", "")
+    ).strip().upper()
+
+    eligible_subjects = {
+        str(item).strip().upper()
+        for item in getattr(faculty, "eligible_subjects", set())
+    }
+
+    return bool(subject_number) and subject_number in eligible_subjects
+
+
 def get_ranked_faculty_candidates(subject, list_faculty):
     """
     Rank faculty candidates using the current workload model.
@@ -1268,6 +1367,13 @@ def get_ranked_faculty_candidates(subject, list_faculty):
     candidates = []
 
     for faculty in list_faculty:
+
+        # HARD faculty-subject qualification filter.
+        if not faculty_is_explicitly_eligible_for_subject(
+            faculty,
+            subject
+        ):
+            continue
 
         projected_load = (
             faculty.current_teaching_load
@@ -1389,6 +1495,38 @@ def try_assign_complete_subject(subject, faculty, room_list=None):
         return False
 
     return True
+
+
+def validate_faculty_subject_eligibility(
+    list_subjects,
+    raise_error=True
+):
+    """Validate explicit faculty-subject eligibility for the chromosome."""
+    violations = []
+
+    for subject in list_subjects:
+        faculty = getattr(subject, "assigned_faculty", None)
+        if faculty is None:
+            continue
+
+        if not faculty_is_explicitly_eligible_for_subject(faculty, subject):
+            violations.append({
+                "faculty_code": getattr(faculty, "code", None),
+                "subject": getattr(subject, "number", None),
+                "section": getattr(
+                    getattr(subject, "section", None),
+                    "code",
+                    None
+                ),
+            })
+
+    if violations and raise_error:
+        raise RuntimeError(
+            "Faculty-subject qualification violation(s): "
+            + str(violations)
+        )
+
+    return not violations
 
 
 def validate_minimum_teaching_load(
@@ -1763,6 +1901,10 @@ def create_schedule_with_minimum_load(
 
         if (
             complete
+            and validate_faculty_subject_eligibility(
+                list_subjects,
+                raise_error=False
+            )
             and validate_minimum_teaching_load(list_faculty, raise_error=False)
             and validate_room_conflicts(room_list, raise_error=False)
             and validate_section_conflicts(list_subjects, raise_error=False)
@@ -2860,6 +3002,9 @@ def find_resource_conflicts(entries, resource):
                 same_class = (
                     schedule1["subject"]
                     == schedule2["subject"]
+                    and
+                    schedule1["section"]
+                    == schedule2["section"]
                     and
                     schedule1["type"]
                     == schedule2["type"]

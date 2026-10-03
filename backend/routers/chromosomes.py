@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 from fastapi import (
     APIRouter,
     Body,
@@ -28,6 +31,50 @@ router = APIRouter(
 
 
 # ============================================================
+# LATEST COMPLETED GA RESULT
+# ============================================================
+
+BACKEND_DIR = Path(__file__).resolve().parents[1]
+
+LATEST_RESULT_FILE = (
+    BACKEND_DIR
+    / "saved_chromosomes"
+    / "latest_ga_result.json"
+)
+
+
+def _load_latest_ga_result():
+    """
+    Load the most recently completed GA result.
+
+    This is different from the saved-best chromosome.
+
+    latest result = most recently generated schedule
+    saved best    = persistent best baseline across GA runs
+    """
+
+    if not LATEST_RESULT_FILE.exists():
+        return None
+
+    try:
+
+        with open(
+            LATEST_RESULT_FILE,
+            "r",
+            encoding="utf-8",
+        ) as file:
+
+            return json.load(file)
+
+    except (
+        json.JSONDecodeError,
+        OSError,
+    ):
+
+        return None
+
+
+# ============================================================
 # SAVED BEST STATUS
 # ============================================================
 
@@ -49,7 +96,6 @@ def download_saved_best():
 
     path = get_best_chromosome_path()
 
-
     if not path.exists():
 
         raise HTTPException(
@@ -58,7 +104,6 @@ def download_saved_best():
                 "No saved best chromosome exists yet."
             ),
         )
-
 
     return FileResponse(
         path=path,
@@ -82,7 +127,6 @@ def upload_baseline(
             payload
         )
 
-
         return {
             "status": "success",
 
@@ -105,6 +149,51 @@ def upload_baseline(
             },
         }
 
+    except Exception as error:
+
+        raise HTTPException(
+            status_code=400,
+            detail=str(error),
+        )
+
+
+# ============================================================
+# ANALYZE LATEST COMPLETED GA RESULT
+#
+# DOES NOT RUN THE GA
+#
+# This analyzes the SAME latest result that is written by
+# /api/ga/run or /api/ga/stream.
+# ============================================================
+
+@router.post("/latest/analyze")
+def analyze_latest_ga_result():
+
+    try:
+
+        payload = _load_latest_ga_result()
+
+        if payload is None:
+
+            raise HTTPException(
+                status_code=404,
+                detail=(
+                    "No latest completed GA result exists yet."
+                ),
+            )
+
+        result = analyze_chromosome_payload(
+            payload,
+            source="latest",
+        )
+
+        return {
+            "status": "success",
+            "data": result,
+        }
+
+    except HTTPException:
+        raise
 
     except Exception as error:
 
@@ -118,6 +207,9 @@ def upload_baseline(
 # ANALYZE SAVED BEST
 #
 # DOES NOT RUN THE GA
+#
+# This is intentionally separate from latest/analyze.
+# It analyzes the persistent best baseline chromosome.
 # ============================================================
 
 @router.post("/best/analyze")
@@ -126,7 +218,6 @@ def analyze_saved_best():
     try:
 
         payload = load_saved_best_payload()
-
 
         if payload is None:
 
@@ -137,22 +228,18 @@ def analyze_saved_best():
                 ),
             )
 
-
         result = analyze_chromosome_payload(
             payload,
             source="saved",
         )
-
 
         return {
             "status": "success",
             "data": result,
         }
 
-
     except HTTPException:
         raise
-
 
     except Exception as error:
 
@@ -175,7 +262,6 @@ def analyze_uploaded_chromosome():
 
         payload = load_uploaded_payload()
 
-
         if payload is None:
 
             raise HTTPException(
@@ -185,22 +271,18 @@ def analyze_uploaded_chromosome():
                 ),
             )
 
-
         result = analyze_chromosome_payload(
             payload,
             source="uploaded",
         )
-
 
         return {
             "status": "success",
             "data": result,
         }
 
-
     except HTTPException:
         raise
-
 
     except Exception as error:
 

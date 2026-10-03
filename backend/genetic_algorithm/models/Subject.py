@@ -7,7 +7,9 @@ class Subject:
                 lec_hours: int = 0,
                 lab_hours: int = 0,
                 section: str = None,
-                year_level:int = 0):
+                year_level:int = 0,
+                primary_domain: str = None,
+                secondary_domains: list = None):
 
         
         self.number = number
@@ -28,6 +30,19 @@ class Subject:
         self.section = section
         self.year_level = year_level
 
+        # Descriptive domain metadata only. Domain membership does not
+        # automatically grant faculty teaching eligibility.
+        self.primary_domain = (
+            str(primary_domain).strip()
+            if primary_domain is not None
+            else ""
+        )
+        self.secondary_domains = (
+            secondary_domains
+            if secondary_domains is not None
+            else []
+        )
+
 
     
     def __repr__(self):
@@ -39,6 +54,8 @@ class Subject:
             f"time_blocks={self.scheduled_time_blocks},"
             f"lec_hours={self.lec_hours},"
             f"lab_hours={self.lab_hours},"
+            f"primary_domain={self.primary_domain},"
+            f"secondary_domains={self.secondary_domains},"
             f"section={self.section.code},"
     
         )

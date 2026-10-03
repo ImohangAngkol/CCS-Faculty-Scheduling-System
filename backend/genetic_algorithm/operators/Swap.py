@@ -5,15 +5,32 @@ from genetic_algorithm.utils.Functions import (
     df_faculty_pref,
     get_subject_schedule_entries,
     find_resource_conflicts,
+    faculty_is_explicitly_eligible_for_subject,
 )
 
 from genetic_algorithm.operators.FitnessFunction import (
     faculty_preference_fitness,
 )
 
-from genetic_algorithm.operators.ElitisimSelection import (
-    elitism_selection,
-)
+def chromosome_has_eligibility_violation(chromosome):
+    """
+    HARD constraint:
+    every assigned faculty member must be explicitly eligible
+    for the subject according to faculty_subject_eligibility.csv.
+    """
+    for subject in chromosome:
+        faculty = getattr(subject, "assigned_faculty", None)
+
+        if faculty is None:
+            return True
+
+        if not faculty_is_explicitly_eligible_for_subject(
+            faculty,
+            subject
+        ):
+            return True
+
+    return False
 
 def chromosome_has_conflicts(
     chromosome
@@ -95,17 +112,112 @@ def chromosome_has_conflicts(
 
     return False
 
+
+def calculate_faculty_loads(chromosome):
+    """
+    Recalculate teaching loads directly from chromosome assignments.
+
+    This is safer for crossover validation than relying on a Faculty
+    object's cached current_teaching_load, because crossover changes
+    subject-to-faculty assignments inside a copied chromosome.
+    """
+
+    loads = {}
+
+    for subject in chromosome:
+
+        faculty = getattr(
+            subject,
+            "assigned_faculty",
+            None
+        )
+
+        if faculty is None:
+            continue
+
+        units = (
+            getattr(
+                subject,
+                "credit_units",
+                0
+            )
+            or 0
+        )
+
+        loads[faculty.code] = (
+            loads.get(
+                faculty.code,
+                0
+            )
+            + units
+        )
+
+    return loads
+
+
+def chromosome_has_load_violation(chromosome):
+    """
+    Check HARD faculty teaching-load violations after crossover.
+
+    Confirmed project workload rules:
+      * underload is SOFT and belongs in the fitness function;
+      * overload above the faculty target is allowed when necessary;
+      * only the absolute teaching-load ceiling is HARD.
+    """
+
+    loads = calculate_faculty_loads(
+        chromosome
+    )
+
+    faculty_objects = {}
+
+    for subject in chromosome:
+
+        faculty = getattr(
+            subject,
+            "assigned_faculty",
+            None
+        )
+
+        if faculty is not None:
+            faculty_objects[
+                faculty.code
+            ] = faculty
+
+    for code, faculty in faculty_objects.items():
+
+        load = loads.get(
+            code,
+            0
+        )
+
+        absolute_max = getattr(
+            faculty,
+            "absolute_max_teaching_load",
+            getattr(
+                faculty,
+                "max_teaching_load",
+                40
+            )
+        )
+
+        if load > absolute_max:
+            return True
+
+    return False
+
 def create_child_by_faculty_swap(
-    population,
+    parent1,
+    parent2,
     df_faculty_pref,
     max_attempts=100
 ):
     """
-    Create one new chromosome from two randomly selected parents.
+    Create one new chromosome from two tournament-selected parents.
 
     Procedure
     ---------
-    1. Randomly select two parents.
+    1. Receive two parents already chosen by Tournament Selection.
     2. Calculate their fitness values.
     3. Use the parent with LOWER fitness as the base chromosome.
     4. Randomly select a matching subject-section pair.
@@ -130,18 +242,19 @@ def create_child_by_faculty_swap(
     """
 
     # =====================================================
-    # Select TWO RANDOM parents
+    # Parents are supplied by Tournament Selection.
+    # This crossover must NOT choose parents internally.
     # =====================================================
 
-    if len(population) < 2:
+    if parent1 is None or parent2 is None:
         raise ValueError(
-            "Population must contain at least two chromosomes."
+            "Both parent1 and parent2 are required."
         )
 
-    parent1, parent2 = random.sample(
-        population,
-        2
-    )
+    if parent1 is parent2:
+        raise ValueError(
+            "Crossover requires two different parent chromosome objects."
+        )
 
     # =====================================================
     # Calculate parent fitness
@@ -287,7 +400,7 @@ def create_child_by_faculty_swap(
             "with different faculty assignments."
         )
 
-        return "None"
+        return None
 
     # =====================================================
     # Try crossover repeatedly
@@ -482,7 +595,27 @@ def create_child_by_faculty_swap(
 
         # =================================================
         # STEP 2:
-        # CHECK ALL CONFLICTS
+        # CHECK HARD FACULTY-SUBJECT ELIGIBILITY
+        # =================================================
+
+        if chromosome_has_eligibility_violation(
+            child
+        ):
+
+            print(
+                "Result: Faculty is not explicitly "
+                "eligible for this subject."
+            )
+
+            print(
+                "Trying another faculty swap..."
+            )
+
+            continue
+
+        # =================================================
+        # STEP 3:
+        # CHECK ALL RESOURCE CONFLICTS
         # =================================================
 
         if chromosome_has_conflicts(
@@ -500,7 +633,27 @@ def create_child_by_faculty_swap(
             continue
 
         # =================================================
-        # NO CONFLICTS
+        # STEP 4:
+        # CHECK HARD TEACHING-LOAD CEILING
+        # =================================================
+
+        if chromosome_has_load_violation(
+            child
+        ):
+
+            print(
+                "Result: Absolute teaching-load "
+                "ceiling exceeded."
+            )
+
+            print(
+                "Trying another faculty swap..."
+            )
+
+            continue
+
+        # =================================================
+        # NO HARD CONSTRAINT VIOLATIONS
         #
         # Calculate NEW FITNESS
         # =================================================
@@ -574,4 +727,4 @@ def create_child_by_faculty_swap(
         f"{max_attempts} attempts."
     )
 
-    return "None"
+    return None

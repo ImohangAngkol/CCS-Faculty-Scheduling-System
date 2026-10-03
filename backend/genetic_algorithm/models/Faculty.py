@@ -12,7 +12,9 @@ class Faculty:
         admin_load=0,
         extension_load=0,
         research_load=0,
-        max_teaching_load=0
+        max_teaching_load=0,
+        specializations=None,
+        eligible_subjects=None
     ):
         self.code = code
         self.seniority_level = seniority_level
@@ -101,6 +103,26 @@ class Faculty:
             if preferred_subjects is not None
             else []
         )
+
+        # Expertise profile only. This does NOT automatically grant
+        # eligibility to teach every subject in the same specialization.
+        self.specializations = (
+            specializations
+            if specializations is not None
+            else []
+        )
+
+        # Explicit course-level teaching eligibility used as the
+        # hard faculty-subject qualification source.
+        self.eligible_subjects = {
+            str(subject).strip().upper()
+            for subject in (
+                eligible_subjects
+                if eligible_subjects is not None
+                else []
+            )
+            if str(subject).strip()
+        }
 
         self.preferred_time = (
             preferred_time
@@ -466,6 +488,8 @@ class Faculty:
             f"seniority_level={self.seniority_level}, "
             f"subjects_assigned={self.subjects_assigned}, "
             f"preferred_subjects={self.preferred_subjects}, "
+            f"specializations={self.specializations}, "
+            f"eligible_subjects={sorted(self.eligible_subjects)}, "
             f"preferred_time={self.preferred_time}, "
             f"preferred_day={self.preferred_day})"
         )

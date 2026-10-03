@@ -4,6 +4,7 @@ import copy
 from genetic_algorithm.utils.Functions import (
     df_faculty_pref,
     find_resource_conflicts,
+    faculty_is_explicitly_eligible_for_subject,
 )
 
 from genetic_algorithm.operators.FitnessFunction import (
@@ -61,6 +62,27 @@ def update_subject_faculty_blocks(subject, new_faculty):
             block.instructor = new_faculty
 
 
+
+def chromosome_has_eligibility_violation(chromosome):
+    """
+    HARD constraint:
+    every assigned faculty member must be explicitly eligible
+    for the subject according to faculty_subject_eligibility.csv.
+    """
+    for subject in chromosome:
+        faculty = getattr(subject, "assigned_faculty", None)
+
+        if faculty is None:
+            return True
+
+        if not faculty_is_explicitly_eligible_for_subject(
+            faculty,
+            subject
+        ):
+            return True
+
+    return False
+
 def chromosome_has_conflicts(chromosome):
     """True when faculty, room, or section conflicts exist."""
     all_entries = []
@@ -86,22 +108,41 @@ def calculate_faculty_loads(chromosome):
 
 
 def chromosome_has_load_violation(chromosome):
-    """Check min/max teaching loads after the swap."""
+    """
+    Check HARD teaching-load violations after mutation.
+
+    Confirmed workload rule:
+    - Underload is a SOFT optimization target handled by FitnessFunction.py.
+    - Overload above the faculty-specific target is allowed when necessary.
+    - Only the absolute teaching-load ceiling is a HARD constraint.
+    """
     loads = calculate_faculty_loads(chromosome)
+
     faculty_objects = {}
+
     for subject in chromosome:
         faculty = getattr(subject, "assigned_faculty", None)
+
         if faculty is not None:
             faculty_objects[faculty.code] = faculty
 
     for code, faculty in faculty_objects.items():
+
         load = loads.get(code, 0)
-        minimum = getattr(faculty, "min_teaching_load", None)
-        maximum = getattr(faculty, "max_teaching_load", None)
-        if minimum is not None and load < minimum:
+
+        absolute_max = getattr(
+            faculty,
+            "absolute_max_teaching_load",
+            getattr(
+                faculty,
+                "max_teaching_load",
+                40
+            )
+        )
+
+        if load > absolute_max:
             return True
-        if maximum is not None and load > maximum:
-            return True
+
     return False
 
 
@@ -156,6 +197,11 @@ def mutate_by_swapping_faculty_subjects(population, df_faculty_pref,
             print(f"Original Fitness: {original_fitness}")
             print(f"{subject1.number}-{subject1.section.code}: {faculty1.code} -> {faculty2.code}")
             print(f"{subject2.number}-{subject2.section.code}: {faculty2.code} -> {faculty1.code}")
+
+        if chromosome_has_eligibility_violation(child):
+            if verbose:
+                print("Rejected: faculty is not explicitly eligible for subject. Restarting...\n")
+            continue
 
         if chromosome_has_conflicts(child):
             if verbose:
