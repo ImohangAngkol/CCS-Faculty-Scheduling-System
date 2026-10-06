@@ -1,0 +1,19 @@
+{
+  "external_instructors": {
+    "external:eddie-bouy-palad": "Atty. Eddie Bouy Palad"
+  },
+  "assignments": [
+    {
+      "course_no": "ITE184",
+      "section": "4A",
+      "instructor_id": "external:eddie-bouy-palad",
+      "room": "ICT3A"
+    },
+    {
+      "course_no": "ITE184",
+      "section": "4B",
+      "instructor_id": "external:eddie-bouy-palad",
+      "room": "ICT3A"
+    }
+  ]
+}

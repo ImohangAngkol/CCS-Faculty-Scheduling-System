@@ -8,6 +8,19 @@ from genetic_algorithm.models.TimeBlock import TimeBlock
 from genetic_algorithm.utils.Functions import (
     get_subject_schedule_entries,
     find_resource_conflicts,
+    get_faculty_day_blocks,
+    get_room_day_blocks,
+    get_section_day_blocks,
+    validate_faculty_subject_eligibility,
+    validate_minimum_teaching_load,
+    validate_fixed_section_conflicts,
+    validate_preassigned_assignments,
+)
+from genetic_algorithm.models.PreassignedAssignment import (
+    ExternalInstructor,
+    declared_instructor_matches,
+    is_preassigned,
+    normalize_room_name,
 )
 
 
@@ -665,6 +678,56 @@ def create_component_blocks(
 # JSON -> REAL CHROMOSOME
 # ============================================================
 
+def _validate_baseline_components(chromosome):
+    """Check normal GA meetings; external meetings use their existing validator."""
+    for subject in chromosome:
+        if is_preassigned(subject):
+            continue
+        key = subject_section_key(subject.number, get_section_code(subject))
+        for component, hours, room_type in (
+            ("lecture", subject.lec_hours, "Lecture"),
+            ("laboratory", subject.lab_hours, "Laboratory"),
+        ):
+            blocks = getattr(subject, component + "_time_blocks")
+            room = getattr(subject, component + "_room")
+            if not hours:
+                if blocks:
+                    raise ValueError(f"Baseline {key}: unexpected {room_type} component; required hours = 0.")
+                continue
+            if not blocks:
+                raise ValueError(f"Baseline {key}: missing required {room_type} component ({hours} hours).")
+            if room is None or room.type != room_type:
+                raise ValueError(
+                    f"Baseline {key}: {room_type} room compatibility violation; "
+                    f"requires a {room_type} room, got {getattr(room, 'type', None)}."
+                )
+
+            intervals = sorted((day, time_to_minutes(block.start_time), time_to_minutes(block.end_time))
+                               for day, block in blocks)
+            if len(set(intervals)) != len(intervals):
+                raise ValueError(f"Baseline {key}: duplicate {room_type} time blocks.")
+            weekly_minutes = sum(end - start for _, start, end in intervals)
+            if weekly_minutes != hours * 60:
+                raise ValueError(
+                    f"Baseline {key}: {room_type} weekly duration violation; "
+                    f"requires {hours * 60} minutes, got {weekly_minutes}."
+                )
+            if component == "laboratory" and hours == 3:
+                if (len({day for day, _, _ in intervals}) != 1
+                        or any(a[2] != b[1] for a, b in zip(intervals, intervals[1:]))):
+                    raise ValueError(f"Baseline {key}: Laboratory must be one continuous 3-hour meeting.")
+
+            # Check the current resource grids, without trusting cached occupancy.
+            for calendar in (get_faculty_day_blocks(subject.assigned_faculty),
+                             get_room_day_blocks(room), get_section_day_blocks(subject.section)):
+                allowed = {(day, time_to_minutes(block.start_time), time_to_minutes(block.end_time))
+                           for day, day_blocks in calendar.items() for block in day_blocks}
+                if any(interval not in allowed for interval in intervals):
+                    raise ValueError(
+                        f"Baseline {key}: {room_type} meeting falls outside the current resource time blocks."
+                    )
+
+
 def payload_to_chromosome(
     payload,
     list_subjects,
@@ -711,6 +774,16 @@ def payload_to_chromosome(
         for faculty
         in list_faculty
     }
+
+    # External identities come only from current declarations, never uploads.
+    for subject in chromosome:
+        if is_preassigned(subject):
+            declaration = subject.preassigned_assignment
+            if declaration.instructor_id not in faculty_objects:
+                faculty_objects[declaration.instructor_id] = ExternalInstructor(
+                    declaration.instructor_id, declaration.instructor_name,
+                )
+            subject.preassigned_instructor = faculty_objects[declaration.instructor_id]
 
 
     room_objects = {
@@ -938,6 +1011,12 @@ def payload_to_chromosome(
             )
 
 
+        if is_preassigned(subject):
+            if not declared_instructor_matches(subject, faculty):
+                raise ValueError(f"{key} must use its locked preassigned instructor.")
+        elif getattr(faculty, "is_external", False):
+            raise ValueError(f"{key} does not declare an external instructor.")
+
         subject.assigned_faculty = (
             faculty
         )
@@ -1016,6 +1095,12 @@ def payload_to_chromosome(
                     room_name
                 )
             )
+
+            if is_preassigned(subject):
+                if normalize_room_name(room_name) != normalize_room_name(subject.preassigned_assignment.room_name):
+                    raise ValueError(f"{key} must use its locked preassigned room.")
+                room = next((candidate for candidate in room_objects.values()
+                             if normalize_room_name(candidate.name) == normalize_room_name(room_name)), None)
 
 
             if room is None:
@@ -1156,6 +1241,39 @@ def payload_to_chromosome(
                 f"{resource} conflict detected."
             )
 
+
+    validate_preassigned_assignments(chromosome)
+
+    # Shared gate for saved and uploaded baselines, before either can enter GA.
+    validate_faculty_subject_eligibility(chromosome)
+    # Loads were rebuilt above from current Subject units, once per offering.
+    # External instructors are resources, outside normal workload balancing.
+    validate_minimum_teaching_load([
+        faculty for faculty in faculty_objects.values()
+        if not getattr(faculty, "is_external", False)
+    ])
+    validate_fixed_section_conflicts(chromosome)
+    _validate_baseline_components(chromosome)
+
+    # Rebuild external calendars so subsequent preassigned courses also see them.
+    for subject in chromosome:
+        if not is_preassigned(subject):
+            continue
+        calendar = get_faculty_day_blocks(subject.preassigned_instructor)
+        for day, scheduled in subject.scheduled_time_blocks:
+            matching = [block for block in calendar.get(day, [])
+                        if block.start_time == scheduled.start_time and block.end_time == scheduled.end_time]
+            if len(matching) != 1:
+                raise ValueError("Preassigned meeting falls outside the instructor calendar.")
+            block = matching[0]
+            block.is_available = False
+            block.subject = subject
+            block.faculty = subject.assigned_faculty
+            block.instructor = subject.assigned_faculty
+            block.section = subject.section
+            block.day_code = day
+            block.type = scheduled.type
+            block.room = scheduled.room
 
     return chromosome
 

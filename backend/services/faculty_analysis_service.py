@@ -704,7 +704,8 @@ def build_faculty_analysis(
         _
     ) = analyze_selected_chromosome(
 
-        chromosome,
+        [subject for subject in chromosome
+         if not getattr(getattr(subject, "assigned_faculty", None), "is_external", False)],
 
         df_faculty_pref,
 

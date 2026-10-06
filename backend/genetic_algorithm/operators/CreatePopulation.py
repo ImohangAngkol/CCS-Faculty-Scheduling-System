@@ -15,6 +15,7 @@ from genetic_algorithm.utils.Functions import  (
     create_schedule_with_minimum_load,
     check_all_schedule_conflicts,
     validate_faculty_subject_eligibility,
+    validate_preassigned_assignments,
 )
 
 
@@ -86,7 +87,10 @@ def generate_population(
                 raise_error=False
             )
 
-            valid = no_conflicts and valid_eligibility
+            valid = (
+                no_conflicts and valid_eligibility
+                and validate_preassigned_assignments(list_subjects, raise_error=False)
+            )
 
             if valid:
 

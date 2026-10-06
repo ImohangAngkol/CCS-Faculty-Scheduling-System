@@ -23,6 +23,10 @@ from genetic_algorithm.operators.Swap import (
     create_child_by_faculty_swap,
 )
 
+from genetic_algorithm.operators.TournamentSelection import (
+    select_parent_pair,
+)
+
 from genetic_algorithm.operators.mutation import (
     mutate_by_swapping_faculty_subjects,
 )
@@ -144,17 +148,29 @@ def test_elitism_returns_best_chromosomes():
 
 def test_crossover_child_if_created_is_better():
     chromosomes = generate_population(
-        population_size=6,
+        population_size=3,
         list_faculty=list_faculty,
         list_subjects=list_subjects,
         lst_rooms=lst_rooms,
         max_restarts=300,
     )
 
-    result = create_child_by_faculty_swap(
+    parent_fitnesses = [
+        faculty_preference_fitness(chromosome, df_faculty_pref)
+        for chromosome in chromosomes
+    ]
+    parent1, parent2 = select_parent_pair(
         population=chromosomes,
+        fitness_scores=parent_fitnesses,
+        tournament_size=3,
+    )
+    assert parent1 is not parent2
+
+    result = create_child_by_faculty_swap(
+        parent1=parent1,
+        parent2=parent2,
         df_faculty_pref=df_faculty_pref,
-        max_attempts=50,
+        max_attempts=1,
     )
 
     if result is not None and result != "None":
@@ -163,15 +179,10 @@ def test_crossover_child_if_created_is_better():
             df_faculty_pref,
         )
 
-        parent_fitnesses = [
-            faculty_preference_fitness(
-                chromosome,
-                df_faculty_pref,
-            )
-            for chromosome in chromosomes
-        ]
-
-        assert child_fitness <= max(parent_fitnesses)
+        assert child_fitness < min(
+            faculty_preference_fitness(parent1, df_faculty_pref),
+            faculty_preference_fitness(parent2, df_faculty_pref),
+        )
 
 
 def test_mutation_if_created_is_valid():

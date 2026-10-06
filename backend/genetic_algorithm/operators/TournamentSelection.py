@@ -70,10 +70,11 @@ def select_parent_pair(
     tournament_size=3,
 ):
     """
-    Select two parents independently using tournament selection.
+    Select two distinct parent objects using tournament selection.
 
-    The function attempts to return two different chromosome
-    objects when the population contains more than one chromosome.
+    The second tournament excludes all references to the first parent,
+    while retaining the fitness scores of the remaining chromosomes.
+    At least two distinct chromosome objects are required.
     """
 
     parent1 = tournament_selection(
@@ -82,23 +83,23 @@ def select_parent_pair(
         tournament_size=tournament_size,
     )
 
+    remaining_population = []
+    remaining_fitness_scores = []
+
+    for chromosome, fitness in zip(population, fitness_scores):
+        if chromosome is not parent1:
+            remaining_population.append(chromosome)
+            remaining_fitness_scores.append(fitness)
+
+    if not remaining_population:
+        raise ValueError(
+            "Parent selection requires at least two distinct chromosome objects."
+        )
+
     parent2 = tournament_selection(
-        population=population,
-        fitness_scores=fitness_scores,
+        population=remaining_population,
+        fitness_scores=remaining_fitness_scores,
         tournament_size=tournament_size,
     )
-
-    # Try to avoid selecting the exact same chromosome object twice.
-    if len(population) > 1:
-        attempts = 0
-
-        while parent2 is parent1 and attempts < 20:
-            parent2 = tournament_selection(
-                population=population,
-                fitness_scores=fitness_scores,
-                tournament_size=tournament_size,
-            )
-
-            attempts += 1
 
     return parent1, parent2

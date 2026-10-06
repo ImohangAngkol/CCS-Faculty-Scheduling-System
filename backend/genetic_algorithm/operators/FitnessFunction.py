@@ -1201,7 +1201,7 @@ def faculty_preference_fitness(
             None
         )
 
-        if faculty is None:
+        if faculty is None or getattr(faculty, "is_external", False):
             continue
 
         try:

@@ -5,8 +5,10 @@ from genetic_algorithm.utils.Functions import (
     df_faculty_pref,
     get_subject_schedule_entries,
     find_resource_conflicts,
-    faculty_is_explicitly_eligible_for_subject,
+    faculty_assignment_is_valid,
+    validate_preassigned_assignments,
 )
+from genetic_algorithm.models.PreassignedAssignment import is_preassigned
 
 from genetic_algorithm.operators.FitnessFunction import (
     faculty_preference_fitness,
@@ -15,22 +17,13 @@ from genetic_algorithm.operators.FitnessFunction import (
 def chromosome_has_eligibility_violation(chromosome):
     """
     HARD constraint:
-    every assigned faculty member must be explicitly eligible
-    for the subject according to faculty_subject_eligibility.csv.
+    GA faculty require explicit CSV eligibility. External assignments
+    must match their declared instructor, locked room, and meeting hours.
     """
-    for subject in chromosome:
-        faculty = getattr(subject, "assigned_faculty", None)
-
-        if faculty is None:
-            return True
-
-        if not faculty_is_explicitly_eligible_for_subject(
-            faculty,
-            subject
-        ):
-            return True
-
-    return False
+    return (
+        any(not faculty_assignment_is_valid(subject) for subject in chromosome)
+        or not validate_preassigned_assignments(chromosome, raise_error=False)
+    )
 
 def chromosome_has_conflicts(
     chromosome
@@ -132,7 +125,7 @@ def calculate_faculty_loads(chromosome):
             None
         )
 
-        if faculty is None:
+        if faculty is None or getattr(faculty, "is_external", False):
             continue
 
         units = (
@@ -179,7 +172,7 @@ def chromosome_has_load_violation(chromosome):
             None
         )
 
-        if faculty is not None:
+        if faculty is not None and not getattr(faculty, "is_external", False):
             faculty_objects[
                 faculty.code
             ] = faculty
@@ -340,6 +333,9 @@ def create_child_by_faculty_swap(
 
     for subject in better_parent:
 
+        if is_preassigned(subject):
+            continue
+
         section = getattr(
             subject,
             "section",
@@ -358,6 +354,9 @@ def create_child_by_faculty_swap(
             continue
 
         donor_subject = donor_subjects[key]
+
+        if is_preassigned(donor_subject):
+            continue
 
         # ---------------------------------------------
         # Only useful when faculty assignments differ
@@ -378,6 +377,8 @@ def create_child_by_faculty_swap(
         if (
             better_faculty is None
             or donor_faculty is None
+            or getattr(better_faculty, "is_external", False)
+            or getattr(donor_faculty, "is_external", False)
         ):
             continue
 

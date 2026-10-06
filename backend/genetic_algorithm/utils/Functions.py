@@ -8,6 +8,13 @@ from genetic_algorithm.models.TimeBlock import TimeBlock
 from genetic_algorithm.models.Faculty import Faculty
 from genetic_algorithm.models.Section import Section
 from genetic_algorithm.models.Student import Student
+from genetic_algorithm.models.PreassignedAssignment import (
+    apply_preassigned_assignments,
+    declared_instructor_matches,
+    is_preassigned,
+    normalize_room_name,
+    preassigned_schedule_is_valid,
+)
 
 
 BASE_DIR = Path(__file__).resolve().parents[2]
@@ -522,6 +529,10 @@ for section in lst_sections:
                 )
 
 
+preassigned_instructors = apply_preassigned_assignments(
+    list_subjects, DATA_DIR / "preassigned_assignments.json"
+)
+
 tmp = []
 for i in list_subjects:
     if i.lab_hours not in tmp:
@@ -1022,6 +1033,12 @@ def assign_schedule_to_faculty(
     """
     time_range, day_string = selected_schedule
 
+    if is_preassigned(subject):
+        if not declared_instructor_matches(subject, faculty):
+            return False
+    elif getattr(faculty, "is_external", False):
+        return False
+
     # A section cannot attend two overlapping subjects, regardless of faculty/room.
     if not section_schedule_is_available(
         subject=subject,
@@ -1040,7 +1057,7 @@ def assign_schedule_to_faculty(
         return False
 
     is_new_subject_assignment = subject.assigned_faculty is None
-    if is_new_subject_assignment:
+    if is_new_subject_assignment and not getattr(faculty, "is_external", False):
         projected_load = (
             faculty.current_teaching_load
             + subject.credit_units
@@ -1068,6 +1085,11 @@ def assign_schedule_to_faculty(
     available_rooms = get_available_rooms(
         schedule_type, day_string, time_range, room_list
     )
+    if is_preassigned(subject):
+        available_rooms = [
+            room for room in available_rooms
+            if normalize_room_name(room.name) == normalize_room_name(subject.preassigned_assignment.room_name)
+        ]
     if not available_rooms:
         return False
 
@@ -1241,7 +1263,13 @@ def reset_complete_schedule(list_faculty, list_subjects, room_list=None):
     if room_list is None:
         room_list = lst_rooms
 
-    for faculty in list_faculty:
+    instructors = list(list_faculty)
+    for subject in list_subjects:
+        instructor = getattr(subject, "preassigned_instructor", None)
+        if instructor is not None and instructor not in instructors:
+            instructors.append(instructor)
+
+    for faculty in instructors:
         faculty.current_teaching_load = 0
         faculty.subjects_assigned.clear()
 
@@ -1364,9 +1392,16 @@ def get_ranked_faculty_candidates(subject, list_faculty):
     absolute teaching-load ceiling.
     """
 
+    # Preassigned resources are scheduled directly, never ranked as GA faculty.
+    if is_preassigned(subject):
+        return []
+
     candidates = []
 
     for faculty in list_faculty:
+
+        if getattr(faculty, "is_external", False):
+            continue
 
         # HARD faculty-subject qualification filter.
         if not faculty_is_explicitly_eligible_for_subject(
@@ -1497,19 +1532,42 @@ def try_assign_complete_subject(subject, faculty, room_list=None):
     return True
 
 
+def faculty_assignment_is_valid(subject):
+    """Validate declared ownership or explicit GA course-level eligibility."""
+    faculty = getattr(subject, "assigned_faculty", None)
+    if is_preassigned(subject):
+        return declared_instructor_matches(subject, faculty)
+    return bool(
+        faculty is not None
+        and not getattr(faculty, "is_external", False)
+        and faculty_is_explicitly_eligible_for_subject(faculty, subject)
+    )
+
+
+def validate_preassigned_assignments(list_subjects, raise_error=True):
+    invalid = [
+        f"{subject.number}::{subject.section.code}"
+        for subject in list_subjects
+        if not preassigned_schedule_is_valid(subject)
+    ]
+    if invalid and raise_error:
+        raise ValueError("Invalid locked preassigned assignment(s): " + ", ".join(invalid))
+    return not invalid
+
+
 def validate_faculty_subject_eligibility(
     list_subjects,
     raise_error=True
 ):
-    """Validate explicit faculty-subject eligibility for the chromosome."""
+    """GA assignments require CSV eligibility; external ones require their declaration."""
     violations = []
 
     for subject in list_subjects:
         faculty = getattr(subject, "assigned_faculty", None)
-        if faculty is None:
+        if faculty is None and not is_preassigned(subject):
             continue
 
-        if not faculty_is_explicitly_eligible_for_subject(faculty, subject):
+        if not faculty_assignment_is_valid(subject):
             violations.append({
                 "faculty_code": getattr(faculty, "code", None),
                 "subject": getattr(subject, "number", None),
@@ -1674,6 +1732,7 @@ def check_minimum_load_feasibility(
     total_available_units = sum(
         subject.credit_units
         for subject in list_subjects
+        if not is_preassigned(subject)
     )
 
     total_required_units = sum(
@@ -1891,7 +1950,12 @@ def create_schedule_with_minimum_load(
         complete = True
         for subject in subjects:
             assigned = False
-            for faculty in get_ranked_faculty_candidates(subject, list_faculty):
+            candidates = (
+                [subject.preassigned_instructor]
+                if is_preassigned(subject)
+                else get_ranked_faculty_candidates(subject, list_faculty)
+            )
+            for faculty in candidates:
                 if try_assign_complete_subject(subject, faculty, room_list):
                     assigned = True
                     break
@@ -1906,6 +1970,7 @@ def create_schedule_with_minimum_load(
                 raise_error=False
             )
             and validate_minimum_teaching_load(list_faculty, raise_error=False)
+            and validate_preassigned_assignments(list_subjects, raise_error=False)
             and validate_room_conflicts(room_list, raise_error=False)
             and validate_section_conflicts(list_subjects, raise_error=False)
             and validate_fixed_section_conflicts(list_subjects, raise_error=False)
@@ -2841,6 +2906,13 @@ def get_subject_schedule_entries(subject):
             room_name=laboratory_room_name
         )
     )
+
+    if is_preassigned(subject):
+        for entry in entries:
+            entry["assignment_type"] = subject.assignment_type
+            entry["faculty_name"] = subject.preassigned_assignment.instructor_name
+            entry["instructor_locked"] = True
+            entry["room_locked"] = True
 
     return entries
 

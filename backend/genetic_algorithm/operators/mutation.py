@@ -4,8 +4,10 @@ import copy
 from genetic_algorithm.utils.Functions import (
     df_faculty_pref,
     find_resource_conflicts,
-    faculty_is_explicitly_eligible_for_subject,
+    faculty_assignment_is_valid,
+    validate_preassigned_assignments,
 )
+from genetic_algorithm.models.PreassignedAssignment import is_preassigned
 
 from genetic_algorithm.operators.FitnessFunction import (
     faculty_preference_fitness,
@@ -66,22 +68,13 @@ def update_subject_faculty_blocks(subject, new_faculty):
 def chromosome_has_eligibility_violation(chromosome):
     """
     HARD constraint:
-    every assigned faculty member must be explicitly eligible
-    for the subject according to faculty_subject_eligibility.csv.
+    GA faculty require explicit CSV eligibility. External assignments
+    must match their declared instructor, locked room, and meeting hours.
     """
-    for subject in chromosome:
-        faculty = getattr(subject, "assigned_faculty", None)
-
-        if faculty is None:
-            return True
-
-        if not faculty_is_explicitly_eligible_for_subject(
-            faculty,
-            subject
-        ):
-            return True
-
-    return False
+    return (
+        any(not faculty_assignment_is_valid(subject) for subject in chromosome)
+        or not validate_preassigned_assignments(chromosome, raise_error=False)
+    )
 
 def chromosome_has_conflicts(chromosome):
     """True when faculty, room, or section conflicts exist."""
@@ -100,7 +93,7 @@ def calculate_faculty_loads(chromosome):
     loads = {}
     for subject in chromosome:
         faculty = getattr(subject, "assigned_faculty", None)
-        if faculty is None:
+        if faculty is None or getattr(faculty, "is_external", False):
             continue
         units = getattr(subject, "credit_units", 0) or 0
         loads[faculty.code] = loads.get(faculty.code, 0) + units
@@ -123,7 +116,7 @@ def chromosome_has_load_violation(chromosome):
     for subject in chromosome:
         faculty = getattr(subject, "assigned_faculty", None)
 
-        if faculty is not None:
+        if faculty is not None and not getattr(faculty, "is_external", False):
             faculty_objects[faculty.code] = faculty
 
     for code, faculty in faculty_objects.items():
@@ -171,8 +164,10 @@ def mutate_by_swapping_faculty_subjects(population, df_faculty_pref,
 
         faculty_subjects = {}
         for subject in child:
+            if is_preassigned(subject):
+                continue
             faculty = getattr(subject, "assigned_faculty", None)
-            if faculty is not None:
+            if faculty is not None and not getattr(faculty, "is_external", False):
                 faculty_subjects.setdefault(faculty.code, []).append(subject)
 
         valid_codes = [code for code, subjects in faculty_subjects.items() if subjects]

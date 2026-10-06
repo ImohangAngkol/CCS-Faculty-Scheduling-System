@@ -25,6 +25,9 @@ class Subject:
         self.laboratory_room_time_blocks = []
         self.credit_units = credit_units
         self.assigned_faculty = None
+        # Declaration survives schedule resets; assigned_faculty is run state.
+        self.preassigned_assignment = None
+        self.preassigned_instructor = None
         self.lec_hours = lec_hours
         self.lab_hours = lab_hours
         self.section = section
@@ -45,6 +48,10 @@ class Subject:
 
 
     
+    @property
+    def assignment_type(self):
+        return "preassigned_external" if self.preassigned_assignment is not None else "ga_managed"
+
     def __repr__(self):
         return (
             f"Subject(number={self.number}, "

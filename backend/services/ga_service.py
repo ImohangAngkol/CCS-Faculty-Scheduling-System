@@ -25,6 +25,10 @@ from genetic_algorithm.operators.ElitisimSelection import (
     elitism_selection,
 )
 
+from genetic_algorithm.operators.TournamentSelection import (
+    select_parent_pair,
+)
+
 from genetic_algorithm.operators.Swap import (
     create_child_by_faculty_swap,
 )
@@ -610,12 +614,19 @@ def run_genetic_algorithm(
 
             attempts += 1
 
-            if not top_non_elites:
+            if len(population) < 2:
                 break
+
+            parent1, parent2 = select_parent_pair(
+                population=population,
+                fitness_scores=fitness_scores,
+                tournament_size=3,
+            )
 
             result = (
                 create_child_by_faculty_swap(
-                    population=top_non_elites,
+                    parent1=parent1,
+                    parent2=parent2,
                     df_faculty_pref=df_faculty_pref,
                     max_attempts=100,
                 )
