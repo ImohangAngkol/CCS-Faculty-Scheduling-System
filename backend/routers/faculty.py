@@ -1,8 +1,11 @@
 from fastapi import APIRouter, HTTPException
 
-from genetic_algorithm.utils.Functions import (
-    list_faculty,
-    dct_fac_name,
+from schemas.faculty import FacultyDetailResponse, FacultyListResponse, FacultySubjectsResponse
+from services.metadata_service import (
+    faculty_metadata,
+    list_faculty_metadata,
+    list_subject_metadata,
+    resolve_normal_faculty,
 )
 
 router = APIRouter(
@@ -11,62 +14,34 @@ router = APIRouter(
 )
 
 
-@router.get("/")
+@router.get("/", response_model=FacultyListResponse)
 def get_all_faculty():
+    return FacultyListResponse(
+        message="Faculty retrieved successfully.", data=list_faculty_metadata(),
+    )
 
-    faculty_data = []
 
-    for faculty in list_faculty:
+def _resolve_faculty(faculty_id):
+    try:
+        return resolve_normal_faculty(faculty_id)
+    except ValueError as error:
+        raise HTTPException(status_code=404, detail=str(error)) from error
 
-        faculty_code = int(
-            faculty.code
-        )
 
-        faculty_data.append(
-            {
-                "faculty_code": faculty_code,
+@router.get("/{faculty_id}", response_model=FacultyDetailResponse)
+def get_faculty(faculty_id: str):
+    return FacultyDetailResponse(
+        message="Faculty retrieved successfully.",
+        data=faculty_metadata(_resolve_faculty(faculty_id)),
+    )
 
-                "name": dct_fac_name.get(
-                    faculty_code,
-                    f"Faculty {faculty_code}"
-                ),
 
-                "seniority_level":
-                    faculty.seniority_level,
-
-                "admin_load":
-                    faculty.admin_load,
-
-                "research_load":
-                    faculty.research_load,
-
-                "extension_load":
-                    faculty.extension_load,
-
-                "current_teaching_load":
-                    faculty.current_teaching_load,
-            }
-        )
-
-    return {
-        "message":
-            "Faculty retrieved successfully.",
-
-        "data":
-            faculty_data,
-    }
-
-@router.get("/{faculty_id}")
-def get_faculty(faculty_id: int):
-    """
-    Return one faculty member.
-
-    Database integration will be added later.
-    """
-
-    # No database yet, so there is currently
-    # no faculty record to retrieve.
-    raise HTTPException(
-        status_code=404,
-        detail=f"Faculty with ID {faculty_id} was not found."
+@router.get("/{faculty_id}/eligible-subjects", response_model=FacultySubjectsResponse)
+def get_faculty_subjects(faculty_id: str, eligible_only: bool = True):
+    faculty = _resolve_faculty(faculty_id)
+    return FacultySubjectsResponse(
+        message="Faculty subject metadata retrieved successfully.",
+        faculty=faculty_metadata(faculty),
+        eligible_only=eligible_only,
+        data=list_subject_metadata(faculty, eligible_only=eligible_only),
     )

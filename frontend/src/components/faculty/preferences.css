@@ -1,0 +1,39 @@
+.preference-section { padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: .75rem; background: white; min-width: 0; }
+.preference-label { display: block; font-size: .875rem; font-weight: 500; color: #334155; }
+.preference-input { display: block; width: 100%; margin-top: .4rem; border: 1px solid #cbd5e1; border-radius: .5rem; background: white; padding: .5rem .65rem; color: #0f172a; font-size: .875rem; }
+.preference-button { padding: .45rem .75rem; border: 1px solid #cbd5e1; border-radius: .5rem; background: white; color: #334155; font-size: .8125rem; font-weight: 500; cursor: pointer; }
+.preference-button:hover:not(:disabled) { background: #f1f5f9; }
+.preference-button:disabled { opacity: .5; cursor: not-allowed; }
+.preference-primary { background: #1d4ed8; color: white; border-color: #1d4ed8; }
+.preference-primary:hover:not(:disabled) { background: #1e40af; }
+.preference-tag { display: inline-block; padding: .15rem .4rem; border-radius: .3rem; background: #f1f5f9; font-size: .6875rem; }
+.preference-category { padding: .4rem .6rem; border: 1px solid #e2e8f0; border-radius: .4rem; font-size: .75rem; cursor: pointer; }
+.preference-category[aria-pressed=true], .preference-button[aria-pressed=true] { background: #eff6ff; border-color: #93c5fd; color: #1d4ed8; }
+.preference-empty { padding: 1rem; background: #f8fafc; border-radius: .5rem; font-size: .875rem; color: #64748b; }
+.preference-subject-browser { max-height: 25rem; overflow-y: auto; }
+.preference-save-bar { position: sticky; bottom: 0; z-index: 20; padding: 1rem 1.25rem; border: 1px solid #cbd5e1; border-radius: .75rem; background: #fffffffa; box-shadow: 0 -3px 15px #0f172a0a; }
+.preference-dialog { margin: auto; width: min(28rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); overflow-y: auto; padding: 1.5rem; border: 1px solid #cbd5e1; border-radius: .75rem; }
+.preference-dialog::backdrop { background: #0f172a66; }
+.preference-editor :is(button, input, select, summary):focus-visible, .preference-dialog :is(button, input, select):focus-visible { outline: 3px solid #60a5fa; outline-offset: 2px; }
+.preference-calendar .fc { font-size: .75rem; --fc-border-color: #e2e8f0; --fc-today-bg-color: transparent; }
+.preference-calendar .fc-event { cursor: grab; }
+.preference-calendar .fc-event-title { font-weight: 600; }
+.preference-component-drag { padding: .65rem; border: 1px dashed #94a3b8; border-radius: .5rem; background: #f8fafc; }
+.preference-component-drag + .preference-component-drag { margin-top: .5rem; }
+.preference-component-drag[data-component-drag=true] { cursor: grab; touch-action: none; user-select: none; }
+.preference-component-drag[data-component-drag=true]:hover { border-color: #2563eb; background: #eff6ff; }
+.preference-component-drag[aria-disabled=true] { border-style: solid; opacity: .65; }
+.preference-add-fallback { font-size: .75rem; border-color: transparent; background: transparent; }
+.preference-editor fieldset:disabled .preference-component-drag { pointer-events: none; }
+@media (max-width: 640px) { .preference-section { padding: 1rem; } .preference-save-bar { padding: .75rem; } .preference-calendar .fc { font-size: .625rem; } }
+/* Keep the existing navigation usable on narrow screens, scoped to preference pages. */
+@media (max-width: 767px) {
+  .flex.min-h-screen:has(.preference-page) { display: block; }
+  .flex.min-h-screen:has(.preference-page) > aside { width: 100%; min-height: 0; }
+  .flex.min-h-screen:has(.preference-page) > aside > div { display: none; }
+  .flex.min-h-screen:has(.preference-page) > aside > nav { display: flex; flex-wrap: wrap; gap: .25rem; padding: .5rem; }
+  .flex.min-h-screen:has(.preference-page) > aside > nav a { padding: .4rem .6rem; font-size: .75rem; }
+  .flex.min-h-screen:has(.preference-page) > div > main { padding: 1rem; }
+  .flex.min-h-screen:has(.preference-page) > div > header { padding: 0 1rem; }
+  .flex.min-h-screen:has(.preference-page) > div > header h2 { font-size: 1rem; }
+}

@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "test:preferences": "node --test tests/preferenceModel.test.mjs",
+    "test:preferences:browser": "node --test tests/preferences.browser.test.mjs",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

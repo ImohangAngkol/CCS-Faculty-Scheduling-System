@@ -3,6 +3,13 @@ const API_URL =
 
 
 export interface FacultySummary {
+  faculty_id: string;
+  display_code: string;
+  instructor_type: "optimization_faculty" | "preassigned_external";
+  specializations: string[];
+  eligible_subject_codes: string[];
+  required_teaching_load: number;
+  absolute_max_teaching_load: number;
 
   faculty_code: number;
 

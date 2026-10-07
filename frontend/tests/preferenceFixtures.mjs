@@ -1,0 +1,11 @@
+export const faculty = [0, 1].map(code => ({ faculty_code: code, faculty_id: `stable-faculty-${code}`, display_code: `Faculty ${code}`, name: `Private name ${code}`, instructor_type: "optimization_faculty", specializations: ["Programming"], eligible_subject_codes: code === 0 ? ["CCC100", "ITD105", "ITN102"] : ["ITD105"] }));
+export const pattern = (count, duration, days = count === 1 ? [["M"], ["T"], ["W"], ["TH"], ["F"], ["S"]] : [["M", "TH"], ["T", "F"], ["W", "S"]]) => ({ meetings_per_week: count, duration_minutes: duration, continuous: true, day_combinations: days });
+export const component = (type, hours, patterns) => ({ type, weekly_hours: hours, fixed_duration: true, metadata_status: "supported", duration_minutes: patterns.length === 1 ? patterns[0].duration_minutes : null, continuous: true, meeting_patterns: patterns });
+export const subject = (code, title, parts, eligible = true) => ({ course_id: `course-${code}`, subject_code: code, subject_title: title, category: code.match(/^[A-Z]+/)[0], lecture_hours: parts.find(part => part.type === "Lecture")?.weekly_hours ?? 0, laboratory_hours: parts.find(part => part.type === "Laboratory")?.weekly_hours ?? 0, components: parts, eligibility: { explicitly_eligible: eligible }, offerings: [{ can_be_assigned: eligible, is_preassigned: false }], preassignment_status: "none", domains: ["Programming"] });
+export const subjects = [
+  subject("CCC100", "Foundations of Computing", [component("Lecture", 2, [pattern(1, 120)]), component("Laboratory", 3, [pattern(1, 180)])]),
+  subject("ITD105", "Data Analysis", [component("Lecture", 3, [pattern(1, 180), pattern(2, 90)])]),
+  subject("ITN102", "Networking Practicum", [component("Laboratory", 3, [pattern(1, 180)])]),
+  subject("ITE184", "Reserved Course", [component("Lecture", 3, [pattern(1, 180)])], false),
+];
+export const preference = { faculty_priority: 3, preferred_subjects: [], preferred_schedule_blocks: [], subject_importance: 3, preferred_days: [], day_importance: 0, preferred_start_time: null, preferred_end_time: null, time_importance: 0, gap_preference: "No Preference", gap_importance: 0, lecture_lab_preference: "No Preference", lecture_lab_importance: 0, use_subject_preference: true, use_day_preference: false, use_time_preference: false, use_gap_preference: false, use_lecture_lab_preference: false };

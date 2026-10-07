@@ -20,6 +20,7 @@ from genetic_algorithm.models.faculty_preference import (
 from genetic_algorithm.models.ga_setting import (
     GASetting
 )
+from services.preference_validation_service import validate_preference_write
 
 
 router = APIRouter(
@@ -257,6 +258,11 @@ def update_faculty_preference(
     faculty_code: int,
     payload: FacultyPreferenceUpdate
 ):
+
+    try:
+        validate_preference_write(faculty_code, payload)
+    except ValueError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
 
     preferences = _read_preferences()
 

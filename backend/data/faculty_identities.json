@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "faculty": [
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd00", "faculty_code": 0, "display_code": "Faculty 0", "name": "BALAGA"},
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd01", "faculty_code": 1, "display_code": "Faculty 1", "name": "BOKINGKITO"},
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd02", "faculty_code": 2, "display_code": "Faculty 2", "name": "CONOL"},
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd03", "faculty_code": 3, "display_code": "Faculty 3", "name": "IBRAHIM"},
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd04", "faculty_code": 4, "display_code": "Faculty 4", "name": "LLAMAS"},
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd05", "faculty_code": 5, "display_code": "Faculty 5", "name": "LUA"},
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd06", "faculty_code": 6, "display_code": "Faculty 6", "name": "NAGA"},
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd07", "faculty_code": 7, "display_code": "Faculty 7", "name": "RARUGAL"},
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd08", "faculty_code": 8, "display_code": "Faculty 8", "name": "SALA"},
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd09", "faculty_code": 9, "display_code": "Faculty 9", "name": "TABIGUE"},
+    {"faculty_id": "a1746741-97b6-4e55-990e-06a4cc98dd10", "faculty_code": 10, "display_code": "Faculty 10", "name": "TINAM-ISAN"}
+  ]
+}

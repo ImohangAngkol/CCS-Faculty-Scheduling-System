@@ -1,13 +1,11 @@
 import FacultyPreferenceEditor
   from "../../components/faculty/FacultyPreferenceEditor";
 
-export default function Preferences() {
-  // TEMPORARY TEST VALUE
-  // Later this will come from the logged-in faculty account.
-  const facultyCode = 0;
+export default function Preferences({ facultyCode = 0 }: { facultyCode?: number }) {
+  // The prototype defaults to Faculty 0; future authenticated callers supply identity.
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="preference-page space-y-4">
 
       <div>
         <h1 className="text-2xl font-bold text-gray-900">

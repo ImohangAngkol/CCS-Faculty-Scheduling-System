@@ -8,6 +8,11 @@ from genetic_algorithm.models.TimeBlock import TimeBlock
 from genetic_algorithm.models.Faculty import Faculty
 from genetic_algorithm.models.Section import Section
 from genetic_algorithm.models.Student import Student
+from services.identity_service import (
+    build_legacy_faculty_codes,
+    normalize_code,
+    resolve_faculty_identity,
+)
 from genetic_algorithm.models.PreassignedAssignment import (
     apply_preassigned_assignments,
     declared_instructor_matches,
@@ -209,11 +214,9 @@ dct_fac_loads = {
 df_preferences['Faculty_Prio'] = df_preferences['Faculty'].apply(lambda x: set_priority(x))
 
 
-tmp = df_preferences.groupby('Faculty').count().reset_index().reset_index()
-dct_fac_code = {}
-
-for i,u in zip(tmp['index'],tmp['Faculty']):
-    dct_fac_code[u] = i
+# Frozen compatibility codes keep existing CSV/JSON mappings valid regardless
+# of source ordering or changes to the set of faculty names.
+dct_fac_code = build_legacy_faculty_codes(df_preferences['Faculty'])
 
 # Reverse lookup: faculty code -> normalized faculty name
 dct_fac_name = {
@@ -275,7 +278,7 @@ for _, row in df_subject_domains.iterrows():
 # for i,u in zip(tmp['Faculty'],tmp['Faculty']):
 #     dct_fac_code[u] = i
 def get_code(x):
-    return int(dct_fac_code[x])
+    return int(dct_fac_code[normalize_code(x)])
 df_preferences['Faculty_Code'] = df_preferences['Faculty'].apply(lambda x: get_code(x))
 
 
@@ -437,6 +440,11 @@ for faculty_code in dct_fac_subj.keys():
         specializations=dct_fac_specializations.get(faculty_code, []),
         eligible_subjects=dct_fac_eligible_subjects.get(faculty_code, set())
     )
+
+    identity = resolve_faculty_identity(faculty_code)
+    faculty.stable_id = identity.faculty_id
+    faculty.display_code = identity.display_code
+    faculty.name = identity.name
 
     faculty.set_preferred_time_blocks(
         day_schedule_pairs=preferences
