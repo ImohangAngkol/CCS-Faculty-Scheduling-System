@@ -58,7 +58,11 @@ Unsupported metadata displays “Meeting pattern unavailable” and disables pla
 
 Component cards support FullCalendar external dragging as the primary desktop interaction. Drag a ready card onto a calendar cell to use that exact day/start time. The smaller Add button remains a keyboard fallback. A component with alternative patterns requires a selection before dragging is enabled; durations always come from the selected metadata pattern. General periods retain their separate Add action.
 
-The external drag uses `create=false`: only the controlled preference model creates persisted blocks after validating the drop. Completed components display **Placed · Complete**, disable their source cards and Add button, and reject duplicate insertion in the shared model. Removing a placement makes its source available again. This works after save/reload as well because completion and pattern selection are derived from saved blocks.
+The **02 Preferred Schedule** section contains one short instruction, a small legend, the compact **Draggable Subject Preferences** tray, and **Preferred Weekly Schedule**. Only ranked subjects contribute cards. Cards show code, title, component, metadata duration, and **Drag to preferred time**. The empty tray uses one short sentence without reserving a panel. The academic timetable has a **Time** column, full Monday–Saturday headings, and 29 labeled half-hour ranges, **07:30–08:00** through **21:30–22:00**, ending at a visible 22:00 boundary. FullCalendar uses `height="auto"` instead of a fixed 480px window: the timetable grows vertically, and the page scrolls to later times with no internal vertical calendar scrolling. On narrow screens, horizontal overflow stays within the timetable. Week/Day controls are removed. The general-period action remains separate. Meeting details and keyboard controls use a small, initially collapsed disclosure below the timetable. Multi-meeting pattern controls remain available.
+
+The generated timetable in `frontend/src/components/schedule/WeeklySchedule.tsx` was inspected before this visual change. Preference rendering reuses its centered Tailwind block layout, rounded bordered container, **38px** rows, teal **#115E59** header, and pale blue/teal background-border-text palette. Generated Schedule View files and behavior are unchanged. `eventContent` displays centered subject code, metadata title, component, and exact start/end time; it displays no room or section. Lecture and laboratory styling use distinct existing palette colors; general periods use the existing neutral slate style. Short periods use compact content without changing their height or duration.
+
+The external drag uses `create=false`: only the controlled preference model creates persisted blocks after validating the drop. Completed components display **✓ Placed**, remain visible, disable their source cards and Add button, and reject duplicate insertion in the shared model. Removing a placement makes its source available again. This works after save/reload as well because completion and pattern selection are derived from saved blocks.
 
 ## F. Resizing prevention
 
@@ -119,13 +123,14 @@ Legacy day/time ranges without general blocks are represented as equivalent edit
 Results:
 
 - **19 frontend model tests passed.**
-- **16 browser test results passed:** 15 interaction checks plus their parent test. API responses are isolated fixtures; no production preferences are written.
+- **22 browser test results passed:** 21 interaction checks plus their parent test. API responses are isolated fixtures; no production preferences are written.
 - **24 new backend validation tests passed.** All use temporary persistence files.
 - Production TypeScript/Vite build passed.
 - ESLint passed for all changed TypeScript/TSX files.
-- Mobile and 1024px laptop screenshots were visually inspected. Screenshots are generated under the ignored `frontend/.cache` directory.
+- Full-project lint was also run after the tray correction: it reports four existing errors and eight warnings in unchanged `WeeklySchedule.tsx`, `GAContext.tsx`, `FacultyManagement.tsx`, `RoomAssignments.tsx`, and `ScheduleView.tsx`. The edited calendar and browser-test files pass lint. Those unrelated files were not modified.
+- Full-timetable, mobile and 1024px laptop screenshots were visually inspected. Screenshots are generated under the ignored `frontend/.cache` directory. `preferences-reference-timetable.png` shows the complete reference scenario: Tuesday 10:30–12:30 lecture and Thursday 13:30–16:30 laboratory.
 
-The focused drag/drop follow-up changes only `PreferenceCalendar.tsx`, `preferenceModel.ts`, `preferences.css`, the two preference test files, and this report. Browser coverage now includes real source-card drops at Monday 10:30 (lecture 10:30–12:30) and Tuesday 13:00 (lab 13:00–16:00), fixed-duration event movement, absent resize handles/end editors, duplicate drag rejection, removal/re-enabling/replacement, paired-pattern cards, and saved-source completion after reload. Backend files and GA code were not changed for this follow-up; the complete 153-test backend selection was rerun successfully.
+The Schedule View visual correction changes only `PreferenceCalendar.tsx`, `preferences.css`, `preferences.browser.test.mjs`, and this report. Model tests, browser tests, the production build, and edited-file lint pass. Browser checks prove the compact empty tray, selected metadata components, full-height grid, page scrolling, and absence of internal scrolling. The exact acceptance scenario passes using the CCC121 metadata fixture: lecture at Tuesday 10:30–12:30 spans four rows; laboratory at Thursday 13:30–16:30 spans six rows; moving the lecture to Friday 08:00 produces 08:00–10:00. Physical bottom-edge drag attempts preserve both event heights/durations, there are no resize handles or editable end times, and deleting the laboratory reactivates its source card. A held drag with mouse-wheel page scrolling places an evening lecture at Tuesday 19:30–21:30; natural edge scrolling also reaches targets below the viewport. Coverage retains duplicate prevention, supported paired patterns, ranking, filters, save/discard, unsaved-change protection, and save/reload. A separate general-period test verifies its neutral styling and one-row height for a 30-minute period. Backend, GA, eligibility, preference scoring, preference persistence, and fixed-duration validation are unchanged by this correction. The complete 153-test backend selection passed during an earlier follow-up; backend tests were not rerun for this UI-only correction.
 
 Commands from `frontend`:
 
@@ -133,7 +138,7 @@ Commands from `frontend`:
 npm.cmd run test:preferences
 npm.cmd run test:preferences:browser
 npm.cmd run build
-node_modules\.bin\eslint.cmd src/components/faculty/FacultyPreferenceEditor.tsx src/components/faculty/PreferenceCalendar.tsx src/components/faculty/preferenceModel.ts src/pages/admin/PreferencesReview.tsx src/pages/faculty/Preferences.tsx src/api/faculty.ts src/api/subjects.ts
+node_modules\.bin\eslint.cmd src/components/faculty/FacultyPreferenceEditor.tsx src/components/faculty/PreferenceCalendar.tsx tests/preferences.browser.test.mjs
 ```
 
 The model tests use Node's built-in TypeScript support (verified with Node 24). Browser tests use a locally installed headless Chromium browser, defaulting to Windows Edge. Set `PREFERENCE_TEST_BROWSER` to another executable if needed. They use local ports 5187 and 9226, temporary browser profiles, and no additional npm dependencies. The in-app Browser tool could not initialize because of a missing `sandboxPolicy` field; local headless verification was used instead.

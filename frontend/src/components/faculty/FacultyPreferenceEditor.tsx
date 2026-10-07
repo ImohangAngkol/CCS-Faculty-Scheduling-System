@@ -21,10 +21,10 @@ function Importance({ label, value, onChange }: { label: string; value: number; 
     {IMPORTANCE_OPTIONS.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}
   </select></label>;
 }
-function Section({ number, title, description, children }: { number: number; title: string; description: string; children: ReactNode }) {
+function Section({ number, title, description, children }: { number: number; title: string; description?: string; children: ReactNode }) {
   return <section className="preference-section" aria-labelledby={`preference-section-${number}`}>
     <h2 id={`preference-section-${number}`} className="text-lg font-semibold text-slate-900"><span className="mr-2 text-sm text-slate-400">{number.toString().padStart(2, "0")}</span>{title}</h2>
-    <p className="mb-4 mt-1 text-sm text-slate-500">{description}</p>{children}
+    {description && <p className="mb-4 mt-1 text-sm text-slate-500">{description}</p>}{children}
   </section>;
 }
 export default function FacultyPreferenceEditor({ facultyCode, facultyId, adminMode = false, onEditStateChange }: Props) {
@@ -140,7 +140,7 @@ export default function FacultyPreferenceEditor({ facultyCode, facultyId, adminM
           </div>
         </div>
       </Section>
-      <Section number={2} title="Preferred Schedule" description="Add a preferred meeting for a selected subject, or a general period when you prefer to teach.">
+      <Section number={2} title="Preferred Schedule">
         <PreferenceCalendar subjects={selected} blocks={draft.preferred_schedule_blocks} onChange={blocks => change(withBlocks(draft, blocks))} />
         {draft.preferred_schedule_blocks.length > 0 && <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div><label className="mb-2 flex items-center gap-2 text-sm"><input type="checkbox" checked={draft.use_day_preference} onChange={event => change({ use_day_preference: event.target.checked })} />Consider preferred days</label>{importanceVisible(draft.use_day_preference) && <Importance label="Day preference importance" value={draft.day_importance} onChange={value => change({ day_importance: value })} />}</div>
