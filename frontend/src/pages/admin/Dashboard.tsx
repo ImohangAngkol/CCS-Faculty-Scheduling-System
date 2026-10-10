@@ -1,3 +1,4 @@
+import LiveGAMonitor from "../../components/ga/LiveGAMonitor";
 import {
   useGA,
 } from "../../context/GAContext";
@@ -7,13 +8,14 @@ export default function Dashboard() {
 
   const {
     gaData,
+    executionStatus,
+    progressHistory,
     loading,
     error,
     elapsedSeconds,
 
     populationSize,
     generations,
-    freshChromosomes,
 
     runGA,
   } = useGA();
@@ -95,111 +97,7 @@ export default function Dashboard() {
 
       {/* RUNNING */}
 
-      {loading && (
-        <div
-          className="
-            rounded-xl
-            border
-            border-teal-200
-            bg-white
-            p-6
-            shadow-sm
-          "
-        >
-
-          <div
-            className="
-              flex
-              items-center
-              gap-5
-            "
-          >
-
-            <div
-              className="
-                h-12
-                w-12
-                shrink-0
-                animate-spin
-                rounded-full
-                border-4
-                border-teal-100
-                border-t-[#0F766E]
-              "
-            />
-
-
-            <div>
-              <h2
-                className="
-                  text-lg
-                  font-semibold
-                  text-[#115E59]
-                "
-              >
-                Genetic Algorithm is running
-              </h2>
-
-              <p
-                className="
-                  mt-1
-                  text-sm
-                  text-slate-500
-                "
-              >
-                Searching for a better faculty schedule.
-              </p>
-
-
-              <div
-                className="
-                  mt-3
-                  flex
-                  flex-wrap
-                  gap-x-5
-                  gap-y-2
-                  text-sm
-                  text-slate-500
-                "
-              >
-
-                <span>
-                  Population:{" "}
-                  <strong>
-                    {populationSize}
-                  </strong>
-                </span>
-
-                <span>
-                  Generations:{" "}
-                  <strong>
-                    {generations}
-                  </strong>
-                </span>
-
-                <span>
-                  Fresh Chromosomes:{" "}
-                  <strong>
-                    {freshChromosomes}
-                  </strong>
-                </span>
-
-                <span>
-                  Elapsed:{" "}
-                  <strong>
-                    {elapsedSeconds}s
-                  </strong>
-                </span>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-      )}
-
+      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />}
 
       {/* ERROR */}
 
@@ -219,7 +117,7 @@ export default function Dashboard() {
               text-red-700
             "
           >
-            Genetic Algorithm failed
+            {executionStatus === "FAILED" ? "Genetic Algorithm failed" : "Monitoring unavailable"}
           </p>
 
           <p

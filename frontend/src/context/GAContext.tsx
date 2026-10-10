@@ -1,3 +1,5 @@
+import { GAStreamError } from "../services/gaMonitoring";
+import type { GAExecutionStatus, GenerationMetrics, GAMonitoringEvent } from "../services/gaMonitoring";
 import {
   createContext,
   useContext,
@@ -19,6 +21,8 @@ import type {
 
 
 type GAContextType = {
+  executionStatus: GAExecutionStatus;
+  progressHistory: GenerationMetrics[];
 
   gaData:
     GARunData | null;
@@ -145,6 +149,18 @@ export function GAProvider({
   ] =
     useState(2);
 
+
+  const [executionStatus, setExecutionStatus] = useState<GAExecutionStatus>("IDLE");
+  const [progressHistory, setProgressHistory] = useState<GenerationMetrics[]>([]);
+
+  function receiveEvent(event: GAMonitoringEvent) {
+    if (event.type === "run_created" || event.type === "run_started") setExecutionStatus("RUNNING");
+    if (event.type === "initial_population_ready" || event.type === "generation_completed") {
+      const metric = event.data;
+      setProgressHistory(current => current.some(item => item.generation === metric.generation) ? current : [...current, metric]);
+      setElapsedSeconds(Math.floor(metric.elapsed_ms / 1000));
+    }
+  }
 
   const runningRef =
     useRef(false);
@@ -310,6 +326,8 @@ export function GAProvider({
     try {
 
       setLoading(true);
+      setExecutionStatus("CONNECTING");
+      setProgressHistory([]);
 
       setError(null);
 
@@ -331,7 +349,8 @@ export function GAProvider({
 
           addLog,
 
-          baselineMode
+          baselineMode,
+          receiveEvent
 
         );
 
@@ -340,6 +359,7 @@ export function GAProvider({
        * Normal generated result.
        */
 
+      setExecutionStatus("COMPLETED");
       setGaData({
 
         ...result,
@@ -354,6 +374,7 @@ export function GAProvider({
 
 
     } catch (err) {
+      setExecutionStatus(err instanceof GAStreamError ? err.status : "DISCONNECTED");
 
       if (
         err instanceof Error
@@ -408,6 +429,9 @@ export function GAProvider({
   function loadChromosomeData(
     data: GARunData
   ) {
+    if (runningRef.current) return;
+    setProgressHistory([]);
+    setExecutionStatus("IDLE");
 
     setGaData(
       data
@@ -441,6 +465,9 @@ export function GAProvider({
   // =========================================================
 
   function clearGAData() {
+    if (runningRef.current) return;
+    setProgressHistory([]);
+    setExecutionStatus("IDLE");
 
     setGaData(
       null
@@ -469,6 +496,8 @@ export function GAProvider({
     <GAContext.Provider
       value={{
         gaData,
+        executionStatus,
+        progressHistory,
         loading,
         error,
         elapsedSeconds,

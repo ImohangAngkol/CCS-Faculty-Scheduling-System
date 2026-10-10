@@ -1,4 +1,7 @@
 import copy
+from genetic_algorithm.utils.FitnessObservation import collect_run_scores
+from services.ga_progress_service import GenerationMonitor
+from services.ga_publication_service import validate_publication
 
 from services.faculty_analysis_service import (
     build_faculty_analysis,
@@ -223,6 +226,15 @@ def get_dashboard_preferences_dataframe():
         rows
     )
 
+def validate_saved_result(payload):
+    """Validate a stored result for publication without re-scoring or modifying it."""
+    templates = copy.deepcopy((list_subjects, list_faculty, lst_rooms))
+    try:
+        payload_to_chromosome(payload, *templates)
+    except (ValueError, RuntimeError) as error:
+        raise ValueError(f"Stored schedule publication rejected: {error}") from error
+
+
 def generate_schedule(
     population_size: int = 10,
     max_restarts: int = 2000,
@@ -234,6 +246,7 @@ def generate_schedule(
     LOWER FITNESS = BETTER.
     """
 
+    publication_templates = copy.deepcopy((list_subjects, list_faculty, lst_rooms))
     chromosomes = generate_population(
         population_size=population_size,
         list_faculty=list_faculty,
@@ -253,6 +266,7 @@ def generate_schedule(
     )
 
     best_chromosome = chromosomes[0]
+    validate_publication(best_chromosome, *publication_templates)
 
     best_fitness = faculty_preference_fitness(
         best_chromosome,
@@ -279,6 +293,7 @@ def generate_schedule(
         "schedule": schedule,
     }
 
+@collect_run_scores
 def run_genetic_algorithm(
     population_size=20,
     generations=5,
@@ -286,6 +301,7 @@ def run_genetic_algorithm(
     baseline_mode="fresh",
     mutation_attempts=100,
     max_restarts=300,
+    progress_callback=None,
 ):
     """
     Run the full Genetic Algorithm.
@@ -312,6 +328,12 @@ def run_genetic_algorithm(
     # OPTIONAL BASELINE CHROMOSOME
     # ========================================================
 
+    publication_templates = copy.deepcopy((list_subjects, list_faculty, lst_rooms))
+    monitor = GenerationMonitor(progress_callback, population_size, generations, {
+        "population_size": population_size, "generations": generations,
+        "fresh_chromosomes": fresh_chromosomes, "baseline_mode": baseline_mode,
+        "mutation_attempts": mutation_attempts, "max_restarts": max_restarts,
+    })
     baseline_mode = (
         str(
             baseline_mode
@@ -444,6 +466,7 @@ def run_genetic_algorithm(
     # INITIAL POPULATION
     # ========================================================
 
+    monitor.register_baseline(baseline_payload)
     number_to_generate = (
         population_size
         -
@@ -467,6 +490,8 @@ def run_genetic_algorithm(
 
 
     # Seed baseline as chromosome #1.
+    monitor.accepted += len(population)
+    monitor.baseline_count = int(baseline_chromosome is not None)
 
     if (
         baseline_chromosome
@@ -524,6 +549,10 @@ def run_genetic_algorithm(
             "best_fitness": best_ever_fitness,
         }
     ]
+
+    for candidate in population:
+        validate_publication(candidate, *publication_templates)
+    monitor.report(0, population, best_ever_fitness)
 
     # =====================================================
     # 3. GENERATION LOOP
@@ -639,6 +668,7 @@ def run_genetic_algorithm(
                 new_population.append(
                     result
                 )
+                monitor.accepted += 1
 
         # -----------------------------------------------
         # Keep selected parents
@@ -672,6 +702,7 @@ def run_genetic_algorithm(
                 new_population.append(
                     result
                 )
+                monitor.accepted += 1
 
         # -----------------------------------------------
         # Add elites
@@ -711,6 +742,7 @@ def run_genetic_algorithm(
         new_population.extend(
             fresh_population
         )
+        monitor.accepted += len(fresh_population)
 
         # -----------------------------------------------
         # Remove invalid objects
@@ -793,11 +825,16 @@ def run_genetic_algorithm(
                 :population_size
             ]
         )
+        for candidate in population:
+            validate_publication(candidate, *publication_templates)
+        monitor.report(generation, population, best_ever_fitness)
 
     # =====================================================
     # 4. CONVERT BEST-EVER TO JSON
     # =====================================================
 
+    monitor.check_inputs()
+    validate_publication(best_ever, *publication_templates)
     schedule = []
 
     for subject in best_ever:
@@ -822,6 +859,8 @@ def run_genetic_algorithm(
         # ========================================================
     # SAVE BEST CHROMOSOME TO DISK
     # ========================================================
+
+    monitor.check_inputs()
 
     (
         saved_best_updated,
@@ -856,6 +895,8 @@ def run_genetic_algorithm(
     # =====================================================
     # 6. RETURN RESULT
     # =====================================================
+
+    monitor.check_inputs()
 
     return {
         "best_fitness": best_fitness,

@@ -9,7 +9,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:ga": "node --test tests/gaMonitoring.test.mjs",
+    "test:ga:browser": "node --test tests/gaMonitoring.browser.test.mjs"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.21",

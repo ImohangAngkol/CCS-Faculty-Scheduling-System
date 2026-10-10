@@ -3,6 +3,7 @@ import math
 from pathlib import Path
 
 import pandas as pd
+from genetic_algorithm.utils.FitnessObservation import record_fitness
 
 from genetic_algorithm.models.Faculty import (
     Faculty
@@ -961,6 +962,7 @@ def _score_exact_subject_schedule_blocks(
 # FITNESS FUNCTION
 # =========================================================
 
+@record_fitness
 def faculty_preference_fitness(
     chromosome,
     df_faculty_pref=None,

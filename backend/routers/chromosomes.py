@@ -8,8 +8,9 @@ from fastapi import (
 )
 
 from fastapi.responses import (
-    FileResponse,
+    Response,
 )
+from services.ga_service import validate_saved_result
 
 from services.chromosome_service import (
     get_best_chromosome_path,
@@ -105,10 +106,16 @@ def download_saved_best():
             ),
         )
 
-    return FileResponse(
-        path=path,
-        filename="best_chromosome.json",
+    try:
+        content = path.read_bytes()
+        validate_saved_result(json.loads(content))
+    except (ValueError, RuntimeError) as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
+    # Serve exactly the bytes validated above, avoiding a second file read.
+    return Response(
+        content=content,
         media_type="application/json",
+        headers={"Content-Disposition": 'attachment; filename="best_chromosome.json"'},
     )
 
 

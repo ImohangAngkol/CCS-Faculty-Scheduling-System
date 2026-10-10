@@ -7,6 +7,7 @@ import threading
 from pathlib import Path
 
 from contextlib import redirect_stdout
+from services.ga_progress_service import EventEmitter
 
 from fastapi import (
     APIRouter,
@@ -19,6 +20,7 @@ from fastapi.responses import StreamingResponse
 from services.ga_service import (
     generate_schedule,
     run_genetic_algorithm,
+    validate_saved_result,
 )
 
 
@@ -29,10 +31,15 @@ router = APIRouter(
 
 
 # ============================================================
-# Prevent multiple streamed GA runs at the same time
+# Single-process admission across every API GA execution path
 # ============================================================
 
-_ga_stream_lock = threading.Lock()
+_ga_execution_lock = threading.Lock()
+
+
+def _admit_execution():
+    if not _ga_execution_lock.acquire(blocking=False):
+        raise HTTPException(status_code=409, detail="Another Genetic Algorithm execution is already in progress.")
 
 
 # ============================================================
@@ -101,6 +108,7 @@ class QueueWriter(io.TextIOBase):
         super().__init__()
 
         self.event_queue = event_queue
+        self.owner_thread = threading.get_ident()
         self.original_stdout = original_stdout
 
         self.buffer = ""
@@ -122,6 +130,9 @@ class QueueWriter(io.TextIOBase):
         self.original_stdout.write(text)
         self.original_stdout.flush()
 
+
+        if threading.get_ident() != self.owner_thread:
+            return len(text)
 
         # Also send output to frontend
         with self.lock:
@@ -204,6 +215,10 @@ def get_latest_ga_result():
             detail="No completed GA result has been saved yet.",
         )
 
+    try:
+        validate_saved_result(result)
+    except ValueError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
     return {
         "status": "success",
         "data": result,
@@ -225,6 +240,7 @@ def generate_ga_schedule(
 
 ):
 
+    _admit_execution()
     try:
 
         result = generate_schedule(
@@ -243,6 +259,9 @@ def generate_ga_schedule(
             status_code=500,
             detail=str(error),
         )
+
+    finally:
+        _ga_execution_lock.release()
 
 
 # ============================================================
@@ -277,6 +296,7 @@ def run_ga(
 
 ):
 
+    _admit_execution()
     try:
 
         result = run_genetic_algorithm(
@@ -303,6 +323,9 @@ def run_ga(
             status_code=500,
             detail=str(error),
         )
+
+    finally:
+        _ga_execution_lock.release()
 
 
 # ============================================================
@@ -337,296 +360,94 @@ def stream_ga(
 
 ):
 
-    async def event_generator():
+    _admit_execution()
+    event_queue = queue.Queue(maxsize=1024)
+    disconnected = threading.Event()
 
-        event_queue = queue.Queue()
+    def enqueue(event):
+        if disconnected.is_set():
+            return  # Detaching monitoring is not GA cancellation.
+        try:
+            event_queue.put(event, timeout=0.1)
+        except queue.Full:
+            if event["type"] == "log":
+                return  # Console logs are best effort; structured metrics are not.
+            raise RuntimeError("Monitoring consumer is too slow; structured event delivery failed.")
 
+    emitter = EventEmitter(enqueue)
 
-        # ====================================================
-        # BACKGROUND WORKER
-        # ====================================================
+    class LogSink:
+        def put(self, event):
+            emitter.emit("log", {"message": event["message"]})
 
-        def worker():
-
-            acquired = (
-                _ga_stream_lock.acquire(
-                    blocking=False
-                )
-            )
-
-
-            if not acquired:
-
-                event_queue.put(
-                    {
-                        "type": "error",
-                        "message": (
-                            "Another Genetic Algorithm "
-                            "run is already in progress."
-                        ),
-                    }
-                )
-
-                event_queue.put(
-                    {
-                        "type": "done",
-                    }
-                )
-
-                return
-
-
-            original_stdout = sys.stdout
-
-
-            writer = QueueWriter(
-                event_queue,
-                original_stdout,
-            )
-
-
+    def terminal(event_type, data):
+        # Reserve terminal delivery even when a slow client filled the queue.
+        try:
+            emitter.emit(event_type, data)
+        except RuntimeError:
             try:
+                event_queue.get_nowait()
+            except queue.Empty:
+                pass
+            emitter.emit(event_type, data)
 
-                # --------------------------------------------
-                # INITIAL LIVE LOG
-                # --------------------------------------------
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": "=" * 60,
-                    }
+    def worker():
+        writer = QueueWriter(LogSink(), sys.stdout)
+        status = "FAILED"
+        try:
+            requested = {"population_size": population_size, "generations": generations,
+                         "fresh_chromosomes": fresh_chromosomes, "baseline_mode": baseline_mode}
+            emitter.emit("run_created", {"status": "CREATED", "configuration": requested})
+            emitter.emit("run_started", {"status": "RUNNING", "phase": "initializing"})
+            emitter.emit("log", {"message": "GENETIC ALGORITHM STARTED"})
+            with redirect_stdout(writer):
+                result = run_genetic_algorithm(
+                    **requested, progress_callback=emitter.emit,
                 )
-
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": (
-                            "GENETIC ALGORITHM STARTED"
-                        ),
-                    }
-                )
-
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": "=" * 60,
-                    }
-                )
-
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": (
-                            f"Population Size   : "
-                            f"{population_size}"
-                        ),
-                    }
-                )
-
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": (
-                            f"Generations       : "
-                            f"{generations}"
-                        ),
-                    }
-                )
-
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": (
-                            f"Fresh Chromosomes : "
-                            f"{fresh_chromosomes}"
-                        ),
-                    }
-                )
-
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": (
-                            f"Baseline Mode     : "
-                            f"{baseline_mode}"
-                        ),
-                    }
-                )
-
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": "",
-                    }
-                )
-
-
-                # --------------------------------------------
-                # RUN GA AND CAPTURE print()
-                # --------------------------------------------
-
-                with redirect_stdout(
-                    writer
-                ):
-
-                    result = (
-                        run_genetic_algorithm(
-
-                            population_size=
-                            population_size,
-
-                            generations=
-                            generations,
-
-                            fresh_chromosomes=
-                            fresh_chromosomes,
-
-                            baseline_mode=
-                            baseline_mode,
-
-                        )
-                    )
-
-
-                writer.flush_remaining()
-
-
-                # --------------------------------------------
-                # COMPLETE
-                # --------------------------------------------
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": "",
-                    }
-                )
-
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": "=" * 60,
-                    }
-                )
-
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": (
-                            "GENETIC ALGORITHM COMPLETED"
-                        ),
-                    }
-                )
-
-
-                event_queue.put(
-                    {
-                        "type": "log",
-                        "message": "=" * 60,
-                    }
-                )
-
-
-                _save_latest_result(
-                    result
-                )
-
-                # Send final result
-                event_queue.put(
-                    {
-                        "type": "result",
-                        "data": result,
-                    }
-                )
-
-
-            except Exception as error:
-
-                writer.flush_remaining()
-
-
-                event_queue.put(
-                    {
-                        "type": "error",
-                        "message": str(error),
-                    }
-                )
-
-
+            writer.flush_remaining()
+            _save_latest_result(result)
+            emitter.emit("result", result)
+            status = "COMPLETED"
+            emitter.emit("log", {"message": "GENETIC ALGORITHM COMPLETED"})
+        except Exception as error:
+            terminal("error", {"status": "FAILED", "code": "GA_EXECUTION_FAILED", "message": str(error)})
+        finally:
+            try:
+                terminal("done", {"status": status})
             finally:
+                _ga_execution_lock.release()
 
-                _ga_stream_lock.release()
-
-
-                event_queue.put(
-                    {
-                        "type": "done",
-                    }
-                )
-
-
-        # ====================================================
-        # START THREAD
-        # ====================================================
-
-        thread = threading.Thread(
-            target=worker,
-            daemon=True,
-        )
-
+    thread = threading.Thread(target=worker, daemon=True)
+    try:
         thread.start()
+    except Exception:
+        _ga_execution_lock.release()
+        raise
 
+    def next_event():
+        try:
+            return event_queue.get(timeout=0.5)
+        except queue.Empty:
+            return None
 
-        # ====================================================
-        # SEND EVENTS TO FRONTEND
-        # ====================================================
+    async def event_generator():
+        try:
+            while True:
+                event = await asyncio.to_thread(next_event)
+                if event is None:
+                    continue
+                yield f"data: {json.dumps(event, allow_nan=False, default=str)}\n\n"
+                if event["type"] == "done":
+                    break
+        finally:
+            disconnected.set()
+            # Worker continues and preserves its validated final result.
+            while not event_queue.empty():
+                try:
+                    event_queue.get_nowait()
+                except queue.Empty:
+                    break
 
-        while True:
-
-            event = await asyncio.to_thread(
-                event_queue.get
-            )
-
-
-            payload = json.dumps(
-                event,
-                default=str,
-            )
-
-
-            yield (
-                f"data: {payload}\n\n"
-            )
-
-
-            if (
-                event.get("type")
-                ==
-                "done"
-            ):
-                break
-
-
-    return StreamingResponse(
-
-        event_generator(),
-
-        media_type="text/event-stream",
-
-        headers={
-            "Cache-Control": "no-cache",
-            "Connection": "keep-alive",
-            "X-Accel-Buffering": "no",
-        },
-
-    )
+    return StreamingResponse(event_generator(), media_type="text/event-stream", headers={
+        "Cache-Control": "no-cache", "Connection": "keep-alive", "X-Accel-Buffering": "no",
+    })

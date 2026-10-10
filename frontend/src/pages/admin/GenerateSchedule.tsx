@@ -1,3 +1,4 @@
+import LiveGAMonitor from "../../components/ga/LiveGAMonitor";
 import {
   useEffect,
   useState,
@@ -45,6 +46,8 @@ export default function GenerateSchedule() {
 
   const {
     gaData,
+    executionStatus,
+    progressHistory,
     loading,
     error,
     elapsedSeconds,
@@ -56,8 +59,6 @@ export default function GenerateSchedule() {
     generations:
       runningGenerations,
 
-    freshChromosomes:
-      runningFreshChromosomes,
 
     runGA,
   } = useGA();
@@ -1139,205 +1140,7 @@ const [
       {/* RUNNING */}
       {/* ==================================================== */}
 
-      {loading && (
-
-        <div
-          className="
-            overflow-hidden
-            rounded-xl
-            border
-            border-teal-200
-            bg-white
-            shadow-sm
-          "
-        >
-
-          <div
-            className="
-              h-1.5
-              bg-[#0F766E]
-            "
-          />
-
-
-          <div className="p-6">
-
-            <div
-              className="
-                flex
-                flex-col
-                gap-5
-                md:flex-row
-                md:items-center
-                md:justify-between
-              "
-            >
-
-              <div
-                className="
-                  flex
-                  items-center
-                  gap-5
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    h-16
-                    w-16
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[#F0FDFA]
-                  "
-                >
-
-                  <div
-                    className="
-                      h-10
-                      w-10
-                      animate-spin
-                      rounded-full
-                      border-4
-                      border-teal-100
-                      border-t-[#0F766E]
-                    "
-                  />
-
-                </div>
-
-
-                <div>
-
-                  <p
-                    className="
-                      text-xs
-                      font-bold
-                      uppercase
-                      tracking-wider
-                      text-[#0F766E]
-                    "
-                  >
-                    Running
-                  </p>
-
-
-                  <h2
-                    className="
-                      mt-1
-                      text-xl
-                      font-bold
-                      text-slate-900
-                    "
-                  >
-                    Genetic Algorithm is running
-                  </h2>
-
-
-                  <p
-                    className="
-                      mt-1
-                      text-sm
-                      text-slate-500
-                    "
-                  >
-                    Starting Mode:{" "}
-                    <strong>
-                      {
-                        baselineMode === "fresh"
-                          ? "Fresh Population"
-                          : baselineMode === "saved"
-                          ? "Saved Best Chromosome"
-                          : "Uploaded Baseline"
-                      }
-                    </strong>
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              <div
-                className="
-                  rounded-xl
-                  bg-[#F0FDFA]
-                  px-6
-                  py-4
-                  text-center
-                "
-              >
-
-                <p
-                  className="
-                    text-xs
-                    uppercase
-                    text-slate-500
-                  "
-                >
-                  Elapsed
-                </p>
-
-
-                <p
-                  className="
-                    mt-1
-                    text-3xl
-                    font-bold
-                    text-[#115E59]
-                  "
-                >
-                  {formatElapsedTime(
-                    elapsedSeconds
-                  )}
-                </p>
-
-              </div>
-
-            </div>
-
-
-            <div
-              className="
-                mt-6
-                grid
-                gap-3
-                sm:grid-cols-3
-              "
-            >
-
-              <RunningStat
-                label="Population"
-                value={
-                  runningPopulationSize
-                }
-              />
-
-
-              <RunningStat
-                label="Generations"
-                value={
-                  runningGenerations
-                }
-              />
-
-
-              <RunningStat
-                label="Fresh Chromosomes"
-                value={
-                  runningFreshChromosomes
-                }
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-      )}
-
+      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={runningPopulationSize} limit={runningGenerations} />}
 
       {/* ==================================================== */}
       {/* LIVE CONSOLE */}
@@ -1403,7 +1206,7 @@ const [
               text-red-700
             "
           >
-            Schedule generation failed
+            {executionStatus === "FAILED" ? "Schedule generation failed" : "Monitoring unavailable"}
           </p>
 
 
@@ -1728,89 +1531,7 @@ const [
    HELPERS
 ========================================================== */
 
-function formatElapsedTime(
-  seconds: number
-) {
-
-  const minutes =
-    Math.floor(
-      seconds / 60
-    );
-
-
-  const remainingSeconds =
-    seconds % 60;
-
-
-  return (
-    `${String(
-      minutes
-    ).padStart(
-      2,
-      "0"
-    )}:` +
-    `${String(
-      remainingSeconds
-    ).padStart(
-      2,
-      "0"
-    )}`
-  );
-
-}
-
-
-type CardProps = {
-  label: string;
-  value: number | string;
-};
-
-
-function RunningStat({
-  label,
-  value,
-}: CardProps) {
-
-  return (
-
-    <div
-      className="
-        rounded-lg
-        border
-        border-teal-100
-        bg-[#F0FDFA]
-        px-4
-        py-3
-      "
-    >
-
-      <p
-        className="
-          text-xs
-          text-slate-500
-        "
-      >
-        {label}
-      </p>
-
-
-      <p
-        className="
-          mt-1
-          text-lg
-          font-bold
-          text-[#115E59]
-        "
-      >
-        {value}
-      </p>
-
-    </div>
-
-  );
-
-}
-
+type CardProps = { label: string; value: number | string };
 
 function ResultCard({
   label,

@@ -1,3 +1,4 @@
+import LiveGAMonitor from "../../components/ga/LiveGAMonitor";
 import {
   useNavigate,
 } from "react-router-dom";
@@ -24,12 +25,15 @@ export default function FitnessAnalysis() {
 
   const {
     gaData,
+    executionStatus, progressHistory, elapsedSeconds, populationSize, generations,
   } = useGA();
 
 
   // ==========================================================
   // EMPTY
   // ==========================================================
+
+  if (!gaData && executionStatus !== "IDLE") return <LiveGAMonitor status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />;
 
   if (!gaData) {
 
