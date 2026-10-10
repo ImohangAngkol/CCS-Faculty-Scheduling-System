@@ -1,16 +1,26 @@
 import type { GAExecutionStatus, GenerationMetrics } from "../../services/gaMonitoring";
 
 const format = (value: number | undefined) => value === undefined ? "—" : value.toLocaleString(undefined, { maximumFractionDigits: 2 });
-export default function LiveGAMonitor({ status, history, elapsedSeconds, population, limit }: {
+export default function LiveGAMonitor({ status, history, elapsedSeconds, population, limit, onStop, canStop = false, stopError, runId, recoveryNotice }: {
   status: GAExecutionStatus; history: GenerationMetrics[]; elapsedSeconds: number; population: number; limit: number;
+  onStop?: () => Promise<void>; canStop?: boolean; stopError?: string | null;
+  runId?: string | null; recoveryNotice?: string | null;
 }) {
   const current = history.at(-1);
-  const label = { IDLE: "Ready", CONNECTING: "Connecting", RUNNING: current ? "Optimizing schedules" : "Preparing initial schedules", COMPLETED: "Completed", FAILED: "Failed", DISCONNECTED: "Monitoring disconnected", REJECTED: "Execution request rejected" }[status];
+  const label = { IDLE: "Ready", CONNECTING: "Connecting", RECOVERING: "Checking the backend for an active run", INTERRUPTED: "Previous run interrupted or unknown", CREATED: "Preparing initial schedules", INITIALIZING: "Preparing initial schedules", RUNNING: current ? "Optimizing schedules" : "Preparing initial schedules", STOP_REQUESTED: "Stop requested — waiting for a safe boundary", STOPPING: "Stopping — preserving the best valid schedule", STOPPED: "Stopped — optimization interrupted", COMPLETED: "Completed", FAILED: "Failed", DISCONNECTED: "Monitoring disconnected", REJECTED: "Execution request rejected" }[status];
   return <section data-testid="live-ga-monitor" className="overflow-hidden rounded-xl border border-purple-200 bg-white shadow-sm" aria-label="Live schedule optimization">
     <div className="flex flex-wrap items-center justify-between gap-3 border-b border-purple-100 bg-purple-50 px-6 py-4">
       <div><h2 className="text-lg font-semibold text-purple-950">Schedule optimization</h2><p role="status" aria-live="polite" className="text-sm text-purple-800">{label}</p></div>
       <p className="text-sm text-slate-600">Elapsed <strong data-testid="ga-elapsed" className="ml-1 text-purple-950">{Math.floor(elapsedSeconds / 60)}m {elapsedSeconds % 60}s</strong></p>
     </div>
+    {runId && <p className="break-all px-6 pt-3 text-xs text-slate-500">Server run ID <code data-testid="ga-run-id">{runId}</code></p>}
+    {recoveryNotice && <p role="status" className="mx-6 mt-3 rounded-lg bg-slate-50 p-3 text-sm text-slate-600">{recoveryNotice}</p>}
+    {onStop && ["CREATED", "INITIALIZING", "RUNNING", "STOP_REQUESTED", "STOPPING"].includes(status) && <div className="flex flex-wrap items-center gap-3 px-6 pt-4">
+      <button type="button" onClick={() => void onStop()} disabled={!canStop} className="rounded-lg border border-orange-300 bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-900 hover:bg-orange-100 disabled:cursor-wait disabled:opacity-60">Stop Generation</button>
+      <p className="text-xs text-slate-600">Finishes the current safe generation and preserves its best valid schedule.</p>
+    </div>}
+    {stopError && <p role="alert" className="mx-6 mt-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">{stopError}</p>}
+    {status === "STOPPED" && <p role="status" className="mx-6 mt-4 rounded-lg bg-orange-50 p-3 text-sm text-orange-900">{current ? `Stopped after generation ${current.generation}. The preserved schedule is available below; optimization did not complete its requested generations.` : "Stopped before the initial population was ready. No schedule was produced. Your previous completed result is unchanged."}</p>}
     <div className="grid gap-6 p-6 sm:grid-cols-2">
       <div><h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Progress</h3><dl className="space-y-2 text-sm">
         <Metric label="Generation" testId="ga-generation" value={current ? `${current.generation} / ${current.generation_limit}` : `Preparing / ${limit}`} />

@@ -66,3 +66,44 @@ test("invalid metrics, envelope, run identity and malformed data fail safely", a
   ]) await assert.rejects(readGAStream(source(frames(items)).stream, () => {}), GAStreamError);
   await assert.rejects(readGAStream(source("data: broken\n\n").stream, () => {}), GAStreamError);
 });
+
+test("stop request and stopping preserve progress until validated stopped result and done", async () => {
+  const stopped = { ...result, status: "STOPPED", run_id: "run-1" };
+  const events = [event("initial_population_ready", 1, metric(0)),
+    event("run_state_changed", 2, { status: "STOP_REQUESTED" }),
+    event("generation_completed", 3, metric(1)),
+    event("run_state_changed", 4, { status: "STOPPING" }),
+    event("run_state_changed", 5, { status: "STOPPED" }),
+    event("result", 6, stopped), event("done", 7, { status: "STOPPED", has_result: true })];
+  const seen = [];
+  assert.deepEqual(await readGAStream(source(frames(events)).stream, () => {}, item => seen.push(item)), stopped);
+  assert.equal(seen[2].type, "generation_completed");
+  assert.equal(seen.at(-1).data.status, "STOPPED");
+});
+
+test("stop before initialization succeeds only with explicit no-result terminal event", async () => {
+  const input = source(frames([event("run_state_changed", 1, { status: "STOPPED" }), event("done", 2, { status: "STOPPED", has_result: false })]));
+  assert.equal(await readGAStream(input.stream, () => {}), null);
+  assert.equal(input.stream.locked, false);
+});
+
+test("disconnect while stop is pending or after acknowledgement never claims a completed stop", async () => {
+  for (const state of ["STOP_REQUESTED", "STOPPING", "STOPPED"]) {
+    await assert.rejects(readGAStream(source(frames([event("run_state_changed", 1, { status: state })])).stream, () => {}), error => error.status === "DISCONNECTED");
+  }
+});
+
+test("missing stopped result, contradictory completion and invalid state fail safely", async () => {
+  const stopped = { ...result, status: "STOPPED" };
+  for (const events of [
+    [event("done", 1, { status: "STOPPED", has_result: true })],
+    [event("result", 1, result), event("done", 2, { status: "STOPPED", has_result: true })],
+    [event("result", 1, stopped), event("done", 2, { status: "COMPLETED" })],
+    [event("run_state_changed", 1, { status: "STOPPED" }), event("run_state_changed", 2, { status: "COMPLETED" })],
+    [event("run_state_changed", 1, { status: "PAUSED" })],
+  ]) await assert.rejects(readGAStream(source(frames(events)).stream, () => {}), GAStreamError);
+});
+
+test("failure while stopping stays failed", async () => {
+  await assert.rejects(readGAStream(source(frames([event("run_state_changed", 1, { status: "STOPPING" }), event("error", 2, { status: "FAILED", message: "Persistence failed" })])).stream, () => {}), error => error.status === "FAILED");
+});

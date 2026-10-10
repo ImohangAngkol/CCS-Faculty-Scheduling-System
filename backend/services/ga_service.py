@@ -302,6 +302,7 @@ def run_genetic_algorithm(
     mutation_attempts=100,
     max_restarts=300,
     progress_callback=None,
+    run_control=None,
 ):
     """
     Run the full Genetic Algorithm.
@@ -334,6 +335,9 @@ def run_genetic_algorithm(
         "fresh_chromosomes": fresh_chromosomes, "baseline_mode": baseline_mode,
         "mutation_attempts": mutation_attempts, "max_restarts": max_restarts,
     })
+    # An early stop never constructs, scores, saves or publishes a partial seed.
+    if run_control is not None and run_control.acknowledge_stop():
+        return None
     baseline_mode = (
         str(
             baseline_mode
@@ -467,6 +471,8 @@ def run_genetic_algorithm(
     # ========================================================
 
     monitor.register_baseline(baseline_payload)
+    if run_control is not None and run_control.acknowledge_stop():
+        return None
     number_to_generate = (
         population_size
         -
@@ -552,6 +558,9 @@ def run_genetic_algorithm(
 
     for candidate in population:
         validate_publication(candidate, *publication_templates)
+    completed_generation = 0
+    if run_control is not None:
+        run_control.boundary(0, best_ever_fitness)
     monitor.report(0, population, best_ever_fitness)
 
     # =====================================================
@@ -562,6 +571,9 @@ def run_genetic_algorithm(
         1,
         generations + 1,
     ):
+
+        if run_control is not None and run_control.acknowledge_stop():
+            break
 
         # -----------------------------------------------
         # Calculate fitness
@@ -827,12 +839,19 @@ def run_genetic_algorithm(
         )
         for candidate in population:
             validate_publication(candidate, *publication_templates)
+        completed_generation = generation
+        if run_control is not None:
+            run_control.boundary(generation, best_ever_fitness)
         monitor.report(generation, population, best_ever_fitness)
+        if run_control is not None and run_control.acknowledge_stop():
+            break
 
     # =====================================================
     # 4. CONVERT BEST-EVER TO JSON
     # =====================================================
 
+    if run_control is not None:
+        run_control.seal()
     monitor.check_inputs()
     validate_publication(best_ever, *publication_templates)
     schedule = []
@@ -905,7 +924,7 @@ def run_genetic_algorithm(
             fitness_breakdown,
 
         "generations_completed":
-            generations,
+            completed_generation,
 
         "population_size":
             population_size,

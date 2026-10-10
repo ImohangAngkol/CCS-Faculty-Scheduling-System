@@ -1,5 +1,8 @@
 import { GAStreamError, readGAStream } from "./gaMonitoring";
 import type { GAMonitoringEvent } from "./gaMonitoring";
+import type { GARunState } from "./gaMonitoring";
+import { controlError, GAControlError } from "./gaRecovery";
+import type { BackendStatus, RunSnapshot } from "./gaRecovery";
 import type {
   BaselineMode,
   GARunData,
@@ -21,7 +24,7 @@ export async function runGeneticAlgorithm(
   freshChromosomes = 2,
   baselineMode:
     BaselineMode = "fresh"
-): Promise<GARunResponse> {
+): Promise<{ status: string; data: GARunData | null }> {
 
   const params =
     new URLSearchParams({
@@ -109,18 +112,61 @@ export async function runGeneticAlgorithmStream(
   populationSize: number, generations: number, freshChromosomes: number,
   onLog: (message: string) => void, baselineMode: BaselineMode = "fresh",
   onEvent?: (event: GAMonitoringEvent) => void,
-): Promise<GARunData> {
+  processInstanceId?: string,
+): Promise<GARunData | null> {
   const params = new URLSearchParams({ population_size: String(populationSize),
     generations: String(generations), fresh_chromosomes: String(freshChromosomes), baseline_mode: baselineMode });
   const response = await fetch(`${API_BASE_URL}/api/ga/stream?${params}`, {
-    method: "POST", headers: { Accept: "text/event-stream" },
+    method: "POST", headers: { Accept: "text/event-stream", ...(processInstanceId ? { "X-GA-Process-ID": processInstanceId } : {}) },
   });
   if (!response.ok) {
     const body = await response.json().catch(() => null);
-    throw new GAStreamError(body?.detail ?? `GA execution request rejected (${response.status}).`, "REJECTED");
+    throw new GAStreamError(controlError(response.status, body, `${API_BASE_URL}/api/ga/stream`).message, "REJECTED");
   }
   if (!response.body) throw new GAStreamError("Live monitoring is unavailable. The server may still be running.");
   return readGAStream(response.body, onLog, onEvent);
+}
+
+export async function stopGARun(runId: string, processInstanceId?: string): Promise<{ run_id: string; state: GARunState; accepted: boolean }> {
+  const url = `${API_BASE_URL}/api/ga/runs/${encodeURIComponent(runId)}/stop`;
+  const response = await fetch(url, { method: "POST", headers: processInstanceId ? { "X-GA-Process-ID": processInstanceId } : {} });
+  const body = await response.json().catch(() => null);
+  if (!response.ok) throw controlError(response.status, body, url);
+  if (body?.run_id !== runId || typeof body.accepted !== "boolean" || !["CREATED", "INITIALIZING", "RUNNING", "STOP_REQUESTED", "STOPPING", "STOPPED", "COMPLETED", "FAILED"].includes(body.state)) {
+    throw new Error("Invalid stop acknowledgement. The server may still be running.");
+  }
+  return body;
+}
+
+export async function getGABackendStatus(): Promise<BackendStatus> {
+  const url = `${API_BASE_URL}/api/ga/status`;
+  const response = await fetch(url);
+  const body = await response.json().catch(() => null);
+  if (!response.ok) throw controlError(response.status, body, url);
+  if (body?.control_version !== "3c.1" || typeof body.process_instance_id !== "string") {
+    throw new GAControlError(`The backend at ${API_BASE_URL} does not advertise Phase 3C.1 control support. Restart the updated backend with one worker before starting another run.`, "GA_CONTROL_UNSUPPORTED", response.status);
+  }
+  return body;
+}
+
+export async function getGARunState(runId: string, processInstanceId: string): Promise<RunSnapshot> {
+  const url = `${API_BASE_URL}/api/ga/runs/${encodeURIComponent(runId)}`;
+  const response = await fetch(url, { headers: { "X-GA-Process-ID": processInstanceId } });
+  const body = await response.json().catch(() => null);
+  if (!response.ok) throw controlError(response.status, body, url);
+  if (body?.run_id !== runId || body.process_instance_id !== processInstanceId || !["CREATED", "INITIALIZING", "RUNNING", "STOP_REQUESTED", "STOPPING", "STOPPED", "COMPLETED", "FAILED"].includes(body.state)) {
+    throw new GAControlError("The backend returned a different run or process identity. No stop was acknowledged.", "GA_RUN_IDENTITY_MISMATCH", response.status);
+  }
+  return body;
+}
+
+export async function getGARunResult(runId: string): Promise<GARunData> {
+  const url = `${API_BASE_URL}/api/ga/runs/${encodeURIComponent(runId)}/result`;
+  const response = await fetch(url);
+  const body = await response.json().catch(() => null);
+  if (!response.ok) throw controlError(response.status, body, url);
+  if (body?.data?.run_id !== runId || !["STOPPED", "COMPLETED"].includes(body.data.status)) throw new Error("Recovered result belongs to another run.");
+  return body.data;
 }
 
 

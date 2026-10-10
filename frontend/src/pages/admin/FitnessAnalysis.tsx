@@ -25,7 +25,10 @@ export default function FitnessAnalysis() {
 
   const {
     gaData,
+    activeRunId,
+    recoveryNotice,
     executionStatus, progressHistory, elapsedSeconds, populationSize, generations,
+    stopGA, canStop, stopError,
   } = useGA();
 
 
@@ -33,7 +36,7 @@ export default function FitnessAnalysis() {
   // EMPTY
   // ==========================================================
 
-  if (!gaData && executionStatus !== "IDLE") return <LiveGAMonitor status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />;
+  if (!gaData && executionStatus !== "IDLE") return <LiveGAMonitor runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />;
 
   if (!gaData) {
 
@@ -291,6 +294,8 @@ export default function FitnessAnalysis() {
       {/* ==================================================== */}
       {/* TOP CARDS */}
       {/* ==================================================== */}
+
+      {gaData.status === "STOPPED" && <p role="status" className="rounded-lg bg-orange-50 p-4 text-sm text-orange-900">Stopped run: this analysis describes the preserved best valid schedule after {gaData.generations_completed} generations. Optimization was interrupted.</p>}
 
       <div
         className="

@@ -10,7 +10,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:ga": "node --test tests/gaMonitoring.test.mjs",
+    "test:ga": "node --test tests/gaMonitoring.test.mjs tests/gaRecovery.test.mjs",
     "test:ga:browser": "node --test tests/gaMonitoring.browser.test.mjs"
   },
   "dependencies": {

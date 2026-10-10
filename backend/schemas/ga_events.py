@@ -7,6 +7,6 @@ class GAEvent(BaseModel):
     run_id: str
     sequence: int
     type: Literal["run_created", "run_started", "initial_population_ready",
-                  "generation_completed", "log", "result", "error", "done"]
+                  "generation_completed", "run_state_changed", "log", "result", "error", "done"]
     timestamp: str
     data: dict[str, Any]

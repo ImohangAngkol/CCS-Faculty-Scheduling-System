@@ -22,12 +22,13 @@ export type GenerationMetrics = {
   metrics_comparable: boolean;
   validation_status: "passed";
 };
-export type GAExecutionStatus = "IDLE" | "CONNECTING" | "RUNNING" | "COMPLETED" | "FAILED" | "DISCONNECTED" | "REJECTED";
+export type GARunState = "CREATED" | "INITIALIZING" | "RUNNING" | "STOP_REQUESTED" | "STOPPING" | "STOPPED" | "COMPLETED" | "FAILED";
+export type GAExecutionStatus = "IDLE" | "CONNECTING" | "RECOVERING" | "INTERRUPTED" | GARunState | "DISCONNECTED" | "REJECTED";
 export type GAMonitoringEvent = {
   schema_version: 1; run_id: string; sequence: number; timestamp: string;
 } & (
   | { type: "initial_population_ready" | "generation_completed"; data: GenerationMetrics }
-  | { type: "run_created" | "run_started" | "log" | "error" | "done"; data: Record<string, unknown> }
+  | { type: "run_created" | "run_started" | "run_state_changed" | "log" | "error" | "done"; data: Record<string, unknown> }
   | { type: "result"; data: GARunData }
 );
 
@@ -42,11 +43,11 @@ export class GAStreamError extends Error {
 export async function readGAStream(
   stream: ReadableStream<Uint8Array>, onLog: (message: string) => void,
   onEvent?: (event: GAMonitoringEvent) => void,
-): Promise<GARunData> {
+): Promise<GARunData | null> {
   const reader = stream.getReader(), decoder = new TextDecoder();
   let buffer = "", lines: string[] = [], result: GARunData | null = null;
-  let runId: string | null = null, sequence = 0, terminal = false;
-  const known = new Set(["run_created", "run_started", "initial_population_ready", "generation_completed", "log", "result", "error", "done"]);
+  let runId: string | null = null, sequence = 0, terminal = false, stopped = false;
+  const known = new Set(["run_created", "run_started", "run_state_changed", "initial_population_ready", "generation_completed", "log", "result", "error", "done"]);
   function dispatch() {
     const data = lines.filter(line => line.startsWith("data:")).map(line => line.slice(5).replace(/^ /, "")).join("\n");
     lines = [];
@@ -61,6 +62,11 @@ export async function readGAStream(
       runId = event.run_id;
       if (event.sequence <= sequence) return; // Ignore duplicate/stale delivery.
       sequence = event.sequence; // Gaps are allowed: console logs are best effort.
+      if (event.type === "run_state_changed" && !["CREATED", "INITIALIZING", "RUNNING", "STOP_REQUESTED", "STOPPING", "STOPPED", "COMPLETED", "FAILED"].includes(event.data.status)) {
+        throw new GAStreamError("Invalid GA lifecycle state.");
+      }
+      if (event.type === "run_state_changed" && event.data.status === "STOPPED") stopped = true;
+      if (stopped && event.data.status === "COMPLETED") throw new GAStreamError("GA completion contradicts its acknowledged stop.");
       if (event.type === "initial_population_ready" || event.type === "generation_completed") {
         const metric = event.data;
         for (const key of ["generation", "generation_limit", "population_requested", "population_actual", "generation_best_fitness", "best_ever_fitness", "average_fitness", "worst_fitness", "elapsed_ms", "accepted_new_chromosomes_total"]) {
@@ -81,6 +87,14 @@ export async function readGAStream(
     }
     if (event.type === "done") {
       if (event.data?.status === "FAILED") throw new GAStreamError("GA execution failed.", "FAILED");
+      if (event.data?.status === "STOPPED") {
+        if (result ? result.status !== "STOPPED" || event.data.has_result === false : event.data.has_result !== false) {
+          throw new GAStreamError("Stopped GA stream is missing its preserved result.");
+        }
+        terminal = true;
+        return;
+      }
+      if (result?.status === "STOPPED") throw new GAStreamError("Stopped result received a contradictory terminal status.");
       if (!result) throw new GAStreamError("GA stream ended without a valid result.");
       terminal = true;
     }
@@ -106,7 +120,7 @@ export async function readGAStream(
       consume(chunk.done);
       if (chunk.done) break;
     }
-    if (!terminal || !result) throw new GAStreamError("Live monitoring disconnected. The server may still be running; this did not stop the GA.");
+    if (!terminal) throw new GAStreamError("Live monitoring disconnected. The server may still be running; this did not stop the GA.");
     return result;
   } catch (error) {
     if (error instanceof GAStreamError) throw error;

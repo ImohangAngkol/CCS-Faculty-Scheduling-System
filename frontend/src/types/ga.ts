@@ -223,6 +223,11 @@ export type FacultyAnalysis = {
 // ============================================================
 
 export type GARunData = {
+  run_id?: string;
+  status?: "COMPLETED" | "STOPPED";
+  stopped_at?: string;
+  stop_reason?: string;
+  elapsed_ms?: number;
 
   best_fitness:
     number;

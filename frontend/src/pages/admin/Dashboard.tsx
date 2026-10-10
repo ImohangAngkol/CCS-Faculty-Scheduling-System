@@ -8,8 +8,13 @@ export default function Dashboard() {
 
   const {
     gaData,
+    activeRunId,
+    recoveryNotice,
     executionStatus,
     progressHistory,
+    stopGA,
+    canStop,
+    stopError,
     loading,
     error,
     elapsedSeconds,
@@ -97,7 +102,7 @@ export default function Dashboard() {
 
       {/* RUNNING */}
 
-      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />}
+      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />}
 
       {/* ERROR */}
 

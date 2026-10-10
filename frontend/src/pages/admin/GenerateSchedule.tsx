@@ -46,8 +46,13 @@ export default function GenerateSchedule() {
 
   const {
     gaData,
+    activeRunId,
+    recoveryNotice,
     executionStatus,
     progressHistory,
+    stopGA,
+    canStop,
+    stopError,
     loading,
     error,
     elapsedSeconds,
@@ -1140,7 +1145,7 @@ const [
       {/* RUNNING */}
       {/* ==================================================== */}
 
-      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={runningPopulationSize} limit={runningGenerations} />}
+      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={runningPopulationSize} limit={runningGenerations} />}
 
       {/* ==================================================== */}
       {/* LIVE CONSOLE */}
@@ -1278,7 +1283,7 @@ const [
                     text-[#115E59]
                   "
                 >
-                  ✓ Generation Complete
+                  {gaData.status === "STOPPED" ? "Stopped — preserved schedule" : executionStatus === "STOPPED" ? "Previous completed schedule" : "✓ Generation Complete"}
                 </div>
 
 
@@ -1290,7 +1295,7 @@ const [
                     text-slate-900
                   "
                 >
-                  Schedule generated successfully
+                  {gaData.status === "STOPPED" ? "Best valid schedule preserved" : executionStatus === "STOPPED" ? "Previous completed result" : "Schedule generated successfully"}
                 </h2>
 
 
@@ -1301,7 +1306,7 @@ const [
                     text-slate-500
                   "
                 >
-                  The best chromosome is ready for review.
+                  {gaData.status === "STOPPED" ? "Optimization was interrupted. Review the best schedule from the completed generations." : "The best chromosome is ready for review."}
                 </p>
 
               </div>

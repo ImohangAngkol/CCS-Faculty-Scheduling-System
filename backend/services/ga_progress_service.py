@@ -24,8 +24,8 @@ def input_fingerprint():
 
 
 class EventEmitter:
-    def __init__(self, sink):
-        self.run_id = str(uuid4())  # OS entropy; does not consume GA random state.
+    def __init__(self, sink, run_id=None):
+        self.run_id = run_id or str(uuid4())  # OS entropy; does not consume GA random state.
         self.sequence = 0
         self.sink = sink
         self.lock = threading.Lock()
