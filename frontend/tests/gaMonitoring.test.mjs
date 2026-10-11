@@ -107,3 +107,24 @@ test("missing stopped result, contradictory completion and invalid state fail sa
 test("failure while stopping stays failed", async () => {
   await assert.rejects(readGAStream(source(frames([event("run_state_changed", 1, { status: "STOPPING" }), event("error", 2, { status: "FAILED", message: "Persistence failed" })])).stream, () => {}), error => error.status === "FAILED");
 });
+
+test("pause request, durable acknowledgement and done preserve generation metrics without a final schedule", async () => {
+  const seen = [];
+  const events = [event("generation_completed", 1, metric(1)),
+    event("run_state_changed", 2, {status:"PAUSE_REQUESTED"}),
+    event("run_state_changed", 3, {status:"PAUSING"}),
+    event("run_state_changed", 4, {status:"PAUSED",checkpoint:"checkpoint-1.json.gz"}),
+    event("done", 5, {status:"PAUSED",has_result:false})];
+  assert.equal(await readGAStream(source(frames(events)).stream, () => {}, item => seen.push(item)), null);
+  assert.equal(seen[0].data.generation, 1);
+  assert.equal(seen.at(-1).data.status, "PAUSED");
+});
+
+test("an incomplete pause or a paused stream containing a final result is rejected", async () => {
+  for (const events of [
+    [event("run_state_changed",1,{status:"PAUSE_REQUESTED"})],
+    [event("run_state_changed",1,{status:"PAUSING"})],
+    [event("result",1,result), event("done",2,{status:"PAUSED",has_result:false})],
+    [event("done",1,{status:"PAUSED",has_result:true})],
+  ]) await assert.rejects(readGAStream(source(frames(events)).stream, () => {}), GAStreamError);
+});

@@ -4,6 +4,8 @@ from pathlib import Path
 
 import pandas as pd
 from genetic_algorithm.utils.FitnessObservation import record_fitness
+from genetic_algorithm.utils.FrozenInputs import scoring_inputs
+import copy
 
 from genetic_algorithm.models.Faculty import (
     Faculty
@@ -46,6 +48,9 @@ GA_SETTINGS_FILE = (
 # =========================================================
 
 def _load_ga_settings():
+    frozen = scoring_inputs.get()
+    if frozen is not None:
+        return GASetting.from_dict(frozen["settings"])
 
     if not GA_SETTINGS_FILE.exists():
 
@@ -71,6 +76,9 @@ def _load_ga_settings():
 
 
 def _load_dashboard_preferences():
+    frozen = scoring_inputs.get()
+    if frozen is not None:
+        return copy.deepcopy(frozen["preferences"])
 
     if not PREFERENCE_FILE.exists():
 
@@ -1102,6 +1110,10 @@ def faculty_preference_fitness(
 
         system_faculty = []
 
+
+    frozen = scoring_inputs.get()
+    if frozen is not None:
+        system_faculty = frozen["system_faculty"]
 
     if faculty_scope is None:
 

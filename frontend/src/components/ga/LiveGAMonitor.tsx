@@ -1,13 +1,17 @@
 import type { GAExecutionStatus, GenerationMetrics } from "../../services/gaMonitoring";
 
 const format = (value: number | undefined) => value === undefined ? "—" : value.toLocaleString(undefined, { maximumFractionDigits: 2 });
-export default function LiveGAMonitor({ status, history, elapsedSeconds, population, limit, onStop, canStop = false, stopError, runId, recoveryNotice }: {
+export default function LiveGAMonitor({ status, history, elapsedSeconds, population, limit, onStop, canStop = false, stopError, runId, recoveryNotice, onPause, onResume, canPause = false, canResume = false, controlError, pausedRuns = [], onSelectPaused }: {
   status: GAExecutionStatus; history: GenerationMetrics[]; elapsedSeconds: number; population: number; limit: number;
   onStop?: () => Promise<void>; canStop?: boolean; stopError?: string | null;
   runId?: string | null; recoveryNotice?: string | null;
+  onPause?: () => Promise<void>; onResume?: () => Promise<void>; canPause?: boolean; canResume?: boolean;
+  controlError?: string | null;
+  pausedRuns?: {run_id:string; latest_completed_generation:number|null}[];
+  onSelectPaused?: (runId:string) => void;
 }) {
   const current = history.at(-1);
-  const label = { IDLE: "Ready", CONNECTING: "Connecting", RECOVERING: "Checking the backend for an active run", INTERRUPTED: "Previous run interrupted or unknown", CREATED: "Preparing initial schedules", INITIALIZING: "Preparing initial schedules", RUNNING: current ? "Optimizing schedules" : "Preparing initial schedules", STOP_REQUESTED: "Stop requested — waiting for a safe boundary", STOPPING: "Stopping — preserving the best valid schedule", STOPPED: "Stopped — optimization interrupted", COMPLETED: "Completed", FAILED: "Failed", DISCONNECTED: "Monitoring disconnected", REJECTED: "Execution request rejected" }[status];
+  const label = { IDLE: "Ready", CONNECTING: "Connecting", RECOVERING: "Checking the backend for an active run", INTERRUPTED: "Previous run interrupted or unknown", CREATED: "Preparing initial schedules", INITIALIZING: "Preparing initial schedules", RUNNING: current ? "Optimizing schedules" : "Preparing initial schedules", PAUSE_REQUESTED: "Pause requested — waiting for a safe generation boundary.", PAUSING: "Saving and validating the population checkpoint", PAUSED: "Paused: checkpoint saved.", RESUMING: "Restoring saved population and random state.", STOP_REQUESTED: "Stop requested — waiting for a safe boundary", STOPPING: "Stopping — preserving the best valid schedule", STOPPED: "Stopped — optimization interrupted", COMPLETED: "Completed", FAILED: "Failed", DISCONNECTED: "Monitoring disconnected", REJECTED: "Execution request rejected" }[status];
   return <section data-testid="live-ga-monitor" className="overflow-hidden rounded-xl border border-purple-200 bg-white shadow-sm" aria-label="Live schedule optimization">
     <div className="flex flex-wrap items-center justify-between gap-3 border-b border-purple-100 bg-purple-50 px-6 py-4">
       <div><h2 className="text-lg font-semibold text-purple-950">Schedule optimization</h2><p role="status" aria-live="polite" className="text-sm text-purple-800">{label}</p></div>
@@ -15,7 +19,11 @@ export default function LiveGAMonitor({ status, history, elapsedSeconds, populat
     </div>
     {runId && <p className="break-all px-6 pt-3 text-xs text-slate-500">Server run ID <code data-testid="ga-run-id">{runId}</code></p>}
     {recoveryNotice && <p role="status" className="mx-6 mt-3 rounded-lg bg-slate-50 p-3 text-sm text-slate-600">{recoveryNotice}</p>}
-    {onStop && ["CREATED", "INITIALIZING", "RUNNING", "STOP_REQUESTED", "STOPPING"].includes(status) && <div className="flex flex-wrap items-center gap-3 px-6 pt-4">
+    {pausedRuns.length > 1 && onSelectPaused && status === "PAUSED" && <label className="block px-6 pt-3 text-sm text-slate-600">Saved paused run<select aria-label="Saved paused run" className="ml-2 rounded border p-2" value={runId ?? ""} onChange={event => onSelectPaused(event.target.value)}>{pausedRuns.map((run, index) => <option key={run.run_id} value={run.run_id}>Paused run {index + 1} · Generation {run.latest_completed_generation ?? 0}</option>)}</select></label>}
+    {onPause && ["CREATED", "INITIALIZING", "RUNNING", "PAUSE_REQUESTED", "PAUSING"].includes(status) && <div className="px-6 pt-4"><button type="button" onClick={() => void onPause()} disabled={!canPause} className="rounded-lg border border-purple-300 bg-purple-50 px-4 py-2 text-sm font-semibold text-purple-900 disabled:opacity-60">Pause Generation</button></div>}
+    {onResume && ["PAUSED", "RESUMING"].includes(status) && <div className="px-6 pt-4"><button type="button" onClick={() => void onResume()} disabled={!canResume} className="rounded-lg border border-emerald-300 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-900 disabled:opacity-60">Resume Generation</button></div>}
+    {controlError && <p role="alert" className="mx-6 mt-3 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">{controlError}</p>}
+    {onStop && ["CREATED", "INITIALIZING", "RUNNING", "PAUSE_REQUESTED", "PAUSING", "PAUSED", "RESUMING", "STOP_REQUESTED", "STOPPING"].includes(status) && <div className="flex flex-wrap items-center gap-3 px-6 pt-4">
       <button type="button" onClick={() => void onStop()} disabled={!canStop} className="rounded-lg border border-orange-300 bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-900 hover:bg-orange-100 disabled:cursor-wait disabled:opacity-60">Stop Generation</button>
       <p className="text-xs text-slate-600">Finishes the current safe generation and preserves its best valid schedule.</p>
     </div>}

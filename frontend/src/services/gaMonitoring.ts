@@ -22,7 +22,8 @@ export type GenerationMetrics = {
   metrics_comparable: boolean;
   validation_status: "passed";
 };
-export type GARunState = "CREATED" | "INITIALIZING" | "RUNNING" | "STOP_REQUESTED" | "STOPPING" | "STOPPED" | "COMPLETED" | "FAILED";
+export const GA_RUN_STATES = ["CREATED", "INITIALIZING", "RUNNING", "PAUSE_REQUESTED", "PAUSING", "PAUSED", "RESUMING", "STOP_REQUESTED", "STOPPING", "STOPPED", "COMPLETED", "FAILED"] as const;
+export type GARunState = typeof GA_RUN_STATES[number];
 export type GAExecutionStatus = "IDLE" | "CONNECTING" | "RECOVERING" | "INTERRUPTED" | GARunState | "DISCONNECTED" | "REJECTED";
 export type GAMonitoringEvent = {
   schema_version: 1; run_id: string; sequence: number; timestamp: string;
@@ -41,7 +42,7 @@ export class GAStreamError extends Error {
 
 /** Incremental SSE decoding, including UTF-8, CR/LF framing and multiline data. */
 export async function readGAStream(
-  stream: ReadableStream<Uint8Array>, onLog: (message: string) => void,
+  stream: ReadableStream<Uint8Array>, onLog: (message: string, event?: GAMonitoringEvent) => void,
   onEvent?: (event: GAMonitoringEvent) => void,
 ): Promise<GARunData | null> {
   const reader = stream.getReader(), decoder = new TextDecoder();
@@ -62,7 +63,7 @@ export async function readGAStream(
       runId = event.run_id;
       if (event.sequence <= sequence) return; // Ignore duplicate/stale delivery.
       sequence = event.sequence; // Gaps are allowed: console logs are best effort.
-      if (event.type === "run_state_changed" && !["CREATED", "INITIALIZING", "RUNNING", "STOP_REQUESTED", "STOPPING", "STOPPED", "COMPLETED", "FAILED"].includes(event.data.status)) {
+      if (event.type === "run_state_changed" && !GA_RUN_STATES.includes(event.data.status)) {
         throw new GAStreamError("Invalid GA lifecycle state.");
       }
       if (event.type === "run_state_changed" && event.data.status === "STOPPED") stopped = true;
@@ -76,7 +77,7 @@ export async function readGAStream(
       }
       onEvent?.(event as GAMonitoringEvent);
     }
-    if (event.type === "log") onLog(event.message ?? event.data.message);
+    if (event.type === "log") onLog(event.message ?? event.data.message, event.schema_version === 1 ? event as GAMonitoringEvent : undefined);
     if (event.type === "error") throw new GAStreamError(event.message ?? event.data.message, "FAILED");
     if (event.type === "result") {
       const value = event.data;
@@ -86,6 +87,11 @@ export async function readGAStream(
       result = value;
     }
     if (event.type === "done") {
+      if (event.data?.status === "PAUSED") {
+        if (result || event.data.has_result !== false) throw new GAStreamError("Paused stream must contain a checkpoint, not a final schedule.");
+        terminal = true;
+        return;
+      }
       if (event.data?.status === "FAILED") throw new GAStreamError("GA execution failed.", "FAILED");
       if (event.data?.status === "STOPPED") {
         if (result ? result.status !== "STOPPED" || event.data.has_result === false : event.data.has_result !== false) {

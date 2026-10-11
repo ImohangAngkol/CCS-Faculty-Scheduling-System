@@ -38,7 +38,7 @@ const metrics = generation => ({ status: "RUNNING", generation, generation_limit
 const result = { best_fitness: 98, fitness_breakdown: {}, generations_completed: 2,
   population_size: 10, history: [{ generation: 0, best_fitness: 100 }, { generation: 1, generation_best_fitness: 99, best_ever_fitness: 99 }], schedule: [] };
 
-test("Live GA dashboard updates before final result and distinguishes disconnect", { timeout: 90000 }, async t => {
+test("Live GA dashboard updates before final result and distinguishes disconnect", { timeout: 180000 }, async t => {
   const profile = await mkdtemp(join(tmpdir(), "ga-monitoring-browser-"));
   const vite = spawn(process.execPath, ["node_modules/vite/bin/vite.js", "--host", "localhost", "--port", "5188", "--strictPort"], { cwd: new URL("../", import.meta.url), windowsHide: true, stdio: "pipe" });
   let output = ""; vite.stdout.on("data", data => output += data); vite.stderr.on("data", data => output += data);
@@ -61,15 +61,62 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       window.mockGAController = null;
       window.mockStopRequests = [];
       window.mockStopResolve = null;
+      window.mockPauseResolve = null;
+      window.mockControlRequests = [];
+      window.mockCheckpointRequests = [];
+      window.mockLogRequests = [];
+      const originalTimeout = window.setTimeout.bind(window);
+      window.setTimeout = (callback, delay, ...args) => originalTimeout(callback, (delay===120000 && sessionStorage.getItem('mockFastTimeout')==='true') || (delay===10000 && sessionStorage.getItem('mockFastLogTimeout')==='true') ? 50 : delay, ...args);
       window.mockStateError = false;
       window.mockLegacyBackend = false;
       window.fetch = async (input, options) => {
         const url = String(input);
         const processId = sessionStorage.getItem('mockProcessId') ?? 'browser-process';
-        if (url.endsWith('/api/ga/status')) return Response.json(window.mockLegacyBackend ? {status:'ready'} : {control_version:'3c.1',process_instance_id:processId,active_run:JSON.parse(sessionStorage.getItem('mockActiveRun') ?? 'null')});
+        if (url.includes('/api/ga/runs/') && url.includes('/logs?')) {
+          window.mockLogRequests.push(url);
+          if (sessionStorage.getItem('mockLogUnsupported')==='true') return Response.json({detail:'Not Found'},{status:404});
+          if (sessionStorage.getItem('mockLogError')==='true') throw new Error('Console backend unavailable');
+          if (sessionStorage.getItem('mockLogPending')==='true') return new Promise(()=>{});
+          const runId = new URL(url).pathname.split('/').at(-2);
+          const snapshots = [JSON.parse(sessionStorage.getItem('mockActiveRun') ?? 'null'),JSON.parse(sessionStorage.getItem('mockTerminalRun') ?? 'null'),...JSON.parse(sessionStorage.getItem('mockPausedRuns') ?? '[]')];
+          const snapshot = snapshots.find(run=>run && run.run_id===runId);
+          const all = JSON.parse(sessionStorage.getItem('mockLogEntries') ?? '[]');
+          const latest = all.at(-1)?.sequence ?? 0;
+          const requested = Number(new URL(url).searchParams.get('after_sequence'));
+          const reset = requested > latest;
+          const cursor = reset ? 0 : requested;
+          const entries = all.filter(entry=>entry.sequence>cursor).slice(0,4);
+          const next = entries.at(-1)?.sequence ?? cursor;
+          return Response.json({run_id:runId,process_instance_id:processId,log_epoch:sessionStorage.getItem('mockLogEpoch')??'initial-epoch',
+            state:snapshot?.state??'RUNNING',execution_active:snapshot?.execution_active??true,entries,
+            latest_sequence:latest,next_sequence:next,has_more:next<latest,cursor_reset:reset,
+            earlier_logs_truncated:sessionStorage.getItem('mockLogTruncated')==='true' || reset});
+        }
+        if (url.endsWith('/api/ga/status')) {
+          if (sessionStorage.getItem('mockDiscoveryPending')==='true') return new Promise(()=>{});
+          if (sessionStorage.getItem('mockDiscoveryError')==='true') throw new Error('Backend unavailable');
+          return Response.json(window.mockLegacyBackend ? {status:'ready'} : {control_version:'3c.1',pause_resume_version:'3d.1',process_instance_id:processId,active_run:JSON.parse(sessionStorage.getItem('mockActiveRun') ?? 'null'),paused_runs:JSON.parse(sessionStorage.getItem('mockPausedRuns') ?? '[]')});
+        }
+        if (url.endsWith('/checkpoint-status')) {
+          window.mockCheckpointRequests.push(url);
+          if (sessionStorage.getItem('mockCheckpointPending')==='true') return new Promise(resolve => { window.mockCheckpointResolve=resolve; });
+          if (sessionStorage.getItem('mockCheckpointError')==='true') throw new Error('Checkpoint service unavailable');
+          return Response.json({run_id:url.split('/').at(-2),process_instance_id:processId,state:'PAUSED',resumable:sessionStorage.getItem('mockCheckpointInvalid')!=='true',error:sessionStorage.getItem('mockCheckpointInvalid')==='true'?'Checkpoint inputs changed':undefined});
+        }
+        if (url.endsWith('/pause') || url.endsWith('/resume')) {
+          window.mockControlRequests.push({url,process:options?.headers?.['X-GA-Process-ID']});
+          if (url.endsWith('/pause')) return new Promise(resolve => {window.mockPauseResolve=resolve;});
+          if (sessionStorage.getItem('mockResumeConflict')==='true') return Response.json({detail:{code:'GA_RESUME_CONFLICT',message:'This run is already stopping; resume was not admitted.'}},{status:409});
+          if (sessionStorage.getItem('mockCheckpointInvalid')==='true') return Response.json({detail:{code:'GA_CHECKPOINT_INPUT_CHANGED',message:'Checkpoint inputs changed; no worker was started.'}},{status:409});
+          const snapshot=JSON.parse(sessionStorage.getItem('mockTerminalRun'));
+          const resuming={...snapshot,state:'RESUMING',execution_active:true,accepting_pause:false,accepting_resume:false};
+          sessionStorage.setItem('mockActiveRun',JSON.stringify(resuming)); sessionStorage.setItem('mockPausedRuns','[]');
+          return Response.json({...resuming,accepted:true});
+        }
         if (url.includes('/api/ga/runs/') && !url.endsWith('/stop') && !url.endsWith('/result')) {
           if (window.mockStateError) throw new Error('Status connection lost');
-          const snapshot = JSON.parse(sessionStorage.getItem('mockActiveRun') ?? sessionStorage.getItem('mockTerminalRun') ?? 'null');
+          const snapshots = [JSON.parse(sessionStorage.getItem('mockActiveRun') ?? 'null'),JSON.parse(sessionStorage.getItem('mockTerminalRun') ?? 'null'),...JSON.parse(sessionStorage.getItem('mockPausedRuns') ?? '[]')];
+          const snapshot = snapshots.find(run=>run && url.endsWith('/'+run.run_id));
           if (options?.headers?.['X-GA-Process-ID'] !== processId) return Response.json({detail:{code:'GA_PROCESS_CHANGED',message:'Backend process changed; no cancellation occurred.'}},{status:409});
           return snapshot && url.endsWith('/'+snapshot.run_id) ? Response.json(snapshot) : Response.json({detail:{code:'GA_UNKNOWN_RUN',message:'Run is unknown in this server process; no cancellation occurred.'}},{status:404});
         }
@@ -82,7 +129,9 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
           sessionStorage.setItem('mockStreamCount',String(Number(sessionStorage.getItem('mockStreamCount') ?? '0')+1));
           return new Response(new ReadableStream({ start(controller) { window.mockGAController = controller; } }), { headers: { 'Content-Type': 'text/event-stream' } });
         }
-        if (url.includes('/api/ga/latest')) { const latest = sessionStorage.getItem('mockLatestGA'); return latest ? Response.json({status:'success',data:JSON.parse(latest)}) : new Response('',{status:404}); }
+        if (url.includes('/api/ga/latest')) {
+          if (sessionStorage.getItem('mockLatestPending')==='true') return new Promise((resolve,reject) => { options?.signal?.addEventListener('abort',()=>reject(options.signal.reason),{once:true}); });
+          const latest = sessionStorage.getItem('mockLatestGA'); return latest ? Response.json({status:'success',data:JSON.parse(latest)}) : new Response('',{status:404}); }
         if (url.includes('/api/chromosomes/best')) return Response.json({ status:'success', data:{exists:false,fitness:null,created_at:null} });
         return originalFetch(input, options);
       };
@@ -114,6 +163,10 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       assert.equal(await evaluate(`document.querySelector('[data-testid="ga-best-ever"]').textContent`), "99");
       assert.equal(await evaluate(`document.querySelector('[data-testid="ga-average"]').textContent`), "149");
       assert.equal(await evaluate(`document.querySelector('[data-testid="live-ga-monitor"]').textContent.includes('Completed')`), false);
+      await evaluate(`sessionStorage.setItem('mockLogEntries',JSON.stringify([{sequence:1,message:'INITIAL MUTATION OUTPUT',timestamp:'2026-10-11T03:00:00Z',line_truncated:false}])); true`);
+      await send("log",{message:"INITIAL MUTATION OUTPUT",log_sequence:1,log_epoch:"initial-epoch"});
+      await eventually(() => evaluate(`document.querySelector('[data-testid="ga-console-output"]').textContent.includes('INITIAL MUTATION OUTPUT')`), "Initial run diagnostics did not arrive");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-console-output"]').textContent.split('INITIAL MUTATION OUTPUT').length-1`),1);
       await evaluate(`document.querySelector('[data-testid="live-ga-monitor"]').scrollIntoView({block:'start'}); true`);
       const clip = await evaluate(`var box=document.querySelector('[data-testid="live-ga-monitor"]').getBoundingClientRect(); ({x:box.x+window.scrollX,y:box.y+window.scrollY,width:box.width,height:box.height,scale:1})`);
       const shot = await client.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: true, clip });
@@ -136,7 +189,7 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       await send("initial_population_ready", metrics(0));
       await eventually(() => evaluate(`!![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Stop Generation' && !button.disabled)`), "Stop button not enabled");
       await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Stop Generation').click(); true`);
-      await eventually(() => evaluate(`document.querySelector('[data-testid="live-ga-monitor"]').textContent.includes('Stop requested') && window.mockStopRequests.length===1`), "Stop request was not sent");
+      await eventually(() => evaluate(`document.querySelector('[data-testid="live-ga-monitor"]').textContent.includes('Waiting for acknowledgement') && window.mockStopRequests.length===1`), "Stop request was not sent");
       assert.ok(await evaluate(`window.mockStopRequests[0].endsWith('/api/ga/runs/browser-run/stop')`));
       assert.ok(await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Stop Generation').disabled`));
       await send("run_state_changed", { status: "STOP_REQUESTED" });
@@ -225,8 +278,9 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
         latest_progress: metrics(1), latest_completed_generation: 1, elapsed_ms: 1000, terminal_error: null, result_reference: null };
       await evaluate(`sessionStorage.setItem('mockActiveRun',${JSON.stringify(JSON.stringify(snapshot))}); true`);
       const started = await evaluate("sessionStorage.getItem('mockStreamCount')");
+      await evaluate("window.oldDocument=true; true");
       await client.send("Page.reload");
-      await eventually(() => evaluate(`document.querySelector('[data-testid="ga-run-id"]')?.textContent==='browser-run' && !![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Stop Generation' && !button.disabled)`), "Active worker not recovered");
+      await eventually(() => evaluate(`!window.oldDocument && document.querySelector('[data-testid="ga-run-id"]')?.textContent==='browser-run' && !![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Stop Generation' && !button.disabled)`), "Active worker not recovered");
       assert.equal(await evaluate("window.mockGAController"), null);
       assert.equal(await evaluate("sessionStorage.getItem('mockStreamCount')"), started);
       assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`), "1 / 2");
@@ -260,6 +314,324 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       assert.equal(await evaluate(`document.querySelector('[data-testid="ga-run-id"]').textContent`), "old-run");
       assert.equal(await evaluate("sessionStorage.getItem('mockStreamCount')"), before);
       assert.equal(await evaluate(`!![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Stop Generation')`), false);
+    });
+    await t.test("pause waits for durable acknowledgement and preserves the graph without publishing a schedule", async () => {
+      await evaluate("window.pauseScenarioOldDocument=true; sessionStorage.removeItem('ga.active-run.v1'); sessionStorage.setItem('mockProcessId','browser-process'); sessionStorage.removeItem('mockTerminalRun'); true");
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.pauseScenarioOldDocument && window.mockGAController===null && !![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Generate Schedule' && !button.disabled)`), "Pause scenario discovery did not finish");
+      await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Generate Schedule').click(); true`);
+      await eventually(() => evaluate("!!window.mockGAController"), "Pause scenario stream missing");
+      sequence = 0;
+      await send("run_started",{status:"INITIALIZING",accepting_pause:true,accepting_stop:true});
+      await send("initial_population_ready",metrics(0)); await send("generation_completed",metrics(1));
+      await eventually(() => evaluate(`!![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Pause Generation' && !button.disabled)`), "Pause button missing");
+      await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Pause Generation').click(); true`);
+      await eventually(() => evaluate("!!window.mockPauseResolve"), "Pause was not requested");
+      assert.ok(await evaluate(`document.body.textContent.includes('Sending pause request')`));
+      assert.equal(await evaluate(`document.body.textContent.includes('Pause requested — waiting for a safe generation boundary.')`), false);
+      assert.ok(await evaluate(`!![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Stop Generation' && !button.disabled)`));
+      await evaluate(`window.mockPauseResolve(Response.json({run_id:'browser-run',process_instance_id:'browser-process',state:'PAUSE_REQUESTED',accepted:true})); true`);
+      await send("run_state_changed",{status:"PAUSING",accepting_pause:false,accepting_stop:true});
+      assert.equal(await evaluate(`document.body.textContent.includes('Paused: checkpoint saved.')`), false);
+      const snapshot={run_id:"browser-run",process_instance_id:"browser-process",state:"PAUSED",execution_active:false,
+        accepting_stop:true,accepting_pause:false,accepting_resume:true,configuration:{population_size:10,generations:2,fresh_chromosomes:2},
+        latest_progress:metrics(1),progress_history:[metrics(0),metrics(1)],latest_completed_generation:1,elapsed_ms:1000,
+        terminal_error:null,result_reference:null,checkpoint:"checkpoint-1.json.gz",checkpoint_status:{resumable:true}};
+      await evaluate(`sessionStorage.setItem('mockTerminalRun',${JSON.stringify(JSON.stringify(snapshot))}); sessionStorage.setItem('mockPausedRuns',${JSON.stringify(JSON.stringify([snapshot]))}); sessionStorage.removeItem('mockActiveRun'); true`);
+      await send("run_state_changed",{status:"PAUSED",accepting_resume:false,accepting_pause:false,checkpoint:snapshot.checkpoint});
+      await send("done",{status:"PAUSED",has_result:false});
+      await eventually(() => evaluate(`!![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Resume Generation' && !button.disabled)`), "Durable pause did not enable resume after worker exit");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`),"2");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`),"1 / 2");
+      assert.equal(await evaluate(`document.body.textContent.includes('Stopped — preserved schedule')`),false);
+    });
+    await t.test("acknowledged pause survives refresh even when saved-result loading never responds", async () => {
+      const before = await evaluate("sessionStorage.getItem('mockStreamCount')");
+      await evaluate("sessionStorage.setItem('mockLatestPending','true'); window.oldDocument=true; true");
+      await client.send("Page.reload");
+      await eventually(() => evaluate("!window.oldDocument"), "Refresh did not remount");
+      await eventually(() => evaluate(`!![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Resume Generation' && !button.disabled)`), "Paused refresh stalled behind saved-result loading");
+      for (const [id, value] of Object.entries({'ga-run-id':'browser-run','ga-generation':'1 / 2','ga-population':'8 / 10','ga-best-ever':'99','ga-generation-best':'99','ga-average':'149','ga-accepted':'11','ga-elapsed':'0m 1s'})) {
+        assert.equal(await evaluate(`document.querySelector('[data-testid="${id}"]').textContent`), value);
+      }
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`), "2");
+      assert.equal(await evaluate("sessionStorage.getItem('mockStreamCount')"), before);
+      await evaluate("sessionStorage.removeItem('mockLatestPending'); true");
+    });
+    await t.test("refresh during pending pause and slow checkpoint verification hydrates before enabling resume", async () => {
+      await evaluate(`var paused=JSON.parse(sessionStorage.getItem('mockTerminalRun')); var pending={...paused,state:'PAUSE_REQUESTED',execution_active:true,accepting_resume:false}; sessionStorage.setItem('mockActiveRun',JSON.stringify(pending)); sessionStorage.setItem('mockPausedRuns','[]'); window.oldDocument=true; true`);
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('Pause requested')`), "Pending pause was not recovered");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`), "1 / 2");
+      assert.equal(await evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`), false);
+      await evaluate(`sessionStorage.setItem('mockCheckpointPending','true'); var paused=JSON.parse(sessionStorage.getItem('mockTerminalRun')); sessionStorage.setItem('mockPausedRuns',JSON.stringify([paused])); sessionStorage.removeItem('mockActiveRun'); true`);
+      await eventually(() => evaluate(`!!window.mockCheckpointResolve && document.body.textContent.includes('Checking compatibility')`), "Checkpoint verification was not separated from hydration");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`), "2");
+      assert.equal(await evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`), false);
+      await evaluate(`sessionStorage.removeItem('mockCheckpointPending'); window.mockCheckpointResolve(Response.json({run_id:'browser-run',process_instance_id:'browser-process',state:'PAUSED',resumable:true})); true`);
+      await eventually(() => evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`), "Verified checkpoint did not enable resume");
+    });
+    await t.test("same-run resume survives refresh during RESUMING and continues its history", async () => {
+      const before = await evaluate("sessionStorage.getItem('mockStreamCount')");
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation').click(); true`);
+      await eventually(() => evaluate(`document.body.textContent.includes('Restoring saved population')`), "Resume did not begin");
+      await evaluate("window.oldDocument=true; true");
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('Restoring saved population')`), "RESUMING refresh failed");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`), "1 / 2");
+      assert.equal(await evaluate("window.mockControlRequests.length"), 0);
+      await evaluate(`var running=JSON.parse(sessionStorage.getItem('mockActiveRun')); running.state='RUNNING'; running.latest_progress=${JSON.stringify(metrics(2))}; running.progress_history.push(running.latest_progress); sessionStorage.setItem('mockActiveRun',JSON.stringify(running)); true`);
+      await eventually(() => evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent==='2 / 2'`), "Resumed generation was not monitored");
+      assert.equal(await evaluate("sessionStorage.getItem('mockStreamCount')"), before);
+      await evaluate(`var paused=JSON.parse(sessionStorage.getItem('mockTerminalRun')); sessionStorage.removeItem('mockActiveRun'); sessionStorage.setItem('mockPausedRuns',JSON.stringify([paused])); window.oldDocument=true; true`);
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.oldDocument && !![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`), "Next paused recovery failed");
+    });
+    await t.test("restart discovers the same paused identity and resume preserves history without another stream", async () => {
+      const before=await evaluate("sessionStorage.getItem('mockStreamCount')");
+      await evaluate(`var saved=JSON.parse(sessionStorage.getItem('mockTerminalRun')); saved.process_instance_id='restarted-process'; sessionStorage.setItem('mockProcessId','restarted-process'); sessionStorage.setItem('mockTerminalRun',JSON.stringify(saved)); sessionStorage.setItem('mockPausedRuns',JSON.stringify([saved])); window.oldDocument=true; true`);
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('Durable paused checkpoint recovered') && !![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Resume Generation' && !button.disabled)`), "Restart did not recover checkpoint");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-run-id"]').textContent`),"browser-run");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`),"2");
+      await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Resume Generation').click(); true`);
+      await eventually(() => evaluate(`document.body.textContent.includes('Restoring saved population and random state.')`), "Resuming state missing");
+      assert.equal(await evaluate("window.mockControlRequests[0].process"),"restarted-process");
+      assert.equal(await evaluate("sessionStorage.getItem('mockStreamCount')"),before);
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`),"1 / 2");
+      await evaluate(`var saved=JSON.parse(sessionStorage.getItem('mockActiveRun')); saved.state='RUNNING'; saved.accepting_pause=true; saved.latest_progress=${JSON.stringify(metrics(2))}; saved.progress_history.push(saved.latest_progress); sessionStorage.setItem('mockActiveRun',JSON.stringify(saved)); true`);
+      await eventually(() => evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent==='2 / 2'`), "Resumed progress missing");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`),"3");
+      await evaluate(`var saved=JSON.parse(sessionStorage.getItem('mockActiveRun')); saved.state='COMPLETED'; saved.execution_active=false; saved.result_reference='latest_ga_result.json'; sessionStorage.setItem('mockTerminalRun',JSON.stringify(saved)); sessionStorage.removeItem('mockActiveRun'); sessionStorage.setItem('mockStoppedResult',${JSON.stringify(JSON.stringify({...result,run_id:"browser-run",status:"COMPLETED"}))}); true`);
+      await eventually(() => evaluate(`document.body.textContent.includes('Generation Complete') && !![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Generate Schedule' && !button.disabled)`), "Resumed run did not complete");
+    });
+    await t.test("incompatible resume is rejected without starting a new population", async () => {
+      await evaluate(`var saved=JSON.parse(sessionStorage.getItem('mockTerminalRun')); saved.state='PAUSED'; saved.result_reference=null; saved.accepting_resume=true; saved.latest_progress=${JSON.stringify(metrics(1))}; saved.progress_history=[${JSON.stringify(metrics(0))},${JSON.stringify(metrics(1))}]; saved.checkpoint_status={resumable:true}; sessionStorage.setItem('mockTerminalRun',JSON.stringify(saved)); sessionStorage.setItem('mockPausedRuns',JSON.stringify([saved])); sessionStorage.setItem('ga.active-run.v1',JSON.stringify({run_id:saved.run_id,process_instance_id:saved.process_instance_id})); true`);
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`window.mockControlRequests.length===0 && !![...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Resume Generation' && !button.disabled)`), "Invalid-resume scenario missing");
+      const before=await evaluate("sessionStorage.getItem('mockStreamCount')");
+      await evaluate(`sessionStorage.setItem('mockCheckpointInvalid','true'); [...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Resume Generation').click(); true`);
+      await eventually(() => evaluate(`document.body.textContent.includes('Checkpoint inputs changed; no worker was started.')`), "Incompatible checkpoint error missing");
+      assert.equal(await evaluate("sessionStorage.getItem('mockStreamCount')"),before);
+      assert.ok(await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Resume Generation').disabled`));
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`),"1 / 2");
+    });
+    await t.test("checkpoint failures preserve paused history and disable resume", async () => {
+      await evaluate("sessionStorage.removeItem('mockCheckpointInvalid'); sessionStorage.setItem('mockCheckpointError','true'); window.oldDocument=true; true");
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('Checkpoint service unavailable')`), "Checkpoint error was not surfaced");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`), "1 / 2");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`), "2");
+      assert.ok(await evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && button.disabled)`));
+      assert.equal(await evaluate(`document.body.textContent.includes('Checking the backend for an active run')`), false);
+      await evaluate("sessionStorage.removeItem('mockCheckpointError'); true");
+    });
+    await t.test("incomplete paused metrics produce an explicit error instead of fabricated values", async () => {
+      const saved=await evaluate("sessionStorage.getItem('mockPausedRuns')");
+      await evaluate(`var paused=JSON.parse(sessionStorage.getItem('mockPausedRuns')); delete paused[0].latest_progress.average_fitness; sessionStorage.setItem('mockPausedRuns',JSON.stringify(paused)); window.oldDocument=true; true`);
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('incomplete metrics')`), "Missing metrics were silently accepted");
+      assert.equal(await evaluate(`document.body.textContent.includes('Checking the backend for an active run')`), false);
+      assert.equal(await evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`), false);
+      assert.equal(await evaluate("window.mockControlRequests.length"), 0);
+      await evaluate(`sessionStorage.setItem('mockPausedRuns',${JSON.stringify(saved)}); true`);
+    });
+    await t.test("unavailable and nonresponding discovery settle into actionable errors", async () => {
+      for (const [key, message] of [['mockDiscoveryError','Backend unavailable'],['mockDiscoveryPending','Recovery request timed out']]) {
+        await evaluate(`sessionStorage.setItem('${key}','true'); window.oldDocument=true; true`);
+        await client.send("Page.reload");
+        await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('${message}')`), "Discovery did not settle into an error", 16000);
+        assert.equal(await evaluate(`document.body.textContent.includes('Checking the backend for an active run')`), false);
+        assert.equal(await evaluate("window.mockControlRequests.length"), 0);
+        await evaluate(`sessionStorage.removeItem('${key}'); true`);
+      }
+    });
+    await t.test("stop during paused verification never fabricates a server stop state", async () => {
+      await evaluate(`sessionStorage.setItem('mockCheckpointPending','true'); window.oldDocument=true; true`);
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.oldDocument && !!window.mockCheckpointResolve && document.body.textContent.includes('Checking compatibility')`), "Paused verification did not start");
+      try {
+        await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Stop Generation').click(); true`);
+        await eventually(() => evaluate("!!window.mockStopResolve"), "Stop HTTP request missing");
+        assert.equal(await evaluate(`document.querySelector('[data-testid="live-ga-monitor"]').textContent.includes('Stop requested')`), false, "Unacknowledged HTTP request must not become backend STOP_REQUESTED");
+        assert.ok(await evaluate(`document.body.textContent.includes('Paused: checkpoint saved.')`));
+        assert.equal(await evaluate(`document.body.textContent.includes('Checking compatibility')`), false);
+        assert.ok(await evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && button.disabled)`));
+      } finally {
+        await evaluate(`sessionStorage.removeItem('mockCheckpointPending'); window.mockCheckpointResolve(Response.json({run_id:'browser-run',process_instance_id:sessionStorage.getItem('mockProcessId'),state:'PAUSED',resumable:true})); window.mockStopResolve(Response.json({detail:{code:'GA_CHECKPOINT_INPUT_CHANGED',message:'Stop checkpoint validation rejected changed inputs; no stop was acknowledged.'}},{status:409})); true`);
+      }
+      await eventually(() => evaluate(`document.body.textContent.includes('Stop checkpoint validation rejected changed inputs') && !![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`), "Rejected stop did not reverify the authoritative paused run");
+      assert.equal(await evaluate(`document.body.textContent.includes('Stop requested')`), false);
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`), "1 / 2");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`), "2");
+    });
+    await t.test("checkpoint verification cannot keep resume enabled when the same run is stopping", async () => {
+      const paused = await evaluate("JSON.parse(sessionStorage.getItem('mockTerminalRun'))");
+      const before = await evaluate("sessionStorage.getItem('mockStreamCount')");
+      for (const state of ['STOP_REQUESTED', 'STOPPING']) {
+        await evaluate(`sessionStorage.setItem('mockTerminalRun',${JSON.stringify(JSON.stringify(paused))}); sessionStorage.setItem('mockPausedRuns',${JSON.stringify(JSON.stringify([paused]))}); sessionStorage.setItem('ga.active-run.v1',JSON.stringify({run_id:'browser-run',process_instance_id:sessionStorage.getItem('mockProcessId')})); sessionStorage.setItem('mockCheckpointPending','true'); window.oldDocument=true; true`);
+        await client.send("Page.reload");
+        await eventually(() => evaluate(`!window.oldDocument && !!window.mockCheckpointResolve`), "Verification did not start");
+        await evaluate(`var stopping={...JSON.parse(sessionStorage.getItem('mockTerminalRun')),state:'${state}',execution_active:true,accepting_stop:false,accepting_resume:false}; sessionStorage.setItem('mockActiveRun',JSON.stringify(stopping)); sessionStorage.setItem('mockPausedRuns','[]'); sessionStorage.removeItem('mockCheckpointPending'); window.mockCheckpointResolve(Response.json({run_id:'browser-run',process_instance_id:sessionStorage.getItem('mockProcessId'),state:'${state}',resumable:false})); true`);
+        await eventually(() => evaluate(`document.body.textContent.includes('${state==='STOPPING'?'Stopping':'Stop requested'}') && !document.body.textContent.includes('Checking compatibility')`), "Server stop state was not reconciled");
+        assert.equal(await evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation')`), false);
+        await evaluate("window.oldDocument=true; true");
+        await client.send("Page.reload");
+        await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('${state==='STOPPING'?'Stopping':'Stop requested'}')`), "Stopping refresh failed");
+        assert.equal(await evaluate("window.mockCheckpointRequests.length"), 0);
+        assert.equal(await evaluate("window.mockControlRequests.length + window.mockStopRequests.length"), 0);
+        assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`), "1 / 2");
+        await evaluate("sessionStorage.removeItem('mockActiveRun'); true");
+      }
+      const stopped = {...paused,state:'STOPPED',execution_active:false,accepting_stop:false,accepting_resume:false,process_instance_id:'terminal-restarted-process'};
+      const other = {...paused,run_id:'another-paused-run',process_instance_id:stopped.process_instance_id};
+      await evaluate(`sessionStorage.setItem('mockProcessId','terminal-restarted-process'); sessionStorage.setItem('mockTerminalRun',${JSON.stringify(JSON.stringify(stopped))}); sessionStorage.setItem('mockPausedRuns',${JSON.stringify(JSON.stringify([other]))}); window.oldDocument=true; true`);
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('Stopped after generation 1')`), "Terminal run was incorrectly replaced by another paused run");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-run-id"]').textContent`), "browser-run");
+      assert.equal(await evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation')`), false);
+      assert.equal(await evaluate("window.mockCheckpointRequests.length"), 0);
+      assert.equal(await evaluate("sessionStorage.getItem('mockStreamCount')"), before);
+      await evaluate(`sessionStorage.setItem('mockProcessId',${JSON.stringify(paused.process_instance_id)}); sessionStorage.setItem('mockTerminalRun',${JSON.stringify(JSON.stringify(paused))}); sessionStorage.setItem('mockPausedRuns',${JSON.stringify(JSON.stringify([paused]))}); sessionStorage.setItem('ga.active-run.v1',JSON.stringify({run_id:'browser-run',process_instance_id:sessionStorage.getItem('mockProcessId')})); true`);
+    });
+    await t.test("checkpoint verification timeout reports a specific error and preserves paused metrics", async () => {
+      await evaluate("sessionStorage.setItem('mockCheckpointPending','true'); sessionStorage.setItem('mockFastTimeout','true'); window.oldDocument=true; true");
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('Recovery request timed out')`), "Checkpoint timeout did not settle");
+      assert.equal(await evaluate(`document.body.textContent.includes('Checking compatibility')`), false);
+      assert.ok(await evaluate(`document.body.textContent.includes('Paused: checkpoint saved.')`));
+      assert.ok(await evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && button.disabled)`));
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`), "2");
+      await evaluate("sessionStorage.removeItem('mockCheckpointPending'); sessionStorage.removeItem('mockFastTimeout'); true");
+    });
+    await t.test("selecting another paused run rehydrates only that run and revalidates its checkpoint", async () => {
+      const paused = await evaluate("JSON.parse(sessionStorage.getItem('mockTerminalRun'))");
+      const other = {...paused,run_id:'another-paused-run',latest_completed_generation:2,latest_progress:metrics(2),progress_history:[metrics(0),metrics(1),metrics(2)],elapsed_ms:2000};
+      await evaluate(`sessionStorage.setItem('mockPausedRuns',${JSON.stringify(JSON.stringify([paused,other]))}); window.oldDocument=true; true`);
+      await client.send("Page.reload");
+      await eventually(() => evaluate(`!window.oldDocument && !![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`), "First paused candidate was not verified");
+      await evaluate(`var select=document.querySelector('select[aria-label="Saved paused run"]'); select.value='another-paused-run'; select.dispatchEvent(new Event('change',{bubbles:true})); true`);
+      await eventually(() => evaluate(`document.querySelector('[data-testid="ga-run-id"]').textContent==='another-paused-run' && !![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`), "Selected paused run did not hydrate and verify");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`), "2 / 2");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-best-ever"]').textContent`), "98");
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`), "3");
+      assert.ok(await evaluate(`window.mockCheckpointRequests.at(-1).endsWith('/another-paused-run/checkpoint-status')`));
+      assert.equal(await evaluate("window.mockControlRequests.length + window.mockStopRequests.length"), 0);
+    });
+    await t.test("resume rejection reconciles a concurrent server stop instead of inventing PAUSED", async () => {
+      const paused = await evaluate("JSON.parse(sessionStorage.getItem('mockPausedRuns')).find(run=>run.run_id==='another-paused-run')");
+      const stopping = {...paused,state:'STOPPING',execution_active:true,accepting_stop:false,accepting_resume:false};
+      const before = await evaluate("sessionStorage.getItem('mockStreamCount')");
+      await evaluate(`sessionStorage.setItem('mockResumeConflict','true'); sessionStorage.setItem('mockActiveRun',${JSON.stringify(JSON.stringify(stopping))}); sessionStorage.setItem('mockPausedRuns','[]'); [...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation').click(); true`);
+      await eventually(() => evaluate(`document.body.textContent.includes('Stopping') && document.body.textContent.includes('resume was not admitted')`), "Failed resume invented a paused lifecycle");
+      assert.equal(await evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation')`), false);
+      assert.equal(await evaluate(`document.body.textContent.includes('Checking compatibility')`), false);
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-run-id"]').textContent`), "another-paused-run");
+      assert.equal(await evaluate("window.mockControlRequests.length"), 1);
+      assert.equal(await evaluate("sessionStorage.getItem('mockStreamCount')"), before);
+    });
+    const logEntry=(sequence,message)=>({sequence,message,timestamp:'2026-10-11T03:00:00Z',line_truncated:false});
+    let logPaused;
+    await t.test("paused refresh recovers ordered console output, then resume delivers live logs before metrics advance", async()=>{
+      const template=await evaluate("JSON.parse(sessionStorage.getItem('mockTerminalRun'))");
+      logPaused={...template,run_id:'console-run',state:'PAUSED',execution_active:false,latest_completed_generation:1,
+        latest_progress:metrics(1),progress_history:[metrics(0),metrics(1)],accepting_stop:true,accepting_resume:false};
+      const initial=[logEntry(1,'initial console output'),logEntry(2,'GENETIC ALGORITHM PAUSED')];
+      await evaluate(`sessionStorage.removeItem('mockResumeConflict'); sessionStorage.removeItem('mockActiveRun'); sessionStorage.removeItem('mockLogTruncated'); sessionStorage.setItem('mockLogEpoch','console-epoch'); sessionStorage.setItem('mockTerminalRun',${JSON.stringify(JSON.stringify(logPaused))}); sessionStorage.setItem('mockPausedRuns',${JSON.stringify(JSON.stringify([logPaused]))}); sessionStorage.setItem('ga.active-run.v1',${JSON.stringify(JSON.stringify({run_id:logPaused.run_id,process_instance_id:logPaused.process_instance_id}))}); sessionStorage.setItem('mockLogEntries',${JSON.stringify(JSON.stringify(initial))}); window.oldDocument=true; true`);
+      await client.send('Page.reload');
+      await eventually(()=>evaluate(`!window.oldDocument && document.querySelector('[data-testid="ga-console-output"]')?.textContent.includes('GENETIC ALGORITHM PAUSED') && !![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`),'Paused console did not recover');
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-console-status"]').textContent`),'PAUSED');
+      assert.equal(await evaluate('window.mockControlRequests.length + window.mockStopRequests.length'),0);
+      const before=await evaluate("sessionStorage.getItem('mockStreamCount')");
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation').click(); true`);
+      await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-status"]').textContent==='RESUMING'`),'Console did not show authoritative RESUMING');
+      const resumed=[...initial,logEntry(3,'GENETIC ALGORITHM RESUMING'),logEntry(4,'live mutation attempt'),logEntry(5,'live mutation attempt')];
+      await evaluate(`var resumed=JSON.parse(sessionStorage.getItem('mockActiveRun')); resumed.state='RUNNING'; sessionStorage.setItem('mockActiveRun',JSON.stringify(resumed)); sessionStorage.setItem('mockLogEntries',${JSON.stringify(JSON.stringify(resumed))}); true`);
+      await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-output"]').textContent.split('live mutation attempt').length-1===2 && document.querySelector('[data-testid="ga-console-status"]').textContent==='RUNNING'`),'Resumed diagnostics did not continue');
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`),'1 / 2');
+      assert.ok(await evaluate(`window.mockLogRequests.some(url=>url.endsWith('after_sequence=2'))`));
+      await pause(1200);
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-console-output"]').textContent.split('GENETIC ALGORITHM RESUMING').length-1`),1);
+      assert.equal(await evaluate("sessionStorage.getItem('mockStreamCount')"),before);
+      assert.equal(await evaluate('window.mockControlRequests.length'),1);
+    });
+    await t.test("refresh during RUNNING replays available logs without posting another worker",async()=>{
+      await evaluate('window.oldDocument=true; true'); await client.send('Page.reload');
+      await eventually(()=>evaluate(`!window.oldDocument && document.querySelector('[data-testid="ga-console-output"]')?.textContent.split('live mutation attempt').length-1===2`),'Running refresh lost console');
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-console-output"]').textContent.split('live mutation attempt').length-1`),2);
+      assert.equal(await evaluate('window.mockControlRequests.length + window.mockStopRequests.length'),0);
+    });
+    await t.test("changed log epochs replay from zero and disclose truncated history",async()=>{
+      const retained=[logEntry(100,'first retained line'),logEntry(101,'last retained line')];
+      await evaluate(`sessionStorage.setItem('mockLogEpoch','evicted-epoch'); sessionStorage.setItem('mockLogTruncated','true'); sessionStorage.setItem('mockLogEntries',${JSON.stringify(JSON.stringify(retained))}); true`);
+      await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-output"]').textContent.includes('first retained line') && document.querySelector('[data-testid="ga-console-notice"]').textContent.includes('truncated')`),'Buffer eviction skipped earliest retained logs');
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-console-output"]').textContent.includes('GENETIC ALGORITHM PAUSED')`),false);
+    });
+    await t.test("restart retains checkpoint identity and resumed workers reconnect after earlier logs are lost",async()=>{
+      const restarted={...logPaused,process_instance_id:'console-restarted-process'};
+      await evaluate(`sessionStorage.removeItem('mockActiveRun'); sessionStorage.setItem('mockProcessId','console-restarted-process'); sessionStorage.setItem('mockTerminalRun',${JSON.stringify(JSON.stringify(restarted))}); sessionStorage.setItem('mockPausedRuns',${JSON.stringify(JSON.stringify([restarted]))}); sessionStorage.setItem('mockLogEpoch','restart-epoch'); sessionStorage.setItem('mockLogEntries','[]'); window.oldDocument=true; true`);
+      await client.send('Page.reload');
+      await eventually(()=>evaluate(`!window.oldDocument && !![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled) && document.querySelector('[data-testid="ga-console-notice"]').textContent.includes('truncated')`),'Restart did not recover paused checkpoint/log notice');
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-run-id"]').textContent`),'console-run');
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`),'2');
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation').click(); true`);
+      const restartedLogs=[logEntry(1,'GENETIC ALGORITHM RESUMING'),logEntry(2,'restarted mutation output')];
+      await evaluate(`var run=JSON.parse(sessionStorage.getItem('mockActiveRun')); run.state='RUNNING'; sessionStorage.setItem('mockActiveRun',JSON.stringify(run)); sessionStorage.setItem('mockLogEntries',${JSON.stringify(JSON.stringify(restartedLogs))}); true`);
+      await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-output"]').textContent.includes('restarted mutation output')`),'Restarted resume did not deliver logs');
+      assert.equal(await evaluate('window.mockControlRequests.length'),1);
+      assert.equal(await evaluate(`window.mockControlRequests[0].process`),'console-restarted-process');
+    });
+    await t.test("terminal state drains final logs and stops requesting console pages",async()=>{
+      const terminal={...logPaused,process_instance_id:'console-restarted-process',state:'STOPPED',execution_active:false,accepting_stop:false,accepting_resume:false};
+      await evaluate(`sessionStorage.removeItem('mockActiveRun'); sessionStorage.setItem('mockPausedRuns','[]'); sessionStorage.setItem('mockTerminalRun',${JSON.stringify(JSON.stringify(terminal))}); var lines=JSON.parse(sessionStorage.getItem('mockLogEntries')); lines.push(${JSON.stringify(logEntry(3,'GENETIC ALGORITHM STOPPED'))}); sessionStorage.setItem('mockLogEntries',JSON.stringify(lines)); true`);
+      await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-status"]').textContent==='STOPPED' && document.querySelector('[data-testid="ga-console-output"]').textContent.includes('GENETIC ALGORITHM STOPPED')`),'Final console logs were not drained');
+      await pause(300); const count=await evaluate('window.mockLogRequests.length'); await pause(1500);
+      assert.equal(await evaluate('window.mockLogRequests.length'),count);
+    });
+    await t.test("console recovery failures and timeouts show errors without hiding a verified checkpoint",async()=>{
+      const paused={...logPaused,process_instance_id:'console-restarted-process'};
+      await evaluate(`sessionStorage.setItem('mockTerminalRun',${JSON.stringify(JSON.stringify(paused))}); sessionStorage.setItem('mockPausedRuns',${JSON.stringify(JSON.stringify([paused]))}); sessionStorage.setItem('ga.active-run.v1',${JSON.stringify(JSON.stringify({run_id:paused.run_id,process_instance_id:paused.process_instance_id}))}); true`);
+      for(const [key,message] of [['mockLogError','Console backend unavailable'],['mockLogPending','Recovery request timed out']]) {
+        await evaluate(`sessionStorage.setItem('${key}','true'); sessionStorage.setItem('mockFastLogTimeout','true'); window.oldDocument=true; true`);
+        await client.send('Page.reload');
+        await eventually(()=>evaluate(`!window.oldDocument && document.querySelector('[data-testid="ga-console-notice"]')?.textContent.includes('${message}') && !![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`),'Console failure did not settle separately from checkpoint verification');
+        assert.equal(await evaluate(`document.querySelector('[data-testid="ga-console-status"]').textContent`),'PAUSED');
+        assert.equal(await evaluate('window.mockControlRequests.length + window.mockStopRequests.length'),0);
+        await evaluate(`sessionStorage.removeItem('${key}'); sessionStorage.removeItem('mockFastLogTimeout'); true`);
+      }
+    });
+    await t.test("idle paused log monitoring detects another tab's resume without posting a control",async()=>{
+      await evaluate('window.oldDocument=true; true'); await client.send('Page.reload');
+      await eventually(()=>evaluate(`!window.oldDocument && !![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation' && !button.disabled)`),'Paused observer did not settle');
+      const active={...logPaused,process_instance_id:'console-restarted-process',state:'RUNNING',execution_active:true,accepting_resume:false};
+      await evaluate(`sessionStorage.setItem('mockActiveRun',${JSON.stringify(JSON.stringify(active))}); sessionStorage.setItem('mockPausedRuns','[]'); var entries=JSON.parse(sessionStorage.getItem('mockLogEntries')); entries.push(${JSON.stringify(logEntry(4,'other tab resumed output'))}); sessionStorage.setItem('mockLogEntries',JSON.stringify(entries)); true`);
+      await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-status"]').textContent==='RUNNING' && document.querySelector('[data-testid="ga-console-output"]').textContent.includes('other tab resumed output')`),'Paused observer did not detect external resume');
+      assert.equal(await evaluate('window.mockControlRequests.length + window.mockStopRequests.length'),0);
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-run-id"]').textContent`),'console-run');
+    });
+    await t.test("working log retrieval retries disconnected metric monitoring without starting a worker",async()=>{
+      await evaluate('window.mockStateError=true; true');
+      await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-status"]').textContent==='DISCONNECTED'`),'Metric failure did not report disconnect');
+      await evaluate('window.mockStateError=false; true');
+      try {
+        await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-status"]').textContent==='RUNNING'`),'Available run logs did not trigger authoritative status recovery');
+      } catch(reason) {
+        console.log('Disconnected recovery diagnostics:',await evaluate(`({monitor:document.querySelector('[data-testid="live-ga-monitor"]').textContent,console:document.querySelector('[data-testid="ga-console-notice"]').textContent,active:sessionStorage.getItem('mockActiveRun'),lastLogs:window.mockLogRequests.slice(-3)})`));
+        throw reason;
+      }
+      assert.equal(await evaluate('window.mockControlRequests.length + window.mockStopRequests.length'),0);
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-run-id"]').textContent`),'console-run');
+    });
+    await t.test("legacy SSE console lines survive discovery when a server lacks cursor logs",async()=>{
+      await evaluate(`sessionStorage.removeItem('ga.active-run.v1'); sessionStorage.removeItem('mockActiveRun'); sessionStorage.removeItem('mockTerminalRun'); sessionStorage.setItem('mockPausedRuns','[]'); sessionStorage.setItem('mockProcessId','browser-process'); sessionStorage.setItem('mockLogUnsupported','true'); window.oldDocument=true; true`);
+      await client.send('Page.reload');
+      await eventually(()=>evaluate(`!window.oldDocument && !![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Generate Schedule' && !button.disabled)`),'Legacy test discovery failed');
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Generate Schedule').click(); true`);
+      await eventually(()=>evaluate('!!window.mockGAController'),'Legacy stream missing');
+      sequence=0; await send('run_started',{status:'RUNNING'}); await send('log',{message:'legacy live diagnostic'});
+      await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-output"]')?.textContent.includes('legacy live diagnostic') && document.querySelector('[data-testid="ga-console-notice"]')?.textContent.includes('endpoint is missing')`),'Legacy console output was discarded');
+      await send('result',result); await send('done',{status:'COMPLETED'});
+      await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-status"]')?.textContent==='COMPLETED'`),'Legacy stream did not finish');
     });
     assert.deepEqual(errors, []);
   } finally {

@@ -48,6 +48,7 @@ export default function GenerateSchedule() {
     gaData,
     activeRunId,
     recoveryNotice,
+    pauseGA, resumeGA, canPause, canResume, controlError, pausedRuns, selectPausedRun,
     executionStatus,
     progressHistory,
     stopGA,
@@ -57,6 +58,7 @@ export default function GenerateSchedule() {
     error,
     elapsedSeconds,
     logs,
+    logNotice, logConnection,
 
     populationSize:
       runningPopulationSize,
@@ -1145,14 +1147,14 @@ const [
       {/* RUNNING */}
       {/* ==================================================== */}
 
-      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={runningPopulationSize} limit={runningGenerations} />}
+      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor onPause={pauseGA} onResume={resumeGA} canPause={canPause} canResume={canResume} controlError={controlError} pausedRuns={pausedRuns} onSelectPaused={id => { const run = pausedRuns.find(item => item.run_id === id); if (run) selectPausedRun(run); }} runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={runningPopulationSize} limit={runningGenerations} />}
 
       {/* ==================================================== */}
       {/* LIVE CONSOLE */}
       {/* ==================================================== */}
 
       {(loading ||
-        logs.length > 0) && (
+        logs.length > 0 || activeRunId) && (
 
         <div>
 
@@ -1181,7 +1183,9 @@ const [
 
           <GALiveConsole
             logs={logs}
-            loading={loading}
+            status={executionStatus}
+            notice={logNotice}
+            connection={logConnection}
           />
 
         </div>

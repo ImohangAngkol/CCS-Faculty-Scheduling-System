@@ -56,9 +56,15 @@ class GenerationMonitor:
         self.previous_best = None
         self.without_improvement = 0
         self.comparable = True
+        self.history = []
+        self.check_inputs()
 
     def check_inputs(self):
+        from genetic_algorithm.utils.FrozenInputs import scoring_inputs
+        frozen = scoring_inputs.get()
         self.comparable = self.comparable and input_fingerprint() == self.fingerprint
+        if frozen is not None:
+            self.comparable = self.comparable and frozen["input_fingerprint"] == self.fingerprint
         if not self.comparable:
             raise ValueError("GA inputs/configuration changed during execution; metrics are no longer comparable. No result will be published.")
 
@@ -100,5 +106,18 @@ class GenerationMonitor:
         # JSON copy prevents consumers from receiving mutable GA state.
         self.callback("initial_population_ready" if generation == 0 else "generation_completed",
                       json.loads(json.dumps(data, allow_nan=False)))
+        self.history.append(data)
         self.previous_best, self.previous_time = best_ever, now
         scores.clear()
+
+    def checkpoint_state(self):
+        return {key: getattr(self, key) for key in (
+            "fingerprint", "configuration_fingerprint", "accepted", "baseline_count",
+            "previous_best", "without_improvement", "comparable", "history")}
+
+    def restore(self, state, elapsed_ms):
+        for key, value in state.items():
+            setattr(self, key, value)
+        now = time.monotonic()
+        self.started = now - elapsed_ms / 1000
+        self.previous_time = now

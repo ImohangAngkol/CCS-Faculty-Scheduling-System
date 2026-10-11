@@ -133,6 +133,7 @@ backend/data/*.xlsx
 
 backend/saved_chromosomes/*.json
 backend/saved_chromosomes/stopped_runs/
+backend/run_checkpoints/
 
 
 # ============================================================

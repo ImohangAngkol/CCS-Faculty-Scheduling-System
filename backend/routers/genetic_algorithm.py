@@ -1,15 +1,16 @@
 import asyncio
-import io
 import json
 import queue
-import sys
 import threading
 import os
+import time
 from pathlib import Path
 
-from contextlib import redirect_stdout
 from services.ga_progress_service import EventEmitter
+from services.ga_log_service import capture_run_logs, store_for
 from services import ga_control_service
+from services import ga_checkpoint_service as checkpoints
+from services import ga_service
 from services.ga_control_service import RunRegistry, StopConflict, save_stopped_result, timestamp
 from uuid import UUID
 
@@ -49,15 +50,24 @@ def _admit_execution(cancellable=True, configuration=None):
     try:
         control = _run_registry.register(configuration)
         control.finalizing = not cancellable
+        if cancellable:
+            control.durable = True
+            checkpoints.write_marker(control)
         return control
     except Exception:
+        if "control" in locals():
+            with _run_registry.lock:
+                _run_registry.active_id = None
+                _run_registry.runs.pop(control.run_id, None)
         _ga_execution_lock.release()
         raise
 
 
 def _release_execution(control):
-    _run_registry.release(control)
-    _ga_execution_lock.release()
+    try:
+        _run_registry.release(control)
+    finally:
+        _ga_execution_lock.release()
 
 
 def _finish_result(control, result):
@@ -138,103 +148,12 @@ def _read_latest_result():
 
 
 # ============================================================
-# STDOUT CAPTURE
-# ============================================================
-
-class QueueWriter(io.TextIOBase):
-
-    def __init__(
-        self,
-        event_queue,
-        original_stdout,
-    ):
-        super().__init__()
-
-        self.event_queue = event_queue
-        self.owner_thread = threading.get_ident()
-        self.original_stdout = original_stdout
-
-        self.buffer = ""
-
-        self.lock = threading.Lock()
-
-
-    def writable(self):
-        return True
-
-
-    def write(self, text):
-
-        if not text:
-            return 0
-
-
-        # Keep showing output in VS Code terminal
-        self.original_stdout.write(text)
-        self.original_stdout.flush()
-
-
-        if threading.get_ident() != self.owner_thread:
-            return len(text)
-
-        # Also send output to frontend
-        with self.lock:
-
-            normalized = (
-                text
-                .replace("\r\n", "\n")
-                .replace("\r", "\n")
-            )
-
-            self.buffer += normalized
-
-
-            while "\n" in self.buffer:
-
-                line, self.buffer = (
-                    self.buffer.split(
-                        "\n",
-                        1,
-                    )
-                )
-
-                self.event_queue.put(
-                    {
-                        "type": "log",
-                        "message": line,
-                    }
-                )
-
-
-        return len(text)
-
-
-    def flush(self):
-        self.original_stdout.flush()
-
-
-    def flush_remaining(self):
-
-        with self.lock:
-
-            if self.buffer:
-
-                self.event_queue.put(
-                    {
-                        "type": "log",
-                        "message": self.buffer,
-                    }
-                )
-
-                self.buffer = ""
-
-
-# ============================================================
 # GA STATUS
 # ============================================================
 
 @router.get("/status")
 def get_ga_status():
+    _run_registry.discover()
     active = _run_registry.active()
     return {
         "status": "ready",
@@ -243,6 +162,11 @@ def get_ga_status():
         "process_instance_id": _run_registry.process_instance_id,
         "process_id": os.getpid(),
         "monitoring": "snapshot_polling",
+        "pause_resume_version": "3d.1",
+        # Discovery must not deserialize/validate every population. Verify only
+        # the selected run through checkpoint-status before enabling resume.
+        "paused_runs": [{**control.snapshot(), "accepting_resume": False}
+                        for control in _run_registry.paused()],
         "message": (
             "Genetic Algorithm API is available."
         ),
@@ -262,6 +186,7 @@ def _require_process(process_instance_id, run_id=None):
 
 def _owned_run(run_id, process_instance_id=None):
     _require_process(process_instance_id, run_id)
+    _run_registry.discover()
     control = _run_registry.get(run_id)
     if control is None:
         raise HTTPException(status_code=404, detail={"code": "GA_UNKNOWN_RUN",
@@ -276,13 +201,145 @@ def get_run_state(run_id: str, process_instance_id: str | None = Header(default=
     return control.snapshot()
 
 
+@router.get("/runs/{run_id}/logs")
+def get_run_logs(run_id: str, after_sequence: int = Query(default=0, ge=0),
+                 process_instance_id: str | None = Header(default=None, alias="X-GA-Process-ID")):
+    control = _owned_run(run_id, process_instance_id)
+    # No population/checkpoint restore, fitness calls or giant history copy.
+    with control.lock:
+        lifecycle = {"run_id": control.run_id, "process_instance_id": control.process_instance_id,
+                     "state": control.state, "execution_active": control.execution_active}
+    buffer = store_for(_run_registry).buffer(run_id, history_unavailable=control.state != "CREATED")
+    return {**buffer.read(after_sequence), **lifecycle}
+
+
 @router.post("/runs/{run_id}/stop")
 def stop_run(run_id: str, process_instance_id: str | None = Header(default=None, alias="X-GA-Process-ID")):
     control = _owned_run(run_id, process_instance_id)
     try:
+        if control.state == "PAUSED" and not control.execution_active:
+            return _launch_resume(control, stopping=True)
+        if control.state == "INTERRUPTED":
+            raise StopConflict("The interrupted worker no longer exists; no cancellation occurred.")
         return control.request_stop()
     except StopConflict as error:
         raise HTTPException(status_code=409, detail=str(error)) from error
+
+
+def _templates():
+    return ga_service.list_subjects, ga_service.list_faculty, ga_service.lst_rooms
+
+
+def _checkpoint_error(error):
+    return HTTPException(status_code=409 if error.code in {
+        "GA_CHECKPOINT_INCOMPATIBLE", "GA_CHECKPOINT_INPUT_CHANGED"} else 422,
+                         detail={"code": error.code, "message": str(error)})
+
+
+@router.post("/runs/{run_id}/pause")
+def pause_run(run_id: str, process_instance_id: str | None = Header(default=None, alias="X-GA-Process-ID")):
+    control = _owned_run(run_id, process_instance_id)
+    try:
+        if control.state == "INTERRUPTED" or not control.durable:
+            raise StopConflict("This execution has no resumable population checkpoint capability.")
+        return control.request_pause()
+    except StopConflict as error:
+        raise HTTPException(status_code=409, detail={"code": "GA_PAUSE_CONFLICT", "message": str(error)}) from error
+
+
+@router.get("/runs/{run_id}/checkpoint-status")
+def get_checkpoint_status(run_id: str, process_instance_id: str | None = Header(default=None, alias="X-GA-Process-ID")):
+    control = _owned_run(run_id, process_instance_id)
+    try:
+        verified = checkpoints.checkpoint_status(run_id, _templates())
+        # Another client may resume/stop during the expensive validation.
+        with control.lock:
+            verified.update(process_instance_id=control.process_instance_id, state=control.state)
+            verified["resumable"] = (verified["resumable"] and control.state == "PAUSED"
+                                     and not control.execution_active and verified["checkpoint"] == control.checkpoint)
+        return verified
+    except checkpoints.CheckpointError as error:
+        raise _checkpoint_error(error) from error
+
+
+def _launch_resume(control, stopping=False):
+    if not _ga_execution_lock.acquire(blocking=False):
+        raise HTTPException(status_code=409, detail={"code": "GA_EXECUTION_BUSY", "message": "Another GA worker owns execution admission."})
+    claimed = False
+    try:
+        with control.lock:
+            if control.state != "PAUSED" or control.execution_active:
+                raise StopConflict("Only a durably paused run with no worker can resume.")
+            marker = checkpoints.read_marker(control.run_id)
+            if marker is None or marker["state"] != "PAUSED":
+                raise checkpoints.CheckpointError("The durable record is not PAUSED.")
+            checkpoint = control.checkpoint
+        # Admission remains exclusive, but expensive compatibility/constraint
+        # validation must not block read-only lifecycle/status requests.
+        restored = checkpoints.load_checkpoint(control.run_id, _templates())
+        with control.lock:
+            marker = checkpoints.read_marker(control.run_id)
+            if (control.state != "PAUSED" or control.execution_active
+                    or control.checkpoint != checkpoint or marker is None
+                    or marker["state"] != "PAUSED" or marker["checkpoint"] != checkpoint):
+                raise StopConflict("The paused run changed during checkpoint validation; no worker was started.")
+            _run_registry.claim(control)
+            claimed = True
+            if stopping:
+                control.elapsed_offset = control.snapshot()["elapsed_ms"]
+                control.started_clock = time.monotonic()
+                acknowledgement = control.request_stop()
+                control.execution_active = True
+                control.ended_clock = None
+            else:
+                control.begin_resume()
+                acknowledgement = {**control.snapshot(), "accepted": True, "already_requested": False}
+        def worker():
+            try:
+                with capture_run_logs(_run_registry, control) as log:
+                    log("GENETIC ALGORITHM STOPPING" if stopping else "GENETIC ALGORITHM RESUMING")
+                    result = run_genetic_algorithm(**restored["parameters"], resume_state=restored,
+                                                  run_control=control, progress_callback=control.capture_progress)
+                    if not isinstance(result, checkpoints.PausedRun):
+                        _finish_result(control, result)
+                    log(f"GENETIC ALGORITHM {control.state}")
+            except Exception as error:
+                control.fail(error)
+                with capture_run_logs(_run_registry, control) as log:
+                    log(f"GENETIC ALGORITHM FAILED: {error}")
+            finally:
+                _release_execution(control)
+        thread = threading.Thread(target=worker, daemon=True)
+        thread.start()
+        return acknowledgement
+    except checkpoints.CheckpointError as error:
+        if claimed:
+            _release_execution(control)
+        else:
+            _ga_execution_lock.release()
+        raise _checkpoint_error(error) from error
+    except Exception as error:
+        if claimed:
+            try:
+                control.fail(error)
+            finally:
+                _release_execution(control)
+        else:
+            _ga_execution_lock.release()
+        if isinstance(error, StopConflict):
+            raise HTTPException(status_code=409, detail={"code": "GA_RESUME_CONFLICT", "message": str(error)}) from error
+        raise
+
+
+@router.post("/runs/{run_id}/resume")
+def resume_run(run_id: str, process_instance_id: str | None = Header(default=None, alias="X-GA-Process-ID")):
+    control = _owned_run(run_id, process_instance_id)
+    with control.lock:
+        if control.state in {"RESUMING", "RUNNING"} and control.resumed_at:
+            return {**control.snapshot(), "accepted": True, "already_requested": True}
+        if control.state in {"STOPPED", "COMPLETED", "FAILED"}:
+            return {**control.snapshot(), "accepted": False, "already_requested": False}
+    return _launch_resume(control)
 
 
 @router.get("/runs/{run_id}/result")
@@ -293,6 +350,7 @@ def get_stopped_result(run_id: str):
             raise ValueError("Noncanonical run ID")
     except ValueError:
         raise HTTPException(status_code=404, detail="No preserved stopped result exists.")
+    _run_registry.discover()
     path = ga_control_service.STOPPED_RUNS_DIR / f"{run_id}.json"
     control = _run_registry.get(run_id)
     expected_status = "STOPPED"
@@ -350,19 +408,20 @@ def generate_ga_schedule(
 ):
 
     control = _admit_execution(cancellable=False)
-    control.start()
     try:
+        with capture_run_logs(_run_registry, control):
+            control.start()
 
-        result = generate_schedule(
-            population_size=population_size
-        )
+            result = generate_schedule(
+                population_size=population_size
+            )
 
-        control.seal()
-        control.finish("COMPLETED")
-        return {
-            "status": "success",
-            "data": result,
-        }
+            control.seal()
+            control.finish("COMPLETED")
+            return {
+                "status": "success",
+                "data": result,
+            }
 
 
     except Exception as error:
@@ -411,26 +470,29 @@ def run_ga(
 
     control = _admit_execution(configuration={"population_size": population_size, "generations": generations,
                                             "fresh_chromosomes": fresh_chromosomes, "baseline_mode": baseline_mode})
-    control.start()
     try:
+        with capture_run_logs(_run_registry, control):
+            control.start()
 
-        result = run_genetic_algorithm(
-            population_size=population_size,
-            generations=generations,
-            fresh_chromosomes=fresh_chromosomes,
-            baseline_mode=baseline_mode,
-            run_control=control,
-            progress_callback=control.capture_progress,
-        )
+            result = run_genetic_algorithm(
+                population_size=population_size,
+                generations=generations,
+                fresh_chromosomes=fresh_chromosomes,
+                baseline_mode=baseline_mode,
+                run_control=control,
+                progress_callback=control.capture_progress,
+            )
 
-        result = _finish_result(control, result)
+            if isinstance(result, checkpoints.PausedRun):
+                return {"status": "paused", "data": None, "run": control.snapshot()}
+            result = _finish_result(control, result)
 
 
-        return {
-            "status": "success",
-            "data": result,
-            "run": control.snapshot(),
-        }
+            return {
+                "status": "success",
+                "data": result,
+                "run": control.snapshot(),
+            }
 
 
     except Exception as error:
@@ -490,17 +552,16 @@ def stream_ga(
         if disconnected.is_set():
             return  # Detaching monitoring is not GA cancellation.
         try:
-            event_queue.put(event, timeout=0.1)
+            if event["type"] == "log":
+                event_queue.put_nowait(event)
+            else:
+                event_queue.put(event, timeout=0.1)
         except queue.Full:
             if event["type"] == "log":
                 return  # Console logs are best effort; structured metrics are not.
             raise RuntimeError("Monitoring consumer is too slow; structured event delivery failed.")
 
     emitter = EventEmitter(enqueue, control.run_id)
-
-    class LogSink:
-        def put(self, event):
-            emitter.emit("log", {"message": event["message"]})
 
     def terminal(event_type, data):
         # Reserve terminal delivery even when a slow client filled the queue.
@@ -520,33 +581,33 @@ def stream_ga(
         emitter.emit(event_type, data)
 
     def worker():
-        writer = QueueWriter(LogSink(), sys.stdout)
         status = "FAILED"
         try:
-            control.start()
-            emitter.emit("run_started", {**control.snapshot(), "phase": "initializing"})
-            emitter.emit("log", {"message": "GENETIC ALGORITHM STARTED"})
-            with redirect_stdout(writer):
+            with capture_run_logs(_run_registry, control, lambda entry: emitter.emit("log", entry)) as log:
+                control.start()
+                emitter.emit("run_started", {**control.snapshot(), "phase": "initializing"})
+                log("GENETIC ALGORITHM STARTED")
                 result = run_genetic_algorithm(
                     **requested, progress_callback=progress, run_control=control,
                 )
-            writer.flush_remaining()
-            result = _finish_result(control, result)
-            status = control.state
-            if result is not None:
-                terminal("result", result)
-            emitter.emit("log", {"message": f"GENETIC ALGORITHM {status}"})
+                result = None if isinstance(result, checkpoints.PausedRun) else _finish_result(control, result)
+                status = control.state
+                if result is not None:
+                    terminal("result", result)
+                log(f"GENETIC ALGORITHM {status}")
         except Exception as error:
             control.fail(error)
             status = control.state
+            with capture_run_logs(_run_registry, control, lambda entry: emitter.emit("log", entry)) as log:
+                log(f"GENETIC ALGORITHM FAILED: {error}")
             if status == "FAILED":
                 terminal("error", {"status": "FAILED", "code": "GA_EXECUTION_FAILED", "message": str(error)})
         finally:
             try:
+                _release_execution(control)
+            finally:
                 terminal("done", {"status": status, "has_result": control.result_reference is not None,
                                   "latest_completed_generation": control.latest_completed_generation})
-            finally:
-                _release_execution(control)
 
     thread = threading.Thread(target=worker, daemon=True)
     try:

@@ -27,6 +27,7 @@ export default function FitnessAnalysis() {
     gaData,
     activeRunId,
     recoveryNotice,
+    pauseGA, resumeGA, canPause, canResume, controlError, pausedRuns, selectPausedRun,
     executionStatus, progressHistory, elapsedSeconds, populationSize, generations,
     stopGA, canStop, stopError,
   } = useGA();
@@ -36,7 +37,7 @@ export default function FitnessAnalysis() {
   // EMPTY
   // ==========================================================
 
-  if (!gaData && executionStatus !== "IDLE") return <LiveGAMonitor runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />;
+  if (!gaData && executionStatus !== "IDLE") return <LiveGAMonitor onPause={pauseGA} onResume={resumeGA} canPause={canPause} canResume={canResume} controlError={controlError} pausedRuns={pausedRuns} onSelectPaused={id => { const run = pausedRuns.find(item => item.run_id === id); if (run) selectPausedRun(run); }} runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />;
 
   if (!gaData) {
 
@@ -234,6 +235,7 @@ export default function FitnessAnalysis() {
     <div className="space-y-6">
 
       {/* ==================================================== */}
+      {executionStatus !== "IDLE" && <LiveGAMonitor onPause={pauseGA} onResume={resumeGA} canPause={canPause} canResume={canResume} controlError={controlError} pausedRuns={pausedRuns} onSelectPaused={id => { const run = pausedRuns.find(item => item.run_id === id); if (run) selectPausedRun(run); }} runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />}
       {/* HEADER */}
       {/* ==================================================== */}
 

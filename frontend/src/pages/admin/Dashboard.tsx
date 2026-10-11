@@ -10,6 +10,7 @@ export default function Dashboard() {
     gaData,
     activeRunId,
     recoveryNotice,
+    pauseGA, resumeGA, canPause, canResume, controlError, pausedRuns, selectPausedRun,
     executionStatus,
     progressHistory,
     stopGA,
@@ -102,7 +103,7 @@ export default function Dashboard() {
 
       {/* RUNNING */}
 
-      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />}
+      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor onPause={pauseGA} onResume={resumeGA} canPause={canPause} canResume={canResume} controlError={controlError} pausedRuns={pausedRuns} onSelectPaused={id => { const run = pausedRuns.find(item => item.run_id === id); if (run) selectPausedRun(run); }} runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={populationSize} limit={generations} />}
 
       {/* ERROR */}
 

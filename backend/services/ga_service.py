@@ -1,4 +1,7 @@
 import copy
+import random
+from genetic_algorithm.utils.FrozenInputs import with_frozen_inputs, scoring_inputs
+from services.ga_checkpoint_service import PausedRun, save_checkpoint, validate_state, dataframe_to_state, dataframe_from_state
 from genetic_algorithm.utils.FitnessObservation import collect_run_scores
 from services.ga_progress_service import GenerationMonitor
 from services.ga_publication_service import validate_publication
@@ -293,6 +296,7 @@ def generate_schedule(
         "schedule": schedule,
     }
 
+@with_frozen_inputs
 @collect_run_scores
 def run_genetic_algorithm(
     population_size=20,
@@ -303,6 +307,7 @@ def run_genetic_algorithm(
     max_restarts=300,
     progress_callback=None,
     run_control=None,
+    resume_state=None,
 ):
     """
     Run the full Genetic Algorithm.
@@ -329,246 +334,298 @@ def run_genetic_algorithm(
     # OPTIONAL BASELINE CHROMOSOME
     # ========================================================
 
-    publication_templates = copy.deepcopy((list_subjects, list_faculty, lst_rooms))
-    monitor = GenerationMonitor(progress_callback, population_size, generations, {
-        "population_size": population_size, "generations": generations,
-        "fresh_chromosomes": fresh_chromosomes, "baseline_mode": baseline_mode,
-        "mutation_attempts": mutation_attempts, "max_restarts": max_restarts,
-    })
-    # An early stop never constructs, scores, saves or publishes a partial seed.
-    if run_control is not None and run_control.acknowledge_stop():
-        return None
-    baseline_mode = (
-        str(
+    parameters = {"population_size": population_size, "generations": generations,
+                  "fresh_chromosomes": fresh_chromosomes, "baseline_mode": baseline_mode,
+                  "mutation_attempts": mutation_attempts, "max_restarts": max_restarts}
+    list_subjects, list_faculty, lst_rooms = (globals()[name] for name in ("list_subjects", "list_faculty", "lst_rooms"))
+    df_faculty_pref = globals()["df_faculty_pref"]
+    if resume_state is None:
+        publication_templates = copy.deepcopy((list_subjects, list_faculty, lst_rooms))
+        monitor = GenerationMonitor(progress_callback, population_size, generations, {
+            "population_size": population_size, "generations": generations,
+            "fresh_chromosomes": fresh_chromosomes, "baseline_mode": baseline_mode,
+            "mutation_attempts": mutation_attempts, "max_restarts": max_restarts,
+        })
+        # An early stop never constructs, scores, saves or publishes a partial seed.
+        if run_control is not None and run_control.acknowledge_stop():
+            return None
+        baseline_mode = (
+            str(
+                baseline_mode
+            )
+            .strip()
+            .lower()
+        )
+
+
+        if baseline_mode not in {
+            "fresh",
+            "saved",
+            "uploaded",
+        }:
+
+            raise ValueError(
+                "baseline_mode must be "
+                "'fresh', 'saved', or 'uploaded'."
+            )
+
+
+        baseline_payload = None
+
+        baseline_chromosome = None
+
+        baseline_fitness = None
+
+        baseline_source = "fresh"
+
+
+        # --------------------------------------------------------
+        # USE AUTOMATICALLY SAVED BEST
+        # --------------------------------------------------------
+
+        if (
             baseline_mode
-        )
-        .strip()
-        .lower()
-    )
-
-
-    if baseline_mode not in {
-        "fresh",
-        "saved",
-        "uploaded",
-    }:
-
-        raise ValueError(
-            "baseline_mode must be "
-            "'fresh', 'saved', or 'uploaded'."
-        )
-
-
-    baseline_payload = None
-
-    baseline_chromosome = None
-
-    baseline_fitness = None
-
-    baseline_source = "fresh"
-
-
-    # --------------------------------------------------------
-    # USE AUTOMATICALLY SAVED BEST
-    # --------------------------------------------------------
-
-    if (
-        baseline_mode
-        ==
-        "saved"
-    ):
-
-        baseline_payload = (
-            load_saved_best_payload()
-        )
-
-
-        if baseline_payload is None:
-
-            raise ValueError(
-                "No saved best chromosome exists yet."
-            )
-
-
-        baseline_source = (
+            ==
             "saved"
-        )
+        ):
 
-
-    # --------------------------------------------------------
-    # USE UPLOADED JSON
-    # --------------------------------------------------------
-
-    elif (
-        baseline_mode
-        ==
-        "uploaded"
-    ):
-
-        baseline_payload = (
-            load_uploaded_payload()
-        )
-
-
-        if baseline_payload is None:
-
-            raise ValueError(
-                "No uploaded baseline chromosome exists."
+            baseline_payload = (
+                load_saved_best_payload()
             )
 
 
-        baseline_source = (
+            if baseline_payload is None:
+
+                raise ValueError(
+                    "No saved best chromosome exists yet."
+                )
+
+
+            baseline_source = (
+                "saved"
+            )
+
+
+        # --------------------------------------------------------
+        # USE UPLOADED JSON
+        # --------------------------------------------------------
+
+        elif (
+            baseline_mode
+            ==
             "uploaded"
+        ):
+
+            baseline_payload = (
+                load_uploaded_payload()
+            )
+
+
+            if baseline_payload is None:
+
+                raise ValueError(
+                    "No uploaded baseline chromosome exists."
+                )
+
+
+            baseline_source = (
+                "uploaded"
+            )
+
+
+        # --------------------------------------------------------
+        # RECONSTRUCT BASELINE
+        # --------------------------------------------------------
+
+        if baseline_payload is not None:
+
+            baseline_chromosome = (
+                payload_to_chromosome(
+                    baseline_payload,
+                    list_subjects,
+                    list_faculty,
+                    lst_rooms,
+                )
+            )
+
+
+            baseline_fitness = (
+                faculty_preference_fitness(
+                    baseline_chromosome,
+                    df_faculty_pref,
+                )
+            )
+
+
+            print()
+            print("=" * 60)
+
+            print(
+                "BASELINE CHROMOSOME LOADED"
+            )
+
+            print("=" * 60)
+
+            print(
+                f"Source  : "
+                f"{baseline_source}"
+            )
+
+            print(
+                f"Fitness : "
+                f"{baseline_fitness}"
+            )
+
+
+        # ========================================================
+        # INITIAL POPULATION
+        # ========================================================
+
+        monitor.register_baseline(baseline_payload)
+        if run_control is not None and run_control.acknowledge_stop():
+            return None
+        number_to_generate = (
+            population_size
+            -
+            (
+                1
+                if baseline_chromosome
+                is not None
+                else 0
+            )
         )
 
 
-    # --------------------------------------------------------
-    # RECONSTRUCT BASELINE
-    # --------------------------------------------------------
-
-    if baseline_payload is not None:
-
-        baseline_chromosome = (
-            payload_to_chromosome(
-                baseline_payload,
-                list_subjects,
+        population = (
+            generate_population(
+                number_to_generate,
                 list_faculty,
+                list_subjects,
                 lst_rooms,
             )
         )
 
 
-        baseline_fitness = (
-            faculty_preference_fitness(
+        # Seed baseline as chromosome #1.
+        monitor.accepted += len(population)
+        monitor.baseline_count = int(baseline_chromosome is not None)
+
+        if (
+            baseline_chromosome
+            is not None
+        ):
+
+            population.insert(
+                0,
                 baseline_chromosome,
+            )
+
+
+        if not population:
+
+            raise RuntimeError(
+                "Unable to create an initial population."
+            )
+
+
+        population = (
+            sort_population_by_fitness(
+                population,
                 df_faculty_pref,
             )
         )
 
+        if not population:
+            raise RuntimeError(
+                "No valid chromosomes were generated."
+            )
 
-        print()
-        print("=" * 60)
-
-        print(
-            "BASELINE CHROMOSOME LOADED"
-        )
-
-        print("=" * 60)
-
-        print(
-            f"Source  : "
-            f"{baseline_source}"
-        )
-
-        print(
-            f"Fitness : "
-            f"{baseline_fitness}"
-        )
-
-
-    # ========================================================
-    # INITIAL POPULATION
-    # ========================================================
-
-    monitor.register_baseline(baseline_payload)
-    if run_control is not None and run_control.acknowledge_stop():
-        return None
-    number_to_generate = (
-        population_size
-        -
-        (
-            1
-            if baseline_chromosome
-            is not None
-            else 0
-        )
-    )
-
-
-    population = (
-        generate_population(
-            number_to_generate,
-            list_faculty,
-            list_subjects,
-            lst_rooms,
-        )
-    )
-
-
-    # Seed baseline as chromosome #1.
-    monitor.accepted += len(population)
-    monitor.baseline_count = int(baseline_chromosome is not None)
-
-    if (
-        baseline_chromosome
-        is not None
-    ):
-
-        population.insert(
-            0,
-            baseline_chromosome,
-        )
-
-
-    if not population:
-
-        raise RuntimeError(
-            "Unable to create an initial population."
-        )
-
-
-    population = (
-        sort_population_by_fitness(
+        population = sort_population_by_fitness(
             population,
             df_faculty_pref,
         )
-    )
 
-    if not population:
-        raise RuntimeError(
-            "No valid chromosomes were generated."
+        # =====================================================
+        # 2. BEST-EVER BASELINE
+        # =====================================================
+
+        best_ever = copy.deepcopy(
+            population[0]
         )
 
-    population = sort_population_by_fitness(
-        population,
-        df_faculty_pref,
-    )
-
-    # =====================================================
-    # 2. BEST-EVER BASELINE
-    # =====================================================
-
-    best_ever = copy.deepcopy(
-        population[0]
-    )
-
-    best_ever_fitness = (
-        faculty_preference_fitness(
-            best_ever,
-            df_faculty_pref,
+        best_ever_fitness = (
+            faculty_preference_fitness(
+                best_ever,
+                df_faculty_pref,
+            )
         )
-    )
 
-    history = [
-        {
-            "generation": 0,
-            "best_fitness": best_ever_fitness,
-        }
-    ]
+        history = [
+            {
+                "generation": 0,
+                "best_fitness": best_ever_fitness,
+            }
+        ]
 
-    for candidate in population:
-        validate_publication(candidate, *publication_templates)
-    completed_generation = 0
-    if run_control is not None:
-        run_control.boundary(0, best_ever_fitness)
-    monitor.report(0, population, best_ever_fitness)
+        for candidate in population:
+            validate_publication(candidate, *publication_templates)
+        completed_generation = 0
+        if run_control is not None:
+            run_control.boundary(0, best_ever_fitness)
+        monitor.report(0, population, best_ever_fitness)
+
+    else:
+        validate_state(resume_state, (list_subjects, list_faculty, lst_rooms))
+        if parameters != resume_state["parameters"]:
+            raise ValueError("Resume parameters differ from the checkpoint.")
+        population = resume_state["population"]
+        best_ever = resume_state["best_ever"]
+        best_ever_fitness = resume_state["best_ever_fitness"]
+        history = resume_state["history"]
+        completed_generation = resume_state["generation_completed"]
+        publication_templates = resume_state["publication_templates"]
+        list_subjects, list_faculty, lst_rooms = resume_state["working_templates"]
+        df_faculty_pref = dataframe_from_state(resume_state["legacy_preferences"])
+        baseline_source = resume_state["baseline_source"]
+        baseline_fitness = resume_state["baseline_fitness"]
+        monitor = GenerationMonitor(progress_callback, population_size, generations, parameters)
+        monitor.restore(resume_state["monitor"], resume_state["active_elapsed_ms"])
+        monitor.check_inputs()
+        if run_control is not None:
+            run_control.resumed()
+
+    def pause_boundary():
+        if run_control is None or not run_control.begin_pause(final=completed_generation == generations):
+            return False
+        monitor.check_inputs()
+        state = {"parameters": parameters, "generation_completed": completed_generation,
+                 "next_generation": completed_generation + 1, "population": population,
+                 "best_ever": best_ever, "best_ever_fitness": best_ever_fitness,
+                 "history": history, "monitor": monitor.checkpoint_state(),
+                 "publication_templates": publication_templates,
+                 "working_templates": (list_subjects, list_faculty, lst_rooms),
+                 "legacy_preferences": dataframe_to_state(df_faculty_pref),
+                 "scoring_inputs": scoring_inputs.get(), "random_state": random.getstate(),
+                 "baseline_source": baseline_source, "baseline_fitness": baseline_fitness,
+                 "active_elapsed_ms": run_control.snapshot()["elapsed_ms"]}
+        checkpoint = save_checkpoint(run_control, state, publication_templates)
+        return run_control.finish_pause(checkpoint)
+
+    if resume_state is None and pause_boundary():
+        return PausedRun()
+    if resume_state is not None:
+        # All loading/validation precedes restoration. Continuation makes the
+        # original loop's next random draw; no initialization or rescoring here.
+        random.setstate(resume_state["random_state"])
+        if completed_generation == generations and pause_boundary():
+            return PausedRun()
 
     # =====================================================
     # 3. GENERATION LOOP
     # =====================================================
 
     for generation in range(
-        1,
+        completed_generation + 1,
         generations + 1,
     ):
 
@@ -843,6 +900,8 @@ def run_genetic_algorithm(
         if run_control is not None:
             run_control.boundary(generation, best_ever_fitness)
         monitor.report(generation, population, best_ever_fitness)
+        if pause_boundary():
+            return PausedRun()
         if run_control is not None and run_control.acknowledge_stop():
             break
 

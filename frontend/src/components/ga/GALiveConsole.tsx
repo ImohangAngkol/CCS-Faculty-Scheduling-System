@@ -3,17 +3,20 @@ import {
   useRef,
   useState,
 } from "react";
+import type { GAExecutionStatus } from "../../services/gaMonitoring";
 
 
 type GALiveConsoleProps = {
   logs: string[];
-  loading: boolean;
+  status: GAExecutionStatus;
+  notice: string | null;
+  connection: string;
 };
 
 
 export default function GALiveConsole({
   logs,
-  loading,
+  status, notice, connection,
 }: GALiveConsoleProps) {
 
   const consoleRef =
@@ -189,7 +192,7 @@ export default function GALiveConsole({
             "
           >
 
-            {loading && (
+            {["RUNNING", "RESUMING", "STOPPING"].includes(status) && (
               <span
                 className="
                   h-2
@@ -202,14 +205,13 @@ export default function GALiveConsole({
             )}
 
             <span
+              data-testid="ga-console-status"
               className="
                 text-xs
                 text-teal-100
               "
             >
-              {loading
-                ? "RUNNING"
-                : "IDLE"}
+              {status}
             </span>
 
           </div>
@@ -218,10 +220,15 @@ export default function GALiveConsole({
 
       </div>
 
+      <div role="status" data-testid="ga-console-notice" className="border-b border-slate-800 px-4 py-2 text-xs text-slate-300">
+        {connection}{notice && <p className="mt-1 text-amber-300">{notice}</p>}
+      </div>
+
 
       {/* OUTPUT */}
 
       <div
+        data-testid="ga-console-output"
         ref={consoleRef}
         onScroll={handleScroll}
         className="
@@ -237,7 +244,9 @@ export default function GALiveConsole({
 
         {logs.length === 0 && (
           <div className="text-slate-500">
-            Waiting for Genetic Algorithm output...
+            {status === "PAUSED" ? "The run is paused. Resume continues the existing population."
+              : ["STOPPED", "COMPLETED", "FAILED", "INTERRUPTED"].includes(status) ? "No console entries are available for this run."
+              : "Waiting for the next Genetic Algorithm diagnostic output…"}
           </div>
         )}
 
