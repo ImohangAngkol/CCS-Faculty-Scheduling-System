@@ -35,6 +35,7 @@ import ScheduleView
 
 import FitnessAnalysis
   from "../pages/admin/FitnessAnalysis";
+import GenerationHistory from "../pages/admin/GenerationHistory";
 
 
 // =============================================
@@ -201,6 +202,7 @@ export default function AppRoutes() {
               <FitnessAnalysis />
             }
           />
+          <Route path="history" element={<GenerationHistory />} />
 
         </Route>
 

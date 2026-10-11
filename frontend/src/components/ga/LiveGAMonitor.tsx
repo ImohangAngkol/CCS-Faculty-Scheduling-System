@@ -1,4 +1,5 @@
 import type { GAExecutionStatus, GenerationMetrics } from "../../services/gaMonitoring";
+import { Link } from "react-router-dom";
 
 const format = (value: number | undefined) => value === undefined ? "—" : value.toLocaleString(undefined, { maximumFractionDigits: 2 });
 export default function LiveGAMonitor({ status, history, elapsedSeconds, population, limit, onStop, canStop = false, stopError, runId, recoveryNotice, onPause, onResume, canPause = false, canResume = false, controlError, pausedRuns = [], onSelectPaused }: {
@@ -18,6 +19,7 @@ export default function LiveGAMonitor({ status, history, elapsedSeconds, populat
       <p className="text-sm text-slate-600">Elapsed <strong data-testid="ga-elapsed" className="ml-1 text-purple-950">{Math.floor(elapsedSeconds / 60)}m {elapsedSeconds % 60}s</strong></p>
     </div>
     {runId && <p className="break-all px-6 pt-3 text-xs text-slate-500">Server run ID <code data-testid="ga-run-id">{runId}</code></p>}
+    {runId && <p className="px-6 pt-2 text-sm"><Link className="font-medium text-teal-800 underline" to={`/admin/history?run=${encodeURIComponent(runId)}`}>View recorded generation history</Link></p>}
     {recoveryNotice && <p role="status" className="mx-6 mt-3 rounded-lg bg-slate-50 p-3 text-sm text-slate-600">{recoveryNotice}</p>}
     {pausedRuns.length > 1 && onSelectPaused && status === "PAUSED" && <label className="block px-6 pt-3 text-sm text-slate-600">Saved paused run<select aria-label="Saved paused run" className="ml-2 rounded border p-2" value={runId ?? ""} onChange={event => onSelectPaused(event.target.value)}>{pausedRuns.map((run, index) => <option key={run.run_id} value={run.run_id}>Paused run {index + 1} · Generation {run.latest_completed_generation ?? 0}</option>)}</select></label>}
     {onPause && ["CREATED", "INITIALIZING", "RUNNING", "PAUSE_REQUESTED", "PAUSING"].includes(status) && <div className="px-6 pt-4"><button type="button" onClick={() => void onPause()} disabled={!canPause} className="rounded-lg border border-purple-300 bg-purple-50 px-4 py-2 text-sm font-semibold text-purple-900 disabled:opacity-60">Pause Generation</button></div>}

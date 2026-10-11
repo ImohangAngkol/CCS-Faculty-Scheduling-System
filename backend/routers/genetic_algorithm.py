@@ -7,10 +7,11 @@ import time
 from pathlib import Path
 
 from services.ga_progress_service import EventEmitter
-from services.ga_log_service import capture_run_logs, store_for
+from services.ga_log_service import capture_run_logs, console_print, store_for
 from services import ga_control_service
 from services import ga_checkpoint_service as checkpoints
 from services import ga_service
+from services.ga_history_service import capture_history, HistoryGenerationMonitor, update_lifecycle
 from services.ga_control_service import RunRegistry, StopConflict, save_stopped_result, timestamp
 from uuid import UUID
 
@@ -42,6 +43,21 @@ router = APIRouter(
 
 _ga_execution_lock = threading.Lock()
 _run_registry = RunRegistry()
+# Context-local observational adapter; engine/checkpoint source hashes stay intact.
+ga_service.GenerationMonitor = HistoryGenerationMonitor
+
+
+def _execute_with_history(control, **parameters):
+    def warning(message):
+        # Complete lines go directly to the thread-safe run buffer, preserving
+        # foreground partial-line capture and reconnectable warning delivery.
+        console_print(message)
+        store_for(_run_registry).buffer(control.run_id).append(message)
+    with capture_history(control, _templates(), parameters.get("resume_state"), warning) as history:
+        result = run_genetic_algorithm(**parameters)
+        if history is not None and isinstance(result, dict):
+            history.record_result(result)
+        return result
 
 
 def _admit_execution(cancellable=True, configuration=None):
@@ -67,7 +83,12 @@ def _release_execution(control):
     try:
         _run_registry.release(control)
     finally:
-        _ga_execution_lock.release()
+        try:
+            update_lifecycle(control)
+        except Exception:
+            control.history_error = "GA_HISTORY_LIFECYCLE_WRITE_FAILED"
+        finally:
+            _ga_execution_lock.release()
 
 
 def _finish_result(control, result):
@@ -198,7 +219,7 @@ def _owned_run(run_id, process_instance_id=None):
 @router.get("/runs/{run_id}")
 def get_run_state(run_id: str, process_instance_id: str | None = Header(default=None, alias="X-GA-Process-ID")):
     control = _owned_run(run_id, process_instance_id)
-    return control.snapshot()
+    return {**control.snapshot(), "history_error": getattr(control, "history_error", None)}
 
 
 @router.get("/runs/{run_id}/logs")
@@ -227,11 +248,12 @@ def stop_run(run_id: str, process_instance_id: str | None = Header(default=None,
 
 
 def _templates():
-    return ga_service.list_subjects, ga_service.list_faculty, ga_service.lst_rooms
+    from services.ga_validation_templates import validation_templates
+    return validation_templates((ga_service.list_subjects, ga_service.list_faculty, ga_service.lst_rooms))
 
 
 def _checkpoint_error(error):
-    return HTTPException(status_code=409 if error.code in {
+    return HTTPException(status_code=503 if error.code == "GA_CHECKPOINT_UNAVAILABLE" else 409 if error.code in {
         "GA_CHECKPOINT_INCOMPATIBLE", "GA_CHECKPOINT_INPUT_CHANGED"} else 422,
                          detail={"code": error.code, "message": str(error)})
 
@@ -251,7 +273,8 @@ def pause_run(run_id: str, process_instance_id: str | None = Header(default=None
 def get_checkpoint_status(run_id: str, process_instance_id: str | None = Header(default=None, alias="X-GA-Process-ID")):
     control = _owned_run(run_id, process_instance_id)
     try:
-        verified = checkpoints.checkpoint_status(run_id, _templates())
+        from services.ga_checkpoint_verification import checkpoint_status
+        verified = checkpoint_status(run_id, _templates())
         # Another client may resume/stop during the expensive validation.
         with control.lock:
             verified.update(process_instance_id=control.process_instance_id, state=control.state)
@@ -276,7 +299,8 @@ def _launch_resume(control, stopping=False):
             checkpoint = control.checkpoint
         # Admission remains exclusive, but expensive compatibility/constraint
         # validation must not block read-only lifecycle/status requests.
-        restored = checkpoints.load_checkpoint(control.run_id, _templates())
+        from services.ga_checkpoint_verification import load_checkpoint
+        restored = load_checkpoint(control.run_id, _templates())
         with control.lock:
             marker = checkpoints.read_marker(control.run_id)
             if (control.state != "PAUSED" or control.execution_active
@@ -298,7 +322,7 @@ def _launch_resume(control, stopping=False):
             try:
                 with capture_run_logs(_run_registry, control) as log:
                     log("GENETIC ALGORITHM STOPPING" if stopping else "GENETIC ALGORITHM RESUMING")
-                    result = run_genetic_algorithm(**restored["parameters"], resume_state=restored,
+                    result = _execute_with_history(control, **restored["parameters"], resume_state=restored,
                                                   run_control=control, progress_callback=control.capture_progress)
                     if not isinstance(result, checkpoints.PausedRun):
                         _finish_result(control, result)
@@ -474,7 +498,7 @@ def run_ga(
         with capture_run_logs(_run_registry, control):
             control.start()
 
-            result = run_genetic_algorithm(
+            result = _execute_with_history(control,
                 population_size=population_size,
                 generations=generations,
                 fresh_chromosomes=fresh_chromosomes,
@@ -587,7 +611,7 @@ def stream_ga(
                 control.start()
                 emitter.emit("run_started", {**control.snapshot(), "phase": "initializing"})
                 log("GENETIC ALGORITHM STARTED")
-                result = run_genetic_algorithm(
+                result = _execute_with_history(control,
                     **requested, progress_callback=progress, run_control=control,
                 )
                 result = None if isinstance(result, checkpoints.PausedRun) else _finish_result(control, result)

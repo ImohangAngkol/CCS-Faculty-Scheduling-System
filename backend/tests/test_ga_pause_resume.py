@@ -28,7 +28,9 @@ def wait_finished(client, run_id, expected):
     deadline = time.monotonic() + 30
     while True:
         state = client.get(f"/api/ga/runs/{run_id}").json()
-        if not state["execution_active"]:
+        # Registry release precedes history lifecycle flush/admission cleanup.
+        # Do not tear down temporary storage or begin another test in that gap.
+        if not state["execution_active"] and not router._ga_execution_lock.locked():
             assert state["state"] == expected, state
             return state
         assert time.monotonic() < deadline, state

@@ -51,6 +51,8 @@ const adminItems = [
     path: "/admin/chromosomes",
   },
 
+  { label: "Generation History", path: "/admin/history" },
+
   {
     label: "Schedules",
     path: "/admin/schedules",
@@ -102,6 +104,9 @@ export default function AdminLayout() {
 
       case "/admin/chromosomes":
         return "Saved Chromosomes";
+
+      case "/admin/history":
+        return "Generation History";
 
       case "/admin/schedules":
         return "Generated Schedules";

@@ -65,12 +65,30 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       window.mockControlRequests = [];
       window.mockCheckpointRequests = [];
       window.mockLogRequests = [];
+      window.mockHistoryRequests = [];
       const originalTimeout = window.setTimeout.bind(window);
       window.setTimeout = (callback, delay, ...args) => originalTimeout(callback, (delay===120000 && sessionStorage.getItem('mockFastTimeout')==='true') || (delay===10000 && sessionStorage.getItem('mockFastLogTimeout')==='true') ? 50 : delay, ...args);
       window.mockStateError = false;
       window.mockLegacyBackend = false;
       window.fetch = async (input, options) => {
         const url = String(input);
+        if (url.includes('/api/ga/runs') && sessionStorage.getItem('mockHistory')) {
+          const archive = JSON.parse(sessionStorage.getItem('mockHistory'));
+          const parsed = new URL(url), route = parsed.pathname;
+          if (route === '/api/ga/runs' || route.startsWith('/api/ga/runs/' + archive.run.run_id + '/')) {
+            window.mockHistoryRequests.push({url,method:options?.method??'GET'});
+            if (sessionStorage.getItem('mockHistoryFailure') === 'true') return Response.json({detail:{message:'History checksum failed.'}},{status:422});
+            if (route.endsWith('/generations/0/analysis') && sessionStorage.getItem('mockAnalysisFailure') === 'true') return Response.json({detail:{code:'GA_HISTORY_INVALID',message:'History could not be read or validated.'}},{status:422});
+            if (route.endsWith('/export')) return new Response(route.includes('history/export')?'generation,best_ever_fitness\\n0,100\\n1,100\\n':JSON.stringify({schedule:archive.schedule}),{headers:{'content-disposition':'attachment; filename="run-'+archive.run.run_id+'-history.json"'}});
+            if (route === '/api/ga/runs') return Response.json({schema_version:1,items:[archive.run],total:1,offset:0,limit:20,errors:[]});
+            if (route.endsWith('/generations')) return Response.json({schema_version:1,run:archive.run,items:archive.items,total:2,offset:0,limit:50});
+            if (route.endsWith('/compare')) return Response.json(archive.comparison);
+            const generation = Number(route.split('/').at(-2));
+            const bestEver = parsed.searchParams.get('candidate') === 'best_ever';
+            if (route.endsWith('/schedule')) return Response.json({schema_version:1,run_id:archive.run.run_id,generation,chromosome_id:bestEver?'best-ever':'generation-best',schedule:archive.schedule,current_inputs_match:true,validation:{status:'passed'}});
+            if (route.endsWith('/analysis')) return Response.json({schema_version:1,run_id:archive.run.run_id,generation,chromosome_id:bestEver?'best-ever':'generation-best',timestamp:archive.run.created_at,fitness:bestEver?100:110,fitness_breakdown:null,breakdown_unavailable_reason:'No additional fitness evaluation was performed.',preference_unavailable_reason:'Per-faculty preferences were not captured.',workload:[{faculty:'Faculty 7',required_teaching_load:19,teaching_units:15,difference:-4,fulfillment_percent:15/19*100,preparations:1,assigned_subjects:['ITD104']}],validation:{status:'passed'}});
+          }
+        }
         const processId = sessionStorage.getItem('mockProcessId') ?? 'browser-process';
         if (url.includes('/api/ga/runs/') && url.includes('/logs?')) {
           window.mockLogRequests.push(url);
@@ -632,6 +650,66 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-output"]')?.textContent.includes('legacy live diagnostic') && document.querySelector('[data-testid="ga-console-notice"]')?.textContent.includes('endpoint is missing')`),'Legacy console output was discarded');
       await send('result',result); await send('done',{status:'COMPLETED'});
       await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-status"]')?.textContent==='COMPLETED'`),'Legacy stream did not finish');
+    });
+    const archiveId='00000000-0000-4000-8000-000000000001';
+    const archiveMetrics=metrics(1);
+    archiveMetrics.best_ever_fitness=100; archiveMetrics.generation_best_fitness=110;
+    const archive={run:{run_id:archiveId,state:'PAUSED',created_at:'2026-10-11T03:00:00Z',ended_at:null,generations_recorded:2,latest:{generation:1,metrics:archiveMetrics},errors:[],skipped_generations:[],history_error:null,bytes_written:5000},
+      items:[0,1].map(generation=>({generation,timestamp:'2026-10-11T03:00:00Z',metrics:{...archiveMetrics,generation},snapshot_bytes:2500})),
+      schedule:[{subject:'ITD104',title:'Database Systems',section:'4A',type:'Laboratory',faculty:'7',room:'DATABASE LAB',day:'Tuesday',start:'13:00',end:'16:00'},
+        {subject:'ITE184',title:'Social Legal and Professional Issues',section:'4A',type:'Lecture',faculty:'external:eddie-bouy-palad',faculty_name:'Atty. Eddie Bouy Palad',room:'ICT 3A',day:'Wednesday',start:'12:00',end:'13:30'}],
+      comparison:{schema_version:1,run_id:archiveId,left:0,right:1,candidate:'generation_best',identical_chromosomes:true,improvement:{generation_best_fitness:-10,best_ever_fitness:0,average_fitness:10},left_metrics:metrics(0),right_metrics:archiveMetrics,changes:[],left_workload:[],right_workload:[],preference_unavailable_reason:'No historical preference analysis.'}};
+    await t.test('generation history inspection stays read-only, separates best ever and reuses the calendar',async()=>{
+      await evaluate(`sessionStorage.setItem('mockHistory',${JSON.stringify(JSON.stringify(archive))}); true`);
+      await client.send('Page.navigate',{url:'http://localhost:5188/admin/history?run='+archiveId});
+      await eventually(()=>evaluate(`!!document.querySelector('[data-testid="generation-history"]') && document.body.textContent.includes('2 generations recorded')`),'History page did not load');
+      assert.equal(await evaluate(`document.querySelector('[data-testid="ga-convergence"]').dataset.points`),'2');
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.getAttribute('aria-label')==='Inspect generation 1').click(); true`);
+      await eventually(()=>evaluate(`document.body.textContent.includes('Overall penalty: 110') && document.body.textContent.includes('Faculty 7') && document.body.textContent.includes('13:00–16:00')`),'Historical candidate did not render');
+      assert.equal(await evaluate(`document.body.textContent.includes('external:eddie-bouy-palad')`),false);
+      assert.equal(await evaluate(`document.body.textContent.includes('Atty. Eddie Bouy Palad')`),true);
+      await evaluate(`var select=document.querySelector('select[aria-label="Candidate kind"]'); select.value='best_ever'; select.dispatchEvent(new Event('change',{bubbles:true})); true`);
+      await eventually(()=>evaluate(`document.body.textContent.includes('Overall penalty: 100')`),'Best-ever candidate selection invented a score');
+      assert.ok(await evaluate(`window.mockHistoryRequests.every(request=>request.method==='GET')`));
+      assert.equal(await evaluate(`!![...document.querySelectorAll('button')].find(button=>['Resume Generation','Stop Generation','Generate Schedule'].includes(button.textContent.trim()))`),false);
+    });
+    await t.test('comparison shows identical schedules while separating average from best-ever improvement',async()=>{
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Compare generations').click(); true`);
+      await eventually(()=>evaluate(`document.body.textContent.includes('Identical schedule candidates') && document.body.textContent.includes('10 higher (worse)') && document.body.textContent.includes('10 lower (improved)') && document.body.textContent.includes('Unchanged')`),'Comparison sign or identity was wrong');
+    });
+    await t.test('comparison distinguishes an unavailable contribution from an actual zero penalty',async()=>{
+      await evaluate(`var archive=JSON.parse(sessionStorage.getItem('mockHistory')); archive.comparison.left_fitness_breakdown={subject_preference:0}; archive.comparison.right_fitness_breakdown={subject_preference:5,time_preference:0}; sessionStorage.setItem('mockHistory',JSON.stringify(archive)); [...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Compare generations').click(); true`);
+      await eventually(()=>evaluate(`document.body.textContent.includes('Available penalty contributions') && document.body.textContent.includes('Not captured') && document.body.textContent.includes('5 higher (worse)')`),'Unavailable comparison contribution was presented as zero');
+      assert.ok(await evaluate(`window.mockHistoryRequests.every(request=>request.method==='GET')`));
+    });
+    await t.test('a transient analysis failure clears after successful inspection of the same generation',async()=>{
+      await evaluate(`sessionStorage.setItem('mockAnalysisFailure','true'); [...document.querySelectorAll('button')].find(button=>button.getAttribute('aria-label')==='Inspect generation 0').click(); true`);
+      await eventually(()=>evaluate(`document.querySelector('[role="alert"]')?.textContent.includes('Fitness analysis:') && document.querySelector('[role="alert"]')?.textContent.includes('GA_HISTORY_INVALID')`),'Analysis failure did not identify the failed operation');
+      await evaluate(`sessionStorage.removeItem('mockAnalysisFailure'); [...document.querySelectorAll('button')].find(button=>button.getAttribute('aria-label')==='Inspect generation 1').click(); true`);
+      await eventually(()=>evaluate(`document.body.textContent.includes('Generation 1 · Schedule candidate') && !document.querySelector('[role="alert"]')`),'Another valid generation did not load');
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.getAttribute('aria-label')==='Inspect generation 0').click(); true`);
+      await eventually(()=>evaluate(`document.body.textContent.includes('Generation 0 · Schedule candidate') && !document.querySelector('[role="alert"]')`),'Recovered generation retained a stale validation error');
+      assert.ok(await evaluate(`window.mockHistoryRequests.every(request=>request.method==='GET')`));
+    });
+    await t.test('validated export errors are visible and refresh restores the same historical run',async()=>{
+      await evaluate(`sessionStorage.setItem('mockHistoryFailure','true'); [...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Download candidate JSON').click(); true`);
+      await eventually(()=>evaluate(`document.querySelector('[role="alert"]')?.textContent.includes('History checksum failed.')`),'Invalid export error was hidden');
+      await evaluate(`sessionStorage.removeItem('mockHistoryFailure'); window.oldDocument=true; true`);
+      await client.send('Page.reload');
+      await eventually(()=>evaluate(`!window.oldDocument && document.body.textContent.includes('2 generations recorded') && document.querySelector('select[aria-label="Historical run"]').value==='${archiveId}'`),'Historical run refresh lost identity');
+      assert.equal(await evaluate('window.mockControlRequests.length + window.mockStopRequests.length'),0);
+      assert.ok(await evaluate(`window.mockHistoryRequests.every(request=>request.method==='GET')`));
+    });
+    await t.test('missing or corrupt history settles into an actionable error',async()=>{
+      await evaluate(`sessionStorage.setItem('mockHistoryFailure','true'); [...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Refresh history').click(); true`);
+      await eventually(()=>evaluate(`document.querySelector('[role="alert"]')?.textContent.includes('History checksum failed.')`),'History recovery did not settle into error');
+      assert.equal(await evaluate('window.mockControlRequests.length + window.mockStopRequests.length'),0);
+    });
+    await t.test('an invalid history URL identity displays an error without crashing or starting a run',async()=>{
+      await evaluate(`sessionStorage.removeItem('mockHistoryFailure'); true`);
+      await client.send('Page.navigate',{url:'http://localhost:5188/admin/history?run=invalid-run'});
+      await eventually(()=>evaluate(`document.querySelector('[data-testid="generation-history"]') && document.querySelector('[role="alert"]')?.textContent.includes('Invalid historical run identity')`),'Invalid history identity crashed instead of reporting an error');
+      assert.equal(await evaluate('window.mockControlRequests.length + window.mockStopRequests.length'),0);
     });
     assert.deepEqual(errors, []);
   } finally {

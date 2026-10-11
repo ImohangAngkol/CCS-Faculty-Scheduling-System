@@ -13,6 +13,7 @@ from fastapi.testclient import TestClient
 
 from main import app
 from services import ga_checkpoint_service as checkpoints, ga_service
+from services import ga_checkpoint_verification as checkpoint_verification
 from services.ga_control_service import RunRegistry
 from tests.test_ga_safe_stop import isolated, bounded_run, small_population
 from tests.test_ga_refresh_recovery import live_server
@@ -72,7 +73,7 @@ def test_missing_checkpoint_is_an_explicit_error_not_a_lost_paused_identity(monk
     with TestClient(app) as client:
         status = client.get(f"/api/ga/runs/{control.run_id}/checkpoint-status",
                             headers={"X-GA-Process-ID": registry.process_instance_id}).json()
-        assert not status["resumable"] and status["code"] == "GA_CHECKPOINT_INVALID"
+        assert not status["resumable"] and status["code"] == "GA_CHECKPOINT_UNAVAILABLE"
         assert status["state"] == "PAUSED" and status["error"]
         assert status["process_instance_id"] == registry.process_instance_id
         assert client.get("/api/ga/status").json()["paused_runs"][0]["run_id"] == control.run_id
@@ -102,7 +103,9 @@ def test_verification_does_not_enable_resume_after_a_concurrent_transition(monke
             control.state = changed
             control.execution_active = True
         return result
-    monkeypatch.setattr(checkpoints, "checkpoint_status", verification)
+    # This test isolates lifecycle reconciliation, rather than artifact integrity.
+    # Mock the read-only verification provider now used by the route.
+    monkeypatch.setattr(checkpoint_verification, "checkpoint_status", verification)
     with TestClient(app) as client:
         result = client.get(f"/api/ga/runs/{control.run_id}/checkpoint-status").json()
         assert not result["resumable"] and result["state"] == control.state

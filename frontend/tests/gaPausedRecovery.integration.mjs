@@ -86,6 +86,18 @@ test('real FastAPI: start, pause, acknowledge, refresh, hydrate and resume the s
     for(const [id,value] of Object.entries(expected)) assert.equal(await evaluate(`document.querySelector('[data-testid="${id}"]').textContent`),value,id);
     assert.equal(await evaluate(`Number(document.querySelector('[data-testid="ga-convergence"]').dataset.points)`),state.progress_history.length);
     assert.equal(await evaluate(`window.testRequests.filter(request=>request.method==='POST').length`),0);
+    // A refreshed paused run remains inspectable while checkpoint reads occur.
+    const inspection = await Promise.all([
+      fetch(`${backend}/api/ga/runs/${runId}/generations`),
+      fetch(`${backend}/api/ga/runs/${runId}/generations/0/schedule`),
+      fetch(`${backend}/api/ga/runs/${runId}/generations/${state.latest_completed_generation}/analysis`),
+      fetch(`${backend}/api/ga/runs/${runId}/checkpoint-status`),
+    ]);
+    assert.ok(inspection.every(response=>response.ok), JSON.stringify(await Promise.all(inspection.filter(response=>!response.ok).map(async response=>({url:response.url,status:response.status,body:await response.text()})))));
+    const [historyPage,,analysis,checkpoint]=await Promise.all(inspection.map(response=>response.json()));
+    assert.equal(historyPage.run.run_id,runId);assert.equal(historyPage.total,state.latest_completed_generation+1);
+    assert.equal(analysis.generation,state.latest_completed_generation);assert.equal(checkpoint.resumable,true);
+    assert.equal((await (await fetch(`${backend}/api/ga/runs/${runId}`)).json()).state,'PAUSED');
     await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-console-output"]')?.textContent.includes('GENETIC ALGORITHM PAUSED')`),'Refresh did not recover available paused logs');
     await evaluate(`${button('Resume Generation')}.click();true`);
     await eventually(()=>evaluate(`document.querySelector('[data-testid="ga-generation"]')?.textContent==='2 / 2' && document.querySelector('[data-testid="live-ga-monitor"]')?.textContent.includes('Completed')`),'Resume did not continue to generation 2');

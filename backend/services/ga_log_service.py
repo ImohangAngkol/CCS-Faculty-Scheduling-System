@@ -106,11 +106,45 @@ def store_for(registry):
         return registry.log_store
 
 
+def _write_console(stream, text):
+    """Keep UTF-8/Unicode destinations intact; escape legacy console glyphs.
+
+    Never reconfigure or replace process-wide streams. Preflight a declared
+    encoding so a legacy write does not emit a partial prefix before failing.
+    Only encoding errors get a fallback; real I/O and validation errors escape.
+    """
+    encoding = getattr(stream, "encoding", None)
+    if encoding and not text.isascii():
+        try:
+            text.encode(encoding)
+        except UnicodeEncodeError:
+            text = text.encode(encoding, errors="backslashreplace").decode(encoding)
+    try:
+        stream.write(text)
+    except UnicodeEncodeError:
+        # Some wrappers omit/misreport encoding. ASCII escapes work even there.
+        stream.write(text.encode("ascii", errors="backslashreplace").decode("ascii"))
+
+
+def console_print(*args, **kwargs):
+    """Encoding-safe diagnostic output, without adding a run log entry."""
+    destination = kwargs.get("file")
+    if destination is None:
+        destination = sys.stdout
+    rendered = io.StringIO()
+    # Let print validate sep/end/keywords and format each object exactly once.
+    builtins.print(*args, **{**kwargs, "file": rendered})
+    if destination is not None:
+        _write_console(destination, rendered.getvalue())
+        if kwargs.get("flush"):
+            destination.flush()
+
+
 def diagnostic_print(*args, **kwargs):
     writer = _writer.get()
     destination = kwargs.get("file")
     if writer is None or (destination is not None and destination is not sys.stdout):
-        return builtins.print(*args, **kwargs)
+        return console_print(*args, **kwargs)
     # Formatting occurs once, preserving print semantics and object side effects.
     return builtins.print(*args, **{**kwargs, "file": writer})
 
@@ -118,7 +152,8 @@ def diagnostic_print(*args, **kwargs):
 def bind_diagnostics():
     with _binding_lock:
         for name, module in list(sys.modules.items()):
-            if module is not None and (name == "services.ga_service" or name.startswith("genetic_algorithm.")):
+            if module is not None and (name in {"services.ga_service", "services.chromosome_service"}
+                                       or name.startswith("genetic_algorithm.")):
                 module.__dict__.setdefault("print", diagnostic_print)
 
 
@@ -131,7 +166,7 @@ class DiagnosticWriter(io.TextIOBase):
         self.shortened = False
 
     def write(self, text):
-        self.stdout.write(text)
+        _write_console(self.stdout, text)
         # Partial lines are bounded as well; keep parsing newline boundaries.
         parts = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
         for index, part in enumerate(parts):

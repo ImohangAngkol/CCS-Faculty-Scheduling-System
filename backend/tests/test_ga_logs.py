@@ -113,7 +113,8 @@ def test_concurrent_log_and_status_reads_are_observational(monkeypatch):
     assert random.getstate() == rng and registry.active() is control
 
 
-def test_capture_preserves_rng_fitness_calls_and_schedule(isolated, monkeypatch):
+@pytest.mark.parametrize("console_encoding", ["utf-8", "cp1252"])
+def test_capture_preserves_rng_fitness_calls_and_schedule(isolated, monkeypatch, console_encoding):
     calls = []
     population_module = importlib.import_module("genetic_algorithm.operators.CreatePopulation")
     def score(*args, **kwargs):
@@ -129,6 +130,7 @@ def test_capture_preserves_rng_fitness_calls_and_schedule(isolated, monkeypatch)
         calls.clear()
         registry = RunRegistry()
         control = registry.register()
+        monkeypatch.setattr(sys, "stdout", io.TextIOWrapper(io.BytesIO(), encoding=console_encoding, errors="strict"))
         random.seed(61)
         with logs.capture_run_logs(registry, control):
             captured = ga_service.run_genetic_algorithm(3, 2, 0, progress_callback=lambda *a: None)
@@ -141,10 +143,12 @@ def test_capture_preserves_rng_fitness_calls_and_schedule(isolated, monkeypatch)
 
 
 @pytest.mark.parametrize("restart", [False, True])
-def test_stream_pause_refresh_resume_reconnects_logs_before_next_generation(isolated, monkeypatch, restart):
+@pytest.mark.parametrize("console_encoding", ["utf-8", "cp1252"])
+def test_stream_pause_refresh_resume_reconnects_logs_before_next_generation(isolated, monkeypatch, restart, console_encoding):
     # Pause after validated generation zero; keep resumed mutation in progress
     # so diagnostic delivery is proven independently of generation completion.
     original_mutation = ga_service.mutate_by_swapping_faculty_subjects
+    monkeypatch.setattr(sys, "stdout", io.TextIOWrapper(io.BytesIO(), encoding=console_encoding, errors="strict"))
     entered, release = threading.Event(), threading.Event()
     workers = []
     def held(**kwargs):
@@ -222,6 +226,7 @@ from main import app
 from services import ga_service as ga, ga_checkpoint_service as cp, chromosome_service as cs
 from genetic_algorithm.utils import Functions as inputs
 router = importlib.import_module("routers.genetic_algorithm")
+sys.stdout.reconfigure(encoding="cp1252", errors="strict")
 cp.CHECKPOINTS_DIR = Path(sys.argv[1])
 router.LATEST_RESULT_FILE = Path(sys.argv[3]) / "child-latest.json"
 cs.BEST_CHROMOSOME_PATH = Path(sys.argv[3]) / "child-best.json"
