@@ -15,6 +15,7 @@ pydantic
 SQLAlchemy
 alembic==1.19.2
 psycopg2-binary==2.9.12
+argon2-cffi>=25.1.0,<26
 
 # Testing
 pytest

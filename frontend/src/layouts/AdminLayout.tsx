@@ -8,6 +8,8 @@ import Sidebar
 
 import Topbar
   from "../components/common/Topbar";
+import AccountMenu from "../components/common/AccountMenu";
+import {useAuth} from "../context/AuthContext";
 
 import {
   useGA,
@@ -15,6 +17,7 @@ import {
 
 
 const adminItems = [
+  {label: "Accounts", path: "/admin/accounts"},
 
   {
     label: "Dashboard",
@@ -67,6 +70,7 @@ const adminItems = [
 
 
 export default function AdminLayout() {
+  const {user} = useAuth();
 
   const location =
     useLocation();
@@ -152,9 +156,10 @@ export default function AdminLayout() {
           pageTitle={
             getPageTitle()
           }
-          userName="Administrator"
+          userName={user?.username}
           role="Admin"
         />
+        <AccountMenu />
 
 
         {loading && (

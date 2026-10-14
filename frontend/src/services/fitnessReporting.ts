@@ -21,7 +21,7 @@ export type FitnessComparison = {schema_version: 1; source: {run_id: string; lef
   overall_reduction: number; component_changes: {key: string; label: string; before: number | null; after: number | null; reduction: number | null}[];
   faculty_changes: {faculty: string; before: FacultyReport | null; after: FacultyReport | null}[];
   assignment_changes: unknown[]; explanation: string};
-const BASE = "http://127.0.0.1:8000/api/ga";
+const BASE = `${API_BASE}/api/ga`;
 const validNumber = (value: unknown): value is number => typeof value === "number" && Number.isFinite(value);
 const componentKeys = ["subject_preference", "time_preference", "day_preference", "schedule_style", "lecture_lab_preference", "number_of_preparations", "teaching_load_balance", "daily_teaching_load"];
 export function validateFitnessReport(report: FitnessReport, runId?: string, generation?: number, candidate?: CandidateKind) {
@@ -121,3 +121,4 @@ export async function downloadLoadedEvaluation(report: FitnessReport, section: "
   const anchor = document.createElement("a"); anchor.href = url; anchor.download = `loaded-candidate-${section}.${format}`; anchor.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+import {API_BASE} from "./apiSession.ts";

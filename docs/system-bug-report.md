@@ -1,6 +1,6 @@
 # System bug report
 
-Audit date: 2026-10-14. MSU-IIT CCS Faculty Scheduling Decision-Support System.
+Initial audit: 2026-10-14; Phase 4A update: 2026-10-15. MSU-IIT CCS Faculty Scheduling Decision-Support System.
 
 ## Audit scope and environment
 
@@ -8,9 +8,9 @@ Windows / PowerShell, Python 3.14.2 in the project virtual environment, React/Vi
 
 No backend/frontend listener was available on the usual local ports at audit start. The in-app browser connection was attempted using the browser skill and failed because of unavailable sandbox metadata. This audit therefore does not claim to have reproduced failures against a currently running institutional worker or to have resumed a particular user's run. No full production GA was executed.
 
-Seven confirmed defects are counted below: six application defects and one browser-test defect. Six are fixed after Phase 3F.2; BUG-004 remains partially fixed and blocked on real authentication. Placeholder features, missing PostgreSQL and deployment limitations are tracked as requirements in [roadmap status](implementation-roadmap-status.md), not inflated into bug totals.
+Ten confirmed defects are counted below: seven application defects and three test-harness defects. All ten are fixed after Phase 4A within the documented supported scope; actual PostgreSQL deployment acceptance and production hardening remain outstanding. Placeholder features, missing PostgreSQL and deployment limitations are tracked as requirements in [roadmap status](implementation-roadmap-status.md), not inflated into bug totals.
 
-The tests explicitly labelled `test_audit_...` characterize unresolved defects. They document current behavior and must be changed to enforce the desired secure/correct behavior when those defects are separately fixed. A passing characterization test does not mean the defect is acceptable.
+Original reproduction descriptions record pre-fix behavior. Current regression assertions enforce the corrected behavior; initial characterization passes were not evidence of a fix. The latest Phase 4A ledger identifies executed evidence and the remaining deployment limitations.
 
 ## BUG-001
 
@@ -76,9 +76,9 @@ The tests explicitly labelled `test_audit_...` characterize unresolved defects. 
 - **ERROR MESSAGE / STACK TRACE:** None; unauthorized access is accepted. Source confirms the deferred role implementation.
 - **ROOT CAUSE:** Authentication/authorization is documented future work; frontend adminMode/role labels do not enforce backend permissions.
 - **FILES INVOLVED:** `backend/main.py`, backend routers, `frontend/src/routes/AppRoutes.tsx`, `frontend/src/pages/faculty/Preferences.tsx`, admin/faculty layouts and editor.
-- **FIX STATUS:** PARTIALLY FIXED / AUTHENTICATION INTEGRATION BLOCKED (Phase 3F.2). Anonymous preference/settings PUT and preference DELETE are denied with 401. Server-principal role/ownership rules reject other-faculty writes and faculty priority/settings/reset changes with 403. No real credential/account provider is installed; production preference writes remain locked. Other resource authorization still needs Phase 4.
-- **REGRESSION TEST:** test_preference_integrity.py: spoofed headers/anonymous writes, own-vs-other faculty, administrator-only fields; updated test_system_audit.py. Real FastAPI tests use isolated trusted dependency overrides only for positive cases. Browser verifies 401 retains draft and the self-service route selects no default faculty.
-- **REMAINING RISK:** No production login, account binding or full resource authorization exists. Public reads and GA controls still need Phase 4 policy. Do not claim this deny-by-default groundwork is production authentication.
+- **FIX STATUS:** FIXED in Phase 4A. Database-backed verified credentials and opaque HttpOnly sessions supply the server principal. All current private/admin APIs are protected; faculty can read/update only their own preferences/profile and cannot change priority/settings/reset or administer GA runs/history/exports. Authentication/CSRF failures leave storage untouched. PostgreSQL local deployment acceptance remains pending by owner choice.
+- **REGRESSION TEST:** Phase 4A test_phase4a_auth.py verifies real credential/session login, expiry, logout, disabled accounts, CSRF, faculty ownership, database uniqueness/FKs, atomic/corrupt saves, admin account binding/revocation and every administrative route. Genuine FastAPI/Edge integration verifies login/refresh/logout/save/reload and cross-faculty/admin rejection; DB connections alone use temporary fixtures. Older preference/admin-principal tests remain separately identified; no production bypass exists. Protected 401 returns to login; 403/422/503 retain the draft.
+- **REMAINING RISK:** Local PostgreSQL migration/account/bootstrap acceptance has not been run. One API worker remains required. MFA/SSO/self-service recovery/full audit history and production HTTPS/backup/edge throttling are future work; established GA streams authenticate at admission. See phase-4a-authentication-report.md.
 
 ## BUG-005
 
@@ -188,7 +188,7 @@ The initial working tree already contained Phase 3F implementation changes and a
 - No commit/push and no Phase 3G implementation.
 
 
-## Phase 3F.2 verification and current closure
+## Phase 3F.2 verification and closure (historical before Phase 4A)
 
 The preceding audit verification/file list is historical Phase 3F.1 evidence. Current implementation and complete changed-file/manual acceptance details are in [Phase 3F.2](phase-3f2-data-integrity-report.md).
 
@@ -205,11 +205,68 @@ The preceding audit verification/file list is historical Phase 3F.1 evidence. Cu
 
 | Confirmed bug category | Count |
 |---|---:|
-| Application defects confirmed | 6 |
-| Test-harness defect confirmed | 1 |
-| **All confirmed defects** | **7** |
-| **Fixed** | **6** |
-| **Unresolved / partially fixed and blocked** | **1** |
+| Application defects confirmed | 7 |
+| Test-harness defects confirmed | 3 |
+| **All confirmed defects** | **10** |
+| **Fixed** | **10** |
+| **Unresolved confirmed defects** | **0** |
 
-Prioritize completing BUG-004 with real Phase 4 account/role/ownership integration. BUG-005 now preserves corrupt data and BUG-006 uses corrected policy 2 with legacy policy 1 continuation. Then proceed through identity/term/database design, authorized management, faculty portal/publishing/class lists, and evaluation/deployment qualification. This report recommends those stages; it does not start Phase 3G.
+Prioritize documented local PostgreSQL acceptance for the implemented Phase 4A identity/account/session integration. BUG-005 now preserves corrupt data and BUG-006 uses corrected policy 2 with legacy policy 1 continuation. Then proceed through identity/term/database design, authorized management, faculty portal/publishing/class lists, and evaluation/deployment qualification. This report recommends those stages; it does not start Phase 3G.
 
+
+## Phase 4A update (2026-10-15)
+
+BUG-004 is closed against the current permission contract. Phase 4A implementation closed nine defects; final verification additionally closes BUG-010, bringing the current total to ten confirmed / ten fixed / zero unresolved confirmed defects within their documented scope. Original reproductions above describe pre-fix behavior; they do not assert that anonymous access still succeeds now. No new application bug is inferred from test-fixture CORS timing, native-Headers mocks or the old profile-placeholder assertion; those regression fixtures were corrected and rerun. Full repository lint still has three errors and eight warnings in untouched files (GAContext, FacultyManagement, RoomAssignments, ScheduleView), separately recorded as existing lint findings.
+
+The PostgreSQL service was available, but the owner requested isolated tests and setup documentation; actual PostgreSQL acceptance, including concurrency/row locks, remains unverified. No institutional preferences/checkpoints/history were changed. UI placeholders and missing workflow features remain requirements rather than counted bugs.
+
+## BUG-008 ? test fixture completes before an injected checkpoint failure
+
+- **BUG ID:** BUG-008
+- **TITLE:** Durable-marker failure regression tears down while the worker is still checkpointing.
+- **SEVERITY:** LOW
+- **AFFECTED PAGE / ENDPOINT:** `test_failed_durable_paused_marker_never_acknowledges_pause`; test harness only.
+- **ENVIRONMENT:** Windows, project Python 3.14.2; temporary checkpoints/history; reproduced both in the combined regression suite and a focused run.
+- **REPRODUCTION STEPS:** Run the marker-failure regression. It requests resume/pause, injects an OSError on the PAUSED marker, and starts a 30-second lifecycle-completion deadline before the worker reaches that marker.
+- **EXPECTED RESULT:** Wait for the injected failure boundary, then assert FAILED, no resumable checkpoint acknowledgement and preservation of previous checkpoint/result. Keep temporary fixtures alive until terminal cleanup.
+- **ACTUAL RESULT:** Deadline expires while the authoritative state is PAUSING. The worker subsequently reaches the deliberate marker error and becomes FAILED. This is not evidence of an incorrect successful pause or lost checkpoint.
+- **ERROR MESSAGE / STACK TRACE:** `AssertionError ... state: PAUSING ... time.monotonic() < deadline`, `test_ga_pause_resume.py:wait_finished`; subsequent intentional diagnostic `GENETIC ALGORITHM FAILED: PAUSED marker could not be committed`.
+- **ROOT CAUSE:** Test conflates safe-operation duration with terminal lifecycle cleanup. The exact expensive checkpoint sub-operation was not independently profiled; no production checkpoint defect is inferred.
+- **FILES INVOLVED:** `backend/tests/test_ga_pause_resume.py` only.
+- **FIX STATUS:** FIXED. A test-only Event identifies entry into the injected marker failure (bounded by 120 seconds); the original 30-second terminal cleanup check then runs. Resume acknowledgement is additionally asserted not PAUSED. No scheduling/checkpoint implementation or API timeout changed.
+- **REGRESSION TEST:** Focused corrected test passed in 66.83 seconds, retaining all prior checkpoint/result/integrity assertions. The original combined run's failure is retained in the Phase 4A ledger; the targeted corrected rerun is reported separately.
+- **REMAINING RISK:** Cold checkpoint latency is not a production benchmark. The broader profiling/qualification requirement remains outstanding.
+
+## BUG-009 ? subprocess history path escapes isolated fixture storage
+
+- **BUG ID:** BUG-009
+- **TITLE:** Fresh-interpreter diagnostic regression does not inherit the parent test's history-directory override.
+- **SEVERITY:** MEDIUM
+- **AFFECTED PAGE / ENDPOINT:** `test_fresh_python_process_recovers_checkpoint_and_logs_new_worker`; isolated test subprocess / generation history storage.
+- **ENVIRONMENT:** Windows pytest, actual existing subprocess regression.
+- **REPRODUCTION STEPS:** Run the original fresh-interpreter log/checkpoint test. Its child script redirects checkpoints, latest result and saved best, but omits `ga_history_service.SNAPSHOTS_DIR`. Parent monkeypatches do not cross process boundaries.
+- **EXPECTED RESULT:** All child-process history/analysis files remain in that test's temporary directory.
+- **ACTUAL RESULT:** The initial combined run's preloaded old test created a new three-file history directory in application storage, despite the parent fixture being isolated. Existing files were unchanged.
+- **ERROR MESSAGE / STACK TRACE:** Final protected-area audit assertion detected three new files under run `754fbfbc-b429-4e28-8e99-99aad2edd894`; no original-file checksum changed.
+- **ROOT CAUSE:** Missing explicit child-process history path configuration.
+- **FILES INVOLVED:** `backend/tests/test_ga_logs.py` only.
+- **FIX STATUS:** FIXED. Child script explicitly sets history storage to `sys.argv[3]/child-history`. Corrected focused regression passed. Ownership was verified from post-audit creation time, population 3/generation limit 1, only generation 1 from resumed execution, and the exact bounded fixture's Faculty 7/10 assignments. The new test-only bundle was moved intact to temporary storage; no historical user file was deleted or moved.
+- **REGRESSION TEST:** Corrected fresh-interpreter test passed in 41.29 seconds. Final audit confirms 141 original protected files byte-identical and no new files in protected application storage.
+- **REMAINING RISK:** Future subprocess fixtures must explicitly configure every persistence path; parent dependency/monkeypatch overrides alone do not suffice. The preserved test-only bundle is at `%TEMP%/phase4a-test-history-754fbfbc-b429-4e28-8e99-99aad2edd894`.
+
+## BUG-010 ? stale authentication response clears a newer session
+
+- **BUG ID:** BUG-010
+- **TITLE:** Delayed prior-session HTTP 401 emits an expiration signal for a newer verified login.
+- **SEVERITY:** MEDIUM
+- **AFFECTED PAGE / ENDPOINT:** Frontend shared fetch/Axios client; authenticated portal after account switch or renewed login.
+- **ENVIRONMENT:** Windows/Node transport regression, actual apiSession.ts; real browser login/logout/revocation checked separately.
+- **REPRODUCTION STEPS:** Start request under session A, set session B, deliver A's 401; observe ccs-session-expired.
+- **EXPECTED RESULT:** B remains signed in; a genuine B-session 401 still expires B.
+- **ACTUAL RESULT:** Both transports emitted expiration for B. AuthContext clears the account on that signal. No backend authorization bypass or unauthorized data write was demonstrated.
+- **ERROR MESSAGE / STACK TRACE:** Two regression assertions failed with event count `1 !== 0` in authSessionRace.test.mjs. No credential values were logged.
+- **ROOT CAUSE:** Response expiration logic was not associated with the request's originating session.
+- **FILES INVOLVED:** frontend/src/services/apiSession.ts; frontend/tests/authSessionRace.test.mjs; frontend/package.json.
+- **FIX STATUS:** FIXED. In-memory session revision guards expiration; private WeakMap associates Axios configuration with its request revision. No extra tracking header is sent; server checks remain unchanged.
+- **REGRESSION TEST:** Old/current session 401 cases for fetch and Axios: four passing after fix, two failures reproduced before fix. See phase-4a-final-verification.md for complete current evidence.
+- **REMAINING RISK:** Cross-tab account context can require refresh; no multi-tab synchronization or production PostgreSQL concurrency certification is claimed.

@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "test:auth": "node --test tests/auth.test.mjs tests/authSessionRace.test.mjs",
     "test:preferences": "node --test tests/preferenceModel.test.mjs tests/preferenceApi.test.mjs",
     "test:preferences:browser": "node --test tests/preferences.browser.test.mjs",
     "dev": "vite",

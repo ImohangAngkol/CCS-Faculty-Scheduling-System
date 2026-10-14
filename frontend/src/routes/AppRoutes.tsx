@@ -36,6 +36,12 @@ import ScheduleView
 import FitnessAnalysis
   from "../pages/admin/FitnessAnalysis";
 import GenerationHistory from "../pages/admin/GenerationHistory";
+import Login from "../pages/Login";
+import ProtectedRoute from "./ProtectedRoute";
+import {GAProvider} from "../context/GAContext";
+import {useAuth} from "../context/AuthContext";
+import {accountHome} from "../services/auth";
+import Accounts from "../pages/admin/Accounts";
 
 
 // =============================================
@@ -96,12 +102,14 @@ function PlaceholderPage({
 
 
 export default function AppRoutes() {
+  const {user} = useAuth();
 
   return (
 
     <BrowserRouter>
 
       <Routes>
+        <Route path="/login" element={<Login />} />
 
         {/* ROOT */}
 
@@ -109,7 +117,7 @@ export default function AppRoutes() {
           path="/"
           element={
             <Navigate
-              to="/admin"
+              to={user ? accountHome(user) : "/login"}
               replace
             />
           }
@@ -123,7 +131,7 @@ export default function AppRoutes() {
         <Route
           path="/admin"
           element={
-            <AdminLayout />
+            <ProtectedRoute role="admin"><GAProvider><AdminLayout /></GAProvider></ProtectedRoute>
           }
         >
 
@@ -203,6 +211,7 @@ export default function AppRoutes() {
             }
           />
           <Route path="history" element={<GenerationHistory />} />
+          <Route path="accounts" element={<Accounts />} />
 
         </Route>
 
@@ -214,7 +223,7 @@ export default function AppRoutes() {
         <Route
           path="/faculty"
           element={
-            <FacultyLayout />
+            <ProtectedRoute role="faculty"><FacultyLayout /></ProtectedRoute>
           }
         >
 
@@ -251,9 +260,7 @@ export default function AppRoutes() {
           <Route
             path="profile"
             element={
-              <PlaceholderPage
-                title="Profile"
-              />
+              <div className="rounded-xl border bg-white p-6"><h1 className="text-xl font-bold">My Account</h1><p>{user?.username}</p><p>{user?.faculty?.name ?? "Faculty binding unavailable. Contact an administrator."}</p><p>{user?.faculty?.display_code}</p></div>
             }
           />
 
@@ -266,7 +273,7 @@ export default function AppRoutes() {
           path="*"
           element={
             <Navigate
-              to="/admin"
+              to={user ? accountHome(user) : "/login"}
               replace
             />
           }

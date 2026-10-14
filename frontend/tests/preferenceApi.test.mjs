@@ -1,6 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import axios from 'axios';
+import {apiClient} from '../src/services/apiSession.ts';
 import {preferenceError, updateFacultyPreference} from '../src/api/preferences.ts';
 
 test('authentication, storage and validation errors are shown accurately', () => {
@@ -14,17 +15,17 @@ test('authentication, storage and validation errors are shown accurately', () =>
 });
 
 test('disabled flags and optional null fields round trip without client identity headers', async () => {
-  const before=axios.put;
+  const before=apiClient.put;
   const draft={use_day_preference:false,use_time_preference:false,preferred_start_time:null,preferred_end_time:null};
-  axios.put=async(url,data,options)=>{assert.match(url,/\/preferences\/0$/);assert.equal(options,undefined);assert.deepEqual(data,draft);return {data:{faculty_code:0,...data}};};
+  apiClient.put=async(url,data,options)=>{assert.match(url,/\/preferences\/0$/);assert.equal(options,undefined);assert.deepEqual(data,draft);return {data:{faculty_code:0,...data}};};
   try {assert.deepEqual(await updateFacultyPreference(0,draft),{faculty_code:0,...draft});}
-  finally {axios.put=before;}
+  finally {apiClient.put=before;}
 });
 
 test('a denied save rejects instead of returning fabricated success',async()=>{
-  const before=axios.put;
+  const before=apiClient.put;
   const failure=new axios.AxiosError('unauthorized');failure.response={status:401,data:{detail:'Authentication required'}};
-  axios.put=async()=>{throw failure;};
+  apiClient.put=async()=>{throw failure;};
   try {await assert.rejects(updateFacultyPreference(0,{}),error=>error===failure);}
-  finally {axios.put=before;}
+  finally {apiClient.put=before;}
 });

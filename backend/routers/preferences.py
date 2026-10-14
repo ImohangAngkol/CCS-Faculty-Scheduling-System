@@ -53,7 +53,7 @@ def _write_ga_settings(settings):
     storage.atomic_write(GA_SETTINGS_FILE, settings.to_dict())
 
 
-@router.get("/ga-settings", response_model=GASettingResponse)
+@router.get("/ga-settings", response_model=GASettingResponse, dependencies=[Depends(require_admin)])
 def get_ga_settings():
     return _read_ga_settings().to_dict()
 
@@ -65,13 +65,13 @@ def update_ga_settings(payload: GASettingUpdate, principal=Depends(require_admin
     return GASetting.from_dict(data).to_dict()
 
 
-@router.get("", response_model=list[FacultyPreferenceResponse])
+@router.get("", response_model=list[FacultyPreferenceResponse], dependencies=[Depends(require_admin)])
 def get_all_preferences():
     return _read_preferences()
 
 
 @router.get("/{faculty_code}", response_model=FacultyPreferenceResponse)
-def get_faculty_preference(faculty_code: int):
+def get_faculty_preference(faculty_code: int, principal=Depends(authorize_faculty)):
     try:
         resolve_normal_faculty(faculty_code)
     except ValueError as error:

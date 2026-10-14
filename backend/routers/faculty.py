@@ -1,4 +1,5 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
+from services.preference_authorization import require_admin, authorize_faculty_metadata
 
 from schemas.faculty import FacultyDetailResponse, FacultyListResponse, FacultySubjectsResponse
 from services.metadata_service import (
@@ -14,7 +15,7 @@ router = APIRouter(
 )
 
 
-@router.get("/", response_model=FacultyListResponse)
+@router.get("/", response_model=FacultyListResponse, dependencies=[Depends(require_admin)])
 def get_all_faculty():
     return FacultyListResponse(
         message="Faculty retrieved successfully.", data=list_faculty_metadata(),
@@ -28,7 +29,7 @@ def _resolve_faculty(faculty_id):
         raise HTTPException(status_code=404, detail=str(error)) from error
 
 
-@router.get("/{faculty_id}", response_model=FacultyDetailResponse)
+@router.get("/{faculty_id}", response_model=FacultyDetailResponse, dependencies=[Depends(authorize_faculty_metadata)])
 def get_faculty(faculty_id: str):
     return FacultyDetailResponse(
         message="Faculty retrieved successfully.",
@@ -36,7 +37,7 @@ def get_faculty(faculty_id: str):
     )
 
 
-@router.get("/{faculty_id}/eligible-subjects", response_model=FacultySubjectsResponse)
+@router.get("/{faculty_id}/eligible-subjects", response_model=FacultySubjectsResponse, dependencies=[Depends(authorize_faculty_metadata)])
 def get_faculty_subjects(faculty_id: str, eligible_only: bool = True):
     faculty = _resolve_faculty(faculty_id)
     return FacultySubjectsResponse(

@@ -52,11 +52,13 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
     const errors = [];
     client.on("Runtime.exceptionThrown", event => errors.push(event.exceptionDetails.text));
     const saved = new Map(faculty.map(row => [row.faculty_code, { faculty_code: row.faculty_code, ...structuredClone(preference) }]));
-    let failSave = false, lastWrite = null, unauthorizedSave = false, invalidSave = false;
+    let failSave = false, lastWrite = null, unauthorizedSave = false, invalidSave = false, facultyAccount = false;
     client.on("Fetch.requestPaused", async ({ requestId, request }) => {
       try {
         const url = new URL(request.url); let status = 200, data = {};
         if (request.method === "OPTIONS") data = {};
+        else if (url.pathname === "/api/auth/me") data = {user: {id: "browser-user", username: "browser@test.invalid", role: facultyAccount ? "faculty" : "admin", is_active: true,
+          faculty_id: null, faculty: null}, csrf_token: "test-csrf", expires_at: "2099-01-01T00:00:00Z"};
         else if (url.pathname === "/api/faculty/") data = { data: [...faculty, { faculty_id: "outside-pool", faculty_code: 99, display_code: "Atty. Eddie Bouy Palad", instructor_type: "preassigned_external" }] };
         else if (url.pathname.endsWith("/eligible-subjects")) {
           const row = faculty.find(item => url.pathname.includes(item.faculty_id) || url.pathname.includes(`/${item.faculty_code}/`));
@@ -66,17 +68,17 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
           const code = Number(url.pathname.split("/").at(-1));
           if (request.method === "PUT") {
             lastWrite = JSON.parse(request.postData); await pause(120);
-            if (unauthorizedSave) { status = 401; data = {detail: "Preference writes require authenticated accounts. Authentication is not configured; no changes were saved."}; }
+            if (unauthorizedSave) { status = 403; data = {detail: "Your account is not authorized to save these preferences; no changes were saved."}; }
             else if (invalidSave) { status = 422; data = {detail: "Review the submitted subject eligibility and meeting pattern."}; }
             else if (failSave) { status = 500; data = { detail: "Test save failed" }; }
             else { saved.set(code, { faculty_code: code, ...lastWrite }); data = saved.get(code); }
           } else data = saved.get(code);
         }
-        await client.send("Fetch.fulfillRequest", { requestId, responseCode: status, responseHeaders: [{ name: "Content-Type", value: "application/json" }, { name: "Access-Control-Allow-Origin", value: "http://localhost:5187" }, { name: "Access-Control-Allow-Headers", value: "content-type" }, { name: "Access-Control-Allow-Methods", value: "GET, PUT, OPTIONS" }], body: Buffer.from(JSON.stringify(data)).toString("base64") });
+        await client.send("Fetch.fulfillRequest", { requestId, responseCode: status, responseHeaders: [{ name: "Content-Type", value: "application/json" }, { name: "Access-Control-Allow-Origin", value: "http://localhost:5187" }, {name: "Access-Control-Allow-Credentials", value: "true"}, { name: "Access-Control-Allow-Headers", value: "content-type,x-csrf-token" }, { name: "Access-Control-Allow-Methods", value: "GET, PUT, OPTIONS" }], body: Buffer.from(JSON.stringify(data)).toString("base64") });
       } catch (error) { errors.push(String(error)); await client.send("Fetch.failRequest", { requestId, errorReason: "Failed" }); }
     });
     await client.send("Runtime.enable"); await client.send("Page.enable");
-    await client.send("Fetch.enable", { patterns: [{ urlPattern: "http://127.0.0.1:8000/*", requestStage: "Request" }] });
+    await client.send("Fetch.enable", { patterns: [{ urlPattern: "http://localhost:8000/*", requestStage: "Request" }] });
     await client.send("Emulation.setDeviceMetricsOverride", { width: 1366, height: 900, deviceScaleFactor: 1, mobile: false });
     const evaluate = async expression => {
       const result = await client.send("Runtime.evaluate", { expression, returnByValue: true, awaitPromise: true });
@@ -378,8 +380,9 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       await writeFile(new URL("../.cache/preferences-laptop.png", import.meta.url), Buffer.from(shot.data, "base64"));
     });
     await t.test("faculty self-service hides priority; small viewport has no horizontal overflow", async () => {
+      facultyAccount = true;
       await client.send("Page.navigate", {url:"http://localhost:5187/faculty/preferences"});
-      await eventually(() => evaluate(`document.body.textContent.includes('Faculty sign-in is not configured.')`), "Unverified faculty identity was not blocked");
+      await eventually(() => evaluate(`document.body.textContent.includes('Your account has no valid faculty binding.')`), "Unverified faculty identity was not blocked");
       assert.equal(await evaluate(`!!document.querySelector('.preference-editor') || !!document.querySelector('.preference-save-bar')`), false);
       await client.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
       await pause(100);
@@ -390,11 +393,12 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       await writeFile(new URL("../.cache/preferences-mobile.png", import.meta.url), Buffer.from(shot.data, "base64"));
     });
     await t.test("unauthorized and invalid saves retain the draft and never claim saved", async () => {
+      facultyAccount = false;
       await navigate("/admin/preferences");
       await evaluate(`ui.field('Consider my subject preferences').click(); true`);
       unauthorizedSave = true;
       await evaluate(`ui.button('Save Preferences').click(); true`);
-      await eventually(() => evaluate(`ui.status()==='Save failed' && document.body.textContent.includes('Authentication is not configured')`), "Unauthorized save was misreported");
+      await eventually(() => evaluate(`ui.status()==='Save failed' && document.body.textContent.includes('not authorized to save')`), "Unauthorized save was misreported");
       assert.equal(await evaluate(`ui.button('Save Preferences').disabled`), false);
       unauthorizedSave = false; invalidSave = true;
       await evaluate(`ui.button('Save Preferences').click(); true`);

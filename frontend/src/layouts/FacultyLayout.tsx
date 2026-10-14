@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/common/Sidebar";
 import Topbar from "../components/common/Topbar";
+import AccountMenu from "../components/common/AccountMenu";
+import {useAuth} from "../context/AuthContext";
 
 const facultyItems = [
   { label: "Dashboard", path: "/faculty" },
@@ -10,6 +12,7 @@ const facultyItems = [
 ];
 
 export default function FacultyLayout() {
+  const {user} = useAuth();
   return (
     <div className="flex min-h-screen bg-slate-50">
       <Sidebar
@@ -21,9 +24,10 @@ export default function FacultyLayout() {
       <div className="flex min-w-0 flex-1 flex-col">
         <Topbar
           pageTitle="Faculty Dashboard"
-          userName="Faculty User"
+          userName={user?.faculty?.display_code ?? user?.username}
           role="Faculty"
         />
+        <AccountMenu />
 
         <main className="flex-1 p-6">
           <Outlet />

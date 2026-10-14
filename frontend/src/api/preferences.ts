@@ -1,6 +1,7 @@
 import axios from "axios";
+import {API_BASE, apiClient} from "../services/apiSession.ts";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = API_BASE;
 
 export function preferenceError(reason: unknown, fallback: string): string {
   if (!axios.isAxiosError(reason)) return fallback;
@@ -119,7 +120,7 @@ export async function getFacultyPreference(
   facultyCode: number
 ): Promise<FacultyPreference> {
 
-  const response = await axios.get<FacultyPreference>(
+  const response = await apiClient.get<FacultyPreference>(
     `${API_URL}/preferences/${facultyCode}`
   );
 
@@ -132,7 +133,7 @@ export async function updateFacultyPreference(
   data: FacultyPreferenceUpdate
 ): Promise<FacultyPreference> {
 
-  const response = await axios.put<FacultyPreference>(
+  const response = await apiClient.put<FacultyPreference>(
     `${API_URL}/preferences/${facultyCode}`,
     data
   );

@@ -224,12 +224,16 @@ from pathlib import Path
 from fastapi.testclient import TestClient
 from main import app
 from services import ga_service as ga, ga_checkpoint_service as cp, chromosome_service as cs
+from services import ga_history_service as history
+from services.preference_authorization import current_principal, PreferencePrincipal
+app.dependency_overrides[current_principal] = lambda: PreferencePrincipal("admin")
 from genetic_algorithm.utils import Functions as inputs
 router = importlib.import_module("routers.genetic_algorithm")
 sys.stdout.reconfigure(encoding="cp1252", errors="strict")
 cp.CHECKPOINTS_DIR = Path(sys.argv[1])
 router.LATEST_RESULT_FILE = Path(sys.argv[3]) / "child-latest.json"
 cs.BEST_CHROMOSOME_PATH = Path(sys.argv[3]) / "child-best.json"
+history.SNAPSHOTS_DIR = Path(sys.argv[3]) / "child-history"
 ga.list_subjects = copy.deepcopy([s for s in inputs.list_subjects
     if s.number in {"ITE184", "ITE185", "ITD104"} and s.section.code in {"4A", "4B"}])
 ga.list_faculty = copy.deepcopy([f for f in inputs.list_faculty if f.code in {7, 10}])

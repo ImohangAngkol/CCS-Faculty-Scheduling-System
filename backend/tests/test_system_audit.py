@@ -16,6 +16,7 @@ from genetic_algorithm.operators.FitnessFunction import _score_exact_subject_sch
 def client(tmp_path, monkeypatch):
     monkeypatch.setattr(preferences, "PREFERENCE_FILE", tmp_path / "preferences.json")
     monkeypatch.setattr(preferences, "GA_SETTINGS_FILE", tmp_path / "settings.json")
+    monkeypatch.setitem(app.dependency_overrides, current_principal, lambda: PreferencePrincipal("admin"))
     with TestClient(app) as instance:
         yield instance
 
@@ -65,10 +66,11 @@ def test_readonly_metadata_and_openapi_expose_actual_capabilities(client):
 
 
 def test_anonymous_preference_writes_are_rejected(client):
+    app.dependency_overrides.pop(current_principal, None)
     response = client.put("/preferences/0", json={})
     assert response.status_code == 401
     assert not preferences.PREFERENCE_FILE.exists()
-    assert client.get("/preferences/0").status_code == 200
+    assert client.get("/preferences/0").status_code == 401
     assert not app.openapi().get("components", {}).get("securitySchemes")
 
 

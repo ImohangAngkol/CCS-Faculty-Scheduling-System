@@ -1,16 +1,14 @@
 import AppRoutes from "./routes/AppRoutes";
 
-import {
-  GAProvider,
-} from "./context/GAContext";
+import {AuthProvider} from "./context/AuthContext";
 
 
 export default function App() {
 
   return (
-    <GAProvider>
+    <AuthProvider>
       <AppRoutes />
-    </GAProvider>
+    </AuthProvider>
   );
 
 }

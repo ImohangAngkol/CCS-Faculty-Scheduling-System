@@ -51,9 +51,12 @@ test('real FastAPI: start, pause, acknowledge, refresh, hydrate and resume the s
       window.testRequests=[];
       window.fetch=(input,options)=>{
         const url=String(input);window.testRequests.push({url,method:options?.method??'GET'});
-        if(url.startsWith('http://127.0.0.1:8000')) {
+        // This suite tests GA lifecycle with its isolated server principal fixture.
+        // Real cookie login is covered by auth.browser.integration.mjs.
+        if(url.endsWith('/api/auth/me')) return Promise.resolve(Response.json({user:{id:'ga-test-admin',username:'admin@test.invalid',role:'admin',is_active:true,faculty_id:null,faculty:null},csrf_token:'test-csrf',expires_at:'2099-01-01T00:00:00Z'}));
+        if(url.startsWith('http://localhost:8000')) {
           if(sessionStorage.getItem('delayLatest')==='true' && url.endsWith('/api/ga/latest')) return new Promise(()=>{});
-          return transport(url.replace('http://127.0.0.1:8000',${JSON.stringify(backend)}),options);
+          return transport(url.replace('http://localhost:8000',${JSON.stringify(backend)}),options);
         }
         return transport(input,options);
       };

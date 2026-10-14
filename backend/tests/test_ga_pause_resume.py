@@ -413,8 +413,10 @@ def test_failed_durable_paused_marker_never_acknowledges_pause(isolated, monkeyp
     previous_path = checkpoints.run_directory(control.run_id) / control.checkpoint
     previous = previous_path.read_bytes()
     original_marker = checkpoints.write_marker
+    failure_boundary = threading.Event()
     def marker(*args, **kwargs):
         if kwargs.get("state") == "PAUSED":
+            failure_boundary.set()
             raise OSError("PAUSED marker could not be committed")
         return original_marker(*args, **kwargs)
     monkeypatch.setattr(checkpoints, "write_marker", marker)
@@ -424,7 +426,12 @@ def test_failed_durable_paused_marker_never_acknowledges_pause(isolated, monkeyp
         return original_mutation(**kwargs)
     monkeypatch.setattr(ga_service, "mutate_by_swapping_faculty_subjects", pause_again)
     with TestClient(app) as client:
-        assert client.post(f"/api/ga/runs/{control.run_id}/resume").json()["accepted"]
+        acknowledgement = client.post(f"/api/ga/runs/{control.run_id}/resume").json()
+        assert acknowledgement["accepted"] and acknowledgement["state"] != "PAUSED"
+        # Cold checkpoint serialization/validation can exceed the lifecycle wait.
+        # Synchronize with the injected failure before testing terminal cleanup;
+        # never tear down fixtures underneath a still-checkpointing worker.
+        assert failure_boundary.wait(120), "Worker never reached the injected durable-marker failure"
         final = wait_finished(client, control.run_id, "FAILED")
         assert "could not be committed" in final["terminal_error"]
         assert checkpoints.read_marker(control.run_id)["state"] == "FAILED"

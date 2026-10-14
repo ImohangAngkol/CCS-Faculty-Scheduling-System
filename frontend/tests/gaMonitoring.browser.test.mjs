@@ -72,6 +72,7 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       window.mockLegacyBackend = false;
       window.fetch = async (input, options) => {
         const url = String(input);
+        if (url.endsWith('/api/auth/me')) return Response.json({user:{id:'admin-test',username:'admin@test.invalid',role:sessionStorage.getItem('mockAuthRole')??'admin',is_active:true,faculty_id:null,faculty:null},csrf_token:'test-csrf',expires_at:'2099-01-01T00:00:00Z'});
         if (url.includes('/api/ga/runs') && sessionStorage.getItem('mockHistory')) {
           const archive = JSON.parse(sessionStorage.getItem('mockHistory'));
           const parsed = new URL(url), route = parsed.pathname;
@@ -122,7 +123,7 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
           return Response.json({run_id:url.split('/').at(-2),process_instance_id:processId,state:'PAUSED',resumable:sessionStorage.getItem('mockCheckpointInvalid')!=='true',error:sessionStorage.getItem('mockCheckpointInvalid')==='true'?'Checkpoint inputs changed':undefined});
         }
         if (url.endsWith('/pause') || url.endsWith('/resume')) {
-          window.mockControlRequests.push({url,process:options?.headers?.['X-GA-Process-ID']});
+          window.mockControlRequests.push({url,process:new Headers(options?.headers).get('X-GA-Process-ID')});
           if (url.endsWith('/pause')) return new Promise(resolve => {window.mockPauseResolve=resolve;});
           if (sessionStorage.getItem('mockResumeConflict')==='true') return Response.json({detail:{code:'GA_RESUME_CONFLICT',message:'This run is already stopping; resume was not admitted.'}},{status:409});
           if (sessionStorage.getItem('mockCheckpointInvalid')==='true') return Response.json({detail:{code:'GA_CHECKPOINT_INPUT_CHANGED',message:'Checkpoint inputs changed; no worker was started.'}},{status:409});
@@ -135,7 +136,7 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
           if (window.mockStateError) throw new Error('Status connection lost');
           const snapshots = [JSON.parse(sessionStorage.getItem('mockActiveRun') ?? 'null'),JSON.parse(sessionStorage.getItem('mockTerminalRun') ?? 'null'),...JSON.parse(sessionStorage.getItem('mockPausedRuns') ?? '[]')];
           const snapshot = snapshots.find(run=>run && url.endsWith('/'+run.run_id));
-          if (options?.headers?.['X-GA-Process-ID'] !== processId) return Response.json({detail:{code:'GA_PROCESS_CHANGED',message:'Backend process changed; no cancellation occurred.'}},{status:409});
+          if (new Headers(options?.headers).get('X-GA-Process-ID') !== processId) return Response.json({detail:{code:'GA_PROCESS_CHANGED',message:'Backend process changed; no cancellation occurred.'}},{status:409});
           return snapshot && url.endsWith('/'+snapshot.run_id) ? Response.json(snapshot) : Response.json({detail:{code:'GA_UNKNOWN_RUN',message:'Run is unknown in this server process; no cancellation occurred.'}},{status:404});
         }
         if (url.includes('/api/ga/runs/') && url.endsWith('/result')) return Response.json({status:'success',data:JSON.parse(sessionStorage.getItem('mockStoppedResult'))});
@@ -304,7 +305,7 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       assert.equal(await evaluate("window.mockGAController"), null);
       assert.equal(await evaluate("sessionStorage.getItem('mockStreamCount')"), started);
       assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`), "1 / 2");
-      assert.ok(await evaluate(`document.body.textContent.includes('Earlier events may be missing')`));
+      await eventually(() => evaluate(`document.body.textContent.includes('Earlier events may be missing')`), "Recovered polling notice was not rendered");
       assert.ok(await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Generating Schedule...').disabled`));
       await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Stop Generation').click(); true`);
       await eventually(() => evaluate("!!window.mockStopResolve"), "Recovered stop not sent");
@@ -839,11 +840,16 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       await evaluate(`var selector=document.querySelector('main select'); var option=[...selector.options].find(option=>option.textContent.includes('Atty. Eddie Bouy Palad')); if(!option) throw new Error('External instructor missing from schedule filter'); selector.value=option.value; selector.dispatchEvent(new Event('change',{bubbles:true})); true`);
       await eventually(() => evaluate(`document.querySelector('main tbody')?.textContent.includes('ITE184') && !document.querySelector('main tbody')?.textContent.includes('CCC121')`), 'External filter did not match its assignment');
     });
-    await t.test('audit subject management and faculty portal routes are still placeholders', async () => {
-      for (const path of ['/admin/subjects','/faculty/schedule','/faculty/profile']) {
+    await t.test('audit remaining placeholders and verified faculty account route', async () => {
+      await client.send('Page.navigate', {url:'http://localhost:5188/admin/subjects'});
+      await eventually(() => evaluate(`document.querySelector('main')?.textContent.includes('This page will be built next.')`), 'Subject placeholder not reproduced');
+      await evaluate(`sessionStorage.setItem('mockAuthRole','faculty');true`);
+      for (const path of ['/faculty/schedule']) {
         await client.send('Page.navigate', {url:'http://localhost:5188'+path});
         await eventually(() => evaluate(`document.querySelector('main')?.textContent.includes('This page will be built next.')`), `${path} placeholder not reproduced`);
       }
+      await client.send('Page.navigate', {url:'http://localhost:5188/faculty/profile'});
+      await eventually(() => evaluate(`document.querySelector('main')?.textContent.includes('My Account')`), 'Verified account route did not load');
       await client.send('Page.navigate', {url:'http://localhost:5188/faculty'});
       await eventually(() => evaluate(`document.querySelector('main')?.textContent.trim()==='Faculty Dashboard'`), 'Faculty dashboard placeholder not reproduced');
     });

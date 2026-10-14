@@ -31,7 +31,7 @@ export type HistoryComparison = {schema_version: 1; run_id: string; left: number
   left_fitness_breakdown?: Record<string, number> | null; right_fitness_breakdown?: Record<string, number> | null};
 export type RunPage = {schema_version: 1; items: HistoryRun[]; total: number; offset: number; limit: number;
   errors: {code: string; message: string}[]};
-const BASE = "http://127.0.0.1:8000/api/ga/runs";
+const BASE = `${API_BASE}/api/ga/runs`;
 export function runPath(runId: string): string {
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(runId)) throw new Error("Invalid historical run identity.");
   return `${BASE}/${runId}`;
@@ -121,3 +121,4 @@ export function improvementLabel(value: number) {
   return value > 0 ? `${value.toLocaleString()} lower (improved)` : value < 0 ? `${Math.abs(value).toLocaleString()} higher (worse)` : "Unchanged";
 }
 export { json as readHistoryJSON, request as requestHistory };
+import {API_BASE, apiFetch as fetch} from "./apiSession.ts";

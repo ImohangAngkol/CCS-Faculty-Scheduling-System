@@ -1,5 +1,6 @@
+import {API_BASE, apiFetch as fetch} from "../services/apiSession";
 const API_URL =
-  "http://127.0.0.1:8000";
+  API_BASE;
 
 
 export interface FacultySummary {

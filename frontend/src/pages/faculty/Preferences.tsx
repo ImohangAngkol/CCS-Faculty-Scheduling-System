@@ -1,8 +1,10 @@
 import FacultyPreferenceEditor
   from "../../components/faculty/FacultyPreferenceEditor";
+import {useAuth} from "../../context/AuthContext";
 
-export default function Preferences({ facultyCode }: { facultyCode?: number }) {
-  // A future verified server account must supply faculty identity. Never assume 0.
+export default function Preferences() {
+  const {user} = useAuth();
+  const binding = user?.role === "faculty" ? user.faculty : null;
 
   return (
     <div className="preference-page space-y-4">
@@ -18,10 +20,11 @@ export default function Preferences({ facultyCode }: { facultyCode?: number }) {
         </p>
       </div>
 
-      {facultyCode === undefined ? <p role="status" className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
-        Faculty sign-in is not configured. Your faculty identity must be verified before opening personal preferences. No faculty record has been selected.
+      {!binding ? <p role="alert" className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+        Your account has no valid faculty binding. Ask an administrator to repair it before editing preferences. No faculty record has been selected.
       </p> : <FacultyPreferenceEditor
-        facultyCode={facultyCode}
+        facultyCode={binding.faculty_code}
+        facultyId={binding.faculty_id}
       />}
 
     </div>

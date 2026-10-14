@@ -1,7 +1,7 @@
-import axios from "axios";
+import {API_BASE, apiClient as axios} from "../services/apiSession";
 import type { FacultySummary } from "./faculty";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = API_BASE;
 export type ComponentType = "Lecture" | "Laboratory";
 export interface MeetingPattern {
   meetings_per_week: number;

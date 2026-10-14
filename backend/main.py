@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from routers import faculty
@@ -8,6 +8,11 @@ from routers import chromosomes
 from routers import subjects
 from routers import ga_history
 from routers import fitness_analysis
+from routers import auth
+from services.auth_service import allowed_origins
+from services.preference_authorization import require_admin, require_principal
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 
 app = FastAPI(
     title="CCS Faculty Scheduling System API",
@@ -17,6 +22,23 @@ app = FastAPI(
     ),
     version="1.0.0"
 )
+
+
+@app.exception_handler(RequestValidationError)
+async def safe_validation_error(_request, error):
+    # Do not echo passwords or credential-bearing payloads in validation errors.
+    return JSONResponse(status_code=422, content={"detail": [
+        {"loc": list(item["loc"]), "msg": item["msg"], "type": item["type"]}
+        for item in error.errors()]})
+
+
+@app.middleware("http")
+async def private_response_headers(request, call_next):
+    response = await call_next(request)
+    if request.url.path not in {"/", "/api/health", "/docs", "/openapi.json", "/redoc"}:
+        response.headers["Cache-Control"] = "no-store"
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    return response
 
 app.include_router(
     preferences.router
@@ -28,9 +50,7 @@ app.include_router(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173"
-    ],
+    allow_origins=allowed_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -42,11 +62,12 @@ app.add_middleware(
 # ---------------------------------------------------------
 
 app.include_router(faculty.router)
-app.include_router(genetic_algorithm.router)
-app.include_router(chromosomes.router)
-app.include_router(subjects.router)
-app.include_router(ga_history.router)
-app.include_router(fitness_analysis.router)
+app.include_router(genetic_algorithm.router, dependencies=[Depends(require_admin)])
+app.include_router(chromosomes.router, dependencies=[Depends(require_admin)])
+app.include_router(subjects.router, dependencies=[Depends(require_principal)])
+app.include_router(ga_history.router, dependencies=[Depends(require_admin)])
+app.include_router(fitness_analysis.router, dependencies=[Depends(require_admin)])
+app.include_router(auth.router)
 
 
 # ---------------------------------------------------------
