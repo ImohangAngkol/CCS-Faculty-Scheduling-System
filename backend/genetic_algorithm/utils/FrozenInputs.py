@@ -11,7 +11,7 @@ def capture_inputs():
     from genetic_algorithm.utils.Functions import list_faculty
     from services.ga_progress_service import input_fingerprint
     fingerprint = input_fingerprint()
-    inputs = {"settings": _load_ga_settings().to_dict(),
+    inputs = {"preference_scoring_version": 2, "settings": _load_ga_settings().to_dict(),
               "preferences": _load_dashboard_preferences(),
               "system_faculty": copy.deepcopy(list_faculty),
               "input_fingerprint": fingerprint}

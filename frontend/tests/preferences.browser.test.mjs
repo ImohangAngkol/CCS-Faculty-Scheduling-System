@@ -52,7 +52,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
     const errors = [];
     client.on("Runtime.exceptionThrown", event => errors.push(event.exceptionDetails.text));
     const saved = new Map(faculty.map(row => [row.faculty_code, { faculty_code: row.faculty_code, ...structuredClone(preference) }]));
-    let failSave = false, lastWrite = null;
+    let failSave = false, lastWrite = null, unauthorizedSave = false, invalidSave = false;
     client.on("Fetch.requestPaused", async ({ requestId, request }) => {
       try {
         const url = new URL(request.url); let status = 200, data = {};
@@ -66,7 +66,9 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
           const code = Number(url.pathname.split("/").at(-1));
           if (request.method === "PUT") {
             lastWrite = JSON.parse(request.postData); await pause(120);
-            if (failSave) { status = 500; data = { detail: "Test save failed" }; }
+            if (unauthorizedSave) { status = 401; data = {detail: "Preference writes require authenticated accounts. Authentication is not configured; no changes were saved."}; }
+            else if (invalidSave) { status = 422; data = {detail: "Review the submitted subject eligibility and meeting pattern."}; }
+            else if (failSave) { status = 500; data = { detail: "Test save failed" }; }
             else { saved.set(code, { faculty_code: code, ...lastWrite }); data = saved.get(code); }
           } else data = saved.get(code);
         }
@@ -376,14 +378,30 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       await writeFile(new URL("../.cache/preferences-laptop.png", import.meta.url), Buffer.from(shot.data, "base64"));
     });
     await t.test("faculty self-service hides priority; small viewport has no horizontal overflow", async () => {
-      await navigate("/faculty/preferences"); assert.equal(await evaluate(`!!ui.field('Faculty priority') || !!ui.field('Select faculty')`), false);
+      await client.send("Page.navigate", {url:"http://localhost:5187/faculty/preferences"});
+      await eventually(() => evaluate(`document.body.textContent.includes('Faculty sign-in is not configured.')`), "Unverified faculty identity was not blocked");
+      assert.equal(await evaluate(`!!document.querySelector('.preference-editor') || !!document.querySelector('.preference-save-bar')`), false);
       await client.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
       await pause(100);
       assert.equal(await evaluate(`document.documentElement.scrollWidth <= window.innerWidth`), true);
-      assert.equal(await evaluate(`document.querySelector('.preference-section').getBoundingClientRect().width >= 350`), true);
+      assert.equal(await evaluate(`document.querySelector('.preference-page').getBoundingClientRect().width >= 350`), true);
       await mkdir(new URL("../.cache", import.meta.url), { recursive: true });
       const shot = await client.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
       await writeFile(new URL("../.cache/preferences-mobile.png", import.meta.url), Buffer.from(shot.data, "base64"));
+    });
+    await t.test("unauthorized and invalid saves retain the draft and never claim saved", async () => {
+      await navigate("/admin/preferences");
+      await evaluate(`ui.field('Consider my subject preferences').click(); true`);
+      unauthorizedSave = true;
+      await evaluate(`ui.button('Save Preferences').click(); true`);
+      await eventually(() => evaluate(`ui.status()==='Save failed' && document.body.textContent.includes('Authentication is not configured')`), "Unauthorized save was misreported");
+      assert.equal(await evaluate(`ui.button('Save Preferences').disabled`), false);
+      unauthorizedSave = false; invalidSave = true;
+      await evaluate(`ui.button('Save Preferences').click(); true`);
+      await eventually(() => evaluate(`ui.status()==='Save failed' && document.body.textContent.includes('Review the submitted')`), "Invalid save error was hidden");
+      invalidSave = false;
+      await evaluate(`ui.button('Save Preferences').click(); true`);
+      await eventually(() => evaluate(`ui.status()==='Saved'`), "Authorized fixture retry failed");
     });
     assert.deepEqual(errors, [], "Browser console/runtime errors");
   } finally {

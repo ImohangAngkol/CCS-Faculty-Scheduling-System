@@ -131,11 +131,17 @@ class HistoryWriter:
         self.control, self.path = control, directory(control.run_id)
         self.warning = warning
         self.templates = validation_templates(templates)
-        self.engine = checkpoints.engine_fingerprint()
+        self.engine = checkpoints.engine_fingerprint() if resume_state is None else checkpoints.evaluation_fingerprint(resume_state["scoring_inputs"])
         self.fingerprint = input_fingerprint()
         self.best = None
+        self.reporting_context = None
+        self.best_reporting_assignments = None
+        # Resume reporting uses the checkpoint's original legacy priorities.
+        self.reporting_legacy_preferences = checkpoints.dataframe_from_state(resume_state["legacy_preferences"]) if resume_state is not None else None
         if resume_state is not None:
             self.best = chromosome_to_payload(resume_state["best_ever"], resume_state["best_ever_fitness"])
+            from services.fitness_reporting_service import capture_assignments
+            self.best_reporting_assignments = capture_assignments(resume_state["best_ever"])
         self.jobs = queue.Queue(maxsize=2)
         self.interval = max(1, int(os.environ.get("GA_HISTORY_INTERVAL", "1")))
         self.max_bytes = max(1, int(os.environ.get("GA_HISTORY_MAX_RUN_BYTES", str(256 * 1024 * 1024))))
@@ -185,6 +191,14 @@ class HistoryWriter:
         started = time.perf_counter()
         generation = metrics["generation"]
         try:
+            from services.fitness_reporting_service import capture_assignments, capture_context
+            from genetic_algorithm.utils.FrozenInputs import scoring_inputs
+            frozen = scoring_inputs.get()
+            if self.reporting_context is None and frozen is not None:
+                from services.ga_service import df_faculty_pref
+                self.reporting_context = capture_context(frozen, self.reporting_legacy_preferences if self.reporting_legacy_preferences is not None else df_faculty_pref)
+                if self.reporting_context is not None:
+                    self.reporting_context["engine_fingerprint"] = self.engine
             scores = observed_scores.get()
             candidate = min(population, key=lambda item: scores[id(item)][1])
             penalty = scores[id(candidate)][1]
@@ -195,6 +209,7 @@ class HistoryWriter:
                 if penalty != metrics["best_ever_fitness"]:
                     raise HistoryError("Best-ever observation is unavailable.")
                 self.best = payload
+                self.best_reporting_assignments = capture_assignments(candidate)
             if self.best["best_fitness"] != metrics["best_ever_fitness"]:
                 raise HistoryError("Best-ever continuation mismatch.")
             if generation % self.interval:
@@ -207,8 +222,11 @@ class HistoryWriter:
                 "generation": generation, "timestamp": utc(), "metrics": metrics,
                 "engine_fingerprint": self.engine, "ga_configuration": configuration or self.control.configuration,
                 "fitness_configuration": frozen["settings"] if frozen else None,
-                "generation_best": {"chromosome_id": candidate_id(payload), "payload": payload},
-                "best_ever": {"chromosome_id": candidate_id(self.best), "payload": self.best},
+                "generation_best": {"chromosome_id": candidate_id(payload), "payload": payload,
+                                    "reporting_assignments": capture_assignments(candidate)},
+                "best_ever": {"chromosome_id": candidate_id(self.best), "payload": self.best,
+                              "reporting_assignments": self.best_reporting_assignments},
+                "reporting_context": self.reporting_context,
                 "fitness_breakdown": None, "breakdown_unavailable_reason": "The boundary scorer returned only a total; no additional fitness evaluation was performed.",
                 "capture_elapsed_ms": 0}, allow_nan=False)
             if len(encoded.encode("utf-8")) > self.max_snapshot_bytes:
@@ -260,6 +278,9 @@ class HistoryWriter:
         self.jobs.put(("analysis", {"schema_version": 1, "chromosome_id": candidate_id(self.best),
             "timestamp": utc(), "fitness": result["best_fitness"],
             "fitness_breakdown": result["fitness_breakdown"], "source": "existing-final-evaluation",
+            "faculty_analysis": result.get("faculty_analysis"),
+            "reporting_context": self.reporting_context,
+            "reporting_assignments": self.best_reporting_assignments,
             "input_fingerprint": self.fingerprint, "engine_fingerprint": self.engine}))
 
     def commit(self, data):

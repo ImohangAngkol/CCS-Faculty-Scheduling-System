@@ -51,8 +51,8 @@ export class HistoryRequestError extends Error {
 }
 function operationLabel(path: string) {
   if (path.includes("/export")) return "History export";
-  if (path.includes("/compare")) return "Generation comparison";
-  if (path.includes("/analysis")) return "Fitness analysis";
+  if (path.includes("/compare") || path.includes("/fitness-comparison")) return "Generation comparison";
+  if (path.includes("/analysis") || path.includes("/fitness-analysis")) return "Fitness analysis";
   if (path.includes("/schedule")) return "Schedule inspection";
   if (path.includes("/generations")) return "Generation listing";
   return "Run listing";
@@ -120,3 +120,4 @@ export async function downloadHistory(id: string, suffix: string) {
 export function improvementLabel(value: number) {
   return value > 0 ? `${value.toLocaleString()} lower (improved)` : value < 0 ? `${Math.abs(value).toLocaleString()} higher (worse)` : "Unchanged";
 }
+export { json as readHistoryJSON, request as requestHistory };

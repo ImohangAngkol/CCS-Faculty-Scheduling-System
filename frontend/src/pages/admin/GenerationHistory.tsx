@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import WeeklySchedule, { formatFacultyName } from "../../components/schedule/WeeklySchedule";
+import { Link, useSearchParams } from "react-router-dom";
+import WeeklySchedule from "../../components/schedule/WeeklySchedule";
+import { formatFacultyName } from "../../components/schedule/facultyDisplay";
 import { ConvergenceChart } from "../../components/ga/LiveGAMonitor";
 import { compareGenerations, downloadHistory, getHistoricalAnalysis, getHistoricalSchedule, getHistoryGenerations,
   getHistoryRuns, improvementLabel } from "../../services/gaHistory";
@@ -116,6 +117,7 @@ export default function GenerationHistory() {
           {!view.schedule.current_inputs_match && <p role="alert" className="mt-3 text-sm text-amber-800">Scheduling inputs have changed. This is the original validated observation; schedule exports require restoration of the run's inputs.</p>}
           <div className="mt-4 flex flex-wrap gap-2"><button className={button} disabled={busy || !view.schedule.current_inputs_match} onClick={() => void exportFile(`generations/${generation}/export?candidate=${kind}&format=json`)}>Download candidate JSON</button><button className={button} disabled={busy || !view.schedule.current_inputs_match} onClick={() => void exportFile(`generations/${generation}/export?candidate=${kind}&format=csv`)}>Download schedule CSV</button></div>
           <div className="mt-5 text-sm"><h3 className="font-semibold">Available penalty breakdown</h3>{view.analysis.fitness_breakdown ? <dl className="mt-2 grid gap-2 sm:grid-cols-2">{Object.entries(view.analysis.fitness_breakdown).map(([name, value]) => <div key={name} className="flex justify-between rounded bg-slate-50 p-2"><dt>{name.replaceAll("_", " ")}</dt><dd>{number(value)}</dd></div>)}</dl> : <p className="mt-1 text-slate-500">{view.analysis.breakdown_unavailable_reason}</p>}<p className="mt-2 text-xs text-slate-500">{view.analysis.preference_unavailable_reason}</p></div>
+          <Link className={`${button} mt-4 inline-block`} to={`/admin/analysis?run=${runId}&generation=${generation}&candidate=${kind}`}>Explain this candidate</Link>
           <h3 className="mb-2 mt-5 text-sm font-semibold">Faculty workload · original teaching targets</h3><WorkloadTable rows={view.analysis.workload} />
           {view.analysis.breakdown_timestamp && <p className="mt-2 text-xs text-slate-500">Penalty breakdown recorded at {new Date(view.analysis.breakdown_timestamp).toLocaleString()} under this run's original inputs.</p>}
           <p className="mt-2 text-xs text-slate-500">Preassigned external instructors are shown in the schedule and excluded from normal faculty workload scoring.</p>

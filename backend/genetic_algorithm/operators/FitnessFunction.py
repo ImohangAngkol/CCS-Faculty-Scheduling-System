@@ -5,6 +5,7 @@ from pathlib import Path
 import pandas as pd
 from genetic_algorithm.utils.FitnessObservation import record_fitness
 from genetic_algorithm.utils.FrozenInputs import scoring_inputs
+from services.preference_scoring_policy import scoring_version
 import copy
 
 from genetic_algorithm.models.Faculty import (
@@ -302,6 +303,10 @@ def _normalize_dashboard_preference(
     )
 
     return {
+
+        # Older exact blocks without flags retain their prior enabled semantics.
+        "exact_day_preference_enabled": bool(preference.get("use_day_preference", True)),
+        "exact_time_preference_enabled": bool(preference.get("use_time_preference", True)),
 
         "faculty_code":
             preference.get(
@@ -815,11 +820,9 @@ def _score_exact_subject_schedule_blocks(
     """
     Score exact subject calendar placements.
 
-    The current preference tray still creates one-hour blocks by
-    default because the subject endpoint does not yet expose the real
-    lecture/laboratory duration.  For this checkpoint, TIME matching
-    therefore compares the preferred START TIME rather than requiring
-    the generated class to fit inside the temporary one-hour block.
+    Start membership and independent day matching remain unchanged.
+    New evaluations honor explicit enable flags. Old frozen checkpoints
+    retain policy 1; missing legacy flags preserve their exact-block influence.
 
     Day and time importance still control GA influence:
       importance 0 -> descriptive only, no GA penalty.
@@ -885,6 +888,11 @@ def _score_exact_subject_schedule_blocks(
     day_penalty = 0
     time_penalty = 0
 
+    frozen = scoring_inputs.get()
+    respect_flags = frozen is None or scoring_version(frozen) == 2
+    day_enabled = not respect_flags or preference.get("exact_day_preference_enabled", preference.get("use_day_preference", True))
+    time_enabled = not respect_flags or preference.get("exact_time_preference_enabled", preference.get("use_time_preference", True))
+
     for preferred_block in preferred_blocks:
 
         component_name = (
@@ -941,6 +949,7 @@ def _score_exact_subject_schedule_blocks(
 
         if (
             not day_match
+            and day_enabled
             and day_importance > 0
         ):
             day_penalty += (
@@ -951,6 +960,7 @@ def _score_exact_subject_schedule_blocks(
 
         if (
             not time_match
+            and time_enabled
             and time_importance > 0
         ):
             time_penalty += (

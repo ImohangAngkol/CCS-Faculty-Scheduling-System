@@ -1,6 +1,7 @@
 import type {
   ScheduleEntry,
 } from "../../types/ga";
+import { formatFacultyName } from "./facultyDisplay";
 
 
 type WeeklyScheduleProps = {
@@ -1007,7 +1008,7 @@ export default function WeeklySchedule({
                         "
                       >
                         {formatFacultyName(
-                          entry.faculty
+                          entry.faculty, entry.faculty_name
                         )}
                       </p>
 
@@ -1092,38 +1093,4 @@ export default function WeeklySchedule({
 
   );
 
-}
-
-
-/* =========================================================
-   FACULTY DISPLAY
-========================================================= */
-
-export function formatFacultyName(
-  faculty: string
-) {
-
-  const value =
-    String(
-      faculty ?? ""
-    ).trim();
-
-
-  if (
-    /^\d+$/.test(
-      value
-    )
-  ) {
-
-    return (
-      `Faculty ${value}`
-    );
-
-  }
-
-
-  return (
-    value ||
-    "Unassigned Faculty"
-  );
 }

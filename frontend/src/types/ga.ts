@@ -72,6 +72,7 @@ export type ScheduleEntry = {
   section: string;
 
   faculty: string;
+  faculty_name?: string;
 
   room: string;
 };

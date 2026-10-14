@@ -16,6 +16,7 @@ import {
   getAllFaculty,
   type FacultySummary,
 } from "../../api/faculty";
+import { facultyKey, formatFacultyName } from "../../components/schedule/facultyDisplay";
 
 
 export default function ScheduleView() {
@@ -105,33 +106,12 @@ export default function ScheduleView() {
     useMemo(
       () => {
 
-        if (allFaculty.length > 0) {
-
-          return [
-            ...allFaculty
-          ]
-            .sort(
-              (a, b) =>
-                a.faculty_code
-                - b.faculty_code
-            )
-            .map(
-              (faculty) =>
-                `Faculty ${faculty.faculty_code}`
-            );
-
-        }
-
         return [
           ...new Set(
-            schedule
-              .map(
-                (entry) =>
-                  entry.faculty
-              )
-              .filter(Boolean)
+            [...allFaculty.map(faculty => String(faculty.faculty_code)),
+              ...schedule.map(entry => entry.faculty)].map(facultyKey).filter(Boolean)
           ),
-        ].sort();
+        ].sort((left, right) => left.localeCompare(right, undefined, {numeric: true}));
 
       },
       [
@@ -198,6 +178,7 @@ export default function ScheduleView() {
             entry.faculty
               ?.toLowerCase()
               .includes(query) ||
+            formatFacultyName(entry.faculty, entry.faculty_name).toLowerCase().includes(query) ||
             entry.room
               ?.toLowerCase()
               .includes(query) ||
@@ -208,7 +189,7 @@ export default function ScheduleView() {
 
           const matchesFaculty =
             facultyFilter === "All" ||
-            entry.faculty ===
+            facultyKey(entry.faculty) ===
               facultyFilter;
 
 
@@ -598,7 +579,7 @@ export default function ScheduleView() {
                     key={faculty}
                     value={faculty}
                   >
-                    {faculty}
+                    {formatFacultyName(faculty, schedule.find(entry => facultyKey(entry.faculty) === faculty)?.faculty_name)}
                   </option>
                 )
               )}
@@ -877,7 +858,7 @@ export default function ScheduleView() {
                       </td>
 
                       <td className="px-4 py-3">
-                        {entry.faculty}
+                        {formatFacultyName(entry.faculty, entry.faculty_name)}
                       </td>
 
                       <td className="px-4 py-3">

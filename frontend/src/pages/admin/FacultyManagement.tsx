@@ -8,9 +8,8 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import WeeklySchedule, {
-  formatFacultyName,
-} from "../../components/schedule/WeeklySchedule";
+import WeeklySchedule from "../../components/schedule/WeeklySchedule";
+import { formatFacultyName } from "../../components/schedule/facultyDisplay";
 
 import {
   useGA,

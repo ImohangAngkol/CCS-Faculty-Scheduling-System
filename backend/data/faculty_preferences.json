@@ -108,22 +108,99 @@
     {
         "faculty_code": 5,
         "faculty_priority": 1,
-        "preferred_subjects": [],
+        "preferred_schedule_blocks": [
+            {
+                "id": "499822e6-d307-4827-9bc9-d976337ef6f1",
+                "kind": "subject",
+                "day": "M",
+                "start_time": "07:30",
+                "end_time": "09:30",
+                "subject_code": "ITE133",
+                "subject_title": "Advance Computer Networks",
+                "component": "Lecture"
+            },
+            {
+                "id": "58e1096c-cc4c-48eb-9ae3-f6c34afa387b",
+                "kind": "subject",
+                "day": "M",
+                "start_time": "10:30",
+                "end_time": "13:30",
+                "subject_code": "ITE133",
+                "subject_title": "Advance Computer Networks",
+                "component": "Laboratory"
+            },
+            {
+                "id": "05041d8a-aac9-4d3d-8d88-5f042af007fc",
+                "kind": "subject",
+                "day": "T",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "subject_code": "ITE183",
+                "subject_title": "Web Systems and Technologies",
+                "component": "Lecture"
+            },
+            {
+                "id": "d7a92f9a-1095-4a7c-99cc-4b16e79c96f4",
+                "kind": "subject",
+                "day": "T",
+                "start_time": "13:00",
+                "end_time": "16:00",
+                "subject_code": "ITE183",
+                "subject_title": "Web Systems and Technologies",
+                "component": "Laboratory"
+            },
+            {
+                "id": "b6f568d0-fa90-4e53-b4e5-63b118399596",
+                "kind": "subject",
+                "day": "W",
+                "start_time": "08:30",
+                "end_time": "10:30",
+                "subject_code": "ITN101",
+                "subject_title": "Switching and Routing",
+                "component": "Lecture"
+            },
+            {
+                "id": "8397c459-35d5-488d-bff4-aaaa8dc5d690",
+                "kind": "subject",
+                "day": "TH",
+                "start_time": "12:30",
+                "end_time": "15:30",
+                "subject_code": "ITN101",
+                "subject_title": "Switching and Routing",
+                "component": "Laboratory"
+            },
+            {
+                "id": "a73f671e-d413-40d4-9c09-2ba562c18d7d",
+                "kind": "subject",
+                "day": "F",
+                "start_time": "09:30",
+                "end_time": "12:30",
+                "subject_code": "ITE191",
+                "subject_title": "Capstone 1 / Methods of Research",
+                "component": "Lecture"
+            }
+        ],
+        "preferred_subjects": [
+            "ITE133",
+            "ITE183",
+            "ITE191",
+            "ITN101"
+        ],
         "subject_importance": 3,
         "preferred_days": [],
-        "day_importance": 3,
+        "day_importance": 5,
         "preferred_start_time": null,
         "preferred_end_time": null,
-        "time_importance": 3,
-        "gap_preference": "No Preference",
-        "gap_importance": 0,
-        "lecture_lab_preference": "No Preference",
+        "time_importance": 5,
+        "gap_preference": "Scattered",
+        "gap_importance": 5,
+        "lecture_lab_preference": "Different Day",
         "lecture_lab_importance": 0,
         "use_subject_preference": true,
         "use_day_preference": true,
         "use_time_preference": true,
-        "use_gap_preference": false,
-        "use_lecture_lab_preference": false
+        "use_gap_preference": true,
+        "use_lecture_lab_preference": true
     },
     {
         "faculty_code": 8,
@@ -252,6 +329,27 @@
     },
     {
         "faculty_code": 6,
+        "faculty_priority": 1,
+        "preferred_schedule_blocks": [],
+        "preferred_subjects": [],
+        "subject_importance": 3,
+        "preferred_days": [],
+        "day_importance": 3,
+        "preferred_start_time": null,
+        "preferred_end_time": null,
+        "time_importance": 3,
+        "gap_preference": "No Preference",
+        "gap_importance": 0,
+        "lecture_lab_preference": "No Preference",
+        "lecture_lab_importance": 0,
+        "use_subject_preference": true,
+        "use_day_preference": true,
+        "use_time_preference": true,
+        "use_gap_preference": false,
+        "use_lecture_lab_preference": false
+    },
+    {
+        "faculty_code": 7,
         "faculty_priority": 1,
         "preferred_schedule_blocks": [],
         "preferred_subjects": [],

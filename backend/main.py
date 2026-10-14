@@ -7,6 +7,7 @@ from routers import preferences
 from routers import chromosomes
 from routers import subjects
 from routers import ga_history
+from routers import fitness_analysis
 
 app = FastAPI(
     title="CCS Faculty Scheduling System API",
@@ -45,6 +46,7 @@ app.include_router(genetic_algorithm.router)
 app.include_router(chromosomes.router)
 app.include_router(subjects.router)
 app.include_router(ga_history.router)
+app.include_router(fitness_analysis.router)
 
 
 # ---------------------------------------------------------

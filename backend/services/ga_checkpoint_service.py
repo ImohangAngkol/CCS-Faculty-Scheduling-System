@@ -23,6 +23,7 @@ from genetic_algorithm.models.TimeBlock import TimeBlock
 from genetic_algorithm.models.PreassignedAssignment import PreassignedAssignment, ExternalInstructor
 from services.ga_progress_service import input_fingerprint
 from services.ga_publication_service import validate_publication
+from services.preference_scoring_policy import scoring_version, legacy_source, MANIFEST
 
 ROOT = Path(__file__).resolve().parents[1]
 CHECKPOINTS_DIR = ROOT / "run_checkpoints"
@@ -49,7 +50,9 @@ def canonical(value):
     return json.dumps(value, separators=(",", ":"), sort_keys=True, allow_nan=False).encode("utf-8")
 
 
-def engine_fingerprint():
+def engine_fingerprint(preference_policy=2):
+    if type(preference_policy) is not int or preference_policy not in (1, 2):
+        raise ValueError("Unsupported preference scoring policy.")
     digest = hashlib.sha256()
     paths = sorted((ROOT / "genetic_algorithm").rglob("*.py"))
     paths += [ROOT / "services" / name for name in (
@@ -58,7 +61,12 @@ def engine_fingerprint():
         "faculty_analysis_service.py")]
     for path in paths:
         digest.update(str(path.relative_to(ROOT)).encode())
-        digest.update(path.read_bytes())
+        content = path.read_bytes()
+        digest.update(legacy_source(path.relative_to(ROOT).as_posix(), content) if preference_policy == 1 else content)
+    if preference_policy == 2:
+        # The corrected release's legacy bridge/provenance is fingerprinted too.
+        digest.update(MANIFEST.read_bytes())
+        digest.update(Path(__file__).with_name("preference_scoring_policy.py").read_bytes())
     digest.update(canonical([ENGINE_VERSION, platform.python_version(), pd.__version__, np.__version__]))
     return digest.hexdigest()
 
@@ -70,6 +78,10 @@ def run_directory(run_id):
     except (ValueError, TypeError, AttributeError):
         raise CheckpointError("Invalid canonical run ID.")
     return CHECKPOINTS_DIR / run_id
+
+
+def evaluation_fingerprint(inputs):
+    return engine_fingerprint() if scoring_version(inputs) == 2 else engine_fingerprint(1)
 
 
 def atomic_write(path, content):
@@ -209,6 +221,7 @@ def dataframe_from_state(state):
 
 
 def validate_state(state, current_templates):
+    scoring_version(state["scoring_inputs"])
     parameters = state["parameters"]
     generation = state["generation_completed"]
     population = state["population"]
@@ -273,7 +286,7 @@ def write_marker(control, state=None, checkpoint=None):
 def save_checkpoint(control, state, current_templates):
     validate_state(state, current_templates)
     payload = {"schema_version": SCHEMA_VERSION, "engine_version": ENGINE_VERSION,
-               "run_id": control.run_id, "engine_fingerprint": engine_fingerprint(),
+               "run_id": control.run_id, "engine_fingerprint": evaluation_fingerprint(state["scoring_inputs"]),
                "input_fingerprint": input_fingerprint(), "graph": encode_graph(state),
                "validation": {"population": "passed", "best_ever": "passed"},
                "requested_population": state["parameters"]["population_size"],
@@ -312,11 +325,13 @@ def load_checkpoint(run_id, current_templates, filename=None):
         if hashlib.sha256(canonical(payload)).hexdigest() != envelope["sha256"]:
             raise CheckpointError("Checkpoint checksum failed.")
         if (payload["schema_version"] != SCHEMA_VERSION or payload["engine_version"] != ENGINE_VERSION
-                or payload["run_id"] != run_id or payload["engine_fingerprint"] != engine_fingerprint()):
+                or payload["run_id"] != run_id):
             raise CheckpointError("Checkpoint engine/schema is incompatible.", "GA_CHECKPOINT_INCOMPATIBLE")
         if payload["input_fingerprint"] != input_fingerprint():
             raise CheckpointError("Scheduling inputs changed; resume is rejected.", "GA_CHECKPOINT_INPUT_CHANGED")
         state = decode_graph(payload["graph"])
+        if payload["engine_fingerprint"] != evaluation_fingerprint(state["scoring_inputs"]):
+            raise CheckpointError("Checkpoint engine/scoring policy is incompatible.", "GA_CHECKPOINT_INCOMPATIBLE")
         validate_state(state, current_templates)
         if (payload["generation_completed"] != state["generation_completed"]
                 or payload["actual_population"] != len(state["population"])

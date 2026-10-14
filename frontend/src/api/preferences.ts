@@ -2,6 +2,14 @@ import axios from "axios";
 
 const API_URL = "http://127.0.0.1:8000";
 
+export function preferenceError(reason: unknown, fallback: string): string {
+  if (!axios.isAxiosError(reason)) return fallback;
+  const detail = reason.response?.data?.detail;
+  if (typeof detail === "string") return detail;
+  if (Array.isArray(detail)) return "Review the submitted preference fields: " + detail.map(item => item.msg).filter(Boolean).join("; ");
+  return fallback;
+}
+
 
 // =========================================================
 // FACULTY PREFERENCE TYPES

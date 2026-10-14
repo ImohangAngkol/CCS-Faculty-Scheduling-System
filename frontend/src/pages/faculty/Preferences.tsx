@@ -1,8 +1,8 @@
 import FacultyPreferenceEditor
   from "../../components/faculty/FacultyPreferenceEditor";
 
-export default function Preferences({ facultyCode = 0 }: { facultyCode?: number }) {
-  // The prototype defaults to Faculty 0; future authenticated callers supply identity.
+export default function Preferences({ facultyCode }: { facultyCode?: number }) {
+  // A future verified server account must supply faculty identity. Never assume 0.
 
   return (
     <div className="preference-page space-y-4">
@@ -18,9 +18,11 @@ export default function Preferences({ facultyCode = 0 }: { facultyCode?: number 
         </p>
       </div>
 
-      <FacultyPreferenceEditor
+      {facultyCode === undefined ? <p role="status" className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+        Faculty sign-in is not configured. Your faculty identity must be verified before opening personal preferences. No faculty record has been selected.
+      </p> : <FacultyPreferenceEditor
         facultyCode={facultyCode}
-      />
+      />}
 
     </div>
   );

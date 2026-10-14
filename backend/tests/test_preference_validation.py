@@ -6,13 +6,18 @@ from fastapi.testclient import TestClient
 
 from main import app
 from routers import preferences
+from services.preference_authorization import current_principal, PreferencePrincipal
 
 
 @pytest.fixture
 def client(tmp_path, monkeypatch):
     monkeypatch.setattr(preferences, "PREFERENCE_FILE", tmp_path / "preferences.json")
-    with TestClient(app) as test_client:
-        yield test_client
+    app.dependency_overrides[current_principal] = lambda: PreferencePrincipal("admin")
+    try:
+        with TestClient(app) as test_client:
+            yield test_client
+    finally:
+        app.dependency_overrides.pop(current_principal, None)
 
 
 def example(client, meetings=1, component="Lecture"):

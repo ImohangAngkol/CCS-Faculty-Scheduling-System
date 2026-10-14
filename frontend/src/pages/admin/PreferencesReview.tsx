@@ -22,6 +22,7 @@ export default function PreferencesReview() {
   const selected = faculty.find(row => row.faculty_id === selectedId);
   return <div className="preference-page space-y-4">
     <header><h1 className="text-2xl font-bold text-slate-900">Faculty Preferences</h1><p className="mt-1 text-sm text-slate-500">Review teaching preferences for each faculty member.</p></header>
+    <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">Authenticated accounts are required to save. Sign-in is not configured in this version; the backend currently locks preference writes.</p>
     <div className="rounded-xl border border-slate-200 bg-white p-4">
       {loading ? <p role="status">Loading faculty…</p> : error ? <p role="alert" className="text-red-700">{error}</p> : faculty.length === 0 ? <p>No faculty records are available.</p> :
         <label className="preference-label max-w-sm">Select faculty<select className="preference-input" value={selectedId} disabled={editState.saving} onChange={event => {

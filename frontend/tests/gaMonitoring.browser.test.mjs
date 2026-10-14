@@ -229,6 +229,7 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       // Restore the completed fixture first; stopping must not replace that result.
       await client.send("Page.reload");
       await eventually(() => evaluate(`document.body.textContent.includes('Generations Completed')`), "Previous completed result missing");
+      await eventually(() => evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Generate Schedule' && !button.disabled)`), "Run discovery has not enabled start");
       await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Generate Schedule').click(); true`);
       await eventually(() => evaluate("!!window.mockGAController"), "Early stop stream missing");
       sequence = 0;
@@ -243,6 +244,7 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       await eventually(() => evaluate(`document.body.textContent.includes('No schedule was produced') && document.body.textContent.includes('Previous completed schedule')`), "No-result stop did not preserve completed result");
     });
     await t.test("disconnect after a stop request is unknown execution, never stopped", async () => {
+      await eventually(() => evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Generate Schedule' && !button.disabled)`), "Previous stop has not settled");
       await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim()==='Generate Schedule').click(); true`);
       await eventually(() => evaluate("!!window.mockGAController"), "Second stream missing");
       sequence = 0;
@@ -495,7 +497,12 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
         assert.equal(await evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Resume Generation')`), false);
         await evaluate("window.oldDocument=true; true");
         await client.send("Page.reload");
-        await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('${state==='STOPPING'?'Stopping':'Stop requested'}')`), "Stopping refresh failed");
+        try {
+          await eventually(() => evaluate(`!window.oldDocument && document.body.textContent.includes('${state==='STOPPING'?'Stopping':'Stop requested'}')`), "Stopping refresh failed");
+        } catch (reason) {
+          console.log('Stopping refresh diagnostics:', await evaluate(`({monitor:document.querySelector('[data-testid="live-ga-monitor"]')?.textContent,active:sessionStorage.getItem('mockActiveRun'),reference:sessionStorage.getItem('ga.active-run.v1'),paused:sessionStorage.getItem('mockPausedRuns'),errors:[...document.querySelectorAll('[role="alert"]')].map(el=>el.textContent)})`));
+          throw reason;
+        }
         assert.equal(await evaluate("window.mockCheckpointRequests.length"), 0);
         assert.equal(await evaluate("window.mockControlRequests.length + window.mockStopRequests.length"), 0);
         assert.equal(await evaluate(`document.querySelector('[data-testid="ga-generation"]').textContent`), "1 / 2");
@@ -710,6 +717,135 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       await client.send('Page.navigate',{url:'http://localhost:5188/admin/history?run=invalid-run'});
       await eventually(()=>evaluate(`document.querySelector('[data-testid="generation-history"]') && document.querySelector('[role="alert"]')?.textContent.includes('Invalid historical run identity')`),'Invalid history identity crashed instead of reporting an error');
       assert.equal(await evaluate('window.mockControlRequests.length + window.mockStopRequests.length'),0);
+    });
+    const componentKeys=['subject_preference','time_preference','day_preference','schedule_style','lecture_lab_preference','number_of_preparations','teaching_load_balance','daily_teaching_load'];
+    const fitnessFixture={schema_version:1,source:{kind:'historical',run_id:archiveId,generation:1,candidate:'generation_best',timestamp:'2026-10-11T03:00:00Z',chromosome_id:'candidate'},overall_penalty:110,breakdown_available:true,recorded_component_sum:110,
+      components:componentKeys.map(key=>({key,label:key==='teaching_load_balance'?'Teaching workload':key.replaceAll('_',' '),definition:'Recorded scorer definition',penalty:key==='teaching_load_balance'?75:key==='subject_preference'?35:0})),
+      faculty:[{faculty:'Faculty 1',teaching_units:15,required_teaching_load:19,difference:-4,fulfillment_percent:15/19*100,admin_load:3,research_load:1,extension_load:1,workload_status:'underload',heavy_overload:false,workload_penalty:75,underload_steps:3,preparations:2,total_penalty:110,priority_multiplier:2,penalties:{teaching_load_balance:75,subject_preference:35},unavailable_reason:null,
+        preferences:[{key:'subject_preference',status:'partially_satisfied',satisfaction_percent:50,importance:4,affects_fitness:true,penalty:35,matched:1,total:2,explanation:'Descriptive match; recorded penalty is separate.'},{key:'schedule_style',status:'disabled',satisfaction_percent:null,importance:0,affects_fitness:false,penalty:0,matched:0,total:0,explanation:'Schedule style disabled.'}]}],
+      external_instructors:[{name:'Atty. Eddie Bouy Palad',subject:'ITE184',section:'4A',scoring:'Excluded from normal workload/preference scoring'}],
+      definitions:{overall:'Overall penalty is the sum of eight recorded components; lower is better.',target:'24 minus administrative, research and extension releases.',actual:'Course units, not repeated meeting hours.',difference:'Actual minus target.',fulfillment:'100 times actual divided by target.',priority:'Importance and faculty priority affect recorded penalties.',indicators:'Descriptive indicators do not add to fitness.'},fitness_configuration:null,limitations:['Missing values are not invented.']};
+    await client.send('Page.addScriptToEvaluateOnNewDocument',{source:`
+      window.fitnessRequests=[]; const previousFitnessFetch=window.fetch.bind(window);
+      window.fetch=async(input,options)=>{
+        const url=String(input); if(!url.includes('fitness-analysis')&&!url.includes('fitness-comparison')) return previousFitnessFetch(input,options);
+        window.fitnessRequests.push({url,method:options?.method??'GET'});
+        if(sessionStorage.getItem('fitnessFailure')) return Response.json({detail:{code:'GA_REPORT_INVALID',message:'Stored components do not reconcile.'}},{status:422});
+        const report=${JSON.stringify(fitnessFixture)}; const parsed=new URL(url);
+        const tokens=parsed.pathname.split('/'); const position=tokens.indexOf('generations');
+        const generation=position>=0?tokens[position+1]:undefined; report.source.generation=generation?Number(generation):1;
+        report.source.candidate=parsed.searchParams.get('candidate')??'best_ever';
+        if(report.source.candidate==='best_ever'){report.overall_penalty=100;report.recorded_component_sum=100;report.components.find(row=>row.key==='subject_preference').penalty=25;report.faculty[0].total_penalty=100;report.faculty[0].penalties.subject_preference=25;report.faculty[0].preferences[0].penalty=25;}
+        if(url.includes('fitness-comparison')) return Response.json({schema_version:1,source:{run_id:report.source.run_id,left:0,right:1,candidate:report.source.candidate},overall_reduction:10,component_changes:report.components.map(row=>({key:row.key,label:row.label,before:null,after:row.penalty,reduction:null})),faculty_changes:[{faculty:'Faculty 1',before:{...report.faculty[0],teaching_units:12,fulfillment_percent:12/19*100},after:report.faculty[0]}],assignment_changes:[],explanation:'Missing observations cannot explain the numerical reduction.'});
+        if(generation==='0'){report.breakdown_available=false;report.recorded_component_sum=null;report.components.forEach(row=>row.penalty=null);report.faculty.forEach(row=>{row.preferences=null;row.penalties={};row.workload_penalty=null;row.unavailable_reason='Original preference context was not captured.';});}
+        if(url.includes('/export')) return new Response(parsed.searchParams.get('format')==='csv'?'run_id,generation,definition\\n'+report.source.run_id+',1,Recorded calculation definitions':JSON.stringify(report),{headers:{'content-type':parsed.searchParams.get('format')==='csv'?'text/csv':'application/json','content-disposition':'attachment; filename="fitness-report.'+parsed.searchParams.get('format')+'"'}});
+        return Response.json(report);
+      };
+    `});
+    await client.send('Browser.setDownloadBehavior',{behavior:'allow',downloadPath:join(profile,'downloads')});
+    await t.test('latest saved fitness analysis retains its recorded convergence chart',async()=>{
+      await client.send('Page.navigate',{url:'http://localhost:5188/admin/analysis?run='});
+      await eventually(()=>evaluate(`document.body.textContent.includes('Recorded component sum: 100 = overall penalty 100') && !!document.querySelector('[data-testid="ga-convergence"]')`),'Latest saved analysis lost its convergence chart');
+      assert.equal(await evaluate(`document.querySelector('select[aria-label="Analysis source"]').value`),'');
+    });
+    await t.test('fitness analysis shows original workload, decomposition and preference explanations',async()=>{
+      await client.send('Page.navigate',{url:`http://localhost:5188/admin/analysis?run=${archiveId}&generation=1`});
+      await eventually(()=>evaluate(`document.body.textContent.includes('Recorded component sum: 110 = overall penalty 110')`),'Fitness explanation did not load');
+      assert.ok(await evaluate(`document.body.textContent.includes('Partially satisfied') && document.body.textContent.includes('Disabled') && document.body.textContent.includes('79%')===false`));
+      assert.ok(await evaluate(`document.body.textContent.includes('78.95%') && document.body.textContent.includes('Atty. Eddie Bouy Palad') && !document.body.textContent.includes('external:eddie')`));
+      assert.equal(await evaluate(`document.querySelector('select[aria-label="Analysis source"]').value`),archiveId);
+      const shot=await client.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+      await writeFile(new URL('../.cache/fitness-analysis-desktop.png',import.meta.url),Buffer.from(shot.data,'base64'));
+    });
+    await t.test('fitness filters and missing historical components remain explicit',async()=>{
+      await evaluate(`var filter=document.querySelector('select[aria-label="Workload filter"]'); filter.value='on_target'; filter.dispatchEvent(new Event('change',{bubbles:true})); true`);
+      await eventually(()=>evaluate(`document.body.textContent.includes('No faculty match these filters.')`),'Workload filter did not apply');
+      await evaluate(`var filter=document.querySelector('select[aria-label="Workload filter"]'); filter.value='all'; filter.dispatchEvent(new Event('change',{bubbles:true})); var generation=document.querySelector('select[aria-label="Analysis generation"]'); generation.value='0'; generation.dispatchEvent(new Event('change',{bubbles:true})); true`);
+      await eventually(()=>evaluate(`document.body.textContent.includes('This generation recorded a total only.') && document.body.textContent.includes('Original preference context was not captured.')`),'Missing history was displayed as a score');
+      assert.equal(await evaluate(`document.body.textContent.includes('Recorded component sum:')`),false);
+    });
+    await t.test('fitness comparison and all four report downloads are read only',async()=>{
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Compare fitness outcomes').click(); true`);
+      await eventually(()=>evaluate(`document.body.textContent.includes('Not captured at both generations') && document.body.textContent.includes('10 lower (improved)')`),'Comparison invented component changes');
+      for(const label of ['Export analysis CSV','Export analysis JSON','Export workload CSV','Export workload JSON']){
+        await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()===${JSON.stringify(label)}).click(); true`);
+        await eventually(()=>evaluate(`![...document.querySelectorAll('button')].find(button=>button.textContent.trim()===${JSON.stringify(label)}).disabled`),'Export never settled');
+      }
+      assert.equal(await evaluate(`window.fitnessRequests.filter(request=>request.url.includes('/export')).length`),4);
+      assert.ok(await evaluate(`window.fitnessRequests.every(request=>request.method==='GET')`));
+    });
+    await t.test('fitness errors settle and refresh preserves source and generation',async()=>{
+      await evaluate(`sessionStorage.setItem('fitnessFailure','true'); [...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='Refresh analysis').click(); true`);
+      await eventually(()=>evaluate(`document.querySelector('[role="alert"]')?.textContent.includes('GA_REPORT_INVALID')`),'Invalid report error was hidden');
+      await evaluate(`sessionStorage.removeItem('fitnessFailure'); true`); await client.send('Page.reload');
+      await eventually(()=>evaluate(`document.body.textContent.includes('This generation recorded a total only.') && document.querySelector('select[aria-label="Analysis generation"]').value==='0'`),'Fitness refresh lost its source');
+      assert.ok(await evaluate(`window.fitnessRequests.every(request=>request.method==='GET')`));
+    });
+    await client.send('Page.addScriptToEvaluateOnNewDocument',{source:`
+      const loadedNative=window.fetch.bind(window); window.loadedAnalysisRequests=0;
+      window.fetch=async(input,options)=>{
+        const url=String(input);
+        if(url.endsWith('/api/chromosomes/best/analyze')){window.loadedAnalysisRequests++;return Response.json({status:'success',data:{best_fitness:110,fitness_breakdown:${JSON.stringify(Object.fromEntries(fitnessFixture.components.map(row=>[row.key,row.penalty])))},result_source:'loaded_chromosome',optimization_performed:false,loaded_chromosome_source:'saved',schedule:${JSON.stringify(archive.schedule)},history:[],generations_completed:0,population_size:0,faculty_analysis:{faculty:[{Faculty_Code:7,Teaching_Load:15,Preparations:2,Total_Penalty:110,Subject_Penalty:35,Load_Balance_Penalty:75,Subject_Satisfaction:50,Subject_Importance:4}],daily_load:[],summary:{total_fitness:110}}}});}
+        if(url.endsWith('/api/chromosomes/best'))return Response.json({status:'success',data:{exists:true,fitness:110,created_at:'2026-10-11T03:00:00Z'}});
+        return loadedNative(input,options);
+      };
+    `});
+    await t.test('loaded candidate analysis retains original evaluation without extra scoring requests',async()=>{
+      await client.send('Page.navigate',{url:'http://localhost:5188/admin/chromosomes'});
+      await eventually(()=>evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='View Results Only'&&!button.disabled)`),'Existing saved-candidate viewing button missing');
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='View Results Only').click(); true`);
+      await eventually(()=>evaluate(`window.location.pathname==='/admin/schedules'`),'Existing load workflow did not complete');
+      await evaluate(`document.querySelector('a[href="/admin/analysis"]').click(); true`);
+      await eventually(()=>evaluate(`document.body.textContent.includes('Loaded candidate - original evaluation; no optimization ran') && document.querySelector('select[aria-label="Analysis source"]').value==='loaded'`),'Loaded evaluation was replaced by a saved run');
+      assert.equal(await evaluate('window.loadedAnalysisRequests'),1);
+      assert.equal(await evaluate('window.fitnessRequests.length'),0);
+      assert.ok(await evaluate(`document.body.textContent.includes('Partially satisfied') && document.body.textContent.includes('Teaching targets, release details')`));
+    });
+    await client.send('Page.addScriptToEvaluateOnNewDocument', {source: `
+      const auditFetch = window.fetch.bind(window);
+      window.fetch = (input, options) => String(input).endsWith('/api/faculty/')
+        ? Promise.resolve(Response.json({data: [{faculty_code:7,display_code:'Faculty 7'},{faculty_code:8,display_code:'Faculty 8'}]})) : auditFetch(input, options);
+    `});
+    const auditSchedule = [
+      {subject:'CCC121',title:'Data Structures',type:'Lecture',day:'M',start:'09:00',end:'11:00',section:'3A',faculty:'7.0',room:'ICT 3A'},
+      {subject:'ITE184',title:'Social Legal and Professional Issues in Computing',type:'Lecture',day:'W',start:'12:00',end:'13:30',section:'4A',faculty:'external:eddie-bouy-palad',faculty_name:'Atty. Eddie Bouy Palad',assignment_type:'preassigned_external',room:'ICT 3A'},
+    ];
+    await evaluate(`sessionStorage.setItem('mockLatestGA', ${JSON.stringify(JSON.stringify({...result,schedule:auditSchedule}))}); sessionStorage.removeItem('mockActiveRun'); sessionStorage.removeItem('mockTerminalRun'); sessionStorage.setItem('mockPausedRuns','[]'); true`);
+    await t.test('audit faculty selector hides internal external IDs and normalizes numeric faculty codes', async () => {
+      await client.send('Page.navigate', {url:'http://localhost:5188/admin/faculty'});
+      await eventually(() => evaluate(`document.querySelector('main select')?.options.length===2`), 'Faculty schedule did not load');
+      const labels = await evaluate(`[...document.querySelector('main select').options].map(option=>option.textContent)`);
+      assert.ok(labels.includes('Faculty 7'));
+      assert.ok(labels.some(label=>label.includes('Atty. Eddie Bouy Palad') && label.includes('Preassigned Instructor')));
+      assert.ok(labels.every(label=>!label.includes('external:')));
+    });
+    await t.test('audit room calendar uses readable preassigned instructor names', async () => {
+      await client.send('Page.navigate', {url:'http://localhost:5188/admin/rooms'});
+      await eventually(() => evaluate(`document.querySelector('main')?.textContent.includes('ITE184')`), 'Room schedule did not load');
+      const text = await evaluate(`document.querySelector('main').textContent`);
+      assert.ok(text.includes('Atty. Eddie Bouy Palad') && text.includes('Faculty 7'));
+      assert.ok(!text.includes('external:eddie-bouy-palad'));
+    });
+    await t.test('audit schedule table and filters hide internal instructor IDs', async () => {
+      await client.send('Page.navigate', {url:'http://localhost:5188/admin/schedules'});
+      await eventually(() => evaluate(`document.querySelector('main tbody')?.textContent.includes('ITE184')`), 'Schedule table did not load');
+      const text = await evaluate(`document.querySelector('main').textContent`);
+      assert.ok(text.includes('Atty. Eddie Bouy Palad') && text.includes('Faculty 7'));
+      assert.ok(!text.includes('external:eddie-bouy-palad'));
+    });
+    await t.test('audit metadata faculty filter matches schedule IDs and includes external instructors', async () => {
+      await evaluate(`var selector=document.querySelector('main select'); var option=[...selector.options].find(option=>option.textContent.trim()==='Faculty 7'); selector.value=option.value; selector.dispatchEvent(new Event('change',{bubbles:true})); true`);
+      await eventually(() => evaluate(`document.querySelector('main tbody')?.textContent.includes('CCC121') && !document.querySelector('main tbody')?.textContent.includes('ITE184')`), 'Faculty metadata label did not match schedule identity');
+      await evaluate(`var selector=document.querySelector('main select'); var option=[...selector.options].find(option=>option.textContent.includes('Atty. Eddie Bouy Palad')); if(!option) throw new Error('External instructor missing from schedule filter'); selector.value=option.value; selector.dispatchEvent(new Event('change',{bubbles:true})); true`);
+      await eventually(() => evaluate(`document.querySelector('main tbody')?.textContent.includes('ITE184') && !document.querySelector('main tbody')?.textContent.includes('CCC121')`), 'External filter did not match its assignment');
+    });
+    await t.test('audit subject management and faculty portal routes are still placeholders', async () => {
+      for (const path of ['/admin/subjects','/faculty/schedule','/faculty/profile']) {
+        await client.send('Page.navigate', {url:'http://localhost:5188'+path});
+        await eventually(() => evaluate(`document.querySelector('main')?.textContent.includes('This page will be built next.')`), `${path} placeholder not reproduced`);
+      }
+      await client.send('Page.navigate', {url:'http://localhost:5188/faculty'});
+      await eventually(() => evaluate(`document.querySelector('main')?.textContent.trim()==='Faculty Dashboard'`), 'Faculty dashboard placeholder not reproduced');
     });
     assert.deepEqual(errors, []);
   } finally {

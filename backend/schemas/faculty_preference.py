@@ -1,6 +1,6 @@
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class PreferenceScheduleBlock(BaseModel):
@@ -115,10 +115,15 @@ class FacultyPreferenceBase(BaseModel):
     use_lecture_lab_preference: bool = False
 
 
+class StrictPreferenceScheduleBlock(PreferenceScheduleBlock):
+    model_config = ConfigDict(extra="forbid", strict=True)
+
+
 class FacultyPreferenceUpdate(
     FacultyPreferenceBase
 ):
-    pass
+    model_config = ConfigDict(extra="forbid", strict=True)
+    preferred_schedule_blocks: list[StrictPreferenceScheduleBlock] = Field(default_factory=list)
 
 
 class FacultyPreferenceResponse(
@@ -196,7 +201,7 @@ class GASettingBase(BaseModel):
 class GASettingUpdate(
     GASettingBase
 ):
-    pass
+    model_config = ConfigDict(extra="forbid", strict=True)
 
 
 class GASettingResponse(

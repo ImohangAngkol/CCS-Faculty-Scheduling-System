@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import axios from "axios";
-import { getFacultyPreference, updateFacultyPreference } from "../../api/preferences";
+import { getFacultyPreference, updateFacultyPreference, preferenceError } from "../../api/preferences";
 import type { FacultyPreferenceUpdate } from "../../api/preferences";
 import { getFacultySubjects } from "../../api/subjects";
 import type { AvailableSubject } from "../../api/subjects";
@@ -52,7 +51,7 @@ export default function FacultyPreferenceEditor({ facultyCode, facultyId, adminM
       void _code;
       const editable = editablePreference(values);
       setDraft(editable); setSaved(editable); setFaculty(metadata.faculty); setSubjects(metadata.data);
-    }).catch(() => { if (!cancelled) setLoadError("Unable to load preferences. Refresh this page to try again."); });
+    }).catch(reason => { if (!cancelled) setLoadError(preferenceError(reason, "Unable to load preferences. Refresh this page to try again.")); });
     return () => { cancelled = true; };
   }, [facultyCode, facultyId]);
   useEffect(() => { onEditStateChange?.(dirty, saving); }, [dirty, saving, onEditStateChange]);
@@ -89,8 +88,7 @@ export default function FacultyPreferenceEditor({ facultyCode, facultyId, adminM
       const editable = editablePreference(values);
       setSaved(editable); setDraft(editable); setSaveState("saved");
     } catch (reason) {
-      const detail = axios.isAxiosError(reason) ? reason.response?.data?.detail : null;
-      setMessage(typeof detail === "string" ? detail : "Your changes could not be saved. They are still here; please try again."); setSaveState("failed");
+      setMessage(preferenceError(reason, "Your changes could not be saved. They are still here; please try again.")); setSaveState("failed");
     }
   }
   if (loadError) return <p role="alert" className="rounded-lg bg-red-50 p-4 text-red-700">{loadError}</p>;

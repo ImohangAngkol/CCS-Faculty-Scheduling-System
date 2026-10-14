@@ -1,446 +1,117 @@
-import json
+"""Preference reads and fail-closed, atomic writes. No production auth bypass."""
 from pathlib import Path
-
-from fastapi import (
-    APIRouter,
-    HTTPException
-)
-
-from schemas.faculty_preference import (
-    FacultyPreferenceUpdate,
-    FacultyPreferenceResponse,
-    GASettingUpdate,
-    GASettingResponse,
-)
-
-from genetic_algorithm.models.faculty_preference import (
-    FacultyPreference
-)
-
-from genetic_algorithm.models.ga_setting import (
-    GASetting
-)
+from fastapi import APIRouter, Depends, HTTPException
+from schemas.faculty_preference import FacultyPreferenceUpdate, FacultyPreferenceResponse, GASettingUpdate, GASettingResponse
+from genetic_algorithm.models.faculty_preference import FacultyPreference
+from genetic_algorithm.models.ga_setting import GASetting
 from services.preference_validation_service import validate_preference_write
+from services.metadata_service import resolve_normal_faculty
+from services.preference_authorization import authorize_faculty, require_admin
+from services import preference_storage_service as storage
+
+router = APIRouter(prefix="/preferences", tags=["Preferences"])
+DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+PREFERENCE_FILE = DATA_DIR / "faculty_preferences.json"
+GA_SETTINGS_FILE = DATA_DIR / "ga_settings.json"
 
 
-router = APIRouter(
-    prefix="/preferences",
-    tags=["Preferences"]
-)
+def _validate_records(records):
+    if not isinstance(records, list):
+        raise ValueError("Expected preference list")
+    seen = set()
+    for record in records:
+        if not isinstance(record, dict) or type(record.get("faculty_code")) is not int:
+            raise ValueError("Invalid faculty record")
+        code = record["faculty_code"]
+        if code in seen:
+            raise ValueError("Duplicate faculty record")
+        seen.add(code)
+        resolve_normal_faculty(code)
+        FacultyPreferenceResponse.model_validate(record)
 
 
-# =========================================================
-# FILE LOCATIONS
-# =========================================================
-
-BACKEND_DIR = (
-    Path(__file__)
-    .resolve()
-    .parents[1]
-)
-
-DATA_DIR = BACKEND_DIR / "data"
-
-PREFERENCE_FILE = (
-    DATA_DIR
-    / "faculty_preferences.json"
-)
-
-GA_SETTINGS_FILE = (
-    DATA_DIR
-    / "ga_settings.json"
-)
+def _read_preferences():
+    return storage.read(PREFERENCE_FILE, list, _validate_records)
 
 
-DATA_DIR.mkdir(
-    parents=True,
-    exist_ok=True
-)
+def _write_preferences(records):
+    storage.atomic_write(PREFERENCE_FILE, records)
 
 
-# =========================================================
-# HELPERS
-# =========================================================
-
-def _read_preferences() -> list[dict]:
-
-    if not PREFERENCE_FILE.exists():
-        return []
-
-    try:
-
-        with open(
-            PREFERENCE_FILE,
-            "r",
-            encoding="utf-8"
-        ) as file:
-
-            return json.load(file)
-
-    except (
-        json.JSONDecodeError,
-        OSError
-    ):
-
-        return []
+def _validate_settings(data):
+    if not isinstance(data, dict):
+        raise ValueError("Expected settings object")
+    GASettingResponse.model_validate(data)
 
 
-def _write_preferences(
-    preferences: list[dict]
-):
-
-    with open(
-        PREFERENCE_FILE,
-        "w",
-        encoding="utf-8"
-    ) as file:
-
-        json.dump(
-            preferences,
-            file,
-            indent=4
-        )
+def _read_ga_settings():
+    data = storage.read(GA_SETTINGS_FILE, lambda: GASetting().to_dict(), _validate_settings)
+    return GASetting.from_dict(data)
 
 
-def _read_ga_settings() -> GASetting:
-
-    if not GA_SETTINGS_FILE.exists():
-
-        settings = GASetting()
-
-        _write_ga_settings(
-            settings
-        )
-
-        return settings
-
-    try:
-
-        with open(
-            GA_SETTINGS_FILE,
-            "r",
-            encoding="utf-8"
-        ) as file:
-
-            data = json.load(file)
-
-        return GASetting.from_dict(
-            data
-        )
-
-    except (
-        json.JSONDecodeError,
-        OSError
-    ):
-
-        return GASetting()
+def _write_ga_settings(settings):
+    storage.atomic_write(GA_SETTINGS_FILE, settings.to_dict())
 
 
-def _write_ga_settings(
-    settings: GASetting
-):
-
-    with open(
-        GA_SETTINGS_FILE,
-        "w",
-        encoding="utf-8"
-    ) as file:
-
-        json.dump(
-            settings.to_dict(),
-            file,
-            indent=4
-        )
-
-
-# =========================================================
-# GA SETTINGS ROUTES
-#
-# IMPORTANT:
-# Put these BEFORE /{faculty_code}
-# =========================================================
-
-@router.get(
-    "/ga-settings",
-    response_model=GASettingResponse
-)
+@router.get("/ga-settings", response_model=GASettingResponse)
 def get_ga_settings():
-
-    settings = _read_ga_settings()
-
-    return settings.to_dict()
+    return _read_ga_settings().to_dict()
 
 
-@router.put(
-    "/ga-settings",
-    response_model=GASettingResponse
-)
-def update_ga_settings(
-    payload: GASettingUpdate
-):
-
-    settings = GASetting.from_dict(
-        payload.model_dump()
-    )
-
-    _write_ga_settings(
-        settings
-    )
-
-    return settings.to_dict()
+@router.put("/ga-settings", response_model=GASettingResponse)
+def update_ga_settings(payload: GASettingUpdate, principal=Depends(require_admin)):
+    data = storage.update(GA_SETTINGS_FILE, lambda: GASetting().to_dict(), _validate_settings,
+                          lambda current: {**current, **payload.model_dump(exclude_unset=True)})
+    return GASetting.from_dict(data).to_dict()
 
 
-# =========================================================
-# GET ALL FACULTY PREFERENCES
-# =========================================================
-
-@router.get(
-    "",
-    response_model=list[
-        FacultyPreferenceResponse
-    ]
-)
+@router.get("", response_model=list[FacultyPreferenceResponse])
 def get_all_preferences():
-
     return _read_preferences()
 
 
-# =========================================================
-# GET ONE FACULTY
-# =========================================================
-
-@router.get(
-    "/{faculty_code}",
-    response_model=FacultyPreferenceResponse
-)
-def get_faculty_preference(
-    faculty_code: int
-):
-
-    preferences = _read_preferences()
-
-    for preference in preferences:
-
-        if int(
-            preference[
-                "faculty_code"
-            ]
-        ) == faculty_code:
-
-            return preference
-
-    # Create default preference if
-    # this faculty has never saved one.
-    preference = FacultyPreference(
-        faculty_code=faculty_code
-    )
-
-    preferences.append(
-        preference.to_dict()
-    )
-
-    _write_preferences(
-        preferences
-    )
-
-    return preference.to_dict()
-
-
-# =========================================================
-# SAVE / UPDATE FACULTY
-# =========================================================
-
-@router.put(
-    "/{faculty_code}",
-    response_model=FacultyPreferenceResponse
-)
-def update_faculty_preference(
-    faculty_code: int,
-    payload: FacultyPreferenceUpdate
-):
-
+@router.get("/{faculty_code}", response_model=FacultyPreferenceResponse)
+def get_faculty_preference(faculty_code: int):
     try:
-        validate_preference_write(faculty_code, payload)
+        resolve_normal_faculty(faculty_code)
     except ValueError as error:
-        raise HTTPException(status_code=422, detail=str(error)) from error
-
-    preferences = _read_preferences()
-
-    updated = FacultyPreference(
-        faculty_code=faculty_code,
-
-        # -------------------------------------------------
-        # FACULTY PRIORITY
-        # -------------------------------------------------
-
-        faculty_priority=(
-            payload.faculty_priority
-        ),
-
-        preferred_schedule_blocks=[
-            block.model_dump()
-            for block in payload.preferred_schedule_blocks
-        ],
-
-        # -------------------------------------------------
-        # SUBJECT PREFERENCE
-        # -------------------------------------------------
-
-        preferred_subjects=(
-            payload.preferred_subjects
-        ),
-
-        subject_importance=(
-            payload.subject_importance
-        ),
-
-        # -------------------------------------------------
-        # DAY PREFERENCE
-        # -------------------------------------------------
-
-        preferred_days=(
-            payload.preferred_days
-        ),
-
-        day_importance=(
-            payload.day_importance
-        ),
-
-        # -------------------------------------------------
-        # TIME PREFERENCE
-        # -------------------------------------------------
-
-        preferred_start_time=(
-            payload.preferred_start_time
-        ),
-
-        preferred_end_time=(
-            payload.preferred_end_time
-        ),
-
-        time_importance=(
-            payload.time_importance
-        ),
-
-        # -------------------------------------------------
-        # SCHEDULE STYLE
-        # -------------------------------------------------
-
-        gap_preference=(
-            payload.gap_preference
-        ),
-
-        gap_importance=(
-            payload.gap_importance
-        ),
-
-        # -------------------------------------------------
-        # LECTURE / LAB PREFERENCE
-        # -------------------------------------------------
-
-        lecture_lab_preference=(
-            payload.lecture_lab_preference
-        ),
-
-        lecture_lab_importance=(
-            payload.lecture_lab_importance
-        ),
-
-        # -------------------------------------------------
-        # ENABLE / DISABLE FLAGS
-        # -------------------------------------------------
-
-        use_subject_preference=(
-            payload.use_subject_preference
-        ),
-
-        use_day_preference=(
-            payload.use_day_preference
-        ),
-
-        use_time_preference=(
-            payload.use_time_preference
-        ),
-
-        use_gap_preference=(
-            payload.use_gap_preference
-        ),
-
-        use_lecture_lab_preference=(
-            payload.use_lecture_lab_preference
-        ),
-    )
-
-    found = False
-
-    for index, preference in enumerate(
-        preferences
-    ):
-
-        if int(
-            preference["faculty_code"]
-        ) == faculty_code:
-
-            preferences[index] = (
-                updated.to_dict()
-            )
-
-            found = True
-            break
-
-    if not found:
-
-        preferences.append(
-            updated.to_dict()
-        )
-
-    _write_preferences(
-        preferences
-    )
-
-    return updated.to_dict()
+        raise HTTPException(404, "Unknown optimization faculty ID.") from error
+    return next((record for record in _read_preferences() if record["faculty_code"] == faculty_code),
+                FacultyPreference(faculty_code=faculty_code).to_dict())
 
 
-# =========================================================
-# OPTIONAL RESET
-# =========================================================
+@router.put("/{faculty_code}", response_model=FacultyPreferenceResponse)
+def update_faculty_preference(faculty_code: int, payload: FacultyPreferenceUpdate,
+                              principal=Depends(authorize_faculty)):
+    def change(records):
+        previous = next((record for record in records if record["faculty_code"] == faculty_code), None)
+        base = previous or FacultyPreference(faculty_code=faculty_code).to_dict()
+        submitted = payload.model_dump(exclude_unset=True)
+        if principal.role != "admin" and submitted.get("faculty_priority", base.get("faculty_priority", 1)) != base.get("faculty_priority", 1):
+            raise HTTPException(403, "Faculty priority is an administrator-only setting.")
+        merged = {**base, **submitted, "faculty_code": faculty_code}
+        try:
+            editable = FacultyPreferenceUpdate.model_validate(
+                {key: value for key, value in merged.items() if key in FacultyPreferenceUpdate.model_fields})
+            validate_preference_write(faculty_code, editable)
+        except ValueError as error:
+            raise HTTPException(422, str(error)) from error
+        return [merged if record["faculty_code"] == faculty_code else record for record in records] if previous is not None else [*records, merged]
 
-@router.delete(
-    "/{faculty_code}"
-)
-def reset_faculty_preference(
-    faculty_code: int
-):
+    records = storage.update(PREFERENCE_FILE, list, _validate_records, change)
+    return next(record for record in records if record["faculty_code"] == faculty_code)
 
-    preferences = _read_preferences()
 
-    new_preferences = [
-        preference
-        for preference in preferences
-
-        if int(
-            preference["faculty_code"]
-        ) != faculty_code
-    ]
-
-    if (
-        len(new_preferences)
-        == len(preferences)
-    ):
-
-        raise HTTPException(
-            status_code=404,
-            detail=(
-                "Faculty preference "
-                "not found."
-            )
-        )
-
-    _write_preferences(
-        new_preferences
-    )
-
-    return {
-        "message":
-            "Faculty preference reset."
-    }
+@router.delete("/{faculty_code}")
+def reset_faculty_preference(faculty_code: int, principal=Depends(require_admin)):
+    try:
+        resolve_normal_faculty(faculty_code)
+    except ValueError as error:
+        raise HTTPException(422, "Unknown optimization faculty ID.") from error
+    def change(records):
+        remaining = [record for record in records if record["faculty_code"] != faculty_code]
+        if len(remaining) == len(records):
+            raise HTTPException(404, "Faculty preference not found.")
+        return remaining
+    storage.update(PREFERENCE_FILE, list, _validate_records, change)
+    return {"message": "Faculty preference reset."}
