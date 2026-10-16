@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-16-acceptance-01",
+  "recorded_at": "2026-10-16T12:40:21.979077+08:00",
+  "source_commit": "deba151d5963b083681ce88d60b95f858b61a149",
+  "application_source_unchanged": true,
+  "dirty_scope": "README, documentation, evidence and evidence-only fixture/tests; pre-existing live preferences remain unchanged",
+  "environment": {
+    "os": "Windows",
+    "python": "3.14.2",
+    "fastapi": "0.141.1",
+    "sqlalchemy": "2.0.52",
+    "pytest": "9.1.1",
+    "node": "24.11.1",
+    "installed_edge_version": "155.0.4283.45",
+    "browser": "Microsoft Edge InPrivate via Computer Use @oai/sky",
+    "storage": "Temporary SQLite/JSON; no PostgreSQL connection",
+    "privacy_metadata": "Synthetic identities/profiles; empty offered subjects; real auth checks unchanged"
+  },
+  "initial_local_services": {
+    "localhost:5173": "connection refused",
+    "localhost:8000/api/health": "connection refused",
+    "localhost:8000/api/auth/me": "connection refused"
+  },
+  "tests": [
+    {
+      "kind": "backend authentication",
+      "command": ".venv/Scripts/python.exe -m pytest backend/tests/test_phase4a_final_verification.py backend/tests/test_phase4a_auth.py -q --disable-warnings -k \"not real_browser\" --tb=short --maxfail=1 --basetemp=$env:TEMP/phase4a-documentation-tests-20261016-64d1a2f8",
+      "cwd": "repository root",
+      "exit_code": 0,
+      "passed": 61,
+      "deselected": 1,
+      "warnings": 4,
+      "elapsed_seconds": 45.34,
+      "start_end_timestamps": "not captured; executed 2026-10-16 Asia/Manila"
+    },
+    {
+      "kind": "frontend authentication",
+      "command": "npm.cmd run test:auth",
+      "cwd": "frontend",
+      "exit_code": 0,
+      "passed": 8,
+      "failed": 0,
+      "duration_ms": 4409.4178,
+      "start_end_timestamps": "not captured; executed 2026-10-16 Asia/Manila"
+    },
+    {
+      "kind": "evidence helper regression",
+      "command": ".venv/Scripts/python.exe -m pytest docs/testing/phase-4a/test_evidence_fixture_lifecycle.py -q --disable-warnings --tb=short --maxfail=1 --basetemp=$env:TEMP/phase4a-evidence-lifecycle-20261016-5ea1d9cf",
+      "cwd": "repository root",
+      "exit_code": 0,
+      "passed": 1,
+      "warnings": 1,
+      "elapsed_seconds": 7.91
+    }
+  ],
+  "browser": {
+    "passed_scenarios": [
+      "P4A-B01",
+      "P4A-B02",
+      "P4A-B03",
+      "P4A-B04",
+      "P4A-B05",
+      "P4A-B06",
+      "P4A-B07"
+    ],
+    "blocked": [
+      "P4A-B08"
+    ],
+    "not_run": [
+      "P4A-B09",
+      "P4A-B10"
+    ],
+    "stop_reason": "Computer Use could not determine the current browser URL on Windows with enough confidence to enforce policy. No further browser actions issued.",
+    "independent_api_read_confirmed_saved_preference": true,
+    "browser_refresh_claimed": false,
+    "full_ga_run_started": false,
+    "images_visually_reviewed": true
+  },
+  "api_assertions_passed": 11,
+  "collection_incident": {
+    "id": "EVIDENCE-001",
+    "initial_helper_exit_code": 1,
+    "error": "Windows SQLite file lock during temporary cleanup",
+    "fix": "Resume existing pytest yield fixture normally so engine.dispose executes",
+    "regression": "PASS; fresh helper process exits 0 and removes owned storage/handoff"
+  },
+  "preservation": {
+    "protected_files_byte_identical": 133,
+    "protected_inventory_unchanged": true,
+    "live_preferences_untouched": true,
+    "git_index_unchanged": true,
+    "head_unchanged": true,
+    "staged_committed_pushed": false,
+    "temporary_evidence_services_stopped": true,
+    "temporary_raw_captures_removed": true,
+    "browser_window_left_untouched_after_policy_stop": true
+  },
+  "not_run": [
+    "frontend build/lint",
+    "full GA regression suite",
+    "broader preference/GA frontend suites",
+    "online PostgreSQL acceptance"
+  ],
+  "artifacts": [
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/screenshots.json",
+      "sha256": "dac3ee981ae8567abd017affc740f7a4a037b334dd5228c61ae0f069fd2a3c92"
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/api-results.json",
+      "sha256": "d55ab8c85f3a2a3a83ec939b8d9a9ad0d27174f2db55be00c249f649102386b3"
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/results.md",
+      "sha256": "a1c6bb323ccfd4d2b8e0bbc2853188030bb7bff56665ad0db7bbcb68066de31d"
+    },
+    {
+      "path": "docs/testing/phase-4a/serve_evidence_fixture.py",
+      "sha256": "f359084f13aed8f93e8f8fcf3ae8f66f629af46892bbbccd04ce8cf8351bd6dd"
+    },
+    {
+      "path": "docs/testing/phase-4a/test_evidence_fixture_lifecycle.py",
+      "sha256": "20181a359c4cf1f28242f91342a0759430dc150bfc0cfff2a7541f841f2784c1"
+    },
+    {
+      "path": "docs/thesis-evidence/phase-4a-evidence.md",
+      "sha256": "ceeeb5390a298e1819a63b2c7f996594c5170352258756e6989064dc50697a1f"
+    },
+    {
+      "path": "docs/DEVELOPMENT_DOCUMENTATION_STANDARD.md",
+      "sha256": "a209d32ab3d3f108dd232420520e9a51b1c166ddf22223b28089337479bd22df"
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B01-anonymous-sign-in.png",
+      "sha256": "cf8ce22e27ae8895ea9cdcab9af3d3eb5ef0eeb5da0f3b2b6658df777f2399b7"
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B02-admin-dashboard.png",
+      "sha256": "b55edc36cae5ce55624966d95ae9cd33f8e5b860996fdfa07fa8467cc2ea8e96"
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B03-admin-logout.png",
+      "sha256": "461d99974b98ac5f4503d82a70797a2cc86fcaa0d81e8b5d502b5b6382e998d6"
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B04-faculty-dashboard.png",
+      "sha256": "38b2386e42677e1965cdb64c268ee1a73284238c179c017035bee30e342d30af"
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B05-faculty-preferences-before.png",
+      "sha256": "e884846b36700fabfbd1fd6948e92c6bb137ce67e8d6f605f43044ad7d14417d"
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B06-preference-unsaved.png",
+      "sha256": "5af374c94f8b1c7425a7c0fc3e07ac5ff5e9ae78be4091c3a50d869b756baf97"
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B07-preference-saved.png",
+      "sha256": "0f63330e9d4391abe2fcbdf2ebcde676a8089a70bf5e19b644e716aa44c65d2b"
+    }
+  ],
+  "documentation_revisions": [
+    {
+      "recorded_at": "2026-10-16T12:54:24.909943+08:00",
+      "path": "docs/thesis-evidence/phase-4a-evidence.md",
+      "previous_sha256": "c9168dcf68d7c3b2121a2ffaa3cdc1315273c34751b14508862788118d39ef31",
+      "current_sha256": "2908c4c94a7d6994ab9eb952b10fc745670475670204ed02d51911cf4bb6a300",
+      "reason": "Added a dated missing-browser-evidence follow-up and manual instructions; historical captures, test results and counts unchanged.",
+      "followup": "docs/testing/phase-4a/2026-10-16-missing-browser-02/results.md"
+    },
+    {
+      "recorded_at": "2026-10-16T13:12:24.922756+08:00",
+      "path": "docs/thesis-evidence/phase-4a-evidence.md",
+      "previous_sha256": "2908c4c94a7d6994ab9eb952b10fc745670475670204ed02d51911cf4bb6a300",
+      "current_sha256": "120e40ffdf9e014293c40e854679b083e8768eab0313ad70a00b128ca144e8ad",
+      "reason": "Documentation-only attribution of three user-confirmed manual passes; blocked Codex attempts and automated counts preserved; user screenshots remain unarchived."
+    },
+    {
+      "recorded_at": "2026-10-16T13:55:46.671668+08:00",
+      "path": "docs/thesis-evidence/phase-4a-evidence.md",
+      "previous_sha256": "120e40ffdf9e014293c40e854679b083e8768eab0313ad70a00b128ca144e8ad",
+      "current_sha256": "ceeeb5390a298e1819a63b2c7f996594c5170352258756e6989064dc50697a1f",
+      "reason": "Archived and visually reviewed four user-supplied screenshots with explicit evidence limits and privacy redactions; manual PASS attribution and historical automated/blocked results unchanged."
+    },
+    {
+      "recorded_at": "2026-10-16T14:08:02.004193+08:00",
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/screenshots.json",
+      "previous_sha256": "fd2baf970011ab769b605906c12bedb942fbbed6df8fe85fb3c86b0c994e369a",
+      "current_sha256": "dac3ee981ae8567abd017affc740f7a4a037b334dd5228c61ae0f069fd2a3c92",
+      "reason": "Normalize approved documentation CRLF to LF for Git whitespace validation; update dependent artifact digests only. Evidence content, screenshots, test results and prior revision records preserved."
+    },
+    {
+      "recorded_at": "2026-10-16T14:08:02.004193+08:00",
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/api-results.json",
+      "previous_sha256": "4b044b7f378dfa354c12990c03efde9fec02a805104a02da68492ed7e838f7a4",
+      "current_sha256": "d55ab8c85f3a2a3a83ec939b8d9a9ad0d27174f2db55be00c249f649102386b3",
+      "reason": "Normalize approved documentation CRLF to LF for Git whitespace validation; update dependent artifact digests only. Evidence content, screenshots, test results and prior revision records preserved."
+    }
+  ],
+  "related_user_manual_archive": {
+    "manifest": "docs/testing/phase-4a/2026-10-16-missing-browser-02/manual-acceptance-manifest.json",
+    "note": "Later user evidence; not part of the original Codex capture/test totals."
+  }
+}

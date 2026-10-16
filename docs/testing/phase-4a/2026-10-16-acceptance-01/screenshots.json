@@ -1,0 +1,159 @@
+{
+  "run": "2026-10-16-acceptance-01",
+  "captures": [
+    {
+      "scenario": "P4A-B01",
+      "file": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B01-anonymous-sign-in.png",
+      "description": "Anonymous /admin navigation redirected to /login; fields empty.",
+      "captured_at": "2026-10-16 12:32:21 +08:00",
+      "window_dimensions": {
+        "width": 954,
+        "height": 1025
+      },
+      "crop": {
+        "left": 44,
+        "top": 115,
+        "width": 905,
+        "height": 904
+      },
+      "privacy": "Application area only; synthetic fixture; no credential entry or developer tools",
+      "sha256": "cf8ce22e27ae8895ea9cdcab9af3d3eb5ef0eeb5da0f3b2b6658df777f2399b7",
+      "dimensions": {
+        "width": 905,
+        "height": 904
+      }
+    },
+    {
+      "scenario": "P4A-B02",
+      "file": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B02-admin-dashboard.png",
+      "description": "Genuine administrator login reached the protected dashboard; no GA started.",
+      "captured_at": "2026-10-16 12:33:29 +08:00",
+      "window_dimensions": {
+        "width": 954,
+        "height": 1025
+      },
+      "crop": {
+        "left": 44,
+        "top": 115,
+        "width": 905,
+        "height": 904
+      },
+      "privacy": "Application area only; synthetic fixture; no credential entry or developer tools",
+      "sha256": "b55edc36cae5ce55624966d95ae9cd33f8e5b860996fdfa07fa8467cc2ea8e96",
+      "dimensions": {
+        "width": 905,
+        "height": 904
+      }
+    },
+    {
+      "scenario": "P4A-B03",
+      "file": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B03-admin-logout.png",
+      "description": "Administrator sign-out returned to an empty sign-in form.",
+      "captured_at": "2026-10-16 12:33:51 +08:00",
+      "window_dimensions": {
+        "width": 954,
+        "height": 1025
+      },
+      "crop": {
+        "left": 44,
+        "top": 115,
+        "width": 905,
+        "height": 904
+      },
+      "privacy": "Application area only; synthetic fixture; no credential entry or developer tools",
+      "sha256": "461d99974b98ac5f4503d82a70797a2cc86fcaa0d81e8b5d502b5b6382e998d6",
+      "dimensions": {
+        "width": 905,
+        "height": 904
+      }
+    },
+    {
+      "scenario": "P4A-B04",
+      "file": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B04-faculty-dashboard.png",
+      "description": "Genuine faculty login reached the faculty portal with faculty navigation.",
+      "captured_at": "2026-10-16 12:34:09 +08:00",
+      "window_dimensions": {
+        "width": 954,
+        "height": 1025
+      },
+      "crop": {
+        "left": 44,
+        "top": 115,
+        "width": 905,
+        "height": 904
+      },
+      "privacy": "Application area only; synthetic fixture; no credential entry or developer tools",
+      "sha256": "38b2386e42677e1965cdb64c268ee1a73284238c179c017035bee30e342d30af",
+      "dimensions": {
+        "width": 905,
+        "height": 904
+      }
+    },
+    {
+      "scenario": "P4A-B05",
+      "file": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B05-faculty-preferences-before.png",
+      "description": "Own preferences loaded with default subject preference enabled; academic metadata intentionally empty.",
+      "captured_at": "2026-10-16 12:34:20 +08:00",
+      "window_dimensions": {
+        "width": 954,
+        "height": 1025
+      },
+      "crop": {
+        "left": 44,
+        "top": 115,
+        "width": 905,
+        "height": 904
+      },
+      "privacy": "Application area only; synthetic fixture; no credential entry or developer tools",
+      "sha256": "e884846b36700fabfbd1fd6948e92c6bb137ce67e8d6f605f43044ad7d14417d",
+      "dimensions": {
+        "width": 905,
+        "height": 904
+      }
+    },
+    {
+      "scenario": "P4A-B06",
+      "file": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B06-preference-unsaved.png",
+      "description": "Subject preference disabled in temporary draft; Save Preferences enabled.",
+      "captured_at": "2026-10-16 12:34:34 +08:00",
+      "window_dimensions": {
+        "width": 954,
+        "height": 1025
+      },
+      "crop": {
+        "left": 44,
+        "top": 115,
+        "width": 905,
+        "height": 904
+      },
+      "privacy": "Application area only; synthetic fixture; no credential entry or developer tools",
+      "sha256": "5af374c94f8b1c7425a7c0fc3e07ac5ff5e9ae78be4091c3a50d869b756baf97",
+      "dimensions": {
+        "width": 905,
+        "height": 904
+      }
+    },
+    {
+      "scenario": "P4A-B07",
+      "file": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B07-preference-saved.png",
+      "description": "The actual backend save completed; Saved status displayed.",
+      "captured_at": "2026-10-16 12:34:43 +08:00",
+      "window_dimensions": {
+        "width": 954,
+        "height": 1025
+      },
+      "crop": {
+        "left": 44,
+        "top": 115,
+        "width": 905,
+        "height": 904
+      },
+      "privacy": "Application area only; synthetic fixture; no credential entry or developer tools",
+      "sha256": "0f63330e9d4391abe2fcbdf2ebcde676a8089a70bf5e19b644e716aa44c65d2b",
+      "dimensions": {
+        "width": 905,
+        "height": 904
+      }
+    }
+  ]
+}

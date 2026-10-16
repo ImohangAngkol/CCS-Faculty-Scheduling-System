@@ -299,7 +299,7 @@ Faculty/admin users can:
 - Select preferred subjects
 - Rank selected subjects
 - Drag selected subject components into a weekly preference timetable
-- Move and resize preferred timetable blocks in 30-minute increments
+- Move fixed-duration preferred timetable blocks in 30-minute increments; resizing is disabled
 - Configure schedule style preference
 - Configure lecture/laboratory day preference
 - Set preference importance values
@@ -335,6 +335,10 @@ Save only if the new chromosome is better
 ---
 
 # Development Notes
+
+Every future phase must follow the [Development Documentation and Testing Evidence Standard](docs/DEVELOPMENT_DOCUMENTATION_STANDARD.md). Record actual test results, browser acceptance, reviewed screenshots, limitations and thesis relevance before requesting phase acceptance. See the [testing index](docs/testing/README.md) and [thesis evidence index](docs/thesis-evidence/README.md).
+
+For the implemented Phase 4A accounts and authorization, use the [local identity setup](docs/phase-4a-local-setup.md) and [verification report](docs/phase-4a-final-verification.md). The general quick-start above does not provision an identity database or administrator account. Use localhost consistently for browser cookie authentication.
 
 Before pushing changes:
 

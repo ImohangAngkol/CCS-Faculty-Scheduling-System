@@ -1,0 +1,111 @@
+{
+  "source_commit": "deba151d5963b083681ce88d60b95f858b61a149",
+  "environment": "Isolated existing real-auth fixture; temporary SQLite/JSON; synthetic identities; empty academic metadata",
+  "started_at": "2026-10-16T12:36:07.651161+08:00",
+  "finished_at": "2026-10-16T12:36:14.982781+08:00",
+  "results": [
+    {
+      "case": "P4A-A01",
+      "method": "GET",
+      "path": "/api/auth/me",
+      "expected": 401,
+      "actual": 401,
+      "result": "PASS",
+      "description": "Anonymous session is rejected."
+    },
+    {
+      "case": "P4A-A02",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "description": "Genuine temporary administrator credentials accepted."
+    },
+    {
+      "case": "P4A-A03",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "description": "Genuine temporary faculty credentials accepted."
+    },
+    {
+      "case": "P4A-A04",
+      "method": "GET",
+      "path": "/preferences/0",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "description": "Independent HTTP client retrieved the browser-saved preference.",
+      "persisted_subject_preference_enabled": false
+    },
+    {
+      "case": "P4A-A05",
+      "method": "GET",
+      "path": "/preferences/1",
+      "expected": 403,
+      "actual": 403,
+      "result": "PASS",
+      "description": "Other-faculty read denied."
+    },
+    {
+      "case": "P4A-A06",
+      "method": "PUT",
+      "path": "/preferences/1",
+      "expected": 403,
+      "actual": 403,
+      "result": "PASS",
+      "description": "Other-faculty write denied with valid Origin and session CSRF."
+    },
+    {
+      "case": "P4A-A07",
+      "method": "GET",
+      "path": "/api/auth/users",
+      "expected": 403,
+      "actual": 403,
+      "result": "PASS",
+      "description": "Faculty account administration denied."
+    },
+    {
+      "case": "P4A-A08",
+      "method": "PUT",
+      "path": "/preferences/0",
+      "expected": 403,
+      "actual": 403,
+      "result": "PASS",
+      "description": "Faculty cannot edit administrator-only priority."
+    },
+    {
+      "case": "P4A-A09",
+      "method": "POST",
+      "path": "/api/auth/logout",
+      "expected": 204,
+      "actual": 204,
+      "result": "PASS",
+      "description": "Temporary API faculty session logged out."
+    },
+    {
+      "case": "P4A-A10",
+      "method": "GET",
+      "path": "/api/auth/me",
+      "expected": 401,
+      "actual": 401,
+      "result": "PASS",
+      "description": "Logged-out API session is rejected."
+    },
+    {
+      "case": "P4A-A11",
+      "method": "POST",
+      "path": "/api/auth/logout",
+      "expected": 204,
+      "actual": 204,
+      "result": "PASS",
+      "description": "Temporary API administrator session logged out."
+    }
+  ],
+  "rejected_operations_preserved_preferences": true,
+  "body_and_credentials_omitted": true,
+  "browser_refresh_verified": false
+}

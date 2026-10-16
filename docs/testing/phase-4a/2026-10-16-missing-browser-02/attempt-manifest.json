@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "attempt": "2026-10-16-missing-browser-02",
+  "recorded_at": "2026-10-16T12:55:27.386917+08:00",
+  "source_commit": "deba151d5963b083681ce88d60b95f858b61a149",
+  "purpose": "Complete only P4A-B08, P4A-B09 and P4A-B10 if safe URL verification is possible.",
+  "supported_tooling": "node_repl + @oai/sky Computer Use",
+  "preflight": {
+    "application_candidate": "Microsoft Edge / MSEdge",
+    "window_candidate": "frontend - [InPrivate] - Microsoft Edge",
+    "state_request": "get_window_state(include_screenshot=false, include_text=true)",
+    "result": "window is minimized; call activate_window, refresh with get_window, then retry get_window_state",
+    "current_url": null,
+    "current_url_verified": false,
+    "current_application_page_verified": false,
+    "historical_intended_origin": "http://localhost:5189",
+    "historical_origin_is_not_a_current_observation": true,
+    "browser_activated": false,
+    "browser_input_issued": false,
+    "new_screenshot_captured": false,
+    "fixture_or_backend_started": false,
+    "safety_bypassed": false
+  },
+  "scenarios": [
+    {
+      "id": "P4A-B08",
+      "status": "INCOMPLETE / BLOCKED",
+      "actual": "Not executed: current URL could not be verified before browser interaction.",
+      "screenshot": null
+    },
+    {
+      "id": "P4A-B09",
+      "status": "INCOMPLETE / BLOCKED",
+      "actual": "Not executed: current URL could not be verified before browser interaction.",
+      "screenshot": null
+    },
+    {
+      "id": "P4A-B10",
+      "status": "INCOMPLETE / BLOCKED",
+      "actual": "Not executed: current URL could not be verified before browser interaction.",
+      "screenshot": null
+    }
+  ],
+  "new_completed_scenarios": 0,
+  "new_screenshots": 0,
+  "regressions_rerun": false,
+  "review": {
+    "existing_screenshots_visually_reviewed": 7,
+    "existing_screenshots_byte_identical": true,
+    "sensitive_info_findings": [],
+    "original_artifact_digests_verified": 14,
+    "historical_test_and_browser_results_unchanged": true,
+    "living_report_manifest_digest_updated_with_prior_digest_preserved": true,
+    "text_files_scanned": 12,
+    "relative_links_checked": 31
+  },
+  "preservation": {
+    "protected_files_byte_identical": 133,
+    "protected_inventory_unchanged": true,
+    "live_preferences_untouched": true,
+    "head_unchanged": true,
+    "git_index_unchanged": true,
+    "staged_committed_pushed": false
+  },
+  "artifacts": [
+    {
+      "path": "docs/thesis-evidence/phase-4a-evidence.md",
+      "sha256": "ceeeb5390a298e1819a63b2c7f996594c5170352258756e6989064dc50697a1f"
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-missing-browser-02/results.md",
+      "sha256": "dea03fe006c98ea8676218bd1daddfaaa3f76bffe31b0132cf0a6db762b91566"
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/run-manifest.json",
+      "sha256": "983340aa9169ab0763581e6f7f614726487a987812d0a8047e0b6fb96d50cb0e"
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-missing-browser-02/manual-acceptance-manifest.json",
+      "sha256": "05faca05cf537c6d936c5e863c14ad7382878373215da5e3000cacf686661a33"
+    }
+  ],
+  "documentation_revisions": [
+    {
+      "recorded_at": "2026-10-16T13:12:24.922756+08:00",
+      "path": "docs/thesis-evidence/phase-4a-evidence.md",
+      "previous_sha256": "2908c4c94a7d6994ab9eb952b10fc745670475670204ed02d51911cf4bb6a300",
+      "current_sha256": "120e40ffdf9e014293c40e854679b083e8768eab0313ad70a00b128ca144e8ad",
+      "reason": "Documentation-only attribution of three user-confirmed manual passes; blocked Codex attempts and automated counts preserved; user screenshots remain unarchived."
+    },
+    {
+      "recorded_at": "2026-10-16T13:12:24.922756+08:00",
+      "path": "docs/testing/phase-4a/2026-10-16-missing-browser-02/results.md",
+      "previous_sha256": "3d3297b8e87ebe2a109fe77dee52f6817290627fdaf5a322c358c123f0eabf35",
+      "current_sha256": "4dc7b3a26fc20cc3526700437b42fe844a7d72b5f273d9a6d071a2262156fac5",
+      "reason": "Documentation-only attribution of three user-confirmed manual passes; blocked Codex attempts and automated counts preserved; user screenshots remain unarchived."
+    },
+    {
+      "recorded_at": "2026-10-16T13:12:24.922756+08:00",
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/run-manifest.json",
+      "previous_sha256": "ddebc0b38af26df14c844254067b977ecde551d8b25d6dea0354aae7095f1c53",
+      "current_sha256": "72610be3b92c49f9121f374a7060a549aebc30b67d0824938877a824c51aed8a",
+      "reason": "Documentation-only attribution of three user-confirmed manual passes; blocked Codex attempts and automated counts preserved; user screenshots remain unarchived."
+    },
+    {
+      "recorded_at": "2026-10-16T13:55:46.671668+08:00",
+      "path": "docs/thesis-evidence/phase-4a-evidence.md",
+      "previous_sha256": "120e40ffdf9e014293c40e854679b083e8768eab0313ad70a00b128ca144e8ad",
+      "current_sha256": "ceeeb5390a298e1819a63b2c7f996594c5170352258756e6989064dc50697a1f",
+      "reason": "Archived and visually reviewed four user-supplied screenshots with explicit evidence limits and privacy redactions; manual PASS attribution and historical automated/blocked results unchanged."
+    },
+    {
+      "recorded_at": "2026-10-16T13:55:46.671668+08:00",
+      "path": "docs/testing/phase-4a/2026-10-16-missing-browser-02/results.md",
+      "previous_sha256": "4dc7b3a26fc20cc3526700437b42fe844a7d72b5f273d9a6d071a2262156fac5",
+      "current_sha256": "dea03fe006c98ea8676218bd1daddfaaa3f76bffe31b0132cf0a6db762b91566",
+      "reason": "Archived and visually reviewed four user-supplied screenshots with explicit evidence limits and privacy redactions; manual PASS attribution and historical automated/blocked results unchanged."
+    },
+    {
+      "recorded_at": "2026-10-16T13:55:46.671668+08:00",
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/run-manifest.json",
+      "previous_sha256": "72610be3b92c49f9121f374a7060a549aebc30b67d0824938877a824c51aed8a",
+      "current_sha256": "c6bb7cc1fa319e3def65020c74918714dee8baf4d7cfea9faf45fbb07f4cbcbe",
+      "reason": "Archived and visually reviewed four user-supplied screenshots with explicit evidence limits and privacy redactions; manual PASS attribution and historical automated/blocked results unchanged."
+    },
+    {
+      "recorded_at": "2026-10-16T14:08:02.004193+08:00",
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/run-manifest.json",
+      "previous_sha256": "c6bb7cc1fa319e3def65020c74918714dee8baf4d7cfea9faf45fbb07f4cbcbe",
+      "current_sha256": "983340aa9169ab0763581e6f7f614726487a987812d0a8047e0b6fb96d50cb0e",
+      "reason": "Normalize approved documentation CRLF to LF for Git whitespace validation; update dependent artifact digests only. Evidence content, screenshots, test results and prior revision records preserved."
+    },
+    {
+      "recorded_at": "2026-10-16T14:08:02.004193+08:00",
+      "path": "docs/testing/phase-4a/2026-10-16-missing-browser-02/manual-acceptance-manifest.json",
+      "previous_sha256": "94f2b1975329c6f5f766c9a7a6d3ab7d7ab699df234564b43aa0623d717aff63",
+      "current_sha256": "05faca05cf537c6d936c5e863c14ad7382878373215da5e3000cacf686661a33",
+      "reason": "Normalize approved documentation CRLF to LF for Git whitespace validation; update dependent artifact digests only. Evidence content, screenshots, test results and prior revision records preserved."
+    }
+  ],
+  "user_performed_manual_acceptance": {
+    "recorded_at": "2026-10-16T13:12:24.922756+08:00",
+    "source": "Explicit user confirmation in the conversation; not independently observed or executed by Codex.",
+    "performed_by": "USER",
+    "disposable_test_account": "faculty_test01",
+    "test_execution_timestamps": null,
+    "browser_and_version": null,
+    "database_configuration_verified": false,
+    "application": "CCS Faculty Scheduling Decision-Support System",
+    "scenarios": [
+      {
+        "id": "P4A-B08",
+        "status": "PASS — USER CONFIRMED",
+        "page": "Faculty Preferences",
+        "full_test_url": null,
+        "procedure": [
+          "Select Schedule Style: Compact",
+          "Set Schedule Style Importance: Very High",
+          "Save preferences",
+          "Refresh browser",
+          "Inspect saved selections"
+        ],
+        "expected": "Compact and Very High remain saved after refresh.",
+        "actual_user_confirmed": "Both selections remained saved after refresh.",
+        "archived_screenshots": [
+          "docs/screenshots/phase-4a/manual-acceptance/before-change.png",
+          "docs/screenshots/phase-4a/manual-acceptance/after-change.png"
+        ],
+        "screenshot_observations": [
+          {
+            "path": "docs/screenshots/phase-4a/manual-acceptance/before-change.png",
+            "observed": "Schedule Style: No Preference; No changes; Lecture/Laboratory: Same Day, informational importance.",
+            "limit": "No address bar. Does not prove account, Save, refresh, or persistence."
+          },
+          {
+            "path": "docs/screenshots/phase-4a/manual-acceptance/after-change.png",
+            "observed": "Schedule Style: Compact; importance: Very High; Lecture/Laboratory: No Preference.",
+            "limit": "No address bar or save status. Save/refresh and retained selections remain user-confirmed only."
+          }
+        ]
+      },
+      {
+        "id": "P4A-B09",
+        "status": "PASS — USER CONFIRMED",
+        "requested_url": "http://localhost:5173/admin/accounts",
+        "expected": "Faculty cannot access administrator account management.",
+        "actual_user_confirmed": [
+          "Access unavailable",
+          "You do not have permission to open this portal."
+        ],
+        "evidence_scope": "Frontend restriction; automated backend API authorization remains separate.",
+        "archived_screenshots": [
+          "docs/screenshots/phase-4a/manual-acceptance/fcult-admin-denied.png"
+        ],
+        "screenshot_observations": [
+          {
+            "path": "docs/screenshots/phase-4a/manual-acceptance/fcult-admin-denied.png",
+            "observed": "Access unavailable; You do not have permission to open this portal.",
+            "limit": "Faculty identity and prior navigation are user-confirmed; no backend authorization response demonstrated."
+          }
+        ]
+      },
+      {
+        "id": "P4A-B10",
+        "status": "PASS — USER CONFIRMED",
+        "requested_protected_url": "http://localhost:5173/faculty/preferences",
+        "procedure": [
+          "Sign out of faculty account",
+          "Navigate to protected faculty preferences"
+        ],
+        "expected": "Protected content inaccessible; redirects to login.",
+        "actual_user_confirmed": "Login page displayed; browser subsequently showed /login.",
+        "observed_path_reported_by_user": "/login",
+        "archived_screenshots": [
+          "docs/screenshots/phase-4a/manual-acceptance/redirect.png"
+        ],
+        "screenshot_observations": [
+          {
+            "path": "docs/screenshots/phase-4a/manual-acceptance/redirect.png",
+            "observed": "CCS Faculty Scheduling sign-in form at the protected URL; protected preferences absent.",
+            "limit": "Does not show /login, prior logout, or redirect sequence. Populated fields are redacted; not evidence of an empty form."
+          }
+        ]
+      }
+    ],
+    "user_confirmed_passed": 3,
+    "added_codex_executed_scenarios": 0,
+    "automated_test_total_delta": 0,
+    "screenshots": {
+      "source_reported": "User-supplied files in repository manual-acceptance folder",
+      "available_to_codex": true,
+      "inspected_by_codex": true,
+      "archive_status": "USER-PROVIDED EVIDENCE — ARCHIVED AND VISUALLY REVIEWED",
+      "reviewed_at": "2026-10-16T13:55:00.493968+08:00",
+      "repository_files": [
+        "docs/screenshots/phase-4a/manual-acceptance/before-change.png",
+        "docs/screenshots/phase-4a/manual-acceptance/after-change.png",
+        "docs/screenshots/phase-4a/manual-acceptance/fcult-admin-denied.png",
+        "docs/screenshots/phase-4a/manual-acceptance/redirect.png"
+      ],
+      "hashes": [
+        {
+          "path": "docs/screenshots/phase-4a/manual-acceptance/before-change.png",
+          "sha256": "7c317cd05e20a38fb14ecd1d86bc2050fed38eb458d008f7da9e7a15d4ca7952"
+        },
+        {
+          "path": "docs/screenshots/phase-4a/manual-acceptance/after-change.png",
+          "sha256": "504b163b8a38a003dce5858a8c13859fb94742f799d559d1c584b0ee78e2aadb"
+        },
+        {
+          "path": "docs/screenshots/phase-4a/manual-acceptance/fcult-admin-denied.png",
+          "sha256": "057441369005f153bc948a19aec26f397b07bf22e06be18f9fb4d50f2764e8e0"
+        },
+        {
+          "path": "docs/screenshots/phase-4a/manual-acceptance/redirect.png",
+          "sha256": "6b367d3e2fa09e6e5b78b28c55822b86c482a1d77e8185d7d3dad8a6dfbf71f4"
+        }
+      ],
+      "manifest": "docs/testing/phase-4a/2026-10-16-missing-browser-02/manual-acceptance-manifest.json",
+      "captured_at": null,
+      "evidence_limits": [
+        "Preference crops show selections, not the Save/refresh sequence.",
+        "redirect.png shows sign-in at /faculty/preferences, not /login. Logout and later /login remain user-confirmed."
+      ],
+      "privacy_redactions_recorded": true
+    },
+    "historical_codex_attempt_preserved": true,
+    "results_reference": "docs/testing/phase-4a/2026-10-16-missing-browser-02/results.md",
+    "screenshot_archive_revisions": [
+      {
+        "recorded_at": "2026-10-16T13:55:46.671668+08:00",
+        "previous_archive_state": {
+          "source_reported": "User-provided in ChatGPT",
+          "available_to_codex": false,
+          "inspected_by_codex": false,
+          "archive_status": "USER-PROVIDED EVIDENCE — NOT YET ARCHIVED IN THE REPOSITORY",
+          "subjects_reported": [
+            "Faculty preference selections",
+            "Administrator access denial",
+            "Protected-page login redirect",
+            "Login page URL"
+          ],
+          "repository_files": [],
+          "hashes": []
+        },
+        "reason": "Archived and visually reviewed four user-supplied screenshots with explicit evidence limits and privacy redactions; manual PASS attribution and historical automated/blocked results unchanged."
+      }
+    ]
+  },
+  "line_ending_normalization": {
+    "recorded_at": "2026-10-16T14:08:02.004193+08:00",
+    "scope": "Only six approved documentation files; CRLF to LF with dependent hash/provenance updates.",
+    "pre_normalization_artifacts": [
+      {
+        "path": "README.md",
+        "previous_sha256": "f6c6b24998456e15ce6217d56d5e6b8f79cf2399801a511b174534be0b0f4cea"
+      },
+      {
+        "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/api-results.json",
+        "previous_sha256": "4b044b7f378dfa354c12990c03efde9fec02a805104a02da68492ed7e838f7a4"
+      },
+      {
+        "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/run-manifest.json",
+        "previous_sha256": "c6bb7cc1fa319e3def65020c74918714dee8baf4d7cfea9faf45fbb07f4cbcbe"
+      },
+      {
+        "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/screenshots.json",
+        "previous_sha256": "fd2baf970011ab769b605906c12bedb942fbbed6df8fe85fb3c86b0c994e369a"
+      },
+      {
+        "path": "docs/testing/phase-4a/2026-10-16-missing-browser-02/attempt-manifest.json",
+        "previous_sha256": "a0a4de9b0fc057c8bdd2181e32ed0a3a7642b3bd50c5827bf892566dfef8aed6"
+      },
+      {
+        "path": "docs/testing/phase-4a/2026-10-16-missing-browser-02/manual-acceptance-manifest.json",
+        "previous_sha256": "94f2b1975329c6f5f766c9a7a6d3ab7d7ab699df234564b43aa0623d717aff63"
+      }
+    ],
+    "processing_order": [
+      "README.md",
+      "docs/testing/phase-4a/2026-10-16-acceptance-01/api-results.json",
+      "docs/testing/phase-4a/2026-10-16-acceptance-01/screenshots.json",
+      "docs/testing/phase-4a/2026-10-16-missing-browser-02/manual-acceptance-manifest.json",
+      "docs/testing/phase-4a/2026-10-16-acceptance-01/run-manifest.json",
+      "docs/testing/phase-4a/2026-10-16-missing-browser-02/attempt-manifest.json"
+    ],
+    "current_hash_dependency_cycle": false,
+    "note": "Pre-normalization digests are historical provenance, including manifest self-digests; no current self-hash or circular current-hash reference is introduced."
+  }
+}

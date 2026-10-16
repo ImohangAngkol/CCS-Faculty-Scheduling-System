@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "evidence_type": "USER-PERFORMED MANUAL ACCEPTANCE; CODEX FILE INSPECTION ONLY",
+  "reviewed_at": "2026-10-16T13:55:00.493968+08:00",
+  "application": "CCS Faculty Scheduling Decision-Support System",
+  "source_commit_context": "deba151d5963b083681ce88d60b95f858b61a149",
+  "source_commit_of_user_browser_not_independently_verified": true,
+  "test_execution_timestamps": null,
+  "browser_and_version": null,
+  "database_configuration_verified": false,
+  "manual_results": [
+    {
+      "scenario": "P4A-B08",
+      "status": "PASS — USER CONFIRMED"
+    },
+    {
+      "scenario": "P4A-B09",
+      "status": "PASS — USER CONFIRMED"
+    },
+    {
+      "scenario": "P4A-B10",
+      "status": "PASS — USER CONFIRMED"
+    }
+  ],
+  "added_codex_browser_tests": 0,
+  "automated_test_total_delta": 0,
+  "privacy_review": {
+    "all_four_original_and_archived_images_visually_inspected": true,
+    "plaintext_credentials_tokens_cookies_or_private_faculty_records_observed": false,
+    "precautionary_redactions": [
+      "Bookmarks in denial and sign-in images",
+      "Populated username and masked-password fields in sign-in image"
+    ],
+    "original_hashes_preserved": true,
+    "preference_images_byte_identical": true,
+    "earlier_codex_images_unchanged": true
+  },
+  "artifacts": [
+    {
+      "path": "docs/screenshots/phase-4a/manual-acceptance/before-change.png",
+      "scenario": "P4A-B08",
+      "sha256": "7c317cd05e20a38fb14ecd1d86bc2050fed38eb458d008f7da9e7a15d4ca7952",
+      "original_sha256": "7c317cd05e20a38fb14ecd1d86bc2050fed38eb458d008f7da9e7a15d4ca7952",
+      "dimensions": {
+        "width": 1506,
+        "height": 501
+      },
+      "captured_at": null,
+      "captured_by": "USER",
+      "visible_url": null,
+      "observed_by_codex_in_image": "Schedule Style: No Preference; No changes; Lecture/Laboratory: Same Day, informational importance.",
+      "evidence_limit": "No address bar. Does not prove account, Save, refresh, or persistence.",
+      "redaction": {
+        "method": "None; original bytes retained",
+        "rectangles_xyxy_exclusive": [],
+        "outside_redactions_pixel_identical": true,
+        "unredacted_copy_added_to_archive": false
+      }
+    },
+    {
+      "path": "docs/screenshots/phase-4a/manual-acceptance/after-change.png",
+      "scenario": "P4A-B08",
+      "sha256": "504b163b8a38a003dce5858a8c13859fb94742f799d559d1c584b0ee78e2aadb",
+      "original_sha256": "504b163b8a38a003dce5858a8c13859fb94742f799d559d1c584b0ee78e2aadb",
+      "dimensions": {
+        "width": 1585,
+        "height": 333
+      },
+      "captured_at": null,
+      "captured_by": "USER",
+      "visible_url": null,
+      "observed_by_codex_in_image": "Schedule Style: Compact; importance: Very High; Lecture/Laboratory: No Preference.",
+      "evidence_limit": "No address bar or save status. Save/refresh and retained selections remain user-confirmed only.",
+      "redaction": {
+        "method": "None; original bytes retained",
+        "rectangles_xyxy_exclusive": [],
+        "outside_redactions_pixel_identical": true,
+        "unredacted_copy_added_to_archive": false
+      }
+    },
+    {
+      "path": "docs/screenshots/phase-4a/manual-acceptance/fcult-admin-denied.png",
+      "scenario": "P4A-B09",
+      "sha256": "057441369005f153bc948a19aec26f397b07bf22e06be18f9fb4d50f2764e8e0",
+      "original_sha256": "710f7f343b3ffde3830fd5b78fd49ffc856151e2350bc980e574bd7a0e344f94",
+      "dimensions": {
+        "width": 616,
+        "height": 287
+      },
+      "captured_at": null,
+      "captured_by": "USER",
+      "visible_url": "http://localhost:5173/admin/accounts",
+      "observed_by_codex_in_image": "Access unavailable; You do not have permission to open this portal.",
+      "evidence_limit": "Faculty identity and prior navigation are user-confirmed; no backend authorization response demonstrated.",
+      "redaction": {
+        "method": "Opaque RGB (25,25,25) rectangles; no generated/reconstructed content",
+        "rectangles_xyxy_exclusive": [
+          [
+            0,
+            60,
+            616,
+            94
+          ]
+        ],
+        "outside_redactions_pixel_identical": true,
+        "unredacted_copy_added_to_archive": false
+      }
+    },
+    {
+      "path": "docs/screenshots/phase-4a/manual-acceptance/redirect.png",
+      "scenario": "P4A-B10",
+      "sha256": "6b367d3e2fa09e6e5b78b28c55822b86c482a1d77e8185d7d3dad8a6dfbf71f4",
+      "original_sha256": "610a52f9a9a4fd7beac18b5bddd4fc0ecaafedb901399a6f0d764eae412d946d",
+      "dimensions": {
+        "width": 1297,
+        "height": 810
+      },
+      "captured_at": null,
+      "captured_by": "USER",
+      "visible_url": "http://localhost:5173/faculty/preferences",
+      "observed_by_codex_in_image": "CCS Faculty Scheduling sign-in form at the protected URL; protected preferences absent.",
+      "evidence_limit": "Does not show /login, prior logout, or redirect sequence. Populated fields are redacted; not evidence of an empty form.",
+      "redaction": {
+        "method": "Opaque RGB (25,25,25) rectangles; no generated/reconstructed content",
+        "rectangles_xyxy_exclusive": [
+          [
+            0,
+            75,
+            1297,
+            106
+          ],
+          [
+            754,
+            511,
+            1136,
+            550
+          ],
+          [
+            754,
+            589,
+            1136,
+            628
+          ]
+        ],
+        "outside_redactions_pixel_identical": true,
+        "unredacted_copy_added_to_archive": false
+      }
+    }
+  ],
+  "limitations": [
+    "Save/refresh sequence and persistence are user-confirmed, not independently demonstrated by still images.",
+    "The sign-in image shows /faculty/preferences; the later /login URL is user-confirmed only.",
+    "Exact capture times, browser version, database setup and deployed source commit were not independently verified.",
+    "Prior Codex attempts remain blocked; no application/API/database or GA execution performed in archival."
+  ],
+  "archival_validation": {
+    "recorded_at": "2026-10-16T13:55:46.671668+08:00",
+    "relative_documentation_links_checked": 57,
+    "missing_links": 0,
+    "png_artifacts_validated": 11,
+    "protected_backend_frontend_source_notebook_files_byte_identical": 279,
+    "live_faculty_preferences_untouched": true,
+    "original_seven_codex_captures_byte_identical": true,
+    "head_and_index_unchanged": true,
+    "staged_files": 0,
+    "application_tests_rerun": false,
+    "application_api_database_or_ga_execution": false,
+    "proposed_documentation_evidence_commit_files": 26,
+    "live_preferences_excluded_from_proposal": true
+  }
+}
