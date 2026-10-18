@@ -13,6 +13,7 @@ from services import ga_checkpoint_service as checkpoints
 from services import ga_service
 from services.ga_history_service import capture_history, HistoryGenerationMonitor, update_lifecycle
 from services.ga_control_service import RunRegistry, StopConflict, save_stopped_result, timestamp
+from services.ga_input_validation_service import validate_ga_inputs
 from uuid import UUID
 
 from fastapi import (
@@ -48,6 +49,7 @@ ga_service.GenerationMonitor = HistoryGenerationMonitor
 
 
 def _execute_with_history(control, **parameters):
+    validate_ga_inputs()
     def warning(message):
         # Complete lines go directly to the thread-safe run buffer, preserving
         # foreground partial-line capture and reconnectable warning delivery.
@@ -61,6 +63,8 @@ def _execute_with_history(control, **parameters):
 
 
 def _admit_execution(cancellable=True, configuration=None):
+    # Reject corrupt source data before registration or durable marker writes.
+    validate_ga_inputs()
     if not _ga_execution_lock.acquire(blocking=False):
         raise HTTPException(status_code=409, detail="Another Genetic Algorithm execution is already in progress.")
     try:
@@ -286,6 +290,7 @@ def get_checkpoint_status(run_id: str, process_instance_id: str | None = Header(
 
 
 def _launch_resume(control, stopping=False):
+    validate_ga_inputs()
     if not _ga_execution_lock.acquire(blocking=False):
         raise HTTPException(status_code=409, detail={"code": "GA_EXECUTION_BUSY", "message": "Another GA worker owns execution admission."})
     claimed = False
