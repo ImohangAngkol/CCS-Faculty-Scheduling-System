@@ -270,3 +270,43 @@ The PostgreSQL service was available, but the owner requested isolated tests and
 - **FIX STATUS:** FIXED. In-memory session revision guards expiration; private WeakMap associates Axios configuration with its request revision. No extra tracking header is sent; server checks remain unchanged.
 - **REGRESSION TEST:** Old/current session 401 cases for fetch and Axios: four passing after fix, two failures reproduced before fix. See phase-4a-final-verification.md for complete current evidence.
 - **REMAINING RISK:** Cross-tab account context can require refresh; no multi-tab synchronization or production PostgreSQL concurrency certification is claimed.
+
+## Phase 4B.1 input-admission correction (2026-10-16)
+
+The preceding totals are the historical Phase 4A snapshot. Phase 4B.1 adds BUG-011 below: latest supported-scope totals are **11 confirmed, 11 fixed, zero unresolved confirmed defects** (eight application defects and three earlier test-harness defects). The new evidence-runner console incident is documented separately, not counted as a production authentication/GA defect. PostgreSQL acceptance is BLOCKED by a missing designated environment variable; skipped tests and unavailable browser evidence are not bugs or passes.
+
+### BUG-011: corrupt preference storage silently admitted to GA execution
+
+- **SEVERITY:** HIGH (input integrity and preference correctness; no demonstrated hard-constraint bypass).
+- **AFFECTED ENDPOINTS:** POST /api/ga/generate, /run, /stream and resumed-worker admission.
+- **ENVIRONMENT:** Phase 4B.1 isolated temporary input/storage files; TestClient with explicit administrator principal for GA behavior tests. Real credential/ownership behavior is separately regressed.
+- **REPRODUCTION:** Supply malformed preference JSON to a temporary engine input path; submit GA start with execution spies.
+- **EXPECTED:** Actionable error before run registration, durable marker, history or optimization.
+- **ACTUAL BEFORE FIX:** HTTP 200 on /generate; desired admission regression failed (200 != 503). The legacy loaders return empty containers after parsing errors. No production GA was run for reproduction.
+- **ROOT CAUSE:** GA loaders catch malformed/unreadable input and substitute defaults; admission had no stored-input validation.
+- **FILES:** backend/services/ga_input_validation_service.py; backend/routers/genetic_algorithm.py; backend/tests/test_ga_input_validation.py.
+- **FIX STATUS:** FIXED at the API admission boundary, with worker-entry and resume rechecks. The fingerprinted loaders/scorer themselves remain unchanged. Missing files retain defaults; present null/malformed/invalid storage is rejected.
+- **REGRESSION:** All start paths; invalid/missing/empty/unreadable data; preserved artifact sentinels; authentication-before-diagnostics; no worker/RNG/fitness side effects; seeded valid-input equivalence. See the [Phase 4B ledger](testing/phase-4b/README.md) for final executed counts and initial failures.
+- **REMAINING RISK:** Direct notebook/Python calls bypass this API guard. No OS-level input lease or multiworker contract is added. Stored legacy records retain their existing response schema; the new-edit eligibility/pattern contract remains unchanged. PostgreSQL/browser acceptance is still blocked.
+
+## Phase 4B.1 PostgreSQL safety-gate correction (2026-10-18)
+
+Earlier eleven-defect totals remain historical. Latest supported-scope totals are **12 confirmed, 12 corrected, zero unresolved code defects within their documented scope** (eight application defects and four test-harness defects). BUG-012 is corrected and offline-tested; real PostgreSQL preflight and acceptance remain pending. No online acceptance pass is implied.
+
+### BUG-012: valid IPv4 server rejected because inet text includes its netmask
+
+- **BUG ID:** BUG-012
+- **SEVERITY:** MEDIUM (acceptance harness blocks a valid target; no weakened gate or production scheduling defect).
+- **AFFECTED PAGE / ENDPOINT:** PostgreSQL acceptance setup, `inspect_empty_database()`; no application endpoint changed.
+- **ENVIRONMENT:** User-executed Windows/PostgreSQL acceptance on 2026-10-18 at 09:56 +08:00; Codex offline regression at 10:02 +08:00.
+- **REPRODUCTION STEPS:** Run the documented PostgreSQL group against the intended IPv4 target. The catalog query casts `inet_server_addr()` to `text`, then compares it with the unmasked literal `127.0.0.1`.
+- **EXPECTED RESULT:** An otherwise valid IPv4 target passes host verification; all other safety conditions remain mandatory.
+- **ACTUAL RESULT:** Two setup errors, zero test bodies executed, then stop under `--maxfail=2`. Alembic upgrade was not reached. See the unchanged [user-run evidence](testing/phase-4b/20261018T095643+0800-postgresql-ab3e0ed0.json).
+- **ERROR MESSAGE / STACK TRACE:** `Connected server identity/privileges failed the safety gate; no writes permitted.` Pytest reported `2 warnings, 2 errors in 1.73s`; runner exit 1. These are setup errors, not two passed or completed acceptance cases.
+- **ROOT CAUSE:** PostgreSQL's explicit `inet::text` conversion includes the mask (`127.0.0.1/32`), so the host predicate necessarily rejects even the intended address. [PostgreSQL documentation](https://www.postgresql.org/docs/18/functions-net.html) describes the conversion and `host(inet)` extraction. Original evidence does not capture returned catalog values, so additional mismatches remain unverified. This does not justify accepting IPv6 or other loopback addresses.
+- **FILES INVOLVED:** `backend/tests/phase4b_database_safety.py`; `backend/tests/test_phase4b_database_safety.py`.
+- **FIX STATUS:** CORRECTED; OFFLINE VERIFIED. Only `inet_server_addr()::text AS host` becomes `host(inet_server_addr()) AS host`. Exact IPv4 comparison, URL checks, role restrictions, timeouts, read-only mode, schema and emptiness checks are unchanged.
+- **REGRESSION TEST:** [27 offline tests passed](testing/phase-4b/20261018T100212+0800-safety-gate-offline-7c09a63e.json). Query-contract regression requests mask-free IPv4 extraction. Negative cases cover IPv6/mapped IPv6/unexpected/missing/masked addresses, wrong database/role/port/schema, elevated privileges, writable transactions, nonempty relations, URL overrides and credential-safe errors. Existing positive test also asserts SELECT-only catalog access, timeouts, disposal and relation-filter SQL.
+- **REMAINING RISK:** Offline fake-engine tests do not execute PostgreSQL's `host()` function. A fresh read-only preflight must confirm actual server conditions. No migration, PostgreSQL acceptance test, browser scenario or GA generation was run for this fix. No automatic retry/reset is authorized.
+
+**BUG-012 follow-up (2026-10-18):** the user's later [PostgreSQL execution](testing/phase-4b/20261018T100533+0800-postgresql-e2beb33f.json) passed all 14 cases after the correction, including preflight/migration assertions. This supplements the earlier offline verification without rewriting it. Codex inspected the successful record; no online rerun or database change occurred during this review. The three warning details are unavailable because the summary was suppressed. Browser fixture hardening remains planned separately; no additional confirmed application defect or defect-count change is asserted.

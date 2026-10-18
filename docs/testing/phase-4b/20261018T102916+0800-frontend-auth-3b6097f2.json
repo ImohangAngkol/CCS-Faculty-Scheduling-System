@@ -1,0 +1,28 @@
+{
+  "run_id": "20261018T102916+0800-frontend-auth-3b6097f2",
+  "group": "frontend-auth",
+  "started_at": "2026-10-18T10:29:16.241960+08:00",
+  "ended_at": "2026-10-18T10:29:23.186903+08:00",
+  "elapsed_seconds": 6.945,
+  "cwd": "frontend",
+  "command": [
+    "cmd",
+    "/d",
+    "/c",
+    "npm.cmd",
+    "run",
+    "test:auth"
+  ],
+  "exit_code": 0,
+  "python": "3.14.2",
+  "packages": {
+    "pytest": "9.1.1",
+    "SQLAlchemy": "2.0.52",
+    "fastapi": "0.141.1",
+    "alembic": "1.19.2",
+    "psycopg2-binary": "2.9.12"
+  },
+  "phase4b_test_url_present": false,
+  "phase4b_browser_url_present": false,
+  "output": "\n> frontend@0.0.0 test:auth\n> node --test tests/auth.test.mjs tests/authSessionRace.test.mjs\n\n✔ role home is derived from server role and malformed binding is rejected (2.8623ms)\n✔ fetch sends cookies, memory-only CSRF and existing GA process headers (1.9702ms)\n✔ GET is read-only and axios shares cookie and CSRF transport (8.2939ms)\n✔ auth errors preserve 401/403/503 and network failures are actionable (7.8096ms)\n✔ fetch: late prior-session 401 preserves a new login (6.7341ms)\n✔ fetch: current-session 401 still expires authentication (2.8139ms)\n✔ axios: late prior-session 401 preserves a new login (19.1392ms)\n✔ axios: current-session 401 still expires authentication (1.9384ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 3914.2405\n"
+}

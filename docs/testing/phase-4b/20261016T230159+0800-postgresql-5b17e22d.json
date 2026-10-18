@@ -1,0 +1,32 @@
+{
+  "run_id": "20261016T230159+0800-postgresql-5b17e22d",
+  "group": "postgresql",
+  "started_at": "2026-10-16T23:01:59.361435+08:00",
+  "ended_at": "2026-10-16T23:02:01.986852+08:00",
+  "elapsed_seconds": 2.625,
+  "cwd": "repository root",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "backend/tests/test_phase4b_postgresql.py",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--disable-warnings",
+    "--tb=short",
+    "--maxfail=2",
+    "--basetemp=C:\\Users\\User\\AppData\\Local\\Temp\\phase4b-20261016T230159+0800-postgresql-5b17e22d"
+  ],
+  "exit_code": 0,
+  "python": "3.14.2",
+  "packages": {
+    "pytest": "9.1.1",
+    "SQLAlchemy": "2.0.52",
+    "fastapi": "0.141.1",
+    "alembic": "1.19.2",
+    "psycopg2-binary": "2.9.12"
+  },
+  "phase4b_test_url_present": false,
+  "output": "ssssssssssssss                                                           [100%]\n14 skipped, 2 warnings in 1.41s\n"
+}

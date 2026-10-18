@@ -1,0 +1,47 @@
+{
+  "recorded_at": "2026-10-16T23:14:34.007074+08:00",
+  "execution_timestamps_for_initial_uninstrumented_reproductions": null,
+  "incidents": [
+    {
+      "id": "P4B-REPRO-001",
+      "kind": "expected pre-fix product reproduction",
+      "command": ".venv/Scripts/python.exe -m pytest backend/tests/test_ga_input_validation.py -q -p no:cacheprovider --disable-warnings --tb=short --maxfail=1 --basetemp=<new OS-temp phase4b-admission-repro path>",
+      "exit_code": 1,
+      "passed": 0,
+      "failed": 1,
+      "pytest_elapsed_seconds": 4.79,
+      "finding": "Malformed temporary preference input admitted on /generate: HTTP 200 rather than 503. Execution spy only; no production GA."
+    },
+    {
+      "id": "P4B-FIXTURE-001",
+      "kind": "test-only correction",
+      "command": ".venv/Scripts/python.exe -m pytest backend/tests/test_ga_input_validation.py -q -p no:cacheprovider --disable-warnings --tb=short --maxfail=1 --basetemp=<new OS-temp phase4b-admission-after path>",
+      "exit_code": 1,
+      "passed": 48,
+      "failed": 1,
+      "pytest_elapsed_seconds": 3.79,
+      "finding": "Manually constructed PAUSED test control had a running elapsed clock; snapshots differed by 4ms. Fixture now freezes ended_clock like a real paused control. No production lifecycle change."
+    },
+    {
+      "id": "P4B-EVIDENCE-001",
+      "kind": "evidence-runner console encoding",
+      "affected_artifacts": [
+        "20261016T230234+0800-frontend-auth-e87a852a.json",
+        "20261016T230235+0800-frontend-preferences-3a541c8b.json",
+        "20261016T230236+0800-frontend-ga-741573e0.json"
+      ],
+      "child_exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "outer_runner_exit_codes": [
+        1,
+        1,
+        1
+      ],
+      "finding": "Children passed and UTF-8 JSON was saved, then printing a Unicode checkmark to cp1252 raised UnicodeEncodeError. Artifact exit_code is the child code, not outer runner success.",
+      "fix": "Evidence-only runner configures its own stdout UTF-8/backslashreplace. All three commands rerun successfully; initial artifacts retained. Production GA logging unchanged."
+    }
+  ]
+}

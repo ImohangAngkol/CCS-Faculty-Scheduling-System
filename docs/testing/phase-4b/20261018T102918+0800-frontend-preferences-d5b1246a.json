@@ -1,0 +1,28 @@
+{
+  "run_id": "20261018T102918+0800-frontend-preferences-d5b1246a",
+  "group": "frontend-preferences",
+  "started_at": "2026-10-18T10:29:18.617888+08:00",
+  "ended_at": "2026-10-18T10:29:23.186387+08:00",
+  "elapsed_seconds": 4.569,
+  "cwd": "frontend",
+  "command": [
+    "cmd",
+    "/d",
+    "/c",
+    "npm.cmd",
+    "run",
+    "test:preferences"
+  ],
+  "exit_code": 0,
+  "python": "3.14.2",
+  "packages": {
+    "pytest": "9.1.1",
+    "SQLAlchemy": "2.0.52",
+    "fastapi": "0.141.1",
+    "alembic": "1.19.2",
+    "psycopg2-binary": "2.9.12"
+  },
+  "phase4b_test_url_present": false,
+  "phase4b_browser_url_present": false,
+  "output": "\n> frontend@0.0.0 test:preferences\n> node --test tests/preferenceModel.test.mjs tests/preferenceApi.test.mjs\n\n✔ authentication, storage and validation errors are shown accurately (2.7754ms)\n✔ disabled flags and optional null fields round trip without client identity headers (2.8835ms)\n✔ a denied save rejects instead of returning fabricated success (3.5658ms)\n✔ normal faculty selector excludes external instructors (2.7639ms)\n✔ eligibility and preassignment, not domain or prefix, authorize selection (0.3602ms)\n✔ categories and code/title search are independent browsing filters (0.1639ms)\n✔ no fake labs or lectures, and zero hour metadata is not rendered (0.4935ms)\n✔ duration labels reflect real metadata and supported alternatives (0.5082ms)\n✔ calendar supports moving and prohibits both forms of resizing (0.1262ms)\n✔ moving a lab always uses authoritative 180 minute duration (7.3065ms)\n✔ moving lectures preserves 60,120,180 or 90 minute backend requirements (0.3947ms)\n✔ ineligible components and guessed patterns cannot be placed (0.2176ms)\n✔ two lecture meetings are a complete removable group and move independently (0.8717ms)\n✔ external placement uses the exact dropped start and rejects a placed component (0.5822ms)\n✔ paired external placement stays complete and cannot be duplicated with another pattern (0.3322ms)\n✔ drag and rank dropdown share one unique ordered list (0.1571ms)\n✔ importance is hidden when disabled and zero is retained and described (0.0894ms)\n✔ dirty state detects changes and becomes clean on discard or save (0.8038ms)\n✔ general periods retain duration and do not invent subject placements (0.5932ms)\n✔ legacy preferred periods can be edited without an automatic dirty state (0.3161ms)\n✔ editing or removing meetings preserves deliberately disabled day/time scoring (0.2722ms)\n✔ older invalid preferences are explained rather than silently discarded (0.2503ms)\nℹ tests 22\nℹ suites 0\nℹ pass 22\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 3841.7254\n"
+}

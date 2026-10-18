@@ -1,0 +1,36 @@
+{
+  "run_id": "20261018T102915+0800-browser-offline-a6cf6d43",
+  "group": "browser-offline",
+  "started_at": "2026-10-18T10:29:15.172300+08:00",
+  "ended_at": "2026-10-18T10:29:26.323724+08:00",
+  "elapsed_seconds": 11.151,
+  "cwd": "repository root",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "backend/tests/test_phase4b_database_safety.py",
+    "backend/tests/test_phase4b_browser_safety.py",
+    "backend/tests/test_phase4b_browser_fixture.py",
+    "backend/tests/test_phase4b_browser_evidence.py",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--disable-warnings",
+    "--tb=short",
+    "--maxfail=2",
+    "--basetemp=C:\\Users\\User\\AppData\\Local\\Temp\\phase4b-20261018T102915+0800-browser-offline-a6cf6d43"
+  ],
+  "exit_code": 1,
+  "python": "3.14.2",
+  "packages": {
+    "pytest": "9.1.1",
+    "SQLAlchemy": "2.0.52",
+    "fastapi": "0.141.1",
+    "alembic": "1.19.2",
+    "psycopg2-binary": "2.9.12"
+  },
+  "phase4b_test_url_present": false,
+  "phase4b_browser_url_present": false,
+  "output": "........................................................................ [ 79%]\n........F..........                                                      [100%]\n================================== FAILURES ===================================\n_________________ test_private_temp_directory_acl_is_verified _________________\nbackend\\tests\\test_phase4b_browser_fixture.py:273: in test_private_temp_directory_acl_is_verified\n    support.secure_private_directory(root)\nbackend\\tests\\phase4b_browser_support.py:199: in secure_private_directory\n    raise SafetyError(\"Private Windows fixture ACL could not be established/verified; details withheld.\")\nE   tests.phase4b_database_safety.SafetyError: Private Windows fixture ACL could not be established/verified; details withheld.\n=========================== short test summary info ===========================\nFAILED backend/tests/test_phase4b_browser_fixture.py::test_private_temp_directory_acl_is_verified\n1 failed, 90 passed, 2 warnings in 8.91s\n"
+}

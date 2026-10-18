@@ -1,0 +1,34 @@
+{
+  "run_id": "20261016T232435+0800-admission-366311ce",
+  "group": "admission",
+  "started_at": "2026-10-16T23:24:35.676022+08:00",
+  "ended_at": "2026-10-16T23:25:08.298503+08:00",
+  "elapsed_seconds": 32.623,
+  "cwd": "repository root",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "backend/tests/test_ga_input_validation.py",
+    "backend/tests/test_phase4b_database_safety.py",
+    "backend/tests/test_phase4b_browser_fixture.py",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--disable-warnings",
+    "--tb=short",
+    "--maxfail=2",
+    "--basetemp=C:\\Users\\User\\AppData\\Local\\Temp\\phase4b-20261016T232435+0800-admission-366311ce"
+  ],
+  "exit_code": 0,
+  "python": "3.14.2",
+  "packages": {
+    "pytest": "9.1.1",
+    "SQLAlchemy": "2.0.52",
+    "fastapi": "0.141.1",
+    "alembic": "1.19.2",
+    "psycopg2-binary": "2.9.12"
+  },
+  "phase4b_test_url_present": false,
+  "output": "........................................................................ [ 88%]\n.........                                                                [100%]\n81 passed, 2 warnings in 29.82s\n"
+}

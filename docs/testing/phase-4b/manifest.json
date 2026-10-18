@@ -1,0 +1,3418 @@
+{
+  "schema_version": 1,
+  "phase": "4B.1",
+  "recorded_at": "2026-10-18T12:54:05.683926+08:00",
+  "source_commit": "c770c841259b968132f8ce6b48ae5cb36df35171",
+  "assessment": "POSTGRESQL ACCEPTANCE USER PASS; SIX BROWSER FUNCTIONAL PASSES USER CONFIRMED; WRITTEN-ONLY EVIDENCE; SCREENSHOTS NOT CAPTURED; AUTOMATED BROWSER EXECUTION NOT ESTABLISHED",
+  "database": {
+    "environment_variable": "PHASE4B_TEST_DATABASE_URL",
+    "source": "User-executed existing artifact, inspected by Codex without database access",
+    "success_artifact": "docs/testing/phase-4b/20261018T100533+0800-postgresql-e2beb33f.json",
+    "user_execution_url_present": true,
+    "application_url_fallback_used": false,
+    "user_execution_connected_and_migrated": true,
+    "codex_connected_or_migrated_during_this_review": false,
+    "acceptance": "14 PASSED, 0 FAILED, 0 SKIPPED, 3 WARNINGS",
+    "pytest_seconds": 12.23,
+    "runner_seconds": 13.66,
+    "warning_messages": null,
+    "warning_limitation": "--disable-warnings suppressed individual warning messages; no exact attribution is available",
+    "server_version_in_supplied_artifact": null,
+    "successful_database_reset_or_reuse_approved": false
+  },
+  "verification": {
+    "backend_distinct_passed": 503,
+    "backend_groups": {
+      "admission_safety_helper": 81,
+      "auth": 61,
+      "domain": 219,
+      "ga_lifecycle_history": 142
+    },
+    "existing_browser_cases_deselected": 2,
+    "postgresql_skipped": 0,
+    "frontend_contracts_passed": 78,
+    "frontend_groups": {
+      "auth": 8,
+      "preferences": 22,
+      "ga": 48
+    },
+    "production_frontend_build": "PASS; existing >500 kB chunk warning",
+    "focused_frontend_lint": "PASS; five authentication modules only",
+    "full_project_lint": "NOT RUN",
+    "browser_scenarios_executed": 0,
+    "browser_scenarios_blocked": 6,
+    "screenshots": 0,
+    "earlier_failed_attempts": "Retained in collection-incidents.json and earlier execution JSON; repeated successes not counted twice",
+    "historical_group_context": "Original 503/78 code/frontend results describe earlier execution scopes; not recomputed or rerun during this documentation review",
+    "previous_postgresql_skipped": 14,
+    "postgresql_passed": 14,
+    "postgresql_warnings": 3
+  },
+  "inventory": [
+    {
+      "path": "backend/routers/genetic_algorithm.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "backend/services/ga_input_validation_service.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/phase4b_browser_recovery.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/phase4b_browser_safety.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/phase4b_browser_support.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/phase4b_database_safety.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/test_ga_input_validation.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/test_phase4b_browser_evidence.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/test_phase4b_browser_fixture.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/test_phase4b_browser_recovery.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/test_phase4b_browser_safety.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/test_phase4b_database_safety.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "backend/tests/test_phase4b_postgresql.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/implementation-roadmap-status.md",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "docs/phase-4b-postgresql-verification.md",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/screenshots/phase-4b/README.md",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/system-bug-report.md",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "docs/testing/phase-4b/2026-10-16-resume-01/acceptance-status.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230130+0800-admission-1fd0a944.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230148+0800-auth-6d4c0d92.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230159+0800-postgresql-5b17e22d.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230233+0800-ga-95b3a329.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230234+0800-domain-77bdae01.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230234+0800-frontend-auth-e87a852a.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230235+0800-frontend-preferences-3a541c8b.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230236+0800-frontend-ga-741573e0.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230313+0800-frontend-auth-dbed8e40.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230313+0800-frontend-preferences-f0bc29ed.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230314+0800-build-713f666a.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230314+0800-frontend-ga-25d59fcf.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230315+0800-lint-b0358b7d.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230545+0800-admission-bcc53354.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T231114+0800-admission-e0a6b0f7.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T231746+0800-admission-39ee929c.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T232435+0800-admission-366311ce.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T234917+0800-admission-18ef74b1.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T234917+0800-auth-8f4fc74d.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T234917+0800-postgresql-9d993683.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T234918+0800-frontend-auth-434d000f.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T234919+0800-frontend-preferences-f6a78a03.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T095643+0800-postgresql-ab3e0ed0.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T100212+0800-safety-gate-offline-7c09a63e.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T100533+0800-postgresql-e2beb33f.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T102915+0800-browser-offline-a6cf6d43.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T102916+0800-frontend-auth-3b6097f2.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T102917+0800-auth-ae3212b4.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T102918+0800-frontend-preferences-d5b1246a.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T102919+0800-frontend-ga-96e4276b.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T103008+0800-browser-offline-496f2ecf.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T103133+0800-browser-offline-354d402a.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T103234+0800-browser-offline-d1531e28.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T104004+0800-browser-offline-c9b696bd.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T104156+0800-browser-offline-3fc460e7.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124430+0800-browser-offline-e3861185.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124739+0800-browser-offline-8fe74e92.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124831+0800-browser-offline-a0883cb8.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124832+0800-auth-bcf8ebc9.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124833+0800-frontend-auth-5addb12f.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124834+0800-frontend-preferences-d0aa5fd2.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124836+0800-frontend-ga-88a9fe6a.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124936+0800-browser-offline-517a1187.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/README.md",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/browser-acceptance-plan.md",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/browser-acceptance.md",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/collection-incidents.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/database-environment-recheck.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/manifest.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/manual-acceptance-manifest.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/manual-acceptance-results.md",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/record_browser_evidence.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/run_checks.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/serve_browser_fixture.py",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/stage-a-fixture-preparation.md",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/stage-a-manifest.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/stage-b-recovery-manifest.json",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/testing/phase-4b/stage-b-recovery-offline.md",
+      "status": "PENDING"
+    },
+    {
+      "path": "docs/thesis-evidence/phase-4b-evidence.md",
+      "status": "PENDING"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "backend/routers/genetic_algorithm.py",
+      "sha256": "0e5795649ca233f4204b78c9e1b7c77f18de6fb6a1ef517c0943a74e66fe68d0"
+    },
+    {
+      "path": "backend/services/ga_input_validation_service.py",
+      "sha256": "1559681bb3e83f289f01bec8645d6cfd177025d3f866774a1574f6eff644c4c5"
+    },
+    {
+      "path": "backend/tests/phase4b_browser_recovery.py",
+      "sha256": "139079dd0bd1b90e7586bda32af663adef575235d98ff9f23fe77e8b9a6dda38"
+    },
+    {
+      "path": "backend/tests/phase4b_browser_safety.py",
+      "sha256": "5593f5e0dea30b5946ffed004f177f68060c13262535040b3f090b352677c6eb"
+    },
+    {
+      "path": "backend/tests/phase4b_browser_support.py",
+      "sha256": "29bfc64ed81464654a002840574b1c0a6200dabbbb86ccf269df74d6a2da5bf5"
+    },
+    {
+      "path": "backend/tests/phase4b_database_safety.py",
+      "sha256": "2165b112d7024b5c4d9d883649e683d37addc029bf2fd0d4dd419b7b85215776"
+    },
+    {
+      "path": "backend/tests/test_ga_input_validation.py",
+      "sha256": "ace07a9a41d604f3e8224d44200c766aa584c17e6db6a23b842b10675ef6373b"
+    },
+    {
+      "path": "backend/tests/test_phase4b_browser_evidence.py",
+      "sha256": "363664e9ef845686e9911f009577d90a66827cd64c4f5067b04ec4fb44e59e93"
+    },
+    {
+      "path": "backend/tests/test_phase4b_browser_fixture.py",
+      "sha256": "ce427d9f106475b30f6df758e8b0e75e8b820f1d3b4e43afaf7818cc9429836c"
+    },
+    {
+      "path": "backend/tests/test_phase4b_browser_recovery.py",
+      "sha256": "c4e60891b4bfc05389193e791c6510e38cc8eb5ee12cb68fe44c04871d4003cf"
+    },
+    {
+      "path": "backend/tests/test_phase4b_browser_safety.py",
+      "sha256": "c5c64315edba6226a54e8fda4c4f151c5712e9fe99ce94cac68f5ca1f57f3447"
+    },
+    {
+      "path": "backend/tests/test_phase4b_database_safety.py",
+      "sha256": "eb7113d05a6b6e871ff7621e1a95ee6e4b420fb8ed5550db31e7068dfa6f939c"
+    },
+    {
+      "path": "backend/tests/test_phase4b_postgresql.py",
+      "sha256": "45cc8cc60a813f0b1074674e99ba56ac214074800e746c5c1af4fb380bd2a2e2"
+    },
+    {
+      "path": "docs/implementation-roadmap-status.md",
+      "sha256": "5a4a37f3825b404c4d43b6c0252c23f7ea189c4e850d76f80f6386c8342f2622"
+    },
+    {
+      "path": "docs/phase-4b-postgresql-verification.md",
+      "sha256": "7a1abb39c7da24f2c8bedf80c7d9ad2c7f680b0bf17bb9a4d8b9347e1fa99822"
+    },
+    {
+      "path": "docs/screenshots/phase-4b/README.md",
+      "sha256": "467bd451de6388e65a9a0c3697456bd0569a5fd0e6b97e9eefc623c003b5072a"
+    },
+    {
+      "path": "docs/system-bug-report.md",
+      "sha256": "ab9b561a002187774ca8ab58610752dc432d23a492e5dbe537418fd09e71c167"
+    },
+    {
+      "path": "docs/testing/phase-4b/2026-10-16-resume-01/acceptance-status.json",
+      "sha256": "ba46149b6e26091c9eca8fa55bb46b4b40bbd74edfacf9c19356031736ddb7da"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230130+0800-admission-1fd0a944.json",
+      "sha256": "5fe99e5488aacf852f916c76e59e82fa6662d53f7b8ee36ea21e51698d20844c"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230148+0800-auth-6d4c0d92.json",
+      "sha256": "c727d7f76b086493c5cb71dc51d44689de009c27c5bef22b89ddb0cba03a9a70"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230159+0800-postgresql-5b17e22d.json",
+      "sha256": "b69f73e3ee06a5a879169a9c573f6d41cea534aae7960848c0bd8f0a31e77b07"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230233+0800-ga-95b3a329.json",
+      "sha256": "84d8398a5c2bb8bd4d5d32c85e9e6da36fbf9e800570199eb38a93718ab5a93e"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230234+0800-domain-77bdae01.json",
+      "sha256": "37aa3deb41239f1289ddcf408dd5f5920457581daf7651ce4db1738f9e5b4c1c"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230234+0800-frontend-auth-e87a852a.json",
+      "sha256": "baf68f9dba75532155f94c44b7f17bb5c52699385934ecc6b50d81675e1d9f4b"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230235+0800-frontend-preferences-3a541c8b.json",
+      "sha256": "ce381294005acb9051ab46a7d5c36893cf9157d9268ec725df91260a40ece228"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230236+0800-frontend-ga-741573e0.json",
+      "sha256": "dc241686b19d16b48f85bf13ef60ecdba8610dda21faa3e67076ba5be39c90cd"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230313+0800-frontend-auth-dbed8e40.json",
+      "sha256": "b741d4a7ecbf59be6fa4f189fd0b89dbb7df1480ac3e00eedcc07e7d2354c0ed"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230313+0800-frontend-preferences-f0bc29ed.json",
+      "sha256": "55c5433a2b9147cc4db76c165a2e17f6edf3f314ae6e1b6a139dcc4c05feddac"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230314+0800-build-713f666a.json",
+      "sha256": "0c3843a9b893acfd21bdb5ef876c6e6a9ff8bc3b3c0c7811f191959bd1de8e67"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230314+0800-frontend-ga-25d59fcf.json",
+      "sha256": "cefc30278a169b2b2e111f53279c4e0085f93c7f659c023f47361c7fe502e871"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230315+0800-lint-b0358b7d.json",
+      "sha256": "9eb1cca520efd00bcaac077dd98ebcb56cff0d0a1127bc4f40f9cec9553b1cb2"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T230545+0800-admission-bcc53354.json",
+      "sha256": "c64f4f44942b09e4f49a96b9613ca07611806f950334bed7283deb15317fb595"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T231114+0800-admission-e0a6b0f7.json",
+      "sha256": "e4c7fcf2164aefabc6b21d8d57fd4f8cf87576fe0ebc5cff393aec706654b87c"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T231746+0800-admission-39ee929c.json",
+      "sha256": "d39224be9be0b016469934b0a703d07b6d3b74369b2cce31764cc40373d24b64"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T232435+0800-admission-366311ce.json",
+      "sha256": "d4c3b45d44314e9f795d257c0e9e5410b45b7fe59f39c5675f4d03d4224e84fb"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T234917+0800-admission-18ef74b1.json",
+      "sha256": "8979b4557148d20c7e70c0fb720497242d722ff3968fa6cad044c27a2f0596da"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T234917+0800-auth-8f4fc74d.json",
+      "sha256": "148d80d1d916cd317f7e5c152c79610fa1b69cfd6137a162bd04ac09a25b3b52"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T234917+0800-postgresql-9d993683.json",
+      "sha256": "30a714d2c26c9f9de968ba77643b89891817dbb9e678666cf35665ff0b510a67"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T234918+0800-frontend-auth-434d000f.json",
+      "sha256": "542ddf0cc86d22d48ba9d906db37c93c6531195ecc96c107e23ad583a95b061e"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261016T234919+0800-frontend-preferences-f6a78a03.json",
+      "sha256": "df541620e7a21c9aea64e7094ba593c62782617e125be365937da0b72b40e162"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T095643+0800-postgresql-ab3e0ed0.json",
+      "sha256": "995f352ca97031044d0eb407d5b7ed27d8f0d64b00d791fd6fa18ac790d2db26"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T100212+0800-safety-gate-offline-7c09a63e.json",
+      "sha256": "cfdee7ee32d5110bcaf743304fb7ea4d231ed4b77ee5f2dffcdbf084575d6a06"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T100533+0800-postgresql-e2beb33f.json",
+      "sha256": "6b41138f7f2c9b0b10b7b79dbdf4f99eb084e0cfbc27f6e4b45a2ea0502d3e4b"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T102915+0800-browser-offline-a6cf6d43.json",
+      "sha256": "c82344b4d5df5ca333e36bce84ec5d92c8b5784aac6260d88031da29bd1829eb"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T102916+0800-frontend-auth-3b6097f2.json",
+      "sha256": "8b0c15eb72b205ba60a43d59ec5c9aa6f436df71328539106c9599c5931bcbd3"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T102917+0800-auth-ae3212b4.json",
+      "sha256": "7ea3553ff42ea1b4c6d8dfbd0fb411640cb73a5ce120e15c4908b03e06ba8121"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T102918+0800-frontend-preferences-d5b1246a.json",
+      "sha256": "b5fe8162ce1cb09d0ae7bf93e917ee08b0bb443c8164b211ab86c6049ec55eec"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T102919+0800-frontend-ga-96e4276b.json",
+      "sha256": "66ccd28ed9606e2c57f486ddcb294416e2d709725370ee5bd4248d3e6f9d57b1"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T103008+0800-browser-offline-496f2ecf.json",
+      "sha256": "1e4109a9d55ecd86b90294f352951136060b1aa4124fd0fa1f078c872735eaf4"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T103133+0800-browser-offline-354d402a.json",
+      "sha256": "9b3dc4559e7683c662508a251926f49a361d72c7fff0bf19b1caf7d393ad3538"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T103234+0800-browser-offline-d1531e28.json",
+      "sha256": "8b169503fade4f60ee2de176022d44becbcbae264e85fafd83992eeaf92da7db"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T104004+0800-browser-offline-c9b696bd.json",
+      "sha256": "b90e9b2fd2d4e26cd5c80a009d1b92cac8c91f1ec471c5c3797a4308b7b3d81a"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T104156+0800-browser-offline-3fc460e7.json",
+      "sha256": "a7b96d3795b11805735609418e4e91cec7e4ee2f3eb86840213213811e6fa16f"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124430+0800-browser-offline-e3861185.json",
+      "sha256": "c2155d31867b23d4f0eaf166a878770875e671ae858ab5195b1b6747046de8c7"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124739+0800-browser-offline-8fe74e92.json",
+      "sha256": "c38f165decce8a5c3af864c7b3cd9d1d8aa7e410fe1d6be8ded4c83dd6ff2b90"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124831+0800-browser-offline-a0883cb8.json",
+      "sha256": "b2508866bef1ae9d2ae718a14a84a034a8be46102bbc63e4201cc99065cf030b"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124832+0800-auth-bcf8ebc9.json",
+      "sha256": "1cc318fbc584774cf341553b426cc7d230438b648faeb829067dddc5920f643b"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124833+0800-frontend-auth-5addb12f.json",
+      "sha256": "f96961f587a1e7180453589aede1d3276b9548be9fb8dceb8df9b4fe3f3efa76"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124834+0800-frontend-preferences-d0aa5fd2.json",
+      "sha256": "292ef94f9bf8de2ffef0f1a60a5586e950b9a6b525fbf895b2ed69d5cee28f8f"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124836+0800-frontend-ga-88a9fe6a.json",
+      "sha256": "dcc6fe1269c1771b4fbc44ff3cab89c731d8ca031b22be5e3394353ec3e76924"
+    },
+    {
+      "path": "docs/testing/phase-4b/20261018T124936+0800-browser-offline-517a1187.json",
+      "sha256": "25b82fbd4649c00e3dcea233571a8465fe86e7c2162769d1dde3ec9d4f80ec32"
+    },
+    {
+      "path": "docs/testing/phase-4b/README.md",
+      "sha256": "81d44a08e3dfdcee060ee5e22f7cb6115664c20223e59dd993cf3c8e9460329f"
+    },
+    {
+      "path": "docs/testing/phase-4b/browser-acceptance-plan.md",
+      "sha256": "c0c34d9fb049f79da23e45fe59b1838a4d7a71805a8bd54d6e0380dfff5bbe09"
+    },
+    {
+      "path": "docs/testing/phase-4b/browser-acceptance.md",
+      "sha256": "618b0081afaba1ad5c905fb96915c1d68f80b14dc8725f069c8fcc37f332a81d"
+    },
+    {
+      "path": "docs/testing/phase-4b/collection-incidents.json",
+      "sha256": "e94bda02d08e8f83fc01b047d91dadbb96acce4520f09bc85048c44db95ea6a8"
+    },
+    {
+      "path": "docs/testing/phase-4b/database-environment-recheck.json",
+      "sha256": "1ce0013e38b02a17e28f4992726176982631d605d37a9859f5da8e3b2086a4e2"
+    },
+    {
+      "path": "docs/testing/phase-4b/manual-acceptance-manifest.json",
+      "sha256": "0a510ab1942fbc517e5a9d8871b5cfe7c30d15d0b672e2efe75c03406f6f7c01"
+    },
+    {
+      "path": "docs/testing/phase-4b/manual-acceptance-results.md",
+      "sha256": "6ed37a353cf2bda874f85baaf6a6dcd90fa852add2bad162234c11f5fade0be7"
+    },
+    {
+      "path": "docs/testing/phase-4b/record_browser_evidence.py",
+      "sha256": "57b65e8229c17d3a999c674e981d802d8cc0597a1c8721f8c21226bf17db3c3d"
+    },
+    {
+      "path": "docs/testing/phase-4b/run_checks.py",
+      "sha256": "bece0606652c2e03f8a8e0dae95bfd404321f07762b20dc9f3f6eba74a2785cc"
+    },
+    {
+      "path": "docs/testing/phase-4b/serve_browser_fixture.py",
+      "sha256": "b989184bbbb45b9955d38489dc01255113d15057de872765029dcf192cc1a3a8"
+    },
+    {
+      "path": "docs/testing/phase-4b/stage-a-fixture-preparation.md",
+      "sha256": "10ac065c067ef777fe8a50a41f0803e99e56ff424e5c43f8719787f2eb1d4e28"
+    },
+    {
+      "path": "docs/testing/phase-4b/stage-a-manifest.json",
+      "sha256": "0f619496abea5fa22c5dcd51169a58be8e3c4bf1e99a3e575c6c19cd44aaed8c"
+    },
+    {
+      "path": "docs/testing/phase-4b/stage-b-recovery-manifest.json",
+      "sha256": "2c67a9c231881ad0847c418e93fb4de876e2a15da11f5431f65b85573060eb83"
+    },
+    {
+      "path": "docs/testing/phase-4b/stage-b-recovery-offline.md",
+      "sha256": "fdfd10ea39c5afb0840eb2776d9ff22ef18481efc2904ff770cd625d00f5acca"
+    },
+    {
+      "path": "docs/thesis-evidence/phase-4b-evidence.md",
+      "sha256": "628ee1359f3a9860d582ba566b6f9f252a48d463aa68ce67590181581bb3a46d"
+    }
+  ],
+  "hash_policy": "Current artifact bytes; main manifest excludes itself. Manual manifest excludes itself and main. Stage A/recovery manifests and their nested source hashes are unchanged historical snapshots. Superseded current-artifact hashes and former assessment/validation are retained in archive_revisions; no circular hash dependencies.",
+  "preservation": {
+    "baseline_files": 341,
+    "unchanged_baseline_files": 338,
+    "authorized_existing_file_modifications": [
+      "backend/routers/genetic_algorithm.py",
+      "docs/implementation-roadmap-status.md",
+      "docs/system-bug-report.md"
+    ],
+    "missing_baseline_files": [],
+    "protected_data_and_ga_source_unchanged": true,
+    "live_faculty_preference_path": "backend/data/faculty_preferences.json",
+    "live_preferences_match_task_start": true,
+    "live_preferences_excluded_from_inventory": true,
+    "preexisting_live_preference_modification_retained": true,
+    "protected_storage_new_files": [],
+    "checkpoint_fingerprinted_helpers_unchanged": true,
+    "head_unchanged": true,
+    "index_unchanged": true,
+    "index_sha256_at_start": "b5b930885eeefd46125fbea6062cd1fde40848b27ac5acf2ec8dbc49cb7e2dbb",
+    "index_sha256_at_verification": "b5b930885eeefd46125fbea6062cd1fde40848b27ac5acf2ec8dbc49cb7e2dbb",
+    "staged_files": 0,
+    "commits_created": 0,
+    "push_performed": false
+  },
+  "protected_comparisons": [
+    {
+      "path": ".env.example",
+      "baseline_sha256": "1df21e9da6b23501106cc1177dca713b6f0d5c38ac6c9e80d29fa79367307cc7",
+      "current_sha256": "1df21e9da6b23501106cc1177dca713b6f0d5c38ac6c9e80d29fa79367307cc7",
+      "unchanged": true
+    },
+    {
+      "path": "README.md",
+      "baseline_sha256": "7af41126815ccdea5926867e720385992996ef04f898888118fad159e20620ca",
+      "current_sha256": "7af41126815ccdea5926867e720385992996ef04f898888118fad159e20620ca",
+      "unchanged": true
+    },
+    {
+      "path": "backend/alembic.ini",
+      "baseline_sha256": "fa12779adb7c500965a1988e7e42b418122f83cbbd6143adc8b8557189de6c8c",
+      "current_sha256": "fa12779adb7c500965a1988e7e42b418122f83cbbd6143adc8b8557189de6c8c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/BSIT_Consolidated_Subject_Schedules.csv",
+      "baseline_sha256": "f70b0f8d860a9f9f6fd95fb073705bc0a60af4f5df4d0eb8c195945272175c83",
+      "current_sha256": "f70b0f8d860a9f9f6fd95fb073705bc0a60af4f5df4d0eb8c195945272175c83",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/BSIT_Consolidated_Subject_Schedules_test.csv",
+      "baseline_sha256": "b0ab1e24fc1a9bf34498fb4fed5038416849fe11b0a8cf02406a335aea4b6104",
+      "current_sha256": "b0ab1e24fc1a9bf34498fb4fed5038416849fe11b0a8cf02406a335aea4b6104",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/BSIT_GEC.csv",
+      "baseline_sha256": "8c01b1b7c53d29d7a9f6f4f595d898c95490eb8febc2b1099e5d6d61db88e515",
+      "current_sha256": "8c01b1b7c53d29d7a9f6f4f595d898c95490eb8febc2b1099e5d6d61db88e515",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/Best_chromosome.csv",
+      "baseline_sha256": "be96bde9a7e1f472c450f9b8d401018abe457ffa6ea3f6e5fe174730edf4148a",
+      "current_sha256": "be96bde9a7e1f472c450f9b8d401018abe457ffa6ea3f6e5fe174730edf4148a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/Faculty Admin, Research and Extension.csv",
+      "baseline_sha256": "93df2cb1861fd6bcb37e478f01ff3675e349b179c421e609e3c7fd6c4653ae77",
+      "current_sha256": "93df2cb1861fd6bcb37e478f01ff3675e349b179c421e609e3c7fd6c4653ae77",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/Faculty Preferences V2.csv",
+      "baseline_sha256": "a3d4b67fc70e7a7c8bb9ca16757270d1bfe17acd81011f49165e1e9e7e02cfcd",
+      "current_sha256": "a3d4b67fc70e7a7c8bb9ca16757270d1bfe17acd81011f49165e1e9e7e02cfcd",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/Faculty Preferences.csv",
+      "baseline_sha256": "6acd8de23a00e017426fc9c7ee1256097828f98ec5b6f2da87aff298ea0beb8f",
+      "current_sha256": "6acd8de23a00e017426fc9c7ee1256097828f98ec5b6f2da87aff298ea0beb8f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/Faculty.csv",
+      "baseline_sha256": "7537aaf31c38917b2d4239ca4bfc5a8914d0eeafa7134be5b223adf079435d01",
+      "current_sha256": "7537aaf31c38917b2d4239ca4bfc5a8914d0eeafa7134be5b223adf079435d01",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/Faculty_preferences.csv",
+      "baseline_sha256": "3f3feffbdcd011474287b9aa45e72db96c598c548acb7c5fbb73abd6248bec48",
+      "current_sha256": "3f3feffbdcd011474287b9aa45e72db96c598c548acb7c5fbb73abd6248bec48",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/Tentative Load First Sem 2026-2027.xlsx",
+      "baseline_sha256": "d031c48b9737492f24b85051f94edb40ffbb05faf67d35af56cf0625fe98c920",
+      "current_sha256": "d031c48b9737492f24b85051f94edb40ffbb05faf67d35af56cf0625fe98c920",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/Tentative load 1st sem.2026-2027 (2).xlsx",
+      "baseline_sha256": "f6b3c01a6612512d3d9f544534105c61f5af15a5569f6601f09ef8e2f2bdcf33",
+      "current_sha256": "f6b3c01a6612512d3d9f544534105c61f5af15a5569f6601f09ef8e2f2bdcf33",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/faculty_identities.json",
+      "baseline_sha256": "c504dd8c74269fa6b3a0c04b9dd48d5fa44b43736f2c919038df94464ec37b86",
+      "current_sha256": "c504dd8c74269fa6b3a0c04b9dd48d5fa44b43736f2c919038df94464ec37b86",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/faculty_load.csv",
+      "baseline_sha256": "629940a8c0b639345b674fc51ca519c2bbe65ec19307aaf867acb460298bd367",
+      "current_sha256": "629940a8c0b639345b674fc51ca519c2bbe65ec19307aaf867acb460298bd367",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/faculty_preferences.json",
+      "baseline_sha256": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+      "current_sha256": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/faculty_qualifications.csv",
+      "baseline_sha256": "49c1f791e83f310a34c2fc08a30486ce44dc5b497ed1aef87752cd36e87aa82f",
+      "current_sha256": "49c1f791e83f310a34c2fc08a30486ce44dc5b497ed1aef87752cd36e87aa82f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/faculty_subject_eligibility.csv",
+      "baseline_sha256": "153a9beb6a31b4572dcb88314f288852028c6abc3a9b0ff931b730a5c003d808",
+      "current_sha256": "153a9beb6a31b4572dcb88314f288852028c6abc3a9b0ff931b730a5c003d808",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/first_sem_bsit_subjects.csv",
+      "baseline_sha256": "ec79b4b4b24f6d963ec84bdd324bbea83c1b2a2ff12ddb1649536a3325f03775",
+      "current_sha256": "ec79b4b4b24f6d963ec84bdd324bbea83c1b2a2ff12ddb1649536a3325f03775",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/ga_settings.json",
+      "baseline_sha256": "6aa63985887c7fde231b31b6e35c4900c3899e16fdf8bb44fb208767d0211ce2",
+      "current_sha256": "6aa63985887c7fde231b31b6e35c4900c3899e16fdf8bb44fb208767d0211ce2",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/preassigned_assignments.json",
+      "baseline_sha256": "0ce3dcc315508f15adbfce3c7a3adafadb859ec84491e5f2450b7326e18f4144",
+      "current_sha256": "0ce3dcc315508f15adbfce3c7a3adafadb859ec84491e5f2450b7326e18f4144",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/preferences.csv",
+      "baseline_sha256": "f726739e8ae7cb98a1aa18767c6f367d04824c886d4e4106b84b86b1b9152716",
+      "current_sha256": "f726739e8ae7cb98a1aa18767c6f367d04824c886d4e4106b84b86b1b9152716",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/second_sem_bsit_subjects.csv",
+      "baseline_sha256": "5ef5b02cf41a6c8da190561c31422136ec2630f8ebf7c0000b79ef9bec7830ac",
+      "current_sha256": "5ef5b02cf41a6c8da190561c31422136ec2630f8ebf7c0000b79ef9bec7830ac",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/subject_domains.csv",
+      "baseline_sha256": "73ba01e2e28975a148359041bfb0b2543e30f0fe3ed470b2c5e815033726f92a",
+      "current_sha256": "73ba01e2e28975a148359041bfb0b2543e30f0fe3ed470b2c5e815033726f92a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/data/test.csv",
+      "baseline_sha256": "757284df8bb7117c09baea1c7477486516c568d8f11c0e3bcec888885605207e",
+      "current_sha256": "757284df8bb7117c09baea1c7477486516c568d8f11c0e3bcec888885605207e",
+      "unchanged": true
+    },
+    {
+      "path": "backend/database.py",
+      "baseline_sha256": "83229f0066bc8c20a798b3594d8b84ba6058d52aa6c8f5d28e85ba3842962bbf",
+      "current_sha256": "83229f0066bc8c20a798b3594d8b84ba6058d52aa6c8f5d28e85ba3842962bbf",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/__init__.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/analysis/AnalyzeResult.py",
+      "baseline_sha256": "d3531d67e9302fbd5143a53d09c68438e3861bd6187a71e6aceeb67bfd8b34ca",
+      "current_sha256": "d3531d67e9302fbd5143a53d09c68438e3861bd6187a71e6aceeb67bfd8b34ca",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/analysis/FacultyFitnessVisualization.py",
+      "baseline_sha256": "b1fbe7d158df2d57f4c30445acfae2a6fa19e7eec272b14ce1f4c4b52b8f3575",
+      "current_sha256": "b1fbe7d158df2d57f4c30445acfae2a6fa19e7eec272b14ce1f4c4b52b8f3575",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/analysis/FacultySelectedChromosomeDashboard.py",
+      "baseline_sha256": "1cfc7aee2519f438342c786a17eb58e4208a469984d95be6422876d1cb554430",
+      "current_sha256": "1cfc7aee2519f438342c786a17eb58e4208a469984d95be6422876d1cb554430",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Faculty.py",
+      "baseline_sha256": "3120b1de95265cbc92143fa2e2e8897af73eb0c21e50f3b1b78e6b34793352af",
+      "current_sha256": "3120b1de95265cbc92143fa2e2e8897af73eb0c21e50f3b1b78e6b34793352af",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/models/PreassignedAssignment.py",
+      "baseline_sha256": "414f0df76011666446cad61891115c3bfd7d16970588051154198656aaf2f659",
+      "current_sha256": "414f0df76011666446cad61891115c3bfd7d16970588051154198656aaf2f659",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Room.py",
+      "baseline_sha256": "f1920219c823212b1ba8f219a25e538e3c99fc0337f092325c33b3f0b3c0d868",
+      "current_sha256": "f1920219c823212b1ba8f219a25e538e3c99fc0337f092325c33b3f0b3c0d868",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Section.py",
+      "baseline_sha256": "b9ee0e1bf2a999fc7fd24d8c87411538ce72d8c188f7f00e0e6c70c19317a278",
+      "current_sha256": "b9ee0e1bf2a999fc7fd24d8c87411538ce72d8c188f7f00e0e6c70c19317a278",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Student.py",
+      "baseline_sha256": "a59fdf84be24542221698fa06b19464fc9b016db42efdbe2e4ddc74b4ef934d0",
+      "current_sha256": "a59fdf84be24542221698fa06b19464fc9b016db42efdbe2e4ddc74b4ef934d0",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Subject.py",
+      "baseline_sha256": "7ba01efc7efccc6ea5b399091caf63d978c7c3f1192df2bcf1bb40bac813974f",
+      "current_sha256": "7ba01efc7efccc6ea5b399091caf63d978c7c3f1192df2bcf1bb40bac813974f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/models/TimeBlock.py",
+      "baseline_sha256": "f8631d186ca8ecf3fe0ba8f1463b8451c56eb8a922ef6646e98661cb9537cec6",
+      "current_sha256": "f8631d186ca8ecf3fe0ba8f1463b8451c56eb8a922ef6646e98661cb9537cec6",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/models/faculty_preference.py",
+      "baseline_sha256": "ad088ff8e7c50924b0ae48197f8b58fe7dbfdcab5549949d66a1b9fd7c597040",
+      "current_sha256": "ad088ff8e7c50924b0ae48197f8b58fe7dbfdcab5549949d66a1b9fd7c597040",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/models/ga_setting.py",
+      "baseline_sha256": "79608d846366a5681e0b8bdfaf45f71237623303bd6732747948a99c4873d24c",
+      "current_sha256": "79608d846366a5681e0b8bdfaf45f71237623303bd6732747948a99c4873d24c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/BestChromosome.py",
+      "baseline_sha256": "57d32ac71b642e77a2de4d37fa905a59b986fe229fb35b697ef0bbb1866a02be",
+      "current_sha256": "57d32ac71b642e77a2de4d37fa905a59b986fe229fb35b697ef0bbb1866a02be",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/CreatePopulation.py",
+      "baseline_sha256": "2246770113c766220f2dc7e79389feff5a7993a5a46177954eb80da4809b10ff",
+      "current_sha256": "2246770113c766220f2dc7e79389feff5a7993a5a46177954eb80da4809b10ff",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/ElitisimSelection.py",
+      "baseline_sha256": "a02dc5b80336301c5a2480e429bd4d4751b7af80887c03f84313307ad116cf63",
+      "current_sha256": "a02dc5b80336301c5a2480e429bd4d4751b7af80887c03f84313307ad116cf63",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/FitnessFunction.py",
+      "baseline_sha256": "e679e3e649a70c504fcc3d4c10cf749bcc2c92a3a812a0bd5b31e2f3ca0b5ff1",
+      "current_sha256": "e679e3e649a70c504fcc3d4c10cf749bcc2c92a3a812a0bd5b31e2f3ca0b5ff1",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/Swap.py",
+      "baseline_sha256": "14ba9ea2c1f7339a38146390d89ad849e9f6893f9d4e67c9f4cd1234a1043098",
+      "current_sha256": "14ba9ea2c1f7339a38146390d89ad849e9f6893f9d4e67c9f4cd1234a1043098",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/TournamentSelection.py",
+      "baseline_sha256": "f7ef9cf318d4252338ac3a99d54cd7a5ae25f20bf02c0c1a79cc328d4ad61993",
+      "current_sha256": "f7ef9cf318d4252338ac3a99d54cd7a5ae25f20bf02c0c1a79cc328d4ad61993",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/mutation.py",
+      "baseline_sha256": "bee483d6e55923bcf1a04c4f76a91c58dc55fe6a4edcb1e645be104b15504061",
+      "current_sha256": "bee483d6e55923bcf1a04c4f76a91c58dc55fe6a4edcb1e645be104b15504061",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/FitnessObservation.py",
+      "baseline_sha256": "e47537d695b9df17a67929c4fdde6bb3ecbc8c034f9b4fb53b691ae0517829b8",
+      "current_sha256": "e47537d695b9df17a67929c4fdde6bb3ecbc8c034f9b4fb53b691ae0517829b8",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/FrozenInputs.py",
+      "baseline_sha256": "e407d686e2ee95eccca80761c77a2fec6e5d90bef302a8ebe9621268b1f8bf3a",
+      "current_sha256": "e407d686e2ee95eccca80761c77a2fec6e5d90bef302a8ebe9621268b1f8bf3a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/Functions.py",
+      "baseline_sha256": "d28af9197d38957eb5ace526aa243e4448c68bd475efd89337e1d2c4742f555b",
+      "current_sha256": "d28af9197d38957eb5ace526aa243e4448c68bd475efd89337e1d2c4742f555b",
+      "unchanged": true
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/GetUpdatedList.py",
+      "baseline_sha256": "b40045d7e7e926db1eab6f51825afa5adcf19002e81c9ca6544df1c69e4a6317",
+      "current_sha256": "b40045d7e7e926db1eab6f51825afa5adcf19002e81c9ca6544df1c69e4a6317",
+      "unchanged": true
+    },
+    {
+      "path": "backend/identity_admin.py",
+      "baseline_sha256": "0c9ed76764be6dc1fbd4d3bb7e330cceb9c128ac4fb1d4e807b0d98f247bda83",
+      "current_sha256": "0c9ed76764be6dc1fbd4d3bb7e330cceb9c128ac4fb1d4e807b0d98f247bda83",
+      "unchanged": true
+    },
+    {
+      "path": "backend/identity_models.py",
+      "baseline_sha256": "3a591024787c48f745f5baeb72780fc712ad7934925615609047aba2785276db",
+      "current_sha256": "3a591024787c48f745f5baeb72780fc712ad7934925615609047aba2785276db",
+      "unchanged": true
+    },
+    {
+      "path": "backend/main.py",
+      "baseline_sha256": "1e44a84895ba717ed3c7cf2a314f31a010928324f91e15e638d3a115f204970c",
+      "current_sha256": "1e44a84895ba717ed3c7cf2a314f31a010928324f91e15e638d3a115f204970c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/migrations/env.py",
+      "baseline_sha256": "bc46c8ac8ce3ec3760f2d6743766cb812b814fea9344a44e799bcce4c0ef4fdd",
+      "current_sha256": "bc46c8ac8ce3ec3760f2d6743766cb812b814fea9344a44e799bcce4c0ef4fdd",
+      "unchanged": true
+    },
+    {
+      "path": "backend/migrations/versions/4a_0001_identity.py",
+      "baseline_sha256": "9765db86b0fa47ad7bffa95e66376d949ad835d1f5ba361947f0718ef7b0e9bd",
+      "current_sha256": "9765db86b0fa47ad7bffa95e66376d949ad835d1f5ba361947f0718ef7b0e9bd",
+      "unchanged": true
+    },
+    {
+      "path": "backend/requirements.txt",
+      "baseline_sha256": "83a8a751a6efa38dfdfce71fc1e7b6c825a632445231391f726740dac6d664be",
+      "current_sha256": "83a8a751a6efa38dfdfce71fc1e7b6c825a632445231391f726740dac6d664be",
+      "unchanged": true
+    },
+    {
+      "path": "backend/routers/__init__.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/routers/auth.py",
+      "baseline_sha256": "3b26405cca65476f82748b063d91510005e3c6616af9677bd7aa0f57b5f7dff5",
+      "current_sha256": "3b26405cca65476f82748b063d91510005e3c6616af9677bd7aa0f57b5f7dff5",
+      "unchanged": true
+    },
+    {
+      "path": "backend/routers/chromosomes.py",
+      "baseline_sha256": "68e6af580c33fe75795218313e6efc8bb91637e6e105f9048ad3ac87fa5a3d82",
+      "current_sha256": "68e6af580c33fe75795218313e6efc8bb91637e6e105f9048ad3ac87fa5a3d82",
+      "unchanged": true
+    },
+    {
+      "path": "backend/routers/faculty.py",
+      "baseline_sha256": "65d2655be7e718f752d11dd7abb4b079250d7900d02181e36073fc2a0b5df9d8",
+      "current_sha256": "65d2655be7e718f752d11dd7abb4b079250d7900d02181e36073fc2a0b5df9d8",
+      "unchanged": true
+    },
+    {
+      "path": "backend/routers/fitness_analysis.py",
+      "baseline_sha256": "2d1eb8b9aeffd4d68dcf92e49599335a500823d2a09795ea09f43bebd180bfa4",
+      "current_sha256": "2d1eb8b9aeffd4d68dcf92e49599335a500823d2a09795ea09f43bebd180bfa4",
+      "unchanged": true
+    },
+    {
+      "path": "backend/routers/ga_history.py",
+      "baseline_sha256": "48c59de46ec69ce20c4cd07c20260a2360c2f10782978aff33bd3be1d5df7a49",
+      "current_sha256": "48c59de46ec69ce20c4cd07c20260a2360c2f10782978aff33bd3be1d5df7a49",
+      "unchanged": true
+    },
+    {
+      "path": "backend/routers/preferences.py",
+      "baseline_sha256": "2f3d44d141f48e74756dfe88754faa093cbbf47c92fbbe3c79aeaf4e911139bd",
+      "current_sha256": "2f3d44d141f48e74756dfe88754faa093cbbf47c92fbbe3c79aeaf4e911139bd",
+      "unchanged": true
+    },
+    {
+      "path": "backend/routers/schedules.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/routers/sections.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/routers/subjects.py",
+      "baseline_sha256": "a4f0cd79d4a18810eab22398170094d7f1435c727aa5d906807edde400565a37",
+      "current_sha256": "a4f0cd79d4a18810eab22398170094d7f1435c727aa5d906807edde400565a37",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/0959633c-0cbe-4de9-9a17-74c9c1ad80c0/status.json",
+      "baseline_sha256": "69de9fecb6c14d5d2eed48d30e4ee7a570a0887428638639059affdc92a889fa",
+      "current_sha256": "69de9fecb6c14d5d2eed48d30e4ee7a570a0887428638639059affdc92a889fa",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/35a5a4be-b689-4a45-88b1-c8cf1b56915b/status.json",
+      "baseline_sha256": "00f542cf95d1d00cf7f23ba2a95f841509436acfd92ce0cbbd9b142b0c6963c0",
+      "current_sha256": "00f542cf95d1d00cf7f23ba2a95f841509436acfd92ce0cbbd9b142b0c6963c0",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/58719177-702f-40d6-849c-8bd552e0ae4f/checkpoint-1-73edbe90-0586-43c8-89cc-43fbbcf0ed71.json.gz",
+      "baseline_sha256": "c83dcd28fc803b90901b6a7f507685d008434514e49d9da7111dc2de395bf8f2",
+      "current_sha256": "c83dcd28fc803b90901b6a7f507685d008434514e49d9da7111dc2de395bf8f2",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/58719177-702f-40d6-849c-8bd552e0ae4f/status.json",
+      "baseline_sha256": "eeaaa71ccf4809eae0a6660c6b58d4ba5e4d6b1a54e0b1b666b632a59aaa11ec",
+      "current_sha256": "eeaaa71ccf4809eae0a6660c6b58d4ba5e4d6b1a54e0b1b666b632a59aaa11ec",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/8fb9ec22-51ae-4e94-8e1c-8e74187577c2/checkpoint-4-c1cd90a3-ee68-4a83-824e-c64f77c9226d.json.gz",
+      "baseline_sha256": "542bb2df51dc84038c7b9ef7e984edeabf413bb6a03658886e472389d2d8f399",
+      "current_sha256": "542bb2df51dc84038c7b9ef7e984edeabf413bb6a03658886e472389d2d8f399",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/8fb9ec22-51ae-4e94-8e1c-8e74187577c2/status.json",
+      "baseline_sha256": "95e5fa355e2ebbe1bab96181aa117ba4a56d27d0c7cdaeab3778fb30dd2569ed",
+      "current_sha256": "95e5fa355e2ebbe1bab96181aa117ba4a56d27d0c7cdaeab3778fb30dd2569ed",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/92ea50ae-152e-4407-9195-482666eb8cde/status.json",
+      "baseline_sha256": "f2fd92b1c72127896b0ec6423e2e4bdb63d64b3af88f3f0a322f042f44e0d2ee",
+      "current_sha256": "f2fd92b1c72127896b0ec6423e2e4bdb63d64b3af88f3f0a322f042f44e0d2ee",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/b8d7cb7b-60d1-43f0-b85b-b2fbf0187949/status.json",
+      "baseline_sha256": "2aa4764f10a2c2806af80e4e0d2451b3d97987f0f9e59ed3f1680cdd1cb5058d",
+      "current_sha256": "2aa4764f10a2c2806af80e4e0d2451b3d97987f0f9e59ed3f1680cdd1cb5058d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/ba440200-b932-454e-a814-b6633723ffe1/checkpoint-1-079e70d7-8e70-4de9-b59f-5ee5f844b0b0.json.gz",
+      "baseline_sha256": "c48ea8a66424ce816515c4404bbeec965a4e914fad93ec9da75ff905c972e00e",
+      "current_sha256": "c48ea8a66424ce816515c4404bbeec965a4e914fad93ec9da75ff905c972e00e",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/ba440200-b932-454e-a814-b6633723ffe1/status.json",
+      "baseline_sha256": "2cc945c7da8dc1e279ce8a83441b12f8bea894836891847e8092f8414e54f02a",
+      "current_sha256": "2cc945c7da8dc1e279ce8a83441b12f8bea894836891847e8092f8414e54f02a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/d48c257b-3057-47e4-8158-c0f84f422b3c/checkpoint-1-bfe6fd75-ec5e-4ede-99e6-77a43b9b84b2.json.gz",
+      "baseline_sha256": "197b68b3c3a86e033c84c3c763e18dbb768005c44144a23bfeda6a06be9bba33",
+      "current_sha256": "197b68b3c3a86e033c84c3c763e18dbb768005c44144a23bfeda6a06be9bba33",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/d48c257b-3057-47e4-8158-c0f84f422b3c/status.json",
+      "baseline_sha256": "9a75c788a2141ac714ae8ffab64cd96ffa9bde0f49d1c40ca7f6e53a9a0d1fa8",
+      "current_sha256": "9a75c788a2141ac714ae8ffab64cd96ffa9bde0f49d1c40ca7f6e53a9a0d1fa8",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/ee19cca4-9f6d-49a9-bb17-73125543c45a/checkpoint-2-4429beff-7546-4eea-b137-9b9fcb9760b7.json.gz",
+      "baseline_sha256": "96d80b2aaea175a708767ed595b384becdf19460087cbff519a774ee3cf9fc88",
+      "current_sha256": "96d80b2aaea175a708767ed595b384becdf19460087cbff519a774ee3cf9fc88",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/ee19cca4-9f6d-49a9-bb17-73125543c45a/status.json",
+      "baseline_sha256": "7f938ce5d25dff99b91eb3163c515e2487f133b4eaf1686fafd1625df70019e1",
+      "current_sha256": "7f938ce5d25dff99b91eb3163c515e2487f133b4eaf1686fafd1625df70019e1",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/f0f86580-3035-49a4-a704-daea366d464e/checkpoint-0-64276a5f-7d95-4e0d-b27a-69ef15708ce7.json.gz",
+      "baseline_sha256": "f5e773eaedc86d77ce80bc6b156c75adc881d1cd786ec07ebbe62bf4f61a5195",
+      "current_sha256": "f5e773eaedc86d77ce80bc6b156c75adc881d1cd786ec07ebbe62bf4f61a5195",
+      "unchanged": true
+    },
+    {
+      "path": "backend/run_checkpoints/f0f86580-3035-49a4-a704-daea366d464e/status.json",
+      "baseline_sha256": "36d96cb1acac1650461377deb8290b50b3024140c87d10c064c355c09be7660b",
+      "current_sha256": "36d96cb1acac1650461377deb8290b50b3024140c87d10c064c355c09be7660b",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/best_chromosome.json",
+      "baseline_sha256": "ea710d7b1582df977c2a756157133103450383b54667c7da35e7b8564ec1104a",
+      "current_sha256": "ea710d7b1582df977c2a756157133103450383b54667c7da35e7b8564ec1104a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/0959633c-0cbe-4de9-9a17-74c9c1ad80c0/generation-000000.json",
+      "baseline_sha256": "2a7b2e94560cddb563b5f96c62b87ad042728d0d4b3ff43fe5aa8143135f79ad",
+      "current_sha256": "2a7b2e94560cddb563b5f96c62b87ad042728d0d4b3ff43fe5aa8143135f79ad",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/0959633c-0cbe-4de9-9a17-74c9c1ad80c0/generation-000001.json",
+      "baseline_sha256": "badcd45780c0700f466ccb2b858b266aefc89e2e8606b672e958e1d3800d9eb4",
+      "current_sha256": "badcd45780c0700f466ccb2b858b266aefc89e2e8606b672e958e1d3800d9eb4",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/0959633c-0cbe-4de9-9a17-74c9c1ad80c0/generation-000002.json",
+      "baseline_sha256": "1ac46bc285e113ab1fd5ddfe0d611a8f645a303403c42e3f834bbd61e7f4155a",
+      "current_sha256": "1ac46bc285e113ab1fd5ddfe0d611a8f645a303403c42e3f834bbd61e7f4155a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/0959633c-0cbe-4de9-9a17-74c9c1ad80c0/index.json",
+      "baseline_sha256": "f5cc5827b7dab2298659f76522d96801803f474bc1168f63dce0ae8f80ffd7f8",
+      "current_sha256": "f5cc5827b7dab2298659f76522d96801803f474bc1168f63dce0ae8f80ffd7f8",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/20fc95aa-84f8-429d-96f2-6887f7622c3c/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "12db4caac9ac896adf8b23ab7f5fa47f5ce4c68202269038fa069d32ab76e68f",
+      "current_sha256": "12db4caac9ac896adf8b23ab7f5fa47f5ce4c68202269038fa069d32ab76e68f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/20fc95aa-84f8-429d-96f2-6887f7622c3c/generation-000001.json",
+      "baseline_sha256": "bef14aaef6807fe5fb0e4421314529b7530ec16416cb799006d148230e6e2309",
+      "current_sha256": "bef14aaef6807fe5fb0e4421314529b7530ec16416cb799006d148230e6e2309",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/20fc95aa-84f8-429d-96f2-6887f7622c3c/index.json",
+      "baseline_sha256": "eec6297d65eb65ec6bddab4eb6bfb10729bea5e0a6dcc85085da7180ca7e6aa0",
+      "current_sha256": "eec6297d65eb65ec6bddab4eb6bfb10729bea5e0a6dcc85085da7180ca7e6aa0",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/24730583-f60c-426a-ae05-65db5571e0b3/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "1aa3e7d5d4f4af35ac9933a5a685ab8675896b5f53379b3db3d41a92f4e98e04",
+      "current_sha256": "1aa3e7d5d4f4af35ac9933a5a685ab8675896b5f53379b3db3d41a92f4e98e04",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/24730583-f60c-426a-ae05-65db5571e0b3/generation-000001.json",
+      "baseline_sha256": "7b791aaa789b676d2231394a257c5d1527c917d48caad1f7b827d4a53c8c6484",
+      "current_sha256": "7b791aaa789b676d2231394a257c5d1527c917d48caad1f7b827d4a53c8c6484",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/24730583-f60c-426a-ae05-65db5571e0b3/index.json",
+      "baseline_sha256": "768668cfa50eee4e3ded38e809706cbbcba20f403f5666dedfebb534c7ef715d",
+      "current_sha256": "768668cfa50eee4e3ded38e809706cbbcba20f403f5666dedfebb534c7ef715d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/35a5a4be-b689-4a45-88b1-c8cf1b56915b/index.json",
+      "baseline_sha256": "bf2c2703c8cfd7d2e3d76233ce2b4988da1fc921dc64d5649eaa54e19a3bf108",
+      "current_sha256": "bf2c2703c8cfd7d2e3d76233ce2b4988da1fc921dc64d5649eaa54e19a3bf108",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/565ee7a3-1c20-459d-8354-b2f4fea1f826/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "906d9169c0ee949ac7cc4d30000be7dfcf10e566ee57d12bf73e5745bbc7c4a3",
+      "current_sha256": "906d9169c0ee949ac7cc4d30000be7dfcf10e566ee57d12bf73e5745bbc7c4a3",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/565ee7a3-1c20-459d-8354-b2f4fea1f826/generation-000001.json",
+      "baseline_sha256": "4301c373f7251fcf0b117a291ee35ce4cdb1c77250d79fcf9822614f0387575d",
+      "current_sha256": "4301c373f7251fcf0b117a291ee35ce4cdb1c77250d79fcf9822614f0387575d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/565ee7a3-1c20-459d-8354-b2f4fea1f826/index.json",
+      "baseline_sha256": "fb737ffe22df4dc0f2f0869a3aeb52bddd703878ac397ccb21eb01677f77497a",
+      "current_sha256": "fb737ffe22df4dc0f2f0869a3aeb52bddd703878ac397ccb21eb01677f77497a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/906c00c3-e0d9-4d35-8e9c-4d4cbcd88bc2/.7ck6dky1.tmp",
+      "baseline_sha256": "2f41c9b9402e234276b51fb2850acd9ffedb6dd8c0bfeab685c4e8269d2ef4cb",
+      "current_sha256": "2f41c9b9402e234276b51fb2850acd9ffedb6dd8c0bfeab685c4e8269d2ef4cb",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/906c00c3-e0d9-4d35-8e9c-4d4cbcd88bc2/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "fd8c869469aff7b5a8cda70391d066bcaca1abd92dc72a7ebd4f0ae37f7d0a48",
+      "current_sha256": "fd8c869469aff7b5a8cda70391d066bcaca1abd92dc72a7ebd4f0ae37f7d0a48",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/906c00c3-e0d9-4d35-8e9c-4d4cbcd88bc2/generation-000001.json",
+      "baseline_sha256": "2e321b8cf6ec2ad8b3bbfbdd7d50c811423d3cf1059b813f7df8c4d5c61cd160",
+      "current_sha256": "2e321b8cf6ec2ad8b3bbfbdd7d50c811423d3cf1059b813f7df8c4d5c61cd160",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/906c00c3-e0d9-4d35-8e9c-4d4cbcd88bc2/index.json",
+      "baseline_sha256": "e88197930ee273b66e2c20c703ac8d5b4ac2363523c70adf3b3e4d1a6437bd32",
+      "current_sha256": "e88197930ee273b66e2c20c703ac8d5b4ac2363523c70adf3b3e4d1a6437bd32",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/analysis-2946815c7c8c10fd87ff644d16700adb2ce0014721dba8f18f65e60035b22061.json",
+      "baseline_sha256": "5b9f731a025cbb5e3982b151b3715984cb09912f7496965559281d4b123085f4",
+      "current_sha256": "5b9f731a025cbb5e3982b151b3715984cb09912f7496965559281d4b123085f4",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/generation-000000.json",
+      "baseline_sha256": "4484792c76929d37456c13637361695b1791e440d2d8c938ae71e6dacb0e155e",
+      "current_sha256": "4484792c76929d37456c13637361695b1791e440d2d8c938ae71e6dacb0e155e",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/generation-000001.json",
+      "baseline_sha256": "2ca3a883a59ef43917f28152d300248267e01dcf73108093d3facfdd839a8063",
+      "current_sha256": "2ca3a883a59ef43917f28152d300248267e01dcf73108093d3facfdd839a8063",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/generation-000002.json",
+      "baseline_sha256": "66be8cb7b01498eb086c0644b93647f3edd790bbfa2c82468d47f64752eabd42",
+      "current_sha256": "66be8cb7b01498eb086c0644b93647f3edd790bbfa2c82468d47f64752eabd42",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/generation-000003.json",
+      "baseline_sha256": "21d83216bb453025043b346ec4df5ce1e6fa85d837cd80a13062564fd9613dd6",
+      "current_sha256": "21d83216bb453025043b346ec4df5ce1e6fa85d837cd80a13062564fd9613dd6",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/index.json",
+      "baseline_sha256": "e64f772d9accff5f58cf660b0f94f4af6cfec132c9d6694290c609ab72b9f12a",
+      "current_sha256": "e64f772d9accff5f58cf660b0f94f4af6cfec132c9d6694290c609ab72b9f12a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/b8d7cb7b-60d1-43f0-b85b-b2fbf0187949/index.json",
+      "baseline_sha256": "dfdf47668623f3b32c602805c1beb753cd63b1a2c0ff9e7acf9cd41ebe5d3c76",
+      "current_sha256": "dfdf47668623f3b32c602805c1beb753cd63b1a2c0ff9e7acf9cd41ebe5d3c76",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/analysis-90878cb813839c01e0d7a924c5fe58cf796a86d3b490ac697073ec351330b047.json",
+      "baseline_sha256": "be999656ee811bd36deaa59c14b16a054374742ca50fddaf626ca5f508119918",
+      "current_sha256": "be999656ee811bd36deaa59c14b16a054374742ca50fddaf626ca5f508119918",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000000.json",
+      "baseline_sha256": "59278d799096da5fc24845ef3106fc2b7933597b7b68b5aefdfe213320131b41",
+      "current_sha256": "59278d799096da5fc24845ef3106fc2b7933597b7b68b5aefdfe213320131b41",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000001.json",
+      "baseline_sha256": "55371e04934f8b70d85eec43b41b62f75042b7d957126a9362b96786704f9531",
+      "current_sha256": "55371e04934f8b70d85eec43b41b62f75042b7d957126a9362b96786704f9531",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000002.json",
+      "baseline_sha256": "e1e34329872d5495b1ed339140261d21e22cffd08c8cf48207941415e7436d9a",
+      "current_sha256": "e1e34329872d5495b1ed339140261d21e22cffd08c8cf48207941415e7436d9a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000003.json",
+      "baseline_sha256": "3a6daa5bb2382fc6899bd52a56b8df52e05c5e270b366f9b405343d101adda38",
+      "current_sha256": "3a6daa5bb2382fc6899bd52a56b8df52e05c5e270b366f9b405343d101adda38",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000004.json",
+      "baseline_sha256": "230f878369e6d6d52ef597dda04d29a31779c3bad855f8ece4361f71a0ba304d",
+      "current_sha256": "230f878369e6d6d52ef597dda04d29a31779c3bad855f8ece4361f71a0ba304d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000005.json",
+      "baseline_sha256": "104623391167a82dd44b18879feaf613220ea68a7acc13ff84b334a50dc7cb87",
+      "current_sha256": "104623391167a82dd44b18879feaf613220ea68a7acc13ff84b334a50dc7cb87",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000006.json",
+      "baseline_sha256": "ae9871cbcee9ffc71205111418a72c5f7a7c247d6feec18f73fd5fa156dbb074",
+      "current_sha256": "ae9871cbcee9ffc71205111418a72c5f7a7c247d6feec18f73fd5fa156dbb074",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000007.json",
+      "baseline_sha256": "a6ca2cd9d418664684e4f6148cb43e2a35ecdfc650befd4e331e1138733db5b3",
+      "current_sha256": "a6ca2cd9d418664684e4f6148cb43e2a35ecdfc650befd4e331e1138733db5b3",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000008.json",
+      "baseline_sha256": "559214e788f256d3ef72fbde0d07cae1637cf5c42a30b19ae885d3bc4f873544",
+      "current_sha256": "559214e788f256d3ef72fbde0d07cae1637cf5c42a30b19ae885d3bc4f873544",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000009.json",
+      "baseline_sha256": "9387b3660aa227706768e2ecadd90669db1483c780aae53070129e95b83512d0",
+      "current_sha256": "9387b3660aa227706768e2ecadd90669db1483c780aae53070129e95b83512d0",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000010.json",
+      "baseline_sha256": "829c3324479d4b9cb0a5d8be3c247ebec7923587ea64aceb69275a91c84c9821",
+      "current_sha256": "829c3324479d4b9cb0a5d8be3c247ebec7923587ea64aceb69275a91c84c9821",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000011.json",
+      "baseline_sha256": "c06a74985da6447eecdc493e02215a657667d0cfdfeb199f9442478a298870b7",
+      "current_sha256": "c06a74985da6447eecdc493e02215a657667d0cfdfeb199f9442478a298870b7",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000012.json",
+      "baseline_sha256": "28107bfd21a55365016114a4ff227fcb149b77087d1db300aed48509062ea687",
+      "current_sha256": "28107bfd21a55365016114a4ff227fcb149b77087d1db300aed48509062ea687",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000013.json",
+      "baseline_sha256": "4ebcf0d5785112b3823914c44361464783331280b2132c8648836c481e63f419",
+      "current_sha256": "4ebcf0d5785112b3823914c44361464783331280b2132c8648836c481e63f419",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000014.json",
+      "baseline_sha256": "f56c98c73fff2efaf4227b9e06b8e057ea70cd0835abd05a9b0c30f2dbae0705",
+      "current_sha256": "f56c98c73fff2efaf4227b9e06b8e057ea70cd0835abd05a9b0c30f2dbae0705",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000015.json",
+      "baseline_sha256": "fc9cce6ee30614f5f5c4d9f00ecf225a4ccc6d84d72c4a9d8f5abbe22442071f",
+      "current_sha256": "fc9cce6ee30614f5f5c4d9f00ecf225a4ccc6d84d72c4a9d8f5abbe22442071f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000016.json",
+      "baseline_sha256": "7f9711ee311424a6bd5da978df8281e838d92ce91b3c5a07d3375a6b479b995d",
+      "current_sha256": "7f9711ee311424a6bd5da978df8281e838d92ce91b3c5a07d3375a6b479b995d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000017.json",
+      "baseline_sha256": "7aafb8c5c66b2607aa60c53f7222a2113f0aa067c668876dfd54d972c4409ca4",
+      "current_sha256": "7aafb8c5c66b2607aa60c53f7222a2113f0aa067c668876dfd54d972c4409ca4",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000018.json",
+      "baseline_sha256": "1f562ea511a909023e65407852807528b9017a9117f1df985aaf1844bfa5916f",
+      "current_sha256": "1f562ea511a909023e65407852807528b9017a9117f1df985aaf1844bfa5916f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000019.json",
+      "baseline_sha256": "8858a364b88a0b6dbfa09b33955421adca080a83aa7d4a992b5c3eb25b339457",
+      "current_sha256": "8858a364b88a0b6dbfa09b33955421adca080a83aa7d4a992b5c3eb25b339457",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000020.json",
+      "baseline_sha256": "8a1335bad537a64a6ab5a186e9567b5d804db6e59eea5fa653700c1c92e79b4d",
+      "current_sha256": "8a1335bad537a64a6ab5a186e9567b5d804db6e59eea5fa653700c1c92e79b4d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/index.json",
+      "baseline_sha256": "6f8e216449c546cca69d4659a9983dac142403c1807d88f144bf6dd030dfc684",
+      "current_sha256": "6f8e216449c546cca69d4659a9983dac142403c1807d88f144bf6dd030dfc684",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/c6b4d519-9907-410e-919b-26290f8d8a84/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "36aa7f252a447da2e28f189dad1ac745a1d29cfc49e5384b57c2199455c8b04a",
+      "current_sha256": "36aa7f252a447da2e28f189dad1ac745a1d29cfc49e5384b57c2199455c8b04a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/c6b4d519-9907-410e-919b-26290f8d8a84/generation-000001.json",
+      "baseline_sha256": "796de49b1490349f6ca483619181d64ebfaae1362a6d8ee51fe515795b3a999c",
+      "current_sha256": "796de49b1490349f6ca483619181d64ebfaae1362a6d8ee51fe515795b3a999c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/c6b4d519-9907-410e-919b-26290f8d8a84/index.json",
+      "baseline_sha256": "f13ef91fa71c574a8c6448a46d5a623c884d839bd638c732bb78b707b69fee8c",
+      "current_sha256": "f13ef91fa71c574a8c6448a46d5a623c884d839bd638c732bb78b707b69fee8c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/d48c257b-3057-47e4-8158-c0f84f422b3c/generation-000000.json",
+      "baseline_sha256": "53cf5673883cdc2f953d911fbb7d9d0cac7ef173d368dbe40ae3720dcaeeb422",
+      "current_sha256": "53cf5673883cdc2f953d911fbb7d9d0cac7ef173d368dbe40ae3720dcaeeb422",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/d48c257b-3057-47e4-8158-c0f84f422b3c/generation-000001.json",
+      "baseline_sha256": "d63b3ea97c90485e254912147e22610aa9443d00225eb6ebdff852dd507d35fb",
+      "current_sha256": "d63b3ea97c90485e254912147e22610aa9443d00225eb6ebdff852dd507d35fb",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/d48c257b-3057-47e4-8158-c0f84f422b3c/index.json",
+      "baseline_sha256": "494bd251626ec5b2ee0ca8f3cb0a89b58f4b1cbc1f687731b9d927e37855628c",
+      "current_sha256": "494bd251626ec5b2ee0ca8f3cb0a89b58f4b1cbc1f687731b9d927e37855628c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/e8589579-02ab-42a9-9f21-748d33bfb3ea/.v1xy92lu.tmp",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/e8589579-02ab-42a9-9f21-748d33bfb3ea/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "b25919a0ae53bb34fe04bc005b514ac9016ab7d5e5a434e41d2321182e2520b4",
+      "current_sha256": "b25919a0ae53bb34fe04bc005b514ac9016ab7d5e5a434e41d2321182e2520b4",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/e8589579-02ab-42a9-9f21-748d33bfb3ea/generation-000001.json",
+      "baseline_sha256": "debbef1d1e7189aea860d33669fbdf6b8be817fbd47aae154b5e7f8e1413c014",
+      "current_sha256": "debbef1d1e7189aea860d33669fbdf6b8be817fbd47aae154b5e7f8e1413c014",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/e8589579-02ab-42a9-9f21-748d33bfb3ea/index.json",
+      "baseline_sha256": "9cae4085bccd0c4874d3f32daba55dc0a9df530000bb6993ab1e1cfe2abca152",
+      "current_sha256": "9cae4085bccd0c4874d3f32daba55dc0a9df530000bb6993ab1e1cfe2abca152",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ed7eb73c-0a84-4054-9a94-249de58547bb/.vfew4wrh.tmp",
+      "baseline_sha256": "b182f3bcfce2492f1ae6b2b5bb3c31325822c2e051561ecc239c08c3eca11b11",
+      "current_sha256": "b182f3bcfce2492f1ae6b2b5bb3c31325822c2e051561ecc239c08c3eca11b11",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ed7eb73c-0a84-4054-9a94-249de58547bb/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "1ce5a25bac4d56e82179ed98946f535ee6d1d9801517ee7d668daac1962df5f1",
+      "current_sha256": "1ce5a25bac4d56e82179ed98946f535ee6d1d9801517ee7d668daac1962df5f1",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ed7eb73c-0a84-4054-9a94-249de58547bb/generation-000001.json",
+      "baseline_sha256": "dbbc73a1233e3ac2a04f83be55fe2416d7c1cc155b155e8cb9a4e63a6d305cf4",
+      "current_sha256": "dbbc73a1233e3ac2a04f83be55fe2416d7c1cc155b155e8cb9a4e63a6d305cf4",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ed7eb73c-0a84-4054-9a94-249de58547bb/index.json",
+      "baseline_sha256": "39c5cd6c5777adae042479ef1662f49b88081707cd0de1f6845a06d0bac34799",
+      "current_sha256": "39c5cd6c5777adae042479ef1662f49b88081707cd0de1f6845a06d0bac34799",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/latest_ga_result.json",
+      "baseline_sha256": "fb4f8f554e80a58b1d714dc0b84e71687c94f84860040a108bd55a6ebe95713a",
+      "current_sha256": "fb4f8f554e80a58b1d714dc0b84e71687c94f84860040a108bd55a6ebe95713a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/stopped_runs/27548bac-86f5-4716-be42-0fc5da4deaef.json",
+      "baseline_sha256": "d411f2ff3ee6d7d2525d26dbb96a063d5c48a9281e3edd6e5f41f394ff590525",
+      "current_sha256": "d411f2ff3ee6d7d2525d26dbb96a063d5c48a9281e3edd6e5f41f394ff590525",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/stopped_runs/46a35b06-72cc-4056-a5bc-43b19194a6e0.json",
+      "baseline_sha256": "89950ecb3058d25472e18a24bd778908936696b5db2220338135bc9f6b2f9302",
+      "current_sha256": "89950ecb3058d25472e18a24bd778908936696b5db2220338135bc9f6b2f9302",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/stopped_runs/ee19cca4-9f6d-49a9-bb17-73125543c45a.json",
+      "baseline_sha256": "9170bf95f82ddbba4fb1869d71f168ad4bf7fe187961cbc65f23a1d0190e4a7c",
+      "current_sha256": "9170bf95f82ddbba4fb1869d71f168ad4bf7fe187961cbc65f23a1d0190e4a7c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/saved_chromosomes/uploaded_baseline.json",
+      "baseline_sha256": "3b21d2a6849ae17760abc67de391925ffb368ca5dc356b36486437a00d837f83",
+      "current_sha256": "3b21d2a6849ae17760abc67de391925ffb368ca5dc356b36486437a00d837f83",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/__init__.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/auth.py",
+      "baseline_sha256": "ebfedcc579452b8c1e2b32ea16587e1dfb24486434a084c245bb0fff02466e9d",
+      "current_sha256": "ebfedcc579452b8c1e2b32ea16587e1dfb24486434a084c245bb0fff02466e9d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/faculty.py",
+      "baseline_sha256": "c28a5eba8c363363245903459f588671c4be3c3cb5868fd33e346f09a48797f8",
+      "current_sha256": "c28a5eba8c363363245903459f588671c4be3c3cb5868fd33e346f09a48797f8",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/faculty_preference.py",
+      "baseline_sha256": "a94de661b02e4c8ea835ad5ce85e2b0ac9d6fefc709c2dd79ec623cf14382e04",
+      "current_sha256": "a94de661b02e4c8ea835ad5ce85e2b0ac9d6fefc709c2dd79ec623cf14382e04",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/ga_events.py",
+      "baseline_sha256": "c4228aed5bec17a1b2d5ae6dedc5b117691fd03ade08fd1929aa1d57deee2804",
+      "current_sha256": "c4228aed5bec17a1b2d5ae6dedc5b117691fd03ade08fd1929aa1d57deee2804",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/ga_history.py",
+      "baseline_sha256": "8f0845459540f300912eb84de4fa3c03b0fbc81a9f9fdd3ca97b66375c56859f",
+      "current_sha256": "8f0845459540f300912eb84de4fa3c03b0fbc81a9f9fdd3ca97b66375c56859f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/preference.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/room.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/schedule.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/section.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/schemas/subject.py",
+      "baseline_sha256": "b24007fda590c6ac9a8d24dde75e66ab481034e102ae9055a045295424f691c8",
+      "current_sha256": "b24007fda590c6ac9a8d24dde75e66ab481034e102ae9055a045295424f691c8",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/__init__.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/auth_service.py",
+      "baseline_sha256": "7097057236019c84dbf2a838c65ea11333c06d8408ad153267c0aa3a1babbab7",
+      "current_sha256": "7097057236019c84dbf2a838c65ea11333c06d8408ad153267c0aa3a1babbab7",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/chromosome_analysis_service.py",
+      "baseline_sha256": "b5323b3410c5999abb8aca8d5f4dafdbcd5755b7a218f53dcccf0e7a7e5d1822",
+      "current_sha256": "b5323b3410c5999abb8aca8d5f4dafdbcd5755b7a218f53dcccf0e7a7e5d1822",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/chromosome_service.py",
+      "baseline_sha256": "92f8b858806fc7fc1070ef169f86d34f089a1d6fa299751eaa5926c178826740",
+      "current_sha256": "92f8b858806fc7fc1070ef169f86d34f089a1d6fa299751eaa5926c178826740",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/faculty_analysis_service.py",
+      "baseline_sha256": "0e903b2d3b6ba8c075d330df1f736d6a63c18c032af5f5fe4f562ce1b908d815",
+      "current_sha256": "0e903b2d3b6ba8c075d330df1f736d6a63c18c032af5f5fe4f562ce1b908d815",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/fitness_policy_compatibility.json",
+      "baseline_sha256": "44b7c8306fd89c6062b64929a4d5c12bf203bd57d17c2b46854bc3fe4bb96cf5",
+      "current_sha256": "44b7c8306fd89c6062b64929a4d5c12bf203bd57d17c2b46854bc3fe4bb96cf5",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/fitness_reporting_service.py",
+      "baseline_sha256": "fa73b85fec995c34ac39050f91e33552db7580a2d885e1943d1b5fb3f93a0cfa",
+      "current_sha256": "fa73b85fec995c34ac39050f91e33552db7580a2d885e1943d1b5fb3f93a0cfa",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/ga_checkpoint_service.py",
+      "baseline_sha256": "03264366f062bcf09412b99a5bb91cb0b2a88ad9e5e0797a2a72c7007d80248b",
+      "current_sha256": "03264366f062bcf09412b99a5bb91cb0b2a88ad9e5e0797a2a72c7007d80248b",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/ga_checkpoint_verification.py",
+      "baseline_sha256": "eba5a6847ef55a57c609ea15d65722cc54c8d867c7aac258eeb0dcce182ecfea",
+      "current_sha256": "eba5a6847ef55a57c609ea15d65722cc54c8d867c7aac258eeb0dcce182ecfea",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/ga_control_service.py",
+      "baseline_sha256": "9a2899e104483e89ee23afe786eb46330fd2fcca2b1487eaeed7b861b0130c3f",
+      "current_sha256": "9a2899e104483e89ee23afe786eb46330fd2fcca2b1487eaeed7b861b0130c3f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/ga_history_service.py",
+      "baseline_sha256": "92b36d7feeb2d3bb11d7def42eea2d49886183dc44859ec30bc50115ce75761c",
+      "current_sha256": "92b36d7feeb2d3bb11d7def42eea2d49886183dc44859ec30bc50115ce75761c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/ga_log_service.py",
+      "baseline_sha256": "6ba13332b81bfe77fe23fb0de032803274e955ab93c538fa764898ec5aa0d665",
+      "current_sha256": "6ba13332b81bfe77fe23fb0de032803274e955ab93c538fa764898ec5aa0d665",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/ga_progress_service.py",
+      "baseline_sha256": "262c52a742f03938ae7f7653389e7b9d7bb88fe9c0df18b47b44c31e5f00c7a4",
+      "current_sha256": "262c52a742f03938ae7f7653389e7b9d7bb88fe9c0df18b47b44c31e5f00c7a4",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/ga_publication_service.py",
+      "baseline_sha256": "cb6f9f2bcd79b3d93fa2b747ef99d186652def4881c0b2df4150400c4be89b8d",
+      "current_sha256": "cb6f9f2bcd79b3d93fa2b747ef99d186652def4881c0b2df4150400c4be89b8d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/ga_service.py",
+      "baseline_sha256": "d2decf9f0a623b76cf3ede54a11267e3843d9484f083dadc1cfd9d562518d4d9",
+      "current_sha256": "d2decf9f0a623b76cf3ede54a11267e3843d9484f083dadc1cfd9d562518d4d9",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/ga_validation_templates.py",
+      "baseline_sha256": "557c87c1d055a32844a63bc93391ae0e2e1008faee19b4d01f303c64fc529c29",
+      "current_sha256": "557c87c1d055a32844a63bc93391ae0e2e1008faee19b4d01f303c64fc529c29",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/identity_service.py",
+      "baseline_sha256": "b4659aa89e434c216e64de213b0caf47aeb23f41e2bcf7c61f0aa35a017165ed",
+      "current_sha256": "b4659aa89e434c216e64de213b0caf47aeb23f41e2bcf7c61f0aa35a017165ed",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/metadata_service.py",
+      "baseline_sha256": "ea219632aa5798a05bd60383e208f7bc3a282774eef75f40fabbb1d395859f2a",
+      "current_sha256": "ea219632aa5798a05bd60383e208f7bc3a282774eef75f40fabbb1d395859f2a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/preference_authorization.py",
+      "baseline_sha256": "9c673df7623eae71f87823b13d14df1b110329f7543d529bbcddb4ae3e7f2591",
+      "current_sha256": "9c673df7623eae71f87823b13d14df1b110329f7543d529bbcddb4ae3e7f2591",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/preference_scoring_policy.py",
+      "baseline_sha256": "bdde95c6fb5cf9a47e49ad37c8a3d87805e4aa97e4947f7d7ebbf361db3b642b",
+      "current_sha256": "bdde95c6fb5cf9a47e49ad37c8a3d87805e4aa97e4947f7d7ebbf361db3b642b",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/preference_storage_service.py",
+      "baseline_sha256": "7785bc8c4d82f2b05d352dbde4bb73b746acfc70a9ecd3f04c0a6c2d005e766f",
+      "current_sha256": "7785bc8c4d82f2b05d352dbde4bb73b746acfc70a9ecd3f04c0a6c2d005e766f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/preference_validation_service.py",
+      "baseline_sha256": "42d74a3cee7bc1e38d055340d45ba3063ffdbef6bf39dfd4be2edfdc039fcddc",
+      "current_sha256": "42d74a3cee7bc1e38d055340d45ba3063ffdbef6bf39dfd4be2edfdc039fcddc",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/schedule_service.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/__init__.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/conftest.py",
+      "baseline_sha256": "1c88036038b78a982c73d5288472d1f289a04e89e89dbe50339b5c65f0ab5f5f",
+      "current_sha256": "1c88036038b78a982c73d5288472d1f289a04e89e89dbe50339b5c65f0ab5f5f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_api.py",
+      "baseline_sha256": "786dd44cfa422e7c1478dcccea1f62ffe7cb99eb64588a869a7936613c63c90d",
+      "current_sha256": "786dd44cfa422e7c1478dcccea1f62ffe7cb99eb64588a869a7936613c63c90d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_api_validation.py",
+      "baseline_sha256": "9b7f01bb162cc2f6f3fcfe7e6c579383afdffedb7b275b2fad2066e2981e8cb6",
+      "current_sha256": "9b7f01bb162cc2f6f3fcfe7e6c579383afdffedb7b275b2fad2066e2981e8cb6",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_fitness_reporting.py",
+      "baseline_sha256": "85cb39737f07706aade9a9afa425d324ce6c88c8fa99c11feb3e0ae04e5d66b4",
+      "current_sha256": "85cb39737f07706aade9a9afa425d324ce6c88c8fa99c11feb3e0ae04e5d66b4",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_api_crossover.py",
+      "baseline_sha256": "8124f265d8beef4244f32bdc29dbc55894f087ff8a9fcf720d811d77a62e8687",
+      "current_sha256": "8124f265d8beef4244f32bdc29dbc55894f087ff8a9fcf720d811d77a62e8687",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_control_conflicts.py",
+      "baseline_sha256": "c2ea9963e6b919b77ffb12b61b68d0bfd2efb66405dc1a49185d0b4f5c0998ff",
+      "current_sha256": "c2ea9963e6b919b77ffb12b61b68d0bfd2efb66405dc1a49185d0b4f5c0998ff",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_core.py",
+      "baseline_sha256": "3e0f65ce8e5fadc38ac19ea31118b45301853cfbab05adc315e70297ee0165ea",
+      "current_sha256": "3e0f65ce8e5fadc38ac19ea31118b45301853cfbab05adc315e70297ee0165ea",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_generation_history.py",
+      "baseline_sha256": "635d764dabd2b7018209c200fbd1a2750c1ba38bf9ba49927352161638f4d44c",
+      "current_sha256": "635d764dabd2b7018209c200fbd1a2750c1ba38bf9ba49927352161638f4d44c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_hard_constraints.py",
+      "baseline_sha256": "f85ab0e9ab1414710514dc0ac0b7b1440cbbad69e39462c4742c55e1c0c37117",
+      "current_sha256": "f85ab0e9ab1414710514dc0ac0b7b1440cbbad69e39462c4742c55e1c0c37117",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_history_checkpoint_recovery.py",
+      "baseline_sha256": "0150aa365eb6d24e119e75ab7a905d83768096cfdd970e27276b07a51eee9e9b",
+      "current_sha256": "0150aa365eb6d24e119e75ab7a905d83768096cfdd970e27276b07a51eee9e9b",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_logs.py",
+      "baseline_sha256": "568924498e14d01c61ff4ad98a63f0d698798e90e9a004a4d421526303f2d0e7",
+      "current_sha256": "568924498e14d01c61ff4ad98a63f0d698798e90e9a004a4d421526303f2d0e7",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_monitoring.py",
+      "baseline_sha256": "ce1a344a05f10a1014b21f0bfbbcdf6c507551e373d9f04928f0cbb65aaef6a0",
+      "current_sha256": "ce1a344a05f10a1014b21f0bfbbcdf6c507551e373d9f04928f0cbb65aaef6a0",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_pause_resume.py",
+      "baseline_sha256": "a6e71dac81f75435f72df092dcd3f2abb3525ec766d8c962628dbb535bdc0f7c",
+      "current_sha256": "a6e71dac81f75435f72df092dcd3f2abb3525ec766d8c962628dbb535bdc0f7c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_paused_recovery.py",
+      "baseline_sha256": "dd1d047df3167859398967bff8348580daa30019189e900bd00575084eba5797",
+      "current_sha256": "dd1d047df3167859398967bff8348580daa30019189e900bd00575084eba5797",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_refresh_recovery.py",
+      "baseline_sha256": "87b54b8d90d283adc35fef985b594ccd84106a1acae8b6d070e7272d9569ca2c",
+      "current_sha256": "87b54b8d90d283adc35fef985b594ccd84106a1acae8b6d070e7272d9569ca2c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_safe_stop.py",
+      "baseline_sha256": "365dbac5e7cfb2156aee5b14a7d90da6e4d132722862b5f6f46f7c14be5c4038",
+      "current_sha256": "365dbac5e7cfb2156aee5b14a7d90da6e4d132722862b5f6f46f7c14be5c4038",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_ga_unicode_diagnostics.py",
+      "baseline_sha256": "7f5fbe35977392c91e0f0f90c648bb13cf2efc42f4048157dab06f995ad15136",
+      "current_sha256": "7f5fbe35977392c91e0f0f90c648bb13cf2efc42f4048157dab06f995ad15136",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_metadata_api.py",
+      "baseline_sha256": "e27d26bcde093eb493347367cc77fbeb97d1e3eec4a89aa1d2b4d7a3b4bac5e0",
+      "current_sha256": "e27d26bcde093eb493347367cc77fbeb97d1e3eec4a89aa1d2b4d7a3b4bac5e0",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_phase4a_auth.py",
+      "baseline_sha256": "e4390962630ff72d6061c9952e031ea60a7a4ecb5808a04c8faee459d730c5bf",
+      "current_sha256": "e4390962630ff72d6061c9952e031ea60a7a4ecb5808a04c8faee459d730c5bf",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_phase4a_final_verification.py",
+      "baseline_sha256": "bb1a3400aef65b029a48eab8eb8b7be1fd5fac99baee3e70fa35956c7b1c7c93",
+      "current_sha256": "bb1a3400aef65b029a48eab8eb8b7be1fd5fac99baee3e70fa35956c7b1c7c93",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_preassigned_assignments.py",
+      "baseline_sha256": "684f8ec54f1044d2ff2ef90d00fa0faf6db7ef10d4a1eb9feea66e3df2c846f9",
+      "current_sha256": "684f8ec54f1044d2ff2ef90d00fa0faf6db7ef10d4a1eb9feea66e3df2c846f9",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_preference_integrity.py",
+      "baseline_sha256": "8c1327370830a0abbc70f8bee98255e0563bac9fddbb01edce0e4136b56aa645",
+      "current_sha256": "8c1327370830a0abbc70f8bee98255e0563bac9fddbb01edce0e4136b56aa645",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_preference_toggles.py",
+      "baseline_sha256": "c5a339025e64878082f3de1c50d34a9398427743d591c8243d749b7315358db1",
+      "current_sha256": "c5a339025e64878082f3de1c50d34a9398427743d591c8243d749b7315358db1",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_preference_validation.py",
+      "baseline_sha256": "9dc196fe9c2463e928f93277f07691c31183a78826f5414dc807d5a482e2f83b",
+      "current_sha256": "9dc196fe9c2463e928f93277f07691c31183a78826f5414dc807d5a482e2f83b",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_system_audit.py",
+      "baseline_sha256": "ad767a2c8bb130f84f6f580360c33a887daca42f3aa180f1a07defafb3b33a64",
+      "current_sha256": "ad767a2c8bb130f84f6f580360c33a887daca42f3aa180f1a07defafb3b33a64",
+      "unchanged": true
+    },
+    {
+      "path": "backend/tests/test_tournament_selection.py",
+      "baseline_sha256": "52f51f2d0a772f0cba9b4c335c696e136157a9606ffe8ac13bae7475b5f2cd17",
+      "current_sha256": "52f51f2d0a772f0cba9b4c335c696e136157a9606ffe8ac13bae7475b5f2cd17",
+      "unchanged": true
+    },
+    {
+      "path": "docs/DEVELOPMENT_DOCUMENTATION_STANDARD.md",
+      "baseline_sha256": "a209d32ab3d3f108dd232420520e9a51b1c166ddf22223b28089337479bd22df",
+      "current_sha256": "a209d32ab3d3f108dd232420520e9a51b1c166ddf22223b28089337479bd22df",
+      "unchanged": true
+    },
+    {
+      "path": "docs/api/api-endpoints.md",
+      "baseline_sha256": "d96196b1af00aa5c4c3c4e7fc0999d8f1693b3d6f6d55d24a69644a907423fb0",
+      "current_sha256": "d96196b1af00aa5c4c3c4e7fc0999d8f1693b3d6f6d55d24a69644a907423fb0",
+      "unchanged": true
+    },
+    {
+      "path": "docs/api/phase-1-metadata.md",
+      "baseline_sha256": "004b8cc8cd43f99c322b78ef708059a7e5293dcaf04fa8064baed03f24195b17",
+      "current_sha256": "004b8cc8cd43f99c322b78ef708059a7e5293dcaf04fa8064baed03f24195b17",
+      "unchanged": true
+    },
+    {
+      "path": "docs/architecture/ga-workflow.md",
+      "baseline_sha256": "fed52ba1e150c2aac17a4cf831f7c77a057180246e0c7cfb6b2d330cf92f98e6",
+      "current_sha256": "fed52ba1e150c2aac17a4cf831f7c77a057180246e0c7cfb6b2d330cf92f98e6",
+      "unchanged": true
+    },
+    {
+      "path": "docs/architecture/system-architecture.md",
+      "baseline_sha256": "880576a3063942d2984845ae6e16815c8ef7442b32b57c8c2a903c61efe21a4f",
+      "current_sha256": "880576a3063942d2984845ae6e16815c8ef7442b32b57c8c2a903c61efe21a4f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-2-faculty-preferences.md",
+      "baseline_sha256": "a023b9b756a41aabb8a0e659ec856e54e4b7676fb4e2c2042c216e8eadda42ad",
+      "current_sha256": "a023b9b756a41aabb8a0e659ec856e54e4b7676fb4e2c2042c216e8eadda42ad",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-3b-live-ga-monitoring.md",
+      "baseline_sha256": "aa8b26712f46334f3a4585ad7e81236ffeb41850f5ee87086f438493f89386ac",
+      "current_sha256": "aa8b26712f46334f3a4585ad7e81236ffeb41850f5ee87086f438493f89386ac",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-3c-safe-stop.md",
+      "baseline_sha256": "a0b953fb5bc8fe972330c05f3958d04947264c7a25baea7bfa67d591d2f19109",
+      "current_sha256": "a0b953fb5bc8fe972330c05f3958d04947264c7a25baea7bfa67d591d2f19109",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-3d-pause-resume.md",
+      "baseline_sha256": "cebeba14b5d32c5214f5c4ae5f840ba4ff4b40005b53e4b8a6d2df1a905ecb05",
+      "current_sha256": "cebeba14b5d32c5214f5c4ae5f840ba4ff4b40005b53e4b8a6d2df1a905ecb05",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-3e-generation-history.md",
+      "baseline_sha256": "682bc19b135d796110220211feeee3ed0263ed95a0d15f698dffa7c99e9160f0",
+      "current_sha256": "682bc19b135d796110220211feeee3ed0263ed95a0d15f698dffa7c99e9160f0",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-3e1-history-checkpoint-recovery.md",
+      "baseline_sha256": "2028a5d2048f8358dd40240f73d8cf30b3cab9c8fdd2ff1f06ee0d1225e99405",
+      "current_sha256": "2028a5d2048f8358dd40240f73d8cf30b3cab9c8fdd2ff1f06ee0d1225e99405",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-3e2-windows-diagnostics.md",
+      "baseline_sha256": "ddd5a8e6e060d17ecba601c07e021e973ccbc92d86f632a16fe62b08b812ef06",
+      "current_sha256": "ddd5a8e6e060d17ecba601c07e021e973ccbc92d86f632a16fe62b08b812ef06",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-3f-fitness-analysis.md",
+      "baseline_sha256": "3229edfe31c2ef481c2083d78a75328b9c0d4f99522eec71f8d2cb7fb436f372",
+      "current_sha256": "3229edfe31c2ef481c2083d78a75328b9c0d4f99522eec71f8d2cb7fb436f372",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-3f2-data-integrity-report.md",
+      "baseline_sha256": "b61b0a7ad171aeb2f3bf8a3e76a93ae82d2b3e5c4a45d219b04a4045c0bb3081",
+      "current_sha256": "b61b0a7ad171aeb2f3bf8a3e76a93ae82d2b3e5c4a45d219b04a4045c0bb3081",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-4a-authentication-report.md",
+      "baseline_sha256": "2fa1c6529071ea4f977cca7c26f481a2c891e457610f1fe7f50cc0545598bfb1",
+      "current_sha256": "2fa1c6529071ea4f977cca7c26f481a2c891e457610f1fe7f50cc0545598bfb1",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-4a-final-verification.md",
+      "baseline_sha256": "2589d468d077f9a483df5e97bac4c0bac35437b19718202cbbd640113ccb6a06",
+      "current_sha256": "2589d468d077f9a483df5e97bac4c0bac35437b19718202cbbd640113ccb6a06",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase-4a-local-setup.md",
+      "baseline_sha256": "d9aa280a0539364a5a6adcabfbc5c46a26ce9cbfe5b4b8fa635448519c0196d3",
+      "current_sha256": "d9aa280a0539364a5a6adcabfbc5c46a26ce9cbfe5b4b8fa635448519c0196d3",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/README.md",
+      "baseline_sha256": "976f98842791bf1a8b9e7e79ad369ff8fa7b0a4fd312a87645a313079e605b1d",
+      "current_sha256": "976f98842791bf1a8b9e7e79ad369ff8fa7b0a4fd312a87645a313079e605b1d",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/admin-dashboard.png",
+      "baseline_sha256": "f73f54b14c2993c9623f394e094737bd2ac6f20cfb7dc019d353a45501e6588b",
+      "current_sha256": "f73f54b14c2993c9623f394e094737bd2ac6f20cfb7dc019d353a45501e6588b",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/generate-schedule.png",
+      "baseline_sha256": "cc04752eef4d057da6b56c4a21c86bfa246732e5885c63a39d6132a753d6669f",
+      "current_sha256": "cc04752eef4d057da6b56c4a21c86bfa246732e5885c63a39d6132a753d6669f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B01-anonymous-sign-in.png",
+      "baseline_sha256": "cf8ce22e27ae8895ea9cdcab9af3d3eb5ef0eeb5da0f3b2b6658df777f2399b7",
+      "current_sha256": "cf8ce22e27ae8895ea9cdcab9af3d3eb5ef0eeb5da0f3b2b6658df777f2399b7",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B02-admin-dashboard.png",
+      "baseline_sha256": "b55edc36cae5ce55624966d95ae9cd33f8e5b860996fdfa07fa8467cc2ea8e96",
+      "current_sha256": "b55edc36cae5ce55624966d95ae9cd33f8e5b860996fdfa07fa8467cc2ea8e96",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B03-admin-logout.png",
+      "baseline_sha256": "461d99974b98ac5f4503d82a70797a2cc86fcaa0d81e8b5d502b5b6382e998d6",
+      "current_sha256": "461d99974b98ac5f4503d82a70797a2cc86fcaa0d81e8b5d502b5b6382e998d6",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B04-faculty-dashboard.png",
+      "baseline_sha256": "38b2386e42677e1965cdb64c268ee1a73284238c179c017035bee30e342d30af",
+      "current_sha256": "38b2386e42677e1965cdb64c268ee1a73284238c179c017035bee30e342d30af",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B05-faculty-preferences-before.png",
+      "baseline_sha256": "e884846b36700fabfbd1fd6948e92c6bb137ce67e8d6f605f43044ad7d14417d",
+      "current_sha256": "e884846b36700fabfbd1fd6948e92c6bb137ce67e8d6f605f43044ad7d14417d",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B06-preference-unsaved.png",
+      "baseline_sha256": "5af374c94f8b1c7425a7c0fc3e07ac5ff5e9ae78be4091c3a50d869b756baf97",
+      "current_sha256": "5af374c94f8b1c7425a7c0fc3e07ac5ff5e9ae78be4091c3a50d869b756baf97",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/2026-10-16-acceptance-01/P4A-B07-preference-saved.png",
+      "baseline_sha256": "0f63330e9d4391abe2fcbdf2ebcde676a8089a70bf5e19b644e716aa44c65d2b",
+      "current_sha256": "0f63330e9d4391abe2fcbdf2ebcde676a8089a70bf5e19b644e716aa44c65d2b",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/manual-acceptance/after-change.png",
+      "baseline_sha256": "504b163b8a38a003dce5858a8c13859fb94742f799d559d1c584b0ee78e2aadb",
+      "current_sha256": "504b163b8a38a003dce5858a8c13859fb94742f799d559d1c584b0ee78e2aadb",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/manual-acceptance/before-change.png",
+      "baseline_sha256": "7c317cd05e20a38fb14ecd1d86bc2050fed38eb458d008f7da9e7a15d4ca7952",
+      "current_sha256": "7c317cd05e20a38fb14ecd1d86bc2050fed38eb458d008f7da9e7a15d4ca7952",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/manual-acceptance/fcult-admin-denied.png",
+      "baseline_sha256": "057441369005f153bc948a19aec26f397b07bf22e06be18f9fb4d50f2764e8e0",
+      "current_sha256": "057441369005f153bc948a19aec26f397b07bf22e06be18f9fb4d50f2764e8e0",
+      "unchanged": true
+    },
+    {
+      "path": "docs/screenshots/phase-4a/manual-acceptance/redirect.png",
+      "baseline_sha256": "6b367d3e2fa09e6e5b78b28c55822b86c482a1d77e8185d7d3dad8a6dfbf71f4",
+      "current_sha256": "6b367d3e2fa09e6e5b78b28c55822b86c482a1d77e8185d7d3dad8a6dfbf71f4",
+      "unchanged": true
+    },
+    {
+      "path": "docs/testing/README.md",
+      "baseline_sha256": "575357970832e15dc276c85e3bbd75cafaa9ec8d78ac9878dfa2a8ccee42a6f7",
+      "current_sha256": "575357970832e15dc276c85e3bbd75cafaa9ec8d78ac9878dfa2a8ccee42a6f7",
+      "unchanged": true
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/api-results.json",
+      "baseline_sha256": "d55ab8c85f3a2a3a83ec939b8d9a9ad0d27174f2db55be00c249f649102386b3",
+      "current_sha256": "d55ab8c85f3a2a3a83ec939b8d9a9ad0d27174f2db55be00c249f649102386b3",
+      "unchanged": true
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/results.md",
+      "baseline_sha256": "a1c6bb323ccfd4d2b8e0bbc2853188030bb7bff56665ad0db7bbcb68066de31d",
+      "current_sha256": "a1c6bb323ccfd4d2b8e0bbc2853188030bb7bff56665ad0db7bbcb68066de31d",
+      "unchanged": true
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/run-manifest.json",
+      "baseline_sha256": "983340aa9169ab0763581e6f7f614726487a987812d0a8047e0b6fb96d50cb0e",
+      "current_sha256": "983340aa9169ab0763581e6f7f614726487a987812d0a8047e0b6fb96d50cb0e",
+      "unchanged": true
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-acceptance-01/screenshots.json",
+      "baseline_sha256": "dac3ee981ae8567abd017affc740f7a4a037b334dd5228c61ae0f069fd2a3c92",
+      "current_sha256": "dac3ee981ae8567abd017affc740f7a4a037b334dd5228c61ae0f069fd2a3c92",
+      "unchanged": true
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-missing-browser-02/attempt-manifest.json",
+      "baseline_sha256": "3df316bc0c3fc04aca649a322c4afee091dd96f122d4910a7e6f941ee9eea0ba",
+      "current_sha256": "3df316bc0c3fc04aca649a322c4afee091dd96f122d4910a7e6f941ee9eea0ba",
+      "unchanged": true
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-missing-browser-02/manual-acceptance-manifest.json",
+      "baseline_sha256": "05faca05cf537c6d936c5e863c14ad7382878373215da5e3000cacf686661a33",
+      "current_sha256": "05faca05cf537c6d936c5e863c14ad7382878373215da5e3000cacf686661a33",
+      "unchanged": true
+    },
+    {
+      "path": "docs/testing/phase-4a/2026-10-16-missing-browser-02/results.md",
+      "baseline_sha256": "dea03fe006c98ea8676218bd1daddfaaa3f76bffe31b0132cf0a6db762b91566",
+      "current_sha256": "dea03fe006c98ea8676218bd1daddfaaa3f76bffe31b0132cf0a6db762b91566",
+      "unchanged": true
+    },
+    {
+      "path": "docs/testing/phase-4a/serve_evidence_fixture.py",
+      "baseline_sha256": "f359084f13aed8f93e8f8fcf3ae8f66f629af46892bbbccd04ce8cf8351bd6dd",
+      "current_sha256": "f359084f13aed8f93e8f8fcf3ae8f66f629af46892bbbccd04ce8cf8351bd6dd",
+      "unchanged": true
+    },
+    {
+      "path": "docs/testing/phase-4a/test_evidence_fixture_lifecycle.py",
+      "baseline_sha256": "20181a359c4cf1f28242f91342a0759430dc150bfc0cfff2a7541f841f2784c1",
+      "current_sha256": "20181a359c4cf1f28242f91342a0759430dc150bfc0cfff2a7541f841f2784c1",
+      "unchanged": true
+    },
+    {
+      "path": "docs/thesis-evidence/README.md",
+      "baseline_sha256": "931be540c078eff713e2044608b20552188cd0b165166760d273072d503d03bc",
+      "current_sha256": "931be540c078eff713e2044608b20552188cd0b165166760d273072d503d03bc",
+      "unchanged": true
+    },
+    {
+      "path": "docs/thesis-evidence/phase-4a-evidence.md",
+      "baseline_sha256": "ceeeb5390a298e1819a63b2c7f996594c5170352258756e6989064dc50697a1f",
+      "current_sha256": "ceeeb5390a298e1819a63b2c7f996594c5170352258756e6989064dc50697a1f",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/App.css",
+      "baseline_sha256": "6e25a776d3e8102da5bacb3cb99f4a5fc662a2e01e6143140671a556d28c3d5c",
+      "current_sha256": "6e25a776d3e8102da5bacb3cb99f4a5fc662a2e01e6143140671a556d28c3d5c",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "baseline_sha256": "cc295f29ba760ae83199ddfff360f92d9e1bf35477b69cd1854065369615b778",
+      "current_sha256": "cc295f29ba760ae83199ddfff360f92d9e1bf35477b69cd1854065369615b778",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/api/faculty.ts",
+      "baseline_sha256": "f0e85e44fe5eec2ee794425050686f241321881e8c0c67ec316d5e973641a0af",
+      "current_sha256": "f0e85e44fe5eec2ee794425050686f241321881e8c0c67ec316d5e973641a0af",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/api/preferences.ts",
+      "baseline_sha256": "d0146cdfdb3f90bb37b173a7b2dec9bcd24af564ee4a105895157ca8a83e02b6",
+      "current_sha256": "d0146cdfdb3f90bb37b173a7b2dec9bcd24af564ee4a105895157ca8a83e02b6",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/api/subjects.ts",
+      "baseline_sha256": "29c91487d58f17ea08d7856ec0de709463b62fd7674ede36f3ead2e35637fb81",
+      "current_sha256": "29c91487d58f17ea08d7856ec0de709463b62fd7674ede36f3ead2e35637fb81",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/assets/hero.png",
+      "baseline_sha256": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c",
+      "current_sha256": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/assets/react.svg",
+      "baseline_sha256": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5",
+      "current_sha256": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/assets/vite.svg",
+      "baseline_sha256": "5be21acd42eb7b896e517f4e0f0f11eb5c5d9e54fbbcebe9453f033008fcca6f",
+      "current_sha256": "5be21acd42eb7b896e517f4e0f0f11eb5c5d9e54fbbcebe9453f033008fcca6f",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/common/AccountMenu.tsx",
+      "baseline_sha256": "779cc11b30a7bc576b8d08259870b209623b10cd92121ea624b29b94f339d20b",
+      "current_sha256": "779cc11b30a7bc576b8d08259870b209623b10cd92121ea624b29b94f339d20b",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/common/EmptyState.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/common/LoadingSpinner.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/common/Sidebar.tsx",
+      "baseline_sha256": "d2e7e102476963c5cc86b088643d0de9e0e107e5dc6858a0131fe363ef8170fa",
+      "current_sha256": "d2e7e102476963c5cc86b088643d0de9e0e107e5dc6858a0131fe363ef8170fa",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/common/StatCard.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/common/Topbar.tsx",
+      "baseline_sha256": "64864aadeb13186126a14021a329d3407646629b13c7f65f68e776749587ae41",
+      "current_sha256": "64864aadeb13186126a14021a329d3407646629b13c7f65f68e776749587ae41",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/faculty/FacultyPreferenceEditor.tsx",
+      "baseline_sha256": "0f203bdf4859bb54a4617d2e2443c1a5d0385460d3499b71fba2ec31de1762d6",
+      "current_sha256": "0f203bdf4859bb54a4617d2e2443c1a5d0385460d3499b71fba2ec31de1762d6",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/faculty/PreferenceCalendar.tsx",
+      "baseline_sha256": "25a5bcc77d1562cc088ee0c731b85837fd639073611d0c709d3b8ea4429652b3",
+      "current_sha256": "25a5bcc77d1562cc088ee0c731b85837fd639073611d0c709d3b8ea4429652b3",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/faculty/preferenceModel.ts",
+      "baseline_sha256": "50577e2e9171ab20f9876cb291f17f95c156f394bd5cb56d755ee213369581c3",
+      "current_sha256": "50577e2e9171ab20f9876cb291f17f95c156f394bd5cb56d755ee213369581c3",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/faculty/preferences.css",
+      "baseline_sha256": "f39c895064397baee8666bbc28f56300c29e1bb6833484e79fe8c6bb5e4e59c2",
+      "current_sha256": "f39c895064397baee8666bbc28f56300c29e1bb6833484e79fe8c6bb5e4e59c2",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/ga/FitnessCards.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/ga/FitnessChart.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/ga/GALiveConsole.tsx",
+      "baseline_sha256": "dd90d3b6be652a22d2fc9a560f01cfcc6c32cd92e4f4421e10df6fc586428d75",
+      "current_sha256": "dd90d3b6be652a22d2fc9a560f01cfcc6c32cd92e4f4421e10df6fc586428d75",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/ga/GenerationHistory.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/ga/LiveGAMonitor.tsx",
+      "baseline_sha256": "5c3d934063bd20ac70c90a8b1e4d119bbe3be95af2abb47c13bfaab147a74d4a",
+      "current_sha256": "5c3d934063bd20ac70c90a8b1e4d119bbe3be95af2abb47c13bfaab147a74d4a",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/schedule/ScheduleFilters.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/schedule/ScheduleTable.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/schedule/WeeklySchedule.tsx",
+      "baseline_sha256": "4b56016f9548f586da4e9441ba9ef12651e9c49ef437528761eff5d2ca7a3331",
+      "current_sha256": "4b56016f9548f586da4e9441ba9ef12651e9c49ef437528761eff5d2ca7a3331",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/schedule/facultyDisplay.ts",
+      "baseline_sha256": "b9534a091d75fcb052139f8817bc5faafbbb822b8b97b009e17a7801774582b8",
+      "current_sha256": "b9534a091d75fcb052139f8817bc5faafbbb822b8b97b009e17a7801774582b8",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/context/AuthContext.tsx",
+      "baseline_sha256": "504bf88469b80ab04562a200630016eda509a494db3d88b75fa108b60bbc856a",
+      "current_sha256": "504bf88469b80ab04562a200630016eda509a494db3d88b75fa108b60bbc856a",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/context/GAContext.tsx",
+      "baseline_sha256": "d8f107c47de205bd8f7a953124fbb00b37164ab3a09237baa1510e4b567e8640",
+      "current_sha256": "d8f107c47de205bd8f7a953124fbb00b37164ab3a09237baa1510e4b567e8640",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/index.css",
+      "baseline_sha256": "5b788be1403455e2573a79d439966ef6e01b54767b84e6edbb95bb9bf97e1b1c",
+      "current_sha256": "5b788be1403455e2573a79d439966ef6e01b54767b84e6edbb95bb9bf97e1b1c",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/layouts/AdminLayout.tsx",
+      "baseline_sha256": "11634a01c9f6cea07f3ac746a2374c37a11430dba4b0e4b89ac45658b0a6c2b4",
+      "current_sha256": "11634a01c9f6cea07f3ac746a2374c37a11430dba4b0e4b89ac45658b0a6c2b4",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/layouts/FacultyLayout.tsx",
+      "baseline_sha256": "d47a295e923376e61d8a70139bda2dbe0c2593ba5262e5ccec4cf5c2a71e89a2",
+      "current_sha256": "d47a295e923376e61d8a70139bda2dbe0c2593ba5262e5ccec4cf5c2a71e89a2",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "baseline_sha256": "4f4922e37b539aaea9a865c414cca33fea59a2f325432aaea94ef8614bb0b721",
+      "current_sha256": "4f4922e37b539aaea9a865c414cca33fea59a2f325432aaea94ef8614bb0b721",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/Login.tsx",
+      "baseline_sha256": "9d2b7222e8c839b2c69c7ef42928400575dd191c1cfd026211c8ecab219934f3",
+      "current_sha256": "9d2b7222e8c839b2c69c7ef42928400575dd191c1cfd026211c8ecab219934f3",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/Accounts.tsx",
+      "baseline_sha256": "4840c6c2e2bcf58b6590ea47223db437a409aa0f6f97b3692a9ac40d59db2fd7",
+      "current_sha256": "4840c6c2e2bcf58b6590ea47223db437a409aa0f6f97b3692a9ac40d59db2fd7",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/ChromosomeViewer.tsx",
+      "baseline_sha256": "dd60768ced2e6440ebcf285a49c29f461bf4854f3891749ab980487b3690e6e0",
+      "current_sha256": "dd60768ced2e6440ebcf285a49c29f461bf4854f3891749ab980487b3690e6e0",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/Dashboard.tsx",
+      "baseline_sha256": "1951c1d8600567c6acf3bd09df577b80d0a97e9ec01ab20662eda62ce45b0ebf",
+      "current_sha256": "1951c1d8600567c6acf3bd09df577b80d0a97e9ec01ab20662eda62ce45b0ebf",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/FacultyManagement.tsx",
+      "baseline_sha256": "9e9d16fa3ff69525d74e4dde4784c2294035697ae65028c70db06017355200bc",
+      "current_sha256": "9e9d16fa3ff69525d74e4dde4784c2294035697ae65028c70db06017355200bc",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/FitnessAnalysis.tsx",
+      "baseline_sha256": "595493b9ee2c5061689b6fbcc999b7c2bb801666625766dfcf585a196615fa67",
+      "current_sha256": "595493b9ee2c5061689b6fbcc999b7c2bb801666625766dfcf585a196615fa67",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/GenerateSchedule.tsx",
+      "baseline_sha256": "f1cd88bbdd019ef678c8710698da65d05b180ad466da932e783ed6169e808b37",
+      "current_sha256": "f1cd88bbdd019ef678c8710698da65d05b180ad466da932e783ed6169e808b37",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/GenerationHistory.tsx",
+      "baseline_sha256": "ea82282ab2caba2bd0724600ded59ba7e657fb7b5c31b9ff460bd192c6587621",
+      "current_sha256": "ea82282ab2caba2bd0724600ded59ba7e657fb7b5c31b9ff460bd192c6587621",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/PreferencesReview.tsx",
+      "baseline_sha256": "740f20e6b38d8607c7ee1199c862ca8d8c875d40440a202e3a4d771fe113958d",
+      "current_sha256": "740f20e6b38d8607c7ee1199c862ca8d8c875d40440a202e3a4d771fe113958d",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/RoomAssignments.tsx",
+      "baseline_sha256": "1d9d1155b080c1c50c90e13d1916258bd4f1969c7adb157b33d03ba431a9c89e",
+      "current_sha256": "1d9d1155b080c1c50c90e13d1916258bd4f1969c7adb157b33d03ba431a9c89e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/ScheduleView.tsx",
+      "baseline_sha256": "0b28b929349e2f0be6b07b3fa7ca5d623def7941c3b03952bc214937d9d9bf61",
+      "current_sha256": "0b28b929349e2f0be6b07b3fa7ca5d623def7941c3b03952bc214937d9d9bf61",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/admin/SubjectManagement.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/faculty/Dashboard.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/faculty/MySchedule.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/faculty/Preferences.tsx",
+      "baseline_sha256": "92806ed8f5a43c587689b9d2c1d5734e008273dd2257ba90fd198ba281e12306",
+      "current_sha256": "92806ed8f5a43c587689b9d2c1d5734e008273dd2257ba90fd198ba281e12306",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/pages/faculty/Profile.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/routes/AppRoutes.tsx",
+      "baseline_sha256": "32530e5bb2af4ce7f8dc2259c8f5f728a6111110cb65daf69e9f5819796358dc",
+      "current_sha256": "32530e5bb2af4ce7f8dc2259c8f5f728a6111110cb65daf69e9f5819796358dc",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/routes/ProtectedRoute.tsx",
+      "baseline_sha256": "20f7a4c6a2ac5aaba611e495909b017242c536ff9ac41c8a8cc01ed9972c2ff7",
+      "current_sha256": "20f7a4c6a2ac5aaba611e495909b017242c536ff9ac41c8a8cc01ed9972c2ff7",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/api.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/apiSession.ts",
+      "baseline_sha256": "a6116d1c71eff79700a7654a3aab920982c24fe9724e0bca4942b0adef07a872",
+      "current_sha256": "a6116d1c71eff79700a7654a3aab920982c24fe9724e0bca4942b0adef07a872",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/auth.ts",
+      "baseline_sha256": "4bca2d7294863742a2ee1f3c4052fdf0c12e14ee5b6e2269973db2931ed89246",
+      "current_sha256": "4bca2d7294863742a2ee1f3c4052fdf0c12e14ee5b6e2269973db2931ed89246",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/facultyService.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/fitnessReporting.ts",
+      "baseline_sha256": "9e76a92a1a19327bbddb7e0e53dcf1589375855422ce57fa15560fefd8652f7f",
+      "current_sha256": "9e76a92a1a19327bbddb7e0e53dcf1589375855422ce57fa15560fefd8652f7f",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/gaHistory.ts",
+      "baseline_sha256": "1da9a446d4afba6fd824db7aac9b8d0d8606f2fc12b2f7b93abf4c359f08693b",
+      "current_sha256": "1da9a446d4afba6fd824db7aac9b8d0d8606f2fc12b2f7b93abf4c359f08693b",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/gaLogs.ts",
+      "baseline_sha256": "f0573b21ff87f5749714230504f35c89fd97083fad0d33f966d64721d8d434b9",
+      "current_sha256": "f0573b21ff87f5749714230504f35c89fd97083fad0d33f966d64721d8d434b9",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/gaMonitoring.ts",
+      "baseline_sha256": "2d4a43e0eb5caf66c35b7a97ddaf97f1344b5fd717260e456c89d2c1d05c8b5c",
+      "current_sha256": "2d4a43e0eb5caf66c35b7a97ddaf97f1344b5fd717260e456c89d2c1d05c8b5c",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/gaRecovery.ts",
+      "baseline_sha256": "292b3ff7e9f2dc6824b2a88b28b283ab144bcc5274427401d9066d65a300b3e9",
+      "current_sha256": "292b3ff7e9f2dc6824b2a88b28b283ab144bcc5274427401d9066d65a300b3e9",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/gaService.ts",
+      "baseline_sha256": "1744ee7f162ea8784c58da63b257c2253fc007b9ec0f3d91b97a25a756f60b61",
+      "current_sha256": "1744ee7f162ea8784c58da63b257c2253fc007b9ec0f3d91b97a25a756f60b61",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/services/preferenceService.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/types/faculty.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/types/ga.ts",
+      "baseline_sha256": "ec5686384299b56db33cebc9c811491a956144b7d8c530d4d291e812d91b8fd9",
+      "current_sha256": "ec5686384299b56db33cebc9c811491a956144b7d8c530d4d291e812d91b8fd9",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/types/preference.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/types/schedule.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/auth.browser.integration.mjs",
+      "baseline_sha256": "147c6c43bc97e1540433a847d55157c3c387fd97ac24be1d2aab96e1c82700f2",
+      "current_sha256": "147c6c43bc97e1540433a847d55157c3c387fd97ac24be1d2aab96e1c82700f2",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/auth.test.mjs",
+      "baseline_sha256": "43c5cb138f7017ac9964031cc75eb7983db830a9c348f7f8646db59667b3595f",
+      "current_sha256": "43c5cb138f7017ac9964031cc75eb7983db830a9c348f7f8646db59667b3595f",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/authSessionRace.test.mjs",
+      "baseline_sha256": "a94a85e7be310140d8d1663d429e25adf30090217b42330a43e487981ca04066",
+      "current_sha256": "a94a85e7be310140d8d1663d429e25adf30090217b42330a43e487981ca04066",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/facultyDisplay.test.mjs",
+      "baseline_sha256": "70b839aacf88ed6dcd48e66bc92fd4f2b83aec85003b710c624d2e92c0a1ad16",
+      "current_sha256": "70b839aacf88ed6dcd48e66bc92fd4f2b83aec85003b710c624d2e92c0a1ad16",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/fitnessReporting.test.mjs",
+      "baseline_sha256": "60c68e87ee2ee345e550c5bc4e35c5aad7c1c051ec450d161f0bd8ff428eb61d",
+      "current_sha256": "60c68e87ee2ee345e550c5bc4e35c5aad7c1c051ec450d161f0bd8ff428eb61d",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/gaHistory.test.mjs",
+      "baseline_sha256": "273614e89d2cafe129858eb697c92ce0c29cc366346388f6cbacdc11fc85a4cf",
+      "current_sha256": "273614e89d2cafe129858eb697c92ce0c29cc366346388f6cbacdc11fc85a4cf",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/gaLogs.test.mjs",
+      "baseline_sha256": "34d0b3364a12030529e88387ff0fbcada8cc0a3ac3138614438117ddab7ac651",
+      "current_sha256": "34d0b3364a12030529e88387ff0fbcada8cc0a3ac3138614438117ddab7ac651",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/gaMonitoring.browser.test.mjs",
+      "baseline_sha256": "83327464d40ffccf5db650765d42fa7a0ff2a80f0ca158c47481f76f431f8f2b",
+      "current_sha256": "83327464d40ffccf5db650765d42fa7a0ff2a80f0ca158c47481f76f431f8f2b",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/gaMonitoring.test.mjs",
+      "baseline_sha256": "1b1c9a8d5046bcdd6b07c0bd0c3fadace3de8d072d3c4402dd307a896b1b43b2",
+      "current_sha256": "1b1c9a8d5046bcdd6b07c0bd0c3fadace3de8d072d3c4402dd307a896b1b43b2",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/gaPausedRecovery.integration.mjs",
+      "baseline_sha256": "e576682e5c1923a956fdae78a8af6774dbb256ac4b67657267a4c9b1340d32c2",
+      "current_sha256": "e576682e5c1923a956fdae78a8af6774dbb256ac4b67657267a4c9b1340d32c2",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/gaRecovery.test.mjs",
+      "baseline_sha256": "580005b74d3d25899aadb83001df8ea5aeb79cdf0742caf38fba3734e2a3b2ed",
+      "current_sha256": "580005b74d3d25899aadb83001df8ea5aeb79cdf0742caf38fba3734e2a3b2ed",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/preferenceApi.test.mjs",
+      "baseline_sha256": "6c34a5c5e32c23cd7f352aa04138ba9d887470d398f22b1b3af92bb7547e3751",
+      "current_sha256": "6c34a5c5e32c23cd7f352aa04138ba9d887470d398f22b1b3af92bb7547e3751",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/preferenceFixtures.mjs",
+      "baseline_sha256": "2afc36deb22b8e536a8ee2356b0922445926182b6d2eeededa7d4cde016a7dc8",
+      "current_sha256": "2afc36deb22b8e536a8ee2356b0922445926182b6d2eeededa7d4cde016a7dc8",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/preferenceModel.test.mjs",
+      "baseline_sha256": "c9fa059d4fc0d761d3c06b075dd618e4d0b919b047f517547022d48ea8e96b2c",
+      "current_sha256": "c9fa059d4fc0d761d3c06b075dd618e4d0b919b047f517547022d48ea8e96b2c",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tests/preferences.browser.test.mjs",
+      "baseline_sha256": "1c0df5d94aed11766762171d039ca3886e1773a8d2b261c9f8614f99116c7506",
+      "current_sha256": "1c0df5d94aed11766762171d039ca3886e1773a8d2b261c9f8614f99116c7506",
+      "unchanged": true
+    },
+    {
+      "path": "notebooks/main_loopv2.ipynb",
+      "baseline_sha256": "cce9b1d0a6241219b966afb49dab284f9741244f34d93a24483b7f2e8a294000",
+      "current_sha256": "cce9b1d0a6241219b966afb49dab284f9741244f34d93a24483b7f2e8a294000",
+      "unchanged": true
+    },
+    {
+      "path": "notebooks/test.ipynb",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    }
+  ],
+  "final_archive_validation": {
+    "json_files_parsed": 50,
+    "relative_links_verified": 164,
+    "anchors_verified": 4,
+    "current_artifact_hashes_verified": {
+      "manifest.json": 76,
+      "manual-acceptance-manifest.json": 8
+    },
+    "manual_scenarios_validated": 6,
+    "phase4b_image_count": 0,
+    "sensitive_pattern_findings": 0,
+    "trailing_whitespace_files": [],
+    "git_diff_check_exit": 0,
+    "errors": [],
+    "protected_file_hashes_unchanged": 390,
+    "git_index_unchanged": true,
+    "head_unchanged": true,
+    "faculty_preferences_unchanged": true,
+    "unexpected_file_changes": [],
+    "exact_task_inventory": [
+      "docs/implementation-roadmap-status.md",
+      "docs/phase-4b-postgresql-verification.md",
+      "docs/screenshots/phase-4b/README.md",
+      "docs/testing/phase-4b/README.md",
+      "docs/testing/phase-4b/browser-acceptance-plan.md",
+      "docs/testing/phase-4b/browser-acceptance.md",
+      "docs/testing/phase-4b/manual-acceptance-results.md",
+      "docs/testing/phase-4b/manual-acceptance-manifest.json",
+      "docs/testing/phase-4b/manifest.json",
+      "docs/thesis-evidence/phase-4b-evidence.md"
+    ],
+    "recorded_at": "2026-10-18T17:51:17.291574+08:00",
+    "scope": "Documentation and current artifact validation only. Stage A/recovery nested source hashes remain historical snapshots. No test rerun, browser or database execution; report timestamp is not an original manual test time."
+  },
+  "limitations": [
+    "No screenshots were taken; no originals exist to recover.",
+    "Original manual execution timestamps, browser version, viewport and per-test observed URLs are not recorded.",
+    "Independent automated browser execution is not established.",
+    "B06 is user-confirmed injected fixture HTTP 503 recovery, not a physical PostgreSQL outage.",
+    "Detailed subchecks from the plan have no separate archived observations.",
+    "No production readiness, usability study, GA-quality or institutional-data migration conclusion.",
+    "The three original PostgreSQL warning messages remain unidentified; original counts/artifacts unchanged.",
+    "Browser catalog is synthetic/empty; course/calendar and production operations remain outside this evidence."
+  ],
+  "archive_revisions": [
+    {
+      "recorded_at": "2026-10-16T23:51:41.450731+08:00",
+      "previous_manifest_sha256": "935dc44d8496dbb1faa5f3a2e34e3ff9e1b968671ac82742320de02c52153be8",
+      "previous_hash_is_provenance_not_current_artifact": true,
+      "reason": "User requested PostgreSQL/browser acceptance resumption; private URL still absent",
+      "changed_artifact_revisions": [
+        {
+          "path": "docs/implementation-roadmap-status.md",
+          "previous_sha256": "55f81cb6e4204e69c45360eba04202fd21de3cf612e804c6558d4fbb176d8242",
+          "current_sha256": "f39a1b01cdcca36c8ed39478fa6fe56e15396a9bbe339116772c10df1cd19d6a",
+          "reason": "Append acceptance resumption evidence; retain earlier attempts and results"
+        },
+        {
+          "path": "docs/phase-4b-postgresql-verification.md",
+          "previous_sha256": "3491e3889f3eb87c77536387698b1e988d81fc5dbbed954270d2dd9cf0262401",
+          "current_sha256": "3b9ad4e913a559bf157c99644154f566eb5220f199f017b95f538be94c528d9b",
+          "reason": "Append acceptance resumption evidence; retain earlier attempts and results"
+        },
+        {
+          "path": "docs/screenshots/phase-4b/README.md",
+          "previous_sha256": "0110c94839db0d3a79ffa4e10572258042b4b5e3f4bba1e6855acfc5302f7291",
+          "current_sha256": "a92aba1a4ae5f2930f003c442f6886234b2f491602b5e9281ee6075b8bc93dfe",
+          "reason": "Append acceptance resumption evidence; retain earlier attempts and results"
+        },
+        {
+          "path": "docs/testing/phase-4b/README.md",
+          "previous_sha256": "0eba37d591991f889900fc18ee2644f5e33956067007ed9af0a673782c82e9c0",
+          "current_sha256": "d9962d933f413093bbe771fe1bac2a30ebd26387ddef7352bab9ce4e94458124",
+          "reason": "Append acceptance resumption evidence; retain earlier attempts and results"
+        },
+        {
+          "path": "docs/testing/phase-4b/browser-acceptance.md",
+          "previous_sha256": "1b3925fcef177a24bf05babfa4598c97aa677617afdf0eadab1e85422b6b8051",
+          "current_sha256": "f9edef4284ca509b3cb8a3fba5db7c1ff60602cb02941214e6999c150f94f001",
+          "reason": "Append acceptance resumption evidence; retain earlier attempts and results"
+        },
+        {
+          "path": "docs/thesis-evidence/phase-4b-evidence.md",
+          "previous_sha256": "cf784f5603dd814e6145f1b8268c64f26fb47b71baf81632c39cd32d87dbc2d9",
+          "current_sha256": "bb97e05a4a68594b21b9e9263f9ac9fa1d82bcd685b93ef2cd2736c39f6f107d",
+          "reason": "Append acceptance resumption evidence; retain earlier attempts and results"
+        }
+      ]
+    },
+    {
+      "recorded_at": "2026-10-18T10:03:27.165938+08:00",
+      "previous_manifest_sha256": "4ed7b90cc5fde0934ab112d529cb726ca9ecc021fd4e19d2c6da6a584c2aa5f1",
+      "previous_hash_is_provenance_not_current_artifact": true,
+      "reason": "Record unchanged user-run two-setup-error evidence and approved BUG-012 correction; no online retry",
+      "changed_artifact_revisions": [
+        {
+          "path": "backend/tests/phase4b_database_safety.py",
+          "previous_sha256": "198663e2d0e7147c2ee73a59f0fb42d773b4ac2b5a9d2fee97d1287b9bbf4897",
+          "current_sha256": "2165b112d7024b5c4d9d883649e683d37addc029bf2fd0d4dd419b7b85215776",
+          "reason": "Approved focused host-extraction test-harness correction and offline regression documentation"
+        },
+        {
+          "path": "backend/tests/test_phase4b_database_safety.py",
+          "previous_sha256": "c1575e523d77cf45c359fc82aa4879425dda30e87a1e88af1d0dbeeae33ff666",
+          "current_sha256": "eb7113d05a6b6e871ff7621e1a95ee6e4b420fb8ed5550db31e7068dfa6f939c",
+          "reason": "Approved focused host-extraction test-harness correction and offline regression documentation"
+        },
+        {
+          "path": "docs/system-bug-report.md",
+          "previous_sha256": "afb052a532df94035aaee9cdffbe1a80f91b99451971b73d328d070877c3cea7",
+          "current_sha256": "2d2017ebe1c0684b3e6ae4a36d2fb5625f4f99f95d03804d322e933bfa99a482",
+          "reason": "Approved focused host-extraction test-harness correction and offline regression documentation"
+        },
+        {
+          "path": "docs/testing/phase-4b/README.md",
+          "previous_sha256": "d9962d933f413093bbe771fe1bac2a30ebd26387ddef7352bab9ce4e94458124",
+          "current_sha256": "2b961aa07f4d4a249a8361b5c58d0fde88ed5a0755693bfe28987f1374e69589",
+          "reason": "Approved focused host-extraction test-harness correction and offline regression documentation"
+        }
+      ]
+    },
+    {
+      "recorded_at": "2026-10-18T10:18:08.382817+08:00",
+      "previous_manifest_sha256": "e69f6a4afb1d08299f99920e6d51ef2364cfd4a1cae1bec0dba2816a2fede22c",
+      "previous_hash_is_provenance_not_current_artifact": true,
+      "reason": "Documentation-only successful PostgreSQL evidence review and browser readiness plan; no online actions by Codex",
+      "changed_artifact_revisions": [
+        {
+          "path": "docs/implementation-roadmap-status.md",
+          "previous_sha256": "f39a1b01cdcca36c8ed39478fa6fe56e15396a9bbe339116772c10df1cd19d6a",
+          "current_sha256": "8dec6c79d79fe68544d9c5b603b7c0951722baf0a2550ab5a932bd6a3efdb11d",
+          "reason": "Record genuine user-executed PostgreSQL pass and proposed second-database browser plan; earlier attempts retained"
+        },
+        {
+          "path": "docs/phase-4b-postgresql-verification.md",
+          "previous_sha256": "3b9ad4e913a559bf157c99644154f566eb5220f199f017b95f538be94c528d9b",
+          "current_sha256": "de232147acd2e8ff85ab86985c4c2a6b169aab4963956a70177a8c6c438b4d98",
+          "reason": "Record genuine user-executed PostgreSQL pass and proposed second-database browser plan; earlier attempts retained"
+        },
+        {
+          "path": "docs/screenshots/phase-4b/README.md",
+          "previous_sha256": "a92aba1a4ae5f2930f003c442f6886234b2f491602b5e9281ee6075b8bc93dfe",
+          "current_sha256": "e897a9960b6684086d232b15b8f505c9e6d4f59edef0d2b89354b6df789b82be",
+          "reason": "Record genuine user-executed PostgreSQL pass and proposed second-database browser plan; earlier attempts retained"
+        },
+        {
+          "path": "docs/system-bug-report.md",
+          "previous_sha256": "2d2017ebe1c0684b3e6ae4a36d2fb5625f4f99f95d03804d322e933bfa99a482",
+          "current_sha256": "ab9b561a002187774ca8ab58610752dc432d23a492e5dbe537418fd09e71c167",
+          "reason": "Record genuine user-executed PostgreSQL pass and proposed second-database browser plan; earlier attempts retained"
+        },
+        {
+          "path": "docs/testing/phase-4b/README.md",
+          "previous_sha256": "2b961aa07f4d4a249a8361b5c58d0fde88ed5a0755693bfe28987f1374e69589",
+          "current_sha256": "cae0e12e2958a85159ddaa24f1ea35d964982bd08730e8eceec0bcae1e76fb7f",
+          "reason": "Record genuine user-executed PostgreSQL pass and proposed second-database browser plan; earlier attempts retained"
+        },
+        {
+          "path": "docs/testing/phase-4b/browser-acceptance.md",
+          "previous_sha256": "f9edef4284ca509b3cb8a3fba5db7c1ff60602cb02941214e6999c150f94f001",
+          "current_sha256": "8dc799b31e6ffe45550cc491b1d6e60bb8f981976f613604041221dc5dd0518e",
+          "reason": "Record genuine user-executed PostgreSQL pass and proposed second-database browser plan; earlier attempts retained"
+        },
+        {
+          "path": "docs/thesis-evidence/phase-4b-evidence.md",
+          "previous_sha256": "bb97e05a4a68594b21b9e9263f9ac9fa1d82bcd685b93ef2cd2736c39f6f107d",
+          "current_sha256": "0c510379686c2ed4ad523805a5c20dc88b9504362ee86a2adc0e7680aeb93c5c",
+          "reason": "Record genuine user-executed PostgreSQL pass and proposed second-database browser plan; earlier attempts retained"
+        }
+      ]
+    },
+    {
+      "recorded_at": "2026-10-18T10:45:13.392664+08:00",
+      "previous_manifest_sha256": "b14a17bc4428348952dfa766adda668681ae162eb787296204b19f7812d302a6",
+      "previous_hash_is_provenance_not_current_artifact": true,
+      "reason": "Stage A preparation/offline verification; original successful PostgreSQL record preserved; no database or browser execution",
+      "changed_artifact_revisions": [
+        {
+          "path": "backend/tests/test_phase4b_browser_fixture.py",
+          "previous_sha256": "661f38b2315e25c6f46e27a6345636ce2866ceb0550f0e5112c4b4a5ad83f835",
+          "current_sha256": "ce427d9f106475b30f6df758e8b0e75e8b820f1d3b4e43afaf7818cc9429836c",
+          "reason": "Authorized Stage A browser fixture preparation/offline tests and documentation; no online execution"
+        },
+        {
+          "path": "docs/implementation-roadmap-status.md",
+          "previous_sha256": "8dec6c79d79fe68544d9c5b603b7c0951722baf0a2550ab5a932bd6a3efdb11d",
+          "current_sha256": "55741d99ac1d522d3b1af68ac90c1f90bc6100ddfb292b04c9759a4c0386bd7a",
+          "reason": "Authorized Stage A browser fixture preparation/offline tests and documentation; no online execution"
+        },
+        {
+          "path": "docs/phase-4b-postgresql-verification.md",
+          "previous_sha256": "de232147acd2e8ff85ab86985c4c2a6b169aab4963956a70177a8c6c438b4d98",
+          "current_sha256": "4eb2eb0392905ca86dea4ba2d41ccb22ba51776a16e71bce8da9aa8fd79c821f",
+          "reason": "Authorized Stage A browser fixture preparation/offline tests and documentation; no online execution"
+        },
+        {
+          "path": "docs/screenshots/phase-4b/README.md",
+          "previous_sha256": "e897a9960b6684086d232b15b8f505c9e6d4f59edef0d2b89354b6df789b82be",
+          "current_sha256": "d7edf740f702f7c7b1b9afc8eae433b3286d1863ff3c9c0b34f5d9aab144e95f",
+          "reason": "Authorized Stage A browser fixture preparation/offline tests and documentation; no online execution"
+        },
+        {
+          "path": "docs/testing/phase-4b/README.md",
+          "previous_sha256": "cae0e12e2958a85159ddaa24f1ea35d964982bd08730e8eceec0bcae1e76fb7f",
+          "current_sha256": "aa91f027eb9152562bc3a527a221c84ce8f435087d34804d24a49bd50524b146",
+          "reason": "Authorized Stage A browser fixture preparation/offline tests and documentation; no online execution"
+        },
+        {
+          "path": "docs/testing/phase-4b/browser-acceptance-plan.md",
+          "previous_sha256": "37b0f5a775b0282daacd23f3f962eab1271b4d4e239e4a10485eedadb5cef47f",
+          "current_sha256": "d8794d82224410bbd780c1e49b875c1561ea0c28c34533674b0f0ea304ef3598",
+          "reason": "Authorized Stage A browser fixture preparation/offline tests and documentation; no online execution"
+        },
+        {
+          "path": "docs/testing/phase-4b/browser-acceptance.md",
+          "previous_sha256": "8dc799b31e6ffe45550cc491b1d6e60bb8f981976f613604041221dc5dd0518e",
+          "current_sha256": "b410ff10d61010eb245d0ddbc58ec0ddb676963259215361d3c2085bc466f232",
+          "reason": "Authorized Stage A browser fixture preparation/offline tests and documentation; no online execution"
+        },
+        {
+          "path": "docs/testing/phase-4b/run_checks.py",
+          "previous_sha256": "f41fcb5233d1f910478a36b93e55a01ef54d1be2197c02d5aec1b07cea920bf1",
+          "current_sha256": "7c4a7b52bb3af51b4fe295e1cfa5a1377af0cf8c07bc0d4e09def1e95b0de8ad",
+          "reason": "Authorized Stage A browser fixture preparation/offline tests and documentation; no online execution"
+        },
+        {
+          "path": "docs/testing/phase-4b/serve_browser_fixture.py",
+          "previous_sha256": "9ad4b88a0d08ad42708f9874043224bd635d7c498580aaf6a2e9313c2cf62b42",
+          "current_sha256": "0be29913cfff4ec0e8de5745d934c0162e1f9165b6df3eee148b2ed2d05f92ad",
+          "reason": "Authorized Stage A browser fixture preparation/offline tests and documentation; no online execution"
+        },
+        {
+          "path": "docs/thesis-evidence/phase-4b-evidence.md",
+          "previous_sha256": "0c510379686c2ed4ad523805a5c20dc88b9504362ee86a2adc0e7680aeb93c5c",
+          "current_sha256": "599200d89a5d48bf656cbd8d888c4ca8141bc53777e68d41e4ad62407d2de7b4",
+          "reason": "Authorized Stage A browser fixture preparation/offline tests and documentation; no online execution"
+        }
+      ]
+    },
+    {
+      "recorded_at": "2026-10-18T12:54:05.683926+08:00",
+      "previous_manifest_sha256": "890ce35f6d4d3288f58c84de84584b81ea1a1075d6ef693c0e368ba092f71153",
+      "previous_hash_is_provenance_not_current_artifact": true,
+      "reason": "Approved offline-only retained-browser recovery tooling; historical execution/Stage A artifacts preserved",
+      "changed_artifact_references": [
+        {
+          "path": "docs/implementation-roadmap-status.md",
+          "previous_sha256": "55741d99ac1d522d3b1af68ac90c1f90bc6100ddfb292b04c9759a4c0386bd7a",
+          "current_sha256": "82bd35e2d3c17ad4c1474ca29460555feb8890efb059bd574d9c357a0169b78f",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/phase-4b-postgresql-verification.md",
+          "previous_sha256": "4eb2eb0392905ca86dea4ba2d41ccb22ba51776a16e71bce8da9aa8fd79c821f",
+          "current_sha256": "281583842529b70bcbaf640c97f45e52988097d563a636856a1e0f89cf51ab75",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/testing/phase-4b/README.md",
+          "previous_sha256": "aa91f027eb9152562bc3a527a221c84ce8f435087d34804d24a49bd50524b146",
+          "current_sha256": "4022c09afcff12a7e516fcc5c983cef28e1e35bcd868c1b58d01753ed89bc0d7",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/testing/phase-4b/browser-acceptance-plan.md",
+          "previous_sha256": "d8794d82224410bbd780c1e49b875c1561ea0c28c34533674b0f0ea304ef3598",
+          "current_sha256": "41f40ff392e4994b7389c22e339c20508c8af477f531080000554873c4da2cbd",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/testing/phase-4b/run_checks.py",
+          "previous_sha256": "7c4a7b52bb3af51b4fe295e1cfa5a1377af0cf8c07bc0d4e09def1e95b0de8ad",
+          "current_sha256": "bece0606652c2e03f8a8e0dae95bfd404321f07762b20dc9f3f6eba74a2785cc",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/testing/phase-4b/serve_browser_fixture.py",
+          "previous_sha256": "0be29913cfff4ec0e8de5745d934c0162e1f9165b6df3eee148b2ed2d05f92ad",
+          "current_sha256": "b989184bbbb45b9955d38489dc01255113d15057de872765029dcf192cc1a3a8",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/thesis-evidence/phase-4b-evidence.md",
+          "previous_sha256": "599200d89a5d48bf656cbd8d888c4ca8141bc53777e68d41e4ad62407d2de7b4",
+          "current_sha256": "9dc0677d4481f50e2ba6f25fdee15d60e4bad7081002db1a79530d75a072d2b7",
+          "previous_is_historical_provenance": true
+        }
+      ],
+      "previous_final_archive_validation": {
+        "verified_at": "2026-10-18T10:49:06.070863+08:00",
+        "artifact_hashes_verified": 62,
+        "unchanged_baseline_hashes_verified": 338,
+        "inventory_files": 63,
+        "json_files_parsed_before_this_metadata_addition": 40,
+        "python_files_ast_parsed": 14,
+        "relative_links_verified": 142,
+        "phase4a_current_path_sha256_references_verified": 26,
+        "sensitive_pattern_scan_findings": 0,
+        "trailing_whitespace_findings": 0,
+        "git_diff_check": "PASS; existing autocrlf advisory warnings only",
+        "phase4b_png_count": 0,
+        "errors": [],
+        "scope": "Changed/new phase artifacts and existing Phase 4A current path/sha256 references. Historical previous/original hashes are provenance, not current artifact checks. Pattern scan is supplemented by source/evidence review and does not certify arbitrary secret absence.",
+        "attempt_protected_hashes_verified": 302,
+        "stage_a_protected_hashes_verified": 301
+      }
+    },
+    {
+      "recorded_at": "2026-10-18T17:50:15.558954+08:00",
+      "previous_manifest_sha256": "0c36c5f914d854c7fe93c8a1d738e88dba883e7ca5480b8d8e7568d8b9c0843a",
+      "previous_hash_is_provenance_not_current_artifact": true,
+      "reason": "Final written-only USER CONFIRMED browser acceptance; no screenshots captured, no test timestamps invented; historical evidence unchanged",
+      "previous_assessment": "POSTGRESQL ACCEPTANCE USER PASS; INITIAL BROWSER SETUP USER CONFIRMED; RECOVERY OFFLINE VERIFIED; LIVE RECOVERY/SIX BROWSER SCENARIOS NOT RUN",
+      "previous_verification": {
+        "backend_distinct_passed": 503,
+        "backend_groups": {
+          "admission_safety_helper": 81,
+          "auth": 61,
+          "domain": 219,
+          "ga_lifecycle_history": 142
+        },
+        "existing_browser_cases_deselected": 2,
+        "postgresql_skipped": 0,
+        "frontend_contracts_passed": 78,
+        "frontend_groups": {
+          "auth": 8,
+          "preferences": 22,
+          "ga": 48
+        },
+        "production_frontend_build": "PASS; existing >500 kB chunk warning",
+        "focused_frontend_lint": "PASS; five authentication modules only",
+        "full_project_lint": "NOT RUN",
+        "browser_scenarios_executed": 0,
+        "browser_scenarios_blocked": 6,
+        "screenshots": 0,
+        "earlier_failed_attempts": "Retained in collection-incidents.json and earlier execution JSON; repeated successes not counted twice",
+        "historical_group_context": "Original 503/78 code/frontend results describe earlier execution scopes; not recomputed or rerun during this documentation review",
+        "previous_postgresql_skipped": 14,
+        "postgresql_passed": 14,
+        "postgresql_warnings": 3
+      },
+      "previous_limitations": [
+        "Stage B needs approval, actual separate target/privilege/empty-schema verification, migration/seed/startup and six genuine browser observations.",
+        "Fake engines and in-memory SQLite ASGI offline tests do not establish live browser/PostgreSQL runtime behavior.",
+        "Original PostgreSQL run three warning details remain unavailable; old evidence unchanged.",
+        "Synthetic browser catalog is intentionally empty; course/calendar workflows not certified.",
+        "Private marker/handshake cleanup retains owned synthetic storage/database; failed future initialization requires explicit owner review, never automatic reset.",
+        "Evidence metadata/hash helper does not prove authenticity/privacy or automatically declare PASS.",
+        "No production GA/frontend source, original acceptance test/gate, live preferences, identities, saved schedules or histories were changed by Stage A."
+      ],
+      "previous_final_archive_validation": {
+        "recorded_at": "2026-10-18T12:54:56.599324+08:00",
+        "current_artifact_hashes_verified": 74,
+        "task_artifact_hashes_verified": 18,
+        "protected_files_verified": 289,
+        "documentation_links_verified": 139,
+        "phase_json_files_parsed": 49,
+        "task_python_files_ast_parsed": 4,
+        "sensitive_pattern_findings": 0,
+        "phase4b_png_count": 0,
+        "git_diff_check": 0,
+        "errors": [],
+        "scope": "Current main/recovery artifact hashes; Stage A manifest nested source hashes are historical, not current-byte assertions. No browser/DB execution.",
+        "markdown_anchors_verified": 5,
+        "additional_validation_incident": "Ad hoc anchor validator initially used Windows cp1252; explicit UTF-8 rerun passed. No product/test failure or data change."
+      },
+      "changed_artifact_references": [
+        {
+          "path": "docs/implementation-roadmap-status.md",
+          "previous_sha256": "82bd35e2d3c17ad4c1474ca29460555feb8890efb059bd574d9c357a0169b78f",
+          "current_sha256": "5a4a37f3825b404c4d43b6c0252c23f7ea189c4e850d76f80f6386c8342f2622",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/phase-4b-postgresql-verification.md",
+          "previous_sha256": "281583842529b70bcbaf640c97f45e52988097d563a636856a1e0f89cf51ab75",
+          "current_sha256": "7a1abb39c7da24f2c8bedf80c7d9ad2c7f680b0bf17bb9a4d8b9347e1fa99822",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/screenshots/phase-4b/README.md",
+          "previous_sha256": "d7edf740f702f7c7b1b9afc8eae433b3286d1863ff3c9c0b34f5d9aab144e95f",
+          "current_sha256": "467bd451de6388e65a9a0c3697456bd0569a5fd0e6b97e9eefc623c003b5072a",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/testing/phase-4b/README.md",
+          "previous_sha256": "dbe037ec1c6ffb735c5e999903e2c6032a33cb182acd36d0a7e767ab37e88c7a",
+          "current_sha256": "81d44a08e3dfdcee060ee5e22f7cb6115664c20223e59dd993cf3c8e9460329f",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/testing/phase-4b/browser-acceptance-plan.md",
+          "previous_sha256": "41f40ff392e4994b7389c22e339c20508c8af477f531080000554873c4da2cbd",
+          "current_sha256": "c0c34d9fb049f79da23e45fe59b1838a4d7a71805a8bd54d6e0380dfff5bbe09",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/testing/phase-4b/browser-acceptance.md",
+          "previous_sha256": "b410ff10d61010eb245d0ddbc58ec0ddb676963259215361d3c2085bc466f232",
+          "current_sha256": "618b0081afaba1ad5c905fb96915c1d68f80b14dc8725f069c8fcc37f332a81d",
+          "previous_is_historical_provenance": true
+        },
+        {
+          "path": "docs/thesis-evidence/phase-4b-evidence.md",
+          "previous_sha256": "9dc0677d4481f50e2ba6f25fdee15d60e4bad7081002db1a79530d75a072d2b7",
+          "current_sha256": "628ee1359f3a9860d582ba566b6f9f252a48d463aa68ce67590181581bb3a46d",
+          "previous_is_historical_provenance": true
+        }
+      ]
+    },
+    {
+      "recorded_at": "2026-10-18T22:50:51.998424+08:00",
+      "reason": "Approved Phase 4B release preparation: router CRLF-to-LF normalization only; current artifact hash now matches intended Git blob bytes. Historical evidence unchanged.",
+      "previous_manifest_sha256": "c563c0a6d0399af286e1fca4b8d8e53f5613fb32e7b6121a682338ee8e7d8c92",
+      "previous_hash_is_provenance_not_current_artifact": true,
+      "changed_artifact_references": [
+        {
+          "path": "backend/routers/genetic_algorithm.py",
+          "previous_sha256": "90b408e6d9f57a0f8f5564b74af01d9724994e7725946919f37859d35a46f739",
+          "current_sha256": "0e5795649ca233f4204b78c9e1b7c77f18de6fb6a1ef517c0943a74e66fe68d0",
+          "previous_is_historical_provenance": true
+        }
+      ],
+      "normalization": {
+        "CRLF_pairs_replaced": 638,
+        "only_newline_bytes_changed": true,
+        "python_AST_unchanged": true
+      }
+    }
+  ],
+  "acceptance_resumption": {
+    "record": "docs/testing/phase-4b/2026-10-16-resume-01/acceptance-status.json",
+    "postgresql": "14 skipped / BLOCKED; no connection or write",
+    "backend_passed_this_attempt": 142,
+    "frontend_contracts_passed_this_attempt": 30,
+    "browser_deselected_this_attempt": 1,
+    "browser_scenarios_blocked": 6,
+    "screenshots_created": 0,
+    "distinct_original_totals_unchanged": true,
+    "no_application_or_helper_changes_this_attempt": true,
+    "protected_source_and_data_files_unchanged": 302,
+    "live_preferences_unchanged_and_unstaged": true,
+    "head_and_index_unchanged": true
+  },
+  "latest_safety_gate_correction": {
+    "date": "2026-10-18",
+    "bug": "BUG-012",
+    "user_supplied_original_run": "docs/testing/phase-4b/20261018T095643+0800-postgresql-ab3e0ed0.json",
+    "original_result": "Two setup errors; stopped before Alembic/test bodies",
+    "offline_artifact": "docs/testing/phase-4b/20261018T100212+0800-safety-gate-offline-7c09a63e.json",
+    "offline_passed": 27,
+    "offline_failed": 0,
+    "offline_errors": 0,
+    "offline_skipped": 0,
+    "code_change": "host(inet_server_addr()) AS host; exact IPv4 comparison and other restrictions unchanged",
+    "real_database_connection_or_acceptance_run_by_codex_for_this_fix": false,
+    "migration_or_database_write_by_codex": false,
+    "browser_run": false,
+    "historical_verification_note": "Original database/environment/503-78 totals and prior resumption fields describe earlier executions; latest user run is separately attributed and is not a pass",
+    "preservation_validation": {
+      "verified_at": "2026-10-18T10:04:03.868792+08:00",
+      "baseline_files": 381,
+      "unchanged_baseline_files": 376,
+      "authorized_modified_paths": [
+        "backend/tests/phase4b_database_safety.py",
+        "backend/tests/test_phase4b_database_safety.py",
+        "docs/system-bug-report.md",
+        "docs/testing/phase-4b/manifest.json",
+        "docs/testing/phase-4b/README.md"
+      ],
+      "new_paths": [
+        "docs/testing/phase-4b/20261018T100212+0800-safety-gate-offline-7c09a63e.json"
+      ],
+      "helper_exact_one_line_change": true,
+      "live_preferences_unchanged": true,
+      "head_unchanged": true,
+      "index_unchanged": true,
+      "staged_files": 0,
+      "artifact_hashes": 43,
+      "protected_original_hashes": 338,
+      "relative_links": 84,
+      "json_files": 28,
+      "python_ast_files": 9,
+      "sensitive_pattern_paths": [],
+      "trailing_whitespace_paths": [],
+      "errors": []
+    },
+    "subsequent_user_success_artifact": "docs/testing/phase-4b/20261018T100533+0800-postgresql-e2beb33f.json"
+  },
+  "historical_database_observations": [
+    {
+      "context": "Earlier 2026-10-16 agent executions; preserved before recording user success",
+      "observation": {
+        "environment_variable": "PHASE4B_TEST_DATABASE_URL",
+        "available": false,
+        "application_url_fallback_used": false,
+        "connection_attempted": false,
+        "migration_or_write_attempted": false,
+        "acceptance": "14 SKIPPED / BLOCKED",
+        "prepared_fixture": "NOT VERIFIED AGAINST POSTGRESQL; requires empty designated schema and read-only preflight"
+      }
+    }
+  ],
+  "browser_readiness_plan": {
+    "path": "docs/testing/phase-4b/browser-acceptance-plan.md",
+    "status": "STAGE A IMPLEMENTED / OFFLINE VERIFIED; ACTUAL STAGE B STARTUP AND BROWSER ACCEPTANCE NOT EXECUTED",
+    "proposed_database": "ccs_ga_phase4b_browser_test",
+    "proposed_role": "ccs_ga_phase4b_browser_tester",
+    "proposed_variable": "PHASE4B_BROWSER_DATABASE_URL",
+    "target_existence_or_connection_not_verified": true,
+    "fixture_changes_not_implemented": false,
+    "known_gaps": [],
+    "browser_scenarios_executed": 0,
+    "screenshots": [],
+    "database_provisioning_migration_or_service_startup_performed_in_this_review": false,
+    "documentation_review_validation": {
+      "baseline_files": 383,
+      "unchanged_baseline_files": 375,
+      "modified_documentation_paths": [
+        "docs/implementation-roadmap-status.md",
+        "docs/phase-4b-postgresql-verification.md",
+        "docs/system-bug-report.md",
+        "docs/thesis-evidence/phase-4b-evidence.md",
+        "docs/testing/phase-4b/browser-acceptance.md",
+        "docs/testing/phase-4b/manifest.json",
+        "docs/testing/phase-4b/README.md",
+        "docs/screenshots/phase-4b/README.md"
+      ],
+      "created_documentation_paths": [
+        "docs/testing/phase-4b/browser-acceptance-plan.md"
+      ],
+      "non_documentation_files_verified": 302,
+      "non_documentation_changes": [],
+      "live_preferences_match_start": true,
+      "successful_user_run_artifact_match_start": true,
+      "head_unchanged": true,
+      "index_unchanged": true,
+      "staged_files": 0,
+      "artifact_hashes": 45,
+      "protected_original_hashes": 338,
+      "relative_links": 101,
+      "json_files": 29,
+      "python_ast_files": 9,
+      "sensitive_pattern_paths": [],
+      "trailing_whitespace_paths": [],
+      "phase4b_png_files": 0,
+      "errors": [],
+      "verified_at": "2026-10-18T10:19:11.630526+08:00"
+    },
+    "historical_pre_stage_a_gaps": [
+      "Current helper accepts only original target and requires empty schema",
+      "Synthetic identity labels retain copied real academic profile fields",
+      "Separate routers.chromosomes.LATEST_RESULT_FILE reader not redirected",
+      "Windows private handoff ACL guarantee needs verification"
+    ],
+    "stage_a_manifest": "docs/testing/phase-4b/stage-a-manifest.json",
+    "stage_a_report": "docs/testing/phase-4b/stage-a-fixture-preparation.md",
+    "runtime_readiness_requires_approval_and_new_target": true
+  },
+  "historical_limitations": [
+    {
+      "context": "Original 2026-10-16 acceptance attempt",
+      "items": [
+        "No real PostgreSQL connection, schema/migration, identity/session, row-lock or browser acceptance was executed because the private test URL was absent.",
+        "Prepared PostgreSQL/browser helper code has only collection, static and isolated gate verification; real database behavior remains unverified.",
+        "Direct Python/notebook legacy loader calls are unchanged. No external-file lease or multiworker guarantee was added.",
+        "Baseline checks preserve local data bytes; they do not certify every saved run as valid or resumable."
+      ]
+    }
+  ],
+  "latest_stage_a": {
+    "manifest": "docs/testing/phase-4b/stage-a-manifest.json",
+    "backend_passed": 154,
+    "frontend_contracts_passed": 78,
+    "backend_browser_case_deselected": 1,
+    "actual_postgresql_connections": 0,
+    "migrations": 0,
+    "roles_databases_created": 0,
+    "services_started": 0,
+    "browser_scenarios_run": 0,
+    "screenshots": 0,
+    "initial_failure_retained": "docs/testing/phase-4b/20261018T102915+0800-browser-offline-a6cf6d43.json",
+    "final_offline_browser": "docs/testing/phase-4b/20261018T104156+0800-browser-offline-3fc460e7.json",
+    "original_acceptance_database_test_and_gate_untouched": true,
+    "totals_do_not_add_prior_overlapping_cases": true,
+    "final_validation": {
+      "baseline_files": 384,
+      "unchanged_existing_baseline_files": 373,
+      "authorized_modified_paths": [
+        "backend/tests/test_phase4b_browser_fixture.py",
+        "docs/implementation-roadmap-status.md",
+        "docs/phase-4b-postgresql-verification.md",
+        "docs/thesis-evidence/phase-4b-evidence.md",
+        "docs/testing/phase-4b/browser-acceptance-plan.md",
+        "docs/testing/phase-4b/browser-acceptance.md",
+        "docs/testing/phase-4b/manifest.json",
+        "docs/testing/phase-4b/README.md",
+        "docs/testing/phase-4b/run_checks.py",
+        "docs/testing/phase-4b/serve_browser_fixture.py",
+        "docs/screenshots/phase-4b/README.md"
+      ],
+      "new_paths": [
+        "backend/tests/phase4b_browser_safety.py",
+        "backend/tests/phase4b_browser_support.py",
+        "backend/tests/test_phase4b_browser_evidence.py",
+        "backend/tests/test_phase4b_browser_safety.py",
+        "docs/testing/phase-4b/20261018T102915+0800-browser-offline-a6cf6d43.json",
+        "docs/testing/phase-4b/20261018T102916+0800-frontend-auth-3b6097f2.json",
+        "docs/testing/phase-4b/20261018T102917+0800-auth-ae3212b4.json",
+        "docs/testing/phase-4b/20261018T102918+0800-frontend-preferences-d5b1246a.json",
+        "docs/testing/phase-4b/20261018T102919+0800-frontend-ga-96e4276b.json",
+        "docs/testing/phase-4b/20261018T103008+0800-browser-offline-496f2ecf.json",
+        "docs/testing/phase-4b/20261018T103133+0800-browser-offline-354d402a.json",
+        "docs/testing/phase-4b/20261018T103234+0800-browser-offline-d1531e28.json",
+        "docs/testing/phase-4b/20261018T104004+0800-browser-offline-c9b696bd.json",
+        "docs/testing/phase-4b/20261018T104156+0800-browser-offline-3fc460e7.json",
+        "docs/testing/phase-4b/record_browser_evidence.py",
+        "docs/testing/phase-4b/stage-a-fixture-preparation.md",
+        "docs/testing/phase-4b/stage-a-manifest.json"
+      ],
+      "unexpected_protected_changes": [],
+      "new_protected_storage_files": [],
+      "original_pg_gate_and_test_unchanged": true,
+      "live_preferences_unchanged": true,
+      "head_unchanged": true,
+      "index_unchanged": true,
+      "staged_files": 0,
+      "main_artifact_hashes": 62,
+      "stage_artifact_hashes": 26,
+      "original_protected_hashes": 338,
+      "stage_protected_hashes": 301,
+      "relative_links": 142,
+      "json_files": 40,
+      "python_ast_files": 14,
+      "sensitive_pattern_paths": [],
+      "trailing_whitespace_paths": [],
+      "phase4b_png_files": 0,
+      "errors": [],
+      "verified_at": "2026-10-18T10:49:06.070863+08:00"
+    }
+  },
+  "latest_recovery_preparation": {
+    "manifest": "docs/testing/phase-4b/stage-b-recovery-manifest.json",
+    "report": "docs/testing/phase-4b/stage-b-recovery-offline.md",
+    "backend_passed": 248,
+    "frontend_contracts_passed": 78,
+    "user_reported_checks": {
+      "observer": "USER_CONFIRMED",
+      "observation_timestamp": null,
+      "raw_artifact_supplied": false,
+      "exact_target_and_read_only": true,
+      "revision": "4a_0001",
+      "synthetic_identities": 2,
+      "active_unbound_administrators": 1,
+      "sessions": 0,
+      "independently_queried_by_codex": false
+    },
+    "live_recovery_executed": false,
+    "browser_scenarios_executed": 0,
+    "screenshots": 0,
+    "protected_files_unchanged": 289,
+    "authorization": "OFFLINE ONLY",
+    "historical_manifest_scope": "Stage A source hashes refer to Stage A bytes, not the revised current tooling. Stage A manifest remains unchanged."
+  },
+  "verification_scope": "Historical automated/Stage A counters retained unchanged below; current manual browser results are separately recorded in manual_browser_acceptance.",
+  "manual_browser_acceptance": {
+    "path": "docs/testing/phase-4b/manual-acceptance-manifest.json",
+    "report": "docs/testing/phase-4b/manual-acceptance-results.md",
+    "status": "PASS — USER CONFIRMED",
+    "scenarios": 6,
+    "screenshots": "NOT CAPTURED for every scenario",
+    "automated_browser_execution": "NOT ESTABLISHED",
+    "original_test_timestamps": "NOT RECORDED",
+    "b06": "Injected fixture HTTP 503; same faculty session and Compact / Very High restored, USER CONFIRMED; not a physical PostgreSQL outage"
+  },
+  "documentation_only_update": {
+    "recorded_at": "2026-10-18T17:50:15.558954+08:00",
+    "timestamp_scope": "Documentation update only; original manual test times NOT RECORDED",
+    "files": [
+      "docs/implementation-roadmap-status.md",
+      "docs/phase-4b-postgresql-verification.md",
+      "docs/screenshots/phase-4b/README.md",
+      "docs/testing/phase-4b/README.md",
+      "docs/testing/phase-4b/browser-acceptance-plan.md",
+      "docs/testing/phase-4b/browser-acceptance.md",
+      "docs/testing/phase-4b/manual-acceptance-results.md",
+      "docs/testing/phase-4b/manual-acceptance-manifest.json",
+      "docs/testing/phase-4b/manifest.json",
+      "docs/thesis-evidence/phase-4b-evidence.md"
+    ],
+    "tests_run": false,
+    "browser_actions_performed": false,
+    "database_connections_performed": false,
+    "git_mutations_performed": false
+  }
+}

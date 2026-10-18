@@ -1,0 +1,1335 @@
+{
+  "schema_version": 1,
+  "attempt": "2026-10-16-resume-01",
+  "observed_at": "2026-10-16T23:49:17+08:00",
+  "timezone": "Asia/Manila",
+  "source_commit": "c770c841259b968132f8ce6b48ae5cb36df35171",
+  "request": "Resume existing Phase 4B.1 acceptance after user reported private configuration",
+  "environment": {
+    "phase4b_test_database_url_present": false,
+    "full_url_or_password_printed": false,
+    "application_database_url_fallback_used": false
+  },
+  "preflight": {
+    "status": "BLOCKED",
+    "reason": "Required PHASE4B_TEST_DATABASE_URL absent in the command execution environment",
+    "connection_attempted": false,
+    "expected_database": "ccs_ga_phase4b_test",
+    "expected_role": "ccs_ga_phase4b_tester",
+    "expected_host": "127.0.0.1",
+    "expected_port": 5432,
+    "connected_identity_verified": false,
+    "role_privileges_verified": false,
+    "schema_revision_and_existing_data_inspected": false,
+    "migration_initialization_cleanup_or_write_attempted": false
+  },
+  "results": {
+    "postgresql": {
+      "passed": 0,
+      "failed": 0,
+      "skipped": 14,
+      "status": "BLOCKED"
+    },
+    "isolated_backend": {
+      "passed": 142,
+      "failed": 0,
+      "deselected": 1
+    },
+    "frontend_contracts": {
+      "passed": 30,
+      "failed": 0
+    },
+    "case_accounting": "Reruns of prior cases; do not add to previous distinct 503 backend / 78 frontend totals",
+    "other_checks": "Existing domain/GA/build/lint not rerun: no source/helper changes in this attempt"
+  },
+  "execution_artifacts": [
+    "docs/testing/phase-4b/20261016T234917+0800-postgresql-9d993683.json",
+    "docs/testing/phase-4b/20261016T234917+0800-admission-18ef74b1.json",
+    "docs/testing/phase-4b/20261016T234917+0800-auth-8f4fc74d.json",
+    "docs/testing/phase-4b/20261016T234918+0800-frontend-auth-434d000f.json",
+    "docs/testing/phase-4b/20261016T234919+0800-frontend-preferences-f6a78a03.json"
+  ],
+  "browser": {
+    "status": "BLOCKED / NOT RUN",
+    "reason": "Verified isolated PostgreSQL prerequisite unavailable",
+    "tool_unavailability_claimed": false,
+    "browser_version": null,
+    "browser_observed_urls": [],
+    "isolated_services_started": false,
+    "existing_services_modified": false,
+    "screenshots": [],
+    "scenarios": [
+      {
+        "id": "P4B-B01",
+        "status": "BLOCKED / NOT RUN",
+        "expected_result_and_manual_instructions": "docs/testing/phase-4b/browser-acceptance.md",
+        "actual_result": "No browser interaction; prerequisite unavailable",
+        "screenshot": null,
+        "timestamp": null
+      },
+      {
+        "id": "P4B-B02",
+        "status": "BLOCKED / NOT RUN",
+        "expected_result_and_manual_instructions": "docs/testing/phase-4b/browser-acceptance.md",
+        "actual_result": "No browser interaction; prerequisite unavailable",
+        "screenshot": null,
+        "timestamp": null
+      },
+      {
+        "id": "P4B-B03",
+        "status": "BLOCKED / NOT RUN",
+        "expected_result_and_manual_instructions": "docs/testing/phase-4b/browser-acceptance.md",
+        "actual_result": "No browser interaction; prerequisite unavailable",
+        "screenshot": null,
+        "timestamp": null
+      },
+      {
+        "id": "P4B-B04",
+        "status": "BLOCKED / NOT RUN",
+        "expected_result_and_manual_instructions": "docs/testing/phase-4b/browser-acceptance.md",
+        "actual_result": "No browser interaction; prerequisite unavailable",
+        "screenshot": null,
+        "timestamp": null
+      },
+      {
+        "id": "P4B-B05",
+        "status": "BLOCKED / NOT RUN",
+        "expected_result_and_manual_instructions": "docs/testing/phase-4b/browser-acceptance.md",
+        "actual_result": "No browser interaction; prerequisite unavailable",
+        "screenshot": null,
+        "timestamp": null
+      },
+      {
+        "id": "P4B-B06",
+        "status": "BLOCKED / NOT RUN",
+        "expected_result_and_manual_instructions": "docs/testing/phase-4b/browser-acceptance.md",
+        "actual_result": "No browser interaction; prerequisite unavailable",
+        "screenshot": null,
+        "timestamp": null
+      }
+    ]
+  },
+  "prior_archive_manifest_sha256": "935dc44d8496dbb1faa5f3a2e34e3ff9e1b968671ac82742320de02c52153be8",
+  "prior_hash_note": "Identifies the pre-resumption manifest bytes for revision provenance, not a current-artifact hash",
+  "protected_at_attempt_start": [
+    {
+      "path": "backend/alembic.ini",
+      "baseline_sha256": "fa12779adb7c500965a1988e7e42b418122f83cbbd6143adc8b8557189de6c8c"
+    },
+    {
+      "path": "backend/database.py",
+      "baseline_sha256": "83229f0066bc8c20a798b3594d8b84ba6058d52aa6c8f5d28e85ba3842962bbf"
+    },
+    {
+      "path": "backend/identity_admin.py",
+      "baseline_sha256": "0c9ed76764be6dc1fbd4d3bb7e330cceb9c128ac4fb1d4e807b0d98f247bda83"
+    },
+    {
+      "path": "backend/identity_models.py",
+      "baseline_sha256": "3a591024787c48f745f5baeb72780fc712ad7934925615609047aba2785276db"
+    },
+    {
+      "path": "backend/main.py",
+      "baseline_sha256": "1e44a84895ba717ed3c7cf2a314f31a010928324f91e15e638d3a115f204970c"
+    },
+    {
+      "path": "backend/requirements.txt",
+      "baseline_sha256": "83a8a751a6efa38dfdfce71fc1e7b6c825a632445231391f726740dac6d664be"
+    },
+    {
+      "path": "backend/data/Best_chromosome.csv",
+      "baseline_sha256": "be96bde9a7e1f472c450f9b8d401018abe457ffa6ea3f6e5fe174730edf4148a"
+    },
+    {
+      "path": "backend/data/BSIT_Consolidated_Subject_Schedules.csv",
+      "baseline_sha256": "f70b0f8d860a9f9f6fd95fb073705bc0a60af4f5df4d0eb8c195945272175c83"
+    },
+    {
+      "path": "backend/data/BSIT_Consolidated_Subject_Schedules_test.csv",
+      "baseline_sha256": "b0ab1e24fc1a9bf34498fb4fed5038416849fe11b0a8cf02406a335aea4b6104"
+    },
+    {
+      "path": "backend/data/BSIT_GEC.csv",
+      "baseline_sha256": "8c01b1b7c53d29d7a9f6f4f595d898c95490eb8febc2b1099e5d6d61db88e515"
+    },
+    {
+      "path": "backend/data/Faculty Admin, Research and Extension.csv",
+      "baseline_sha256": "93df2cb1861fd6bcb37e478f01ff3675e349b179c421e609e3c7fd6c4653ae77"
+    },
+    {
+      "path": "backend/data/Faculty Preferences V2.csv",
+      "baseline_sha256": "a3d4b67fc70e7a7c8bb9ca16757270d1bfe17acd81011f49165e1e9e7e02cfcd"
+    },
+    {
+      "path": "backend/data/Faculty Preferences.csv",
+      "baseline_sha256": "6acd8de23a00e017426fc9c7ee1256097828f98ec5b6f2da87aff298ea0beb8f"
+    },
+    {
+      "path": "backend/data/Faculty.csv",
+      "baseline_sha256": "7537aaf31c38917b2d4239ca4bfc5a8914d0eeafa7134be5b223adf079435d01"
+    },
+    {
+      "path": "backend/data/faculty_identities.json",
+      "baseline_sha256": "c504dd8c74269fa6b3a0c04b9dd48d5fa44b43736f2c919038df94464ec37b86"
+    },
+    {
+      "path": "backend/data/faculty_load.csv",
+      "baseline_sha256": "629940a8c0b639345b674fc51ca519c2bbe65ec19307aaf867acb460298bd367"
+    },
+    {
+      "path": "backend/data/Faculty_preferences.csv",
+      "baseline_sha256": "3f3feffbdcd011474287b9aa45e72db96c598c548acb7c5fbb73abd6248bec48"
+    },
+    {
+      "path": "backend/data/faculty_preferences.json",
+      "baseline_sha256": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9"
+    },
+    {
+      "path": "backend/data/faculty_qualifications.csv",
+      "baseline_sha256": "49c1f791e83f310a34c2fc08a30486ce44dc5b497ed1aef87752cd36e87aa82f"
+    },
+    {
+      "path": "backend/data/faculty_subject_eligibility.csv",
+      "baseline_sha256": "153a9beb6a31b4572dcb88314f288852028c6abc3a9b0ff931b730a5c003d808"
+    },
+    {
+      "path": "backend/data/first_sem_bsit_subjects.csv",
+      "baseline_sha256": "ec79b4b4b24f6d963ec84bdd324bbea83c1b2a2ff12ddb1649536a3325f03775"
+    },
+    {
+      "path": "backend/data/ga_settings.json",
+      "baseline_sha256": "6aa63985887c7fde231b31b6e35c4900c3899e16fdf8bb44fb208767d0211ce2"
+    },
+    {
+      "path": "backend/data/preassigned_assignments.json",
+      "baseline_sha256": "0ce3dcc315508f15adbfce3c7a3adafadb859ec84491e5f2450b7326e18f4144"
+    },
+    {
+      "path": "backend/data/preferences.csv",
+      "baseline_sha256": "f726739e8ae7cb98a1aa18767c6f367d04824c886d4e4106b84b86b1b9152716"
+    },
+    {
+      "path": "backend/data/second_sem_bsit_subjects.csv",
+      "baseline_sha256": "5ef5b02cf41a6c8da190561c31422136ec2630f8ebf7c0000b79ef9bec7830ac"
+    },
+    {
+      "path": "backend/data/subject_domains.csv",
+      "baseline_sha256": "73ba01e2e28975a148359041bfb0b2543e30f0fe3ed470b2c5e815033726f92a"
+    },
+    {
+      "path": "backend/data/Tentative load 1st sem.2026-2027 (2).xlsx",
+      "baseline_sha256": "f6b3c01a6612512d3d9f544534105c61f5af15a5569f6601f09ef8e2f2bdcf33"
+    },
+    {
+      "path": "backend/data/Tentative Load First Sem 2026-2027.xlsx",
+      "baseline_sha256": "d031c48b9737492f24b85051f94edb40ffbb05faf67d35af56cf0625fe98c920"
+    },
+    {
+      "path": "backend/data/test.csv",
+      "baseline_sha256": "757284df8bb7117c09baea1c7477486516c568d8f11c0e3bcec888885605207e"
+    },
+    {
+      "path": "backend/genetic_algorithm/__init__.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/migrations/env.py",
+      "baseline_sha256": "bc46c8ac8ce3ec3760f2d6743766cb812b814fea9344a44e799bcce4c0ef4fdd"
+    },
+    {
+      "path": "backend/routers/auth.py",
+      "baseline_sha256": "3b26405cca65476f82748b063d91510005e3c6616af9677bd7aa0f57b5f7dff5"
+    },
+    {
+      "path": "backend/routers/chromosomes.py",
+      "baseline_sha256": "68e6af580c33fe75795218313e6efc8bb91637e6e105f9048ad3ac87fa5a3d82"
+    },
+    {
+      "path": "backend/routers/faculty.py",
+      "baseline_sha256": "65d2655be7e718f752d11dd7abb4b079250d7900d02181e36073fc2a0b5df9d8"
+    },
+    {
+      "path": "backend/routers/fitness_analysis.py",
+      "baseline_sha256": "2d1eb8b9aeffd4d68dcf92e49599335a500823d2a09795ea09f43bebd180bfa4"
+    },
+    {
+      "path": "backend/routers/ga_history.py",
+      "baseline_sha256": "48c59de46ec69ce20c4cd07c20260a2360c2f10782978aff33bd3be1d5df7a49"
+    },
+    {
+      "path": "backend/routers/genetic_algorithm.py",
+      "baseline_sha256": "90b408e6d9f57a0f8f5564b74af01d9724994e7725946919f37859d35a46f739"
+    },
+    {
+      "path": "backend/routers/preferences.py",
+      "baseline_sha256": "2f3d44d141f48e74756dfe88754faa093cbbf47c92fbbe3c79aeaf4e911139bd"
+    },
+    {
+      "path": "backend/routers/schedules.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/routers/sections.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/routers/subjects.py",
+      "baseline_sha256": "a4f0cd79d4a18810eab22398170094d7f1435c727aa5d906807edde400565a37"
+    },
+    {
+      "path": "backend/routers/__init__.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/saved_chromosomes/best_chromosome.json",
+      "baseline_sha256": "ea710d7b1582df977c2a756157133103450383b54667c7da35e7b8564ec1104a"
+    },
+    {
+      "path": "backend/saved_chromosomes/latest_ga_result.json",
+      "baseline_sha256": "fb4f8f554e80a58b1d714dc0b84e71687c94f84860040a108bd55a6ebe95713a"
+    },
+    {
+      "path": "backend/saved_chromosomes/uploaded_baseline.json",
+      "baseline_sha256": "3b21d2a6849ae17760abc67de391925ffb368ca5dc356b36486437a00d837f83"
+    },
+    {
+      "path": "backend/schemas/auth.py",
+      "baseline_sha256": "ebfedcc579452b8c1e2b32ea16587e1dfb24486434a084c245bb0fff02466e9d"
+    },
+    {
+      "path": "backend/schemas/faculty.py",
+      "baseline_sha256": "c28a5eba8c363363245903459f588671c4be3c3cb5868fd33e346f09a48797f8"
+    },
+    {
+      "path": "backend/schemas/faculty_preference.py",
+      "baseline_sha256": "a94de661b02e4c8ea835ad5ce85e2b0ac9d6fefc709c2dd79ec623cf14382e04"
+    },
+    {
+      "path": "backend/schemas/ga_events.py",
+      "baseline_sha256": "c4228aed5bec17a1b2d5ae6dedc5b117691fd03ade08fd1929aa1d57deee2804"
+    },
+    {
+      "path": "backend/schemas/ga_history.py",
+      "baseline_sha256": "8f0845459540f300912eb84de4fa3c03b0fbc81a9f9fdd3ca97b66375c56859f"
+    },
+    {
+      "path": "backend/schemas/preference.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/schemas/room.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/schemas/schedule.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/schemas/section.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/schemas/subject.py",
+      "baseline_sha256": "b24007fda590c6ac9a8d24dde75e66ab481034e102ae9055a045295424f691c8"
+    },
+    {
+      "path": "backend/schemas/__init__.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/services/auth_service.py",
+      "baseline_sha256": "7097057236019c84dbf2a838c65ea11333c06d8408ad153267c0aa3a1babbab7"
+    },
+    {
+      "path": "backend/services/chromosome_analysis_service.py",
+      "baseline_sha256": "b5323b3410c5999abb8aca8d5f4dafdbcd5755b7a218f53dcccf0e7a7e5d1822"
+    },
+    {
+      "path": "backend/services/chromosome_service.py",
+      "baseline_sha256": "92f8b858806fc7fc1070ef169f86d34f089a1d6fa299751eaa5926c178826740"
+    },
+    {
+      "path": "backend/services/faculty_analysis_service.py",
+      "baseline_sha256": "0e903b2d3b6ba8c075d330df1f736d6a63c18c032af5f5fe4f562ce1b908d815"
+    },
+    {
+      "path": "backend/services/fitness_policy_compatibility.json",
+      "baseline_sha256": "44b7c8306fd89c6062b64929a4d5c12bf203bd57d17c2b46854bc3fe4bb96cf5"
+    },
+    {
+      "path": "backend/services/fitness_reporting_service.py",
+      "baseline_sha256": "fa73b85fec995c34ac39050f91e33552db7580a2d885e1943d1b5fb3f93a0cfa"
+    },
+    {
+      "path": "backend/services/ga_checkpoint_service.py",
+      "baseline_sha256": "03264366f062bcf09412b99a5bb91cb0b2a88ad9e5e0797a2a72c7007d80248b"
+    },
+    {
+      "path": "backend/services/ga_checkpoint_verification.py",
+      "baseline_sha256": "eba5a6847ef55a57c609ea15d65722cc54c8d867c7aac258eeb0dcce182ecfea"
+    },
+    {
+      "path": "backend/services/ga_control_service.py",
+      "baseline_sha256": "9a2899e104483e89ee23afe786eb46330fd2fcca2b1487eaeed7b861b0130c3f"
+    },
+    {
+      "path": "backend/services/ga_history_service.py",
+      "baseline_sha256": "92b36d7feeb2d3bb11d7def42eea2d49886183dc44859ec30bc50115ce75761c"
+    },
+    {
+      "path": "backend/services/ga_input_validation_service.py",
+      "baseline_sha256": "1559681bb3e83f289f01bec8645d6cfd177025d3f866774a1574f6eff644c4c5"
+    },
+    {
+      "path": "backend/services/ga_log_service.py",
+      "baseline_sha256": "6ba13332b81bfe77fe23fb0de032803274e955ab93c538fa764898ec5aa0d665"
+    },
+    {
+      "path": "backend/services/ga_progress_service.py",
+      "baseline_sha256": "262c52a742f03938ae7f7653389e7b9d7bb88fe9c0df18b47b44c31e5f00c7a4"
+    },
+    {
+      "path": "backend/services/ga_publication_service.py",
+      "baseline_sha256": "cb6f9f2bcd79b3d93fa2b747ef99d186652def4881c0b2df4150400c4be89b8d"
+    },
+    {
+      "path": "backend/services/ga_service.py",
+      "baseline_sha256": "d2decf9f0a623b76cf3ede54a11267e3843d9484f083dadc1cfd9d562518d4d9"
+    },
+    {
+      "path": "backend/services/ga_validation_templates.py",
+      "baseline_sha256": "557c87c1d055a32844a63bc93391ae0e2e1008faee19b4d01f303c64fc529c29"
+    },
+    {
+      "path": "backend/services/identity_service.py",
+      "baseline_sha256": "b4659aa89e434c216e64de213b0caf47aeb23f41e2bcf7c61f0aa35a017165ed"
+    },
+    {
+      "path": "backend/services/metadata_service.py",
+      "baseline_sha256": "ea219632aa5798a05bd60383e208f7bc3a282774eef75f40fabbb1d395859f2a"
+    },
+    {
+      "path": "backend/services/preference_authorization.py",
+      "baseline_sha256": "9c673df7623eae71f87823b13d14df1b110329f7543d529bbcddb4ae3e7f2591"
+    },
+    {
+      "path": "backend/services/preference_scoring_policy.py",
+      "baseline_sha256": "bdde95c6fb5cf9a47e49ad37c8a3d87805e4aa97e4947f7d7ebbf361db3b642b"
+    },
+    {
+      "path": "backend/services/preference_storage_service.py",
+      "baseline_sha256": "7785bc8c4d82f2b05d352dbde4bb73b746acfc70a9ecd3f04c0a6c2d005e766f"
+    },
+    {
+      "path": "backend/services/preference_validation_service.py",
+      "baseline_sha256": "42d74a3cee7bc1e38d055340d45ba3063ffdbef6bf39dfd4be2edfdc039fcddc"
+    },
+    {
+      "path": "backend/services/schedule_service.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/services/__init__.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/tests/conftest.py",
+      "baseline_sha256": "1c88036038b78a982c73d5288472d1f289a04e89e89dbe50339b5c65f0ab5f5f"
+    },
+    {
+      "path": "backend/tests/phase4b_database_safety.py",
+      "baseline_sha256": "198663e2d0e7147c2ee73a59f0fb42d773b4ac2b5a9d2fee97d1287b9bbf4897"
+    },
+    {
+      "path": "backend/tests/test_api.py",
+      "baseline_sha256": "786dd44cfa422e7c1478dcccea1f62ffe7cb99eb64588a869a7936613c63c90d"
+    },
+    {
+      "path": "backend/tests/test_api_validation.py",
+      "baseline_sha256": "9b7f01bb162cc2f6f3fcfe7e6c579383afdffedb7b275b2fad2066e2981e8cb6"
+    },
+    {
+      "path": "backend/tests/test_fitness_reporting.py",
+      "baseline_sha256": "85cb39737f07706aade9a9afa425d324ce6c88c8fa99c11feb3e0ae04e5d66b4"
+    },
+    {
+      "path": "backend/tests/test_ga_api_crossover.py",
+      "baseline_sha256": "8124f265d8beef4244f32bdc29dbc55894f087ff8a9fcf720d811d77a62e8687"
+    },
+    {
+      "path": "backend/tests/test_ga_control_conflicts.py",
+      "baseline_sha256": "c2ea9963e6b919b77ffb12b61b68d0bfd2efb66405dc1a49185d0b4f5c0998ff"
+    },
+    {
+      "path": "backend/tests/test_ga_core.py",
+      "baseline_sha256": "3e0f65ce8e5fadc38ac19ea31118b45301853cfbab05adc315e70297ee0165ea"
+    },
+    {
+      "path": "backend/tests/test_ga_generation_history.py",
+      "baseline_sha256": "635d764dabd2b7018209c200fbd1a2750c1ba38bf9ba49927352161638f4d44c"
+    },
+    {
+      "path": "backend/tests/test_ga_hard_constraints.py",
+      "baseline_sha256": "f85ab0e9ab1414710514dc0ac0b7b1440cbbad69e39462c4742c55e1c0c37117"
+    },
+    {
+      "path": "backend/tests/test_ga_history_checkpoint_recovery.py",
+      "baseline_sha256": "0150aa365eb6d24e119e75ab7a905d83768096cfdd970e27276b07a51eee9e9b"
+    },
+    {
+      "path": "backend/tests/test_ga_input_validation.py",
+      "baseline_sha256": "ace07a9a41d604f3e8224d44200c766aa584c17e6db6a23b842b10675ef6373b"
+    },
+    {
+      "path": "backend/tests/test_ga_logs.py",
+      "baseline_sha256": "568924498e14d01c61ff4ad98a63f0d698798e90e9a004a4d421526303f2d0e7"
+    },
+    {
+      "path": "backend/tests/test_ga_monitoring.py",
+      "baseline_sha256": "ce1a344a05f10a1014b21f0bfbbcdf6c507551e373d9f04928f0cbb65aaef6a0"
+    },
+    {
+      "path": "backend/tests/test_ga_paused_recovery.py",
+      "baseline_sha256": "dd1d047df3167859398967bff8348580daa30019189e900bd00575084eba5797"
+    },
+    {
+      "path": "backend/tests/test_ga_pause_resume.py",
+      "baseline_sha256": "a6e71dac81f75435f72df092dcd3f2abb3525ec766d8c962628dbb535bdc0f7c"
+    },
+    {
+      "path": "backend/tests/test_ga_refresh_recovery.py",
+      "baseline_sha256": "87b54b8d90d283adc35fef985b594ccd84106a1acae8b6d070e7272d9569ca2c"
+    },
+    {
+      "path": "backend/tests/test_ga_safe_stop.py",
+      "baseline_sha256": "365dbac5e7cfb2156aee5b14a7d90da6e4d132722862b5f6f46f7c14be5c4038"
+    },
+    {
+      "path": "backend/tests/test_ga_unicode_diagnostics.py",
+      "baseline_sha256": "7f5fbe35977392c91e0f0f90c648bb13cf2efc42f4048157dab06f995ad15136"
+    },
+    {
+      "path": "backend/tests/test_metadata_api.py",
+      "baseline_sha256": "e27d26bcde093eb493347367cc77fbeb97d1e3eec4a89aa1d2b4d7a3b4bac5e0"
+    },
+    {
+      "path": "backend/tests/test_phase4a_auth.py",
+      "baseline_sha256": "e4390962630ff72d6061c9952e031ea60a7a4ecb5808a04c8faee459d730c5bf"
+    },
+    {
+      "path": "backend/tests/test_phase4a_final_verification.py",
+      "baseline_sha256": "bb1a3400aef65b029a48eab8eb8b7be1fd5fac99baee3e70fa35956c7b1c7c93"
+    },
+    {
+      "path": "backend/tests/test_phase4b_browser_fixture.py",
+      "baseline_sha256": "661f38b2315e25c6f46e27a6345636ce2866ceb0550f0e5112c4b4a5ad83f835"
+    },
+    {
+      "path": "backend/tests/test_phase4b_database_safety.py",
+      "baseline_sha256": "c1575e523d77cf45c359fc82aa4879425dda30e87a1e88af1d0dbeeae33ff666"
+    },
+    {
+      "path": "backend/tests/test_phase4b_postgresql.py",
+      "baseline_sha256": "45cc8cc60a813f0b1074674e99ba56ac214074800e746c5c1af4fb380bd2a2e2"
+    },
+    {
+      "path": "backend/tests/test_preassigned_assignments.py",
+      "baseline_sha256": "684f8ec54f1044d2ff2ef90d00fa0faf6db7ef10d4a1eb9feea66e3df2c846f9"
+    },
+    {
+      "path": "backend/tests/test_preference_integrity.py",
+      "baseline_sha256": "8c1327370830a0abbc70f8bee98255e0563bac9fddbb01edce0e4136b56aa645"
+    },
+    {
+      "path": "backend/tests/test_preference_toggles.py",
+      "baseline_sha256": "c5a339025e64878082f3de1c50d34a9398427743d591c8243d749b7315358db1"
+    },
+    {
+      "path": "backend/tests/test_preference_validation.py",
+      "baseline_sha256": "9dc196fe9c2463e928f93277f07691c31183a78826f5414dc807d5a482e2f83b"
+    },
+    {
+      "path": "backend/tests/test_system_audit.py",
+      "baseline_sha256": "ad767a2c8bb130f84f6f580360c33a887daca42f3aa180f1a07defafb3b33a64"
+    },
+    {
+      "path": "backend/tests/test_tournament_selection.py",
+      "baseline_sha256": "52f51f2d0a772f0cba9b4c335c696e136157a9606ffe8ac13bae7475b5f2cd17"
+    },
+    {
+      "path": "backend/tests/__init__.py",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/saved_chromosomes/stopped_runs/27548bac-86f5-4716-be42-0fc5da4deaef.json",
+      "baseline_sha256": "d411f2ff3ee6d7d2525d26dbb96a063d5c48a9281e3edd6e5f41f394ff590525"
+    },
+    {
+      "path": "backend/saved_chromosomes/stopped_runs/46a35b06-72cc-4056-a5bc-43b19194a6e0.json",
+      "baseline_sha256": "89950ecb3058d25472e18a24bd778908936696b5db2220338135bc9f6b2f9302"
+    },
+    {
+      "path": "backend/saved_chromosomes/stopped_runs/ee19cca4-9f6d-49a9-bb17-73125543c45a.json",
+      "baseline_sha256": "9170bf95f82ddbba4fb1869d71f168ad4bf7fe187961cbc65f23a1d0190e4a7c"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/0959633c-0cbe-4de9-9a17-74c9c1ad80c0/generation-000000.json",
+      "baseline_sha256": "2a7b2e94560cddb563b5f96c62b87ad042728d0d4b3ff43fe5aa8143135f79ad"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/0959633c-0cbe-4de9-9a17-74c9c1ad80c0/generation-000001.json",
+      "baseline_sha256": "badcd45780c0700f466ccb2b858b266aefc89e2e8606b672e958e1d3800d9eb4"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/0959633c-0cbe-4de9-9a17-74c9c1ad80c0/generation-000002.json",
+      "baseline_sha256": "1ac46bc285e113ab1fd5ddfe0d611a8f645a303403c42e3f834bbd61e7f4155a"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/0959633c-0cbe-4de9-9a17-74c9c1ad80c0/index.json",
+      "baseline_sha256": "f5cc5827b7dab2298659f76522d96801803f474bc1168f63dce0ae8f80ffd7f8"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/20fc95aa-84f8-429d-96f2-6887f7622c3c/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "12db4caac9ac896adf8b23ab7f5fa47f5ce4c68202269038fa069d32ab76e68f"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/20fc95aa-84f8-429d-96f2-6887f7622c3c/generation-000001.json",
+      "baseline_sha256": "bef14aaef6807fe5fb0e4421314529b7530ec16416cb799006d148230e6e2309"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/20fc95aa-84f8-429d-96f2-6887f7622c3c/index.json",
+      "baseline_sha256": "eec6297d65eb65ec6bddab4eb6bfb10729bea5e0a6dcc85085da7180ca7e6aa0"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/24730583-f60c-426a-ae05-65db5571e0b3/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "1aa3e7d5d4f4af35ac9933a5a685ab8675896b5f53379b3db3d41a92f4e98e04"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/24730583-f60c-426a-ae05-65db5571e0b3/generation-000001.json",
+      "baseline_sha256": "7b791aaa789b676d2231394a257c5d1527c917d48caad1f7b827d4a53c8c6484"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/24730583-f60c-426a-ae05-65db5571e0b3/index.json",
+      "baseline_sha256": "768668cfa50eee4e3ded38e809706cbbcba20f403f5666dedfebb534c7ef715d"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/35a5a4be-b689-4a45-88b1-c8cf1b56915b/index.json",
+      "baseline_sha256": "bf2c2703c8cfd7d2e3d76233ce2b4988da1fc921dc64d5649eaa54e19a3bf108"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/565ee7a3-1c20-459d-8354-b2f4fea1f826/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "906d9169c0ee949ac7cc4d30000be7dfcf10e566ee57d12bf73e5745bbc7c4a3"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/565ee7a3-1c20-459d-8354-b2f4fea1f826/generation-000001.json",
+      "baseline_sha256": "4301c373f7251fcf0b117a291ee35ce4cdb1c77250d79fcf9822614f0387575d"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/565ee7a3-1c20-459d-8354-b2f4fea1f826/index.json",
+      "baseline_sha256": "fb737ffe22df4dc0f2f0869a3aeb52bddd703878ac397ccb21eb01677f77497a"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/906c00c3-e0d9-4d35-8e9c-4d4cbcd88bc2/.7ck6dky1.tmp",
+      "baseline_sha256": "2f41c9b9402e234276b51fb2850acd9ffedb6dd8c0bfeab685c4e8269d2ef4cb"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/906c00c3-e0d9-4d35-8e9c-4d4cbcd88bc2/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "fd8c869469aff7b5a8cda70391d066bcaca1abd92dc72a7ebd4f0ae37f7d0a48"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/906c00c3-e0d9-4d35-8e9c-4d4cbcd88bc2/generation-000001.json",
+      "baseline_sha256": "2e321b8cf6ec2ad8b3bbfbdd7d50c811423d3cf1059b813f7df8c4d5c61cd160"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/906c00c3-e0d9-4d35-8e9c-4d4cbcd88bc2/index.json",
+      "baseline_sha256": "e88197930ee273b66e2c20c703ac8d5b4ac2363523c70adf3b3e4d1a6437bd32"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/analysis-2946815c7c8c10fd87ff644d16700adb2ce0014721dba8f18f65e60035b22061.json",
+      "baseline_sha256": "5b9f731a025cbb5e3982b151b3715984cb09912f7496965559281d4b123085f4"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/generation-000000.json",
+      "baseline_sha256": "4484792c76929d37456c13637361695b1791e440d2d8c938ae71e6dacb0e155e"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/generation-000001.json",
+      "baseline_sha256": "2ca3a883a59ef43917f28152d300248267e01dcf73108093d3facfdd839a8063"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/generation-000002.json",
+      "baseline_sha256": "66be8cb7b01498eb086c0644b93647f3edd790bbfa2c82468d47f64752eabd42"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/generation-000003.json",
+      "baseline_sha256": "21d83216bb453025043b346ec4df5ce1e6fa85d837cd80a13062564fd9613dd6"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/92ea50ae-152e-4407-9195-482666eb8cde/index.json",
+      "baseline_sha256": "e64f772d9accff5f58cf660b0f94f4af6cfec132c9d6694290c609ab72b9f12a"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/b8d7cb7b-60d1-43f0-b85b-b2fbf0187949/index.json",
+      "baseline_sha256": "dfdf47668623f3b32c602805c1beb753cd63b1a2c0ff9e7acf9cd41ebe5d3c76"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/analysis-90878cb813839c01e0d7a924c5fe58cf796a86d3b490ac697073ec351330b047.json",
+      "baseline_sha256": "be999656ee811bd36deaa59c14b16a054374742ca50fddaf626ca5f508119918"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000000.json",
+      "baseline_sha256": "59278d799096da5fc24845ef3106fc2b7933597b7b68b5aefdfe213320131b41"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000001.json",
+      "baseline_sha256": "55371e04934f8b70d85eec43b41b62f75042b7d957126a9362b96786704f9531"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000002.json",
+      "baseline_sha256": "e1e34329872d5495b1ed339140261d21e22cffd08c8cf48207941415e7436d9a"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000003.json",
+      "baseline_sha256": "3a6daa5bb2382fc6899bd52a56b8df52e05c5e270b366f9b405343d101adda38"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000004.json",
+      "baseline_sha256": "230f878369e6d6d52ef597dda04d29a31779c3bad855f8ece4361f71a0ba304d"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000005.json",
+      "baseline_sha256": "104623391167a82dd44b18879feaf613220ea68a7acc13ff84b334a50dc7cb87"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000006.json",
+      "baseline_sha256": "ae9871cbcee9ffc71205111418a72c5f7a7c247d6feec18f73fd5fa156dbb074"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000007.json",
+      "baseline_sha256": "a6ca2cd9d418664684e4f6148cb43e2a35ecdfc650befd4e331e1138733db5b3"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000008.json",
+      "baseline_sha256": "559214e788f256d3ef72fbde0d07cae1637cf5c42a30b19ae885d3bc4f873544"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000009.json",
+      "baseline_sha256": "9387b3660aa227706768e2ecadd90669db1483c780aae53070129e95b83512d0"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000010.json",
+      "baseline_sha256": "829c3324479d4b9cb0a5d8be3c247ebec7923587ea64aceb69275a91c84c9821"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000011.json",
+      "baseline_sha256": "c06a74985da6447eecdc493e02215a657667d0cfdfeb199f9442478a298870b7"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000012.json",
+      "baseline_sha256": "28107bfd21a55365016114a4ff227fcb149b77087d1db300aed48509062ea687"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000013.json",
+      "baseline_sha256": "4ebcf0d5785112b3823914c44361464783331280b2132c8648836c481e63f419"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000014.json",
+      "baseline_sha256": "f56c98c73fff2efaf4227b9e06b8e057ea70cd0835abd05a9b0c30f2dbae0705"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000015.json",
+      "baseline_sha256": "fc9cce6ee30614f5f5c4d9f00ecf225a4ccc6d84d72c4a9d8f5abbe22442071f"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000016.json",
+      "baseline_sha256": "7f9711ee311424a6bd5da978df8281e838d92ce91b3c5a07d3375a6b479b995d"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000017.json",
+      "baseline_sha256": "7aafb8c5c66b2607aa60c53f7222a2113f0aa067c668876dfd54d972c4409ca4"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000018.json",
+      "baseline_sha256": "1f562ea511a909023e65407852807528b9017a9117f1df985aaf1844bfa5916f"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000019.json",
+      "baseline_sha256": "8858a364b88a0b6dbfa09b33955421adca080a83aa7d4a992b5c3eb25b339457"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/generation-000020.json",
+      "baseline_sha256": "8a1335bad537a64a6ab5a186e9567b5d804db6e59eea5fa653700c1c92e79b4d"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ba440200-b932-454e-a814-b6633723ffe1/index.json",
+      "baseline_sha256": "6f8e216449c546cca69d4659a9983dac142403c1807d88f144bf6dd030dfc684"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/c6b4d519-9907-410e-919b-26290f8d8a84/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "36aa7f252a447da2e28f189dad1ac745a1d29cfc49e5384b57c2199455c8b04a"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/c6b4d519-9907-410e-919b-26290f8d8a84/generation-000001.json",
+      "baseline_sha256": "796de49b1490349f6ca483619181d64ebfaae1362a6d8ee51fe515795b3a999c"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/c6b4d519-9907-410e-919b-26290f8d8a84/index.json",
+      "baseline_sha256": "f13ef91fa71c574a8c6448a46d5a623c884d839bd638c732bb78b707b69fee8c"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/d48c257b-3057-47e4-8158-c0f84f422b3c/generation-000000.json",
+      "baseline_sha256": "53cf5673883cdc2f953d911fbb7d9d0cac7ef173d368dbe40ae3720dcaeeb422"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/d48c257b-3057-47e4-8158-c0f84f422b3c/generation-000001.json",
+      "baseline_sha256": "d63b3ea97c90485e254912147e22610aa9443d00225eb6ebdff852dd507d35fb"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/d48c257b-3057-47e4-8158-c0f84f422b3c/index.json",
+      "baseline_sha256": "494bd251626ec5b2ee0ca8f3cb0a89b58f4b1cbc1f687731b9d927e37855628c"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/e8589579-02ab-42a9-9f21-748d33bfb3ea/.v1xy92lu.tmp",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/e8589579-02ab-42a9-9f21-748d33bfb3ea/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "b25919a0ae53bb34fe04bc005b514ac9016ab7d5e5a434e41d2321182e2520b4"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/e8589579-02ab-42a9-9f21-748d33bfb3ea/generation-000001.json",
+      "baseline_sha256": "debbef1d1e7189aea860d33669fbdf6b8be817fbd47aae154b5e7f8e1413c014"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/e8589579-02ab-42a9-9f21-748d33bfb3ea/index.json",
+      "baseline_sha256": "9cae4085bccd0c4874d3f32daba55dc0a9df530000bb6993ab1e1cfe2abca152"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ed7eb73c-0a84-4054-9a94-249de58547bb/.vfew4wrh.tmp",
+      "baseline_sha256": "b182f3bcfce2492f1ae6b2b5bb3c31325822c2e051561ecc239c08c3eca11b11"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ed7eb73c-0a84-4054-9a94-249de58547bb/analysis-b6270ae1822b1626d82bb2cbf659da8695da5f3cce3aff9877f87c75251faf8e.json",
+      "baseline_sha256": "1ce5a25bac4d56e82179ed98946f535ee6d1d9801517ee7d668daac1962df5f1"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ed7eb73c-0a84-4054-9a94-249de58547bb/generation-000001.json",
+      "baseline_sha256": "dbbc73a1233e3ac2a04f83be55fe2416d7c1cc155b155e8cb9a4e63a6d305cf4"
+    },
+    {
+      "path": "backend/saved_chromosomes/generation_snapshots/ed7eb73c-0a84-4054-9a94-249de58547bb/index.json",
+      "baseline_sha256": "39c5cd6c5777adae042479ef1662f49b88081707cd0de1f6845a06d0bac34799"
+    },
+    {
+      "path": "backend/run_checkpoints/0959633c-0cbe-4de9-9a17-74c9c1ad80c0/status.json",
+      "baseline_sha256": "69de9fecb6c14d5d2eed48d30e4ee7a570a0887428638639059affdc92a889fa"
+    },
+    {
+      "path": "backend/run_checkpoints/35a5a4be-b689-4a45-88b1-c8cf1b56915b/status.json",
+      "baseline_sha256": "00f542cf95d1d00cf7f23ba2a95f841509436acfd92ce0cbbd9b142b0c6963c0"
+    },
+    {
+      "path": "backend/run_checkpoints/58719177-702f-40d6-849c-8bd552e0ae4f/checkpoint-1-73edbe90-0586-43c8-89cc-43fbbcf0ed71.json.gz",
+      "baseline_sha256": "c83dcd28fc803b90901b6a7f507685d008434514e49d9da7111dc2de395bf8f2"
+    },
+    {
+      "path": "backend/run_checkpoints/58719177-702f-40d6-849c-8bd552e0ae4f/status.json",
+      "baseline_sha256": "eeaaa71ccf4809eae0a6660c6b58d4ba5e4d6b1a54e0b1b666b632a59aaa11ec"
+    },
+    {
+      "path": "backend/run_checkpoints/8fb9ec22-51ae-4e94-8e1c-8e74187577c2/checkpoint-4-c1cd90a3-ee68-4a83-824e-c64f77c9226d.json.gz",
+      "baseline_sha256": "542bb2df51dc84038c7b9ef7e984edeabf413bb6a03658886e472389d2d8f399"
+    },
+    {
+      "path": "backend/run_checkpoints/8fb9ec22-51ae-4e94-8e1c-8e74187577c2/status.json",
+      "baseline_sha256": "95e5fa355e2ebbe1bab96181aa117ba4a56d27d0c7cdaeab3778fb30dd2569ed"
+    },
+    {
+      "path": "backend/run_checkpoints/92ea50ae-152e-4407-9195-482666eb8cde/status.json",
+      "baseline_sha256": "f2fd92b1c72127896b0ec6423e2e4bdb63d64b3af88f3f0a322f042f44e0d2ee"
+    },
+    {
+      "path": "backend/run_checkpoints/b8d7cb7b-60d1-43f0-b85b-b2fbf0187949/status.json",
+      "baseline_sha256": "2aa4764f10a2c2806af80e4e0d2451b3d97987f0f9e59ed3f1680cdd1cb5058d"
+    },
+    {
+      "path": "backend/run_checkpoints/ba440200-b932-454e-a814-b6633723ffe1/checkpoint-1-079e70d7-8e70-4de9-b59f-5ee5f844b0b0.json.gz",
+      "baseline_sha256": "c48ea8a66424ce816515c4404bbeec965a4e914fad93ec9da75ff905c972e00e"
+    },
+    {
+      "path": "backend/run_checkpoints/ba440200-b932-454e-a814-b6633723ffe1/status.json",
+      "baseline_sha256": "2cc945c7da8dc1e279ce8a83441b12f8bea894836891847e8092f8414e54f02a"
+    },
+    {
+      "path": "backend/run_checkpoints/d48c257b-3057-47e4-8158-c0f84f422b3c/checkpoint-1-bfe6fd75-ec5e-4ede-99e6-77a43b9b84b2.json.gz",
+      "baseline_sha256": "197b68b3c3a86e033c84c3c763e18dbb768005c44144a23bfeda6a06be9bba33"
+    },
+    {
+      "path": "backend/run_checkpoints/d48c257b-3057-47e4-8158-c0f84f422b3c/status.json",
+      "baseline_sha256": "9a75c788a2141ac714ae8ffab64cd96ffa9bde0f49d1c40ca7f6e53a9a0d1fa8"
+    },
+    {
+      "path": "backend/run_checkpoints/ee19cca4-9f6d-49a9-bb17-73125543c45a/checkpoint-2-4429beff-7546-4eea-b137-9b9fcb9760b7.json.gz",
+      "baseline_sha256": "96d80b2aaea175a708767ed595b384becdf19460087cbff519a774ee3cf9fc88"
+    },
+    {
+      "path": "backend/run_checkpoints/ee19cca4-9f6d-49a9-bb17-73125543c45a/status.json",
+      "baseline_sha256": "7f938ce5d25dff99b91eb3163c515e2487f133b4eaf1686fafd1625df70019e1"
+    },
+    {
+      "path": "backend/run_checkpoints/f0f86580-3035-49a4-a704-daea366d464e/checkpoint-0-64276a5f-7d95-4e0d-b27a-69ef15708ce7.json.gz",
+      "baseline_sha256": "f5e773eaedc86d77ce80bc6b156c75adc881d1cd786ec07ebbe62bf4f61a5195"
+    },
+    {
+      "path": "backend/run_checkpoints/f0f86580-3035-49a4-a704-daea366d464e/status.json",
+      "baseline_sha256": "36d96cb1acac1650461377deb8290b50b3024140c87d10c064c355c09be7660b"
+    },
+    {
+      "path": "backend/migrations/versions/4a_0001_identity.py",
+      "baseline_sha256": "9765db86b0fa47ad7bffa95e66376d949ad835d1f5ba361947f0718ef7b0e9bd"
+    },
+    {
+      "path": "backend/genetic_algorithm/analysis/AnalyzeResult.py",
+      "baseline_sha256": "d3531d67e9302fbd5143a53d09c68438e3861bd6187a71e6aceeb67bfd8b34ca"
+    },
+    {
+      "path": "backend/genetic_algorithm/analysis/FacultyFitnessVisualization.py",
+      "baseline_sha256": "b1fbe7d158df2d57f4c30445acfae2a6fa19e7eec272b14ce1f4c4b52b8f3575"
+    },
+    {
+      "path": "backend/genetic_algorithm/analysis/FacultySelectedChromosomeDashboard.py",
+      "baseline_sha256": "1cfc7aee2519f438342c786a17eb58e4208a469984d95be6422876d1cb554430"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Faculty.py",
+      "baseline_sha256": "3120b1de95265cbc92143fa2e2e8897af73eb0c21e50f3b1b78e6b34793352af"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/faculty_preference.py",
+      "baseline_sha256": "ad088ff8e7c50924b0ae48197f8b58fe7dbfdcab5549949d66a1b9fd7c597040"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/ga_setting.py",
+      "baseline_sha256": "79608d846366a5681e0b8bdfaf45f71237623303bd6732747948a99c4873d24c"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/PreassignedAssignment.py",
+      "baseline_sha256": "414f0df76011666446cad61891115c3bfd7d16970588051154198656aaf2f659"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Room.py",
+      "baseline_sha256": "f1920219c823212b1ba8f219a25e538e3c99fc0337f092325c33b3f0b3c0d868"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Section.py",
+      "baseline_sha256": "b9ee0e1bf2a999fc7fd24d8c87411538ce72d8c188f7f00e0e6c70c19317a278"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Student.py",
+      "baseline_sha256": "a59fdf84be24542221698fa06b19464fc9b016db42efdbe2e4ddc74b4ef934d0"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Subject.py",
+      "baseline_sha256": "7ba01efc7efccc6ea5b399091caf63d978c7c3f1192df2bcf1bb40bac813974f"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/TimeBlock.py",
+      "baseline_sha256": "f8631d186ca8ecf3fe0ba8f1463b8451c56eb8a922ef6646e98661cb9537cec6"
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/BestChromosome.py",
+      "baseline_sha256": "57d32ac71b642e77a2de4d37fa905a59b986fe229fb35b697ef0bbb1866a02be"
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/CreatePopulation.py",
+      "baseline_sha256": "2246770113c766220f2dc7e79389feff5a7993a5a46177954eb80da4809b10ff"
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/ElitisimSelection.py",
+      "baseline_sha256": "a02dc5b80336301c5a2480e429bd4d4751b7af80887c03f84313307ad116cf63"
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/FitnessFunction.py",
+      "baseline_sha256": "e679e3e649a70c504fcc3d4c10cf749bcc2c92a3a812a0bd5b31e2f3ca0b5ff1"
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/mutation.py",
+      "baseline_sha256": "bee483d6e55923bcf1a04c4f76a91c58dc55fe6a4edcb1e645be104b15504061"
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/Swap.py",
+      "baseline_sha256": "14ba9ea2c1f7339a38146390d89ad849e9f6893f9d4e67c9f4cd1234a1043098"
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/TournamentSelection.py",
+      "baseline_sha256": "f7ef9cf318d4252338ac3a99d54cd7a5ae25f20bf02c0c1a79cc328d4ad61993"
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/FitnessObservation.py",
+      "baseline_sha256": "e47537d695b9df17a67929c4fdde6bb3ecbc8c034f9b4fb53b691ae0517829b8"
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/FrozenInputs.py",
+      "baseline_sha256": "e407d686e2ee95eccca80761c77a2fec6e5d90bef302a8ebe9621268b1f8bf3a"
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/Functions.py",
+      "baseline_sha256": "d28af9197d38957eb5ace526aa243e4448c68bd475efd89337e1d2c4742f555b"
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/GetUpdatedList.py",
+      "baseline_sha256": "b40045d7e7e926db1eab6f51825afa5adcf19002e81c9ca6544df1c69e4a6317"
+    },
+    {
+      "path": "frontend/src/App.css",
+      "baseline_sha256": "6e25a776d3e8102da5bacb3cb99f4a5fc662a2e01e6143140671a556d28c3d5c"
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "baseline_sha256": "cc295f29ba760ae83199ddfff360f92d9e1bf35477b69cd1854065369615b778"
+    },
+    {
+      "path": "frontend/src/index.css",
+      "baseline_sha256": "5b788be1403455e2573a79d439966ef6e01b54767b84e6edbb95bb9bf97e1b1c"
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "baseline_sha256": "4f4922e37b539aaea9a865c414cca33fea59a2f325432aaea94ef8614bb0b721"
+    },
+    {
+      "path": "frontend/src/api/faculty.ts",
+      "baseline_sha256": "f0e85e44fe5eec2ee794425050686f241321881e8c0c67ec316d5e973641a0af"
+    },
+    {
+      "path": "frontend/src/api/preferences.ts",
+      "baseline_sha256": "d0146cdfdb3f90bb37b173a7b2dec9bcd24af564ee4a105895157ca8a83e02b6"
+    },
+    {
+      "path": "frontend/src/api/subjects.ts",
+      "baseline_sha256": "29c91487d58f17ea08d7856ec0de709463b62fd7674ede36f3ead2e35637fb81"
+    },
+    {
+      "path": "frontend/src/assets/hero.png",
+      "baseline_sha256": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c"
+    },
+    {
+      "path": "frontend/src/assets/react.svg",
+      "baseline_sha256": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5"
+    },
+    {
+      "path": "frontend/src/assets/vite.svg",
+      "baseline_sha256": "5be21acd42eb7b896e517f4e0f0f11eb5c5d9e54fbbcebe9453f033008fcca6f"
+    },
+    {
+      "path": "frontend/src/context/AuthContext.tsx",
+      "baseline_sha256": "504bf88469b80ab04562a200630016eda509a494db3d88b75fa108b60bbc856a"
+    },
+    {
+      "path": "frontend/src/context/GAContext.tsx",
+      "baseline_sha256": "d8f107c47de205bd8f7a953124fbb00b37164ab3a09237baa1510e4b567e8640"
+    },
+    {
+      "path": "frontend/src/layouts/AdminLayout.tsx",
+      "baseline_sha256": "11634a01c9f6cea07f3ac746a2374c37a11430dba4b0e4b89ac45658b0a6c2b4"
+    },
+    {
+      "path": "frontend/src/layouts/FacultyLayout.tsx",
+      "baseline_sha256": "d47a295e923376e61d8a70139bda2dbe0c2593ba5262e5ccec4cf5c2a71e89a2"
+    },
+    {
+      "path": "frontend/src/pages/Login.tsx",
+      "baseline_sha256": "9d2b7222e8c839b2c69c7ef42928400575dd191c1cfd026211c8ecab219934f3"
+    },
+    {
+      "path": "frontend/src/routes/AppRoutes.tsx",
+      "baseline_sha256": "32530e5bb2af4ce7f8dc2259c8f5f728a6111110cb65daf69e9f5819796358dc"
+    },
+    {
+      "path": "frontend/src/routes/ProtectedRoute.tsx",
+      "baseline_sha256": "20f7a4c6a2ac5aaba611e495909b017242c536ff9ac41c8a8cc01ed9972c2ff7"
+    },
+    {
+      "path": "frontend/src/services/api.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/services/apiSession.ts",
+      "baseline_sha256": "a6116d1c71eff79700a7654a3aab920982c24fe9724e0bca4942b0adef07a872"
+    },
+    {
+      "path": "frontend/src/services/auth.ts",
+      "baseline_sha256": "4bca2d7294863742a2ee1f3c4052fdf0c12e14ee5b6e2269973db2931ed89246"
+    },
+    {
+      "path": "frontend/src/services/facultyService.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/services/fitnessReporting.ts",
+      "baseline_sha256": "9e76a92a1a19327bbddb7e0e53dcf1589375855422ce57fa15560fefd8652f7f"
+    },
+    {
+      "path": "frontend/src/services/gaHistory.ts",
+      "baseline_sha256": "1da9a446d4afba6fd824db7aac9b8d0d8606f2fc12b2f7b93abf4c359f08693b"
+    },
+    {
+      "path": "frontend/src/services/gaLogs.ts",
+      "baseline_sha256": "f0573b21ff87f5749714230504f35c89fd97083fad0d33f966d64721d8d434b9"
+    },
+    {
+      "path": "frontend/src/services/gaMonitoring.ts",
+      "baseline_sha256": "2d4a43e0eb5caf66c35b7a97ddaf97f1344b5fd717260e456c89d2c1d05c8b5c"
+    },
+    {
+      "path": "frontend/src/services/gaRecovery.ts",
+      "baseline_sha256": "292b3ff7e9f2dc6824b2a88b28b283ab144bcc5274427401d9066d65a300b3e9"
+    },
+    {
+      "path": "frontend/src/services/gaService.ts",
+      "baseline_sha256": "1744ee7f162ea8784c58da63b257c2253fc007b9ec0f3d91b97a25a756f60b61"
+    },
+    {
+      "path": "frontend/src/services/preferenceService.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/types/faculty.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/types/ga.ts",
+      "baseline_sha256": "ec5686384299b56db33cebc9c811491a956144b7d8c530d4d291e812d91b8fd9"
+    },
+    {
+      "path": "frontend/src/types/preference.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/types/schedule.ts",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/pages/admin/Accounts.tsx",
+      "baseline_sha256": "4840c6c2e2bcf58b6590ea47223db437a409aa0f6f97b3692a9ac40d59db2fd7"
+    },
+    {
+      "path": "frontend/src/pages/admin/ChromosomeViewer.tsx",
+      "baseline_sha256": "dd60768ced2e6440ebcf285a49c29f461bf4854f3891749ab980487b3690e6e0"
+    },
+    {
+      "path": "frontend/src/pages/admin/Dashboard.tsx",
+      "baseline_sha256": "1951c1d8600567c6acf3bd09df577b80d0a97e9ec01ab20662eda62ce45b0ebf"
+    },
+    {
+      "path": "frontend/src/pages/admin/FacultyManagement.tsx",
+      "baseline_sha256": "9e9d16fa3ff69525d74e4dde4784c2294035697ae65028c70db06017355200bc"
+    },
+    {
+      "path": "frontend/src/pages/admin/FitnessAnalysis.tsx",
+      "baseline_sha256": "595493b9ee2c5061689b6fbcc999b7c2bb801666625766dfcf585a196615fa67"
+    },
+    {
+      "path": "frontend/src/pages/admin/GenerateSchedule.tsx",
+      "baseline_sha256": "f1cd88bbdd019ef678c8710698da65d05b180ad466da932e783ed6169e808b37"
+    },
+    {
+      "path": "frontend/src/pages/admin/GenerationHistory.tsx",
+      "baseline_sha256": "ea82282ab2caba2bd0724600ded59ba7e657fb7b5c31b9ff460bd192c6587621"
+    },
+    {
+      "path": "frontend/src/pages/admin/PreferencesReview.tsx",
+      "baseline_sha256": "740f20e6b38d8607c7ee1199c862ca8d8c875d40440a202e3a4d771fe113958d"
+    },
+    {
+      "path": "frontend/src/pages/admin/RoomAssignments.tsx",
+      "baseline_sha256": "1d9d1155b080c1c50c90e13d1916258bd4f1969c7adb157b33d03ba431a9c89e"
+    },
+    {
+      "path": "frontend/src/pages/admin/ScheduleView.tsx",
+      "baseline_sha256": "0b28b929349e2f0be6b07b3fa7ca5d623def7941c3b03952bc214937d9d9bf61"
+    },
+    {
+      "path": "frontend/src/pages/admin/SubjectManagement.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/pages/faculty/Dashboard.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/pages/faculty/MySchedule.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/pages/faculty/Preferences.tsx",
+      "baseline_sha256": "92806ed8f5a43c587689b9d2c1d5734e008273dd2257ba90fd198ba281e12306"
+    },
+    {
+      "path": "frontend/src/pages/faculty/Profile.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/common/AccountMenu.tsx",
+      "baseline_sha256": "779cc11b30a7bc576b8d08259870b209623b10cd92121ea624b29b94f339d20b"
+    },
+    {
+      "path": "frontend/src/components/common/EmptyState.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/common/LoadingSpinner.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/common/Sidebar.tsx",
+      "baseline_sha256": "d2e7e102476963c5cc86b088643d0de9e0e107e5dc6858a0131fe363ef8170fa"
+    },
+    {
+      "path": "frontend/src/components/common/StatCard.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/common/Topbar.tsx",
+      "baseline_sha256": "64864aadeb13186126a14021a329d3407646629b13c7f65f68e776749587ae41"
+    },
+    {
+      "path": "frontend/src/components/faculty/FacultyPreferenceEditor.tsx",
+      "baseline_sha256": "0f203bdf4859bb54a4617d2e2443c1a5d0385460d3499b71fba2ec31de1762d6"
+    },
+    {
+      "path": "frontend/src/components/faculty/PreferenceCalendar.tsx",
+      "baseline_sha256": "25a5bcc77d1562cc088ee0c731b85837fd639073611d0c709d3b8ea4429652b3"
+    },
+    {
+      "path": "frontend/src/components/faculty/preferenceModel.ts",
+      "baseline_sha256": "50577e2e9171ab20f9876cb291f17f95c156f394bd5cb56d755ee213369581c3"
+    },
+    {
+      "path": "frontend/src/components/faculty/preferences.css",
+      "baseline_sha256": "f39c895064397baee8666bbc28f56300c29e1bb6833484e79fe8c6bb5e4e59c2"
+    },
+    {
+      "path": "frontend/src/components/ga/FitnessCards.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/ga/FitnessChart.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/ga/GALiveConsole.tsx",
+      "baseline_sha256": "dd90d3b6be652a22d2fc9a560f01cfcc6c32cd92e4f4421e10df6fc586428d75"
+    },
+    {
+      "path": "frontend/src/components/ga/GenerationHistory.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/ga/LiveGAMonitor.tsx",
+      "baseline_sha256": "5c3d934063bd20ac70c90a8b1e4d119bbe3be95af2abb47c13bfaab147a74d4a"
+    },
+    {
+      "path": "frontend/src/components/schedule/facultyDisplay.ts",
+      "baseline_sha256": "b9534a091d75fcb052139f8817bc5faafbbb822b8b97b009e17a7801774582b8"
+    },
+    {
+      "path": "frontend/src/components/schedule/ScheduleFilters.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/schedule/ScheduleTable.tsx",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/schedule/WeeklySchedule.tsx",
+      "baseline_sha256": "4b56016f9548f586da4e9441ba9ef12651e9c49ef437528761eff5d2ca7a3331"
+    },
+    {
+      "path": "frontend/tests/auth.browser.integration.mjs",
+      "baseline_sha256": "147c6c43bc97e1540433a847d55157c3c387fd97ac24be1d2aab96e1c82700f2"
+    },
+    {
+      "path": "frontend/tests/auth.test.mjs",
+      "baseline_sha256": "43c5cb138f7017ac9964031cc75eb7983db830a9c348f7f8646db59667b3595f"
+    },
+    {
+      "path": "frontend/tests/authSessionRace.test.mjs",
+      "baseline_sha256": "a94a85e7be310140d8d1663d429e25adf30090217b42330a43e487981ca04066"
+    },
+    {
+      "path": "frontend/tests/facultyDisplay.test.mjs",
+      "baseline_sha256": "70b839aacf88ed6dcd48e66bc92fd4f2b83aec85003b710c624d2e92c0a1ad16"
+    },
+    {
+      "path": "frontend/tests/fitnessReporting.test.mjs",
+      "baseline_sha256": "60c68e87ee2ee345e550c5bc4e35c5aad7c1c051ec450d161f0bd8ff428eb61d"
+    },
+    {
+      "path": "frontend/tests/gaHistory.test.mjs",
+      "baseline_sha256": "273614e89d2cafe129858eb697c92ce0c29cc366346388f6cbacdc11fc85a4cf"
+    },
+    {
+      "path": "frontend/tests/gaLogs.test.mjs",
+      "baseline_sha256": "34d0b3364a12030529e88387ff0fbcada8cc0a3ac3138614438117ddab7ac651"
+    },
+    {
+      "path": "frontend/tests/gaMonitoring.browser.test.mjs",
+      "baseline_sha256": "83327464d40ffccf5db650765d42fa7a0ff2a80f0ca158c47481f76f431f8f2b"
+    },
+    {
+      "path": "frontend/tests/gaMonitoring.test.mjs",
+      "baseline_sha256": "1b1c9a8d5046bcdd6b07c0bd0c3fadace3de8d072d3c4402dd307a896b1b43b2"
+    },
+    {
+      "path": "frontend/tests/gaPausedRecovery.integration.mjs",
+      "baseline_sha256": "e576682e5c1923a956fdae78a8af6774dbb256ac4b67657267a4c9b1340d32c2"
+    },
+    {
+      "path": "frontend/tests/gaRecovery.test.mjs",
+      "baseline_sha256": "580005b74d3d25899aadb83001df8ea5aeb79cdf0742caf38fba3734e2a3b2ed"
+    },
+    {
+      "path": "frontend/tests/preferenceApi.test.mjs",
+      "baseline_sha256": "6c34a5c5e32c23cd7f352aa04138ba9d887470d398f22b1b3af92bb7547e3751"
+    },
+    {
+      "path": "frontend/tests/preferenceFixtures.mjs",
+      "baseline_sha256": "2afc36deb22b8e536a8ee2356b0922445926182b6d2eeededa7d4cde016a7dc8"
+    },
+    {
+      "path": "frontend/tests/preferenceModel.test.mjs",
+      "baseline_sha256": "c9fa059d4fc0d761d3c06b075dd618e4d0b919b047f517547022d48ea8e96b2c"
+    },
+    {
+      "path": "frontend/tests/preferences.browser.test.mjs",
+      "baseline_sha256": "1c0df5d94aed11766762171d039ca3886e1773a8d2b261c9f8614f99116c7506"
+    },
+    {
+      "path": "notebooks/main_loopv2.ipynb",
+      "baseline_sha256": "cce9b1d0a6241219b966afb49dab284f9741244f34d93a24483b7f2e8a294000"
+    },
+    {
+      "path": "notebooks/test.ipynb",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "README.md",
+      "baseline_sha256": "7af41126815ccdea5926867e720385992996ef04f898888118fad159e20620ca"
+    },
+    {
+      "path": ".env.example",
+      "baseline_sha256": "1df21e9da6b23501106cc1177dca713b6f0d5c38ac6c9e80d29fa79367307cc7"
+    }
+  ],
+  "git": {
+    "head_at_start": "c770c841259b968132f8ce6b48ae5cb36df35171",
+    "index_sha256_at_start": "b5b930885eeefd46125fbea6062cd1fde40848b27ac5acf2ec8dbc49cb7e2dbb",
+    "staging_commit_or_push_authorized": false
+  },
+  "limitations": [
+    "No PostgreSQL test passed; all 14 skipped before connection.",
+    "Actual PostgreSQL privileges/schema/data/migration/session/lock behavior remains unverified.",
+    "Six genuine browser scenarios and screenshots remain outstanding.",
+    "Configuration in a separate shell may not be inherited by the current execution process; do not paste credentials into chat."
+  ]
+}

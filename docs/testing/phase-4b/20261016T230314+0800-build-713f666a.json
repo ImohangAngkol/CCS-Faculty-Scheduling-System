@@ -1,0 +1,27 @@
+{
+  "run_id": "20261016T230314+0800-build-713f666a",
+  "group": "build",
+  "started_at": "2026-10-16T23:03:14.984072+08:00",
+  "ended_at": "2026-10-16T23:03:26.378935+08:00",
+  "elapsed_seconds": 11.395,
+  "cwd": "frontend",
+  "command": [
+    "cmd",
+    "/d",
+    "/c",
+    "npm.cmd",
+    "run",
+    "build"
+  ],
+  "exit_code": 0,
+  "python": "3.14.2",
+  "packages": {
+    "pytest": "9.1.1",
+    "SQLAlchemy": "2.0.52",
+    "fastapi": "0.141.1",
+    "alembic": "1.19.2",
+    "psycopg2-binary": "2.9.12"
+  },
+  "phase4b_test_url_present": false,
+  "output": "\n> frontend@0.0.0 build\n> tsc -b && vite build\n\nvite v8.2.2 building client environment for production...\ntransforming...\n✓ 129 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.45 kB │ gzip:   0.29 kB\ndist/assets/index-Cpskcc0p.css   36.47 kB │ gzip:   8.25 kB\ndist/assets/index-tuoe6x74.js   751.57 kB │ gzip: 213.90 kB\n\n✓ built in 879ms\n[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n"
+}

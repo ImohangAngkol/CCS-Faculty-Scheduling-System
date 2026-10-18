@@ -1,0 +1,28 @@
+{
+  "run_id": "20261018T102919+0800-frontend-ga-96e4276b",
+  "group": "frontend-ga",
+  "started_at": "2026-10-18T10:29:19.877455+08:00",
+  "ended_at": "2026-10-18T10:29:24.225616+08:00",
+  "elapsed_seconds": 4.348,
+  "cwd": "frontend",
+  "command": [
+    "cmd",
+    "/d",
+    "/c",
+    "npm.cmd",
+    "run",
+    "test:ga"
+  ],
+  "exit_code": 0,
+  "python": "3.14.2",
+  "packages": {
+    "pytest": "9.1.1",
+    "SQLAlchemy": "2.0.52",
+    "fastapi": "0.141.1",
+    "alembic": "1.19.2",
+    "psycopg2-binary": "2.9.12"
+  },
+  "phase4b_test_url_present": false,
+  "phase4b_browser_url_present": false,
+  "output": "\n> frontend@0.0.0 test:ga\n> node --test tests/gaMonitoring.test.mjs tests/gaRecovery.test.mjs tests/gaLogs.test.mjs tests/gaHistory.test.mjs tests/fitnessReporting.test.mjs tests/facultyDisplay.test.mjs\n\n✔ metadata codes, integral float codes and legacy labels identify the same faculty (2.2959ms)\n✔ external display uses available names and hides internal keys (0.5678ms)\n✔ report provenance, finite observations and component reconciliation are verified (2.9228ms)\n✔ missing values remain distinct from real zero and disabled preferences (83.2916ms)\n✔ historical and latest reports issue only bounded GET requests (6.1048ms)\n✔ comparison source is verified and missing contributions stay null (1.9172ms)\n✔ corrupt analysis and unavailable backend are actionable errors (2.0792ms)\n✔ loaded candidate retains its existing evaluation without current targets or extra API calls (1.3768ms)\n✔ loaded report CSV protects spreadsheet cells and identifies unavailable generation (2.4901ms)\n✔ history paths reject unsafe identities (2.4003ms)\n✔ invalid URL run identity rejects asynchronously so recovery settles into an error (0.9251ms)\n✔ history contracts reject wrong schemas, runs and generations (0.5132ms)\n✔ penalty reduction is positive, deterioration negative, equal unchanged (77.0023ms)\n✔ inspection and comparison issue GET only and preserve server data (4.9178ms)\n✔ history API reports specific validation errors (0.826ms)\n✔ history distinguishes unavailable backend, timeout, incompatible inputs and corrupt history (4.4263ms)\n✔ a stalled history JSON body settles into a timeout without reporting corruption (27.922ms)\n✔ initial, pause, refresh and resume diagnostics preserve ordering and suppress duplicate sequences (3.8282ms)\n✔ identical text on different sequences remains distinct and the frontend keeps only 500 entries (1.1181ms)\n✔ cursor advances to delivered entries instead of skipping a response backlog (0.4158ms)\n✔ restart or buffer eviction resets log epoch without inventing another GA run (0.4149ms)\n✔ truncated history notice persists across incremental requests (1.9145ms)\n✔ buffer epoch change replays from zero even when new sequence numbers exceed the old cursor (0.2136ms)\n✔ paused monitoring is slower; terminal monitoring drains logs then stops (0.213ms)\n✔ invalid identities, lifecycle, order and cursors are rejected (0.9186ms)\n✔ single-byte UTF-8 and CRLF chunks deliver progress before result and clean up (42.5494ms)\n✔ multiple events per chunk, heartbeat comments and multiline JSON (0.9065ms)\n✔ duplicate and stale sequences ignored; unknown events are forward compatible (0.6506ms)\n✔ premature EOF is disconnected, never stopped or completed (4.265ms)\n✔ explicit server error is failed and reader is cancelled (1.818ms)\n✔ legacy log, result and done contracts remain supported (3.3824ms)\n✔ invalid metrics, envelope, run identity and malformed data fail safely (25.6764ms)\n✔ stop request and stopping preserve progress until validated stopped result and done (20.3016ms)\n✔ stop before initialization succeeds only with explicit no-result terminal event (2.657ms)\n✔ disconnect while stop is pending or after acknowledgement never claims a completed stop (5.4485ms)\n✔ missing stopped result, contradictory completion and invalid state fail safely (18.8272ms)\n✔ failure while stopping stays failed (2.2687ms)\n✔ pause request, durable acknowledgement and done preserve generation metrics without a final schedule (15.2338ms)\n✔ an incomplete pause or a paused stream containing a final result is rejected (9.435ms)\n✔ refresh remembers only a server run/process reference, not a population (6.7566ms)\n✔ missing route Not Found explains a stale or wrong backend, never cancellation (0.8663ms)\n✔ unknown run and changed process remain distinguishable (0.4427ms)\n✔ unreadable control responses include URL and status (0.2624ms)\n✔ recovery timeout bounds a stalled request and aborts only its read (21.8607ms)\n✔ recovery timeout also bounds a stalled JSON response body (36.9579ms)\n✔ unavailable backend errors identify the endpoint without claiming checkpoint loss (1.9362ms)\n✔ a control timeout has an unknown outcome and must never claim the worker was cancelled (27.6633ms)\n✔ a lost control connection requests authoritative reconciliation without retrying the POST (1.7678ms)\nℹ tests 48\nℹ suites 0\nℹ pass 48\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 3730.1561\n"
+}

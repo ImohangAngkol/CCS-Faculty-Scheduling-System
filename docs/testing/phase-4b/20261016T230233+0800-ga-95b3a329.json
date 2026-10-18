@@ -1,0 +1,43 @@
+{
+  "run_id": "20261016T230233+0800-ga-95b3a329",
+  "group": "ga",
+  "started_at": "2026-10-16T23:02:33.554027+08:00",
+  "ended_at": "2026-10-16T23:38:28.941276+08:00",
+  "elapsed_seconds": 2155.388,
+  "cwd": "repository root",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "backend/tests/test_ga_monitoring.py",
+    "backend/tests/test_ga_safe_stop.py",
+    "backend/tests/test_ga_refresh_recovery.py",
+    "backend/tests/test_ga_pause_resume.py",
+    "backend/tests/test_ga_paused_recovery.py",
+    "backend/tests/test_ga_control_conflicts.py",
+    "backend/tests/test_ga_logs.py",
+    "backend/tests/test_ga_unicode_diagnostics.py",
+    "backend/tests/test_ga_generation_history.py",
+    "backend/tests/test_ga_history_checkpoint_recovery.py",
+    "-k",
+    "not browser",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--disable-warnings",
+    "--tb=short",
+    "--maxfail=2",
+    "--basetemp=C:\\Users\\User\\AppData\\Local\\Temp\\phase4b-20261016T230233+0800-ga-95b3a329"
+  ],
+  "exit_code": 0,
+  "python": "3.14.2",
+  "packages": {
+    "pytest": "9.1.1",
+    "SQLAlchemy": "2.0.52",
+    "fastapi": "0.141.1",
+    "alembic": "1.19.2",
+    "psycopg2-binary": "2.9.12"
+  },
+  "phase4b_test_url_present": false,
+  "output": "........................................................................ [ 50%]\n......................................................................   [100%]\n142 passed, 1 deselected, 2 warnings in 2150.20s (0:35:50)\n"
+}
