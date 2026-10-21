@@ -74,12 +74,48 @@ export type RowMapping = {source_row: number; sections?: {reference_index: numbe
 export async function reviewExternal(source: ExternalPreview, mappings: RowMapping[], signal?: AbortSignal): Promise<ReviewProjection> {
   if (!source.review_token) throw new Error("Preview the source again with the current backend before reconciling resources.");
   const response = await apiClient.post(endpoint + "/review", {review_token: source.review_token, mappings}, {signal});
-  const parsed = reviewProjectionSchema.safeParse(response.data);
+  return verifyReview(source, response.data);
+}
+
+function verifyReview(source: ExternalPreview, value: unknown): ReviewProjection {
+  const parsed = reviewProjectionSchema.safeParse(value);
   if (!parsed.success) throw new Error("The reconciled preview could not be verified.");
   const data = parsed.data, lines = new Set(data.rows.map(r => r.source_row));
   if (data.source_sha256 !== source.source_sha256 || data.source_kind !== source.source_kind || data.source_name !== source.source_name
       || data.rows.length !== source.rows.length || lines.size !== data.rows.length
       || data.rows.some(r => JSON.stringify(r.original) !== JSON.stringify(source.rows.find(original => original.source_row === r.source_row)?.input)))
     throw new Error("The review does not match the original preview provenance. Preview the source again.");
+  return data;
+}
+
+export const HANDOFF_LABEL = "REVIEW PREVIEW — NOT CONFIRMED OR ACTIVE IN GA";
+export const handoffSchema = z.object({
+  schema_version: z.literal(3), handoff_version: z.literal("d5.1"), label: z.literal(HANDOFF_LABEL),
+  preview_only: z.literal(true), persisted: z.literal(false), activated: z.literal(false), approved: z.literal(false),
+  preview_id: z.string().regex(/^d5-[a-f0-9]{64}$/), revalidated_at: z.string().datetime({offset: true}),
+  review: reviewProjectionSchema,
+}).strict();
+export type ReviewHandoff = z.infer<typeof handoffSchema>;
+
+// Matches the server's sorted ASCII JSON. The ID is a content fingerprint,
+// never an authorization token, supplier attestation or approval identifier.
+export async function handoffIdentity(value: unknown): Promise<string> {
+  function canonical(item: unknown): string {
+    if (Array.isArray(item)) return "[" + item.map(canonical).join(",") + "]";
+    if (item !== null && typeof item === "object") return "{" + Object.keys(item).sort().map(key => canonical(key) + ":" + canonical((item as Record<string, unknown>)[key])).join(",") + "}";
+    return JSON.stringify(item).replace(/[\u0080-\uffff]/g, char => "\\u" + char.charCodeAt(0).toString(16).padStart(4, "0"));
+  }
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(canonical(value)));
+  return "d5-" + [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, "0")).join("");
+}
+
+export async function prepareExternalHandoff(source: ExternalPreview, mappings: RowMapping[], signal?: AbortSignal): Promise<ReviewHandoff> {
+  if (!source.review_token) throw new Error("Preview the source again before preparing a review handoff.");
+  const response = await apiClient.post(endpoint + "/handoff", {review_token: source.review_token, mappings}, {signal});
+  const parsed = handoffSchema.safeParse(response.data);
+  if (!parsed.success) throw new Error("The review handoff could not be verified.");
+  const data = parsed.data;
+  verifyReview(source, data.review);
+  if (await handoffIdentity(data.review) !== data.preview_id) throw new Error("The handoff identity does not match its complete review content.");
   return data;
 }

@@ -1,0 +1,29 @@
+.external-handoff-print-root { display: none; }
+.external-handoff-document { background: white; color: #172b37; border: 1px solid #b3ceca; border-radius: 8px; padding: 1rem; font-size: 0.875rem; overflow-wrap: anywhere; min-width: 0; }
+.external-handoff-document h3, .external-handoff-document h4, .external-handoff-document h5 { font-weight: 700; color: #115e59; margin-bottom: 0.5rem; }
+.external-handoff-document h3 { font-size: 1.1rem; }
+.external-handoff-document p { margin: 0.35rem 0; }
+.external-handoff-document dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.external-handoff-document dt { font-weight: 600; }
+.external-handoff-document dd { margin: 0; }
+.external-handoff-document ul { padding-left: 1.25rem; list-style: disc; }
+.external-handoff-document li { margin: 0.35rem 0; }
+.handoff-row { border-top: 1px solid #a6c3bf; margin-top: 1rem; padding-top: 1rem; }
+.handoff-row-label, .handoff-fingerprint { font-size: 0.75rem; }
+.handoff-warning { border: 1px solid #b38920; padding: 0.5rem; }
+.handoff-notes { white-space: pre-wrap; }
+.handoff-resources, .handoff-discrepancies { margin: 0.75rem 0; }
+.external-handoff-document footer { margin-top: 1rem; font-weight: 600; }
+@media (max-width: 600px) { .external-handoff-document dl { grid-template-columns: minmax(0, 1fr); } }
+@media print {
+  @page { size: A4 portrait; margin: 12mm; }
+  body:has(> .external-handoff-print-root) > :not(.external-handoff-print-root) { display: none !important; }
+  body:has(> .external-handoff-print-root) { margin: 0 !important; background: white !important; }
+  .external-handoff-print-root { display: block !important; color: black; font-size: 10pt; }
+  .external-handoff-document { padding: 0; border: 0; border-radius: 0; font-size: 10pt; color: black; overflow: visible; }
+  .external-handoff-document h3, .external-handoff-document h4, .external-handoff-document h5 { color: black; break-after: avoid; }
+  .external-handoff-document dl { grid-template-columns: minmax(0, 1fr); }
+  .external-handoff-document section, .external-handoff-document ul { overflow: visible; max-height: none; break-inside: auto; }
+  .external-handoff-document li, .external-handoff-document p { orphans: 2; widows: 2; }
+  .external-handoff-document footer { border-top: 1px solid black; padding-top: 0.5rem; }
+}

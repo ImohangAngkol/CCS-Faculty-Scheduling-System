@@ -6,6 +6,7 @@ import type {ExternalMetadata, ExternalPreview, ResourceResolution, ReviewMeetin
 import {metadataError} from "../../services/dashboardMetadata";
 import {emptyReviewFilters, filterReviewRows, hasResourceOverlap, reviewCalendarEvents} from "./externalReviewModel";
 import type {ReviewFilters} from "./externalReviewModel";
+import ExternalScheduleHandoff from "./ExternalScheduleHandoff";
 
 const stateLabels = {resolved: "Resolved", unresolved: "Unresolved", ambiguous: "Ambiguous", unsupported: "Unsupported", missing_optional: "Missing optional resource"};
 const intentLabels = {draft: "Draft", tentative: "Tentative"};
@@ -111,5 +112,6 @@ export default function ExternalScheduleReview({source, metadata}: {source: Exte
       <button type="button" className="ccs-btn-secondary mt-3" disabled={busy} onClick={revalidate}>Revalidate all resource mappings</button>
       {current && <div className="mt-4 space-y-2" aria-label="Reconciled discrepancies">{current.discrepancies.map((d,index) => <p key={index} className={d.severity === "error" ? "text-sm text-red-900" : "text-sm text-amber-950"}><strong>{d.code}</strong> · {d.field} · {d.message}{d.related_rows.length ? " · Related source rows: " + d.related_rows.join(", ") : ""}</p>)}</div>}
     </section>}
+    <ExternalScheduleHandoff key={JSON.stringify(mappings)} source={source} mappings={mappings} onInvalid={() => setProjection(undefined)} />
   </section>;
 }

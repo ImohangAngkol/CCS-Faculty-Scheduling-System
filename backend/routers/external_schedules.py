@@ -4,7 +4,7 @@ import json
 from pydantic import ValidationError
 from starlette.concurrency import run_in_threadpool
 
-from schemas.external_schedule import ManualPreview, PreviewResult, ReviewRequest, ReviewProjection
+from schemas.external_schedule import ManualPreview, PreviewResult, ReviewRequest, ReviewProjection, ReviewHandoff
 from services import external_schedule_service as service
 from services.preference_authorization import require_admin
 
@@ -57,8 +57,7 @@ async def file_preview(request: Request, filename: str = ""):
     return await run_in_threadpool(service.parse_file, raw, filename)
 
 
-@router.post("/review", response_model=ReviewProjection)
-async def review(request: Request):
+async def review_payload(request: Request):
     if request.headers.get("content-type", "").split(";")[0].strip() != "application/json":
         service.fail("UNSUPPORTED_MEDIA_TYPE", "Review requires application/json.", 415)
     raw = await bounded_body(request, 2 * service.MAX_BYTES)
@@ -66,5 +65,18 @@ async def review(request: Request):
         payload = ReviewRequest.model_validate(json.loads(raw, object_pairs_hook=unique_json_pairs))
     except (ValidationError, ValueError, RecursionError):
         service.fail("INVALID_REVIEW_REQUEST", "Provide a preview receipt and bounded mappings to original source rows.")
+    return payload
+
+
+@router.post("/review", response_model=ReviewProjection)
+async def review(request: Request):
+    payload = await review_payload(request)
     from services.external_schedule_review_service import project
     return await run_in_threadpool(project, payload)
+
+
+@router.post("/handoff", response_model=ReviewHandoff)
+async def handoff(request: Request):
+    payload = await review_payload(request)
+    from services.external_schedule_handoff_service import prepare
+    return await run_in_threadpool(prepare, payload)

@@ -20,7 +20,9 @@
     "test:external": "node --test tests/externalSchedules.test.mjs",
     "test:external:browser": "node --test tests/externalSchedules.browser.test.mjs",
     "test:external:review": "node --test tests/externalReview.test.mjs",
-    "test:external:review:browser": "node --test tests/externalReview.browser.test.mjs"
+    "test:external:review:browser": "node --test tests/externalReview.browser.test.mjs",
+    "test:external:handoff": "node --test tests/externalHandoff.test.mjs",
+    "test:external:handoff:browser": "node --test tests/externalHandoff.browser.test.mjs"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.21",

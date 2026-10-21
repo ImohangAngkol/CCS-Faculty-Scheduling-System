@@ -1,5 +1,6 @@
 """Preview DTOs only. No durable commitment or confirmation state."""
 from typing import Literal
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field
 
 
@@ -116,3 +117,19 @@ class ReviewProjection(BaseModel):
     term_verification: Literal["not_configured"] = "not_configured"
     reference_digest: str
     rows: list[ReviewMeeting]
+
+
+HANDOFF_LABEL = "REVIEW PREVIEW — NOT CONFIRMED OR ACTIVE IN GA"
+
+
+class ReviewHandoff(BaseModel):
+    schema_version: Literal[3] = 3
+    handoff_version: Literal["d5.1"] = "d5.1"
+    label: Literal["REVIEW PREVIEW — NOT CONFIRMED OR ACTIVE IN GA"] = HANDOFF_LABEL
+    preview_only: Literal[True] = True
+    persisted: Literal[False] = False
+    activated: Literal[False] = False
+    approved: Literal[False] = False
+    preview_id: str
+    revalidated_at: datetime
+    review: ReviewProjection
