@@ -1,4 +1,4 @@
-import {API_BASE, apiClient as axios} from "../services/apiSession";
+import {API_BASE, apiClient as axios} from "../services/apiSession.ts";
 import type { FacultySummary } from "./faculty";
 
 const API_URL = API_BASE;
@@ -37,8 +37,8 @@ export interface FacultySubjectsResponse {
   eligible_only: boolean;
   data: AvailableSubject[];
 }
-export async function getAvailableSubjects(): Promise<AvailableSubject[]> {
-  const response = await axios.get<{ data: AvailableSubject[] }>(`${API_URL}/api/subjects/available`);
+export async function getAvailableSubjects(signal?: AbortSignal): Promise<AvailableSubject[]> {
+  const response = await axios.get<{ data: AvailableSubject[] }>(`${API_URL}/api/subjects/available`, {signal});
   return response.data.data;
 }
 export async function getFacultySubjects(reference: string | number, eligibleOnly = true): Promise<FacultySubjectsResponse> {

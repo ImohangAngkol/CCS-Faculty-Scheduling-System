@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "phase": "4C.2",
+  "status": "IMPLEMENTED / OFFLINE VERIFIED / POSTGRESQL ACCEPTANCE PENDING",
+  "baseline_commit": "3167cda2bd2d86011b50ea582026a4c39accb529",
+  "documentation_date": "2026-10-19",
+  "timezone": "Asia/Manila",
+  "modified_existing_files": [
+    "backend/migrations/env.py"
+  ],
+  "preexisting_changes": [
+    "backend/data/faculty_preferences.json",
+    "docs/phase-4c1-academic-data-contract.md",
+    "docs/architecture/phase-4c1-relational-schema.md",
+    "docs/testing/phase-4c/phase-4c1-design-manifest.json"
+  ],
+  "migration": {
+    "revision": "4c_0001",
+    "down_revision": "4a_0001",
+    "new_tables": 7,
+    "seeding": false,
+    "executed_against_PostgreSQL": false
+  },
+  "verification": {
+    "passed": 85,
+    "failed": 0,
+    "skipped": 17,
+    "warnings": 2,
+    "pytest_seconds": 1.34,
+    "exit_code": 0,
+    "scope": "Synthetic offline/unit checks, SQLite constraints, offline SQL rendering, fake catalog gates; PostgreSQL tests all skipped."
+  },
+  "preservation": {
+    "existing_files_compared": 402,
+    "changed_existing_files": [
+      "backend/migrations/env.py"
+    ],
+    "HEAD_unchanged": true,
+    "index_unchanged": true,
+    "protected_preference_bytes_unchanged": true,
+    "GA_sources_inputs_schedules_history_checkpoints_unchanged": true,
+    "prior_4C1_documents_and_manifests_unchanged": true
+  },
+  "prior_hashes": {
+    "migration_environment": "bc46c8ac8ce3ec3760f2d6743766cb812b814fea9344a44e799bcce4c0ef4fdd",
+    "protected_preferences": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+    "git_index": "8937687bd094a86085d3bc6b5762da738ea8ba64202b984f339553e56c1e206b"
+  },
+  "execution_boundaries": {
+    "PostgreSQL_connections": "NOT RUN",
+    "live_migrations": "NOT RUN",
+    "institutional_imports": "NOT RUN",
+    "services_restarted": "NOT RUN",
+    "browser_frontend_tests": "NOT APPLICABLE - no routes or UI changed",
+    "full_application_GA_auth_regressions": "NOT RUN - focused tests avoid institutional source imports",
+    "staging_commit_push": "NOT RUN"
+  },
+  "implementation_choices": [
+    "All academic mutations use one nonblocking transaction advisory gate and READ COMMITTED; actual concurrency unverified.",
+    "Terminal archive and reserved keys; no deletion/truncate or reactivation.",
+    "Identity-only normalized JSON planner, not direct institutional CSV import or apply.",
+    "Global faculty code mapping without invented scope membership.",
+    "Caller-owned Alembic connection supported; standalone explicit command URL behavior retained."
+  ],
+  "limitations": [
+    "PL/pgSQL is rendered, not compiled or executed by PostgreSQL.",
+    "17 prepared PostgreSQL cases require separate target and execution approval.",
+    "No persisted academic facts, full metadata parity, CRUD/UI, preference cutover or GA activation.",
+    "Earlier failed boolean-default check and intermediate runs retained in the execution record.",
+    "Alembic path_separator warning remains; historical configuration unchanged."
+  ],
+  "hash_policy": "SHA-256 of current artifact bytes; excludes this manifest. Earlier phase hashes are preserved as historical evidence, not silently updated.",
+  "created_files": [
+    "backend/academic_models.py",
+    "backend/migrations/versions/4c_0001_academic_foundation.py",
+    "backend/repositories/__init__.py",
+    "backend/repositories/academic_repository.py",
+    "backend/schemas/academic.py",
+    "backend/services/academic_import_service.py",
+    "backend/services/academic_metadata_adapter.py",
+    "backend/tests/academic/conftest.py",
+    "backend/tests/academic/test_academic_foundation.py",
+    "backend/tests/academic/test_academic_planner.py",
+    "backend/tests/academic/postgresql_safety.py",
+    "backend/tests/academic/test_academic_safety.py",
+    "backend/tests/academic/test_academic_postgresql.py",
+    "docs/phase-4c2-academic-foundation.md",
+    "docs/testing/phase-4c/phase-4c2-offline-tests.json",
+    "docs/testing/phase-4c/phase-4c2-implementation-manifest.json"
+  ],
+  "artifacts": [
+    {
+      "path": "backend/academic_models.py",
+      "sha256": "c3e1fa6d3cb34c26774557d5c4bb66fe8e76427ada1ef165994c08a53b7c1671"
+    },
+    {
+      "path": "backend/migrations/versions/4c_0001_academic_foundation.py",
+      "sha256": "4b90e14232d86546e60f72135b3544cc6c5e9e9df543ad997188125f32f820cd"
+    },
+    {
+      "path": "backend/migrations/env.py",
+      "sha256": "88ca40e0856f5d3931dda9936c8e477d39ec841a0f26885318bcb4a764ebeb8a"
+    },
+    {
+      "path": "backend/repositories/__init__.py",
+      "sha256": "7f073f35f362c86c54a0787c7fc3ef815a60cf2402e4a07db13d8297c4bc80c0"
+    },
+    {
+      "path": "backend/repositories/academic_repository.py",
+      "sha256": "89bf5cc99fca27ea6bfbaf6280a1c95d2a420dd50a5b99242e385fba1ae75b1a"
+    },
+    {
+      "path": "backend/schemas/academic.py",
+      "sha256": "b4a0af8066a5ddb2918a154e108d3a6ce49d6dce2f6d70bec82e1372a8f6c470"
+    },
+    {
+      "path": "backend/services/academic_import_service.py",
+      "sha256": "8dfdfb7467c25250dcd80c7ec980bcd061c089a5298bd2602acfb170f72fa986"
+    },
+    {
+      "path": "backend/services/academic_metadata_adapter.py",
+      "sha256": "cb62bf7d49b745e10de84d71e72a1c9236f1cce10d8f8f4ac5cd166bd50f4344"
+    },
+    {
+      "path": "backend/tests/academic/conftest.py",
+      "sha256": "e56741d929032ba8803a6bcccc5029638e32e2168877e4ff0009c08812d974a8"
+    },
+    {
+      "path": "backend/tests/academic/test_academic_foundation.py",
+      "sha256": "1982b93f0c105a93dc34436ff8d53ae3e2546c209b92c91a269e7c89b47f1d24"
+    },
+    {
+      "path": "backend/tests/academic/test_academic_planner.py",
+      "sha256": "4b02bd7e6824cac530272d00a6d2d61649f5d133a95d3ddcb5257dbb1662eb36"
+    },
+    {
+      "path": "backend/tests/academic/postgresql_safety.py",
+      "sha256": "fccbf4b6f4d7276c0ef9001cad6a3198474c7ff24441ee5c4452f45569be213d"
+    },
+    {
+      "path": "backend/tests/academic/test_academic_safety.py",
+      "sha256": "5b188b63bde5a90e48e6167f0fdfd82913b74d87f69b96fae8353265e4324682"
+    },
+    {
+      "path": "backend/tests/academic/test_academic_postgresql.py",
+      "sha256": "fd71b7e6f5bbf9d90e6e5cf4bbc78d744634f60559877f9cf658179039725e5d"
+    },
+    {
+      "path": "docs/phase-4c2-academic-foundation.md",
+      "sha256": "fcd9f558c5f28ba2bba4dca6ddaece4c5d3da280eac8568f45edcb525924afed"
+    },
+    {
+      "path": "docs/testing/phase-4c/phase-4c2-offline-tests.json",
+      "sha256": "6b82d3c9c274f8029eceaa179dacfcbe460e142c8f2671364c512c297332523d"
+    }
+  ],
+  "static_validation_history": [
+    "New-file whitespace review found SQLAlchemy-rendered trailing spaces in new migration string literals; removed formatting only and reran tests successfully."
+  ],
+  "final_static_validation": {
+    "artifact_hashes_checked": 16,
+    "relative_links_checked": 19,
+    "JSON_files_parsed": 3,
+    "inventory_files": 17,
+    "syntax_and_whitespace": "PASS",
+    "sensitive_inventory": "Reviewed: only synthetic fixtures and driver-prefix/dummy/offline URL literals; no private handoffs, raw institutional rows or real credentials",
+    "git_diff_check_exit": 0,
+    "errors": []
+  }
+}

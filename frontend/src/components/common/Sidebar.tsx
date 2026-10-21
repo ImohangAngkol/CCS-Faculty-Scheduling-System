@@ -26,8 +26,9 @@ export default function Sidebar({
 
     <aside
       className="
-        min-h-screen
-        w-64
+        w-full
+        md:min-h-screen
+        md:w-64
         shrink-0
         bg-[#115E59]
         text-white
@@ -113,7 +114,11 @@ export default function Sidebar({
 
       <nav
         className="
-          space-y-1
+          grid
+          grid-cols-2
+          gap-1
+          md:block
+          md:space-y-1
           p-4
         "
       >

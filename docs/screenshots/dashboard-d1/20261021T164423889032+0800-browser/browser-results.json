@@ -1,0 +1,160 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React DOM in headless Edge; synthetic HTTP API, no FastAPI/PostgreSQL or persisted workflow verification",
+  "scenarios": [
+    {
+      "id": "D1-B01",
+      "title": "catalog loading, real component details and unsupported metadata",
+      "started_at": "2026-10-21T16:44:25.825+08:00",
+      "finished_at": "2026-10-21T16:44:27.592+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B02",
+      "title": "code/title search, no matches and clear",
+      "started_at": "2026-10-21T16:44:27.594+08:00",
+      "finished_at": "2026-10-21T16:44:27.625+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B03",
+      "title": "genuine empty catalog",
+      "started_at": "2026-10-21T16:44:27.626+08:00",
+      "finished_at": "2026-10-21T16:44:27.871+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B04",
+      "title": "catalog error and successful retry",
+      "started_at": "2026-10-21T16:44:27.872+08:00",
+      "finished_at": "2026-10-21T16:44:28.138+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B05",
+      "title": "catalog metadata denial is actionable",
+      "started_at": "2026-10-21T16:44:28.140+08:00",
+      "finished_at": "2026-10-21T16:44:28.406+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B06",
+      "title": "faculty welcome, honest feature status and navigation",
+      "started_at": "2026-10-21T16:44:28.407+08:00",
+      "finished_at": "2026-10-21T16:44:29.068+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B07",
+      "title": "profile loading, identity and read-only academic details survive refresh",
+      "started_at": "2026-10-21T16:44:29.069+08:00",
+      "finished_at": "2026-10-21T16:44:29.658+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B08",
+      "title": "empty academic fields remain honest unknowns",
+      "started_at": "2026-10-21T16:44:29.658+08:00",
+      "finished_at": "2026-10-21T16:44:29.886+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B09",
+      "title": "missing metadata preserves account binding",
+      "started_at": "2026-10-21T16:44:29.887+08:00",
+      "finished_at": "2026-10-21T16:44:30.090+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B10",
+      "title": "mismatched identity is never rendered",
+      "started_at": "2026-10-21T16:44:30.091+08:00",
+      "finished_at": "2026-10-21T16:44:30.306+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B11",
+      "title": "profile service failure and retry",
+      "started_at": "2026-10-21T16:44:30.307+08:00",
+      "finished_at": "2026-10-21T16:44:30.631+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B12",
+      "title": "missing binding makes no faculty lookup",
+      "started_at": "2026-10-21T16:44:30.632+08:00",
+      "finished_at": "2026-10-21T16:44:30.969+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B13",
+      "title": "role-denied routes never mount protected metadata pages",
+      "started_at": "2026-10-21T16:44:30.970+08:00",
+      "finished_at": "2026-10-21T16:44:31.341+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B14",
+      "title": "anonymous access redirects and metadata 401 expires the session",
+      "started_at": "2026-10-21T16:44:31.341+08:00",
+      "finished_at": "2026-10-21T16:44:32.125+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B15",
+      "title": "mobile catalog, dashboard and profile fit the viewport",
+      "started_at": "2026-10-21T16:44:32.126+08:00",
+      "finished_at": "2026-10-21T16:44:32.774+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D1-B16",
+      "title": "metadata denial does not expose academic details",
+      "started_at": "2026-10-21T16:44:32.774+08:00",
+      "finished_at": "2026-10-21T16:44:32.945+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D1-B01-subject-catalog.png",
+      "captured_at": "2026-10-21T16:44:27.589+08:00",
+      "url": "http://localhost:56578/admin/subjects",
+      "viewport": {
+        "width": 1366,
+        "height": 1000
+      }
+    },
+    {
+      "name": "D1-B06-faculty-dashboard.png",
+      "captured_at": "2026-10-21T16:44:28.731+08:00",
+      "url": "http://localhost:56578/faculty",
+      "viewport": {
+        "width": 1366,
+        "height": 1000
+      }
+    },
+    {
+      "name": "D1-B07-faculty-profile.png",
+      "captured_at": "2026-10-21T16:44:29.655+08:00",
+      "url": "http://localhost:56578/faculty/profile",
+      "viewport": {
+        "width": 1366,
+        "height": 1000
+      }
+    },
+    {
+      "name": "D1-B15-mobile-profile.png",
+      "captured_at": "2026-10-21T16:44:32.771+08:00",
+      "url": "http://localhost:56578/faculty/profile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "mutation_requests": 0
+}

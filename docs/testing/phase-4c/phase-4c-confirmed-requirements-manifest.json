@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "phase": "4C",
+  "documentation_date": "2026-10-20",
+  "timezone": "Asia/Manila",
+  "date_scope": "Client-context requirement/design update date; not a browser, GA or database execution timestamp.",
+  "status": "CONFIRMED REQUIREMENTS / DESIGN ONLY / IMPLEMENTATION NOT AUTHORIZED",
+  "baseline_commit": "3167cda2bd2d86011b50ea582026a4c39accb529",
+  "confirmed_requirements": {
+    "R_GEC": "External/GEC schedules entered/imported, reviewed, confirmed and preserved as fixed resource constraints; tentative records remain separate.",
+    "R_ADJ": "Own faculty change requests require department-scoped Chair decision; approval creates a hard-valid revision, rejection leaves selected schedule unchanged; original GA history retained."
+  },
+  "approved_4c2_boundary": {
+    "academic_tables": 7,
+    "revision": "4c_0001",
+    "migration_changed": false,
+    "application_code_changed": false
+  },
+  "modified_files": [
+    "docs/phase-4c1-academic-data-contract.md",
+    "docs/architecture/phase-4c1-relational-schema.md"
+  ],
+  "created_files": [
+    "docs/phase-4c-confirmed-scheduling-workflows.md",
+    "docs/testing/phase-4c/design-history/2026-10-19/docs/phase-4c1-academic-data-contract.md",
+    "docs/testing/phase-4c/design-history/2026-10-19/docs/architecture/phase-4c1-relational-schema.md",
+    "docs/testing/phase-4c/phase-4c-confirmed-requirements-manifest.json"
+  ],
+  "historical_design_revisions": [
+    {
+      "original_path": "docs/phase-4c1-academic-data-contract.md",
+      "original_sha256": "893cda109c1ebcbde38716b5fe0a4c1c508175f5e4b0221be9812e0d5ffa9f71",
+      "snapshot_path": "docs/testing/phase-4c/design-history/2026-10-19/docs/phase-4c1-academic-data-contract.md"
+    },
+    {
+      "original_path": "docs/architecture/phase-4c1-relational-schema.md",
+      "original_sha256": "cbf3ad71294365bb0e4794482f8c563a85b97913894729084bf9fa6477538ab4",
+      "snapshot_path": "docs/testing/phase-4c/design-history/2026-10-19/docs/architecture/phase-4c1-relational-schema.md"
+    }
+  ],
+  "preservation": {
+    "pre_update_files_compared": 418,
+    "changed_existing_files": [
+      "docs/phase-4c1-academic-data-contract.md",
+      "docs/architecture/phase-4c1-relational-schema.md"
+    ],
+    "HEAD_unchanged": true,
+    "git_index_unchanged": true,
+    "protected_preferences_unchanged": true,
+    "academic_foundation_model_and_migration_unchanged": true,
+    "GA_sources_inputs_saved_schedules_history_checkpoints_unchanged": true,
+    "existing_manifests_and_execution_artifacts_unchanged": true
+  },
+  "baseline_protected_hashes": {
+    "backend/data/faculty_preferences.json": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+    ".git/index": "8937687bd094a86085d3bc6b5762da738ea8ba64202b984f339553e56c1e206b",
+    "backend/academic_models.py": "c3e1fa6d3cb34c26774557d5c4bb66fe8e76427ada1ef165994c08a53b7c1671",
+    "backend/migrations/versions/4c_0001_academic_foundation.py": "4b90e14232d86546e60f72135b3544cc6c5e9e9df543ad997188125f32f820cd"
+  },
+  "execution": {
+    "application_unit_tests": "NOT RUN - design documentation only",
+    "PostgreSQL_connections_and_migrations": "NOT RUN",
+    "GA_execution_or_fitness_evaluation": "NOT RUN",
+    "browser_tests_and_screenshots": "NOT RUN",
+    "institutional_data_import": "NOT RUN",
+    "service_operations": "NOT RUN",
+    "staging_commits_pushes": "NOT RUN"
+  },
+  "design_choices_pending_review": [
+    "Eighteen provisional future relations are not a migration approval or additions to 4C.2.",
+    "Department capability grants preserve existing admin/faculty role CHECK; appointment authority unresolved.",
+    "No self-approval by default; delegation requires institutional policy.",
+    "Day/time/room requests only; swaps and external edits excluded.",
+    "Late conflicting external activation blocks; coordinated publication policy unresolved.",
+    "Cross-department shared-resource canonical mapping and locking require design confirmation."
+  ],
+  "institutional_decisions": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "P10"
+  ],
+  "hash_policy": "Current artifact bytes, excluding this manifest. Earlier design manifests retain their old hashes; historical_design_revisions maps their original paths/hashes to byte-identical snapshots. Snapshot links retain original repository-relative context and are not rewritten.",
+  "artifacts": [
+    {
+      "path": "docs/phase-4c1-academic-data-contract.md",
+      "sha256": "cf105a529f0a4ceb82ffd03ce738b581eb6b5ff81b59786ff8f81991e972edf0"
+    },
+    {
+      "path": "docs/architecture/phase-4c1-relational-schema.md",
+      "sha256": "58407b6e77f8a6dd6cffde66dd161ef1b26c07221db10506a38dad3879f6853e"
+    },
+    {
+      "path": "docs/phase-4c-confirmed-scheduling-workflows.md",
+      "sha256": "638e433aa70ba2af913cbaa5e3b1685b75e60df4c9ae3af8e50baa6b6c55994d"
+    },
+    {
+      "path": "docs/testing/phase-4c/design-history/2026-10-19/docs/phase-4c1-academic-data-contract.md",
+      "sha256": "893cda109c1ebcbde38716b5fe0a4c1c508175f5e4b0221be9812e0d5ffa9f71"
+    },
+    {
+      "path": "docs/testing/phase-4c/design-history/2026-10-19/docs/architecture/phase-4c1-relational-schema.md",
+      "sha256": "cbf3ad71294365bb0e4794482f8c563a85b97913894729084bf9fa6477538ab4"
+    }
+  ],
+  "inspected_source_fingerprints": [
+    {
+      "path": "backend/genetic_algorithm/utils/Functions.py",
+      "sha256": "d28af9197d38957eb5ace526aa243e4448c68bd475efd89337e1d2c4742f555b"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/PreassignedAssignment.py",
+      "sha256": "414f0df76011666446cad61891115c3bfd7d16970588051154198656aaf2f659"
+    },
+    {
+      "path": "backend/services/ga_publication_service.py",
+      "sha256": "cb6f9f2bcd79b3d93fa2b747ef99d186652def4881c0b2df4150400c4be89b8d"
+    },
+    {
+      "path": "backend/services/chromosome_service.py",
+      "sha256": "92f8b858806fc7fc1070ef169f86d34f089a1d6fa299751eaa5926c178826740"
+    },
+    {
+      "path": "backend/services/identity_service.py",
+      "sha256": "b4659aa89e434c216e64de213b0caf47aeb23f41e2bcf7c61f0aa35a017165ed"
+    },
+    {
+      "path": "backend/services/preference_authorization.py",
+      "sha256": "9c673df7623eae71f87823b13d14df1b110329f7543d529bbcddb4ae3e7f2591"
+    },
+    {
+      "path": "backend/services/auth_service.py",
+      "sha256": "7097057236019c84dbf2a838c65ea11333c06d8408ad153267c0aa3a1babbab7"
+    },
+    {
+      "path": "backend/identity_models.py",
+      "sha256": "3a591024787c48f745f5baeb72780fc712ad7934925615609047aba2785276db"
+    },
+    {
+      "path": "backend/main.py",
+      "sha256": "1e44a84895ba717ed3c7cf2a314f31a010928324f91e15e638d3a115f204970c"
+    },
+    {
+      "path": "backend/routers/chromosomes.py",
+      "sha256": "68e6af580c33fe75795218313e6efc8bb91637e6e105f9048ad3ac87fa5a3d82"
+    },
+    {
+      "path": "frontend/src/pages/admin/ScheduleView.tsx",
+      "sha256": "0b28b929349e2f0be6b07b3fa7ca5d623def7941c3b03952bc214937d9d9bf61"
+    },
+    {
+      "path": "frontend/src/components/schedule/WeeklySchedule.tsx",
+      "sha256": "4b56016f9548f586da4e9441ba9ef12651e9c49ef437528761eff5d2ca7a3331"
+    },
+    {
+      "path": "frontend/src/components/schedule/ScheduleTable.tsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/schedule/ScheduleFilters.tsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend/src/components/schedule/facultyDisplay.ts",
+      "sha256": "b9534a091d75fcb052139f8817bc5faafbbb822b8b97b009e17a7801774582b8"
+    },
+    {
+      "path": "frontend/src/components/faculty/PreferenceCalendar.tsx",
+      "sha256": "25a5bcc77d1562cc088ee0c731b85837fd639073611d0c709d3b8ea4429652b3"
+    },
+    {
+      "path": "frontend/src/components/faculty/preferenceModel.ts",
+      "sha256": "50577e2e9171ab20f9876cb291f17f95c156f394bd5cb56d755ee213369581c3"
+    },
+    {
+      "path": "frontend/src/services/apiSession.ts",
+      "sha256": "a6116d1c71eff79700a7654a3aab920982c24fe9724e0bca4942b0adef07a872"
+    },
+    {
+      "path": "frontend/src/routes/AppRoutes.tsx",
+      "sha256": "32530e5bb2af4ce7f8dc2259c8f5f728a6111110cb65daf69e9f5819796358dc"
+    },
+    {
+      "path": "frontend/src/routes/ProtectedRoute.tsx",
+      "sha256": "20f7a4c6a2ac5aaba611e495909b017242c536ff9ac41c8a8cc01ed9972c2ff7"
+    },
+    {
+      "path": "frontend/src/pages/faculty/MySchedule.tsx",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/tests/test_ga_hard_constraints.py",
+      "sha256": "f85ab0e9ab1414710514dc0ac0b7b1440cbbad69e39462c4742c55e1c0c37117"
+    },
+    {
+      "path": "backend/tests/test_preassigned_assignments.py",
+      "sha256": "684f8ec54f1044d2ff2ef90d00fa0faf6db7ef10d4a1eb9feea66e3df2c846f9"
+    }
+  ],
+  "static_validation": {
+    "current_document_relative_links": 66,
+    "anchors": 8,
+    "JSON_files_parsed": 4,
+    "artifact_hashes_checked": 5,
+    "source_fingerprints_checked": 23,
+    "historical_design_snapshots_verified": 2,
+    "unchanged_4c2_artifact_hashes_verified": 16,
+    "future_relation_candidates": 18,
+    "unchanged_4c2_model_tables": 7,
+    "Mermaid_validation": "Entity references checked statically; rendering NOT RUN",
+    "git_diff_check_exit": 0,
+    "staged_paths": 0,
+    "errors": []
+  }
+}

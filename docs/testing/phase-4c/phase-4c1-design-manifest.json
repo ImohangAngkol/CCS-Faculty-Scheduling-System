@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "phase": "4C.1",
+  "status": "DRAFT DESIGN - REVIEW REQUIRED - NOT IMPLEMENTED",
+  "documentation_date": "2026-10-19",
+  "timezone": "Asia/Manila",
+  "date_scope": "Client-context design/review date; not a claimed database/browser test execution timestamp",
+  "baseline_commit": "3167cda2bd2d86011b50ea582026a4c39accb529",
+  "branch": "main",
+  "preexisting_local_changes": [
+    "backend/data/faculty_preferences.json"
+  ],
+  "files_created": [
+    "docs/phase-4c1-academic-data-contract.md",
+    "docs/architecture/phase-4c1-relational-schema.md",
+    "docs/testing/phase-4c/phase-4c1-design-manifest.json"
+  ],
+  "artifacts": [
+    {
+      "path": "docs/phase-4c1-academic-data-contract.md",
+      "sha256": "893cda109c1ebcbde38716b5fe0a4c1c508175f5e4b0221be9812e0d5ffa9f71"
+    },
+    {
+      "path": "docs/architecture/phase-4c1-relational-schema.md",
+      "sha256": "cbf3ad71294365bb0e4794482f8c563a85b97913894729084bf9fa6477538ab4"
+    }
+  ],
+  "hash_policy": "Design artifact hashes cover current UTF-8 files; this manifest excludes itself. Source hashes below identify inspected baseline implementation, not newly modified or implemented code. Private datasets are not archive dependencies or copied into Git evidence.",
+  "inspected_source_fingerprints": [
+    {
+      "path": "backend/identity_models.py",
+      "working_tree_sha256": "3a591024787c48f745f5baeb72780fc712ad7934925615609047aba2785276db",
+      "git_blob_sha256": "3a591024787c48f745f5baeb72780fc712ad7934925615609047aba2785276db"
+    },
+    {
+      "path": "backend/identity_admin.py",
+      "working_tree_sha256": "0c9ed76764be6dc1fbd4d3bb7e330cceb9c128ac4fb1d4e807b0d98f247bda83",
+      "git_blob_sha256": "0c9ed76764be6dc1fbd4d3bb7e330cceb9c128ac4fb1d4e807b0d98f247bda83"
+    },
+    {
+      "path": "backend/database.py",
+      "working_tree_sha256": "83229f0066bc8c20a798b3594d8b84ba6058d52aa6c8f5d28e85ba3842962bbf",
+      "git_blob_sha256": "83229f0066bc8c20a798b3594d8b84ba6058d52aa6c8f5d28e85ba3842962bbf"
+    },
+    {
+      "path": "backend/migrations/env.py",
+      "working_tree_sha256": "bc46c8ac8ce3ec3760f2d6743766cb812b814fea9344a44e799bcce4c0ef4fdd",
+      "git_blob_sha256": "bc46c8ac8ce3ec3760f2d6743766cb812b814fea9344a44e799bcce4c0ef4fdd"
+    },
+    {
+      "path": "backend/migrations/versions/4a_0001_identity.py",
+      "working_tree_sha256": "9765db86b0fa47ad7bffa95e66376d949ad835d1f5ba361947f0718ef7b0e9bd",
+      "git_blob_sha256": "9765db86b0fa47ad7bffa95e66376d949ad835d1f5ba361947f0718ef7b0e9bd"
+    },
+    {
+      "path": "backend/services/identity_service.py",
+      "working_tree_sha256": "b4659aa89e434c216e64de213b0caf47aeb23f41e2bcf7c61f0aa35a017165ed",
+      "git_blob_sha256": "b4659aa89e434c216e64de213b0caf47aeb23f41e2bcf7c61f0aa35a017165ed"
+    },
+    {
+      "path": "backend/services/metadata_service.py",
+      "working_tree_sha256": "ea219632aa5798a05bd60383e208f7bc3a282774eef75f40fabbb1d395859f2a",
+      "git_blob_sha256": "ea219632aa5798a05bd60383e208f7bc3a282774eef75f40fabbb1d395859f2a"
+    },
+    {
+      "path": "backend/services/preference_validation_service.py",
+      "working_tree_sha256": "42d74a3cee7bc1e38d055340d45ba3063ffdbef6bf39dfd4be2edfdc039fcddc",
+      "git_blob_sha256": "42d74a3cee7bc1e38d055340d45ba3063ffdbef6bf39dfd4be2edfdc039fcddc"
+    },
+    {
+      "path": "backend/services/preference_authorization.py",
+      "working_tree_sha256": "9c673df7623eae71f87823b13d14df1b110329f7543d529bbcddb4ae3e7f2591",
+      "git_blob_sha256": "9c673df7623eae71f87823b13d14df1b110329f7543d529bbcddb4ae3e7f2591"
+    },
+    {
+      "path": "backend/routers/preferences.py",
+      "working_tree_sha256": "2f3d44d141f48e74756dfe88754faa093cbbf47c92fbbe3c79aeaf4e911139bd",
+      "git_blob_sha256": "8ed372f03087dbb88dbaef21b7c4794277dd7d3778e5a41fb20440d666686e47"
+    },
+    {
+      "path": "backend/routers/faculty.py",
+      "working_tree_sha256": "65d2655be7e718f752d11dd7abb4b079250d7900d02181e36073fc2a0b5df9d8",
+      "git_blob_sha256": "8da0ed6d705d260d06dd0b3f065955a1542f050cfb87c03319ea0de37898cdb0"
+    },
+    {
+      "path": "backend/routers/subjects.py",
+      "working_tree_sha256": "a4f0cd79d4a18810eab22398170094d7f1435c727aa5d906807edde400565a37",
+      "git_blob_sha256": "f1ff5f9758c82b37b205c07fe212b3500eaec9100c0c2404269266851f2b1705"
+    },
+    {
+      "path": "backend/routers/auth.py",
+      "working_tree_sha256": "3b26405cca65476f82748b063d91510005e3c6616af9677bd7aa0f57b5f7dff5",
+      "git_blob_sha256": "3b26405cca65476f82748b063d91510005e3c6616af9677bd7aa0f57b5f7dff5"
+    },
+    {
+      "path": "backend/schemas/faculty.py",
+      "working_tree_sha256": "c28a5eba8c363363245903459f588671c4be3c3cb5868fd33e346f09a48797f8",
+      "git_blob_sha256": "c28a5eba8c363363245903459f588671c4be3c3cb5868fd33e346f09a48797f8"
+    },
+    {
+      "path": "backend/schemas/subject.py",
+      "working_tree_sha256": "b24007fda590c6ac9a8d24dde75e66ab481034e102ae9055a045295424f691c8",
+      "git_blob_sha256": "b24007fda590c6ac9a8d24dde75e66ab481034e102ae9055a045295424f691c8"
+    },
+    {
+      "path": "backend/schemas/faculty_preference.py",
+      "working_tree_sha256": "a94de661b02e4c8ea835ad5ce85e2b0ac9d6fefc709c2dd79ec623cf14382e04",
+      "git_blob_sha256": "ab09f6f8500731aebd171d80e9624a9e3a55b4a6f98648b8e733641828fc66cd"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Faculty.py",
+      "working_tree_sha256": "3120b1de95265cbc92143fa2e2e8897af73eb0c21e50f3b1b78e6b34793352af",
+      "git_blob_sha256": "fbcefe00a218c572c3cfc52a707398c4915fa6454cfbccb1f2d812ed708a1b9b"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Subject.py",
+      "working_tree_sha256": "7ba01efc7efccc6ea5b399091caf63d978c7c3f1192df2bcf1bb40bac813974f",
+      "git_blob_sha256": "d8c59254cdc84d6dc8e5c36723bd40b08979c398a546c2866e5a462fe9b4025a"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Section.py",
+      "working_tree_sha256": "b9ee0e1bf2a999fc7fd24d8c87411538ce72d8c188f7f00e0e6c70c19317a278",
+      "git_blob_sha256": "43a1554c5640e22b9bc78ed6dbdafd486dc119ef5569c86d5cf1789a9c75ee06"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/Room.py",
+      "working_tree_sha256": "f1920219c823212b1ba8f219a25e538e3c99fc0337f092325c33b3f0b3c0d868",
+      "git_blob_sha256": "7ee54bad767683b981281a25e8f7f6ab62f5616bac7d54315dbfa24f375353c1"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/PreassignedAssignment.py",
+      "working_tree_sha256": "414f0df76011666446cad61891115c3bfd7d16970588051154198656aaf2f659",
+      "git_blob_sha256": "414f0df76011666446cad61891115c3bfd7d16970588051154198656aaf2f659"
+    },
+    {
+      "path": "backend/genetic_algorithm/models/ga_setting.py",
+      "working_tree_sha256": "79608d846366a5681e0b8bdfaf45f71237623303bd6732747948a99c4873d24c",
+      "git_blob_sha256": "b3f70a6d09d664dc3a6808bba31569de2ccffc58d300b7608eb138d2192e3683"
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/Functions.py",
+      "working_tree_sha256": "d28af9197d38957eb5ace526aa243e4448c68bd475efd89337e1d2c4742f555b",
+      "git_blob_sha256": "d557d16af45089d5267468e56fd1fc73b511dcae5a61134fcae8609e06efecf5"
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/FrozenInputs.py",
+      "working_tree_sha256": "e407d686e2ee95eccca80761c77a2fec6e5d90bef302a8ebe9621268b1f8bf3a",
+      "git_blob_sha256": "e407d686e2ee95eccca80761c77a2fec6e5d90bef302a8ebe9621268b1f8bf3a"
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/FitnessFunction.py",
+      "working_tree_sha256": "e679e3e649a70c504fcc3d4c10cf749bcc2c92a3a812a0bd5b31e2f3ca0b5ff1",
+      "git_blob_sha256": "5f2dfa8cb609be8c788a940a82753772ecbfece984a20a13f2af4b1507d1e20f"
+    },
+    {
+      "path": "backend/services/ga_progress_service.py",
+      "working_tree_sha256": "262c52a742f03938ae7f7653389e7b9d7bb88fe9c0df18b47b44c31e5f00c7a4",
+      "git_blob_sha256": "c3d373b0331a2b8b684eaa7389030f054c292e681a43fde0ff61555c0a6b94fe"
+    },
+    {
+      "path": "backend/services/ga_checkpoint_service.py",
+      "working_tree_sha256": "03264366f062bcf09412b99a5bb91cb0b2a88ad9e5e0797a2a72c7007d80248b",
+      "git_blob_sha256": "03264366f062bcf09412b99a5bb91cb0b2a88ad9e5e0797a2a72c7007d80248b"
+    },
+    {
+      "path": "backend/tests/test_metadata_api.py",
+      "working_tree_sha256": "e27d26bcde093eb493347367cc77fbeb97d1e3eec4a89aa1d2b4d7a3b4bac5e0",
+      "git_blob_sha256": "e27d26bcde093eb493347367cc77fbeb97d1e3eec4a89aa1d2b4d7a3b4bac5e0"
+    },
+    {
+      "path": "frontend/src/api/faculty.ts",
+      "working_tree_sha256": "f0e85e44fe5eec2ee794425050686f241321881e8c0c67ec316d5e973641a0af",
+      "git_blob_sha256": "384f5ba3a09ee5f470fa41434145b69094da32909d3a7e5ec76b0c5b3a719084"
+    },
+    {
+      "path": "frontend/src/api/subjects.ts",
+      "working_tree_sha256": "29c91487d58f17ea08d7856ec0de709463b62fd7674ede36f3ead2e35637fb81",
+      "git_blob_sha256": "29c91487d58f17ea08d7856ec0de709463b62fd7674ede36f3ead2e35637fb81"
+    },
+    {
+      "path": "frontend/src/api/preferences.ts",
+      "working_tree_sha256": "d0146cdfdb3f90bb37b173a7b2dec9bcd24af564ee4a105895157ca8a83e02b6",
+      "git_blob_sha256": "033ff9bff842f1b87e7c056060bca87e885ef7f86578cdf6b73241b86df0d38b"
+    }
+  ],
+  "sanitized_local_source_observations": [
+    {
+      "path": "backend/data/first_sem_bsit_subjects.csv",
+      "headers": [
+        "course no.",
+        "course title",
+        "units",
+        "num of lec hours/week",
+        "num of lab hours/week",
+        "year_level"
+      ],
+      "rows": 19,
+      "unique_course_keys": 19,
+      "duplicate_course_keys": 0,
+      "component_hour_combinations": {
+        "('2', '3')": 15,
+        "('3', '0')": 4
+      }
+    },
+    {
+      "path": "backend/data/BSIT_Consolidated_Subject_Schedules.csv",
+      "headers": [
+        "Year Level",
+        "Section",
+        "Course Number",
+        "Schedule"
+      ],
+      "rows": 32
+    },
+    {
+      "path": "backend/data/Faculty Preferences V2.csv",
+      "headers": [
+        "Faculty",
+        "Subject",
+        "New Schedule",
+        "Schedule",
+        "Room Assignment",
+        "Day(s)"
+      ],
+      "rows": 131
+    },
+    {
+      "path": "backend/data/Faculty Admin, Research and Extension.csv",
+      "headers": [
+        "",
+        "Faculty",
+        "Admin Load",
+        "Research Load",
+        "Extension Load",
+        "Teaching Load"
+      ],
+      "rows": 9
+    },
+    {
+      "path": "backend/data/faculty_qualifications.csv",
+      "headers": [
+        "faculty_code",
+        "faculty_name",
+        "specializations",
+        "auto_qualify_by_specialization",
+        "source",
+        "notes"
+      ],
+      "rows": 11,
+      "qualification_column_names": [
+        "faculty_code",
+        "faculty_name",
+        "specializations",
+        "auto_qualify_by_specialization",
+        "source",
+        "notes"
+      ]
+    },
+    {
+      "path": "backend/data/faculty_subject_eligibility.csv",
+      "headers": [
+        "faculty_code",
+        "faculty_name",
+        "course_no",
+        "eligibility_status",
+        "eligibility_basis",
+        "source",
+        "notes"
+      ],
+      "rows": 39,
+      "statuses": {
+        "eligible": 39
+      },
+      "duplicate_faculty_course_pairs": 0
+    },
+    {
+      "path": "backend/data/subject_domains.csv",
+      "headers": [
+        "course_no",
+        "course_title",
+        "primary_domain",
+        "secondary_domains",
+        "offered_first_sem",
+        "offered_second_sem",
+        "domain_mapping_status",
+        "notes"
+      ],
+      "rows": 56
+    },
+    {
+      "path": "backend/data/faculty_identities.json",
+      "top_level_type": "dict",
+      "keys": [
+        "version",
+        "faculty"
+      ],
+      "faculty_count": 11,
+      "faculty_record_keys": [
+        "faculty_id",
+        "faculty_code",
+        "display_code",
+        "name"
+      ]
+    },
+    {
+      "path": "backend/data/preassigned_assignments.json",
+      "top_level_type": "dict",
+      "keys": [
+        "external_instructors",
+        "assignments"
+      ],
+      "assignments_count": 2,
+      "assignments_record_keys": [
+        "course_no",
+        "section",
+        "instructor_id",
+        "room"
+      ]
+    },
+    {
+      "path": "backend/data/ga_settings.json",
+      "top_level_type": "dict",
+      "keys": [
+        "subject_penalty",
+        "time_penalty",
+        "day_penalty",
+        "preparation_penalty",
+        "load_balance_penalty",
+        "daily_load_penalty",
+        "gap_penalty",
+        "lecture_lab_penalty",
+        "max_preparations",
+        "regular_teaching_load",
+        "absolute_max_teaching_load",
+        "overload_warning_threshold",
+        "underload_penalty",
+        "overload_penalty",
+        "heavy_overload_penalty",
+        "workload_step_units",
+        "target_teaching_load",
+        "load_tolerance",
+        "max_daily_teaching_minutes",
+        "daily_load_step_minutes"
+      ]
+    }
+  ],
+  "additional_local_observations": {
+    "eligibility_rows_for_courses_outside_offered_catalog": 3,
+    "distinct_eligibility_course_keys_outside_offered_catalog": 3,
+    "domain_rows_outside_offered_catalog": 37,
+    "duplicate_domain_course_keys": 0,
+    "room_capacity_source": "NOT PRESENT in current Room model",
+    "real_enrollment_source": "NOT ESTABLISHED; 40 synthetic students constructed per section",
+    "reliable_term_year_or_dates_in_academic_contract": "NOT ESTABLISHED"
+  },
+  "design_validation": {
+    "markdown_links_checked": 26,
+    "anchors_checked": 2,
+    "ER_entities": 35,
+    "dictionary_tables": 44,
+    "new_proposed_tables": 41,
+    "contract_ids": 13,
+    "institutional_decisions": 11,
+    "future_acceptance_cases": 12,
+    "phase4b_hashes_unchanged": 76,
+    "git_diff_check_exit": 0,
+    "errors": [],
+    "scope": "Static documentation links, anchor/ER/dictionary/contract identifiers, hash checks and protected-file comparisons only; no runtime or SQL constraint verification."
+  },
+  "preservation": {
+    "existing_files_compared": 399,
+    "changed_existing_files": [],
+    "HEAD_unchanged": true,
+    "git_index_unchanged": true,
+    "protected_faculty_preference_bytes_unchanged": true,
+    "GA_source_and_existing_schedule_checkpoint_history_files_unchanged": true,
+    "scope": "All existing non-cache files under backend, notebooks, frontend/src and docs plus Git index; excluded cache directories only. No existing file was edited."
+  },
+  "execution": {
+    "PostgreSQL_connections": "NOT RUN",
+    "migrations_or_imports": "NOT RUN",
+    "backend_regression_execution": "NOT RUN - documentation-only design",
+    "frontend_regression_build_lint": "NOT RUN - documentation-only design",
+    "browser_acceptance": "NOT APPLICABLE - no implemented UI",
+    "screenshots": "NOT APPLICABLE - none created",
+    "Mermaid_rendering": "NOT RUN - entity references checked statically",
+    "GA_generation_or_resume": "NOT RUN",
+    "application_or_service_startup": "NOT RUN",
+    "staging_commits_pushes": "NOT RUN"
+  },
+  "limitations": [
+    "All proposed tables/constraints, transactions, privileges and adapters remain unimplemented and unverified against PostgreSQL.",
+    "Eleven institutional confirmation items remain open; real term/year/date, capacities, enrollments and qualification credentials were not invented.",
+    "Full target has 41 proposed new tables; choose a coherent bounded 4C.2 subset before implementation.",
+    "DB-backed GA cutover and exact continuation compatibility remain unverified and require a separate approval gate.",
+    "Private CSV source counts/headers are local inspection facts, not public institutional data snapshots. No faculty records, preference values or credentials are reproduced.",
+    "Earlier Phase 4A/4B reports, execution counts and artifact hashes remain historical and unchanged."
+  ],
+  "source_fingerprint_scope": "Both inspected working-tree bytes and baseline Git blob bytes are recorded explicitly; Windows checkout line endings may differ. No source was modified."
+}

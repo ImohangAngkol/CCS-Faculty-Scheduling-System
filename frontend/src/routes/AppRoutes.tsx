@@ -42,6 +42,10 @@ import {GAProvider} from "../context/GAContext";
 import {useAuth} from "../context/AuthContext";
 import {accountHome} from "../services/auth";
 import Accounts from "../pages/admin/Accounts";
+import SubjectManagement from "../pages/admin/SubjectManagement";
+import FacultyDashboard from "../pages/faculty/Dashboard";
+import FacultyProfile from "../pages/faculty/Profile";
+import FacultyMySchedule from "../pages/faculty/MySchedule";
 
 
 // =============================================
@@ -50,55 +54,6 @@ import Accounts from "../pages/admin/Accounts";
 
 import FacultyPreferences
   from "../pages/faculty/Preferences";
-
-
-function FacultyDashboard() {
-  return (
-    <div>
-      Faculty Dashboard
-    </div>
-  );
-}
-
-
-function PlaceholderPage({
-  title,
-}: {
-  title: string;
-}) {
-
-  return (
-    <div
-      className="
-        rounded-xl
-        border
-        bg-white
-        p-6
-      "
-    >
-
-      <h1
-        className="
-          text-2xl
-          font-bold
-          text-slate-900
-        "
-      >
-        {title}
-      </h1>
-
-      <p
-        className="
-          mt-2
-          text-slate-500
-        "
-      >
-        This page will be built next.
-      </p>
-
-    </div>
-  );
-}
 
 
 export default function AppRoutes() {
@@ -154,9 +109,7 @@ export default function AppRoutes() {
           <Route
             path="subjects"
             element={
-              <PlaceholderPage
-                title="Subject Management"
-              />
+              <SubjectManagement />
             }
           />
 
@@ -250,9 +203,7 @@ export default function AppRoutes() {
           <Route
             path="schedule"
             element={
-              <PlaceholderPage
-                title="My Schedule"
-              />
+              <FacultyMySchedule />
             }
           />
 
@@ -260,7 +211,7 @@ export default function AppRoutes() {
           <Route
             path="profile"
             element={
-              <div className="rounded-xl border bg-white p-6"><h1 className="text-xl font-bold">My Account</h1><p>{user?.username}</p><p>{user?.faculty?.name ?? "Faculty binding unavailable. Contact an administrator."}</p><p>{user?.faculty?.display_code}</p></div>
+              <FacultyProfile />
             }
           />
 

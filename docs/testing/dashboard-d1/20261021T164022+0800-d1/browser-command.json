@@ -1,0 +1,15 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "tests/dashboardD1.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T16:40:22.291278+08:00",
+  "finished_at": "2026-10-21T16:40:44.985941+08:00",
+  "elapsed_seconds": 22.694,
+  "exit_code": 1,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u2716 D1 rendered dashboard acceptance with synthetic HTTP responses (22275.7843ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 0\n\u2139 fail 1\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 22617.3665\n\n\u2716 failing tests:\n\ntest at tests\\dashboardD1.browser.test.mjs:23:1\n\u2716 D1 rendered dashboard acceptance with synthetic HTTP responses (22275.7843ms)\n  Error: Browser command timeout: Page.enable\n      at Timeout._onTimeout (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/dashboardD1.browser.test.mjs:60:64)\n      at listOnTimeout (node:internal/timers:605:17)\n      at process.processTimers (node:internal/timers:541:7)\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; envDir=false; synthetic HTTP API only"
+}

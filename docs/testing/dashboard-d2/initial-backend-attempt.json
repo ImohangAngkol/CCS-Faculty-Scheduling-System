@@ -1,0 +1,23 @@
+{
+  "status": "FAIL_THEN_FIXED",
+  "observed_on": "2026-10-21",
+  "timezone": "Asia/Manila",
+  "started_at": null,
+  "finished_at": null,
+  "timestamp_limitation": "Original start/end timestamps were not recorded. This summary does not reconstruct them.",
+  "command": ".venv/Scripts/python.exe -B -m pytest -p no:cacheprovider backend/tests/dashboard/test_my_schedule.py -q",
+  "cwd": "repository root",
+  "exit_code": 1,
+  "passed": 23,
+  "failed": 5,
+  "warnings": 2,
+  "pytest_seconds": 14.69,
+  "failures": [
+    "Empty own timetable incorrectly returned source-changed instead of a successful empty result",
+    "Four stale-source cases incorrectly returned source-changed instead of source-stale"
+  ],
+  "root_cause": "On Windows/Python 3.14, fstat and Path.stat exposed different ctime meanings for a stable overwritten file. Comparing their ctime_ns fields caused a false change detection.",
+  "fix": "Compare device, inode, size and modification time; recheck after validation. Added a repeated stable-overwrite regression.",
+  "rerun": "20261021T172130961419+0800-backend/command.json",
+  "sanitization": "Assertion summary only; ephemeral credentials, cookies, fixture object representations and response bodies excluded."
+}

@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../components/common/Sidebar";
 import Topbar from "../components/common/Topbar";
 import AccountMenu from "../components/common/AccountMenu";
@@ -13,8 +13,10 @@ const facultyItems = [
 
 export default function FacultyLayout() {
   const {user} = useAuth();
+  const {pathname} = useLocation();
+  const title = ({"/faculty": "Faculty Dashboard", "/faculty/preferences": "My Preferences", "/faculty/schedule": "My Schedule", "/faculty/profile": "Faculty Profile"} as Record<string, string>)[pathname] ?? "Faculty Portal";
   return (
-    <div className="flex min-h-screen bg-slate-50">
+    <div className="flex min-h-screen flex-col bg-slate-50 md:flex-row">
       <Sidebar
         title="CCS Faculty Scheduling"
         role="Faculty"
@@ -23,13 +25,13 @@ export default function FacultyLayout() {
 
       <div className="flex min-w-0 flex-1 flex-col">
         <Topbar
-          pageTitle="Faculty Dashboard"
+          pageTitle={title}
           userName={user?.faculty?.display_code ?? user?.username}
           role="Faculty"
         />
         <AccountMenu />
 
-        <main className="flex-1 p-6">
+        <main className="min-w-0 flex-1 p-4 sm:p-6">
           <Outlet />
         </main>
       </div>

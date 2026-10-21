@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "test:schedule": "node --test tests/mySchedule.test.mjs",
+    "test:schedule:browser": "node --test tests/mySchedule.browser.test.mjs",
+    "test:dashboard": "node --test tests/dashboardD1.test.mjs",
+    "test:dashboard:browser": "node --test tests/dashboardD1.browser.test.mjs",
     "test:auth": "node --test tests/auth.test.mjs tests/authSessionRace.test.mjs",
     "test:preferences": "node --test tests/preferenceModel.test.mjs tests/preferenceApi.test.mjs",
     "test:preferences:browser": "node --test tests/preferences.browser.test.mjs",

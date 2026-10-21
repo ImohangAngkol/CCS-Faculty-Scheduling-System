@@ -1,0 +1,17 @@
+{
+  "check": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/dashboardD1.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T16:44:23.889675+08:00",
+  "finished_at": "2026-10-21T16:44:36.100688+08:00",
+  "elapsed_seconds": 12.211,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D1 rendered dashboard acceptance with synthetic HTTP responses\n  \u2714 D1-B01 catalog loading, real component details and unsupported metadata (1768.112ms)\n  \u2714 D1-B02 code/title search, no matches and clear (31.3638ms)\n  \u2714 D1-B03 genuine empty catalog (245.3802ms)\n  \u2714 D1-B04 catalog error and successful retry (267.0019ms)\n  \u2714 D1-B05 catalog metadata denial is actionable (266.6766ms)\n  \u2714 D1-B06 faculty welcome, honest feature status and navigation (661.7772ms)\n  \u2714 D1-B07 profile loading, identity and read-only academic details survive refresh (589.3354ms)\n  \u2714 D1-B08 empty academic fields remain honest unknowns (228.2141ms)\n  \u2714 D1-B09 missing metadata preserves account binding (203.1294ms)\n  \u2714 D1-B10 mismatched identity is never rendered (215.7646ms)\n  \u2714 D1-B11 profile service failure and retry (324.837ms)\n  \u2714 D1-B12 missing binding makes no faculty lookup (337.6984ms)\n  \u2714 D1-B13 role-denied routes never mount protected metadata pages (371.2438ms)\n  \u2714 D1-B14 anonymous access redirects and metadata 401 expires the session (784.5408ms)\n  \u2714 D1-B15 mobile catalog, dashboard and profile fit the viewport (647.7372ms)\n  \u2714 D1-B16 metadata denial does not expose academic details (171.2526ms)\n\u2714 D1 rendered dashboard acceptance with synthetic HTTP responses (8866.1814ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 12113.1781\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no database/approval/API credential variables",
+  "browser_scope": "Synthetic API responses; actual React browser rendering; no FastAPI/PostgreSQL"
+}

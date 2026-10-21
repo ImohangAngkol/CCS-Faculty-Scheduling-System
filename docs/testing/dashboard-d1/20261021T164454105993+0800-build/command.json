@@ -1,0 +1,17 @@
+{
+  "check": "build",
+  "command": [
+    "npm.cmd",
+    "run",
+    "build"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T16:44:54.107069+08:00",
+  "finished_at": "2026-10-21T16:45:03.625594+08:00",
+  "elapsed_seconds": 9.518,
+  "exit_code": 0,
+  "stdout": "\n> frontend@0.0.0 build\n> tsc -b && vite build\n\n\u001b[36mvite v8.2.2 \u001b[32mbuilding client environment for production...\u001b[36m\u001b[39m\ntransforming...\n\u2713 213 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.45 kB \u2502 gzip:   0.29 kB\ndist/assets/index-DqINVyN1.css   37.75 kB \u2502 gzip:   8.44 kB\ndist/assets/index-C3CyBvOM.js   833.03 kB \u2502 gzip: 235.57 kB\n\n\u001b[32m\u2713 built in 524ms\u001b[39m\n",
+  "stderr": "\u001b[33m[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n",
+  "environment": "Whitelisted OS environment; no database/approval/API credential variables",
+  "browser_scope": null
+}

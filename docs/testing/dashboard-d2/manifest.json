@@ -1,0 +1,718 @@
+{
+  "milestone": "D2",
+  "created_at": "2026-10-21T17:39:24.795558+08:00",
+  "baseline_head": "3167cda2bd2d86011b50ea582026a4c39accb529",
+  "branch": "main",
+  "status": "IMPLEMENTED; FINAL FOCUSED CHECKS PASS; POSTGRESQL AND D3 NOT RUN",
+  "hash_kind": "SHA-256 raw working-tree bytes; manifest excludes its own hash",
+  "dirty_tree_scope": "Pre-existing D1, Phase 4C.2 and protected preference edits preserved; see pre-D2 baseline. No staging/commit/push.",
+  "runtime": {
+    "python": "3.14.2",
+    "node": "v24.11.1",
+    "vite": "8.2.2",
+    "browser": "Edg/155.0.4283.62",
+    "platform": "Windows",
+    "sqlite": "3.50.4"
+  },
+  "final_counts": {
+    "backend_focused": {
+      "passed": 29,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 2
+    },
+    "backend_regressions": {
+      "passed": 46,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 4,
+      "includes_existing_real_HTTP_auth_browser_wrapper": true
+    },
+    "frontend_contracts": {
+      "passed": 91,
+      "new_D2": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    "D2_browser": {
+      "scenarios_passed": 13,
+      "parent_wrappers": 1,
+      "failed": 0
+    },
+    "D1_browser": {
+      "scenarios_passed": 16,
+      "parent_wrappers": 1,
+      "failed": 0
+    },
+    "GA_browser": {
+      "scenarios_passed": 51,
+      "parent_wrappers": 1,
+      "failed": 0
+    },
+    "build": "PASS; existing chunk-size warning",
+    "focused_lint": "PASS"
+  },
+  "final_commands": {
+    "backend": {
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T17:21:30.961918+08:00",
+      "finished_at": "2026-10-21T17:21:46.261410+08:00",
+      "elapsed_seconds": 15.299,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172130961419+0800-backend/command.json"
+    },
+    "backend-regressions": {
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d2-20261021T173649821170+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T17:36:49.822951+08:00",
+      "finished_at": "2026-10-21T17:37:39.282623+08:00",
+      "elapsed_seconds": 49.459,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T173649821170+0800-backend-regressions/command.json"
+    },
+    "contracts": {
+      "check": "contracts",
+      "command": [
+        "node",
+        "--test",
+        "tests/mySchedule.test.mjs",
+        "tests/dashboardD1.test.mjs",
+        "tests/auth.test.mjs",
+        "tests/authSessionRace.test.mjs",
+        "tests/preferenceModel.test.mjs",
+        "tests/preferenceApi.test.mjs",
+        "tests/gaMonitoring.test.mjs",
+        "tests/gaRecovery.test.mjs",
+        "tests/gaLogs.test.mjs",
+        "tests/gaHistory.test.mjs",
+        "tests/fitnessReporting.test.mjs",
+        "tests/facultyDisplay.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:28:23.920943+08:00",
+      "finished_at": "2026-10-21T17:28:26.501012+08:00",
+      "elapsed_seconds": 2.58,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172823919102+0800-contracts/command.json"
+    },
+    "build": {
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:28:26.162911+08:00",
+      "finished_at": "2026-10-21T17:28:37.647175+08:00",
+      "elapsed_seconds": 11.484,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172826162090+0800-build/command.json"
+    },
+    "lint": {
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/services/scheduleService.ts",
+        "src/pages/faculty/MySchedule.tsx",
+        "src/pages/faculty/Dashboard.tsx",
+        "src/routes/AppRoutes.tsx"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:28:27.576414+08:00",
+      "finished_at": "2026-10-21T17:28:34.970361+08:00",
+      "elapsed_seconds": 7.394,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172827574821+0800-lint/command.json"
+    },
+    "browser": {
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/mySchedule.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:24:02.406155+08:00",
+      "finished_at": "2026-10-21T17:24:12.136915+08:00",
+      "elapsed_seconds": 9.731,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172402405419+0800-browser/command.json"
+    },
+    "d1-browser": {
+      "check": "d1-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/dashboardD1.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:28:46.407778+08:00",
+      "finished_at": "2026-10-21T17:29:00.985600+08:00",
+      "elapsed_seconds": 14.578,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172846407072+0800-d1-browser/command.json"
+    },
+    "ga-browser": {
+      "check": "ga-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/gaMonitoring.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:28:45.984947+08:00",
+      "finished_at": "2026-10-21T17:29:45.353272+08:00",
+      "elapsed_seconds": 59.368,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172845983460+0800-ga-browser/command.json"
+    }
+  },
+  "all_attempt_commands": [
+    {
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T17:21:30.961918+08:00",
+      "finished_at": "2026-10-21T17:21:46.261410+08:00",
+      "elapsed_seconds": 15.299,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172130961419+0800-backend/command.json"
+    },
+    {
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/mySchedule.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:24:02.406155+08:00",
+      "finished_at": "2026-10-21T17:24:12.136915+08:00",
+      "elapsed_seconds": 9.731,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172402405419+0800-browser/command.json"
+    },
+    {
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T17:28:22.614252+08:00",
+      "finished_at": "2026-10-21T17:29:20.595107+08:00",
+      "elapsed_seconds": 57.981,
+      "exit_code": 1,
+      "path": "docs/testing/dashboard-d2/20261021T172822613724+0800-backend-regressions/command.json"
+    },
+    {
+      "check": "contracts",
+      "command": [
+        "node",
+        "--test",
+        "tests/mySchedule.test.mjs",
+        "tests/dashboardD1.test.mjs",
+        "tests/auth.test.mjs",
+        "tests/authSessionRace.test.mjs",
+        "tests/preferenceModel.test.mjs",
+        "tests/preferenceApi.test.mjs",
+        "tests/gaMonitoring.test.mjs",
+        "tests/gaRecovery.test.mjs",
+        "tests/gaLogs.test.mjs",
+        "tests/gaHistory.test.mjs",
+        "tests/fitnessReporting.test.mjs",
+        "tests/facultyDisplay.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:28:23.920943+08:00",
+      "finished_at": "2026-10-21T17:28:26.501012+08:00",
+      "elapsed_seconds": 2.58,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172823919102+0800-contracts/command.json"
+    },
+    {
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:28:26.162911+08:00",
+      "finished_at": "2026-10-21T17:28:37.647175+08:00",
+      "elapsed_seconds": 11.484,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172826162090+0800-build/command.json"
+    },
+    {
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/services/scheduleService.ts",
+        "src/pages/faculty/MySchedule.tsx",
+        "src/pages/faculty/Dashboard.tsx",
+        "src/routes/AppRoutes.tsx"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:28:27.576414+08:00",
+      "finished_at": "2026-10-21T17:28:34.970361+08:00",
+      "elapsed_seconds": 7.394,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172827574821+0800-lint/command.json"
+    },
+    {
+      "check": "ga-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/gaMonitoring.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:28:45.984947+08:00",
+      "finished_at": "2026-10-21T17:29:45.353272+08:00",
+      "elapsed_seconds": 59.368,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172845983460+0800-ga-browser/command.json"
+    },
+    {
+      "check": "d1-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/dashboardD1.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T17:28:46.407778+08:00",
+      "finished_at": "2026-10-21T17:29:00.985600+08:00",
+      "elapsed_seconds": 14.578,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T172846407072+0800-d1-browser/command.json"
+    },
+    {
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T17:29:58.939443+08:00",
+      "finished_at": "2026-10-21T17:30:32.685558+08:00",
+      "elapsed_seconds": 33.746,
+      "exit_code": 1,
+      "path": "docs/testing/dashboard-d2/20261021T172958938888+0800-backend-regressions/command.json"
+    },
+    {
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d2-20261021T173101459491+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T17:31:01.461107+08:00",
+      "finished_at": "2026-10-21T17:33:21.874313+08:00",
+      "elapsed_seconds": 140.412,
+      "exit_code": 1,
+      "path": "docs/testing/dashboard-d2/20261021T173101459491+0800-backend-regressions/command.json"
+    },
+    {
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d2-20261021T173524892874+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T17:35:24.895678+08:00",
+      "finished_at": "2026-10-21T17:35:58.750275+08:00",
+      "elapsed_seconds": 33.854,
+      "exit_code": 1,
+      "path": "docs/testing/dashboard-d2/20261021T173524892874+0800-backend-regressions/command.json"
+    },
+    {
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d2-20261021T173649821170+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T17:36:49.822951+08:00",
+      "finished_at": "2026-10-21T17:37:39.282623+08:00",
+      "elapsed_seconds": 49.459,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d2/20261021T173649821170+0800-backend-regressions/command.json"
+    }
+  ],
+  "initial_backend_failure_summary": "docs/testing/dashboard-d2/initial-backend-attempt.json",
+  "browser_scope": "D2/D1/GA React+Edge scenarios use synthetic HTTP, not live FastAPI authorization. New backend tests use actual ASGI auth with temporary SQLite/synthetic templates. Existing real-auth HTTP browser wrapper separately passes.",
+  "browser_scenarios": [
+    {
+      "id": "D2-B01",
+      "title": "loading, own lecture/lab timetable and proposal provenance",
+      "started_at": "2026-10-21T17:24:04.053+08:00",
+      "finished_at": "2026-10-21T17:24:05.172+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B02",
+      "title": "refresh retains source and only own rows",
+      "started_at": "2026-10-21T17:24:05.174+08:00",
+      "finished_at": "2026-10-21T17:24:05.487+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B03",
+      "title": "missing completed source is distinct from an empty own schedule",
+      "started_at": "2026-10-21T17:24:05.488+08:00",
+      "finished_at": "2026-10-21T17:24:06.069+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B04",
+      "title": "unavailable source clears old rows and supports retry",
+      "started_at": "2026-10-21T17:24:06.070+08:00",
+      "finished_at": "2026-10-21T17:24:06.411+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B05",
+      "title": "stale proposal shows review status and refresh recovers",
+      "started_at": "2026-10-21T17:24:06.412+08:00",
+      "finished_at": "2026-10-21T17:24:06.808+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B06",
+      "title": "permission denial never displays assignments",
+      "started_at": "2026-10-21T17:24:06.809+08:00",
+      "finished_at": "2026-10-21T17:24:07.027+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B07",
+      "title": "missing binding performs no timetable request",
+      "started_at": "2026-10-21T17:24:07.028+08:00",
+      "finished_at": "2026-10-21T17:24:07.329+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B08",
+      "title": "mismatched server identity is rejected before rendering its rows",
+      "started_at": "2026-10-21T17:24:07.330+08:00",
+      "finished_at": "2026-10-21T17:24:07.580+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B09",
+      "title": "anonymous and wrong-role routes do not fetch the timetable",
+      "started_at": "2026-10-21T17:24:07.580+08:00",
+      "finished_at": "2026-10-21T17:24:08.025+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B10",
+      "title": "expired synthetic session redirects to login",
+      "started_at": "2026-10-21T17:24:08.026+08:00",
+      "finished_at": "2026-10-21T17:24:08.227+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B11",
+      "title": "unknown source title and room are not fabricated",
+      "started_at": "2026-10-21T17:24:08.228+08:00",
+      "finished_at": "2026-10-21T17:24:08.410+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B12",
+      "title": "mobile timetable remains contained and assignment details readable",
+      "started_at": "2026-10-21T17:24:08.411+08:00",
+      "finished_at": "2026-10-21T17:24:08.674+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D2-B13",
+      "title": "leaving during a delayed read cannot inject stale assignments",
+      "started_at": "2026-10-21T17:24:08.674+08:00",
+      "finished_at": "2026-10-21T17:24:09.038+08:00",
+      "result": "PASS"
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "D2-B01-own-proposal-timetable.png",
+      "captured_at": "2026-10-21T17:24:05.171+08:00",
+      "url": "http://localhost:53902/faculty/schedule",
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      },
+      "path": "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B01-own-proposal-timetable.png",
+      "sha256": "32ea7a213555f3b6f236f0e7d5cb59ac4fa7873db3e4b9c2d9e76b2b7be03d16",
+      "image_dimensions": {
+        "width": 1366,
+        "height": 1100
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Synthetic HTTP responses; actual Edge-rendered React page"
+    },
+    {
+      "name": "D2-B03-no-own-assignments.png",
+      "captured_at": "2026-10-21T17:24:06.017+08:00",
+      "url": "http://localhost:53902/faculty/schedule",
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      },
+      "path": "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B03-no-own-assignments.png",
+      "sha256": "a918e0889e74b47f5a8fa31b79569f635067ff58e8035845a87f8e6187936221",
+      "image_dimensions": {
+        "width": 1366,
+        "height": 1100
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Synthetic HTTP responses; actual Edge-rendered React page"
+    },
+    {
+      "name": "D2-B05-stale-source.png",
+      "captured_at": "2026-10-21T17:24:06.734+08:00",
+      "url": "http://localhost:53902/faculty/schedule",
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      },
+      "path": "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B05-stale-source.png",
+      "sha256": "e1e2fdf6b9d76adeac6d1eb85032689870c7af9c33f413cdbb71c59ee9518347",
+      "image_dimensions": {
+        "width": 1366,
+        "height": 1100
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Synthetic HTTP responses; actual Edge-rendered React page"
+    },
+    {
+      "name": "D2-B12-mobile-assignment-details.png",
+      "captured_at": "2026-10-21T17:24:08.671+08:00",
+      "url": "http://localhost:53902/faculty/schedule",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B12-mobile-assignment-details.png",
+      "sha256": "7965929400058ac3575d3e6bdb6df961ad44c105b60e1b8fd98a1699906b2868",
+      "image_dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Synthetic HTTP responses; actual Edge-rendered React page"
+    }
+  ],
+  "browser_read_safety": {
+    "runtime_errors": [],
+    "mutation_requests": 0,
+    "faculty_selector_requests": 0,
+    "administrator_result_requests": 0
+  },
+  "preservation": {
+    "baseline_files": 479,
+    "unchanged_files": 467,
+    "intentional_modified_files": [
+      "backend/main.py",
+      "backend/routers/schedules.py",
+      "backend/schemas/schedule.py",
+      "backend/services/schedule_service.py",
+      "backend/tests/test_phase4a_auth.py",
+      "frontend/package.json",
+      "frontend/src/pages/faculty/Dashboard.tsx",
+      "frontend/src/pages/faculty/MySchedule.tsx",
+      "frontend/src/routes/AppRoutes.tsx",
+      "frontend/tests/auth.browser.integration.mjs",
+      "frontend/tests/dashboardD1.browser.test.mjs",
+      "frontend/tests/gaMonitoring.browser.test.mjs"
+    ],
+    "missing_files": [],
+    "unexpected_changes": [],
+    "protected_preferences_sha256": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+    "git_index_unchanged": true,
+    "no_PostgreSQL_connections_or_live_migrations": true,
+    "no_GA_generation_or_scoring_for_D2_reads": true,
+    "all_existing_data_and_saved_artifact_files_unchanged": true
+  },
+  "created_files": [
+    "backend/tests/dashboard/conftest.py",
+    "backend/tests/dashboard/test_my_schedule.py",
+    "docs/dashboard-d2-implementation.md",
+    "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B01-own-proposal-timetable.png",
+    "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B03-no-own-assignments.png",
+    "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B05-stale-source.png",
+    "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B12-mobile-assignment-details.png",
+    "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/browser-results.json",
+    "docs/testing/dashboard-d2/20261021T172130961419+0800-backend/command.json",
+    "docs/testing/dashboard-d2/20261021T172402405419+0800-browser/command.json",
+    "docs/testing/dashboard-d2/20261021T172822613724+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-d2/20261021T172823919102+0800-contracts/command.json",
+    "docs/testing/dashboard-d2/20261021T172826162090+0800-build/command.json",
+    "docs/testing/dashboard-d2/20261021T172827574821+0800-lint/command.json",
+    "docs/testing/dashboard-d2/20261021T172845983460+0800-ga-browser/command.json",
+    "docs/testing/dashboard-d2/20261021T172846407072+0800-d1-browser/command.json",
+    "docs/testing/dashboard-d2/20261021T172958938888+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-d2/20261021T173101459491+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-d2/20261021T173524892874+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-d2/20261021T173649821170+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-d2/initial-backend-attempt.json",
+    "docs/testing/dashboard-d2/preservation-baseline.json",
+    "docs/testing/dashboard-d2/run_checks.py",
+    "frontend/src/services/scheduleService.ts",
+    "frontend/tests/mySchedule.browser.test.mjs",
+    "frontend/tests/mySchedule.fixtures.mjs",
+    "frontend/tests/mySchedule.test.mjs"
+  ],
+  "artifacts": {
+    "backend/main.py": "3ed128047a3cda12b3a4aa66987bfb1d55aab24c49c373880ff026c3f24eb0c4",
+    "backend/routers/schedules.py": "e8e274368f9fdcefd0c12c1ba38277b2cbaee2c92c701c291a2a51063559fbae",
+    "backend/schemas/schedule.py": "87defbc4194d55990cdbdbe44d9c655347a4072a6614c9cc84a230d7c5a882dd",
+    "backend/services/schedule_service.py": "c706609de1a3a343fa69f8ed1b3a4f1579a1c92f052bacba2f10066b6a811794",
+    "backend/tests/dashboard/conftest.py": "66e308683517d93d6c1d64ec9961842f232c3eb12926d23d69eb10f1e72fcc89",
+    "backend/tests/dashboard/test_my_schedule.py": "ecdd51329a0175016f45219ed84fcc2d12df9d37430fd9803ba7e01abd74118d",
+    "backend/tests/test_phase4a_auth.py": "f258958d017df75ff7190aa0863bf31b1dbd0d418a580a85348ab360f82265df",
+    "docs/dashboard-d2-implementation.md": "3f58b95b563f9c24b404c7b141282c57afc9ad3d1855e9ef0f608ebc6c1a23ec",
+    "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B01-own-proposal-timetable.png": "32ea7a213555f3b6f236f0e7d5cb59ac4fa7873db3e4b9c2d9e76b2b7be03d16",
+    "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B03-no-own-assignments.png": "a918e0889e74b47f5a8fa31b79569f635067ff58e8035845a87f8e6187936221",
+    "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B05-stale-source.png": "e1e2fdf6b9d76adeac6d1eb85032689870c7af9c33f413cdbb71c59ee9518347",
+    "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/D2-B12-mobile-assignment-details.png": "7965929400058ac3575d3e6bdb6df961ad44c105b60e1b8fd98a1699906b2868",
+    "docs/screenshots/dashboard-d2/20261021T172402405419+0800-browser/browser-results.json": "c7f6964a458dfacb8578a0709c2b4253283f6dae7c14802fc32809a04a5f5ec6",
+    "docs/testing/dashboard-d2/20261021T172130961419+0800-backend/command.json": "0e53afcb56d90d76504559e4664fe50b0e11859bc116f902be10f07668b76148",
+    "docs/testing/dashboard-d2/20261021T172402405419+0800-browser/command.json": "e74aca21d73dedc476b071c2fcd740bd3e2769f7c73b44871cd7459dfe5947d4",
+    "docs/testing/dashboard-d2/20261021T172822613724+0800-backend-regressions/command.json": "11f91fc72b5655f467b614ebeb1e5562236efc080e09f772144d9c59381e6f9e",
+    "docs/testing/dashboard-d2/20261021T172823919102+0800-contracts/command.json": "da4109c556d496b91600db2ad49081d13b419d5337e76a8d108a8096ebed43ef",
+    "docs/testing/dashboard-d2/20261021T172826162090+0800-build/command.json": "47766f894f26620c43f6e3efab923acf9df7e9f5cdbb055c41abe4bb7f63c476",
+    "docs/testing/dashboard-d2/20261021T172827574821+0800-lint/command.json": "4e28f1290dc3255cca346c19ddd2a70cdc9f49a2e088eb24ad52a742c1824453",
+    "docs/testing/dashboard-d2/20261021T172845983460+0800-ga-browser/command.json": "8040d40662ae9f2ddb4d30675812b2f8d5efca3e628794f1d5ef0058fabf0b0c",
+    "docs/testing/dashboard-d2/20261021T172846407072+0800-d1-browser/command.json": "14f31eb1ab97e782438340f1f04bbc5e36b43360742f78bfbcf5a28cf8cb4034",
+    "docs/testing/dashboard-d2/20261021T172958938888+0800-backend-regressions/command.json": "1831557721daeec3868d0f2f843f5e185460d447891a7374538289a8a7d609f8",
+    "docs/testing/dashboard-d2/20261021T173101459491+0800-backend-regressions/command.json": "69061276b38b57351b31b73f051468cad65b1396a24872cf875ebc00aa51d1f5",
+    "docs/testing/dashboard-d2/20261021T173524892874+0800-backend-regressions/command.json": "091a3dd958f2b5d0a26590cdccd3c6b9a76e5aa5f7dee0e5a8a58d76d8b2ea3d",
+    "docs/testing/dashboard-d2/20261021T173649821170+0800-backend-regressions/command.json": "312cd140a20f1e76ded2891af92b6b36005fbb5105f6210b54d6637c9f59d555",
+    "docs/testing/dashboard-d2/initial-backend-attempt.json": "94dee6775e37386287e8b4452909a8538d6a7d7ce1c717aca0db8ece2aef189b",
+    "docs/testing/dashboard-d2/preservation-baseline.json": "a17417007ccbd699c5660422c7ea670382fa55d5a7516c4a1bd445438dc0ea4a",
+    "docs/testing/dashboard-d2/run_checks.py": "4a76dd6f3d9620c3fdced57b90c685507be2fb5a9e99f641499bac2eda40f341",
+    "frontend/package.json": "fa319e22c94903e95ca2dcbb93b98d6c94e6a10c0cafda9f4a152fb6726343d1",
+    "frontend/src/pages/faculty/Dashboard.tsx": "7036b3377cd6b055d5401e88ca5dfffafc3145c780eb8c0c5457edc9f353ce50",
+    "frontend/src/pages/faculty/MySchedule.tsx": "0bca290b705845c92b16c5da8beff577b996cb79e5da534b0f224007bae88950",
+    "frontend/src/routes/AppRoutes.tsx": "61b7701a98abc4784d6b96435bb4640f44e5f994a83b10786e739b5ca3ad0f2b",
+    "frontend/src/services/scheduleService.ts": "917cce2a82c300fbd5b5b4adf297a96656feab23fe37099e52358f32f3f98232",
+    "frontend/tests/auth.browser.integration.mjs": "40f07b58ffcda045536231df6ef743cb91260ab5be806cd91757b2fa28581847",
+    "frontend/tests/dashboardD1.browser.test.mjs": "8407dee4ed3e18d0e361b554d30c8e619e59aed43a20e96f1626fbe2193b2af2",
+    "frontend/tests/gaMonitoring.browser.test.mjs": "3d6354c3744cfc0ecf8215a713085eab1b560c0c891f976d7292b127c8ef417f",
+    "frontend/tests/mySchedule.browser.test.mjs": "fd55c2644c6d9ce0782b041a73e37c37ac3939ab44879e4af1bc71f474a55f90",
+    "frontend/tests/mySchedule.fixtures.mjs": "679db5535f415606f64ac15091a846519af446f920b7bc9bb81fce4697dbe620",
+    "frontend/tests/mySchedule.test.mjs": "34696592b79c7da50eb396e03325f5e55741f5f2635a6385bf2a916751b57303"
+  },
+  "limitations": [
+    "No PostgreSQL deployment or D2 real-browser-to-FastAPI acceptance; real D2 authorization is ASGI/SQLite tested.",
+    "Legacy source freshness, academic year and approval/publication status are unrecorded.",
+    "Full-project lint and full GA suite not run.",
+    "Initial failed attempts retained; final regression pass follows test-harness port/ACL isolation fixes.",
+    "Existing Starlette/AnyIO/Alembic deprecations and build chunk warning remain.",
+    "GEC intake, Chair approvals, versioned official schedules and D3 are unimplemented."
+  ],
+  "final_review": {
+    "at": "2026-10-21T17:40:22.182432+08:00",
+    "artifact_hashes": "PASS: 39 files",
+    "report_links": "PASS: no broken local links",
+    "git_diff_check": "PASS: no whitespace errors; existing CRLF conversion notices only",
+    "screenshots": "PASS: four originals visually/privacy reviewed"
+  }
+}

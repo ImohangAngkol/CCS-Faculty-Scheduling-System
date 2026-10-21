@@ -1,0 +1,20 @@
+{
+  "check": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/services/scheduleService.ts",
+    "src/pages/faculty/MySchedule.tsx",
+    "src/pages/faculty/Dashboard.tsx",
+    "src/routes/AppRoutes.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T17:28:27.576414+08:00",
+  "finished_at": "2026-10-21T17:28:34.970361+08:00",
+  "elapsed_seconds": 7.394,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

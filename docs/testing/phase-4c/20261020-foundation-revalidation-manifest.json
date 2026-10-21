@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "phase": "4C.2",
+  "review_date": "2026-10-20",
+  "timezone": "Asia/Manila",
+  "status": "EXISTING IMPLEMENTATION REUSED / OFFLINE REVALIDATION PASS / POSTGRESQL ACCEPTANCE PENDING",
+  "baseline_commit": "3167cda2bd2d86011b50ea582026a4c39accb529",
+  "branch": "main",
+  "application_files_created_or_modified": [],
+  "existing_files_modified": [],
+  "created_files": [
+    "docs/testing/phase-4c/20261020-foundation-revalidation.md",
+    "docs/testing/phase-4c/20261020-foundation-revalidation-tests.json",
+    "docs/testing/phase-4c/20261020-foundation-revalidation-manifest.json"
+  ],
+  "scope": {
+    "academic_tables": 7,
+    "revision": "4c_0001",
+    "down_revision": "4a_0001",
+    "duplicate_implementation": false,
+    "new_future_relations": 0,
+    "active_GA_or_route_changes": false
+  },
+  "compatibility_findings": [
+    "No blocking conflict within seven-table identity/calendar foundation.",
+    "External commitments/resource links/constraint sets remain future designs, not CCS offering rows.",
+    "Chair capability/request/decision/schedule-revision entities remain future designs, not new auth roles.",
+    "Approved faculty-code bridge directly references existing faculty_identities; broader draft profile/import-batch dependencies remain deferred.",
+    "Shared-resource, Chair policy and full schedule validation decisions remain future activation prerequisites."
+  ],
+  "verification": {
+    "passed": 85,
+    "failed": 0,
+    "skipped": 17,
+    "warnings": 2,
+    "pytest_seconds": 2.99,
+    "exit_code": 0,
+    "scope": "Synthetic offline SQLite/unit/fake-catalog checks and Alembic SQL rendering; no PostgreSQL connection."
+  },
+  "preservation": {
+    "pre_request_files_compared": 422,
+    "changed_existing_files": [],
+    "HEAD_unchanged": true,
+    "index_unchanged": true,
+    "protected_preferences_unchanged": true,
+    "identity_sources_and_account_bindings_code_unchanged": true,
+    "GA_sources_inputs_saved_artifacts_checkpoints_unchanged": true,
+    "existing_Phase4B_and_Phase4C_evidence_unchanged": true
+  },
+  "protected_reference_hashes": {
+    ".git/index": "8937687bd094a86085d3bc6b5762da738ea8ba64202b984f339553e56c1e206b",
+    "backend/data/faculty_preferences.json": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+    "backend/academic_models.py": "c3e1fa6d3cb34c26774557d5c4bb66fe8e76427ada1ef165994c08a53b7c1671",
+    "backend/migrations/versions/4c_0001_academic_foundation.py": "4b90e14232d86546e60f72135b3544cc6c5e9e9df543ad997188125f32f820cd"
+  },
+  "execution_boundaries": {
+    "PostgreSQL_connections": "NOT RUN",
+    "live_migrations": "NOT RUN",
+    "institutional_imports": "NOT RUN",
+    "GA_execution_or_resume": "NOT RUN",
+    "full_application_auth_GA_regressions": "NOT RUN",
+    "frontend_browser_verification": "NOT RUN - no routes/UI changed",
+    "staging_commits_pushes": "NOT RUN"
+  },
+  "remaining_acceptance": [
+    "Separate approval for exact fresh isolated Phase 4C target and SELECT-only preflight.",
+    "Separate approval to execute prepared synthetic PostgreSQL migrations/17 tests.",
+    "Real PL/pgSQL, constraints, dates, concurrency, archive guards and rollback verification with server version recorded.",
+    "No authorization implied for institutional import, GEC/Chair workflows or GA cutover."
+  ],
+  "hash_policy": "Hashes identify current verification artifacts and unchanged dependencies; self-excludes. Existing manifests/results are retained without rewriting.",
+  "artifacts": [
+    {
+      "path": "docs/testing/phase-4c/20261020-foundation-revalidation.md",
+      "sha256": "f6d93957e95abb70fb92e1fd46d5ff1f50a32bea95cc260b51b893e182a71ac5"
+    },
+    {
+      "path": "docs/testing/phase-4c/20261020-foundation-revalidation-tests.json",
+      "sha256": "b72c2de5ce80dcf18a21beef2c7a3c09928ecc546d1cebf18d3851c6cd2d3fe2"
+    }
+  ],
+  "existing_implementation_artifacts": [
+    {
+      "path": "backend/academic_models.py",
+      "sha256": "c3e1fa6d3cb34c26774557d5c4bb66fe8e76427ada1ef165994c08a53b7c1671"
+    },
+    {
+      "path": "backend/migrations/versions/4c_0001_academic_foundation.py",
+      "sha256": "4b90e14232d86546e60f72135b3544cc6c5e9e9df543ad997188125f32f820cd"
+    },
+    {
+      "path": "backend/migrations/env.py",
+      "sha256": "88ca40e0856f5d3931dda9936c8e477d39ec841a0f26885318bcb4a764ebeb8a"
+    },
+    {
+      "path": "backend/repositories/__init__.py",
+      "sha256": "7f073f35f362c86c54a0787c7fc3ef815a60cf2402e4a07db13d8297c4bc80c0"
+    },
+    {
+      "path": "backend/repositories/academic_repository.py",
+      "sha256": "89bf5cc99fca27ea6bfbaf6280a1c95d2a420dd50a5b99242e385fba1ae75b1a"
+    },
+    {
+      "path": "backend/schemas/academic.py",
+      "sha256": "b4a0af8066a5ddb2918a154e108d3a6ce49d6dce2f6d70bec82e1372a8f6c470"
+    },
+    {
+      "path": "backend/services/academic_import_service.py",
+      "sha256": "8dfdfb7467c25250dcd80c7ec980bcd061c089a5298bd2602acfb170f72fa986"
+    },
+    {
+      "path": "backend/services/academic_metadata_adapter.py",
+      "sha256": "cb62bf7d49b745e10de84d71e72a1c9236f1cce10d8f8f4ac5cd166bd50f4344"
+    },
+    {
+      "path": "backend/tests/academic/conftest.py",
+      "sha256": "e56741d929032ba8803a6bcccc5029638e32e2168877e4ff0009c08812d974a8"
+    },
+    {
+      "path": "backend/tests/academic/test_academic_foundation.py",
+      "sha256": "1982b93f0c105a93dc34436ff8d53ae3e2546c209b92c91a269e7c89b47f1d24"
+    },
+    {
+      "path": "backend/tests/academic/test_academic_planner.py",
+      "sha256": "4b02bd7e6824cac530272d00a6d2d61649f5d133a95d3ddcb5257dbb1662eb36"
+    },
+    {
+      "path": "backend/tests/academic/postgresql_safety.py",
+      "sha256": "fccbf4b6f4d7276c0ef9001cad6a3198474c7ff24441ee5c4452f45569be213d"
+    },
+    {
+      "path": "backend/tests/academic/test_academic_safety.py",
+      "sha256": "5b188b63bde5a90e48e6167f0fdfd82913b74d87f69b96fae8353265e4324682"
+    },
+    {
+      "path": "backend/tests/academic/test_academic_postgresql.py",
+      "sha256": "fd71b7e6f5bbf9d90e6e5cf4bbc78d744634f60559877f9cf658179039725e5d"
+    },
+    {
+      "path": "docs/phase-4c2-academic-foundation.md",
+      "sha256": "fcd9f558c5f28ba2bba4dca6ddaece4c5d3da280eac8568f45edcb525924afed"
+    },
+    {
+      "path": "docs/testing/phase-4c/phase-4c2-offline-tests.json",
+      "sha256": "6b82d3c9c274f8029eceaa179dacfcbe460e142c8f2671364c512c297332523d"
+    }
+  ],
+  "reviewed_documents": [
+    {
+      "path": "docs/phase-4c1-academic-data-contract.md",
+      "sha256": "cf105a529f0a4ceb82ffd03ce738b581eb6b5ff81b59786ff8f81991e972edf0"
+    },
+    {
+      "path": "docs/architecture/phase-4c1-relational-schema.md",
+      "sha256": "58407b6e77f8a6dd6cffde66dd161ef1b26c07221db10506a38dad3879f6853e"
+    },
+    {
+      "path": "docs/phase-4c-confirmed-scheduling-workflows.md",
+      "sha256": "638e433aa70ba2af913cbaa5e3b1685b75e60df4c9ae3af8e50baa6b6c55994d"
+    },
+    {
+      "path": "docs/phase-4c2-academic-foundation.md",
+      "sha256": "fcd9f558c5f28ba2bba4dca6ddaece4c5d3da280eac8568f45edcb525924afed"
+    },
+    {
+      "path": "docs/testing/phase-4c/phase-4c2-implementation-manifest.json",
+      "sha256": "8426ad3ef5a9ce25d94fc6269928741bf768d915220ffb54105213a565f33e13"
+    },
+    {
+      "path": "docs/testing/phase-4c/phase-4c-confirmed-requirements-manifest.json",
+      "sha256": "1a387a396d43c2df8eab0b57990e2b48e8edf358eaddedf19beff9dea93c2fc4"
+    }
+  ],
+  "static_validation": {
+    "hash_entries_checked": 24,
+    "new_report_relative_links": 7,
+    "new_JSON_files_validated": 2,
+    "new_files": 3,
+    "existing_files_changed": 0,
+    "sensitive_inventory": "Only sanitized verification notes/results/hashes; no raw academic rows, credentials, handoffs or tokens",
+    "git_diff_check_exit": 0,
+    "staged_paths": 0,
+    "errors": []
+  }
+}

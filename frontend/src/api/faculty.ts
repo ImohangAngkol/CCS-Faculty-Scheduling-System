@@ -1,4 +1,4 @@
-import {API_BASE, apiFetch as fetch} from "../services/apiSession";
+import {API_BASE, apiClient, apiFetch as fetch} from "../services/apiSession.ts";
 const API_URL =
   API_BASE;
 
@@ -66,4 +66,12 @@ export async function getAllFaculty():
   )
     ? payload.data
     : [];
+}
+
+/** Read only the identity supplied by the authenticated account. */
+export async function getFacultyDetail(facultyId: string, signal?: AbortSignal): Promise<FacultySummary> {
+  const response = await apiClient.get<{data: FacultySummary}>(
+    `${API_URL}/api/faculty/${encodeURIComponent(facultyId)}`, {signal},
+  );
+  return response.data.data;
 }

@@ -16,7 +16,12 @@ export default function Topbar({
     <header
       className="
         flex
-        h-16
+        min-h-16
+        flex-wrap
+        gap-3
+        py-3
+        sm:h-16
+        sm:flex-nowrap
         items-center
         justify-between
         border-b
@@ -48,7 +53,8 @@ export default function Topbar({
 
         <h2
           className="
-            text-xl
+            text-lg
+            sm:text-xl
             font-semibold
             text-slate-900
           "
@@ -78,6 +84,7 @@ export default function Topbar({
           <p
             className="
               text-sm
+              break-all
               font-medium
               text-slate-900
             "

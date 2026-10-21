@@ -131,6 +131,8 @@ export default function AdminLayout() {
     <div
       className="
         flex
+        flex-col
+        md:flex-row
         min-h-screen
         bg-slate-50
       "
@@ -219,7 +221,8 @@ export default function AdminLayout() {
           className="
             min-w-0
             flex-1
-            p-6
+            p-4
+            sm:p-6
           "
         >
 

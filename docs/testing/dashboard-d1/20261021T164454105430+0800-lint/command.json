@@ -1,0 +1,28 @@
+{
+  "check": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/api/faculty.ts",
+    "src/api/subjects.ts",
+    "src/services/dashboardMetadata.ts",
+    "src/components/dashboard/MetadataState.tsx",
+    "src/pages/admin/SubjectManagement.tsx",
+    "src/pages/faculty/Dashboard.tsx",
+    "src/pages/faculty/Profile.tsx",
+    "src/routes/AppRoutes.tsx",
+    "src/layouts/FacultyLayout.tsx",
+    "src/layouts/AdminLayout.tsx",
+    "src/components/common/Sidebar.tsx",
+    "src/components/common/Topbar.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T16:44:54.106351+08:00",
+  "finished_at": "2026-10-21T16:45:01.622430+08:00",
+  "elapsed_seconds": 7.516,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no database/approval/API credential variables",
+  "browser_scope": null
+}

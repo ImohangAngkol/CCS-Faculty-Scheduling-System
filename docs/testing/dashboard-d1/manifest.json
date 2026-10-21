@@ -1,0 +1,298 @@
+{
+  "milestone": "D1",
+  "created_at": "2026-10-21T16:55:01.891073+08:00",
+  "baseline_head": "3167cda2bd2d86011b50ea582026a4c39accb529",
+  "branch": "main",
+  "hash_kind": "SHA-256 of raw working-tree bytes; no staged or committed D1 contents",
+  "status": "IMPLEMENTED; FINAL FRONTEND CHECKS PASS; LIVE BACKEND ACCEPTANCE NOT RUN",
+  "final_results": {
+    "contracts": {
+      "passed": 86,
+      "failed": 0,
+      "skipped": 0
+    },
+    "d1_browser": {
+      "scenarios_passed": 16,
+      "parent_wrappers": 1,
+      "failed": 0
+    },
+    "ga_browser": {
+      "scenarios_passed": 51,
+      "parent_wrappers": 1,
+      "failed": 0
+    },
+    "build": "PASS with 833.03 kB main-JS chunk warning",
+    "focused_lint": "PASS",
+    "postgresql": "NOT RUN - paused",
+    "live_backend_authorization": "NOT RUN - synthetic responses only"
+  },
+  "commands_including_initial_failures": [
+    {
+      "path": "docs/testing/dashboard-d1/20261021T163848+0800-d1/browser-command.json",
+      "exit_code": 1,
+      "started_at": "2026-10-21T16:38:48.959509+08:00",
+      "finished_at": "2026-10-21T16:39:12.940456+08:00"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164022+0800-d1/browser-command.json",
+      "exit_code": 1,
+      "started_at": "2026-10-21T16:40:22.291278+08:00",
+      "finished_at": "2026-10-21T16:40:44.985941+08:00"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164423889032+0800-browser/command.json",
+      "exit_code": 0,
+      "started_at": "2026-10-21T16:44:23.889675+08:00",
+      "finished_at": "2026-10-21T16:44:36.100688+08:00"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164454105430+0800-lint/command.json",
+      "exit_code": 0,
+      "started_at": "2026-10-21T16:44:54.106351+08:00",
+      "finished_at": "2026-10-21T16:45:01.622430+08:00"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164454105993+0800-build/command.json",
+      "exit_code": 0,
+      "started_at": "2026-10-21T16:44:54.107069+08:00",
+      "finished_at": "2026-10-21T16:45:03.625594+08:00"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164454161844+0800-contracts/command.json",
+      "exit_code": 0,
+      "started_at": "2026-10-21T16:44:54.162390+08:00",
+      "finished_at": "2026-10-21T16:44:56.373222+08:00"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164519205668+0800-ga-browser/command.json",
+      "exit_code": 1,
+      "started_at": "2026-10-21T16:45:19.206265+08:00",
+      "finished_at": "2026-10-21T16:46:58.029149+08:00"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164819634561+0800-ga-browser/command.json",
+      "exit_code": 0,
+      "started_at": "2026-10-21T16:48:19.635479+08:00",
+      "finished_at": "2026-10-21T16:49:56.617596+08:00"
+    }
+  ],
+  "browser": {
+    "product": "Edg/155.0.4283.62",
+    "fixture_scope": "Actual React DOM in headless Edge; synthetic HTTP API, no FastAPI/PostgreSQL or persisted workflow verification",
+    "captures": [
+      {
+        "name": "D1-B01-subject-catalog.png",
+        "captured_at": "2026-10-21T16:44:27.589+08:00",
+        "url": "http://localhost:56578/admin/subjects",
+        "viewport": {
+          "width": 1366,
+          "height": 1000
+        },
+        "privacy_reviewed": true,
+        "visually_reviewed": true
+      },
+      {
+        "name": "D1-B06-faculty-dashboard.png",
+        "captured_at": "2026-10-21T16:44:28.731+08:00",
+        "url": "http://localhost:56578/faculty",
+        "viewport": {
+          "width": 1366,
+          "height": 1000
+        },
+        "privacy_reviewed": true,
+        "visually_reviewed": true
+      },
+      {
+        "name": "D1-B07-faculty-profile.png",
+        "captured_at": "2026-10-21T16:44:29.655+08:00",
+        "url": "http://localhost:56578/faculty/profile",
+        "viewport": {
+          "width": 1366,
+          "height": 1000
+        },
+        "privacy_reviewed": true,
+        "visually_reviewed": true
+      },
+      {
+        "name": "D1-B15-mobile-profile.png",
+        "captured_at": "2026-10-21T16:44:32.771+08:00",
+        "url": "http://localhost:56578/faculty/profile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "privacy_reviewed": true,
+        "visually_reviewed": true
+      }
+    ]
+  },
+  "preservation": {
+    "baseline_file_count": 373,
+    "expected_modified_paths": [
+      "frontend/package.json",
+      "frontend/src/api/faculty.ts",
+      "frontend/src/api/subjects.ts",
+      "frontend/src/components/common/Sidebar.tsx",
+      "frontend/src/components/common/Topbar.tsx",
+      "frontend/src/layouts/AdminLayout.tsx",
+      "frontend/src/layouts/FacultyLayout.tsx",
+      "frontend/src/pages/admin/SubjectManagement.tsx",
+      "frontend/src/pages/faculty/Dashboard.tsx",
+      "frontend/src/pages/faculty/Profile.tsx",
+      "frontend/src/routes/AppRoutes.tsx",
+      "frontend/tests/gaMonitoring.browser.test.mjs"
+    ],
+    "unchanged_baseline_count": 361,
+    "unexpected_changes": [],
+    "git_index_unchanged": true,
+    "faculty_preferences_unchanged": true,
+    "faculty_preferences_sha256": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+    "all_baselined_backend_and_phase4c_files_unchanged": true,
+    "database_connections_performed": false,
+    "ga_execution_performed": false,
+    "git_mutations_performed": false,
+    "verification_note": "Initial default-encoding JSON read misdecoded one non-ASCII filename; explicit UTF-8 read verified the unchanged original. No file renamed or restored."
+  },
+  "artifacts": [
+    {
+      "path": "docs/dashboard-d1-implementation.md",
+      "sha256": "3148babe5fb4091de87e7797d225183060628c77e9ad65a3a70d87560e207bc9"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d1/20261021T164423889032+0800-browser/D1-B01-subject-catalog.png",
+      "sha256": "6f830c5a0b1f942a977d3e73c2417fbd5a1e624b4f38980cddf516ce41b116fa"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d1/20261021T164423889032+0800-browser/D1-B06-faculty-dashboard.png",
+      "sha256": "7d3f86b869e17a4dae05da79fde245315e719f92df193c157cb61d22c8034fe8"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d1/20261021T164423889032+0800-browser/D1-B07-faculty-profile.png",
+      "sha256": "e9c89fa2c076a7f5aecc7defcd6bf0312259cb9a23ff8dd4444b6f0a2d0c499e"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d1/20261021T164423889032+0800-browser/D1-B15-mobile-profile.png",
+      "sha256": "451a4b4857f4c4c8a2e86cb5abcc4186c6531de2ecf75022a7d5643fc10bd9ea"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d1/20261021T164423889032+0800-browser/browser-results.json",
+      "sha256": "ec27f4aea734f31937c041bbf0bb42de27977889a6d7b0d34c9230090ac517ba"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T163848+0800-d1/browser-command.json",
+      "sha256": "9d26836694817f35fde1801daea25560af688da607012ca07283a3dccb821807"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164022+0800-d1/browser-command.json",
+      "sha256": "80f2fc8eec22e2e9856cae249638e35fc462365b503437904da5645e2f777f77"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164423889032+0800-browser/command.json",
+      "sha256": "4a3e8bf5f378efa7b465354cdb16893e92122aa9553bd823c8a14b74e210b78a"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164454105430+0800-lint/command.json",
+      "sha256": "eb17cb116abd4809d670e4050ac157de3c019943b6113d80b6f741ab689ea726"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164454105993+0800-build/command.json",
+      "sha256": "9e9a3926d35f03c416ba8abb7678c3d09c6c5b9db3901ede05f43a9ad9c1c5af"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164454161844+0800-contracts/command.json",
+      "sha256": "c5f366972892344d58a486d8b09e82e6d2392c494e82f4ccccb1bd938f30e7b8"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164519205668+0800-ga-browser/command.json",
+      "sha256": "e38217cc5a0e82776ac64c2185c04c682826a95f773f40ade09fecd721a67619"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/20261021T164819634561+0800-ga-browser/command.json",
+      "sha256": "443d1488db879d74f60fb536a7e23d10ad89af5c66fe22e5e973c7261cbf9507"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/preservation-baseline.json",
+      "sha256": "97e8509da55fadcef50b557999c71b0aa53a77fab28e30d01fcb4f937d82cfa9"
+    },
+    {
+      "path": "docs/testing/dashboard-d1/run_checks.py",
+      "sha256": "5640e39e3a049c6be3df19899ddfc8cd6f25343700dcc2409984237d33426b6a"
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "dacf2ecb41420fbe23607424c6dbd6b8b56489a2b709111b21ac9f54b7ec6c2a"
+    },
+    {
+      "path": "frontend/src/api/faculty.ts",
+      "sha256": "c4e05332ec4ff580d0fb2709ff332f424778cbf7fdca7b9df456c0f39abc5546"
+    },
+    {
+      "path": "frontend/src/api/subjects.ts",
+      "sha256": "73a2481ae8c504bacb5784a4dab807077599a205efedab6ecf1eb6e516fdc13f"
+    },
+    {
+      "path": "frontend/src/components/common/Sidebar.tsx",
+      "sha256": "04c56f9c7998c5c58b550416819d9e8210d6a1b44db090635270295de16c82bb"
+    },
+    {
+      "path": "frontend/src/components/common/Topbar.tsx",
+      "sha256": "160cf64d094283a5c02eb9c843a1485cde2a6ce3dbcb749e150d7438422807d6"
+    },
+    {
+      "path": "frontend/src/components/dashboard/MetadataState.tsx",
+      "sha256": "2167c2b4f9054d0f964ada04d3537378ef44cadae8c738f6e5aa10b86b4e95c4"
+    },
+    {
+      "path": "frontend/src/layouts/AdminLayout.tsx",
+      "sha256": "cbe90d4d34f2f62f521f1ccded200de49bf3041a397376264f7701c837789b3c"
+    },
+    {
+      "path": "frontend/src/layouts/FacultyLayout.tsx",
+      "sha256": "69c6a91d2b22c4273c1e93d5ef0ed8517f02ee74939fea9dca7a3967db08c04f"
+    },
+    {
+      "path": "frontend/src/pages/admin/SubjectManagement.tsx",
+      "sha256": "151a972896609cdeca57ba19922e81e94ba5683a5243b8b30754c7cbb893525f"
+    },
+    {
+      "path": "frontend/src/pages/faculty/Dashboard.tsx",
+      "sha256": "ba74bc7fca0f6a71d3d63ba38c224453f30247f84e05cc6ede2d4fe84a3e04df"
+    },
+    {
+      "path": "frontend/src/pages/faculty/Profile.tsx",
+      "sha256": "829ca190d288d7ab58133d508e892b32390689818d9d2dc8917ce77e6bceddcd"
+    },
+    {
+      "path": "frontend/src/routes/AppRoutes.tsx",
+      "sha256": "d9c86e34df664a27e1a0e286d5022f7aa998ea72de67f82944a28cc9f392d1b8"
+    },
+    {
+      "path": "frontend/src/services/dashboardMetadata.ts",
+      "sha256": "5090c976938b2f4cc96ee394a11d94f5113b152cd4f82a5377d3521ff086702a"
+    },
+    {
+      "path": "frontend/tests/dashboardD1.browser.test.mjs",
+      "sha256": "48280a252504dd497576e1afe553b68ad2a4cf04018bd6f48f0030137ff01915"
+    },
+    {
+      "path": "frontend/tests/dashboardD1.fixtures.mjs",
+      "sha256": "0e4c7624fe99d5d5e46960bfc7e9f1960da7f58a9ed1f8f6bb4f66fa88857718"
+    },
+    {
+      "path": "frontend/tests/dashboardD1.test.mjs",
+      "sha256": "27158e636e2f803466d068ed8553cf840bf5201784b77167c153e2fb50f74c73"
+    },
+    {
+      "path": "frontend/tests/gaMonitoring.browser.test.mjs",
+      "sha256": "593de16a8f353cf88eb3cfbc82f11d8064f70b1ddb911e55314955c615356606"
+    }
+  ],
+  "limitations": [
+    "Synthetic HTTP responses do not establish real FastAPI session/ownership enforcement.",
+    "No PostgreSQL, migration, institutional import or database acceptance.",
+    "Full-project lint and new backend tests not run; existing GA source unchanged.",
+    "My Schedule, GEC intake, requests, Chair authority and final revision workflow remain outside D1.",
+    "Initial sandbox/harness failures are retained; final runs passed.",
+    "Baseline covers nonignored tracked/untracked files plus backend/data and index; it is not a live database inventory."
+  ]
+}

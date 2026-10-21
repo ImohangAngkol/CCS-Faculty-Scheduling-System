@@ -394,10 +394,18 @@ def test_real_browser_identity_and_preferences(identity_app, monkeypatch):
     import time
     import uvicorn
     _client, _engine, password, _tmp = identity_app
-    monkeypatch.setenv("AUTH_ALLOWED_ORIGINS", "http://localhost:5189")
-    with socket.socket() as sock:
+    with socket.socket() as sock, socket.socket() as frontend_sock:
         sock.bind(("127.0.0.1", 0))
         port = sock.getsockname()[1]
+        frontend_sock.bind(("127.0.0.1", 0))
+        frontend_port = frontend_sock.getsockname()[1]
+    origin = f"http://localhost:{frontend_port}"
+    monkeypatch.setenv("AUTH_ALLOWED_ORIGINS", origin)
+    from fastapi.middleware.cors import CORSMiddleware
+    for middleware in app.user_middleware:
+        if middleware.cls is CORSMiddleware:
+            monkeypatch.setitem(middleware.kwargs, "allow_origins", [origin])
+    monkeypatch.setattr(app, "middleware_stack", None)
     server = uvicorn.Server(uvicorn.Config(app, host="127.0.0.1", port=port, log_level="error", lifespan="off"))
     thread = threading.Thread(target=server.run, daemon=True)
     thread.start()
@@ -408,7 +416,7 @@ def test_real_browser_identity_and_preferences(identity_app, monkeypatch):
             time.sleep(0.02)
         result = subprocess.run([shutil.which("node"), "--test", "tests/auth.browser.integration.mjs"],
                                 cwd=Path(__file__).resolve().parents[2] / "frontend",
-                                env={**os.environ, "AUTH_TEST_URL": f"http://localhost:{port}", "AUTH_TEST_PASSWORD": password},
+                                env={**os.environ, "AUTH_TEST_URL": f"http://localhost:{port}", "AUTH_TEST_FRONTEND_PORT": str(frontend_port), "AUTH_TEST_PASSWORD": password},
                                 capture_output=True, text=True, timeout=150)
         assert result.returncode == 0, result.stdout + result.stderr
         print(result.stdout)

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "phase": "4C.2",
+  "purpose": "Revalidate existing seven-table implementation after professor-confirmed requirement documentation update; no duplicate implementation",
+  "started_at": "2026-10-20T18:54:53.636411+08:00",
+  "ended_at": "2026-10-20T18:54:58.840319+08:00",
+  "elapsed_seconds": 5.205,
+  "client_documentation_date": "2026-10-20",
+  "timezone": "Asia/Manila",
+  "python": "3.14.2",
+  "cwd": "backend",
+  "command": [
+    "../.venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/academic",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "removed_database_environment_variable_names": [
+    "DATABASE_URL",
+    "PHASE4B_TEST_DATABASE_URL",
+    "PHASE4B_BROWSER_DATABASE_URL",
+    "PHASE4C_TEST_DATABASE_URL",
+    "PHASE4C_POSTGRESQL_APPROVAL"
+  ],
+  "scope": "Synthetic SQLite/unit/fake-catalog checks and offline SQL rendering only; PostgreSQL tests disabled",
+  "PostgreSQL_execution": "NOT RUN",
+  "exit_code": 0,
+  "stdout": "......................................................sssssssssssssssss. [ 70%]\n..............................                                           [100%]\n============================== warnings summary ===============================\ntests/academic/test_academic_foundation.py::test_migration_chain_and_frozen_ddl_match_models\ntests/academic/test_academic_foundation.py::test_alembic_environment_renders_full_chain_without_connecting\n  <workspace>\\.venv\\Lib\\site-packages\\alembic\\config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.\n    util.warn_deprecated(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n85 passed, 17 skipped, 2 warnings in 2.99s\n",
+  "stderr": "",
+  "sanitization": "Absolute workspace prefix replaced; no environment values printed.",
+  "summary": {
+    "passed": 85,
+    "skipped": 17,
+    "warnings": 2,
+    "pytest_seconds": 2.99,
+    "failed": 0
+  }
+}

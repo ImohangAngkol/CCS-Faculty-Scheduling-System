@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
-import { mkdtemp, rm, mkdir, writeFile } from "node:fs/promises";
+import { mkdtemp, rm, mkdir, writeFile, readFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, resolve, join, sep } from "node:path";
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -22,7 +22,7 @@ function cdp(socket) {
   });
   return {
     on: (name, handler) => listeners.set(name, handler),
-    send: (method, params = {}) => new Promise((resolve, reject) => { const id = ++sequence; const timer = setTimeout(() => {pending.delete(id); reject(new Error(`Browser command timed out: ${method}`));}, 10000); pending.set(id, { resolve: value => {clearTimeout(timer); resolve(value);}, reject: error => {clearTimeout(timer); reject(error);} }); socket.send(JSON.stringify({ id, method, params })); }),
+    send: (method, params = {}) => new Promise((resolve, reject) => { const id = ++sequence; const timer = setTimeout(() => {pending.delete(id); reject(new Error(`Browser command timed out: ${method}`));}, method === "Page.captureScreenshot" ? 30000 : 10000); pending.set(id, { resolve: value => {clearTimeout(timer); resolve(value);}, reject: error => {clearTimeout(timer); reject(error);} }); socket.send(JSON.stringify({ id, method, params })); }),
   };
 }
 
@@ -43,16 +43,25 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
   const vite = spawn(process.execPath, ["node_modules/vite/bin/vite.js", "--host", "localhost", "--port", "5188", "--strictPort"], { cwd: new URL("../", import.meta.url), windowsHide: true, stdio: "pipe" });
   let output = ""; vite.stdout.on("data", data => output += data); vite.stderr.on("data", data => output += data);
   const executable = process.env.PREFERENCE_TEST_BROWSER ?? (process.platform === "win32" ? "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" : "chromium");
-  const edge = spawn(executable, ["--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check", "--remote-debugging-port=9227", `--user-data-dir=${profile}`, "about:blank"], { windowsHide: true, stdio: ["ignore", "ignore", "pipe"] });
+  const edge = spawn(executable, ["--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check", "--remote-debugging-port=0", `--user-data-dir=${profile}`, "about:blank"], { windowsHide: true, stdio: ["ignore", "ignore", "pipe"] });
   let browserOutput = ""; edge.stderr?.on("data", data => browserOutput += data);
   let launchError; edge.on("error", error => launchError = error);
   let socket;
   try {
     await eventually(async () => (await fetch("http://localhost:5188", {signal:AbortSignal.timeout(2000)})).ok, `Vite startup: ${output}`);
-    const targets = await eventually(async () => { if (launchError) throw launchError; return (await fetch("http://127.0.0.1:9227/json/list", {signal:AbortSignal.timeout(2000)})).json(); }, `Headless browser startup failed: ${launchError ?? browserOutput}`);
+    const targets = await eventually(async () => { if (launchError) throw launchError; const port=(await readFile(join(profile,"DevToolsActivePort"),"utf8")).split("\n")[0]; return (await fetch(`http://127.0.0.1:${port}/json/list`, {signal:AbortSignal.timeout(2000)})).json(); }, `Headless browser startup failed: ${launchError ?? browserOutput}`);
     socket = new WebSocket(targets.find(target => target.type === "page").webSocketDebuggerUrl);
     await new Promise((resolve, reject) => { socket.addEventListener("open", resolve, { once: true }); socket.addEventListener("error", reject, { once: true }); });
     const client = cdp(socket), errors = [];
+    // Never let an unhandled fixture request reach a real backend. D1's catalog
+    // uses the existing axios transport; return an explicit empty synthetic list.
+    client.on("Fetch.requestPaused", event => {
+      const catalog = new URL(event.request.url).pathname === "/api/subjects/available";
+      void client.send("Fetch.fulfillRequest", {requestId:event.requestId, responseCode:catalog ? 200 : 404,
+        responseHeaders:[{name:"Content-Type",value:"application/json"},{name:"Access-Control-Allow-Origin",value:"http://localhost:5188"},{name:"Access-Control-Allow-Credentials",value:"true"}],
+        body:Buffer.from(JSON.stringify(catalog ? {data:[]} : {detail:"Not provided by synthetic fixture"})).toString("base64")}).catch(error => errors.push(error.message));
+    });
+    await client.send("Fetch.enable", {patterns:[{urlPattern:"http://localhost:8000/*",requestStage:"Request"},{urlPattern:"http://127.0.0.1:8000/*",requestStage:"Request"}]});
     client.on("Runtime.exceptionThrown", event => { const message = event.exceptionDetails.exception?.description ?? event.exceptionDetails.text; errors.push(message); console.log("Browser error:",message); });
     await client.send("Runtime.enable"); await client.send("Page.enable");
     await client.send("Emulation.setDeviceMetricsOverride", { width: 1366, height: 900, deviceScaleFactor: 1, mobile: false });
@@ -840,18 +849,18 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       await evaluate(`var selector=document.querySelector('main select'); var option=[...selector.options].find(option=>option.textContent.includes('Atty. Eddie Bouy Palad')); if(!option) throw new Error('External instructor missing from schedule filter'); selector.value=option.value; selector.dispatchEvent(new Event('change',{bubbles:true})); true`);
       await eventually(() => evaluate(`document.querySelector('main tbody')?.textContent.includes('ITE184') && !document.querySelector('main tbody')?.textContent.includes('CCC121')`), 'External filter did not match its assignment');
     });
-    await t.test('audit remaining placeholders and verified faculty account route', async () => {
+    await t.test('audit D1 catalog and faculty pages retain the D2 own-schedule boundary', async () => {
       await client.send('Page.navigate', {url:'http://localhost:5188/admin/subjects'});
-      await eventually(() => evaluate(`document.querySelector('main')?.textContent.includes('This page will be built next.')`), 'Subject placeholder not reproduced');
+      await eventually(() => evaluate(`document.querySelector('main h1')?.textContent==='Subject Management' && !document.querySelector('main')?.textContent.includes('This page will be built next.')`), 'D1 subject catalog did not load');
       await evaluate(`sessionStorage.setItem('mockAuthRole','faculty');true`);
       for (const path of ['/faculty/schedule']) {
         await client.send('Page.navigate', {url:'http://localhost:5188'+path});
-        await eventually(() => evaluate(`document.querySelector('main')?.textContent.includes('This page will be built next.')`), `${path} placeholder not reproduced`);
+        await eventually(() => evaluate(`document.querySelector('main h1')?.textContent==='My Schedule' && document.querySelector('main')?.textContent.includes('Faculty binding unavailable')`), `${path} did not preserve the missing-binding boundary`);
       }
       await client.send('Page.navigate', {url:'http://localhost:5188/faculty/profile'});
       await eventually(() => evaluate(`document.querySelector('main')?.textContent.includes('My Account')`), 'Verified account route did not load');
       await client.send('Page.navigate', {url:'http://localhost:5188/faculty'});
-      await eventually(() => evaluate(`document.querySelector('main')?.textContent.trim()==='Faculty Dashboard'`), 'Faculty dashboard placeholder not reproduced');
+      await eventually(() => evaluate(`document.querySelector('main h1')?.textContent==='Faculty Dashboard' && !!document.querySelector('main a[href="/faculty/profile"]')`), 'D1 faculty dashboard did not load');
     });
     assert.deepEqual(errors, []);
   } finally {

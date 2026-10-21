@@ -2,30 +2,39 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
-import {mkdtemp, rm} from 'node:fs/promises';
+import {mkdtemp, rm, readFile} from 'node:fs/promises';
+import {createServer} from 'vite';
+import {fileURLToPath} from 'node:url';
 import {tmpdir} from 'node:os';
 import {join, resolve, basename, sep} from 'node:path';
 const backend=process.env.AUTH_TEST_URL, password=process.env.AUTH_TEST_PASSWORD;
+const frontendPort=Number(process.env.AUTH_TEST_FRONTEND_PORT), origin=`http://localhost:${frontendPort}`;
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 async function eventually(check,message,timeout=15000){const end=Date.now()+timeout;while(Date.now()<end){try{if(await check())return;}catch{}await sleep(60);}throw Error(message);}
 
 test('Phase 4A real browser authentication and authorization', {skip:!backend,timeout:120000}, async t=>{
   assert.match(backend,/^http:\/\/localhost:\d+$/);
+  assert.ok(Number.isInteger(frontendPort) && frontendPort>0 && frontendPort<65536);
   const profile=await mkdtemp(join(tmpdir(),'phase4a-auth-browser-'));
-  const vite=spawn(process.execPath,['node_modules/vite/bin/vite.js','--host','localhost','--port','5189','--strictPort'],{cwd:new URL('../',import.meta.url),env:{...process.env,VITE_API_URL:backend},windowsHide:true,stdio:'pipe'});
-  const edge=spawn(process.env.PREFERENCE_TEST_BROWSER??'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',['--headless=new','--disable-gpu','--no-first-run','--no-default-browser-check','--remote-debugging-port=9230',`--user-data-dir=${profile}`,'about:blank'],{windowsHide:true,stdio:'pipe'});
+  const root=fileURLToPath(new URL('../',import.meta.url));
+  let vite,edge;
   let socket,startupError,sequence=0;const pending=new Map();
-  for(const child of [vite,edge]){child.on('error',error=>startupError=error);child.stdout?.resume();child.stderr?.resume();}
   try{
-    await eventually(async()=>{if(startupError)throw startupError;return(await fetch('http://localhost:5189')).ok;},'Vite did not start');
-    let targets;await eventually(async()=>{targets=await(await fetch('http://127.0.0.1:9230/json/list')).json();return targets.length;},'Browser did not start');
+    vite=await createServer({root,envDir:false,configFile:join(root,'vite.config.ts'),server:{host:'localhost',port:frontendPort,strictPort:true},logLevel:'error',define:{'import.meta.env.VITE_API_URL':JSON.stringify(backend)}});
+    await vite.listen();
+    edge=spawn(process.env.PREFERENCE_TEST_BROWSER??'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',['--headless=new','--disable-gpu','--no-first-run','--no-default-browser-check','--remote-debugging-port=0',`--user-data-dir=${profile}`,'about:blank'],{windowsHide:true,stdio:'ignore'});
+    edge.on('error',error=>startupError=error);
+    await eventually(async()=>{if(startupError)throw startupError;return(await fetch(origin)).ok;},'Vite did not start');
+    let port;await eventually(async()=>{if(startupError)throw startupError;port=(await readFile(join(profile,'DevToolsActivePort'),'utf8')).split('\n')[0];return /^\d+$/.test(port);},'Owned browser did not start');
+    const targets=await(await fetch(`http://127.0.0.1:${port}/json/list`)).json();
     socket=new WebSocket(targets.find(row=>row.type==='page').webSocketDebuggerUrl);
     await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true});});
     socket.addEventListener('message',event=>{const data=JSON.parse(event.data),entry=pending.get(data.id);if(entry){pending.delete(data.id);clearTimeout(entry.timer);data.error?entry.reject(Error(data.error.message)):entry.resolve(data.result);}});
     const command=(method,params={})=>new Promise((resolve,reject)=>{const id=++sequence,timer=setTimeout(()=>{pending.delete(id);reject(Error('Browser command timeout: '+method));},10000);pending.set(id,{resolve,reject,timer});socket.send(JSON.stringify({id,method,params}));});
     const evaluate=async expression=>{const result=await command('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(result.exceptionDetails)throw Error(result.exceptionDetails.exception?.description??result.exceptionDetails.text);return result.result.value;};
     await command('Runtime.enable');await command('Page.enable');
-    const goto=path=>command('Page.navigate',{url:'http://localhost:5189'+path});
+    console.log('Owned browser:',(await command('Browser.getVersion')).product);
+    const goto=path=>command('Page.navigate',{url:origin+path});
     const waitText=text=>eventually(()=>evaluate(`document.body.textContent.includes(${JSON.stringify(text)})`),'Missing browser text: '+text);
     const button=label=>`[...document.querySelectorAll('button')].find(el=>el.textContent.trim()===${JSON.stringify(label)})`;
     const click=label=>evaluate(`${button(label)}.click();true`);
@@ -54,7 +63,6 @@ test('Phase 4A real browser authentication and authorization', {skip:!backend,ti
     await t.test('own preference save and browser reload persist',async()=>{await evaluate(`[...document.querySelectorAll('label')].find(el=>el.textContent.includes('Consider my subject preferences')).querySelector('input').click();true`);await click('Save Preferences');await waitText('Saved');await command('Page.reload');await eventually(()=>evaluate(`!!document.querySelector('.preference-save-bar')`),'Saved preferences did not reload');assert.equal(await evaluate(`[...document.querySelectorAll('label')].find(el=>el.textContent.includes('Consider my subject preferences')).querySelector('input').checked`),false);});
     await t.test('faculty cannot change identity through URL or payload',async()=>{const status=await evaluate(`(async()=>{const session=await(await fetch(${JSON.stringify(backend+'/api/auth/me')},{credentials:'include'})).json();return(await fetch(${JSON.stringify(backend+'/preferences/1')},{method:'PUT',credentials:'include',headers:{'Content-Type':'application/json','X-CSRF-Token':session.csrf_token},body:JSON.stringify({use_subject_preference:false})})).status})()`);assert.equal(status,403);await goto('/admin/preferences');await waitText('Access unavailable');assert.equal(await evaluate(`!!document.querySelector('.preference-editor')`),false);});
     await t.test('revoked session returns login and displays session error',async()=>{
-      const origin='http://localhost:5189';
       const reply=await fetch(backend+'/api/auth/login',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({username:'admin@test.invalid',password})});assert.equal(reply.status,200);
       const session=await reply.json(),cookie=reply.headers.get('set-cookie').split(';')[0];
       const headers={Origin:origin,Cookie:cookie,'X-CSRF-Token':session.csrf_token,'Content-Type':'application/json'};
@@ -64,10 +72,11 @@ test('Phase 4A real browser authentication and authorization', {skip:!backend,ti
       await waitText('Sign in with your administrator');await waitText('Your session expired or was revoked.');
       assert.equal(await evaluate(`location.pathname`),'/login');
     });
-    await t.test('anonymous direct API write remains rejected',async()=>{assert.equal((await fetch(backend+'/preferences/0',{method:'PUT',headers:{Origin:'http://localhost:5189','Content-Type':'application/json'},body:'{}'})).status,401);});
+    await t.test('anonymous direct API write remains rejected',async()=>{assert.equal((await fetch(backend+'/preferences/0',{method:'PUT',headers:{Origin:origin,'Content-Type':'application/json'},body:'{}'})).status,401);});
   }finally{
-    socket?.close();for(const entry of pending.values())clearTimeout(entry.timer);edge.kill();vite.kill();
-    await Promise.race([sleep(3000),Promise.all([edge,vite].map(child=>new Promise(resolve=>child.exitCode!==null||child.signalCode!==null?resolve():child.once('exit',resolve))))]);
+    socket?.close();for(const entry of pending.values())clearTimeout(entry.timer);edge?.kill();
+    await vite?.close();
+    if(edge)await Promise.race([sleep(3000),new Promise(resolve=>edge.exitCode!==null||edge.signalCode!==null?resolve():edge.once('exit',resolve))]);
     assert.ok(resolve(profile).startsWith(resolve(tmpdir())+sep)&&basename(profile).startsWith('phase4a-auth-browser-'));await rm(profile,{recursive:true,force:true,maxRetries:5,retryDelay:100});
   }
 });
