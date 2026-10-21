@@ -1,0 +1,155 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+  "scenarios": [
+    {
+      "id": "D5-B01",
+      "title": "preparation waits for fresh server validation before any output",
+      "started_at": "2026-10-21T21:00:19.151+08:00",
+      "finished_at": "2026-10-21T21:00:21.073+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B02",
+      "title": "calendar filters cannot omit invalid or unresolved handoff rows",
+      "started_at": "2026-10-21T21:00:21.075+08:00",
+      "finished_at": "2026-10-21T21:00:21.502+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B03",
+      "title": "source hash fingerprint and import provenance remain visible without a receipt",
+      "started_at": "2026-10-21T21:00:21.503+08:00",
+      "finished_at": "2026-10-21T21:00:21.513+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B04",
+      "title": "explicit mapping invalidates the handoff and new output preserves source labels",
+      "started_at": "2026-10-21T21:00:21.513+08:00",
+      "finished_at": "2026-10-21T21:00:21.676+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B05",
+      "title": "HTML-looking imported text renders literally and cannot execute or load markup",
+      "started_at": "2026-10-21T21:00:21.677+08:00",
+      "finished_at": "2026-10-21T21:00:21.850+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B06",
+      "title": "stale preparation discards old output and does not enable printing",
+      "started_at": "2026-10-21T21:00:21.851+08:00",
+      "finished_at": "2026-10-21T21:00:22.108+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B07",
+      "title": "tampered or truncated review response is rejected with no partial output",
+      "started_at": "2026-10-21T21:00:22.109+08:00",
+      "finished_at": "2026-10-21T21:00:22.288+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B08",
+      "title": "print revalidates again and a stale print attempt never invokes printing",
+      "started_at": "2026-10-21T21:00:22.289+08:00",
+      "finished_at": "2026-10-21T21:00:22.394+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B09",
+      "title": "print-media layout contains the freshly revalidated complete batch only",
+      "started_at": "2026-10-21T21:00:22.394+08:00",
+      "finished_at": "2026-10-21T21:00:22.495+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B10",
+      "title": "ordinary browser printing cannot reuse a prior handoff snapshot",
+      "started_at": "2026-10-21T21:00:22.496+08:00",
+      "finished_at": "2026-10-21T21:00:22.590+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B11",
+      "title": "clear during delayed preparation cancels output and printing",
+      "started_at": "2026-10-21T21:00:22.591+08:00",
+      "finished_at": "2026-10-21T21:00:22.760+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B12",
+      "title": "mobile complete handoff remains readable without page overflow",
+      "started_at": "2026-10-21T21:00:22.761+08:00",
+      "finished_at": "2026-10-21T21:00:23.123+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B13",
+      "title": "anonymous and faculty users cannot mount handoff or issue preview posts",
+      "started_at": "2026-10-21T21:00:23.123+08:00",
+      "finished_at": "2026-10-21T21:00:23.613+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B14",
+      "title": "printing errors discard print state and remain actionable",
+      "started_at": "2026-10-21T21:00:23.613+08:00",
+      "finished_at": "2026-10-21T21:00:24.107+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D5-B15",
+      "title": "reload drops the handoff and no confirmation or GA mutations exist",
+      "started_at": "2026-10-21T21:00:24.107+08:00",
+      "finished_at": "2026-10-21T21:00:24.310+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D5-B02-complete-review-handoff.png",
+      "captured_at": "2026-10-21T21:00:21.495+08:00",
+      "url": "http://localhost:61409/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D5-B05-mappings-and-safe-text.png",
+      "captured_at": "2026-10-21T21:00:21.846+08:00",
+      "url": "http://localhost:61409/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D5-B10-unvalidated-print-blocked.png",
+      "captured_at": "2026-10-21T21:00:22.580+08:00",
+      "url": "http://localhost:61409/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D5-B12-mobile-handoff.png",
+      "captured_at": "2026-10-21T21:00:23.104+08:00",
+      "url": "http://localhost:61409/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_and_review_posts": 21,
+  "activation_or_GA_mutations": 0,
+  "csv_raw_bytes_verified": true
+}

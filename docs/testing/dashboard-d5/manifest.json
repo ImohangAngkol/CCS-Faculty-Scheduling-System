@@ -1,0 +1,1112 @@
+{
+  "schema_version": 1,
+  "milestone": "Dashboard-first D5: validated GEC review handoff",
+  "status": "IMPLEMENTED / SCOPED AUTOMATED VERIFICATION COMPLETE / NATIVE PRINT ACCEPTANCE NOT RUN",
+  "recorded_at": "2026-10-21T21:15:58.552124+08:00",
+  "source_head": "3b83c8bef0a62a151a58e7a5fae770dc94977eec",
+  "branch": "main",
+  "dirty_scope": "Five D5 tracked source/script modifications plus new D5 service/UI/tests/evidence; protected faculty preferences were already dirty and remain unchanged.",
+  "resume": {
+    "existing_implementation_reused": true,
+    "implementation_edits_on_resume": [],
+    "new_files_on_resume": [
+      "docs/dashboard-d5-implementation.md",
+      "docs/testing/dashboard-d5/manifest.json"
+    ],
+    "runtime_tests_repeated_on_resume": false,
+    "reason": "Final runtime evidence was already present and passing; remaining work was report/manifest and static preservation review.",
+    "retained_snapshot_files_verified": 39,
+    "retained_snapshot_sha256": {
+      ".git/index": "c1d2b63d0bc0f3938ffb0e99a9e6dde64a4393285d83d79c48fdccd8ac69e812",
+      "backend/data/faculty_preferences.json": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+      "backend/routers/external_schedules.py": "c57865bfa853a75f481a257c290ae88b1f5c3f5b694dc16845dd1605d08f7dbe",
+      "backend/schemas/external_schedule.py": "8000d020c88361e9c27013aed8062325f5f6c60ae6f0b5b6ce81a7b1ef399e26",
+      "backend/services/external_schedule_handoff_service.py": "f79e7f60a0528e993164f7288ef881f5be74f9b7e6e91070c3b911880bb842ab",
+      "backend/tests/dashboard/test_external_handoff.py": "8dbc6ff138e32822f71557fa7d71d3345c020b55445a14375861922f491e477f",
+      "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/D5-B02-complete-review-handoff.png": "68579e07df63723f23f089be507b32214b7d7db15e400d15937fdb1b5c69937e",
+      "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/D5-B05-mappings-and-safe-text.png": "4cce24f542666678887073724572f1934e44f9788915473c908da468e9c0c25e",
+      "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/browser-results.json": "fd3fce1c0f91508abf81759fd24029811814a6b3d6b73294885d7df58c13a8a1",
+      "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B02-complete-review-handoff.png": "68579e07df63723f23f089be507b32214b7d7db15e400d15937fdb1b5c69937e",
+      "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B05-mappings-and-safe-text.png": "4cce24f542666678887073724572f1934e44f9788915473c908da468e9c0c25e",
+      "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B10-unvalidated-print-blocked.png": "4d08192a30174c943f6701b49abf497f1dff5cc2775eaff074fcecadc044ac62",
+      "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B12-mobile-handoff.png": "0278dbadd3ecf975107f4aff1faebe0e3e283b062c9728d74dd9b81718514e96",
+      "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/browser-results.json": "495f09399240fd4c4ac5ccfab2facbe14aad7e0de9a944a99a95b4afddd7cee0",
+      "docs/testing/dashboard-d5/20261021T205346949820+0800-build/command.json": "0e99bcef7785e05b6a66e9173c6c8b840b582d95c1920341bff1a88cb06274ae",
+      "docs/testing/dashboard-d5/20261021T205346958091+0800-contracts/command.json": "951a73a89f3a06dd75b29f5dd6c9d39dc29b67677fa41a5bb72de7ad88e66b4c",
+      "docs/testing/dashboard-d5/20261021T205347010603+0800-backend/command.json": "1c0554d29e7aca89bb4cfc7ac88a35603427f3859311fbb36b7c1fa04a07dee4",
+      "docs/testing/dashboard-d5/20261021T205349931570+0800-lint/command.json": "d7259988151727672802db599ab1ef59c79664de6a5a19277c6453aeef08f65e",
+      "docs/testing/dashboard-d5/20261021T205425733991+0800-contracts/command.json": "e564fda99ec8229d29bbceff6e79cc88e0067f9f6255a5cae5a84729bcb8feae",
+      "docs/testing/dashboard-d5/20261021T205641205922+0800-browser/command.json": "05cd524994dd45afb5f0019b382fdfa20a9e10c6d71eb3f18ec9cad5ffff4281",
+      "docs/testing/dashboard-d5/20261021T205741622365+0800-d3-browser/command.json": "565d5776529e401f1d99602401e99105c2e6498dc5a8c745e3bb21c220b6492e",
+      "docs/testing/dashboard-d5/20261021T205741644195+0800-d1-browser/command.json": "0628323c1e81735395b62823ed51cd6010f262e1307f0dde9f1ab6b51defd190",
+      "docs/testing/dashboard-d5/20261021T205742793775+0800-d2-browser/command.json": "f5746c47ec9c048867a866d882450932bdf6ab7be9d05cc521532580cccdfc19",
+      "docs/testing/dashboard-d5/20261021T205742876072+0800-d4-browser/command.json": "34e9aba2385d71f77216bda6f3be3f81369e9ebdead35ba1f00698960a180f2d",
+      "docs/testing/dashboard-d5/20261021T205743898331+0800-backend-regressions/command.json": "f21040ff0474b27d161297a7ee6a13493afec3103e2c29719d3131e17d9c8000",
+      "docs/testing/dashboard-d5/20261021T205744036223+0800-ga-browser/command.json": "5287a3814009869d98e78a9c7cf5626dfbe3bc1582988373439cbbe8b6eff137",
+      "docs/testing/dashboard-d5/20261021T210012127069+0800-build/command.json": "5d735dd564c164b979fba47629cea415bce6e4eeaeff97fddeedb1aee1233f02",
+      "docs/testing/dashboard-d5/20261021T210013532677+0800-lint/command.json": "901e0b59bb47d0c67e078283aef6b8af32ba0c70c4d75e7635db1e7f3eafccaa",
+      "docs/testing/dashboard-d5/20261021T210016898305+0800-browser/command.json": "dbfc42f4ad13b10a0147707fbc782c6bd2ea58987c5ede142eaf7148d11dad9b",
+      "docs/testing/dashboard-d5/preservation-baseline.json": "c6c6ea87ad05bf079eeb4591b94ecafb2a09f8825169508c5742baa53c2fe5fc",
+      "docs/testing/dashboard-d5/run_checks.py": "3146e439fd46e27deffc2a26e839badfa802bd94cb739d3f6d856e2fa57b3ab1",
+      "frontend/package.json": "2b7b587fa1752fe8da9b1478615602f2f5f4de842f65b02c15609e264064d852",
+      "frontend/src/api/externalSchedules.ts": "40171be9378f71797ef72549c9d850e8d633b32ff2103eaed08fb46c345762b5",
+      "frontend/src/components/schedule/ExternalScheduleHandoff.tsx": "33fe00d0e52d763c943f85095f80eaf2224c7c6c03d80cbdf93b7b4bfd021801",
+      "frontend/src/components/schedule/ExternalScheduleReview.tsx": "64bd788ac8a50fe499ed1742eb24d9776c04c2c73432542c759a864a4187588e",
+      "frontend/src/components/schedule/externalHandoff.css": "4751de4377f9473beaec7f28172d5f551a525e6a622479d62bac7a4f22269be7",
+      "frontend/tests/externalHandoff.browser.test.mjs": "7034f34f93d6dbd3acc3cd213eed7bc73ff8ff78251928ce794436e0dd9ee69f",
+      "frontend/tests/externalHandoff.fixtures.mjs": "1c75076320c89ab016f791e7cb65962ffaccd024aeacd5a5eb5d396ddcc10b92",
+      "frontend/tests/externalHandoff.test.mjs": "fc813ce12b380cc86f6b90dcc2127044cc30fa06d1b57bea67ec488507029399"
+    },
+    "retained_snapshot_changed": []
+  },
+  "runtime": {
+    "python": "3.14.2",
+    "sqlite": "3.50.4",
+    "node": "v24.11.1",
+    "vite": "8.2.2",
+    "edge": "155.0.4283.62"
+  },
+  "final_results": {
+    "backend": {
+      "passed": 137,
+      "failed": 0,
+      "skipped": 0,
+      "D5": 15,
+      "D4": 32,
+      "D3": 61,
+      "D2": 29,
+      "warnings": 2,
+      "pytest_seconds": 24.21
+    },
+    "backend_regressions": {
+      "passed": 46,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 4,
+      "pytest_seconds": 83.21,
+      "scope": "Existing authentication and GA control, including real HTTP auth wrapper with synthetic SQLite; no evolution."
+    },
+    "frontend_contracts": {
+      "passed": 118,
+      "failed": 0,
+      "skipped": 0,
+      "D5": 8,
+      "existing": 110
+    },
+    "rendered_browser_scenarios": {
+      "D5": 15,
+      "D1": 16,
+      "D2": 13,
+      "D3": 15,
+      "D4": 15,
+      "GA_monitoring": 51,
+      "failed_final": 0,
+      "skipped": 0,
+      "parent_wrappers": 6,
+      "note": "Do not count wrappers as independent scenarios. D5 uses synthetic HTTP, not real backend validation."
+    },
+    "production_build": {
+      "status": "PASS",
+      "modules": 221,
+      "javascript_kB": 876.14,
+      "javascript_gzip_kB": 245.97,
+      "warning": "Existing >500 kB chunk warning"
+    },
+    "focused_eslint": {
+      "status": "PASS",
+      "selected_typescript_files": 5,
+      "findings": 0
+    }
+  },
+  "final_checks": {
+    "build": {
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T21:00:12.127800+08:00",
+      "finished_at": "2026-10-21T21:00:23.473774+08:00",
+      "elapsed_seconds": 11.346,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T210012127069+0800-build/command.json"
+    },
+    "contracts": {
+      "check": "contracts",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalHandoff.test.mjs",
+        "tests/externalReview.test.mjs",
+        "tests/externalSchedules.test.mjs",
+        "tests/mySchedule.test.mjs",
+        "tests/dashboardD1.test.mjs",
+        "tests/auth.test.mjs",
+        "tests/authSessionRace.test.mjs",
+        "tests/preferenceModel.test.mjs",
+        "tests/preferenceApi.test.mjs",
+        "tests/gaMonitoring.test.mjs",
+        "tests/gaRecovery.test.mjs",
+        "tests/gaLogs.test.mjs",
+        "tests/gaHistory.test.mjs",
+        "tests/fitnessReporting.test.mjs",
+        "tests/facultyDisplay.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:54:25.735158+08:00",
+      "finished_at": "2026-10-21T20:54:28.318758+08:00",
+      "elapsed_seconds": 2.584,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205425733991+0800-contracts/command.json"
+    },
+    "backend": {
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_handoff.py",
+        "tests/dashboard/test_external_review.py",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T20:53:47.011425+08:00",
+      "finished_at": "2026-10-21T20:54:15.987267+08:00",
+      "elapsed_seconds": 28.976,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205347010603+0800-backend/command.json"
+    },
+    "lint": {
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/components/schedule/ExternalScheduleHandoff.tsx",
+        "src/api/externalSchedules.ts",
+        "src/pages/admin/ExternalSchedules.tsx",
+        "src/components/schedule/ExternalScheduleReview.tsx",
+        "src/components/schedule/externalReviewModel.ts"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T21:00:13.533983+08:00",
+      "finished_at": "2026-10-21T21:00:22.297405+08:00",
+      "elapsed_seconds": 8.763,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T210013532677+0800-lint/command.json"
+    },
+    "browser": {
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalHandoff.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T21:00:16.898942+08:00",
+      "finished_at": "2026-10-21T21:00:27.395212+08:00",
+      "elapsed_seconds": 10.496,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T210016898305+0800-browser/command.json"
+    },
+    "d3-browser": {
+      "check": "d3-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalSchedules.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:57:41.623321+08:00",
+      "finished_at": "2026-10-21T20:58:24.038529+08:00",
+      "elapsed_seconds": 42.415,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205741622365+0800-d3-browser/command.json"
+    },
+    "d1-browser": {
+      "check": "d1-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/dashboardD1.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:57:41.646709+08:00",
+      "finished_at": "2026-10-21T20:58:26.932652+08:00",
+      "elapsed_seconds": 45.286,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205741644195+0800-d1-browser/command.json"
+    },
+    "d2-browser": {
+      "check": "d2-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/mySchedule.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:57:42.794951+08:00",
+      "finished_at": "2026-10-21T20:58:23.877428+08:00",
+      "elapsed_seconds": 41.082,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205742793775+0800-d2-browser/command.json"
+    },
+    "d4-browser": {
+      "check": "d4-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReview.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:57:42.877117+08:00",
+      "finished_at": "2026-10-21T20:58:26.305641+08:00",
+      "elapsed_seconds": 43.429,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205742876072+0800-d4-browser/command.json"
+    },
+    "backend-regressions": {
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d5-20261021T205743898331+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T20:57:43.902317+08:00",
+      "finished_at": "2026-10-21T20:59:19.784445+08:00",
+      "elapsed_seconds": 95.882,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205743898331+0800-backend-regressions/command.json"
+    },
+    "ga-browser": {
+      "check": "ga-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/gaMonitoring.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:57:44.037148+08:00",
+      "finished_at": "2026-10-21T20:59:31.681444+08:00",
+      "elapsed_seconds": 107.644,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205744036223+0800-ga-browser/command.json"
+    }
+  },
+  "all_command_attempts": [
+    {
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:53:46.950651+08:00",
+      "finished_at": "2026-10-21T20:54:01.886168+08:00",
+      "elapsed_seconds": 14.936,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205346949820+0800-build/command.json"
+    },
+    {
+      "check": "contracts",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalHandoff.test.mjs",
+        "tests/externalReview.test.mjs",
+        "tests/externalSchedules.test.mjs",
+        "tests/mySchedule.test.mjs",
+        "tests/dashboardD1.test.mjs",
+        "tests/auth.test.mjs",
+        "tests/authSessionRace.test.mjs",
+        "tests/preferenceModel.test.mjs",
+        "tests/preferenceApi.test.mjs",
+        "tests/gaMonitoring.test.mjs",
+        "tests/gaRecovery.test.mjs",
+        "tests/gaLogs.test.mjs",
+        "tests/gaHistory.test.mjs",
+        "tests/fitnessReporting.test.mjs",
+        "tests/facultyDisplay.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:53:46.958651+08:00",
+      "finished_at": "2026-10-21T20:53:50.195667+08:00",
+      "elapsed_seconds": 3.237,
+      "exit_code": 1,
+      "path": "docs/testing/dashboard-d5/20261021T205346958091+0800-contracts/command.json"
+    },
+    {
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_handoff.py",
+        "tests/dashboard/test_external_review.py",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T20:53:47.011425+08:00",
+      "finished_at": "2026-10-21T20:54:15.987267+08:00",
+      "elapsed_seconds": 28.976,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205347010603+0800-backend/command.json"
+    },
+    {
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/components/schedule/ExternalScheduleHandoff.tsx",
+        "src/api/externalSchedules.ts",
+        "src/pages/admin/ExternalSchedules.tsx",
+        "src/components/schedule/ExternalScheduleReview.tsx",
+        "src/components/schedule/externalReviewModel.ts"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:53:49.932442+08:00",
+      "finished_at": "2026-10-21T20:53:59.930932+08:00",
+      "elapsed_seconds": 9.999,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205349931570+0800-lint/command.json"
+    },
+    {
+      "check": "contracts",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalHandoff.test.mjs",
+        "tests/externalReview.test.mjs",
+        "tests/externalSchedules.test.mjs",
+        "tests/mySchedule.test.mjs",
+        "tests/dashboardD1.test.mjs",
+        "tests/auth.test.mjs",
+        "tests/authSessionRace.test.mjs",
+        "tests/preferenceModel.test.mjs",
+        "tests/preferenceApi.test.mjs",
+        "tests/gaMonitoring.test.mjs",
+        "tests/gaRecovery.test.mjs",
+        "tests/gaLogs.test.mjs",
+        "tests/gaHistory.test.mjs",
+        "tests/fitnessReporting.test.mjs",
+        "tests/facultyDisplay.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:54:25.735158+08:00",
+      "finished_at": "2026-10-21T20:54:28.318758+08:00",
+      "elapsed_seconds": 2.584,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205425733991+0800-contracts/command.json"
+    },
+    {
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalHandoff.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:56:41.206678+08:00",
+      "finished_at": "2026-10-21T20:58:47.981466+08:00",
+      "elapsed_seconds": 126.775,
+      "exit_code": 1,
+      "path": "docs/testing/dashboard-d5/20261021T205641205922+0800-browser/command.json"
+    },
+    {
+      "check": "d3-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalSchedules.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:57:41.623321+08:00",
+      "finished_at": "2026-10-21T20:58:24.038529+08:00",
+      "elapsed_seconds": 42.415,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205741622365+0800-d3-browser/command.json"
+    },
+    {
+      "check": "d1-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/dashboardD1.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:57:41.646709+08:00",
+      "finished_at": "2026-10-21T20:58:26.932652+08:00",
+      "elapsed_seconds": 45.286,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205741644195+0800-d1-browser/command.json"
+    },
+    {
+      "check": "d2-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/mySchedule.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:57:42.794951+08:00",
+      "finished_at": "2026-10-21T20:58:23.877428+08:00",
+      "elapsed_seconds": 41.082,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205742793775+0800-d2-browser/command.json"
+    },
+    {
+      "check": "d4-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReview.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:57:42.877117+08:00",
+      "finished_at": "2026-10-21T20:58:26.305641+08:00",
+      "elapsed_seconds": 43.429,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205742876072+0800-d4-browser/command.json"
+    },
+    {
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d5-20261021T205743898331+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T20:57:43.902317+08:00",
+      "finished_at": "2026-10-21T20:59:19.784445+08:00",
+      "elapsed_seconds": 95.882,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205743898331+0800-backend-regressions/command.json"
+    },
+    {
+      "check": "ga-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/gaMonitoring.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T20:57:44.037148+08:00",
+      "finished_at": "2026-10-21T20:59:31.681444+08:00",
+      "elapsed_seconds": 107.644,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T205744036223+0800-ga-browser/command.json"
+    },
+    {
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T21:00:12.127800+08:00",
+      "finished_at": "2026-10-21T21:00:23.473774+08:00",
+      "elapsed_seconds": 11.346,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T210012127069+0800-build/command.json"
+    },
+    {
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/components/schedule/ExternalScheduleHandoff.tsx",
+        "src/api/externalSchedules.ts",
+        "src/pages/admin/ExternalSchedules.tsx",
+        "src/components/schedule/ExternalScheduleReview.tsx",
+        "src/components/schedule/externalReviewModel.ts"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T21:00:13.533983+08:00",
+      "finished_at": "2026-10-21T21:00:22.297405+08:00",
+      "elapsed_seconds": 8.763,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T210013532677+0800-lint/command.json"
+    },
+    {
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalHandoff.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T21:00:16.898942+08:00",
+      "finished_at": "2026-10-21T21:00:27.395212+08:00",
+      "elapsed_seconds": 10.496,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d5/20261021T210016898305+0800-browser/command.json"
+    }
+  ],
+  "earlier_failures": [
+    {
+      "path": "docs/testing/dashboard-d5/20261021T205346958091+0800-contracts/command.json",
+      "passed": 117,
+      "failed": 1,
+      "cause": "Synthetic response shared objects with input, invalidating a mutation test; D5 fixture now clones the projection."
+    },
+    {
+      "path": "docs/testing/dashboard-d5/20261021T205641205922+0800-browser/command.json",
+      "scenarios_passed": 7,
+      "scenarios_failed": 8,
+      "parent_failed": 1,
+      "node_pass": 7,
+      "node_fail": 9,
+      "causes": "Generated label encoding and inconsistent error heading corrected. Several later tests failed following earlier failures. Screenshot timeout followed experimental in-memory native PDF-buffer step; exact timeout cause unconfirmed. Final harness omits PDF step and narrows print scope."
+    }
+  ],
+  "browser_runs": [
+    {
+      "path": "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/browser-results.json",
+      "status": "EARLIER FAILED / SUPERSEDED",
+      "browser": "Edg/155.0.4283.62",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+      "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions, no physical printer or native print-dialog claim. CDP native print-to-PDF verified blocked-output notice in memory only.",
+      "scenarios": [
+        {
+          "id": "D5-B01",
+          "title": "preparation waits for fresh server validation before any output",
+          "started_at": "2026-10-21T20:56:43.708+08:00",
+          "finished_at": "2026-10-21T20:56:45.847+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B02",
+          "title": "calendar filters cannot omit invalid or unresolved handoff rows",
+          "started_at": "2026-10-21T20:56:45.850+08:00",
+          "finished_at": "2026-10-21T20:56:46.663+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B03",
+          "title": "source hash fingerprint and import provenance remain visible without a receipt",
+          "started_at": "2026-10-21T20:56:46.664+08:00",
+          "finished_at": "2026-10-21T20:56:46.691+08:00",
+          "result": "FAIL",
+          "error": "The expression evaluated to a falsy value:\n\n  assert.ok(value.includes('REVIEW PREVIEW ? NOT CONFIRMED OR ACTIVE IN GA'))\n"
+        },
+        {
+          "id": "D5-B04",
+          "title": "explicit mapping invalidates the handoff and new output preserves source labels",
+          "started_at": "2026-10-21T20:56:46.692+08:00",
+          "finished_at": "2026-10-21T20:56:46.889+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B05",
+          "title": "HTML-looking imported text renders literally and cannot execute or load markup",
+          "started_at": "2026-10-21T20:56:46.890+08:00",
+          "finished_at": "2026-10-21T20:56:47.322+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B06",
+          "title": "stale preparation discards old output and does not enable printing",
+          "started_at": "2026-10-21T20:56:47.323+08:00",
+          "finished_at": "2026-10-21T20:56:47.821+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B07",
+          "title": "tampered or truncated review response is rejected with no partial output",
+          "started_at": "2026-10-21T20:56:47.823+08:00",
+          "finished_at": "2026-10-21T20:57:02.858+08:00",
+          "result": "FAIL",
+          "error": "Missing page text: Handoff unavailable"
+        },
+        {
+          "id": "D5-B08",
+          "title": "print revalidates again and a stale print attempt never invokes printing",
+          "started_at": "2026-10-21T20:57:02.859+08:00",
+          "finished_at": "2026-10-21T20:57:17.910+08:00",
+          "result": "FAIL",
+          "error": "Missing page text: Handoff unavailable"
+        },
+        {
+          "id": "D5-B09",
+          "title": "print-media layout contains the freshly revalidated complete batch only",
+          "started_at": "2026-10-21T20:57:17.911+08:00",
+          "finished_at": "2026-10-21T20:57:32.954+08:00",
+          "result": "FAIL",
+          "error": "Print interception not called"
+        },
+        {
+          "id": "D5-B10",
+          "title": "ordinary browser printing cannot reuse a prior handoff snapshot",
+          "started_at": "2026-10-21T20:57:32.955+08:00",
+          "finished_at": "2026-10-21T20:57:48.218+08:00",
+          "result": "FAIL",
+          "error": "Browser command timeout: Page.captureScreenshot"
+        },
+        {
+          "id": "D5-B11",
+          "title": "clear during delayed preparation cancels output and printing",
+          "started_at": "2026-10-21T20:57:48.221+08:00",
+          "finished_at": "2026-10-21T20:57:50.319+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B12",
+          "title": "mobile complete handoff remains readable without page overflow",
+          "started_at": "2026-10-21T20:57:50.321+08:00",
+          "finished_at": "2026-10-21T20:58:09.310+08:00",
+          "result": "FAIL",
+          "error": "Complete handoff did not load"
+        },
+        {
+          "id": "D5-B13",
+          "title": "anonymous and faculty users cannot mount handoff or issue preview posts",
+          "started_at": "2026-10-21T20:58:09.313+08:00",
+          "finished_at": "2026-10-21T20:58:25.785+08:00",
+          "result": "FAIL",
+          "error": "Anonymous redirect"
+        },
+        {
+          "id": "D5-B14",
+          "title": "printing errors discard print state and remain actionable",
+          "started_at": "2026-10-21T20:58:25.786+08:00",
+          "finished_at": "2026-10-21T20:58:42.920+08:00",
+          "result": "FAIL",
+          "error": "Missing page text: Handoff unavailable"
+        },
+        {
+          "id": "D5-B15",
+          "title": "reload drops the handoff and no confirmation or GA mutations exist",
+          "started_at": "2026-10-21T20:58:42.920+08:00",
+          "finished_at": "2026-10-21T20:58:44.693+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": [],
+      "activation_or_GA_mutations": 0,
+      "csv_raw_bytes_verified": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/browser-results.json",
+      "status": "FINAL PASS",
+      "browser": "Edg/155.0.4283.62",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+      "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+      "scenarios": [
+        {
+          "id": "D5-B01",
+          "title": "preparation waits for fresh server validation before any output",
+          "started_at": "2026-10-21T21:00:19.151+08:00",
+          "finished_at": "2026-10-21T21:00:21.073+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B02",
+          "title": "calendar filters cannot omit invalid or unresolved handoff rows",
+          "started_at": "2026-10-21T21:00:21.075+08:00",
+          "finished_at": "2026-10-21T21:00:21.502+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B03",
+          "title": "source hash fingerprint and import provenance remain visible without a receipt",
+          "started_at": "2026-10-21T21:00:21.503+08:00",
+          "finished_at": "2026-10-21T21:00:21.513+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B04",
+          "title": "explicit mapping invalidates the handoff and new output preserves source labels",
+          "started_at": "2026-10-21T21:00:21.513+08:00",
+          "finished_at": "2026-10-21T21:00:21.676+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B05",
+          "title": "HTML-looking imported text renders literally and cannot execute or load markup",
+          "started_at": "2026-10-21T21:00:21.677+08:00",
+          "finished_at": "2026-10-21T21:00:21.850+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B06",
+          "title": "stale preparation discards old output and does not enable printing",
+          "started_at": "2026-10-21T21:00:21.851+08:00",
+          "finished_at": "2026-10-21T21:00:22.108+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B07",
+          "title": "tampered or truncated review response is rejected with no partial output",
+          "started_at": "2026-10-21T21:00:22.109+08:00",
+          "finished_at": "2026-10-21T21:00:22.288+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B08",
+          "title": "print revalidates again and a stale print attempt never invokes printing",
+          "started_at": "2026-10-21T21:00:22.289+08:00",
+          "finished_at": "2026-10-21T21:00:22.394+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B09",
+          "title": "print-media layout contains the freshly revalidated complete batch only",
+          "started_at": "2026-10-21T21:00:22.394+08:00",
+          "finished_at": "2026-10-21T21:00:22.495+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B10",
+          "title": "ordinary browser printing cannot reuse a prior handoff snapshot",
+          "started_at": "2026-10-21T21:00:22.496+08:00",
+          "finished_at": "2026-10-21T21:00:22.590+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B11",
+          "title": "clear during delayed preparation cancels output and printing",
+          "started_at": "2026-10-21T21:00:22.591+08:00",
+          "finished_at": "2026-10-21T21:00:22.760+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B12",
+          "title": "mobile complete handoff remains readable without page overflow",
+          "started_at": "2026-10-21T21:00:22.761+08:00",
+          "finished_at": "2026-10-21T21:00:23.123+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B13",
+          "title": "anonymous and faculty users cannot mount handoff or issue preview posts",
+          "started_at": "2026-10-21T21:00:23.123+08:00",
+          "finished_at": "2026-10-21T21:00:23.613+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B14",
+          "title": "printing errors discard print state and remain actionable",
+          "started_at": "2026-10-21T21:00:23.613+08:00",
+          "finished_at": "2026-10-21T21:00:24.107+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D5-B15",
+          "title": "reload drops the handoff and no confirmation or GA mutations exist",
+          "started_at": "2026-10-21T21:00:24.107+08:00",
+          "finished_at": "2026-10-21T21:00:24.310+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": [],
+      "activation_or_GA_mutations": 0,
+      "csv_raw_bytes_verified": true
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "D5-B02-complete-review-handoff.png",
+      "captured_at": "2026-10-21T20:56:46.636+08:00",
+      "url": "http://localhost:58570/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/D5-B02-complete-review-handoff.png",
+      "sha256": "68579e07df63723f23f089be507b32214b7d7db15e400d15937fdb1b5c69937e",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "status": "SUPERSEDED",
+      "scope": "Actual React/Edge with fictional HTTP fixtures. Print invocation intercepted; print-media screenshot is the blocked ordinary-print notice, not validated paginated paper/PDF."
+    },
+    {
+      "name": "D5-B05-mappings-and-safe-text.png",
+      "captured_at": "2026-10-21T20:56:47.264+08:00",
+      "url": "http://localhost:58570/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/D5-B05-mappings-and-safe-text.png",
+      "sha256": "4cce24f542666678887073724572f1934e44f9788915473c908da468e9c0c25e",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "status": "SUPERSEDED",
+      "scope": "Actual React/Edge with fictional HTTP fixtures. Print invocation intercepted; print-media screenshot is the blocked ordinary-print notice, not validated paginated paper/PDF."
+    },
+    {
+      "name": "D5-B02-complete-review-handoff.png",
+      "captured_at": "2026-10-21T21:00:21.495+08:00",
+      "url": "http://localhost:61409/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B02-complete-review-handoff.png",
+      "sha256": "68579e07df63723f23f089be507b32214b7d7db15e400d15937fdb1b5c69937e",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "status": "FINAL",
+      "scope": "Actual React/Edge with fictional HTTP fixtures. Print invocation intercepted; print-media screenshot is the blocked ordinary-print notice, not validated paginated paper/PDF."
+    },
+    {
+      "name": "D5-B05-mappings-and-safe-text.png",
+      "captured_at": "2026-10-21T21:00:21.846+08:00",
+      "url": "http://localhost:61409/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B05-mappings-and-safe-text.png",
+      "sha256": "4cce24f542666678887073724572f1934e44f9788915473c908da468e9c0c25e",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "status": "FINAL",
+      "scope": "Actual React/Edge with fictional HTTP fixtures. Print invocation intercepted; print-media screenshot is the blocked ordinary-print notice, not validated paginated paper/PDF."
+    },
+    {
+      "name": "D5-B10-unvalidated-print-blocked.png",
+      "captured_at": "2026-10-21T21:00:22.580+08:00",
+      "url": "http://localhost:61409/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B10-unvalidated-print-blocked.png",
+      "sha256": "4d08192a30174c943f6701b49abf497f1dff5cc2775eaff074fcecadc044ac62",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "status": "FINAL",
+      "scope": "Actual React/Edge with fictional HTTP fixtures. Print invocation intercepted; print-media screenshot is the blocked ordinary-print notice, not validated paginated paper/PDF."
+    },
+    {
+      "name": "D5-B12-mobile-handoff.png",
+      "captured_at": "2026-10-21T21:00:23.104+08:00",
+      "url": "http://localhost:61409/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B12-mobile-handoff.png",
+      "sha256": "0278dbadd3ecf975107f4aff1faebe0e3e283b062c9728d74dd9b81718514e96",
+      "image_dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "status": "FINAL",
+      "scope": "Actual React/Edge with fictional HTTP fixtures. Print invocation intercepted; print-media screenshot is the blocked ordinary-print notice, not validated paginated paper/PDF."
+    }
+  ],
+  "verification_boundary": {
+    "backend": "Actual FastAPI ASGI with real session/admin/Origin/CSRF dependencies, synthetic SQLite identities and fictional metadata. No principal bypass.",
+    "browser": "Actual React/Edge, fictional synthetic HTTP API. No live D5 backend/browser end-to-end claim.",
+    "print": "Intercepted window.print verifies fresh complete synchronous DOM and print-media styles; blocked ordinary-print screenshot. Native dialog, paper, PDF/multi-page pagination and nonblocking print-call behavior not verified. Earlier failed run PDF scope string is not acceptance.",
+    "database": "No PostgreSQL operations or live migrations. Existing regression machinery uses SQLite/offline SQL only. Seventeen Phase 4C PostgreSQL cases remain paused/unverified.",
+    "GA": "No generation, evolution, fitness changes or external-constraint activation."
+  },
+  "static_checks": {
+    "python_ast": "PASS",
+    "evidence_json": "PASS",
+    "report_relative_links": "PASS",
+    "git_added_diff_whitespace": "PASS",
+    "screenshot_visual_privacy": "PASS",
+    "credential_private_key_database_url_scan": "No matches detected in new evidence/source; synthetic test constants and public loopback URLs are not production credentials."
+  },
+  "bounds": {
+    "body_bytes": 2097152,
+    "receipt_characters": 1600000,
+    "rows": 200,
+    "section_mapping_slots": 12
+  },
+  "preservation": {
+    "baseline_path": "docs/testing/dashboard-d5/preservation-baseline.json",
+    "baseline_files": 587,
+    "unchanged_files": 582,
+    "modified_expected": {
+      "backend/routers/external_schedules.py": {
+        "before": "c984d4cf915e0199b2d9b9595cf481b91e6389080c8697526d4c1acfd151e0d1",
+        "after": "c57865bfa853a75f481a257c290ae88b1f5c3f5b694dc16845dd1605d08f7dbe"
+      },
+      "backend/schemas/external_schedule.py": {
+        "before": "ea09167e37b4c2042ef3c47dc026d0e0088079706fc0c3928cf20632f22a3201",
+        "after": "8000d020c88361e9c27013aed8062325f5f6c60ae6f0b5b6ce81a7b1ef399e26"
+      },
+      "frontend/package.json": {
+        "before": "415bc1681a97c808663a340e307fe88ee3accf9a50235cd9b5689618c820666a",
+        "after": "2b7b587fa1752fe8da9b1478615602f2f5f4de842f65b02c15609e264064d852"
+      },
+      "frontend/src/api/externalSchedules.ts": {
+        "before": "491ac2a6a467eb9b59699df120fe9bf9202d99ac5d15d9748c5f93e6d347c280",
+        "after": "40171be9378f71797ef72549c9d850e8d633b32ff2103eaed08fb46c345762b5"
+      },
+      "frontend/src/components/schedule/ExternalScheduleReview.tsx": {
+        "before": "2b823a337ea736571e7a07de5adbd0ebe4f9271fa6e9c36f5cc97905681dddad",
+        "after": "64bd788ac8a50fe499ed1742eb24d9776c04c2c73432542c759a864a4187588e"
+      }
+    },
+    "missing": [],
+    "unexpected_changes": [],
+    "protected_preferences_sha256": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+    "protected_preferences_unchanged": true,
+    "git_index_sha256": "c1d2b63d0bc0f3938ffb0e99a9e6dde64a4393285d83d79c48fdccd8ac69e812",
+    "git_index_unchanged": true,
+    "HEAD_unchanged": true,
+    "staged_committed_pushed": false,
+    "PostgreSQL_operations": false,
+    "existing_GA_inputs_data_schedules_history_Phase4C_and_evidence_preserved": true
+  },
+  "created_files": [
+    "backend/services/external_schedule_handoff_service.py",
+    "backend/tests/dashboard/test_external_handoff.py",
+    "docs/dashboard-d5-implementation.md",
+    "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/D5-B02-complete-review-handoff.png",
+    "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/D5-B05-mappings-and-safe-text.png",
+    "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/browser-results.json",
+    "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B02-complete-review-handoff.png",
+    "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B05-mappings-and-safe-text.png",
+    "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B10-unvalidated-print-blocked.png",
+    "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B12-mobile-handoff.png",
+    "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/browser-results.json",
+    "docs/testing/dashboard-d5/20261021T205346949820+0800-build/command.json",
+    "docs/testing/dashboard-d5/20261021T205346958091+0800-contracts/command.json",
+    "docs/testing/dashboard-d5/20261021T205347010603+0800-backend/command.json",
+    "docs/testing/dashboard-d5/20261021T205349931570+0800-lint/command.json",
+    "docs/testing/dashboard-d5/20261021T205425733991+0800-contracts/command.json",
+    "docs/testing/dashboard-d5/20261021T205641205922+0800-browser/command.json",
+    "docs/testing/dashboard-d5/20261021T205741622365+0800-d3-browser/command.json",
+    "docs/testing/dashboard-d5/20261021T205741644195+0800-d1-browser/command.json",
+    "docs/testing/dashboard-d5/20261021T205742793775+0800-d2-browser/command.json",
+    "docs/testing/dashboard-d5/20261021T205742876072+0800-d4-browser/command.json",
+    "docs/testing/dashboard-d5/20261021T205743898331+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-d5/20261021T205744036223+0800-ga-browser/command.json",
+    "docs/testing/dashboard-d5/20261021T210012127069+0800-build/command.json",
+    "docs/testing/dashboard-d5/20261021T210013532677+0800-lint/command.json",
+    "docs/testing/dashboard-d5/20261021T210016898305+0800-browser/command.json",
+    "docs/testing/dashboard-d5/preservation-baseline.json",
+    "docs/testing/dashboard-d5/run_checks.py",
+    "frontend/src/components/schedule/ExternalScheduleHandoff.tsx",
+    "frontend/src/components/schedule/externalHandoff.css",
+    "frontend/tests/externalHandoff.browser.test.mjs",
+    "frontend/tests/externalHandoff.fixtures.mjs",
+    "frontend/tests/externalHandoff.test.mjs",
+    "docs/testing/dashboard-d5/manifest.json"
+  ],
+  "modified_files": [
+    "backend/routers/external_schedules.py",
+    "backend/schemas/external_schedule.py",
+    "frontend/package.json",
+    "frontend/src/api/externalSchedules.ts",
+    "frontend/src/components/schedule/ExternalScheduleReview.tsx"
+  ],
+  "artifact_sha256": {
+    "backend/routers/external_schedules.py": "c57865bfa853a75f481a257c290ae88b1f5c3f5b694dc16845dd1605d08f7dbe",
+    "backend/schemas/external_schedule.py": "8000d020c88361e9c27013aed8062325f5f6c60ae6f0b5b6ce81a7b1ef399e26",
+    "backend/services/external_schedule_handoff_service.py": "f79e7f60a0528e993164f7288ef881f5be74f9b7e6e91070c3b911880bb842ab",
+    "backend/tests/dashboard/test_external_handoff.py": "8dbc6ff138e32822f71557fa7d71d3345c020b55445a14375861922f491e477f",
+    "docs/dashboard-d5-implementation.md": "0d436cc531ef82cdfc96e49933f2415b1c28c4c5bdcd3e0a91bc6c589148e213",
+    "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/D5-B02-complete-review-handoff.png": "68579e07df63723f23f089be507b32214b7d7db15e400d15937fdb1b5c69937e",
+    "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/D5-B05-mappings-and-safe-text.png": "4cce24f542666678887073724572f1934e44f9788915473c908da468e9c0c25e",
+    "docs/screenshots/dashboard-d5/20261021T205641205922+0800-browser/browser-results.json": "fd3fce1c0f91508abf81759fd24029811814a6b3d6b73294885d7df58c13a8a1",
+    "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B02-complete-review-handoff.png": "68579e07df63723f23f089be507b32214b7d7db15e400d15937fdb1b5c69937e",
+    "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B05-mappings-and-safe-text.png": "4cce24f542666678887073724572f1934e44f9788915473c908da468e9c0c25e",
+    "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B10-unvalidated-print-blocked.png": "4d08192a30174c943f6701b49abf497f1dff5cc2775eaff074fcecadc044ac62",
+    "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/D5-B12-mobile-handoff.png": "0278dbadd3ecf975107f4aff1faebe0e3e283b062c9728d74dd9b81718514e96",
+    "docs/screenshots/dashboard-d5/20261021T210016898305+0800-browser/browser-results.json": "495f09399240fd4c4ac5ccfab2facbe14aad7e0de9a944a99a95b4afddd7cee0",
+    "docs/testing/dashboard-d5/20261021T205346949820+0800-build/command.json": "0e99bcef7785e05b6a66e9173c6c8b840b582d95c1920341bff1a88cb06274ae",
+    "docs/testing/dashboard-d5/20261021T205346958091+0800-contracts/command.json": "951a73a89f3a06dd75b29f5dd6c9d39dc29b67677fa41a5bb72de7ad88e66b4c",
+    "docs/testing/dashboard-d5/20261021T205347010603+0800-backend/command.json": "1c0554d29e7aca89bb4cfc7ac88a35603427f3859311fbb36b7c1fa04a07dee4",
+    "docs/testing/dashboard-d5/20261021T205349931570+0800-lint/command.json": "d7259988151727672802db599ab1ef59c79664de6a5a19277c6453aeef08f65e",
+    "docs/testing/dashboard-d5/20261021T205425733991+0800-contracts/command.json": "e564fda99ec8229d29bbceff6e79cc88e0067f9f6255a5cae5a84729bcb8feae",
+    "docs/testing/dashboard-d5/20261021T205641205922+0800-browser/command.json": "05cd524994dd45afb5f0019b382fdfa20a9e10c6d71eb3f18ec9cad5ffff4281",
+    "docs/testing/dashboard-d5/20261021T205741622365+0800-d3-browser/command.json": "565d5776529e401f1d99602401e99105c2e6498dc5a8c745e3bb21c220b6492e",
+    "docs/testing/dashboard-d5/20261021T205741644195+0800-d1-browser/command.json": "0628323c1e81735395b62823ed51cd6010f262e1307f0dde9f1ab6b51defd190",
+    "docs/testing/dashboard-d5/20261021T205742793775+0800-d2-browser/command.json": "f5746c47ec9c048867a866d882450932bdf6ab7be9d05cc521532580cccdfc19",
+    "docs/testing/dashboard-d5/20261021T205742876072+0800-d4-browser/command.json": "34e9aba2385d71f77216bda6f3be3f81369e9ebdead35ba1f00698960a180f2d",
+    "docs/testing/dashboard-d5/20261021T205743898331+0800-backend-regressions/command.json": "f21040ff0474b27d161297a7ee6a13493afec3103e2c29719d3131e17d9c8000",
+    "docs/testing/dashboard-d5/20261021T205744036223+0800-ga-browser/command.json": "5287a3814009869d98e78a9c7cf5626dfbe3bc1582988373439cbbe8b6eff137",
+    "docs/testing/dashboard-d5/20261021T210012127069+0800-build/command.json": "5d735dd564c164b979fba47629cea415bce6e4eeaeff97fddeedb1aee1233f02",
+    "docs/testing/dashboard-d5/20261021T210013532677+0800-lint/command.json": "901e0b59bb47d0c67e078283aef6b8af32ba0c70c4d75e7635db1e7f3eafccaa",
+    "docs/testing/dashboard-d5/20261021T210016898305+0800-browser/command.json": "dbfc42f4ad13b10a0147707fbc782c6bd2ea58987c5ede142eaf7148d11dad9b",
+    "docs/testing/dashboard-d5/preservation-baseline.json": "c6c6ea87ad05bf079eeb4591b94ecafb2a09f8825169508c5742baa53c2fe5fc",
+    "docs/testing/dashboard-d5/run_checks.py": "3146e439fd46e27deffc2a26e839badfa802bd94cb739d3f6d856e2fa57b3ab1",
+    "frontend/package.json": "2b7b587fa1752fe8da9b1478615602f2f5f4de842f65b02c15609e264064d852",
+    "frontend/src/api/externalSchedules.ts": "40171be9378f71797ef72549c9d850e8d633b32ff2103eaed08fb46c345762b5",
+    "frontend/src/components/schedule/ExternalScheduleHandoff.tsx": "33fe00d0e52d763c943f85095f80eaf2224c7c6c03d80cbdf93b7b4bfd021801",
+    "frontend/src/components/schedule/ExternalScheduleReview.tsx": "64bd788ac8a50fe499ed1742eb24d9776c04c2c73432542c759a864a4187588e",
+    "frontend/src/components/schedule/externalHandoff.css": "4751de4377f9473beaec7f28172d5f551a525e6a622479d62bac7a4f22269be7",
+    "frontend/tests/externalHandoff.browser.test.mjs": "7034f34f93d6dbd3acc3cd213eed7bc73ff8ff78251928ce794436e0dd9ee69f",
+    "frontend/tests/externalHandoff.fixtures.mjs": "1c75076320c89ab016f791e7cb65962ffaccd024aeacd5a5eb5d396ddcc10b92",
+    "frontend/tests/externalHandoff.test.mjs": "fc813ce12b380cc86f6b90dcc2127044cc30fa06d1b57bea67ec488507029399"
+  },
+  "manifest_self_hash": "Excluded to avoid self-reference.",
+  "limitations": [
+    "Native Edge print-dialog and physical-printer/multi-page PDF acceptance not performed; cleanup assumes synchronous window.print.",
+    "No D5 browser-to-real-FastAPI/production database acceptance.",
+    "Academic dates/shared-resource policies and authoritative metadata coverage remain incomplete.",
+    "Receipts are process-bound; no durable confirmation, revision history or GA integration.",
+    "No maximum-200-row pagination, full-project lint, full GA suite or performance qualification."
+  ],
+  "recommended_next": "Separately approved durable external-confirmation readiness, authority/calendar/resource policy and minimal persistence scope; isolated PostgreSQL acceptance needs explicit approval. GA fixed-meeting integration only after durable confirmation acceptance. No next milestone started."
+}

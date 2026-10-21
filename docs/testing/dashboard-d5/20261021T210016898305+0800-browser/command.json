@@ -1,0 +1,17 @@
+{
+  "check": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalHandoff.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T21:00:16.898942+08:00",
+  "finished_at": "2026-10-21T21:00:27.395212+08:00",
+  "elapsed_seconds": 10.496,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D5 external review browser acceptance with synthetic HTTP responses\n  \u2714 D5-B01 preparation waits for fresh server validation before any output (1923.5561ms)\n  \u2714 D5-B02 calendar filters cannot omit invalid or unresolved handoff rows (427.3277ms)\n  \u2714 D5-B03 source hash fingerprint and import provenance remain visible without a receipt (10.178ms)\n  \u2714 D5-B04 explicit mapping invalidates the handoff and new output preserves source labels (163.0678ms)\n  \u2714 D5-B05 HTML-looking imported text renders literally and cannot execute or load markup (173.2041ms)\n  \u2714 D5-B06 stale preparation discards old output and does not enable printing (257.5383ms)\n  \u2714 D5-B07 tampered or truncated review response is rejected with no partial output (179.4382ms)\n  \u2714 D5-B08 print revalidates again and a stale print attempt never invokes printing (104.8386ms)\n  \u2714 D5-B09 print-media layout contains the freshly revalidated complete batch only (100.8532ms)\n  \u2714 D5-B10 ordinary browser printing cannot reuse a prior handoff snapshot (95.0918ms)\n  \u2714 D5-B11 clear during delayed preparation cancels output and printing (168.8297ms)\n  \u2714 D5-B12 mobile complete handoff remains readable without page overflow (362.2148ms)\n  \u2714 D5-B13 anonymous and faculty users cannot mount handoff or issue preview posts (489.8344ms)\n  \u2714 D5-B14 printing errors discard print state and remain actionable (493.9292ms)\n  \u2714 D5-B15 reload drops the handoff and no confirmation or GA mutations exist (202.6822ms)\n\u2714 D5 external review browser acceptance with synthetic HTTP responses (6706.6039ms)\n\u2139 tests 16\n\u2139 suites 0\n\u2139 pass 16\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 10414.1063\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

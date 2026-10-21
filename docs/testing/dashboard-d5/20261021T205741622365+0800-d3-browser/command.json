@@ -1,0 +1,17 @@
+{
+  "check": "d3-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalSchedules.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T20:57:41.623321+08:00",
+  "finished_at": "2026-10-21T20:58:24.038529+08:00",
+  "elapsed_seconds": 42.415,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D3 external intake browser acceptance with synthetic HTTP responses\n  \u2714 D3-B01 metadata loading, honest empty state and no confirm/lock actions (12022.3654ms)\n  \u2714 D3-B02 manual draft entry, multiple fields, source notes and local edit (509.9195ms)\n  \u2714 D3-B03 server review findings are shown without persisted or active claims (164.2394ms)\n  \u2714 D3-B04 invalid rows show required-field discrepancies with edit and re-review (615.8586ms)\n  \u2714 D3-B05 duplicate and section conflict rows retain related source references (762.5855ms)\n  \u2714 D3-B06 actual CSV selection uploads raw bytes and displays source hash/row (1074.653ms)\n  \u2714 D3-B07 unsafe-file rejection clears prior preview and supports retry (362.9983ms)\n  \u2714 D3-B08 unsupported extension is rejected before upload (234.475ms)\n  \u2714 D3-B09 metadata unavailability retries without fabricating references (762.7257ms)\n  \u2714 D3-B10 permission-denied preview never claims acceptance (1120.7869ms)\n  \u2714 D3-B11 anonymous and faculty routes do not fetch administrator preview metadata (942.5476ms)\n  \u2714 D3-B12 mobile intake form and review table stay within viewport (1177.9028ms)\n  \u2714 D3-B13 refresh discards temporary work and template is explicitly fictional (766.7417ms)\n  \u2714 D3-B14 clearing during a delayed preview prevents stale results reappearing (1781.6862ms)\n  \u2714 D3-B15 unresolved section room and instructor findings remain explicit (1272.9423ms)\n\u2714 D3 external intake browser acceptance with synthetic HTTP responses (40947.7816ms)\n\u2139 tests 16\n\u2139 suites 0\n\u2139 pass 16\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 42227.0639\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

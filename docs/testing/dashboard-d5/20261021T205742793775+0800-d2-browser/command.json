@@ -1,0 +1,17 @@
+{
+  "check": "d2-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/mySchedule.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T20:57:42.794951+08:00",
+  "finished_at": "2026-10-21T20:58:23.877428+08:00",
+  "elapsed_seconds": 41.082,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D2 own timetable browser acceptance with synthetic HTTP responses\n  \u2714 D2-B01 loading, own lecture/lab timetable and proposal provenance (9398.4841ms)\n  \u2714 D2-B02 refresh retains source and only own rows (761.9339ms)\n  \u2714 D2-B03 missing completed source is distinct from an empty own schedule (1183.5305ms)\n  \u2714 D2-B04 unavailable source clears old rows and supports retry (2009.1555ms)\n  \u2714 D2-B05 stale proposal shows review status and refresh recovers (1527.8452ms)\n  \u2714 D2-B06 permission denial never displays assignments (746.384ms)\n  \u2714 D2-B07 missing binding performs no timetable request (1148.8045ms)\n  \u2714 D2-B08 mismatched server identity is rejected before rendering its rows (555.9272ms)\n  \u2714 D2-B09 anonymous and wrong-role routes do not fetch the timetable (744.1485ms)\n  \u2714 D2-B10 expired synthetic session redirects to login (411.9319ms)\n  \u2714 D2-B11 unknown source title and room are not fabricated (441.7184ms)\n  \u2714 D2-B12 mobile timetable remains contained and assignment details readable (796.2192ms)\n  \u2714 D2-B13 leaving during a delayed read cannot inject stale assignments (1497.4204ms)\n\u2714 D2 own timetable browser acceptance with synthetic HTTP responses (39346.9156ms)\n\u2139 tests 14\n\u2139 suites 0\n\u2139 pass 14\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 40779.8095\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

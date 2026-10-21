@@ -1,0 +1,17 @@
+{
+  "check": "d1-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/dashboardD1.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T20:57:41.646709+08:00",
+  "finished_at": "2026-10-21T20:58:26.932652+08:00",
+  "elapsed_seconds": 45.286,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D1 rendered dashboard acceptance with synthetic HTTP responses\n  \u2714 D1-B01 catalog loading, real component details and unsupported metadata (11990.3121ms)\n  \u2714 D1-B02 code/title search, no matches and clear (50.8934ms)\n  \u2714 D1-B03 genuine empty catalog (562.494ms)\n  \u2714 D1-B04 catalog error and successful retry (989.9451ms)\n  \u2714 D1-B05 catalog metadata denial is actionable (793.1804ms)\n  \u2714 D1-B06 faculty welcome, honest feature status and navigation (1671.5708ms)\n  \u2714 D1-B07 profile loading, identity and read-only academic details survive refresh (2177.034ms)\n  \u2714 D1-B08 empty academic fields remain honest unknowns (1568.6881ms)\n  \u2714 D1-B09 missing metadata preserves account binding (1829.6466ms)\n  \u2714 D1-B10 mismatched identity is never rendered (1800.6122ms)\n  \u2714 D1-B11 profile service failure and retry (1242.0372ms)\n  \u2714 D1-B12 missing binding makes no faculty lookup (2256.8344ms)\n  \u2714 D1-B13 role-denied routes never mount protected metadata pages (1730.8399ms)\n  \u2714 D1-B14 anonymous access redirects and metadata 401 expires the session (3302.3432ms)\n  \u2714 D1-B15 mobile catalog, dashboard and profile fit the viewport (1606.2896ms)\n  \u2714 D1-B16 metadata denial does not expose academic details (382.4195ms)\n\u2714 D1 rendered dashboard acceptance with synthetic HTTP responses (43282.3203ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 45070.5246\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}
