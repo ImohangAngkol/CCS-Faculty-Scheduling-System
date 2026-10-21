@@ -46,6 +46,7 @@ import SubjectManagement from "../pages/admin/SubjectManagement";
 import FacultyDashboard from "../pages/faculty/Dashboard";
 import FacultyProfile from "../pages/faculty/Profile";
 import FacultyMySchedule from "../pages/faculty/MySchedule";
+import ExternalSchedules from "../pages/admin/ExternalSchedules";
 
 
 // =============================================
@@ -165,6 +166,7 @@ export default function AppRoutes() {
           />
           <Route path="history" element={<GenerationHistory />} />
           <Route path="accounts" element={<Accounts />} />
+          <Route path="external-schedules" element={<ExternalSchedules />} />
 
         </Route>
 

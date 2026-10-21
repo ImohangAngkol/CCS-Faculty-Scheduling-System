@@ -17,6 +17,7 @@ import {
 
 
 const adminItems = [
+  {label: "External/GEC Schedules", path: "/admin/external-schedules"},
   {label: "Accounts", path: "/admin/accounts"},
 
   {
@@ -96,6 +97,8 @@ export default function AdminLayout() {
 
       case "/admin/subjects":
         return "Subject Management";
+      case "/admin/external-schedules":
+        return "External/GEC Schedules";
 
       case "/admin/preferences":
         return "Faculty Preferences";
