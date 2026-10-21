@@ -1,0 +1,20 @@
+{
+  "check": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/api/externalSchedules.ts",
+    "src/pages/admin/ExternalSchedules.tsx",
+    "src/components/schedule/ExternalScheduleReview.tsx",
+    "src/components/schedule/externalReviewModel.ts"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T19:34:16.872677+08:00",
+  "finished_at": "2026-10-21T19:34:25.064342+08:00",
+  "elapsed_seconds": 8.192,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

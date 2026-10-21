@@ -1,0 +1,17 @@
+{
+  "check": "d1-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/dashboardD1.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T18:09:42.368976+08:00",
+  "finished_at": "2026-10-21T18:09:55.360834+08:00",
+  "elapsed_seconds": 12.992,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D1 rendered dashboard acceptance with synthetic HTTP responses\n  \u2714 D1-B01 catalog loading, real component details and unsupported metadata (1916.2779ms)\n  \u2714 D1-B02 code/title search, no matches and clear (34.7239ms)\n  \u2714 D1-B03 genuine empty catalog (284.0818ms)\n  \u2714 D1-B04 catalog error and successful retry (304.376ms)\n  \u2714 D1-B05 catalog metadata denial is actionable (273.7988ms)\n  \u2714 D1-B06 faculty welcome, honest feature status and navigation (633.2277ms)\n  \u2714 D1-B07 profile loading, identity and read-only academic details survive refresh (521.7156ms)\n  \u2714 D1-B08 empty academic fields remain honest unknowns (279.2753ms)\n  \u2714 D1-B09 missing metadata preserves account binding (292.4199ms)\n  \u2714 D1-B10 mismatched identity is never rendered (224.699ms)\n  \u2714 D1-B11 profile service failure and retry (351.5411ms)\n  \u2714 D1-B12 missing binding makes no faculty lookup (348.8299ms)\n  \u2714 D1-B13 role-denied routes never mount protected metadata pages (445.2747ms)\n  \u2714 D1-B14 anonymous access redirects and metadata 401 expires the session (904.3903ms)\n  \u2714 D1-B15 mobile catalog, dashboard and profile fit the viewport (827.1984ms)\n  \u2714 D1-B16 metadata denial does not expose academic details (303.1926ms)\n\u2714 D1 rendered dashboard acceptance with synthetic HTTP responses (9771.6787ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 12864.3075\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

@@ -1,0 +1,155 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/Edge with synthetic HTTP responses; no FastAPI authorization or XLSX parser claim",
+  "scenarios": [
+    {
+      "id": "D3-B01",
+      "title": "metadata loading, honest empty state and no confirm/lock actions",
+      "started_at": "2026-10-21T18:11:10.736+08:00",
+      "finished_at": "2026-10-21T18:11:12.096+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B02",
+      "title": "manual draft entry, multiple fields, source notes and local edit",
+      "started_at": "2026-10-21T18:11:12.100+08:00",
+      "finished_at": "2026-10-21T18:11:12.430+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B03",
+      "title": "server review findings are shown without persisted or active claims",
+      "started_at": "2026-10-21T18:11:12.430+08:00",
+      "finished_at": "2026-10-21T18:11:12.620+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B04",
+      "title": "invalid rows show required-field discrepancies with edit and re-review",
+      "started_at": "2026-10-21T18:11:12.621+08:00",
+      "finished_at": "2026-10-21T18:11:12.875+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B05",
+      "title": "duplicate and section conflict rows retain related source references",
+      "started_at": "2026-10-21T18:11:12.876+08:00",
+      "finished_at": "2026-10-21T18:11:13.096+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B06",
+      "title": "actual CSV selection uploads raw bytes and displays source hash/row",
+      "started_at": "2026-10-21T18:11:13.097+08:00",
+      "finished_at": "2026-10-21T18:11:13.700+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B07",
+      "title": "unsafe-file rejection clears prior preview and supports retry",
+      "started_at": "2026-10-21T18:11:13.701+08:00",
+      "finished_at": "2026-10-21T18:11:13.876+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B08",
+      "title": "unsupported extension is rejected before upload",
+      "started_at": "2026-10-21T18:11:13.877+08:00",
+      "finished_at": "2026-10-21T18:11:13.908+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B09",
+      "title": "metadata unavailability retries without fabricating references",
+      "started_at": "2026-10-21T18:11:13.909+08:00",
+      "finished_at": "2026-10-21T18:11:14.245+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B10",
+      "title": "permission-denied preview never claims acceptance",
+      "started_at": "2026-10-21T18:11:14.246+08:00",
+      "finished_at": "2026-10-21T18:11:14.444+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B11",
+      "title": "anonymous and faculty routes do not fetch administrator preview metadata",
+      "started_at": "2026-10-21T18:11:14.444+08:00",
+      "finished_at": "2026-10-21T18:11:14.844+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B12",
+      "title": "mobile intake form and review table stay within viewport",
+      "started_at": "2026-10-21T18:11:14.845+08:00",
+      "finished_at": "2026-10-21T18:11:15.320+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B13",
+      "title": "refresh discards temporary work and template is explicitly fictional",
+      "started_at": "2026-10-21T18:11:15.321+08:00",
+      "finished_at": "2026-10-21T18:11:15.536+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B14",
+      "title": "clearing during a delayed preview prevents stale results reappearing",
+      "started_at": "2026-10-21T18:11:15.536+08:00",
+      "finished_at": "2026-10-21T18:11:15.901+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D3-B15",
+      "title": "unresolved section room and instructor findings remain explicit",
+      "started_at": "2026-10-21T18:11:15.901+08:00",
+      "finished_at": "2026-10-21T18:11:16.088+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D3-B02-manual-intake.png",
+      "captured_at": "2026-10-21T18:11:12.427+08:00",
+      "url": "http://localhost:59273/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D3-B03-review-findings.png",
+      "captured_at": "2026-10-21T18:11:12.616+08:00",
+      "url": "http://localhost:59273/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D3-B06-csv-preview.png",
+      "captured_at": "2026-10-21T18:11:13.685+08:00",
+      "url": "http://localhost:59273/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D3-B12-mobile-intake.png",
+      "captured_at": "2026-10-21T18:11:15.306+08:00",
+      "url": "http://localhost:59273/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_post_requests": 10,
+  "activation_or_GA_mutations": 0,
+  "csv_raw_bytes_verified": true
+}

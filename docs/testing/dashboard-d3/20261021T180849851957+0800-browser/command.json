@@ -1,0 +1,17 @@
+{
+  "check": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalSchedules.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-21T18:08:49.852615+08:00",
+  "finished_at": "2026-10-21T18:09:15.089905+08:00",
+  "elapsed_seconds": 25.237,
+  "exit_code": 1,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D3 external intake browser acceptance with synthetic HTTP responses\n  \u2714 D3-B01 metadata loading, honest empty state and no confirm/lock actions (1359.3434ms)\n  \u2714 D3-B02 manual draft entry, multiple fields, source notes and local edit (275.2051ms)\n  \u2714 D3-B03 server review findings are shown without persisted or active claims (178.1943ms)\n  \u2714 D3-B04 invalid rows show required-field discrepancies with edit and re-review (243.0857ms)\n  \u2714 D3-B05 duplicate and section conflict rows retain related source references (405.3379ms)\n  \u2714 D3-B06 actual CSV selection uploads raw bytes and displays source hash/row (776.4733ms)\n  \u2714 D3-B07 unsafe-file rejection clears prior preview and supports retry (83.5392ms)\n  \u2714 D3-B08 unsupported extension is rejected before upload (38.6848ms)\n  \u2714 D3-B09 metadata unavailability retries without fabricating references (312.1419ms)\n  \u2714 D3-B10 permission-denied preview never claims acceptance (228.0468ms)\n  \u2716 D3-B11 anonymous and faculty routes do not fetch administrator preview metadata (15248.071ms)\n  \u2714 D3-B12 mobile intake form and review table stay within viewport (507.3956ms)\n  \u2714 D3-B13 refresh discards temporary work and template is explicitly fictional (233.8417ms)\n  \u2714 D3-B14 clearing during a delayed preview prevents stale results reappearing (353.1386ms)\n  \u2714 D3-B15 unresolved section room and instructor findings remain explicit (202.4812ms)\n\u2716 D3 external intake browser acceptance with synthetic HTTP responses (22024.5561ms)\n\u2139 tests 16\n\u2139 suites 0\n\u2139 pass 14\n\u2139 fail 2\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 25151.8991\n\n\u2716 failing tests:\n\ntest at tests\\externalSchedules.browser.test.mjs:74:42\n\u2716 D3-B11 anonymous and faculty routes do not fetch administrator preview metadata (15248.071ms)\n  Error: Missing page text: Access unavailable\n      at eventually (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/externalSchedules.browser.test.mjs:21:9)\n      at async file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/externalSchedules.browser.test.mjs:164:32\n      at async TestContext.<anonymous> (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/externalSchedules.browser.test.mjs:76:10)\n      at async Test.run (node:internal/test_runner/test:1113:7)\n      at async TestContext.<anonymous> (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/externalSchedules.browser.test.mjs:161:5)\n      at async Test.run (node:internal/test_runner/test:1113:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

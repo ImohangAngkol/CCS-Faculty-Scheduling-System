@@ -1,0 +1,967 @@
+{
+  "milestone": "D3",
+  "created_at": "2026-10-21T18:23:04.843990+08:00",
+  "baseline_head": "f3a07e5461430caab7a3998a2fd9d16b0aa1287d",
+  "branch": "main",
+  "status": "IMPLEMENTED; FINAL FOCUSED CHECKS PASS; NO PERSISTENCE, ACTIVATION, POSTGRESQL OR D4",
+  "hash_kind": "SHA-256 of raw working-tree bytes; manifest excludes its own hash",
+  "preexisting_dirty_scope": "backend/data/faculty_preferences.json only; pre-D3 bytes preserved",
+  "runtime": {
+    "python": "3.14.2",
+    "sqlite": "3.50.4",
+    "openpyxl": "3.1.5",
+    "node": "v24.11.1",
+    "vite": "8.2.2",
+    "edge": "155.0.4283.62",
+    "platform": "Windows"
+  },
+  "final_counts": {
+    "backend_D3_and_D2": {
+      "passed": 90,
+      "D3": 61,
+      "D2": 29,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 2
+    },
+    "backend_auth_GA_control": {
+      "passed": 46,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 4,
+      "includes_real_HTTP_auth_browser_wrapper": true
+    },
+    "frontend_contracts": {
+      "passed": 99,
+      "D3": 8,
+      "existing": 91,
+      "failed": 0,
+      "skipped": 0
+    },
+    "D3_browser": {
+      "scenarios_passed": 15,
+      "parent_wrappers": 1,
+      "failed": 0
+    },
+    "D1_browser": {
+      "scenarios_passed": 16,
+      "parent_wrappers": 1,
+      "failed": 0
+    },
+    "D2_browser": {
+      "scenarios_passed": 13,
+      "parent_wrappers": 1,
+      "failed": 0
+    },
+    "GA_browser": {
+      "scenarios_passed": 51,
+      "parent_wrappers": 1,
+      "failed": 0
+    },
+    "build": "PASS; existing chunk-size warning",
+    "focused_lint": "PASS"
+  },
+  "final_commands": {
+    "backend": {
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T18:15:48.123764+08:00",
+      "finished_at": "2026-10-21T18:16:09.325326+08:00",
+      "elapsed_seconds": 21.202,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T181548123118+0800-backend/command.json"
+    },
+    "backend-regressions": {
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d3-20261021T180930036624+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T18:09:30.039713+08:00",
+      "finished_at": "2026-10-21T18:10:27.195072+08:00",
+      "elapsed_seconds": 57.155,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180930036624+0800-backend-regressions/command.json"
+    },
+    "contracts": {
+      "check": "contracts",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalSchedules.test.mjs",
+        "tests/mySchedule.test.mjs",
+        "tests/dashboardD1.test.mjs",
+        "tests/auth.test.mjs",
+        "tests/authSessionRace.test.mjs",
+        "tests/preferenceModel.test.mjs",
+        "tests/preferenceApi.test.mjs",
+        "tests/gaMonitoring.test.mjs",
+        "tests/gaRecovery.test.mjs",
+        "tests/gaLogs.test.mjs",
+        "tests/gaHistory.test.mjs",
+        "tests/fitnessReporting.test.mjs",
+        "tests/facultyDisplay.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:06:49.240712+08:00",
+      "finished_at": "2026-10-21T18:06:51.573694+08:00",
+      "elapsed_seconds": 2.333,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180649240181+0800-contracts/command.json"
+    },
+    "build": {
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:04:44.483250+08:00",
+      "finished_at": "2026-10-21T18:04:55.467752+08:00",
+      "elapsed_seconds": 10.984,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180444482420+0800-build/command.json"
+    },
+    "lint": {
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/api/externalSchedules.ts",
+        "src/pages/admin/ExternalSchedules.tsx",
+        "src/layouts/AdminLayout.tsx",
+        "src/routes/AppRoutes.tsx"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:06:51.152911+08:00",
+      "finished_at": "2026-10-21T18:06:58.628580+08:00",
+      "elapsed_seconds": 7.476,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180651152173+0800-lint/command.json"
+    },
+    "browser": {
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalSchedules.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:11:09.119750+08:00",
+      "finished_at": "2026-10-21T18:11:19.209186+08:00",
+      "elapsed_seconds": 10.089,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T181109118902+0800-browser/command.json"
+    },
+    "d1-browser": {
+      "check": "d1-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/dashboardD1.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:09:42.368976+08:00",
+      "finished_at": "2026-10-21T18:09:55.360834+08:00",
+      "elapsed_seconds": 12.992,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180942367522+0800-d1-browser/command.json"
+    },
+    "d2-browser": {
+      "check": "d2-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/mySchedule.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:09:54.769840+08:00",
+      "finished_at": "2026-10-21T18:10:06.918906+08:00",
+      "elapsed_seconds": 12.149,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180954769004+0800-d2-browser/command.json"
+    },
+    "ga-browser": {
+      "check": "ga-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/gaMonitoring.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:10:06.616296+08:00",
+      "finished_at": "2026-10-21T18:11:04.553669+08:00",
+      "elapsed_seconds": 57.937,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T181006615455+0800-ga-browser/command.json"
+    }
+  },
+  "all_attempts": [
+    {
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T18:04:32.459279+08:00",
+      "finished_at": "2026-10-21T18:04:52.388307+08:00",
+      "elapsed_seconds": 19.929,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180432458430+0800-backend/command.json"
+    },
+    {
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:04:44.483250+08:00",
+      "finished_at": "2026-10-21T18:04:55.467752+08:00",
+      "elapsed_seconds": 10.984,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180444482420+0800-build/command.json"
+    },
+    {
+      "check": "contracts",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalSchedules.test.mjs",
+        "tests/mySchedule.test.mjs",
+        "tests/dashboardD1.test.mjs",
+        "tests/auth.test.mjs",
+        "tests/authSessionRace.test.mjs",
+        "tests/preferenceModel.test.mjs",
+        "tests/preferenceApi.test.mjs",
+        "tests/gaMonitoring.test.mjs",
+        "tests/gaRecovery.test.mjs",
+        "tests/gaLogs.test.mjs",
+        "tests/gaHistory.test.mjs",
+        "tests/fitnessReporting.test.mjs",
+        "tests/facultyDisplay.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:06:49.240712+08:00",
+      "finished_at": "2026-10-21T18:06:51.573694+08:00",
+      "elapsed_seconds": 2.333,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180649240181+0800-contracts/command.json"
+    },
+    {
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/api/externalSchedules.ts",
+        "src/pages/admin/ExternalSchedules.tsx",
+        "src/layouts/AdminLayout.tsx",
+        "src/routes/AppRoutes.tsx"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:06:51.152911+08:00",
+      "finished_at": "2026-10-21T18:06:58.628580+08:00",
+      "elapsed_seconds": 7.476,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180651152173+0800-lint/command.json"
+    },
+    {
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalSchedules.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:08:49.852615+08:00",
+      "finished_at": "2026-10-21T18:09:15.089905+08:00",
+      "elapsed_seconds": 25.237,
+      "exit_code": 1,
+      "path": "docs/testing/dashboard-d3/20261021T180849851957+0800-browser/command.json"
+    },
+    {
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d3-20261021T180930036624+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T18:09:30.039713+08:00",
+      "finished_at": "2026-10-21T18:10:27.195072+08:00",
+      "elapsed_seconds": 57.155,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180930036624+0800-backend-regressions/command.json"
+    },
+    {
+      "check": "d1-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/dashboardD1.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:09:42.368976+08:00",
+      "finished_at": "2026-10-21T18:09:55.360834+08:00",
+      "elapsed_seconds": 12.992,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180942367522+0800-d1-browser/command.json"
+    },
+    {
+      "check": "d2-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/mySchedule.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:09:54.769840+08:00",
+      "finished_at": "2026-10-21T18:10:06.918906+08:00",
+      "elapsed_seconds": 12.149,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T180954769004+0800-d2-browser/command.json"
+    },
+    {
+      "check": "ga-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/gaMonitoring.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:10:06.616296+08:00",
+      "finished_at": "2026-10-21T18:11:04.553669+08:00",
+      "elapsed_seconds": 57.937,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T181006615455+0800-ga-browser/command.json"
+    },
+    {
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalSchedules.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-21T18:11:09.119750+08:00",
+      "finished_at": "2026-10-21T18:11:19.209186+08:00",
+      "elapsed_seconds": 10.089,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T181109118902+0800-browser/command.json"
+    },
+    {
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T18:11:24.498905+08:00",
+      "finished_at": "2026-10-21T18:11:44.425293+08:00",
+      "elapsed_seconds": 19.926,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T181124497502+0800-backend/command.json"
+    },
+    {
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T18:13:59.115299+08:00",
+      "finished_at": "2026-10-21T18:14:20.410703+08:00",
+      "elapsed_seconds": 21.295,
+      "exit_code": 1,
+      "path": "docs/testing/dashboard-d3/20261021T181359114595+0800-backend/command.json"
+    },
+    {
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-21T18:15:48.123764+08:00",
+      "finished_at": "2026-10-21T18:16:09.325326+08:00",
+      "elapsed_seconds": 21.202,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d3/20261021T181548123118+0800-backend/command.json"
+    }
+  ],
+  "browser_runs": [
+    {
+      "path": "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/browser-results.json",
+      "browser": "Edg/155.0.4283.62",
+      "scenarios": [
+        {
+          "id": "D3-B01",
+          "title": "metadata loading, honest empty state and no confirm/lock actions",
+          "started_at": "2026-10-21T18:08:51.557+08:00",
+          "finished_at": "2026-10-21T18:08:52.915+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B02",
+          "title": "manual draft entry, multiple fields, source notes and local edit",
+          "started_at": "2026-10-21T18:08:52.917+08:00",
+          "finished_at": "2026-10-21T18:08:53.192+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B03",
+          "title": "server review findings are shown without persisted or active claims",
+          "started_at": "2026-10-21T18:08:53.193+08:00",
+          "finished_at": "2026-10-21T18:08:53.370+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B04",
+          "title": "invalid rows show required-field discrepancies with edit and re-review",
+          "started_at": "2026-10-21T18:08:53.371+08:00",
+          "finished_at": "2026-10-21T18:08:53.614+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B05",
+          "title": "duplicate and section conflict rows retain related source references",
+          "started_at": "2026-10-21T18:08:53.615+08:00",
+          "finished_at": "2026-10-21T18:08:54.020+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B06",
+          "title": "actual CSV selection uploads raw bytes and displays source hash/row",
+          "started_at": "2026-10-21T18:08:54.021+08:00",
+          "finished_at": "2026-10-21T18:08:54.797+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B07",
+          "title": "unsafe-file rejection clears prior preview and supports retry",
+          "started_at": "2026-10-21T18:08:54.797+08:00",
+          "finished_at": "2026-10-21T18:08:54.881+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B08",
+          "title": "unsupported extension is rejected before upload",
+          "started_at": "2026-10-21T18:08:54.881+08:00",
+          "finished_at": "2026-10-21T18:08:54.920+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B09",
+          "title": "metadata unavailability retries without fabricating references",
+          "started_at": "2026-10-21T18:08:54.920+08:00",
+          "finished_at": "2026-10-21T18:08:55.232+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B10",
+          "title": "permission-denied preview never claims acceptance",
+          "started_at": "2026-10-21T18:08:55.233+08:00",
+          "finished_at": "2026-10-21T18:08:55.461+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B11",
+          "title": "anonymous and faculty routes do not fetch administrator preview metadata",
+          "started_at": "2026-10-21T18:08:55.461+08:00",
+          "finished_at": "2026-10-21T18:09:10.709+08:00",
+          "result": "FAIL",
+          "error": "Missing page text: Access unavailable"
+        },
+        {
+          "id": "D3-B12",
+          "title": "mobile intake form and review table stay within viewport",
+          "started_at": "2026-10-21T18:09:10.710+08:00",
+          "finished_at": "2026-10-21T18:09:11.217+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B13",
+          "title": "refresh discards temporary work and template is explicitly fictional",
+          "started_at": "2026-10-21T18:09:11.217+08:00",
+          "finished_at": "2026-10-21T18:09:11.451+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B14",
+          "title": "clearing during a delayed preview prevents stale results reappearing",
+          "started_at": "2026-10-21T18:09:11.452+08:00",
+          "finished_at": "2026-10-21T18:09:11.805+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B15",
+          "title": "unresolved section room and instructor findings remain explicit",
+          "started_at": "2026-10-21T18:09:11.805+08:00",
+          "finished_at": "2026-10-21T18:09:12.007+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": [],
+      "activation_or_GA_mutations": 0,
+      "scope": "Actual React/Edge with synthetic HTTP responses; no FastAPI authorization or XLSX parser claim"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/browser-results.json",
+      "browser": "Edg/155.0.4283.62",
+      "scenarios": [
+        {
+          "id": "D3-B01",
+          "title": "metadata loading, honest empty state and no confirm/lock actions",
+          "started_at": "2026-10-21T18:11:10.736+08:00",
+          "finished_at": "2026-10-21T18:11:12.096+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B02",
+          "title": "manual draft entry, multiple fields, source notes and local edit",
+          "started_at": "2026-10-21T18:11:12.100+08:00",
+          "finished_at": "2026-10-21T18:11:12.430+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B03",
+          "title": "server review findings are shown without persisted or active claims",
+          "started_at": "2026-10-21T18:11:12.430+08:00",
+          "finished_at": "2026-10-21T18:11:12.620+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B04",
+          "title": "invalid rows show required-field discrepancies with edit and re-review",
+          "started_at": "2026-10-21T18:11:12.621+08:00",
+          "finished_at": "2026-10-21T18:11:12.875+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B05",
+          "title": "duplicate and section conflict rows retain related source references",
+          "started_at": "2026-10-21T18:11:12.876+08:00",
+          "finished_at": "2026-10-21T18:11:13.096+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B06",
+          "title": "actual CSV selection uploads raw bytes and displays source hash/row",
+          "started_at": "2026-10-21T18:11:13.097+08:00",
+          "finished_at": "2026-10-21T18:11:13.700+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B07",
+          "title": "unsafe-file rejection clears prior preview and supports retry",
+          "started_at": "2026-10-21T18:11:13.701+08:00",
+          "finished_at": "2026-10-21T18:11:13.876+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B08",
+          "title": "unsupported extension is rejected before upload",
+          "started_at": "2026-10-21T18:11:13.877+08:00",
+          "finished_at": "2026-10-21T18:11:13.908+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B09",
+          "title": "metadata unavailability retries without fabricating references",
+          "started_at": "2026-10-21T18:11:13.909+08:00",
+          "finished_at": "2026-10-21T18:11:14.245+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B10",
+          "title": "permission-denied preview never claims acceptance",
+          "started_at": "2026-10-21T18:11:14.246+08:00",
+          "finished_at": "2026-10-21T18:11:14.444+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B11",
+          "title": "anonymous and faculty routes do not fetch administrator preview metadata",
+          "started_at": "2026-10-21T18:11:14.444+08:00",
+          "finished_at": "2026-10-21T18:11:14.844+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B12",
+          "title": "mobile intake form and review table stay within viewport",
+          "started_at": "2026-10-21T18:11:14.845+08:00",
+          "finished_at": "2026-10-21T18:11:15.320+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B13",
+          "title": "refresh discards temporary work and template is explicitly fictional",
+          "started_at": "2026-10-21T18:11:15.321+08:00",
+          "finished_at": "2026-10-21T18:11:15.536+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B14",
+          "title": "clearing during a delayed preview prevents stale results reappearing",
+          "started_at": "2026-10-21T18:11:15.536+08:00",
+          "finished_at": "2026-10-21T18:11:15.901+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D3-B15",
+          "title": "unresolved section room and instructor findings remain explicit",
+          "started_at": "2026-10-21T18:11:15.901+08:00",
+          "finished_at": "2026-10-21T18:11:16.088+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": [],
+      "activation_or_GA_mutations": 0,
+      "scope": "Actual React/Edge with synthetic HTTP responses; no FastAPI authorization or XLSX parser claim"
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "D3-B02-manual-intake.png",
+      "captured_at": "2026-10-21T18:08:53.188+08:00",
+      "url": "http://localhost:55360/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B02-manual-intake.png",
+      "sha256": "c94aec706b8a961097102f4963b67301126a562ac872e24990ad6c774f6149c0",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Actual React/Edge rendering with fictional HTTP responses"
+    },
+    {
+      "name": "D3-B03-review-findings.png",
+      "captured_at": "2026-10-21T18:08:53.367+08:00",
+      "url": "http://localhost:55360/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B03-review-findings.png",
+      "sha256": "a616f44e43be0f4c9d16eab2110dfd01a43861e3a1251bc94ed42fcebc518b61",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Actual React/Edge rendering with fictional HTTP responses"
+    },
+    {
+      "name": "D3-B06-csv-preview.png",
+      "captured_at": "2026-10-21T18:08:54.793+08:00",
+      "url": "http://localhost:55360/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B06-csv-preview.png",
+      "sha256": "9566f71fe88c771d4e84c8511854eb99aae9c5c77942e1fc5ed1dafd8dd1b270",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Actual React/Edge rendering with fictional HTTP responses"
+    },
+    {
+      "name": "D3-B12-mobile-intake.png",
+      "captured_at": "2026-10-21T18:09:11.191+08:00",
+      "url": "http://localhost:55360/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B12-mobile-intake.png",
+      "sha256": "e9a6b8ec5407f84573767903280aaecde30294c3b1639d5481ab6d7824e47325",
+      "image_dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Actual React/Edge rendering with fictional HTTP responses"
+    },
+    {
+      "name": "D3-B02-manual-intake.png",
+      "captured_at": "2026-10-21T18:11:12.427+08:00",
+      "url": "http://localhost:59273/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B02-manual-intake.png",
+      "sha256": "1d982a53755c7fea0cb54baba1a0cb7d614fbfe61635e5013c4be0da50013c7a",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Actual React/Edge rendering with fictional HTTP responses"
+    },
+    {
+      "name": "D3-B03-review-findings.png",
+      "captured_at": "2026-10-21T18:11:12.616+08:00",
+      "url": "http://localhost:59273/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B03-review-findings.png",
+      "sha256": "a616f44e43be0f4c9d16eab2110dfd01a43861e3a1251bc94ed42fcebc518b61",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Actual React/Edge rendering with fictional HTTP responses"
+    },
+    {
+      "name": "D3-B06-csv-preview.png",
+      "captured_at": "2026-10-21T18:11:13.685+08:00",
+      "url": "http://localhost:59273/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B06-csv-preview.png",
+      "sha256": "9566f71fe88c771d4e84c8511854eb99aae9c5c77942e1fc5ed1dafd8dd1b270",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Actual React/Edge rendering with fictional HTTP responses"
+    },
+    {
+      "name": "D3-B12-mobile-intake.png",
+      "captured_at": "2026-10-21T18:11:15.306+08:00",
+      "url": "http://localhost:59273/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B12-mobile-intake.png",
+      "sha256": "e9a6b8ec5407f84573767903280aaecde30294c3b1639d5481ab6d7824e47325",
+      "image_dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "fixture": "Actual React/Edge rendering with fictional HTTP responses"
+    }
+  ],
+  "fixture_scope": "D3 parser/auth: actual FastAPI ASGI, real sessions/Origin/CSRF with temporary SQLite and synthetic metadata; file parsers use actual in-memory CSV/XLSX. D3/D1/D2/GA browser scenarios use synthetic HTTP. Existing real-HTTP auth wrapper separately passes. No browser-to-real D3 parser or PostgreSQL acceptance claim.",
+  "limits": {
+    "request_bytes": 1048576,
+    "rows": 200,
+    "columns": 13,
+    "xlsx_sheets": 1,
+    "archive_members": 32,
+    "decompressed_bytes": 8388608,
+    "member_bytes": 4194304,
+    "compression_ratio": 1000,
+    "xml_nodes": 30000,
+    "xml_depth": 64,
+    "discrepancy_records": 5000
+  },
+  "preservation": {
+    "baseline_files": 507,
+    "unchanged_files": 503,
+    "intentional_modified_files": [
+      "backend/main.py",
+      "frontend/package.json",
+      "frontend/src/layouts/AdminLayout.tsx",
+      "frontend/src/routes/AppRoutes.tsx"
+    ],
+    "unexpected_changes": [],
+    "missing_files": [],
+    "git_index_unchanged": true,
+    "protected_preferences_sha256": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+    "protected_preferences_unchanged": true,
+    "existing_inputs_artifacts_checkpoints_unchanged": true,
+    "no_PostgreSQL_or_GA_activation": true
+  },
+  "created_files": [
+    "backend/routers/external_schedules.py",
+    "backend/schemas/external_schedule.py",
+    "backend/services/external_schedule_service.py",
+    "backend/tests/dashboard/test_external_preview.py",
+    "docs/dashboard-d3-implementation.md",
+    "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B02-manual-intake.png",
+    "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B03-review-findings.png",
+    "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B06-csv-preview.png",
+    "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B12-mobile-intake.png",
+    "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/browser-results.json",
+    "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B02-manual-intake.png",
+    "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B03-review-findings.png",
+    "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B06-csv-preview.png",
+    "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B12-mobile-intake.png",
+    "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/browser-results.json",
+    "docs/testing/dashboard-d3/20261021T180432458430+0800-backend/command.json",
+    "docs/testing/dashboard-d3/20261021T180444482420+0800-build/command.json",
+    "docs/testing/dashboard-d3/20261021T180649240181+0800-contracts/command.json",
+    "docs/testing/dashboard-d3/20261021T180651152173+0800-lint/command.json",
+    "docs/testing/dashboard-d3/20261021T180849851957+0800-browser/command.json",
+    "docs/testing/dashboard-d3/20261021T180930036624+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-d3/20261021T180942367522+0800-d1-browser/command.json",
+    "docs/testing/dashboard-d3/20261021T180954769004+0800-d2-browser/command.json",
+    "docs/testing/dashboard-d3/20261021T181006615455+0800-ga-browser/command.json",
+    "docs/testing/dashboard-d3/20261021T181109118902+0800-browser/command.json",
+    "docs/testing/dashboard-d3/20261021T181124497502+0800-backend/command.json",
+    "docs/testing/dashboard-d3/20261021T181359114595+0800-backend/command.json",
+    "docs/testing/dashboard-d3/20261021T181548123118+0800-backend/command.json",
+    "docs/testing/dashboard-d3/preservation-baseline.json",
+    "docs/testing/dashboard-d3/run_checks.py",
+    "frontend/public/templates/external-gec-fictional.csv",
+    "frontend/src/api/externalSchedules.ts",
+    "frontend/src/pages/admin/ExternalSchedules.tsx",
+    "frontend/tests/externalSchedules.browser.test.mjs",
+    "frontend/tests/externalSchedules.fixtures.mjs",
+    "frontend/tests/externalSchedules.test.mjs"
+  ],
+  "artifacts": {
+    "backend/main.py": "f7dca657401d74a20c3f07f6d9310ff595ffb5c092478b0d2c9e310f26540c79",
+    "backend/routers/external_schedules.py": "77b51ad04980c2a5db22f9db543eccd94aa276c27a20a957d9b212393f122bb3",
+    "backend/schemas/external_schedule.py": "d200863384d80251fcb27841289b50dbc419ecdaf545ce2db75dd07dd0365f9c",
+    "backend/services/external_schedule_service.py": "e326c27edb1f6f2ee292282b17b2ed522ce4e0588d6974f3bd9cf4766409c6b0",
+    "backend/tests/dashboard/test_external_preview.py": "3673c1d6726ff62916778614ec5134a74c6223b1bce40771ff5f0cf6fa828803",
+    "docs/dashboard-d3-implementation.md": "b5b24099ed6cfaf9bc865452dc68cc443ff37f02f80e34b425fbe6a7b986f705",
+    "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B02-manual-intake.png": "c94aec706b8a961097102f4963b67301126a562ac872e24990ad6c774f6149c0",
+    "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B03-review-findings.png": "a616f44e43be0f4c9d16eab2110dfd01a43861e3a1251bc94ed42fcebc518b61",
+    "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B06-csv-preview.png": "9566f71fe88c771d4e84c8511854eb99aae9c5c77942e1fc5ed1dafd8dd1b270",
+    "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/D3-B12-mobile-intake.png": "e9a6b8ec5407f84573767903280aaecde30294c3b1639d5481ab6d7824e47325",
+    "docs/screenshots/dashboard-d3/20261021T180849851957+0800-browser/browser-results.json": "d91aa2ec3504d326e610c62a8e6fe5048f8182bd99b2f50333d762bb5c1f5fca",
+    "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B02-manual-intake.png": "1d982a53755c7fea0cb54baba1a0cb7d614fbfe61635e5013c4be0da50013c7a",
+    "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B03-review-findings.png": "a616f44e43be0f4c9d16eab2110dfd01a43861e3a1251bc94ed42fcebc518b61",
+    "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B06-csv-preview.png": "9566f71fe88c771d4e84c8511854eb99aae9c5c77942e1fc5ed1dafd8dd1b270",
+    "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/D3-B12-mobile-intake.png": "e9a6b8ec5407f84573767903280aaecde30294c3b1639d5481ab6d7824e47325",
+    "docs/screenshots/dashboard-d3/20261021T181109118902+0800-browser/browser-results.json": "2da1384f6a5e0b6af800b17b8fb16503ff395a1bad4b360e8122837b35448044",
+    "docs/testing/dashboard-d3/20261021T180432458430+0800-backend/command.json": "8587422ab73c8aeed0d8cf1733998739a48420ed78a85f1f273c2f4736a72220",
+    "docs/testing/dashboard-d3/20261021T180444482420+0800-build/command.json": "1eb1b0eb50bb0050184ff81507ccddda90a9433291d684ebbbb00477718a00c0",
+    "docs/testing/dashboard-d3/20261021T180649240181+0800-contracts/command.json": "e228643858fc476c45b6c559f1b7c98ffc6816639adbe69c00125b1b97b2ddca",
+    "docs/testing/dashboard-d3/20261021T180651152173+0800-lint/command.json": "5e676a6ecb0be3517e14950ba57d051f6bcae94cc3dc3fbd3ac8f99e902ef048",
+    "docs/testing/dashboard-d3/20261021T180849851957+0800-browser/command.json": "330ee3e80acebaaee182ef623dad4d8d0a85b582a0d1a6a9a578c8f5ed17de22",
+    "docs/testing/dashboard-d3/20261021T180930036624+0800-backend-regressions/command.json": "a79559142b4fbc18cab89b2c042e43ddc13456918fea31bed4df4cc07173c08e",
+    "docs/testing/dashboard-d3/20261021T180942367522+0800-d1-browser/command.json": "fc809f55bc38803eaf8ab5ca38d10b7bec5592d4d5e06619cc7eeef176c91b26",
+    "docs/testing/dashboard-d3/20261021T180954769004+0800-d2-browser/command.json": "ed6a22f820a7f01a180fc9c40e45248fd581b291188615b68d067d3e65749fbd",
+    "docs/testing/dashboard-d3/20261021T181006615455+0800-ga-browser/command.json": "bda624202c4df8d6def648153ba49335609d022e8650299b27a4b9d700ad7c80",
+    "docs/testing/dashboard-d3/20261021T181109118902+0800-browser/command.json": "f6360ec72bdc843b5f8795c5abdd2d067dd50ef3b6affb66578b537125c209b7",
+    "docs/testing/dashboard-d3/20261021T181124497502+0800-backend/command.json": "aea036c5c654bff497b6bfe8e48f4956d6ce7b2f9412a8ee04a3e901856a7806",
+    "docs/testing/dashboard-d3/20261021T181359114595+0800-backend/command.json": "9169341531a62eec3a99d243e215eecf130ef315eff3a870f76453e2bf38d594",
+    "docs/testing/dashboard-d3/20261021T181548123118+0800-backend/command.json": "763c82e4d8e028d502585a1bbd8eb788ac147c00ef55c0731bf08326fba5cba7",
+    "docs/testing/dashboard-d3/preservation-baseline.json": "2b26c30ec7100c42ba53cb7ac227a1a420101db4836f21e1aaa4178485f39d74",
+    "docs/testing/dashboard-d3/run_checks.py": "aa1d8021b631e094a75eb981345f45b91b9e469245dd3cf4d36f8c24079a0719",
+    "frontend/package.json": "ca7106ff46df4547d9d448797759f0942b4d409f1187333307f4e7aebfc08229",
+    "frontend/public/templates/external-gec-fictional.csv": "12a73963fdd066a792ad5329420a231edca24b3362ac379722ff464bb0fead58",
+    "frontend/src/api/externalSchedules.ts": "3f681e9414a8f7fe55313ea8b8c36c368f21b81d6156513644a3c9d30a19bc34",
+    "frontend/src/layouts/AdminLayout.tsx": "6b6b18b4ff68a341f45a59feb337f1541019c211fafdb448abe12ab8486c2cf8",
+    "frontend/src/pages/admin/ExternalSchedules.tsx": "7e768771f23e50da663cb0833b5e869743950175a266a26150e02ce481ceee70",
+    "frontend/src/routes/AppRoutes.tsx": "25912147df6ae9469ac48eebfc4ae09d403b03736a6942d68550f9e5efc43ab8",
+    "frontend/tests/externalSchedules.browser.test.mjs": "2c1c96ede8802428f2bcace3961a92065c8cca5ef95bb690d37c807b2d37281e",
+    "frontend/tests/externalSchedules.fixtures.mjs": "4845f57551e4bd4b88218651f192f5ff9c0c71fee1c18d0817ee33e86f72913c",
+    "frontend/tests/externalSchedules.test.mjs": "a59840fe805305cd103fb336df4e5fc0025df239ff4bb40cf731c26ec4e34b39"
+  },
+  "limitations": [
+    "Memory-only drafts/previews disappear on refresh/navigation.",
+    "No verified term/date registry or complete cross-college resource mapping.",
+    "No persistence, confirmation, revisions, Chair decisions, or external GA inputs.",
+    "Strict bounded XLSX subset; XLSX browser selection not separately tested.",
+    "Real D3 browser-to-FastAPI parser acceptance and PostgreSQL execution not performed.",
+    "Full-project lint, complete backend GA suite, profiling and deployment qualification not performed."
+  ],
+  "failed_attempts_retained": [
+    "First D3 browser run: 14 scenarios pass, B11 fails due to main-scoped selector for denial outside layout; selector fixed.",
+    "Expanded XML stress case: 89 pass, two setup/teardown errors from enormous PYTEST_CURRENT_TEST exceeding Windows environment limit; explicit short test IDs fixed."
+  ]
+}

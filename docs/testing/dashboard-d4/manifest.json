@@ -1,0 +1,871 @@
+{
+  "schema_version": 1,
+  "milestone": "Dashboard-first D4: GEC review calendar and resource reconciliation",
+  "status": "IMPLEMENTED / FINAL SCOPED CHECKS PASS",
+  "recorded_at": "2026-10-21T19:42:53.133039+08:00",
+  "source_head": "f3a07e5461430caab7a3998a2fd9d16b0aa1287d",
+  "branch": "main",
+  "preexisting_work": "Uncommitted D3 implementation/evidence and protected preference changes were present before D4 and included in the baseline. Exactly six approved D3 extension/script files changed.",
+  "runtime": {
+    "python": "3.14.2",
+    "sqlite": "3.50.4",
+    "node": "v24.11.1",
+    "vite": "8.2.2",
+    "fullcalendar": "6.1.21",
+    "edge": "155.0.4283.62"
+  },
+  "coverage": {
+    "backend": {
+      "passed": 122,
+      "failed": 0,
+      "skipped": 0,
+      "D4": 32,
+      "D3": 61,
+      "D2": 29,
+      "warnings": 2
+    },
+    "backend_regressions": {
+      "passed": 46,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 4,
+      "scope": "Existing authentication/GA control tests using isolated SQLite/HTTP fixtures; no GA evolution."
+    },
+    "frontend_contracts": {
+      "passed": 110,
+      "failed": 0,
+      "D4": 11,
+      "existing": 99
+    },
+    "rendered_browser_scenarios": {
+      "D4": 15,
+      "D1": 16,
+      "D2": 13,
+      "D3": 15,
+      "GA_monitoring": 51,
+      "note": "Each harness also reports one parent test. D4 browser uses synthetic HTTP responses."
+    },
+    "production_build": "PASS (219 modules; existing bundle-size warning)",
+    "focused_eslint": "PASS (four changed/new TypeScript files)"
+  },
+  "final_checks": {
+    "build": {
+      "check": "build",
+      "started_at": "2026-10-21T19:34:15.632895+08:00",
+      "finished_at": "2026-10-21T19:34:28.524731+08:00",
+      "elapsed_seconds": 12.892,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193415632019+0800-build/command.json"
+    },
+    "backend": {
+      "check": "backend",
+      "started_at": "2026-10-21T19:30:48.578244+08:00",
+      "finished_at": "2026-10-21T19:31:13.165601+08:00",
+      "elapsed_seconds": 24.587,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193048577215+0800-backend/command.json"
+    },
+    "lint": {
+      "check": "lint",
+      "started_at": "2026-10-21T19:34:16.872677+08:00",
+      "finished_at": "2026-10-21T19:34:25.064342+08:00",
+      "elapsed_seconds": 8.192,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193416872014+0800-lint/command.json"
+    },
+    "contracts": {
+      "check": "contracts",
+      "started_at": "2026-10-21T19:28:50.191512+08:00",
+      "finished_at": "2026-10-21T19:28:52.550454+08:00",
+      "elapsed_seconds": 2.359,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192850190990+0800-contracts/command.json"
+    },
+    "browser": {
+      "check": "browser",
+      "started_at": "2026-10-21T19:34:18.760208+08:00",
+      "finished_at": "2026-10-21T19:34:30.173445+08:00",
+      "elapsed_seconds": 11.413,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193418759578+0800-browser/command.json"
+    },
+    "backend-regressions": {
+      "check": "backend-regressions",
+      "started_at": "2026-10-21T19:29:49.769755+08:00",
+      "finished_at": "2026-10-21T19:30:54.244414+08:00",
+      "elapsed_seconds": 64.475,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192949768046+0800-backend-regressions/command.json"
+    },
+    "d2-browser": {
+      "check": "d2-browser",
+      "started_at": "2026-10-21T19:29:51.721741+08:00",
+      "finished_at": "2026-10-21T19:30:10.107294+08:00",
+      "elapsed_seconds": 18.386,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192951721172+0800-d2-browser/command.json"
+    },
+    "d3-browser": {
+      "check": "d3-browser",
+      "started_at": "2026-10-21T19:29:51.866190+08:00",
+      "finished_at": "2026-10-21T19:30:09.710894+08:00",
+      "elapsed_seconds": 17.845,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192951865651+0800-d3-browser/command.json"
+    },
+    "d1-browser": {
+      "check": "d1-browser",
+      "started_at": "2026-10-21T19:29:52.907002+08:00",
+      "finished_at": "2026-10-21T19:30:15.448122+08:00",
+      "elapsed_seconds": 22.541,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192952905704+0800-d1-browser/command.json"
+    },
+    "ga-browser": {
+      "check": "ga-browser",
+      "started_at": "2026-10-21T19:29:55.322208+08:00",
+      "finished_at": "2026-10-21T19:31:05.576751+08:00",
+      "elapsed_seconds": 70.255,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192955321225+0800-ga-browser/command.json"
+    }
+  },
+  "all_command_attempts": [
+    {
+      "check": "build",
+      "started_at": "2026-10-21T19:21:23.666189+08:00",
+      "finished_at": "2026-10-21T19:21:35.006526+08:00",
+      "elapsed_seconds": 11.34,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192123664940+0800-build/command.json"
+    },
+    {
+      "check": "backend",
+      "started_at": "2026-10-21T19:21:24.737425+08:00",
+      "finished_at": "2026-10-21T19:21:44.844212+08:00",
+      "elapsed_seconds": 20.107,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192124736771+0800-backend/command.json"
+    },
+    {
+      "check": "lint",
+      "started_at": "2026-10-21T19:21:26.223518+08:00",
+      "finished_at": "2026-10-21T19:21:34.884093+08:00",
+      "elapsed_seconds": 8.661,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192126222976+0800-lint/command.json"
+    },
+    {
+      "check": "contracts",
+      "started_at": "2026-10-21T19:24:16.412822+08:00",
+      "finished_at": "2026-10-21T19:24:18.773298+08:00",
+      "elapsed_seconds": 2.36,
+      "exit_code": 1,
+      "path": "docs/testing/dashboard-d4/20261021T192416412281+0800-contracts/command.json"
+    },
+    {
+      "check": "contracts",
+      "started_at": "2026-10-21T19:28:50.191512+08:00",
+      "finished_at": "2026-10-21T19:28:52.550454+08:00",
+      "elapsed_seconds": 2.359,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192850190990+0800-contracts/command.json"
+    },
+    {
+      "check": "browser",
+      "started_at": "2026-10-21T19:28:54.353506+08:00",
+      "finished_at": "2026-10-21T19:29:18.931990+08:00",
+      "elapsed_seconds": 24.578,
+      "exit_code": 1,
+      "path": "docs/testing/dashboard-d4/20261021T192854352300+0800-browser/command.json"
+    },
+    {
+      "check": "backend-regressions",
+      "started_at": "2026-10-21T19:29:49.769755+08:00",
+      "finished_at": "2026-10-21T19:30:54.244414+08:00",
+      "elapsed_seconds": 64.475,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192949768046+0800-backend-regressions/command.json"
+    },
+    {
+      "check": "d2-browser",
+      "started_at": "2026-10-21T19:29:51.721741+08:00",
+      "finished_at": "2026-10-21T19:30:10.107294+08:00",
+      "elapsed_seconds": 18.386,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192951721172+0800-d2-browser/command.json"
+    },
+    {
+      "check": "d3-browser",
+      "started_at": "2026-10-21T19:29:51.866190+08:00",
+      "finished_at": "2026-10-21T19:30:09.710894+08:00",
+      "elapsed_seconds": 17.845,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192951865651+0800-d3-browser/command.json"
+    },
+    {
+      "check": "d1-browser",
+      "started_at": "2026-10-21T19:29:52.907002+08:00",
+      "finished_at": "2026-10-21T19:30:15.448122+08:00",
+      "elapsed_seconds": 22.541,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192952905704+0800-d1-browser/command.json"
+    },
+    {
+      "check": "ga-browser",
+      "started_at": "2026-10-21T19:29:55.322208+08:00",
+      "finished_at": "2026-10-21T19:31:05.576751+08:00",
+      "elapsed_seconds": 70.255,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T192955321225+0800-ga-browser/command.json"
+    },
+    {
+      "check": "backend",
+      "started_at": "2026-10-21T19:30:48.578244+08:00",
+      "finished_at": "2026-10-21T19:31:13.165601+08:00",
+      "elapsed_seconds": 24.587,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193048577215+0800-backend/command.json"
+    },
+    {
+      "check": "browser",
+      "started_at": "2026-10-21T19:30:51.606186+08:00",
+      "finished_at": "2026-10-21T19:31:04.227925+08:00",
+      "elapsed_seconds": 12.622,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193051605221+0800-browser/command.json"
+    },
+    {
+      "check": "build",
+      "started_at": "2026-10-21T19:32:32.225947+08:00",
+      "finished_at": "2026-10-21T19:32:40.240930+08:00",
+      "elapsed_seconds": 8.015,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193232225140+0800-build/command.json"
+    },
+    {
+      "check": "lint",
+      "started_at": "2026-10-21T19:32:33.342925+08:00",
+      "finished_at": "2026-10-21T19:32:39.798568+08:00",
+      "elapsed_seconds": 6.456,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193233342148+0800-lint/command.json"
+    },
+    {
+      "check": "build",
+      "started_at": "2026-10-21T19:34:15.632895+08:00",
+      "finished_at": "2026-10-21T19:34:28.524731+08:00",
+      "elapsed_seconds": 12.892,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193415632019+0800-build/command.json"
+    },
+    {
+      "check": "lint",
+      "started_at": "2026-10-21T19:34:16.872677+08:00",
+      "finished_at": "2026-10-21T19:34:25.064342+08:00",
+      "elapsed_seconds": 8.192,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193416872014+0800-lint/command.json"
+    },
+    {
+      "check": "browser",
+      "started_at": "2026-10-21T19:34:18.760208+08:00",
+      "finished_at": "2026-10-21T19:34:30.173445+08:00",
+      "elapsed_seconds": 11.413,
+      "exit_code": 0,
+      "path": "docs/testing/dashboard-d4/20261021T193418759578+0800-browser/command.json"
+    }
+  ],
+  "earlier_failures": [
+    {
+      "check": "contracts",
+      "path": "docs/testing/dashboard-d4/20261021T192416412281+0800-contracts/command.json",
+      "cause": "Unsupported-inventory fixture retained room choices; fixture corrected. 109 passed, one failed."
+    },
+    {
+      "check": "browser",
+      "path": "docs/testing/dashboard-d4/20261021T192854352300+0800-browser/command.json",
+      "cause": "Generated fixture text encoding and URL pathname audit comparisons corrected. 14 scenarios passed, one scenario and parent audit failed."
+    }
+  ],
+  "browser_evidence": [
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/browser-results.json",
+      "scope": "Actual React/FullCalendar/Edge with synthetic HTTP responses; no live D4 API authorization claim",
+      "browser": "Edg/155.0.4283.62",
+      "scenarios": [
+        {
+          "id": "D4-B01",
+          "title": "signed-source review loading and weekly calendar provenance",
+          "started_at": "2026-10-21T19:30:53.742+08:00",
+          "finished_at": "2026-10-21T19:30:56.357+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B02",
+          "title": "overlapping entries occupy separate calendar lanes with row-level details",
+          "started_at": "2026-10-21T19:30:56.360+08:00",
+          "finished_at": "2026-10-21T19:30:56.620+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B03",
+          "title": "section supplier subject and Draft/Tentative filters combine",
+          "started_at": "2026-10-21T19:30:56.621+08:00",
+          "finished_at": "2026-10-21T19:30:57.034+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B04",
+          "title": "reference-state filters distinguish ambiguity and missing optional resources",
+          "started_at": "2026-10-21T19:30:57.035+08:00",
+          "finished_at": "2026-10-21T19:30:57.243+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B05",
+          "title": "explicit mappings trigger full-batch identity conflicts and preserve original text/hash",
+          "started_at": "2026-10-21T19:30:57.244+08:00",
+          "finished_at": "2026-10-21T19:30:57.760+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B06",
+          "title": "distinct canonical mappings clear corresponding conflicts without changing source",
+          "started_at": "2026-10-21T19:30:57.761+08:00",
+          "finished_at": "2026-10-21T19:30:57.949+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B07",
+          "title": "clearing explicit mappings restores unresolved and ambiguous source states",
+          "started_at": "2026-10-21T19:30:57.950+08:00",
+          "finished_at": "2026-10-21T19:30:58.196+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B08",
+          "title": "invalid time rows remain selectable as details but are not plotted",
+          "started_at": "2026-10-21T19:30:58.197+08:00",
+          "finished_at": "2026-10-21T19:30:58.407+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B09",
+          "title": "missing optional resources can map only to listed existing records",
+          "started_at": "2026-10-21T19:30:58.407+08:00",
+          "finished_at": "2026-10-21T19:30:58.641+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B10",
+          "title": "stale-source review removes the calendar until the source is re-previewed",
+          "started_at": "2026-10-21T19:30:58.642+08:00",
+          "finished_at": "2026-10-21T19:30:58.876+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B11",
+          "title": "clearing during delayed revalidation prevents stale source projection",
+          "started_at": "2026-10-21T19:30:58.877+08:00",
+          "finished_at": "2026-10-21T19:30:59.108+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B12",
+          "title": "mobile filters reconciliation and contained calendar remain usable",
+          "started_at": "2026-10-21T19:30:59.108+08:00",
+          "finished_at": "2026-10-21T19:30:59.483+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B13",
+          "title": "anonymous and faculty users cannot mount administrator review",
+          "started_at": "2026-10-21T19:30:59.484+08:00",
+          "finished_at": "2026-10-21T19:31:00.111+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B14",
+          "title": "unsupported resource inventory disables selection and exposes state",
+          "started_at": "2026-10-21T19:31:00.112+08:00",
+          "finished_at": "2026-10-21T19:31:00.769+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B15",
+          "title": "calendar has no drag resize confirmation or GA mutation controls",
+          "started_at": "2026-10-21T19:31:00.770+08:00",
+          "finished_at": "2026-10-21T19:31:01.096+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": [],
+      "activation_or_GA_mutations": 0
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/browser-results.json",
+      "scope": "Actual React/FullCalendar/Edge with synthetic HTTP responses; no live D4 API authorization claim",
+      "browser": "Edg/155.0.4283.62",
+      "scenarios": [
+        {
+          "id": "D4-B01",
+          "title": "signed-source review loading and weekly calendar provenance",
+          "started_at": "2026-10-21T19:34:20.829+08:00",
+          "finished_at": "2026-10-21T19:34:22.953+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B02",
+          "title": "overlapping entries occupy separate calendar lanes with row-level details",
+          "started_at": "2026-10-21T19:34:22.955+08:00",
+          "finished_at": "2026-10-21T19:34:23.215+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B03",
+          "title": "section supplier subject and Draft/Tentative filters combine",
+          "started_at": "2026-10-21T19:34:23.216+08:00",
+          "finished_at": "2026-10-21T19:34:23.566+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B04",
+          "title": "reference-state filters distinguish ambiguity and missing optional resources",
+          "started_at": "2026-10-21T19:34:23.567+08:00",
+          "finished_at": "2026-10-21T19:34:23.715+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B05",
+          "title": "explicit mappings trigger full-batch identity conflicts and preserve original text/hash",
+          "started_at": "2026-10-21T19:34:23.716+08:00",
+          "finished_at": "2026-10-21T19:34:24.075+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B06",
+          "title": "distinct canonical mappings clear corresponding conflicts without changing source",
+          "started_at": "2026-10-21T19:34:24.077+08:00",
+          "finished_at": "2026-10-21T19:34:24.243+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B07",
+          "title": "clearing explicit mappings restores unresolved and ambiguous source states",
+          "started_at": "2026-10-21T19:34:24.244+08:00",
+          "finished_at": "2026-10-21T19:34:24.406+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B08",
+          "title": "invalid time rows remain selectable as details but are not plotted",
+          "started_at": "2026-10-21T19:34:24.407+08:00",
+          "finished_at": "2026-10-21T19:34:24.585+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B09",
+          "title": "missing optional resources can map only to listed existing records",
+          "started_at": "2026-10-21T19:34:24.586+08:00",
+          "finished_at": "2026-10-21T19:34:24.798+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B10",
+          "title": "stale-source review removes the calendar until the source is re-previewed",
+          "started_at": "2026-10-21T19:34:24.799+08:00",
+          "finished_at": "2026-10-21T19:34:25.035+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B11",
+          "title": "clearing during delayed revalidation prevents stale source projection",
+          "started_at": "2026-10-21T19:34:25.036+08:00",
+          "finished_at": "2026-10-21T19:34:25.245+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B12",
+          "title": "mobile filters reconciliation and contained calendar remain usable",
+          "started_at": "2026-10-21T19:34:25.246+08:00",
+          "finished_at": "2026-10-21T19:34:25.738+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B13",
+          "title": "anonymous and faculty users cannot mount administrator review",
+          "started_at": "2026-10-21T19:34:25.739+08:00",
+          "finished_at": "2026-10-21T19:34:26.405+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B14",
+          "title": "unsupported resource inventory disables selection and exposes state",
+          "started_at": "2026-10-21T19:34:26.406+08:00",
+          "finished_at": "2026-10-21T19:34:26.876+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D4-B15",
+          "title": "calendar has no drag resize confirmation or GA mutation controls",
+          "started_at": "2026-10-21T19:34:26.877+08:00",
+          "finished_at": "2026-10-21T19:34:27.095+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": [],
+      "activation_or_GA_mutations": 0
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T192854352300+0800-browser/D4-B05-explicit-resource-reconciliation.png",
+      "sha256": "b97c7bee17ace60fa364c159a0da08ace62f9be101ebee071d4747da532b73a4",
+      "width": 1600,
+      "height": 1200,
+      "captured_at": null,
+      "url": null,
+      "viewport": null,
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "SUPERSEDED",
+      "timestamp_limitation": "Capture timestamp not archived because initial final audit failed; only command run interval is available."
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T192854352300+0800-browser/D4-B08-invalid-source-details.png",
+      "sha256": "badc56265e9f2bbf34435d9b6bf8cb7da852442bd578887537388464cb5df962",
+      "width": 1600,
+      "height": 1200,
+      "captured_at": null,
+      "url": null,
+      "viewport": null,
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "SUPERSEDED",
+      "timestamp_limitation": "Capture timestamp not archived because initial final audit failed; only command run interval is available."
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T192854352300+0800-browser/D4-B12-mobile-review.png",
+      "sha256": "e22952fa29b6cf730ef89ceea8990711fe80105d6599fd9af775b4d25ca291db",
+      "width": 390,
+      "height": 844,
+      "captured_at": null,
+      "url": null,
+      "viewport": null,
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "SUPERSEDED",
+      "timestamp_limitation": "Capture timestamp not archived because initial final audit failed; only command run interval is available."
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B02-weekly-overlap-calendar.png",
+      "sha256": "b62ef1fde737ffff6a941952fdbdb6e50259bf043e162ab24728ecb269c4fb5b",
+      "width": 1600,
+      "height": 1200,
+      "captured_at": "2026-10-21T19:30:56.612+08:00",
+      "url": "http://localhost:54867/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "SUPERSEDED",
+      "timestamp_limitation": null
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B05-explicit-resource-reconciliation.png",
+      "sha256": "b97c7bee17ace60fa364c159a0da08ace62f9be101ebee071d4747da532b73a4",
+      "width": 1600,
+      "height": 1200,
+      "captured_at": "2026-10-21T19:30:57.756+08:00",
+      "url": "http://localhost:54867/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "SUPERSEDED",
+      "timestamp_limitation": null
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B08-invalid-source-details.png",
+      "sha256": "badc56265e9f2bbf34435d9b6bf8cb7da852442bd578887537388464cb5df962",
+      "width": 1600,
+      "height": 1200,
+      "captured_at": "2026-10-21T19:30:58.403+08:00",
+      "url": "http://localhost:54867/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "SUPERSEDED",
+      "timestamp_limitation": null
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B12-mobile-review.png",
+      "sha256": "e22952fa29b6cf730ef89ceea8990711fe80105d6599fd9af775b4d25ca291db",
+      "width": 390,
+      "height": 844,
+      "captured_at": "2026-10-21T19:30:59.455+08:00",
+      "url": "http://localhost:54867/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "SUPERSEDED",
+      "timestamp_limitation": null
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B02-weekly-overlap-calendar.png",
+      "sha256": "4c097040c868e3066239c30548e88923e676e46026a14e7e353461899858ac92",
+      "width": 1600,
+      "height": 1200,
+      "captured_at": "2026-10-21T19:34:23.211+08:00",
+      "url": "http://localhost:59212/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "FINAL",
+      "timestamp_limitation": null
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B05-explicit-resource-reconciliation.png",
+      "sha256": "c9fda2bfa64f9e901140c69d958e5947d08f6ee1bb2446c197294dab5d3d12d8",
+      "width": 1600,
+      "height": 1200,
+      "captured_at": "2026-10-21T19:34:24.070+08:00",
+      "url": "http://localhost:59212/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "FINAL",
+      "timestamp_limitation": null
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B08-invalid-source-details.png",
+      "sha256": "badc56265e9f2bbf34435d9b6bf8cb7da852442bd578887537388464cb5df962",
+      "width": 1600,
+      "height": 1200,
+      "captured_at": "2026-10-21T19:34:24.582+08:00",
+      "url": "http://localhost:59212/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "FINAL",
+      "timestamp_limitation": null
+    },
+    {
+      "path": "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B12-mobile-review.png",
+      "sha256": "8496559beeb6f1c0038d81ac191d4be6e496439a740624d361906360e33cb45b",
+      "width": 390,
+      "height": 844,
+      "captured_at": "2026-10-21T19:34:25.674+08:00",
+      "url": "http://localhost:59212/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "edited": false,
+      "scope": "Actual Edge rendering with fictional synthetic HTTP API responses",
+      "status": "FINAL",
+      "timestamp_limitation": null
+    }
+  ],
+  "api_verification": {
+    "real_fastapi": "Real session/admin/Origin/CSRF checks exercised through FastAPI ASGI with synthetic SQLite authentication. Backend review logic executed with fictional metadata.",
+    "browser": "Actual React/FullCalendar/Edge rendering and interactions; synthetic HTTP API, not a browser-to-live-FastAPI authorization run.",
+    "postgresql": "NOT CONNECTED; no provisioning or live migrations/tests.",
+    "GA": "No generation, evolution or input activation. Existing monitoring/control regressions only."
+  },
+  "bounds": {
+    "intake_bytes": 1048576,
+    "review_body_bytes": 2097152,
+    "receipt_characters": 1600000,
+    "rows": 200,
+    "section_mappings_per_row": 12
+  },
+  "limitations": [
+    "Authoritative coverage is limited to current recognized metadata, not every institutional resource.",
+    "Academic terms/dates/exceptions remain unverified; conflicts are weekly-pattern review findings.",
+    "Process-local receipts invalidate on backend restart or reference change; no wall-clock TTL/durable confirmation.",
+    "Source rows/mappings remain temporary and caller-held; no persistence or GA integration.",
+    "No D4 browser-to-live-FastAPI/PostgreSQL acceptance."
+  ],
+  "preservation": {
+    "baseline_path": "docs/testing/dashboard-d4/preservation-baseline.json",
+    "baseline_files": 544,
+    "unchanged_files": 538,
+    "modified_expected": {
+      "backend/routers/external_schedules.py": {
+        "before": "77b51ad04980c2a5db22f9db543eccd94aa276c27a20a957d9b212393f122bb3",
+        "after": "c984d4cf915e0199b2d9b9595cf481b91e6389080c8697526d4c1acfd151e0d1"
+      },
+      "backend/schemas/external_schedule.py": {
+        "before": "d200863384d80251fcb27841289b50dbc419ecdaf545ce2db75dd07dd0365f9c",
+        "after": "ea09167e37b4c2042ef3c47dc026d0e0088079706fc0c3928cf20632f22a3201"
+      },
+      "backend/services/external_schedule_service.py": {
+        "before": "e326c27edb1f6f2ee292282b17b2ed522ce4e0588d6974f3bd9cf4766409c6b0",
+        "after": "e9780739a9e7d46dc1f70b07910c1b7d5417cf60002a2e170994a3065174ecf0"
+      },
+      "frontend/package.json": {
+        "before": "ca7106ff46df4547d9d448797759f0942b4d409f1187333307f4e7aebfc08229",
+        "after": "415bc1681a97c808663a340e307fe88ee3accf9a50235cd9b5689618c820666a"
+      },
+      "frontend/src/api/externalSchedules.ts": {
+        "before": "3f681e9414a8f7fe55313ea8b8c36c368f21b81d6156513644a3c9d30a19bc34",
+        "after": "491ac2a6a467eb9b59699df120fe9bf9202d99ac5d15d9748c5f93e6d347c280"
+      },
+      "frontend/src/pages/admin/ExternalSchedules.tsx": {
+        "before": "7e768771f23e50da663cb0833b5e869743950175a266a26150e02ce481ceee70",
+        "after": "f5b6a922dae32448b02270dcc0ebd7cdc4045fdd526487307b7b7c3077d7312e"
+      }
+    },
+    "missing": [],
+    "unexpected_changes": [],
+    "protected_preferences_sha256": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+    "git_index_sha256": "b7187e43380ab38040baf1cf51e3b70f4c1ee8ac3cf51b46358946c6d653463b",
+    "staged_committed_pushed": false,
+    "postgresql_operations": false
+  },
+  "created_files": [
+    "backend/services/external_schedule_review_service.py",
+    "backend/tests/dashboard/test_external_review.py",
+    "docs/dashboard-d4-implementation.md",
+    "docs/screenshots/dashboard-d4/20261021T192854352300+0800-browser/D4-B05-explicit-resource-reconciliation.png",
+    "docs/screenshots/dashboard-d4/20261021T192854352300+0800-browser/D4-B08-invalid-source-details.png",
+    "docs/screenshots/dashboard-d4/20261021T192854352300+0800-browser/D4-B12-mobile-review.png",
+    "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B02-weekly-overlap-calendar.png",
+    "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B05-explicit-resource-reconciliation.png",
+    "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B08-invalid-source-details.png",
+    "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B12-mobile-review.png",
+    "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/browser-results.json",
+    "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B02-weekly-overlap-calendar.png",
+    "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B05-explicit-resource-reconciliation.png",
+    "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B08-invalid-source-details.png",
+    "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B12-mobile-review.png",
+    "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/browser-results.json",
+    "docs/testing/dashboard-d4/20261021T192123664940+0800-build/command.json",
+    "docs/testing/dashboard-d4/20261021T192124736771+0800-backend/command.json",
+    "docs/testing/dashboard-d4/20261021T192126222976+0800-lint/command.json",
+    "docs/testing/dashboard-d4/20261021T192416412281+0800-contracts/command.json",
+    "docs/testing/dashboard-d4/20261021T192850190990+0800-contracts/command.json",
+    "docs/testing/dashboard-d4/20261021T192854352300+0800-browser/command.json",
+    "docs/testing/dashboard-d4/20261021T192949768046+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-d4/20261021T192951721172+0800-d2-browser/command.json",
+    "docs/testing/dashboard-d4/20261021T192951865651+0800-d3-browser/command.json",
+    "docs/testing/dashboard-d4/20261021T192952905704+0800-d1-browser/command.json",
+    "docs/testing/dashboard-d4/20261021T192955321225+0800-ga-browser/command.json",
+    "docs/testing/dashboard-d4/20261021T193048577215+0800-backend/command.json",
+    "docs/testing/dashboard-d4/20261021T193051605221+0800-browser/command.json",
+    "docs/testing/dashboard-d4/20261021T193232225140+0800-build/command.json",
+    "docs/testing/dashboard-d4/20261021T193233342148+0800-lint/command.json",
+    "docs/testing/dashboard-d4/20261021T193415632019+0800-build/command.json",
+    "docs/testing/dashboard-d4/20261021T193416872014+0800-lint/command.json",
+    "docs/testing/dashboard-d4/20261021T193418759578+0800-browser/command.json",
+    "docs/testing/dashboard-d4/preservation-baseline.json",
+    "docs/testing/dashboard-d4/run_checks.py",
+    "frontend/src/components/schedule/ExternalScheduleReview.tsx",
+    "frontend/src/components/schedule/externalReviewModel.ts",
+    "frontend/tests/externalReview.browser.test.mjs",
+    "frontend/tests/externalReview.fixtures.mjs",
+    "frontend/tests/externalReview.test.mjs"
+  ],
+  "modified_files": [
+    "backend/routers/external_schedules.py",
+    "backend/schemas/external_schedule.py",
+    "backend/services/external_schedule_service.py",
+    "frontend/package.json",
+    "frontend/src/api/externalSchedules.ts",
+    "frontend/src/pages/admin/ExternalSchedules.tsx"
+  ],
+  "artifact_sha256": {
+    "backend/routers/external_schedules.py": "c984d4cf915e0199b2d9b9595cf481b91e6389080c8697526d4c1acfd151e0d1",
+    "backend/schemas/external_schedule.py": "ea09167e37b4c2042ef3c47dc026d0e0088079706fc0c3928cf20632f22a3201",
+    "backend/services/external_schedule_review_service.py": "f70ed5e98e9280212c747767b36330460cfe532b2d8808d109ffee34ebdd9255",
+    "backend/services/external_schedule_service.py": "e9780739a9e7d46dc1f70b07910c1b7d5417cf60002a2e170994a3065174ecf0",
+    "backend/tests/dashboard/test_external_review.py": "09ae98e3f3b23c077f450aab5a3dab521c376f1a72da4ad5a13f9c945cf8bd2d",
+    "docs/dashboard-d4-implementation.md": "8e6dd5f79993d80483d35adb9ceac97abfb9f6bb456d44775206486f713b3bce",
+    "docs/screenshots/dashboard-d4/20261021T192854352300+0800-browser/D4-B05-explicit-resource-reconciliation.png": "b97c7bee17ace60fa364c159a0da08ace62f9be101ebee071d4747da532b73a4",
+    "docs/screenshots/dashboard-d4/20261021T192854352300+0800-browser/D4-B08-invalid-source-details.png": "badc56265e9f2bbf34435d9b6bf8cb7da852442bd578887537388464cb5df962",
+    "docs/screenshots/dashboard-d4/20261021T192854352300+0800-browser/D4-B12-mobile-review.png": "e22952fa29b6cf730ef89ceea8990711fe80105d6599fd9af775b4d25ca291db",
+    "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B02-weekly-overlap-calendar.png": "b62ef1fde737ffff6a941952fdbdb6e50259bf043e162ab24728ecb269c4fb5b",
+    "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B05-explicit-resource-reconciliation.png": "b97c7bee17ace60fa364c159a0da08ace62f9be101ebee071d4747da532b73a4",
+    "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B08-invalid-source-details.png": "badc56265e9f2bbf34435d9b6bf8cb7da852442bd578887537388464cb5df962",
+    "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/D4-B12-mobile-review.png": "e22952fa29b6cf730ef89ceea8990711fe80105d6599fd9af775b4d25ca291db",
+    "docs/screenshots/dashboard-d4/20261021T193051605221+0800-browser/browser-results.json": "676e2e1d03666d44d59046349fd146b4b3a0fd2b77d971de48a909eeb29330df",
+    "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B02-weekly-overlap-calendar.png": "4c097040c868e3066239c30548e88923e676e46026a14e7e353461899858ac92",
+    "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B05-explicit-resource-reconciliation.png": "c9fda2bfa64f9e901140c69d958e5947d08f6ee1bb2446c197294dab5d3d12d8",
+    "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B08-invalid-source-details.png": "badc56265e9f2bbf34435d9b6bf8cb7da852442bd578887537388464cb5df962",
+    "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/D4-B12-mobile-review.png": "8496559beeb6f1c0038d81ac191d4be6e496439a740624d361906360e33cb45b",
+    "docs/screenshots/dashboard-d4/20261021T193418759578+0800-browser/browser-results.json": "7063eedbe0ad73c022af5152685226faba68996b014067cd111fb0d26fea9a40",
+    "docs/testing/dashboard-d4/20261021T192123664940+0800-build/command.json": "18eeae6f9681c99e72b9777ba02b5ea8811fee56e65e9fe3790ce374a509676e",
+    "docs/testing/dashboard-d4/20261021T192124736771+0800-backend/command.json": "0f4c599d748f497f680d0eca948a88a7ba4b511615481c05a231a484cb6c403f",
+    "docs/testing/dashboard-d4/20261021T192126222976+0800-lint/command.json": "778c282b351d72293d77a3277b307a85186d0515f8b38d1fd3ad48ff0b61b278",
+    "docs/testing/dashboard-d4/20261021T192416412281+0800-contracts/command.json": "1fdac0e2f5840dc8540bcc3502191473331b7faddaf0271642479b2fb9457794",
+    "docs/testing/dashboard-d4/20261021T192850190990+0800-contracts/command.json": "81d9753d7b3f079a1bf3fb64c40edb5947c477eccceb03590b81ea3f35b57d0c",
+    "docs/testing/dashboard-d4/20261021T192854352300+0800-browser/command.json": "9e624c05d50e5a347c597eaf3ac69d0baab02dc94e0f194857132e6435a0cc2f",
+    "docs/testing/dashboard-d4/20261021T192949768046+0800-backend-regressions/command.json": "12e8297466d47e4976006a1d7100ad7f5beeac7dbaae21a84041cac67a1a942f",
+    "docs/testing/dashboard-d4/20261021T192951721172+0800-d2-browser/command.json": "f3bf826cd085882d4ad958ed86702b70574821184bca65f290f02da667a773dd",
+    "docs/testing/dashboard-d4/20261021T192951865651+0800-d3-browser/command.json": "57509bac022247b37bb4b6e9849ab2be85b05efff375ea8b520957368f0a295c",
+    "docs/testing/dashboard-d4/20261021T192952905704+0800-d1-browser/command.json": "d85f2437a4bc4d9284e95b2b45cf84464d97864c9b1d87ea091bbcce43f711b1",
+    "docs/testing/dashboard-d4/20261021T192955321225+0800-ga-browser/command.json": "e3a90d611f924b7fe2edf4357db8cdf8635128ca8ebbec65abb5d90bcf473bd7",
+    "docs/testing/dashboard-d4/20261021T193048577215+0800-backend/command.json": "af189996236048b5738eab8682768699aa6ff51cac26d02ff42ad0fa8f3e90d6",
+    "docs/testing/dashboard-d4/20261021T193051605221+0800-browser/command.json": "e244fb9e45bfa508751b9cbd5ae97a195ee24e5248747c14412532ee61ba4145",
+    "docs/testing/dashboard-d4/20261021T193232225140+0800-build/command.json": "0f818d0b41481ebd30418afdda9714d2958e9e2974da4bc14a058535758b3ebe",
+    "docs/testing/dashboard-d4/20261021T193233342148+0800-lint/command.json": "7acfad0eddad17fee238bd10a8a30e07a863bac295a163b324cf4b9e84f8f0ab",
+    "docs/testing/dashboard-d4/20261021T193415632019+0800-build/command.json": "a24600a682aeede97a51d2f7c3d037c3d96fbee3b58467d0d597ee37ffc6df71",
+    "docs/testing/dashboard-d4/20261021T193416872014+0800-lint/command.json": "db287b8f0b90fe656d2cad1579b9952b44608abdd250541a0de20496b71c3aad",
+    "docs/testing/dashboard-d4/20261021T193418759578+0800-browser/command.json": "cc4469e643ace90cf16d2d13b7c7bd8c4994b72e7a572c7bd60a645a2e0c8701",
+    "docs/testing/dashboard-d4/preservation-baseline.json": "0587d3cd7bdb8fe3da90257de313a13bd32cd8829b8fcdc11f654610219aae3b",
+    "docs/testing/dashboard-d4/run_checks.py": "ff93a81ac2c537ffacfd35927cfb2559a5686e377ba94fbe9eb8aac86ba3b07a",
+    "frontend/package.json": "415bc1681a97c808663a340e307fe88ee3accf9a50235cd9b5689618c820666a",
+    "frontend/src/api/externalSchedules.ts": "491ac2a6a467eb9b59699df120fe9bf9202d99ac5d15d9748c5f93e6d347c280",
+    "frontend/src/components/schedule/ExternalScheduleReview.tsx": "2b823a337ea736571e7a07de5adbd0ebe4f9271fa6e9c36f5cc97905681dddad",
+    "frontend/src/components/schedule/externalReviewModel.ts": "45662e4c005da66b5c2e8ea78a8108c0a7e5f6a77d47932fa804f0c8442cadc1",
+    "frontend/src/pages/admin/ExternalSchedules.tsx": "f5b6a922dae32448b02270dcc0ebd7cdc4045fdd526487307b7b7c3077d7312e",
+    "frontend/tests/externalReview.browser.test.mjs": "9e42089a4e344d266c0099fea7bd177e573da61b0c287fb9d95eef264bf08863",
+    "frontend/tests/externalReview.fixtures.mjs": "912db5e165e29b5e9f128d540f5ac907f9dd65fd4719eade3e80b16ea86609f5",
+    "frontend/tests/externalReview.test.mjs": "0944251f439d69202b67a8eb50cfc39151ac918ef2404ff532b1bd256993232a"
+  },
+  "manifest_self_hash": "Excluded to avoid self-reference.",
+  "recommended_next": "D5 validated review handoff and printable preview report, subject to a new task. Not started."
+}

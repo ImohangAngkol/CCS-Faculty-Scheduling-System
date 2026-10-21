@@ -1,0 +1,155 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/FullCalendar/Edge with synthetic HTTP responses; no live D4 API authorization claim",
+  "scenarios": [
+    {
+      "id": "D4-B01",
+      "title": "signed-source review loading and weekly calendar provenance",
+      "started_at": "2026-10-21T19:34:20.829+08:00",
+      "finished_at": "2026-10-21T19:34:22.953+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B02",
+      "title": "overlapping entries occupy separate calendar lanes with row-level details",
+      "started_at": "2026-10-21T19:34:22.955+08:00",
+      "finished_at": "2026-10-21T19:34:23.215+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B03",
+      "title": "section supplier subject and Draft/Tentative filters combine",
+      "started_at": "2026-10-21T19:34:23.216+08:00",
+      "finished_at": "2026-10-21T19:34:23.566+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B04",
+      "title": "reference-state filters distinguish ambiguity and missing optional resources",
+      "started_at": "2026-10-21T19:34:23.567+08:00",
+      "finished_at": "2026-10-21T19:34:23.715+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B05",
+      "title": "explicit mappings trigger full-batch identity conflicts and preserve original text/hash",
+      "started_at": "2026-10-21T19:34:23.716+08:00",
+      "finished_at": "2026-10-21T19:34:24.075+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B06",
+      "title": "distinct canonical mappings clear corresponding conflicts without changing source",
+      "started_at": "2026-10-21T19:34:24.077+08:00",
+      "finished_at": "2026-10-21T19:34:24.243+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B07",
+      "title": "clearing explicit mappings restores unresolved and ambiguous source states",
+      "started_at": "2026-10-21T19:34:24.244+08:00",
+      "finished_at": "2026-10-21T19:34:24.406+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B08",
+      "title": "invalid time rows remain selectable as details but are not plotted",
+      "started_at": "2026-10-21T19:34:24.407+08:00",
+      "finished_at": "2026-10-21T19:34:24.585+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B09",
+      "title": "missing optional resources can map only to listed existing records",
+      "started_at": "2026-10-21T19:34:24.586+08:00",
+      "finished_at": "2026-10-21T19:34:24.798+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B10",
+      "title": "stale-source review removes the calendar until the source is re-previewed",
+      "started_at": "2026-10-21T19:34:24.799+08:00",
+      "finished_at": "2026-10-21T19:34:25.035+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B11",
+      "title": "clearing during delayed revalidation prevents stale source projection",
+      "started_at": "2026-10-21T19:34:25.036+08:00",
+      "finished_at": "2026-10-21T19:34:25.245+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B12",
+      "title": "mobile filters reconciliation and contained calendar remain usable",
+      "started_at": "2026-10-21T19:34:25.246+08:00",
+      "finished_at": "2026-10-21T19:34:25.738+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B13",
+      "title": "anonymous and faculty users cannot mount administrator review",
+      "started_at": "2026-10-21T19:34:25.739+08:00",
+      "finished_at": "2026-10-21T19:34:26.405+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B14",
+      "title": "unsupported resource inventory disables selection and exposes state",
+      "started_at": "2026-10-21T19:34:26.406+08:00",
+      "finished_at": "2026-10-21T19:34:26.876+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D4-B15",
+      "title": "calendar has no drag resize confirmation or GA mutation controls",
+      "started_at": "2026-10-21T19:34:26.877+08:00",
+      "finished_at": "2026-10-21T19:34:27.095+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D4-B02-weekly-overlap-calendar.png",
+      "captured_at": "2026-10-21T19:34:23.211+08:00",
+      "url": "http://localhost:59212/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D4-B05-explicit-resource-reconciliation.png",
+      "captured_at": "2026-10-21T19:34:24.070+08:00",
+      "url": "http://localhost:59212/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D4-B08-invalid-source-details.png",
+      "captured_at": "2026-10-21T19:34:24.582+08:00",
+      "url": "http://localhost:59212/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D4-B12-mobile-review.png",
+      "captured_at": "2026-10-21T19:34:25.674+08:00",
+      "url": "http://localhost:59212/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_and_review_posts": 14,
+  "activation_or_GA_mutations": 0,
+  "csv_raw_bytes_verified": true
+}
