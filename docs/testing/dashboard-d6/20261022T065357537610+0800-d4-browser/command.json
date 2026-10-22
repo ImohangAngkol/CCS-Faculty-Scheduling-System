@@ -1,0 +1,17 @@
+{
+  "check": "d4-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalReview.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-22T06:53:57.538395+08:00",
+  "finished_at": "2026-10-22T06:54:25.888219+08:00",
+  "elapsed_seconds": 28.349,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D4 external review browser acceptance with synthetic HTTP responses\n  \u2714 D4-B01 signed-source review loading and weekly calendar provenance (5826.7253ms)\n  \u2714 D4-B02 overlapping entries occupy separate calendar lanes with row-level details (193.74ms)\n  \u2714 D4-B03 section supplier subject and Draft/Tentative filters combine (647.6847ms)\n  \u2714 D4-B04 reference-state filters distinguish ambiguity and missing optional resources (490.6703ms)\n  \u2714 D4-B05 explicit mappings trigger full-batch identity conflicts and preserve original text/hash (903.0651ms)\n  \u2714 D4-B06 distinct canonical mappings clear corresponding conflicts without changing source (590.4999ms)\n  \u2714 D4-B07 clearing explicit mappings restores unresolved and ambiguous source states (482.3763ms)\n  \u2714 D4-B08 invalid time rows remain selectable as details but are not plotted (202.2636ms)\n  \u2714 D4-B09 missing optional resources can map only to listed existing records (521.886ms)\n  \u2714 D4-B10 stale-source review removes the calendar until the source is re-previewed (476.9324ms)\n  \u2714 D4-B11 clearing during delayed revalidation prevents stale source projection (331.9386ms)\n  \u2714 D4-B12 mobile filters reconciliation and contained calendar remain usable (526.5314ms)\n  \u2714 D4-B13 anonymous and faculty users cannot mount administrator review (3201.3033ms)\n  \u2714 D4-B14 unsupported resource inventory disables selection and exposes state (1086.6533ms)\n  \u2714 D4-B15 calendar has no drag resize confirmation or GA mutation controls (445.7507ms)\n\u2714 D4 external review browser acceptance with synthetic HTTP responses (25987.518ms)\n\u2139 tests 16\n\u2139 suites 0\n\u2139 pass 16\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 28210.8746\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

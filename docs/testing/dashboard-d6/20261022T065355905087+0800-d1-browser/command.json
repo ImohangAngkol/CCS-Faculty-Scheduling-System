@@ -1,0 +1,17 @@
+{
+  "check": "d1-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/dashboardD1.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-22T06:53:55.906111+08:00",
+  "finished_at": "2026-10-22T06:54:26.221805+08:00",
+  "elapsed_seconds": 30.314,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D1 rendered dashboard acceptance with synthetic HTTP responses\n  \u2714 D1-B01 catalog loading, real component details and unsupported metadata (6811.5546ms)\n  \u2714 D1-B02 code/title search, no matches and clear (45.2246ms)\n  \u2714 D1-B03 genuine empty catalog (558.5034ms)\n  \u2714 D1-B04 catalog error and successful retry (577.5728ms)\n  \u2714 D1-B05 catalog metadata denial is actionable (525.2277ms)\n  \u2714 D1-B06 faculty welcome, honest feature status and navigation (1390.072ms)\n  \u2714 D1-B07 profile loading, identity and read-only academic details survive refresh (1407.4343ms)\n  \u2714 D1-B08 empty academic fields remain honest unknowns (806.2143ms)\n  \u2714 D1-B09 missing metadata preserves account binding (601.5018ms)\n  \u2714 D1-B10 mismatched identity is never rendered (666.5574ms)\n  \u2714 D1-B11 profile service failure and retry (1368.0554ms)\n  \u2714 D1-B12 missing binding makes no faculty lookup (531.6333ms)\n  \u2714 D1-B13 role-denied routes never mount protected metadata pages (688.832ms)\n  \u2714 D1-B14 anonymous access redirects and metadata 401 expires the session (1947.6971ms)\n  \u2714 D1-B15 mobile catalog, dashboard and profile fit the viewport (1458.5324ms)\n  \u2714 D1-B16 metadata denial does not expose academic details (328.0356ms)\n\u2714 D1 rendered dashboard acceptance with synthetic HTTP responses (29364.56ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 30185.9716\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

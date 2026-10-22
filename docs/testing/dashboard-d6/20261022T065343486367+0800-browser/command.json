@@ -1,0 +1,17 @@
+{
+  "check": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalLegacy.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-22T06:53:43.487493+08:00",
+  "finished_at": "2026-10-22T06:53:56.119422+08:00",
+  "elapsed_seconds": 12.632,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D6 legacy intake browser acceptance with synthetic HTTP responses\n  \u2714 D6-B01 canonical remains default and legacy requires explicit selection (2100.537ms)\n  \u2714 D6-B02 missing metadata prompts and fictional template are available (25.6095ms)\n  \u2714 D6-B03 legacy upload retains exact file hash and all original rows (586.7568ms)\n  \u2714 D6-B04 ambiguous and invalid schedules stay visible outside the calendar (256.2066ms)\n  \u2714 D6-B05 explicit section mapping reuses D4 and identifies overlaps (389.0569ms)\n  \u2714 D6-B06 metadata edits invalidate old output and repreview labels their origin (498.2395ms)\n  \u2714 D6-B07 D5 handoff contains complete legacy provenance including invalid rows (279.0823ms)\n  \u2714 D6-B08 tampered legacy originals reject even a recomputed content fingerprint (318.1363ms)\n  \u2714 D6-B09 stale receipt response blocks output (74.1248ms)\n  \u2714 D6-B10 malformed import clears prior results and supports retry (302.3486ms)\n  \u2714 D6-B11 legacy imported markup remains literal text (118.1952ms)\n  \u2714 D6-B12 fresh print includes every original and metadata origin (127.1709ms)\n  \u2714 D6-B13 mobile legacy provenance does not overflow the page (278.254ms)\n  \u2714 D6-B14 clear and refresh discard temporary data with no confirmation actions (507.6921ms)\n  \u2714 D6-B15 anonymous and faculty routes cannot issue intake or handoff requests (477.6522ms)\n\u2714 D6 legacy intake browser acceptance with synthetic HTTP responses (9758.9082ms)\n\u2139 tests 16\n\u2139 suites 0\n\u2139 pass 16\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 12389.4211\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

@@ -1,0 +1,27 @@
+{
+  "check": "backend",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_external_legacy.py",
+    "tests/dashboard/test_external_handoff.py",
+    "tests/dashboard/test_external_review.py",
+    "tests/dashboard/test_external_preview.py",
+    "tests/dashboard/test_my_schedule.py",
+    "-q",
+    "--tb=short"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-22T06:51:44.199534+08:00",
+  "finished_at": "2026-10-22T06:52:13.712553+08:00",
+  "elapsed_seconds": 29.513,
+  "exit_code": 1,
+  "stdout": "......................................F................................. [ 40%]\n........................................................................ [ 81%]\n................................                                         [100%]\n================================== FAILURES ===================================\n_____________ test_real_auth_role_csrf_origin_bounds_and_no_write _____________\ntests\\dashboard\\test_external_legacy.py:156: in test_real_auth_role_csrf_origin_bounds_and_no_write\n    assert fixture.client.post(path,content=b' '*(2*intake.MAX_BYTES+1),headers=headers).status_code==413\nE   AssertionError: assert 415 == 413\nE    +  where 415 = <Response [415 Unsupported Media Type]>.status_code\nE    +    where <Response [415 Unsupported Media Type]> = post('/api/external-schedules/preview-file?filename=fictional.csv&import_format=legacy_gec', content=(b' ' * ((2 * 1048576) + 1)), headers={'Origin': 'http://localhost:5173', 'X-CSRF-Token': '8ITaQ-Us3ioD-JCxiRg7sO1dxEzhGKnQCeu51K5cOeI'})\nE    +      where post = <starlette.testclient.TestClient object at 0x0000022AD9DFF770>.post\nE    +        where <starlette.testclient.TestClient object at 0x0000022AD9DFF770> = namespace(client=<starlette.testclient.TestClient object at 0x0000022AD9DFF770>, engine=Engine(sqlite:///C:\\Users\\User...=None,lec_hours=3,lab_hours=0,primary_domain=,secondary_domains=[],section=SYN-B,], rooms=[name=SYN LEC, name=SYN LAB]).client\nE    +      and   1048576 = intake.MAX_BYTES\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/dashboard/test_external_legacy.py::test_real_auth_role_csrf_origin_bounds_and_no_write\n1 failed, 175 passed, 2 warnings in 26.60s\n",
+  "stderr": "",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "Real FastAPI ASGI auth with isolated SQLite/synthetic resources"
+}

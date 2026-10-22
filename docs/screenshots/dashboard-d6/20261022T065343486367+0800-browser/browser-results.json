@@ -1,0 +1,146 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+  "scenarios": [
+    {
+      "id": "D6-B01",
+      "title": "canonical remains default and legacy requires explicit selection",
+      "started_at": "2026-10-22T06:53:46.659+08:00",
+      "finished_at": "2026-10-22T06:53:48.758+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B02",
+      "title": "missing metadata prompts and fictional template are available",
+      "started_at": "2026-10-22T06:53:48.761+08:00",
+      "finished_at": "2026-10-22T06:53:48.786+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B03",
+      "title": "legacy upload retains exact file hash and all original rows",
+      "started_at": "2026-10-22T06:53:48.787+08:00",
+      "finished_at": "2026-10-22T06:53:49.373+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B04",
+      "title": "ambiguous and invalid schedules stay visible outside the calendar",
+      "started_at": "2026-10-22T06:53:49.374+08:00",
+      "finished_at": "2026-10-22T06:53:49.630+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B05",
+      "title": "explicit section mapping reuses D4 and identifies overlaps",
+      "started_at": "2026-10-22T06:53:49.631+08:00",
+      "finished_at": "2026-10-22T06:53:50.020+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B06",
+      "title": "metadata edits invalidate old output and repreview labels their origin",
+      "started_at": "2026-10-22T06:53:50.020+08:00",
+      "finished_at": "2026-10-22T06:53:50.518+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B07",
+      "title": "D5 handoff contains complete legacy provenance including invalid rows",
+      "started_at": "2026-10-22T06:53:50.519+08:00",
+      "finished_at": "2026-10-22T06:53:50.798+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B08",
+      "title": "tampered legacy originals reject even a recomputed content fingerprint",
+      "started_at": "2026-10-22T06:53:50.799+08:00",
+      "finished_at": "2026-10-22T06:53:51.117+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B09",
+      "title": "stale receipt response blocks output",
+      "started_at": "2026-10-22T06:53:51.118+08:00",
+      "finished_at": "2026-10-22T06:53:51.191+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B10",
+      "title": "malformed import clears prior results and supports retry",
+      "started_at": "2026-10-22T06:53:51.192+08:00",
+      "finished_at": "2026-10-22T06:53:51.494+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B11",
+      "title": "legacy imported markup remains literal text",
+      "started_at": "2026-10-22T06:53:51.495+08:00",
+      "finished_at": "2026-10-22T06:53:51.613+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B12",
+      "title": "fresh print includes every original and metadata origin",
+      "started_at": "2026-10-22T06:53:51.613+08:00",
+      "finished_at": "2026-10-22T06:53:51.740+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B13",
+      "title": "mobile legacy provenance does not overflow the page",
+      "started_at": "2026-10-22T06:53:51.741+08:00",
+      "finished_at": "2026-10-22T06:53:52.019+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B14",
+      "title": "clear and refresh discard temporary data with no confirmation actions",
+      "started_at": "2026-10-22T06:53:52.019+08:00",
+      "finished_at": "2026-10-22T06:53:52.527+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D6-B15",
+      "title": "anonymous and faculty routes cannot issue intake or handoff requests",
+      "started_at": "2026-10-22T06:53:52.527+08:00",
+      "finished_at": "2026-10-22T06:53:53.005+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D6-B04-originals-and-parsing.png",
+      "captured_at": "2026-10-22T06:53:49.622+08:00",
+      "url": "http://localhost:51849/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D6-B07-complete-legacy-handoff.png",
+      "captured_at": "2026-10-22T06:53:50.790+08:00",
+      "url": "http://localhost:51849/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D6-B13-mobile-legacy.png",
+      "captured_at": "2026-10-22T06:53:51.941+08:00",
+      "url": "http://localhost:51849/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_and_review_posts": 17,
+  "activation_or_GA_mutations": 0,
+  "legacy_decoded_bytes_verified": true
+}
