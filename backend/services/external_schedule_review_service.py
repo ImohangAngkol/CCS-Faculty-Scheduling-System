@@ -5,7 +5,7 @@ import hmac
 import json
 import secrets
 
-from schemas.external_schedule import ExternalRow, ReviewProjection, ReviewMeeting, ResourceResolution, Discrepancy
+from schemas.external_schedule import ExternalRow, ReviewProjection, ReviewMeeting, ResourceResolution, Discrepancy, LegacyProvenance
 from services import external_schedule_service as intake
 
 # Only a process key is retained; source batches exist in caller-held receipts,
@@ -27,6 +27,8 @@ def sign_preview(result, ctx):
               "source_kind": result.source_kind, "source_name": result.source_name,
               "source_sha256": result.source_sha256, "source_parser_version": result.parser_version,
               "rows": [{"source_row": row.source_row, "original": row.input.model_dump()} for row in result.rows]}
+    if result.legacy is not None:
+        source["legacy"] = result.legacy.model_dump()
     raw = _json(source)
     token = base64.urlsafe_b64encode(raw).decode() + "." + hmac.new(_PROCESS_KEY, raw, hashlib.sha256).hexdigest()
     if len(token) > 1600000:
@@ -84,6 +86,7 @@ def project(payload):
         intake.fail("PREVIEW_REFERENCES_CHANGED", "Recognized resources or legacy input references changed. Reload metadata and preview the source again.", 409)
     originals = [ExternalRow(**row["original"]) for row in source["rows"]]
     lines = [row["source_row"] for row in source["rows"]]
+    legacy = LegacyProvenance.model_validate(source["legacy"]) if source.get("legacy") is not None else None
     mappings = {}
     for mapping in payload.mappings:
         if mapping.source_row not in lines or mapping.source_row in mappings:
@@ -91,7 +94,7 @@ def project(payload):
         mappings[mapping.source_row] = mapping
     # Reuse all existing format/domain checks, replacing only resource-dependent
     # findings so original labels cannot override explicit canonical identities.
-    base = intake.validate(originals, source["source_kind"], source["source_name"], source_rows=lines, _context=ctx, _sign=False)
+    base = intake.validate(originals, source["source_kind"], source["source_name"], source_rows=lines, _context=ctx, _sign=False, _legacy=legacy)
     replaced = {"DUPLICATE_SECTION", "DUPLICATE_ENTRY", "SECTION_OVERLAP", "ROOM_OVERLAP", "INSTRUCTOR_OVERLAP",
                 "EXISTING_FIXED_SECTION_OVERLAP"}
     output = []
@@ -124,6 +127,8 @@ def project(payload):
         row.calendar_supported = (start is not None and end is not None and start < end
                                   and bool(row.original.days) and len(set(row.original.days)) == len(row.original.days)
                                   and all(day in intake.DAYS for day in row.original.days))
+        if legacy is not None:
+            row.calendar_supported = row.calendar_supported and next(r for r in legacy.rows if r.source_row == row.source_row).parse_state == "parsed"
         resources = [("sections", r) for r in row.sections] + [("room", row.room), ("instructor", row.instructor)]
         for field, resource in resources:
             if resource.state != "resolved":
@@ -181,4 +186,4 @@ def project(payload):
     for row in output:
         row.status = "invalid" if any(d.severity=="error" for d in row.discrepancies) else "needs_review" if row.discrepancies else row.original.status
     return ReviewProjection(source_kind=source["source_kind"],source_name=source["source_name"],
-                            source_sha256=source["source_sha256"],reference_digest=source["reference_digest"],rows=output)
+                            source_sha256=source["source_sha256"],reference_digest=source["reference_digest"],rows=output,legacy=legacy)

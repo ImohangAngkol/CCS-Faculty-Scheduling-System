@@ -4,6 +4,7 @@ import {HANDOFF_LABEL, prepareExternalHandoff} from "../../api/externalSchedules
 import type {ExternalPreview, ResourceResolution, ReviewHandoff, RowMapping} from "../../api/externalSchedules";
 import {metadataError} from "../../services/dashboardMetadata";
 import "./externalHandoff.css";
+import LegacyScheduleProvenance from "./LegacyScheduleProvenance";
 
 const resourceLabels = {resolved: "Resolved", unresolved: "Unresolved", ambiguous: "Ambiguous", unsupported: "Unsupported", missing_optional: "Missing optional resource"};
 const statuses = {draft: "Draft", tentative: "Tentative", needs_review: "Needs review", invalid: "Invalid"};
@@ -33,6 +34,7 @@ export function ExternalHandoffDocument({value}: {value: ReviewHandoff}) {
     {review.rows.map(row => <section key={row.source_row} className="handoff-row" aria-label={"Handoff source row " + row.source_row}>
       <h4>Source row {row.source_row} · {row.original.subject_code || "Missing subject code"} · {row.original.title || "Missing title"}</h4>
       <p className="handoff-row-label">{HANDOFF_LABEL}</p>
+      <LegacyScheduleProvenance legacy={review.legacy} sourceRow={row.source_row} />
       <dl>
         <div><dt>Supplying college/department</dt><dd>{row.original.supplier || "Missing supplier"}</dd></div>
         <div><dt>Academic term (unverified)</dt><dd>{row.original.academic_term || "Term unknown"}</dd></div>

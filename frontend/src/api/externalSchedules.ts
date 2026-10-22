@@ -10,6 +10,11 @@ const row = z.object({
 export type ExternalRow = z.infer<typeof row>;
 const match = z.object({value: z.string(), id: z.string().nullable(), state: z.enum(["resolved", "unresolved", "not_supplied"])}).strict();
 const discrepancy = z.object({code: z.string(), severity: z.enum(["error", "review"]), field: z.string(), message: z.string(), related_rows: z.array(z.number().int().positive())}).strict();
+export const legacyMetadataSchema = z.object({supplier: z.string().max(120), source_reference: z.string().max(250), academic_term: z.string().max(120), status: z.enum(["draft", "tentative"])}).strict();
+export type LegacyMetadata = z.infer<typeof legacyMetadataSchema>;
+const legacySchema = z.object({adapter_version: z.literal("d6.1"), metadata_origin: z.literal("administrator_supplied_unverified"), metadata: legacyMetadataSchema,
+  rows: z.array(z.object({source_row: z.number().int().positive(), year_level: z.string(), section: z.string(), course_number: z.string(), schedule: z.string(),
+    parse_state: z.enum(["parsed", "invalid", "unsupported", "ambiguous"]), discrepancies: z.array(discrepancy)}).strict()).max(200)}).strict();
 export const previewSchema = z.object({
   schema_version: z.literal(1), preview_only: z.literal(true), persisted: z.literal(false), activated: z.literal(false),
   source_kind: z.enum(["manual", "csv", "xlsx"]), source_name: z.string().nullable(), source_sha256: z.string().regex(/^[a-f0-9]{64}$/).nullable(),
@@ -18,6 +23,7 @@ export const previewSchema = z.object({
     status: z.enum(["draft", "tentative", "needs_review", "invalid"]), sections: z.array(match), room: match, instructor: match,
     discrepancies: z.array(discrepancy)}).strict()).max(200),
   review_token: z.string().max(1600000).nullable().optional(),
+  legacy: legacySchema.nullable().optional(),
 }).strict();
 export type ExternalPreview = z.infer<typeof previewSchema>;
 const reference = z.object({id: z.string(), label: z.string(), alias: z.string().optional()}).strict();
@@ -40,11 +46,19 @@ export async function getExternalMetadata(signal?: AbortSignal): Promise<Externa
 export async function previewManual(rows: ExternalRow[], signal?: AbortSignal): Promise<ExternalPreview> {
   return previewSchema.parse((await apiClient.post(endpoint + "/preview", {rows}, {signal})).data);
 }
-export async function previewFile(file: File, signal?: AbortSignal): Promise<ExternalPreview> {
+export async function previewFile(file: File, signal?: AbortSignal, legacyMetadata?: LegacyMetadata): Promise<ExternalPreview> {
   if (file.size > 1048576 || !/\.(csv|xlsx)$/i.test(file.name))
     throw new Error("Choose a CSV or XLSX file no larger than 1 MiB.");
-  return previewSchema.parse((await apiClient.post(endpoint + "/preview-file", file, {
-    signal, params: {filename: file.name}, headers: {"Content-Type": "application/octet-stream"},
+  if (legacyMetadata && !/\.csv$/i.test(file.name)) throw new Error("Legacy GEC preview requires a UTF-8 CSV file.");
+  let payload: File | {content_base64: string; metadata: LegacyMetadata} = file;
+  if (legacyMetadata) {
+    const bytes = new Uint8Array(await file.arrayBuffer());
+    let binary = "";
+    for (let i = 0; i < bytes.length; i += 8192) binary += String.fromCharCode(...bytes.subarray(i, i+8192));
+    payload = {content_base64: btoa(binary), metadata: legacyMetadataSchema.parse(legacyMetadata)};
+  }
+  return previewSchema.parse((await apiClient.post(endpoint + "/preview-file", payload, {
+    signal, params: {filename: file.name, ...(legacyMetadata ? {import_format: "legacy_gec"} : {})}, headers: {"Content-Type": legacyMetadata ? "application/json" : "application/octet-stream"},
   })).data);
 }
 
@@ -65,6 +79,7 @@ export const reviewProjectionSchema = z.object({
     status: z.enum(["draft", "tentative", "needs_review", "invalid"]),
     sections: z.array(resolution), room: resolution, instructor: resolution,
     discrepancies: z.array(discrepancy), calendar_supported: z.boolean()}).strict()).max(200),
+  legacy: legacySchema.nullable().optional(),
 }).strict();
 export type ReviewProjection = z.infer<typeof reviewProjectionSchema>;
 export type ReviewMeeting = ReviewProjection["rows"][number];
@@ -83,6 +98,7 @@ function verifyReview(source: ExternalPreview, value: unknown): ReviewProjection
   const data = parsed.data, lines = new Set(data.rows.map(r => r.source_row));
   if (data.source_sha256 !== source.source_sha256 || data.source_kind !== source.source_kind || data.source_name !== source.source_name
       || data.rows.length !== source.rows.length || lines.size !== data.rows.length
+      || JSON.stringify(data.legacy ?? null) !== JSON.stringify(source.legacy ?? null)
       || data.rows.some(r => JSON.stringify(r.original) !== JSON.stringify(source.rows.find(original => original.source_row === r.source_row)?.input)))
     throw new Error("The review does not match the original preview provenance. Preview the source again.");
   return data;

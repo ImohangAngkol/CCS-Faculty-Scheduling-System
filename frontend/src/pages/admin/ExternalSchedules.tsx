@@ -3,9 +3,10 @@ import type {FormEvent} from "react";
 import axios from "axios";
 import MetadataState from "../../components/dashboard/MetadataState";
 import {emptyExternalRow, getExternalMetadata, previewFile, previewManual} from "../../api/externalSchedules";
-import type {ExternalMetadata, ExternalPreview, ExternalRow} from "../../api/externalSchedules";
+import type {ExternalMetadata, ExternalPreview, ExternalRow, LegacyMetadata} from "../../api/externalSchedules";
 import {metadataError} from "../../services/dashboardMetadata";
 import ExternalScheduleReview from "../../components/schedule/ExternalScheduleReview";
+import LegacyScheduleProvenance from "../../components/schedule/LegacyScheduleProvenance";
 
 const labels = {supplier: "Supplying college / department", subject_code: "Subject code", title: "Descriptive title",
   academic_term: "Academic term (unverified)", start: "Start time", end: "End time", room: "Room (optional)",
@@ -29,6 +30,8 @@ export default function ExternalSchedules() {
   const [drafts, setDrafts] = useState<ExternalRow[]>([]);
   const [editing, setEditing] = useState<number | null>(null);
   const [file, setFile] = useState<File>();
+  const [format, setFormat] = useState("canonical");
+  const [legacyMetadata, setLegacyMetadata] = useState<LegacyMetadata>({supplier: "", source_reference: "", academic_term: "", status: "draft"});
   const [preview, setPreview] = useState<ExternalPreview>();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -54,7 +57,7 @@ export default function ExternalSchedules() {
     const controller = new AbortController(); pending.current = controller; setBusy(true);
     try {
       const result = kind === "manual" ? await previewManual(drafts, controller.signal)
-        : file ? await previewFile(file, controller.signal) : undefined;
+        : file ? await previewFile(file, controller.signal, format === "legacy_gec" ? legacyMetadata : undefined) : undefined;
       if (!controller.signal.aborted) {setPreview(result); setPreviewSequence(value => value+1);}
     } catch (reason) {if (!controller.signal.aborted) setError(importError(reason));}
     finally {if (!controller.signal.aborted) {setBusy(false); pending.current = null;}}
@@ -105,7 +108,15 @@ export default function ExternalSchedules() {
         <h2 id="file-intake" className="text-lg font-semibold text-teal-900">CSV / XLSX import preview</h2>
         <p className="mt-2 text-sm text-slate-600">UTF-8 comma-separated CSV or one-sheet XLSX · 1 MiB · 200 rows · 13 columns. No formulas, macros, external links or embedded content. Use text cells or time-only start/end cells in XLSX. | separates sections and days.</p>
         <a className="mt-2 inline-block font-medium text-teal-800 underline" href="/templates/external-gec-fictional.csv" download>Download fictional CSV template</a>
-        <div className="mt-4 flex min-w-0 flex-wrap items-center gap-3"><label className="min-w-0 text-sm">Schedule file<input key={workspace} type="file" className="mt-1 block w-full max-w-sm text-sm" accept=".csv,.xlsx" onChange={event => {invalidate(); setFile(event.target.files?.[0]);}} /></label>
+        <label className="mt-4 block text-sm font-medium">Import format<select className="mt-1 block w-full max-w-md rounded border p-2" value={format} onChange={event => {invalidate(); setFormat(event.target.value);}}><option value="canonical">Canonical CSV / XLSX</option><option value="legacy_gec">Legacy GEC CSV (four columns)</option></select></label>
+        {format === "legacy_gec" && <fieldset className="mt-4 space-y-3 rounded border border-amber-300 bg-amber-50 p-4"><legend className="font-semibold">Legacy metadata mapping</legend>
+          <p className="text-sm">Requires exactly Year Level, Section, Course Number, Schedule. Use explicit AM/PM endpoints and compact M/T/W/TH/F/S/SAT day codes. Repeated days are ambiguous. Missing metadata stays unresolved. This adds unverified preview context only; no title, faculty, room or stable identity is inferred.</p>
+          {(["supplier", "source_reference", "academic_term"] as const).map(name => <label key={name} className="block text-sm">{labels[name]} · administrator-supplied (unverified)<input className="mt-1 block w-full rounded border p-2" value={legacyMetadata[name]} maxLength={name === "source_reference" ? 250 : 120} onChange={event => {invalidate(); setLegacyMetadata({...legacyMetadata, [name]: event.target.value});}} /></label>)}
+          <label className="block text-sm">Legacy intake status<select className="mt-1 block w-full rounded border p-2" value={legacyMetadata.status} onChange={event => {invalidate(); setLegacyMetadata({...legacyMetadata, status: event.target.value as LegacyMetadata["status"]});}}><option value="draft">Draft</option><option value="tentative">Tentative</option></select></label>
+          <a className="inline-block text-teal-800 underline" href="/templates/external-gec-legacy-fictional.csv" download>Download fictional legacy CSV template</a>
+          <p className="text-sm">Blank supplier/source reference and missing title produce Invalid findings. Supplied term text remains unverified. Correct the source or metadata and preview again; no subset is dropped.</p>
+        </fieldset>}
+        <div className="mt-4 flex min-w-0 flex-wrap items-center gap-3"><label className="min-w-0 text-sm">Schedule file<input key={workspace} type="file" className="mt-1 block w-full max-w-sm text-sm" accept={format === "legacy_gec" ? ".csv" : ".csv,.xlsx"} onChange={event => {invalidate(); setFile(event.target.files?.[0]);}} /></label>
           <button type="button" className="ccs-btn-secondary" disabled={!file || busy} onClick={() => review("file")}>Preview selected file</button></div>
       </section>
     </>}
@@ -117,6 +128,7 @@ export default function ExternalSchedules() {
       {preview.source_sha256 && <p className="mt-1 break-all">Source SHA-256: {preview.source_sha256}</p>}
       <p className="mt-1">Term/date coverage remains unverified. Same-week overlap checks are provisional. This preview is not a constraint set or confirmation.</p>
     </section>}
+    {preview?.legacy && <LegacyScheduleProvenance legacy={preview.legacy} />}
     {preview && metadata && <ExternalScheduleReview key={previewSequence} source={preview} metadata={metadata} />}
     <section className="min-w-0 rounded-xl border border-slate-200 bg-white p-5" aria-labelledby="review-table">
       <h2 id="review-table" className="text-lg font-semibold text-teal-900">Intake review</h2>
@@ -139,6 +151,6 @@ export default function ExternalSchedules() {
         </table></div>
       </>}
     </section>
-    <button type="button" className="ccs-btn-secondary" onClick={() => {invalidate(); setDrafts([]); setForm(emptyExternalRow()); setEditing(null); setFile(undefined); setWorkspace(value => value+1);}}>Clear temporary workspace</button>
+    <button type="button" className="ccs-btn-secondary" onClick={() => {invalidate(); setDrafts([]); setForm(emptyExternalRow()); setEditing(null); setFile(undefined); setLegacyMetadata({supplier: "", source_reference: "", academic_term: "", status: "draft"}); setWorkspace(value => value+1);}}>Clear temporary workspace</button>
   </div>;
 }

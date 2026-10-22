@@ -50,6 +50,37 @@ class ReviewedRow(BaseModel):
     discrepancies: list[Discrepancy]
 
 
+class LegacyMetadata(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
+    supplier: str = Field(default="", max_length=120)
+    source_reference: str = Field(default="", max_length=250)
+    academic_term: str = Field(default="", max_length=120)
+    status: Literal["draft", "tentative"] = "draft"
+
+
+class LegacySourceRow(BaseModel):
+    source_row: int
+    year_level: str
+    section: str
+    course_number: str
+    schedule: str
+    parse_state: Literal["parsed", "invalid", "unsupported", "ambiguous"]
+    discrepancies: list[Discrepancy]
+
+
+class LegacyUpload(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
+    content_base64: str = Field(max_length=1398104)
+    metadata: LegacyMetadata
+
+
+class LegacyProvenance(BaseModel):
+    adapter_version: Literal["d6.1"] = "d6.1"
+    metadata_origin: Literal["administrator_supplied_unverified"] = "administrator_supplied_unverified"
+    metadata: LegacyMetadata
+    rows: list[LegacySourceRow]
+
+
 class PreviewResult(BaseModel):
     schema_version: Literal[1] = 1
     preview_only: Literal[True] = True
@@ -62,6 +93,7 @@ class PreviewResult(BaseModel):
     term_verification: Literal["not_configured"] = "not_configured"
     rows: list[ReviewedRow]
     review_token: str | None = None
+    legacy: LegacyProvenance | None = None
 
 
 class SectionMapping(BaseModel):
@@ -117,6 +149,7 @@ class ReviewProjection(BaseModel):
     term_verification: Literal["not_configured"] = "not_configured"
     reference_digest: str
     rows: list[ReviewMeeting]
+    legacy: LegacyProvenance | None = None
 
 
 HANDOFF_LABEL = "REVIEW PREVIEW — NOT CONFIRMED OR ACTIVE IN GA"

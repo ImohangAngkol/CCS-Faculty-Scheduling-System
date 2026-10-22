@@ -95,7 +95,7 @@ def _unsafe_text(value):
     return any(ord(c) < 32 and c not in "\n\r\t" for c in value) or value.lstrip().startswith(("=", "+", "-", "@"))
 
 
-def validate(rows, source_kind="manual", source_name=None, raw=None, source_rows=None, *, _context=None, _sign=True):
+def validate(rows, source_kind="manual", source_name=None, raw=None, source_rows=None, *, _context=None, _sign=True, _legacy=None):
     ctx = safe_context() if _context is None else _context
     output, intervals, duplicates = [], [], {}
     issue_count = 0
@@ -122,6 +122,9 @@ def validate(rows, source_kind="manual", source_name=None, raw=None, source_rows
                              room=_match(row.room, ctx["rooms"]), instructor=_match(row.instructor, ctx["instructors"]),
                              discrepancies=[])
         output.append(result)
+        if _legacy is not None:
+            for finding in _legacy.rows[index].discrepancies:
+                issue(result, finding.code, finding.severity, finding.field, finding.message, finding.related_rows)
         for field in REQUIRED:
             if not getattr(row, field):
                 issue(result, "REQUIRED_FIELD", "error", field, "This required field is missing.")
@@ -178,7 +181,7 @@ def validate(rows, source_kind="manual", source_name=None, raw=None, source_rows
     for row in output:
         row.status = "invalid" if any(d.severity == "error" for d in row.discrepancies) else "needs_review" if row.discrepancies else row.input.status
     result = PreviewResult(source_kind=source_kind, source_name=source_name,
-                           source_sha256=hashlib.sha256(raw).hexdigest() if raw is not None else None, rows=output)
+                           source_sha256=hashlib.sha256(raw).hexdigest() if raw is not None else None, rows=output, legacy=_legacy)
     if _sign:
         from services.external_schedule_review_service import sign_preview
         result.review_token = sign_preview(result, ctx)
@@ -221,7 +224,7 @@ def _records(records):
     return rows, lines
 
 
-def _csv(raw):
+def _csv(raw, record_parser=_records):
     if raw.startswith((b"PK", b"\xd0\xcf\x11\xe0")):
         fail("FORMAT_MISMATCH", "File contents do not match UTF-8 CSV.")
     try:
@@ -234,7 +237,7 @@ def _csv(raw):
             for cells in reader:
                 yield previous + 1, cells
                 previous = reader.line_num
-        return _records(iter(records()))
+        return record_parser(iter(records()))
     except (UnicodeError, csv.Error, ValueError):
         fail("MALFORMED_CSV", "CSV must be valid UTF-8 with comma separators and correctly quoted fields.")
 
@@ -312,9 +315,16 @@ def _xlsx(raw):
         fail("MALFORMED_XLSX", "The workbook is malformed or unsupported. No rows were accepted.")
 
 
-def parse_file(raw, filename):
+def parse_file(raw, filename, import_format="canonical", legacy_metadata=None):
     kind = filename_kind(filename)
     if len(raw) > MAX_BYTES:
         fail("FILE_TOO_LARGE", "Preview uploads are limited to 1 MiB.", 413)
+    if import_format == "legacy_gec":
+        if kind != "csv":
+            fail("LEGACY_CSV_REQUIRED", "The explicit legacy adapter supports UTF-8 CSV only. Canonical XLSX remains available separately.")
+        from services.external_schedule_legacy_service import parse_legacy
+        return parse_legacy(raw, filename, legacy_metadata)
+    if import_format != "canonical":
+        fail("UNSUPPORTED_IMPORT_FORMAT", "Select canonical or legacy_gec explicitly.")
     rows, lines = _csv(raw) if kind == "csv" else _xlsx(raw)
     return validate(rows, kind, filename, raw, lines)

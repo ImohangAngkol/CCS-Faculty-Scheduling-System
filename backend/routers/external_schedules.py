@@ -1,10 +1,12 @@
 """Administrator-only transient previews; request bodies never spool to disk."""
 from fastapi import APIRouter, Depends, Request
 import json
+import base64
 from pydantic import ValidationError
 from starlette.concurrency import run_in_threadpool
 
-from schemas.external_schedule import ManualPreview, PreviewResult, ReviewRequest, ReviewProjection, ReviewHandoff
+from schemas.external_schedule import ManualPreview, PreviewResult, ReviewRequest, ReviewProjection, ReviewHandoff, LegacyUpload
+from typing import Literal
 from services import external_schedule_service as service
 from services.preference_authorization import require_admin
 
@@ -51,8 +53,18 @@ async def manual_preview(request: Request):
 
 
 @router.post("/preview-file", response_model=PreviewResult)
-async def file_preview(request: Request, filename: str = ""):
+async def file_preview(request: Request, filename: str = "", import_format: Literal["canonical", "legacy_gec"] = "canonical"):
     service.filename_kind(filename)
+    if import_format == "legacy_gec":
+        if request.headers.get("content-type", "").split(";")[0].strip() != "application/json":
+            service.fail("UNSUPPORTED_MEDIA_TYPE", "Legacy preview requires a bounded JSON upload envelope.", 415)
+        envelope = await bounded_body(request, 2 * service.MAX_BYTES)
+        try:
+            payload = LegacyUpload.model_validate(json.loads(envelope, object_pairs_hook=unique_json_pairs))
+            raw = base64.b64decode(payload.content_base64, validate=True)
+        except (ValidationError, ValueError, RecursionError):
+            service.fail("INVALID_LEGACY_UPLOAD", "Provide bounded base64 CSV bytes and preview metadata. No rows were accepted.")
+        return await run_in_threadpool(service.parse_file, raw, filename, import_format, payload.metadata)
     raw = await bounded_body(request)
     return await run_in_threadpool(service.parse_file, raw, filename)
 
