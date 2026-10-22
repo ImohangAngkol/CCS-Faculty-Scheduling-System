@@ -1,8 +1,10 @@
+import ExternalEvidencePanel from "./ExternalEvidencePanel";
 import {READINESS_LABEL} from "../../api/externalReadiness";
 import type {ReadinessAssessment} from "../../api/externalReadiness";
 
 export default function ReadinessDocument({value}:{value:ReadinessAssessment}) {
   return <section className="min-w-0 space-y-3 break-words rounded-lg border border-amber-300 bg-amber-50 p-4" aria-label="Readiness assessment">
+    <ExternalEvidencePanel value={value.evidence_trust} supplier={value.metadata.supplier} reference={value.metadata.evidence_reference}/>
     <h3 className="font-semibold text-teal-900">{READINESS_LABEL}</h3>
     <p><strong>{value.status}</strong> · {value.blocker_count} blockers · {value.warning_count} warnings · Policy {value.policy_version}</p>
     <p>READY means eligible for subsequent institutional confirmation review only. Reviewing or printing never confirms, approves, publishes or activates a schedule.</p>

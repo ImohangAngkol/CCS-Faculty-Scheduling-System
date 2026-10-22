@@ -11,6 +11,7 @@ from schemas.external_readiness import ReadinessAssessment, ReadinessFinding, Re
 from services import external_schedule_service as intake, external_schedule_review_service as review
 from services import external_schedule_preview_lifecycle as lifecycle
 from services import external_schedule_verification_service as authority
+from services.evidence_sanitization import sanitize
 
 POLICY_VERSION = "d7.1"
 SUPPORTED_TIMEZONE = "Asia/Manila"
@@ -27,7 +28,7 @@ def _safe(value):
         for child in value.values(): _safe(child)
     elif isinstance(value, list):
         for child in value: _safe(child)
-    elif isinstance(value, str) and (len(value) > 1000 or intake._unsafe_text(value)):
+    elif isinstance(value, str) and (len(value) > 1000 or intake._unsafe_text(value) or sanitize(value) != value):
         intake.fail("UNSAFE_COMPLETION_METADATA", "Completion contains unsafe or oversized text. No assessment was accepted.")
 
 
@@ -145,19 +146,27 @@ def evaluate(payload):
             if not any(weekdays[d] in occurring for d in item.original.days):
                 add("NO_MEETING_IN_DATE_WINDOW", "effective_dates", "The date window contains none of the declared weekly meeting days.", "Clarify date applicability.", line)
     binding = fingerprint({"policy":POLICY_VERSION,"original":original.model_dump(),"effective":effective.model_dump(),"metadata":metadata.model_dump()})
-    verified = authority.verification_for(binding)
-    valid_verification = (verified is not None and verified.input_fingerprint == binding and bool(verified.policy_version)
-                          and bool(verified.evidence_reference) and authority.REQUIRED_COVERAGE <= verified.covered_fields)
+    material_fields = ('subject_code', 'title', 'sections', 'days', 'start', 'end', 'room', 'instructor')
+    changed_rows = frozenset(a.source_row for a,b in zip(original.rows,effective.rows) if
+        any(getattr(a.original,key) != getattr(b.original,key) for key in material_fields)
+        or [r.id for r in a.sections] != [r.id for r in b.sections] or a.room.id != b.room.id or a.instructor.id != b.instructor.id)
+    trust = authority.evaluate_trust(authority.EvidenceContext(input_fingerprint=binding, source_fingerprint=source_fingerprint,
+        preview_fingerprint=hashlib.sha256(payload.review_token.encode()).hexdigest(), supplier=metadata.supplier,
+        source_revision=metadata.source_revision, academic_year=metadata.academic_year, term=metadata.term,
+        subjects={r.source_row:r.original.subject_code for r in effective.rows}, changed_rows=changed_rows))
+    valid_verification = trust.outcome == 'VERIFIED'
     if not valid_verification:
         add("AUTHORITATIVE_VERIFICATION_REQUIRED", "verification", "No trusted institutional policy/evidence covers this exact source, metadata, mappings and recurrence. Administrator text cannot grant verified status.", "Obtain an authorized verification policy/provider. This deployment has none; readiness remains blocked.")
+    for finding in trust.findings:
+        add('D8_'+finding.code, 'evidence_trust', finding.explanation, finding.action, finding.source_row)
     blockers = sum(f.severity=="blocker" for f in findings)
     result = ReadinessAssessment(status="BLOCKED" if blockers else "READY", metadata=metadata,
-        verification_status="verified_for_readiness" if valid_verification else "unavailable" if verified is None else "requires_verification",
-        verification_reference=verified.evidence_reference if valid_verification else None,
-        authority_policy_version=verified.policy_version if valid_verification else None,
+        verification_status="verified_for_readiness" if valid_verification else "unavailable" if trust.outcome == 'PROVIDER_UNAVAILABLE' else "requires_verification",
+        verification_reference=trust.evidence_id if valid_verification else None,
+        authority_policy_version=trust.policy_revision if valid_verification else None,
         source_fingerprint=source_fingerprint, input_fingerprint=binding, reference_digest=original.reference_digest,
         assessment_fingerprint="", blocker_count=blockers, warning_count=len(findings)-blockers, findings=findings,
-        effective_review=effective, original_row_count=len(original.rows), assessed_at="", expires_at="")
+        effective_review=effective, original_row_count=len(original.rows), assessed_at="", expires_at="", evidence_trust=trust)
     # Time/receipt never make equivalent content acquire a different identity.
     result.assessment_fingerprint = "d7-"+fingerprint(result.model_dump(exclude={"assessment_fingerprint","assessed_at","expires_at","assessment_receipt"}))
     return original, result
@@ -173,7 +182,7 @@ def assess(payload, owner):
     _, result = evaluate(payload)
     lifecycle.record(payload.review_token, owner, head["revision"], result.assessment_fingerprint)
     result.assessed_at = datetime.now(timezone.utc).isoformat()
-    result.expires_at = datetime.fromtimestamp(head["expires"],timezone.utc).isoformat()
+    result.expires_at = _expires(result, head['expires'])
     result.assessment_receipt = _receipt({"kind":"d7-assessment","owner":owner,"revision":head["revision"],"fingerprint":result.assessment_fingerprint,
                                          "source":head["source"],"expires":head["expires"]})
     return result
@@ -200,6 +209,13 @@ def prepare_handoff(payload, owner):
         intake.fail("READINESS_STALE", "Source, metadata, mappings or verification changed. Assess again.",409)
     lifecycle.require_assessment(payload.review_token,owner,receipt['revision'],receipt['fingerprint'])
     result.assessed_at = datetime.now(timezone.utc).isoformat()
-    result.expires_at = datetime.fromtimestamp(head['expires'],timezone.utc).isoformat()
+    result.expires_at = _expires(result, head['expires'])
     return ReadinessHandoff(preview_id="d5-"+fingerprint({"review":original.model_dump(),"readiness":result.model_dump()}),
         revalidated_at=datetime.now(timezone.utc),review=original,readiness=result)
+
+
+def _expires(result, session_expiry):
+    expiry = datetime.fromtimestamp(session_expiry,timezone.utc)
+    if result.evidence_trust and result.evidence_trust.valid_until:
+        expiry = min(expiry, authority.instant(result.evidence_trust.valid_until))
+    return expiry.isoformat()

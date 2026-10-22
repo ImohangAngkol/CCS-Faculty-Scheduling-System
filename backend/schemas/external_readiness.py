@@ -2,6 +2,7 @@
 from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 from schemas.external_schedule import ReviewRequest, ReviewProjection, ReviewHandoff
+from schemas.external_evidence import EvidenceTrust
 
 
 class Strict(BaseModel):
@@ -94,6 +95,7 @@ class ReadinessAssessment(BaseModel):
     assessed_at: str
     expires_at: str
     assessment_receipt: str | None = None
+    evidence_trust: EvidenceTrust | None = None
 
 
 class ReadinessHandoff(ReviewHandoff):

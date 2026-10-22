@@ -1,3 +1,4 @@
+import ExternalEvidencePanel from "./ExternalEvidencePanel";
 import {READINESS_LABEL} from "../../api/externalReadiness";
 import type {CompletionMetadata,ReadinessAssessment,RowCompletion} from "../../api/externalReadiness";
 import type {ExternalMetadata,ExternalPreview} from "../../api/externalSchedules";
@@ -28,6 +29,7 @@ export default function ExternalScheduleReadiness({source,resources,value,onChan
     <p className="text-sm" role="status">Assessment freshness: {freshness}. Completion stays in this page while switching review steps; refresh/reimport discards it.</p>
     <button type="button" className="ccs-btn-primary" disabled={busy} onClick={onAssess}>Check readiness</button>
     {busy&&<p role="status">Assessing current source, mappings and metadata…</p>}{error&&<p role="alert" className="break-words text-red-900">Readiness unavailable. {error}</p>}
+    {!assessment&&<ExternalEvidencePanel supplier={value.supplier} reference={value.evidence_reference}/>}
     {assessment&&<ReadinessDocument value={assessment}/>}
   </section>;
 }

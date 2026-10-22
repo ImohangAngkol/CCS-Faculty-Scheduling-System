@@ -46,7 +46,8 @@ def evaluate(preview=None,meta=None,mappings=None):
 
 
 def trusted(monkeypatch):
-    monkeypatch.setattr(authority,'verification_for',lambda key:authority.Verification(key,'fictional-policy.1','Fictional trusted verifier evidence',authority.REQUIRED_COVERAGE))
+    from tests.dashboard.evidence_support import install_fictional
+    install_fictional(monkeypatch)
 
 
 def codes(result):return {f.code for f in result.findings if f.severity=='blocker'}
