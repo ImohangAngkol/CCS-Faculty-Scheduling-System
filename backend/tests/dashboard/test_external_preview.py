@@ -314,7 +314,9 @@ def test_preview_preserves_session_rows_storage_and_rng(fixture):
     before=db_digest(); files={p:p.read_bytes() for p in fixture.path.parent.iterdir() if p.is_file()}; rng=random.getstate()
     first=fixture.client.post("/api/external-schedules/preview",headers=headers,json={"rows":[ROW]}).json()
     second=fixture.client.post("/api/external-schedules/preview",headers=headers,json={"rows":[ROW]}).json()
+    first_token=first.pop("review_token");second_token=second.pop("review_token")
     assert first==second and first["preview_only"]
+    assert first_token!=second_token  # D7 reimports replace the session preview revision.
     assert db_digest()==before and random.getstate()==rng
     assert all(path.read_bytes()==value for path,value in files.items())
     assert set(fixture.path.parent.iterdir())==set(files)

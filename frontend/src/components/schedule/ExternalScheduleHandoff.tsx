@@ -5,6 +5,8 @@ import type {ExternalPreview, ResourceResolution, ReviewHandoff, RowMapping} fro
 import {metadataError} from "../../services/dashboardMetadata";
 import "./externalHandoff.css";
 import LegacyScheduleProvenance from "./LegacyScheduleProvenance";
+import ReadinessDocument from "./ReadinessDocument";
+import type {CompletionMetadata, ReadinessAssessment} from "../../api/externalReadiness";
 
 const resourceLabels = {resolved: "Resolved", unresolved: "Unresolved", ambiguous: "Ambiguous", unsupported: "Unsupported", missing_optional: "Missing optional resource"};
 const statuses = {draft: "Draft", tentative: "Tentative", needs_review: "Needs review", invalid: "Invalid"};
@@ -30,6 +32,7 @@ export function ExternalHandoffDocument({value}: {value: ReviewHandoff}) {
       <p>Parser {review.source_parser_version} · Review {review.projection_version} · Handoff {value.handoff_version}</p>
       <p className="handoff-warning">Academic terms/dates remain unverified. Printing, exporting or reviewing does not approve a schedule. No commitments are permanently stored, confirmed, locked or supplied to the GA. This is a snapshot of validation at the time above; later source/reference changes require a new review.</p>
       <p>{review.rows.filter(row => row.status === "invalid").length} invalid row(s) · {review.rows.filter(row => row.status === "needs_review").length} row(s) needing review. No filtered or valid-only subset is used.</p>
+      {value.readiness ? <ReadinessDocument value={value.readiness} /> : <p>D7 readiness: Not yet assessed. This handoff makes no confirmation-readiness claim.</p>}
     </header>
     {review.rows.map(row => <section key={row.source_row} className="handoff-row" aria-label={"Handoff source row " + row.source_row}>
       <h4>Source row {row.source_row} · {row.original.subject_code || "Missing subject code"} · {row.original.title || "Missing title"}</h4>
@@ -58,7 +61,7 @@ export function ExternalHandoffDocument({value}: {value: ReviewHandoff}) {
   </article>;
 }
 
-export default function ExternalScheduleHandoff({source, mappings, onInvalid}: {source: ExternalPreview; mappings: RowMapping[]; onInvalid: () => void}) {
+export default function ExternalScheduleHandoff({source, mappings, onInvalid, completion, assessment}: {source: ExternalPreview; mappings: RowMapping[]; onInvalid: () => void; completion?: CompletionMetadata; assessment?: ReadinessAssessment}) {
   const [result, setResult] = useState<ReviewHandoff>();
   const [printSnapshot, setPrintSnapshot] = useState<ReviewHandoff>();
   const [busy, setBusy] = useState(false);
@@ -70,7 +73,8 @@ export default function ExternalScheduleHandoff({source, mappings, onInvalid}: {
     pending.current?.abort(); const controller = new AbortController(); pending.current = controller;
     setResult(undefined); setError(""); setBusy(true);
     try {
-      const data = await prepareExternalHandoff(source, mappings, controller.signal);
+      if (completion && !assessment?.assessment_receipt) throw new Error("Assess the current metadata before preparing this handoff.");
+      const data = await prepareExternalHandoff(source, mappings, controller.signal, completion && assessment?.assessment_receipt ? {metadata:completion,assessment_receipt:assessment.assessment_receipt} : undefined);
       if (controller.signal.aborted) return;
       if (print) {
         // Native print captures a synchronous, fully rendered snapshot. Ordinary

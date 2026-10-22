@@ -13,6 +13,7 @@ from services import external_schedule_service as intake, external_schedule_revi
 from services import external_schedule_handoff_service as handoff
 from tests.dashboard.test_my_schedule import fixture, ORIGIN
 from tests.dashboard.test_external_preview import CTX, ROW, csv_bytes, session
+from tests.dashboard.readiness_support import bind_client_preview
 
 PATH = "/api/external-schedules/handoff"
 
@@ -103,6 +104,7 @@ def test_endpoint_real_session_admin_origin_csrf_and_no_client_role_override(fix
     faculty=session(fixture,"faculty")
     assert fixture.client.post(PATH,json=body,headers={**faculty,"X-Role":"admin"}).status_code==403
     admin=session(fixture)
+    body["review_token"]=bind_client_preview(preview(),fixture).review_token
     assert fixture.client.post(PATH,json=body,headers={"Origin":ORIGIN}).status_code==403
     assert fixture.client.post(PATH,json=body,headers={**admin,"Origin":"https://evil.invalid"}).status_code==403
     result=fixture.client.post(PATH,json=body,headers=admin)
@@ -118,7 +120,7 @@ def test_client_projection_filter_approval_and_provenance_fields_rejected(fixtur
 
 
 def test_endpoint_caps_duplicate_keys_media_type_and_stale_reference_errors(fixture,monkeypatch):
-    headers={**session(fixture),"Content-Type":"application/json"};source=preview()
+    headers={**session(fixture),"Content-Type":"application/json"};source=bind_client_preview(preview(),fixture)
     assert fixture.client.post(PATH,headers=headers,content=b" "*(2*intake.MAX_BYTES+1)).status_code==413
     assert fixture.client.post(PATH,headers={**headers,"Content-Type":"text/plain"},content=b"{}").status_code==415
     raw='{"review_token":'+json.dumps(source.review_token)+',"mappings":[],"mappings":[]}'
@@ -130,7 +132,7 @@ def test_endpoint_caps_duplicate_keys_media_type_and_stale_reference_errors(fixt
 
 def test_imported_markup_is_json_text_and_endpoint_does_not_write_or_change_rng(fixture):
     headers=session(fixture);markup='<script>window.bad=true</script><img src=x onerror="alert(1)">'
-    source=preview([{**ROW,"title":markup,"notes":"Fictional caf\u00e9 \U0001f9ea\n"+markup}])
+    source=bind_client_preview(preview([{**ROW,"title":markup,"notes":"Fictional caf\u00e9 \U0001f9ea\n"+markup}]),fixture)
     before={p:p.read_bytes() for p in fixture.path.parent.iterdir() if p.is_file()};rng=random.getstate()
     with fixture.engine.connect() as c:sessions=repr(c.exec_driver_sql("SELECT * FROM login_sessions").all())
     response=fixture.client.post(PATH,headers=headers,json=request(source).model_dump())

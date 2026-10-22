@@ -12,6 +12,7 @@ from tests.dashboard.test_my_schedule import fixture, ORIGIN
 from tests.dashboard.test_external_preview import ROW, CTX, csv_bytes, session
 from services import external_schedule_service as intake, external_schedule_review_service as review
 from schemas.external_schedule import ExternalRow, ReviewRequest
+from tests.dashboard.readiness_support import bind_client_preview
 
 
 @pytest.fixture(autouse=True)
@@ -186,6 +187,7 @@ def test_real_auth_origin_csrf_role_and_client_field_denial(fixture):
     faculty=session(fixture,"faculty")
     assert fixture.client.post(path,json=body,headers={**faculty,"X-Role":"admin"}).status_code==403
     admin=session(fixture)
+    body["review_token"]=bind_client_preview(source(),fixture).review_token
     assert fixture.client.post(path,json=body,headers={"Origin":ORIGIN}).status_code==403
     assert fixture.client.post(path,json=body,headers={**admin,"Origin":"https://evil.invalid"}).status_code==403
     assert fixture.client.post(path,json={**body,"source_sha256":"forged"},headers=admin).status_code==422
@@ -195,7 +197,7 @@ def test_real_auth_origin_csrf_role_and_client_field_denial(fixture):
 
 
 def test_review_read_preserves_storage_sessions_and_rng(fixture):
-    headers=session(fixture);preview=source();before={p:p.read_bytes() for p in fixture.path.parent.iterdir() if p.is_file()}
+    headers=session(fixture);preview=bind_client_preview(source(),fixture);before={p:p.read_bytes() for p in fixture.path.parent.iterdir() if p.is_file()}
     with fixture.engine.connect() as db:rows=repr(db.exec_driver_sql("SELECT * FROM login_sessions").all())
     rng=random.getstate()
     for _ in range(2):

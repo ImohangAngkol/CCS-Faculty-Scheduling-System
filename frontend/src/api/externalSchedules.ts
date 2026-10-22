@@ -1,5 +1,6 @@
 import {z} from "zod";
 import {apiClient, API_BASE} from "../services/apiSession.ts";
+import type {CompletionMetadata, ReadinessAssessment} from "./externalReadiness.ts";
 
 const row = z.object({
   supplier: z.string(), subject_code: z.string(), title: z.string(), sections: z.array(z.string()),
@@ -110,8 +111,9 @@ export const handoffSchema = z.object({
   preview_only: z.literal(true), persisted: z.literal(false), activated: z.literal(false), approved: z.literal(false),
   preview_id: z.string().regex(/^d5-[a-f0-9]{64}$/), revalidated_at: z.string().datetime({offset: true}),
   review: reviewProjectionSchema,
+  readiness: z.unknown().optional(),
 }).strict();
-export type ReviewHandoff = z.infer<typeof handoffSchema>;
+export type ReviewHandoff = Omit<z.infer<typeof handoffSchema>, "readiness"> & {readiness?: ReadinessAssessment};
 
 // Matches the server's sorted ASCII JSON. The ID is a content fingerprint,
 // never an authorization token, supplier attestation or approval identifier.
@@ -125,13 +127,17 @@ export async function handoffIdentity(value: unknown): Promise<string> {
   return "d5-" + [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, "0")).join("");
 }
 
-export async function prepareExternalHandoff(source: ExternalPreview, mappings: RowMapping[], signal?: AbortSignal): Promise<ReviewHandoff> {
+export async function prepareExternalHandoff(source: ExternalPreview, mappings: RowMapping[], signal?: AbortSignal, readiness?: {metadata: CompletionMetadata; assessment_receipt: string}): Promise<ReviewHandoff> {
   if (!source.review_token) throw new Error("Preview the source again before preparing a review handoff.");
-  const response = await apiClient.post(endpoint + "/handoff", {review_token: source.review_token, mappings}, {signal});
+  const response = await apiClient.post(endpoint + "/handoff", {review_token: source.review_token, mappings, ...readiness}, {signal});
   const parsed = handoffSchema.safeParse(response.data);
   if (!parsed.success) throw new Error("The review handoff could not be verified.");
   const data = parsed.data;
   verifyReview(source, data.review);
-  if (await handoffIdentity(data.review) !== data.preview_id) throw new Error("The handoff identity does not match its complete review content.");
-  return data;
+  if (readiness) {
+    const {verifyAssessment} = await import("./externalReadiness.ts");
+    data.readiness = await verifyAssessment(data.readiness, source, readiness.metadata);
+  } else if (data.readiness !== undefined) throw new Error("Unexpected readiness assessment in an unassessed handoff.");
+  if (await handoffIdentity(readiness ? {review:data.review,readiness:data.readiness} : data.review) !== data.preview_id) throw new Error("The handoff identity does not match its complete review content.");
+  return data as ReviewHandoff;
 }
