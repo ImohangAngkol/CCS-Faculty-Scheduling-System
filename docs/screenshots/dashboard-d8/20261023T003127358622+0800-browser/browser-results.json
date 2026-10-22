@@ -1,0 +1,167 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+  "scenarios": [
+    {
+      "id": "D8-B01",
+      "title": "canonical intake retains calendar and unassessed evidence claims",
+      "started_at": "2026-10-23T00:31:32.063+08:00",
+      "finished_at": "2026-10-23T00:31:35.473+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B02",
+      "title": "missing provider keeps production-style assessment blocked",
+      "started_at": "2026-10-23T00:31:35.476+08:00",
+      "finished_at": "2026-10-23T00:31:36.653+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B03",
+      "title": "UNKNOWN_ISSUER remains actionable without confirmation",
+      "started_at": "2026-10-23T00:31:36.654+08:00",
+      "finished_at": "2026-10-23T00:31:36.793+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B04",
+      "title": "EVIDENCE_EXPIRED remains actionable without confirmation",
+      "started_at": "2026-10-23T00:31:36.794+08:00",
+      "finished_at": "2026-10-23T00:31:36.940+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B05",
+      "title": "EVIDENCE_REVOKED remains actionable without confirmation",
+      "started_at": "2026-10-23T00:31:36.941+08:00",
+      "finished_at": "2026-10-23T00:31:37.072+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B06",
+      "title": "ORGANIZATION_SCOPE_MISMATCH remains actionable without confirmation",
+      "started_at": "2026-10-23T00:31:37.073+08:00",
+      "finished_at": "2026-10-23T00:31:37.218+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B07",
+      "title": "EVIDENCE_BINDING_MISMATCH remains actionable without confirmation",
+      "started_at": "2026-10-23T00:31:37.219+08:00",
+      "finished_at": "2026-10-23T00:31:37.360+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B08",
+      "title": "UNVERIFIED_CORRECTION remains actionable without confirmation",
+      "started_at": "2026-10-23T00:31:37.361+08:00",
+      "finished_at": "2026-10-23T00:31:37.490+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B09",
+      "title": "PARTIAL_ROW_COVERAGE remains actionable without confirmation",
+      "started_at": "2026-10-23T00:31:37.490+08:00",
+      "finished_at": "2026-10-23T00:31:37.619+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B10",
+      "title": "UNSUPPORTED_VERIFICATION_METHOD remains actionable without confirmation",
+      "started_at": "2026-10-23T00:31:37.620+08:00",
+      "finished_at": "2026-10-23T00:31:37.734+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B11",
+      "title": "fictional trusted provider READY is explicitly not confirmation",
+      "started_at": "2026-10-23T00:31:37.735+08:00",
+      "finished_at": "2026-10-23T00:31:37.999+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B12",
+      "title": "metadata edit removes previous trust and handoff",
+      "started_at": "2026-10-23T00:31:38.000+08:00",
+      "finished_at": "2026-10-23T00:31:38.200+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B13",
+      "title": "D5 handoff and print contain current trust with original rows",
+      "started_at": "2026-10-23T00:31:38.201+08:00",
+      "finished_at": "2026-10-23T00:31:38.370+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B14",
+      "title": "stale provider response cannot print cached READY",
+      "started_at": "2026-10-23T00:31:38.370+08:00",
+      "finished_at": "2026-10-23T00:31:38.512+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B15",
+      "title": "canonical XLSX uses the evidence panel and calendar",
+      "started_at": "2026-10-23T00:31:38.513+08:00",
+      "finished_at": "2026-10-23T00:31:40.255+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B16",
+      "title": "legacy CSV retains original values and no evidence bypass",
+      "started_at": "2026-10-23T00:31:40.256+08:00",
+      "finished_at": "2026-10-23T00:31:41.722+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B17",
+      "title": "mobile evidence is contained and renders claims as text",
+      "started_at": "2026-10-23T00:31:41.723+08:00",
+      "finished_at": "2026-10-23T00:31:42.127+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D8-B18",
+      "title": "anonymous and faculty cannot mount evidence controls",
+      "started_at": "2026-10-23T00:31:42.128+08:00",
+      "finished_at": "2026-10-23T00:31:42.638+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D8-B02-provider-unavailable.png",
+      "captured_at": "2026-10-23T00:31:36.627+08:00",
+      "url": "http://localhost:53007/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D8-B11-fictional-provider-only.png",
+      "captured_at": "2026-10-23T00:31:37.996+08:00",
+      "url": "http://localhost:53007/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D8-B17-mobile-evidence.png",
+      "captured_at": "2026-10-23T00:31:42.043+08:00",
+      "url": "http://localhost:53007/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_and_review_posts": 73,
+  "activation_or_GA_mutations": 0,
+  "csv_raw_bytes_verified": true
+}

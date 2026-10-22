@@ -1,0 +1,27 @@
+{
+  "check": "live",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_external_evidence_live.py",
+    "-q",
+    "-s",
+    "--tb=short",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T003023341489+0800-live"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-23T00:30:23.343858+08:00",
+  "finished_at": "2026-10-23T00:30:42.239698+08:00",
+  "elapsed_seconds": 18.896,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D8 live browser-to-FastAPI smoke with synthetic academic data\n  \u2714 D8-L01 real React login authenticates against live FastAPI and isolated SQLite (2462.4714ms)\n  \u2714 D8-L02 real canonical import supplies session-bound preview and calendar (985.4413ms)\n  \u2714 D8-L03 live policy assesses entered metadata as BLOCKED without institutional verification (1229.6359ms)\n  \u2714 D8-L04 live handoff revalidates and includes original source and assessment (79.6901ms)\n  \u2714 D8-L05 live metadata edit invalidates assessment and prevents cached handoff output (361.4656ms)\n\u2714 D8 live browser-to-FastAPI smoke with synthetic academic data (8129.8583ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 10671.3259\n\n.\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n1 passed, 2 warnings in 16.39s\n",
+  "stderr": "",
+  "sanitization": "D8 whole sensitive-line, complete/truncated encoded fragment, header, key and credential-URI sanitization applied before evidence writes and summaries",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

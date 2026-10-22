@@ -1,0 +1,18 @@
+{
+  "check": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalEvidence.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-23T00:38:52.682450+08:00",
+  "finished_at": "2026-10-23T00:39:09.249079+08:00",
+  "elapsed_seconds": 16.567,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D8 evidence trust browser acceptance with synthetic HTTP responses\n  \u2714 D8-B01 canonical intake retains calendar and unassessed evidence claims (2236.6692ms)\n  \u2714 D8-B02 missing provider keeps production-style assessment blocked (1127.2897ms)\n  \u2714 D8-B03 UNKNOWN_ISSUER remains actionable without confirmation (128.0013ms)\n  \u2714 D8-B04 EVIDENCE_EXPIRED remains actionable without confirmation (120.6039ms)\n  \u2714 D8-B05 EVIDENCE_REVOKED remains actionable without confirmation (123.1576ms)\n  \u2714 D8-B06 ORGANIZATION_SCOPE_MISMATCH remains actionable without confirmation (122.7895ms)\n  \u2714 D8-B07 EVIDENCE_BINDING_MISMATCH remains actionable without confirmation (112.0935ms)\n  \u2714 D8-B08 UNVERIFIED_CORRECTION remains actionable without confirmation (123.1334ms)\n  \u2714 D8-B09 PARTIAL_ROW_COVERAGE remains actionable without confirmation (127.0236ms)\n  \u2714 D8-B10 UNSUPPORTED_VERIFICATION_METHOD remains actionable without confirmation (124.6661ms)\n  \u2714 D8-B11 fictional trusted provider READY is explicitly not confirmation (287.2056ms)\n  \u2714 D8-B12 metadata edit removes previous trust and handoff (197.6903ms)\n  \u2714 D8-B13 D5 handoff and print contain current trust with original rows (154.3543ms)\n  \u2714 D8-B14 stale provider response cannot print cached READY (157.577ms)\n  \u2714 D8-B15 canonical XLSX uses the evidence panel and calendar (1880.5531ms)\n  \u2714 D8-B16 legacy CSV retains original values and no evidence bypass (1546.0271ms)\n  \u2714 D8-B17 mobile evidence is contained and renders claims as text (487.1555ms)\n  \u2714 D8-B18 anonymous and faculty cannot mount evidence controls (652.227ms)\n\u2714 D8 evidence trust browser acceptance with synthetic HTTP responses (14728.0234ms)\n\u2139 tests 19\n\u2139 suites 0\n\u2139 pass 19\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 16446.3904\n",
+  "stderr": "",
+  "sanitization": "D8 whole sensitive-line, complete/truncated encoded fragment, header, key and credential-URI sanitization applied before evidence writes and summaries",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

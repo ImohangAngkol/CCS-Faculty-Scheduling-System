@@ -1,0 +1,1721 @@
+{
+  "milestone": "D8",
+  "source_commit": "015b026a0ed9d2a889193fafc4f4a0ce175c843d",
+  "branch": "main",
+  "recorded_at": "2026-10-23T00:43:45.391801+08:00",
+  "status": "IMPLEMENTED; SCOPED CHECKS PASS; production BLOCKED without trusted institutional configuration",
+  "scope": "Temporary evidence/readiness review only. No PostgreSQL, confirmation, publishing, GA activation or Git mutation.",
+  "runtime": {
+    "python": "3.14.2",
+    "sqlite": "3.50.4",
+    "node": "v24.11.1",
+    "vite": "8.2.2",
+    "browser": "Edge 155.0.4283.62"
+  },
+  "final_counts": {
+    "backend": {
+      "passed": 301,
+      "new_D8": 73,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 2
+    },
+    "auth_GA_regressions": {
+      "passed": 46,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 4
+    },
+    "resource_regressions": {
+      "passed": 3
+    },
+    "frontend_contracts": {
+      "passed": 143,
+      "new_D8": 11,
+      "failed": 0,
+      "skipped": 0
+    },
+    "D8_synthetic_HTTP_browser_scenarios": 18,
+    "previous_synthetic_browser_scenarios": 158,
+    "live_browser_FastAPI_scenarios": 5,
+    "node_parent_wrappers": 10,
+    "live_pytest_wrapper": 1,
+    "build": "PASS; 227 modules; JS 904.50 kB / gzip 252.89 kB",
+    "focused_lint": "PASS; eleven selected TS/TSX files"
+  },
+  "commands": [
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002527809774+0800-backend/command.json",
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_evidence.py",
+        "tests/dashboard/test_external_readiness.py",
+        "tests/dashboard/test_external_legacy.py",
+        "tests/dashboard/test_external_handoff.py",
+        "tests/dashboard/test_external_review.py",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T002527809774+0800-backend"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-23T00:25:27.814221+08:00",
+      "finished_at": "2026-10-23T00:26:03.335886+08:00",
+      "elapsed_seconds": 35.522,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002807498821+0800-contracts/command.json",
+      "check": "contracts",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalEvidence.test.mjs",
+        "tests/externalReadiness.test.mjs",
+        "tests/externalLegacy.test.mjs",
+        "tests/externalHandoff.test.mjs",
+        "tests/externalReview.test.mjs",
+        "tests/externalSchedules.test.mjs",
+        "tests/mySchedule.test.mjs",
+        "tests/dashboardD1.test.mjs",
+        "tests/auth.test.mjs",
+        "tests/authSessionRace.test.mjs",
+        "tests/preferenceModel.test.mjs",
+        "tests/preferenceApi.test.mjs",
+        "tests/gaMonitoring.test.mjs",
+        "tests/gaRecovery.test.mjs",
+        "tests/gaLogs.test.mjs",
+        "tests/gaHistory.test.mjs",
+        "tests/fitnessReporting.test.mjs",
+        "tests/facultyDisplay.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:28:07.499609+08:00",
+      "finished_at": "2026-10-23T00:28:12.511044+08:00",
+      "elapsed_seconds": 5.011,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002807514998+0800-lint/command.json",
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/api/externalEvidence.ts",
+        "src/components/schedule/ExternalEvidencePanel.tsx",
+        "src/api/externalReadiness.ts",
+        "src/components/schedule/ExternalScheduleReadiness.tsx",
+        "src/components/schedule/ReadinessDocument.tsx",
+        "src/components/schedule/LegacyScheduleProvenance.tsx",
+        "src/components/schedule/ExternalScheduleHandoff.tsx",
+        "src/api/externalSchedules.ts",
+        "src/pages/admin/ExternalSchedules.tsx",
+        "src/components/schedule/ExternalScheduleReview.tsx",
+        "src/components/schedule/externalReviewModel.ts"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:28:07.515837+08:00",
+      "finished_at": "2026-10-23T00:28:54.365862+08:00",
+      "elapsed_seconds": 46.851,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002807604142+0800-build/command.json",
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:28:07.605148+08:00",
+      "finished_at": "2026-10-23T00:28:34.883489+08:00",
+      "elapsed_seconds": 27.279,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002811979804+0800-ga-resource-regressions/command.json",
+      "check": "ga-resource-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_preassigned_assignments.py::test_reset_and_rollback_preserve_declarations",
+        "tests/test_preassigned_assignments.py::test_room_and_section_conflicts_apply",
+        "tests/test_preassigned_assignments.py::test_external_overlap_and_future_preassignment",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T002811979804+0800-ga-resource-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-23T00:28:11.982617+08:00",
+      "finished_at": "2026-10-23T00:28:18.980421+08:00",
+      "elapsed_seconds": 6.998,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002814119263+0800-backend-regressions/command.json",
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T002814119263+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-23T00:28:14.123095+08:00",
+      "finished_at": "2026-10-23T00:29:19.035315+08:00",
+      "elapsed_seconds": 64.913,
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002835033691+0800-browser/command.json",
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalEvidence.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:28:35.034685+08:00",
+      "finished_at": "2026-10-23T00:29:01.110847+08:00",
+      "elapsed_seconds": 26.076,
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002848882781+0800-live/command.json",
+      "check": "live",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_evidence_live.py",
+        "-q",
+        "-s",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T002848882781+0800-live"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-23T00:28:48.885396+08:00",
+      "finished_at": "2026-10-23T00:29:22.432202+08:00",
+      "elapsed_seconds": 33.547,
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002939852923+0800-browser/command.json",
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalEvidence.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:29:39.853813+08:00",
+      "finished_at": "2026-10-23T00:30:08.133452+08:00",
+      "elapsed_seconds": 28.28,
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003023341489+0800-live/command.json",
+      "check": "live",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_evidence_live.py",
+        "-q",
+        "-s",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T003023341489+0800-live"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-23T00:30:23.343858+08:00",
+      "finished_at": "2026-10-23T00:30:42.239698+08:00",
+      "elapsed_seconds": 18.896,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003049550350+0800-backend-regressions/command.json",
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T003049550350+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-23T00:30:49.553526+08:00",
+      "finished_at": "2026-10-23T00:31:48.611021+08:00",
+      "elapsed_seconds": 59.058,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003127358622+0800-browser/command.json",
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalEvidence.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:31:27.359416+08:00",
+      "finished_at": "2026-10-23T00:31:45.751103+08:00",
+      "elapsed_seconds": 18.392,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003150904820+0800-d1-browser/command.json",
+      "check": "d1-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/dashboardD1.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:31:50.905688+08:00",
+      "finished_at": "2026-10-23T00:32:16.263529+08:00",
+      "elapsed_seconds": 25.358,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003151903542+0800-ga-browser/command.json",
+      "check": "ga-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/gaMonitoring.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:31:51.904756+08:00",
+      "finished_at": "2026-10-23T00:32:58.713262+08:00",
+      "elapsed_seconds": 66.809,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003154542680+0800-d3-browser/command.json",
+      "check": "d3-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalSchedules.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:31:54.549795+08:00",
+      "finished_at": "2026-10-23T00:32:15.687844+08:00",
+      "elapsed_seconds": 21.138,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003155004967+0800-d2-browser/command.json",
+      "check": "d2-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/mySchedule.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:31:55.007174+08:00",
+      "finished_at": "2026-10-23T00:32:16.863903+08:00",
+      "elapsed_seconds": 21.857,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003323568057+0800-backend/command.json",
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_evidence.py",
+        "tests/dashboard/test_external_readiness.py",
+        "tests/dashboard/test_external_legacy.py",
+        "tests/dashboard/test_external_handoff.py",
+        "tests/dashboard/test_external_review.py",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T003323568057+0800-backend"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-23T00:33:23.571170+08:00",
+      "finished_at": "2026-10-23T00:33:59.030685+08:00",
+      "elapsed_seconds": 35.46,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003407653221+0800-d4-browser/command.json",
+      "check": "d4-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReview.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:34:07.654186+08:00",
+      "finished_at": "2026-10-23T00:34:23.094681+08:00",
+      "elapsed_seconds": 15.441,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003408076060+0800-d6-browser/command.json",
+      "check": "d6-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalLegacy.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:34:08.076885+08:00",
+      "finished_at": "2026-10-23T00:34:23.651134+08:00",
+      "elapsed_seconds": 15.574,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003409267047+0800-d7-browser/command.json",
+      "check": "d7-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReadiness.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:34:09.268255+08:00",
+      "finished_at": "2026-10-23T00:34:32.142662+08:00",
+      "elapsed_seconds": 22.875,
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003411129050+0800-d5-browser/command.json",
+      "check": "d5-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalHandoff.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:34:11.130518+08:00",
+      "finished_at": "2026-10-23T00:34:28.899761+08:00",
+      "elapsed_seconds": 17.769,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003507270815+0800-backend/command.json",
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_evidence.py",
+        "tests/dashboard/test_external_readiness.py",
+        "tests/dashboard/test_external_legacy.py",
+        "tests/dashboard/test_external_handoff.py",
+        "tests/dashboard/test_external_review.py",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T003507270815+0800-backend"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-23T00:35:07.274400+08:00",
+      "finished_at": "2026-10-23T00:35:42.941451+08:00",
+      "elapsed_seconds": 35.667,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003623640216+0800-backend/command.json",
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_evidence.py",
+        "tests/dashboard/test_external_readiness.py",
+        "tests/dashboard/test_external_legacy.py",
+        "tests/dashboard/test_external_handoff.py",
+        "tests/dashboard/test_external_review.py",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T003623640216+0800-backend"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-23T00:36:23.641885+08:00",
+      "finished_at": "2026-10-23T00:37:04.457373+08:00",
+      "elapsed_seconds": 40.816,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003625047779+0800-contracts/command.json",
+      "check": "contracts",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalEvidence.test.mjs",
+        "tests/externalReadiness.test.mjs",
+        "tests/externalLegacy.test.mjs",
+        "tests/externalHandoff.test.mjs",
+        "tests/externalReview.test.mjs",
+        "tests/externalSchedules.test.mjs",
+        "tests/mySchedule.test.mjs",
+        "tests/dashboardD1.test.mjs",
+        "tests/auth.test.mjs",
+        "tests/authSessionRace.test.mjs",
+        "tests/preferenceModel.test.mjs",
+        "tests/preferenceApi.test.mjs",
+        "tests/gaMonitoring.test.mjs",
+        "tests/gaRecovery.test.mjs",
+        "tests/gaLogs.test.mjs",
+        "tests/gaHistory.test.mjs",
+        "tests/fitnessReporting.test.mjs",
+        "tests/facultyDisplay.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:36:25.048630+08:00",
+      "finished_at": "2026-10-23T00:36:27.947471+08:00",
+      "elapsed_seconds": 2.899,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003627843716+0800-d7-browser/command.json",
+      "check": "d7-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReadiness.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:36:27.844928+08:00",
+      "finished_at": "2026-10-23T00:36:44.351875+08:00",
+      "elapsed_seconds": 16.507,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003852253448+0800-live/command.json",
+      "check": "live",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_evidence_live.py",
+        "-q",
+        "-s",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d8-20261023T003852253448+0800-live"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-23T00:38:52.256523+08:00",
+      "finished_at": "2026-10-23T00:39:15.920018+08:00",
+      "elapsed_seconds": 23.664,
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003852681542+0800-browser/command.json",
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalEvidence.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-23T00:38:52.682450+08:00",
+      "finished_at": "2026-10-23T00:39:09.249079+08:00",
+      "elapsed_seconds": 16.567,
+      "exit_code": 0
+    }
+  ],
+  "final_selection": {
+    "backend": "docs/testing/dashboard-d8/20261023T003623640216+0800-backend/command.json",
+    "contracts": "docs/testing/dashboard-d8/20261023T003625047779+0800-contracts/command.json",
+    "lint": "docs/testing/dashboard-d8/20261023T002807514998+0800-lint/command.json",
+    "build": "docs/testing/dashboard-d8/20261023T002807604142+0800-build/command.json",
+    "ga-resource-regressions": "docs/testing/dashboard-d8/20261023T002811979804+0800-ga-resource-regressions/command.json",
+    "backend-regressions": "docs/testing/dashboard-d8/20261023T003049550350+0800-backend-regressions/command.json",
+    "browser": "docs/testing/dashboard-d8/20261023T003852681542+0800-browser/command.json",
+    "live": "docs/testing/dashboard-d8/20261023T003852253448+0800-live/command.json",
+    "d1-browser": "docs/testing/dashboard-d8/20261023T003150904820+0800-d1-browser/command.json",
+    "ga-browser": "docs/testing/dashboard-d8/20261023T003151903542+0800-ga-browser/command.json",
+    "d3-browser": "docs/testing/dashboard-d8/20261023T003154542680+0800-d3-browser/command.json",
+    "d2-browser": "docs/testing/dashboard-d8/20261023T003155004967+0800-d2-browser/command.json",
+    "d4-browser": "docs/testing/dashboard-d8/20261023T003407653221+0800-d4-browser/command.json",
+    "d6-browser": "docs/testing/dashboard-d8/20261023T003408076060+0800-d6-browser/command.json",
+    "d7-browser": "docs/testing/dashboard-d8/20261023T003627843716+0800-d7-browser/command.json",
+    "d5-browser": "docs/testing/dashboard-d8/20261023T003411129050+0800-d5-browser/command.json"
+  },
+  "browser_runs": [
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T002939852923+0800-browser/browser-results.json",
+      "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+      "browser": "Edg/155.0.4283.62",
+      "scenarios": [
+        {
+          "id": "D8-B01",
+          "title": "canonical intake retains calendar and unassessed evidence claims",
+          "started_at": "2026-10-23T00:29:43.207+08:00",
+          "finished_at": "2026-10-23T00:29:45.411+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B02",
+          "title": "missing provider keeps production-style assessment blocked",
+          "started_at": "2026-10-23T00:29:45.414+08:00",
+          "finished_at": "2026-10-23T00:29:46.459+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B03",
+          "title": "UNKNOWN_ISSUER remains actionable without confirmation",
+          "started_at": "2026-10-23T00:29:46.459+08:00",
+          "finished_at": "2026-10-23T00:29:46.580+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B04",
+          "title": "EVIDENCE_EXPIRED remains actionable without confirmation",
+          "started_at": "2026-10-23T00:29:46.581+08:00",
+          "finished_at": "2026-10-23T00:29:46.703+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B05",
+          "title": "EVIDENCE_REVOKED remains actionable without confirmation",
+          "started_at": "2026-10-23T00:29:46.703+08:00",
+          "finished_at": "2026-10-23T00:29:46.814+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B06",
+          "title": "ORGANIZATION_SCOPE_MISMATCH remains actionable without confirmation",
+          "started_at": "2026-10-23T00:29:46.815+08:00",
+          "finished_at": "2026-10-23T00:29:46.950+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B07",
+          "title": "EVIDENCE_BINDING_MISMATCH remains actionable without confirmation",
+          "started_at": "2026-10-23T00:29:46.951+08:00",
+          "finished_at": "2026-10-23T00:29:47.079+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B08",
+          "title": "UNVERIFIED_CORRECTION remains actionable without confirmation",
+          "started_at": "2026-10-23T00:29:47.079+08:00",
+          "finished_at": "2026-10-23T00:29:47.201+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B09",
+          "title": "PARTIAL_ROW_COVERAGE remains actionable without confirmation",
+          "started_at": "2026-10-23T00:29:47.202+08:00",
+          "finished_at": "2026-10-23T00:29:47.310+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B10",
+          "title": "UNSUPPORTED_VERIFICATION_METHOD remains actionable without confirmation",
+          "started_at": "2026-10-23T00:29:47.311+08:00",
+          "finished_at": "2026-10-23T00:29:47.432+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B11",
+          "title": "fictional trusted provider READY is explicitly not confirmation",
+          "started_at": "2026-10-23T00:29:47.433+08:00",
+          "finished_at": "2026-10-23T00:29:47.667+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B12",
+          "title": "metadata edit removes previous trust and handoff",
+          "started_at": "2026-10-23T00:29:47.667+08:00",
+          "finished_at": "2026-10-23T00:29:47.834+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B13",
+          "title": "D5 handoff and print contain current trust with original rows",
+          "started_at": "2026-10-23T00:29:47.835+08:00",
+          "finished_at": "2026-10-23T00:29:48.001+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B14",
+          "title": "stale provider response cannot print cached READY",
+          "started_at": "2026-10-23T00:29:48.002+08:00",
+          "finished_at": "2026-10-23T00:29:48.138+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B15",
+          "title": "canonical XLSX uses the evidence panel and calendar",
+          "started_at": "2026-10-23T00:29:48.139+08:00",
+          "finished_at": "2026-10-23T00:29:49.473+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B16",
+          "title": "legacy CSV retains original values and no evidence bypass",
+          "started_at": "2026-10-23T00:29:49.473+08:00",
+          "finished_at": "2026-10-23T00:29:49.676+08:00",
+          "result": "FAIL",
+          "error": "TypeError: Illegal invocation\n    at <anonymous>:1:141"
+        },
+        {
+          "id": "D8-B17",
+          "title": "mobile evidence is contained and renders claims as text",
+          "started_at": "2026-10-23T00:29:49.677+08:00",
+          "finished_at": "2026-10-23T00:29:49.698+08:00",
+          "result": "FAIL",
+          "error": "TypeError: Cannot read properties of null (reading 'tagName')\n    at <anonymous>:1:102"
+        },
+        {
+          "id": "D8-B18",
+          "title": "anonymous and faculty cannot mount evidence controls",
+          "started_at": "2026-10-23T00:29:49.698+08:00",
+          "finished_at": "2026-10-23T00:30:05.009+08:00",
+          "result": "FAIL",
+          "error": "Role redirect missing"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003023341489+0800-live/browser-results.json",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Default authority provider unavailable; BLOCKED only. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "browser": "Edg/155.0.4283.62",
+      "scenarios": [
+        {
+          "id": "D8-L01",
+          "title": "real React login authenticates against live FastAPI and isolated SQLite",
+          "started_at": "2026-10-23T00:30:32.482+08:00",
+          "finished_at": "2026-10-23T00:30:34.943+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-L02",
+          "title": "real canonical import supplies session-bound preview and calendar",
+          "started_at": "2026-10-23T00:30:34.946+08:00",
+          "finished_at": "2026-10-23T00:30:35.931+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-L03",
+          "title": "live policy assesses entered metadata as BLOCKED without institutional verification",
+          "started_at": "2026-10-23T00:30:35.932+08:00",
+          "finished_at": "2026-10-23T00:30:37.161+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-L04",
+          "title": "live handoff revalidates and includes original source and assessment",
+          "started_at": "2026-10-23T00:30:37.162+08:00",
+          "finished_at": "2026-10-23T00:30:37.241+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-L05",
+          "title": "live metadata edit invalidates assessment and prevents cached handoff output",
+          "started_at": "2026-10-23T00:30:37.242+08:00",
+          "finished_at": "2026-10-23T00:30:37.603+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003127358622+0800-browser/browser-results.json",
+      "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+      "browser": "Edg/155.0.4283.62",
+      "scenarios": [
+        {
+          "id": "D8-B01",
+          "title": "canonical intake retains calendar and unassessed evidence claims",
+          "started_at": "2026-10-23T00:31:32.063+08:00",
+          "finished_at": "2026-10-23T00:31:35.473+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B02",
+          "title": "missing provider keeps production-style assessment blocked",
+          "started_at": "2026-10-23T00:31:35.476+08:00",
+          "finished_at": "2026-10-23T00:31:36.653+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B03",
+          "title": "UNKNOWN_ISSUER remains actionable without confirmation",
+          "started_at": "2026-10-23T00:31:36.654+08:00",
+          "finished_at": "2026-10-23T00:31:36.793+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B04",
+          "title": "EVIDENCE_EXPIRED remains actionable without confirmation",
+          "started_at": "2026-10-23T00:31:36.794+08:00",
+          "finished_at": "2026-10-23T00:31:36.940+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B05",
+          "title": "EVIDENCE_REVOKED remains actionable without confirmation",
+          "started_at": "2026-10-23T00:31:36.941+08:00",
+          "finished_at": "2026-10-23T00:31:37.072+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B06",
+          "title": "ORGANIZATION_SCOPE_MISMATCH remains actionable without confirmation",
+          "started_at": "2026-10-23T00:31:37.073+08:00",
+          "finished_at": "2026-10-23T00:31:37.218+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B07",
+          "title": "EVIDENCE_BINDING_MISMATCH remains actionable without confirmation",
+          "started_at": "2026-10-23T00:31:37.219+08:00",
+          "finished_at": "2026-10-23T00:31:37.360+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B08",
+          "title": "UNVERIFIED_CORRECTION remains actionable without confirmation",
+          "started_at": "2026-10-23T00:31:37.361+08:00",
+          "finished_at": "2026-10-23T00:31:37.490+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B09",
+          "title": "PARTIAL_ROW_COVERAGE remains actionable without confirmation",
+          "started_at": "2026-10-23T00:31:37.490+08:00",
+          "finished_at": "2026-10-23T00:31:37.619+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B10",
+          "title": "UNSUPPORTED_VERIFICATION_METHOD remains actionable without confirmation",
+          "started_at": "2026-10-23T00:31:37.620+08:00",
+          "finished_at": "2026-10-23T00:31:37.734+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B11",
+          "title": "fictional trusted provider READY is explicitly not confirmation",
+          "started_at": "2026-10-23T00:31:37.735+08:00",
+          "finished_at": "2026-10-23T00:31:37.999+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B12",
+          "title": "metadata edit removes previous trust and handoff",
+          "started_at": "2026-10-23T00:31:38.000+08:00",
+          "finished_at": "2026-10-23T00:31:38.200+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B13",
+          "title": "D5 handoff and print contain current trust with original rows",
+          "started_at": "2026-10-23T00:31:38.201+08:00",
+          "finished_at": "2026-10-23T00:31:38.370+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B14",
+          "title": "stale provider response cannot print cached READY",
+          "started_at": "2026-10-23T00:31:38.370+08:00",
+          "finished_at": "2026-10-23T00:31:38.512+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B15",
+          "title": "canonical XLSX uses the evidence panel and calendar",
+          "started_at": "2026-10-23T00:31:38.513+08:00",
+          "finished_at": "2026-10-23T00:31:40.255+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B16",
+          "title": "legacy CSV retains original values and no evidence bypass",
+          "started_at": "2026-10-23T00:31:40.256+08:00",
+          "finished_at": "2026-10-23T00:31:41.722+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B17",
+          "title": "mobile evidence is contained and renders claims as text",
+          "started_at": "2026-10-23T00:31:41.723+08:00",
+          "finished_at": "2026-10-23T00:31:42.127+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B18",
+          "title": "anonymous and faculty cannot mount evidence controls",
+          "started_at": "2026-10-23T00:31:42.128+08:00",
+          "finished_at": "2026-10-23T00:31:42.638+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003852253448+0800-live/browser-results.json",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Default authority provider unavailable; BLOCKED only. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "browser": "Edg/155.0.4283.62",
+      "scenarios": [
+        {
+          "id": "D8-L01",
+          "title": "real React login authenticates against live FastAPI and isolated SQLite",
+          "started_at": "2026-10-23T00:39:05.181+08:00",
+          "finished_at": "2026-10-23T00:39:08.612+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-L02",
+          "title": "real canonical import supplies session-bound preview and calendar",
+          "started_at": "2026-10-23T00:39:08.616+08:00",
+          "finished_at": "2026-10-23T00:39:09.572+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-L03",
+          "title": "live policy assesses entered metadata as BLOCKED without institutional verification",
+          "started_at": "2026-10-23T00:39:09.573+08:00",
+          "finished_at": "2026-10-23T00:39:10.796+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-L04",
+          "title": "live handoff revalidates and includes original source and assessment",
+          "started_at": "2026-10-23T00:39:10.797+08:00",
+          "finished_at": "2026-10-23T00:39:10.885+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-L05",
+          "title": "live metadata edit invalidates assessment and prevents cached handoff output",
+          "started_at": "2026-10-23T00:39:10.885+08:00",
+          "finished_at": "2026-10-23T00:39:11.108+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003852681542+0800-browser/browser-results.json",
+      "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+      "browser": "Edg/155.0.4283.62",
+      "scenarios": [
+        {
+          "id": "D8-B01",
+          "title": "canonical intake retains calendar and unassessed evidence claims",
+          "started_at": "2026-10-23T00:38:56.381+08:00",
+          "finished_at": "2026-10-23T00:38:58.616+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B02",
+          "title": "missing provider keeps production-style assessment blocked",
+          "started_at": "2026-10-23T00:38:58.619+08:00",
+          "finished_at": "2026-10-23T00:38:59.745+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B03",
+          "title": "UNKNOWN_ISSUER remains actionable without confirmation",
+          "started_at": "2026-10-23T00:38:59.746+08:00",
+          "finished_at": "2026-10-23T00:38:59.874+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B04",
+          "title": "EVIDENCE_EXPIRED remains actionable without confirmation",
+          "started_at": "2026-10-23T00:38:59.875+08:00",
+          "finished_at": "2026-10-23T00:38:59.995+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B05",
+          "title": "EVIDENCE_REVOKED remains actionable without confirmation",
+          "started_at": "2026-10-23T00:38:59.996+08:00",
+          "finished_at": "2026-10-23T00:39:00.119+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B06",
+          "title": "ORGANIZATION_SCOPE_MISMATCH remains actionable without confirmation",
+          "started_at": "2026-10-23T00:39:00.120+08:00",
+          "finished_at": "2026-10-23T00:39:00.242+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B07",
+          "title": "EVIDENCE_BINDING_MISMATCH remains actionable without confirmation",
+          "started_at": "2026-10-23T00:39:00.243+08:00",
+          "finished_at": "2026-10-23T00:39:00.355+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B08",
+          "title": "UNVERIFIED_CORRECTION remains actionable without confirmation",
+          "started_at": "2026-10-23T00:39:00.355+08:00",
+          "finished_at": "2026-10-23T00:39:00.478+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B09",
+          "title": "PARTIAL_ROW_COVERAGE remains actionable without confirmation",
+          "started_at": "2026-10-23T00:39:00.479+08:00",
+          "finished_at": "2026-10-23T00:39:00.605+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B10",
+          "title": "UNSUPPORTED_VERIFICATION_METHOD remains actionable without confirmation",
+          "started_at": "2026-10-23T00:39:00.606+08:00",
+          "finished_at": "2026-10-23T00:39:00.731+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B11",
+          "title": "fictional trusted provider READY is explicitly not confirmation",
+          "started_at": "2026-10-23T00:39:00.731+08:00",
+          "finished_at": "2026-10-23T00:39:01.018+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B12",
+          "title": "metadata edit removes previous trust and handoff",
+          "started_at": "2026-10-23T00:39:01.019+08:00",
+          "finished_at": "2026-10-23T00:39:01.216+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B13",
+          "title": "D5 handoff and print contain current trust with original rows",
+          "started_at": "2026-10-23T00:39:01.217+08:00",
+          "finished_at": "2026-10-23T00:39:01.371+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B14",
+          "title": "stale provider response cannot print cached READY",
+          "started_at": "2026-10-23T00:39:01.371+08:00",
+          "finished_at": "2026-10-23T00:39:01.529+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B15",
+          "title": "canonical XLSX uses the evidence panel and calendar",
+          "started_at": "2026-10-23T00:39:01.529+08:00",
+          "finished_at": "2026-10-23T00:39:03.409+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B16",
+          "title": "legacy CSV retains original values and no evidence bypass",
+          "started_at": "2026-10-23T00:39:03.410+08:00",
+          "finished_at": "2026-10-23T00:39:04.956+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B17",
+          "title": "mobile evidence is contained and renders claims as text",
+          "started_at": "2026-10-23T00:39:04.957+08:00",
+          "finished_at": "2026-10-23T00:39:05.444+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D8-B18",
+          "title": "anonymous and faculty cannot mount evidence controls",
+          "started_at": "2026-10-23T00:39:05.444+08:00",
+          "finished_at": "2026-10-23T00:39:06.096+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": []
+    }
+  ],
+  "captures": [
+    {
+      "name": "D8-B02-provider-unavailable.png",
+      "captured_at": "2026-10-23T00:29:46.455+08:00",
+      "url": "http://localhost:56379/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d8/20261023T002939852923+0800-browser/D8-B02-provider-unavailable.png",
+      "sha256": "55bb9d97d1a1945059da7f56669517de94471547e7633fdbbe900d0879665d06",
+      "pixels": [
+        1600,
+        1200
+      ],
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Visual review of this original or byte-identical reviewed representative",
+      "scope": "Fictional synthetic-HTTP provider; never institutional approval"
+    },
+    {
+      "name": "D8-B11-fictional-provider-only.png",
+      "captured_at": "2026-10-23T00:29:47.664+08:00",
+      "url": "http://localhost:56379/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d8/20261023T002939852923+0800-browser/D8-B11-fictional-provider-only.png",
+      "sha256": "d0e1f4ebde9e8fec0140522c4d3936305ec3b1977c959bde55cea047aad042c4",
+      "pixels": [
+        1600,
+        1200
+      ],
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Visual review of this original or byte-identical reviewed representative",
+      "scope": "Fictional synthetic-HTTP provider; never institutional approval"
+    },
+    {
+      "name": "D8-L03-live-fastapi-blocked.png",
+      "captured_at": "2026-10-23T00:30:37.158+08:00",
+      "url": "http://localhost:63593/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d8/20261023T003023341489+0800-live/D8-L03-live-fastapi-blocked.png",
+      "sha256": "5970d2404b2b3798e552d0a6621a5a452b23cbbca60cb0cafae6edaa316592d4",
+      "pixels": [
+        1600,
+        1200
+      ],
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Visual review of this original or byte-identical reviewed representative",
+      "scope": "Real FastAPI/SQLite default unavailable provider; fictional metadata; no institutional verification"
+    },
+    {
+      "name": "D8-B02-provider-unavailable.png",
+      "captured_at": "2026-10-23T00:31:36.627+08:00",
+      "url": "http://localhost:53007/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d8/20261023T003127358622+0800-browser/D8-B02-provider-unavailable.png",
+      "sha256": "55bb9d97d1a1945059da7f56669517de94471547e7633fdbbe900d0879665d06",
+      "pixels": [
+        1600,
+        1200
+      ],
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Visual review of this original or byte-identical reviewed representative",
+      "scope": "Fictional synthetic-HTTP provider; never institutional approval"
+    },
+    {
+      "name": "D8-B11-fictional-provider-only.png",
+      "captured_at": "2026-10-23T00:31:37.996+08:00",
+      "url": "http://localhost:53007/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d8/20261023T003127358622+0800-browser/D8-B11-fictional-provider-only.png",
+      "sha256": "d0e1f4ebde9e8fec0140522c4d3936305ec3b1977c959bde55cea047aad042c4",
+      "pixels": [
+        1600,
+        1200
+      ],
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Visual review of this original or byte-identical reviewed representative",
+      "scope": "Fictional synthetic-HTTP provider; never institutional approval"
+    },
+    {
+      "name": "D8-B17-mobile-evidence.png",
+      "captured_at": "2026-10-23T00:31:42.043+08:00",
+      "url": "http://localhost:53007/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/screenshots/dashboard-d8/20261023T003127358622+0800-browser/D8-B17-mobile-evidence.png",
+      "sha256": "99e37e4f7f47c426e7298ed95374a1d1994a5222f0f1755e5a390f79d6a19f34",
+      "pixels": [
+        390,
+        844
+      ],
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Visual review of this original or byte-identical reviewed representative",
+      "scope": "Fictional synthetic-HTTP provider; never institutional approval"
+    },
+    {
+      "name": "D8-L03-live-fastapi-blocked.png",
+      "captured_at": "2026-10-23T00:39:10.791+08:00",
+      "url": "http://localhost:54772/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d8/20261023T003852253448+0800-live/D8-L03-live-fastapi-blocked.png",
+      "sha256": "a52e479759cdb8fbbf334cbbc9d2c8a5ef20ed98fd6aad0a3d252c1c1d435896",
+      "pixels": [
+        1600,
+        1200
+      ],
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Visual review of this original or byte-identical reviewed representative",
+      "scope": "Real FastAPI/SQLite default unavailable provider; fictional metadata; no institutional verification"
+    },
+    {
+      "name": "D8-B02-provider-unavailable.png",
+      "captured_at": "2026-10-23T00:38:59.742+08:00",
+      "url": "http://localhost:57357/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d8/20261023T003852681542+0800-browser/D8-B02-provider-unavailable.png",
+      "sha256": "55bb9d97d1a1945059da7f56669517de94471547e7633fdbbe900d0879665d06",
+      "pixels": [
+        1600,
+        1200
+      ],
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Visual review of this original or byte-identical reviewed representative",
+      "scope": "Fictional synthetic-HTTP provider; never institutional approval"
+    },
+    {
+      "name": "D8-B11-fictional-provider-only.png",
+      "captured_at": "2026-10-23T00:39:01.013+08:00",
+      "url": "http://localhost:57357/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d8/20261023T003852681542+0800-browser/D8-B11-fictional-provider-only.png",
+      "sha256": "d0e1f4ebde9e8fec0140522c4d3936305ec3b1977c959bde55cea047aad042c4",
+      "pixels": [
+        1600,
+        1200
+      ],
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Visual review of this original or byte-identical reviewed representative",
+      "scope": "Fictional synthetic-HTTP provider; never institutional approval"
+    },
+    {
+      "name": "D8-B17-mobile-evidence.png",
+      "captured_at": "2026-10-23T00:39:05.289+08:00",
+      "url": "http://localhost:57357/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/screenshots/dashboard-d8/20261023T003852681542+0800-browser/D8-B17-mobile-evidence.png",
+      "sha256": "99e37e4f7f47c426e7298ed95374a1d1994a5222f0f1755e5a390f79d6a19f34",
+      "pixels": [
+        390,
+        844
+      ],
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Visual review of this original or byte-identical reviewed representative",
+      "scope": "Fictional synthetic-HTTP provider; never institutional approval"
+    }
+  ],
+  "privacy": {
+    "text_files_scanned": [
+      "docs/dashboard-d8-implementation.md",
+      "docs/screenshots/dashboard-d8/20261023T002939852923+0800-browser/browser-results.json",
+      "docs/screenshots/dashboard-d8/20261023T003023341489+0800-live/browser-results.json",
+      "docs/screenshots/dashboard-d8/20261023T003127358622+0800-browser/browser-results.json",
+      "docs/screenshots/dashboard-d8/20261023T003852253448+0800-live/browser-results.json",
+      "docs/screenshots/dashboard-d8/20261023T003852681542+0800-browser/browser-results.json",
+      "docs/testing/dashboard-d8/20261023T002527809774+0800-backend/command.json",
+      "docs/testing/dashboard-d8/20261023T002807498821+0800-contracts/command.json",
+      "docs/testing/dashboard-d8/20261023T002807514998+0800-lint/command.json",
+      "docs/testing/dashboard-d8/20261023T002807604142+0800-build/command.json",
+      "docs/testing/dashboard-d8/20261023T002811979804+0800-ga-resource-regressions/command.json",
+      "docs/testing/dashboard-d8/20261023T002814119263+0800-backend-regressions/command.json",
+      "docs/testing/dashboard-d8/20261023T002835033691+0800-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T002848882781+0800-live/command.json",
+      "docs/testing/dashboard-d8/20261023T002939852923+0800-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003023341489+0800-live/command.json",
+      "docs/testing/dashboard-d8/20261023T003049550350+0800-backend-regressions/command.json",
+      "docs/testing/dashboard-d8/20261023T003127358622+0800-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003150904820+0800-d1-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003151903542+0800-ga-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003154542680+0800-d3-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003155004967+0800-d2-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003323568057+0800-backend/command.json",
+      "docs/testing/dashboard-d8/20261023T003407653221+0800-d4-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003408076060+0800-d6-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003409267047+0800-d7-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003411129050+0800-d5-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003507270815+0800-backend/command.json",
+      "docs/testing/dashboard-d8/20261023T003623640216+0800-backend/command.json",
+      "docs/testing/dashboard-d8/20261023T003625047779+0800-contracts/command.json",
+      "docs/testing/dashboard-d8/20261023T003627843716+0800-d7-browser/command.json",
+      "docs/testing/dashboard-d8/20261023T003852253448+0800-live/command.json",
+      "docs/testing/dashboard-d8/20261023T003852681542+0800-browser/command.json",
+      "docs/testing/dashboard-d8/preservation-baseline.json"
+    ],
+    "remaining_pattern_findings": 0,
+    "private_faculty_name_matches": 0,
+    "png_metadata": "IHDR/IDAT/IEND only; no text/EXIF",
+    "png_count": 10,
+    "unique_visually_reviewed_images": 5,
+    "redaction": "Whole sensitive lines/headers and structured fields; complete/truncated encoded fragments; Bearer/key/credential-URI filters before evidence writes. No unsanitized backups. No raw network headers/bodies archived.",
+    "provider_payloads": "Only strict public allowlisted fields and static findings; exceptions/raw responses never logged",
+    "fake_READY": "Fictional trusted test provider only. Live API tests default unavailable/BLOCKED. Fixed 2099 expiry is fixture content only."
+  },
+  "earlier_attempts": [
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002814119263+0800-backend-regressions/command.json",
+      "exit_code": 1,
+      "scope": "Retained sanitized failed attempt; see report for cause and passing rerun"
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002835033691+0800-browser/command.json",
+      "exit_code": 1,
+      "scope": "Retained sanitized failed attempt; see report for cause and passing rerun"
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002848882781+0800-live/command.json",
+      "exit_code": 1,
+      "scope": "Retained sanitized failed attempt; see report for cause and passing rerun"
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002939852923+0800-browser/command.json",
+      "exit_code": 1,
+      "scope": "Retained sanitized failed attempt; see report for cause and passing rerun"
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003409267047+0800-d7-browser/command.json",
+      "exit_code": 1,
+      "scope": "Retained sanitized failed attempt; see report for cause and passing rerun"
+    }
+  ],
+  "preservation": {
+    "baseline": "docs/testing/dashboard-d8/preservation-baseline.json",
+    "files": 728,
+    "unchanged": 721,
+    "expected_changes": [
+      "backend/schemas/external_readiness.py",
+      "backend/services/external_schedule_readiness_service.py",
+      "backend/services/external_schedule_verification_service.py",
+      "backend/tests/dashboard/test_external_readiness.py",
+      "frontend/src/api/externalReadiness.ts",
+      "frontend/src/components/schedule/ExternalScheduleReadiness.tsx",
+      "frontend/src/components/schedule/ReadinessDocument.tsx"
+    ],
+    "unexpected_changes": [],
+    "protected_preferences_sha256": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+    "backend_data_unchanged": true,
+    "GA_and_saved_artifacts_unchanged": true,
+    "head_and_index_unchanged": true,
+    "nothing_staged_committed_pushed": true
+  },
+  "limitations": [
+    "17 PostgreSQL acceptance tests paused/unverified.",
+    "No real institutional policy, provider, trusted key/credential or revocation integration supplied; production BLOCKED.",
+    "No local document-signature verification; provider-attestation abstraction only.",
+    "No durable verification/confirmation, publication, GA activation, Chair/faculty change workflow or D9 work.",
+    "Point-in-time process-local D7 receipts; no multi-worker coordination or provider snapshot persistence.",
+    "Partial/rejected responses minimize provider details; no local multi-document evidence aggregation.",
+    "Native printer/dialog/PDF pagination/max-row printing/other browsers not tested.",
+    "No full backend/GA suite, full-project lint, performance/usability or production GA evolution.",
+    "Existing backend deprecations and Vite large-chunk/static-dynamic-import warnings remain."
+  ],
+  "artifacts": [
+    {
+      "path": "backend/schemas/external_evidence.py",
+      "sha256": "67212235f7db773fb2b3fc13bf3058df4c40a0a237e7e461f4691bf920268f12",
+      "bytes": 4613
+    },
+    {
+      "path": "backend/schemas/external_readiness.py",
+      "sha256": "9bf506e87ea54c625c26704aeffaf92a6104871745e53975013df9ab8fc387a9",
+      "bytes": 3946
+    },
+    {
+      "path": "backend/services/evidence_sanitization.py",
+      "sha256": "25864c7f573164fea87a1dcf1ab56a05e9c55021fd9517ccf4dbee5cdf0615be",
+      "bytes": 1714
+    },
+    {
+      "path": "backend/services/external_schedule_readiness_service.py",
+      "sha256": "d863435b01acfd5c8f6904b8d4cedad966004fd98083de41d31934a60dc48ea4",
+      "bytes": 17824
+    },
+    {
+      "path": "backend/services/external_schedule_verification_service.py",
+      "sha256": "e4229e139d3bb84d3319d671950349aae727dc9ae3cee9c416ef7c6c64b570cb",
+      "bytes": 11363
+    },
+    {
+      "path": "backend/tests/dashboard/evidence_support.py",
+      "sha256": "d529cb69805e2909e4bd33e234491540c528915a0f9901ea52d61956517e5d79",
+      "bytes": 2306
+    },
+    {
+      "path": "backend/tests/dashboard/test_external_evidence.py",
+      "sha256": "536d16d530cfb112a3460b7f2b5dd430d160c15e32cab10c19e7da32bf78fbea",
+      "bytes": 12867
+    },
+    {
+      "path": "backend/tests/dashboard/test_external_evidence_live.py",
+      "sha256": "78841a043ee8c7ac167a315929a10a5993696a660a12d288688f0272f450a88c",
+      "bytes": 2925
+    },
+    {
+      "path": "backend/tests/dashboard/test_external_readiness.py",
+      "sha256": "fb77b621ec34020fb9b5245df7d783839ec58b4058f88152a2308a03b0478b66",
+      "bytes": 15928
+    },
+    {
+      "path": "docs/dashboard-d8-implementation.md",
+      "sha256": "83752bd79bb48925a20480970f552cadda8b7e3b3f37a824ec8d9f3c4eb798a2",
+      "bytes": 22664
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T002939852923+0800-browser/D8-B02-provider-unavailable.png",
+      "sha256": "55bb9d97d1a1945059da7f56669517de94471547e7633fdbbe900d0879665d06",
+      "bytes": 132672
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T002939852923+0800-browser/D8-B11-fictional-provider-only.png",
+      "sha256": "d0e1f4ebde9e8fec0140522c4d3936305ec3b1977c959bde55cea047aad042c4",
+      "bytes": 122473
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T002939852923+0800-browser/browser-results.json",
+      "sha256": "37c3fc6d702aa44a93db10b71a21cb79583cdf080640d7a31d30a3b10460d7ab",
+      "bytes": 5685
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003023341489+0800-live/D8-L03-live-fastapi-blocked.png",
+      "sha256": "5970d2404b2b3798e552d0a6621a5a452b23cbbca60cb0cafae6edaa316592d4",
+      "bytes": 152183
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003023341489+0800-live/browser-results.json",
+      "sha256": "6bd04d4c0b9d5a37816a4163f2e9172852398e1a2ce1c1ad5e4b47c09d035963",
+      "bytes": 2180
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003127358622+0800-browser/D8-B02-provider-unavailable.png",
+      "sha256": "55bb9d97d1a1945059da7f56669517de94471547e7633fdbbe900d0879665d06",
+      "bytes": 132672
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003127358622+0800-browser/D8-B11-fictional-provider-only.png",
+      "sha256": "d0e1f4ebde9e8fec0140522c4d3936305ec3b1977c959bde55cea047aad042c4",
+      "bytes": 122473
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003127358622+0800-browser/D8-B17-mobile-evidence.png",
+      "sha256": "99e37e4f7f47c426e7298ed95374a1d1994a5222f0f1755e5a390f79d6a19f34",
+      "bytes": 47476
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003127358622+0800-browser/browser-results.json",
+      "sha256": "500110ffbaf1e8bd7440f742ee940d96f6a45657d87a04052ee6fbc710a2948a",
+      "bytes": 5712
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003852253448+0800-live/D8-L03-live-fastapi-blocked.png",
+      "sha256": "a52e479759cdb8fbbf334cbbc9d2c8a5ef20ed98fd6aad0a3d252c1c1d435896",
+      "bytes": 152166
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003852253448+0800-live/browser-results.json",
+      "sha256": "e06c8be8300197188e49c4a673ca212078220d7a385a7e576378d9d2a14ee138",
+      "bytes": 2180
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003852681542+0800-browser/D8-B02-provider-unavailable.png",
+      "sha256": "55bb9d97d1a1945059da7f56669517de94471547e7633fdbbe900d0879665d06",
+      "bytes": 132672
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003852681542+0800-browser/D8-B11-fictional-provider-only.png",
+      "sha256": "d0e1f4ebde9e8fec0140522c4d3936305ec3b1977c959bde55cea047aad042c4",
+      "bytes": 122473
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003852681542+0800-browser/D8-B17-mobile-evidence.png",
+      "sha256": "99e37e4f7f47c426e7298ed95374a1d1994a5222f0f1755e5a390f79d6a19f34",
+      "bytes": 47476
+    },
+    {
+      "path": "docs/screenshots/dashboard-d8/20261023T003852681542+0800-browser/browser-results.json",
+      "sha256": "c1e22322399456f1b81eb48008eefad1fb6e2c7c60a9a509090b88c36add30ae",
+      "bytes": 5712
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002527809774+0800-backend/command.json",
+      "sha256": "087132789e53da809c80d29893838ac23034de7da0280434461d0c121023292b",
+      "bytes": 2504
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002807498821+0800-contracts/command.json",
+      "sha256": "4d60aff1371b45b16c0acccc2b476dc13e2ed9bb42adc5091693f3a548993888",
+      "bytes": 14524
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002807514998+0800-lint/command.json",
+      "sha256": "2b8c1e0a79b5186ad4ba1667c0d43901fd1c6ab94c217940be253d6bfe857fea",
+      "bytes": 1210
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002807604142+0800-build/command.json",
+      "sha256": "c9cc4d9849adecf9c083d7bedaca2b0bff978862f4adca4eb60fa73f27381a44",
+      "bytes": 1905
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002811979804+0800-ga-resource-regressions/command.json",
+      "sha256": "f7501246a197a6ac923b1518eef9d9a4deffa7931c0fe498992981678a10205b",
+      "bytes": 1302
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002814119263+0800-backend-regressions/command.json",
+      "sha256": "30f81646bf94b8d05288bb80372834ddde3d6d8515eb7387650b24b79d33a4f4",
+      "bytes": 4079
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002835033691+0800-browser/command.json",
+      "sha256": "dec6c7708bdc5af44f633c9015a90fc7b70f10aebe8c89cdbd4aa66c9844ad7b",
+      "bytes": 1389
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002848882781+0800-live/command.json",
+      "sha256": "ae5b041501b0ba2a2baca93e3afdb9af5b18b3e50d96832a12a0987e33b4544f",
+      "bytes": 3549
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T002939852923+0800-browser/command.json",
+      "sha256": "2641d2d49c2859273e580a2fca9b18c6c9d002ba8de9d3cf232456ff9ea0b701",
+      "bytes": 5671
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003023341489+0800-live/command.json",
+      "sha256": "0556ce888f24d5742b909dfea3fdcc286e453475993f4b524d9326a9e5472509",
+      "bytes": 2738
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003049550350+0800-backend-regressions/command.json",
+      "sha256": "6f270626e1b3434ac6f45159e5aaa26eb79e3fea38f22edfecf656bfad34a21d",
+      "bytes": 2476
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003127358622+0800-browser/command.json",
+      "sha256": "fb52890e41982c1d6f98b868906798b9ee8e9db075b2db2a1b75555865e13d23",
+      "bytes": 2625
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003150904820+0800-d1-browser/command.json",
+      "sha256": "cb72597d99cd4bb3bc9b2c1a7aea1191be5e850f74a4afd815c551511349a8e1",
+      "bytes": 2240
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003151903542+0800-ga-browser/command.json",
+      "sha256": "b8603511b45a38d2139a00b147d5bba492f9c0534603fee19bbc3642264965a6",
+      "bytes": 6173
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003154542680+0800-d3-browser/command.json",
+      "sha256": "ada235c57e2bf97614f3a0d63eaa0c75d28ab91d739bb348dffa2174fe1213a4",
+      "bytes": 2433
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003155004967+0800-d2-browser/command.json",
+      "sha256": "65625c444ddfd0a7e480534c1df317fc2e4de5fa8d441d02133dfbbb6316f5da",
+      "bytes": 2112
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003323568057+0800-backend/command.json",
+      "sha256": "6139b83f3cd49a4f75291897ca6f1bb96735219d6caa4568abba58dccec2f3de",
+      "bytes": 2584
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003407653221+0800-d4-browser/command.json",
+      "sha256": "c393928e497f6baf9dd1ed4e9031388f9bf40e18f015283c5df3236475f66a76",
+      "bytes": 2527
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003408076060+0800-d6-browser/command.json",
+      "sha256": "ff5527db511f4cc45e36b7eb38e09cbd842f2e26a1feba2be962e3762d7fabf6",
+      "bytes": 2374
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003409267047+0800-d7-browser/command.json",
+      "sha256": "f7e361ecfe86a9d584a11f54e059d7789eecced3380d816f3b16cf2c4d92082c",
+      "bytes": 8723
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003411129050+0800-d5-browser/command.json",
+      "sha256": "4fa5156341885cb7007227d1bb158c19811995f061faac618a832d833d959f92",
+      "bytes": 2505
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003507270815+0800-backend/command.json",
+      "sha256": "12ab4a753989da63a0520877a0387c1485dc657a7bba475c2ce7754f9180647c",
+      "bytes": 2585
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003623640216+0800-backend/command.json",
+      "sha256": "24e40ff871015bac2385155313c02f6166c5455cfb299c03699b7775a1404413",
+      "bytes": 2585
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003625047779+0800-contracts/command.json",
+      "sha256": "6809078cf7dcfb86c6bec8adb200517202359927947927c8e3704d8d9b3912a0",
+      "bytes": 14503
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003627843716+0800-d7-browser/command.json",
+      "sha256": "93b4d8179721f9017b3f22ded4a6c1a0f836f24a76fda66e8f39b94b3db966a3",
+      "bytes": 2677
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003852253448+0800-live/command.json",
+      "sha256": "714bf0a5558b031bf38f49b1e44a73f04465891b55a0d5b55417cd9bfe121ad6",
+      "bytes": 2739
+    },
+    {
+      "path": "docs/testing/dashboard-d8/20261023T003852681542+0800-browser/command.json",
+      "sha256": "85bb3db1b2f1e8870c679b11c65cf9247712ab9cc90187927137ee01751c6823",
+      "bytes": 2625
+    },
+    {
+      "path": "docs/testing/dashboard-d8/preservation-baseline.json",
+      "sha256": "cee893ac39b0ca7b8cab8051e92e9c53b21b26de317c4c43822cf38aa97bb866",
+      "bytes": 98496
+    },
+    {
+      "path": "docs/testing/dashboard-d8/run_checks.py",
+      "sha256": "aed2f58f34e0138e7e6dd48511f804c433b3bd8833020c8cf55c9e2d28ffb006",
+      "bytes": 6588
+    },
+    {
+      "path": "frontend/src/api/externalEvidence.ts",
+      "sha256": "c46f1d65fc32f35c0c9cc986c1640f65c08f11c654f3a551e023d8fb25e150fc",
+      "bytes": 2429
+    },
+    {
+      "path": "frontend/src/api/externalReadiness.ts",
+      "sha256": "adba7610aa1d15c53a02e60bbc81855552f896eb10d93264e130beb7ed5f5e94",
+      "bytes": 6207
+    },
+    {
+      "path": "frontend/src/components/schedule/ExternalEvidencePanel.tsx",
+      "sha256": "3ca729b1a77a8dac97fe0dc59e47b1661eaa223e0d938833b18cab9a65c5a2ec",
+      "bytes": 2868
+    },
+    {
+      "path": "frontend/src/components/schedule/ExternalScheduleReadiness.tsx",
+      "sha256": "d83e0e81ae9f045672b8055725c1e4f2a0d65f10e3d4318c72456de056406e18",
+      "bytes": 8704
+    },
+    {
+      "path": "frontend/src/components/schedule/ReadinessDocument.tsx",
+      "sha256": "ef109a83e4b9145af2820a706c1027afc26f409b2eda34fac5aed722bd78c6cb",
+      "bytes": 3928
+    },
+    {
+      "path": "frontend/tests/evidencePrivacy.mjs",
+      "sha256": "77804d46b0970a00e8dc16e7a309484f81b9d6c9f74d95ca48a45413201393cd",
+      "bytes": 1337
+    },
+    {
+      "path": "frontend/tests/externalEvidence.browser.test.mjs",
+      "sha256": "cf639ced80d91ef278bb61c1d3de413c73426349dd1228fffb93078b3de79bf8",
+      "bytes": 23005
+    },
+    {
+      "path": "frontend/tests/externalEvidence.fixtures.mjs",
+      "sha256": "2a957c3490ff09e6d6fb8e5f8939e273391d2e30a282ae0f2848fea849993ed5",
+      "bytes": 2109
+    },
+    {
+      "path": "frontend/tests/externalEvidence.live.mjs",
+      "sha256": "1615954565a917919d385f729660f39092f36400c16ac6b6663307e4062fda6d",
+      "bytes": 16085
+    },
+    {
+      "path": "frontend/tests/externalEvidence.test.mjs",
+      "sha256": "4b10ef79c141152c392658e186285a89242544b47f50def4b47c6d5e436c218d",
+      "bytes": 2903
+    }
+  ],
+  "artifact_count_excluding_manifest": 64,
+  "manifest_self_hash": "Excluded to avoid recursive hashing. SHA-256 records sanitized raw working-file bytes; future Git newline normalization may change text byte hashes.",
+  "final_audit": {
+    "checked_at": "2026-10-23T00:44:30.672549+08:00",
+    "artifact_hashes": "64/64 PASS",
+    "tracked_and_untracked_text_whitespace": "PASS",
+    "relative_report_links": "PASS",
+    "manifest_privacy": "PASS",
+    "additional_private_key_header_and_escaped_fragment_probes": "PASS; four fictional probes; not counted as test cases",
+    "git_staging": "Empty; no Git mutations"
+  }
+}
