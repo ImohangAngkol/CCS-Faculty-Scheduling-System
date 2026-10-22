@@ -1,0 +1,18 @@
+{
+  "check": "d5-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalHandoff.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-22T22:22:48.945281+08:00",
+  "finished_at": "2026-10-22T22:23:09.279501+08:00",
+  "elapsed_seconds": 20.336,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D5 external review browser acceptance with synthetic HTTP responses\n  \u2714 D5-B01 preparation waits for fresh server validation before any output (5813.4139ms)\n  \u2714 D5-B02 calendar filters cannot omit invalid or unresolved handoff rows (321.6578ms)\n  \u2714 D5-B03 source hash fingerprint and import provenance remain visible without a receipt (5.172ms)\n  \u2714 D5-B04 explicit mapping invalidates the handoff and new output preserves source labels (312.0851ms)\n  \u2714 D5-B05 HTML-looking imported text renders literally and cannot execute or load markup (35.1763ms)\n  \u2714 D5-B06 stale preparation discards old output and does not enable printing (500.0858ms)\n  \u2714 D5-B07 tampered or truncated review response is rejected with no partial output (216.5842ms)\n  \u2714 D5-B08 print revalidates again and a stale print attempt never invokes printing (182.2983ms)\n  \u2714 D5-B09 print-media layout contains the freshly revalidated complete batch only (302.0925ms)\n  \u2714 D5-B10 ordinary browser printing cannot reuse a prior handoff snapshot (99.1201ms)\n  \u2714 D5-B11 clear during delayed preparation cancels output and printing (286.9677ms)\n  \u2714 D5-B12 mobile complete handoff remains readable without page overflow (727.4963ms)\n  \u2714 D5-B13 anonymous and faculty users cannot mount handoff or issue preview posts (1543.2206ms)\n  \u2714 D5-B14 printing errors discard print state and remain actionable (1606.5539ms)\n  \u2714 D5-B15 reload drops the handoff and no confirmation or GA mutations exist (619.5345ms)\n\u2714 D5 external review browser acceptance with synthetic HTTP responses (16661.1743ms)\n\u2139 tests 16\n\u2139 suites 0\n\u2139 pass 16\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 20220.4548\n",
+  "stderr": "",
+  "sanitization": "Opaque preview/assessment receipts redacted if present; counts and failure context retained",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

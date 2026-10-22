@@ -1,0 +1,26 @@
+{
+  "check": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/api/externalReadiness.ts",
+    "src/components/schedule/ExternalScheduleReadiness.tsx",
+    "src/components/schedule/ReadinessDocument.tsx",
+    "src/components/schedule/LegacyScheduleProvenance.tsx",
+    "src/components/schedule/ExternalScheduleHandoff.tsx",
+    "src/api/externalSchedules.ts",
+    "src/pages/admin/ExternalSchedules.tsx",
+    "src/components/schedule/ExternalScheduleReview.tsx",
+    "src/components/schedule/externalReviewModel.ts"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-22T22:29:45.830154+08:00",
+  "finished_at": "2026-10-22T22:30:05.954036+08:00",
+  "elapsed_seconds": 20.126,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "sanitization": "Opaque preview/assessment receipts redacted if present; counts and failure context retained",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

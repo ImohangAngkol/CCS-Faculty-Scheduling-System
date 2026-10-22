@@ -1,0 +1,2602 @@
+{
+  "milestone": "D7",
+  "recorded_at": "2026-10-22T22:38:09.607376+08:00",
+  "source_commit": "1e77993e13bf0ddb9974dd51fb79016d24eb4fe1",
+  "branch": "main",
+  "status": "IMPLEMENTED; SCOPED AUTOMATED CHECKS PASS; normal deployment BLOCKED pending institutional verification provider",
+  "scope": "Temporary metadata completion/readiness only; no confirmation, persistence, GA activation, PostgreSQL operations or Git staging/commit/push.",
+  "runtime": {
+    "python": "3.14.2",
+    "sqlite": "3.50.4",
+    "node": "v24.11.1",
+    "vite": "8.2.2",
+    "browser": "Edg/155.0.4283.62"
+  },
+  "policy": {
+    "version": "d7.1",
+    "statuses": [
+      "READY",
+      "BLOCKED"
+    ],
+    "finding_severities": [
+      "blocker",
+      "warning"
+    ],
+    "verification_provider": "Unavailable by default; fictional tests explicitly inject trusted exact-input evidence. Client input cannot grant verification.",
+    "calendar": "Explicit Asia/Manila weekly pattern, consecutive academic year, ordered ISO dates within year and <=370 days, no supported date exceptions",
+    "source_lifecycle": "Session-bound HMAC receipts; new reimport revisions; 1800-second maximum capped by auth expiry; <=4096 opaque heads; one current preview per session; no source rows retained",
+    "readiness_receipt": "Distinct d7-assessment kind, owner/source/revision/expiry/fingerprint, fresh full recomputation before assessed handoff",
+    "literal_label": "CONFIRMATION-READINESS REVIEW ONLY ? NOT CONFIRMED OR ACTIVE IN GA"
+  },
+  "final_counts": {
+    "focused_backend": {
+      "passed": 228,
+      "new_D7": 52,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 2
+    },
+    "auth_GA_control_regressions": {
+      "passed": 46,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 4
+    },
+    "resource_regressions": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "frontend_contracts": {
+      "passed": 132,
+      "new_D7": 8,
+      "failed": 0,
+      "skipped": 0
+    },
+    "D7_synthetic_HTTP_browser_scenarios": 18,
+    "D1_D6_GA_browser_scenarios": 140,
+    "live_FastAPI_browser_scenarios": 5,
+    "Node_parent_wrappers": 9,
+    "live_pytest_wrapper": {
+      "passed": 1,
+      "warnings": 2,
+      "not_an_additional_distinct_scenario": true
+    },
+    "production_build": "PASS",
+    "focused_eslint": "PASS; 9 selected TS/TSX files"
+  },
+  "commands": [
+    {
+      "path": "docs/testing/dashboard-d7/20261022T220531024959+0800-build/command.json",
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:05:31.025687+08:00",
+      "finished_at": "2026-10-22T22:05:52.358243+08:00",
+      "elapsed_seconds": 21.336,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T220532274572+0800-lint/command.json",
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/api/externalReadiness.ts",
+        "src/components/schedule/ExternalScheduleReadiness.tsx",
+        "src/components/schedule/ReadinessDocument.tsx",
+        "src/components/schedule/LegacyScheduleProvenance.tsx",
+        "src/components/schedule/ExternalScheduleHandoff.tsx",
+        "src/api/externalSchedules.ts",
+        "src/pages/admin/ExternalSchedules.tsx",
+        "src/components/schedule/ExternalScheduleReview.tsx",
+        "src/components/schedule/externalReviewModel.ts"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:05:32.275591+08:00",
+      "finished_at": "2026-10-22T22:06:18.252160+08:00",
+      "elapsed_seconds": 45.984,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T220816421240+0800-backend/command.json",
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_readiness.py",
+        "tests/dashboard/test_external_legacy.py",
+        "tests/dashboard/test_external_handoff.py",
+        "tests/dashboard/test_external_review.py",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d7-20261022T220816421240+0800-backend"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-22T22:08:16.424978+08:00",
+      "finished_at": "2026-10-22T22:08:50.064114+08:00",
+      "elapsed_seconds": 33.644,
+      "exit_code": 1,
+      "scope": "Real FastAPI ASGI auth with isolated SQLite/synthetic resources"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T220956812698+0800-contracts/command.json",
+      "check": "contracts",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReadiness.test.mjs",
+        "tests/externalLegacy.test.mjs",
+        "tests/externalHandoff.test.mjs",
+        "tests/externalReview.test.mjs",
+        "tests/externalSchedules.test.mjs",
+        "tests/mySchedule.test.mjs",
+        "tests/dashboardD1.test.mjs",
+        "tests/auth.test.mjs",
+        "tests/authSessionRace.test.mjs",
+        "tests/preferenceModel.test.mjs",
+        "tests/preferenceApi.test.mjs",
+        "tests/gaMonitoring.test.mjs",
+        "tests/gaRecovery.test.mjs",
+        "tests/gaLogs.test.mjs",
+        "tests/gaHistory.test.mjs",
+        "tests/fitnessReporting.test.mjs",
+        "tests/facultyDisplay.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:09:56.813338+08:00",
+      "finished_at": "2026-10-22T22:10:01.591921+08:00",
+      "elapsed_seconds": 4.779,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221048582467+0800-backend/command.json",
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_readiness.py",
+        "tests/dashboard/test_external_legacy.py",
+        "tests/dashboard/test_external_handoff.py",
+        "tests/dashboard/test_external_review.py",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d7-20261022T221048582467+0800-backend"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-22T22:10:48.584568+08:00",
+      "finished_at": "2026-10-22T22:11:21.085642+08:00",
+      "elapsed_seconds": 32.506,
+      "exit_code": 0,
+      "scope": "Real FastAPI ASGI auth with isolated SQLite/synthetic resources"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221417375394+0800-browser/command.json",
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReadiness.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:14:17.376295+08:00",
+      "finished_at": "2026-10-22T22:14:48.178733+08:00",
+      "elapsed_seconds": 30.807,
+      "exit_code": 1,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221611348279+0800-browser/command.json",
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReadiness.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:16:11.349177+08:00",
+      "finished_at": "2026-10-22T22:16:25.928172+08:00",
+      "elapsed_seconds": 14.581,
+      "exit_code": 1,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221623886262+0800-backend/command.json",
+      "check": "backend",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_readiness.py",
+        "tests/dashboard/test_external_legacy.py",
+        "tests/dashboard/test_external_handoff.py",
+        "tests/dashboard/test_external_review.py",
+        "tests/dashboard/test_external_preview.py",
+        "tests/dashboard/test_my_schedule.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d7-20261022T221623886262+0800-backend"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-22T22:16:23.887818+08:00",
+      "finished_at": "2026-10-22T22:16:58.757554+08:00",
+      "elapsed_seconds": 34.875,
+      "exit_code": 0,
+      "scope": "Real FastAPI ASGI auth with isolated SQLite/synthetic resources"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221626041684+0800-backend-regressions/command.json",
+      "check": "backend-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_phase4a_auth.py",
+        "tests/test_ga_control_conflicts.py",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d7-20261022T221626041684+0800-backend-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-22T22:16:26.045311+08:00",
+      "finished_at": "2026-10-22T22:17:21.672992+08:00",
+      "elapsed_seconds": 55.636,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221626123852+0800-ga-resource-regressions/command.json",
+      "check": "ga-resource-regressions",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_preassigned_assignments.py::test_reset_and_rollback_preserve_declarations",
+        "tests/test_preassigned_assignments.py::test_room_and_section_conflicts_apply",
+        "tests/test_preassigned_assignments.py::test_external_overlap_and_future_preassignment",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d7-20261022T221626123852+0800-ga-resource-regressions"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-22T22:16:26.126090+08:00",
+      "finished_at": "2026-10-22T22:16:31.812167+08:00",
+      "elapsed_seconds": 5.687,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221626693570+0800-lint/command.json",
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/api/externalReadiness.ts",
+        "src/components/schedule/ExternalScheduleReadiness.tsx",
+        "src/components/schedule/ReadinessDocument.tsx",
+        "src/components/schedule/LegacyScheduleProvenance.tsx",
+        "src/components/schedule/ExternalScheduleHandoff.tsx",
+        "src/api/externalSchedules.ts",
+        "src/pages/admin/ExternalSchedules.tsx",
+        "src/components/schedule/ExternalScheduleReview.tsx",
+        "src/components/schedule/externalReviewModel.ts"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:16:26.694268+08:00",
+      "finished_at": "2026-10-22T22:16:37.587427+08:00",
+      "elapsed_seconds": 10.895,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221626711858+0800-build/command.json",
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:16:26.713104+08:00",
+      "finished_at": "2026-10-22T22:16:42.616490+08:00",
+      "elapsed_seconds": 15.906,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221736655033+0800-d2-browser/command.json",
+      "check": "d2-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/mySchedule.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:17:36.656052+08:00",
+      "finished_at": "2026-10-22T22:18:05.173840+08:00",
+      "elapsed_seconds": 28.522,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221738937709+0800-d1-browser/command.json",
+      "check": "d1-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/dashboardD1.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:17:38.939475+08:00",
+      "finished_at": "2026-10-22T22:18:05.831094+08:00",
+      "elapsed_seconds": 26.896,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221738980521+0800-d6-browser/command.json",
+      "check": "d6-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalLegacy.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:17:38.981400+08:00",
+      "finished_at": "2026-10-22T22:18:05.489980+08:00",
+      "elapsed_seconds": 26.513,
+      "exit_code": 1,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221739032410+0800-ga-browser/command.json",
+      "check": "ga-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/gaMonitoring.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:17:39.033331+08:00",
+      "finished_at": "2026-10-22T22:18:47.461946+08:00",
+      "elapsed_seconds": 68.438,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221739042176+0800-d4-browser/command.json",
+      "check": "d4-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReview.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:17:39.043022+08:00",
+      "finished_at": "2026-10-22T22:18:05.614512+08:00",
+      "elapsed_seconds": 26.576,
+      "exit_code": 1,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221739114920+0800-d3-browser/command.json",
+      "check": "d3-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalSchedules.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:17:39.115827+08:00",
+      "finished_at": "2026-10-22T22:18:05.634467+08:00",
+      "elapsed_seconds": 26.523,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221739329781+0800-d5-browser/command.json",
+      "check": "d5-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalHandoff.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:17:39.330780+08:00",
+      "finished_at": "2026-10-22T22:18:05.714186+08:00",
+      "elapsed_seconds": 26.388,
+      "exit_code": 1,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221925957911+0800-live/command.json",
+      "check": "live",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_readiness_live.py",
+        "-q",
+        "-s",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d7-20261022T221925957911+0800-live"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-22T22:19:25.960011+08:00",
+      "finished_at": "2026-10-22T22:20:11.410891+08:00",
+      "elapsed_seconds": 45.456,
+      "exit_code": 1,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222114790493+0800-browser/command.json",
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReadiness.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:21:14.791082+08:00",
+      "finished_at": "2026-10-22T22:21:30.100325+08:00",
+      "elapsed_seconds": 15.311,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222200454890+0800-live/command.json",
+      "check": "live",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_readiness_live.py",
+        "-q",
+        "-s",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d7-20261022T222200454890+0800-live"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-22T22:22:00.457051+08:00",
+      "finished_at": "2026-10-22T22:22:32.148240+08:00",
+      "elapsed_seconds": 31.695,
+      "exit_code": 1,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222247299722+0800-build/command.json",
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:22:47.300467+08:00",
+      "finished_at": "2026-10-22T22:23:16.142165+08:00",
+      "elapsed_seconds": 28.845,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222248930762+0800-d6-browser/command.json",
+      "check": "d6-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalLegacy.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:22:48.931806+08:00",
+      "finished_at": "2026-10-22T22:23:07.964090+08:00",
+      "elapsed_seconds": 19.034,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222248944591+0800-d5-browser/command.json",
+      "check": "d5-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalHandoff.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:22:48.945281+08:00",
+      "finished_at": "2026-10-22T22:23:09.279501+08:00",
+      "elapsed_seconds": 20.336,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222248999904+0800-d4-browser/command.json",
+      "check": "d4-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReview.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:22:49.000745+08:00",
+      "finished_at": "2026-10-22T22:23:10.156418+08:00",
+      "elapsed_seconds": 21.158,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222249037685+0800-lint/command.json",
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/api/externalReadiness.ts",
+        "src/components/schedule/ExternalScheduleReadiness.tsx",
+        "src/components/schedule/ReadinessDocument.tsx",
+        "src/components/schedule/LegacyScheduleProvenance.tsx",
+        "src/components/schedule/ExternalScheduleHandoff.tsx",
+        "src/api/externalSchedules.ts",
+        "src/pages/admin/ExternalSchedules.tsx",
+        "src/components/schedule/ExternalScheduleReview.tsx",
+        "src/components/schedule/externalReviewModel.ts"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:22:49.038618+08:00",
+      "finished_at": "2026-10-22T22:23:10.969166+08:00",
+      "elapsed_seconds": 21.933,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222444863847+0800-live/command.json",
+      "check": "live",
+      "command": [
+        "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/dashboard/test_external_readiness_live.py",
+        "-q",
+        "-s",
+        "--tb=short",
+        "--basetemp",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d7-20261022T222444863847+0800-live"
+      ],
+      "cwd": "backend",
+      "started_at": "2026-10-22T22:24:44.866687+08:00",
+      "finished_at": "2026-10-22T22:25:04.386583+08:00",
+      "elapsed_seconds": 19.522,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222653328791+0800-browser/command.json",
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReadiness.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:26:53.329347+08:00",
+      "finished_at": "2026-10-22T22:27:10.420963+08:00",
+      "elapsed_seconds": 17.094,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222942011136+0800-build/command.json",
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:29:42.011724+08:00",
+      "finished_at": "2026-10-22T22:30:08.220719+08:00",
+      "elapsed_seconds": 26.212,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222943661982+0800-d5-browser/command.json",
+      "check": "d5-browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalHandoff.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:29:43.662728+08:00",
+      "finished_at": "2026-10-22T22:30:01.469357+08:00",
+      "elapsed_seconds": 17.809,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222945753979+0800-browser/command.json",
+      "check": "browser",
+      "command": [
+        "node",
+        "--test",
+        "tests/externalReadiness.browser.test.mjs"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:29:45.754673+08:00",
+      "finished_at": "2026-10-22T22:30:08.906425+08:00",
+      "elapsed_seconds": 23.154,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222945829317+0800-lint/command.json",
+      "check": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/api/externalReadiness.ts",
+        "src/components/schedule/ExternalScheduleReadiness.tsx",
+        "src/components/schedule/ReadinessDocument.tsx",
+        "src/components/schedule/LegacyScheduleProvenance.tsx",
+        "src/components/schedule/ExternalScheduleHandoff.tsx",
+        "src/api/externalSchedules.ts",
+        "src/pages/admin/ExternalSchedules.tsx",
+        "src/components/schedule/ExternalScheduleReview.tsx",
+        "src/components/schedule/externalReviewModel.ts"
+      ],
+      "cwd": "frontend",
+      "started_at": "2026-10-22T22:29:45.830154+08:00",
+      "finished_at": "2026-10-22T22:30:05.954036+08:00",
+      "elapsed_seconds": 20.126,
+      "exit_code": 0,
+      "scope": "See report for fixture and regression scope"
+    }
+  ],
+  "final_selection": {
+    "build": "docs/testing/dashboard-d7/20261022T222942011136+0800-build/command.json",
+    "lint": "docs/testing/dashboard-d7/20261022T222945829317+0800-lint/command.json",
+    "backend": "docs/testing/dashboard-d7/20261022T221623886262+0800-backend/command.json",
+    "contracts": "docs/testing/dashboard-d7/20261022T220956812698+0800-contracts/command.json",
+    "browser": "docs/testing/dashboard-d7/20261022T222945753979+0800-browser/command.json",
+    "backend-regressions": "docs/testing/dashboard-d7/20261022T221626041684+0800-backend-regressions/command.json",
+    "ga-resource-regressions": "docs/testing/dashboard-d7/20261022T221626123852+0800-ga-resource-regressions/command.json",
+    "d2-browser": "docs/testing/dashboard-d7/20261022T221736655033+0800-d2-browser/command.json",
+    "d1-browser": "docs/testing/dashboard-d7/20261022T221738937709+0800-d1-browser/command.json",
+    "d6-browser": "docs/testing/dashboard-d7/20261022T222248930762+0800-d6-browser/command.json",
+    "ga-browser": "docs/testing/dashboard-d7/20261022T221739032410+0800-ga-browser/command.json",
+    "d4-browser": "docs/testing/dashboard-d7/20261022T222248999904+0800-d4-browser/command.json",
+    "d3-browser": "docs/testing/dashboard-d7/20261022T221739114920+0800-d3-browser/command.json",
+    "d5-browser": "docs/testing/dashboard-d7/20261022T222943661982+0800-d5-browser/command.json",
+    "live": "docs/testing/dashboard-d7/20261022T222444863847+0800-live/command.json"
+  },
+  "earlier_attempts": [
+    {
+      "path": "docs/testing/dashboard-d7/20261022T220816421240+0800-backend/command.json",
+      "passed": 225,
+      "failed": 1,
+      "resolution": "Old receipt-equality assertion updated for new session revisions; source/storage/security assertions retained. Receipt output redacted with original/sanitized hashes."
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221048582467+0800-backend/command.json",
+      "passed": 226,
+      "failed": 0,
+      "note": "Subsequent two guard cases added; final backend 228 passes."
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221417375394+0800-browser/command.json",
+      "scenario_pass": 16,
+      "scenario_fail": 2,
+      "parent_failed": true,
+      "resolution": "Correct test Unicode expectation and fix mobile form/hash wrapping."
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221611348279+0800-browser/command.json",
+      "scenario_pass": 17,
+      "scenario_fail": 1,
+      "parent_failed": true,
+      "resolution": "Remaining source-hash wrapping fixed."
+    },
+    {
+      "paths": [
+        "docs/testing/dashboard-d7/20261022T221739042176+0800-d4-browser/command.json",
+        "docs/testing/dashboard-d7/20261022T221739329781+0800-d5-browser/command.json",
+        "docs/testing/dashboard-d7/20261022T221738980521+0800-d6-browser/command.json"
+      ],
+      "each_scenario_pass": 14,
+      "each_scenario_fail": 1,
+      "parent_failed": true,
+      "resolution": "New D7 hash wrapping restored prior mobile containment; all reruns pass."
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221925957911+0800-live/command.json",
+      "pytest_failed": 1,
+      "child_scenario_counts": "Not recoverable from this record; not inferred",
+      "resolution": "Windows UTF-8 output and exact ephemeral CORS fixture setup."
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222200454890+0800-live/command.json",
+      "scenario_pass": 1,
+      "scenario_fail": 4,
+      "parent_failed": true,
+      "pytest_failed": 1,
+      "resolution": "Use consistent localhost for SameSite cookies; ensure results directory exists even without screenshots."
+    }
+  ],
+  "browser_runs": [
+    {
+      "results": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/browser-results.json",
+      "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+      "browser": "Edg/155.0.4283.62",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+      "scenarios": [
+        {
+          "id": "D7-B01",
+          "title": "canonical CSV mounts metadata and original calendar without an assessment",
+          "started_at": "2026-10-22T22:14:21.153+08:00",
+          "finished_at": "2026-10-22T22:14:23.477+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B02",
+          "title": "missing metadata gives actionable BLOCKED findings",
+          "started_at": "2026-10-22T22:14:23.480+08:00",
+          "finished_at": "2026-10-22T22:14:23.607+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B03",
+          "title": "completion is explicitly administrator-provided and unverified",
+          "started_at": "2026-10-22T22:14:23.607+08:00",
+          "finished_at": "2026-10-22T22:14:24.498+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B04",
+          "title": "fictional trusted verifier READY never implies confirmation",
+          "started_at": "2026-10-22T22:14:24.498+08:00",
+          "finished_at": "2026-10-22T22:14:24.731+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B05",
+          "title": "metadata edit invalidates READY and preserves unfinished fields",
+          "started_at": "2026-10-22T22:14:24.733+08:00",
+          "finished_at": "2026-10-22T22:14:39.817+08:00",
+          "result": "FAIL",
+          "error": "Missing page text: Stale ? inputs changed"
+        },
+        {
+          "id": "D7-B06",
+          "title": "D4 mapping edits invalidate readiness and retain completion",
+          "started_at": "2026-10-22T22:14:39.818+08:00",
+          "finished_at": "2026-10-22T22:14:40.161+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B07",
+          "title": "proposed meeting corrections retain original source and update candidate calendar",
+          "started_at": "2026-10-22T22:14:40.162+08:00",
+          "finished_at": "2026-10-22T22:14:40.520+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B08",
+          "title": "D5 complete handoff includes current assessment and immutable source hash",
+          "started_at": "2026-10-22T22:14:40.521+08:00",
+          "finished_at": "2026-10-22T22:14:40.812+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B09",
+          "title": "print revalidates and includes readiness with complete original rows",
+          "started_at": "2026-10-22T22:14:40.813+08:00",
+          "finished_at": "2026-10-22T22:14:40.899+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B10",
+          "title": "stale handoff discards assessment and never prints cached READY",
+          "started_at": "2026-10-22T22:14:40.901+08:00",
+          "finished_at": "2026-10-22T22:14:41.033+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B11",
+          "title": "tampered assessment findings are rejected",
+          "started_at": "2026-10-22T22:14:41.034+08:00",
+          "finished_at": "2026-10-22T22:14:41.126+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B12",
+          "title": "permission and stale assessment errors preserve editable metadata",
+          "started_at": "2026-10-22T22:14:41.127+08:00",
+          "finished_at": "2026-10-22T22:14:41.453+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B13",
+          "title": "canonical XLSX uses the same readiness flow",
+          "started_at": "2026-10-22T22:14:41.453+08:00",
+          "finished_at": "2026-10-22T22:14:42.661+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B14",
+          "title": "legacy CSV retains ambiguous originals and editable clarification metadata",
+          "started_at": "2026-10-22T22:14:42.661+08:00",
+          "finished_at": "2026-10-22T22:14:44.055+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B15",
+          "title": "unknown room and faculty applicability remain explicit",
+          "started_at": "2026-10-22T22:14:44.055+08:00",
+          "finished_at": "2026-10-22T22:14:44.259+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B16",
+          "title": "mobile completion and assessment stay within viewport",
+          "started_at": "2026-10-22T22:14:44.259+08:00",
+          "finished_at": "2026-10-22T22:14:44.320+08:00",
+          "result": "FAIL",
+          "error": "The expression evaluated to a falsy value:\n\n  assert.ok(await evaluate('document.documentElement.scrollWidth<=innerWidth'))\n"
+        },
+        {
+          "id": "D7-B17",
+          "title": "clear during delayed assessment cannot restore stale output",
+          "started_at": "2026-10-22T22:14:44.321+08:00",
+          "finished_at": "2026-10-22T22:14:44.502+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B18",
+          "title": "anonymous and faculty routes issue no readiness actions",
+          "started_at": "2026-10-22T22:14:44.503+08:00",
+          "finished_at": "2026-10-22T22:14:45.057+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "results": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/browser-results.json",
+      "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+      "browser": "Edg/155.0.4283.62",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+      "scenarios": [
+        {
+          "id": "D7-B01",
+          "title": "canonical CSV mounts metadata and original calendar without an assessment",
+          "started_at": "2026-10-22T22:16:14.366+08:00",
+          "finished_at": "2026-10-22T22:16:16.025+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B02",
+          "title": "missing metadata gives actionable BLOCKED findings",
+          "started_at": "2026-10-22T22:16:16.028+08:00",
+          "finished_at": "2026-10-22T22:16:16.162+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B03",
+          "title": "completion is explicitly administrator-provided and unverified",
+          "started_at": "2026-10-22T22:16:16.163+08:00",
+          "finished_at": "2026-10-22T22:16:17.150+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B04",
+          "title": "fictional trusted verifier READY never implies confirmation",
+          "started_at": "2026-10-22T22:16:17.151+08:00",
+          "finished_at": "2026-10-22T22:16:17.406+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B05",
+          "title": "metadata edit invalidates READY and preserves unfinished fields",
+          "started_at": "2026-10-22T22:16:17.407+08:00",
+          "finished_at": "2026-10-22T22:16:17.574+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B06",
+          "title": "D4 mapping edits invalidate readiness and retain completion",
+          "started_at": "2026-10-22T22:16:17.575+08:00",
+          "finished_at": "2026-10-22T22:16:17.836+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B07",
+          "title": "proposed meeting corrections retain original source and update candidate calendar",
+          "started_at": "2026-10-22T22:16:17.837+08:00",
+          "finished_at": "2026-10-22T22:16:18.166+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B08",
+          "title": "D5 complete handoff includes current assessment and immutable source hash",
+          "started_at": "2026-10-22T22:16:18.167+08:00",
+          "finished_at": "2026-10-22T22:16:18.434+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B09",
+          "title": "print revalidates and includes readiness with complete original rows",
+          "started_at": "2026-10-22T22:16:18.435+08:00",
+          "finished_at": "2026-10-22T22:16:18.526+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B10",
+          "title": "stale handoff discards assessment and never prints cached READY",
+          "started_at": "2026-10-22T22:16:18.526+08:00",
+          "finished_at": "2026-10-22T22:16:18.648+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B11",
+          "title": "tampered assessment findings are rejected",
+          "started_at": "2026-10-22T22:16:18.649+08:00",
+          "finished_at": "2026-10-22T22:16:18.739+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B12",
+          "title": "permission and stale assessment errors preserve editable metadata",
+          "started_at": "2026-10-22T22:16:18.740+08:00",
+          "finished_at": "2026-10-22T22:16:19.020+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B13",
+          "title": "canonical XLSX uses the same readiness flow",
+          "started_at": "2026-10-22T22:16:19.020+08:00",
+          "finished_at": "2026-10-22T22:16:20.440+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B14",
+          "title": "legacy CSV retains ambiguous originals and editable clarification metadata",
+          "started_at": "2026-10-22T22:16:20.440+08:00",
+          "finished_at": "2026-10-22T22:16:21.966+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B15",
+          "title": "unknown room and faculty applicability remain explicit",
+          "started_at": "2026-10-22T22:16:21.966+08:00",
+          "finished_at": "2026-10-22T22:16:22.167+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B16",
+          "title": "mobile completion and assessment stay within viewport",
+          "started_at": "2026-10-22T22:16:22.167+08:00",
+          "finished_at": "2026-10-22T22:16:22.214+08:00",
+          "result": "FAIL",
+          "error": "The expression evaluated to a falsy value:\n\n  assert.ok(await evaluate('document.documentElement.scrollWidth<=innerWidth'))\n"
+        },
+        {
+          "id": "D7-B17",
+          "title": "clear during delayed assessment cannot restore stale output",
+          "started_at": "2026-10-22T22:16:22.215+08:00",
+          "finished_at": "2026-10-22T22:16:22.398+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B18",
+          "title": "anonymous and faculty routes issue no readiness actions",
+          "started_at": "2026-10-22T22:16:22.398+08:00",
+          "finished_at": "2026-10-22T22:16:22.786+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "results": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/browser-results.json",
+      "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+      "browser": "Edg/155.0.4283.62",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+      "scenarios": [
+        {
+          "id": "D7-B01",
+          "title": "canonical CSV mounts metadata and original calendar without an assessment",
+          "started_at": "2026-10-22T22:21:17.894+08:00",
+          "finished_at": "2026-10-22T22:21:20.248+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B02",
+          "title": "missing metadata gives actionable BLOCKED findings",
+          "started_at": "2026-10-22T22:21:20.251+08:00",
+          "finished_at": "2026-10-22T22:21:20.389+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B03",
+          "title": "completion is explicitly administrator-provided and unverified",
+          "started_at": "2026-10-22T22:21:20.390+08:00",
+          "finished_at": "2026-10-22T22:21:21.301+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B04",
+          "title": "fictional trusted verifier READY never implies confirmation",
+          "started_at": "2026-10-22T22:21:21.302+08:00",
+          "finished_at": "2026-10-22T22:21:21.536+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B05",
+          "title": "metadata edit invalidates READY and preserves unfinished fields",
+          "started_at": "2026-10-22T22:21:21.537+08:00",
+          "finished_at": "2026-10-22T22:21:21.707+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B06",
+          "title": "D4 mapping edits invalidate readiness and retain completion",
+          "started_at": "2026-10-22T22:21:21.708+08:00",
+          "finished_at": "2026-10-22T22:21:22.052+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B07",
+          "title": "proposed meeting corrections retain original source and update candidate calendar",
+          "started_at": "2026-10-22T22:21:22.053+08:00",
+          "finished_at": "2026-10-22T22:21:22.413+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B08",
+          "title": "D5 complete handoff includes current assessment and immutable source hash",
+          "started_at": "2026-10-22T22:21:22.414+08:00",
+          "finished_at": "2026-10-22T22:21:22.660+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B09",
+          "title": "print revalidates and includes readiness with complete original rows",
+          "started_at": "2026-10-22T22:21:22.661+08:00",
+          "finished_at": "2026-10-22T22:21:22.741+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B10",
+          "title": "stale handoff discards assessment and never prints cached READY",
+          "started_at": "2026-10-22T22:21:22.742+08:00",
+          "finished_at": "2026-10-22T22:21:22.817+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B11",
+          "title": "tampered assessment findings are rejected",
+          "started_at": "2026-10-22T22:21:22.818+08:00",
+          "finished_at": "2026-10-22T22:21:22.909+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B12",
+          "title": "permission and stale assessment errors preserve editable metadata",
+          "started_at": "2026-10-22T22:21:22.909+08:00",
+          "finished_at": "2026-10-22T22:21:23.150+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B13",
+          "title": "canonical XLSX uses the same readiness flow",
+          "started_at": "2026-10-22T22:21:23.151+08:00",
+          "finished_at": "2026-10-22T22:21:24.477+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B14",
+          "title": "legacy CSV retains ambiguous originals and editable clarification metadata",
+          "started_at": "2026-10-22T22:21:24.478+08:00",
+          "finished_at": "2026-10-22T22:21:25.968+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B15",
+          "title": "unknown room and faculty applicability remain explicit",
+          "started_at": "2026-10-22T22:21:25.969+08:00",
+          "finished_at": "2026-10-22T22:21:26.201+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B16",
+          "title": "mobile completion and assessment stay within viewport",
+          "started_at": "2026-10-22T22:21:26.201+08:00",
+          "finished_at": "2026-10-22T22:21:26.335+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B17",
+          "title": "clear during delayed assessment cannot restore stale output",
+          "started_at": "2026-10-22T22:21:26.336+08:00",
+          "finished_at": "2026-10-22T22:21:26.527+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B18",
+          "title": "anonymous and faculty routes issue no readiness actions",
+          "started_at": "2026-10-22T22:21:26.528+08:00",
+          "finished_at": "2026-10-22T22:21:27.012+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "results": "docs/screenshots/dashboard-d7/20261022T222444863847+0800-live/browser-results.json",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Default authority provider unavailable; BLOCKED only. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "browser": "Edg/155.0.4283.62",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+      "scenarios": [
+        {
+          "id": "D7-L01",
+          "title": "real React login authenticates against live FastAPI and isolated SQLite",
+          "started_at": "2026-10-22T22:24:54.619+08:00",
+          "finished_at": "2026-10-22T22:24:57.104+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-L02",
+          "title": "real canonical import supplies session-bound preview and calendar",
+          "started_at": "2026-10-22T22:24:57.108+08:00",
+          "finished_at": "2026-10-22T22:24:58.239+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-L03",
+          "title": "live policy assesses entered metadata as BLOCKED without institutional verification",
+          "started_at": "2026-10-22T22:24:58.240+08:00",
+          "finished_at": "2026-10-22T22:24:59.448+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-L04",
+          "title": "live handoff revalidates and includes original source and assessment",
+          "started_at": "2026-10-22T22:24:59.449+08:00",
+          "finished_at": "2026-10-22T22:24:59.549+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-L05",
+          "title": "live metadata edit invalidates assessment and prevents cached handoff output",
+          "started_at": "2026-10-22T22:24:59.550+08:00",
+          "finished_at": "2026-10-22T22:24:59.769+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "results": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/browser-results.json",
+      "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+      "browser": "Edg/155.0.4283.62",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+      "scenarios": [
+        {
+          "id": "D7-B01",
+          "title": "canonical CSV mounts metadata and original calendar without an assessment",
+          "started_at": "2026-10-22T22:26:57.797+08:00",
+          "finished_at": "2026-10-22T22:27:00.187+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B02",
+          "title": "missing metadata gives actionable BLOCKED findings",
+          "started_at": "2026-10-22T22:27:00.189+08:00",
+          "finished_at": "2026-10-22T22:27:00.344+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B03",
+          "title": "completion is explicitly administrator-provided and unverified",
+          "started_at": "2026-10-22T22:27:00.344+08:00",
+          "finished_at": "2026-10-22T22:27:01.355+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B04",
+          "title": "fictional trusted verifier READY never implies confirmation",
+          "started_at": "2026-10-22T22:27:01.355+08:00",
+          "finished_at": "2026-10-22T22:27:01.613+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B05",
+          "title": "metadata edit invalidates READY and preserves unfinished fields",
+          "started_at": "2026-10-22T22:27:01.614+08:00",
+          "finished_at": "2026-10-22T22:27:01.780+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B06",
+          "title": "D4 mapping edits invalidate readiness and retain completion",
+          "started_at": "2026-10-22T22:27:01.780+08:00",
+          "finished_at": "2026-10-22T22:27:02.226+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B07",
+          "title": "proposed meeting corrections retain original source and update candidate calendar",
+          "started_at": "2026-10-22T22:27:02.227+08:00",
+          "finished_at": "2026-10-22T22:27:02.604+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B08",
+          "title": "D5 complete handoff includes current assessment and immutable source hash",
+          "started_at": "2026-10-22T22:27:02.604+08:00",
+          "finished_at": "2026-10-22T22:27:02.855+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B09",
+          "title": "print revalidates and includes readiness with complete original rows",
+          "started_at": "2026-10-22T22:27:02.855+08:00",
+          "finished_at": "2026-10-22T22:27:02.948+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B10",
+          "title": "stale handoff discards assessment and never prints cached READY",
+          "started_at": "2026-10-22T22:27:02.949+08:00",
+          "finished_at": "2026-10-22T22:27:03.042+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B11",
+          "title": "tampered assessment findings are rejected",
+          "started_at": "2026-10-22T22:27:03.042+08:00",
+          "finished_at": "2026-10-22T22:27:03.139+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B12",
+          "title": "permission and stale assessment errors preserve editable metadata",
+          "started_at": "2026-10-22T22:27:03.140+08:00",
+          "finished_at": "2026-10-22T22:27:03.453+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B13",
+          "title": "canonical XLSX uses the same readiness flow",
+          "started_at": "2026-10-22T22:27:03.454+08:00",
+          "finished_at": "2026-10-22T22:27:04.855+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B14",
+          "title": "legacy CSV retains ambiguous originals and editable clarification metadata",
+          "started_at": "2026-10-22T22:27:04.856+08:00",
+          "finished_at": "2026-10-22T22:27:06.198+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B15",
+          "title": "unknown room and faculty applicability remain explicit",
+          "started_at": "2026-10-22T22:27:06.199+08:00",
+          "finished_at": "2026-10-22T22:27:06.447+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B16",
+          "title": "mobile completion and assessment stay within viewport",
+          "started_at": "2026-10-22T22:27:06.447+08:00",
+          "finished_at": "2026-10-22T22:27:06.590+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B17",
+          "title": "clear during delayed assessment cannot restore stale output",
+          "started_at": "2026-10-22T22:27:06.591+08:00",
+          "finished_at": "2026-10-22T22:27:06.783+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B18",
+          "title": "anonymous and faculty routes issue no readiness actions",
+          "started_at": "2026-10-22T22:27:06.784+08:00",
+          "finished_at": "2026-10-22T22:27:07.281+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "results": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/browser-results.json",
+      "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+      "browser": "Edg/155.0.4283.62",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+      "scenarios": [
+        {
+          "id": "D7-B01",
+          "title": "canonical CSV mounts metadata and original calendar without an assessment",
+          "started_at": "2026-10-22T22:29:51.804+08:00",
+          "finished_at": "2026-10-22T22:29:57.045+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B02",
+          "title": "missing metadata gives actionable BLOCKED findings",
+          "started_at": "2026-10-22T22:29:57.049+08:00",
+          "finished_at": "2026-10-22T22:29:57.365+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B03",
+          "title": "completion is explicitly administrator-provided and unverified",
+          "started_at": "2026-10-22T22:29:57.366+08:00",
+          "finished_at": "2026-10-22T22:29:58.772+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B04",
+          "title": "fictional trusted verifier READY never implies confirmation",
+          "started_at": "2026-10-22T22:29:58.773+08:00",
+          "finished_at": "2026-10-22T22:29:59.081+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B05",
+          "title": "metadata edit invalidates READY and preserves unfinished fields",
+          "started_at": "2026-10-22T22:29:59.082+08:00",
+          "finished_at": "2026-10-22T22:29:59.299+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B06",
+          "title": "D4 mapping edits invalidate readiness and retain completion",
+          "started_at": "2026-10-22T22:29:59.300+08:00",
+          "finished_at": "2026-10-22T22:29:59.685+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B07",
+          "title": "proposed meeting corrections retain original source and update candidate calendar",
+          "started_at": "2026-10-22T22:29:59.686+08:00",
+          "finished_at": "2026-10-22T22:30:00.168+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B08",
+          "title": "D5 complete handoff includes current assessment and immutable source hash",
+          "started_at": "2026-10-22T22:30:00.169+08:00",
+          "finished_at": "2026-10-22T22:30:00.506+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B09",
+          "title": "print revalidates and includes readiness with complete original rows",
+          "started_at": "2026-10-22T22:30:00.507+08:00",
+          "finished_at": "2026-10-22T22:30:00.601+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B10",
+          "title": "stale handoff discards assessment and never prints cached READY",
+          "started_at": "2026-10-22T22:30:00.602+08:00",
+          "finished_at": "2026-10-22T22:30:00.736+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B11",
+          "title": "tampered assessment findings are rejected",
+          "started_at": "2026-10-22T22:30:00.736+08:00",
+          "finished_at": "2026-10-22T22:30:00.835+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B12",
+          "title": "permission and stale assessment errors preserve editable metadata",
+          "started_at": "2026-10-22T22:30:00.835+08:00",
+          "finished_at": "2026-10-22T22:30:01.143+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B13",
+          "title": "canonical XLSX uses the same readiness flow",
+          "started_at": "2026-10-22T22:30:01.144+08:00",
+          "finished_at": "2026-10-22T22:30:02.822+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B14",
+          "title": "legacy CSV retains ambiguous originals and editable clarification metadata",
+          "started_at": "2026-10-22T22:30:02.823+08:00",
+          "finished_at": "2026-10-22T22:30:04.610+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B15",
+          "title": "unknown room and faculty applicability remain explicit",
+          "started_at": "2026-10-22T22:30:04.611+08:00",
+          "finished_at": "2026-10-22T22:30:04.828+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B16",
+          "title": "mobile completion and assessment stay within viewport",
+          "started_at": "2026-10-22T22:30:04.828+08:00",
+          "finished_at": "2026-10-22T22:30:04.974+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B17",
+          "title": "clear during delayed assessment cannot restore stale output",
+          "started_at": "2026-10-22T22:30:04.974+08:00",
+          "finished_at": "2026-10-22T22:30:05.180+08:00",
+          "result": "PASS"
+        },
+        {
+          "id": "D7-B18",
+          "title": "anonymous and faculty routes issue no readiness actions",
+          "started_at": "2026-10-22T22:30:05.181+08:00",
+          "finished_at": "2026-10-22T22:30:05.807+08:00",
+          "result": "PASS"
+        }
+      ],
+      "runtime_errors": []
+    }
+  ],
+  "captures": [
+    {
+      "name": "D7-B03-completed-but-unverified.png",
+      "captured_at": "2026-10-22T22:14:24.495+08:00",
+      "url": "http://localhost:61355/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B03-completed-but-unverified.png",
+      "sha256": "efcd46db8406f89b447141a3c55141f81d9ce99882b95e4d543c868ec1c87ffe",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Intake viewport; assessment below fold. Does not itself show BLOCKED findings."
+    },
+    {
+      "name": "D7-B04-fictional-ready.png",
+      "captured_at": "2026-10-22T22:14:24.729+08:00",
+      "url": "http://localhost:61355/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B04-fictional-ready.png",
+      "sha256": "e70e3d8b523c66d023ca168b0be20681e443c2f1f928d4d6b7b9f34613ba46cf",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B08-assessed-handoff.png",
+      "captured_at": "2026-10-22T22:14:40.809+08:00",
+      "url": "http://localhost:61355/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B08-assessed-handoff.png",
+      "sha256": "64301825999db3090d3a17dcb8c74c101f9fb20763cad85f12a8472353b39fee",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B03-completed-but-unverified.png",
+      "captured_at": "2026-10-22T22:16:17.146+08:00",
+      "url": "http://localhost:57423/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/D7-B03-completed-but-unverified.png",
+      "sha256": "efcd46db8406f89b447141a3c55141f81d9ce99882b95e4d543c868ec1c87ffe",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Intake viewport; assessment below fold. Does not itself show BLOCKED findings."
+    },
+    {
+      "name": "D7-B04-fictional-ready.png",
+      "captured_at": "2026-10-22T22:16:17.403+08:00",
+      "url": "http://localhost:57423/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/D7-B04-fictional-ready.png",
+      "sha256": "e70e3d8b523c66d023ca168b0be20681e443c2f1f928d4d6b7b9f34613ba46cf",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B08-assessed-handoff.png",
+      "captured_at": "2026-10-22T22:16:18.431+08:00",
+      "url": "http://localhost:57423/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/D7-B08-assessed-handoff.png",
+      "sha256": "64301825999db3090d3a17dcb8c74c101f9fb20763cad85f12a8472353b39fee",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B03-completed-but-unverified.png",
+      "captured_at": "2026-10-22T22:21:21.297+08:00",
+      "url": "http://localhost:56855/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B03-completed-but-unverified.png",
+      "sha256": "efcd46db8406f89b447141a3c55141f81d9ce99882b95e4d543c868ec1c87ffe",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Intake viewport; assessment below fold. Does not itself show BLOCKED findings."
+    },
+    {
+      "name": "D7-B04-fictional-ready.png",
+      "captured_at": "2026-10-22T22:21:21.532+08:00",
+      "url": "http://localhost:56855/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B04-fictional-ready.png",
+      "sha256": "e70e3d8b523c66d023ca168b0be20681e443c2f1f928d4d6b7b9f34613ba46cf",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B08-assessed-handoff.png",
+      "captured_at": "2026-10-22T22:21:22.656+08:00",
+      "url": "http://localhost:56855/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B08-assessed-handoff.png",
+      "sha256": "64301825999db3090d3a17dcb8c74c101f9fb20763cad85f12a8472353b39fee",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B16-mobile-completion.png",
+      "captured_at": "2026-10-22T22:21:26.301+08:00",
+      "url": "http://localhost:56855/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B16-mobile-completion.png",
+      "sha256": "ee0a92a8d0ca68d73dbd0744c464875a8b3bddf35c7f40717c3c0e1732c76b88",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-L03-live-fastapi-blocked.png",
+      "captured_at": "2026-10-22T22:24:59.443+08:00",
+      "url": "http://localhost:64902/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222444863847+0800-live/D7-L03-live-fastapi-blocked.png",
+      "sha256": "aa8447c88251b5028ae039c4d20eda8f39f5a7238e494b4c68d448f99f926b77",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Real browser-to-FastAPI BLOCKED assessment with synthetic SQLite/resources; before final display-only fingerprint additions."
+    },
+    {
+      "name": "D7-B03-completed-but-unverified.png",
+      "captured_at": "2026-10-22T22:27:01.351+08:00",
+      "url": "http://localhost:59843/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B03-completed-but-unverified.png",
+      "sha256": "1ab0532a9526db2ab1e3fc7994609a191d75ed80d1ccf8cf17e9b22034e2e833",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B04-fictional-ready.png",
+      "captured_at": "2026-10-22T22:27:01.609+08:00",
+      "url": "http://localhost:59843/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B04-fictional-ready.png",
+      "sha256": "e70e3d8b523c66d023ca168b0be20681e443c2f1f928d4d6b7b9f34613ba46cf",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B08-assessed-handoff.png",
+      "captured_at": "2026-10-22T22:27:02.851+08:00",
+      "url": "http://localhost:59843/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B08-assessed-handoff.png",
+      "sha256": "64301825999db3090d3a17dcb8c74c101f9fb20763cad85f12a8472353b39fee",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B16-mobile-completion.png",
+      "captured_at": "2026-10-22T22:27:06.555+08:00",
+      "url": "http://localhost:59843/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B16-mobile-completion.png",
+      "sha256": "ee0a92a8d0ca68d73dbd0744c464875a8b3bddf35c7f40717c3c0e1732c76b88",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B03-completed-but-unverified.png",
+      "captured_at": "2026-10-22T22:29:58.765+08:00",
+      "url": "http://localhost:49867/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B03-completed-but-unverified.png",
+      "sha256": "29a5df59691d9fa64849319fb4d326b76fdd2534e81718545700069b43f2d67a",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B04-fictional-ready.png",
+      "captured_at": "2026-10-22T22:29:59.071+08:00",
+      "url": "http://localhost:49867/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B04-fictional-ready.png",
+      "sha256": "cb55b17dc3ccfa0de433a7743526b852320227983ff30f8a46987bfdf28da57f",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B08-assessed-handoff.png",
+      "captured_at": "2026-10-22T22:30:00.502+08:00",
+      "url": "http://localhost:49867/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B08-assessed-handoff.png",
+      "sha256": "8a63a23753106c924e95b9e38d9c999cba77862857811d278e5a65ec287d3f7a",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    },
+    {
+      "name": "D7-B16-mobile-completion.png",
+      "captured_at": "2026-10-22T22:30:04.939+08:00",
+      "url": "http://localhost:49867/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B16-mobile-completion.png",
+      "sha256": "242734ae83871d286eee7291de3a8e92156e9ca61be84097c789fc099be762cb",
+      "visually_reviewed": true,
+      "privacy_reviewed": true,
+      "original_unedited": true,
+      "review_method": "Direct visual inspection or raw-hash-identical to a visually inspected original",
+      "scope_note": "Actual rendered preview; synthetic values only."
+    }
+  ],
+  "unique_image_hashes": {
+    "efcd46db8406f89b447141a3c55141f81d9ce99882b95e4d543c868ec1c87ffe": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B03-completed-but-unverified.png",
+    "e70e3d8b523c66d023ca168b0be20681e443c2f1f928d4d6b7b9f34613ba46cf": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B04-fictional-ready.png",
+    "64301825999db3090d3a17dcb8c74c101f9fb20763cad85f12a8472353b39fee": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B08-assessed-handoff.png",
+    "ee0a92a8d0ca68d73dbd0744c464875a8b3bddf35c7f40717c3c0e1732c76b88": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B16-mobile-completion.png",
+    "aa8447c88251b5028ae039c4d20eda8f39f5a7238e494b4c68d448f99f926b77": "docs/screenshots/dashboard-d7/20261022T222444863847+0800-live/D7-L03-live-fastapi-blocked.png",
+    "1ab0532a9526db2ab1e3fc7994609a191d75ed80d1ccf8cf17e9b22034e2e833": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B03-completed-but-unverified.png",
+    "29a5df59691d9fa64849319fb4d326b76fdd2534e81718545700069b43f2d67a": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B03-completed-but-unverified.png",
+    "cb55b17dc3ccfa0de433a7743526b852320227983ff30f8a46987bfdf28da57f": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B04-fictional-ready.png",
+    "8a63a23753106c924e95b9e38d9c999cba77862857811d278e5a65ec287d3f7a": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B08-assessed-handoff.png",
+    "242734ae83871d286eee7291de3a8e92156e9ca61be84097c789fc099be762cb": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B16-mobile-completion.png"
+  },
+  "evidence_boundaries": {
+    "synthetic_HTTP": "Real React/Edge; mocked backend policy/verification. READY is fictional, not real authority.",
+    "backend_ASGI": "Actual password/session/role/Origin/CSRF and SQLite with fictional metadata; trusted verifier injected only for READY tests.",
+    "live": "Actual React/Edge to Uvicorn/FastAPI HTTP and isolated SQLite; real auth, default verifier None, BLOCKED path only. Exact-origin outer fixture CORS; credentials stdin only.",
+    "printing": "Intercepted window.print and actual print-media DOM/style; no native printer/dialog/PDF pagination claim.",
+    "capture_history": "Earlier B03 intake viewport retained; final B03 shows the assessment. Live capture predates final display-only fingerprint/unassessed-label additions."
+  },
+  "preservation": {
+    "baseline_files": 651,
+    "unchanged": 644,
+    "expected_existing_changes": [
+      "backend/routers/external_schedules.py",
+      "backend/tests/dashboard/test_external_handoff.py",
+      "backend/tests/dashboard/test_external_preview.py",
+      "backend/tests/dashboard/test_external_review.py",
+      "frontend/src/api/externalSchedules.ts",
+      "frontend/src/components/schedule/ExternalScheduleHandoff.tsx",
+      "frontend/src/components/schedule/ExternalScheduleReview.tsx"
+    ],
+    "unexpected_changes": [],
+    "protected_preferences_sha256": "72a5f4f239b5cf99cfb6d7159d443375f8496b69c6b3d1d67ad42e449fd2d8a9",
+    "protected_preferences": "Pre-existing local modification unchanged, unstaged and excluded",
+    "head_and_git_index": "unchanged",
+    "datasets_GA_identity_mappings_saved_artifacts_Phase4C_prior_evidence": "unchanged"
+  },
+  "artifact_count_excluding_manifest": 83,
+  "artifacts": [
+    {
+      "path": "backend/routers/external_schedules.py",
+      "sha256": "cea8f79d3e7f57629c9b9d7bd7ff2cbc260bb33cedafe69b32ea9f3d761fe6e5",
+      "bytes": 6199
+    },
+    {
+      "path": "backend/schemas/external_readiness.py",
+      "sha256": "96cfd64e21041b0bc1ab95705daa293000d6676a7cafd3cd5ca2266ca1242705",
+      "bytes": 3846
+    },
+    {
+      "path": "backend/services/external_schedule_preview_lifecycle.py",
+      "sha256": "a8b095b6c980890b346e2f1d884a27d755ca49dd9ab41d8469bf26504e609085",
+      "bytes": 3081
+    },
+    {
+      "path": "backend/services/external_schedule_readiness_service.py",
+      "sha256": "5b138dfcdb284b4cebad333537a67e68d232cb3ef57d82048ebfd5f5865f309d",
+      "bytes": 16709
+    },
+    {
+      "path": "backend/services/external_schedule_verification_service.py",
+      "sha256": "0386367ac7d35d689dbd33995227b11d71df6d80c40031524a54cd9c02ce9c13",
+      "bytes": 667
+    },
+    {
+      "path": "backend/tests/dashboard/readiness_support.py",
+      "sha256": "2f717e89148a3317d1bc283bf94e931847f5b2328c2701fb9d93f38032ad50b7",
+      "bytes": 617
+    },
+    {
+      "path": "backend/tests/dashboard/test_external_handoff.py",
+      "sha256": "405811bf00aaa7cde8ee754197e960fc3c30d453b60e9cda3de07818ee35d4ca",
+      "bytes": 8533
+    },
+    {
+      "path": "backend/tests/dashboard/test_external_preview.py",
+      "sha256": "8a4656b24bf379270783397c76e2db1bb77096d51824b0f80349e62075a833bf",
+      "bytes": 16410
+    },
+    {
+      "path": "backend/tests/dashboard/test_external_readiness.py",
+      "sha256": "b3c7446b10cfbefa0952bab5458ad628589a883b0cb447f1de06ee3ea24cf208",
+      "bytes": 16006
+    },
+    {
+      "path": "backend/tests/dashboard/test_external_readiness_live.py",
+      "sha256": "e55875b8df4346d1445a8301afdc43def0e68e783a259486fccc563136b0376e",
+      "bytes": 2789
+    },
+    {
+      "path": "backend/tests/dashboard/test_external_review.py",
+      "sha256": "0a5173896621309ad76e55d1bc87e87a701b803931316e95af0ab8d43b9f0881",
+      "bytes": 12351
+    },
+    {
+      "path": "docs/dashboard-d7-implementation.md",
+      "sha256": "7e15ce64a7cb6dc07e29cae8502f4a4c1cf70dd1301f660312e9f99398303ef4",
+      "bytes": 29989
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B03-completed-but-unverified.png",
+      "sha256": "efcd46db8406f89b447141a3c55141f81d9ce99882b95e4d543c868ec1c87ffe",
+      "bytes": 123728
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B04-fictional-ready.png",
+      "sha256": "e70e3d8b523c66d023ca168b0be20681e443c2f1f928d4d6b7b9f34613ba46cf",
+      "bytes": 82573
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B08-assessed-handoff.png",
+      "sha256": "64301825999db3090d3a17dcb8c74c101f9fb20763cad85f12a8472353b39fee",
+      "bytes": 132346
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/browser-results.json",
+      "sha256": "3e45d76a190163af2a9f837f61233626ac368ac632f21c87ae7ae29d9d2e3a23",
+      "bytes": 5964
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/D7-B03-completed-but-unverified.png",
+      "sha256": "efcd46db8406f89b447141a3c55141f81d9ce99882b95e4d543c868ec1c87ffe",
+      "bytes": 123728
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/D7-B04-fictional-ready.png",
+      "sha256": "e70e3d8b523c66d023ca168b0be20681e443c2f1f928d4d6b7b9f34613ba46cf",
+      "bytes": 82573
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/D7-B08-assessed-handoff.png",
+      "sha256": "64301825999db3090d3a17dcb8c74c101f9fb20763cad85f12a8472353b39fee",
+      "bytes": 132346
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/browser-results.json",
+      "sha256": "0c85d15f5ba234aefa19b2f641c013af001b11db8f27cb036098a7ea14be0af1",
+      "bytes": 5904
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B03-completed-but-unverified.png",
+      "sha256": "efcd46db8406f89b447141a3c55141f81d9ce99882b95e4d543c868ec1c87ffe",
+      "bytes": 123728
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B04-fictional-ready.png",
+      "sha256": "e70e3d8b523c66d023ca168b0be20681e443c2f1f928d4d6b7b9f34613ba46cf",
+      "bytes": 82573
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B08-assessed-handoff.png",
+      "sha256": "64301825999db3090d3a17dcb8c74c101f9fb20763cad85f12a8472353b39fee",
+      "bytes": 132346
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B16-mobile-completion.png",
+      "sha256": "ee0a92a8d0ca68d73dbd0744c464875a8b3bddf35c7f40717c3c0e1732c76b88",
+      "bytes": 46451
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/browser-results.json",
+      "sha256": "ad7ddfb7e8ae9e743b0c6c1019be985f229b0723e4213862568f83caf52570bc",
+      "bytes": 6007
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222444863847+0800-live/D7-L03-live-fastapi-blocked.png",
+      "sha256": "aa8447c88251b5028ae039c4d20eda8f39f5a7238e494b4c68d448f99f926b77",
+      "bytes": 117553
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222444863847+0800-live/browser-results.json",
+      "sha256": "5e638d5c5e5b2ee2aad43d9828cf4a5142f7d06aaed296b004c36a3afd66d5d9",
+      "bytes": 2180
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B03-completed-but-unverified.png",
+      "sha256": "1ab0532a9526db2ab1e3fc7994609a191d75ed80d1ccf8cf17e9b22034e2e833",
+      "bytes": 90315
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B04-fictional-ready.png",
+      "sha256": "e70e3d8b523c66d023ca168b0be20681e443c2f1f928d4d6b7b9f34613ba46cf",
+      "bytes": 82573
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B08-assessed-handoff.png",
+      "sha256": "64301825999db3090d3a17dcb8c74c101f9fb20763cad85f12a8472353b39fee",
+      "bytes": 132346
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B16-mobile-completion.png",
+      "sha256": "ee0a92a8d0ca68d73dbd0744c464875a8b3bddf35c7f40717c3c0e1732c76b88",
+      "bytes": 46451
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/browser-results.json",
+      "sha256": "95dc6101b65794f9243a99e47c2f9f4d1ef079f37122232c9ab0b7e7bbf21b8f",
+      "bytes": 6007
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B03-completed-but-unverified.png",
+      "sha256": "29a5df59691d9fa64849319fb4d326b76fdd2534e81718545700069b43f2d67a",
+      "bytes": 92642
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B04-fictional-ready.png",
+      "sha256": "cb55b17dc3ccfa0de433a7743526b852320227983ff30f8a46987bfdf28da57f",
+      "bytes": 84771
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B08-assessed-handoff.png",
+      "sha256": "8a63a23753106c924e95b9e38d9c999cba77862857811d278e5a65ec287d3f7a",
+      "bytes": 134136
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B16-mobile-completion.png",
+      "sha256": "242734ae83871d286eee7291de3a8e92156e9ca61be84097c789fc099be762cb",
+      "bytes": 42729
+    },
+    {
+      "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/browser-results.json",
+      "sha256": "d00659a6e4a8c0585cb54f3ed3bc2dcadb8d41411d6506292595fee91709e9d0",
+      "bytes": 6007
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T220531024959+0800-build/command.json",
+      "sha256": "79eeab00becbe6b397f7bf43f0ed190e1d8f68c9909918ddd0cafeee58e65bc3",
+      "bytes": 1732
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T220532274572+0800-lint/command.json",
+      "sha256": "4c9631e15be6cf7147058867afa7ea77dd1f48e2c18b7d2221988cb6a6ab10d6",
+      "bytes": 943
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T220816421240+0800-backend/command.json",
+      "sha256": "79e83e173b0e76e9118d41c0d1d0fbf68fa351a5e504bd8d209d2e5344b3bec9",
+      "bytes": 3196
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T220816421240+0800-backend/sanitization.json",
+      "sha256": "ef7ce28c2c0d77e62a6c68d60e82b12c1eafaf252f9282229ba1171b2a377f93",
+      "bytes": 932
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T220956812698+0800-contracts/command.json",
+      "sha256": "c017952e135b42a2f534ae4e2b53eb19f4945d857e80a00005aeda95ad93bae3",
+      "bytes": 13481
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221048582467+0800-backend/command.json",
+      "sha256": "efa31241ad54142e44d760b119c755e1fa42142251a148af47f7995eb65a8ea7",
+      "bytes": 2395
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221417375394+0800-browser/command.json",
+      "sha256": "993343b18006b371d1025ee83cea611eb22e758329b60edaf06b86c9a3a2e189",
+      "bytes": 4761
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221611348279+0800-browser/command.json",
+      "sha256": "7a8fef91eb77c69e9aeb497ae1e7cc30ee6eb9972a4a920af028f9541c6d050b",
+      "bytes": 3751
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221623886262+0800-backend/command.json",
+      "sha256": "72fc0945bf050a41131b312c58ee80287298a8a7128d6080eea065f52c4297dd",
+      "bytes": 2395
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221626041684+0800-backend-regressions/command.json",
+      "sha256": "c9aed7af471d8b2b0bbf6b9b7478c3b239f254c1a13a1cb2dfa645b11ba4fd11",
+      "bytes": 2417
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221626123852+0800-ga-resource-regressions/command.json",
+      "sha256": "50950562db2147c3aff577d0b9a8650ba2b4e8c3b2c833e830bfb60264cc50cf",
+      "bytes": 1243
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221626693570+0800-lint/command.json",
+      "sha256": "b214f74d2bafbdffa679eba5f34beeeeba5966bd9ccd3dc033ad8de3d9160ed1",
+      "bytes": 1057
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221626711858+0800-build/command.json",
+      "sha256": "96af2f3bed0d966afeb1df99d39f0f5a7ba07fb50563a369e24f029d3f6b5fba",
+      "bytes": 1846
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221736655033+0800-d2-browser/command.json",
+      "sha256": "46196fb5efc141080dbcda3d586b29ea8c1e4e977f72fa1b55a88f932c2683c7",
+      "bytes": 2059
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221738937709+0800-d1-browser/command.json",
+      "sha256": "b48815dee99d043bddd2f05bc26e7ad09a7a9638dc5bf844c4fbb9ff1644905c",
+      "bytes": 2180
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221738980521+0800-d6-browser/command.json",
+      "sha256": "de671bde5c142ed0cb6b5e828fe1f2a4aeee3357d48807f32d796d339d517978",
+      "bytes": 3438
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221739032410+0800-ga-browser/command.json",
+      "sha256": "eb6dc89d9fb7b65ba3ecdeb0139c4930451340597103787dbd9959c9ed996901",
+      "bytes": 6117
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221739042176+0800-d4-browser/command.json",
+      "sha256": "8ad7a598c71127b23840e3fcea71eac807aaa80def11705be37fff299b421fbf",
+      "bytes": 3607
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221739114920+0800-d3-browser/command.json",
+      "sha256": "3948fcb25ec761f0e84c5db22d66c310fc2d48f49d6d70bf7766a1ed4c52f03f",
+      "bytes": 2377
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221739329781+0800-d5-browser/command.json",
+      "sha256": "0a5ad1325c65d541e731d9503803f4c3155fc78f34ce3cef8c1b0c0c115a19ac",
+      "bytes": 3588
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T221925957911+0800-live/command.json",
+      "sha256": "74bf73091468b88e257ed4f48ce75b60b10ba7203036f1a1e30115f2ef0d9670",
+      "bytes": 2686
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222114790493+0800-browser/command.json",
+      "sha256": "afe72029bfa741f4bbdebebd1816450de012ebad2f9bbfa378c592d9b8263938",
+      "bytes": 2613
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222200454890+0800-live/command.json",
+      "sha256": "a6b38e511033f69b3f4e468cffba0e496328503572541ed72700e669ac5b7f00",
+      "bytes": 8852
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222247299722+0800-build/command.json",
+      "sha256": "463f5abe6b198bec7c7e3e352f47324314bef8830e2311481d59e804140a8203",
+      "bytes": 1846
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222248930762+0800-d6-browser/command.json",
+      "sha256": "81aa4f6cea4ae4ca4a672540ede877f423a2fe9db9f9f823643ab3ba41e7dd4e",
+      "bytes": 2314
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222248944591+0800-d5-browser/command.json",
+      "sha256": "cd7c7897d2f48c89ffdad299464456ae823d40ee687bb311a1ca1e310078661b",
+      "bytes": 2446
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222248999904+0800-d4-browser/command.json",
+      "sha256": "8a195dbffed16d87ddaf28b60a1dabc0afbdf9ccaff3060f655336f86e6e8649",
+      "bytes": 2470
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222249037685+0800-lint/command.json",
+      "sha256": "2be87d951196462d02aa8d84664e344c577c6b1cb4fd5c25e124410f042a00e7",
+      "bytes": 1057
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222444863847+0800-live/command.json",
+      "sha256": "c913cea4668966275b5979d7eb920c380e8c1577083b055bae2d30dd4d26f586",
+      "bytes": 2682
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222653328791+0800-browser/command.json",
+      "sha256": "f17e23238abaa8c777ab990c8ea97ae104f088dc21cd9686a1b5f97fd25a8373",
+      "bytes": 2612
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222942011136+0800-build/command.json",
+      "sha256": "cd1e037fbebe54302820b19e76e410f34b0fd5b78bed4cb122313019fe8feac4",
+      "bytes": 1846
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222943661982+0800-d5-browser/command.json",
+      "sha256": "a334b718e83cadec00de45569c0e463e68744c0d39810f67cd89622f8fef2c7d",
+      "bytes": 2443
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222945753979+0800-browser/command.json",
+      "sha256": "4db889f0c360153ec0d9ede3a3a485126db9d575b39d4a9c5c473e61edf3b872",
+      "bytes": 2611
+    },
+    {
+      "path": "docs/testing/dashboard-d7/20261022T222945829317+0800-lint/command.json",
+      "sha256": "ddc0fc88a1663a5deae84a783bebf6fb28f349659b7a2738b862c1bb398643ad",
+      "bytes": 1057
+    },
+    {
+      "path": "docs/testing/dashboard-d7/preservation-baseline.json",
+      "sha256": "219ee1bbbc14713efb1adba32784532fe786a76c0761b2519489c579c9d74708",
+      "bytes": 87058
+    },
+    {
+      "path": "docs/testing/dashboard-d7/run_checks.py",
+      "sha256": "97fdcc90603aa6f17b005552f0c0dd056d80640ed731ae5500b1d5302da1a730",
+      "bytes": 6254
+    },
+    {
+      "path": "frontend/src/api/externalReadiness.ts",
+      "sha256": "deebdfbddb6ef064e067a26ef994b9657a03601935fcd01ab03a7948a9770883",
+      "bytes": 5770
+    },
+    {
+      "path": "frontend/src/api/externalSchedules.ts",
+      "sha256": "339cad02d28911ab6972061cf33694cf65b6e24f970b18d765bb2cb1d5e68bb7",
+      "bytes": 10795
+    },
+    {
+      "path": "frontend/src/components/schedule/ExternalScheduleHandoff.tsx",
+      "sha256": "cef32ad0ec18830d90780f2c3803e6bc60a3b8aa5b541b98194f6dff50c65ebe",
+      "bytes": 9046
+    },
+    {
+      "path": "frontend/src/components/schedule/ExternalScheduleReadiness.tsx",
+      "sha256": "322fc4fa34665e34fac9d8c59c02d1f89d525681e8734aa23a74215c147fd813",
+      "bytes": 8534
+    },
+    {
+      "path": "frontend/src/components/schedule/ExternalScheduleReview.tsx",
+      "sha256": "f0a3f97b6aab282d7d31b7bb4fad2c8bae77c5e64b8a18f8f2503c76170ff1f2",
+      "bytes": 17506
+    },
+    {
+      "path": "frontend/src/components/schedule/ReadinessDocument.tsx",
+      "sha256": "621f99a9163a6f4190402addbe42461fe268fce40967cbc1576beccd76002219",
+      "bytes": 3707
+    },
+    {
+      "path": "frontend/tests/externalReadiness.browser.test.mjs",
+      "sha256": "fd21af5a393354d881ec7d6b95969743e3cf0b23e894f487ad0877eeb4cc876c",
+      "bytes": 25872
+    },
+    {
+      "path": "frontend/tests/externalReadiness.fixtures.mjs",
+      "sha256": "60513baa06094c2d7cccb73cfe20a60a7c64e9955326fd2958733629b304a38b",
+      "bytes": 2793
+    },
+    {
+      "path": "frontend/tests/externalReadiness.live.mjs",
+      "sha256": "6aa2bde8f5b7d56d32ad466181455a2c4f3c63c1cccb4711d869486d53e5efb5",
+      "bytes": 15879
+    },
+    {
+      "path": "frontend/tests/externalReadiness.test.mjs",
+      "sha256": "c912b228a141a3020913352d38d5f543f99f61cc7a2491c9bb53f8467ae7fd8f",
+      "bytes": 4186
+    }
+  ],
+  "manifest_self_hash": "Excluded to avoid recursive hashing; all hashes use raw working-file bytes before future Git newline normalization.",
+  "limitations": [
+    "17 PostgreSQL acceptance tests remain paused/unverified.",
+    "No institutional verification provider/policy configured; normal deployment cannot become READY through entered metadata.",
+    "No actual institutional approval, durable authority/revisions, publishing, external constraints, GA activation or Chair/faculty request workflow.",
+    "One current preview per login session, process-local heads/key, restart invalidation, no multi-worker coordination.",
+    "Only supported weekly/grid/zone/date patterns; exceptions and broader institutional cross-listings remain blocked.",
+    "No full backend/GA suite, production evolution, performance/usability study or full-project lint.",
+    "Native printing/PDF pagination/max-row printing and other browsers unverified.",
+    "Build warnings: existing large chunk and static+dynamic readiness-module import; existing backend deprecations retained."
+  ],
+  "privacy": "Checkpoint privacy remediation replaced two truncated synthetic session-bound preview receipts in retained failed-test output. Prior complete-token-only sanitization was incomplete; see sanitization sidecar. Failed outcomes and timestamps retained; no original sensitive log archived. Broader evidence and screenshot privacy review recorded separately below.",
+  "post_validation_edits": [
+    "Removed trailing whitespace from one blank line in the new live browser harness; no executable behavior changed. node --check passed afterward."
+  ],
+  "privacy_remediation": {
+    "scope": "Evidence only; no application or dataset changes",
+    "changed_artifacts": [
+      "docs/testing/dashboard-d7/20261022T220816421240+0800-backend/command.json",
+      "docs/testing/dashboard-d7/20261022T220816421240+0800-backend/sanitization.json"
+    ],
+    "redacted_values": 2,
+    "marker": "[REDACTED_SESSION_RECEIPT]",
+    "test_results_unchanged": true,
+    "implementation_report_boundary": "The report describes the initial D7 validation. Its original claim of receipt sanitization is superseded by this checkpoint remediation record.",
+    "checkpoint_review": {
+      "reviewed_at": "2026-10-22T23:38:16.990423+08:00",
+      "documentation_files_including_manifest": 63,
+      "files": [
+        {
+          "path": "docs/dashboard-d7-implementation.md",
+          "kind": "implementation_report",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B03-completed-but-unverified.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B04-fictional-ready.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/D7-B08-assessed-handoff.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T221417375394+0800-browser/browser-results.json",
+          "kind": "browser_scenarios",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/D7-B03-completed-but-unverified.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/D7-B04-fictional-ready.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/D7-B08-assessed-handoff.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T221611348279+0800-browser/browser-results.json",
+          "kind": "browser_scenarios",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B03-completed-but-unverified.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B04-fictional-ready.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B08-assessed-handoff.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/D7-B16-mobile-completion.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222114790493+0800-browser/browser-results.json",
+          "kind": "browser_scenarios",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222444863847+0800-live/D7-L03-live-fastapi-blocked.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222444863847+0800-live/browser-results.json",
+          "kind": "browser_scenarios",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B03-completed-but-unverified.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B04-fictional-ready.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B08-assessed-handoff.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/D7-B16-mobile-completion.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222653328791+0800-browser/browser-results.json",
+          "kind": "browser_scenarios",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B03-completed-but-unverified.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B04-fictional-ready.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B08-assessed-handoff.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/D7-B16-mobile-completion.png",
+          "kind": "screenshot_original",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/screenshots/dashboard-d7/20261022T222945753979+0800-browser/browser-results.json",
+          "kind": "browser_scenarios",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T220531024959+0800-build/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T220532274572+0800-lint/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T220816421240+0800-backend/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T220816421240+0800-backend/sanitization.json",
+          "kind": "sanitization_metadata",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T220956812698+0800-contracts/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221048582467+0800-backend/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221417375394+0800-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221611348279+0800-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221623886262+0800-backend/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221626041684+0800-backend-regressions/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221626123852+0800-ga-resource-regressions/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221626693570+0800-lint/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221626711858+0800-build/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221736655033+0800-d2-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221738937709+0800-d1-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221738980521+0800-d6-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221739032410+0800-ga-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221739042176+0800-d4-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221739114920+0800-d3-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221739329781+0800-d5-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T221925957911+0800-live/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222114790493+0800-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222200454890+0800-live/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222247299722+0800-build/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222248930762+0800-d6-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222248944591+0800-d5-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222248999904+0800-d4-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222249037685+0800-lint/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222444863847+0800-live/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222653328791+0800-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222942011136+0800-build/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222943661982+0800-d5-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222945753979+0800-browser/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/20261022T222945829317+0800-lint/command.json",
+          "kind": "command_record",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/preservation-baseline.json",
+          "kind": "preservation_hashes_only",
+          "reviewed_for_checkpoint": true
+        },
+        {
+          "path": "docs/testing/dashboard-d7/run_checks.py",
+          "kind": "offline_runner",
+          "reviewed_for_checkpoint": true
+        }
+      ],
+      "manifest_reviewed_separately": true,
+      "structured_and_decoded_text_scan": "No remaining complete/truncated signed receipts, encoded JSON receipt fragments, credential-bearing URLs, private keys, authentication header values or session credential assignments detected. Account emails use example.invalid only. No names from Faculty.csv detected.",
+      "screenshots": "19 originals checked individually by hash; 10 unique images visually reviewed again; remaining 9 byte-identical to reviewed representatives. All PNGs contain IHDR/IDAT/IEND only, no text/EXIF metadata. No images changed.",
+      "attribution": "Fictional trusted-provider READY remains explicit. Live FastAPI/SQLite browser evidence verifies default BLOCKED only. Retained failures remain failures.",
+      "fresh_tests_run": false,
+      "preservation": "Only command.json, sanitization.json and manifest.json edited for this privacy remediation. All implementation files and protected datasets unchanged from task start.",
+      "exclusions": "Protected faculty_preferences.json remains excluded; no other unexpected working-tree files."
+    }
+  }
+}

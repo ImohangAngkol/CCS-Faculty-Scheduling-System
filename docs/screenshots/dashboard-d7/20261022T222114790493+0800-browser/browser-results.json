@@ -1,0 +1,176 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+  "scenarios": [
+    {
+      "id": "D7-B01",
+      "title": "canonical CSV mounts metadata and original calendar without an assessment",
+      "started_at": "2026-10-22T22:21:17.894+08:00",
+      "finished_at": "2026-10-22T22:21:20.248+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B02",
+      "title": "missing metadata gives actionable BLOCKED findings",
+      "started_at": "2026-10-22T22:21:20.251+08:00",
+      "finished_at": "2026-10-22T22:21:20.389+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B03",
+      "title": "completion is explicitly administrator-provided and unverified",
+      "started_at": "2026-10-22T22:21:20.390+08:00",
+      "finished_at": "2026-10-22T22:21:21.301+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B04",
+      "title": "fictional trusted verifier READY never implies confirmation",
+      "started_at": "2026-10-22T22:21:21.302+08:00",
+      "finished_at": "2026-10-22T22:21:21.536+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B05",
+      "title": "metadata edit invalidates READY and preserves unfinished fields",
+      "started_at": "2026-10-22T22:21:21.537+08:00",
+      "finished_at": "2026-10-22T22:21:21.707+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B06",
+      "title": "D4 mapping edits invalidate readiness and retain completion",
+      "started_at": "2026-10-22T22:21:21.708+08:00",
+      "finished_at": "2026-10-22T22:21:22.052+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B07",
+      "title": "proposed meeting corrections retain original source and update candidate calendar",
+      "started_at": "2026-10-22T22:21:22.053+08:00",
+      "finished_at": "2026-10-22T22:21:22.413+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B08",
+      "title": "D5 complete handoff includes current assessment and immutable source hash",
+      "started_at": "2026-10-22T22:21:22.414+08:00",
+      "finished_at": "2026-10-22T22:21:22.660+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B09",
+      "title": "print revalidates and includes readiness with complete original rows",
+      "started_at": "2026-10-22T22:21:22.661+08:00",
+      "finished_at": "2026-10-22T22:21:22.741+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B10",
+      "title": "stale handoff discards assessment and never prints cached READY",
+      "started_at": "2026-10-22T22:21:22.742+08:00",
+      "finished_at": "2026-10-22T22:21:22.817+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B11",
+      "title": "tampered assessment findings are rejected",
+      "started_at": "2026-10-22T22:21:22.818+08:00",
+      "finished_at": "2026-10-22T22:21:22.909+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B12",
+      "title": "permission and stale assessment errors preserve editable metadata",
+      "started_at": "2026-10-22T22:21:22.909+08:00",
+      "finished_at": "2026-10-22T22:21:23.150+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B13",
+      "title": "canonical XLSX uses the same readiness flow",
+      "started_at": "2026-10-22T22:21:23.151+08:00",
+      "finished_at": "2026-10-22T22:21:24.477+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B14",
+      "title": "legacy CSV retains ambiguous originals and editable clarification metadata",
+      "started_at": "2026-10-22T22:21:24.478+08:00",
+      "finished_at": "2026-10-22T22:21:25.968+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B15",
+      "title": "unknown room and faculty applicability remain explicit",
+      "started_at": "2026-10-22T22:21:25.969+08:00",
+      "finished_at": "2026-10-22T22:21:26.201+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B16",
+      "title": "mobile completion and assessment stay within viewport",
+      "started_at": "2026-10-22T22:21:26.201+08:00",
+      "finished_at": "2026-10-22T22:21:26.335+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B17",
+      "title": "clear during delayed assessment cannot restore stale output",
+      "started_at": "2026-10-22T22:21:26.336+08:00",
+      "finished_at": "2026-10-22T22:21:26.527+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B18",
+      "title": "anonymous and faculty routes issue no readiness actions",
+      "started_at": "2026-10-22T22:21:26.528+08:00",
+      "finished_at": "2026-10-22T22:21:27.012+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D7-B03-completed-but-unverified.png",
+      "captured_at": "2026-10-22T22:21:21.297+08:00",
+      "url": "http://localhost:56855/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D7-B04-fictional-ready.png",
+      "captured_at": "2026-10-22T22:21:21.532+08:00",
+      "url": "http://localhost:56855/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D7-B08-assessed-handoff.png",
+      "captured_at": "2026-10-22T22:21:22.656+08:00",
+      "url": "http://localhost:56855/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D7-B16-mobile-completion.png",
+      "captured_at": "2026-10-22T22:21:26.301+08:00",
+      "url": "http://localhost:56855/admin/external-schedules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_and_review_posts": 84,
+  "activation_or_GA_mutations": 0,
+  "csv_raw_bytes_verified": true
+}

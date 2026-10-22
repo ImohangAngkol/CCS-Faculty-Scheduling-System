@@ -1,0 +1,169 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/Edge with synthetic HTTP API; print invocation intercepted for synchronous DOM/style assertions and print-media screenshots. No physical printer, native print-dialog or PDF-layout claim.",
+  "scenarios": [
+    {
+      "id": "D7-B01",
+      "title": "canonical CSV mounts metadata and original calendar without an assessment",
+      "started_at": "2026-10-22T22:14:21.153+08:00",
+      "finished_at": "2026-10-22T22:14:23.477+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B02",
+      "title": "missing metadata gives actionable BLOCKED findings",
+      "started_at": "2026-10-22T22:14:23.480+08:00",
+      "finished_at": "2026-10-22T22:14:23.607+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B03",
+      "title": "completion is explicitly administrator-provided and unverified",
+      "started_at": "2026-10-22T22:14:23.607+08:00",
+      "finished_at": "2026-10-22T22:14:24.498+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B04",
+      "title": "fictional trusted verifier READY never implies confirmation",
+      "started_at": "2026-10-22T22:14:24.498+08:00",
+      "finished_at": "2026-10-22T22:14:24.731+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B05",
+      "title": "metadata edit invalidates READY and preserves unfinished fields",
+      "started_at": "2026-10-22T22:14:24.733+08:00",
+      "finished_at": "2026-10-22T22:14:39.817+08:00",
+      "result": "FAIL",
+      "error": "Missing page text: Stale ? inputs changed"
+    },
+    {
+      "id": "D7-B06",
+      "title": "D4 mapping edits invalidate readiness and retain completion",
+      "started_at": "2026-10-22T22:14:39.818+08:00",
+      "finished_at": "2026-10-22T22:14:40.161+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B07",
+      "title": "proposed meeting corrections retain original source and update candidate calendar",
+      "started_at": "2026-10-22T22:14:40.162+08:00",
+      "finished_at": "2026-10-22T22:14:40.520+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B08",
+      "title": "D5 complete handoff includes current assessment and immutable source hash",
+      "started_at": "2026-10-22T22:14:40.521+08:00",
+      "finished_at": "2026-10-22T22:14:40.812+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B09",
+      "title": "print revalidates and includes readiness with complete original rows",
+      "started_at": "2026-10-22T22:14:40.813+08:00",
+      "finished_at": "2026-10-22T22:14:40.899+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B10",
+      "title": "stale handoff discards assessment and never prints cached READY",
+      "started_at": "2026-10-22T22:14:40.901+08:00",
+      "finished_at": "2026-10-22T22:14:41.033+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B11",
+      "title": "tampered assessment findings are rejected",
+      "started_at": "2026-10-22T22:14:41.034+08:00",
+      "finished_at": "2026-10-22T22:14:41.126+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B12",
+      "title": "permission and stale assessment errors preserve editable metadata",
+      "started_at": "2026-10-22T22:14:41.127+08:00",
+      "finished_at": "2026-10-22T22:14:41.453+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B13",
+      "title": "canonical XLSX uses the same readiness flow",
+      "started_at": "2026-10-22T22:14:41.453+08:00",
+      "finished_at": "2026-10-22T22:14:42.661+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B14",
+      "title": "legacy CSV retains ambiguous originals and editable clarification metadata",
+      "started_at": "2026-10-22T22:14:42.661+08:00",
+      "finished_at": "2026-10-22T22:14:44.055+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B15",
+      "title": "unknown room and faculty applicability remain explicit",
+      "started_at": "2026-10-22T22:14:44.055+08:00",
+      "finished_at": "2026-10-22T22:14:44.259+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B16",
+      "title": "mobile completion and assessment stay within viewport",
+      "started_at": "2026-10-22T22:14:44.259+08:00",
+      "finished_at": "2026-10-22T22:14:44.320+08:00",
+      "result": "FAIL",
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(await evaluate('document.documentElement.scrollWidth<=innerWidth'))\n"
+    },
+    {
+      "id": "D7-B17",
+      "title": "clear during delayed assessment cannot restore stale output",
+      "started_at": "2026-10-22T22:14:44.321+08:00",
+      "finished_at": "2026-10-22T22:14:44.502+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-B18",
+      "title": "anonymous and faculty routes issue no readiness actions",
+      "started_at": "2026-10-22T22:14:44.503+08:00",
+      "finished_at": "2026-10-22T22:14:45.057+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D7-B03-completed-but-unverified.png",
+      "captured_at": "2026-10-22T22:14:24.495+08:00",
+      "url": "http://localhost:61355/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D7-B04-fictional-ready.png",
+      "captured_at": "2026-10-22T22:14:24.729+08:00",
+      "url": "http://localhost:61355/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D7-B08-assessed-handoff.png",
+      "captured_at": "2026-10-22T22:14:40.809+08:00",
+      "url": "http://localhost:61355/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_and_review_posts": 83,
+  "activation_or_GA_mutations": 0,
+  "csv_raw_bytes_verified": true
+}

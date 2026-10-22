@@ -1,0 +1,18 @@
+{
+  "check": "d2-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/mySchedule.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-22T22:17:36.656052+08:00",
+  "finished_at": "2026-10-22T22:18:05.173840+08:00",
+  "elapsed_seconds": 28.522,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D2 own timetable browser acceptance with synthetic HTTP responses\n  \u2714 D2-B01 loading, own lecture/lab timetable and proposal provenance (2569.1241ms)\n  \u2714 D2-B02 refresh retains source and only own rows (767.9927ms)\n  \u2714 D2-B03 missing completed source is distinct from an empty own schedule (1148.9539ms)\n  \u2714 D2-B04 unavailable source clears old rows and supports retry (985.7046ms)\n  \u2714 D2-B05 stale proposal shows review status and refresh recovers (851.1791ms)\n  \u2714 D2-B06 permission denial never displays assignments (1071.7491ms)\n  \u2714 D2-B07 missing binding performs no timetable request (979.7252ms)\n  \u2714 D2-B08 mismatched server identity is rejected before rendering its rows (815.5085ms)\n  \u2714 D2-B09 anonymous and wrong-role routes do not fetch the timetable (1529.9107ms)\n  \u2714 D2-B10 expired synthetic session redirects to login (816.5119ms)\n  \u2714 D2-B11 unknown source title and room are not fabricated (1143.8941ms)\n  \u2714 D2-B12 mobile timetable remains contained and assignment details readable (638.062ms)\n  \u2714 D2-B13 leaving during a delayed read cannot inject stale assignments (671.7117ms)\n\u2714 D2 own timetable browser acceptance with synthetic HTTP responses (27173.3475ms)\n\u2139 tests 14\n\u2139 suites 0\n\u2139 pass 14\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 28428.8016\n",
+  "stderr": "",
+  "sanitization": "Opaque preview/assessment receipts redacted if present; counts and failure context retained",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

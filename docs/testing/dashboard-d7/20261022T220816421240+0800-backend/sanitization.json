@@ -1,0 +1,12 @@
+{
+  "artifact": "docs/testing/dashboard-d7/20261022T220816421240+0800-backend/command.json",
+  "original_sha256": "4f9b93564b6b6a202cd26d785c8aa67781f3eee129764d31ca8bbfccb6bb1b84",
+  "sanitized_sha256": "79e83e173b0e76e9118d41c0d1d0fbf68fa351a5e504bd8d209d2e5344b3bec9",
+  "reason": "Privacy remediation: replaced complete quoted preview-receipt values, including pytest-truncated prefixes and signatures, with [REDACTED_SESSION_RECEIPT]. The earlier complete-token-only sanitizer missed two truncated values. Test outcomes, failure context and timestamps are preserved.",
+  "original_sensitive_log_not_archived": true,
+  "previous_incomplete_sanitization_sha256": "9a752322547b5df7174b27acac2ec89625beb217eab98a98757ddc671efe2d25",
+  "redacted_values": 2,
+  "redaction_marker": "[REDACTED_SESSION_RECEIPT]",
+  "remediated_at": "2026-10-22T23:35:51.159009+08:00",
+  "sensitive_values_or_fragments_not_archived": true
+}

@@ -1,0 +1,58 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Default authority provider unavailable; BLOCKED only. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+  "scenarios": [
+    {
+      "id": "D7-L01",
+      "title": "real React login authenticates against live FastAPI and isolated SQLite",
+      "started_at": "2026-10-22T22:24:54.619+08:00",
+      "finished_at": "2026-10-22T22:24:57.104+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-L02",
+      "title": "real canonical import supplies session-bound preview and calendar",
+      "started_at": "2026-10-22T22:24:57.108+08:00",
+      "finished_at": "2026-10-22T22:24:58.239+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-L03",
+      "title": "live policy assesses entered metadata as BLOCKED without institutional verification",
+      "started_at": "2026-10-22T22:24:58.240+08:00",
+      "finished_at": "2026-10-22T22:24:59.448+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-L04",
+      "title": "live handoff revalidates and includes original source and assessment",
+      "started_at": "2026-10-22T22:24:59.449+08:00",
+      "finished_at": "2026-10-22T22:24:59.549+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D7-L05",
+      "title": "live metadata edit invalidates assessment and prevents cached handoff output",
+      "started_at": "2026-10-22T22:24:59.550+08:00",
+      "finished_at": "2026-10-22T22:24:59.769+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D7-L03-live-fastapi-blocked.png",
+      "captured_at": "2026-10-22T22:24:59.443+08:00",
+      "url": "http://localhost:64902/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_and_review_posts": 23,
+  "activation_or_GA_mutations": 0,
+  "live_http_backend": true
+}
