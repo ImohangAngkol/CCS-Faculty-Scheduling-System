@@ -8,6 +8,7 @@ import { compareFitness, downloadFitnessReport, downloadLoadedEvaluation, getFit
 import type { FitnessReport, FitnessComparison } from "../../services/fitnessReporting";
 import type { GARunData } from "../../types/ga";
 import { IMPORTANCE_OPTIONS } from "../../components/faculty/preferenceModel";
+import ConstrainedResultPanel from "../../components/ga/ConstrainedResultPanel";
 
 const box = "rounded-xl border border-slate-200 bg-white p-5 shadow-sm";
 const button = "rounded-lg border border-teal-700 px-3 py-2 text-sm font-medium text-teal-800 disabled:opacity-40";
@@ -16,6 +17,12 @@ const errorText = (error: unknown) => error instanceof Error ? error.message : "
 const importance = (value: number | null) => IMPORTANCE_OPTIONS.find(option => option.value === value)?.label ?? "Not captured";
 
 export default function FitnessAnalysis() {
+  const [params]=useSearchParams();
+  const runId=params.get("v2run");
+  return runId?<ConstrainedResultPanel runId={runId} analysis/>:<LegacyFitnessAnalysis/>;
+}
+
+function LegacyFitnessAnalysis() {
   const ga = useGA();
   const [params, setParams] = useSearchParams();
   const runId = params.get("run") ?? (ga.gaData?.result_source === "loaded_chromosome" ? "loaded" : "");

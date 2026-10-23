@@ -1,4 +1,5 @@
 import LiveGAMonitor from "../../components/ga/LiveGAMonitor";
+import ConstrainedRunPanel from "../../components/ga/ConstrainedRunPanel";
 import {
   useEffect,
   useState,
@@ -377,6 +378,8 @@ const [
   return (
 
     <div className="space-y-6">
+
+      <ConstrainedRunPanel />
 
       {/* ==================================================== */}
       {/* PAGE HEADER */}

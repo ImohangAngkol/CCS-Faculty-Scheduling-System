@@ -17,9 +17,17 @@ import {
   type FacultySummary,
 } from "../../api/faculty";
 import { facultyKey, formatFacultyName } from "../../components/schedule/facultyDisplay";
+import {useSearchParams} from "react-router-dom";
+import ConstrainedResultPanel from "../../components/ga/ConstrainedResultPanel";
 
 
 export default function ScheduleView() {
+  const [params]=useSearchParams();
+  const runId=params.get("v2run");
+  return runId?<ConstrainedResultPanel runId={runId}/>:<LegacyScheduleView/>;
+}
+
+function LegacyScheduleView() {
 
   const navigate =
     useNavigate();
