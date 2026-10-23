@@ -1,0 +1,18 @@
+{
+  "check": "d6-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalLegacy.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-23T10:22:53.777014+08:00",
+  "finished_at": "2026-10-23T10:23:02.015285+08:00",
+  "elapsed_seconds": 8.238,
+  "exit_code": 1,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D6 legacy intake browser acceptance with synthetic HTTP responses\n  \u2714 D6-B01 canonical remains default and legacy requires explicit selection (1108.3507ms)\n  \u2714 D6-B02 missing metadata prompts and fictional template are available (5.3501ms)\n  \u2714 D6-B03 legacy upload retains exact file hash and all original rows (235.0237ms)\n  \u2714 D6-B04 ambiguous and invalid schedules stay visible outside the calendar (2.971ms)\n  \u2714 D6-B05 explicit section mapping reuses D4 and identifies overlaps (318.8643ms)\n  \u2714 D6-B06 metadata edits invalidate old output and repreview labels their origin (203.0411ms)\n  \u2714 D6-B07 D5 handoff contains complete legacy provenance including invalid rows (79.8668ms)\n  \u2714 D6-B08 tampered legacy originals reject even a recomputed content fingerprint (321.2938ms)\n  \u2714 D6-B09 stale receipt response blocks output (51.3329ms)\n  \u2714 D6-B10 malformed import clears prior results and supports retry (264.9483ms)\n  \u2714 D6-B11 legacy imported markup remains literal text (77.7277ms)\n  \u2714 D6-B12 fresh print includes every original and metadata origin (74.6621ms)\n  \u2714 D6-B13 mobile legacy provenance does not overflow the page (70.6698ms)\n  \u2716 D6-B14 clear and refresh discard temporary data with no confirmation actions (318.2471ms)\n  \u2714 D6-B15 anonymous and faculty routes cannot issue intake or handoff requests (382.4271ms)\n\u2716 D6 legacy intake browser acceptance with synthetic HTTP responses (4771.0208ms)\n\u2139 tests 16\n\u2139 suites 0\n\u2139 pass 14\n\u2139 fail 2\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 8135.4128\n\n\u2716 failing tests:\n\ntest at tests\\externalLegacy.browser.test.mjs:92:42\n\u2716 D6-B14 clear and refresh discard temporary data with no confirmation actions (318.2471ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  true !== false\n  \n      at file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/externalLegacy.browser.test.mjs:187:185\n      at async TestContext.<anonymous> (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/externalLegacy.browser.test.mjs:94:10)\n      at async Test.run (node:internal/test_runner/test:1113:7)\n      at async TestContext.<anonymous> (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/externalLegacy.browser.test.mjs:186:5)\n      at async Test.run (node:internal/test_runner/test:1113:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: true,\n    expected: false,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n",
+  "stderr": "",
+  "sanitization": "D8 whole sensitive-line, complete/truncated encoded fragment, header, key and credential-URI sanitization applied before evidence writes and summaries",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

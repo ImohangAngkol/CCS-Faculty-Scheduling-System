@@ -1,0 +1,18 @@
+{
+  "check": "d7-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalReadiness.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-23T10:24:31.522775+08:00",
+  "finished_at": "2026-10-23T10:24:47.440727+08:00",
+  "elapsed_seconds": 15.918,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D7 external review browser acceptance with synthetic HTTP responses\n  \u2714 D7-B01 canonical CSV mounts metadata and original calendar without an assessment (2708.2432ms)\n  \u2714 D7-B02 missing metadata gives actionable BLOCKED findings (210.0627ms)\n  \u2714 D7-B03 completion is explicitly administrator-provided and unverified (1085.4022ms)\n  \u2714 D7-B04 fictional trusted verifier READY never implies confirmation (197.7153ms)\n  \u2714 D7-B05 metadata edit invalidates READY and preserves unfinished fields (205.0223ms)\n  \u2714 D7-B06 D4 mapping edits invalidate readiness and retain completion (304.6744ms)\n  \u2714 D7-B07 proposed meeting corrections retain original source and update candidate calendar (319.0268ms)\n  \u2714 D7-B08 D5 complete handoff includes current assessment and immutable source hash (90.2301ms)\n  \u2714 D7-B09 print revalidates and includes readiness with complete original rows (125.0247ms)\n  \u2714 D7-B10 stale handoff discards assessment and never prints cached READY (117.1164ms)\n  \u2714 D7-B11 tampered assessment findings are rejected (44.8444ms)\n  \u2714 D7-B12 permission and stale assessment errors preserve editable metadata (233.5514ms)\n  \u2714 D7-B13 canonical XLSX uses the same readiness flow (1640.7844ms)\n  \u2714 D7-B14 legacy CSV retains ambiguous originals and editable clarification metadata (1412.4133ms)\n  \u2714 D7-B15 unknown room and faculty applicability remain explicit (274.2625ms)\n  \u2714 D7-B16 mobile completion and assessment stay within viewport (68.4283ms)\n  \u2714 D7-B17 clear during delayed assessment cannot restore stale output (231.2307ms)\n  \u2714 D7-B18 anonymous and faculty routes issue no readiness actions (434.7705ms)\n\u2714 D7 external review browser acceptance with synthetic HTTP responses (12455.9853ms)\n\u2139 tests 19\n\u2139 suites 0\n\u2139 pass 19\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 15811.8365\n",
+  "stderr": "",
+  "sanitization": "D8 whole sensitive-line, complete/truncated encoded fragment, header, key and credential-URI sanitization applied before evidence writes and summaries",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

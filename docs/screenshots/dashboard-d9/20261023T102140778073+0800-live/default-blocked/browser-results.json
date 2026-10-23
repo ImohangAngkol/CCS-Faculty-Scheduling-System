@@ -1,0 +1,66 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+  "scenarios": [
+    {
+      "id": "D9-L01",
+      "title": "real React login authenticates against live FastAPI and isolated SQLite",
+      "started_at": "2026-10-23T10:21:58.040+08:00",
+      "finished_at": "2026-10-23T10:21:59.677+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L02",
+      "title": "real canonical import supplies session-bound preview and calendar",
+      "started_at": "2026-10-23T10:21:59.681+08:00",
+      "finished_at": "2026-10-23T10:22:00.505+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L03",
+      "title": "current D8 evidence is server-evaluated without granting confirmer authority",
+      "started_at": "2026-10-23T10:22:00.505+08:00",
+      "finished_at": "2026-10-23T10:22:01.372+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L04",
+      "title": "real API stores a receipt-free proposed revision",
+      "started_at": "2026-10-23T10:22:01.373+08:00",
+      "finished_at": "2026-10-23T10:22:01.642+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L05",
+      "title": "independent confirmation authority is evaluated on server",
+      "started_at": "2026-10-23T10:22:01.643+08:00",
+      "finished_at": "2026-10-23T10:22:01.731+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L10",
+      "title": "reload retrieves durable history without reusing preview receipts",
+      "started_at": "2026-10-23T10:22:01.732+08:00",
+      "finished_at": "2026-10-23T10:22:02.339+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D9-L10-blocked-proposal-retained.png",
+      "captured_at": "2026-10-23T10:22:02.336+08:00",
+      "url": "http://localhost:50142/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_and_review_posts": 23,
+  "activation_or_GA_mutations": 0,
+  "live_http_backend": true,
+  "fictional_authority": false
+}

@@ -1,0 +1,18 @@
+{
+  "check": "d4-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalReview.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-23T10:22:30.390973+08:00",
+  "finished_at": "2026-10-23T10:22:38.816297+08:00",
+  "elapsed_seconds": 8.426,
+  "exit_code": 1,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D4 external review browser acceptance with synthetic HTTP responses\n  \u2714 D4-B01 signed-source review loading and weekly calendar provenance (1427.6931ms)\n  \u2714 D4-B02 overlapping entries occupy separate calendar lanes with row-level details (57.2143ms)\n  \u2714 D4-B03 section supplier subject and Draft/Tentative filters combine (279.1691ms)\n  \u2714 D4-B04 reference-state filters distinguish ambiguity and missing optional resources (91.8973ms)\n  \u2714 D4-B05 explicit mappings trigger full-batch identity conflicts and preserve original text/hash (107.3139ms)\n  \u2714 D4-B06 distinct canonical mappings clear corresponding conflicts without changing source (123.2711ms)\n  \u2714 D4-B07 clearing explicit mappings restores unresolved and ambiguous source states (189.4767ms)\n  \u2714 D4-B08 invalid time rows remain selectable as details but are not plotted (41.9133ms)\n  \u2714 D4-B09 missing optional resources can map only to listed existing records (198.3495ms)\n  \u2714 D4-B10 stale-source review removes the calendar until the source is re-previewed (220.9304ms)\n  \u2714 D4-B11 clearing during delayed revalidation prevents stale source projection (176.1804ms)\n  \u2714 D4-B12 mobile filters reconciliation and contained calendar remain usable (133.3437ms)\n  \u2714 D4-B13 anonymous and faculty users cannot mount administrator review (533.6352ms)\n  \u2714 D4-B14 unsupported resource inventory disables selection and exposes state (398.0627ms)\n  \u2716 D4-B15 calendar has no drag resize confirmation or GA mutation controls (3.045ms)\n\u2716 D4 external review browser acceptance with synthetic HTTP responses (5179.8709ms)\n\u2139 tests 16\n\u2139 suites 0\n\u2139 pass 14\n\u2139 fail 2\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 8337.5484\n\n\u2716 failing tests:\n\ntest at tests\\externalReview.browser.test.mjs:67:42\n\u2716 D4-B15 calendar has no drag resize confirmation or GA mutation controls (3.045ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  true !== false\n  \n      at file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/externalReview.browser.test.mjs:179:14\n      at async TestContext.<anonymous> (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/externalReview.browser.test.mjs:69:10)\n      at async Test.run (node:internal/test_runner/test:1113:7)\n      at async TestContext.<anonymous> (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/externalReview.browser.test.mjs:177:5)\n      at async Test.run (node:internal/test_runner/test:1113:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: true,\n    expected: false,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n",
+  "stderr": "",
+  "sanitization": "D8 whole sensitive-line, complete/truncated encoded fragment, header, key and credential-URI sanitization applied before evidence writes and summaries",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

@@ -1,0 +1,103 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+  "scenarios": [
+    {
+      "id": "D9-L01",
+      "title": "real React login authenticates against live FastAPI and isolated SQLite",
+      "started_at": "2026-10-23T10:25:02.319+08:00",
+      "finished_at": "2026-10-23T10:25:04.360+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L02",
+      "title": "real canonical import supplies session-bound preview and calendar",
+      "started_at": "2026-10-23T10:25:04.363+08:00",
+      "finished_at": "2026-10-23T10:25:05.375+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L03",
+      "title": "current D8 evidence is server-evaluated without granting confirmer authority",
+      "started_at": "2026-10-23T10:25:05.376+08:00",
+      "finished_at": "2026-10-23T10:25:06.668+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L04",
+      "title": "real API stores a receipt-free proposed revision",
+      "started_at": "2026-10-23T10:25:06.669+08:00",
+      "finished_at": "2026-10-23T10:25:06.943+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L05",
+      "title": "independent confirmation authority is evaluated on server",
+      "started_at": "2026-10-23T10:25:06.943+08:00",
+      "finished_at": "2026-10-23T10:25:07.040+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L06",
+      "title": "fictional authorized confirmation is durable and not GA active",
+      "started_at": "2026-10-23T10:25:07.041+08:00",
+      "finished_at": "2026-10-23T10:25:07.206+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L07",
+      "title": "new proposed meeting preserves current confirmed revision",
+      "started_at": "2026-10-23T10:25:07.207+08:00",
+      "finished_at": "2026-10-23T10:25:08.081+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L08",
+      "title": "successor confirmation requires fresh authority and supersedes history",
+      "started_at": "2026-10-23T10:25:08.082+08:00",
+      "finished_at": "2026-10-23T10:25:08.267+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L09",
+      "title": "authorized revocation retains history without restoring older revision",
+      "started_at": "2026-10-23T10:25:08.268+08:00",
+      "finished_at": "2026-10-23T10:25:08.436+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L10",
+      "title": "reload retrieves durable history without reusing preview receipts",
+      "started_at": "2026-10-23T10:25:08.437+08:00",
+      "finished_at": "2026-10-23T10:25:09.246+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D9-L07-fictional-revision-comparison.png",
+      "captured_at": "2026-10-23T10:25:08.077+08:00",
+      "url": "http://localhost:58092/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "name": "D9-L10-fictional-history-retained.png",
+      "captured_at": "2026-10-23T10:25:09.242+08:00",
+      "url": "http://localhost:58092/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_and_review_posts": 34,
+  "activation_or_GA_mutations": 0,
+  "live_http_backend": true,
+  "fictional_authority": true
+}

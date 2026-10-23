@@ -1,0 +1,209 @@
+{
+  "recorded_at": "2026-10-23T15:33:30.304851+08:00",
+  "milestone": "D9 screenshot stabilization",
+  "previous_manifest_sha256": "4a7cf07fec3986e133709392da824dc48fbb22b9bfd16c3236f35dea6580fe30",
+  "failing_test": "fitness analysis shows original workload, decomposition and preference explanations",
+  "test_file": "frontend/tests/gaMonitoring.browser.test.mjs",
+  "operation": "Page.captureScreenshot({format:'png',captureBeyondViewport:false})",
+  "classification": [
+    "B: browser automation capture lifecycle",
+    "C: missing test foreground/paint synchronization"
+  ],
+  "direct_observations": [
+    "Current-tree hidden page: DOM complete, fonts loaded, no active animations, valid viewport; surface capture timeout at 30005 ms; DOM/layout still responsive.",
+    "fromSurface:false returned in 240 ms but produced blank output, rejected after visual inspection.",
+    "Foreground plus two paint frames: original surface capture passed in 88 ms with readable UI.",
+    "Pre-D9 HEAD disposable frontend: visible page surface capture passed in 104 ms."
+  ],
+  "uncertainty": "The exact upstream reason the original target became hidden is not established. Welcome/extension targets were observed but not proven causal. Controlled tab attempts could not force hidden state; do not claim a forced pre-D9 reproduction or a specific Edge internal bug.",
+  "pre_D9_status": "Historical D8 acceptance passed 51 scenarios; fresh pre-D9 HEAD comparison also passed. The absent visibility precondition existed in the old test.",
+  "application_impact": "No application/GA functional regression observed. The test target remained responsive and all original UI assertions passed. Synthetic HTTP testing is not proof of live backend behavior.",
+  "fix": "Five lines in the existing browser test activate the target, require visibility, await font readiness and two animation frames; preserve screenshot options, 30-second capture deadline, all functional assertions and fixtures.",
+  "fresh_actual_verification": {
+    "command": "docs/testing/dashboard-d9/20261023T152412404110+0800-ga-browser/command.json",
+    "GA_scenarios_passed": 51,
+    "failed": 0,
+    "skipped": 0,
+    "parent_wrapper_passed": 1,
+    "node_reported_tests": 52,
+    "formerly_failing_scenario_ms": 1064.7653,
+    "frontend_contracts_passed": 150,
+    "contract_command": "docs/testing/dashboard-d9/20261023T152354462890+0800-contracts/command.json",
+    "node_syntax": "PASS",
+    "python_AST": "PASS"
+  },
+  "previously_recorded_not_rerun": {
+    "focused_backend_passed": 327,
+    "academic_offline_passed": 85,
+    "backend_regressions_passed": 46,
+    "resource_regressions_passed": 3,
+    "D9_live_browser_passed": 16,
+    "D1_D8_browser_passed": 125,
+    "build": "PASS",
+    "focused_ESLint": "PASS"
+  },
+  "probe_runs": [
+    {
+      "path": "docs/testing/dashboard-d9/20261023T151737069378+0800-ga-capture-probe/command.json",
+      "check": "ga-capture-probe",
+      "exit_code": 0,
+      "observations": [
+        {
+          "observation": "CAPTURE_PROBE_BEFORE",
+          "value": {
+            "rendering": {
+              "ready": "complete",
+              "visibility": "hidden",
+              "fonts": "loaded",
+              "width": 1366,
+              "height": 900,
+              "x": 0,
+              "y": 0,
+              "documentWidth": 1351,
+              "documentHeight": 2865,
+              "animations": 0,
+              "resources": 79
+            },
+            "target_count": 0
+          }
+        },
+        {
+          "observation": "CAPTURE_PROBE_SURFACE",
+          "value": {
+            "result": "TIMEOUT",
+            "elapsed_ms": 30005
+          }
+        },
+        {
+          "observation": "CAPTURE_PROBE_AFTER",
+          "value": {
+            "responsive": "complete"
+          }
+        },
+        {
+          "observation": "CAPTURE_PROBE_VIEW",
+          "value": {
+            "result": "PASS",
+            "elapsed_ms": 240
+          }
+        }
+      ],
+      "acceptance_run": false
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T151943791535+0800-ga-baseline-probe/command.json",
+      "check": "ga-baseline-probe",
+      "exit_code": 1,
+      "observations": [],
+      "acceptance_run": false
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T152056697133+0800-ga-foreground-probe/command.json",
+      "check": "ga-foreground-probe",
+      "exit_code": 0,
+      "observations": [
+        {
+          "observation": "CAPTURE_PROBE_BEFORE",
+          "value": {
+            "rendering": {
+              "ready": "complete",
+              "visibility": "hidden",
+              "fonts": "loaded",
+              "width": 1366,
+              "height": 900,
+              "x": 0,
+              "y": 0,
+              "documentWidth": 1351,
+              "documentHeight": 2865,
+              "animations": 0,
+              "resources": 79
+            },
+            "target_count": 0
+          }
+        },
+        {
+          "observation": "CAPTURE_PROBE_FOREGROUND",
+          "value": {
+            "visibility": "visible"
+          }
+        },
+        {
+          "observation": "CAPTURE_PROBE_SURFACE",
+          "value": {
+            "result": "PASS",
+            "elapsed_ms": 88
+          }
+        }
+      ],
+      "acceptance_run": false
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T152234486817+0800-ga-baseline-probe/command.json",
+      "check": "ga-baseline-probe",
+      "exit_code": 0,
+      "observations": [
+        {
+          "observation": "CAPTURE_PROBE_BEFORE",
+          "value": {
+            "rendering": {
+              "ready": "complete",
+              "visibility": "visible",
+              "fonts": "loaded",
+              "width": 1366,
+              "height": 900,
+              "x": 0,
+              "y": 0,
+              "documentWidth": 1351,
+              "documentHeight": 2865,
+              "animations": 0,
+              "resources": 77
+            },
+            "target_count": 11
+          }
+        },
+        {
+          "observation": "CAPTURE_PROBE_SURFACE",
+          "value": {
+            "result": "PASS",
+            "elapsed_ms": 104
+          }
+        }
+      ],
+      "acceptance_run": false
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T152553547466+0800-ga-background-baseline-probe/command.json",
+      "check": "ga-background-baseline-probe",
+      "exit_code": 1,
+      "observations": [],
+      "acceptance_run": false
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T152746764194+0800-ga-background-baseline-probe/command.json",
+      "check": "ga-background-baseline-probe",
+      "exit_code": 1,
+      "observations": [],
+      "acceptance_run": false
+    }
+  ],
+  "capture": {
+    "path": "docs/screenshots/dashboard-d9/20261023T152412404110+0800-ga-browser/GA-fitness-analysis-foreground.png",
+    "metadata": {
+      "captured_at": "2026-10-23T15:25:24.901066+08:00",
+      "archived_at": "2026-10-23T15:25:33.749609+08:00",
+      "url": "http://localhost:5188/admin/analysis",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "scope": "Actual Edge/React screenshot with synthetic HTTP responses; no live backend, real GA execution or institutional authority.",
+      "scenario": "fitness analysis shows original workload, decomposition and preference explanations",
+      "browser": "Edge 155.0.4283.62",
+      "privacy_reviewed": true,
+      "visually_reviewed": true
+    }
+  },
+  "checkpoint_readiness": "Ready for separately reviewed Git checkpoint of safely testable D9 scope. No commit/push performed. Production institutional authority and PostgreSQL acceptance remain blocked.",
+  "no_D10": true
+}

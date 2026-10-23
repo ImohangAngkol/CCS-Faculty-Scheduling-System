@@ -1,0 +1,99 @@
+{
+  "browser": "Edg/155.0.4283.62",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "node": "v24.11.1",
+  "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+  "scenarios": [
+    {
+      "id": "D9-L01",
+      "title": "real React login authenticates against live FastAPI and isolated SQLite",
+      "started_at": "2026-10-23T10:12:42.368+08:00",
+      "finished_at": "2026-10-23T10:12:43.508+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L02",
+      "title": "real canonical import supplies session-bound preview and calendar",
+      "started_at": "2026-10-23T10:12:43.511+08:00",
+      "finished_at": "2026-10-23T10:12:44.244+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L03",
+      "title": "current D8 evidence is server-evaluated without granting confirmer authority",
+      "started_at": "2026-10-23T10:12:44.245+08:00",
+      "finished_at": "2026-10-23T10:12:44.998+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L04",
+      "title": "real API stores a receipt-free proposed revision",
+      "started_at": "2026-10-23T10:12:44.999+08:00",
+      "finished_at": "2026-10-23T10:12:45.084+08:00",
+      "result": "FAIL",
+      "error": "TypeError: Cannot read properties of null (reading 'value')\n    at <anonymous>:1:59"
+    },
+    {
+      "id": "D9-L05",
+      "title": "independent confirmation authority is evaluated on server",
+      "started_at": "2026-10-23T10:12:45.085+08:00",
+      "finished_at": "2026-10-23T10:12:45.087+08:00",
+      "result": "FAIL",
+      "error": "TypeError: Cannot read properties of undefined (reading 'click')\n    at <anonymous>:1:128"
+    },
+    {
+      "id": "D9-L06",
+      "title": "fictional authorized confirmation is durable and not GA active",
+      "started_at": "2026-10-23T10:12:45.088+08:00",
+      "finished_at": "2026-10-23T10:12:45.090+08:00",
+      "result": "FAIL",
+      "error": "TypeError: Cannot read properties of undefined (reading 'click')\n    at <anonymous>:1:114"
+    },
+    {
+      "id": "D9-L07",
+      "title": "new proposed meeting preserves current confirmed revision",
+      "started_at": "2026-10-23T10:12:45.090+08:00",
+      "finished_at": "2026-10-23T10:12:45.641+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L08",
+      "title": "successor confirmation requires fresh authority and supersedes history",
+      "started_at": "2026-10-23T10:12:45.642+08:00",
+      "finished_at": "2026-10-23T10:13:00.743+08:00",
+      "result": "FAIL",
+      "error": "Missing page text: Record version 2"
+    },
+    {
+      "id": "D9-L09",
+      "title": "authorized revocation retains history without restoring older revision",
+      "started_at": "2026-10-23T10:13:00.744+08:00",
+      "finished_at": "2026-10-23T10:13:00.824+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D9-L10",
+      "title": "reload retrieves durable history without reusing preview receipts",
+      "started_at": "2026-10-23T10:13:00.824+08:00",
+      "finished_at": "2026-10-23T10:13:16.165+08:00",
+      "result": "FAIL",
+      "error": "Stored revisions missing"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D9-L07-fictional-revision-comparison.png",
+      "captured_at": "2026-10-23T10:12:45.640+08:00",
+      "url": "http://localhost:51210/admin/external-schedules",
+      "viewport": {
+        "width": 1600,
+        "height": 1200
+      }
+    }
+  ],
+  "runtime_errors": [],
+  "preview_and_review_posts": 32,
+  "activation_or_GA_mutations": 0,
+  "live_http_backend": true,
+  "fictional_authority": true
+}

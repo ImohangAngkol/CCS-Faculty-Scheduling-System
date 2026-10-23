@@ -1,0 +1,18 @@
+{
+  "check": "d4-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/externalReview.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-23T10:23:36.475936+08:00",
+  "finished_at": "2026-10-23T10:23:53.371598+08:00",
+  "elapsed_seconds": 16.896,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D4 external review browser acceptance with synthetic HTTP responses\n  \u2714 D4-B01 signed-source review loading and weekly calendar provenance (2058.9211ms)\n  \u2714 D4-B02 overlapping entries occupy separate calendar lanes with row-level details (101.9792ms)\n  \u2714 D4-B03 section supplier subject and Draft/Tentative filters combine (829.1237ms)\n  \u2714 D4-B04 reference-state filters distinguish ambiguity and missing optional resources (495.699ms)\n  \u2714 D4-B05 explicit mappings trigger full-batch identity conflicts and preserve original text/hash (575.0644ms)\n  \u2714 D4-B06 distinct canonical mappings clear corresponding conflicts without changing source (580.5316ms)\n  \u2714 D4-B07 clearing explicit mappings restores unresolved and ambiguous source states (405.87ms)\n  \u2714 D4-B08 invalid time rows remain selectable as details but are not plotted (88.7997ms)\n  \u2714 D4-B09 missing optional resources can map only to listed existing records (362.1785ms)\n  \u2714 D4-B10 stale-source review removes the calendar until the source is re-previewed (516.5624ms)\n  \u2714 D4-B11 clearing during delayed revalidation prevents stale source projection (301.9539ms)\n  \u2714 D4-B12 mobile filters reconciliation and contained calendar remain usable (396.5407ms)\n  \u2714 D4-B13 anonymous and faculty users cannot mount administrator review (788.4386ms)\n  \u2714 D4-B14 unsupported resource inventory disables selection and exposes state (822.1493ms)\n  \u2714 D4-B15 calendar has no drag resize confirmation or GA mutation controls (405.157ms)\n\u2714 D4 external review browser acceptance with synthetic HTTP responses (16349.8331ms)\n\u2139 tests 16\n\u2139 suites 0\n\u2139 pass 16\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 16806.462\n",
+  "stderr": "",
+  "sanitization": "D8 whole sensitive-line, complete/truncated encoded fragment, header, key and credential-URI sanitization applied before evidence writes and summaries",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

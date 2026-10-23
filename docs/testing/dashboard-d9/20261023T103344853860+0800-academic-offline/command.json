@@ -1,0 +1,28 @@
+{
+  "check": "academic-offline",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/academic/test_academic_foundation.py",
+    "tests/academic/test_academic_planner.py",
+    "tests/academic/test_academic_safety.py",
+    "-q",
+    "--tb=short",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d9-20261023T103344853860+0800-academic-offline"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-23T10:33:44.856331+08:00",
+  "finished_at": "2026-10-23T10:33:48.086104+08:00",
+  "elapsed_seconds": 3.23,
+  "exit_code": 1,
+  "stdout": "........................F............................................... [ 84%]\n.............                                                            [100%]\n================================== FAILURES ===================================\n_____ test_alembic_injected_connection_does_not_read_url_or_create_engine _____\ntests\\academic\\test_academic_foundation.py:218: in test_alembic_injected_connection_does_not_read_url_or_create_engine\n    assert seen[0][\"target_metadata\"] is Base.metadata\nE   assert [MetaData(), MetaData()] is MetaData()\nE    +  where MetaData() = Base.metadata\n============================== warnings summary ===============================\ntests/academic/test_academic_foundation.py::test_migration_chain_and_frozen_ddl_match_models\ntests/academic/test_academic_foundation.py::test_alembic_environment_renders_full_chain_without_connecting\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\alembic\\config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.\n    util.warn_deprecated(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/academic/test_academic_foundation.py::test_alembic_injected_connection_does_not_read_url_or_create_engine\n1 failed, 84 passed, 2 warnings in 1.84s\n",
+  "stderr": "",
+  "sanitization": "D8 whole sensitive-line, complete/truncated encoded fragment, header, key and credential-URI sanitization applied before evidence writes and summaries",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

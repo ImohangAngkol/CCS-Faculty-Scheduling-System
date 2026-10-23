@@ -1,0 +1,59 @@
+{
+  "recorded_at": "2026-10-23T15:33:30.304851+08:00",
+  "files_scanned": 91,
+  "json_parsed": 58,
+  "python_AST_parsed": 13,
+  "privacy_findings": [],
+  "inspection_methods": [
+    "Pre-write sanitizer plus independent decoded JSON/text complete/partial token and credential/header/key patterns",
+    "Local private faculty-name comparison without printing names",
+    "PNG ancillary metadata inventory",
+    "Original 11 screenshots previously visually reviewed and unchanged; new successful GA image freshly visually reviewed"
+  ],
+  "private_records_compared": 12,
+  "pngs_visually_reviewed": [
+    "docs/screenshots/dashboard-d9/20261023T101223207570+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T101223207570+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+    "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+    "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/fictional-authorized/D9-L10-fictional-history-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+    "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/fictional-authorized/D9-L10-fictional-history-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+    "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/fictional-authorized/D9-L10-fictional-history-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T152412404110+0800-ga-browser/GA-fitness-analysis-foreground.png"
+  ],
+  "whitespace_errors": [],
+  "broken_report_links": [],
+  "baseline_files": 786,
+  "unchanged_baselined_files": 780,
+  "intended_existing_changes": [
+    "backend/main.py",
+    "backend/migrations/env.py",
+    "backend/tests/academic/test_academic_foundation.py",
+    "frontend/src/components/schedule/ExternalScheduleReview.tsx",
+    "frontend/src/pages/admin/ExternalSchedules.tsx",
+    "frontend/tests/gaMonitoring.browser.test.mjs"
+  ],
+  "academic_data_paths_unchanged": 23,
+  "protected_preferences_unchanged": true,
+  "git_index_unchanged": true,
+  "head_unchanged": true,
+  "stabilization_baseline": "docs/testing/dashboard-d9/stabilization-baseline.json",
+  "changed_since_stabilization_start": [
+    "docs/dashboard-d9-implementation.md",
+    "docs/testing/dashboard-d9/final-audit.json",
+    "docs/testing/dashboard-d9/manifest.json",
+    "docs/testing/dashboard-d9/run_checks.py",
+    "frontend/tests/gaMonitoring.browser.test.mjs"
+  ],
+  "D9_application_security_sources_unchanged_since_stabilization": true,
+  "previous_failed_command_records_unchanged": true,
+  "limitations": [
+    "Pattern scanning cannot prove absence of every possible secret; independent image and fixture reviews were also used.",
+    "Exact upstream hidden-window/focus trigger remains unconfirmed; the capture synchronization failure is resolved.",
+    "No production PostgreSQL or institutional-provider acceptance."
+  ]
+}

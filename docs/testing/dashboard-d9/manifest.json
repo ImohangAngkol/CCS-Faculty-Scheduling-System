@@ -1,0 +1,1707 @@
+{
+  "milestone": "D9",
+  "recorded_at": "2026-10-23T15:33:30.304851+08:00",
+  "source_commit": "eaba995e19c104a32d9cb2ea6c6acb4f2a1bf7ac",
+  "branch": "main",
+  "origin_main_last_known": "eaba995e19c104a32d9cb2ea6c6acb4f2a1bf7ac",
+  "status": "Safely testable D9 implementation and targeted screenshot stabilization verified; production confirmation remains BLOCKED",
+  "scope": "Durable proposals and append-only decisions through established SQLAlchemy; only synthetic SQLite and offline PostgreSQL rendering executed. No institutional provider, PostgreSQL operation, GA activation or Git mutation.",
+  "runtime": {
+    "python": "3.14.2",
+    "sqlite": "3.50.4",
+    "node": "v24.11.1",
+    "browser": "Edge 155.0.4283.62",
+    "vite": "8.2.2"
+  },
+  "existing_files_modified": [
+    "backend/main.py",
+    "backend/migrations/env.py",
+    "backend/tests/academic/test_academic_foundation.py",
+    "frontend/src/components/schedule/ExternalScheduleReview.tsx",
+    "frontend/src/pages/admin/ExternalSchedules.tsx",
+    "frontend/tests/gaMonitoring.browser.test.mjs"
+  ],
+  "new_implementation_files": [
+    "backend/confirmation_models.py",
+    "backend/migrations/versions/d9_0001_confirmation_ledger.py",
+    "backend/routers/external_confirmations.py",
+    "backend/schemas/external_confirmation.py",
+    "backend/services/confirmation_authority_service.py",
+    "backend/services/external_confirmation_service.py",
+    "backend/tests/dashboard/test_external_confirmations.py",
+    "backend/tests/dashboard/test_external_confirmations_live.py",
+    "frontend/src/api/externalConfirmations.ts",
+    "frontend/src/components/schedule/ExternalConfirmationLedger.tsx",
+    "frontend/tests/externalConfirmations.live.mjs",
+    "frontend/tests/externalConfirmations.test.mjs"
+  ],
+  "final_results": {
+    "backend": {
+      "passed": 327,
+      "new_D9": 26,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 2
+    },
+    "academic_offline": {
+      "passed": 85,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 2
+    },
+    "auth_GA_regressions": {
+      "passed": 46,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 4
+    },
+    "resource_regressions": {
+      "passed": 3,
+      "failed": 0
+    },
+    "frontend_contracts": {
+      "passed": 150,
+      "new_D9": 7,
+      "failed": 0,
+      "skipped": 0
+    },
+    "D9_live_browser": {
+      "passed_scenarios": 16,
+      "failed_scenarios": 0,
+      "pytest_fixture_wrappers": 2,
+      "node_parent_wrappers": 2,
+      "fixture_counts": {
+        "default_blocked": 6,
+        "fictional_authorized": 10
+      }
+    },
+    "D1_D8_synthetic_http_browser": {
+      "passed_scenarios": 125,
+      "failed_scenarios": 0,
+      "counts": [
+        16,
+        13,
+        15,
+        15,
+        15,
+        15,
+        18,
+        18
+      ],
+      "node_parent_wrappers": 8
+    },
+    "GA_synthetic_http_browser": {
+      "passed_scenarios": 51,
+      "failed_scenarios": 0,
+      "parent_wrapper_passed": 1,
+      "node_reported_tests": 52,
+      "skipped": 0,
+      "formerly_failing_capture": "PASS after foreground/font/paint synchronization; original capture timeout unchanged"
+    },
+    "build": {
+      "exit_code": 0,
+      "modules": 229
+    },
+    "focused_lint": {
+      "exit_code": 0,
+      "files": 13
+    }
+  },
+  "counting": "Distinct cases only. Do not add pytest/live/Node parent wrappers to scenario counts. Earlier repeated runs are historical, not additional acceptance cases.",
+  "final_command_selection": {
+    "backend": "docs/testing/dashboard-d9/20261023T102755503689+0800-backend/command.json",
+    "contracts": "docs/testing/dashboard-d9/20261023T152354462890+0800-contracts/command.json",
+    "build": "docs/testing/dashboard-d9/20261023T102554907350+0800-build/command.json",
+    "lint": "docs/testing/dashboard-d9/20261023T102556241716+0800-lint/command.json",
+    "ga-resource-regressions": "docs/testing/dashboard-d9/20261023T100905729439+0800-ga-resource-regressions/command.json",
+    "live": "docs/testing/dashboard-d9/20261023T102433771189+0800-live/command.json",
+    "d8-browser": "docs/testing/dashboard-d9/20261023T101539383955+0800-d8-browser/command.json",
+    "backend-regressions": "docs/testing/dashboard-d9/20261023T101539386536+0800-backend-regressions/command.json",
+    "d1-browser": "docs/testing/dashboard-d9/20261023T102140502878+0800-d1-browser/command.json",
+    "d2-browser": "docs/testing/dashboard-d9/20261023T102141336034+0800-d2-browser/command.json",
+    "d3-browser": "docs/testing/dashboard-d9/20261023T102338654087+0800-d3-browser/command.json",
+    "d4-browser": "docs/testing/dashboard-d9/20261023T102336475398+0800-d4-browser/command.json",
+    "d5-browser": "docs/testing/dashboard-d9/20261023T102338312528+0800-d5-browser/command.json",
+    "d6-browser": "docs/testing/dashboard-d9/20261023T102338012343+0800-d6-browser/command.json",
+    "d7-browser": "docs/testing/dashboard-d9/20261023T102431522164+0800-d7-browser/command.json",
+    "ga-browser": "docs/testing/dashboard-d9/20261023T152412404110+0800-ga-browser/command.json",
+    "academic-offline": "docs/testing/dashboard-d9/20261023T103403045594+0800-academic-offline/command.json",
+    "ga-capture-probe": "docs/testing/dashboard-d9/20261023T151737069378+0800-ga-capture-probe/command.json",
+    "ga-baseline-probe": "docs/testing/dashboard-d9/20261023T152234486817+0800-ga-baseline-probe/command.json",
+    "ga-foreground-probe": "docs/testing/dashboard-d9/20261023T152056697133+0800-ga-foreground-probe/command.json",
+    "ga-background-baseline-probe": "docs/testing/dashboard-d9/20261023T152746764194+0800-ga-background-baseline-probe/command.json"
+  },
+  "all_command_records": [
+    {
+      "check": "backend",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:06:17.422967+08:00",
+      "finished_at": "2026-10-23T10:06:49.212843+08:00",
+      "elapsed_seconds": 31.791,
+      "path": "docs/testing/dashboard-d9/20261023T100617421109+0800-backend/command.json"
+    },
+    {
+      "check": "backend",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:08:58.315825+08:00",
+      "finished_at": "2026-10-23T10:09:38.476628+08:00",
+      "elapsed_seconds": 40.162,
+      "path": "docs/testing/dashboard-d9/20261023T100858313122+0800-backend/command.json"
+    },
+    {
+      "check": "contracts",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:08:59.234629+08:00",
+      "finished_at": "2026-10-23T10:09:05.779771+08:00",
+      "elapsed_seconds": 6.545,
+      "path": "docs/testing/dashboard-d9/20261023T100859234090+0800-contracts/command.json"
+    },
+    {
+      "check": "build",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:09:01.245420+08:00",
+      "finished_at": "2026-10-23T10:09:22.049456+08:00",
+      "elapsed_seconds": 20.805,
+      "path": "docs/testing/dashboard-d9/20261023T100901242739+0800-build/command.json"
+    },
+    {
+      "check": "lint",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:09:03.557525+08:00",
+      "finished_at": "2026-10-23T10:09:47.097765+08:00",
+      "elapsed_seconds": 43.542,
+      "path": "docs/testing/dashboard-d9/20261023T100903556572+0800-lint/command.json"
+    },
+    {
+      "check": "ga-resource-regressions",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:09:05.731559+08:00",
+      "finished_at": "2026-10-23T10:09:11.433750+08:00",
+      "elapsed_seconds": 5.702,
+      "path": "docs/testing/dashboard-d9/20261023T100905729439+0800-ga-resource-regressions/command.json"
+    },
+    {
+      "check": "live",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:11:05.375932+08:00",
+      "finished_at": "2026-10-23T10:11:12.256579+08:00",
+      "elapsed_seconds": 6.881,
+      "path": "docs/testing/dashboard-d9/20261023T101105373578+0800-live/command.json"
+    },
+    {
+      "check": "lint",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:12:19.640174+08:00",
+      "finished_at": "2026-10-23T10:12:26.086755+08:00",
+      "elapsed_seconds": 6.447,
+      "path": "docs/testing/dashboard-d9/20261023T101219639451+0800-lint/command.json"
+    },
+    {
+      "check": "build",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:12:20.679115+08:00",
+      "finished_at": "2026-10-23T10:12:29.850856+08:00",
+      "elapsed_seconds": 9.172,
+      "path": "docs/testing/dashboard-d9/20261023T101220678289+0800-build/command.json"
+    },
+    {
+      "check": "live",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:12:23.210807+08:00",
+      "finished_at": "2026-10-23T10:13:20.763692+08:00",
+      "elapsed_seconds": 57.555,
+      "path": "docs/testing/dashboard-d9/20261023T101223207570+0800-live/command.json"
+    },
+    {
+      "check": "live",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:15:37.622896+08:00",
+      "finished_at": "2026-10-23T10:16:12.723819+08:00",
+      "elapsed_seconds": 35.102,
+      "path": "docs/testing/dashboard-d9/20261023T101537621529+0800-live/command.json"
+    },
+    {
+      "check": "d8-browser",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:15:39.384489+08:00",
+      "finished_at": "2026-10-23T10:15:55.259380+08:00",
+      "elapsed_seconds": 15.876,
+      "path": "docs/testing/dashboard-d9/20261023T101539383955+0800-d8-browser/command.json"
+    },
+    {
+      "check": "backend-regressions",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:15:39.389539+08:00",
+      "finished_at": "2026-10-23T10:16:27.763692+08:00",
+      "elapsed_seconds": 48.376,
+      "path": "docs/testing/dashboard-d9/20261023T101539386536+0800-backend-regressions/command.json"
+    },
+    {
+      "check": "backend",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:17:45.492149+08:00",
+      "finished_at": "2026-10-23T10:18:21.134243+08:00",
+      "elapsed_seconds": 35.643,
+      "path": "docs/testing/dashboard-d9/20261023T101745489800+0800-backend/command.json"
+    },
+    {
+      "check": "contracts",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:18:07.505413+08:00",
+      "finished_at": "2026-10-23T10:18:10.193821+08:00",
+      "elapsed_seconds": 2.688,
+      "path": "docs/testing/dashboard-d9/20261023T101807504767+0800-contracts/command.json"
+    },
+    {
+      "check": "lint",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:18:10.043778+08:00",
+      "finished_at": "2026-10-23T10:18:18.921766+08:00",
+      "elapsed_seconds": 8.878,
+      "path": "docs/testing/dashboard-d9/20261023T101810042540+0800-lint/command.json"
+    },
+    {
+      "check": "build",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:18:11.281977+08:00",
+      "finished_at": "2026-10-23T10:18:21.982538+08:00",
+      "elapsed_seconds": 10.701,
+      "path": "docs/testing/dashboard-d9/20261023T101811281142+0800-build/command.json"
+    },
+    {
+      "check": "d1-browser",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:21:40.503480+08:00",
+      "finished_at": "2026-10-23T10:21:56.469078+08:00",
+      "elapsed_seconds": 15.966,
+      "path": "docs/testing/dashboard-d9/20261023T102140502878+0800-d1-browser/command.json"
+    },
+    {
+      "check": "live",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:21:40.780624+08:00",
+      "finished_at": "2026-10-23T10:22:17.192626+08:00",
+      "elapsed_seconds": 36.413,
+      "path": "docs/testing/dashboard-d9/20261023T102140778073+0800-live/command.json"
+    },
+    {
+      "check": "d2-browser",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:21:41.336827+08:00",
+      "finished_at": "2026-10-23T10:21:56.223324+08:00",
+      "elapsed_seconds": 14.887,
+      "path": "docs/testing/dashboard-d9/20261023T102141336034+0800-d2-browser/command.json"
+    },
+    {
+      "check": "d3-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:21:41.365797+08:00",
+      "finished_at": "2026-10-23T10:21:56.013647+08:00",
+      "elapsed_seconds": 14.648,
+      "path": "docs/testing/dashboard-d9/20261023T102141364822+0800-d3-browser/command.json"
+    },
+    {
+      "check": "d4-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:22:30.390973+08:00",
+      "finished_at": "2026-10-23T10:22:38.816297+08:00",
+      "elapsed_seconds": 8.426,
+      "path": "docs/testing/dashboard-d9/20261023T102230390154+0800-d4-browser/command.json"
+    },
+    {
+      "check": "d5-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:22:42.006839+08:00",
+      "finished_at": "2026-10-23T10:22:51.066468+08:00",
+      "elapsed_seconds": 9.06,
+      "path": "docs/testing/dashboard-d9/20261023T102242005864+0800-d5-browser/command.json"
+    },
+    {
+      "check": "d6-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:22:53.777014+08:00",
+      "finished_at": "2026-10-23T10:23:02.015285+08:00",
+      "elapsed_seconds": 8.238,
+      "path": "docs/testing/dashboard-d9/20261023T102253775522+0800-d6-browser/command.json"
+    },
+    {
+      "check": "d4-browser",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:23:36.475936+08:00",
+      "finished_at": "2026-10-23T10:23:53.371598+08:00",
+      "elapsed_seconds": 16.896,
+      "path": "docs/testing/dashboard-d9/20261023T102336475398+0800-d4-browser/command.json"
+    },
+    {
+      "check": "d6-browser",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:23:38.013999+08:00",
+      "finished_at": "2026-10-23T10:23:53.423239+08:00",
+      "elapsed_seconds": 15.41,
+      "path": "docs/testing/dashboard-d9/20261023T102338012343+0800-d6-browser/command.json"
+    },
+    {
+      "check": "d5-browser",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:23:38.313433+08:00",
+      "finished_at": "2026-10-23T10:23:54.879967+08:00",
+      "elapsed_seconds": 16.567,
+      "path": "docs/testing/dashboard-d9/20261023T102338312528+0800-d5-browser/command.json"
+    },
+    {
+      "check": "d3-browser",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:23:38.655187+08:00",
+      "finished_at": "2026-10-23T10:23:54.720008+08:00",
+      "elapsed_seconds": 16.065,
+      "path": "docs/testing/dashboard-d9/20261023T102338654087+0800-d3-browser/command.json"
+    },
+    {
+      "check": "d7-browser",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:24:31.522775+08:00",
+      "finished_at": "2026-10-23T10:24:47.440727+08:00",
+      "elapsed_seconds": 15.918,
+      "path": "docs/testing/dashboard-d9/20261023T102431522164+0800-d7-browser/command.json"
+    },
+    {
+      "check": "live",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:24:33.772576+08:00",
+      "finished_at": "2026-10-23T10:25:14.630156+08:00",
+      "elapsed_seconds": 40.859,
+      "path": "docs/testing/dashboard-d9/20261023T102433771189+0800-live/command.json"
+    },
+    {
+      "check": "ga-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:24:34.165692+08:00",
+      "finished_at": "2026-10-23T10:26:28.451080+08:00",
+      "elapsed_seconds": 114.289,
+      "path": "docs/testing/dashboard-d9/20261023T102434165167+0800-ga-browser/command.json"
+    },
+    {
+      "check": "backend",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:24:36.156847+08:00",
+      "finished_at": "2026-10-23T10:25:28.115761+08:00",
+      "elapsed_seconds": 51.96,
+      "path": "docs/testing/dashboard-d9/20261023T102436153639+0800-backend/command.json"
+    },
+    {
+      "check": "build",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:25:54.908757+08:00",
+      "finished_at": "2026-10-23T10:26:05.459646+08:00",
+      "elapsed_seconds": 10.551,
+      "path": "docs/testing/dashboard-d9/20261023T102554907350+0800-build/command.json"
+    },
+    {
+      "check": "lint",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:25:56.242714+08:00",
+      "finished_at": "2026-10-23T10:26:04.947163+08:00",
+      "elapsed_seconds": 8.705,
+      "path": "docs/testing/dashboard-d9/20261023T102556241716+0800-lint/command.json"
+    },
+    {
+      "check": "ga-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:27:06.348176+08:00",
+      "finished_at": "2026-10-23T10:28:49.754726+08:00",
+      "elapsed_seconds": 103.41,
+      "path": "docs/testing/dashboard-d9/20261023T102706347529+0800-ga-browser/command.json"
+    },
+    {
+      "check": "backend",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:27:55.505844+08:00",
+      "finished_at": "2026-10-23T10:28:30.791657+08:00",
+      "elapsed_seconds": 35.287,
+      "path": "docs/testing/dashboard-d9/20261023T102755503689+0800-backend/command.json"
+    },
+    {
+      "check": "academic-offline",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:33:44.856331+08:00",
+      "finished_at": "2026-10-23T10:33:48.086104+08:00",
+      "elapsed_seconds": 3.23,
+      "path": "docs/testing/dashboard-d9/20261023T103344853860+0800-academic-offline/command.json"
+    },
+    {
+      "check": "academic-offline",
+      "exit_code": 0,
+      "started_at": "2026-10-23T10:34:03.047154+08:00",
+      "finished_at": "2026-10-23T10:34:05.824233+08:00",
+      "elapsed_seconds": 2.777,
+      "path": "docs/testing/dashboard-d9/20261023T103403045594+0800-academic-offline/command.json"
+    },
+    {
+      "check": "ga-capture-probe",
+      "exit_code": 0,
+      "started_at": "2026-10-23T15:17:37.070229+08:00",
+      "finished_at": "2026-10-23T15:19:24.682219+08:00",
+      "elapsed_seconds": 107.612,
+      "path": "docs/testing/dashboard-d9/20261023T151737069378+0800-ga-capture-probe/command.json"
+    },
+    {
+      "check": "ga-baseline-probe",
+      "exit_code": 1,
+      "started_at": "2026-10-23T15:19:43.792571+08:00",
+      "finished_at": "2026-10-23T15:20:03.526056+08:00",
+      "elapsed_seconds": 19.733,
+      "path": "docs/testing/dashboard-d9/20261023T151943791535+0800-ga-baseline-probe/command.json"
+    },
+    {
+      "check": "ga-foreground-probe",
+      "exit_code": 0,
+      "started_at": "2026-10-23T15:20:56.698583+08:00",
+      "finished_at": "2026-10-23T15:22:14.538413+08:00",
+      "elapsed_seconds": 77.84,
+      "path": "docs/testing/dashboard-d9/20261023T152056697133+0800-ga-foreground-probe/command.json"
+    },
+    {
+      "check": "ga-baseline-probe",
+      "exit_code": 0,
+      "started_at": "2026-10-23T15:22:34.488784+08:00",
+      "finished_at": "2026-10-23T15:23:41.964673+08:00",
+      "elapsed_seconds": 67.476,
+      "path": "docs/testing/dashboard-d9/20261023T152234486817+0800-ga-baseline-probe/command.json"
+    },
+    {
+      "check": "contracts",
+      "exit_code": 0,
+      "started_at": "2026-10-23T15:23:54.463699+08:00",
+      "finished_at": "2026-10-23T15:23:57.720411+08:00",
+      "elapsed_seconds": 3.257,
+      "path": "docs/testing/dashboard-d9/20261023T152354462890+0800-contracts/command.json"
+    },
+    {
+      "check": "ga-browser",
+      "exit_code": 0,
+      "started_at": "2026-10-23T15:24:12.404884+08:00",
+      "finished_at": "2026-10-23T15:25:33.790257+08:00",
+      "elapsed_seconds": 81.385,
+      "path": "docs/testing/dashboard-d9/20261023T152412404110+0800-ga-browser/command.json"
+    },
+    {
+      "check": "ga-background-baseline-probe",
+      "exit_code": 1,
+      "started_at": "2026-10-23T15:25:53.548263+08:00",
+      "finished_at": "2026-10-23T15:27:18.766723+08:00",
+      "elapsed_seconds": 85.218,
+      "path": "docs/testing/dashboard-d9/20261023T152553547466+0800-ga-background-baseline-probe/command.json"
+    },
+    {
+      "check": "ga-background-baseline-probe",
+      "exit_code": 1,
+      "started_at": "2026-10-23T15:27:46.764801+08:00",
+      "finished_at": "2026-10-23T15:29:09.559858+08:00",
+      "elapsed_seconds": 82.795,
+      "path": "docs/testing/dashboard-d9/20261023T152746764194+0800-ga-background-baseline-probe/command.json"
+    }
+  ],
+  "retained_failed_attempts": [
+    {
+      "check": "lint",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:09:03.557525+08:00",
+      "finished_at": "2026-10-23T10:09:47.097765+08:00",
+      "elapsed_seconds": 43.542,
+      "path": "docs/testing/dashboard-d9/20261023T100903556572+0800-lint/command.json"
+    },
+    {
+      "check": "live",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:11:05.375932+08:00",
+      "finished_at": "2026-10-23T10:11:12.256579+08:00",
+      "elapsed_seconds": 6.881,
+      "path": "docs/testing/dashboard-d9/20261023T101105373578+0800-live/command.json"
+    },
+    {
+      "check": "live",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:12:23.210807+08:00",
+      "finished_at": "2026-10-23T10:13:20.763692+08:00",
+      "elapsed_seconds": 57.555,
+      "path": "docs/testing/dashboard-d9/20261023T101223207570+0800-live/command.json"
+    },
+    {
+      "check": "d3-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:21:41.365797+08:00",
+      "finished_at": "2026-10-23T10:21:56.013647+08:00",
+      "elapsed_seconds": 14.648,
+      "path": "docs/testing/dashboard-d9/20261023T102141364822+0800-d3-browser/command.json"
+    },
+    {
+      "check": "d4-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:22:30.390973+08:00",
+      "finished_at": "2026-10-23T10:22:38.816297+08:00",
+      "elapsed_seconds": 8.426,
+      "path": "docs/testing/dashboard-d9/20261023T102230390154+0800-d4-browser/command.json"
+    },
+    {
+      "check": "d5-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:22:42.006839+08:00",
+      "finished_at": "2026-10-23T10:22:51.066468+08:00",
+      "elapsed_seconds": 9.06,
+      "path": "docs/testing/dashboard-d9/20261023T102242005864+0800-d5-browser/command.json"
+    },
+    {
+      "check": "d6-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:22:53.777014+08:00",
+      "finished_at": "2026-10-23T10:23:02.015285+08:00",
+      "elapsed_seconds": 8.238,
+      "path": "docs/testing/dashboard-d9/20261023T102253775522+0800-d6-browser/command.json"
+    },
+    {
+      "check": "ga-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:24:34.165692+08:00",
+      "finished_at": "2026-10-23T10:26:28.451080+08:00",
+      "elapsed_seconds": 114.289,
+      "path": "docs/testing/dashboard-d9/20261023T102434165167+0800-ga-browser/command.json"
+    },
+    {
+      "check": "ga-browser",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:27:06.348176+08:00",
+      "finished_at": "2026-10-23T10:28:49.754726+08:00",
+      "elapsed_seconds": 103.41,
+      "path": "docs/testing/dashboard-d9/20261023T102706347529+0800-ga-browser/command.json"
+    },
+    {
+      "check": "academic-offline",
+      "exit_code": 1,
+      "started_at": "2026-10-23T10:33:44.856331+08:00",
+      "finished_at": "2026-10-23T10:33:48.086104+08:00",
+      "elapsed_seconds": 3.23,
+      "path": "docs/testing/dashboard-d9/20261023T103344853860+0800-academic-offline/command.json"
+    },
+    {
+      "check": "ga-baseline-probe",
+      "exit_code": 1,
+      "started_at": "2026-10-23T15:19:43.792571+08:00",
+      "finished_at": "2026-10-23T15:20:03.526056+08:00",
+      "elapsed_seconds": 19.733,
+      "path": "docs/testing/dashboard-d9/20261023T151943791535+0800-ga-baseline-probe/command.json"
+    },
+    {
+      "check": "ga-background-baseline-probe",
+      "exit_code": 1,
+      "started_at": "2026-10-23T15:25:53.548263+08:00",
+      "finished_at": "2026-10-23T15:27:18.766723+08:00",
+      "elapsed_seconds": 85.218,
+      "path": "docs/testing/dashboard-d9/20261023T152553547466+0800-ga-background-baseline-probe/command.json"
+    },
+    {
+      "check": "ga-background-baseline-probe",
+      "exit_code": 1,
+      "started_at": "2026-10-23T15:27:46.764801+08:00",
+      "finished_at": "2026-10-23T15:29:09.559858+08:00",
+      "elapsed_seconds": 82.795,
+      "path": "docs/testing/dashboard-d9/20261023T152746764194+0800-ga-background-baseline-probe/command.json"
+    }
+  ],
+  "browser_runs": [
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101223207570+0800-live/default-blocked/browser-results.json",
+      "fixture": "default-blocked",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "passed": 6,
+      "failed": 0,
+      "captures": [
+        {
+          "name": "D9-L10-blocked-proposal-retained.png",
+          "captured_at": "2026-10-23T10:12:36.202+08:00",
+          "url": "http://localhost:58729/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        }
+      ],
+      "browser": "Edg/155.0.4283.62",
+      "node": "v24.11.1",
+      "final_acceptance": false
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101223207570+0800-live/fictional-authorized/browser-results.json",
+      "fixture": "fictional-authorized",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "passed": 5,
+      "failed": 5,
+      "captures": [
+        {
+          "name": "D9-L07-fictional-revision-comparison.png",
+          "captured_at": "2026-10-23T10:12:45.640+08:00",
+          "url": "http://localhost:51210/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        }
+      ],
+      "browser": "Edg/155.0.4283.62",
+      "node": "v24.11.1",
+      "final_acceptance": false
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/default-blocked/browser-results.json",
+      "fixture": "default-blocked",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "passed": 6,
+      "failed": 0,
+      "captures": [
+        {
+          "name": "D9-L10-blocked-proposal-retained.png",
+          "captured_at": "2026-10-23T10:15:55.438+08:00",
+          "url": "http://localhost:49444/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        }
+      ],
+      "browser": "Edg/155.0.4283.62",
+      "node": "v24.11.1",
+      "final_acceptance": false
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/fictional-authorized/browser-results.json",
+      "fixture": "fictional-authorized",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "passed": 10,
+      "failed": 0,
+      "captures": [
+        {
+          "name": "D9-L07-fictional-revision-comparison.png",
+          "captured_at": "2026-10-23T10:16:07.469+08:00",
+          "url": "http://localhost:62876/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "name": "D9-L10-fictional-history-retained.png",
+          "captured_at": "2026-10-23T10:16:08.485+08:00",
+          "url": "http://localhost:62876/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        }
+      ],
+      "browser": "Edg/155.0.4283.62",
+      "node": "v24.11.1",
+      "final_acceptance": false
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/default-blocked/browser-results.json",
+      "fixture": "default-blocked",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "passed": 6,
+      "failed": 0,
+      "captures": [
+        {
+          "name": "D9-L10-blocked-proposal-retained.png",
+          "captured_at": "2026-10-23T10:22:02.336+08:00",
+          "url": "http://localhost:50142/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        }
+      ],
+      "browser": "Edg/155.0.4283.62",
+      "node": "v24.11.1",
+      "final_acceptance": false
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/fictional-authorized/browser-results.json",
+      "fixture": "fictional-authorized",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "passed": 10,
+      "failed": 0,
+      "captures": [
+        {
+          "name": "D9-L07-fictional-revision-comparison.png",
+          "captured_at": "2026-10-23T10:22:12.185+08:00",
+          "url": "http://localhost:54641/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "name": "D9-L10-fictional-history-retained.png",
+          "captured_at": "2026-10-23T10:22:13.032+08:00",
+          "url": "http://localhost:54641/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        }
+      ],
+      "browser": "Edg/155.0.4283.62",
+      "node": "v24.11.1",
+      "final_acceptance": false
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/default-blocked/browser-results.json",
+      "fixture": "default-blocked",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "passed": 6,
+      "failed": 0,
+      "captures": [
+        {
+          "name": "D9-L10-blocked-proposal-retained.png",
+          "captured_at": "2026-10-23T10:24:54.985+08:00",
+          "url": "http://localhost:64579/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        }
+      ],
+      "browser": "Edg/155.0.4283.62",
+      "node": "v24.11.1",
+      "final_acceptance": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/fictional-authorized/browser-results.json",
+      "fixture": "fictional-authorized",
+      "scope": "Actual React/Edge -> real Uvicorn/FastAPI HTTP -> isolated SQLite password/session storage and fictional metadata. Fictional test-only provider injection when authorized scenario is selected; otherwise default BLOCKED. No real institutional authority. No PostgreSQL or institutional records. No native printing or READY authority claim.",
+      "passed": 10,
+      "failed": 0,
+      "captures": [
+        {
+          "name": "D9-L07-fictional-revision-comparison.png",
+          "captured_at": "2026-10-23T10:25:08.077+08:00",
+          "url": "http://localhost:58092/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "name": "D9-L10-fictional-history-retained.png",
+          "captured_at": "2026-10-23T10:25:09.242+08:00",
+          "url": "http://localhost:58092/admin/external-schedules",
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          }
+        }
+      ],
+      "browser": "Edg/155.0.4283.62",
+      "node": "v24.11.1",
+      "final_acceptance": true
+    }
+  ],
+  "screenshots_visually_reviewed": [
+    "docs/screenshots/dashboard-d9/20261023T101223207570+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T101223207570+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+    "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+    "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/fictional-authorized/D9-L10-fictional-history-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+    "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/fictional-authorized/D9-L10-fictional-history-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+    "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/fictional-authorized/D9-L10-fictional-history-retained.png",
+    "docs/screenshots/dashboard-d9/20261023T152412404110+0800-ga-browser/GA-fitness-analysis-foreground.png"
+  ],
+  "preservation": {
+    "baseline_path": "docs/testing/dashboard-d9/preservation-baseline.json",
+    "audit_path": "docs/testing/dashboard-d9/final-audit.json",
+    "baseline_files": 786,
+    "unchanged": 780,
+    "intended_changes": [
+      "backend/main.py",
+      "backend/migrations/env.py",
+      "backend/tests/academic/test_academic_foundation.py",
+      "frontend/src/components/schedule/ExternalScheduleReview.tsx",
+      "frontend/src/pages/admin/ExternalSchedules.tsx",
+      "frontend/tests/gaMonitoring.browser.test.mjs"
+    ],
+    "academic_data_unchanged": true,
+    "protected_preferences_byte_identical": true,
+    "git_index_byte_identical": true,
+    "GA_source_and_stored_artifacts_unchanged": true,
+    "D9_application_security_unchanged_during_stabilization": true
+  },
+  "privacy": {
+    "findings": 0,
+    "audit_path": "docs/testing/dashboard-d9/final-audit.json",
+    "institutional_authority": "None configured. Fictional test-only evidence and independent confirmation policy injection are not institutional approval.",
+    "raw_receipts_credentials_and_DB_fixtures_archived": false
+  },
+  "limitations": [
+    "Existing 17 Phase 4C PostgreSQL cases NOT RUN; additional D9 online schema/trigger/lock/restart/downgrade acceptance NOT RUN.",
+    "No real institutional verification or actor authorization provider configured; production confirmation BLOCKED.",
+    "No native D9 printing, D9-specific mobile scenario, full-project lint, full backend suite, performance or usability study.",
+    "Database-owner bypass requires production grants, independent audit/backup and separate acceptance.",
+    "No GA constraint consumer or D10 implementation.",
+    "Exact upstream cause of the originally hidden browser target remains unconfirmed; original capture is now synchronized and the actual 51-scenario GA suite passes."
+  ],
+  "hash_convention": "sha256/bytes: raw working-file bytes at review. git_blob_sha256/git_blob_bytes: Git-normalized committed blob bytes (CRLF to LF for auto-text, binaries unchanged). Manifest excludes itself. Hashes do not prove institutional approval or correctness.",
+  "artifacts": [
+    {
+      "path": "backend/confirmation_models.py",
+      "bytes": 9010,
+      "sha256": "da84cb2f0a30262e9bb728173bc576ba9f7846dc0fb412385bf7c4620164ed93",
+      "git_blob_sha256": "da84cb2f0a30262e9bb728173bc576ba9f7846dc0fb412385bf7c4620164ed93",
+      "git_blob_bytes": 9010
+    },
+    {
+      "path": "backend/main.py",
+      "bytes": 3261,
+      "sha256": "1a5ea460e84520beb0a4d78105e12e08fb6fee685bcb3ca7ae8a3a24ac085b92",
+      "git_blob_sha256": "3797209d89c262cc2ffacfc6ff9c8cdd94c8d3fddb02d29ec9aeb337ad9c1a7e",
+      "git_blob_bytes": 3166
+    },
+    {
+      "path": "backend/migrations/env.py",
+      "bytes": 1592,
+      "sha256": "034c2fd3eaff5fcb75ebf4dc5c82557eef81e80282b21110346b10f2ef63b281",
+      "git_blob_sha256": "3bcd8140380e9c8a4b80c0dc6a4ac7e1d6a477b6fc5d2caafe6bb1ebf3523896",
+      "git_blob_bytes": 1559
+    },
+    {
+      "path": "backend/migrations/versions/d9_0001_confirmation_ledger.py",
+      "bytes": 6935,
+      "sha256": "3fe012ee6fa571a4afec153f3c7f6e50b685399a391daedd98cb44f84da491b6",
+      "git_blob_sha256": "9a8845184846676b5eadb2e70777405e4dd7de33748b6e8fc1be93657f87b38b",
+      "git_blob_bytes": 6812
+    },
+    {
+      "path": "backend/routers/external_confirmations.py",
+      "bytes": 2677,
+      "sha256": "5741d5566e23f26ac835bbdb337e77b679dedc8364bcdb43a08cec1260b19d00",
+      "git_blob_sha256": "5741d5566e23f26ac835bbdb337e77b679dedc8364bcdb43a08cec1260b19d00",
+      "git_blob_bytes": 2677
+    },
+    {
+      "path": "backend/schemas/external_confirmation.py",
+      "bytes": 882,
+      "sha256": "5f3409377d44fe9e2cbfb3169fd1d448c29eb95fcb30af8421e696aa4a751ac9",
+      "git_blob_sha256": "5f3409377d44fe9e2cbfb3169fd1d448c29eb95fcb30af8421e696aa4a751ac9",
+      "git_blob_bytes": 882
+    },
+    {
+      "path": "backend/services/confirmation_authority_service.py",
+      "bytes": 2006,
+      "sha256": "0a938297acedff804ad0982897173511a65367f8767b10b00309cbd3ffbb81f5",
+      "git_blob_sha256": "0a938297acedff804ad0982897173511a65367f8767b10b00309cbd3ffbb81f5",
+      "git_blob_bytes": 2006
+    },
+    {
+      "path": "backend/services/external_confirmation_service.py",
+      "bytes": 12477,
+      "sha256": "299ca439a6e90718d1e57a09d9455eb25441290eb74d503ed01876b669c421c1",
+      "git_blob_sha256": "5ed5cbf702035e713502e3e9a76fe022353b41b0fcfb0b97434c4444c858ce14",
+      "git_blob_bytes": 12300
+    },
+    {
+      "path": "backend/tests/academic/test_academic_foundation.py",
+      "bytes": 11753,
+      "sha256": "faa42eca3badce3cc30e5457811f429e992229ecc3c6f3eef3e533733bcda8b8",
+      "git_blob_sha256": "faa42eca3badce3cc30e5457811f429e992229ecc3c6f3eef3e533733bcda8b8",
+      "git_blob_bytes": 11753
+    },
+    {
+      "path": "backend/tests/dashboard/test_external_confirmations.py",
+      "bytes": 15042,
+      "sha256": "06a6727db14f61228a43152b6847dc5b03b7e324fa1921fd7651ccf0c4cd1a29",
+      "git_blob_sha256": "06a6727db14f61228a43152b6847dc5b03b7e324fa1921fd7651ccf0c4cd1a29",
+      "git_blob_bytes": 15042
+    },
+    {
+      "path": "backend/tests/dashboard/test_external_confirmations_live.py",
+      "bytes": 3911,
+      "sha256": "dc01c721e5472bb268e683c8dc2e96278b99247a229c2b93f331851392b97b59",
+      "git_blob_sha256": "2177eaf41f3b4e1d745bb5237bf0f1109a69fd37ddd046feb698e342d5d8e456",
+      "git_blob_bytes": 3848
+    },
+    {
+      "path": "docs/dashboard-d9-implementation.md",
+      "bytes": 31978,
+      "sha256": "2c0ca878a8386dc13a765d3d1d39ff86045411ae3ad0be2985189591907a09ec",
+      "git_blob_sha256": "2c0ca878a8386dc13a765d3d1d39ff86045411ae3ad0be2985189591907a09ec",
+      "git_blob_bytes": 31978
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101223207570+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+      "bytes": 102574,
+      "sha256": "1bffcfa54dfda7c4968859bd2a2fa8dfeeb825331b9a00e3d86f3015d39ef2d0",
+      "git_blob_sha256": "1bffcfa54dfda7c4968859bd2a2fa8dfeeb825331b9a00e3d86f3015d39ef2d0",
+      "git_blob_bytes": 102574
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101223207570+0800-live/default-blocked/browser-results.json",
+      "bytes": 2503,
+      "sha256": "bd9d41c9ac6b1f68c7bcc69c87554b0d102b5fd8d69569fa288e0a23e2ee1ed1",
+      "git_blob_sha256": "bd9d41c9ac6b1f68c7bcc69c87554b0d102b5fd8d69569fa288e0a23e2ee1ed1",
+      "git_blob_bytes": 2503
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101223207570+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+      "bytes": 114737,
+      "sha256": "987ac990b49b3c7f89cef6372f112b7639e8bb8aaca19782ba1a41a271c45e29",
+      "git_blob_sha256": "987ac990b49b3c7f89cef6372f112b7639e8bb8aaca19782ba1a41a271c45e29",
+      "git_blob_bytes": 114737
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101223207570+0800-live/fictional-authorized/browser-results.json",
+      "bytes": 3919,
+      "sha256": "a05859796998ca3f4bd14cad1bcfbda8d9aea36fb7fe46cf196370b2800a106c",
+      "git_blob_sha256": "a05859796998ca3f4bd14cad1bcfbda8d9aea36fb7fe46cf196370b2800a106c",
+      "git_blob_bytes": 3919
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+      "bytes": 99973,
+      "sha256": "60be306c2b09223ec4839ed612b8cf2acdb8a5e5e0c7947164de12ed5931e62c",
+      "git_blob_sha256": "60be306c2b09223ec4839ed612b8cf2acdb8a5e5e0c7947164de12ed5931e62c",
+      "git_blob_bytes": 99973
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/default-blocked/browser-results.json",
+      "bytes": 2503,
+      "sha256": "dd53e8773edc8528f21f6b503d7b9e2caf42630cb701f9829d9f7d8fc0f171ba",
+      "git_blob_sha256": "dd53e8773edc8528f21f6b503d7b9e2caf42630cb701f9829d9f7d8fc0f171ba",
+      "git_blob_bytes": 2503
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+      "bytes": 124523,
+      "sha256": "7c211b670cf10c31d86f1551378daf8d19162f407bbe91235229295a572e2da5",
+      "git_blob_sha256": "7c211b670cf10c31d86f1551378daf8d19162f407bbe91235229295a572e2da5",
+      "git_blob_bytes": 124523
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/fictional-authorized/D9-L10-fictional-history-retained.png",
+      "bytes": 116104,
+      "sha256": "892b401af399c7765ab7ef8362c7987823639ddaff32b24ce300ad11db7387ef",
+      "git_blob_sha256": "892b401af399c7765ab7ef8362c7987823639ddaff32b24ce300ad11db7387ef",
+      "git_blob_bytes": 116104
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T101537621529+0800-live/fictional-authorized/browser-results.json",
+      "bytes": 3761,
+      "sha256": "d46afcee8ff6cbdf603e35c7a7a85720359e50e9d972f0b0003f3fbbebd85874",
+      "git_blob_sha256": "d46afcee8ff6cbdf603e35c7a7a85720359e50e9d972f0b0003f3fbbebd85874",
+      "git_blob_bytes": 3761
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+      "bytes": 100037,
+      "sha256": "fc3fdc76a3cde24e347ad2de87d343e2d7a3cfaf8e93ef1eb11dcd4df12f35f8",
+      "git_blob_sha256": "fc3fdc76a3cde24e347ad2de87d343e2d7a3cfaf8e93ef1eb11dcd4df12f35f8",
+      "git_blob_bytes": 100037
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/default-blocked/browser-results.json",
+      "bytes": 2503,
+      "sha256": "c240ac77a0e7a77f1cb2955cf131022fc317816db923180fb0af5049f7dce9dd",
+      "git_blob_sha256": "c240ac77a0e7a77f1cb2955cf131022fc317816db923180fb0af5049f7dce9dd",
+      "git_blob_bytes": 2503
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+      "bytes": 124230,
+      "sha256": "d8e2b47c884fb184ae64638bdb47546d184240421086b445d0781a7c58cd8ae7",
+      "git_blob_sha256": "d8e2b47c884fb184ae64638bdb47546d184240421086b445d0781a7c58cd8ae7",
+      "git_blob_bytes": 124230
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/fictional-authorized/D9-L10-fictional-history-retained.png",
+      "bytes": 115999,
+      "sha256": "733b0a0ffbc5e13fc508cfff2fd2b37904563f2529ddc91012e8449b41419772",
+      "git_blob_sha256": "733b0a0ffbc5e13fc508cfff2fd2b37904563f2529ddc91012e8449b41419772",
+      "git_blob_bytes": 115999
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102140778073+0800-live/fictional-authorized/browser-results.json",
+      "bytes": 3761,
+      "sha256": "750ce321df809303ccaa989afb761cfe661ec5dcb639ca6b62e295d1e9860660",
+      "git_blob_sha256": "750ce321df809303ccaa989afb761cfe661ec5dcb639ca6b62e295d1e9860660",
+      "git_blob_bytes": 3761
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/default-blocked/D9-L10-blocked-proposal-retained.png",
+      "bytes": 99575,
+      "sha256": "1426219925f811a2ed4e621424d18b0c64db203dd6cae091ff318918bf31ff1e",
+      "git_blob_sha256": "1426219925f811a2ed4e621424d18b0c64db203dd6cae091ff318918bf31ff1e",
+      "git_blob_bytes": 99575
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/default-blocked/browser-results.json",
+      "bytes": 2503,
+      "sha256": "cb2b112baf7fddcd7e20a2a23441b0cd6e0562acb261ed05ebf2843ddc0dee30",
+      "git_blob_sha256": "cb2b112baf7fddcd7e20a2a23441b0cd6e0562acb261ed05ebf2843ddc0dee30",
+      "git_blob_bytes": 2503
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/fictional-authorized/D9-L07-fictional-revision-comparison.png",
+      "bytes": 123975,
+      "sha256": "f42b3395fc9f657b454cfccf7299e425702e11540156261047f310f834212e9b",
+      "git_blob_sha256": "f42b3395fc9f657b454cfccf7299e425702e11540156261047f310f834212e9b",
+      "git_blob_bytes": 123975
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/fictional-authorized/D9-L10-fictional-history-retained.png",
+      "bytes": 115495,
+      "sha256": "e9b7585e7835f1ba2575a2dc76b23479f4673b6f753b993bc6f074f3b07be94e",
+      "git_blob_sha256": "e9b7585e7835f1ba2575a2dc76b23479f4673b6f753b993bc6f074f3b07be94e",
+      "git_blob_bytes": 115495
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T102433771189+0800-live/fictional-authorized/browser-results.json",
+      "bytes": 3761,
+      "sha256": "1d59badb0d938673db08bd8931333286dcb403e00228715fb66477bae9a5407f",
+      "git_blob_sha256": "1d59badb0d938673db08bd8931333286dcb403e00228715fb66477bae9a5407f",
+      "git_blob_bytes": 3761
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T152412404110+0800-ga-browser/GA-fitness-analysis-foreground.png",
+      "bytes": 94477,
+      "sha256": "3d0ad38192cd38305489a944bbd7ec297cdee0e48779bb68d086d44b87c0c791",
+      "git_blob_sha256": "3d0ad38192cd38305489a944bbd7ec297cdee0e48779bb68d086d44b87c0c791",
+      "git_blob_bytes": 94477
+    },
+    {
+      "path": "docs/screenshots/dashboard-d9/20261023T152412404110+0800-ga-browser/capture.json",
+      "bytes": 586,
+      "sha256": "6daea04098ef0abcc1e2e34b43a21a8a0ca21825628481c8b7fa432593c080ac",
+      "git_blob_sha256": "cc62cac5a27934e783a40fd7dea08340f9f0929560ec828bd069622ec7e76089",
+      "git_blob_bytes": 571
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T100617421109+0800-backend/command.json",
+      "bytes": 2640,
+      "sha256": "b333071fb2926cb497645e1e9a5fdc5f6ba0585a51add2d25d7925eafd4b7eb5",
+      "git_blob_sha256": "093052f667f58d01112496043764a1b66a294968cec6003c08b5a6bc7275bb7e",
+      "git_blob_bytes": 2607
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T100858313122+0800-backend/command.json",
+      "bytes": 2640,
+      "sha256": "e3d5bff0f70aa3935658b45d4413f68b32f96a22e09c3986f9c993bf2fe8d98d",
+      "git_blob_sha256": "f3c11d9b7faae50f394693d0498baf0718ae6e84d4092687674778742370f404",
+      "git_blob_bytes": 2607
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T100859234090+0800-contracts/command.json",
+      "bytes": 15102,
+      "sha256": "bca5e8304db3e7853ce7015347c25cedc80b5d796027d07c28eb9efcb790ee74",
+      "git_blob_sha256": "410e416c3103d2f0bd196161ae27f0502d825b58448325fc29ce05ea2270d755",
+      "git_blob_bytes": 15066
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T100901242739+0800-build/command.json",
+      "bytes": 1939,
+      "sha256": "e594b1d280b4a7fb6e1a59b6d0a89e61134af86cab1b7c7ad587967683862683",
+      "git_blob_sha256": "616d25357b22e5c3a15b7081245585acde1c9613713d25cce78872c366e5693a",
+      "git_blob_bytes": 1921
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T100903556572+0800-lint/command.json",
+      "bytes": 11776,
+      "sha256": "bdabe216da84254df20e989fd98027f465a340a05c314832c2cbf720eed657c3",
+      "git_blob_sha256": "d70dba195b07691ae2abdd205bca914180131b4eea2d669a4d98f0e944b013eb",
+      "git_blob_bytes": 11746
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T100905729439+0800-ga-resource-regressions/command.json",
+      "bytes": 1302,
+      "sha256": "c58ef1d1ba335f85a2c1b0d74565af2f94ec1c900e4e705dc0313bd3e58747b9",
+      "git_blob_sha256": "fb0b81a2b076c3263b3de935cae0ed9da777b35b13193acd3e8d04ffec19211f",
+      "git_blob_bytes": 1274
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101105373578+0800-live/command.json",
+      "bytes": 2951,
+      "sha256": "b87a6ecbf6ab6b444971c9f9e7073520012190df52b8596286e1133b0f09e38d",
+      "git_blob_sha256": "62fb4abd1197cf9729a8e7340f56c8d58570dc53e9d461b38d2962a08d5311fe",
+      "git_blob_bytes": 2924
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101219639451+0800-lint/command.json",
+      "bytes": 1313,
+      "sha256": "175dd8583961c34442ea0f25df56994d5fedff1e308f92cde8f0fe52f8c4ed11",
+      "git_blob_sha256": "b4a94db32412fbb58d3d3540d37a7f219ebea952df2f0b97c6b60f85c0136d47",
+      "git_blob_bytes": 1283
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101220678289+0800-build/command.json",
+      "bytes": 1938,
+      "sha256": "9677f28e4baff129277a5dc6a8fd7055bc090da3e5f89af040249b25a637785f",
+      "git_blob_sha256": "6e8ae1a84405249e46ebe6be9f23992660992a641d5afd7d991d2a06c40adcc2",
+      "git_blob_bytes": 1920
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101223207570+0800-live/command.json",
+      "bytes": 10750,
+      "sha256": "2ab7d63b7662af69f89b12a6b2a4c1a79dc177862d92275a5dbb692b82b10161",
+      "git_blob_sha256": "c7c5a18b00784a8fda4d4cc898973e371bba02ad4f5a1bacd2490f223565500e",
+      "git_blob_bytes": 10723
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101537621529+0800-live/command.json",
+      "bytes": 4083,
+      "sha256": "8fc2feb377bb17cdb3107cbfbb88fa8fbbfb264066c2055f931712dc2e09a4ee",
+      "git_blob_sha256": "d4528729b1b9764b114b798b59ddfb147face29a81afeee9be99ac7158b271fd",
+      "git_blob_bytes": 4056
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101539383955+0800-d8-browser/command.json",
+      "bytes": 2627,
+      "sha256": "7b89f35821a523e3b848b26d8e14479adef6dfb09362a4a6e2f5bf87ff4c0308",
+      "git_blob_sha256": "198e4f036e8ca4148ada80681773e4bd42277bd4047dc1d2ddf448633d30df77",
+      "git_blob_bytes": 2609
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101539386536+0800-backend-regressions/command.json",
+      "bytes": 2476,
+      "sha256": "b77c81e4bc257b94451d8fb120e6482a2138f780375b734eaa345008804d7241",
+      "git_blob_sha256": "1d84728d7c12a6df5e0806f2f7390035326044a63f79e89a1790297e18adfb92",
+      "git_blob_bytes": 2449
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101745489800+0800-backend/command.json",
+      "bytes": 2640,
+      "sha256": "e36287b17d7847bbf1400eac90c61a4b1e620a3fc5ad885df20366c31bcab1e6",
+      "git_blob_sha256": "c20ebd415a9f4846644bc2ad547b13a2b45721fb771e9e70cdb52639d7d2dd10",
+      "git_blob_bytes": 2607
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101807504767+0800-contracts/command.json",
+      "bytes": 15180,
+      "sha256": "172d2dc3e465934d4ceced8a8ffea28b409b1493238a70051d486e5b0db0df53",
+      "git_blob_sha256": "fd837ab473b3ccfae884b5af130535ba0b7977cdfcb811c67f570a1a4b5a6a9b",
+      "git_blob_bytes": 15144
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101810042540+0800-lint/command.json",
+      "bytes": 1313,
+      "sha256": "2722b9e3e8be18b87d575c9208554de7f881623eb22d26b7d4778b03d15aa514",
+      "git_blob_sha256": "e809491eca77b425276d61f3206ca835880ec01c3427b1fa10ddf763b6d6c356",
+      "git_blob_bytes": 1283
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T101811281142+0800-build/command.json",
+      "bytes": 1939,
+      "sha256": "604700435bcba249f3f9549710de76f619b0850cc34a3d3f352db7ffebcdf1fe",
+      "git_blob_sha256": "c5837edeaefd5452b3ee2563189667cefc0c6ed94aba98f0040e9107508df914",
+      "git_blob_bytes": 1921
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102140502878+0800-d1-browser/command.json",
+      "bytes": 2235,
+      "sha256": "eb571bff880c9b7c62f2324227f745935616c73b88d55a1c1531ff98faf7b648",
+      "git_blob_sha256": "8dfa120375d9a130ccf0450c695556a874b093d9e4f8e6bd6bc1e59cc48584c0",
+      "git_blob_bytes": 2217
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102140778073+0800-live/command.json",
+      "bytes": 4079,
+      "sha256": "ed0af83e48c12c3d8d4a43dfad94f42004c1fdd142a938cda6c49981309482e9",
+      "git_blob_sha256": "26c42b24168f9a18d3bc89b40de68e01c49ce75c669e377c1bf08f8a3237d5d7",
+      "git_blob_bytes": 4052
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102141336034+0800-d2-browser/command.json",
+      "bytes": 2111,
+      "sha256": "b02e7434f491cf201a2c2e5f8610ced3ee978076ffa702afccbac27a3f6dcc75",
+      "git_blob_sha256": "d3bb58274a8117cce5a3fcccc54d0e0295d85499d36eb740063e549f3a31f69a",
+      "git_blob_bytes": 2093
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102141364822+0800-d3-browser/command.json",
+      "bytes": 3524,
+      "sha256": "62f59c08112829bbcdd3ba99961413de78b958fb1319a7c8d32dec97176a7f5a",
+      "git_blob_sha256": "c10a8a54f13e2b00a6aefa9aa50d7a5c35a5b3047437410984c1f63d51d6f0a9",
+      "git_blob_bytes": 3506
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102230390154+0800-d4-browser/command.json",
+      "bytes": 3593,
+      "sha256": "1a2f679e00b31db928539ab9e2d35957ef720355ec4b33de37ad177604638eac",
+      "git_blob_sha256": "fdd4828c904aa9855f0bbc4243d06aa64a93c0cb697b1855889a845573d2b9b0",
+      "git_blob_bytes": 3575
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102242005864+0800-d5-browser/command.json",
+      "bytes": 3577,
+      "sha256": "6500d877fcc1f68b8a51ee68d046078456a39a5013cdebc0542c032f3d9c29f2",
+      "git_blob_sha256": "48348d96be8f0943378f53b4fa24e20c8d128dd82280b2c88141f50c2d198384",
+      "git_blob_bytes": 3559
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102253775522+0800-d6-browser/command.json",
+      "bytes": 3446,
+      "sha256": "a26bf4462a1da846da6bed4a9b5c19fee0350743a837108e5467d325c9ceb853",
+      "git_blob_sha256": "09075794d447534e2cf53bbceb19b1cb8b605b3cc8402f9e8a4548745e0b8ee1",
+      "git_blob_bytes": 3428
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102336475398+0800-d4-browser/command.json",
+      "bytes": 2522,
+      "sha256": "fc8b6fd0e9523112329d780f3f25de6106e3a0de51a0c5144fcaf617cfa23c38",
+      "git_blob_sha256": "7b76af97995bfd74e2c7494fde91e37c495f665eeceedaebc29f14432f756f8c",
+      "git_blob_bytes": 2504
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102338012343+0800-d6-browser/command.json",
+      "bytes": 2369,
+      "sha256": "91eb5d23fe489a06f7b663ec78954e36e87ab669b8d500b707db4cd7f85490dc",
+      "git_blob_sha256": "bd1b83f5a408057490dbea9a99b6dd445b4f3e84514013410939ca149824474a",
+      "git_blob_bytes": 2351
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102338312528+0800-d5-browser/command.json",
+      "bytes": 2503,
+      "sha256": "9c8952dda83db4d22fb9fea0eab685be55a45b2f1314ed2b54c3cb4f7b5fa89e",
+      "git_blob_sha256": "b984a5130dedba5f8bd3788b51444068956e72cedf1847624f06ead8a1a5fac3",
+      "git_blob_bytes": 2485
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102338654087+0800-d3-browser/command.json",
+      "bytes": 2430,
+      "sha256": "fabc5c014854a76612467b97b7ba3b40899ffd5384910cc954f1d53d643cb0e5",
+      "git_blob_sha256": "bba082b156376f576407d4b9efc541992f47e38e9d6bcc3d3a96dd66647bd777",
+      "git_blob_bytes": 2412
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102431522164+0800-d7-browser/command.json",
+      "bytes": 2677,
+      "sha256": "69a72b1478f6113ab922a1881f0fa891740aee5706738781dc089f81302893fd",
+      "git_blob_sha256": "96981df711434f221bd5d00fdfe68567f4e24ea436e0db34bf059d3760c9f0d5",
+      "git_blob_bytes": 2659
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102433771189+0800-live/command.json",
+      "bytes": 4088,
+      "sha256": "e50235ddeee525f23bf06049a7d9e581d853ad7187246f75a5295fb154c8cdb1",
+      "git_blob_sha256": "a3cc123364e106f246ccead3ac821ca6d754190731d95b0c50ebeddbc9ec8947",
+      "git_blob_bytes": 4061
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102434165167+0800-ga-browser/command.json",
+      "bytes": 6694,
+      "sha256": "16cdf4414cbbc8354d21ec887615c55589959a632fca65e82d5e3e4259435b62",
+      "git_blob_sha256": "0c0e5cdb1c6963a191cef6e1cbb9da183728286133b413892aea55b44ba1a98b",
+      "git_blob_bytes": 6676
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102436153639+0800-backend/command.json",
+      "bytes": 2639,
+      "sha256": "a3370b8fc683952c8b9b9b59a51071aca3c5985d6611cdf03926f07b15775fd5",
+      "git_blob_sha256": "f71c7ec0108122337113b1530e2bf6c0f2d0b18e0f66634aa247f089ad913375",
+      "git_blob_bytes": 2606
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102554907350+0800-build/command.json",
+      "bytes": 1939,
+      "sha256": "463d6357aa3ceb41d0825460a4ba80913747cccef44fab692259bf532deed1a8",
+      "git_blob_sha256": "fc1fb9e518c403b3b01bacd60ca5929b04a00ea98088fb12dd5e63f1bfda6222",
+      "git_blob_bytes": 1921
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102556241716+0800-lint/command.json",
+      "bytes": 1313,
+      "sha256": "df574e5674a2d0b897fdd873193280fef72d2bbc9724a467579c9eb610b48e76",
+      "git_blob_sha256": "b550f85164c19b93bef308689e832b939aca38ed9cce1905e8fac9b151141aa4",
+      "git_blob_bytes": 1283
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102706347529+0800-ga-browser/command.json",
+      "bytes": 6690,
+      "sha256": "cad8c52a9c345e8e6f3477caa006334eb51adc91138e71b08c6fd47f30f1a444",
+      "git_blob_sha256": "a57f94eb40a10680505cd058f83271390da5fbaa7bf16f465bdec9667e6e714c",
+      "git_blob_bytes": 6672
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T102755503689+0800-backend/command.json",
+      "bytes": 2640,
+      "sha256": "f3fa9ec9d0a6f5aad8106bd792415fed38df6e2b12af33afc6e31adee887001a",
+      "git_blob_sha256": "ba63cf415932885fe0c2b351630a9455601b37177c1c06530c400d2b89a3963b",
+      "git_blob_bytes": 2607
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T103344853860+0800-academic-offline/command.json",
+      "bytes": 2596,
+      "sha256": "ccbcf9fc149609a0b3e082ce3f21ee851d1df1bc5a51ef784d66eba329ddce07",
+      "git_blob_sha256": "abc40c82b225365fb6716a600d06ca069eacd5f66d78adaed513b8401c2a8c72",
+      "git_blob_bytes": 2568
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T103403045594+0800-academic-offline/command.json",
+      "bytes": 1951,
+      "sha256": "9d1379da199ed55ee45784506e63762aea0ee6c949df995a45212766da938479",
+      "git_blob_sha256": "c5634cc8ad91cbe4199a92d7c51aa76005811e56a5b7ca323ad9afc2fc3d32f3",
+      "git_blob_bytes": 1923
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T151737069378+0800-ga-capture-probe/command.json",
+      "bytes": 7893,
+      "sha256": "0f112d8594ce5986a383ce871ae1259c58bcf1561cda809a357fd6c8d8a32ba2",
+      "git_blob_sha256": "195e4edb0164474660583b82534a1d3fd2db43da2a6d7f782f641cbdf20e1104",
+      "git_blob_bytes": 7875
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T151943791535+0800-ga-baseline-probe/command.json",
+      "bytes": 1903,
+      "sha256": "8392194d5e8d2f50574f4d80a22717c732d97fa11209e9074dfe1b62ebf0541d",
+      "git_blob_sha256": "742c011e8ff76c012e82c950349ca3046eb040a086273e3aeb341b6ed21bdf90",
+      "git_blob_bytes": 1884
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T152056697133+0800-ga-foreground-probe/command.json",
+      "bytes": 7304,
+      "sha256": "c8fe467b76462e5149663dfe8704624bce216793eb8b33b6457dfde05834c756",
+      "git_blob_sha256": "b9fcdfdf6f9f3536f699e717a1dec965e866ca54dc7af739aa826c9d10998ca5",
+      "git_blob_bytes": 7285
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T152234486817+0800-ga-baseline-probe/command.json",
+      "bytes": 7872,
+      "sha256": "3f2007d9246f76db5c3898cd45c35b5944dad2817605abb9f54ba0894cc0858c",
+      "git_blob_sha256": "4386de5d3ab457b9c2403c499735737421641d1de5958931582a6de14692e77c",
+      "git_blob_bytes": 7853
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T152354462890+0800-contracts/command.json",
+      "bytes": 15194,
+      "sha256": "b7dfb09647a971eaf83804b5c1a83dce4fc62a209349f656cf889b4bec3a6f49",
+      "git_blob_sha256": "5079006394dadc7168614f1e95e878451a00b69f120f0101f5766fb92b22d4b0",
+      "git_blob_bytes": 15158
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T152412404110+0800-ga-browser/command.json",
+      "bytes": 6182,
+      "sha256": "0377fedd186b2d02fa07e480b3551b33d6abd044c5ef5a0d58cef3f6c4c8d681",
+      "git_blob_sha256": "96aa545b0d189309755d15fd6cb566550a27f927014409c81827e6a04e6a99cb",
+      "git_blob_bytes": 6164
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T152553547466+0800-ga-background-baseline-probe/command.json",
+      "bytes": 7767,
+      "sha256": "23ab882fbfe3d232157c03bf215454d04b5e3b079d1c48aff894c312d410e365",
+      "git_blob_sha256": "20a8cde85d9486ee18a79bebaa88a2de2586ad7acb8c5bb956d9e2bae40f3eb6",
+      "git_blob_bytes": 7747
+    },
+    {
+      "path": "docs/testing/dashboard-d9/20261023T152746764194+0800-ga-background-baseline-probe/command.json",
+      "bytes": 8138,
+      "sha256": "022abbac8f958764b0e86913a6457150eb6d884ec4ed0bebeb53bfb8c5ba23e8",
+      "git_blob_sha256": "625d42f1cf6566a0d287df3adab16e0dc69308ec75ae488bb617a8db6b9259b1",
+      "git_blob_bytes": 8118
+    },
+    {
+      "path": "docs/testing/dashboard-d9/final-audit.json",
+      "bytes": 3582,
+      "sha256": "0749ab8dad0e4e5de83426aca0386443b633cc740f9137ce9b1a45fa84ba9115",
+      "git_blob_sha256": "81164c6094ae71b982df38f9c4aae604f176316291da84b3b65bc2fe40b86f3e",
+      "git_blob_bytes": 3523
+    },
+    {
+      "path": "docs/testing/dashboard-d9/preservation-baseline.json",
+      "bytes": 106934,
+      "sha256": "ac4c3e7d09526e0308b404a8e40d581e0e418d67952892385adebfdcdc7f9515",
+      "git_blob_sha256": "8698b9d6b21c4ef5f8aaa951c78536141061c8d57c7f3be4e375a3be3008cc9a",
+      "git_blob_bytes": 106146
+    },
+    {
+      "path": "docs/testing/dashboard-d9/probe_ga_capture.py",
+      "bytes": 6140,
+      "sha256": "061929bcb27dbefcaf92fa58765e274559626eaa5516e9499f5ffda928478920",
+      "git_blob_sha256": "061929bcb27dbefcaf92fa58765e274559626eaa5516e9499f5ffda928478920",
+      "git_blob_bytes": 6140
+    },
+    {
+      "path": "docs/testing/dashboard-d9/run_checks.py",
+      "bytes": 8650,
+      "sha256": "c03371b862b94b5694db9a6814b919a19e0557e23e167cb29f0541218e668298",
+      "git_blob_sha256": "d8a6873284a186dec31541541ac30ebbf7ade41a7f5c5bf6eebc7bb2cfd4ced9",
+      "git_blob_bytes": 8554
+    },
+    {
+      "path": "docs/testing/dashboard-d9/screenshot-stabilization.json",
+      "bytes": 7956,
+      "sha256": "2bdc080e9063b1d4a3cc4e08f382c93130bc7718df0766d2daa36b5617ae9a77",
+      "git_blob_sha256": "9914c954d7c50a0c4327e2fcd882ba141503a2a414f5ade671a6078890964d57",
+      "git_blob_bytes": 7747
+    },
+    {
+      "path": "docs/testing/dashboard-d9/stabilization-baseline.json",
+      "bytes": 101047,
+      "sha256": "8151084a606fb0ffe6895589a4a151ff384756107bf4431372bda53baac5b9b1",
+      "git_blob_sha256": "bb146fcf2b119c5c7333cc5151279d6264d1c35d4796a669e3d296ceee68d900",
+      "git_blob_bytes": 100288
+    },
+    {
+      "path": "frontend/src/api/externalConfirmations.ts",
+      "bytes": 4490,
+      "sha256": "d8a9dcd270f16b20529a35a76b9839d2117c1f00fde60f6c92eb602f7cf8e71c",
+      "git_blob_sha256": "3de370cecc05c793163c81da0a25dad119c48a40a33c60be411634d5b634e626",
+      "git_blob_bytes": 4463
+    },
+    {
+      "path": "frontend/src/components/schedule/ExternalConfirmationLedger.tsx",
+      "bytes": 8904,
+      "sha256": "ea8739af5e0df2e403907ce6350568495addf5158c6f61e2573ef088ba0f4386",
+      "git_blob_sha256": "0a6f4cd44e66902c77329818c81710b916bbee8b04c43de7cfcbcf29e750e467",
+      "git_blob_bytes": 8852
+    },
+    {
+      "path": "frontend/src/components/schedule/ExternalScheduleReview.tsx",
+      "bytes": 18127,
+      "sha256": "987da6df19de416744c5182ef9f2d5922dd6dcbda9e1f2f0ece89ada4402335d",
+      "git_blob_sha256": "a2fd6ff9c0f200409877a257cfc986d989c9f7c61c922c6255ae55c508acb774",
+      "git_blob_bytes": 17971
+    },
+    {
+      "path": "frontend/src/pages/admin/ExternalSchedules.tsx",
+      "bytes": 18202,
+      "sha256": "e9f42924505f59e26779b4fb64692e3393bb350c2314f1dd1c4342e9c23f0cad",
+      "git_blob_sha256": "48458473aa5a2d06fde106e7a5bc3c40f3871b28d89943044339964bd70e9d1a",
+      "git_blob_bytes": 18042
+    },
+    {
+      "path": "frontend/tests/externalConfirmations.live.mjs",
+      "bytes": 19473,
+      "sha256": "2ad4425da2a4cf537bfeef9f86b75b1342f95c6756e00d60ea71b1237c737d4a",
+      "git_blob_sha256": "8ed29b955228ab164d6fb564588e8d6a571632eb8c04f74ab9ad9022de92e85b",
+      "git_blob_bytes": 19333
+    },
+    {
+      "path": "frontend/tests/externalConfirmations.test.mjs",
+      "bytes": 3584,
+      "sha256": "6dd3b8a685627fab9fecab5dc390dd924924644ea842226134d3157ba0e20736",
+      "git_blob_sha256": "ee6ad26da480500875cbe321f74e750d5b6bf5ed6bdeb6da97edf2c11ee2fe38",
+      "git_blob_bytes": 3569
+    },
+    {
+      "path": "frontend/tests/gaMonitoring.browser.test.mjs",
+      "bytes": 106804,
+      "sha256": "7831e862c80a0e48758ea76b496c3b50ce4b2f15e038fb09b0610dbb0096e20f",
+      "git_blob_sha256": "7831e862c80a0e48758ea76b496c3b50ce4b2f15e038fb09b0610dbb0096e20f",
+      "git_blob_bytes": 106804
+    }
+  ],
+  "screenshot_stabilization": {
+    "findings_path": "docs/testing/dashboard-d9/screenshot-stabilization.json",
+    "fresh_results": {
+      "command": "docs/testing/dashboard-d9/20261023T152412404110+0800-ga-browser/command.json",
+      "GA_scenarios_passed": 51,
+      "failed": 0,
+      "skipped": 0,
+      "parent_wrapper_passed": 1,
+      "node_reported_tests": 52,
+      "formerly_failing_scenario_ms": 1064.7653,
+      "frontend_contracts_passed": 150,
+      "contract_command": "docs/testing/dashboard-d9/20261023T152354462890+0800-contracts/command.json",
+      "node_syntax": "PASS",
+      "python_AST": "PASS"
+    },
+    "prior_results_not_rerun": {
+      "focused_backend_passed": 327,
+      "academic_offline_passed": 85,
+      "backend_regressions_passed": 46,
+      "resource_regressions_passed": 3,
+      "D9_live_browser_passed": 16,
+      "D1_D8_browser_passed": 125,
+      "build": "PASS",
+      "focused_ESLint": "PASS"
+    },
+    "diagnostic_runs_not_acceptance": [
+      {
+        "path": "docs/testing/dashboard-d9/20261023T151737069378+0800-ga-capture-probe/command.json",
+        "check": "ga-capture-probe",
+        "exit_code": 0,
+        "observations": [
+          {
+            "observation": "CAPTURE_PROBE_BEFORE",
+            "value": {
+              "rendering": {
+                "ready": "complete",
+                "visibility": "hidden",
+                "fonts": "loaded",
+                "width": 1366,
+                "height": 900,
+                "x": 0,
+                "y": 0,
+                "documentWidth": 1351,
+                "documentHeight": 2865,
+                "animations": 0,
+                "resources": 79
+              },
+              "target_count": 0
+            }
+          },
+          {
+            "observation": "CAPTURE_PROBE_SURFACE",
+            "value": {
+              "result": "TIMEOUT",
+              "elapsed_ms": 30005
+            }
+          },
+          {
+            "observation": "CAPTURE_PROBE_AFTER",
+            "value": {
+              "responsive": "complete"
+            }
+          },
+          {
+            "observation": "CAPTURE_PROBE_VIEW",
+            "value": {
+              "result": "PASS",
+              "elapsed_ms": 240
+            }
+          }
+        ],
+        "acceptance_run": false
+      },
+      {
+        "path": "docs/testing/dashboard-d9/20261023T151943791535+0800-ga-baseline-probe/command.json",
+        "check": "ga-baseline-probe",
+        "exit_code": 1,
+        "observations": [],
+        "acceptance_run": false
+      },
+      {
+        "path": "docs/testing/dashboard-d9/20261023T152056697133+0800-ga-foreground-probe/command.json",
+        "check": "ga-foreground-probe",
+        "exit_code": 0,
+        "observations": [
+          {
+            "observation": "CAPTURE_PROBE_BEFORE",
+            "value": {
+              "rendering": {
+                "ready": "complete",
+                "visibility": "hidden",
+                "fonts": "loaded",
+                "width": 1366,
+                "height": 900,
+                "x": 0,
+                "y": 0,
+                "documentWidth": 1351,
+                "documentHeight": 2865,
+                "animations": 0,
+                "resources": 79
+              },
+              "target_count": 0
+            }
+          },
+          {
+            "observation": "CAPTURE_PROBE_FOREGROUND",
+            "value": {
+              "visibility": "visible"
+            }
+          },
+          {
+            "observation": "CAPTURE_PROBE_SURFACE",
+            "value": {
+              "result": "PASS",
+              "elapsed_ms": 88
+            }
+          }
+        ],
+        "acceptance_run": false
+      },
+      {
+        "path": "docs/testing/dashboard-d9/20261023T152234486817+0800-ga-baseline-probe/command.json",
+        "check": "ga-baseline-probe",
+        "exit_code": 0,
+        "observations": [
+          {
+            "observation": "CAPTURE_PROBE_BEFORE",
+            "value": {
+              "rendering": {
+                "ready": "complete",
+                "visibility": "visible",
+                "fonts": "loaded",
+                "width": 1366,
+                "height": 900,
+                "x": 0,
+                "y": 0,
+                "documentWidth": 1351,
+                "documentHeight": 2865,
+                "animations": 0,
+                "resources": 77
+              },
+              "target_count": 11
+            }
+          },
+          {
+            "observation": "CAPTURE_PROBE_SURFACE",
+            "value": {
+              "result": "PASS",
+              "elapsed_ms": 104
+            }
+          }
+        ],
+        "acceptance_run": false
+      },
+      {
+        "path": "docs/testing/dashboard-d9/20261023T152553547466+0800-ga-background-baseline-probe/command.json",
+        "check": "ga-background-baseline-probe",
+        "exit_code": 1,
+        "observations": [],
+        "acceptance_run": false
+      },
+      {
+        "path": "docs/testing/dashboard-d9/20261023T152746764194+0800-ga-background-baseline-probe/command.json",
+        "check": "ga-background-baseline-probe",
+        "exit_code": 1,
+        "observations": [],
+        "acceptance_run": false
+      }
+    ],
+    "new_screenshot": {
+      "path": "docs/screenshots/dashboard-d9/20261023T152412404110+0800-ga-browser/GA-fitness-analysis-foreground.png",
+      "metadata": {
+        "captured_at": "2026-10-23T15:25:24.901066+08:00",
+        "archived_at": "2026-10-23T15:25:33.749609+08:00",
+        "url": "http://localhost:5188/admin/analysis",
+        "query_omitted": true,
+        "viewport": {
+          "width": 1366,
+          "height": 900
+        },
+        "scope": "Actual Edge/React screenshot with synthetic HTTP responses; no live backend, real GA execution or institutional authority.",
+        "scenario": "fitness analysis shows original workload, decomposition and preference explanations",
+        "browser": "Edge 155.0.4283.62",
+        "privacy_reviewed": true,
+        "visually_reviewed": true
+      }
+    },
+    "previous_manifest_sha256": "4a7cf07fec3986e133709392da824dc48fbb22b9bfd16c3236f35dea6580fe30",
+    "historical_failures_retained": true
+  },
+  "checkpoint_review": {
+    "recorded_at": "2026-10-23T15:57:02.397196+08:00",
+    "baseline": "eaba995e19c104a32d9cb2ea6c6acb4f2a1bf7ac",
+    "prior_manifest_sha256": "84ee65e81f4a877ca276e2149b3007461e4a3b63ce5b78c62e059d972a605299",
+    "original_92_hashes_verified_before_checkpoint_metadata_update": true,
+    "implementation_and_test_paths": 18,
+    "documentation_and_evidence_paths": 75,
+    "all_93_paths_reviewed": true,
+    "all_12_PNGs_visually_reviewed": true,
+    "privacy_findings": 0,
+    "tests_rerun": false,
+    "recorded_test_evidence_reviewed": true,
+    "line_endings": "Existing core.autocrlf=true retained. Both raw and committed representations are independently verified.",
+    "protected_preferences_excluded": true,
+    "historical_failures_retained": true
+  }
+}

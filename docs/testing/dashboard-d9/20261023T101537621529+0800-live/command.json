@@ -1,0 +1,27 @@
+{
+  "check": "live",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_external_confirmations_live.py",
+    "-q",
+    "-s",
+    "--tb=short",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\dashboard-d9-20261023T101537621529+0800-live"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-23T10:15:37.622896+08:00",
+  "finished_at": "2026-10-23T10:16:12.723819+08:00",
+  "elapsed_seconds": 35.102,
+  "exit_code": 0,
+  "stdout": "Owned browser: Edg/155.0.4283.62\n\u25b6 D9 live browser-to-FastAPI smoke with synthetic academic data\n  \u2714 D9-L01 real React login authenticates against live FastAPI and isolated SQLite (3221.2918ms)\n  \u2714 D9-L02 real canonical import supplies session-bound preview and calendar (961.1423ms)\n  \u2714 D9-L03 current D8 evidence is server-evaluated without granting confirmer authority (1051.7689ms)\n  \u2714 D9-L04 real API stores a receipt-free proposed revision (274.6056ms)\n  \u2714 D9-L05 independent confirmation authority is evaluated on server (79.7357ms)\n  \u2714 D9-L10 reload retrieves durable history without reusing preview receipts (680.3845ms)\n\u2714 D9 live browser-to-FastAPI smoke with synthetic academic data (10314.516ms)\n\u2139 tests 7\n\u2139 suites 0\n\u2139 pass 7\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 12950.6043\n\n.Owned browser: Edg/155.0.4283.62\n\u25b6 D9 live browser-to-FastAPI smoke with synthetic academic data\n  \u2714 D9-L01 real React login authenticates against live FastAPI and isolated SQLite (1970.4443ms)\n  \u2714 D9-L02 real canonical import supplies session-bound preview and calendar (839.1824ms)\n  \u2714 D9-L03 current D8 evidence is server-evaluated without granting confirmer authority (835.7901ms)\n  \u2714 D9-L04 real API stores a receipt-free proposed revision (185.3205ms)\n  \u2714 D9-L05 independent confirmation authority is evaluated on server (76.5389ms)\n  \u2714 D9-L06 fictional authorized confirmation is durable and not GA active (154.1349ms)\n  \u2714 D9-L07 new proposed meeting preserves current confirmed revision (685.0377ms)\n  \u2714 D9-L08 successor confirmation requires fresh authority and supersedes history (139.5738ms)\n  \u2714 D9-L09 authorized revocation retains history without restoring older revision (94.1797ms)\n  \u2714 D9-L10 reload retrieves durable history without reusing preview receipts (788.3547ms)\n\u2714 D9 live browser-to-FastAPI smoke with synthetic academic data (9303.8025ms)\n\u2139 tests 11\n\u2139 suites 0\n\u2139 pass 11\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 11810.1128\n\n.\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n2 passed, 2 warnings in 33.06s\n",
+  "stderr": "",
+  "sanitization": "D8 whole sensitive-line, complete/truncated encoded fragment, header, key and credential-URI sanitization applied before evidence writes and summaries",
+  "environment": "Whitelisted OS environment; no DB URLs, approval flags or credential variables",
+  "scope": "See report for fixture and regression scope"
+}

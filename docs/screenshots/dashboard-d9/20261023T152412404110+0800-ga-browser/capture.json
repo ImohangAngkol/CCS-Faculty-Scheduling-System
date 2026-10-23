@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-10-23T15:25:24.901066+08:00",
+  "archived_at": "2026-10-23T15:25:33.749609+08:00",
+  "url": "http://localhost:5188/admin/analysis",
+  "query_omitted": true,
+  "viewport": {
+    "width": 1366,
+    "height": 900
+  },
+  "scope": "Actual Edge/React screenshot with synthetic HTTP responses; no live backend, real GA execution or institutional authority.",
+  "scenario": "fitness analysis shows original workload, decomposition and preference explanations",
+  "browser": "Edge 155.0.4283.62",
+  "privacy_reviewed": true,
+  "visually_reviewed": true
+}
