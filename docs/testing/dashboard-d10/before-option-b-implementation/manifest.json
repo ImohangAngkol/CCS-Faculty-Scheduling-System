@@ -1,0 +1,168 @@
+{
+  "milestone": "D10",
+  "status": "BLOCKED: retained historical V1 continuation prerequisite not demonstrated; no application implementation",
+  "source_commit": "d6446d0757b91e1b3b17d650fcb49e896f51203b",
+  "recorded_at": "2026-10-23T23:24:07.056687+08:00",
+  "architecture_decision": {
+    "approved": true,
+    "mode": "Separate constrained V2 orchestration with immutable snapshots and pre-admission validation",
+    "V2_implemented": false,
+    "V1_fingerprinted_sources_modified": false,
+    "runtime_engine_replacement_or_fingerprint_bypass": false
+  },
+  "initial_investigation": {
+    "scope": "Historical six synthetic boundary diagnostics, not constrained generation acceptance",
+    "diagnostics_passed": 6,
+    "freshly_rerun": false,
+    "report_archive": "docs/testing/dashboard-d10/initial-investigation/report.md",
+    "manifest_archive": "docs/testing/dashboard-d10/initial-investigation/manifest.json",
+    "historical_artifact_hashes_verified": 4,
+    "note": "Archived manifest paths/hashes describe the initial state; the report hash is verified against its byte-identical archive."
+  },
+  "fresh_validation": {
+    "retained_V1": {
+      "command_record": "docs/testing/dashboard-d10/20261023T231610208098+0800-retained-v1/command.json",
+      "exit_code": 2,
+      "artifacts_checked": 6,
+      "copy_and_checksum_checks_passed": 6,
+      "restorations_succeeded": 0,
+      "restorations_rejected": 6,
+      "actual_loader_code": "GA_CHECKPOINT_INPUT_CHANGED",
+      "stored_input_matches": 0,
+      "stored_engine_matches_either_supported_V1_policy": 0,
+      "historical_continuations_executed": 0,
+      "temporary_copies_removed": true,
+      "scope": "Compatibility gate unsuccessful, not six passing pytest tests; no envelope rewriting or fingerprint overrides"
+    },
+    "current_release_V1": {
+      "command_record": "docs/testing/dashboard-d10/20261023T231638112417+0800-current-v1-continuation/command.json",
+      "exit_code": 0,
+      "pytest_passed": 3,
+      "pytest_failed": 0,
+      "warnings": 2,
+      "pytest_duration_seconds": 327.95,
+      "runner_elapsed_seconds": 332.926,
+      "pause_generations": [
+        0,
+        1,
+        3
+      ],
+      "scope": "Bounded existing pause/resume equivalence using new current-release checkpoints; not retained historical continuation",
+      "warnings_detail": [
+        "Starlette httpx TestClient integration deprecated",
+        "AnyIO BlockingPortal alias deprecated"
+      ]
+    },
+    "V2_generations": 0,
+    "database_connections": 0,
+    "Python_utilities_syntax_checked": 3
+  },
+  "blocker": "All six byte-identical retained checkpoint copies are rejected by the unchanged current V1 loader. Both stored input and engine fingerprints differ. The actual loader rejects inputs first. No retained continuation is demonstrated.",
+  "recommended_next_decision": "Validate matching historical source/runtime/input provenance privately, or explicitly accept preserving rejection of these already-incompatible artifacts while using current-release V1 continuation as the compatibility baseline. V2 architecture approval is retained.",
+  "continuation_existing_D10_files_updated": [
+    "docs/dashboard-d10-implementation.md",
+    "docs/testing/dashboard-d10/manifest.json"
+  ],
+  "continuation_files_created": [
+    "docs/testing/dashboard-d10/20261023T231610208098+0800-retained-v1/command.json",
+    "docs/testing/dashboard-d10/20261023T231638112417+0800-current-v1-continuation/command.json",
+    "docs/testing/dashboard-d10/check_retained_v1.py",
+    "docs/testing/dashboard-d10/initial-investigation/manifest.json",
+    "docs/testing/dashboard-d10/initial-investigation/report.md",
+    "docs/testing/dashboard-d10/run_compatibility_checks.py"
+  ],
+  "application_files_modified": [],
+  "preservation": {
+    "baseline_files": 873,
+    "unchanged_files": 873,
+    "academic_data_paths_unchanged": 23,
+    "protected_preferences_unchanged": true,
+    "all_GA_operator_fitness_RNG_and_fingerprinted_services_unchanged": true,
+    "stored_results_checkpoints_and_D1_D9_files_unchanged": true,
+    "HEAD_and_Git_index_unchanged": true
+  },
+  "privacy": {
+    "files_scanned": 10,
+    "findings": [],
+    "private_names_compared_locally": 12,
+    "raw_substring_false_positive_review": "One short name string occurs inside ordinary longer words; whole-name-boundary review found no private-name exposure. Value omitted.",
+    "methods": [
+      "Import output suppressed before capture",
+      "Whole sensitive-line and complete/truncated fragment sanitizer before record writes",
+      "Independent decoded JSON/text encoded-fragment, signed-token, bearer, credential-URI and private-key scans",
+      "Local private-name comparison with boundary review"
+    ],
+    "screenshots_archived": 0,
+    "raw_checkpoint_database_or_academic_rows_archived": false
+  },
+  "whitespace": {
+    "git_diff_check": "PASS",
+    "untracked_text_scan": "PASS"
+  },
+  "NOT_RUN": [
+    "V2 immutable constraint snapshot and fresh trust integration",
+    "V2 feasible run, candidate admission, reset persistence, bounded exhaustion and checkpoint continuation",
+    "V2 saved-best/history/final publication protection",
+    "V2 API/frontend/browser/build/lint acceptance",
+    "Constrained performance and memory comparison",
+    "Broader D1-D9 regressions beyond the 3 current-release V1 tests",
+    "17 Phase 4C PostgreSQL tests",
+    "D9 online PostgreSQL acceptance"
+  ],
+  "authority": "Genuine institutional providers remain unavailable; production constrained activation remains BLOCKED",
+  "no_staging_commit_push": true,
+  "no_D11_D12_or_Cpp": true,
+  "hash_convention": "Raw-byte SHA-256; current manifest excludes itself. Hashes identify evidence, not institutional approval or GA correctness.",
+  "artifacts": [
+    {
+      "path": "docs/dashboard-d10-implementation.md",
+      "bytes": 27108,
+      "sha256": "819b03a580848d7971cbbb8543541cb37411af3dcbbaeae540c58e9845af47a6"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/20261023T215141091867+0800-boundary/command.json",
+      "bytes": 2291,
+      "sha256": "b872be0230b74e87d9f1568c1ddadf644d27812737a8c11482d44e0b876ac95b"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/20261023T231610208098+0800-retained-v1/command.json",
+      "bytes": 2970,
+      "sha256": "0b22d4040345c9a189f46d1537df5c5584518bebd3281eb06b885a0f30f1f29a"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/20261023T231638112417+0800-current-v1-continuation/command.json",
+      "bytes": 2082,
+      "sha256": "60cde82f777d071277efda8f1088cb23cc4c51f2409e30515665893173fa5a03"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/check_retained_v1.py",
+      "bytes": 5068,
+      "sha256": "f74b0756468a357855dbf608705aab7d75fe1d0cd6123e152d38d2c653787146"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/initial-investigation/manifest.json",
+      "bytes": 5852,
+      "sha256": "c6b7d62416983e83404643a09aa0650f29332f8a9f1d351d523d3a7b228096a0"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/initial-investigation/report.md",
+      "bytes": 17777,
+      "sha256": "e09bdadde337796e8ec0086d21437987c860d207214e34fb5d2da5e609e7ca43"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/inspect_integration_boundary.py",
+      "bytes": 6003,
+      "sha256": "5918661d8f4a1dc79f9b0ffd303004468a97d9881e48a23788f8dcf91d60ece4"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/preservation-baseline.json",
+      "bytes": 120191,
+      "sha256": "398ab8e5dee0073efb92f65a820ed4021db4b786a7148c8410fb189ceb92b258"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/run_compatibility_checks.py",
+      "bytes": 3300,
+      "sha256": "60db665be13e06b9dda2753fbaf29818dbb880b40323bf6b85892ebc802daba3"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "milestone": "D10",
+  "status": "BLOCKED BEFORE APPLICATION IMPLEMENTATION: explicit candidate-admission and checkpoint compatibility decision required",
+  "source_commit": "d6446d0757b91e1b3b17d650fcb49e896f51203b",
+  "branch": "main",
+  "recorded_at": "2026-10-23T21:55:28.520476+08:00",
+  "scope": "Read-only inspection and synthetic boundary characterization only. No constrained generation or institutional approval.",
+  "created_files": [
+    "docs/dashboard-d10-implementation.md",
+    "docs/testing/dashboard-d10/20261023T215141091867+0800-boundary/command.json",
+    "docs/testing/dashboard-d10/inspect_integration_boundary.py",
+    "docs/testing/dashboard-d10/preservation-baseline.json",
+    "docs/testing/dashboard-d10/manifest.json"
+  ],
+  "existing_files_modified": [],
+  "fresh_validation": {
+    "diagnostic_checks_passed": 6,
+    "failed": 0,
+    "pytest_tests_executed": 0,
+    "GA_generations_executed": 0,
+    "fitness_evaluations_executed": 0,
+    "database_connections": 0,
+    "command_record": "docs/testing/dashboard-d10/20261023T215141091867+0800-boundary/command.json",
+    "started_at": "2026-10-23T21:51:41.091867+08:00",
+    "finished_at": "2026-10-23T21:51:44.441646+08:00",
+    "diagnostic_elapsed_seconds": 3.35,
+    "performance_claim": "None. Diagnostic runtime is not constrained scheduling overhead."
+  },
+  "probe_results": [
+    {
+      "id": "D10-I01",
+      "result": "PASS",
+      "finding": "Reset reopens faculty and room reservations, including a fixed_schedule marker; section reservation survives."
+    },
+    {
+      "id": "D10-I02",
+      "result": "PASS",
+      "finding": "Existing section availability check rejects an overlapping fixed section interval."
+    },
+    {
+      "id": "D10-I03",
+      "result": "PASS",
+      "finding": "Both operators' conflict/eligibility/load gates do not detect a separate faculty or room commitment. This partial fixture tests these gates only, not complete-duration validity or successful mutation."
+    },
+    {
+      "id": "D10-I04",
+      "result": "PASS",
+      "finding": "Preassignment declaration has instructor and room identity, with no fixed meeting time or day."
+    },
+    {
+      "id": "D10-I05",
+      "result": "PASS",
+      "finding": "Orchestration/publication/progress source bytes are engine-fingerprinted; loader rejects mismatched engine identity. Hypothetical byte change was computed only in memory."
+    },
+    {
+      "id": "D10-I06",
+      "result": "PASS",
+      "finding": "Engine saves best before returning; a router-only check after return would be too late to guard that write. Probes consumed no RNG draws after imports."
+    }
+  ],
+  "NOT_RUN": [
+    "D10 feasible/infeasible constrained generation",
+    "D8/D9 D10 integration API tests",
+    "D10 frontend contracts/browser/screenshots/build/lint",
+    "Fresh D1-D9 regressions (application bytes preserved)",
+    "GA performance/memory/feasible-rate comparison",
+    "17 existing Phase 4C PostgreSQL cases",
+    "D9 online PostgreSQL acceptance"
+  ],
+  "blockers": [
+    "One-time faculty/room reservations are erased on reset.",
+    "Swapped/mutated candidates are not checked against separate fixed faculty/room commitments.",
+    "A late route check cannot guard the earlier saved-best write.",
+    "Changing fingerprinted orchestration/publication requires an explicit legacy engine continuation policy; spoofing hashes/runtime engine replacements is not accepted as compatibility."
+  ],
+  "recommendation": "Review the versioned orchestration, pre-admission constraint validation and checkpoint compatibility design in the report before application implementation.",
+  "preservation": {
+    "baseline_files": 873,
+    "unchanged_files": 873,
+    "academic_data_paths_unchanged": 23,
+    "protected_preferences_unchanged": true,
+    "application_and_GA_sources_unchanged": true,
+    "stored_checkpoints_schedules_history_unchanged": true,
+    "D1_D9_implementation_and_evidence_unchanged": true,
+    "Git_HEAD_and_index_unchanged": true
+  },
+  "privacy": {
+    "files_scanned": 4,
+    "private_names_compared_locally": 12,
+    "findings": [],
+    "methods": [
+      "Import diagnostics suppressed before any evidence write",
+      "Static synthetic-only findings",
+      "Independent decoded JSON/text complete/partial receipt and credential/key patterns",
+      "Local private-name comparison without exporting names"
+    ],
+    "screenshots_archived": 0,
+    "raw_academic_rows_or_database_files_archived": false
+  },
+  "whitespace": "PASS",
+  "report_links": "PASS",
+  "runtime": {
+    "python": "3.14.2"
+  },
+  "authority": "Production providers remain unconfigured/BLOCKED; no fictional provider or GEC constraint activation.",
+  "no_staging_commit_push": true,
+  "no_D11_D12_or_Cpp": true,
+  "hash_convention": "SHA-256 of raw file bytes; manifest excludes itself. Hashes do not establish institutional approval or implementation correctness.",
+  "artifacts": [
+    {
+      "path": "docs/dashboard-d10-implementation.md",
+      "bytes": 17777,
+      "sha256": "e09bdadde337796e8ec0086d21437987c860d207214e34fb5d2da5e609e7ca43"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/20261023T215141091867+0800-boundary/command.json",
+      "bytes": 2291,
+      "sha256": "b872be0230b74e87d9f1568c1ddadf644d27812737a8c11482d44e0b876ac95b"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/inspect_integration_boundary.py",
+      "bytes": 6003,
+      "sha256": "5918661d8f4a1dc79f9b0ffd303004468a97d9881e48a23788f8dcf91d60ece4"
+    },
+    {
+      "path": "docs/testing/dashboard-d10/preservation-baseline.json",
+      "bytes": 120191,
+      "sha256": "398ab8e5dee0073efb92f65a820ed4021db4b786a7148c8410fb189ceb92b258"
+    }
+  ]
+}

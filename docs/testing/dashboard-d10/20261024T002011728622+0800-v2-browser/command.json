@@ -1,0 +1,24 @@
+{
+  "check": "v2-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/constrainedGA.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-24T00:20:11.729151+08:00",
+  "finished_at": "2026-10-24T00:20:19.380440+08:00",
+  "elapsed_seconds": 7.651,
+  "exit_code": 0,
+  "stdout": "\u25b6 D10 versioned constrained UI with synthetic HTTP\n  \u2714 D10-B01 production block and explicit term fields (1593.4133ms)\n  \u2714 D10-B02 review current set and start explicit V2 (491.2134ms)\n  \u2714 D10-B03 pause and resume controls stay versioned (153.8594ms)\n  \u2714 D10-B04 timetable and source-row provenance (475.8662ms)\n  \u2714 D10-B05 fitness and rejected candidates are visible (476.0524ms)\n  \u2714 D10-B06 stale head hides rows and retry recovers (321.9299ms)\n  \u2714 D10-B07 authority unavailable hides prior result (321.8784ms)\n  \u2714 D10-B08 tampered approval reply is rejected (216.8614ms)\n  \u2714 D10-B09 imported HTML remains escaped text (251.4021ms)\n  \u2714 D10-B10 faculty and anonymous routes cannot fetch V2 data (373.6565ms)\n  \u2714 D10-B11 loading waits for a validated result (245.2891ms)\n  \u2714 D10-B12 mobile remains contained (350.1991ms)\n\u2714 D10 versioned constrained UI with synthetic HTTP (7219.9176ms)\n\u2139 tests 13\n\u2139 suites 0\n\u2139 pass 13\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 7567.038\n",
+  "stderr": "",
+  "environment": "Whitelisted OS variables only; no database URLs, credentials or approval flags",
+  "scope": "Actual Edge/React with synthetic HTTP replies; no live FastAPI authorization or GA execution",
+  "sanitization": "Complete/truncated session artifacts, sensitive assignments, headers, keys and credential URIs sanitized before writing",
+  "scope_metadata_correction": {
+    "previous_scope": "Current-release bounded V1 pause/resume regression; not retained historical checkpoint acceptance",
+    "reason": "Early runner reused a generic V1 label; exact command/output are unchanged",
+    "corrected_at": "2026-10-24T00:55:04.659673+08:00",
+    "test_output_and_outcome_unchanged": true
+  }
+}

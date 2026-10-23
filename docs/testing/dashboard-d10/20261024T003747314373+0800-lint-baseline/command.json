@@ -1,0 +1,21 @@
+{
+  "check": "lint-baseline",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "--stdin",
+    "--stdin-filename",
+    "src/pages/admin/ScheduleView.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-24T00:37:47.314988+08:00",
+  "finished_at": "2026-10-24T00:37:52.553109+08:00",
+  "elapsed_seconds": 5.238,
+  "exit_code": 0,
+  "stdout": "\nC:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\frontend\\src\\pages\\admin\\ScheduleView.tsx\n  63:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 117) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n  63:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 137) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n  63:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 154) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n  63:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 218) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n\n\u2716 4 problems (0 errors, 4 warnings)\n\n",
+  "stderr": "",
+  "environment": "Whitelisted OS variables only; no database URLs, credentials or approval flags",
+  "scope": "Read-only ESLint of the exact HEAD ScheduleView source via stdin, to classify existing warnings",
+  "stdin_source": "git show HEAD:frontend/src/pages/admin/ScheduleView.tsx",
+  "sanitization": "Complete/truncated session artifacts, sensitive assignments, headers, keys and credential URIs sanitized before writing"
+}

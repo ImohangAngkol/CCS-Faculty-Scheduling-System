@@ -1,0 +1,33 @@
+{
+  "check": "backend",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_external_confirmations.py",
+    "tests/dashboard/test_external_evidence.py",
+    "tests/dashboard/test_external_readiness.py",
+    "tests/dashboard/test_external_legacy.py",
+    "tests/dashboard/test_external_handoff.py",
+    "tests/dashboard/test_external_review.py",
+    "tests/dashboard/test_external_preview.py",
+    "tests/dashboard/test_my_schedule.py",
+    "-q",
+    "--tb=short",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d10-compat-pytest-20261024T002647955206+0800-backend"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T00:26:47.958187+08:00",
+  "finished_at": "2026-10-24T00:27:33.961214+08:00",
+  "elapsed_seconds": 46.003,
+  "exit_code": 0,
+  "stdout": "........................................................................ [ 22%]\n........................................................................ [ 44%]\n........................................................................ [ 66%]\n........................................................................ [ 88%]\n.......................................                                  [100%]\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n327 passed, 2 warnings in 42.67s\n",
+  "stderr": "",
+  "environment": "Whitelisted OS variables only; no database URLs, credentials or approval flags",
+  "scope": "Existing D2-D9 FastAPI/validation regressions using fictional fixtures and SQLite",
+  "sanitization": "Complete/truncated session artifacts, sensitive assignments, headers, keys and credential URIs sanitized before writing"
+}

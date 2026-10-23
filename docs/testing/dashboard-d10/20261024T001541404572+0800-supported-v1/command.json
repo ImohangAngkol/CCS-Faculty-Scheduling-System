@@ -1,0 +1,24 @@
+{
+  "check": "supported-v1",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "docs/testing/dashboard-d10/verify_supported_v1.py"
+  ],
+  "cwd": ".",
+  "started_at": "2026-10-24T00:15:41.405581+08:00",
+  "finished_at": "2026-10-24T00:16:21.836966+08:00",
+  "elapsed_seconds": 40.431,
+  "exit_code": 0,
+  "stdout": "{\"scope\": \"Actual current-release V1 pre-V2 checkpoint copies, original operators and real continuation; not six historical artifact acceptance\", \"source_fixture_record\": \"docs/testing/dashboard-d10/20261023T234234124363+0800-v1-fixtures/command.json\", \"engine_version\": \"ga-continuation-v1\", \"engine_fingerprint\": \"5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1\", \"input_fingerprint\": \"b06d58f6c2b81c843fd791dda28c0e248aeef037d2733ff65c639ef5cfffa729\", \"standalone_continuation_checks_passed\": 3, \"failed\": 0, \"findings\": [{\"pause_generation\": 0, \"checkpoint_sha256\": \"cba35156a4d500bd6497262734c5e53fb0ffe8050ef662da41fa09f4c984990a\", \"actual_pre_V2_fixture_restored\": true, \"real_original_operator_continuation\": true, \"schedule_history_fitness_analysis_and_RNG_equivalent\": true, \"source_and_copy_unchanged\": true}, {\"pause_generation\": 1, \"checkpoint_sha256\": \"2dc4c88ef18b01000b24aede31fdfafe54ec69b01cf60cadfd3239037c4c1ec9\", \"actual_pre_V2_fixture_restored\": true, \"real_original_operator_continuation\": true, \"schedule_history_fitness_analysis_and_RNG_equivalent\": true, \"source_and_copy_unchanged\": true}, {\"pause_generation\": 2, \"checkpoint_sha256\": \"9908d68d240e2f6b7a21e9008ad999ac3fe9db9a9e9cc6f1ec0be537752bccb1\", \"actual_pre_V2_fixture_restored\": true, \"real_original_operator_continuation\": true, \"schedule_history_fitness_analysis_and_RNG_equivalent\": true, \"source_and_copy_unchanged\": true}], \"raw_checkpoints_archived\": false, \"temporary_copies_removed\": true, \"database_connections\": 0}\n",
+  "stderr": "",
+  "environment": "Whitelisted OS variables only; no database URLs, credentials or approval flags",
+  "scope": "Actual pre-V2 supported V1 checkpoint copies, original operators and real continuation",
+  "sanitization": "Complete/truncated session artifacts, sensitive assignments, headers, keys and credential URIs sanitized before writing",
+  "scope_metadata_correction": {
+    "previous_scope": "Current-release bounded V1 pause/resume regression; not retained historical checkpoint acceptance",
+    "reason": "Early runner reused a generic V1 label; exact command/output are unchanged",
+    "corrected_at": "2026-10-24T00:55:04.657214+08:00",
+    "test_output_and_outcome_unchanged": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "check": "retained-v1",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "docs/testing/dashboard-d10/check_retained_v1.py"
+  ],
+  "cwd": ".",
+  "started_at": "2026-10-23T23:16:10.209112+08:00",
+  "finished_at": "2026-10-23T23:17:15.794969+08:00",
+  "elapsed_seconds": 65.586,
+  "exit_code": 2,
+  "stdout": "{\"scope\": \"Actual unchanged V1 loader against byte-identical temporary copies; no continuation attempted after rejection\", \"artifacts_checked\": 6, \"restorations_succeeded\": 0, \"restorations_rejected\": 6, \"findings\": [{\"artifact_number\": 1, \"copy_identical\": true, \"checksum_valid\": true, \"input_fingerprint_matches_current\": false, \"engine_matches_either_supported_V1_scoring_policy\": false, \"loader_outcome\": \"REJECTED\", \"loader_code\": \"GA_CHECKPOINT_INPUT_CHANGED\"}, {\"artifact_number\": 2, \"copy_identical\": true, \"checksum_valid\": true, \"input_fingerprint_matches_current\": false, \"engine_matches_either_supported_V1_scoring_policy\": false, \"loader_outcome\": \"REJECTED\", \"loader_code\": \"GA_CHECKPOINT_INPUT_CHANGED\"}, {\"artifact_number\": 3, \"copy_identical\": true, \"checksum_valid\": true, \"input_fingerprint_matches_current\": false, \"engine_matches_either_supported_V1_scoring_policy\": false, \"loader_outcome\": \"REJECTED\", \"loader_code\": \"GA_CHECKPOINT_INPUT_CHANGED\"}, {\"artifact_number\": 4, \"copy_identical\": true, \"checksum_valid\": true, \"input_fingerprint_matches_current\": false, \"engine_matches_either_supported_V1_scoring_policy\": false, \"loader_outcome\": \"REJECTED\", \"loader_code\": \"GA_CHECKPOINT_INPUT_CHANGED\"}, {\"artifact_number\": 5, \"copy_identical\": true, \"checksum_valid\": true, \"input_fingerprint_matches_current\": false, \"engine_matches_either_supported_V1_scoring_policy\": false, \"loader_outcome\": \"REJECTED\", \"loader_code\": \"GA_CHECKPOINT_INPUT_CHANGED\"}, {\"artifact_number\": 6, \"copy_identical\": true, \"checksum_valid\": true, \"input_fingerprint_matches_current\": false, \"engine_matches_either_supported_V1_scoring_policy\": false, \"loader_outcome\": \"REJECTED\", \"loader_code\": \"GA_CHECKPOINT_INPUT_CHANGED\"}], \"historical_continuation_demonstrated\": false, \"checkpoint_originals_unchanged\": true, \"temporary_copies_removed\": true, \"RNG_unchanged_after_imports\": true, \"GA_generations_executed\": 0, \"database_connections\": 0, \"application_files_modified\": 0, \"decision\": \"STOP: no retained checkpoint restored on the current baseline; historical continuation acceptance is not demonstrated\"}\n",
+  "stderr": "",
+  "environment": "Whitelisted OS variables only; no database URLs, credentials or approval flags",
+  "scope": "Owned checkpoint copies and unchanged V1 loader",
+  "sanitization": "Complete/truncated session artifacts, sensitive assignments, headers, keys and credential URIs sanitized before writing"
+}

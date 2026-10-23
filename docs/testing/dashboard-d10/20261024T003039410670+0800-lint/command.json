@@ -1,0 +1,23 @@
+{
+  "check": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/api/constrainedGA.ts",
+    "src/components/ga/ConstrainedRunPanel.tsx",
+    "src/components/ga/ConstrainedResultPanel.tsx",
+    "src/pages/admin/GenerateSchedule.tsx",
+    "src/pages/admin/ScheduleView.tsx",
+    "src/pages/admin/FitnessAnalysis.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-24T00:30:39.411410+08:00",
+  "finished_at": "2026-10-24T00:30:52.576501+08:00",
+  "elapsed_seconds": 13.165,
+  "exit_code": 0,
+  "stdout": "\nC:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\frontend\\src\\pages\\admin\\ScheduleView.tsx\n  71:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 125) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n  71:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 145) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n  71:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 162) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n  71:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 226) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n\n\u2716 4 problems (0 errors, 4 warnings)\n\n",
+  "stderr": "",
+  "environment": "Whitelisted OS variables only; no database URLs, credentials or approval flags",
+  "scope": "Focused ESLint; existing warnings are retained without changing legacy page logic",
+  "sanitization": "Complete/truncated session artifacts, sensitive assignments, headers, keys and credential URIs sanitized before writing"
+}

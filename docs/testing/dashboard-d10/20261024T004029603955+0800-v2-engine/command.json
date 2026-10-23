@@ -1,0 +1,28 @@
+{
+  "check": "v2-engine",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/d10/test_v2_engine.py",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d10-compat-pytest-20261024T004029603955+0800-v2-engine"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T00:40:29.606415+08:00",
+  "finished_at": "2026-10-24T00:40:50.459090+08:00",
+  "elapsed_seconds": 20.853,
+  "exit_code": 0,
+  "stdout": "............................                                             [100%]\n28 passed in 18.59s\n",
+  "stderr": "",
+  "environment": "Whitelisted OS variables only; no database URLs, credentials or approval flags",
+  "scope": "Fictional V2 kernel, constraints and checkpoint tests; authority doubles are unit boundaries, not institutional verification",
+  "stdin_source": null,
+  "sanitization": "Complete/truncated session artifacts, sensitive assignments, headers, keys and credential URIs sanitized before writing"
+}

@@ -1,0 +1,71 @@
+{
+  "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite, real passwords/sessions/Origin/CSRF and original GA functions; entirely fictional resources and institutional providers, no PostgreSQL or genuine institutional authority",
+  "browser": "Edg/155.0.4283.62",
+  "node": "v24.11.1",
+  "scenarios": [
+    {
+      "id": "D10-L01",
+      "title": "real unauthenticated request is rejected",
+      "started_at": "2026-10-24T00:26:40.549+08:00",
+      "finished_at": "2026-10-24T00:26:41.786+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D10-L02",
+      "title": "real administrator login and current D9 review",
+      "started_at": "2026-10-24T00:26:41.787+08:00",
+      "finished_at": "2026-10-24T00:26:42.587+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D10-L03",
+      "title": "real original operators produce a constrained proposal",
+      "started_at": "2026-10-24T00:26:42.588+08:00",
+      "finished_at": "2026-10-24T00:26:46.037+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D10-L04",
+      "title": "real timetable has current source provenance",
+      "started_at": "2026-10-24T00:26:46.038+08:00",
+      "finished_at": "2026-10-24T00:26:46.824+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D10-L05",
+      "title": "real original fitness and admission history are rendered",
+      "started_at": "2026-10-24T00:26:46.826+08:00",
+      "finished_at": "2026-10-24T00:26:47.594+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D10-L06",
+      "title": "real faculty session cannot retrieve the administrator V2 run",
+      "started_at": "2026-10-24T00:26:47.595+08:00",
+      "finished_at": "2026-10-24T00:26:47.864+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D10-L04-real-api-proposal.png",
+      "captured_at": "2026-10-24T00:26:46.818+08:00",
+      "url": "http://localhost:53929/admin/schedules",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D10-L05-real-api-analysis.png",
+      "captured_at": "2026-10-24T00:26:47.591+08:00",
+      "url": "http://localhost:53929/admin/analysis",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "check": "v2-live",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/d10/test_v2_live.py",
+    "-q",
+    "-s",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d10-compat-pytest-20261024T002633237071+0800-v2-live"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T00:26:33.239419+08:00",
+  "finished_at": "2026-10-24T00:26:51.671392+08:00",
+  "elapsed_seconds": 18.432,
+  "exit_code": 0,
+  "stdout": "\u25b6 D10 actual HTTP/Edge V2 with fictional institutional providers\n  \u2714 D10-L01 real unauthenticated request is rejected (1237.5431ms)\n  \u2714 D10-L02 real administrator login and current D9 review (799.9635ms)\n  \u2714 D10-L03 real original operators produce a constrained proposal (3449.9095ms)\n  \u2714 D10-L04 real timetable has current source provenance (786.1513ms)\n  \u2714 D10-L05 real original fitness and admission history are rendered (769.1717ms)\n  \u2714 D10-L06 real faculty session cannot retrieve the administrator V2 run (269.5287ms)\n\u2714 D10 actual HTTP/Edge V2 with fictional institutional providers (10211.6087ms)\n\u2139 tests 7\n\u2139 suites 0\n\u2139 pass 7\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 10217.1027\n\n.\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n1 passed, 2 warnings in 15.59s\n",
+  "stderr": "",
+  "environment": "Whitelisted OS variables only; no database URLs, credentials or approval flags",
+  "scope": "Actual Edge to FastAPI HTTP/SQLite and real GA operators with entirely fictional resources/providers; no PostgreSQL or genuine authority",
+  "sanitization": "Complete/truncated session artifacts, sensitive assignments, headers, keys and credential URIs sanitized before writing"
+}

@@ -1,0 +1,33 @@
+{
+  "check": "v2-engine",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/d10/test_v2_engine.py",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d10-compat-pytest-20261023T235425975636+0800-v2-engine"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-23T23:54:25.977934+08:00",
+  "finished_at": "2026-10-23T23:54:35.580268+08:00",
+  "elapsed_seconds": 9.602,
+  "exit_code": 1,
+  "stdout": "...F...F...............                                                  [100%]\n================================== FAILURES ===================================\n_________ test_adjacent_half_open_interval_is_allowed_and_nonmutating _________\nservices\\ga_v2_engine.py:34: in admit\n    validate_publication(candidate, *templates)\nservices\\ga_publication_service.py:24: in validate_publication\n    raise ValueError(f\"Publication rejected: {key(subject)} fixed institutional schedule changed.\")\nE   ValueError: Publication rejected: ('SYN101', 'SYN-A') fixed institutional schedule changed.\n\nDuring handling of the above exception, another exception occurred:\ntests\\d10\\test_v2_engine.py:73: in test_adjacent_half_open_interval_is_allowed_and_nonmutating\n    engine.admit(candidate,snapshot,constraints.reduced_templates(snapshot,inputs))\nservices\\ga_v2_engine.py:38: in admit\n    reject(\"INVALID_CANDIDATE\", \"Candidate violates existing academic scheduling constraints.\")\nservices\\ga_v2_constraints.py:33: in reject\n    raise ConstraintError(code, message)\nE   services.ga_v2_constraints.ConstraintError: Candidate violates existing academic scheduling constraints.\n_____ test_invalid_constraints_fail_closed[change3-CALENDAR_CONTAINMENT] ______\ntests\\d10\\test_v2_engine.py:83: in test_invalid_constraints_fail_closed\n    with pytest.raises(constraints.ConstraintError) as caught:constraints.validate_snapshot(snapshot,inputs)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE ConstraintError\n=========================== short test summary info ===========================\nFAILED tests/d10/test_v2_engine.py::test_adjacent_half_open_interval_is_allowed_and_nonmutating\nFAILED tests/d10/test_v2_engine.py::test_invalid_constraints_fail_closed[change3-CALENDAR_CONTAINMENT]\n2 failed, 21 passed in 7.69s\n",
+  "stderr": "",
+  "environment": "Whitelisted OS variables only; no database URLs, credentials or approval flags",
+  "scope": "Fictional V2 kernel, constraints and checkpoint tests; authority doubles are unit boundaries, not institutional verification",
+  "sanitization": "Complete/truncated session artifacts, sensitive assignments, headers, keys and credential URIs sanitized before writing",
+  "scope_metadata_correction": {
+    "previous_scope": "Current-release bounded V1 pause/resume regression; not retained historical checkpoint acceptance",
+    "reason": "Early runner reused a generic V1 label; exact command/output are unchanged",
+    "corrected_at": "2026-10-24T00:55:04.645963+08:00",
+    "test_output_and_outcome_unchanged": true
+  }
+}

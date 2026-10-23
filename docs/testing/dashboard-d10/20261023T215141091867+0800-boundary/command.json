@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "docs/testing/dashboard-d10/inspect_integration_boundary.py"
+  ],
+  "cwd": "repository root",
+  "started_at": "2026-10-23T21:51:41.091867+08:00",
+  "finished_at": "2026-10-23T21:51:44.441646+08:00",
+  "elapsed_seconds": 3.35,
+  "exit_code": 0,
+  "environment": "Whitelisted OS variables only; database/credential variables excluded.",
+  "scope": "Synthetic read-only characterization; no actual GA generation, publication, database or filesystem reset.",
+  "stdout": "{\n  \"scope\": \"Read-only synthetic boundary characterization, not acceptance of confirmed GEC generation\",\n  \"checks\": [\n    {\n      \"id\": \"D10-I01\",\n      \"result\": \"PASS\",\n      \"finding\": \"Reset reopens faculty and room reservations, including a fixed_schedule marker; section reservation survives.\"\n    },\n    {\n      \"id\": \"D10-I02\",\n      \"result\": \"PASS\",\n      \"finding\": \"Existing section availability check rejects an overlapping fixed section interval.\"\n    },\n    {\n      \"id\": \"D10-I03\",\n      \"result\": \"PASS\",\n      \"finding\": \"Both operators' conflict/eligibility/load gates do not detect a separate faculty or room commitment. This partial fixture tests these gates only, not complete-duration validity or successful mutation.\"\n    },\n    {\n      \"id\": \"D10-I04\",\n      \"result\": \"PASS\",\n      \"finding\": \"Preassignment declaration has instructor and room identity, with no fixed meeting time or day.\"\n    },\n    {\n      \"id\": \"D10-I05\",\n      \"result\": \"PASS\",\n      \"finding\": \"Orchestration/publication/progress source bytes are engine-fingerprinted; loader rejects mismatched engine identity. Hypothetical byte change was computed only in memory.\"\n    },\n    {\n      \"id\": \"D10-I06\",\n      \"result\": \"PASS\",\n      \"finding\": \"Engine saves best before returning; a router-only check after return would be too late to guard that write. Probes consumed no RNG draws after imports.\"\n    }\n  ],\n  \"passed\": 6,\n  \"failed\": 0,\n  \"GA_generations_executed\": 0,\n  \"fitness_evaluations_executed\": 0,\n  \"database_connections\": 0\n}\n",
+  "stderr": ""
+}
