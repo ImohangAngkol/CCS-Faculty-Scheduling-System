@@ -764,6 +764,11 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       assert.ok(await evaluate(`document.body.textContent.includes('Partially satisfied') && document.body.textContent.includes('Disabled') && document.body.textContent.includes('79%')===false`));
       assert.ok(await evaluate(`document.body.textContent.includes('78.95%') && document.body.textContent.includes('Atty. Eddie Bouy Palad') && !document.body.textContent.includes('external:eddie')`));
       assert.equal(await evaluate(`document.querySelector('select[aria-label="Analysis source"]').value`),archiveId);
+      // Headless Edge can leave this target hidden after the earlier workflow.
+      // Capture the foreground, painted page; DOM readiness alone is insufficient.
+      await client.send('Page.bringToFront');
+      await eventually(()=>evaluate(`document.visibilityState==='visible'`),'Fitness capture target did not become visible');
+      await evaluate(`document.fonts.ready.then(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))))`);
       const shot=await client.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
       await writeFile(new URL('../.cache/fitness-analysis-desktop.png',import.meta.url),Buffer.from(shot.data,'base64'));
     });

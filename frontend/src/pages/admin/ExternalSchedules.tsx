@@ -1,3 +1,5 @@
+import ExternalConfirmationLedger from "../../components/schedule/ExternalConfirmationLedger";
+import type {ConfirmationReview} from "../../api/externalConfirmations";
 import {useEffect, useRef, useState} from "react";
 import type {FormEvent} from "react";
 import axios from "axios";
@@ -23,6 +25,7 @@ function importError(error: unknown): string {
 }
 
 export default function ExternalSchedules() {
+  const [confirmationReview,setConfirmationReview]=useState<ConfirmationReview>();
   const [metadata, setMetadata] = useState<ExternalMetadata>();
   const [metadataErrorText, setMetadataErrorText] = useState("");
   const [attempt, setAttempt] = useState(0);
@@ -45,7 +48,7 @@ export default function ExternalSchedules() {
     return () => controller.abort();
   }, [attempt]);
   useEffect(() => () => pending.current?.abort(), []);
-  function invalidate() {pending.current?.abort(); pending.current = null; setBusy(false); setPreview(undefined); setError("");}
+  function invalidate() {setConfirmationReview(undefined);pending.current?.abort(); pending.current = null; setBusy(false); setPreview(undefined); setError("");}
   function add(event: FormEvent) {
     event.preventDefault(); invalidate();
     if (editing === null && drafts.length >= 200) {setError("The manual queue is limited to 200 rows."); return;}
@@ -129,7 +132,8 @@ export default function ExternalSchedules() {
       <p className="mt-1">Term/date coverage remains unverified. Same-week overlap checks are provisional. This preview is not a constraint set or confirmation.</p>
     </section>}
     {preview?.legacy && <LegacyScheduleProvenance legacy={preview.legacy} />}
-    {preview && metadata && <ExternalScheduleReview key={previewSequence} source={preview} metadata={metadata} />}
+    <ExternalConfirmationLedger review={confirmationReview}/>
+    {preview && metadata && <ExternalScheduleReview key={previewSequence} source={preview} metadata={metadata} onConfirmationReview={setConfirmationReview} />}
     <section className="min-w-0 rounded-xl border border-slate-200 bg-white p-5" aria-labelledby="review-table">
       <h2 id="review-table" className="text-lg font-semibold text-teal-900">Intake review</h2>
       {preview?.review_token && <p className="mt-2 text-sm text-slate-600">Original intake findings before resource reconciliation. The calendar review above shows the currently revalidated mappings; original source text below is unchanged.</p>}

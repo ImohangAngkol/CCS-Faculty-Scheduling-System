@@ -1,3 +1,4 @@
+import type {ConfirmationReview} from "../../api/externalConfirmations";
 import {useEffect, useRef, useState} from "react";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -17,7 +18,7 @@ function ResourceState({value}: {value?: ResourceResolution}) {
   return <p className="mt-1 text-sm text-slate-600">{value ? stateLabels[value.state] + (value.label ? " · " + value.label : "") + (value.method === "explicit" ? " · Explicit preview mapping" : "") : "Awaiting full-batch validation"}</p>;
 }
 
-export default function ExternalScheduleReview({source, metadata}: {source: ExternalPreview; metadata: ExternalMetadata}) {
+export default function ExternalScheduleReview({source, metadata,onConfirmationReview}: {source: ExternalPreview; metadata: ExternalMetadata;onConfirmationReview?:(value:ConfirmationReview|undefined)=>void}) {
   const [projection, setProjection] = useState<ReviewProjection>();
   const [mappings, setMappings] = useState<RowMapping[]>([]);
   const [busy, setBusy] = useState(Boolean(source.review_token));
@@ -34,6 +35,7 @@ export default function ExternalScheduleReview({source, metadata}: {source: Exte
   const assessmentPending = useRef<AbortController | null>(null);
   const invalidations = useRef<Promise<void>>(Promise.resolve());
   useEffect(()=>()=>assessmentPending.current?.abort(),[]);
+  useEffect(()=>{onConfirmationReview?.(assessment?.assessment_receipt?{review_token:source.review_token!,mappings,metadata:completion,assessment_receipt:assessment.assessment_receipt}:undefined);return ()=>onConfirmationReview?.(undefined);},[source,mappings,completion,assessment,onConfirmationReview]);
   useEffect(()=>{
     if(!assessment)return;
     const timer=setTimeout(()=>{setAssessment(undefined);setFreshness("Stale — assessment expired");},Math.min(Math.max(0,Date.parse(assessment.expires_at)-Date.now()),2147483647));

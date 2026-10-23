@@ -73,7 +73,8 @@ def test_migration_chain_and_frozen_ddl_match_models():
     m = migration()
     assert m.revision == "4c_0001" and m.down_revision == "4a_0001"
     script = ScriptDirectory.from_config(Config(str(ROOT / "alembic.ini")))
-    assert script.get_heads() == ["4c_0001"]
+    assert script.get_heads() == ["d9_0001"]
+    assert script.get_revision("d9_0001").down_revision == "4c_0001"
     statements = []
     for table in ACADEMIC_TABLES:
         statements.append(str(CreateTable(table).compile(dialect=postgresql.dialect())).strip())
@@ -214,4 +215,5 @@ def test_alembic_injected_connection_does_not_read_url_or_create_engine(monkeypa
     monkeypatch.setattr(sqlalchemy, "create_engine", denied)
     runpy.run_path(str(ROOT / "migrations/env.py"))
     assert seen[0]["connection"] is connection
-    assert seen[0]["target_metadata"] is Base.metadata
+    from confirmation_models import ConfirmationBase
+    assert seen[0]["target_metadata"] == [Base.metadata, ConfirmationBase.metadata]

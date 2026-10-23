@@ -11,6 +11,7 @@ from routers import fitness_analysis
 from routers import auth
 from routers import schedules
 from routers import external_schedules
+from routers import external_confirmations
 from services.auth_service import allowed_origins
 from services.preference_authorization import require_admin, require_principal
 from fastapi.exceptions import RequestValidationError
@@ -72,6 +73,7 @@ app.include_router(fitness_analysis.router, dependencies=[Depends(require_admin)
 app.include_router(auth.router)
 app.include_router(schedules.router)
 app.include_router(external_schedules.router)
+app.include_router(external_confirmations.router)
 
 
 # ---------------------------------------------------------
