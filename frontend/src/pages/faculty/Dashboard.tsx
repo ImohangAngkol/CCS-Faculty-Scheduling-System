@@ -4,6 +4,7 @@ import {useAuth} from "../../context/AuthContext";
 const links = [
   {to: "/faculty/preferences", title: "My Preferences", status: "Available", description: "Review and save your own teaching preferences."},
   {to: "/faculty/schedule", title: "My Schedule", status: "Read only", description: "View your own assignments from the latest GA-generated proposal."},
+  {to: "/faculty/adjustments", title: "Adjustment Requests", status: "Requires verified schedule source", description: "Prepare, track and withdraw your own proposals without changing your teaching schedule."},
   {to: "/faculty/profile", title: "My Profile", status: "Read only", description: "View your account, linked faculty identity and available academic metadata."},
 ];
 
@@ -28,7 +29,7 @@ export default function Dashboard() {
     </section>
     <section className="rounded-xl border border-slate-200 bg-white p-5">
       <h2 className="font-semibold text-slate-900">Schedule review and adjustments</h2>
-      <p className="mt-2 text-sm text-slate-600">My Schedule shows your GA-generated proposal. Faculty change requests, Department Chair approvals and official schedule publication are not available yet.</p>
+      <p className="mt-2 text-sm text-slate-600">My Schedule shows your GA-generated proposal. Adjustment requests require a verified schedule source. Department Chair approvals and official schedule publication are not available yet.</p>
     </section>
   </div>;
 }

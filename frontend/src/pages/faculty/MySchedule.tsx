@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 import axios from "axios";
 import {useAuth} from "../../context/AuthContext";
 import WeeklySchedule from "../../components/schedule/WeeklySchedule";
@@ -41,6 +42,7 @@ export default function MySchedule() {
       <h1 className="mt-1 text-2xl font-bold text-slate-900">My Schedule</h1>
       <p className="mt-2 text-sm font-semibold text-teal-950">GA-generated proposal</p>
       <p className="mt-2 text-sm text-slate-600">Your assignments from the latest completed GA result. This is a proposal, not an approved or official schedule.</p>
+      <Link className="text-sm text-teal-800 underline" to="/faculty/adjustments">Request an adjustment (verified schedule source required)</Link>
       {binding && <p className="mt-2 text-sm text-slate-600">{binding.display_code} · {binding.name}</p>}
     </header>
     {!binding && <MetadataState title="Faculty binding unavailable" description="Contact an administrator to verify your account binding. No faculty schedule has been selected." />}

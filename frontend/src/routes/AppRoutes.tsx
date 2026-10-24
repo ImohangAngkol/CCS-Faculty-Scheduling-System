@@ -46,6 +46,7 @@ import SubjectManagement from "../pages/admin/SubjectManagement";
 import FacultyDashboard from "../pages/faculty/Dashboard";
 import FacultyProfile from "../pages/faculty/Profile";
 import FacultyMySchedule from "../pages/faculty/MySchedule";
+import AdjustmentRequests from "../pages/faculty/AdjustmentRequests";
 import ExternalSchedules from "../pages/admin/ExternalSchedules";
 
 
@@ -181,6 +182,7 @@ export default function AppRoutes() {
             <ProtectedRoute role="faculty"><FacultyLayout /></ProtectedRoute>
           }
         >
+          <Route path="adjustments" element={<AdjustmentRequests />} />
 
           <Route
             index

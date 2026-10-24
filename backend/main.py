@@ -13,6 +13,7 @@ from routers import schedules
 from routers import external_schedules
 from routers import external_confirmations
 from routers import ga_constrained
+from routers import adjustments
 from services.auth_service import allowed_origins
 from services.preference_authorization import require_admin, require_principal
 from fastapi.exceptions import RequestValidationError
@@ -76,6 +77,7 @@ app.include_router(schedules.router)
 app.include_router(external_schedules.router)
 app.include_router(external_confirmations.router)
 app.include_router(ga_constrained.router)
+app.include_router(adjustments.router)
 
 
 # ---------------------------------------------------------

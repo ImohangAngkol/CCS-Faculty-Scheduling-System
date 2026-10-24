@@ -6,7 +6,8 @@ from identity_models import Base
 import academic_models  # noqa: F401 -- register additive tables; no engine or GA imports
 
 from confirmation_models import ConfirmationBase
-target_metadata = [Base.metadata, ConfirmationBase.metadata]
+from adjustment_models import AdjustmentBase
+target_metadata = [Base.metadata, ConfirmationBase.metadata, AdjustmentBase.metadata]
 
 config = context.config
 connection = config.attributes.get("connection")

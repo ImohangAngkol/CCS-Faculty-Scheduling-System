@@ -8,13 +8,14 @@ const facultyItems = [
   { label: "Dashboard", path: "/faculty" },
   { label: "My Preferences", path: "/faculty/preferences" },
   { label: "My Schedule", path: "/faculty/schedule" },
+  { label: "Adjustment Requests", path: "/faculty/adjustments" },
   { label: "Profile", path: "/faculty/profile" },
 ];
 
 export default function FacultyLayout() {
   const {user} = useAuth();
   const {pathname} = useLocation();
-  const title = ({"/faculty": "Faculty Dashboard", "/faculty/preferences": "My Preferences", "/faculty/schedule": "My Schedule", "/faculty/profile": "Faculty Profile"} as Record<string, string>)[pathname] ?? "Faculty Portal";
+  const title = ({"/faculty": "Faculty Dashboard", "/faculty/preferences": "My Preferences", "/faculty/schedule": "My Schedule", "/faculty/adjustments": "Adjustment Requests", "/faculty/profile": "Faculty Profile"} as Record<string, string>)[pathname] ?? "Faculty Portal";
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 md:flex-row">
       <Sidebar
