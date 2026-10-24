@@ -65,6 +65,11 @@ def institutional_schedule_source():
 
 @contextmanager
 def current_source():
+    from services.published_schedule_views import review_context
+    with review_context() as published:
+        if published is not None:
+            yield published
+            return
     provider = institutional_schedule_source()
     if provider is None:
         raise problem(503, 'ADJUSTMENT_SOURCE_UNAVAILABLE', 'Requests are blocked until a verified schedule revision, academic term, resource catalog and current GEC constraint source are configured. My Schedule remains read only.')
@@ -146,7 +151,7 @@ def public_meeting(meeting):
     return data
 
 
-def validate(source, identity, body):
+def validate(source, identity, body, *, allow_unchanged=False):
     if (body.schedule_id, body.revision) != (source.schedule_id, source.revision):
         raise problem(409, 'STALE_SCHEDULE_REFERENCE', 'This schedule revision was superseded. Reload assignments; the original request remains unchanged.')
     if (body.academic_year, body.term) != (source.academic_year, source.term):
@@ -167,7 +172,7 @@ def validate(source, identity, body):
         raise problem(422, 'MISSING_RESOURCE', 'Select an existing recognized room.')
     if room.kind != original.component:
         raise problem(422, 'ROOM_COMPONENT_MISMATCH', 'The room must support this lecture/laboratory component.')
-    if (p.day, p.start, p.end, p.room_id) == (original.day, original.start, original.end, original.room_id):
+    if not allow_unchanged and (p.day, p.start, p.end, p.room_id) == (original.day, original.start, original.end, original.room_id):
         raise problem(422, 'NO_ADJUSTMENT', 'Change a day, time or room before creating a request.')
     findings = set()
     resources = (('faculty', identity.faculty_id), ('section', original.section_id), ('room', p.room_id))

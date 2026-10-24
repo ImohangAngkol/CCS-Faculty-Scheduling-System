@@ -94,6 +94,10 @@ def detail(db, record, identity):
             'freshness': freshness(record, identity), 'history': [json.loads(e.payload_json) for e in events],
             'schedule_changed': False, 'approval': decision['status'] if decision else 'NOT_IMPLEMENTED_D11'}
     if decision: result.update(decision=decision, base_status=record.status)
+    if decision:
+        from services.schedule_version_store import application_for
+        application = application_for(db, record)
+        if application: result.update(application=application, status='APPLIED', schedule_changed=True)
     return result
 
 

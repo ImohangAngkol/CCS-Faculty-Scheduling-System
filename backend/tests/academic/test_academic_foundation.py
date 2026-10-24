@@ -73,7 +73,8 @@ def test_migration_chain_and_frozen_ddl_match_models():
     m = migration()
     assert m.revision == "4c_0001" and m.down_revision == "4a_0001"
     script = ScriptDirectory.from_config(Config(str(ROOT / "alembic.ini")))
-    assert script.get_heads() == ["d12_0001"]
+    assert script.get_heads() == ["d13_0001"]
+    assert script.get_revision("d13_0001").down_revision == "d12_0001"
     assert script.get_revision("d12_0001").down_revision == "d11_0001"
     assert script.get_revision("d11_0001").down_revision == "d9_0001"
     assert script.get_revision("d9_0001").down_revision == "4c_0001"
@@ -220,4 +221,5 @@ def test_alembic_injected_connection_does_not_read_url_or_create_engine(monkeypa
     from confirmation_models import ConfirmationBase
     from adjustment_models import AdjustmentBase
     from chair_models import ChairBase
-    assert seen[0]["target_metadata"] == [Base.metadata, ConfirmationBase.metadata, AdjustmentBase.metadata, ChairBase.metadata]
+    from application_models import ApplicationBase
+    assert seen[0]["target_metadata"] == [Base.metadata, ConfirmationBase.metadata, AdjustmentBase.metadata, ChairBase.metadata, ApplicationBase.metadata]

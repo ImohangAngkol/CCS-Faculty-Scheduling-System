@@ -40,8 +40,8 @@ export default function MySchedule() {
     <header className="rounded-xl border border-teal-200 bg-teal-50 p-5 sm:p-6">
       <p className="text-sm font-semibold text-teal-800">Faculty timetable · Read only</p>
       <h1 className="mt-1 text-2xl font-bold text-slate-900">My Schedule</h1>
-      <p className="mt-2 text-sm font-semibold text-teal-950">GA-generated proposal</p>
-      <p className="mt-2 text-sm text-slate-600">Your assignments from the latest completed GA result. This is a proposal, not an approved or official schedule.</p>
+      <p className="mt-2 text-sm font-semibold text-teal-950">{data?.schema_version===2?data.source.label:"GA-generated proposal"}</p>
+      <p className="mt-2 text-sm text-slate-600">{data?.schema_version===2?"Your own assignments from the verified published version. Original GA results remain unchanged.":"Your assignments from the latest completed GA result. This is a proposal, not an approved or official schedule."}</p>
       <Link className="text-sm text-teal-800 underline" to="/faculty/adjustments">Request an adjustment (verified schedule source required)</Link>
       {binding && <p className="mt-2 text-sm text-slate-600">{binding.display_code} · {binding.name}</p>}
     </header>
@@ -51,9 +51,9 @@ export default function MySchedule() {
     {data?.availability === "missing" && <MetadataState title="No GA proposal available" description="No completed GA result has been saved. Ask an administrator to generate a proposal." />}
     {data && data.availability !== "missing" && <>
       <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-950" role="status">
-        <p>Source status: compatible with loaded scheduling inputs. Original input freshness was not recorded in this legacy result.</p>
+        {data.schema_version===2?<><p>Published version {data.source.sequence} | {data.source.academic_year} | {data.source.term}</p><p className="break-all">Publication revision: {data.source.revision}</p><p>Post-GA adjustments: {data.source.post_ga_changes?"Yes":"No"}. This history read does not certify current institutional constraints; application requires fresh validation.</p></>:<><p>Source status: compatible with loaded scheduling inputs. Original input freshness was not recorded in this legacy result.</p>
         {data.source.saved_at && <p className="mt-1">Saved source updated: <time dateTime={data.source.saved_at}>{new Date(data.source.saved_at).toLocaleString()}</time></p>}
-        <p className="mt-1">The source timestamp is not an approval date. An academic year and official publication status are not recorded.</p>
+        <p className="mt-1">The source timestamp is not an approval date. An academic year and official publication status are not recorded.</p></>}
       </div>
       {data.availability === "empty" ? <MetadataState title="No assignments in this proposal" description="The saved proposal contains no assignments for your verified faculty identity." /> : <>
         <section aria-label="Weekly timetable" className="min-w-0"><WeeklySchedule entries={entries} viewMode="faculty" /></section>

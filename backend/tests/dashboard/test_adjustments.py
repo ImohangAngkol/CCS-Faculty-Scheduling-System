@@ -28,6 +28,8 @@ def setup(fixture, monkeypatch):
     AdjustmentBase.metadata.create_all(f.engine)
     from tests.dashboard.chair_sqlite import install
     install(f.engine)
+    from tests.dashboard.application_sqlite import install as install_application
+    install_application(f.engine)
     # SQLite append-only equivalents, fixture-owned schema only. PostgreSQL
     # migration functions are rendered/tested offline separately.
     with f.engine.begin() as db:

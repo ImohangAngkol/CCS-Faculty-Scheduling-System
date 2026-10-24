@@ -59,7 +59,7 @@ def history(request_id: UUID, identity=Depends(bound_faculty), account=Depends(a
 @router.get('/{request_id}/status')
 def status(request_id: UUID, identity=Depends(bound_faculty), account=Depends(authenticated_session), db=Depends(get_identity_db)):
     result = detail(request_id, identity, account, db)
-    return {k: result[k] for k in ('id', 'status', 'version', 'freshness', 'approval', 'schedule_changed', 'decision', 'base_status') if k in result}
+    return {k: result[k] for k in ('id', 'status', 'version', 'freshness', 'approval', 'schedule_changed', 'decision', 'base_status', 'application') if k in result}
 
 
 @router.post('/{request_id}/{action}')

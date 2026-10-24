@@ -49,6 +49,7 @@ import FacultyMySchedule from "../pages/faculty/MySchedule";
 import AdjustmentRequests from "../pages/faculty/AdjustmentRequests";
 import ExternalSchedules from "../pages/admin/ExternalSchedules";
 import ChairRequests from "../pages/chair/Requests";
+import ScheduleApplications from "../pages/admin/ScheduleApplications";
 
 
 // =============================================
@@ -69,6 +70,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/chair/requests" element={<ChairRequests />} />
+        <Route path="/schedule-applications" element={<ScheduleApplications />} />
 
         {/* ROOT */}
 

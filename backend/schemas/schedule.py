@@ -35,3 +35,26 @@ class MyScheduleResponse(BaseModel):
     faculty_code: int = Field(ge=0)
     source: FacultyScheduleSource
     assignments: list[FacultyAssignment]
+
+
+class PublishedFacultySource(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    kind: Literal['published_schedule']
+    label: Literal['Published schedule with authorized post-GA changes','Verified published source']
+    version_id: UUID | None
+    sequence: int=Field(ge=1)
+    revision: str
+    academic_year: str
+    term: str
+    post_ga_changes: bool
+    constraint_status: Literal['NOT_RECHECKED_READ_ONLY']
+
+
+class PublishedFacultyResponse(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    schema_version: Literal[2]=2
+    availability: Literal['available','empty']
+    faculty_id: UUID
+    faculty_code: int=Field(ge=0)
+    source: PublishedFacultySource
+    assignments: list[FacultyAssignment]
