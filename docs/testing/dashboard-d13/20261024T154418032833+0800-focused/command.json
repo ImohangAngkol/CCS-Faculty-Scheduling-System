@@ -1,0 +1,29 @@
+{
+  "check": "focused",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_schedule_applications.py",
+    "tests/dashboard/test_application_migration.py",
+    "tests/dashboard/test_application_trust.py",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d13-pytest-20261024T154418032833+0800-focused"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T15:44:18.034840+08:00",
+  "finished_at": "2026-10-24T15:45:51.470564+08:00",
+  "elapsed_seconds": 93.436,
+  "exit_code": 0,
+  "stdout": "..........................................                               [100%]\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\ntests/dashboard/test_application_migration.py::test_offline_upgrade_downgrade_refuses_history\ntests/dashboard/test_application_migration.py::test_offline_upgrade_downgrade_refuses_history\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\alembic\\config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.\n    util.warn_deprecated(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n42 passed, 4 warnings in 89.63s (0:01:29)\n",
+  "stderr": "",
+  "scope": "D13 actual FastAPI/auth/transactional SQLite with fictional independent publisher, Chair and published schedule; PostgreSQL SQL rendering only",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

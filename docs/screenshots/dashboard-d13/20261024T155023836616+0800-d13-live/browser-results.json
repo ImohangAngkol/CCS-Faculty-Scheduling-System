@@ -1,0 +1,155 @@
+{
+  "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real authentication, Chair decisions and application transactions. Independent publisher, Chair, published-source, capacity and trust providers are explicitly fictional. Storage and trust faults are fixture injections; real D8-D10 verification is exercised separately by backend tests. No PostgreSQL or institutional approval.",
+  "browser": "Edg/155.0.4283.62",
+  "node": "v24.11.1",
+  "scenarios": [
+    {
+      "id": "D13-L01",
+      "title": "anonymous application API and route deny access",
+      "started_at": "2026-10-24T15:50:31.246+08:00",
+      "finished_at": "2026-10-24T15:50:32.381+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D13-L02",
+      "title": "faculty submits proposed change against explicit fictional published source",
+      "started_at": "2026-10-24T15:50:32.382+08:00",
+      "finished_at": "2026-10-24T15:50:34.333+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D13-L03",
+      "title": "Chair approval remains pending and does not grant publishing",
+      "started_at": "2026-10-24T15:50:34.333+08:00",
+      "finished_at": "2026-10-24T15:50:36.049+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D13-L04",
+      "title": "independent scheduler previews before/after and complete rules without writing versions",
+      "started_at": "2026-10-24T15:50:36.050+08:00",
+      "finished_at": "2026-10-24T15:50:37.323+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D13-L05",
+      "title": "injected persistence failure rolls back version, head and application together",
+      "started_at": "2026-10-24T15:50:37.324+08:00",
+      "finished_at": "2026-10-24T15:50:37.747+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D13-L06",
+      "title": "recovery publishes one new version after explicit confirmation",
+      "started_at": "2026-10-24T15:50:37.748+08:00",
+      "finished_at": "2026-10-24T15:50:38.858+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D13-L07",
+      "title": "faculty sees APPLIED audit and new published timetable after refresh",
+      "started_at": "2026-10-24T15:50:38.860+08:00",
+      "finished_at": "2026-10-24T15:50:40.417+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D13-L08",
+      "title": "another faculty identity cannot read private request or application history",
+      "started_at": "2026-10-24T15:50:40.418+08:00",
+      "finished_at": "2026-10-24T15:50:40.998+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D13-L09",
+      "title": "rejected request cannot be applied through the real API",
+      "started_at": "2026-10-24T15:50:40.999+08:00",
+      "finished_at": "2026-10-24T15:51:13.988+08:00",
+      "result": "FAIL",
+      "error": "Enabled button missing: Sign out"
+    },
+    {
+      "id": "D13-L10",
+      "title": "new request uses current published revision and receives a new approval",
+      "started_at": "2026-10-24T15:51:13.990+08:00",
+      "finished_at": "2026-10-24T15:51:44.043+08:00",
+      "result": "FAIL",
+      "error": "Enabled button missing: Sign out"
+    },
+    {
+      "id": "D13-L11",
+      "title": "injected current GEC trust loss blocks application while retaining current version",
+      "started_at": "2026-10-24T15:51:44.044+08:00",
+      "finished_at": "2026-10-24T15:52:14.118+08:00",
+      "result": "FAIL",
+      "error": "Missing live UI text: Approved requests"
+    },
+    {
+      "id": "D13-L12",
+      "title": "concurrent HTTP application attempts retain one final publication",
+      "started_at": "2026-10-24T15:52:14.119+08:00",
+      "finished_at": "2026-10-24T15:52:14.182+08:00",
+      "result": "FAIL",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   422,\n+   422\n-   200,\n-   409\n  ]\n"
+    },
+    {
+      "id": "D13-L13",
+      "title": "mobile retained published versions are read-only and contained",
+      "started_at": "2026-10-24T15:52:14.182+08:00",
+      "finished_at": "2026-10-24T15:52:44.238+08:00",
+      "result": "FAIL",
+      "error": "Missing live UI text: Approved requests"
+    },
+    {
+      "id": "D13-L14",
+      "title": "ordinary authenticated account has no publication controls or cached private review",
+      "started_at": "2026-10-24T15:52:44.239+08:00",
+      "finished_at": "2026-10-24T15:52:45.735+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D13-L04-validated-application-preview.png",
+      "captured_at": "2026-10-24T15:50:37.320+08:00",
+      "url": "http://localhost:51916/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D13-L05-rollback-blocked.png",
+      "captured_at": "2026-10-24T15:50:37.743+08:00",
+      "url": "http://localhost:51916/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D13-L06-applied-version-history.png",
+      "captured_at": "2026-10-24T15:50:38.853+08:00",
+      "url": "http://localhost:51916/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D13-L07-faculty-published-timetable.png",
+      "captured_at": "2026-10-24T15:50:40.414+08:00",
+      "url": "http://localhost:51916/faculty/schedule",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    }
+  ],
+  "runtime_errors": [
+    "TypeError: Cannot read properties of undefined (reading 'map')\n    at Dashboard (http://localhost:51916/src/pages/admin/Dashboard.tsx:305:78)\n    at Object.react_stack_bottom_frame (http://localhost:51916/node_modules/.vite/deps/react-dom_client.js?v=a7cb31e1:12866:12)\n    at renderWithHooks (http://localhost:51916/node_modules/.vite/deps/react-dom_client.js?v=a7cb31e1:4213:19)\n    at updateFunctionComponent (http://localhost:51916/node_modules/.vite/deps/react-dom_client.js?v=a7cb31e1:5569:16)\n    at beginWork (http://localhost:51916/node_modules/.vite/deps/react-dom_client.js?v=a7cb31e1:6140:20)\n    at runWithFiberInDEV (http://localhost:51916/node_modules/.vite/deps/react-dom_client.js?v=a7cb31e1:851:66)\n    at performUnitOfWork (http://localhost:51916/node_modules/.vite/deps/react-dom_client.js?v=a7cb31e1:8429:92)\n    at workLoopSync (http://localhost:51916/node_modules/.vite/deps/react-dom_client.js?v=a7cb31e1:8325:37)\n    at renderRootSync (http://localhost:51916/node_modules/.vite/deps/react-dom_client.js?v=a7cb31e1:8309:6)\n    at performWorkOnRoot (http://localhost:51916/node_modules/.vite/deps/react-dom_client.js?v=a7cb31e1:7994:27)"
+  ]
+}

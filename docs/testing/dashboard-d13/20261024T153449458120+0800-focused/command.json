@@ -1,0 +1,28 @@
+{
+  "check": "focused",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_schedule_applications.py",
+    "tests/dashboard/test_application_migration.py",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d13-pytest-20261024T153449458120+0800-focused"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T15:34:49.459948+08:00",
+  "finished_at": "2026-10-24T15:35:52.449835+08:00",
+  "elapsed_seconds": 62.99,
+  "exit_code": 1,
+  "stdout": "........................F.......                                         [100%]\n================================== FAILURES ===================================\n_________________ test_fresh_complete_validation[assignment] __________________\ntests\\dashboard\\test_schedule_applications.py:157: in test_fresh_complete_validation\n    reply=apply(f,r,body);assert reply.status_code in (409,403,503),reply.json();assert counts(f)==[0,0,0]\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   AssertionError: {'detail': {'code': 'ASSIGNMENT_NOT_FOUND', 'message': 'No authorized assignment matches this reference.'}}\nE   assert 404 in (409, 403, 503)\nE    +  where 404 = <Response [404 Not Found]>.status_code\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\ntests/dashboard/test_application_migration.py::test_offline_upgrade_downgrade_refuses_history\ntests/dashboard/test_application_migration.py::test_offline_upgrade_downgrade_refuses_history\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\alembic\\config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.\n    util.warn_deprecated(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/dashboard/test_schedule_applications.py::test_fresh_complete_validation[assignment]\n1 failed, 31 passed, 4 warnings in 59.95s\n",
+  "stderr": "",
+  "scope": "D13 actual FastAPI/auth/transactional SQLite with fictional independent publisher, Chair and published schedule; PostgreSQL SQL rendering only",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

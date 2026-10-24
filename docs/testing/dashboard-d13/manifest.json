@@ -1,0 +1,1241 @@
+{
+  "milestone": "D13",
+  "status": "IMPLEMENTED AND VERIFIED IN ISOLATED FICTIONAL ENVIRONMENTS; PRODUCTION SOURCE AND POSTGRESQL ACCEPTANCE BLOCKED",
+  "recorded_at": "2026-10-24T16:08:45.616813+08:00",
+  "baseline_commit": "d0d548d8ede489246011ab67e9c85967afc4729b",
+  "latest_commands": {
+    "focused": {
+      "path": "docs/testing/dashboard-d13/20261024T160010820940+0800-focused/command.json",
+      "exit_code": 0,
+      "scope": "D13 actual FastAPI/auth/transactional SQLite with fictional independent publisher, Chair and published schedule; PostgreSQL SQL rendering only"
+    },
+    "build": {
+      "path": "docs/testing/dashboard-d13/20261024T160200225700+0800-build/command.json",
+      "exit_code": 0,
+      "scope": "Production frontend compilation/bundling, not browser or database acceptance"
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-d13/20261024T160201567019+0800-lint/command.json",
+      "exit_code": 0,
+      "scope": "Focused ESLint; existing warnings are retained without changing legacy page logic"
+    },
+    "contracts": {
+      "path": "docs/testing/dashboard-d13/20261024T160203149002+0800-contracts/command.json",
+      "exit_code": 0,
+      "scope": "Frontend API/model contracts, not rendered UI or live backend authorization"
+    },
+    "d12-backend": {
+      "path": "docs/testing/dashboard-d13/20261024T154233626188+0800-d12-backend/command.json",
+      "exit_code": 0,
+      "scope": "D12 real FastAPI authentication/transactions with explicit fictional Chair and schedule providers; owned SQLite only, PostgreSQL rendering offline"
+    },
+    "d11-backend": {
+      "path": "docs/testing/dashboard-d13/20261024T154245266446+0800-d11-backend/command.json",
+      "exit_code": 0,
+      "scope": "D11 real FastAPI sessions/ownership and SQLAlchemy transactions, fictional guarded schedule/catalog and owned SQLite; offline PostgreSQL SQL rendering only"
+    },
+    "d13-live": {
+      "path": "docs/testing/dashboard-d13/20261024T160014331704+0800-d13-live/command.json",
+      "exit_code": 0,
+      "scope": "Actual Edge/React to owned FastAPI/SQLite with real auth and fictional independent application/Chair/publication providers; no PostgreSQL or genuine institutional authority"
+    },
+    "backend": {
+      "path": "docs/testing/dashboard-d13/20261024T154719876796+0800-backend/command.json",
+      "exit_code": 0,
+      "scope": "Existing D2-D9 FastAPI/validation regressions using fictional fixtures and SQLite"
+    },
+    "academic-offline": {
+      "path": "docs/testing/dashboard-d13/20261024T154732019121+0800-academic-offline/command.json",
+      "exit_code": 0,
+      "scope": "Academic foundation offline tests only; no PostgreSQL cases selected"
+    },
+    "ga-resource-regressions": {
+      "path": "docs/testing/dashboard-d13/20261024T154739123448+0800-ga-resource-regressions/command.json",
+      "exit_code": 0,
+      "scope": "Original preassignment/reset/resource regression fixtures; current academic inputs read internally, never modified"
+    },
+    "v1-fixtures": {
+      "path": "docs/testing/dashboard-d13/20261024T154746297187+0800-v1-fixtures/command.json",
+      "exit_code": 0,
+      "scope": "Fictional current-release V1 fixtures with original operators and actual checkpoint I/O/continuation"
+    },
+    "v2-engine": {
+      "path": "docs/testing/dashboard-d13/20261024T154758462700+0800-v2-engine/command.json",
+      "exit_code": 0,
+      "scope": "Fictional V2 kernel, constraints and checkpoint tests; authority doubles are unit boundaries, not institutional verification"
+    },
+    "v2-api": {
+      "path": "docs/testing/dashboard-d13/20261024T154809977281+0800-v2-api/command.json",
+      "exit_code": 0,
+      "scope": "Actual FastAPI ASGI auth and D8/D9 transactions against owned SQLite with fictional resources/providers; no browser or PostgreSQL"
+    },
+    "browser-regressions": {
+      "path": "docs/testing/dashboard-d13/20261024T155729769848+0800-browser-regressions/command.json",
+      "exit_code": 0,
+      "scope": "Existing D1-D8 actual Edge/React regressions with synthetic HTTP replies"
+    },
+    "backend-regressions": {
+      "path": "docs/testing/dashboard-d13/20261024T155916127913+0800-backend-regressions/command.json",
+      "exit_code": 0,
+      "scope": "Existing auth and GA control regression fixtures, no production database"
+    },
+    "ga-browser": {
+      "path": "docs/testing/dashboard-d13/20261024T155918096767+0800-ga-browser/command.json",
+      "exit_code": 0,
+      "scope": "Existing GA actual Edge/React regressions with synthetic HTTP replies"
+    },
+    "v2-browser": {
+      "path": "docs/testing/dashboard-d13/20261024T160013876263+0800-v2-browser/command.json",
+      "exit_code": 0,
+      "scope": "Actual Edge/React with synthetic HTTP replies; no live FastAPI authorization or GA execution"
+    },
+    "d11-live": {
+      "path": "docs/testing/dashboard-d13/20261024T160051433516+0800-d11-live/command.json",
+      "exit_code": 0,
+      "scope": "Actual Edge/React to owned FastAPI/SQLite with real faculty authentication; fictional guarded schedule/term/resource source, no genuine authority or PostgreSQL"
+    },
+    "d12-live": {
+      "path": "docs/testing/dashboard-d13/20261024T160052432689+0800-d12-live/command.json",
+      "exit_code": 0,
+      "scope": "Actual Edge/React to owned FastAPI/SQLite with real authentication and fictional Chair/schedule/trust providers; no institutional authority or PostgreSQL"
+    },
+    "v2-live": {
+      "path": "docs/testing/dashboard-d13/20261024T160053461181+0800-v2-live/command.json",
+      "exit_code": 0,
+      "scope": "Actual Edge to FastAPI HTTP/SQLite and real GA operators with entirely fictional resources/providers; no PostgreSQL or genuine authority"
+    },
+    "live": {
+      "path": "docs/testing/dashboard-d13/20261024T160205992852+0800-live/command.json",
+      "exit_code": 0,
+      "scope": "Existing D9 actual Edge/FastAPI HTTP/SQLite regressions with fictional providers; no PostgreSQL"
+    },
+    "publication-preservation": {
+      "path": "docs/testing/dashboard-d13/20261024T160810140628+0800-publication-preservation/command.json",
+      "exit_code": 0,
+      "scope": "Additional exact RNG-state and synthetic original-source byte preservation assertion across real D13 SQLite application, replay, version/history and own timetable reads"
+    }
+  },
+  "results": {
+    "focused_backend_and_offline_migration": 47,
+    "D12_backend": 42,
+    "D11_backend": 33,
+    "new_frontend_contracts": 16,
+    "all_frontend_contracts": 205,
+    "D13_real_HTTP_browser_scenarios": 14,
+    "D13_live_pytest_wrappers": 1,
+    "D2_D9_backend": 327,
+    "auth_control": 46,
+    "academic_offline": 85,
+    "original_resource": 3,
+    "V1_original_operator_continuation_fixtures": 4,
+    "V2_kernel": 30,
+    "V2_API": 18,
+    "publication_RNG_and_source_preservation_rerun": 1,
+    "D1_D8_synthetic_HTTP_browser_scenarios": 125,
+    "GA_synthetic_HTTP_browser_scenarios": 51,
+    "D10_synthetic_HTTP_browser_scenarios": 12,
+    "D9_real_HTTP_browser_scenarios": 16,
+    "D10_real_HTTP_browser_scenarios": 6,
+    "D11_real_HTTP_browser_scenarios": 12,
+    "D12_real_HTTP_browser_scenarios": 12,
+    "build": "PASS with existing bundling warnings",
+    "focused_ESLint": "0 errors, 0 warnings"
+  },
+  "preservation": {
+    "baseline_files": 1124,
+    "byte_identical": 1108,
+    "intended_modified": [
+      "backend/main.py",
+      "backend/migrations/env.py",
+      "backend/routers/adjustments.py",
+      "backend/routers/schedules.py",
+      "backend/schemas/schedule.py",
+      "backend/services/adjustment_schedule_service.py",
+      "backend/services/adjustment_service.py",
+      "backend/tests/academic/test_academic_foundation.py",
+      "backend/tests/dashboard/test_adjustments.py",
+      "frontend/src/api/adjustments.ts",
+      "frontend/src/components/common/AccountMenu.tsx",
+      "frontend/src/pages/faculty/AdjustmentRequests.tsx",
+      "frontend/src/pages/faculty/MySchedule.tsx",
+      "frontend/src/routes/AppRoutes.tsx",
+      "frontend/src/services/scheduleService.ts",
+      "frontend/tests/mySchedule.browser.test.mjs"
+    ],
+    "academic_data_files_unchanged": 23,
+    "protected_preferences_unchanged": true,
+    "original_GA_V1_V2_sources_and_six_historical_checkpoints_unchanged": true,
+    "index_HEAD_origin_unchanged": true,
+    "production_PostgreSQL_operations": 0,
+    "existing_schedule_file_mutations": 0,
+    "D13_implemented": true,
+    "fixture_SQLite_application_transactions": true
+  },
+  "new_source_and_test_files": [
+    "backend/application_models.py",
+    "backend/migrations/versions/d13_0001_schedule_application.py",
+    "backend/routers/schedule_applications.py",
+    "backend/schemas/schedule_applications.py",
+    "backend/services/application_authority_service.py",
+    "backend/services/published_schedule_source.py",
+    "backend/services/published_schedule_views.py",
+    "backend/services/schedule_application_service.py",
+    "backend/services/schedule_version_store.py",
+    "backend/tests/dashboard/application_restart_child.py",
+    "backend/tests/dashboard/application_sqlite.py",
+    "backend/tests/dashboard/test_application_migration.py",
+    "backend/tests/dashboard/test_application_trust.py",
+    "backend/tests/dashboard/test_applications_live.py",
+    "backend/tests/dashboard/test_schedule_applications.py",
+    "frontend/src/api/scheduleApplicationModel.ts",
+    "frontend/src/api/scheduleApplications.ts",
+    "frontend/src/components/common/ApplicationReviewLink.tsx",
+    "frontend/src/pages/admin/ScheduleApplications.tsx",
+    "frontend/tests/scheduleApplications.live.mjs",
+    "frontend/tests/scheduleApplications.test.mjs"
+  ],
+  "historical_nonzero_commands": [
+    {
+      "path": "docs/testing/dashboard-d13/20261024T153449458120+0800-focused/command.json",
+      "check": "focused",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154102533237+0800-focused/command.json",
+      "check": "focused",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154602177842+0800-d13-live/command.json",
+      "check": "d13-live",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T155023836616+0800-d13-live/command.json",
+      "check": "d13-live",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T155152830546+0800-focused/command.json",
+      "check": "focused",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T155728449437+0800-d13-live/command.json",
+      "check": "d13-live",
+      "exit_code": 1
+    }
+  ],
+  "privacy": {
+    "findings": [],
+    "methods": [
+      "Full/truncated encoded/signed fragments, credential URIs, private keys and bearer scans",
+      "Decoded JSON strings and sensitive assignment/header checks for all command output",
+      "Locally compare private faculty names without exporting them",
+      "PNG CRC/metadata checks and original-image visual review"
+    ],
+    "screenshots": [
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T154602177842+0800-d13-live/D13-L04-validated-application-preview.png",
+        "sha256": "e27a4c32ee475566fcb1b46e623eb4a35fe91245ac2ea72dbe957c616ce24dc8",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T154602177842+0800-d13-live/D13-L05-rollback-blocked.png",
+        "sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T154602177842+0800-d13-live/D13-L06-applied-version-history.png",
+        "sha256": "aa791b80475360a799bcdcda4e3e49ea2a690acd93df4914ee56d7727d4c5a8a",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T154602177842+0800-d13-live/D13-L07-faculty-published-timetable.png",
+        "sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T155023836616+0800-d13-live/D13-L04-validated-application-preview.png",
+        "sha256": "accadfee30a6093b7ed41afe72bd1fbe5d3d061da908a975a83197a1c02b8d92",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T155023836616+0800-d13-live/D13-L05-rollback-blocked.png",
+        "sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T155023836616+0800-d13-live/D13-L06-applied-version-history.png",
+        "sha256": "bbac039220e793ec47d1834d593b30a3e75e54d905e59737820a4b90bb3c4b95",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T155023836616+0800-d13-live/D13-L07-faculty-published-timetable.png",
+        "sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T155728449437+0800-d13-live/D13-L04-validated-application-preview.png",
+        "sha256": "4867809d872c1e0fc1a642b0b079c07ef307d00bb50d0f38b168f8cd093dd11e",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T155728449437+0800-d13-live/D13-L05-rollback-blocked.png",
+        "sha256": "c3fd9e337c05842881a195294dcb7748d4fbf77cb79371ac0630a3c22d9dd374",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T155728449437+0800-d13-live/D13-L06-applied-version-history.png",
+        "sha256": "bbd064b8da99d4f8b3652cd0c6c0ba8a3e918a787d3632c6e50cf8440da6f5a5",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T155728449437+0800-d13-live/D13-L07-faculty-published-timetable.png",
+        "sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L04-validated-application-preview.png",
+        "sha256": "0d6ef665ea03c13ae030189068326bd2afe204805ad75111bed1dad5435007cb",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L05-rollback-blocked.png",
+        "sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L06-applied-version-history.png",
+        "sha256": "7620dc72fcf90e35df9f8d0ec8ebcc48e14ec8541d043c6646541ac1374d32a6",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L07-faculty-published-timetable.png",
+        "sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L11-trust-unavailable-blocked.png",
+        "sha256": "5679e3713011878428a7a584ece4ebd5b51e54cab03b08ec2878d8905af28e63",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L13-mobile-preserved-version.png",
+        "sha256": "f5e92ce8373596a18698adb406e2ab0280b72d7b8bb26462747a645f08eebe0d",
+        "width": 390,
+        "height": 844,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional publisher/Chair directories, scope, published source, capacity and trust providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      }
+    ],
+    "unique_images": 13,
+    "raw_databases_checkpoints_HAR_or_session_payloads_archived": false
+  },
+  "limitations": [
+    "Production application/Chair authority, guarded published source, verified complete metadata and D8-D10 providers remain unconfigured/BLOCKED",
+    "D13 live browser uses explicitly fictional authority/publication/capacity/trust providers; real D8/D9/D10 confirmation validation is exercised separately by backend integration tests with fictional issuers",
+    "17 Phase4C PostgreSQL tests and D9-D13 PostgreSQL migration/trigger/transaction/concurrency/locking acceptance NOT RUN",
+    "SQLite fixture triggers and offline PostgreSQL SQL rendering are not live PostgreSQL migration acceptance",
+    "Deployment requires separately approved additive D13 migration; existing unmigrated decision-aware storage fails closed",
+    "No public GA-to-published promotion, appeals, arbitrary revision rebasing, persistent failed-attempt ledger, automatic GA execution or fitness recalculation",
+    "Complete queue, schedule and history bounds are 1000; oversized inputs fail rather than return partial data",
+    "Historical failures and intermediate screenshots retained; final browser run is authoritative for D13 acceptance"
+  ],
+  "hash_convention": "Raw-byte SHA-256 of reviewed working files; current manifest excludes itself. Hashes do not prove institutional authority.",
+  "artifacts": [
+    {
+      "path": "backend/application_models.py",
+      "bytes": 2953,
+      "sha256": "0a6f387fdc9f3310f86bdd2e6e7de7040c85f438d1bf8991ba0b4c24e8135d01",
+      "git_blob_sha1": "ca487964420c9fdf7f732629bd198597f7686044",
+      "git_blob_sha256": "0a6f387fdc9f3310f86bdd2e6e7de7040c85f438d1bf8991ba0b4c24e8135d01",
+      "git_blob_bytes": 2953
+    },
+    {
+      "path": "backend/main.py",
+      "bytes": 3583,
+      "sha256": "baf9f95f0eb2f02c6c146a22b705709230b64bb989b5aaee499fb34d328cf17a",
+      "git_blob_sha1": "69802db039f717cbc8bad427719bb56114762e0b",
+      "git_blob_sha256": "09c7283674d100473141c5aef6c5abf9f4b9375d8f38369b6b7be3e030afc1a4",
+      "git_blob_bytes": 3480
+    },
+    {
+      "path": "backend/migrations/env.py",
+      "bytes": 1793,
+      "sha256": "c7de2c08d4a07d65ed9f0f0d5220161d9ae2c642751ac9371efb4564e667ea6e",
+      "git_blob_sha1": "2b91ba24e9fba2986e8c8b889100dc92b433aa35",
+      "git_blob_sha256": "016176281cee159c959d7a28e9f6454f25e1a594eed8b55dbaaa0d7c4669215e",
+      "git_blob_bytes": 1757
+    },
+    {
+      "path": "backend/migrations/versions/d13_0001_schedule_application.py",
+      "bytes": 5847,
+      "sha256": "9607a8aa5e1409d66c787f9c45a99b9b75f276f19a99f74ced570ec743fc926b",
+      "git_blob_sha1": "3d329b534c976be61aa4cad64b2f8b6a695e6d28",
+      "git_blob_sha256": "cbf28c107e12e36a0761b92f10664c0292166a72ff2f2b5d899164623e5d01b4",
+      "git_blob_bytes": 5826
+    },
+    {
+      "path": "backend/routers/adjustments.py",
+      "bytes": 3490,
+      "sha256": "270ba832de5402fe5c944fb79bd0bf9d852a6578655028c52e1449b6296b47db",
+      "git_blob_sha1": "de56e59309ce26c901194b2aa9c558a6fa4aab07",
+      "git_blob_sha256": "270ba832de5402fe5c944fb79bd0bf9d852a6578655028c52e1449b6296b47db",
+      "git_blob_bytes": 3490
+    },
+    {
+      "path": "backend/routers/schedule_applications.py",
+      "bytes": 2758,
+      "sha256": "91cc3c158a8f66cf903971422343e0f4e637eb389be0b1b039af7d5ebc953e2d",
+      "git_blob_sha1": "f2fc6274a2fb2a10d3bc6d7e63d5b732ce4c18a9",
+      "git_blob_sha256": "91cc3c158a8f66cf903971422343e0f4e637eb389be0b1b039af7d5ebc953e2d",
+      "git_blob_bytes": 2758
+    },
+    {
+      "path": "backend/routers/schedules.py",
+      "bytes": 2104,
+      "sha256": "d054bf138691c6778adda3eb065beac35eb03f36f6ff28164421f79b443b93a5",
+      "git_blob_sha1": "6422e50908b5bff8f8a7df1d223fb5bd7ae0fb90",
+      "git_blob_sha256": "d054bf138691c6778adda3eb065beac35eb03f36f6ff28164421f79b443b93a5",
+      "git_blob_bytes": 2104
+    },
+    {
+      "path": "backend/schemas/schedule.py",
+      "bytes": 1943,
+      "sha256": "dd776d5eea17159b7b487392d829979b0a7499da9698914e8dbb86b54764fc45",
+      "git_blob_sha1": "b71735867ccb5d589d331622e04764ca6e72ba95",
+      "git_blob_sha256": "dd776d5eea17159b7b487392d829979b0a7499da9698914e8dbb86b54764fc45",
+      "git_blob_bytes": 1943
+    },
+    {
+      "path": "backend/schemas/schedule_applications.py",
+      "bytes": 441,
+      "sha256": "08850450a2557e43deedf689613023e5f34e69a546e9521995dd9874a566d07d",
+      "git_blob_sha1": "e1bae7598f82a50c20187b347366fdb0d80923af",
+      "git_blob_sha256": "08850450a2557e43deedf689613023e5f34e69a546e9521995dd9874a566d07d",
+      "git_blob_bytes": 441
+    },
+    {
+      "path": "backend/services/adjustment_schedule_service.py",
+      "bytes": 10633,
+      "sha256": "e12bd33e629f765375a6bc97bf253129fe6c24a82bca60dec7d7ca032e353dee",
+      "git_blob_sha1": "fe9ce476f543b0514ba726b4248f83b0106c7b84",
+      "git_blob_sha256": "e12bd33e629f765375a6bc97bf253129fe6c24a82bca60dec7d7ca032e353dee",
+      "git_blob_bytes": 10633
+    },
+    {
+      "path": "backend/services/adjustment_service.py",
+      "bytes": 13198,
+      "sha256": "7e5f341c136cd9cbe2b2e0a9c59ee5e2569d12abcea0bac3a3cd880553591124",
+      "git_blob_sha1": "8344ef2e2c4e52ec8d057ee7504061ac213b7a63",
+      "git_blob_sha256": "7e5f341c136cd9cbe2b2e0a9c59ee5e2569d12abcea0bac3a3cd880553591124",
+      "git_blob_bytes": 13198
+    },
+    {
+      "path": "backend/services/application_authority_service.py",
+      "bytes": 2293,
+      "sha256": "0b2663dba6223fd8d4ce03e6aad78f3c7ecbcb8ab02843c8b75d2a9c8e65aae5",
+      "git_blob_sha1": "f22b68a09319bf48c8a37e4e30baa5f98c474295",
+      "git_blob_sha256": "0b2663dba6223fd8d4ce03e6aad78f3c7ecbcb8ab02843c8b75d2a9c8e65aae5",
+      "git_blob_bytes": 2293
+    },
+    {
+      "path": "backend/services/published_schedule_source.py",
+      "bytes": 5352,
+      "sha256": "2e7838aa8f4a460ac847263379ca509c970c3d4c9b9d6b1576f5cab843b41a87",
+      "git_blob_sha1": "b56104568e346d5fc37aba0e0cac6e899a9eab71",
+      "git_blob_sha256": "2e7838aa8f4a460ac847263379ca509c970c3d4c9b9d6b1576f5cab843b41a87",
+      "git_blob_bytes": 5352
+    },
+    {
+      "path": "backend/services/published_schedule_views.py",
+      "bytes": 2126,
+      "sha256": "e883dd3722f538974a9f56dc6ac895b0ff21e2443aed71aa97b51e91ef170d08",
+      "git_blob_sha1": "6a1470903ef9c30d346e626f715464e7665a2673",
+      "git_blob_sha256": "e883dd3722f538974a9f56dc6ac895b0ff21e2443aed71aa97b51e91ef170d08",
+      "git_blob_bytes": 2126
+    },
+    {
+      "path": "backend/services/schedule_application_service.py",
+      "bytes": 14360,
+      "sha256": "3b2d20ed12549e68b460483eaa9c52b515bc6f56c48cd3a7d2ee62f726ef88b1",
+      "git_blob_sha1": "4eb6fe34a1ca8d7a106a5e1613e06ca3f3f9ce1f",
+      "git_blob_sha256": "3b2d20ed12549e68b460483eaa9c52b515bc6f56c48cd3a7d2ee62f726ef88b1",
+      "git_blob_bytes": 14360
+    },
+    {
+      "path": "backend/services/schedule_version_store.py",
+      "bytes": 6532,
+      "sha256": "0c96d319eca3fc30acfcb00fc91e290e69949d8e66b2de4de5a115b5abeb4a4f",
+      "git_blob_sha1": "0225e6df58a40dd9898076c56dc433d0d66eb241",
+      "git_blob_sha256": "0c96d319eca3fc30acfcb00fc91e290e69949d8e66b2de4de5a115b5abeb4a4f",
+      "git_blob_bytes": 6532
+    },
+    {
+      "path": "backend/tests/academic/test_academic_foundation.py",
+      "bytes": 12401,
+      "sha256": "7892299616924b7cff93d4d1b4e0e19482e99e924cfd092ad9274db88e37a3d5",
+      "git_blob_sha1": "945b67b12ff4b8f293fa9239e6bd0e10d977c2ff",
+      "git_blob_sha256": "0965bf2fb9851929626aa5a2097bf4f025db0badb3c37e776f1667448990cbcf",
+      "git_blob_bytes": 12176
+    },
+    {
+      "path": "backend/tests/dashboard/application_restart_child.py",
+      "bytes": 2284,
+      "sha256": "c2d8cc1138a14eedb870573b63872aed1a2c183dd1d0a9b100377dbe372f431f",
+      "git_blob_sha1": "ccf78f681c1619363d5bf8b5dd8a79389ba108bf",
+      "git_blob_sha256": "87a3c7360c6112edff2c77fa1fb2bbf66b00cdc215f4bf22ff15ac60338444f2",
+      "git_blob_bytes": 2244
+    },
+    {
+      "path": "backend/tests/dashboard/application_sqlite.py",
+      "bytes": 2671,
+      "sha256": "cd705a538cbcac20808a42dba1230ad1eb7ae9e0ed10be0e9479709ff8df7127",
+      "git_blob_sha1": "904a08cb85926038573577c2ca00421831653055",
+      "git_blob_sha256": "cd705a538cbcac20808a42dba1230ad1eb7ae9e0ed10be0e9479709ff8df7127",
+      "git_blob_bytes": 2671
+    },
+    {
+      "path": "backend/tests/dashboard/test_adjustments.py",
+      "bytes": 16167,
+      "sha256": "4087433228b01a98a04559a6dcd3079200b171052f404d3dc63e85877776572b",
+      "git_blob_sha1": "c4e7821bd753dbf63b4e8f63aa50589af4576145",
+      "git_blob_sha256": "4087433228b01a98a04559a6dcd3079200b171052f404d3dc63e85877776572b",
+      "git_blob_bytes": 16167
+    },
+    {
+      "path": "backend/tests/dashboard/test_application_migration.py",
+      "bytes": 1255,
+      "sha256": "21c476043cb7ae70076cbe8cb94d04dd39e2cb903afb0a3a8cbca4a6c2d7dde8",
+      "git_blob_sha1": "af099edb7c20d159271497f61f711d223d8fde80",
+      "git_blob_sha256": "21c476043cb7ae70076cbe8cb94d04dd39e2cb903afb0a3a8cbca4a6c2d7dde8",
+      "git_blob_bytes": 1255
+    },
+    {
+      "path": "backend/tests/dashboard/test_application_trust.py",
+      "bytes": 2273,
+      "sha256": "2a5729a980ca14c20067b79dff5f1c9d16db93d560ce7d56be22db8b1d2b604c",
+      "git_blob_sha1": "1b17452172192ca007ef92c8d9e47d8368826924",
+      "git_blob_sha256": "2a5729a980ca14c20067b79dff5f1c9d16db93d560ce7d56be22db8b1d2b604c",
+      "git_blob_bytes": 2273
+    },
+    {
+      "path": "backend/tests/dashboard/test_applications_live.py",
+      "bytes": 3674,
+      "sha256": "383b5a9f1ecbc9cdc197ea94169f9ecb5cb7e4f32394f81cdfa58e704366a653",
+      "git_blob_sha1": "17a98c6a509e86517b03e740c28ba5f734e8b4fa",
+      "git_blob_sha256": "2d1edd1268c5166ecce5e53c749ca75ff56cd3ae83e6318020f8bb530ca5a7f4",
+      "git_blob_bytes": 3613
+    },
+    {
+      "path": "backend/tests/dashboard/test_schedule_applications.py",
+      "bytes": 18822,
+      "sha256": "23157bd3fa65e9ce0e37d5325988484af6325ff37a86dfd4435678c2bf9d99ba",
+      "git_blob_sha1": "d11b85e62a3043ff2a72f80c82f788e9b0e564b5",
+      "git_blob_sha256": "23157bd3fa65e9ce0e37d5325988484af6325ff37a86dfd4435678c2bf9d99ba",
+      "git_blob_bytes": 18822
+    },
+    {
+      "path": "docs/dashboard-d13-implementation.md",
+      "bytes": 25227,
+      "sha256": "e7748be816b9cc45bf6be9f5d748434c8cc1d7a93acef5d8107099ebf4639cc6",
+      "git_blob_sha1": "23a29e5f770cc8e97e760ff2e0f5bfab3c838b22",
+      "git_blob_sha256": "e7748be816b9cc45bf6be9f5d748434c8cc1d7a93acef5d8107099ebf4639cc6",
+      "git_blob_bytes": 25227
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T154602177842+0800-d13-live/browser-results.json",
+      "bytes": 5531,
+      "sha256": "858e2c9feeced8d493cb880339187dd2e09b63503776cb2cdf76bcf1d53cd103",
+      "git_blob_sha1": "d38cba7353bf1581cccde025dd54a581e6760627",
+      "git_blob_sha256": "858e2c9feeced8d493cb880339187dd2e09b63503776cb2cdf76bcf1d53cd103",
+      "git_blob_bytes": 5531
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T154602177842+0800-d13-live/D13-L04-validated-application-preview.png",
+      "bytes": 86525,
+      "sha256": "e27a4c32ee475566fcb1b46e623eb4a35fe91245ac2ea72dbe957c616ce24dc8",
+      "git_blob_sha1": "f15bc08cb5b861937dedc2541173281dda009720",
+      "git_blob_sha256": "e27a4c32ee475566fcb1b46e623eb4a35fe91245ac2ea72dbe957c616ce24dc8",
+      "git_blob_bytes": 86525
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T154602177842+0800-d13-live/D13-L05-rollback-blocked.png",
+      "bytes": 49827,
+      "sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+      "git_blob_sha1": "58ca87f6c10864be0b18ce9bb4bfc3aa50d52f11",
+      "git_blob_sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+      "git_blob_bytes": 49827
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T154602177842+0800-d13-live/D13-L06-applied-version-history.png",
+      "bytes": 81155,
+      "sha256": "aa791b80475360a799bcdcda4e3e49ea2a690acd93df4914ee56d7727d4c5a8a",
+      "git_blob_sha1": "e01aa4da04ccca8fefa5a927d5380b707be07577",
+      "git_blob_sha256": "aa791b80475360a799bcdcda4e3e49ea2a690acd93df4914ee56d7727d4c5a8a",
+      "git_blob_bytes": 81155
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T154602177842+0800-d13-live/D13-L07-faculty-published-timetable.png",
+      "bytes": 92887,
+      "sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+      "git_blob_sha1": "848623f4b4b940e354371ae9e53dd2cbe7a8354b",
+      "git_blob_sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+      "git_blob_bytes": 92887
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T155023836616+0800-d13-live/browser-results.json",
+      "bytes": 6734,
+      "sha256": "60cbdc97aeb89156f0fb1df9c012b4a7c537b0f1121c2f22d0acb2c661c6e632",
+      "git_blob_sha1": "5de2846a0f0b34c83b486cc83301b0aa395af29f",
+      "git_blob_sha256": "60cbdc97aeb89156f0fb1df9c012b4a7c537b0f1121c2f22d0acb2c661c6e632",
+      "git_blob_bytes": 6734
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T155023836616+0800-d13-live/D13-L04-validated-application-preview.png",
+      "bytes": 86308,
+      "sha256": "accadfee30a6093b7ed41afe72bd1fbe5d3d061da908a975a83197a1c02b8d92",
+      "git_blob_sha1": "d3fe27cf44f2a26464ca74c6b3e370e17872506e",
+      "git_blob_sha256": "accadfee30a6093b7ed41afe72bd1fbe5d3d061da908a975a83197a1c02b8d92",
+      "git_blob_bytes": 86308
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T155023836616+0800-d13-live/D13-L05-rollback-blocked.png",
+      "bytes": 49827,
+      "sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+      "git_blob_sha1": "58ca87f6c10864be0b18ce9bb4bfc3aa50d52f11",
+      "git_blob_sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+      "git_blob_bytes": 49827
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T155023836616+0800-d13-live/D13-L06-applied-version-history.png",
+      "bytes": 80834,
+      "sha256": "bbac039220e793ec47d1834d593b30a3e75e54d905e59737820a4b90bb3c4b95",
+      "git_blob_sha1": "0656999360a35ef98bf41e6ef8958a68a72e2da6",
+      "git_blob_sha256": "bbac039220e793ec47d1834d593b30a3e75e54d905e59737820a4b90bb3c4b95",
+      "git_blob_bytes": 80834
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T155023836616+0800-d13-live/D13-L07-faculty-published-timetable.png",
+      "bytes": 92887,
+      "sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+      "git_blob_sha1": "848623f4b4b940e354371ae9e53dd2cbe7a8354b",
+      "git_blob_sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+      "git_blob_bytes": 92887
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T155728449437+0800-d13-live/browser-results.json",
+      "bytes": 5443,
+      "sha256": "14e76b0aca2408c217218e3869444a55e40632cb67b37baa61026c6c6d36f1b0",
+      "git_blob_sha1": "ba6efd0f872b8b2c38b20225bf1ba19e52f656ec",
+      "git_blob_sha256": "14e76b0aca2408c217218e3869444a55e40632cb67b37baa61026c6c6d36f1b0",
+      "git_blob_bytes": 5443
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T155728449437+0800-d13-live/D13-L04-validated-application-preview.png",
+      "bytes": 86796,
+      "sha256": "4867809d872c1e0fc1a642b0b079c07ef307d00bb50d0f38b168f8cd093dd11e",
+      "git_blob_sha1": "be852332e565820bae7d0c777a0b22c394250fd7",
+      "git_blob_sha256": "4867809d872c1e0fc1a642b0b079c07ef307d00bb50d0f38b168f8cd093dd11e",
+      "git_blob_bytes": 86796
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T155728449437+0800-d13-live/D13-L05-rollback-blocked.png",
+      "bytes": 49834,
+      "sha256": "c3fd9e337c05842881a195294dcb7748d4fbf77cb79371ac0630a3c22d9dd374",
+      "git_blob_sha1": "1c159fd312976c82b02e91159b4181907f8fdc63",
+      "git_blob_sha256": "c3fd9e337c05842881a195294dcb7748d4fbf77cb79371ac0630a3c22d9dd374",
+      "git_blob_bytes": 49834
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T155728449437+0800-d13-live/D13-L06-applied-version-history.png",
+      "bytes": 81355,
+      "sha256": "bbd064b8da99d4f8b3652cd0c6c0ba8a3e918a787d3632c6e50cf8440da6f5a5",
+      "git_blob_sha1": "771872b6d1265a47b27e65336a9c7b505517b6bd",
+      "git_blob_sha256": "bbd064b8da99d4f8b3652cd0c6c0ba8a3e918a787d3632c6e50cf8440da6f5a5",
+      "git_blob_bytes": 81355
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T155728449437+0800-d13-live/D13-L07-faculty-published-timetable.png",
+      "bytes": 92887,
+      "sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+      "git_blob_sha1": "848623f4b4b940e354371ae9e53dd2cbe7a8354b",
+      "git_blob_sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+      "git_blob_bytes": 92887
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/browser-results.json",
+      "bytes": 5772,
+      "sha256": "7e00b18fe20838a909fa6bbe38f9a3113a14fd70ddcd2aa416cf863404039caa",
+      "git_blob_sha1": "4351ec215111aaba80e7eb562c704924be9f9486",
+      "git_blob_sha256": "7e00b18fe20838a909fa6bbe38f9a3113a14fd70ddcd2aa416cf863404039caa",
+      "git_blob_bytes": 5772
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L04-validated-application-preview.png",
+      "bytes": 86774,
+      "sha256": "0d6ef665ea03c13ae030189068326bd2afe204805ad75111bed1dad5435007cb",
+      "git_blob_sha1": "aeba4943e6e77d98a2d11c441627813347f0fe49",
+      "git_blob_sha256": "0d6ef665ea03c13ae030189068326bd2afe204805ad75111bed1dad5435007cb",
+      "git_blob_bytes": 86774
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L05-rollback-blocked.png",
+      "bytes": 49827,
+      "sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+      "git_blob_sha1": "58ca87f6c10864be0b18ce9bb4bfc3aa50d52f11",
+      "git_blob_sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+      "git_blob_bytes": 49827
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L06-applied-version-history.png",
+      "bytes": 81392,
+      "sha256": "7620dc72fcf90e35df9f8d0ec8ebcc48e14ec8541d043c6646541ac1374d32a6",
+      "git_blob_sha1": "488472f6533161ee69152c038325466c0bf9d8cd",
+      "git_blob_sha256": "7620dc72fcf90e35df9f8d0ec8ebcc48e14ec8541d043c6646541ac1374d32a6",
+      "git_blob_bytes": 81392
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L07-faculty-published-timetable.png",
+      "bytes": 92887,
+      "sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+      "git_blob_sha1": "848623f4b4b940e354371ae9e53dd2cbe7a8354b",
+      "git_blob_sha256": "d359e8666a5d2de9bfcb37614662893edcc1fa92677e2a31eff102ca6f13aa7c",
+      "git_blob_bytes": 92887
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L11-trust-unavailable-blocked.png",
+      "bytes": 49734,
+      "sha256": "5679e3713011878428a7a584ece4ebd5b51e54cab03b08ec2878d8905af28e63",
+      "git_blob_sha1": "b625138529fa22480bb72f297215ece042f8a4ce",
+      "git_blob_sha256": "5679e3713011878428a7a584ece4ebd5b51e54cab03b08ec2878d8905af28e63",
+      "git_blob_bytes": 49734
+    },
+    {
+      "path": "docs/screenshots/dashboard-d13/20261024T160014331704+0800-d13-live/D13-L13-mobile-preserved-version.png",
+      "bytes": 35826,
+      "sha256": "f5e92ce8373596a18698adb406e2ab0280b72d7b8bb26462747a645f08eebe0d",
+      "git_blob_sha1": "f98a3c98236ca51f21fbd0b093930176eb1cd255",
+      "git_blob_sha256": "f5e92ce8373596a18698adb406e2ab0280b72d7b8bb26462747a645f08eebe0d",
+      "git_blob_bytes": 35826
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T153449458120+0800-focused/command.json",
+      "bytes": 3521,
+      "sha256": "4411113ce57165fa2518711e6cc4b5297acfaeb0157d6d70585539b9e30fdbcd",
+      "git_blob_sha1": "4a0b885f1527dd0b09aa3c5c21c5e65ce0dce3f7",
+      "git_blob_sha256": "92a30b56febc5cb1e38302f4882f6ef0b7f1d6952c7d5974c4b6673d91d6f23b",
+      "git_blob_bytes": 3493
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T153831147507+0800-build/command.json",
+      "bytes": 1980,
+      "sha256": "6e741e73c9a333dc3d1ff1486179456ef7cd72a02c1605e03556586732880dcc",
+      "git_blob_sha1": "eaddfa1c673f80213ca7871cc0e55dc5517e84cf",
+      "git_blob_sha256": "fd7db7f7baee6716cef6e1f0a45ca16ac083924ec429f3e5d8c4278cee6adf23",
+      "git_blob_bytes": 1962
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T153843395870+0800-lint/command.json",
+      "bytes": 1119,
+      "sha256": "7b56071cda8055f34e36e22c30f85630dee7ac0347fe37af5a391be4a14c23f7",
+      "git_blob_sha1": "a11eb7e6ebcf20b88cb4b791fe9b4a0423c5e05e",
+      "git_blob_sha256": "2ba89cfaf6b187fd3fd20c6331b3f11a4231c540ae9b98aa8f64f25b04c979a9",
+      "git_blob_bytes": 1092
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154102533237+0800-focused/command.json",
+      "bytes": 7061,
+      "sha256": "a7af4cf7d63c7563beebb15d429464fc7f861b245ce581bf59f17bb26b7d11a3",
+      "git_blob_sha1": "501208feb72745c98718b76ac0e9fdb6c2643ea4",
+      "git_blob_sha256": "5d9a71c87b7c6f899916be56624c3ea99eba7b502cce8b1b0a146557a3cd83fe",
+      "git_blob_bytes": 7032
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154227693231+0800-contracts/command.json",
+      "bytes": 19728,
+      "sha256": "22e8543e914f2c85fe4e4c8a0cd2be9ab48198aa2ddd2260db592014d21b7ee1",
+      "git_blob_sha1": "194875e443e4e96e12e2da660a29905386e33e07",
+      "git_blob_sha256": "ccfb29a7eb3eecb26586c36276708303ddb47432ff3d3f4caa3e498eddc83c74",
+      "git_blob_bytes": 19688
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154233626188+0800-d12-backend/command.json",
+      "bytes": 2715,
+      "sha256": "c9f109a5ecdfb0435dd38bf2ccbfa604179b181dd38ab893a8d1ccde52455b0b",
+      "git_blob_sha1": "0b9bfbe179061e47120d94106c134c20904210ea",
+      "git_blob_sha256": "ca9495bb3b8a662f007a1f4154838bdfe5b9850eb602df8bbb4ce8b744d9a658",
+      "git_blob_bytes": 2686
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154245266446+0800-d11-backend/command.json",
+      "bytes": 2683,
+      "sha256": "db3fbc1703cfb154dfc34b02515eb0cdcc4cd873b274b7f0199ecf2deda7e464",
+      "git_blob_sha1": "8e1a09d2ff2d2c02925229a9dbfe5c8a607cf687",
+      "git_blob_sha256": "85b693a797a96a41e7633b059e6bf873b83a923c7df0313d7487ec8079e9a89b",
+      "git_blob_bytes": 2655
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154418032833+0800-focused/command.json",
+      "bytes": 2729,
+      "sha256": "9dff85072ea569ae8b9023950c25f07ecfeb2a68333aaa7fb636a2ec86741426",
+      "git_blob_sha1": "507de6c4d44f2be198f1d8a450ac00216e5f5993",
+      "git_blob_sha256": "4dedf7a56420f5398f7fe53ad2aa5bdcf890fa49cb3354ea7a647e11008fddab",
+      "git_blob_bytes": 2700
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154602177842+0800-d13-live/command.json",
+      "bytes": 11165,
+      "sha256": "65108174d6f795cb599ae300e4629067f450885b4132e18672bc75f4c9497d61",
+      "git_blob_sha1": "cfcc249f799e75e46dde6aea255b9a9e8ae4875a",
+      "git_blob_sha256": "26d0958c4f923823617e5eeb2c2b582eaa1f69460fe2c124b8122c93038466fa",
+      "git_blob_bytes": 11137
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154719876796+0800-backend/command.json",
+      "bytes": 2664,
+      "sha256": "8424312a9dc7472a189b4efe4344bedadc43f1393f1f0904a3ac02975261be56",
+      "git_blob_sha1": "f5b90998ca8663ccbf2fa88058f66b9b4accc5a0",
+      "git_blob_sha256": "28a6d826be1f52393bcffe488b5b0f358425bfb61ce43b11fd0ee2df7eec4dd6",
+      "git_blob_bytes": 2631
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154732019121+0800-academic-offline/command.json",
+      "bytes": 1981,
+      "sha256": "ee5d5cc420a7f4e05a6175dae6ef2bc9f96196820c7de930ebec53aa8bde909e",
+      "git_blob_sha1": "735df33c272ce52b916134168e87fa15a685fedd",
+      "git_blob_sha256": "753d3ae625411133fab66b1a6bc15cb0d761ac0abbe3f5b954f15f99836cf9d2",
+      "git_blob_bytes": 1953
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154739123448+0800-ga-resource-regressions/command.json",
+      "bytes": 1379,
+      "sha256": "ddffd1eb90f277fcc3cf4e8a58ac0044e09248c4ee7f03acf89c9ad3b2217e25",
+      "git_blob_sha1": "67628758b33e8f013a25da0c0efffa01b4fb50ca",
+      "git_blob_sha256": "c0641f4f1182b9eff56a976862303f5dee776849086cc8f13762b4d1dab00ec7",
+      "git_blob_bytes": 1351
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154746297187+0800-v1-fixtures/command.json",
+      "bytes": 1147,
+      "sha256": "20800db631d4186877bdba84a39906b9ee554ec30ff77e1a312e9a14bf24906a",
+      "git_blob_sha1": "50ccf2e04cab746fe7e3ee33a30d4346d8dd88c5",
+      "git_blob_sha256": "7c4dca53eb0593920b661b5903aaf392f9ee8aadc11f0684ebbe978f7c36b39d",
+      "git_blob_bytes": 1120
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154758462700+0800-v2-engine/command.json",
+      "bytes": 1154,
+      "sha256": "76313bdac15a41a7f88faff5f69cf46e7712846c9159a57060f5c3693c27cd78",
+      "git_blob_sha1": "258e1e323362630c1952614b301e4b76a005ecc4",
+      "git_blob_sha256": "7971f15247ac1ff8feef801fe43007ce832e890fe90cab35dd6cb828457c34e6",
+      "git_blob_bytes": 1127
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T154809977281+0800-v2-api/command.json",
+      "bytes": 2050,
+      "sha256": "1c79ca674c6536fe099c66c71aff0c8c5bfc010fb79cea46b6e155eb5ce80eda",
+      "git_blob_sha1": "9fb8fd01f20718739e5e769b355b497deecad53a",
+      "git_blob_sha256": "ca9bc31f82e3bc099312906298184a66e8c7a7a102f65665516f802146fc680f",
+      "git_blob_bytes": 2023
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T155023836616+0800-d13-live/command.json",
+      "bytes": 12480,
+      "sha256": "d8b85863eac3ac687403bc0a52cf18e3ca3be2cb402b12c6006c5d849fef5438",
+      "git_blob_sha1": "19c1f3e7f42e6a6f083042c009cb1d266f808557",
+      "git_blob_sha256": "93e9ae8dfa286d8d1b8337b9d057c9179faa2baa5f506d4d8afeb0ded98f495b",
+      "git_blob_bytes": 12452
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T155152830546+0800-focused/command.json",
+      "bytes": 3689,
+      "sha256": "220712dee4b096d8324d6427f21842ceb339857cfbc8f95421688acc6a012fd0",
+      "git_blob_sha1": "3e82c1d703a15ea0c444725c0448a19e289cacd5",
+      "git_blob_sha256": "bf820f924dae3b23c54a984ab8bff67032388c08e38031015e37a1bfdaba1828",
+      "git_blob_bytes": 3660
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T155724377411+0800-focused/command.json",
+      "bytes": 2731,
+      "sha256": "0b52b31ab5d7bb8c4c4e625f3fd2fe2963d9c6879fe421f55d7f225070229424",
+      "git_blob_sha1": "347b4ede199d12d8f3f123b1df7432d6c234b758",
+      "git_blob_sha256": "f7512d037a61d5ee7ab9ba7109fa70bf091e461a373cd67f7b4867abae082aa4",
+      "git_blob_bytes": 2702
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T155728449437+0800-d13-live/command.json",
+      "bytes": 8168,
+      "sha256": "cbdd7ed6015091e5715887c6352afb0ff973fcbd0c3220e2d63ddd41e5c5d98a",
+      "git_blob_sha1": "983c3527a227a3afe01da3d768c365bff9c96a13",
+      "git_blob_sha256": "7e5770f75d36014ae8e9768c556ce6d3bd8e269dd3fbd5b0a4c155df08c1877f",
+      "git_blob_bytes": 8140
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T155729769848+0800-browser-regressions/command.json",
+      "bytes": 14138,
+      "sha256": "7eedaaed95e62d6d115997a7371579752a9e9c71a6b84a3ee873ea2044fa75f7",
+      "git_blob_sha1": "dd354b7ef1417cd245f7af9acd0946fda4d7060f",
+      "git_blob_sha256": "67ded06a2fb5726476edc0e09b62803377dfb15e224e6aacbeca971ea2b51450",
+      "git_blob_bytes": 14112
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T155916127913+0800-backend-regressions/command.json",
+      "bytes": 2511,
+      "sha256": "3146ae047f3bbb99ca350513d93bef0ef02c7e1b622985cd10358e5cd54568a8",
+      "git_blob_sha1": "bb32c0f26711fe44d571b322b00dabcbbf09dab4",
+      "git_blob_sha256": "edaab81707a5de6ede4e5d9d49db6d5ba12c80b8fd19d583f4ff7313bc96e9b9",
+      "git_blob_bytes": 2484
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T155918096767+0800-ga-browser/command.json",
+      "bytes": 6220,
+      "sha256": "db6ecfc4b7378a47551ff1a1d59e5ad74db172cb3f6adef565b2e2082c06c4e6",
+      "git_blob_sha1": "41fed335d32285306e937895ed82b1f78fe7d789",
+      "git_blob_sha256": "02d137734e0b29f3b4db7f958f7565bd3c0c3c77a8a423190e507ca83477ddd7",
+      "git_blob_bytes": 6202
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160010820940+0800-focused/command.json",
+      "bytes": 2731,
+      "sha256": "acb5da00b52769a64f41817ca7bcc5e09a2d67d6239808a2588c31f5e9190b4f",
+      "git_blob_sha1": "3012ae9f305a09c868ebaec7c5322146d6ab37c0",
+      "git_blob_sha256": "bdbf3efac3eb959910902d4d457fa50b0924911921a9a8562c3104c195f85eb2",
+      "git_blob_bytes": 2702
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160013876263+0800-v2-browser/command.json",
+      "bytes": 1841,
+      "sha256": "54f14947b0105bf521101ee0df31b5535073ff95b73e60f98d9c82dcdb31969b",
+      "git_blob_sha1": "ec9be64520c7f92a2850f7f0eb41932b33f411fe",
+      "git_blob_sha256": "fd7f2d3132302caeed625072864d6b58af12caedc4cadfe2b0b1f670a3057e35",
+      "git_blob_bytes": 1823
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160014331704+0800-d13-live/command.json",
+      "bytes": 3813,
+      "sha256": "3e0ee203347f4798292b730f4fa53886d7ef52e899734bdcb683978d3f765640",
+      "git_blob_sha1": "7a7e870137fe315e9e0202a29ce8a55cc2bae5ae",
+      "git_blob_sha256": "c042eef461a95fb81a96830c6a5d95a88f96310c8d0924ae51ee94cfa383aaf6",
+      "git_blob_bytes": 3785
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160051433516+0800-d11-live/command.json",
+      "bytes": 3383,
+      "sha256": "e4997d852292d9244a764446e95d688912cbc174637a7b50edc7802e9f49a126",
+      "git_blob_sha1": "dd17d122abf7b540186e60e100ca237a4c1f11b2",
+      "git_blob_sha256": "bd664f36cacf25cecac938a0e57e7c682e1050ba043cc396258e4c0c4757860b",
+      "git_blob_bytes": 3355
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160052432689+0800-d12-live/command.json",
+      "bytes": 3457,
+      "sha256": "c9817fac862704631efb31ffe72fa3964f87c5be62b47d71a13ecf2f0388d4b9",
+      "git_blob_sha1": "356cadd6bc4c3ca58eb6ba26bd65ebd427657441",
+      "git_blob_sha256": "b37f22ff8d0d2e67d1a4dd4e6b4055f9cf212e7a5da12c4a048a87ba7153612a",
+      "git_blob_bytes": 3429
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160053461181+0800-v2-live/command.json",
+      "bytes": 2790,
+      "sha256": "e0c9d14cd5352a2a7a93ad11253e50eff7ba9679fa68ec042bb69e46e9d02e2d",
+      "git_blob_sha1": "2dcce1f9478d50a45cd4277c4260025e8ce68cdd",
+      "git_blob_sha256": "34f8bf821d55fd91350806c105dc418dae527adcb4895b9cc86348c12aa19757",
+      "git_blob_bytes": 2762
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160200225700+0800-build/command.json",
+      "bytes": 1980,
+      "sha256": "c03b729cc78592d93fac0abc658bdd585f0e181d17cb1862da7334294ad69708",
+      "git_blob_sha1": "990ca6ed4162e4ccf5a031a6348c4577efbd38d6",
+      "git_blob_sha256": "5ab1fdeee5af4ed223e8cea5fce2731c9a5d2c062066b080958bc60213c58fe3",
+      "git_blob_bytes": 1962
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160201567019+0800-lint/command.json",
+      "bytes": 1118,
+      "sha256": "ef2ae93f69e1e14108b94552c21c3b0f11b6248a0265c000dd7a906eb28a1e4a",
+      "git_blob_sha1": "aa96a369ff399d9d8923f93ac5783db9534c6fb4",
+      "git_blob_sha256": "6c0b2ce98f6f8285e36f11bf597ec44330ff6cddba0dec53ee53ced93abbb659",
+      "git_blob_bytes": 1091
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160203149002+0800-contracts/command.json",
+      "bytes": 19729,
+      "sha256": "58fe830e1f9918db83d7601c55ba2ed3b207bbf877857d69332cba52f297ebc1",
+      "git_blob_sha1": "dda9758c7af7cad42c98b4c375060abd99ff72df",
+      "git_blob_sha256": "b8b8d056a9c5307da666382dfc2a2443a78277b411965d2fc13ee519d742c67d",
+      "git_blob_bytes": 19689
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160205992852+0800-live/command.json",
+      "bytes": 4139,
+      "sha256": "90d0abf1b13d712e04f9d72f3550afc25c05d678059bc0a902f4e4744c48fb49",
+      "git_blob_sha1": "525a38ab84b61f66eb6e1a21447d1539daf6a2fc",
+      "git_blob_sha256": "fef0d0d68281dd73883dee076caee4037a5a5748cfbac0089107748ecddec1b0",
+      "git_blob_bytes": 4112
+    },
+    {
+      "path": "docs/testing/dashboard-d13/20261024T160810140628+0800-publication-preservation/command.json",
+      "bytes": 2206,
+      "sha256": "d40bdccd67a44dc2579473af48d649ddb89a245e9ca9b48028e043c01b2bddba",
+      "git_blob_sha1": "31adfa820ed98f6407f890fdcf652a16e43d0d6e",
+      "git_blob_sha256": "1cd04866b0d8006b7d67971e53676c40d4a08905f73ca0bd44ce005b87fdf78a",
+      "git_blob_bytes": 2179
+    },
+    {
+      "path": "docs/testing/dashboard-d13/audit_evidence.py",
+      "bytes": 12073,
+      "sha256": "6659ad1706457ff391c452a0978d82d4f0b472e8baf0757f2007e0a7fb09f7ea",
+      "git_blob_sha1": "ae9417c6b5e53bfa40a13b76d1ffec505cb0b570",
+      "git_blob_sha256": "5ff30953f6222d40d3183a907ec2a26e8c5229fbdc290f43654522de123f2b30",
+      "git_blob_bytes": 11948
+    },
+    {
+      "path": "docs/testing/dashboard-d13/preservation-baseline.json",
+      "bytes": 156896,
+      "sha256": "bd0f85aceee2e8629270fbeef25704687ea0a0ab4fe3e14a56d79cc8a7b0a0bd",
+      "git_blob_sha1": "ba7bee9128c752edd5053cc9145062c75a6ba59a",
+      "git_blob_sha256": "2b0d8dfa7e55fc6bbdf84559bf5cc2e3f21b90bbdf0b36c12cbf741d24e87990",
+      "git_blob_bytes": 155770
+    },
+    {
+      "path": "docs/testing/dashboard-d13/run_checks.py",
+      "bytes": 4830,
+      "sha256": "9b78ee5b73e2b1732d9ab17113f71fca6d743dfe5030ed98acf24a5aca37c14f",
+      "git_blob_sha1": "50e6e490ac5eb4d463e12cfcc576a0bb1e588cec",
+      "git_blob_sha256": "3bb4df22b0a089d38dc0c8f3a25e166b9eab233d199cec80e4f30e0c1c2ec4ea",
+      "git_blob_bytes": 4776
+    },
+    {
+      "path": "frontend/src/api/adjustments.ts",
+      "bytes": 5024,
+      "sha256": "14b3c50ed42293bb1124a4b78aab0d5fe32c86df94a82a428c44f2a4fd70b57d",
+      "git_blob_sha1": "eec5b234fdc033c33c77f6d4ea0aa16ce6a79085",
+      "git_blob_sha256": "aaa957a4f93e2ad6e95b27620459a0b07dfc4e1cff7fa0a4f2eecde69bd4c60f",
+      "git_blob_bytes": 4989
+    },
+    {
+      "path": "frontend/src/api/scheduleApplicationModel.ts",
+      "bytes": 392,
+      "sha256": "8ae4046f83ec125be688c76591b87e47b5fde1282b0239de7bdbdbb839b4e0ad",
+      "git_blob_sha1": "f0da2bac55afc6fe036cce2e4bdfa837a4f16ace",
+      "git_blob_sha256": "8ae4046f83ec125be688c76591b87e47b5fde1282b0239de7bdbdbb839b4e0ad",
+      "git_blob_bytes": 392
+    },
+    {
+      "path": "frontend/src/api/scheduleApplications.ts",
+      "bytes": 3532,
+      "sha256": "af3a1a1c086b6d59cc36914c5950fbb6973eb6da5565a20a34ea1871a0137340",
+      "git_blob_sha1": "75cfdb84b0a63a1e6a2fdc4c139630128c09e284",
+      "git_blob_sha256": "4148379cc24fa24d12e1cca2f5773c2672e417d628f08796cf971541b0bafabc",
+      "git_blob_bytes": 3512
+    },
+    {
+      "path": "frontend/src/components/common/AccountMenu.tsx",
+      "bytes": 1040,
+      "sha256": "da4533af9b555eb0f65193d367b1511aab0737f1801000711bbb72ed9ab2695e",
+      "git_blob_sha1": "cbed8fe11f07dd3d7c5659e1b92a46cf7df29b2a",
+      "git_blob_sha256": "da4533af9b555eb0f65193d367b1511aab0737f1801000711bbb72ed9ab2695e",
+      "git_blob_bytes": 1040
+    },
+    {
+      "path": "frontend/src/components/common/ApplicationReviewLink.tsx",
+      "bytes": 753,
+      "sha256": "27777e92f414e512b82c2a40f82290680f7ddfab23312997814eafe7171153d7",
+      "git_blob_sha1": "1ff8bccf66a0b8ac515abd7c017b151efd0586f4",
+      "git_blob_sha256": "27777e92f414e512b82c2a40f82290680f7ddfab23312997814eafe7171153d7",
+      "git_blob_bytes": 753
+    },
+    {
+      "path": "frontend/src/pages/admin/ScheduleApplications.tsx",
+      "bytes": 8821,
+      "sha256": "c05dda6c8bcc078dc92512426eca63cbec91da049d026a1754bf2a796e4293a1",
+      "git_blob_sha1": "2ce1fb4a22f07f4cac2e62f46bc2b8fc06a13a3b",
+      "git_blob_sha256": "c05dda6c8bcc078dc92512426eca63cbec91da049d026a1754bf2a796e4293a1",
+      "git_blob_bytes": 8821
+    },
+    {
+      "path": "frontend/src/pages/faculty/AdjustmentRequests.tsx",
+      "bytes": 13840,
+      "sha256": "bfb38b4b00c389b4b5210faf1069edd1d429b45561d8ff6ae353c6fb50553733",
+      "git_blob_sha1": "ebd4dc71ab162d02c4839b26ba534f8d538f6e46",
+      "git_blob_sha256": "62fab60616e1d1528bcc4f5d0b449e5ad0d06a959709a31781471fb1b8a56d71",
+      "git_blob_bytes": 13751
+    },
+    {
+      "path": "frontend/src/pages/faculty/MySchedule.tsx",
+      "bytes": 6637,
+      "sha256": "66394fb4aad2dcd35b84eed14e2b80e53eb13b3d22da3f0eda083f8e15ce0b29",
+      "git_blob_sha1": "cf2815e9906c0eb4ba8b620ea58b1789cf005def",
+      "git_blob_sha256": "bbd9929e30a47495d03ed1ef5e4249fa5015ef1b653c1cd7452dea362c2f77e7",
+      "git_blob_bytes": 6560
+    },
+    {
+      "path": "frontend/src/routes/AppRoutes.tsx",
+      "bytes": 5645,
+      "sha256": "19393071fd7708dd509bec089ea1716bf3e7f58f5e4bb151f3ecd7dcef85592b",
+      "git_blob_sha1": "433839200edc0225cd39121aeca6ea5921098307",
+      "git_blob_sha256": "891c69628126c2009746307fe9d0ee1a35f72781aaa1d7b51c1205d3d5f89987",
+      "git_blob_bytes": 5407
+    },
+    {
+      "path": "frontend/src/services/scheduleService.ts",
+      "bytes": 2810,
+      "sha256": "d8039d038c019b320ea0c80005475ae68dcc23ee1d4ecf45c911873f98258f94",
+      "git_blob_sha1": "446c8c512f659e66da6f584c1b46692753956d0c",
+      "git_blob_sha256": "e99b5dd0467885d76ae0c516a5ccf56bbad814ea8f8d305dc64d43a94135bf30",
+      "git_blob_bytes": 2778
+    },
+    {
+      "path": "frontend/tests/mySchedule.browser.test.mjs",
+      "bytes": 13956,
+      "sha256": "3b2e0c197dc2e7112a6709caad891eada8106922dc17086c0ba9d80d8247d778",
+      "git_blob_sha1": "e7cf82d636518ca46635d1b5b945d3b87a9a66ab",
+      "git_blob_sha256": "35507d3a2b57bf09d87d673473fa6c10ac25c7148886eea97bf711c18fca5dd0",
+      "git_blob_bytes": 13777
+    },
+    {
+      "path": "frontend/tests/scheduleApplications.live.mjs",
+      "bytes": 19644,
+      "sha256": "7d151614d531134e0e4ecf1e3be8b9458496f92f54dffad5d6fd9fb3d350a821",
+      "git_blob_sha1": "baca61c3ebdb61db5c41e048269287647b56fd0b",
+      "git_blob_sha256": "49a87b143ba1f3958b9edfacebfcdbd1b880998b85d15f249da539a74bc9558b",
+      "git_blob_bytes": 19517
+    },
+    {
+      "path": "frontend/tests/scheduleApplications.test.mjs",
+      "bytes": 7070,
+      "sha256": "55f58f169ef34042326018ae5cc2ba2d230623515190ddd07dd382dc0cd419b6",
+      "git_blob_sha1": "9918064e6d346e8936cdf071317a3a0633905589",
+      "git_blob_sha256": "55f58f169ef34042326018ae5cc2ba2d230623515190ddd07dd382dc0cd419b6",
+      "git_blob_bytes": 7070
+    }
+  ],
+  "implementation_inventory": {
+    "modified": [
+      "backend/main.py",
+      "backend/migrations/env.py",
+      "backend/routers/adjustments.py",
+      "backend/routers/schedules.py",
+      "backend/schemas/schedule.py",
+      "backend/services/adjustment_schedule_service.py",
+      "backend/services/adjustment_service.py",
+      "backend/tests/academic/test_academic_foundation.py",
+      "backend/tests/dashboard/test_adjustments.py",
+      "frontend/src/api/adjustments.ts",
+      "frontend/src/components/common/AccountMenu.tsx",
+      "frontend/src/pages/faculty/AdjustmentRequests.tsx",
+      "frontend/src/pages/faculty/MySchedule.tsx",
+      "frontend/src/routes/AppRoutes.tsx",
+      "frontend/src/services/scheduleService.ts",
+      "frontend/tests/mySchedule.browser.test.mjs"
+    ],
+    "created": [
+      "backend/application_models.py",
+      "backend/migrations/versions/d13_0001_schedule_application.py",
+      "backend/routers/schedule_applications.py",
+      "backend/schemas/schedule_applications.py",
+      "backend/services/application_authority_service.py",
+      "backend/services/published_schedule_source.py",
+      "backend/services/published_schedule_views.py",
+      "backend/services/schedule_application_service.py",
+      "backend/services/schedule_version_store.py",
+      "backend/tests/dashboard/application_restart_child.py",
+      "backend/tests/dashboard/application_sqlite.py",
+      "backend/tests/dashboard/test_application_migration.py",
+      "backend/tests/dashboard/test_application_trust.py",
+      "backend/tests/dashboard/test_applications_live.py",
+      "backend/tests/dashboard/test_schedule_applications.py",
+      "frontend/src/api/scheduleApplicationModel.ts",
+      "frontend/src/api/scheduleApplications.ts",
+      "frontend/src/components/common/ApplicationReviewLink.tsx",
+      "frontend/src/pages/admin/ScheduleApplications.tsx",
+      "frontend/tests/scheduleApplications.live.mjs",
+      "frontend/tests/scheduleApplications.test.mjs"
+    ]
+  },
+  "checkpoint_review": {
+    "reviewed_at": "2026-10-24T16:19:20.087096+08:00",
+    "scope": "Authorized Git checkpoint only; no application behavior or dataset changes",
+    "baseline_and_fetched_remote": "d0d548d8ede489246011ab67e9c85967afc4729b",
+    "original_manifest_sha256": "9b077e6f954d71589840628c644206336423b8214609ac4003ec12f4e6e3779b",
+    "original_report_sha256": "b539bd7cd03bcb7143d8e99ce337a6d0af4b26358059b7b2584a4fca3b023bfb",
+    "original_96_artifact_hashes_verified_before_annotation": true,
+    "application_tests_rerun": false,
+    "recorded_tests_and_browser_evidence_reviewed": true,
+    "privacy_findings": 0,
+    "failed_command_records_retained": 6,
+    "screenshots_retained": 18,
+    "unique_reviewed_images": 13,
+    "planned_implementation_files": 37,
+    "planned_documentation_files": 60,
+    "excluded": [
+      "backend/data/faculty_preferences.json"
+    ],
+    "all_23_academic_files_unchanged": true,
+    "GA_sources_checkpoints_saved_results_unchanged": true,
+    "Git_EOL_normalized_artifacts": 50,
+    "documentation_changes_only": [
+      "docs/dashboard-d13-implementation.md",
+      "docs/testing/dashboard-d13/manifest.json"
+    ],
+    "hash_convention": "sha256 is original working raw bytes; git_blob_sha256 is verified Git clean content. Manifest excludes itself.",
+    "implementation_commit": "47cc3f973e279eaafea0ce0ed752d6ed0c4824be",
+    "implementation_commit_files_verified": 37,
+    "implementation_staged_whitespace_check": "PASS",
+    "implementation_commit_message": "feat(dashboard): add controlled schedule adjustment application"
+  }
+}
