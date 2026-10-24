@@ -1,0 +1,25 @@
+{
+  "check": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/api/chairDecisions.ts",
+    "src/api/chairReviews.ts",
+    "src/api/adjustments.ts",
+    "src/pages/chair/Requests.tsx",
+    "src/pages/faculty/AdjustmentRequests.tsx",
+    "src/components/common/AccountMenu.tsx",
+    "src/components/common/ChairReviewLink.tsx",
+    "src/routes/AppRoutes.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-24T14:33:30.775054+08:00",
+  "finished_at": "2026-10-24T14:34:15.217787+08:00",
+  "elapsed_seconds": 44.443,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Focused ESLint; existing warnings are retained without changing legacy page logic",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

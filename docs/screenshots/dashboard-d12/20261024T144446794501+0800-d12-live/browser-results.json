@@ -1,0 +1,163 @@
+{
+  "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real sessions/Origin/CSRF and decision transactions, explicitly fictional Chair directory, scope, guarded schedule and trusted snapshot provider. Real D8-D10 integration is tested separately by backend tests; no PostgreSQL or genuine institutional authority",
+  "browser": "Edg/155.0.4283.62",
+  "node": "v24.11.1",
+  "scenarios": [
+    {
+      "id": "D12-L01",
+      "title": "unauthenticated Chair API and route deny access",
+      "started_at": "2026-10-24T14:44:55.362+08:00",
+      "finished_at": "2026-10-24T14:44:57.264+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L02",
+      "title": "bound faculty submits through real UI and cannot decide",
+      "started_at": "2026-10-24T14:44:57.267+08:00",
+      "finished_at": "2026-10-24T14:44:59.569+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L03",
+      "title": "independent fictional Chair sees scoped queue and fresh findings",
+      "started_at": "2026-10-24T14:44:59.570+08:00",
+      "finished_at": "2026-10-24T14:45:01.185+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L04",
+      "title": "approval requires explanation and explicit confirmation",
+      "started_at": "2026-10-24T14:45:01.187+08:00",
+      "finished_at": "2026-10-24T14:45:01.847+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L05",
+      "title": "faculty sees durable approval without schedule mutation",
+      "started_at": "2026-10-24T14:45:01.848+08:00",
+      "finished_at": "2026-10-24T14:45:03.321+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L06",
+      "title": "second proposal receives explained rejection",
+      "started_at": "2026-10-24T14:45:03.322+08:00",
+      "finished_at": "2026-10-24T14:45:06.797+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L07",
+      "title": "faculty sees rejection and cannot replace a final decision",
+      "started_at": "2026-10-24T14:45:06.798+08:00",
+      "finished_at": "2026-10-24T14:45:07.585+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L08",
+      "title": "stale source blocks approval while rejection remains available",
+      "started_at": "2026-10-24T14:45:07.586+08:00",
+      "finished_at": "2026-10-24T14:45:10.307+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L09",
+      "title": "concurrent contradictory HTTP decisions retain exactly one final",
+      "started_at": "2026-10-24T14:45:10.307+08:00",
+      "finished_at": "2026-10-24T14:45:10.963+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L10",
+      "title": "mobile decided history is available after a full reload",
+      "started_at": "2026-10-24T14:45:10.964+08:00",
+      "finished_at": "2026-10-24T14:45:11.780+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L11",
+      "title": "authenticated ordinary faculty cannot enter Chair review or obtain controls",
+      "started_at": "2026-10-24T14:45:11.781+08:00",
+      "finished_at": "2026-10-24T14:45:12.664+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D12-L12",
+      "title": "retry rechecks authority without granting access or showing cached private rows",
+      "started_at": "2026-10-24T14:45:12.664+08:00",
+      "finished_at": "2026-10-24T14:45:12.736+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D12-L03-scoped-review.png",
+      "captured_at": "2026-10-24T14:45:01.179+08:00",
+      "url": "http://localhost:65497/chair/requests",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D12-L04-approved-pending-application.png",
+      "captured_at": "2026-10-24T14:45:01.839+08:00",
+      "url": "http://localhost:65497/chair/requests",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D12-L05-faculty-approved.png",
+      "captured_at": "2026-10-24T14:45:03.316+08:00",
+      "url": "http://localhost:65497/faculty/adjustments",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D12-L06-rejected-history.png",
+      "captured_at": "2026-10-24T14:45:06.792+08:00",
+      "url": "http://localhost:65497/chair/requests",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D12-L08-stale-approval-blocked.png",
+      "captured_at": "2026-10-24T14:45:10.298+08:00",
+      "url": "http://localhost:65497/chair/requests",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D12-L10-mobile-decision.png",
+      "captured_at": "2026-10-24T14:45:11.778+08:00",
+      "url": "http://localhost:65497/chair/requests",
+      "query_omitted": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "D12-L11-ordinary-account-denied.png",
+      "captured_at": "2026-10-24T14:45:12.661+08:00",
+      "url": "http://localhost:65497/chair/requests",
+      "query_omitted": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ]
+}

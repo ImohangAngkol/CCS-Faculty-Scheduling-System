@@ -1,0 +1,27 @@
+{
+  "check": "backend-regressions",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_phase4a_auth.py",
+    "tests/test_ga_control_conflicts.py",
+    "-q",
+    "--tb=short",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d12-pytest-20261024T143718792678+0800-backend-regressions"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T14:37:18.795034+08:00",
+  "finished_at": "2026-10-24T14:38:27.133423+08:00",
+  "elapsed_seconds": 68.338,
+  "exit_code": 1,
+  "stdout": "......................................F.......                           [100%]\n================================== FAILURES ===================================\n_________________ test_real_browser_identity_and_preferences __________________\ntests\\test_phase4a_auth.py:421: in test_real_browser_identity_and_preferences\n    assert result.returncode == 0, result.stdout + result.stderr\nE   AssertionError: \u2716 Phase 4A real browser authentication and authorization (19896.9584ms)\nE     \u2139 tests 1\nE     \u2139 suites 0\nE     \u2139 pass 0\nE     \u2139 fail 1\nE     \u2139 cancelled 0\nE     \u2139 skipped 0\nE     \u2139 todo 0\nE     \u2139 duration_ms 23764.9541\nE     \nE     \u2716 failing tests:\nE     \nE     test at tests\\auth.browser.integration.mjs:15:1\nE     \u2716 Phase 4A real browser authentication and authorization (19896.9584ms)\nE       Error: Browser command timeout: Runtime.enable\nE           at Timeout._onTimeout (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/auth.browser.integration.mjs:33:138)\nE           at listOnTimeout (node:internal/timers:605:17)\nE           at process.processTimers (node:internal/timers:541:7)\nE     \nE   assert 1 == 0\nE    +  where 1 = CompletedProcess(args=['C:\\\\Program Files\\\\nodejs\\\\node.EXE', '--test', 'tests/auth.browser.integration.mjs'], returnc...listOnTimeout (node:internal/timers:605:17)\\n      at process.processTimers (node:internal/timers:541:7)\\n', stderr='').returncode\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\ntests/test_phase4a_auth.py::test_postgresql_offline_migration_sql\ntests/test_phase4a_auth.py::test_postgresql_offline_migration_sql\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\alembic\\config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.\n    util.warn_deprecated(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/test_phase4a_auth.py::test_real_browser_identity_and_preferences\n1 failed, 45 passed, 4 warnings in 65.44s (0:01:05)\n",
+  "stderr": "",
+  "scope": "Existing auth and GA control regression fixtures, no production database",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

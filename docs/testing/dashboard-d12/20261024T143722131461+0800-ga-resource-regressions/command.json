@@ -1,0 +1,28 @@
+{
+  "check": "ga-resource-regressions",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_preassigned_assignments.py::test_reset_and_rollback_preserve_declarations",
+    "tests/test_preassigned_assignments.py::test_room_and_section_conflicts_apply",
+    "tests/test_preassigned_assignments.py::test_external_overlap_and_future_preassignment",
+    "-q",
+    "--tb=short",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d12-pytest-20261024T143722131461+0800-ga-resource-regressions"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T14:37:22.134077+08:00",
+  "finished_at": "2026-10-24T14:37:30.085182+08:00",
+  "elapsed_seconds": 7.951,
+  "exit_code": 0,
+  "stdout": "...                                                                      [100%]\n3 passed in 4.89s\n",
+  "stderr": "",
+  "scope": "Original preassignment/reset/resource regression fixtures; current academic inputs read internally, never modified",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

@@ -1,0 +1,28 @@
+{
+  "check": "academic-offline",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/academic/test_academic_foundation.py",
+    "tests/academic/test_academic_planner.py",
+    "tests/academic/test_academic_safety.py",
+    "-q",
+    "--tb=short",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d12-pytest-20261024T143800437180+0800-academic-offline"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T14:38:00.440171+08:00",
+  "finished_at": "2026-10-24T14:38:07.338468+08:00",
+  "elapsed_seconds": 6.898,
+  "exit_code": 0,
+  "stdout": "........................................................................ [ 84%]\n.............                                                            [100%]\n============================== warnings summary ===============================\ntests/academic/test_academic_foundation.py::test_migration_chain_and_frozen_ddl_match_models\ntests/academic/test_academic_foundation.py::test_alembic_environment_renders_full_chain_without_connecting\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\alembic\\config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.\n    util.warn_deprecated(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n85 passed, 2 warnings in 3.54s\n",
+  "stderr": "",
+  "scope": "Academic foundation offline tests only; no PostgreSQL cases selected",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

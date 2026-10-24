@@ -1,0 +1,1044 @@
+{
+  "milestone": "D12",
+  "status": "IMPLEMENTED AND VERIFIED IN ISOLATED FICTIONAL ENVIRONMENTS; PRODUCTION SOURCE AND POSTGRESQL ACCEPTANCE BLOCKED",
+  "recorded_at": "2026-10-24T15:01:37.324557+08:00",
+  "baseline_commit": "cad837dde9bed38da6427ee3a4106566323dd53d",
+  "latest_commands": {
+    "focused": {
+      "path": "docs/testing/dashboard-d12/20261024T145045457446+0800-focused/command.json",
+      "exit_code": 0,
+      "scope": "D12 real FastAPI authentication/transactions with explicit fictional Chair and schedule providers; owned SQLite only, PostgreSQL rendering offline"
+    },
+    "build": {
+      "path": "docs/testing/dashboard-d12/20261024T144246396451+0800-build/command.json",
+      "exit_code": 0,
+      "scope": "Production frontend compilation/bundling, not browser or database acceptance"
+    },
+    "contracts": {
+      "path": "docs/testing/dashboard-d12/20261024T144241332136+0800-contracts/command.json",
+      "exit_code": 0,
+      "scope": "Frontend API/model contracts, not rendered UI or live backend authorization"
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-d12/20261024T144258589330+0800-lint/command.json",
+      "exit_code": 0,
+      "scope": "Focused ESLint; existing warnings are retained without changing legacy page logic"
+    },
+    "d11-backend": {
+      "path": "docs/testing/dashboard-d12/20261024T143332838725+0800-d11-backend/command.json",
+      "exit_code": 0,
+      "scope": "D11 real FastAPI sessions/ownership and SQLAlchemy transactions, fictional guarded schedule/catalog and owned SQLite; offline PostgreSQL SQL rendering only"
+    },
+    "d12-live": {
+      "path": "docs/testing/dashboard-d12/20261024T144446794501+0800-d12-live/command.json",
+      "exit_code": 0,
+      "scope": "Actual Edge/React to owned FastAPI/SQLite with real authentication and fictional Chair/schedule/trust providers; no institutional authority or PostgreSQL"
+    },
+    "backend-regressions": {
+      "path": "docs/testing/dashboard-d12/20261024T143918888791+0800-backend-regressions/command.json",
+      "exit_code": 0,
+      "scope": "Existing auth and GA control regression fixtures, no production database"
+    },
+    "backend": {
+      "path": "docs/testing/dashboard-d12/20261024T143718842126+0800-backend/command.json",
+      "exit_code": 0,
+      "scope": "Existing D2-D9 FastAPI/validation regressions using fictional fixtures and SQLite"
+    },
+    "academic-offline": {
+      "path": "docs/testing/dashboard-d12/20261024T144612299529+0800-academic-offline/command.json",
+      "exit_code": 0,
+      "scope": "Academic foundation offline tests only; no PostgreSQL cases selected"
+    },
+    "ga-resource-regressions": {
+      "path": "docs/testing/dashboard-d12/20261024T143722131461+0800-ga-resource-regressions/command.json",
+      "exit_code": 0,
+      "scope": "Original preassignment/reset/resource regression fixtures; current academic inputs read internally, never modified"
+    },
+    "v1-fixtures": {
+      "path": "docs/testing/dashboard-d12/20261024T143723923009+0800-v1-fixtures/command.json",
+      "exit_code": 0,
+      "scope": "Fictional current-release V1 fixtures with original operators and actual checkpoint I/O/continuation"
+    },
+    "v2-api": {
+      "path": "docs/testing/dashboard-d12/20261024T143725965447+0800-v2-api/command.json",
+      "exit_code": 0,
+      "scope": "Actual FastAPI ASGI auth and D8/D9 transactions against owned SQLite with fictional resources/providers; no browser or PostgreSQL"
+    },
+    "v2-engine": {
+      "path": "docs/testing/dashboard-d12/20261024T143728411757+0800-v2-engine/command.json",
+      "exit_code": 0,
+      "scope": "Fictional V2 kernel, constraints and checkpoint tests; authority doubles are unit boundaries, not institutional verification"
+    },
+    "d11-live": {
+      "path": "docs/testing/dashboard-d12/20261024T143945745735+0800-d11-live/command.json",
+      "exit_code": 0,
+      "scope": "Actual Edge/React to owned FastAPI/SQLite with real faculty authentication; fictional guarded schedule/term/resource source, no genuine authority or PostgreSQL"
+    },
+    "browser-regressions": {
+      "path": "docs/testing/dashboard-d12/20261024T144308743312+0800-browser-regressions/command.json",
+      "exit_code": 0,
+      "scope": "Existing D1-D8 actual Edge/React regressions with synthetic HTTP replies"
+    },
+    "ga-browser": {
+      "path": "docs/testing/dashboard-d12/20261024T144010456317+0800-ga-browser/command.json",
+      "exit_code": 0,
+      "scope": "Existing GA actual Edge/React regressions with synthetic HTTP replies"
+    },
+    "v2-browser": {
+      "path": "docs/testing/dashboard-d12/20261024T144022890017+0800-v2-browser/command.json",
+      "exit_code": 0,
+      "scope": "Actual Edge/React with synthetic HTTP replies; no live FastAPI authorization or GA execution"
+    },
+    "live": {
+      "path": "docs/testing/dashboard-d12/20261024T144559728202+0800-live/command.json",
+      "exit_code": 0,
+      "scope": "Existing D9 actual Edge/FastAPI HTTP/SQLite regressions with fictional providers; no PostgreSQL"
+    },
+    "v2-live": {
+      "path": "docs/testing/dashboard-d12/20261024T144047366014+0800-v2-live/command.json",
+      "exit_code": 0,
+      "scope": "Actual Edge to FastAPI HTTP/SQLite and real GA operators with entirely fictional resources/providers; no PostgreSQL or genuine authority"
+    }
+  },
+  "results": {
+    "focused_backend_and_offline_migration": 42,
+    "D11_backend_and_offline_migration": 33,
+    "new_frontend_contracts": 15,
+    "all_frontend_contracts": 189,
+    "D12_real_HTTP_browser_scenarios": 12,
+    "D12_live_pytest_wrappers": 1,
+    "D2_D9_backend": 327,
+    "auth_control": 46,
+    "academic_offline": 85,
+    "original_resource": 3,
+    "V1_original_operator_continuation_fixtures": 4,
+    "V2_kernel": 30,
+    "V2_API": 18,
+    "D1_D8_synthetic_HTTP_browser_scenarios": 125,
+    "GA_synthetic_HTTP_browser_scenarios": 51,
+    "D10_synthetic_HTTP_browser_scenarios": 12,
+    "D9_real_HTTP_browser_scenarios": 16,
+    "D10_real_HTTP_browser_scenarios": 6,
+    "D11_real_HTTP_browser_scenarios": 12,
+    "build": "PASS with existing bundling warnings",
+    "focused_ESLint": "0 errors, 0 warnings"
+  },
+  "preservation": {
+    "baseline_files": 1043,
+    "byte_identical": 1031,
+    "intended_modified": [
+      "backend/main.py",
+      "backend/migrations/env.py",
+      "backend/routers/adjustments.py",
+      "backend/services/adjustment_service.py",
+      "backend/tests/academic/test_academic_foundation.py",
+      "backend/tests/dashboard/test_adjustments.py",
+      "frontend/src/api/adjustments.ts",
+      "frontend/src/components/common/AccountMenu.tsx",
+      "frontend/src/pages/faculty/AdjustmentRequests.tsx",
+      "frontend/src/routes/AppRoutes.tsx",
+      "frontend/tests/adjustments.live.mjs",
+      "frontend/tests/mySchedule.browser.test.mjs"
+    ],
+    "academic_data_files_unchanged": 23,
+    "protected_preferences_unchanged": true,
+    "original_GA_V1_V2_sources_and_six_historical_checkpoints_unchanged": true,
+    "index_HEAD_origin_unchanged": true,
+    "production_PostgreSQL_operations": 0,
+    "schedule_mutations": 0,
+    "D12_implemented": true,
+    "schedule_application_implemented": false
+  },
+  "new_source_and_test_files": [
+    "backend/chair_models.py",
+    "backend/migrations/versions/d12_0001_chair_decisions.py",
+    "backend/routers/chair_reviews.py",
+    "backend/schemas/chair_reviews.py",
+    "backend/services/chair_authority_service.py",
+    "backend/services/chair_decision_projection.py",
+    "backend/services/chair_review_service.py",
+    "backend/tests/dashboard/chair_restart_child.py",
+    "backend/tests/dashboard/chair_sqlite.py",
+    "backend/tests/dashboard/test_chair_live.py",
+    "backend/tests/dashboard/test_chair_migration.py",
+    "backend/tests/dashboard/test_chair_reviews.py",
+    "backend/tests/dashboard/test_chair_trust.py",
+    "frontend/src/api/chairDecisions.ts",
+    "frontend/src/api/chairReviews.ts",
+    "frontend/src/components/common/ChairReviewLink.tsx",
+    "frontend/src/pages/chair/Requests.tsx",
+    "frontend/tests/chairReviews.live.mjs",
+    "frontend/tests/chairReviews.test.mjs"
+  ],
+  "historical_nonzero_commands": [
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143518865265+0800-d12-live/command.json",
+      "check": "d12-live",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143718792678+0800-backend-regressions/command.json",
+      "check": "backend-regressions",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143720453427+0800-academic-offline/command.json",
+      "check": "academic-offline",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143957865978+0800-browser-regressions/command.json",
+      "check": "browser-regressions",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144034740823+0800-live/command.json",
+      "check": "live",
+      "exit_code": 1
+    }
+  ],
+  "privacy": {
+    "findings": [],
+    "methods": [
+      "Full/truncated encoded/signed fragments, credential URIs, private keys and bearer scans",
+      "Decoded JSON strings and sensitive assignment/header checks for all command output",
+      "Locally compare private faculty names without exporting them",
+      "PNG CRC/metadata checks and original-image visual review"
+    ],
+    "screenshots": [
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L03-scoped-review.png",
+        "sha256": "7362a9dcd74bb3ef60a86ac1c512d95d99c793fcaaa9f61d03fd6849de01814b",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L04-approved-pending-application.png",
+        "sha256": "c4c6ddd9c26c0d9e17ff2948659de70300110372b26e868a4fa9768a91d4f4b4",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L05-faculty-approved.png",
+        "sha256": "0555ae5ef54996da3099e0787c362919350dc68145aaa57a013a4967d19f9013",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L06-rejected-history.png",
+        "sha256": "d201503839ba6adbb6b5ae44477c75591ec95715fecad45b83637ed2690b3d76",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L08-stale-approval-blocked.png",
+        "sha256": "5f4d214876798f131c8659870880f7a4f532faee880ed757b8c85970491ff7e4",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L10-mobile-decision.png",
+        "sha256": "7ed5b4356fd09f79c4b7b8d375a02ea5dc5c0b9ab6ae1093181a24b43ffc6fbd",
+        "width": 390,
+        "height": 844,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L03-scoped-review.png",
+        "sha256": "7e595579bc093633fab8f18467a342757d6b9cc74bddd7d62e3ca82bfbcafef9",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L04-approved-pending-application.png",
+        "sha256": "80c591a1e4b7324038901b34928150a6bb921e733e16381fc31540d718b3eeed",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L05-faculty-approved.png",
+        "sha256": "70efd090d8158e2734d9ae4d126c1c703360f9a14e3b251b70ac5b3b02d42cdd",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L06-rejected-history.png",
+        "sha256": "4886f6659988edf9fd4f5dcbd3d2febf66433f8cbc677a61c0e1fdb52901f6bb",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L08-stale-approval-blocked.png",
+        "sha256": "608f2f6b3f7bcb01ecc7930f986502ec0003aaf6f61e148812b24c313f5c1b26",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L10-mobile-decision.png",
+        "sha256": "ff0977f8c8162d7a17c8a5e701a14803a9454a378087b3971c55ffa098b34d25",
+        "width": 390,
+        "height": 844,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L03-scoped-review.png",
+        "sha256": "5e1cdee7e21974894f7d3b4f662c117846426c62bf7431e778bef1ef7758089d",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L04-approved-pending-application.png",
+        "sha256": "d788c764ab104ea5fcd366149b5afdc79e8730c153c9411c184eb6dff03ae01c",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L05-faculty-approved.png",
+        "sha256": "5efc306a0f6f0a14e66582e78674f65067725c11a8cb15161a0c61fc30ac5abf",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L06-rejected-history.png",
+        "sha256": "f441df7a12a6c399c95f2d1c73078476c55c694de724bb191bb25700ba552211",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L08-stale-approval-blocked.png",
+        "sha256": "1840e0abe5d7ccb5c2b09f53354550eafad97f1cd5a11e1ee436be6fc56fdd79",
+        "width": 1366,
+        "height": 1100,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L10-mobile-decision.png",
+        "sha256": "cf79c63f2dd8226f014c485eba824dd78b11dcc30b687b36964ce0a2ae054d43",
+        "width": 390,
+        "height": 844,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L11-ordinary-account-denied.png",
+        "sha256": "7a22f9bfc59c1c1efc9493bf460b6acbd8c34d292e5876e50964e261aed674ba",
+        "width": 390,
+        "height": 844,
+        "scope": "Real Edge/FastAPI/SQLite; explicitly fictional Chair directory, scope, schedule and snapshot providers; no genuine institutional approval",
+        "privacy": "Visually reviewed original or confirmed byte-identical to reviewed original; fictional records only"
+      }
+    ],
+    "unique_images": 19,
+    "raw_databases_checkpoints_HAR_or_session_payloads_archived": false
+  },
+  "limitations": [
+    "Institutional Chair directory, department scope bindings, verified schedule source and production faculty submission remain unconfigured/BLOCKED",
+    "D12 browser uses explicitly fictional guarded Chair/schedule/trusted snapshot providers; real D8/D9/D10 ledger validation is exercised separately by backend integration tests with fictional issuers",
+    "17 Phase4C PostgreSQL tests and D9-D12 PostgreSQL migration/trigger/transaction/concurrency/locking acceptance NOT RUN",
+    "SQLite fixture triggers and offline PostgreSQL SQL rendering are not live PostgreSQL migration acceptance",
+    "Deployment requires separately approved D12 migration; an unmigrated D11 database fails closed for decision-aware request reads",
+    "One immutable final decision per request; no replacement, appeals, application or automatic GA execution",
+    "Queue is bounded to 1000 submitted records; exceeds bound fails without partial data",
+    "Historical failures and intermediate screenshots retained; final browser run supersedes intermediate UI wording/mobile observations"
+  ],
+  "hash_convention": "sha256/bytes retain the original reviewed working-file bytes. git_blob_sha256/git_blob_bytes describe verified Git clean-filter bytes (CRLF to LF for text under core.autocrlf=true; PNG bytes unchanged). The manifest excludes itself from artifact hashes. Hashes do not establish institutional authority.",
+  "artifacts": [
+    {
+      "path": "backend/chair_models.py",
+      "bytes": 1713,
+      "sha256": "2552d5179770f47ee331da278cc7a7722365e40452379a87dbaa39471596ac5f",
+      "git_blob_sha256": "2552d5179770f47ee331da278cc7a7722365e40452379a87dbaa39471596ac5f",
+      "git_blob_bytes": 1713
+    },
+    {
+      "path": "backend/main.py",
+      "bytes": 3490,
+      "sha256": "ff5dde1fb0b0c97972306281834fd7ec59dab9f4192bbd333c5c31470b86a630",
+      "git_blob_sha256": "e76945e7f344d62cf66dfbbaf1ba36c99f229411b0090dcffd683f5c1786b344",
+      "git_blob_bytes": 3389
+    },
+    {
+      "path": "backend/migrations/env.py",
+      "bytes": 1719,
+      "sha256": "e627c9512b8d7c0c7fcdd95aea4521e1af29cd576d74e02191ccc8f28075da1d",
+      "git_blob_sha256": "c38a94d80e7c69a61d9be3dab2ed9979ae3ec2521152f67fd8f8161ea48182fa",
+      "git_blob_bytes": 1684
+    },
+    {
+      "path": "backend/migrations/versions/d12_0001_chair_decisions.py",
+      "bytes": 3058,
+      "sha256": "8af1f3dacfcd70e00fa9edcdb0effb1009dac0e340d3308892f441f127220600",
+      "git_blob_sha256": "0c9aa1c242e47b12778a28661cb173d1a829e5d78e0d58e8f882e9ae2dca1a97",
+      "git_blob_bytes": 3039
+    },
+    {
+      "path": "backend/routers/adjustments.py",
+      "bytes": 3475,
+      "sha256": "583e87538b2378c265c2aadede6cdb7b4d01902f32c1918b14dcdba352c76d28",
+      "git_blob_sha256": "583e87538b2378c265c2aadede6cdb7b4d01902f32c1918b14dcdba352c76d28",
+      "git_blob_bytes": 3475
+    },
+    {
+      "path": "backend/routers/chair_reviews.py",
+      "bytes": 3056,
+      "sha256": "f5581da91590aba7b20241d692c7ecdb89fedbfbbf4e92b41c9f1f22d0ecf983",
+      "git_blob_sha256": "f5581da91590aba7b20241d692c7ecdb89fedbfbbf4e92b41c9f1f22d0ecf983",
+      "git_blob_bytes": 3056
+    },
+    {
+      "path": "backend/schemas/chair_reviews.py",
+      "bytes": 554,
+      "sha256": "f41109f0a8b72210bf9ec46ab141c99dba61c78783cdea12135236c02c30609c",
+      "git_blob_sha256": "f41109f0a8b72210bf9ec46ab141c99dba61c78783cdea12135236c02c30609c",
+      "git_blob_bytes": 554
+    },
+    {
+      "path": "backend/services/adjustment_service.py",
+      "bytes": 12959,
+      "sha256": "d8f3497257c9103944230edb73ec0abbd2767d712d6ff73874d2c631c75566df",
+      "git_blob_sha256": "d8f3497257c9103944230edb73ec0abbd2767d712d6ff73874d2c631c75566df",
+      "git_blob_bytes": 12959
+    },
+    {
+      "path": "backend/services/chair_authority_service.py",
+      "bytes": 4350,
+      "sha256": "ca0e79f286e332815544daafce2e65cfd7d44c26657a0d99be7781a03935f092",
+      "git_blob_sha256": "ca0e79f286e332815544daafce2e65cfd7d44c26657a0d99be7781a03935f092",
+      "git_blob_bytes": 4350
+    },
+    {
+      "path": "backend/services/chair_decision_projection.py",
+      "bytes": 2515,
+      "sha256": "a55005c45a082f9fb528658ba23de0c2c1648de8ea02f907b618ac70f0962c79",
+      "git_blob_sha256": "a55005c45a082f9fb528658ba23de0c2c1648de8ea02f907b618ac70f0962c79",
+      "git_blob_bytes": 2515
+    },
+    {
+      "path": "backend/services/chair_review_service.py",
+      "bytes": 11802,
+      "sha256": "ca57ea73bbeb6fff9171170523367a2628685c97f1aed91efeac0a898a68caad",
+      "git_blob_sha256": "ca57ea73bbeb6fff9171170523367a2628685c97f1aed91efeac0a898a68caad",
+      "git_blob_bytes": 11802
+    },
+    {
+      "path": "backend/tests/academic/test_academic_foundation.py",
+      "bytes": 12028,
+      "sha256": "f0d1704e93f1db82bf0ea29fbdd2a2feaf2f06d820aeee2901ba47e299fc476b",
+      "git_blob_sha256": "f0d1704e93f1db82bf0ea29fbdd2a2feaf2f06d820aeee2901ba47e299fc476b",
+      "git_blob_bytes": 12028
+    },
+    {
+      "path": "backend/tests/dashboard/chair_restart_child.py",
+      "bytes": 2279,
+      "sha256": "122c6b667975b94ca90b8bcbd8934d3d00c17977af4b3a6870d77bfb014d0092",
+      "git_blob_sha256": "d9b1e7007497caab8909fcefc583348740e2058a99cd447a5f4d5868dcd05c5e",
+      "git_blob_bytes": 2239
+    },
+    {
+      "path": "backend/tests/dashboard/chair_sqlite.py",
+      "bytes": 1180,
+      "sha256": "ae265c565e4329881de78c38dfdcffa2ef592deb7f71fee61144ce2d922b1588",
+      "git_blob_sha256": "ae265c565e4329881de78c38dfdcffa2ef592deb7f71fee61144ce2d922b1588",
+      "git_blob_bytes": 1180
+    },
+    {
+      "path": "backend/tests/dashboard/test_adjustments.py",
+      "bytes": 16051,
+      "sha256": "66b66f70769994d9544a888fc58a4a6c521f077419e91177943911995c69daa7",
+      "git_blob_sha256": "66b66f70769994d9544a888fc58a4a6c521f077419e91177943911995c69daa7",
+      "git_blob_bytes": 16051
+    },
+    {
+      "path": "backend/tests/dashboard/test_chair_live.py",
+      "bytes": 2694,
+      "sha256": "157dccd58d14ba496d0cd562b39764cb85b4c429c3089055d5597345e67008b8",
+      "git_blob_sha256": "f6a1f70d5abf9052d6e6e944ee87aa23c1f5ebb2e041b15168e044c36261b517",
+      "git_blob_bytes": 2644
+    },
+    {
+      "path": "backend/tests/dashboard/test_chair_migration.py",
+      "bytes": 1480,
+      "sha256": "3353f1fa6a861e681351a4c573dea92a448950b55a871075afa7643208f1d036",
+      "git_blob_sha256": "3353f1fa6a861e681351a4c573dea92a448950b55a871075afa7643208f1d036",
+      "git_blob_bytes": 1480
+    },
+    {
+      "path": "backend/tests/dashboard/test_chair_reviews.py",
+      "bytes": 15021,
+      "sha256": "7f0af4620a1ab41fa6c5a90e68b1bd8ca1c43f63246c57384fe8a991298d9071",
+      "git_blob_sha256": "7f0af4620a1ab41fa6c5a90e68b1bd8ca1c43f63246c57384fe8a991298d9071",
+      "git_blob_bytes": 15021
+    },
+    {
+      "path": "backend/tests/dashboard/test_chair_trust.py",
+      "bytes": 4306,
+      "sha256": "b4a678378df04b3e5a933f7761b8bc085dce6fa7218437d5a8139d42bca27667",
+      "git_blob_sha256": "b4a678378df04b3e5a933f7761b8bc085dce6fa7218437d5a8139d42bca27667",
+      "git_blob_bytes": 4306
+    },
+    {
+      "path": "docs/dashboard-d12-implementation.md",
+      "bytes": 18746,
+      "sha256": "83b8760aab18549f2f303453b702b1979001051841404143da25cd9fcbdccce2",
+      "git_blob_sha256": "4f72d5cdd13007cf99a2de4c95bafa04c5dfca2d92d08974f6ac13bedc14ec16",
+      "git_blob_bytes": 18593
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143518865265+0800-d12-live/browser-results.json",
+      "bytes": 378,
+      "sha256": "7dffefdfbcf827ad7732d9a8b841e17c47467aa10a6d1dd5350e63c15cf640dc",
+      "git_blob_sha256": "7dffefdfbcf827ad7732d9a8b841e17c47467aa10a6d1dd5350e63c15cf640dc",
+      "git_blob_bytes": 378
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/browser-results.json",
+      "bytes": 4462,
+      "sha256": "1c469e9bb1a256c639dedfc4082d87666db88c228653894a034cdf2304f9cc81",
+      "git_blob_sha256": "1c469e9bb1a256c639dedfc4082d87666db88c228653894a034cdf2304f9cc81",
+      "git_blob_bytes": 4462
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L03-scoped-review.png",
+      "bytes": 80433,
+      "sha256": "7362a9dcd74bb3ef60a86ac1c512d95d99c793fcaaa9f61d03fd6849de01814b",
+      "git_blob_sha256": "7362a9dcd74bb3ef60a86ac1c512d95d99c793fcaaa9f61d03fd6849de01814b",
+      "git_blob_bytes": 80433
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L04-approved-pending-application.png",
+      "bytes": 86686,
+      "sha256": "c4c6ddd9c26c0d9e17ff2948659de70300110372b26e868a4fa9768a91d4f4b4",
+      "git_blob_sha256": "c4c6ddd9c26c0d9e17ff2948659de70300110372b26e868a4fa9768a91d4f4b4",
+      "git_blob_bytes": 86686
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L05-faculty-approved.png",
+      "bytes": 89689,
+      "sha256": "0555ae5ef54996da3099e0787c362919350dc68145aaa57a013a4967d19f9013",
+      "git_blob_sha256": "0555ae5ef54996da3099e0787c362919350dc68145aaa57a013a4967d19f9013",
+      "git_blob_bytes": 89689
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L06-rejected-history.png",
+      "bytes": 83009,
+      "sha256": "d201503839ba6adbb6b5ae44477c75591ec95715fecad45b83637ed2690b3d76",
+      "git_blob_sha256": "d201503839ba6adbb6b5ae44477c75591ec95715fecad45b83637ed2690b3d76",
+      "git_blob_bytes": 83009
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L08-stale-approval-blocked.png",
+      "bytes": 74823,
+      "sha256": "5f4d214876798f131c8659870880f7a4f532faee880ed757b8c85970491ff7e4",
+      "git_blob_sha256": "5f4d214876798f131c8659870880f7a4f532faee880ed757b8c85970491ff7e4",
+      "git_blob_bytes": 74823
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143614636779+0800-d12-live/D12-L10-mobile-decision.png",
+      "bytes": 50228,
+      "sha256": "7ed5b4356fd09f79c4b7b8d375a02ea5dc5c0b9ab6ae1093181a24b43ffc6fbd",
+      "git_blob_sha256": "7ed5b4356fd09f79c4b7b8d375a02ea5dc5c0b9ab6ae1093181a24b43ffc6fbd",
+      "git_blob_bytes": 50228
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/browser-results.json",
+      "bytes": 4462,
+      "sha256": "198846bb1308fe560b8f2bc9e1b4238760fab4991bd0c510fefad4720778fdcd",
+      "git_blob_sha256": "198846bb1308fe560b8f2bc9e1b4238760fab4991bd0c510fefad4720778fdcd",
+      "git_blob_bytes": 4462
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L03-scoped-review.png",
+      "bytes": 81234,
+      "sha256": "7e595579bc093633fab8f18467a342757d6b9cc74bddd7d62e3ca82bfbcafef9",
+      "git_blob_sha256": "7e595579bc093633fab8f18467a342757d6b9cc74bddd7d62e3ca82bfbcafef9",
+      "git_blob_bytes": 81234
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L04-approved-pending-application.png",
+      "bytes": 87330,
+      "sha256": "80c591a1e4b7324038901b34928150a6bb921e733e16381fc31540d718b3eeed",
+      "git_blob_sha256": "80c591a1e4b7324038901b34928150a6bb921e733e16381fc31540d718b3eeed",
+      "git_blob_bytes": 87330
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L05-faculty-approved.png",
+      "bytes": 80570,
+      "sha256": "70efd090d8158e2734d9ae4d126c1c703360f9a14e3b251b70ac5b3b02d42cdd",
+      "git_blob_sha256": "70efd090d8158e2734d9ae4d126c1c703360f9a14e3b251b70ac5b3b02d42cdd",
+      "git_blob_bytes": 80570
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L06-rejected-history.png",
+      "bytes": 83789,
+      "sha256": "4886f6659988edf9fd4f5dcbd3d2febf66433f8cbc677a61c0e1fdb52901f6bb",
+      "git_blob_sha256": "4886f6659988edf9fd4f5dcbd3d2febf66433f8cbc677a61c0e1fdb52901f6bb",
+      "git_blob_bytes": 83789
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L08-stale-approval-blocked.png",
+      "bytes": 74919,
+      "sha256": "608f2f6b3f7bcb01ecc7930f986502ec0003aaf6f61e148812b24c313f5c1b26",
+      "git_blob_sha256": "608f2f6b3f7bcb01ecc7930f986502ec0003aaf6f61e148812b24c313f5c1b26",
+      "git_blob_bytes": 74919
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T143931297748+0800-d12-live/D12-L10-mobile-decision.png",
+      "bytes": 49322,
+      "sha256": "ff0977f8c8162d7a17c8a5e701a14803a9454a378087b3971c55ffa098b34d25",
+      "git_blob_sha256": "ff0977f8c8162d7a17c8a5e701a14803a9454a378087b3971c55ffa098b34d25",
+      "git_blob_bytes": 49322
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/browser-results.json",
+      "bytes": 5261,
+      "sha256": "89a81dd3a7e3a5c9d31eb9ef084d1c1d5128c9f196dd86d201a5e0e2f2bf78bb",
+      "git_blob_sha256": "89a81dd3a7e3a5c9d31eb9ef084d1c1d5128c9f196dd86d201a5e0e2f2bf78bb",
+      "git_blob_bytes": 5261
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L03-scoped-review.png",
+      "bytes": 81188,
+      "sha256": "5e1cdee7e21974894f7d3b4f662c117846426c62bf7431e778bef1ef7758089d",
+      "git_blob_sha256": "5e1cdee7e21974894f7d3b4f662c117846426c62bf7431e778bef1ef7758089d",
+      "git_blob_bytes": 81188
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L04-approved-pending-application.png",
+      "bytes": 87172,
+      "sha256": "d788c764ab104ea5fcd366149b5afdc79e8730c153c9411c184eb6dff03ae01c",
+      "git_blob_sha256": "d788c764ab104ea5fcd366149b5afdc79e8730c153c9411c184eb6dff03ae01c",
+      "git_blob_bytes": 87172
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L05-faculty-approved.png",
+      "bytes": 80538,
+      "sha256": "5efc306a0f6f0a14e66582e78674f65067725c11a8cb15161a0c61fc30ac5abf",
+      "git_blob_sha256": "5efc306a0f6f0a14e66582e78674f65067725c11a8cb15161a0c61fc30ac5abf",
+      "git_blob_bytes": 80538
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L06-rejected-history.png",
+      "bytes": 83547,
+      "sha256": "f441df7a12a6c399c95f2d1c73078476c55c694de724bb191bb25700ba552211",
+      "git_blob_sha256": "f441df7a12a6c399c95f2d1c73078476c55c694de724bb191bb25700ba552211",
+      "git_blob_bytes": 83547
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L08-stale-approval-blocked.png",
+      "bytes": 74662,
+      "sha256": "1840e0abe5d7ccb5c2b09f53354550eafad97f1cd5a11e1ee436be6fc56fdd79",
+      "git_blob_sha256": "1840e0abe5d7ccb5c2b09f53354550eafad97f1cd5a11e1ee436be6fc56fdd79",
+      "git_blob_bytes": 74662
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L10-mobile-decision.png",
+      "bytes": 49241,
+      "sha256": "cf79c63f2dd8226f014c485eba824dd78b11dcc30b687b36964ce0a2ae054d43",
+      "git_blob_sha256": "cf79c63f2dd8226f014c485eba824dd78b11dcc30b687b36964ce0a2ae054d43",
+      "git_blob_bytes": 49241
+    },
+    {
+      "path": "docs/screenshots/dashboard-d12/20261024T144446794501+0800-d12-live/D12-L11-ordinary-account-denied.png",
+      "bytes": 29025,
+      "sha256": "7a22f9bfc59c1c1efc9493bf460b6acbd8c34d292e5876e50964e261aed674ba",
+      "git_blob_sha256": "7a22f9bfc59c1c1efc9493bf460b6acbd8c34d292e5876e50964e261aed674ba",
+      "git_blob_bytes": 29025
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143128828195+0800-focused/command.json",
+      "bytes": 2652,
+      "sha256": "55fbad96227d44e30708b96661e3b80ba3c30e2591287e385438f9bd83cd5688",
+      "git_blob_sha256": "e325841d6ed9c2e626d13be3c4e203903b4d480585ade83a4ec9980f8f91474c",
+      "git_blob_bytes": 2624
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143327989697+0800-focused/command.json",
+      "bytes": 2696,
+      "sha256": "5aea1cb48cc69a06fcb8e2546f4aaa358c48ebe92821fc4b57e4e57743f58464",
+      "git_blob_sha256": "b683b7485a8eed643f102fed1b3a87fd30f9679ac70277b2acaf783a98e2c1f5",
+      "git_blob_bytes": 2667
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143328062595+0800-build/command.json",
+      "bytes": 1980,
+      "sha256": "58388027136c23c9c40dcdef98aac35181406eb8b87c7302aeebbb4a224ae044",
+      "git_blob_sha256": "c87208f7bc3d1d2d7a240d0ce17d94ee3510d97bcc171702516c4066299324be",
+      "git_blob_bytes": 1962
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143328120454+0800-contracts/command.json",
+      "bytes": 18210,
+      "sha256": "d06e62961f097e03959cc835c6f1dd27df7ef11dd1ab229ff2d217f82f87f4b9",
+      "git_blob_sha256": "7726e6e7d43823460decabc1438e7cdd997efc616ec8d465e4fe4914d4a797d2",
+      "git_blob_bytes": 18171
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143330773596+0800-lint/command.json",
+      "bytes": 1003,
+      "sha256": "02f4a9b39a67868dd6cc308bba04cb97664cead823f3b009794c1ab6b1c59863",
+      "git_blob_sha256": "75d22e00a24570b806b51149fe1473f0d963e9cdf0b9670d9ca5e49d9740be96",
+      "git_blob_bytes": 978
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143332838725+0800-d11-backend/command.json",
+      "bytes": 2683,
+      "sha256": "82513145240b17e735a84a18ed1a11321713d2f379d6b8928e488e8888eea502",
+      "git_blob_sha256": "e060f04e5f0896d4ab94f366b6c13227e3e020c72b2d51176174cfc26e8304a6",
+      "git_blob_bytes": 2655
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143518865265+0800-d12-live/command.json",
+      "bytes": 3638,
+      "sha256": "d8b25be4dd245e21f2b003490132fb8066248a2d67c06e194e72d73e2ceb29bd",
+      "git_blob_sha256": "16039d40bd1b70270b5b9e5285b2ffc7d5eef85a7a7508abd192262fc2234175",
+      "git_blob_bytes": 3610
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143614636779+0800-d12-live/command.json",
+      "bytes": 3241,
+      "sha256": "d36b6e8cae0d73e3b7d0c8bf3259b20f941e999432c54918da3037cd647f2d1f",
+      "git_blob_sha256": "79781ad99e52b8318d5bfa8c60960749c8bd73412f10af6c53da18707a0e0b99",
+      "git_blob_bytes": 3213
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143657177851+0800-focused/command.json",
+      "bytes": 2707,
+      "sha256": "46ad43f3d50c0f130b9d731bb80a6ecca521a0a173c0296b32ad5170156b350e",
+      "git_blob_sha256": "6e231dfc98279b37305148bdce942e0ebd83c0cc3593e0efba7d212b0a232274",
+      "git_blob_bytes": 2678
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143718792678+0800-backend-regressions/command.json",
+      "bytes": 4114,
+      "sha256": "ad4b0dd52d9fb768a8bf1359a4bc7e44c56c71c8d3542f02a949c8673136595c",
+      "git_blob_sha256": "58a8eaed9956c97a2030add11553c44df88d3a9c5cd58df62a0dd697e06455e2",
+      "git_blob_bytes": 4087
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143718842126+0800-backend/command.json",
+      "bytes": 2674,
+      "sha256": "4bd05af92cd8089b623dad1d82f938112356af49a635becd4d3b3f5e854f1682",
+      "git_blob_sha256": "6544f73aef30d1cd654d3b43f82e445bc3f22a4e21b6aa85dd83af2f6bf97543",
+      "git_blob_bytes": 2641
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143720453427+0800-academic-offline/command.json",
+      "bytes": 3230,
+      "sha256": "dc867b25ada2812f0574b38a044a78775ef52ddc4327a5abf0447230d56a249c",
+      "git_blob_sha256": "72a19c2287392859f02c4422804841523839aa9f48af24b7e3c19d2225c21b81",
+      "git_blob_bytes": 3202
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143722131461+0800-ga-resource-regressions/command.json",
+      "bytes": 1379,
+      "sha256": "2269bb1767e07d050f21d57a7c0b0e5f56471beb846e108225e4493d5ced78ae",
+      "git_blob_sha256": "c4230d48e1d003fb08362067faaf4cf5901073985aeddec1c7d1c25d57b57b7b",
+      "git_blob_bytes": 1351
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143723923009+0800-v1-fixtures/command.json",
+      "bytes": 1147,
+      "sha256": "8a83b680cc8387f7d0bee030b52c339388c2f162285315c891e1439f430fda05",
+      "git_blob_sha256": "294e516088c7f7d1af84578b839f99bcbafc9c1fb1bef18632747d76e7fa5191",
+      "git_blob_bytes": 1120
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143725965447+0800-v2-api/command.json",
+      "bytes": 2050,
+      "sha256": "a824f1d491ba36b3e1c57bf726c0757c63e9e8e9c4742ef4dfc42178ad033a47",
+      "git_blob_sha256": "9c85e3a8efed875b1afa5f3631f41c29be6dd11114f27b27ed46c4657e983bd0",
+      "git_blob_bytes": 2023
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143728411757+0800-v2-engine/command.json",
+      "bytes": 1154,
+      "sha256": "22e40c9cd7c189991c3db096276fdd4a1e3036147eaacb3d21e1416bba5eaae1",
+      "git_blob_sha256": "d31e345932280e3549b8e1b78016aa8b9c1de62f48384d9afe33cf45bf62b243",
+      "git_blob_bytes": 1127
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143800437180+0800-academic-offline/command.json",
+      "bytes": 1982,
+      "sha256": "672ea9d48da83749c28490eebe5096461f1f829594e28edc227c71f41adf74d2",
+      "git_blob_sha256": "bbeb8e0028952eecc51847ae109c32963a6013c04d4ceca7c44094c02a64030a",
+      "git_blob_bytes": 1954
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143918888791+0800-backend-regressions/command.json",
+      "bytes": 2511,
+      "sha256": "38ae69fe61c4b3f38585da41f6521d2a8e7ed615b81f6f4e8ab59604a56337ff",
+      "git_blob_sha256": "ceb9f7d50d6db4a6555bb62ae0265dd73788dbd0ff81967c3c8e79370aca888d",
+      "git_blob_bytes": 2484
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143931297748+0800-d12-live/command.json",
+      "bytes": 3241,
+      "sha256": "0aa81c4c35d6ff63ef5850327c755620be55502d860d21879dea8d0b7090bb2e",
+      "git_blob_sha256": "525f904269e058606e5afc9e48f767e8bc88c60199ef6b15d8c0dde7c65b3d94",
+      "git_blob_bytes": 3213
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143945745735+0800-d11-live/command.json",
+      "bytes": 3379,
+      "sha256": "c0ed3d426faaca27072f1a6bfd8bc085aa5ed2669135930b24f72712540f72c4",
+      "git_blob_sha256": "3729b6712242740b3399b5e4b283dbb5c21e0abcb9994bd490ac9f9d5d520da9",
+      "git_blob_bytes": 3351
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T143957865978+0800-browser-regressions/command.json",
+      "bytes": 14932,
+      "sha256": "bf57f6d39c5d47115541a410c7923bfdebdf6655b67f01c47428db58cec9d24b",
+      "git_blob_sha256": "a3618356c4b5eb8be24630d65190067c1ac0123b79d80a2ec63cf21fcc7e7bac",
+      "git_blob_bytes": 14906
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144010456317+0800-ga-browser/command.json",
+      "bytes": 6218,
+      "sha256": "da97cb71d3c3d51ec4d9473a989223abc658629a5ee4a00fc0f098ae19ab41e2",
+      "git_blob_sha256": "b233cab14dd980a753958da075c03faa8b03cd964f281a0e2704a7d1b00af16b",
+      "git_blob_bytes": 6200
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144022890017+0800-v2-browser/command.json",
+      "bytes": 1841,
+      "sha256": "332fc1e7041c2c552fd2a8566c5b098f2387bf977038781fd56f5936e4eb202e",
+      "git_blob_sha256": "a3d27352386f52f8711d78fd032d994fedfdd0b0df409bbdd51234a7a77bed3f",
+      "git_blob_bytes": 1823
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144034740823+0800-live/command.json",
+      "bytes": 5731,
+      "sha256": "bd477a46b438ed5277e921c5820eae1d3ceef5fa816b0c0aba1d9b6e356a1670",
+      "git_blob_sha256": "f780568ea4367ac0a16c0bc20b181fb9c4677244a70a359a3d6968f88b645216",
+      "git_blob_bytes": 5704
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144047366014+0800-v2-live/command.json",
+      "bytes": 2796,
+      "sha256": "3cb26e946f9e0c7accc5c9f762cf30196c87daec6299fb6e92b0cefb23e82f37",
+      "git_blob_sha256": "4b3022a2d51591bf082be71b5ee02e1609326d79d03e8483643a30c5a1dde4f5",
+      "git_blob_bytes": 2768
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144241332136+0800-contracts/command.json",
+      "bytes": 18310,
+      "sha256": "a98a4372f64dc02ebba7ee045b7693915a38a311bef06a7a706a1369e5b2002a",
+      "git_blob_sha256": "63d9f29887378b4e0d55a332bf0fbfad30f0594677b67c83f506cb9c02bbee73",
+      "git_blob_bytes": 18271
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144246396451+0800-build/command.json",
+      "bytes": 1980,
+      "sha256": "3c3f5ba07331498ef7d73b6bd9688650571e9397922d6c248369714aff9c3dde",
+      "git_blob_sha256": "68c840fe5927eb3e27ff1dbce710aeb8ba504b622400e55f6eb945db435e80ad",
+      "git_blob_bytes": 1962
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144258589330+0800-lint/command.json",
+      "bytes": 1002,
+      "sha256": "2d0c8835205c79ee6385178b742450d1bcf3ffabb15d2714fef83663d4ab555d",
+      "git_blob_sha256": "ae7188f503b8c97315779dbfcf75b512803573da50518d9a5b7daf6c9861e4c1",
+      "git_blob_bytes": 977
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144308743312+0800-browser-regressions/command.json",
+      "bytes": 14133,
+      "sha256": "7ebbfe66f195b384dbb5be3855200cfae332a8dcbedc5fd5c75eb44ffc6e840b",
+      "git_blob_sha256": "81c1e7bf58343cefd4be0f95d5dc9df9874107b702eb1964cb836a310e5e7576",
+      "git_blob_bytes": 14107
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144402316935+0800-focused/command.json",
+      "bytes": 2707,
+      "sha256": "85fccb3f67a859ddd2ae8d6a9d4977bf2dbdf267db4200090d3917d4f5206b04",
+      "git_blob_sha256": "e7b225253dc5a49bc4e3eed83d955ecb3107c6118c5cafb713ae80638c7de90e",
+      "git_blob_bytes": 2678
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144446794501+0800-d12-live/command.json",
+      "bytes": 3459,
+      "sha256": "5ea6c651563867d82f732495d3fc57252ca208bda8a14480bde87f724a65dd85",
+      "git_blob_sha256": "273694d7ab3ae48c1a6586eadda844913a91a02d7a05bea99c66ed2d6e5ed9aa",
+      "git_blob_bytes": 3431
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144559728202+0800-live/command.json",
+      "bytes": 4139,
+      "sha256": "ab5195ed9380f9129bf41f372a37b49760a67ecd53969d2e2c750d392e5ef01e",
+      "git_blob_sha256": "a26952e34cc762bc4c6959c04f09111a3a597f21bc8758f67d7af7fb71559726",
+      "git_blob_bytes": 4112
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T144612299529+0800-academic-offline/command.json",
+      "bytes": 1981,
+      "sha256": "e2ffe4ea1a3917c68b05cf596b2f0ebc47a77d583675dff093c6b5b3025eb934",
+      "git_blob_sha256": "203cccd4c4efed9d6779af748b6a139d51c3e1c4b0980066ed6d9b7ca09d570f",
+      "git_blob_bytes": 1953
+    },
+    {
+      "path": "docs/testing/dashboard-d12/20261024T145045457446+0800-focused/command.json",
+      "bytes": 2697,
+      "sha256": "360ded87c7bb4cb5a4194898109631afb261f21c19f6ff16292f05efabe27255",
+      "git_blob_sha256": "fce6f9fc2e5a53e247797926bb6d24a73e6a07e2fc087ed304fbc08db4b589d5",
+      "git_blob_bytes": 2668
+    },
+    {
+      "path": "docs/testing/dashboard-d12/audit_evidence.py",
+      "bytes": 10880,
+      "sha256": "2feb32bcfcf8bfc96cf3adc600c7017dfdbab4a48e51e29af7bbb0ddffc49505",
+      "git_blob_sha256": "19d8725c0113f249b33e02ba9b94b0453d41b9c698bddfe21b15400bb2b4d78e",
+      "git_blob_bytes": 10751
+    },
+    {
+      "path": "docs/testing/dashboard-d12/preservation-baseline.json",
+      "bytes": 145034,
+      "sha256": "a04af3ce2d04403e24884b4f9ad8895426e7dfaee63aa6617bd004bd0db74313",
+      "git_blob_sha256": "351933bd45bab18670a55ef9dc0c758f77a29d2c1b1b948d721be1fbc0adca76",
+      "git_blob_bytes": 143989
+    },
+    {
+      "path": "docs/testing/dashboard-d12/run_checks.py",
+      "bytes": 4210,
+      "sha256": "36de4ead68565e4f6acd66aed47c49fd625aea583a773e52928afab894aab32b",
+      "git_blob_sha256": "895af7b58ee7b62bcef9f0a3502b3d72e86ba8a4198fe1903786dfd81f13e77b",
+      "git_blob_bytes": 4159
+    },
+    {
+      "path": "frontend/src/api/adjustments.ts",
+      "bytes": 4724,
+      "sha256": "94cae8d2e44305920495e9323282783d3727b703bb02ed573db00ecee19d2ede",
+      "git_blob_sha256": "8d52d5044b102f0b68a81d779aeb21afe97900c74db520461a56a406069b19e7",
+      "git_blob_bytes": 4690
+    },
+    {
+      "path": "frontend/src/api/chairDecisions.ts",
+      "bytes": 867,
+      "sha256": "e9bb19153b69631e095bbd482fdd76d8266740bdc5c1198006ceac25eceef6df",
+      "git_blob_sha256": "e9bb19153b69631e095bbd482fdd76d8266740bdc5c1198006ceac25eceef6df",
+      "git_blob_bytes": 867
+    },
+    {
+      "path": "frontend/src/api/chairReviews.ts",
+      "bytes": 2628,
+      "sha256": "7fba2310f7ac4dc7377476cc22dba1038b1a027e0eeb7e719dfc496a7cca26f9",
+      "git_blob_sha256": "7fba2310f7ac4dc7377476cc22dba1038b1a027e0eeb7e719dfc496a7cca26f9",
+      "git_blob_bytes": 2628
+    },
+    {
+      "path": "frontend/src/components/common/AccountMenu.tsx",
+      "bytes": 950,
+      "sha256": "67d641f26d11afc959783a7c40a289ac60c5969876f717b113171cf038b72ea6",
+      "git_blob_sha256": "67d641f26d11afc959783a7c40a289ac60c5969876f717b113171cf038b72ea6",
+      "git_blob_bytes": 950
+    },
+    {
+      "path": "frontend/src/components/common/ChairReviewLink.tsx",
+      "bytes": 694,
+      "sha256": "6e661facd1bd546b49144cf5c8421cbaba1b9843cca2a2c94938ee6a368f89bc",
+      "git_blob_sha256": "6e661facd1bd546b49144cf5c8421cbaba1b9843cca2a2c94938ee6a368f89bc",
+      "git_blob_bytes": 694
+    },
+    {
+      "path": "frontend/src/pages/chair/Requests.tsx",
+      "bytes": 9456,
+      "sha256": "aecd9d6e5df2709785449b7ceafc4cee5b0a524aba08fc539a63a4ccc475b1eb",
+      "git_blob_sha256": "01060079066e53412208c5199806d756ea84bb690442755c6e403cebbf31acb8",
+      "git_blob_bytes": 9401
+    },
+    {
+      "path": "frontend/src/pages/faculty/AdjustmentRequests.tsx",
+      "bytes": 13226,
+      "sha256": "ab1f65e3bbf5d0a37ff8c654e05e5cf1906b6b3dbfb9240c0fbcb93209fb383e",
+      "git_blob_sha256": "aec1f5c7359f14e9821329e564573c4f218c3a29c0d0a3083e869025cfa15d8c",
+      "git_blob_bytes": 13138
+    },
+    {
+      "path": "frontend/src/routes/AppRoutes.tsx",
+      "bytes": 5488,
+      "sha256": "99667586f17a4f8e2403a6b304d3a8ffc136d6c712ac8d738db5b52d150268d7",
+      "git_blob_sha256": "a476a45805166fdce00969beb6085128bda71794e68b87b7f8e933f6dccf74fa",
+      "git_blob_bytes": 5252
+    },
+    {
+      "path": "frontend/tests/adjustments.live.mjs",
+      "bytes": 13525,
+      "sha256": "54c3bc0c7b4d60365ec8f1e71250ea152c9c9844b6974c0f316cb7f05b55a258",
+      "git_blob_sha256": "2179259fee18f9f75593222742881d83c2b97b474d328356677c375646b8eaae",
+      "git_blob_bytes": 13409
+    },
+    {
+      "path": "frontend/tests/chairReviews.live.mjs",
+      "bytes": 16778,
+      "sha256": "4d7cc5144ce1883756cde5391c0de112edffcb57bfdd32e613e3df7a157cdee9",
+      "git_blob_sha256": "bf8e92c3a7ecb4cf42dec83c31dc5d3f7b42e91cd95a722c34eff4b8b43f340b",
+      "git_blob_bytes": 16661
+    },
+    {
+      "path": "frontend/tests/chairReviews.test.mjs",
+      "bytes": 5164,
+      "sha256": "d64ebfa7b6040c21492803943699b80b1db58f26426c8dd4c99104d53c5e4f04",
+      "git_blob_sha256": "53f03e9c0adb400334f0be78f1c4561920b02d221950b9eaff50134f3e6b691d",
+      "git_blob_bytes": 5133
+    },
+    {
+      "path": "frontend/tests/mySchedule.browser.test.mjs",
+      "bytes": 13920,
+      "sha256": "1d2d8436f0ac3ca90aae64a24a198bf2b853fd2750e8ab94973b841ef3a47f09",
+      "git_blob_sha256": "ceccd0e611c1b2d9a1206410e0484a2904ba5d52f66ff92a90a0c9cf6f55294b",
+      "git_blob_bytes": 13741
+    }
+  ],
+  "checkpoint_review": {
+    "reviewed_at": "2026-10-24T15:04:33.874592+08:00",
+    "baseline_commit": "cad837dde9bed38da6427ee3a4106566323dd53d",
+    "implementation_commit": "dabc4b378a1efcabc1a706d62205151bf2bc3bb0",
+    "planned_files": 93,
+    "implementation_test_files": 31,
+    "documentation_evidence_files": 62,
+    "existing_validation_evidence_reviewed": true,
+    "application_tests_rerun": false,
+    "raw_artifact_hashes_verified": 92,
+    "Git_normalized_artifact_hashes_verified": 92,
+    "Git_EOL_normalized_files": 51,
+    "privacy_findings": [],
+    "all_command_records_reviewed": 34,
+    "original_screenshot_hashes_rechecked_against_visual_review": 19,
+    "historical_failed_commands_retained": 5,
+    "protected_preferences_excluded": true,
+    "academic_data_files_unchanged": 23,
+    "new_redactions_required": false,
+    "public_fixture_classification": "One generic credential-assignment regex hit was an explicitly public, unchanged synthetic D2 HTTP fixture literal, verified against the pushed baseline; no real credential or session receipt was found.",
+    "notes": "The implementation report and preservation statements about unchanged HEAD/index and no staging describe implementation signoff before this authorized checkpoint. Only additive checkpoint and Git-normalized hash metadata changed during this checkpoint; application code, test records and original screenshot bytes are unchanged. The recorded tests were reviewed, not freshly executed. Production institutional authority and all stated PostgreSQL acceptance limitations remain blocked/unverified."
+  }
+}

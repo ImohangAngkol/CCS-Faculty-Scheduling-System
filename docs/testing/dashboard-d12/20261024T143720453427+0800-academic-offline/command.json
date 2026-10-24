@@ -1,0 +1,28 @@
+{
+  "check": "academic-offline",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/academic/test_academic_foundation.py",
+    "tests/academic/test_academic_planner.py",
+    "tests/academic/test_academic_safety.py",
+    "-q",
+    "--tb=short",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d12-pytest-20261024T143720453427+0800-academic-offline"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T14:37:20.455043+08:00",
+  "finished_at": "2026-10-24T14:37:26.760288+08:00",
+  "elapsed_seconds": 6.305,
+  "exit_code": 1,
+  "stdout": ".F......................F............................................... [ 84%]\n.............                                                            [100%]\n================================== FAILURES ===================================\n______________ test_migration_chain_and_frozen_ddl_match_models _______________\ntests\\academic\\test_academic_foundation.py:76: in test_migration_chain_and_frozen_ddl_match_models\n    assert script.get_heads() == [\"d11_0001\"]\nE   AssertionError: assert ['d12_0001'] == ['d11_0001']\nE     \nE     At index 0 diff: 'd12_0001' != 'd11_0001'\nE     Use -v to get more diff\n_____ test_alembic_injected_connection_does_not_read_url_or_create_engine _____\ntests\\academic\\test_academic_foundation.py:221: in test_alembic_injected_connection_does_not_read_url_or_create_engine\n    assert seen[0][\"target_metadata\"] == [Base.metadata, ConfirmationBase.metadata, AdjustmentBase.metadata]\nE   assert [MetaData(), ...), MetaData()] == [MetaData(), ...), MetaData()]\nE     \nE     Left contains one more item: MetaData()\nE     Use -v to get more diff\n============================== warnings summary ===============================\ntests/academic/test_academic_foundation.py::test_migration_chain_and_frozen_ddl_match_models\ntests/academic/test_academic_foundation.py::test_alembic_environment_renders_full_chain_without_connecting\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\alembic\\config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.\n    util.warn_deprecated(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/academic/test_academic_foundation.py::test_migration_chain_and_frozen_ddl_match_models\nFAILED tests/academic/test_academic_foundation.py::test_alembic_injected_connection_does_not_read_url_or_create_engine\n2 failed, 83 passed, 2 warnings in 3.94s\n",
+  "stderr": "",
+  "scope": "Academic foundation offline tests only; no PostgreSQL cases selected",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}
