@@ -26,6 +26,8 @@ ENDPOINT = '/api/adjustment-requests'
 def setup(fixture, monkeypatch):
     f = fixture
     AdjustmentBase.metadata.create_all(f.engine)
+    from tests.dashboard.chair_sqlite import install
+    install(f.engine)
     # SQLite append-only equivalents, fixture-owned schema only. PostgreSQL
     # migration functions are rendered/tested offline separately.
     with f.engine.begin() as db:

@@ -48,6 +48,7 @@ import FacultyProfile from "../pages/faculty/Profile";
 import FacultyMySchedule from "../pages/faculty/MySchedule";
 import AdjustmentRequests from "../pages/faculty/AdjustmentRequests";
 import ExternalSchedules from "../pages/admin/ExternalSchedules";
+import ChairRequests from "../pages/chair/Requests";
 
 
 // =============================================
@@ -67,6 +68,7 @@ export default function AppRoutes() {
 
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/chair/requests" element={<ChairRequests />} />
 
         {/* ROOT */}
 

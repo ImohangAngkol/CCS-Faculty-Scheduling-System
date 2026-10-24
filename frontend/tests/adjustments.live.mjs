@@ -82,7 +82,7 @@ test("D11 actual HTTP/Edge faculty request lifecycle with fictional schedule sou
       await text("Fictional reason <img");assert.equal(await evaluate("window.__d11Injected===undefined"),true);
     });
     await check("D11-L08","explicit submission retains original schedule",async()=>{
-      await click("Submit for future Chair review");await text("Submit this proposal?");await click("Confirm submission");await text("Request submitted.");
+      await click("Submit for Chair review");await text("Submit this proposal?");await click("Confirm submission");await text("Request submitted.");
       assert.equal(await evaluate(`fetch(${JSON.stringify(config.backend+"/api/schedules/me")},{credentials:'include'}).then(r=>r.json()).then(v=>JSON.stringify(v.assignments))`),beforeSchedule);
       await evaluate(`document.querySelector('[aria-label="Request details"]').scrollIntoView();true`);await screenshot("D11-L08-submitted-history");
     });

@@ -166,7 +166,7 @@ test('D2 own timetable browser acceptance with synthetic HTTP responses', {timeo
     });
     assert.deepEqual(errors,[]);
     assert.ok(requests.every(r=>r.method==='GET'));
-    assert.ok(requests.every(r=>['/api/auth/me','/api/schedules/me'].includes(r.path)));
+    assert.ok(requests.every(r=>['/api/auth/me','/api/schedules/me','/api/chair-reviews/access'].includes(r.path)));
     if(process.env.D2_SCREENSHOT_DIR) await writeFile(join(resolve(process.env.D2_SCREENSHOT_DIR),'browser-results.json'),JSON.stringify({browser:version.product,user_agent:version.userAgent,node:process.version,
       scope:'Actual Edge/React DOM with synthetic HTTP responses, not FastAPI authorization or PostgreSQL acceptance',scenarios,captures,runtime_errors:errors,mutation_requests:0,faculty_selector_requests:0,administrator_result_requests:0},null,2)+'\n',{flag:'wx'});
   } finally {

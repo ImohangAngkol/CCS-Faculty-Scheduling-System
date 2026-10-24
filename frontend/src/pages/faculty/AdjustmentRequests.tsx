@@ -7,7 +7,7 @@ import type {AdjustmentInput,AdjustmentRecord,AdjustmentReview,AssignmentBundle}
 
 const box="min-w-0 rounded-xl border border-slate-200 bg-white p-5 space-y-3";
 const field="block w-full rounded-lg border border-slate-300 p-2";
-function Findings({review}:{review:AdjustmentReview}) {return <div role="status" className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm"><p className="font-semibold">{review.validation.outcome==="VALID_PROPOSAL"?"Valid proposal within checked constraints":"Proposal requires authorized review"}</p>{review.validation.findings.map(f=><p key={f.code}>{f.code}: {f.message}</p>)}<p>No approval or schedule change has occurred.</p></div>;}
+function Findings({review}:{review:AdjustmentReview}) {return <div role="status" className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm"><p className="font-semibold">{review.validation.outcome==="VALID_PROPOSAL"?"Valid proposal within checked constraints":"Proposal requires authorized review"}</p>{review.validation.findings.map(f=><p key={f.code}>{f.code}: {f.message}</p>)}<p>Validation alone is not approval. No teaching schedule change has occurred.</p></div>;}
 
 export default function AdjustmentRequests() {
   const {user}=useAuth();
@@ -47,10 +47,10 @@ function Requests({bound}:{bound:boolean}) {
     if(!detail)return;const key=`${detail.id}:${detail.version}:${action}`;
     if(!operations.current.has(key))operations.current.set(key,crypto.randomUUID());
     merge(await transitionAdjustment(detail,action,operations.current.get(key)!));
-    setNotice(action==="submit"?"Request submitted. Awaiting a future Department Chair workflow; your schedule is unchanged.":"Request withdrawn. Its history is retained; your schedule is unchanged.");
+    setNotice(action==="submit"?"Request submitted. Awaiting authorized Department Chair review; your schedule is unchanged.":"Request withdrawn. Its history is retained; your schedule is unchanged.");
   });
   return <div className="min-w-0 space-y-6">
-    <header className="rounded-xl border border-teal-200 bg-teal-50 p-5"><h1 className="text-2xl font-bold text-teal-950">Schedule Adjustment Requests</h1><p className="mt-2">Propose changes to your own GA-generated assignments.</p><p className="mt-2 font-semibold">Requests are proposals. Department Chair decisions are not implemented in D11. Your teaching schedule remains unchanged.</p><Link className="text-teal-800 underline" to="/faculty/schedule">View My Schedule</Link></header>
+    <header className="rounded-xl border border-teal-200 bg-teal-50 p-5"><h1 className="text-2xl font-bold text-teal-950">Schedule Adjustment Requests</h1><p className="mt-2">Propose changes to your own GA-generated assignments.</p><p className="mt-2 font-semibold">Requests are proposals. Department Chair approval authorizes a proposal; application is a separate controlled step. Your teaching schedule remains unchanged.</p><Link className="text-teal-800 underline" to="/faculty/schedule">View My Schedule</Link></header>
     {!bound&&<MetadataState title="Faculty binding unavailable" description="Ask an administrator to verify your account binding. No faculty identity is selected."/>}
     {loading&&<MetadataState title="Loading adjustment requests" description="Retrieving your verified assignments and private request history."/>}
     {sourceError&&<MetadataState title="Adjustment source unavailable" description={sourceError} retry={reload}/>}
@@ -77,10 +77,11 @@ function Requests({bound}:{bound:boolean}) {
     {detail&&<section className={box} aria-label="Request details"><h2 className="text-lg font-bold text-teal-900">Request details</h2><p className="break-all text-sm">Request {detail.id} · version {detail.version} · {detail.status}</p><p>Source: {detail.freshness.state}{detail.freshness.code&&` — ${detail.freshness.code}`}</p><p>{detail.content.input.academic_year} · {detail.content.input.term}</p><p>Original: {detail.content.review.original.day} {detail.content.review.original.start}–{detail.content.review.original.end} · {detail.content.review.original.room_id}</p><p>Proposed: {detail.content.input.proposal.day} {detail.content.input.proposal.start}–{detail.content.input.proposal.end} · {detail.content.input.proposal.room_id}</p><p className="whitespace-pre-wrap break-words">Justification: {detail.content.input.justification}</p><Findings review={detail.content.review}/>
       {detail.freshness.validation&&<Findings review={{...detail.content.review,validation:detail.freshness.validation}}/>}
       <p className="break-all text-xs">Original revision: {detail.content.input.revision}<br/>Pinned GEC constraints: {detail.content.review.constraint_digest}</p>
-      {detail.status==="DRAFT"&&detail.freshness.state==="CURRENT"&&!confirm&&<button disabled={busy} className="ccs-btn-primary" onClick={()=>setConfirm(true)}>Submit for future Chair review</button>}
+      {detail.status==="DRAFT"&&detail.freshness.state==="CURRENT"&&!confirm&&<button disabled={busy} className="ccs-btn-primary" onClick={()=>setConfirm(true)}>Submit for Chair review</button>}
       {confirm&&<div role="alert" className="rounded-lg bg-amber-50 p-3"><p>Submit this proposal? Its contents cannot be edited, and no schedule change or approval will occur.</p><button disabled={busy} className="ccs-btn-primary" onClick={()=>void transition("submit")}>Confirm submission</button><button disabled={busy} className="ccs-btn-secondary" onClick={()=>setConfirm(false)}>Cancel</button></div>}
-      {detail.status!=="WITHDRAWN"&&<button disabled={busy} className="ccs-btn-secondary" onClick={()=>void transition("withdraw")}>Withdraw request</button>}
+      {["DRAFT","SUBMITTED"].includes(detail.status)&&<button disabled={busy} className="ccs-btn-secondary" onClick={()=>void transition("withdraw")}>Withdraw request</button>}
       <button disabled={busy} className="ccs-btn-secondary" onClick={()=>void run(async()=>merge(await getAdjustment(detail.id)))}>Refresh request status</button>
+      {detail.decision&&<div role="status" className="rounded-lg border border-teal-300 bg-teal-50 p-4"><h3 className="font-semibold">Department Chair decision: {detail.decision.status}</h3><p><time>{detail.decision.decided_at}</time></p><p className="whitespace-pre-wrap break-words">{detail.decision.explanation}</p><p>{detail.decision.action==="APPROVE"?"Approved pending application. Your teaching schedule has not changed.":"Rejected. Your teaching schedule has not changed."}</p></div>}
       <h3 className="font-semibold">Immutable request history</h3><ol className="space-y-2">{detail.history.map(e=><li key={e.sequence} className="break-words text-sm">{e.sequence}. {e.action} · <time>{e.created_at}</time>{e.validation&&` · ${e.validation.outcome}`}</li>)}</ol>
     </section>}
   </div>;

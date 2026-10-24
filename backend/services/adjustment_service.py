@@ -24,9 +24,11 @@ def verified_actor(db, user, identity):
         raise problem(403, 'REQUEST_BINDING_CHANGED', 'The account binding changed. Sign in again before continuing.')
 
 
-def owner(db, request_id, user, identity):
-    record = db.scalar(select(Record).where(Record.id == request_id, Record.owner_id == user.id,
-                                          Record.faculty_id == UUID(identity.faculty_id)))
+def owner(db, request_id, user, identity, lock=False):
+    query = select(Record).where(Record.id == request_id, Record.owner_id == user.id,
+                                          Record.faculty_id == UUID(identity.faculty_id))
+    if lock: query = query.with_for_update().execution_options(populate_existing=True)
+    record = db.scalar(query)
     if record is None:
         raise problem(404, 'REQUEST_NOT_FOUND', 'No request is available to your account.')
     verify(db, record)
@@ -82,13 +84,17 @@ def freshness(record, identity):
 
 def detail(db, record, identity):
     events = verify(db, record)
-    return {'id': str(record.id), 'status': record.status, 'version': record.version,
+    from services.chair_decision_projection import decision_for
+    decision = decision_for(db, record)
+    result = {'id': str(record.id), 'status': decision['status'] if decision else record.status, 'version': record.version,
             'created_at': record.created_at.isoformat(), 'updated_at': record.updated_at.isoformat(),
             'submitted_at': record.submitted_at.isoformat() if record.submitted_at else None,
             'withdrawn_at': record.withdrawn_at.isoformat() if record.withdrawn_at else None,
             'content_digest': record.content_digest, 'content': json.loads(record.content_json),
             'freshness': freshness(record, identity), 'history': [json.loads(e.payload_json) for e in events],
-            'schedule_changed': False, 'approval': 'NOT_IMPLEMENTED_D11'}
+            'schedule_changed': False, 'approval': decision['status'] if decision else 'NOT_IMPLEMENTED_D11'}
+    if decision: result.update(decision=decision, base_status=record.status)
+    return result
 
 
 def assignments(identity):
@@ -159,12 +165,14 @@ def transition(db, user, identity, request_id, action, body):
     with (source.current_source() if action == 'submit' else nullcontext(None)) as current:
         with db.begin():
             verified_actor(db, user, identity)
-            record = owner(db, request_id, user, identity)
+            record = owner(db, request_id, user, identity, lock=True)
             prior = db.scalar(select(Event).where(Event.actor_id == user.id, Event.operation_id == body.operation_id))
             if prior:
                 if prior.request_id != record.id or prior.command_digest != command_hash:
                     raise problem(409, 'IDEMPOTENCY_MISMATCH', 'This operation identifier was already used for another command.')
             else:
+                from services.chair_decision_projection import ensure_undecided
+                ensure_undecided(db, record)
                 if record.version != body.expected_version:
                     raise problem(409, 'REQUEST_VERSION_CHANGED', 'The request changed in another session. Reload before retrying.')
                 if (action == 'submit' and record.status != 'DRAFT') or (action == 'withdraw' and record.status not in {'DRAFT', 'SUBMITTED'}):

@@ -7,7 +7,8 @@ import academic_models  # noqa: F401 -- register additive tables; no engine or G
 
 from confirmation_models import ConfirmationBase
 from adjustment_models import AdjustmentBase
-target_metadata = [Base.metadata, ConfirmationBase.metadata, AdjustmentBase.metadata]
+from chair_models import ChairBase
+target_metadata = [Base.metadata, ConfirmationBase.metadata, AdjustmentBase.metadata, ChairBase.metadata]
 
 config = context.config
 connection = config.attributes.get("connection")
