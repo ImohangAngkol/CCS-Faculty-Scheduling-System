@@ -1,0 +1,115 @@
+{
+  "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real faculty sessions/Origin/CSRF, fictional guarded schedules/term/catalog/GEC source. No GA execution, PostgreSQL or genuine institutional authority",
+  "browser": "Edg/155.0.4283.62",
+  "node": "v24.11.1",
+  "scenarios": [
+    {
+      "id": "D11-L01",
+      "title": "unauthenticated real API rejects requests",
+      "started_at": "2026-10-24T11:17:29.815+08:00",
+      "finished_at": "2026-10-24T11:17:31.031+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L02",
+      "title": "real bound faculty sees only own assignments and empty history",
+      "started_at": "2026-10-24T11:17:31.034+08:00",
+      "finished_at": "2026-10-24T11:17:31.835+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L03",
+      "title": "invalid lecture duration rejected by actual API",
+      "started_at": "2026-10-24T11:17:31.836+08:00",
+      "finished_at": "2026-10-24T11:17:31.958+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L04",
+      "title": "real room conflict remains a review discrepancy",
+      "started_at": "2026-10-24T11:17:31.959+08:00",
+      "finished_at": "2026-10-24T11:17:32.149+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L05",
+      "title": "confirmed fictional GEC commitment conflicts explicitly",
+      "started_at": "2026-10-24T11:17:32.150+08:00",
+      "finished_at": "2026-10-24T11:17:32.294+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L06",
+      "title": "valid proposal renders safely and cannot imply approval",
+      "started_at": "2026-10-24T11:17:32.295+08:00",
+      "finished_at": "2026-10-24T11:17:32.687+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L07",
+      "title": "draft persists through real SQLite API",
+      "started_at": "2026-10-24T11:17:32.688+08:00",
+      "finished_at": "2026-10-24T11:17:33.039+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L08",
+      "title": "explicit submission retains original schedule",
+      "started_at": "2026-10-24T11:17:33.039+08:00",
+      "finished_at": "2026-10-24T11:17:33.568+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L09",
+      "title": "submitted request survives a full dashboard reload",
+      "started_at": "2026-10-24T11:17:33.569+08:00",
+      "finished_at": "2026-10-24T11:17:34.118+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L10",
+      "title": "another real faculty session cannot access private request",
+      "started_at": "2026-10-24T11:17:34.119+08:00",
+      "finished_at": "2026-10-24T11:17:34.940+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L11",
+      "title": "unavailable source retains private history and permits withdrawal",
+      "started_at": "2026-10-24T11:17:34.941+08:00",
+      "finished_at": "2026-10-24T11:17:35.559+08:00",
+      "result": "FAIL",
+      "error": "Uncaught"
+    },
+    {
+      "id": "D11-L12",
+      "title": "mobile view exposes preserved proposal/history after recovery",
+      "started_at": "2026-10-24T11:17:35.560+08:00",
+      "finished_at": "2026-10-24T11:18:05.643+08:00",
+      "result": "FAIL",
+      "error": "Missing live UI text: Your current assignments"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D11-L06-validated-proposal.png",
+      "captured_at": "2026-10-24T11:17:32.682+08:00",
+      "url": "http://localhost:61545/faculty/adjustments",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D11-L08-submitted-history.png",
+      "captured_at": "2026-10-24T11:17:33.566+08:00",
+      "url": "http://localhost:61545/faculty/adjustments",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    }
+  ]
+}

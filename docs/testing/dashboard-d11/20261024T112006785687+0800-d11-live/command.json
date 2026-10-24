@@ -1,0 +1,28 @@
+{
+  "check": "d11-live",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_adjustments_live.py",
+    "-q",
+    "-s",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d11-pytest-20261024T112006785687+0800-d11-live"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T11:20:06.788143+08:00",
+  "finished_at": "2026-10-24T11:20:22.818396+08:00",
+  "elapsed_seconds": 16.029,
+  "exit_code": 0,
+  "stdout": "\u25b6 D11 actual HTTP/Edge faculty request lifecycle with fictional schedule source\n  \u2714 D11-L01 unauthenticated real API rejects requests (1369.6712ms)\n  \u2714 D11-L02 real bound faculty sees only own assignments and empty history (986.4766ms)\n  \u2714 D11-L03 invalid lecture duration rejected by actual API (112.695ms)\n  \u2714 D11-L04 real room conflict remains a review discrepancy (172.1308ms)\n  \u2714 D11-L05 confirmed fictional GEC commitment conflicts explicitly (163.4684ms)\n  \u2714 D11-L06 valid proposal renders safely and cannot imply approval (342.236ms)\n  \u2714 D11-L07 draft persists through real SQLite API (440.5644ms)\n  \u2714 D11-L08 explicit submission retains original schedule (473.5651ms)\n  \u2714 D11-L09 submitted request survives a full dashboard reload (555.0604ms)\n  \u2714 D11-L10 another real faculty session cannot access private request (876.7003ms)\n  \u2714 D11-L11 unavailable source retains private history and permits withdrawal (939.7371ms)\n  \u2714 D11-L12 mobile view exposes preserved proposal/history after recovery (754.6906ms)\n\u2714 D11 actual HTTP/Edge faculty request lifecycle with fictional schedule source (9176.2228ms)\n\u2139 tests 13\n\u2139 suites 0\n\u2139 pass 13\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 9180.2797\n\n.\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n1 passed, 2 warnings in 13.77s\n",
+  "stderr": "",
+  "scope": "Actual Edge/React to owned FastAPI/SQLite with real faculty authentication; fictional guarded schedule/term/resource source, no genuine authority or PostgreSQL",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

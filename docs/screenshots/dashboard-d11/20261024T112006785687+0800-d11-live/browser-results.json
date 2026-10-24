@@ -1,0 +1,123 @@
+{
+  "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real faculty sessions/Origin/CSRF, fictional guarded schedules/term/catalog/GEC source. No GA execution, PostgreSQL or genuine institutional authority",
+  "browser": "Edg/155.0.4283.62",
+  "node": "v24.11.1",
+  "scenarios": [
+    {
+      "id": "D11-L01",
+      "title": "unauthenticated real API rejects requests",
+      "started_at": "2026-10-24T11:20:13.219+08:00",
+      "finished_at": "2026-10-24T11:20:14.587+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L02",
+      "title": "real bound faculty sees only own assignments and empty history",
+      "started_at": "2026-10-24T11:20:14.589+08:00",
+      "finished_at": "2026-10-24T11:20:15.575+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L03",
+      "title": "invalid lecture duration rejected by actual API",
+      "started_at": "2026-10-24T11:20:15.576+08:00",
+      "finished_at": "2026-10-24T11:20:15.688+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L04",
+      "title": "real room conflict remains a review discrepancy",
+      "started_at": "2026-10-24T11:20:15.689+08:00",
+      "finished_at": "2026-10-24T11:20:15.861+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L05",
+      "title": "confirmed fictional GEC commitment conflicts explicitly",
+      "started_at": "2026-10-24T11:20:15.862+08:00",
+      "finished_at": "2026-10-24T11:20:16.025+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L06",
+      "title": "valid proposal renders safely and cannot imply approval",
+      "started_at": "2026-10-24T11:20:16.026+08:00",
+      "finished_at": "2026-10-24T11:20:16.368+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L07",
+      "title": "draft persists through real SQLite API",
+      "started_at": "2026-10-24T11:20:16.369+08:00",
+      "finished_at": "2026-10-24T11:20:16.809+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L08",
+      "title": "explicit submission retains original schedule",
+      "started_at": "2026-10-24T11:20:16.810+08:00",
+      "finished_at": "2026-10-24T11:20:17.283+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L09",
+      "title": "submitted request survives a full dashboard reload",
+      "started_at": "2026-10-24T11:20:17.284+08:00",
+      "finished_at": "2026-10-24T11:20:17.838+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L10",
+      "title": "another real faculty session cannot access private request",
+      "started_at": "2026-10-24T11:20:17.839+08:00",
+      "finished_at": "2026-10-24T11:20:18.716+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L11",
+      "title": "unavailable source retains private history and permits withdrawal",
+      "started_at": "2026-10-24T11:20:18.716+08:00",
+      "finished_at": "2026-10-24T11:20:19.656+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D11-L12",
+      "title": "mobile view exposes preserved proposal/history after recovery",
+      "started_at": "2026-10-24T11:20:19.656+08:00",
+      "finished_at": "2026-10-24T11:20:20.411+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D11-L06-validated-proposal.png",
+      "captured_at": "2026-10-24T11:20:16.364+08:00",
+      "url": "http://localhost:52626/faculty/adjustments",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D11-L08-submitted-history.png",
+      "captured_at": "2026-10-24T11:20:17.280+08:00",
+      "url": "http://localhost:52626/faculty/adjustments",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D11-L12-mobile-history.png",
+      "captured_at": "2026-10-24T11:20:20.336+08:00",
+      "url": "http://localhost:52626/faculty/adjustments",
+      "query_omitted": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ]
+}

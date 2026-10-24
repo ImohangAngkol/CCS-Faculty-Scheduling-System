@@ -1,0 +1,23 @@
+{
+  "check": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/api/adjustments.ts",
+    "src/pages/faculty/AdjustmentRequests.tsx",
+    "src/pages/faculty/Dashboard.tsx",
+    "src/pages/faculty/MySchedule.tsx",
+    "src/layouts/FacultyLayout.tsx",
+    "src/routes/AppRoutes.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-24T11:10:55.771788+08:00",
+  "finished_at": "2026-10-24T11:12:02.737120+08:00",
+  "elapsed_seconds": 66.966,
+  "exit_code": 1,
+  "stdout": "\nC:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\frontend\\src\\pages\\faculty\\AdjustmentRequests.tsx\n  27:16  error  Error: Calling setState synchronously within an effect can trigger cascading renders\n\nEffects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:\n* Update external systems with the latest state from React.\n* Subscribe for updates from some external system, calling setState in a callback function when external state changes.\n\nCalling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).\n\nC:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\frontend\\src\\pages\\faculty\\AdjustmentRequests.tsx:27:16\n  25 |   const createOperation=useRef(crypto.randomUUID()),operations=useRef(new Map<string,string>());\n  26 |   useEffect(()=>{\n> 27 |     if(!bound){setLoading(false);return;}\n     |                ^^^^^^^^^^ Avoid calling setState() directly within an effect\n  28 |     const controller=new AbortController();setLoading(true);setBundle(undefined);setSourceError(\"\");setListError(\"\");setReview(undefined);setSelected(\"\");\n  29 |     Promise.allSettled([getAdjustmentAssignments(controller.signal),listAdjustments(controller.signal)]).then(([a,b])=>{\n  30 |       if(controller.signal.aborted)return;  react-hooks/set-state-in-effect\n\n\u2716 1 problem (1 error, 0 warnings)\n\n",
+  "stderr": "",
+  "scope": "Focused ESLint; existing warnings are retained without changing legacy page logic",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

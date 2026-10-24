@@ -1,0 +1,23 @@
+{
+  "check": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/api/adjustments.ts",
+    "src/pages/faculty/AdjustmentRequests.tsx",
+    "src/pages/faculty/Dashboard.tsx",
+    "src/pages/faculty/MySchedule.tsx",
+    "src/layouts/FacultyLayout.tsx",
+    "src/routes/AppRoutes.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-24T11:22:40.520232+08:00",
+  "finished_at": "2026-10-24T11:23:24.803156+08:00",
+  "elapsed_seconds": 44.28,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Focused ESLint; existing warnings are retained without changing legacy page logic",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}
