@@ -55,7 +55,7 @@ export default function MySchedule() {
         {data.source.saved_at && <p className="mt-1">Saved source updated: <time dateTime={data.source.saved_at}>{new Date(data.source.saved_at).toLocaleString()}</time></p>}
         <p className="mt-1">The source timestamp is not an approval date. An academic year and official publication status are not recorded.</p></>}
       </div>
-      {data.availability === "empty" ? <MetadataState title="No assignments in this proposal" description="The saved proposal contains no assignments for your verified faculty identity." /> : <>
+      {data.availability === "empty" ? <MetadataState title={data.schema_version===2?"No assignments in this published schedule":"No assignments in this proposal"} description={data.schema_version===2?"The published version contains no assignments for your verified faculty identity.":"The saved proposal contains no assignments for your verified faculty identity."} /> : <>
         <section aria-label="Weekly timetable" className="min-w-0"><WeeklySchedule entries={entries} viewMode="faculty" /></section>
         <section aria-labelledby="assignment-details" className="rounded-xl border border-slate-200 bg-white p-5">
           <h2 id="assignment-details" className="text-lg font-semibold text-teal-900">Assignment details</h2>

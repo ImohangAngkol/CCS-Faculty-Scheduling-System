@@ -71,7 +71,7 @@ export default function ExternalSchedules() {
     <header className="rounded-xl border border-teal-200 bg-teal-50 p-5 sm:p-6">
       <p className="text-sm font-semibold text-teal-800">Administrator workspace · Preview only</p>
       <h1 className="mt-1 text-2xl font-bold text-slate-900">External/GEC Schedules</h1>
-      <p className="mt-3 text-sm text-slate-700">Record incoming commitments for review. Nothing here is saved, confirmed, locked or supplied to the GA.</p>
+      <p className="mt-3 text-sm text-slate-700">Intake and calendar previews are temporary. Durable revisions and confirmation decisions are managed separately in the ledger below. Confirmation does not start or activate a GA run.</p>
       <p className="mt-2 text-sm text-amber-950">Temporary drafts and uploaded previews are lost when you leave or refresh this page. No verified academic term/date registry is configured.</p>
     </header>
     {!metadata && !metadataErrorText && <MetadataState title="Loading reference metadata" description="Reading the existing prototype catalog and resource labels…" />}
