@@ -1,0 +1,27 @@
+{
+  "check": "focused",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_system_acceptance.py",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d14-pytest-20261024T203938525513+0800-focused"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T20:39:38.529639+08:00",
+  "finished_at": "2026-10-24T20:39:54.958364+08:00",
+  "elapsed_seconds": 16.427,
+  "exit_code": 1,
+  "stdout": "EEE                                                                      [100%]\n=================================== ERRORS ====================================\n_ ERROR at setup of test_actual_confirmed_generation_request_approval_application_and_history _\ntests\\dashboard\\test_system_acceptance.py:68: in system\n    from genetic_algorithm.models.GASetting import GASetting\nE   ModuleNotFoundError: No module named 'genetic_algorithm.models.GASetting'\n_ ERROR at setup of test_current_real_confirmation_revocation_blocks_generated_application _\ntests\\dashboard\\test_system_acceptance.py:68: in system\n    from genetic_algorithm.models.GASetting import GASetting\nE   ModuleNotFoundError: No module named 'genetic_algorithm.models.GASetting'\n_ ERROR at setup of test_owned_preferences_round_trip_identity_and_invalid_input _\ntests\\dashboard\\test_system_acceptance.py:68: in system\n    from genetic_algorithm.models.GASetting import GASetting\nE   ModuleNotFoundError: No module named 'genetic_algorithm.models.GASetting'\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nERROR tests/dashboard/test_system_acceptance.py::test_actual_confirmed_generation_request_approval_application_and_history\nERROR tests/dashboard/test_system_acceptance.py::test_current_real_confirmation_revocation_blocks_generated_application\nERROR tests/dashboard/test_system_acceptance.py::test_owned_preferences_round_trip_identity_and_invalid_input\n2 warnings, 3 errors in 12.11s\n",
+  "stderr": "",
+  "scope": "D14 cross-milestone actual FastAPI/SQLite with real operators and fictional guarded institutional resources/providers",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

@@ -1,0 +1,28 @@
+{
+  "check": "d12-live",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_chair_live.py",
+    "-q",
+    "-s",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d14-pytest-20261024T204950941847+0800-d12-live"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T20:49:50.946138+08:00",
+  "finished_at": "2026-10-24T20:50:30.104469+08:00",
+  "elapsed_seconds": 39.154,
+  "exit_code": 0,
+  "stdout": "\u25b6 D12 actual HTTP/Edge faculty request lifecycle with fictional schedule source\n  \u2714 D12-L01 unauthenticated Chair API and route deny access (4087.0222ms)\n  \u2714 D12-L02 bound faculty submits through real UI and cannot decide (3633.7528ms)\n  \u2714 D12-L03 independent fictional Chair sees scoped queue and fresh findings (1870.8639ms)\n  \u2714 D12-L04 approval requires explanation and explicit confirmation (559.3935ms)\n  \u2714 D12-L05 faculty sees durable approval without schedule mutation (1847.5532ms)\n  \u2714 D12-L06 second proposal receives explained rejection (5049.1645ms)\n  \u2714 D12-L07 faculty sees rejection and cannot replace a final decision (925.8351ms)\n  \u2714 D12-L08 stale source blocks approval while rejection remains available (3902.6503ms)\n  \u2714 D12-L09 concurrent contradictory HTTP decisions retain exactly one final (1246.5736ms)\n  \u2714 D12-L10 mobile decided history is available after a full reload (1031.7965ms)\n  \u2714 D12-L11 authenticated ordinary faculty cannot enter Chair review or obtain controls (1128.8544ms)\n  \u2714 D12-L12 retry rechecks authority without granting access or showing cached private rows (87.2315ms)\n\u2714 D12 actual HTTP/Edge faculty request lifecycle with fictional schedule source (28278.3033ms)\n\u2139 tests 13\n\u2139 suites 0\n\u2139 pass 13\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 28289.0089\n\n.\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n1 passed, 2 warnings in 35.37s\n",
+  "stderr": "",
+  "scope": "Actual Edge/React to owned FastAPI/SQLite with real authentication and fictional Chair/schedule/trust providers; no institutional authority or PostgreSQL",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

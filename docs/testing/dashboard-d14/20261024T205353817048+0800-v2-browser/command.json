@@ -1,0 +1,18 @@
+{
+  "check": "v2-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/constrainedGA.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-10-24T20:53:53.817587+08:00",
+  "finished_at": "2026-10-24T20:54:01.655401+08:00",
+  "elapsed_seconds": 7.837,
+  "exit_code": 0,
+  "stdout": "\u25b6 D10 versioned constrained UI with synthetic HTTP\n  \u2714 D10-B01 production block and explicit term fields (1429.2695ms)\n  \u2714 D10-B02 review current set and start explicit V2 (611.5953ms)\n  \u2714 D10-B03 pause and resume controls stay versioned (154.4021ms)\n  \u2714 D10-B04 timetable and source-row provenance (510.666ms)\n  \u2714 D10-B05 fitness and rejected candidates are visible (308.9979ms)\n  \u2714 D10-B06 stale head hides rows and retry recovers (442.195ms)\n  \u2714 D10-B07 authority unavailable hides prior result (295.6127ms)\n  \u2714 D10-B08 tampered approval reply is rejected (246.7794ms)\n  \u2714 D10-B09 imported HTML remains escaped text (324.599ms)\n  \u2714 D10-B10 faculty and anonymous routes cannot fetch V2 data (506.9453ms)\n  \u2714 D10-B11 loading waits for a validated result (274.65ms)\n  \u2714 D10-B12 mobile remains contained (250.5843ms)\n\u2714 D10 versioned constrained UI with synthetic HTTP (7409.223ms)\n\u2139 tests 13\n\u2139 suites 0\n\u2139 pass 13\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 7742.5838\n",
+  "stderr": "",
+  "scope": "Actual Edge/React with synthetic HTTP replies; no live FastAPI authorization or GA execution",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

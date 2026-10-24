@@ -1,0 +1,12 @@
+{
+  "GA_ms": 3308.305,
+  "complete_preview_ms": 354.42,
+  "atomic_application_ms": 399.5,
+  "best_fitness": 30,
+  "generated_meetings": 5,
+  "confirmed_heads": 1,
+  "published_versions": 2,
+  "hard_constraint_validation": "PASS",
+  "fitness_recalculated_by_application": false,
+  "sample_size": 1
+}

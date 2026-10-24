@@ -1,0 +1,28 @@
+{
+  "check": "d14-live",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_system_acceptance_live.py",
+    "-q",
+    "-s",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d14-pytest-20261024T205255320884+0800-d14-live"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-24T20:52:55.322584+08:00",
+  "finished_at": "2026-10-24T20:53:39.983114+08:00",
+  "elapsed_seconds": 44.656,
+  "exit_code": 1,
+  "stdout": "{\"scenario\":\"D14-L01\",\"result\":\"PASS\"}\n\u25b6 D14 actual HTTP/Edge whole system journey using actual constrained generation and fictional institutional providers\n  \u2714 D14-L01 anonymous application API and route deny access (1269.8108ms)\n{\"scenario\":\"D14-I01\",\"result\":\"FAIL\"}\n  \u2716 D14-I01 real faculty preference write and full reload preserve Compact / Very High (30907.8728ms)\n\u2716 D14 actual HTTP/Edge whole system journey using actual constrained generation and fictional institutional providers (34123.5536ms)\n\u2139 tests 3\n\u2139 suites 0\n\u2139 pass 1\n\u2139 fail 2\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 34127.0298\n\n\u2716 failing tests:\n\ntest at tests\\systemAcceptance.live.mjs:30:13\n\u2716 D14-I01 real faculty preference write and full reload preserve Compact / Very High (30907.8728ms)\n  Error: Missing live UI text: Saved\n      at eventually (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/systemAcceptance.live.mjs:16:152)\n      at async file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/systemAcceptance.live.mjs:98:39\n      at async TestContext.<anonymous> (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/systemAcceptance.live.mjs:30:68)\n      at async Test.run (node:internal/test_runner/test:1113:7)\n      at async check (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/systemAcceptance.live.mjs:30:5)\n      at async TestContext.<anonymous> (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/systemAcceptance.live.mjs:93:5)\n      at async Test.run (node:internal/test_runner/test:1113:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)\n\ntest at tests\\systemAcceptance.live.mjs:18:1\n\u2716 D14 actual HTTP/Edge whole system journey using actual constrained generation and fictional institutional providers (34123.5536ms)\n  Error: Dependent journey stopped after D14-I01\n      at check (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/systemAcceptance.live.mjs:32:48)\n      at async TestContext.<anonymous> (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/systemAcceptance.live.mjs:93:5)\n      at async Test.run (node:internal/test_runner/test:1113:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)\n\nF\n================================== FAILURES ===================================\n________________ test_complete_system_edge_fastapi_sqlite_flow ________________\ntests\\dashboard\\test_system_acceptance_live.py:64: in test_complete_system_edge_fastapi_sqlite_flow\n    assert result.returncode==0,\"Live D14 fixture failed; sanitized scenario evidence retained\"\nE   AssertionError: Live D14 fixture failed; sanitized scenario evidence retained\nE   assert 1 == 0\nE    +  where 1 = CompletedProcess(args=['node', 'tests/systemAcceptance.live.mjs'], returncode=1, stdout='{\"scenario\":\"D14-L01\",\"result...runner/test:1113:7)\\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)\\n', stderr='').returncode\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/dashboard/test_system_acceptance_live.py::test_complete_system_edge_fastapi_sqlite_flow\n1 failed, 2 warnings in 42.14s\n",
+  "stderr": "",
+  "scope": "D14 actual Edge/React to owned FastAPI/SQLite with real authentication, GA generation, confirmation, decisions and application; all institutional providers/resources explicitly fictional",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

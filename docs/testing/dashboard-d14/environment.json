@@ -1,0 +1,18 @@
+{
+  "python": "3.14.2",
+  "sqlite": "3.50.4",
+  "node": "v24.11.1",
+  "packages": {
+    "fastapi": "0.141.1",
+    "starlette": "1.6.0",
+    "sqlalchemy": "2.0.52",
+    "alembic": "1.19.2",
+    "psycopg2-binary": "2.9.12",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "openpyxl": "3.1.5"
+  },
+  "PostgreSQL_environment": "No dedicated authorized Phase4C variable; no connection attempted; existence/version of live PostgreSQL databases not inspected",
+  "protected_preference_file": "Untouched; no production credentials read",
+  "runtime": "Owned loopback fixture servers only; no existing service was stopped or reconfigured"
+}

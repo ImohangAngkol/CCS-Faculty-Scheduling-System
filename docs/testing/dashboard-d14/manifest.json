@@ -1,0 +1,2234 @@
+{
+  "milestone": "D14",
+  "status": "PASSED within isolated fictional acceptance scope; production authority and PostgreSQL BLOCKED",
+  "recorded_at": "2026-10-24T21:14:54.486984+08:00",
+  "baseline_commit": "7a0c3eaf32dc3cc350c04871fdb6f8dd72c43bb4",
+  "latest_commands": {
+    "backend": {
+      "path": "docs/testing/dashboard-d14/20261024T203333612493+0800-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 45.766,
+      "scope": "Existing D2-D9 FastAPI/validation regressions using fictional fixtures and SQLite"
+    },
+    "d13-backend": {
+      "path": "docs/testing/dashboard-d14/20261024T203334554278+0800-d13-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 105.371,
+      "scope": "D13 actual FastAPI/auth/transactional SQLite with fictional independent publisher, Chair and published schedule; PostgreSQL SQL rendering only"
+    },
+    "v1-fixtures": {
+      "path": "docs/testing/dashboard-d14/20261024T203335537407+0800-v1-fixtures/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 115.201,
+      "scope": "Fictional current-release V1 fixtures with original operators and actual checkpoint I/O/continuation"
+    },
+    "focused": {
+      "path": "docs/testing/dashboard-d14/20261024T205920068755+0800-focused/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 40.681,
+      "scope": "D14 cross-milestone actual FastAPI/SQLite with real operators and fictional guarded institutional resources/providers"
+    },
+    "v2-api": {
+      "path": "docs/testing/dashboard-d14/20261024T203841803527+0800-v2-api/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 30.408,
+      "scope": "Actual FastAPI ASGI auth and D8/D9 transactions against owned SQLite with fictional resources/providers; no browser or PostgreSQL"
+    },
+    "v2-engine": {
+      "path": "docs/testing/dashboard-d14/20261024T203843325639+0800-v2-engine/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 29.506,
+      "scope": "Fictional V2 kernel, constraints and checkpoint tests; authority doubles are unit boundaries, not institutional verification"
+    },
+    "d12-backend": {
+      "path": "docs/testing/dashboard-d14/20261024T203844271450+0800-d12-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 87.233,
+      "scope": "D12 real FastAPI authentication/transactions with explicit fictional Chair and schedule providers; owned SQLite only, PostgreSQL rendering offline"
+    },
+    "d11-backend": {
+      "path": "docs/testing/dashboard-d14/20261024T203951141062+0800-d11-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 37.205,
+      "scope": "D11 real FastAPI sessions/ownership and SQLAlchemy transactions, fictional guarded schedule/catalog and owned SQLite; offline PostgreSQL SQL rendering only"
+    },
+    "ga-resource-regressions": {
+      "path": "docs/testing/dashboard-d14/20261024T203952291272+0800-ga-resource-regressions/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 5.969,
+      "scope": "Original preassignment/reset/resource regression fixtures; current academic inputs read internally, never modified"
+    },
+    "academic-offline": {
+      "path": "docs/testing/dashboard-d14/20261024T203953238570+0800-academic-offline/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 4.847,
+      "scope": "Academic foundation offline tests only; no PostgreSQL cases selected"
+    },
+    "backend-regressions": {
+      "path": "docs/testing/dashboard-d14/20261024T204053080111+0800-backend-regressions/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 59.639,
+      "scope": "Existing auth and GA control regression fixtures, no production database"
+    },
+    "browser-regressions": {
+      "path": "docs/testing/dashboard-d14/20261024T205932304230+0800-browser-regressions/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 99.146,
+      "scope": "Existing D1-D8 actual Edge/React regressions with synthetic HTTP replies"
+    },
+    "contracts": {
+      "path": "docs/testing/dashboard-d14/20261024T204301602146+0800-contracts/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 3.391,
+      "scope": "Frontend API/model contracts, not rendered UI or live backend authorization"
+    },
+    "ga-browser": {
+      "path": "docs/testing/dashboard-d14/20261024T204304917658+0800-ga-browser/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 75.597,
+      "scope": "Existing GA actual Edge/React regressions with synthetic HTTP replies"
+    },
+    "d14-live": {
+      "path": "docs/testing/dashboard-d14/20261024T210021246779+0800-d14-live/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 60.335,
+      "scope": "D14 actual Edge/React to owned FastAPI/SQLite with real authentication, GA generation, confirmation, decisions and application; all institutional providers/resources explicitly fictional"
+    },
+    "d12-live": {
+      "path": "docs/testing/dashboard-d14/20261024T204950941847+0800-d12-live/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 39.154,
+      "scope": "Actual Edge/React to owned FastAPI/SQLite with real authentication and fictional Chair/schedule/trust providers; no institutional authority or PostgreSQL"
+    },
+    "d11-live": {
+      "path": "docs/testing/dashboard-d14/20261024T204953181080+0800-d11-live/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 31.276,
+      "scope": "Actual Edge/React to owned FastAPI/SQLite with real faculty authentication; fictional guarded schedule/term/resource source, no genuine authority or PostgreSQL"
+    },
+    "d13-live": {
+      "path": "docs/testing/dashboard-d14/20261024T204953197421+0800-d13-live/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 45.501,
+      "scope": "Actual Edge/React to owned FastAPI/SQLite with real auth and fictional independent application/Chair/publication providers; no PostgreSQL or genuine institutional authority"
+    },
+    "build": {
+      "path": "docs/testing/dashboard-d14/20261024T205241200718+0800-build/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 13.865,
+      "scope": "Production frontend compilation/bundling, not browser or database acceptance"
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-d14/20261024T205352041077+0800-lint/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 32.761,
+      "scope": "Focused ESLint; existing warnings are retained without changing legacy page logic"
+    },
+    "v2-browser": {
+      "path": "docs/testing/dashboard-d14/20261024T205353817048+0800-v2-browser/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 7.837,
+      "scope": "Actual Edge/React with synthetic HTTP replies; no live FastAPI authorization or GA execution"
+    },
+    "v2-live": {
+      "path": "docs/testing/dashboard-d14/20261024T205356171907+0800-v2-live/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 19.811,
+      "scope": "Actual Edge to FastAPI HTTP/SQLite and real GA operators with entirely fictional resources/providers; no PostgreSQL or genuine authority"
+    },
+    "live": {
+      "path": "docs/testing/dashboard-d14/20261024T205820791507+0800-live/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 27.236,
+      "scope": "Existing D9 actual Edge/FastAPI HTTP/SQLite regressions with fictional providers; no PostgreSQL"
+    }
+  },
+  "fresh_counts_by_category": {
+    "focused": 6,
+    "d13-backend": 47,
+    "d12-backend": 42,
+    "d11-backend": 33,
+    "backend": 327,
+    "backend-regressions": 46,
+    "academic-offline": 85,
+    "ga-resource-regressions": 3,
+    "v1-fixtures": 4,
+    "v2-engine": 30,
+    "v2-api": 18,
+    "contracts": 205,
+    "browser-regressions": 125,
+    "ga-browser": 51,
+    "v2-browser": 12,
+    "live": 16,
+    "v2-live": 6,
+    "d11-live": 12,
+    "d12-live": 12,
+    "d13-live": 14,
+    "d14-live": 20
+  },
+  "counting": "One latest run per group; browser counts exclude Node parent tests and pytest wrappers; no attempt totals or historical passes added",
+  "build": "PASS with existing mixed import and chunk-size warnings",
+  "focused_ESLint": "PASS: zero errors/warnings",
+  "complete_workflow_metrics": [
+    {
+      "GA_ms": 2177.554,
+      "complete_preview_ms": 291.153,
+      "atomic_application_ms": 165.153,
+      "best_fitness": 30,
+      "generated_meetings": 4,
+      "confirmed_heads": 1,
+      "published_versions": 2,
+      "hard_constraint_validation": "PASS",
+      "fitness_recalculated_by_application": false,
+      "sample_size": 1
+    },
+    {
+      "GA_ms": 3308.305,
+      "complete_preview_ms": 354.42,
+      "atomic_application_ms": 399.5,
+      "best_fitness": 30,
+      "generated_meetings": 5,
+      "confirmed_heads": 1,
+      "published_versions": 2,
+      "hard_constraint_validation": "PASS",
+      "fitness_recalculated_by_application": false,
+      "sample_size": 1
+    },
+    {
+      "GA_ms": 2797.336,
+      "complete_preview_ms": 394.853,
+      "atomic_application_ms": 199.948,
+      "best_fitness": 30,
+      "generated_meetings": 5,
+      "confirmed_heads": 1,
+      "published_versions": 2,
+      "hard_constraint_validation": "PASS",
+      "fitness_recalculated_by_application": false,
+      "sample_size": 1
+    }
+  ],
+  "implementation_inventory": {
+    "modified": [
+      "frontend/src/pages/admin/ExternalSchedules.tsx",
+      "frontend/src/pages/faculty/MySchedule.tsx"
+    ],
+    "new_tests": [
+      "backend/tests/dashboard/test_system_acceptance.py",
+      "backend/tests/dashboard/test_system_acceptance_live.py",
+      "frontend/tests/systemAcceptance.live.mjs"
+    ],
+    "new_report": "docs/dashboard-d14-acceptance.md",
+    "other_new_files": [
+      "docs/screenshots/dashboard-d14/20261024T205255320884+0800-d14-live/browser-results.json",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I01-real-preference-persistence.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I02-real-confirmed-ledger.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I04-actual-constrained-proposal.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I04-actual-fitness-analysis.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I05-empty-published-timetable.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L04-validated-application-preview.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L05-rollback-blocked.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L06-applied-version-history.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L07-faculty-published-timetable.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L11-trust-unavailable-blocked.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L13-mobile-preserved-version.png",
+      "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/browser-results.json",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I01-real-preference-persistence.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I02-real-confirmed-ledger.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I04-actual-constrained-proposal.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I04-actual-fitness-analysis.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I05-empty-published-timetable.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L04-validated-application-preview.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L05-rollback-blocked.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L06-applied-version-history.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L07-faculty-published-timetable.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L11-trust-unavailable-blocked.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L13-mobile-preserved-version.png",
+      "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/browser-results.json",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I01-real-preference-persistence.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I02-real-confirmed-ledger.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I04-actual-constrained-proposal.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I04-actual-fitness-analysis.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I05-empty-published-timetable.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I06-owned-backend-unavailable.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L04-validated-application-preview.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L05-rollback-blocked.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L06-applied-version-history.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L07-faculty-published-timetable.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L11-trust-unavailable-blocked.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L13-mobile-preserved-version.png",
+      "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/browser-results.json",
+      "docs/testing/dashboard-d14/20261024T203333612493+0800-backend/command.json",
+      "docs/testing/dashboard-d14/20261024T203334554278+0800-d13-backend/command.json",
+      "docs/testing/dashboard-d14/20261024T203335537407+0800-v1-fixtures/command.json",
+      "docs/testing/dashboard-d14/20261024T203752806289+0800-focused/command.json",
+      "docs/testing/dashboard-d14/20261024T203841803527+0800-v2-api/command.json",
+      "docs/testing/dashboard-d14/20261024T203843325639+0800-v2-engine/command.json",
+      "docs/testing/dashboard-d14/20261024T203844271450+0800-d12-backend/command.json",
+      "docs/testing/dashboard-d14/20261024T203938525513+0800-focused/command.json",
+      "docs/testing/dashboard-d14/20261024T203951141062+0800-d11-backend/command.json",
+      "docs/testing/dashboard-d14/20261024T203952291272+0800-ga-resource-regressions/command.json",
+      "docs/testing/dashboard-d14/20261024T203953238570+0800-academic-offline/command.json",
+      "docs/testing/dashboard-d14/20261024T204038859235+0800-focused/command.json",
+      "docs/testing/dashboard-d14/20261024T204053080111+0800-backend-regressions/command.json",
+      "docs/testing/dashboard-d14/20261024T204053296056+0800-browser-regressions/command.json",
+      "docs/testing/dashboard-d14/20261024T204250502578+0800-focused/command.json",
+      "docs/testing/dashboard-d14/20261024T204301602146+0800-contracts/command.json",
+      "docs/testing/dashboard-d14/20261024T204304917658+0800-ga-browser/command.json",
+      "docs/testing/dashboard-d14/20261024T204454603662+0800-focused/command.json",
+      "docs/testing/dashboard-d14/20261024T204454603662+0800-focused/metrics/complete-workflow.json",
+      "docs/testing/dashboard-d14/20261024T204756328460+0800-focused/command.json",
+      "docs/testing/dashboard-d14/20261024T204756328460+0800-focused/metrics/complete-workflow-1.json",
+      "docs/testing/dashboard-d14/20261024T204756328460+0800-focused/metrics/complete-workflow-2.json",
+      "docs/testing/dashboard-d14/20261024T204756328460+0800-focused/metrics/complete-workflow-3.json",
+      "docs/testing/dashboard-d14/20261024T204830736495+0800-d14-live/command.json",
+      "docs/testing/dashboard-d14/20261024T204950941847+0800-d12-live/command.json",
+      "docs/testing/dashboard-d14/20261024T204953181080+0800-d11-live/command.json",
+      "docs/testing/dashboard-d14/20261024T204953197421+0800-d13-live/command.json",
+      "docs/testing/dashboard-d14/20261024T205241200718+0800-build/command.json",
+      "docs/testing/dashboard-d14/20261024T205255320884+0800-d14-live/command.json",
+      "docs/testing/dashboard-d14/20261024T205352041077+0800-lint/command.json",
+      "docs/testing/dashboard-d14/20261024T205353817048+0800-v2-browser/command.json",
+      "docs/testing/dashboard-d14/20261024T205356171907+0800-v2-live/command.json",
+      "docs/testing/dashboard-d14/20261024T205442812029+0800-d14-live/command.json",
+      "docs/testing/dashboard-d14/20261024T205455416978+0800-live/command.json",
+      "docs/testing/dashboard-d14/20261024T205651991799+0800-d14-live/command.json",
+      "docs/testing/dashboard-d14/20261024T205820791507+0800-live/command.json",
+      "docs/testing/dashboard-d14/20261024T205920068755+0800-focused/command.json",
+      "docs/testing/dashboard-d14/20261024T205920068755+0800-focused/metrics/complete-workflow-1.json",
+      "docs/testing/dashboard-d14/20261024T205920068755+0800-focused/metrics/complete-workflow-2.json",
+      "docs/testing/dashboard-d14/20261024T205920068755+0800-focused/metrics/complete-workflow-3.json",
+      "docs/testing/dashboard-d14/20261024T205932304230+0800-browser-regressions/command.json",
+      "docs/testing/dashboard-d14/20261024T210021246779+0800-d14-live/command.json",
+      "docs/testing/dashboard-d14/audit_evidence.py",
+      "docs/testing/dashboard-d14/environment.json",
+      "docs/testing/dashboard-d14/preservation-baseline.json",
+      "docs/testing/dashboard-d14/run_checks.py"
+    ]
+  },
+  "preservation": {
+    "baseline_files": 1206,
+    "byte_identical": 1204,
+    "intended_existing_modifications": [
+      "frontend/src/pages/admin/ExternalSchedules.tsx",
+      "frontend/src/pages/faculty/MySchedule.tsx"
+    ],
+    "academic_data_files_byte_identical": 23,
+    "protected_preferences_byte_identical": true,
+    "all_original_GA_V1_V2_sources_unchanged": true,
+    "historical_checkpoints_schedules_and_D1_D13_evidence_unchanged": true,
+    "Git_index_HEAD_and_last_fetched_origin_unchanged": true,
+    "PostgreSQL_connections_or_migrations": 0,
+    "existing_schedule_file_writes": 0,
+    "SQLite_writes": "Only owned fictional test stores"
+  },
+  "historical_nonzero_commands_retained": [
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203752806289+0800-focused/command.json",
+      "check": "focused",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203938525513+0800-focused/command.json",
+      "check": "focused",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204038859235+0800-focused/command.json",
+      "check": "focused",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204250502578+0800-focused/command.json",
+      "check": "focused",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204830736495+0800-d14-live/command.json",
+      "check": "d14-live",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205255320884+0800-d14-live/command.json",
+      "check": "d14-live",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205442812029+0800-d14-live/command.json",
+      "check": "d14-live",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205455416978+0800-live/command.json",
+      "check": "live",
+      "exit_code": 1
+    }
+  ],
+  "privacy": {
+    "findings": [],
+    "screenshots": [
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I01-real-preference-persistence.png",
+        "sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I02-real-confirmed-ledger.png",
+        "sha256": "ef0518d59c75ee6e34ff83d8ad273ce991add23da03a5e4e0bccda8c347d2031",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I04-actual-constrained-proposal.png",
+        "sha256": "2501fd21f97e896ed430e48f04b29ee1e5a7136d8166d15210633ca8d02a55dc",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I04-actual-fitness-analysis.png",
+        "sha256": "05bb84b74fd270b6b2f900ba540fc248fd65397981c40d2a377c9d2c49c95268",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I05-empty-published-timetable.png",
+        "sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d",
+        "width": 390,
+        "height": 844,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L04-validated-application-preview.png",
+        "sha256": "9a2a7e06c426bc067eb4c83179fd241a32b28af0d89dd9ff76aa5ffba4800690",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L05-rollback-blocked.png",
+        "sha256": "99151747df3604721917fc8e9710290bdf694a5607ab981717ec7592bf01042d",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L06-applied-version-history.png",
+        "sha256": "cc92d8b5b1d3cfe91ae16d0a7c5ad68616da0a91e9c2ef3c26c78b8c3bbb85a8",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L07-faculty-published-timetable.png",
+        "sha256": "a3fee5a5c5736f6314b618ea9a1af5742f9b984930564f0594aef4ef8f9d03a4",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L11-trust-unavailable-blocked.png",
+        "sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L13-mobile-preserved-version.png",
+        "sha256": "aa980593db85fc5569b4950d9da8c5495c107a7e60dda0b335ef274a0f66ae54",
+        "width": 390,
+        "height": 844,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I01-real-preference-persistence.png",
+        "sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I02-real-confirmed-ledger.png",
+        "sha256": "20e12918e79aa4acacf72e8c68581b4d2a06f9f6057c6dbe1c9f2f1917eab8a4",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I04-actual-constrained-proposal.png",
+        "sha256": "28527082b1e162ff9dcd6a9f34872827cd4e4cccc44973841a57f7b35a7d33a6",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I04-actual-fitness-analysis.png",
+        "sha256": "037fda128df023bc8b3086d5b19ff03f98d738cf3c690d3578a3959e575f1993",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I05-empty-published-timetable.png",
+        "sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d",
+        "width": 390,
+        "height": 844,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L04-validated-application-preview.png",
+        "sha256": "68da7acbd02c8a0515f9691fe31d0758b5212ccd8ba82b9bd74c8c3220dea9db",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L05-rollback-blocked.png",
+        "sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L06-applied-version-history.png",
+        "sha256": "b0e63c0d29c33a82b891d4eb70662dfdd69a381af1134d0d587756353a321bb4",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L07-faculty-published-timetable.png",
+        "sha256": "22785305e0dd8d13c815ae81325d3dc5bd7d7040ffba9b9835960a93b229746c",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L11-trust-unavailable-blocked.png",
+        "sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L13-mobile-preserved-version.png",
+        "sha256": "f00803336df8dd63d862759ef2b3b1748ebe5d152040f911ee2f090dda28fc3c",
+        "width": 390,
+        "height": 844,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I01-real-preference-persistence.png",
+        "sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I02-real-confirmed-ledger.png",
+        "sha256": "41ecf2286e07f6259b3d6fa8a863d0402c06fba2c5f30bc8d08d4f82de353fa3",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I04-actual-constrained-proposal.png",
+        "sha256": "6d530b681a5b2325f553ddf264023e69a3d5e30d793590ce4036221e90b73eda",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I04-actual-fitness-analysis.png",
+        "sha256": "2c2e70fceeec5351a9c2f23c80bc8dd8a303d792bea65660a89b4b9e320c8a8d",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I05-empty-published-timetable.png",
+        "sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d",
+        "width": 390,
+        "height": 844,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I06-owned-backend-unavailable.png",
+        "sha256": "336c83f8c074262adf984dacf1cff0f95eb51a9d38e771533de089a8805fdb26",
+        "width": 390,
+        "height": 844,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L04-validated-application-preview.png",
+        "sha256": "947b8c2964d7e1191cde7c664ea837f95ccac7d5c6b945ba58ec684993aa3b7e",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L05-rollback-blocked.png",
+        "sha256": "cc8a940b76782f3fd6b5d200a51ad19667b94462b317cdfa83f5147d4caf95e7",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L06-applied-version-history.png",
+        "sha256": "ac55e1fbdb5a53af3bc0bbd7bd7079d4f0de1f04becde673c2902d53b20bc2da",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L07-faculty-published-timetable.png",
+        "sha256": "b8b07c6354a5e65dd9dae4c6486061aa7ff8debbd575182c617b60fa14db137f",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L11-trust-unavailable-blocked.png",
+        "sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480",
+        "width": 1366,
+        "height": 1100,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      },
+      {
+        "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L13-mobile-preserved-version.png",
+        "sha256": "1ad0d503c268e5b0be18096b9728594ceb3780d8fab2ee0196c12c5437b7229e",
+        "width": 390,
+        "height": 844,
+        "privacy": "Original visually reviewed or byte-identical to reviewed original; fictional records only",
+        "scope": "Real Edge/React/FastAPI/SQLite with fictional institutional providers; no genuine approval"
+      }
+    ],
+    "unique_images": 28,
+    "methods": [
+      "Whole sensitive log/header assignment filtering before evidence writes",
+      "Independent full/partial encoded receipt, bearer, private key and credential URI scan",
+      "Decoded JSON string scan and local private faculty-name comparison with no names exported",
+      "Original image visual review and PNG CRC/text/EXIF metadata checks"
+    ],
+    "raw_database_checkpoint_HAR_cookie_or_provider_payloads_archived": false
+  },
+  "browser_records": [
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205255320884+0800-d14-live/browser-results.json",
+      "sha256": "b1ec9210e3012284dd8f4482c772146bd5a4077424b409d732df0efad83c9f65",
+      "record": {
+        "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real authentication, original GA execution, actual D8-D10 ledger revalidation, Chair decisions and application transactions. Independent publisher, Chair, evidence issuer, confirmer, catalog and capacity providers are explicitly fictional; source publication is an explicit owned test handoff, not a production promotion feature. The initial GEC confirmation is created through the real API by fixture setup. Storage and trust faults are fixture injections. No PostgreSQL or institutional approval.",
+        "browser": "Edg/155.0.4283.62",
+        "node": "v24.11.1",
+        "scenarios": [
+          {
+            "id": "D14-L01",
+            "title": "anonymous application API and route deny access",
+            "started_at": "2026-10-24T20:53:04.876+08:00",
+            "finished_at": "2026-10-24T20:53:06.144+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I01",
+            "title": "real faculty preference write and full reload preserve Compact / Very High",
+            "started_at": "2026-10-24T20:53:06.147+08:00",
+            "finished_at": "2026-10-24T20:53:37.055+08:00",
+            "result": "FAIL",
+            "error": "Missing live UI text: Saved"
+          }
+        ],
+        "captures": [],
+        "runtime_errors": []
+      }
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/browser-results.json",
+      "sha256": "f06232ce09330ba238bf7cf77a464842e336b2d0e7eecb987b0e28dbebbfca85",
+      "record": {
+        "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real authentication, original GA execution, actual D8-D10 ledger revalidation, Chair decisions and application transactions. Independent publisher, Chair, evidence issuer, confirmer, catalog and capacity providers are explicitly fictional; source publication is an explicit owned test handoff, not a production promotion feature. The initial GEC confirmation is created through the real API by fixture setup. Storage and trust faults are fixture injections. No PostgreSQL or institutional approval.",
+        "browser": "Edg/155.0.4283.62",
+        "node": "v24.11.1",
+        "scenarios": [
+          {
+            "id": "D14-L01",
+            "title": "anonymous application API and route deny access",
+            "started_at": "2026-10-24T20:54:49.671+08:00",
+            "finished_at": "2026-10-24T20:54:50.673+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I01",
+            "title": "real faculty preference write and full reload preserve Compact / Very High",
+            "started_at": "2026-10-24T20:54:50.674+08:00",
+            "finished_at": "2026-10-24T20:54:52.186+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I02",
+            "title": "administrator catalog and durable fictional GEC confirmation history use real APIs",
+            "started_at": "2026-10-24T20:54:52.187+08:00",
+            "finished_at": "2026-10-24T20:54:53.722+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I03",
+            "title": "real UI starts original constrained engine against this exact confirmed ledger",
+            "started_at": "2026-10-24T20:54:53.722+08:00",
+            "finished_at": "2026-10-24T20:54:57.230+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I04",
+            "title": "real generated timetable and original fitness precede explicit fictional publication designation",
+            "started_at": "2026-10-24T20:54:57.231+08:00",
+            "finished_at": "2026-10-24T20:54:58.865+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L02",
+            "title": "faculty submits proposed change against explicit fictional published source",
+            "started_at": "2026-10-24T20:54:58.866+08:00",
+            "finished_at": "2026-10-24T20:55:01.257+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L03",
+            "title": "Chair approval remains pending and does not grant publishing",
+            "started_at": "2026-10-24T20:55:01.259+08:00",
+            "finished_at": "2026-10-24T20:55:03.007+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L04",
+            "title": "independent scheduler previews before/after and complete rules without writing versions",
+            "started_at": "2026-10-24T20:55:03.008+08:00",
+            "finished_at": "2026-10-24T20:55:04.998+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L05",
+            "title": "injected persistence failure rolls back version, head and application together",
+            "started_at": "2026-10-24T20:55:04.999+08:00",
+            "finished_at": "2026-10-24T20:55:05.518+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L06",
+            "title": "recovery publishes one new version after explicit confirmation",
+            "started_at": "2026-10-24T20:55:05.520+08:00",
+            "finished_at": "2026-10-24T20:55:06.945+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L07",
+            "title": "faculty sees APPLIED audit and new published timetable after refresh",
+            "started_at": "2026-10-24T20:55:06.947+08:00",
+            "finished_at": "2026-10-24T20:55:09.901+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L08",
+            "title": "another faculty identity cannot read private request or application history",
+            "started_at": "2026-10-24T20:55:09.902+08:00",
+            "finished_at": "2026-10-24T20:55:10.574+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L09",
+            "title": "rejected request cannot be applied through the real API",
+            "started_at": "2026-10-24T20:55:10.575+08:00",
+            "finished_at": "2026-10-24T20:55:18.380+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L10",
+            "title": "new request uses current published revision and receives a new approval",
+            "started_at": "2026-10-24T20:55:18.380+08:00",
+            "finished_at": "2026-10-24T20:55:28.102+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L11",
+            "title": "injected current GEC trust loss blocks application while retaining current version",
+            "started_at": "2026-10-24T20:55:28.103+08:00",
+            "finished_at": "2026-10-24T20:55:29.471+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L12",
+            "title": "concurrent HTTP application attempts retain one final publication",
+            "started_at": "2026-10-24T20:55:29.472+08:00",
+            "finished_at": "2026-10-24T20:55:30.343+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L13",
+            "title": "mobile retained published versions are read-only and contained",
+            "started_at": "2026-10-24T20:55:30.343+08:00",
+            "finished_at": "2026-10-24T20:55:32.124+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L14",
+            "title": "ordinary authenticated account has no publication controls or cached private review",
+            "started_at": "2026-10-24T20:55:32.125+08:00",
+            "finished_at": "2026-10-24T20:55:33.506+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I05",
+            "title": "bound faculty without assignments receives an honest empty published timetable",
+            "started_at": "2026-10-24T20:55:33.507+08:00",
+            "finished_at": "2026-10-24T20:55:34.925+08:00",
+            "result": "PASS"
+          }
+        ],
+        "captures": [
+          {
+            "name": "D14-I01-real-preference-persistence.png",
+            "captured_at": "2026-10-24T20:54:52.177+08:00",
+            "url": "http://localhost:56487/faculty/preferences",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-I02-real-confirmed-ledger.png",
+            "captured_at": "2026-10-24T20:54:53.719+08:00",
+            "url": "http://localhost:56487/admin/external-schedules",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-I04-actual-constrained-proposal.png",
+            "captured_at": "2026-10-24T20:54:57.962+08:00",
+            "url": "http://localhost:56487/admin/schedules",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-I04-actual-fitness-analysis.png",
+            "captured_at": "2026-10-24T20:54:58.854+08:00",
+            "url": "http://localhost:56487/admin/analysis",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L04-validated-application-preview.png",
+            "captured_at": "2026-10-24T20:55:04.995+08:00",
+            "url": "http://localhost:56487/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L05-rollback-blocked.png",
+            "captured_at": "2026-10-24T20:55:05.482+08:00",
+            "url": "http://localhost:56487/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L06-applied-version-history.png",
+            "captured_at": "2026-10-24T20:55:06.938+08:00",
+            "url": "http://localhost:56487/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L07-faculty-published-timetable.png",
+            "captured_at": "2026-10-24T20:55:09.899+08:00",
+            "url": "http://localhost:56487/faculty/schedule",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L11-trust-unavailable-blocked.png",
+            "captured_at": "2026-10-24T20:55:29.465+08:00",
+            "url": "http://localhost:56487/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L13-mobile-preserved-version.png",
+            "captured_at": "2026-10-24T20:55:32.121+08:00",
+            "url": "http://localhost:56487/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 390,
+              "height": 844
+            }
+          },
+          {
+            "name": "D14-I05-empty-published-timetable.png",
+            "captured_at": "2026-10-24T20:55:34.922+08:00",
+            "url": "http://localhost:56487/faculty/schedule",
+            "query_omitted": true,
+            "viewport": {
+              "width": 390,
+              "height": 844
+            }
+          }
+        ],
+        "runtime_errors": []
+      }
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/browser-results.json",
+      "sha256": "171ff324877abb69e8b559090f5a90a4cfd16ab1fc19d9168f704664ac0ff8fc",
+      "record": {
+        "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real authentication, original GA execution, actual D8-D10 ledger revalidation, Chair decisions and application transactions. Independent publisher, Chair, evidence issuer, confirmer, catalog and capacity providers are explicitly fictional; source publication is an explicit owned test handoff, not a production promotion feature. The initial GEC confirmation is created through the real API by fixture setup. Storage and trust faults are fixture injections. No PostgreSQL or institutional approval.",
+        "browser": "Edg/155.0.4283.62",
+        "node": "v24.11.1",
+        "scenarios": [
+          {
+            "id": "D14-L01",
+            "title": "anonymous application API and route deny access",
+            "started_at": "2026-10-24T20:56:58.615+08:00",
+            "finished_at": "2026-10-24T20:56:59.591+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I01",
+            "title": "real faculty preference write and full reload preserve Compact / Very High",
+            "started_at": "2026-10-24T20:56:59.593+08:00",
+            "finished_at": "2026-10-24T20:57:01.105+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I02",
+            "title": "administrator catalog and durable fictional GEC confirmation history use real APIs",
+            "started_at": "2026-10-24T20:57:01.106+08:00",
+            "finished_at": "2026-10-24T20:57:02.535+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I03",
+            "title": "real UI starts original constrained engine against this exact confirmed ledger",
+            "started_at": "2026-10-24T20:57:02.535+08:00",
+            "finished_at": "2026-10-24T20:57:06.066+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I04",
+            "title": "real generated timetable and original fitness precede explicit fictional publication designation",
+            "started_at": "2026-10-24T20:57:06.067+08:00",
+            "finished_at": "2026-10-24T20:57:07.586+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L02",
+            "title": "faculty submits proposed change against explicit fictional published source",
+            "started_at": "2026-10-24T20:57:07.587+08:00",
+            "finished_at": "2026-10-24T20:57:09.601+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L03",
+            "title": "Chair approval remains pending and does not grant publishing",
+            "started_at": "2026-10-24T20:57:09.602+08:00",
+            "finished_at": "2026-10-24T20:57:10.984+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L04",
+            "title": "independent scheduler previews before/after and complete rules without writing versions",
+            "started_at": "2026-10-24T20:57:10.984+08:00",
+            "finished_at": "2026-10-24T20:57:12.180+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L05",
+            "title": "injected persistence failure rolls back version, head and application together",
+            "started_at": "2026-10-24T20:57:12.180+08:00",
+            "finished_at": "2026-10-24T20:57:12.496+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L06",
+            "title": "recovery publishes one new version after explicit confirmation",
+            "started_at": "2026-10-24T20:57:12.497+08:00",
+            "finished_at": "2026-10-24T20:57:13.290+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L07",
+            "title": "faculty sees APPLIED audit and new published timetable after refresh",
+            "started_at": "2026-10-24T20:57:13.291+08:00",
+            "finished_at": "2026-10-24T20:57:14.823+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L08",
+            "title": "another faculty identity cannot read private request or application history",
+            "started_at": "2026-10-24T20:57:14.824+08:00",
+            "finished_at": "2026-10-24T20:57:15.343+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L09",
+            "title": "rejected request cannot be applied through the real API",
+            "started_at": "2026-10-24T20:57:15.343+08:00",
+            "finished_at": "2026-10-24T20:57:18.327+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L10",
+            "title": "new request uses current published revision and receives a new approval",
+            "started_at": "2026-10-24T20:57:18.327+08:00",
+            "finished_at": "2026-10-24T20:57:22.530+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L11",
+            "title": "injected current GEC trust loss blocks application while retaining current version",
+            "started_at": "2026-10-24T20:57:22.531+08:00",
+            "finished_at": "2026-10-24T20:57:24.862+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L12",
+            "title": "concurrent HTTP application attempts retain one final publication",
+            "started_at": "2026-10-24T20:57:24.863+08:00",
+            "finished_at": "2026-10-24T20:57:25.523+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L13",
+            "title": "mobile retained published versions are read-only and contained",
+            "started_at": "2026-10-24T20:57:25.523+08:00",
+            "finished_at": "2026-10-24T20:57:26.743+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L14",
+            "title": "ordinary authenticated account has no publication controls or cached private review",
+            "started_at": "2026-10-24T20:57:26.743+08:00",
+            "finished_at": "2026-10-24T20:57:27.697+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I05",
+            "title": "bound faculty without assignments receives an honest empty published timetable",
+            "started_at": "2026-10-24T20:57:27.698+08:00",
+            "finished_at": "2026-10-24T20:57:28.978+08:00",
+            "result": "PASS"
+          }
+        ],
+        "captures": [
+          {
+            "name": "D14-I01-real-preference-persistence.png",
+            "captured_at": "2026-10-24T20:57:01.097+08:00",
+            "url": "http://localhost:55438/faculty/preferences",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-I02-real-confirmed-ledger.png",
+            "captured_at": "2026-10-24T20:57:02.531+08:00",
+            "url": "http://localhost:55438/admin/external-schedules",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-I04-actual-constrained-proposal.png",
+            "captured_at": "2026-10-24T20:57:06.735+08:00",
+            "url": "http://localhost:55438/admin/schedules",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-I04-actual-fitness-analysis.png",
+            "captured_at": "2026-10-24T20:57:07.576+08:00",
+            "url": "http://localhost:55438/admin/analysis",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L04-validated-application-preview.png",
+            "captured_at": "2026-10-24T20:57:12.177+08:00",
+            "url": "http://localhost:55438/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L05-rollback-blocked.png",
+            "captured_at": "2026-10-24T20:57:12.493+08:00",
+            "url": "http://localhost:55438/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L06-applied-version-history.png",
+            "captured_at": "2026-10-24T20:57:13.288+08:00",
+            "url": "http://localhost:55438/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L07-faculty-published-timetable.png",
+            "captured_at": "2026-10-24T20:57:14.821+08:00",
+            "url": "http://localhost:55438/faculty/schedule",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L11-trust-unavailable-blocked.png",
+            "captured_at": "2026-10-24T20:57:24.859+08:00",
+            "url": "http://localhost:55438/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L13-mobile-preserved-version.png",
+            "captured_at": "2026-10-24T20:57:26.740+08:00",
+            "url": "http://localhost:55438/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 390,
+              "height": 844
+            }
+          },
+          {
+            "name": "D14-I05-empty-published-timetable.png",
+            "captured_at": "2026-10-24T20:57:28.975+08:00",
+            "url": "http://localhost:55438/faculty/schedule",
+            "query_omitted": true,
+            "viewport": {
+              "width": 390,
+              "height": 844
+            }
+          }
+        ],
+        "runtime_errors": []
+      }
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/browser-results.json",
+      "sha256": "9774becffa24f7c1151417ed13317f08a8b9471cf09680fe2b102a73fc023863",
+      "record": {
+        "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real authentication, original GA execution, actual D8-D10 ledger revalidation, Chair decisions and application transactions. Independent publisher, Chair, evidence issuer, confirmer, catalog and capacity providers are explicitly fictional; source publication is an explicit owned test handoff, not a production promotion feature. The initial GEC confirmation is created through the real API by fixture setup. Storage and trust faults are fixture injections. No PostgreSQL or institutional approval.",
+        "browser": "Edg/155.0.4283.62",
+        "node": "v24.11.1",
+        "scenarios": [
+          {
+            "id": "D14-L01",
+            "title": "anonymous application API and route deny access",
+            "started_at": "2026-10-24T21:00:31.419+08:00",
+            "finished_at": "2026-10-24T21:00:33.170+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I01",
+            "title": "real faculty preference write and full reload preserve Compact / Very High",
+            "started_at": "2026-10-24T21:00:33.172+08:00",
+            "finished_at": "2026-10-24T21:00:34.984+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I02",
+            "title": "administrator catalog and durable fictional GEC confirmation history use real APIs",
+            "started_at": "2026-10-24T21:00:34.985+08:00",
+            "finished_at": "2026-10-24T21:00:36.609+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I03",
+            "title": "real UI starts original constrained engine against this exact confirmed ledger",
+            "started_at": "2026-10-24T21:00:36.610+08:00",
+            "finished_at": "2026-10-24T21:00:40.320+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I04",
+            "title": "real generated timetable and original fitness precede explicit fictional publication designation",
+            "started_at": "2026-10-24T21:00:40.321+08:00",
+            "finished_at": "2026-10-24T21:00:42.173+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L02",
+            "title": "faculty submits proposed change against explicit fictional published source",
+            "started_at": "2026-10-24T21:00:42.175+08:00",
+            "finished_at": "2026-10-24T21:00:45.108+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L03",
+            "title": "Chair approval remains pending and does not grant publishing",
+            "started_at": "2026-10-24T21:00:45.108+08:00",
+            "finished_at": "2026-10-24T21:00:46.787+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L04",
+            "title": "independent scheduler previews before/after and complete rules without writing versions",
+            "started_at": "2026-10-24T21:00:46.788+08:00",
+            "finished_at": "2026-10-24T21:00:48.620+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L05",
+            "title": "injected persistence failure rolls back version, head and application together",
+            "started_at": "2026-10-24T21:00:48.621+08:00",
+            "finished_at": "2026-10-24T21:00:49.233+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L06",
+            "title": "recovery publishes one new version after explicit confirmation",
+            "started_at": "2026-10-24T21:00:49.234+08:00",
+            "finished_at": "2026-10-24T21:00:50.765+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L07",
+            "title": "faculty sees APPLIED audit and new published timetable after refresh",
+            "started_at": "2026-10-24T21:00:50.766+08:00",
+            "finished_at": "2026-10-24T21:00:53.075+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L08",
+            "title": "another faculty identity cannot read private request or application history",
+            "started_at": "2026-10-24T21:00:53.075+08:00",
+            "finished_at": "2026-10-24T21:00:53.756+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L09",
+            "title": "rejected request cannot be applied through the real API",
+            "started_at": "2026-10-24T21:00:53.757+08:00",
+            "finished_at": "2026-10-24T21:01:01.396+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L10",
+            "title": "new request uses current published revision and receives a new approval",
+            "started_at": "2026-10-24T21:01:01.396+08:00",
+            "finished_at": "2026-10-24T21:01:10.909+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L11",
+            "title": "injected current GEC trust loss blocks application while retaining current version",
+            "started_at": "2026-10-24T21:01:10.910+08:00",
+            "finished_at": "2026-10-24T21:01:12.221+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L12",
+            "title": "concurrent HTTP application attempts retain one final publication",
+            "started_at": "2026-10-24T21:01:12.222+08:00",
+            "finished_at": "2026-10-24T21:01:13.210+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L13",
+            "title": "mobile retained published versions are read-only and contained",
+            "started_at": "2026-10-24T21:01:13.211+08:00",
+            "finished_at": "2026-10-24T21:01:14.753+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-L14",
+            "title": "ordinary authenticated account has no publication controls or cached private review",
+            "started_at": "2026-10-24T21:01:14.754+08:00",
+            "finished_at": "2026-10-24T21:01:16.181+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I05",
+            "title": "bound faculty without assignments receives an honest empty published timetable",
+            "started_at": "2026-10-24T21:01:16.181+08:00",
+            "finished_at": "2026-10-24T21:01:17.695+08:00",
+            "result": "PASS"
+          },
+          {
+            "id": "D14-I06",
+            "title": "stopping only the owned backend clears the portal and exposes session retry",
+            "started_at": "2026-10-24T21:01:17.696+08:00",
+            "finished_at": "2026-10-24T21:01:18.487+08:00",
+            "result": "PASS"
+          }
+        ],
+        "captures": [
+          {
+            "name": "D14-I01-real-preference-persistence.png",
+            "captured_at": "2026-10-24T21:00:34.973+08:00",
+            "url": "http://localhost:62115/faculty/preferences",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-I02-real-confirmed-ledger.png",
+            "captured_at": "2026-10-24T21:00:36.595+08:00",
+            "url": "http://localhost:62115/admin/external-schedules",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-I04-actual-constrained-proposal.png",
+            "captured_at": "2026-10-24T21:00:41.200+08:00",
+            "url": "http://localhost:62115/admin/schedules",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-I04-actual-fitness-analysis.png",
+            "captured_at": "2026-10-24T21:00:42.154+08:00",
+            "url": "http://localhost:62115/admin/analysis",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L04-validated-application-preview.png",
+            "captured_at": "2026-10-24T21:00:48.617+08:00",
+            "url": "http://localhost:62115/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L05-rollback-blocked.png",
+            "captured_at": "2026-10-24T21:00:49.227+08:00",
+            "url": "http://localhost:62115/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L06-applied-version-history.png",
+            "captured_at": "2026-10-24T21:00:50.760+08:00",
+            "url": "http://localhost:62115/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L07-faculty-published-timetable.png",
+            "captured_at": "2026-10-24T21:00:53.072+08:00",
+            "url": "http://localhost:62115/faculty/schedule",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L11-trust-unavailable-blocked.png",
+            "captured_at": "2026-10-24T21:01:12.217+08:00",
+            "url": "http://localhost:62115/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 1366,
+              "height": 1100
+            }
+          },
+          {
+            "name": "D14-L13-mobile-preserved-version.png",
+            "captured_at": "2026-10-24T21:01:14.750+08:00",
+            "url": "http://localhost:62115/schedule-applications",
+            "query_omitted": true,
+            "viewport": {
+              "width": 390,
+              "height": 844
+            }
+          },
+          {
+            "name": "D14-I05-empty-published-timetable.png",
+            "captured_at": "2026-10-24T21:01:17.691+08:00",
+            "url": "http://localhost:62115/faculty/schedule",
+            "query_omitted": true,
+            "viewport": {
+              "width": 390,
+              "height": 844
+            }
+          },
+          {
+            "name": "D14-I06-owned-backend-unavailable.png",
+            "captured_at": "2026-10-24T21:01:18.482+08:00",
+            "url": "http://localhost:62115/faculty/schedule",
+            "query_omitted": true,
+            "viewport": {
+              "width": 390,
+              "height": 844
+            }
+          }
+        ],
+        "runtime_errors": []
+      }
+    }
+  ],
+  "final_D14_browser_record": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/browser-results.json",
+  "limitations": [
+    "Institutional evidence, issuer, confirmation, catalog, Chair and publication providers remain unconfigured in production",
+    "Explicit owned fictional publication designation is a test provider, not a new production GA promotion API",
+    "17 Phase4C PostgreSQL cases and D9-D13 online PostgreSQL acceptance NOT RUN",
+    "Database-unavailable case injects SQLite OperationalError; it is not a physical PostgreSQL outage",
+    "Older D9 Windows Proactor teardown failed once; same unchanged suite passed in isolation; broader teardown reliability unresolved",
+    "Six historical incompatible checkpoints remain incompatible and untouched; four current V1 continuation fixtures passed",
+    "Tiny three-sample workload is not a performance, memory, scalability or institutional feasibility benchmark",
+    "Native browser printing and real institutional data accuracy NOT RUN"
+  ],
+  "hash_convention": "Raw-byte SHA-256; this manifest excludes itself. Hashes do not establish institutional authority or screenshot coverage.",
+  "artifacts": [
+    {
+      "path": "backend/tests/dashboard/test_system_acceptance.py",
+      "bytes": 15452,
+      "sha256": "91507dc339b526b53872575a067e3179b3c6cad84e8cdf553d39c615b4fab4b7",
+      "git_blob_sha1": "9c5f3b3d62fa596b8c6ba54e05e09cddfc2f1c6c",
+      "git_blob_sha256": "91507dc339b526b53872575a067e3179b3c6cad84e8cdf553d39c615b4fab4b7",
+      "git_blob_bytes": 15452
+    },
+    {
+      "path": "backend/tests/dashboard/test_system_acceptance_live.py",
+      "bytes": 4701,
+      "sha256": "92acb30451116720c5d58808bfebe6941a70b98c692a0a52c9b0589feb8de2e0",
+      "git_blob_sha1": "f2889a902912e1899fd1cc16f2ee3df734c5c6cd",
+      "git_blob_sha256": "92acb30451116720c5d58808bfebe6941a70b98c692a0a52c9b0589feb8de2e0",
+      "git_blob_bytes": 4701
+    },
+    {
+      "path": "docs/dashboard-d14-acceptance.md",
+      "bytes": 43737,
+      "sha256": "fb3aff4fd8aa2f25bff8e87eda1a2b30246ad586ef8cd8f78a6fb2df4dd629cc",
+      "git_blob_sha1": "cbfb921647c061f7ba14aa28e1816f64a8f2cdbf",
+      "git_blob_sha256": "fb3aff4fd8aa2f25bff8e87eda1a2b30246ad586ef8cd8f78a6fb2df4dd629cc",
+      "git_blob_bytes": 43737
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205255320884+0800-d14-live/browser-results.json",
+      "bytes": 1216,
+      "sha256": "b1ec9210e3012284dd8f4482c772146bd5a4077424b409d732df0efad83c9f65",
+      "git_blob_sha1": "f2fbc5feffa2cb42ff0fab8135d3ce30a6a67fa8",
+      "git_blob_sha256": "b1ec9210e3012284dd8f4482c772146bd5a4077424b409d732df0efad83c9f65",
+      "git_blob_bytes": 1216
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/browser-results.json",
+      "bytes": 8686,
+      "sha256": "f06232ce09330ba238bf7cf77a464842e336b2d0e7eecb987b0e28dbebbfca85",
+      "git_blob_sha1": "a0fd62e8bb0a1a6272c876f0d9b90bee4d0b2d3c",
+      "git_blob_sha256": "f06232ce09330ba238bf7cf77a464842e336b2d0e7eecb987b0e28dbebbfca85",
+      "git_blob_bytes": 8686
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I01-real-preference-persistence.png",
+      "bytes": 100145,
+      "sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133",
+      "git_blob_sha1": "c4cf60a800299dc88dd39d9e5173c32311e6b982",
+      "git_blob_sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133",
+      "git_blob_bytes": 100145
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I02-real-confirmed-ledger.png",
+      "bytes": 82486,
+      "sha256": "ef0518d59c75ee6e34ff83d8ad273ce991add23da03a5e4e0bccda8c347d2031",
+      "git_blob_sha1": "96a6b3199bb8e69136bc7ade0f608d140bfd067c",
+      "git_blob_sha256": "ef0518d59c75ee6e34ff83d8ad273ce991add23da03a5e4e0bccda8c347d2031",
+      "git_blob_bytes": 82486
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I04-actual-constrained-proposal.png",
+      "bytes": 106514,
+      "sha256": "2501fd21f97e896ed430e48f04b29ee1e5a7136d8166d15210633ca8d02a55dc",
+      "git_blob_sha1": "b1021aae46f2582b2b83ceff4abd24332da0aa46",
+      "git_blob_sha256": "2501fd21f97e896ed430e48f04b29ee1e5a7136d8166d15210633ca8d02a55dc",
+      "git_blob_bytes": 106514
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I04-actual-fitness-analysis.png",
+      "bytes": 116520,
+      "sha256": "05bb84b74fd270b6b2f900ba540fc248fd65397981c40d2a377c9d2c49c95268",
+      "git_blob_sha1": "96730eed4c78ee930063a3eaae63c084e5946a6d",
+      "git_blob_sha256": "05bb84b74fd270b6b2f900ba540fc248fd65397981c40d2a377c9d2c49c95268",
+      "git_blob_bytes": 116520
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-I05-empty-published-timetable.png",
+      "bytes": 39806,
+      "sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d",
+      "git_blob_sha1": "af044db223f071d3c49976fc02fd2ad2fb7d067c",
+      "git_blob_sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d",
+      "git_blob_bytes": 39806
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L04-validated-application-preview.png",
+      "bytes": 86943,
+      "sha256": "9a2a7e06c426bc067eb4c83179fd241a32b28af0d89dd9ff76aa5ffba4800690",
+      "git_blob_sha1": "8efd503581266322a303c897ccb9172749296a43",
+      "git_blob_sha256": "9a2a7e06c426bc067eb4c83179fd241a32b28af0d89dd9ff76aa5ffba4800690",
+      "git_blob_bytes": 86943
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L05-rollback-blocked.png",
+      "bytes": 49830,
+      "sha256": "99151747df3604721917fc8e9710290bdf694a5607ab981717ec7592bf01042d",
+      "git_blob_sha1": "604d75e9601519370751e655bbaca5fe2b274fbb",
+      "git_blob_sha256": "99151747df3604721917fc8e9710290bdf694a5607ab981717ec7592bf01042d",
+      "git_blob_bytes": 49830
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L06-applied-version-history.png",
+      "bytes": 81480,
+      "sha256": "cc92d8b5b1d3cfe91ae16d0a7c5ad68616da0a91e9c2ef3c26c78b8c3bbb85a8",
+      "git_blob_sha1": "cf693be5ef1946736f8999a1cce9ae00cb86056a",
+      "git_blob_sha256": "cc92d8b5b1d3cfe91ae16d0a7c5ad68616da0a91e9c2ef3c26c78b8c3bbb85a8",
+      "git_blob_bytes": 81480
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L07-faculty-published-timetable.png",
+      "bytes": 88466,
+      "sha256": "a3fee5a5c5736f6314b618ea9a1af5742f9b984930564f0594aef4ef8f9d03a4",
+      "git_blob_sha1": "dbaab84c77386a6b53a79b93c63dada0b9e7a183",
+      "git_blob_sha256": "a3fee5a5c5736f6314b618ea9a1af5742f9b984930564f0594aef4ef8f9d03a4",
+      "git_blob_bytes": 88466
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L11-trust-unavailable-blocked.png",
+      "bytes": 49721,
+      "sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480",
+      "git_blob_sha1": "fd9e9274723a0bc45f900286a3b872103b20db86",
+      "git_blob_sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480",
+      "git_blob_bytes": 49721
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205442812029+0800-d14-live/D14-L13-mobile-preserved-version.png",
+      "bytes": 31217,
+      "sha256": "aa980593db85fc5569b4950d9da8c5495c107a7e60dda0b335ef274a0f66ae54",
+      "git_blob_sha1": "8d557686f7facf8ac75acd16982052a1da6b2455",
+      "git_blob_sha256": "aa980593db85fc5569b4950d9da8c5495c107a7e60dda0b335ef274a0f66ae54",
+      "git_blob_bytes": 31217
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/browser-results.json",
+      "bytes": 8686,
+      "sha256": "171ff324877abb69e8b559090f5a90a4cfd16ab1fc19d9168f704664ac0ff8fc",
+      "git_blob_sha1": "bfb913111636487261e0602f01b9551df5be5b41",
+      "git_blob_sha256": "171ff324877abb69e8b559090f5a90a4cfd16ab1fc19d9168f704664ac0ff8fc",
+      "git_blob_bytes": 8686
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I01-real-preference-persistence.png",
+      "bytes": 100145,
+      "sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133",
+      "git_blob_sha1": "c4cf60a800299dc88dd39d9e5173c32311e6b982",
+      "git_blob_sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133",
+      "git_blob_bytes": 100145
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I02-real-confirmed-ledger.png",
+      "bytes": 82697,
+      "sha256": "20e12918e79aa4acacf72e8c68581b4d2a06f9f6057c6dbe1c9f2f1917eab8a4",
+      "git_blob_sha1": "bbadba141c6070864285895dfe7132eee957f11a",
+      "git_blob_sha256": "20e12918e79aa4acacf72e8c68581b4d2a06f9f6057c6dbe1c9f2f1917eab8a4",
+      "git_blob_bytes": 82697
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I04-actual-constrained-proposal.png",
+      "bytes": 117516,
+      "sha256": "28527082b1e162ff9dcd6a9f34872827cd4e4cccc44973841a57f7b35a7d33a6",
+      "git_blob_sha1": "f4afd4bf9b4ef9c69410121d73e0340b70660402",
+      "git_blob_sha256": "28527082b1e162ff9dcd6a9f34872827cd4e4cccc44973841a57f7b35a7d33a6",
+      "git_blob_bytes": 117516
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I04-actual-fitness-analysis.png",
+      "bytes": 116361,
+      "sha256": "037fda128df023bc8b3086d5b19ff03f98d738cf3c690d3578a3959e575f1993",
+      "git_blob_sha1": "719d979f9eb7870cc266c14f1f84980d1c437dae",
+      "git_blob_sha256": "037fda128df023bc8b3086d5b19ff03f98d738cf3c690d3578a3959e575f1993",
+      "git_blob_bytes": 116361
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-I05-empty-published-timetable.png",
+      "bytes": 39806,
+      "sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d",
+      "git_blob_sha1": "af044db223f071d3c49976fc02fd2ad2fb7d067c",
+      "git_blob_sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d",
+      "git_blob_bytes": 39806
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L04-validated-application-preview.png",
+      "bytes": 86744,
+      "sha256": "68da7acbd02c8a0515f9691fe31d0758b5212ccd8ba82b9bd74c8c3220dea9db",
+      "git_blob_sha1": "7c5629b8a87ebcbfa247fdd96041da9b5260af43",
+      "git_blob_sha256": "68da7acbd02c8a0515f9691fe31d0758b5212ccd8ba82b9bd74c8c3220dea9db",
+      "git_blob_bytes": 86744
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L05-rollback-blocked.png",
+      "bytes": 49827,
+      "sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+      "git_blob_sha1": "58ca87f6c10864be0b18ce9bb4bfc3aa50d52f11",
+      "git_blob_sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103",
+      "git_blob_bytes": 49827
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L06-applied-version-history.png",
+      "bytes": 81325,
+      "sha256": "b0e63c0d29c33a82b891d4eb70662dfdd69a381af1134d0d587756353a321bb4",
+      "git_blob_sha1": "d8f25479eeef87afe4836ec618a2a3e98d3c2bf5",
+      "git_blob_sha256": "b0e63c0d29c33a82b891d4eb70662dfdd69a381af1134d0d587756353a321bb4",
+      "git_blob_bytes": 81325
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L07-faculty-published-timetable.png",
+      "bytes": 94248,
+      "sha256": "22785305e0dd8d13c815ae81325d3dc5bd7d7040ffba9b9835960a93b229746c",
+      "git_blob_sha1": "d5d800f08ee7d28cf4fe9ba7696ec67eeff3fd50",
+      "git_blob_sha256": "22785305e0dd8d13c815ae81325d3dc5bd7d7040ffba9b9835960a93b229746c",
+      "git_blob_bytes": 94248
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L11-trust-unavailable-blocked.png",
+      "bytes": 49721,
+      "sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480",
+      "git_blob_sha1": "fd9e9274723a0bc45f900286a3b872103b20db86",
+      "git_blob_sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480",
+      "git_blob_bytes": 49721
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T205651991799+0800-d14-live/D14-L13-mobile-preserved-version.png",
+      "bytes": 31065,
+      "sha256": "f00803336df8dd63d862759ef2b3b1748ebe5d152040f911ee2f090dda28fc3c",
+      "git_blob_sha1": "a9123c04aa06f259b793894340cbaaa2899989b0",
+      "git_blob_sha256": "f00803336df8dd63d862759ef2b3b1748ebe5d152040f911ee2f090dda28fc3c",
+      "git_blob_bytes": 31065
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/browser-results.json",
+      "bytes": 9225,
+      "sha256": "9774becffa24f7c1151417ed13317f08a8b9471cf09680fe2b102a73fc023863",
+      "git_blob_sha1": "bc295f057861788fc0bcac9027618ef7ad2ae588",
+      "git_blob_sha256": "9774becffa24f7c1151417ed13317f08a8b9471cf09680fe2b102a73fc023863",
+      "git_blob_bytes": 9225
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I01-real-preference-persistence.png",
+      "bytes": 100145,
+      "sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133",
+      "git_blob_sha1": "c4cf60a800299dc88dd39d9e5173c32311e6b982",
+      "git_blob_sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133",
+      "git_blob_bytes": 100145
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I02-real-confirmed-ledger.png",
+      "bytes": 82113,
+      "sha256": "41ecf2286e07f6259b3d6fa8a863d0402c06fba2c5f30bc8d08d4f82de353fa3",
+      "git_blob_sha1": "3453856f09da4a5f4a5a7bf9a9a09f4659d4c363",
+      "git_blob_sha256": "41ecf2286e07f6259b3d6fa8a863d0402c06fba2c5f30bc8d08d4f82de353fa3",
+      "git_blob_bytes": 82113
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I04-actual-constrained-proposal.png",
+      "bytes": 118378,
+      "sha256": "6d530b681a5b2325f553ddf264023e69a3d5e30d793590ce4036221e90b73eda",
+      "git_blob_sha1": "b34ac7bb9d7fcf0b5c18cc6a3584a981d4433941",
+      "git_blob_sha256": "6d530b681a5b2325f553ddf264023e69a3d5e30d793590ce4036221e90b73eda",
+      "git_blob_bytes": 118378
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I04-actual-fitness-analysis.png",
+      "bytes": 116739,
+      "sha256": "2c2e70fceeec5351a9c2f23c80bc8dd8a303d792bea65660a89b4b9e320c8a8d",
+      "git_blob_sha1": "4e71736a5538d761f07d17bd0fa74cd9b5c83f09",
+      "git_blob_sha256": "2c2e70fceeec5351a9c2f23c80bc8dd8a303d792bea65660a89b4b9e320c8a8d",
+      "git_blob_bytes": 116739
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I05-empty-published-timetable.png",
+      "bytes": 39806,
+      "sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d",
+      "git_blob_sha1": "af044db223f071d3c49976fc02fd2ad2fb7d067c",
+      "git_blob_sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d",
+      "git_blob_bytes": 39806
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-I06-owned-backend-unavailable.png",
+      "bytes": 7643,
+      "sha256": "336c83f8c074262adf984dacf1cff0f95eb51a9d38e771533de089a8805fdb26",
+      "git_blob_sha1": "5ff574b808556418624bcd46e8e11e149d653c31",
+      "git_blob_sha256": "336c83f8c074262adf984dacf1cff0f95eb51a9d38e771533de089a8805fdb26",
+      "git_blob_bytes": 7643
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L04-validated-application-preview.png",
+      "bytes": 86403,
+      "sha256": "947b8c2964d7e1191cde7c664ea837f95ccac7d5c6b945ba58ec684993aa3b7e",
+      "git_blob_sha1": "55944b49299d1cb3b0f0307253efe16feb2a66ab",
+      "git_blob_sha256": "947b8c2964d7e1191cde7c664ea837f95ccac7d5c6b945ba58ec684993aa3b7e",
+      "git_blob_bytes": 86403
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L05-rollback-blocked.png",
+      "bytes": 49844,
+      "sha256": "cc8a940b76782f3fd6b5d200a51ad19667b94462b317cdfa83f5147d4caf95e7",
+      "git_blob_sha1": "b1c3a157f13a86801fb6875cd672f16f55e9f7fa",
+      "git_blob_sha256": "cc8a940b76782f3fd6b5d200a51ad19667b94462b317cdfa83f5147d4caf95e7",
+      "git_blob_bytes": 49844
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L06-applied-version-history.png",
+      "bytes": 80845,
+      "sha256": "ac55e1fbdb5a53af3bc0bbd7bd7079d4f0de1f04becde673c2902d53b20bc2da",
+      "git_blob_sha1": "d36ce16fc080f124c0931572e08c1f77d0a705ae",
+      "git_blob_sha256": "ac55e1fbdb5a53af3bc0bbd7bd7079d4f0de1f04becde673c2902d53b20bc2da",
+      "git_blob_bytes": 80845
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L07-faculty-published-timetable.png",
+      "bytes": 94255,
+      "sha256": "b8b07c6354a5e65dd9dae4c6486061aa7ff8debbd575182c617b60fa14db137f",
+      "git_blob_sha1": "701cea6ee60e4b826ebefa0b246c097b7b253293",
+      "git_blob_sha256": "b8b07c6354a5e65dd9dae4c6486061aa7ff8debbd575182c617b60fa14db137f",
+      "git_blob_bytes": 94255
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L11-trust-unavailable-blocked.png",
+      "bytes": 49721,
+      "sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480",
+      "git_blob_sha1": "fd9e9274723a0bc45f900286a3b872103b20db86",
+      "git_blob_sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480",
+      "git_blob_bytes": 49721
+    },
+    {
+      "path": "docs/screenshots/dashboard-d14/20261024T210021246779+0800-d14-live/D14-L13-mobile-preserved-version.png",
+      "bytes": 31052,
+      "sha256": "1ad0d503c268e5b0be18096b9728594ceb3780d8fab2ee0196c12c5437b7229e",
+      "git_blob_sha1": "3027e0603c699dbfb792515f38fb253a19ab66ee",
+      "git_blob_sha256": "1ad0d503c268e5b0be18096b9728594ceb3780d8fab2ee0196c12c5437b7229e",
+      "git_blob_bytes": 31052
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203333612493+0800-backend/command.json",
+      "bytes": 2664,
+      "sha256": "1b22aff2d80d9dc1c4c7d20477db24038fabcbba4bdc5e471787be4a7c8cb24c",
+      "git_blob_sha1": "64a70b0954593d6ad04eec5847a959f8f275eef5",
+      "git_blob_sha256": "3d0479d95a1ab2b7a67490cc312686331c6f2ff888b911d24e6521ab8fbed441",
+      "git_blob_bytes": 2631
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203334554278+0800-d13-backend/command.json",
+      "bytes": 2739,
+      "sha256": "422c5c8017a76d880549695da71b990ad1cd21b203c656a308a829e03f2324ba",
+      "git_blob_sha1": "e3b2bfb48058628226d34dc7895e7c19c3bf618b",
+      "git_blob_sha256": "4adb6e82959b1aaf8355514842d71427bda37f5f6b506d5a9378b9a1b866cad2",
+      "git_blob_bytes": 2710
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203335537407+0800-v1-fixtures/command.json",
+      "bytes": 1147,
+      "sha256": "c9034d470051a6a1aebe1682b6914db91f15d4955681ab246d546c9bdbc5a96f",
+      "git_blob_sha1": "1c27fadf44e9e0c291b84ecc28a5d202658a028e",
+      "git_blob_sha256": "122370cf0d67b2b8c6bf2d38187417e956000be4ac336b6513bfadf2d5ffe166",
+      "git_blob_bytes": 1120
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203752806289+0800-focused/command.json",
+      "bytes": 25317,
+      "sha256": "674c9d28b246b969b812c67ca9e71e278e8458a42cf6c082b212f03133cf4251",
+      "git_blob_sha1": "e42ba022f879ff9a44e5e6880a76277845b7af51",
+      "git_blob_sha256": "5252617bb3c6c87fd7b6cf155378a7a069bbd622304e93d015c94763a117c62b",
+      "git_blob_bytes": 25290
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203841803527+0800-v2-api/command.json",
+      "bytes": 2050,
+      "sha256": "c10b0102d0526536a3efc9db9eca3c64f16b44e92a7750fbd8306328fe6849bd",
+      "git_blob_sha1": "f270b85e8980d1f5e19398c9f4e18e2f442e93fb",
+      "git_blob_sha256": "a4a8304198dffbd83f390a7e8efc85a8718349fb85d8b053acacf46d2d09a507",
+      "git_blob_bytes": 2023
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203843325639+0800-v2-engine/command.json",
+      "bytes": 1154,
+      "sha256": "cf9642f6e23378bc197b3752aca1cadebab89dc3f02cbecab845ed058d61ff3f",
+      "git_blob_sha1": "542af6fc2de9be93f46d251e067fa3c8059269d4",
+      "git_blob_sha256": "2dfbc377ea5be7deb161ba88e5d6a31be8b284327fb2bf4a198174047183fc7c",
+      "git_blob_bytes": 1127
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203844271450+0800-d12-backend/command.json",
+      "bytes": 2715,
+      "sha256": "b4c590fcf2efcd0339661993a794c613f2bac9f43630b5ab172cadc7e4a99142",
+      "git_blob_sha1": "cb123f382250a22c8edf8db8efeecc5bc3dbb020",
+      "git_blob_sha256": "ed38195448364af838d843b388cb364ed633aff92c95b53a326e71564cf679bc",
+      "git_blob_bytes": 2686
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203938525513+0800-focused/command.json",
+      "bytes": 3449,
+      "sha256": "a5ffc281d543fbf1195bdd40df5381d84126535a75e5cc0fc5cd3324a917e505",
+      "git_blob_sha1": "492ee677c9dd9d3f17e3970a99471024d54053c2",
+      "git_blob_sha256": "ebd4e73ae797e0e9c7c5a18eba1d19859d57582782f568d4b283ab7f6f48f9d3",
+      "git_blob_bytes": 3422
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203951141062+0800-d11-backend/command.json",
+      "bytes": 2683,
+      "sha256": "689eb115851f194a3fe73bb90e3dca8b4e90c090129b5902409846fe3673fcee",
+      "git_blob_sha1": "854f3ee61256a0381c161cfe28c80a3f87d2880a",
+      "git_blob_sha256": "4aa6a94b7ca71d05d4581dfafa9f3c407d4e30cc9764c8d92b4b95c774ecde45",
+      "git_blob_bytes": 2655
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203952291272+0800-ga-resource-regressions/command.json",
+      "bytes": 1379,
+      "sha256": "86a17c2f33a88807a385946d9b67867290d206d2a4e8d2f0106100323a17deda",
+      "git_blob_sha1": "da3a020658b801a3907e95e9fd73d0fe8476c15e",
+      "git_blob_sha256": "f565a427336e6b52440ebaf9af0638e00597cdbb5f093609d905973ff705c5a2",
+      "git_blob_bytes": 1351
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T203953238570+0800-academic-offline/command.json",
+      "bytes": 1982,
+      "sha256": "c779b8f808dd756d536a0325bc95ddbd34e00d682687ca3bf201af2550d28bf0",
+      "git_blob_sha1": "ae991feed781eb05c3d66401a97423f74fd44d9c",
+      "git_blob_sha256": "adf06dff83701c0c789118857e523120608d9c5e378f25a51b7670e3d8992023",
+      "git_blob_bytes": 1954
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204038859235+0800-focused/command.json",
+      "bytes": 3212,
+      "sha256": "10d8dc92507005592ea3417ef6307aa4659f199a0b78e361388e870a31af6b11",
+      "git_blob_sha1": "620a9747f239bff158661b012b262af303788810",
+      "git_blob_sha256": "7620a1d62bd6e07969abf807b89d27b097530471f928f3c22e5fd4bd41e17426",
+      "git_blob_bytes": 3185
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204053080111+0800-backend-regressions/command.json",
+      "bytes": 2511,
+      "sha256": "f1fc15cc72263c0e32354b2c5ae84980c09b30f7763cc7f9d324eb6d887b9999",
+      "git_blob_sha1": "f4bf6d40335a0bbc4a5f121cd3a9900ad4d04602",
+      "git_blob_sha256": "643a4fabb70f78d143ba041bc7e8987e817eb38be81e1ab0a61741af851030a9",
+      "git_blob_bytes": 2484
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204053296056+0800-browser-regressions/command.json",
+      "bytes": 14140,
+      "sha256": "925a956e9fa6d6a4e2c0f062e777a1bccadce4487714f7ac221b45b07c3ce6b1",
+      "git_blob_sha1": "1ad314901eed34e3cfca9d18a039e186ff6e0575",
+      "git_blob_sha256": "018d0162bd0225b452cbb1c0d6ee85f8f3826fee5a0d6b50cbab55967fbfea19",
+      "git_blob_bytes": 14114
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204250502578+0800-focused/command.json",
+      "bytes": 4462,
+      "sha256": "805550bffa669b3fc697f2345e7920134e78acce32c19ca7481b41d811128cb6",
+      "git_blob_sha1": "b211c765e28e04ab70c1e4f178eb039d65cb5839",
+      "git_blob_sha256": "e84912b699be639f9ec18776a3f9bb4269431b884809027da7ee00f65c599dca",
+      "git_blob_bytes": 4435
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204301602146+0800-contracts/command.json",
+      "bytes": 19717,
+      "sha256": "1183b43c16a21088cbb76713b8be8a3a64d17b7d7438695a7bb0689535f78cc6",
+      "git_blob_sha1": "ce298fbfc0fb98d08b922f81f9e5a0989ebee2bd",
+      "git_blob_sha256": "e41046af28a59ea3825a4e7817711edc866c5cc6274dd205dbf386ba2b11dd13",
+      "git_blob_bytes": 19677
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204304917658+0800-ga-browser/command.json",
+      "bytes": 6216,
+      "sha256": "e2da84c0e2f8ac11c4505637f2ebf4d181c6c775330e4d901107b076a6de7d71",
+      "git_blob_sha1": "77945fcd9dd5aff4277864346584e2974cfc8916",
+      "git_blob_sha256": "422bfd01fb62334a01b630fb14a63a318a5ae33e1c02f3851e706aa74414c0fb",
+      "git_blob_bytes": 6198
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204454603662+0800-focused/command.json",
+      "bytes": 2056,
+      "sha256": "e8c3c24f615e621b1dc324925f4ad3b22a21d0191c8cdf6de4d4a8c31e3cf586",
+      "git_blob_sha1": "84e0b03c121190a74ac77d0334b2f321df01fc50",
+      "git_blob_sha256": "a4069285bb0421a3d6dd06ee92c633a0e0c7fe3b1421dea1080379427a4f6928",
+      "git_blob_bytes": 2029
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204454603662+0800-focused/metrics/complete-workflow.json",
+      "bytes": 313,
+      "sha256": "3761dd6ed25a7a9c4d7f90ca0d91b03675ad04211279f98f2aec4637371ab0b9",
+      "git_blob_sha1": "1ccbef730dee5cd96fd080ab81e9ff1847c9f945",
+      "git_blob_sha256": "83c9c5f689bac40f62ea9e0482038fdd122755296278e73bd2948336f1f68310",
+      "git_blob_bytes": 302
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204756328460+0800-focused/command.json",
+      "bytes": 2056,
+      "sha256": "d277dbb2f8055b7d1a7f131ba3f5f8d3b9e4223a11f5632ffb14a07218abd10d",
+      "git_blob_sha1": "4fdc04bd402744e3624e87a73c399207e3b19721",
+      "git_blob_sha256": "2192b52fc538a387a07a48fbea3df59d8f37bae8f7795cd2504866403e69efae",
+      "git_blob_bytes": 2029
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204756328460+0800-focused/metrics/complete-workflow-1.json",
+      "bytes": 311,
+      "sha256": "da7989d386856be2fad0031b50ae175c690b8dfcb2a33eb7d185b3395ac3b6b6",
+      "git_blob_sha1": "303e328fc67c7404939558255bde7f02b929c38a",
+      "git_blob_sha256": "d10d5fbb6ab1efcdb3c420bb5beb9625b9cb249e9998c554df1e7fd27d770e88",
+      "git_blob_bytes": 300
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204756328460+0800-focused/metrics/complete-workflow-2.json",
+      "bytes": 312,
+      "sha256": "b63b5ed75114fde2d5fce1c64bb062769996ced6a34f3323ce6edc6188c18bba",
+      "git_blob_sha1": "794e9141d24a89ebc4a8edb686e8df12b9e3822b",
+      "git_blob_sha256": "297e325730034de0ab0161a726586fbe5514bb460cfcafd5d790721f2fa9035c",
+      "git_blob_bytes": 301
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204756328460+0800-focused/metrics/complete-workflow-3.json",
+      "bytes": 312,
+      "sha256": "009fee32c127d64700dd8e20c100fa347738e044a3a8c4e0d48883c398bf8bd6",
+      "git_blob_sha1": "b202485a81f5302b6831b900904f186b29db279b",
+      "git_blob_sha256": "09de6c69a4cae5136f6fe86776053cbe06d93115dac05226da54f52723f81f86",
+      "git_blob_bytes": 301
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204830736495+0800-d14-live/command.json",
+      "bytes": 3363,
+      "sha256": "be5cb54168a9181abbcb9f666e0c05c2e8fe22181ec28ffb1dcaa28c5cfade09",
+      "git_blob_sha1": "58fb3d2a421e9437c9d8503e672326c6a3dcd680",
+      "git_blob_sha256": "62dec81a899ea75b1463fcbce0aca853362ce91a6eb30732865a93e20427e967",
+      "git_blob_bytes": 3335
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204950941847+0800-d12-live/command.json",
+      "bytes": 3463,
+      "sha256": "001e3bca77e8a78910ebdafb711b47dae9669d12312e06a2e21acc8000f1ca6a",
+      "git_blob_sha1": "25197039f82d3fb3fc268db4da0ccf3661431b55",
+      "git_blob_sha256": "04fd650edde576c3838be9cf860d93454ffc8d6b03371f5882fc74987b8a843a",
+      "git_blob_bytes": 3435
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204953181080+0800-d11-live/command.json",
+      "bytes": 3382,
+      "sha256": "0adfe3ea4a59bd94202dd453adab20cd956d08d1eab418c1f1d5b8ebdaaf506c",
+      "git_blob_sha1": "691eff20170346cf1c65fa4026e89b12990bb4c0",
+      "git_blob_sha256": "270e00c3ccd26fec9d3ce5c01cba318c4180a62010b45d48947f8d4282288247",
+      "git_blob_bytes": 3354
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T204953197421+0800-d13-live/command.json",
+      "bytes": 3808,
+      "sha256": "4832251a5c0b9176df96ca36108ab1160d148cf1489d23c9861203199d0b9917",
+      "git_blob_sha1": "0e135a76dbd12963751b735f06f61fec6b0bb171",
+      "git_blob_sha256": "e3e927a3f6452c4f38754f9a3ace86f0c7a49dffa679866db48b52341cf9eaba",
+      "git_blob_bytes": 3780
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205241200718+0800-build/command.json",
+      "bytes": 1980,
+      "sha256": "8bcf5def864c8655a2f5164b546dac7f4e446758464d704f761aebe7414906a8",
+      "git_blob_sha1": "6e9e3eeeafaf433029ee896e74096b60412327bd",
+      "git_blob_sha256": "34544a9296f87d54e23d2aa3e806b2fafee27c2ca254e4bff02dc2b505ec4b52",
+      "git_blob_bytes": 1962
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205255320884+0800-d14-live/command.json",
+      "bytes": 5464,
+      "sha256": "879d182abbf620d1bf78693cb92feb3805abbb9ca41c69275f22b226666b32f0",
+      "git_blob_sha1": "2f32ee9b29388e20b0455183fe722bdf7bb59f47",
+      "git_blob_sha256": "7664e13efafa8501c3c8016a4eaf9d1324d4fab530cdfde1bb42c3cda7736b8a",
+      "git_blob_bytes": 5436
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205352041077+0800-lint/command.json",
+      "bytes": 1166,
+      "sha256": "892cd90b634c63afea88fac35a3904ba6335a8d0d2f3c62aa504f19118175c03",
+      "git_blob_sha1": "1f323f6918c49b73025432e54325e19bf2dc573b",
+      "git_blob_sha256": "4284a743770dde49b2153373adc9812b3dae9f801cb27ecb93a157d36c3c0f20",
+      "git_blob_bytes": 1138
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205353817048+0800-v2-browser/command.json",
+      "bytes": 1837,
+      "sha256": "d282473641c7045c66a43169d79aa26228ede4ff558fee6d33efbd50984437e0",
+      "git_blob_sha1": "1e36fe1d6b3e1ba369feb2735149d2d37a455f65",
+      "git_blob_sha256": "db87837f444ec525e8724556e998d40d5c1fb8f8c14b34e8f085b5404c78311f",
+      "git_blob_bytes": 1819
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205356171907+0800-v2-live/command.json",
+      "bytes": 2789,
+      "sha256": "e0893191827208940b50e2044833a50201d59c3e63c8f833993ef18eda7fd00f",
+      "git_blob_sha1": "97e73057a8fd9ac2abfde7ef72b6c81217900c32",
+      "git_blob_sha256": "9114e086e7306c10769aba069373792e9027c477071a5b0a8e3e6243186d86ee",
+      "git_blob_bytes": 2761
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205442812029+0800-d14-live/command.json",
+      "bytes": 6123,
+      "sha256": "e8a9e182e79f7c18645547ec83495540cccc4403866004fd7daec0fb198db667",
+      "git_blob_sha1": "3ab9a11edb6b631ac5cd863105046c61e6076eaf",
+      "git_blob_sha256": "3d540ef3b79ad92f0932f8749275bf473da6bccca2355c6fdb85919ea9b32e32",
+      "git_blob_bytes": 6095
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205455416978+0800-live/command.json",
+      "bytes": 5717,
+      "sha256": "a0bb10881f853b237eefb0c1903696245aea03929d875ae339952e37274c47f7",
+      "git_blob_sha1": "a0631320bee5b39162e7069d0050e19daf735345",
+      "git_blob_sha256": "82f5ae7969221ce6676388084ea24bcb310db98d1576188a8b52d1a025f7f579",
+      "git_blob_bytes": 5690
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205651991799+0800-d14-live/command.json",
+      "bytes": 5385,
+      "sha256": "40a66d2d56b6f56c84771a972be3b64c04e1bf80c6b9fad13bb0efd33767d831",
+      "git_blob_sha1": "b945645eea8e0b218660e78bc060d6d1e400feed",
+      "git_blob_sha256": "a8978b8438f064e5d6b862ff837bb551f08dcb2024bac7a117aa87c5d1d604ec",
+      "git_blob_bytes": 5357
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205820791507+0800-live/command.json",
+      "bytes": 4137,
+      "sha256": "0360be7d391d43644bc86a2c87917dab258ba14b7146c3555e08663c41ebf6c9",
+      "git_blob_sha1": "afc7be9a4e610a8176327382e5bbc163eb348425",
+      "git_blob_sha256": "01ad497165407e082da88dc30816383992dea4c23c74ab25c07e817b22a5d9fe",
+      "git_blob_bytes": 4110
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205920068755+0800-focused/command.json",
+      "bytes": 2056,
+      "sha256": "02d0a89c0b55e284f88da9e54c483695e36d7bb46c28cef74d277051008f2f9f",
+      "git_blob_sha1": "9cddfa2fd843213dbb2e33000e1daca95fc253ea",
+      "git_blob_sha256": "35f0c9efdbd9e8d5e2064a579a863df4b2984c9d90098908b3b3c778d0e6f13c",
+      "git_blob_bytes": 2029
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205920068755+0800-focused/metrics/complete-workflow-1.json",
+      "bytes": 312,
+      "sha256": "edd14e1acc6c4fc6f7aadda3f401359514d14af220612b736cf00d75184e0a72",
+      "git_blob_sha1": "12f5003d67e66480f4084e68de1c0dac9081b4b5",
+      "git_blob_sha256": "7467f9418f6002a99a045897b6f9879669695293babfa7d75042800cf4ef96eb",
+      "git_blob_bytes": 301
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205920068755+0800-focused/metrics/complete-workflow-2.json",
+      "bytes": 309,
+      "sha256": "2f2ff88a1f662f2be749d0a4fbf532989fc1622059a7d7cdc10ba209519e1e00",
+      "git_blob_sha1": "edf474aba2c2caf43d6654fed0f4a05a1050b11f",
+      "git_blob_sha256": "3b6dfa3e19132841564af4a8e30365e50df8bd895f79843429912457ad1c8c10",
+      "git_blob_bytes": 298
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205920068755+0800-focused/metrics/complete-workflow-3.json",
+      "bytes": 312,
+      "sha256": "0aaa81cf429023964aa2b8baa1adc827b0b810b98931fbaefd7180d33e6a98b0",
+      "git_blob_sha1": "65205617505b68d8ee0d1355ed815fbc4488089f",
+      "git_blob_sha256": "ff72c6e44f49e9a559dea5b4fd3e338b5e93f6837c4163a3cf1f060acd24d92c",
+      "git_blob_bytes": 301
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T205932304230+0800-browser-regressions/command.json",
+      "bytes": 14130,
+      "sha256": "96887c892da30c5468c0a9fc57cb5609c5eeb0aa813bf00b54eb304b5cbac77a",
+      "git_blob_sha1": "d5d0a067d21621ccd7bc246600e3f1e7f74f011b",
+      "git_blob_sha256": "eb28239e68700fc17bc6453873c98c32160764404a8c2e107abe817c16817006",
+      "git_blob_bytes": 14104
+    },
+    {
+      "path": "docs/testing/dashboard-d14/20261024T210021246779+0800-d14-live/command.json",
+      "bytes": 5547,
+      "sha256": "7c732305305689ff0b62c58c6787688009e6ba7de25b97f47c5b22bd51f595a1",
+      "git_blob_sha1": "7c16f1c14707594abfd48a53938e144a84959f90",
+      "git_blob_sha256": "3cad74c302750fdea792311b22ec27530fca5759df0006f5f5cbb17c7f5c77c5",
+      "git_blob_bytes": 5519
+    },
+    {
+      "path": "docs/testing/dashboard-d14/audit_evidence.py",
+      "bytes": 11868,
+      "sha256": "1349ed27cac10c0585b70fea0aea666e642d7490a4942873cea26e2a7abcc534",
+      "git_blob_sha1": "0927c05c9486f7a4b0921286e232d836a06ce28d",
+      "git_blob_sha256": "1349ed27cac10c0585b70fea0aea666e642d7490a4942873cea26e2a7abcc534",
+      "git_blob_bytes": 11868
+    },
+    {
+      "path": "docs/testing/dashboard-d14/environment.json",
+      "bytes": 633,
+      "sha256": "39cd1b43cb8799ae43e63994251b7c5fd94dd9aff292fc84e224485bf0c36b73",
+      "git_blob_sha1": "e45966aa954f32b94519d58b3a13a0675f1ff123",
+      "git_blob_sha256": "39cd1b43cb8799ae43e63994251b7c5fd94dd9aff292fc84e224485bf0c36b73",
+      "git_blob_bytes": 633
+    },
+    {
+      "path": "docs/testing/dashboard-d14/preservation-baseline.json",
+      "bytes": 167797,
+      "sha256": "173653eaf184454f051d6666bc6a65bf2684f74da49b5803aabefcfa6c40a87d",
+      "git_blob_sha1": "caaa0a8795558807488ad069df5d0c9c803ec94c",
+      "git_blob_sha256": "173653eaf184454f051d6666bc6a65bf2684f74da49b5803aabefcfa6c40a87d",
+      "git_blob_bytes": 167797
+    },
+    {
+      "path": "docs/testing/dashboard-d14/run_checks.py",
+      "bytes": 3771,
+      "sha256": "2705e5c12d2c83efa232661f40a175c9e5aee31d15738e866cf54502ddb494d0",
+      "git_blob_sha1": "2846d61fda4d5cb706b92b979b998c3fee67ae1a",
+      "git_blob_sha256": "2705e5c12d2c83efa232661f40a175c9e5aee31d15738e866cf54502ddb494d0",
+      "git_blob_bytes": 3771
+    },
+    {
+      "path": "frontend/src/pages/admin/ExternalSchedules.tsx",
+      "bytes": 18281,
+      "sha256": "45bdc89f553536cae24ce5735675b9320f149044a5a98f8121b7a89ac6cd37a1",
+      "git_blob_sha1": "2076a1f78c6a548d380cd94ff2dcf68752dcb546",
+      "git_blob_sha256": "b27ef01c6924e368a56030a2426152c3df62212813a2c195755f5d13cac0a251",
+      "git_blob_bytes": 18121
+    },
+    {
+      "path": "frontend/src/pages/faculty/MySchedule.tsx",
+      "bytes": 6817,
+      "sha256": "237c01c21ae8f6352059fb8eb18198b44336f77d171a25f01245c8283f3344c5",
+      "git_blob_sha1": "56eab2405b4381225ef523555422337f6f2339d9",
+      "git_blob_sha256": "f544e8ea51cb798617495c27c5313f958c081606930eacb15a053096a2f5c32c",
+      "git_blob_bytes": 6740
+    },
+    {
+      "path": "frontend/tests/systemAcceptance.live.mjs",
+      "bytes": 26645,
+      "sha256": "74cfe10f18571d43519a7e7d89a20cd5de7984adc8527a887a13bc5927ef45b8",
+      "git_blob_sha1": "d17f410675d8d51aac829dcf6e3ae628cd546b93",
+      "git_blob_sha256": "74cfe10f18571d43519a7e7d89a20cd5de7984adc8527a887a13bc5927ef45b8",
+      "git_blob_bytes": 26645
+    }
+  ],
+  "checkpoint_review": {
+    "reviewed_at": "2026-10-24T21:35:38.253466+08:00",
+    "scope": "Separately authorized D14 Git checkpoint only; no application behavior or data changes",
+    "baseline_and_fetched_remote": "7a0c3eaf32dc3cc350c04871fdb6f8dd72c43bb4",
+    "original_manifest_sha256": "214676ebca26e6e4cb622d7cd34ca8946ba56fd56ba9f64c85acc30391edc683",
+    "original_report_sha256": "a70767f1a520595ad35a39b21fc82068549ea1d01df4192474df9594f2141757",
+    "original_90_artifact_hashes_verified_before_annotation": true,
+    "application_tests_rerun": false,
+    "recorded_results_and_failures_reviewed": true,
+    "privacy_findings": 0,
+    "failed_command_records_retained": 8,
+    "screenshots_retained": 34,
+    "unique_reviewed_images": 28,
+    "planned_implementation_files": 6,
+    "planned_documentation_files": 85,
+    "excluded": [
+      "backend/data/faculty_preferences.json"
+    ],
+    "all_23_academic_files_unchanged": true,
+    "GA_sources_checkpoints_saved_results_unchanged": true,
+    "Git_EOL_normalized_artifacts": 44,
+    "documentation_changes_only": [
+      "docs/dashboard-d14-acceptance.md",
+      "docs/testing/dashboard-d14/manifest.json"
+    ],
+    "hash_convention": "sha256 and bytes are reviewed raw working bytes; git_blob_sha256 and git_blob_bytes verify Git-clean content; git_blob_sha1 is the Git object ID. Manifest excludes itself.",
+    "implementation_commit": "2dc24a3bbe29498d63349e0da427951a5a81a273",
+    "implementation_commit_files_verified": 6,
+    "implementation_staged_whitespace_check": "PASS",
+    "implementation_commit_message": "test(dashboard): add full-system integration acceptance coverage"
+  }
+}

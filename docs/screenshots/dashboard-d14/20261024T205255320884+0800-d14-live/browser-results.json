@@ -1,0 +1,24 @@
+{
+  "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real authentication, original GA execution, actual D8-D10 ledger revalidation, Chair decisions and application transactions. Independent publisher, Chair, evidence issuer, confirmer, catalog and capacity providers are explicitly fictional; source publication is an explicit owned test handoff, not a production promotion feature. The initial GEC confirmation is created through the real API by fixture setup. Storage and trust faults are fixture injections. No PostgreSQL or institutional approval.",
+  "browser": "Edg/155.0.4283.62",
+  "node": "v24.11.1",
+  "scenarios": [
+    {
+      "id": "D14-L01",
+      "title": "anonymous application API and route deny access",
+      "started_at": "2026-10-24T20:53:04.876+08:00",
+      "finished_at": "2026-10-24T20:53:06.144+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D14-I01",
+      "title": "real faculty preference write and full reload preserve Compact / Very High",
+      "started_at": "2026-10-24T20:53:06.147+08:00",
+      "finished_at": "2026-10-24T20:53:37.055+08:00",
+      "result": "FAIL",
+      "error": "Missing live UI text: Saved"
+    }
+  ],
+  "captures": [],
+  "runtime_errors": []
+}
