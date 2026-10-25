@@ -1,0 +1,35 @@
+{
+  "baseline_commit": "c6baad2a0d59515555b33c84eca337a78a913a65",
+  "baseline_files": 1295,
+  "academic_paths": 23,
+  "environment_variable_presence_only": {
+    "PHASE4C_TEST_DATABASE_URL": false,
+    "PHASE4C_POSTGRESQL_APPROVAL": false,
+    "D15_TEST_DATABASE_URL": false,
+    "PHASE4B_TEST_DATABASE_URL": false,
+    "PHASE4B_BROWSER_DATABASE_URL": false,
+    "DATABASE_URL": false,
+    "PGHOST": false,
+    "PGPORT": false,
+    "PGDATABASE": false,
+    "PGUSER": false,
+    "PGPASSWORD": false
+  },
+  "project_environment_files_present": [],
+  "PostgreSQL_connections_attempted": 0,
+  "recorded_client_date": "2026-10-25",
+  "timezone": "Asia/Manila",
+  "postgresql_service": {
+    "name": "postgresql-x64-18",
+    "observed_status": "Running",
+    "scope": "Windows service metadata only; actual connected server version, listen address and cluster identity NOT VERIFIED"
+  },
+  "python": "3.14.2",
+  "sqlite": "3.50.4",
+  "packages": {
+    "sqlalchemy": "2.0.52",
+    "alembic": "1.19.2",
+    "psycopg2-binary": "2.9.12",
+    "fastapi": "0.141.1"
+  }
+}

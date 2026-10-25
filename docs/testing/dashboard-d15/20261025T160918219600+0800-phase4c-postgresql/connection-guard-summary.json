@@ -1,0 +1,13 @@
+{
+  "guard": "d15-academic-write.1",
+  "target": "ccs_ga_d15_test",
+  "role": "ccs_ga_d15_tester",
+  "counts": {
+    "physical_connections": 22,
+    "identity_checks": 370,
+    "guarded_statements": 314
+  },
+  "owned_connections_closed": true,
+  "schema_retained": true,
+  "cleanup_DDL_executed": false
+}

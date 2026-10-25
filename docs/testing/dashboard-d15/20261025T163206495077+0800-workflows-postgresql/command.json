@@ -1,0 +1,32 @@
+{
+  "check": "workflows-postgresql",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-p",
+    "d15_workflow_plugin",
+    "--noconftest",
+    "docs/testing/dashboard-d15/test_workflows_d15.py",
+    "-q",
+    "-x",
+    "--tb=no",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d15-postgresql-20261025T163206495077+0800-workflows-postgresql"
+  ],
+  "cwd": ".",
+  "started_at": "2026-10-25T16:32:06.495077+08:00",
+  "finished_at": "2026-10-25T16:32:09.390940+08:00",
+  "elapsed_seconds": 2.893,
+  "exit_code": 1,
+  "stdout": "E\n=========================== short test summary info ===========================\nERROR docs/testing/dashboard-d15/test_workflows_d15.py::test_01_additive_upgrade_atomic_rollback_then_commit\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!\n1 error in 1.17s\n",
+  "stderr": "",
+  "infrastructure_error": null,
+  "scope": "Actual PostgreSQL only: retained 4c SELECT-only compatibility gate, additive D9-D13 migrations, real FastAPI services, fictional authority/resources, actual V2 generation and independent transactions; no browser run",
+  "environment": "Whitelisted OS plus dedicated private D15 URL and controlled runner flags; no DATABASE_URL or PG defaults inherited",
+  "cleanup": "No reset/drop/truncate/reseed/cleanup DDL. Rollback-only upgrade rehearsals precede committed additive upgrades. All new fictional rows and schema retained."
+}

@@ -1,0 +1,58 @@
+{
+  "scope": "Actual D15 PostgreSQL D9-D13 services, migrations and fictional trust providers; in-process FastAPI, not browser evidence",
+  "collected": 10,
+  "exit_code": 1,
+  "counts": {
+    "PASSED": 0,
+    "FAILED": 0,
+    "ERROR": 1,
+    "SKIPPED": 0,
+    "NOT_RUN": 9
+  },
+  "cases": [
+    {
+      "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_01_additive_upgrade_atomic_rollback_then_commit",
+      "status": "ERROR",
+      "phase": "setup",
+      "exception_type": "SafetyError",
+      "safety_code": "RETAINED_CONSTRAINT_CONTRACT_MISMATCH"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_02_durable_confirmation_revision_and_concurrent_one_winner",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_03_postgresql_ledger_triggers_and_row_lock_recovery",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_04_actual_v2_generation_from_postgresql_heads",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_05_owned_request_submit_unauthorized_and_idempotency",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_06_independent_chair_concurrency_and_no_schedule_mutation",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_07_application_failure_rolls_back_and_same_command_recovers",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_08_independent_applications_publish_once_and_retry_is_idempotent",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_09_immutable_publication_history_own_view_and_new_connections",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_10_revocation_blocks_fresh_v2_scope_and_preserves_history",
+      "status": "NOT_RUN"
+    }
+  ],
+  "credentials_or_exception_payloads_recorded": false
+}

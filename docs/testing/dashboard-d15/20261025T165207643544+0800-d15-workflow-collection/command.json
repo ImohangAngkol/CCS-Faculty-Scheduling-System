@@ -1,0 +1,28 @@
+{
+  "check": "d15-workflow-collection",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "--noconftest",
+    "docs/testing/dashboard-d15/test_workflows_d15.py",
+    "--collect-only",
+    "-q",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d15-offline-20261025T165207643544+0800-d15-workflow-collection"
+  ],
+  "cwd": ".",
+  "started_at": "2026-10-25T16:52:07.644948+08:00",
+  "finished_at": "2026-10-25T16:52:09.585303+08:00",
+  "elapsed_seconds": 1.94,
+  "exit_code": 0,
+  "stdout": "docs/testing/dashboard-d15/test_workflows_d15.py::test_01_additive_upgrade_atomic_rollback_then_commit\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_02_durable_confirmation_revision_and_concurrent_one_winner\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_03_postgresql_ledger_triggers_and_row_lock_recovery\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_04_actual_v2_generation_from_postgresql_heads\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_05_owned_request_submit_unauthorized_and_idempotency\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_06_independent_chair_concurrency_and_no_schedule_mutation\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_07_application_failure_rolls_back_and_same_command_recovers\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_08_independent_applications_publish_once_and_retry_is_idempotent\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_09_immutable_publication_history_own_view_and_new_connections\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_10_revocation_blocks_fresh_v2_scope_and_preserves_history\n\n10 tests collected in 0.93s\n",
+  "stderr": "",
+  "scope": "Collection only; no PostgreSQL fixtures or tests executed",
+  "database_scope": "Offline/owned fictional SQLite only; no live PostgreSQL operation",
+  "environment": "Whitelisted OS variables only; all database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignments/headers, full/truncated receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

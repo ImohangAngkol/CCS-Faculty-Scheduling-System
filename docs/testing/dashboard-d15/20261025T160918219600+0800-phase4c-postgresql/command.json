@@ -1,0 +1,32 @@
+{
+  "check": "phase4c-postgresql",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-p",
+    "d15_phase4c_plugin",
+    "--noconftest",
+    "docs/testing/dashboard-d15/test_phase4c_d15.py",
+    "-q",
+    "-x",
+    "--tb=no",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d15-postgresql-20261025T160918219600+0800-phase4c-postgresql"
+  ],
+  "cwd": ".",
+  "started_at": "2026-10-25T16:09:18.219600+08:00",
+  "finished_at": "2026-10-25T16:09:33.491277+08:00",
+  "elapsed_seconds": 15.268,
+  "exit_code": 0,
+  "stdout": ".................                                                        [100%]\n============================== warnings summary ===============================\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_online_revision_and_exact_inventory\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_empty_downgrade_upgrade_roundtrip_keeps_identity_revision\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_empty_downgrade_upgrade_roundtrip_keeps_identity_revision\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\alembic\\config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.\n    util.warn_deprecated(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n17 passed, 3 warnings in 13.10s\n",
+  "stderr": "",
+  "infrastructure_error": null,
+  "scope": "Actual PostgreSQL only: original 17 Phase4C assertions; initially pristine exact D15 target; independent guarded connections; retained schema",
+  "environment": "Whitelisted OS plus dedicated private D15 URL and controlled runner flags; no DATABASE_URL or PG defaults inherited",
+  "cleanup": "No reset/drop/reseed/cleanup DDL. Original empty-table downgrade cases are rollback-only assertions on newly created objects."
+}

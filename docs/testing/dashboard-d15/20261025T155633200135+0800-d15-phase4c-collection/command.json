@@ -1,0 +1,28 @@
+{
+  "check": "d15-phase4c-collection",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "--noconftest",
+    "docs/testing/dashboard-d15/test_phase4c_d15.py",
+    "--collect-only",
+    "-q",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d15-offline-20261025T155633200135+0800-d15-phase4c-collection"
+  ],
+  "cwd": ".",
+  "started_at": "2026-10-25T15:56:33.201536+08:00",
+  "finished_at": "2026-10-25T15:56:36.050239+08:00",
+  "elapsed_seconds": 2.849,
+  "exit_code": 0,
+  "stdout": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_online_revision_and_exact_inventory\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicScope-changes0]\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicCourse-changes1]\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicSection-changes2]\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicCourseOffering-changes3]\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicYear-changes4]\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_calendar_containment_and_year_shrink\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_timezone_archive_and_delete_guards\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_cross_term_fk_and_offering_key\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_populated_downgrade_refuses_without_losing_rows\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_failed_upgrade_rolls_back_all_ddl\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_concurrent_writer_rejected_then_retry_after_rollback\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_higher_isolation_writes_rejected\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_read_only_snapshot_and_no_default_term\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_empty_downgrade_upgrade_roundtrip_keeps_identity_revision\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_calendar_writer_race_is_fail_closed\ndocs/testing/dashboard-d15/test_phase4c_d15.py::test_locked_parent_rejects_even_inactive_new_child\n\n17 tests collected in 1.25s\n",
+  "stderr": "",
+  "scope": "Collection only; no PostgreSQL fixtures or tests executed",
+  "database_scope": "Offline/owned fictional SQLite only; no live PostgreSQL operation",
+  "environment": "Whitelisted OS variables only; all database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignments/headers, full/truncated receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

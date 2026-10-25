@@ -1,0 +1,27 @@
+{
+  "check": "postgres-collection",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/academic/test_academic_postgresql.py",
+    "--collect-only",
+    "-q",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d15-offline-20261025T025753803887+0800-postgres-collection"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-25T02:57:53.805966+08:00",
+  "finished_at": "2026-10-25T02:57:59.332177+08:00",
+  "elapsed_seconds": 5.526,
+  "exit_code": 0,
+  "stdout": "tests/academic/test_academic_postgresql.py::test_online_revision_and_exact_inventory\ntests/academic/test_academic_postgresql.py::test_direct_identity_and_revision_mutations_rejected[AcademicScope-changes0]\ntests/academic/test_academic_postgresql.py::test_direct_identity_and_revision_mutations_rejected[AcademicCourse-changes1]\ntests/academic/test_academic_postgresql.py::test_direct_identity_and_revision_mutations_rejected[AcademicSection-changes2]\ntests/academic/test_academic_postgresql.py::test_direct_identity_and_revision_mutations_rejected[AcademicCourseOffering-changes3]\ntests/academic/test_academic_postgresql.py::test_direct_identity_and_revision_mutations_rejected[AcademicYear-changes4]\ntests/academic/test_academic_postgresql.py::test_calendar_containment_and_year_shrink\ntests/academic/test_academic_postgresql.py::test_timezone_archive_and_delete_guards\ntests/academic/test_academic_postgresql.py::test_cross_term_fk_and_offering_key\ntests/academic/test_academic_postgresql.py::test_populated_downgrade_refuses_without_losing_rows\ntests/academic/test_academic_postgresql.py::test_failed_upgrade_rolls_back_all_ddl\ntests/academic/test_academic_postgresql.py::test_concurrent_writer_rejected_then_retry_after_rollback\ntests/academic/test_academic_postgresql.py::test_higher_isolation_writes_rejected\ntests/academic/test_academic_postgresql.py::test_read_only_snapshot_and_no_default_term\ntests/academic/test_academic_postgresql.py::test_empty_downgrade_upgrade_roundtrip_keeps_identity_revision\ntests/academic/test_academic_postgresql.py::test_calendar_writer_race_is_fail_closed\ntests/academic/test_academic_postgresql.py::test_locked_parent_rejects_even_inactive_new_child\n\n17 tests collected in 2.36s\n",
+  "stderr": "",
+  "scope": "Collection only; no PostgreSQL fixtures or tests executed",
+  "database_scope": "Offline/owned fictional SQLite only; no live PostgreSQL operation",
+  "environment": "Whitelisted OS variables only; all database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignments/headers, full/truncated receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

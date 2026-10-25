@@ -1,0 +1,31 @@
+{
+  "check": "d15-workflow-guard",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "--noconftest",
+    "docs/testing/dashboard-d15/test_d15_target_guard.py",
+    "docs/testing/dashboard-d15/test_d15_write_guard.py",
+    "docs/testing/dashboard-d15/test_d15_workflow_guard.py",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d15-offline-20261025T162541849252+0800-d15-workflow-guard"
+  ],
+  "cwd": ".",
+  "started_at": "2026-10-25T16:25:41.850884+08:00",
+  "finished_at": "2026-10-25T16:25:45.673181+08:00",
+  "elapsed_seconds": 3.822,
+  "exit_code": 0,
+  "stdout": "........................................................................ [ 20%]\n........................................................................ [ 41%]\n........................................................................ [ 62%]\n........................................................................ [ 83%]\n.......................................................                  [100%]\n343 passed in 2.37s\n",
+  "stderr": "",
+  "scope": "Offline D15 target/write guard; fake DBAPI catalogs and blocked real connectors",
+  "database_scope": "Offline/owned fictional SQLite only; no live PostgreSQL operation",
+  "environment": "Whitelisted OS variables only; all database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignments/headers, full/truncated receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

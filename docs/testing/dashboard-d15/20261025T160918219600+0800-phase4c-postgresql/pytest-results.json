@@ -1,0 +1,83 @@
+{
+  "scope": "Actual D15 PostgreSQL original Phase4C assertions with D15 guarded fixtures",
+  "collected": 17,
+  "exit_code": 0,
+  "counts": {
+    "PASSED": 17,
+    "FAILED": 0,
+    "ERROR": 0,
+    "SKIPPED": 0,
+    "NOT_RUN": 0
+  },
+  "cases": [
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_online_revision_and_exact_inventory",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicScope-changes0]",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicCourse-changes1]",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicSection-changes2]",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicCourseOffering-changes3]",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicYear-changes4]",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_calendar_containment_and_year_shrink",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_timezone_archive_and_delete_guards",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_cross_term_fk_and_offering_key",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_populated_downgrade_refuses_without_losing_rows",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_failed_upgrade_rolls_back_all_ddl",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_concurrent_writer_rejected_then_retry_after_rollback",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_higher_isolation_writes_rejected",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_read_only_snapshot_and_no_default_term",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_empty_downgrade_upgrade_roundtrip_keeps_identity_revision",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_calendar_writer_race_is_fail_closed",
+      "status": "PASSED"
+    },
+    {
+      "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_locked_parent_rejects_even_inactive_new_child",
+      "status": "PASSED"
+    }
+  ],
+  "credentials_or_exception_payloads_recorded": false
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "D15 read-only PostgreSQL preflight",
+  "observer": "LOCAL_OPERATOR_EXECUTION",
+  "started_at": "2026-10-25T15:35:41.735052+08:00",
+  "finished_at": "2026-10-25T15:35:42.972310+08:00",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-B",
+    "docs/testing/dashboard-d15/preflight.py",
+    "--read-only"
+  ],
+  "scope": "One exact-target SELECT-only connection; no migrations, fixtures or cleanup DDL",
+  "credential_handling": "D15_TEST_DATABASE_URL read privately from this process; no URL/password retained",
+  "exit_code": 0,
+  "result": {
+    "status": "READ_ONLY_PREFLIGHT_PASSED",
+    "database": "ccs_ga_d15_test",
+    "session_user": "ccs_ga_d15_tester",
+    "current_user": "ccs_ga_d15_tester",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "schema": "public",
+    "owner": "ccs_ga_d15_tester",
+    "server_version": "18.6",
+    "read_only": true,
+    "empty": true,
+    "role_restrictions_verified": true,
+    "object_inventory_verified": true,
+    "writes_performed": false,
+    "scope": "Pristine read-only preflight only; migrations and acceptance not executed"
+  }
+}

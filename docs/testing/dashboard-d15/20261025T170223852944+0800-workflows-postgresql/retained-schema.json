@@ -1,0 +1,2661 @@
+{
+  "revision": "4c_0001",
+  "read_only_entry_verified": true,
+  "schema_sha256": "aeeee69e036f62e5952337fe7ebd6e9e995c0c27e733622b95618baa0da6aa00",
+  "catalog": {
+    "server_version_num": 180006,
+    "columns": [
+      [
+        "academic_course_offerings",
+        "id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_course_offerings",
+        "term_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_course_offerings",
+        "scope_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_course_offerings",
+        "course_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_course_offerings",
+        "section_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_course_offerings",
+        "identity_key",
+        "character varying(160)",
+        true,
+        null
+      ],
+      [
+        "academic_course_offerings",
+        "created_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_course_offerings",
+        "updated_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_course_offerings",
+        "row_version",
+        "bigint",
+        true,
+        "'1'::bigint"
+      ],
+      [
+        "academic_course_offerings",
+        "is_active",
+        "boolean",
+        true,
+        "true"
+      ],
+      [
+        "academic_course_offerings",
+        "archived_at",
+        "timestamp with time zone",
+        false,
+        null
+      ],
+      [
+        "academic_courses",
+        "id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_courses",
+        "scope_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_courses",
+        "identity_code",
+        "character varying(64)",
+        true,
+        null
+      ],
+      [
+        "academic_courses",
+        "catalog_status",
+        "character varying(24)",
+        true,
+        "'descriptor_only'::character varying"
+      ],
+      [
+        "academic_courses",
+        "created_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_courses",
+        "updated_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_courses",
+        "row_version",
+        "bigint",
+        true,
+        "'1'::bigint"
+      ],
+      [
+        "academic_courses",
+        "is_active",
+        "boolean",
+        true,
+        "true"
+      ],
+      [
+        "academic_courses",
+        "archived_at",
+        "timestamp with time zone",
+        false,
+        null
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "faculty_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "legacy_code",
+        "integer",
+        true,
+        null
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "allocated_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_scopes",
+        "id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_scopes",
+        "scope_key",
+        "character varying(100)",
+        true,
+        null
+      ],
+      [
+        "academic_scopes",
+        "institution_label",
+        "text",
+        true,
+        null
+      ],
+      [
+        "academic_scopes",
+        "department_label",
+        "text",
+        true,
+        null
+      ],
+      [
+        "academic_scopes",
+        "created_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_scopes",
+        "updated_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_scopes",
+        "row_version",
+        "bigint",
+        true,
+        "'1'::bigint"
+      ],
+      [
+        "academic_scopes",
+        "is_active",
+        "boolean",
+        true,
+        "true"
+      ],
+      [
+        "academic_scopes",
+        "archived_at",
+        "timestamp with time zone",
+        false,
+        null
+      ],
+      [
+        "academic_sections",
+        "id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_sections",
+        "term_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_sections",
+        "scope_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_sections",
+        "identity_code",
+        "character varying(40)",
+        true,
+        null
+      ],
+      [
+        "academic_sections",
+        "created_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_sections",
+        "updated_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_sections",
+        "row_version",
+        "bigint",
+        true,
+        "'1'::bigint"
+      ],
+      [
+        "academic_sections",
+        "is_active",
+        "boolean",
+        true,
+        "true"
+      ],
+      [
+        "academic_sections",
+        "archived_at",
+        "timestamp with time zone",
+        false,
+        null
+      ],
+      [
+        "academic_terms",
+        "id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_terms",
+        "scope_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_terms",
+        "year_id",
+        "uuid",
+        false,
+        null
+      ],
+      [
+        "academic_terms",
+        "term_key",
+        "character varying(80)",
+        true,
+        null
+      ],
+      [
+        "academic_terms",
+        "identity_scope",
+        "character varying(160)",
+        true,
+        null
+      ],
+      [
+        "academic_terms",
+        "label",
+        "character varying(100)",
+        true,
+        null
+      ],
+      [
+        "academic_terms",
+        "kind",
+        "character varying(24)",
+        true,
+        "'legacy_unknown'::character varying"
+      ],
+      [
+        "academic_terms",
+        "ordinal",
+        "smallint",
+        false,
+        null
+      ],
+      [
+        "academic_terms",
+        "start_date",
+        "date",
+        false,
+        null
+      ],
+      [
+        "academic_terms",
+        "end_date",
+        "date",
+        false,
+        null
+      ],
+      [
+        "academic_terms",
+        "timezone",
+        "character varying(64)",
+        true,
+        null
+      ],
+      [
+        "academic_terms",
+        "calendar_status",
+        "character varying(20)",
+        true,
+        "'unresolved'::character varying"
+      ],
+      [
+        "academic_terms",
+        "lifecycle",
+        "character varying(20)",
+        true,
+        "'draft'::character varying"
+      ],
+      [
+        "academic_terms",
+        "created_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_terms",
+        "updated_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_terms",
+        "row_version",
+        "bigint",
+        true,
+        "'1'::bigint"
+      ],
+      [
+        "academic_terms",
+        "is_active",
+        "boolean",
+        true,
+        "true"
+      ],
+      [
+        "academic_terms",
+        "archived_at",
+        "timestamp with time zone",
+        false,
+        null
+      ],
+      [
+        "academic_years",
+        "id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_years",
+        "scope_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "academic_years",
+        "year_key",
+        "character varying(40)",
+        true,
+        null
+      ],
+      [
+        "academic_years",
+        "label",
+        "character varying(100)",
+        true,
+        null
+      ],
+      [
+        "academic_years",
+        "start_date",
+        "date",
+        false,
+        null
+      ],
+      [
+        "academic_years",
+        "end_date",
+        "date",
+        false,
+        null
+      ],
+      [
+        "academic_years",
+        "calendar_status",
+        "character varying(20)",
+        true,
+        "'unresolved'::character varying"
+      ],
+      [
+        "academic_years",
+        "created_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_years",
+        "updated_at",
+        "timestamp with time zone",
+        true,
+        "now()"
+      ],
+      [
+        "academic_years",
+        "row_version",
+        "bigint",
+        true,
+        "'1'::bigint"
+      ],
+      [
+        "academic_years",
+        "is_active",
+        "boolean",
+        true,
+        "true"
+      ],
+      [
+        "academic_years",
+        "archived_at",
+        "timestamp with time zone",
+        false,
+        null
+      ],
+      [
+        "alembic_version",
+        "version_num",
+        "character varying(32)",
+        true,
+        null
+      ],
+      [
+        "faculty_identities",
+        "id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "faculty_identities",
+        "display_code",
+        "character varying(100)",
+        true,
+        null
+      ],
+      [
+        "faculty_identities",
+        "name",
+        "character varying(200)",
+        true,
+        null
+      ],
+      [
+        "login_sessions",
+        "id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "login_sessions",
+        "token_hash",
+        "character varying(64)",
+        true,
+        null
+      ],
+      [
+        "login_sessions",
+        "user_id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "login_sessions",
+        "csrf_token",
+        "character varying(64)",
+        true,
+        null
+      ],
+      [
+        "login_sessions",
+        "expires_at",
+        "timestamp with time zone",
+        true,
+        null
+      ],
+      [
+        "login_sessions",
+        "created_at",
+        "timestamp with time zone",
+        true,
+        null
+      ],
+      [
+        "users",
+        "id",
+        "uuid",
+        true,
+        null
+      ],
+      [
+        "users",
+        "username",
+        "character varying(254)",
+        true,
+        null
+      ],
+      [
+        "users",
+        "password_hash",
+        "character varying(512)",
+        true,
+        null
+      ],
+      [
+        "users",
+        "role",
+        "character varying(20)",
+        true,
+        null
+      ],
+      [
+        "users",
+        "faculty_id",
+        "uuid",
+        false,
+        null
+      ],
+      [
+        "users",
+        "is_active",
+        "boolean",
+        true,
+        null
+      ],
+      [
+        "users",
+        "created_at",
+        "timestamp with time zone",
+        true,
+        null
+      ],
+      [
+        "users",
+        "updated_at",
+        "timestamp with time zone",
+        true,
+        null
+      ]
+    ],
+    "constraints": [
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_course_id_not_null",
+        "n",
+        "NOT NULL course_id",
+        true,
+        true,
+        [
+          "course_id"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_created_at_not_null",
+        "n",
+        "NOT NULL created_at",
+        true,
+        true,
+        [
+          "created_at"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_id_not_null",
+        "n",
+        "NOT NULL id",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_identity_key_not_null",
+        "n",
+        "NOT NULL identity_key",
+        true,
+        true,
+        [
+          "identity_key"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_is_active_not_null",
+        "n",
+        "NOT NULL is_active",
+        true,
+        true,
+        [
+          "is_active"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_pkey",
+        "p",
+        "PRIMARY KEY (id)",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_row_version_not_null",
+        "n",
+        "NOT NULL row_version",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_scope_id_not_null",
+        "n",
+        "NOT NULL scope_id",
+        true,
+        true,
+        [
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_section_id_not_null",
+        "n",
+        "NOT NULL section_id",
+        true,
+        true,
+        [
+          "section_id"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_term_id_not_null",
+        "n",
+        "NOT NULL term_id",
+        true,
+        true,
+        [
+          "term_id"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_updated_at_not_null",
+        "n",
+        "NOT NULL updated_at",
+        true,
+        true,
+        [
+          "updated_at"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "ck_ac_offering_archive",
+        "c",
+        "CHECK (((archived_at IS NULL) OR (NOT is_active)))",
+        true,
+        true,
+        [
+          "archived_at",
+          "is_active"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "ck_ac_offering_key",
+        "c",
+        "CHECK (((length(TRIM(BOTH FROM identity_key)) > 0) AND ((identity_key)::text = upper(TRIM(BOTH FROM identity_key)))))",
+        true,
+        true,
+        [
+          "identity_key"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "ck_ac_offering_version",
+        "c",
+        "CHECK ((row_version > 0))",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "fk_ac_offering_course_scope",
+        "f",
+        "FOREIGN KEY (course_id, scope_id) REFERENCES academic_courses(id, scope_id) ON DELETE RESTRICT",
+        true,
+        true,
+        [
+          "course_id",
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "fk_ac_offering_section_term_scope",
+        "f",
+        "FOREIGN KEY (section_id, term_id, scope_id) REFERENCES academic_sections(id, term_id, scope_id) ON DELETE RESTRICT",
+        true,
+        true,
+        [
+          "section_id",
+          "term_id",
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "fk_ac_offering_term_scope",
+        "f",
+        "FOREIGN KEY (term_id, scope_id) REFERENCES academic_terms(id, scope_id) ON DELETE RESTRICT",
+        true,
+        true,
+        [
+          "term_id",
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "uq_ac_offering_key",
+        "u",
+        "UNIQUE (term_id, identity_key)",
+        true,
+        true,
+        [
+          "term_id",
+          "identity_key"
+        ]
+      ],
+      [
+        "academic_course_offerings",
+        "uq_ac_offering_membership",
+        "u",
+        "UNIQUE (term_id, course_id, section_id)",
+        true,
+        true,
+        [
+          "term_id",
+          "course_id",
+          "section_id"
+        ]
+      ],
+      [
+        "academic_courses",
+        "academic_courses_catalog_status_not_null",
+        "n",
+        "NOT NULL catalog_status",
+        true,
+        true,
+        [
+          "catalog_status"
+        ]
+      ],
+      [
+        "academic_courses",
+        "academic_courses_created_at_not_null",
+        "n",
+        "NOT NULL created_at",
+        true,
+        true,
+        [
+          "created_at"
+        ]
+      ],
+      [
+        "academic_courses",
+        "academic_courses_id_not_null",
+        "n",
+        "NOT NULL id",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_courses",
+        "academic_courses_identity_code_not_null",
+        "n",
+        "NOT NULL identity_code",
+        true,
+        true,
+        [
+          "identity_code"
+        ]
+      ],
+      [
+        "academic_courses",
+        "academic_courses_is_active_not_null",
+        "n",
+        "NOT NULL is_active",
+        true,
+        true,
+        [
+          "is_active"
+        ]
+      ],
+      [
+        "academic_courses",
+        "academic_courses_pkey",
+        "p",
+        "PRIMARY KEY (id)",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_courses",
+        "academic_courses_row_version_not_null",
+        "n",
+        "NOT NULL row_version",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_courses",
+        "academic_courses_scope_id_fkey",
+        "f",
+        "FOREIGN KEY (scope_id) REFERENCES academic_scopes(id) ON DELETE RESTRICT",
+        true,
+        true,
+        [
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_courses",
+        "academic_courses_scope_id_not_null",
+        "n",
+        "NOT NULL scope_id",
+        true,
+        true,
+        [
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_courses",
+        "academic_courses_updated_at_not_null",
+        "n",
+        "NOT NULL updated_at",
+        true,
+        true,
+        [
+          "updated_at"
+        ]
+      ],
+      [
+        "academic_courses",
+        "ck_ac_course_archive",
+        "c",
+        "CHECK (((archived_at IS NULL) OR (NOT is_active)))",
+        true,
+        true,
+        [
+          "archived_at",
+          "is_active"
+        ]
+      ],
+      [
+        "academic_courses",
+        "ck_ac_course_key",
+        "c",
+        "CHECK (((length(TRIM(BOTH FROM identity_code)) > 0) AND ((identity_code)::text = upper(TRIM(BOTH FROM identity_code)))))",
+        true,
+        true,
+        [
+          "identity_code"
+        ]
+      ],
+      [
+        "academic_courses",
+        "ck_ac_course_status",
+        "c",
+        "CHECK (((catalog_status)::text = ANY ((ARRAY['descriptor_only'::character varying, 'verified'::character varying])::text[])))",
+        true,
+        true,
+        [
+          "catalog_status"
+        ]
+      ],
+      [
+        "academic_courses",
+        "ck_ac_course_version",
+        "c",
+        "CHECK ((row_version > 0))",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_courses",
+        "uq_ac_course_key",
+        "u",
+        "UNIQUE (scope_id, identity_code)",
+        true,
+        true,
+        [
+          "scope_id",
+          "identity_code"
+        ]
+      ],
+      [
+        "academic_courses",
+        "uq_ac_course_scope",
+        "u",
+        "UNIQUE (id, scope_id)",
+        true,
+        true,
+        [
+          "id",
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "academic_faculty_legacy_codes_allocated_at_not_null",
+        "n",
+        "NOT NULL allocated_at",
+        true,
+        true,
+        [
+          "allocated_at"
+        ]
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "academic_faculty_legacy_codes_faculty_id_fkey",
+        "f",
+        "FOREIGN KEY (faculty_id) REFERENCES faculty_identities(id) ON DELETE RESTRICT",
+        true,
+        true,
+        [
+          "faculty_id"
+        ]
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "academic_faculty_legacy_codes_faculty_id_not_null",
+        "n",
+        "NOT NULL faculty_id",
+        true,
+        true,
+        [
+          "faculty_id"
+        ]
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "academic_faculty_legacy_codes_legacy_code_not_null",
+        "n",
+        "NOT NULL legacy_code",
+        true,
+        true,
+        [
+          "legacy_code"
+        ]
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "academic_faculty_legacy_codes_pkey",
+        "p",
+        "PRIMARY KEY (faculty_id)",
+        true,
+        true,
+        [
+          "faculty_id"
+        ]
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "ck_ac_faculty_code",
+        "c",
+        "CHECK ((legacy_code >= 0))",
+        true,
+        true,
+        [
+          "legacy_code"
+        ]
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "uq_ac_faculty_code",
+        "u",
+        "UNIQUE (legacy_code)",
+        true,
+        true,
+        [
+          "legacy_code"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "academic_scopes_created_at_not_null",
+        "n",
+        "NOT NULL created_at",
+        true,
+        true,
+        [
+          "created_at"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "academic_scopes_department_label_not_null",
+        "n",
+        "NOT NULL department_label",
+        true,
+        true,
+        [
+          "department_label"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "academic_scopes_id_not_null",
+        "n",
+        "NOT NULL id",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "academic_scopes_institution_label_not_null",
+        "n",
+        "NOT NULL institution_label",
+        true,
+        true,
+        [
+          "institution_label"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "academic_scopes_is_active_not_null",
+        "n",
+        "NOT NULL is_active",
+        true,
+        true,
+        [
+          "is_active"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "academic_scopes_pkey",
+        "p",
+        "PRIMARY KEY (id)",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "academic_scopes_row_version_not_null",
+        "n",
+        "NOT NULL row_version",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "academic_scopes_scope_key_not_null",
+        "n",
+        "NOT NULL scope_key",
+        true,
+        true,
+        [
+          "scope_key"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "academic_scopes_updated_at_not_null",
+        "n",
+        "NOT NULL updated_at",
+        true,
+        true,
+        [
+          "updated_at"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "ck_ac_scope_archive",
+        "c",
+        "CHECK (((archived_at IS NULL) OR (NOT is_active)))",
+        true,
+        true,
+        [
+          "archived_at",
+          "is_active"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "ck_ac_scope_key",
+        "c",
+        "CHECK (((length(TRIM(BOTH FROM scope_key)) > 0) AND ((scope_key)::text = TRIM(BOTH FROM scope_key))))",
+        true,
+        true,
+        [
+          "scope_key"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "ck_ac_scope_version",
+        "c",
+        "CHECK ((row_version > 0))",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_scopes",
+        "uq_ac_scope_key",
+        "u",
+        "UNIQUE (scope_key)",
+        true,
+        true,
+        [
+          "scope_key"
+        ]
+      ],
+      [
+        "academic_sections",
+        "academic_sections_created_at_not_null",
+        "n",
+        "NOT NULL created_at",
+        true,
+        true,
+        [
+          "created_at"
+        ]
+      ],
+      [
+        "academic_sections",
+        "academic_sections_id_not_null",
+        "n",
+        "NOT NULL id",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_sections",
+        "academic_sections_identity_code_not_null",
+        "n",
+        "NOT NULL identity_code",
+        true,
+        true,
+        [
+          "identity_code"
+        ]
+      ],
+      [
+        "academic_sections",
+        "academic_sections_is_active_not_null",
+        "n",
+        "NOT NULL is_active",
+        true,
+        true,
+        [
+          "is_active"
+        ]
+      ],
+      [
+        "academic_sections",
+        "academic_sections_pkey",
+        "p",
+        "PRIMARY KEY (id)",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_sections",
+        "academic_sections_row_version_not_null",
+        "n",
+        "NOT NULL row_version",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_sections",
+        "academic_sections_scope_id_not_null",
+        "n",
+        "NOT NULL scope_id",
+        true,
+        true,
+        [
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_sections",
+        "academic_sections_term_id_not_null",
+        "n",
+        "NOT NULL term_id",
+        true,
+        true,
+        [
+          "term_id"
+        ]
+      ],
+      [
+        "academic_sections",
+        "academic_sections_updated_at_not_null",
+        "n",
+        "NOT NULL updated_at",
+        true,
+        true,
+        [
+          "updated_at"
+        ]
+      ],
+      [
+        "academic_sections",
+        "ck_ac_section_archive",
+        "c",
+        "CHECK (((archived_at IS NULL) OR (NOT is_active)))",
+        true,
+        true,
+        [
+          "archived_at",
+          "is_active"
+        ]
+      ],
+      [
+        "academic_sections",
+        "ck_ac_section_key",
+        "c",
+        "CHECK (((length(TRIM(BOTH FROM identity_code)) > 0) AND ((identity_code)::text = upper(TRIM(BOTH FROM identity_code)))))",
+        true,
+        true,
+        [
+          "identity_code"
+        ]
+      ],
+      [
+        "academic_sections",
+        "ck_ac_section_version",
+        "c",
+        "CHECK ((row_version > 0))",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_sections",
+        "fk_ac_section_term_scope",
+        "f",
+        "FOREIGN KEY (term_id, scope_id) REFERENCES academic_terms(id, scope_id) ON DELETE RESTRICT",
+        true,
+        true,
+        [
+          "term_id",
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_sections",
+        "uq_ac_section_key",
+        "u",
+        "UNIQUE (term_id, identity_code)",
+        true,
+        true,
+        [
+          "term_id",
+          "identity_code"
+        ]
+      ],
+      [
+        "academic_sections",
+        "uq_ac_section_term_scope",
+        "u",
+        "UNIQUE (id, term_id, scope_id)",
+        true,
+        true,
+        [
+          "id",
+          "term_id",
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_calendar_status_not_null",
+        "n",
+        "NOT NULL calendar_status",
+        true,
+        true,
+        [
+          "calendar_status"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_created_at_not_null",
+        "n",
+        "NOT NULL created_at",
+        true,
+        true,
+        [
+          "created_at"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_id_not_null",
+        "n",
+        "NOT NULL id",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_identity_scope_not_null",
+        "n",
+        "NOT NULL identity_scope",
+        true,
+        true,
+        [
+          "identity_scope"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_is_active_not_null",
+        "n",
+        "NOT NULL is_active",
+        true,
+        true,
+        [
+          "is_active"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_kind_not_null",
+        "n",
+        "NOT NULL kind",
+        true,
+        true,
+        [
+          "kind"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_label_not_null",
+        "n",
+        "NOT NULL label",
+        true,
+        true,
+        [
+          "label"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_lifecycle_not_null",
+        "n",
+        "NOT NULL lifecycle",
+        true,
+        true,
+        [
+          "lifecycle"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_pkey",
+        "p",
+        "PRIMARY KEY (id)",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_row_version_not_null",
+        "n",
+        "NOT NULL row_version",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_scope_id_fkey",
+        "f",
+        "FOREIGN KEY (scope_id) REFERENCES academic_scopes(id) ON DELETE RESTRICT",
+        true,
+        true,
+        [
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_scope_id_not_null",
+        "n",
+        "NOT NULL scope_id",
+        true,
+        true,
+        [
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_term_key_not_null",
+        "n",
+        "NOT NULL term_key",
+        true,
+        true,
+        [
+          "term_key"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_timezone_not_null",
+        "n",
+        "NOT NULL timezone",
+        true,
+        true,
+        [
+          "timezone"
+        ]
+      ],
+      [
+        "academic_terms",
+        "academic_terms_updated_at_not_null",
+        "n",
+        "NOT NULL updated_at",
+        true,
+        true,
+        [
+          "updated_at"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_archive",
+        "c",
+        "CHECK (((archived_at IS NULL) OR (NOT is_active)))",
+        true,
+        true,
+        [
+          "archived_at",
+          "is_active"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_archived",
+        "c",
+        "CHECK ((((lifecycle)::text = 'archived'::text) = (archived_at IS NOT NULL)))",
+        true,
+        true,
+        [
+          "lifecycle",
+          "archived_at"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_calendar",
+        "c",
+        "CHECK (((calendar_status)::text = ANY ((ARRAY['unresolved'::character varying, 'confirmed'::character varying])::text[])))",
+        true,
+        true,
+        [
+          "calendar_status"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_confirmed",
+        "c",
+        "CHECK ((((calendar_status)::text <> 'confirmed'::text) OR (start_date IS NOT NULL)))",
+        true,
+        true,
+        [
+          "calendar_status",
+          "start_date"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_confirmed_year",
+        "c",
+        "CHECK ((((calendar_status)::text <> 'confirmed'::text) OR ((year_id IS NOT NULL) AND (ordinal IS NOT NULL) AND ((kind)::text <> 'legacy_unknown'::text))))",
+        true,
+        true,
+        [
+          "calendar_status",
+          "year_id",
+          "ordinal",
+          "kind"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_dates",
+        "c",
+        "CHECK ((((start_date IS NULL) AND (end_date IS NULL)) OR ((start_date IS NOT NULL) AND (end_date IS NOT NULL) AND (start_date <= end_date))))",
+        true,
+        true,
+        [
+          "start_date",
+          "end_date"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_identity",
+        "c",
+        "CHECK (((length(TRIM(BOTH FROM identity_scope)) > 0) AND ((identity_scope)::text = TRIM(BOTH FROM identity_scope))))",
+        true,
+        true,
+        [
+          "identity_scope"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_key",
+        "c",
+        "CHECK (((length(TRIM(BOTH FROM term_key)) > 0) AND ((term_key)::text = TRIM(BOTH FROM term_key))))",
+        true,
+        true,
+        [
+          "term_key"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_kind",
+        "c",
+        "CHECK (((kind)::text = ANY ((ARRAY['legacy_unknown'::character varying, 'first'::character varying, 'second'::character varying, 'midyear'::character varying, 'other'::character varying])::text[])))",
+        true,
+        true,
+        [
+          "kind"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_lifecycle",
+        "c",
+        "CHECK (((lifecycle)::text = ANY ((ARRAY['draft'::character varying, 'open'::character varying, 'locked'::character varying, 'archived'::character varying])::text[])))",
+        true,
+        true,
+        [
+          "lifecycle"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_open",
+        "c",
+        "CHECK ((((lifecycle)::text <> 'open'::text) OR ((calendar_status)::text = 'confirmed'::text)))",
+        true,
+        true,
+        [
+          "lifecycle",
+          "calendar_status"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_ordinal",
+        "c",
+        "CHECK (((ordinal IS NULL) OR (ordinal > 0)))",
+        true,
+        true,
+        [
+          "ordinal"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_timezone",
+        "c",
+        "CHECK ((length(TRIM(BOTH FROM timezone)) > 0))",
+        true,
+        true,
+        [
+          "timezone"
+        ]
+      ],
+      [
+        "academic_terms",
+        "ck_ac_term_version",
+        "c",
+        "CHECK ((row_version > 0))",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_terms",
+        "fk_ac_term_year_scope",
+        "f",
+        "FOREIGN KEY (year_id, scope_id) REFERENCES academic_years(id, scope_id) ON DELETE RESTRICT",
+        true,
+        true,
+        [
+          "year_id",
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_terms",
+        "uq_ac_term_identity",
+        "u",
+        "UNIQUE (identity_scope)",
+        true,
+        true,
+        [
+          "identity_scope"
+        ]
+      ],
+      [
+        "academic_terms",
+        "uq_ac_term_key",
+        "u",
+        "UNIQUE (scope_id, term_key)",
+        true,
+        true,
+        [
+          "scope_id",
+          "term_key"
+        ]
+      ],
+      [
+        "academic_terms",
+        "uq_ac_term_ordinal",
+        "u",
+        "UNIQUE (year_id, ordinal)",
+        true,
+        true,
+        [
+          "year_id",
+          "ordinal"
+        ]
+      ],
+      [
+        "academic_terms",
+        "uq_ac_term_scope",
+        "u",
+        "UNIQUE (id, scope_id)",
+        true,
+        true,
+        [
+          "id",
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_calendar_status_not_null",
+        "n",
+        "NOT NULL calendar_status",
+        true,
+        true,
+        [
+          "calendar_status"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_created_at_not_null",
+        "n",
+        "NOT NULL created_at",
+        true,
+        true,
+        [
+          "created_at"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_id_not_null",
+        "n",
+        "NOT NULL id",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_is_active_not_null",
+        "n",
+        "NOT NULL is_active",
+        true,
+        true,
+        [
+          "is_active"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_label_not_null",
+        "n",
+        "NOT NULL label",
+        true,
+        true,
+        [
+          "label"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_pkey",
+        "p",
+        "PRIMARY KEY (id)",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_row_version_not_null",
+        "n",
+        "NOT NULL row_version",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_scope_id_fkey",
+        "f",
+        "FOREIGN KEY (scope_id) REFERENCES academic_scopes(id) ON DELETE RESTRICT",
+        true,
+        true,
+        [
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_scope_id_not_null",
+        "n",
+        "NOT NULL scope_id",
+        true,
+        true,
+        [
+          "scope_id"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_updated_at_not_null",
+        "n",
+        "NOT NULL updated_at",
+        true,
+        true,
+        [
+          "updated_at"
+        ]
+      ],
+      [
+        "academic_years",
+        "academic_years_year_key_not_null",
+        "n",
+        "NOT NULL year_key",
+        true,
+        true,
+        [
+          "year_key"
+        ]
+      ],
+      [
+        "academic_years",
+        "ck_ac_year_archive",
+        "c",
+        "CHECK (((archived_at IS NULL) OR (NOT is_active)))",
+        true,
+        true,
+        [
+          "archived_at",
+          "is_active"
+        ]
+      ],
+      [
+        "academic_years",
+        "ck_ac_year_calendar",
+        "c",
+        "CHECK (((calendar_status)::text = ANY ((ARRAY['unresolved'::character varying, 'confirmed'::character varying])::text[])))",
+        true,
+        true,
+        [
+          "calendar_status"
+        ]
+      ],
+      [
+        "academic_years",
+        "ck_ac_year_confirmed",
+        "c",
+        "CHECK ((((calendar_status)::text <> 'confirmed'::text) OR (start_date IS NOT NULL)))",
+        true,
+        true,
+        [
+          "calendar_status",
+          "start_date"
+        ]
+      ],
+      [
+        "academic_years",
+        "ck_ac_year_dates",
+        "c",
+        "CHECK ((((start_date IS NULL) AND (end_date IS NULL)) OR ((start_date IS NOT NULL) AND (end_date IS NOT NULL) AND (start_date <= end_date))))",
+        true,
+        true,
+        [
+          "start_date",
+          "end_date"
+        ]
+      ],
+      [
+        "academic_years",
+        "ck_ac_year_key",
+        "c",
+        "CHECK (((length(TRIM(BOTH FROM year_key)) > 0) AND ((year_key)::text = TRIM(BOTH FROM year_key))))",
+        true,
+        true,
+        [
+          "year_key"
+        ]
+      ],
+      [
+        "academic_years",
+        "ck_ac_year_version",
+        "c",
+        "CHECK ((row_version > 0))",
+        true,
+        true,
+        [
+          "row_version"
+        ]
+      ],
+      [
+        "academic_years",
+        "uq_ac_year_key",
+        "u",
+        "UNIQUE (scope_id, year_key)",
+        true,
+        true,
+        [
+          "scope_id",
+          "year_key"
+        ]
+      ],
+      [
+        "academic_years",
+        "uq_ac_year_scope",
+        "u",
+        "UNIQUE (id, scope_id)",
+        true,
+        true,
+        [
+          "id",
+          "scope_id"
+        ]
+      ],
+      [
+        "alembic_version",
+        "alembic_version_pkc",
+        "p",
+        "PRIMARY KEY (version_num)",
+        true,
+        true,
+        [
+          "version_num"
+        ]
+      ],
+      [
+        "alembic_version",
+        "alembic_version_version_num_not_null",
+        "n",
+        "NOT NULL version_num",
+        true,
+        true,
+        [
+          "version_num"
+        ]
+      ],
+      [
+        "faculty_identities",
+        "faculty_identities_display_code_key",
+        "u",
+        "UNIQUE (display_code)",
+        true,
+        true,
+        [
+          "display_code"
+        ]
+      ],
+      [
+        "faculty_identities",
+        "faculty_identities_display_code_not_null",
+        "n",
+        "NOT NULL display_code",
+        true,
+        true,
+        [
+          "display_code"
+        ]
+      ],
+      [
+        "faculty_identities",
+        "faculty_identities_id_not_null",
+        "n",
+        "NOT NULL id",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "faculty_identities",
+        "faculty_identities_name_not_null",
+        "n",
+        "NOT NULL name",
+        true,
+        true,
+        [
+          "name"
+        ]
+      ],
+      [
+        "faculty_identities",
+        "faculty_identities_pkey",
+        "p",
+        "PRIMARY KEY (id)",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "login_sessions",
+        "login_sessions_created_at_not_null",
+        "n",
+        "NOT NULL created_at",
+        true,
+        true,
+        [
+          "created_at"
+        ]
+      ],
+      [
+        "login_sessions",
+        "login_sessions_csrf_token_not_null",
+        "n",
+        "NOT NULL csrf_token",
+        true,
+        true,
+        [
+          "csrf_token"
+        ]
+      ],
+      [
+        "login_sessions",
+        "login_sessions_expires_at_not_null",
+        "n",
+        "NOT NULL expires_at",
+        true,
+        true,
+        [
+          "expires_at"
+        ]
+      ],
+      [
+        "login_sessions",
+        "login_sessions_id_not_null",
+        "n",
+        "NOT NULL id",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "login_sessions",
+        "login_sessions_pkey",
+        "p",
+        "PRIMARY KEY (id)",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "login_sessions",
+        "login_sessions_token_hash_key",
+        "u",
+        "UNIQUE (token_hash)",
+        true,
+        true,
+        [
+          "token_hash"
+        ]
+      ],
+      [
+        "login_sessions",
+        "login_sessions_token_hash_not_null",
+        "n",
+        "NOT NULL token_hash",
+        true,
+        true,
+        [
+          "token_hash"
+        ]
+      ],
+      [
+        "login_sessions",
+        "login_sessions_user_id_fkey",
+        "f",
+        "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE",
+        true,
+        true,
+        [
+          "user_id"
+        ]
+      ],
+      [
+        "login_sessions",
+        "login_sessions_user_id_not_null",
+        "n",
+        "NOT NULL user_id",
+        true,
+        true,
+        [
+          "user_id"
+        ]
+      ],
+      [
+        "users",
+        "ck_user_binding",
+        "c",
+        "CHECK (((((role)::text = 'admin'::text) AND (faculty_id IS NULL)) OR (((role)::text = 'faculty'::text) AND (faculty_id IS NOT NULL))))",
+        true,
+        true,
+        [
+          "role",
+          "faculty_id"
+        ]
+      ],
+      [
+        "users",
+        "ck_user_role",
+        "c",
+        "CHECK (((role)::text = ANY ((ARRAY['admin'::character varying, 'faculty'::character varying])::text[])))",
+        true,
+        true,
+        [
+          "role"
+        ]
+      ],
+      [
+        "users",
+        "ck_username_lower",
+        "c",
+        "CHECK (((username)::text = lower((username)::text)))",
+        true,
+        true,
+        [
+          "username"
+        ]
+      ],
+      [
+        "users",
+        "users_created_at_not_null",
+        "n",
+        "NOT NULL created_at",
+        true,
+        true,
+        [
+          "created_at"
+        ]
+      ],
+      [
+        "users",
+        "users_faculty_id_fkey",
+        "f",
+        "FOREIGN KEY (faculty_id) REFERENCES faculty_identities(id) ON DELETE RESTRICT",
+        true,
+        true,
+        [
+          "faculty_id"
+        ]
+      ],
+      [
+        "users",
+        "users_faculty_id_key",
+        "u",
+        "UNIQUE (faculty_id)",
+        true,
+        true,
+        [
+          "faculty_id"
+        ]
+      ],
+      [
+        "users",
+        "users_id_not_null",
+        "n",
+        "NOT NULL id",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "users",
+        "users_is_active_not_null",
+        "n",
+        "NOT NULL is_active",
+        true,
+        true,
+        [
+          "is_active"
+        ]
+      ],
+      [
+        "users",
+        "users_password_hash_not_null",
+        "n",
+        "NOT NULL password_hash",
+        true,
+        true,
+        [
+          "password_hash"
+        ]
+      ],
+      [
+        "users",
+        "users_pkey",
+        "p",
+        "PRIMARY KEY (id)",
+        true,
+        true,
+        [
+          "id"
+        ]
+      ],
+      [
+        "users",
+        "users_role_not_null",
+        "n",
+        "NOT NULL role",
+        true,
+        true,
+        [
+          "role"
+        ]
+      ],
+      [
+        "users",
+        "users_updated_at_not_null",
+        "n",
+        "NOT NULL updated_at",
+        true,
+        true,
+        [
+          "updated_at"
+        ]
+      ],
+      [
+        "users",
+        "users_username_key",
+        "u",
+        "UNIQUE (username)",
+        true,
+        true,
+        [
+          "username"
+        ]
+      ],
+      [
+        "users",
+        "users_username_not_null",
+        "n",
+        "NOT NULL username",
+        true,
+        true,
+        [
+          "username"
+        ]
+      ]
+    ],
+    "indexes": [
+      [
+        "academic_course_offerings",
+        "academic_course_offerings_pkey",
+        "CREATE UNIQUE INDEX academic_course_offerings_pkey ON public.academic_course_offerings USING btree (id)"
+      ],
+      [
+        "academic_course_offerings",
+        "ix_ac_offering_course_scope",
+        "CREATE INDEX ix_ac_offering_course_scope ON public.academic_course_offerings USING btree (course_id, scope_id)"
+      ],
+      [
+        "academic_course_offerings",
+        "ix_ac_offering_section_term_scope",
+        "CREATE INDEX ix_ac_offering_section_term_scope ON public.academic_course_offerings USING btree (section_id, term_id, scope_id)"
+      ],
+      [
+        "academic_course_offerings",
+        "uq_ac_offering_key",
+        "CREATE UNIQUE INDEX uq_ac_offering_key ON public.academic_course_offerings USING btree (term_id, identity_key)"
+      ],
+      [
+        "academic_course_offerings",
+        "uq_ac_offering_membership",
+        "CREATE UNIQUE INDEX uq_ac_offering_membership ON public.academic_course_offerings USING btree (term_id, course_id, section_id)"
+      ],
+      [
+        "academic_courses",
+        "academic_courses_pkey",
+        "CREATE UNIQUE INDEX academic_courses_pkey ON public.academic_courses USING btree (id)"
+      ],
+      [
+        "academic_courses",
+        "uq_ac_course_key",
+        "CREATE UNIQUE INDEX uq_ac_course_key ON public.academic_courses USING btree (scope_id, identity_code)"
+      ],
+      [
+        "academic_courses",
+        "uq_ac_course_scope",
+        "CREATE UNIQUE INDEX uq_ac_course_scope ON public.academic_courses USING btree (id, scope_id)"
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "academic_faculty_legacy_codes_pkey",
+        "CREATE UNIQUE INDEX academic_faculty_legacy_codes_pkey ON public.academic_faculty_legacy_codes USING btree (faculty_id)"
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "uq_ac_faculty_code",
+        "CREATE UNIQUE INDEX uq_ac_faculty_code ON public.academic_faculty_legacy_codes USING btree (legacy_code)"
+      ],
+      [
+        "academic_scopes",
+        "academic_scopes_pkey",
+        "CREATE UNIQUE INDEX academic_scopes_pkey ON public.academic_scopes USING btree (id)"
+      ],
+      [
+        "academic_scopes",
+        "uq_ac_scope_key",
+        "CREATE UNIQUE INDEX uq_ac_scope_key ON public.academic_scopes USING btree (scope_key)"
+      ],
+      [
+        "academic_sections",
+        "academic_sections_pkey",
+        "CREATE UNIQUE INDEX academic_sections_pkey ON public.academic_sections USING btree (id)"
+      ],
+      [
+        "academic_sections",
+        "ix_ac_section_scope",
+        "CREATE INDEX ix_ac_section_scope ON public.academic_sections USING btree (scope_id)"
+      ],
+      [
+        "academic_sections",
+        "uq_ac_section_key",
+        "CREATE UNIQUE INDEX uq_ac_section_key ON public.academic_sections USING btree (term_id, identity_code)"
+      ],
+      [
+        "academic_sections",
+        "uq_ac_section_term_scope",
+        "CREATE UNIQUE INDEX uq_ac_section_term_scope ON public.academic_sections USING btree (id, term_id, scope_id)"
+      ],
+      [
+        "academic_terms",
+        "academic_terms_pkey",
+        "CREATE UNIQUE INDEX academic_terms_pkey ON public.academic_terms USING btree (id)"
+      ],
+      [
+        "academic_terms",
+        "ix_ac_term_year_scope",
+        "CREATE INDEX ix_ac_term_year_scope ON public.academic_terms USING btree (year_id, scope_id)"
+      ],
+      [
+        "academic_terms",
+        "uq_ac_term_identity",
+        "CREATE UNIQUE INDEX uq_ac_term_identity ON public.academic_terms USING btree (identity_scope)"
+      ],
+      [
+        "academic_terms",
+        "uq_ac_term_key",
+        "CREATE UNIQUE INDEX uq_ac_term_key ON public.academic_terms USING btree (scope_id, term_key)"
+      ],
+      [
+        "academic_terms",
+        "uq_ac_term_ordinal",
+        "CREATE UNIQUE INDEX uq_ac_term_ordinal ON public.academic_terms USING btree (year_id, ordinal)"
+      ],
+      [
+        "academic_terms",
+        "uq_ac_term_scope",
+        "CREATE UNIQUE INDEX uq_ac_term_scope ON public.academic_terms USING btree (id, scope_id)"
+      ],
+      [
+        "academic_years",
+        "academic_years_pkey",
+        "CREATE UNIQUE INDEX academic_years_pkey ON public.academic_years USING btree (id)"
+      ],
+      [
+        "academic_years",
+        "uq_ac_year_key",
+        "CREATE UNIQUE INDEX uq_ac_year_key ON public.academic_years USING btree (scope_id, year_key)"
+      ],
+      [
+        "academic_years",
+        "uq_ac_year_scope",
+        "CREATE UNIQUE INDEX uq_ac_year_scope ON public.academic_years USING btree (id, scope_id)"
+      ],
+      [
+        "alembic_version",
+        "alembic_version_pkc",
+        "CREATE UNIQUE INDEX alembic_version_pkc ON public.alembic_version USING btree (version_num)"
+      ],
+      [
+        "faculty_identities",
+        "faculty_identities_display_code_key",
+        "CREATE UNIQUE INDEX faculty_identities_display_code_key ON public.faculty_identities USING btree (display_code)"
+      ],
+      [
+        "faculty_identities",
+        "faculty_identities_pkey",
+        "CREATE UNIQUE INDEX faculty_identities_pkey ON public.faculty_identities USING btree (id)"
+      ],
+      [
+        "login_sessions",
+        "ix_login_sessions_expires_at",
+        "CREATE INDEX ix_login_sessions_expires_at ON public.login_sessions USING btree (expires_at)"
+      ],
+      [
+        "login_sessions",
+        "ix_login_sessions_user_id",
+        "CREATE INDEX ix_login_sessions_user_id ON public.login_sessions USING btree (user_id)"
+      ],
+      [
+        "login_sessions",
+        "login_sessions_pkey",
+        "CREATE UNIQUE INDEX login_sessions_pkey ON public.login_sessions USING btree (id)"
+      ],
+      [
+        "login_sessions",
+        "login_sessions_token_hash_key",
+        "CREATE UNIQUE INDEX login_sessions_token_hash_key ON public.login_sessions USING btree (token_hash)"
+      ],
+      [
+        "users",
+        "users_faculty_id_key",
+        "CREATE UNIQUE INDEX users_faculty_id_key ON public.users USING btree (faculty_id)"
+      ],
+      [
+        "users",
+        "users_pkey",
+        "CREATE UNIQUE INDEX users_pkey ON public.users USING btree (id)"
+      ],
+      [
+        "users",
+        "users_username_key",
+        "CREATE UNIQUE INDEX users_username_key ON public.users USING btree (username)"
+      ]
+    ],
+    "triggers": [
+      [
+        "academic_course_offerings",
+        "academic_row_guard",
+        "CREATE TRIGGER academic_row_guard BEFORE INSERT OR DELETE OR UPDATE ON public.academic_course_offerings FOR EACH ROW EXECUTE FUNCTION academic_4c_row_guard('id', 'scope_id', 'term_id', 'course_id', 'section_id', 'identity_key')",
+        "O"
+      ],
+      [
+        "academic_course_offerings",
+        "academic_write_gate",
+        "CREATE TRIGGER academic_write_gate BEFORE INSERT OR DELETE OR UPDATE OR TRUNCATE ON public.academic_course_offerings FOR EACH STATEMENT EXECUTE FUNCTION academic_4c_write_lock()",
+        "O"
+      ],
+      [
+        "academic_courses",
+        "academic_row_guard",
+        "CREATE TRIGGER academic_row_guard BEFORE INSERT OR DELETE OR UPDATE ON public.academic_courses FOR EACH ROW EXECUTE FUNCTION academic_4c_row_guard('id', 'scope_id', 'identity_code')",
+        "O"
+      ],
+      [
+        "academic_courses",
+        "academic_write_gate",
+        "CREATE TRIGGER academic_write_gate BEFORE INSERT OR DELETE OR UPDATE OR TRUNCATE ON public.academic_courses FOR EACH STATEMENT EXECUTE FUNCTION academic_4c_write_lock()",
+        "O"
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "academic_row_guard",
+        "CREATE TRIGGER academic_row_guard BEFORE INSERT OR DELETE OR UPDATE ON public.academic_faculty_legacy_codes FOR EACH ROW EXECUTE FUNCTION academic_4c_row_guard('faculty_id', 'legacy_code', 'allocated_at')",
+        "O"
+      ],
+      [
+        "academic_faculty_legacy_codes",
+        "academic_write_gate",
+        "CREATE TRIGGER academic_write_gate BEFORE INSERT OR DELETE OR UPDATE OR TRUNCATE ON public.academic_faculty_legacy_codes FOR EACH STATEMENT EXECUTE FUNCTION academic_4c_write_lock()",
+        "O"
+      ],
+      [
+        "academic_scopes",
+        "academic_row_guard",
+        "CREATE TRIGGER academic_row_guard BEFORE INSERT OR DELETE OR UPDATE ON public.academic_scopes FOR EACH ROW EXECUTE FUNCTION academic_4c_row_guard('id', 'scope_key')",
+        "O"
+      ],
+      [
+        "academic_scopes",
+        "academic_write_gate",
+        "CREATE TRIGGER academic_write_gate BEFORE INSERT OR DELETE OR UPDATE OR TRUNCATE ON public.academic_scopes FOR EACH STATEMENT EXECUTE FUNCTION academic_4c_write_lock()",
+        "O"
+      ],
+      [
+        "academic_sections",
+        "academic_row_guard",
+        "CREATE TRIGGER academic_row_guard BEFORE INSERT OR DELETE OR UPDATE ON public.academic_sections FOR EACH ROW EXECUTE FUNCTION academic_4c_row_guard('id', 'scope_id', 'term_id', 'identity_code')",
+        "O"
+      ],
+      [
+        "academic_sections",
+        "academic_write_gate",
+        "CREATE TRIGGER academic_write_gate BEFORE INSERT OR DELETE OR UPDATE OR TRUNCATE ON public.academic_sections FOR EACH STATEMENT EXECUTE FUNCTION academic_4c_write_lock()",
+        "O"
+      ],
+      [
+        "academic_terms",
+        "academic_calendar_guard",
+        "CREATE TRIGGER academic_calendar_guard AFTER INSERT OR UPDATE ON public.academic_terms FOR EACH STATEMENT EXECUTE FUNCTION academic_4c_calendar_guard()",
+        "O"
+      ],
+      [
+        "academic_terms",
+        "academic_row_guard",
+        "CREATE TRIGGER academic_row_guard BEFORE INSERT OR DELETE OR UPDATE ON public.academic_terms FOR EACH ROW EXECUTE FUNCTION academic_4c_row_guard('id', 'scope_id', 'term_key', 'identity_scope')",
+        "O"
+      ],
+      [
+        "academic_terms",
+        "academic_write_gate",
+        "CREATE TRIGGER academic_write_gate BEFORE INSERT OR DELETE OR UPDATE OR TRUNCATE ON public.academic_terms FOR EACH STATEMENT EXECUTE FUNCTION academic_4c_write_lock()",
+        "O"
+      ],
+      [
+        "academic_years",
+        "academic_calendar_guard",
+        "CREATE TRIGGER academic_calendar_guard AFTER INSERT OR UPDATE ON public.academic_years FOR EACH STATEMENT EXECUTE FUNCTION academic_4c_calendar_guard()",
+        "O"
+      ],
+      [
+        "academic_years",
+        "academic_row_guard",
+        "CREATE TRIGGER academic_row_guard BEFORE INSERT OR DELETE OR UPDATE ON public.academic_years FOR EACH ROW EXECUTE FUNCTION academic_4c_row_guard('id', 'scope_id', 'year_key')",
+        "O"
+      ],
+      [
+        "academic_years",
+        "academic_write_gate",
+        "CREATE TRIGGER academic_write_gate BEFORE INSERT OR DELETE OR UPDATE OR TRUNCATE ON public.academic_years FOR EACH STATEMENT EXECUTE FUNCTION academic_4c_write_lock()",
+        "O"
+      ]
+    ],
+    "functions": [
+      [
+        "academic_4c_calendar_guard",
+        "\nBEGIN\n    -- AFTER STATEMENT sees the whole command; VOLATILE queries use fresh RC snapshots\n    -- after the shared write gate, including another writer's just-committed children.\n    IF EXISTS (\n        SELECT 1 FROM public.academic_terms t JOIN public.academic_years y ON y.id = t.year_id\n        WHERE (t.calendar_status = 'confirmed' AND y.calendar_status <> 'confirmed')\n           OR (t.start_date IS NOT NULL AND (y.start_date IS NULL OR y.end_date IS NULL\n                OR t.start_date < y.start_date OR t.end_date > y.end_date))\n    ) THEN\n        RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic term dates must be contained in their academic year';\n    END IF;\n    IF EXISTS (SELECT 1 FROM public.academic_terms t WHERE NOT EXISTS (\n        SELECT 1 FROM pg_catalog.pg_timezone_names z WHERE z.name = t.timezone\n    )) THEN\n        RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic term timezone is unknown';\n    END IF;\n    RETURN NULL;\nEND ",
+        false,
+        "v",
+        [
+          "search_path=pg_catalog, public"
+        ],
+        "plpgsql"
+      ],
+      [
+        "academic_4c_row_guard",
+        "\nDECLARE key text; old_row jsonb; new_row jsonb; closing_only boolean := false;\n        parent_term public.academic_terms%ROWTYPE;\nBEGIN\n    IF TG_OP = 'DELETE' THEN\n        RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic identity deletion is forbidden; archive instead';\n    END IF;\n    new_row := to_jsonb(NEW);\n    IF TG_OP = 'UPDATE' THEN\n        old_row := to_jsonb(OLD);\n        FOREACH key IN ARRAY TG_ARGV LOOP\n            IF new_row -> key IS DISTINCT FROM old_row -> key THEN\n                RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic identity keys are immutable';\n            END IF;\n        END LOOP;\n        IF TG_TABLE_NAME = 'academic_faculty_legacy_codes' THEN\n            RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Faculty code reservations are immutable';\n        END IF;\n        IF OLD.archived_at IS NOT NULL THEN\n            RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Archived academic records are immutable';\n        END IF;\n        IF NEW.created_at IS DISTINCT FROM OLD.created_at OR NEW.row_version <> OLD.row_version + 1 THEN\n            RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic update requires unchanged creation time and next revision';\n        END IF;\n        closing_only := NOT NEW.is_active AND\n            (new_row - ARRAY['is_active','archived_at','row_version','updated_at']) =\n            (old_row - ARRAY['is_active','archived_at','row_version','updated_at']);\n        NEW.updated_at := clock_timestamp();\n    ELSIF TG_TABLE_NAME <> 'academic_faculty_legacy_codes' THEN\n        IF NEW.row_version <> 1 THEN\n            RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'New academic records require revision one';\n        END IF;\n    END IF;\n    IF TG_TABLE_NAME = 'academic_faculty_legacy_codes' THEN RETURN NEW; END IF;\n    -- Only status-only closing updates may proceed under inactive parents.\n    -- Even an inactive INSERT must not add a child to a locked/archived parent.\n    IF NOT closing_only THEN\n        IF TG_TABLE_NAME <> 'academic_scopes' THEN\n            PERFORM 1 FROM public.academic_scopes WHERE id = NEW.scope_id AND is_active AND archived_at IS NULL;\n            IF NOT FOUND THEN\n                RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic parent scope is missing or inactive';\n            END IF;\n        END IF;\n        IF TG_TABLE_NAME = 'academic_terms' THEN\n            IF NEW.year_id IS NOT NULL THEN\n                PERFORM 1 FROM public.academic_years WHERE id = NEW.year_id AND scope_id = NEW.scope_id AND is_active AND archived_at IS NULL;\n                IF NOT FOUND THEN\n                    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic parent year is missing or inactive';\n                END IF;\n            END IF;\n        END IF;\n        IF TG_TABLE_NAME IN ('academic_sections', 'academic_course_offerings') THEN\n            SELECT * INTO parent_term FROM public.academic_terms WHERE id = NEW.term_id AND scope_id = NEW.scope_id;\n            IF NOT FOUND OR NOT parent_term.is_active OR parent_term.lifecycle IN ('locked','archived') THEN\n                RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic parent term is missing, inactive or locked';\n            END IF;\n        END IF;\n        IF TG_TABLE_NAME = 'academic_course_offerings' THEN\n            PERFORM 1 FROM public.academic_courses WHERE id = NEW.course_id AND scope_id = NEW.scope_id AND is_active AND archived_at IS NULL;\n            IF NOT FOUND THEN\n                RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic parent course is missing or inactive';\n            END IF;\n            PERFORM 1 FROM public.academic_sections WHERE id = NEW.section_id AND term_id = NEW.term_id AND scope_id = NEW.scope_id AND is_active AND archived_at IS NULL;\n            IF NOT FOUND THEN\n                RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic parent section is missing or inactive';\n            END IF;\n        END IF;\n    END IF;\n    IF TG_TABLE_NAME = 'academic_course_offerings' THEN\n        PERFORM 1 FROM public.academic_courses c, public.academic_sections s\n        WHERE c.id = NEW.course_id AND s.id = NEW.section_id\n          AND NEW.identity_key = c.identity_code || '::' || s.identity_code;\n        IF NOT FOUND THEN\n            RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Offering identity key does not match its parents';\n        END IF;\n    END IF;\n    RETURN NEW;\nEND ",
+        false,
+        "v",
+        [
+          "search_path=pg_catalog, public"
+        ],
+        "plpgsql"
+      ],
+      [
+        "academic_4c_write_lock",
+        "\nBEGIN\n    IF TG_OP = 'TRUNCATE' THEN\n        RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'Academic identity truncation is forbidden';\n    END IF;\n    -- A single conservative gate also serializes archive-vs-child-insert races.\n    -- Fail immediately instead of waiting indefinitely on an administrative writer.\n    IF current_setting('transaction_isolation') <> 'read committed' THEN\n        RAISE EXCEPTION USING ERRCODE = '0A000', MESSAGE = 'Academic writes require READ COMMITTED';\n    END IF;\n    IF NOT pg_try_advisory_xact_lock(41002, 1) THEN\n        RAISE EXCEPTION USING ERRCODE = '55P03', MESSAGE = 'Concurrent academic write; rollback and review retry';\n    END IF;\n    RETURN NULL;\nEND ",
+        false,
+        "v",
+        [
+          "search_path=pg_catalog, public"
+        ],
+        "plpgsql"
+      ]
+    ]
+  },
+  "unexpected_rows": false
+}

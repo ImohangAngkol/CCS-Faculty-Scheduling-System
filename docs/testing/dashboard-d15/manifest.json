@@ -1,0 +1,1412 @@
+{
+  "milestone": "D15",
+  "status": "FINAL REVIEW PASS: disposable PostgreSQL Phase4C 17 + D9-D13 workflow10 passed; historical failures preserved; safe to propose separate Git checkpoint; production authority BLOCKED",
+  "recorded_at": "2026-10-25T17:43:19.256802+08:00",
+  "baseline_commit": "c6baad2a0d59515555b33c84eca337a78a913a65",
+  "latest_commands": {
+    "postgres-collection": {
+      "path": "docs/testing/dashboard-d15/20261025T025753803887+0800-postgres-collection/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 5.526,
+      "scope": "Collection only; no PostgreSQL fixtures or tests executed"
+    },
+    "academic-offline": {
+      "path": "docs/testing/dashboard-d15/20261025T025754994679+0800-academic-offline/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 5.504,
+      "scope": "Academic foundation offline tests only; no PostgreSQL cases selected"
+    },
+    "backend": {
+      "path": "docs/testing/dashboard-d15/20261025T025756136494+0800-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 58.849,
+      "scope": "Existing D2-D9 FastAPI/validation regressions using fictional fixtures and SQLite"
+    },
+    "v2-api": {
+      "path": "docs/testing/dashboard-d15/20261025T025829583597+0800-v2-api/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 30.499,
+      "scope": "Actual FastAPI ASGI auth and D8/D9 transactions against owned SQLite with fictional resources/providers; no browser or PostgreSQL"
+    },
+    "v2-engine": {
+      "path": "docs/testing/dashboard-d15/20261025T025830599003+0800-v2-engine/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 28.86,
+      "scope": "Fictional V2 kernel, constraints and checkpoint tests; authority doubles are unit boundaries, not institutional verification"
+    },
+    "d11-backend": {
+      "path": "docs/testing/dashboard-d15/20261025T025831818994+0800-d11-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 40.613,
+      "scope": "D11 real FastAPI sessions/ownership and SQLAlchemy transactions, fictional guarded schedule/catalog and owned SQLite; offline PostgreSQL SQL rendering only"
+    },
+    "d13-backend": {
+      "path": "docs/testing/dashboard-d15/20261025T025914668669+0800-d13-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 114.335,
+      "scope": "D13 actual FastAPI/auth/transactional SQLite with fictional independent publisher, Chair and published schedule; PostgreSQL SQL rendering only"
+    },
+    "d12-backend": {
+      "path": "docs/testing/dashboard-d15/20261025T025914751444+0800-d12-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 76.599,
+      "scope": "D12 real FastAPI authentication/transactions with explicit fictional Chair and schedule providers; owned SQLite only, PostgreSQL rendering offline"
+    },
+    "focused": {
+      "path": "docs/testing/dashboard-d15/20261025T025915484597+0800-focused/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 44.28,
+      "scope": "D14 cross-milestone actual FastAPI/SQLite with real operators and fictional guarded institutional resources/providers"
+    },
+    "d15-guard": {
+      "path": "docs/testing/dashboard-d15/20261025T153042027709+0800-d15-guard/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 1.838,
+      "scope": "Offline D15 target guard; fake DBAPI catalogs and blocked real connectors"
+    },
+    "d15-write-guard": {
+      "path": "docs/testing/dashboard-d15/20261025T160018333458+0800-d15-write-guard/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 2.764,
+      "scope": "Offline D15 target/write guard; fake DBAPI catalogs and blocked real connectors"
+    },
+    "d15-phase4c-collection": {
+      "path": "docs/testing/dashboard-d15/20261025T155633200135+0800-d15-phase4c-collection/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 2.849,
+      "scope": "Collection only; no PostgreSQL fixtures or tests executed"
+    },
+    "phase4c-postgresql": {
+      "path": "docs/testing/dashboard-d15/20261025T160918219600+0800-phase4c-postgresql/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 15.268,
+      "scope": "Actual PostgreSQL only: original 17 Phase4C assertions; initially pristine exact D15 target; independent guarded connections; retained schema"
+    },
+    "d15-workflow-guard": {
+      "path": "docs/testing/dashboard-d15/20261025T172940483974+0800-d15-workflow-guard/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 7.497,
+      "scope": "Offline D15 target/write guard; fake DBAPI catalogs and blocked real connectors"
+    },
+    "d15-workflow-rehearsal": {
+      "path": "docs/testing/dashboard-d15/20261025T172900027377+0800-d15-workflow-rehearsal/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 12.983,
+      "scope": "Owned fictional SQLite rehearsal of new workflow fixtures; NOT PostgreSQL migration, trigger or locking evidence"
+    },
+    "d15-workflow-collection": {
+      "path": "docs/testing/dashboard-d15/20261025T172900623569+0800-d15-workflow-collection/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 2.283,
+      "scope": "Collection only; no PostgreSQL fixtures or tests executed"
+    },
+    "workflows-postgresql": {
+      "path": "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 51.831,
+      "scope": "Actual PostgreSQL only: retained 4c SELECT-only compatibility gate, additive D9-D13 migrations, real FastAPI services, fictional authority/resources, actual V2 generation and independent transactions; no browser run"
+    }
+  },
+  "fresh_offline_or_SQLite_cases": {
+    "academic-offline": 85,
+    "backend": 327,
+    "v2-engine": 30,
+    "v2-api": 18,
+    "d11-backend": 33,
+    "d12-backend": 42,
+    "d13-backend": 47,
+    "focused": 6
+  },
+  "fresh_offline_or_SQLite_passed": 588,
+  "guard_offline_tests_latest_passed": 84,
+  "write_guard_offline_tests_latest_passed": 243,
+  "workflow_guard_offline_tests_latest_passed": 469,
+  "workflow_fixture_SQLite_rehearsal_passed": 7,
+  "test_attribution": "Operator executed 17 successful Phase4C cases and ten successful final workflow cases; Codex inspected evidence. Historical failed workflow call/setup/teardown remain recorded. 469 offline tooling tests, seven SQLite rehearsal cases and earlier 588 regressions were not rerun in final review. No browser or production acceptance inferred.",
+  "phase4c_PostgreSQL_evidence": {
+    "observer": "LOCAL_OPERATOR_EXECUTION; inspected by Codex",
+    "command": "docs/testing/dashboard-d15/20261025T160918219600+0800-phase4c-postgresql/command.json",
+    "outcomes": {
+      "scope": "Actual D15 PostgreSQL original Phase4C assertions with D15 guarded fixtures",
+      "collected": 17,
+      "exit_code": 0,
+      "counts": {
+        "PASSED": 17,
+        "FAILED": 0,
+        "ERROR": 0,
+        "SKIPPED": 0,
+        "NOT_RUN": 0
+      },
+      "cases": [
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_online_revision_and_exact_inventory",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicScope-changes0]",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicCourse-changes1]",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicSection-changes2]",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicCourseOffering-changes3]",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_direct_identity_and_revision_mutations_rejected[AcademicYear-changes4]",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_calendar_containment_and_year_shrink",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_timezone_archive_and_delete_guards",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_cross_term_fk_and_offering_key",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_populated_downgrade_refuses_without_losing_rows",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_failed_upgrade_rolls_back_all_ddl",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_concurrent_writer_rejected_then_retry_after_rollback",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_higher_isolation_writes_rejected",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_read_only_snapshot_and_no_default_term",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_empty_downgrade_upgrade_roundtrip_keeps_identity_revision",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_calendar_writer_race_is_fail_closed",
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_phase4c_d15.py::test_locked_parent_rejects_even_inactive_new_child",
+          "status": "PASSED"
+        }
+      ],
+      "credentials_or_exception_payloads_recorded": false
+    },
+    "connection_guard": {
+      "guard": "d15-academic-write.1",
+      "target": "ccs_ga_d15_test",
+      "role": "ccs_ga_d15_tester",
+      "counts": {
+        "physical_connections": 22,
+        "identity_checks": 370,
+        "guarded_statements": 314
+      },
+      "owned_connections_closed": true,
+      "schema_retained": true,
+      "cleanup_DDL_executed": false
+    },
+    "warnings": "3 emissions of Alembic path_separator deprecation; no warning suppression",
+    "duration_pytest_seconds": 13.1,
+    "duration_runner_seconds": 15.268
+  },
+  "workflow_PostgreSQL_failure": {
+    "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql",
+    "outcomes": {
+      "scope": "Actual D15 PostgreSQL D9-D13 services, migrations and fictional trust providers; in-process FastAPI, not browser evidence",
+      "collected": 10,
+      "exit_code": 1,
+      "counts": {
+        "PASSED": 0,
+        "FAILED": 0,
+        "ERROR": 1,
+        "SKIPPED": 0,
+        "NOT_RUN": 9
+      },
+      "cases": [
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_01_additive_upgrade_atomic_rollback_then_commit",
+          "status": "ERROR",
+          "phase": "setup",
+          "exception_type": "SafetyError",
+          "safety_code": "RETAINED_CONSTRAINT_CONTRACT_MISMATCH"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_02_durable_confirmation_revision_and_concurrent_one_winner",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_03_postgresql_ledger_triggers_and_row_lock_recovery",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_04_actual_v2_generation_from_postgresql_heads",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_05_owned_request_submit_unauthorized_and_idempotency",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_06_independent_chair_concurrency_and_no_schedule_mutation",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_07_application_failure_rolls_back_and_same_command_recovers",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_08_independent_applications_publish_once_and_retry_is_idempotent",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_09_immutable_publication_history_own_view_and_new_connections",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_10_revocation_blocks_fresh_v2_scope_and_preserves_history",
+          "status": "NOT_RUN"
+        }
+      ],
+      "credentials_or_exception_payloads_recorded": false
+    },
+    "connection_guard": {
+      "guard": "d15-retained-workflow-write.1",
+      "target": "ccs_ga_d15_test",
+      "role": "ccs_ga_d15_tester",
+      "counts": {
+        "physical_connections": 1,
+        "identity_checks": 1,
+        "guarded_statements": 0
+      },
+      "owned_connections_closed": true,
+      "schema_retained": true,
+      "fictional_rows_retained": true,
+      "cleanup_DDL_executed": false
+    },
+    "stage": "Initial read-only fixture gate, before any migration/write-mode activation",
+    "original_traceback": "Not captured: controlled runner used --tb=no",
+    "migration_writes_reached": false,
+    "superseded_by_successful_workflow_execution": true
+  },
+  "operator_pg18_read_only_diagnosis": {
+    "path": "docs/testing/dashboard-d15/operator-pg18-diagnosis.json",
+    "attribution": "USER_REPORTED in chat; no original terminal JSON file or original diagnostic timestamps supplied; Codex did not execute the diagnostic",
+    "record": {
+      "kind": "PostgreSQL 18 constraint diagnostic supplied by user",
+      "attribution": "USER_REPORTED in chat; no original terminal JSON file or original diagnostic timestamps supplied; Codex did not execute the diagnostic",
+      "recorded_at": "2026-10-25T16:52:50.833500+08:00",
+      "original_execution_timestamp": null,
+      "environment": {
+        "server_version": "18.6",
+        "database": "ccs_ga_d15_test",
+        "session_user": "ccs_ga_d15_tester",
+        "current_user": "ccs_ga_d15_tester",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "revision": "4c_0001"
+      },
+      "constraint_type_counts": {
+        "n": 76,
+        "p": 11,
+        "c": 37,
+        "f": 11,
+        "u": 18
+      },
+      "differences": {
+        "missing_non_not_null_constraints": [],
+        "unexpected_non_not_null_constraints": [],
+        "missing_not_null_columns": [],
+        "unexpected_not_null_columns": [],
+        "unvalidated_or_unenforced": []
+      },
+      "academic_identity_table_count": 10,
+      "all_academic_identity_table_row_counts_zero": true,
+      "read_only_enforcement_verified": true,
+      "writes_performed": false,
+      "owned_connection_cleanup_verified": true,
+      "authorized_correction": "D15 guard-only PostgreSQL18 NOT NULL validation and independent offline tests; no database write execution from Codex",
+      "prior_failure_artifacts": [
+        {
+          "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/command.json",
+          "sha256": "a231edd759da4e17d84d3dcfcc5cf2b1981994f5fc00b049dcf20b217207e0a9"
+        },
+        {
+          "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/connection-guard-summary.json",
+          "sha256": "c2493ada58fc11a5ac93cc6817560cb96a6a5d76282acaab946b7909ec3f983e"
+        },
+        {
+          "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/pytest-results.json",
+          "sha256": "331afcaa9542ad15f29942a995de7817f711d373960a32dbdf52c94ea979be34"
+        }
+      ]
+    }
+  },
+  "workflow_PostgreSQL_retest": {
+    "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql",
+    "legacy_outcomes_unmodified": {
+      "scope": "Actual D15 PostgreSQL D9-D13 services, migrations and fictional trust providers; in-process FastAPI, not browser evidence",
+      "collected": 10,
+      "exit_code": 1,
+      "counts": {
+        "PASSED": 0,
+        "FAILED": 0,
+        "ERROR": 1,
+        "SKIPPED": 0,
+        "NOT_RUN": 9
+      },
+      "cases": [
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_01_additive_upgrade_atomic_rollback_then_commit",
+          "status": "ERROR",
+          "phase": "teardown",
+          "exception_type": "AssertionError",
+          "safety_code": "UNREVIEWED_WORKFLOW_DDL_REJECTED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_02_durable_confirmation_revision_and_concurrent_one_winner",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_03_postgresql_ledger_triggers_and_row_lock_recovery",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_04_actual_v2_generation_from_postgresql_heads",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_05_owned_request_submit_unauthorized_and_idempotency",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_06_independent_chair_concurrency_and_no_schedule_mutation",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_07_application_failure_rolls_back_and_same_command_recovers",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_08_independent_applications_publish_once_and_retry_is_idempotent",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_09_immutable_publication_history_own_view_and_new_connections",
+          "status": "NOT_RUN"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_10_revocation_blocks_fresh_v2_scope_and_preserves_history",
+          "status": "NOT_RUN"
+        }
+      ],
+      "credentials_or_exception_payloads_recorded": false
+    },
+    "guard_summary_unmodified": {
+      "guard": "d15-retained-workflow-write.1",
+      "target": "ccs_ga_d15_test",
+      "role": "ccs_ga_d15_tester",
+      "counts": {
+        "physical_connections": 3,
+        "identity_checks": 26,
+        "guarded_statements": 16
+      },
+      "owned_connections_closed": true,
+      "schema_retained": true,
+      "fictional_rows_retained": true,
+      "cleanup_DDL_executed": false
+    },
+    "actual_pytest_phase_counts": {
+      "PASSED": 0,
+      "FAILED": 1,
+      "ERROR": 1,
+      "SKIPPED": 0,
+      "NOT_RUN": 9
+    },
+    "legacy_summary_defect": "Call SafetyError was overwritten by teardown AssertionError; original artifacts retained, not rewritten",
+    "primary_cause": "Frozen D9 statement14 percent ROWTYPE is doubled by psycopg2 dialect compilation; raw expected SQL mismatched transport",
+    "secondary_cause": "Unconditional successful final revision assertion after aborted migration",
+    "recovery_diagnostic": {
+      "kind": "Post-failure read-only recovery diagnostic supplied by user",
+      "attribution": "USER_REPORTED in chat; no raw terminal artifact or original execution timestamp supplied. Codex did not execute this diagnostic.",
+      "recorded_at": "2026-10-25T17:30:36.759890+08:00",
+      "original_execution_timestamp": null,
+      "result": {
+        "status": "READ_ONLY_DIAGNOSTIC_COMPLETE",
+        "database": "ccs_ga_d15_test",
+        "session_user": "ccs_ga_d15_tester",
+        "current_user": "ccs_ga_d15_tester",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "verified_revision": "4c_0001",
+        "retained_schema_guard_passed": true,
+        "all_ten_fixture_tables_empty": true,
+        "schema_matches_retest_entry": true,
+        "read_only_enforcement_verified": true,
+        "writes_performed": false,
+        "owned_connection_cleanup_verified": true
+      },
+      "conclusion": "User-reported diagnostic confirms failed D9 transaction rolled back and retained catalog matches retest entry; no new live diagnostic performed during this correction.",
+      "retest_artifacts": [
+        {
+          "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/command.json",
+          "sha256": "ded6185fa33de8139453299085d9bd1d4b3a722405597bea35e897187430efb1"
+        },
+        {
+          "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/connection-guard-summary.json",
+          "sha256": "d4fb2a7b6d851f1c8f64a3b0d970b07f79cdd24904e313bc446d3f5518630923"
+        },
+        {
+          "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/pytest-results.json",
+          "sha256": "01c8681803f660aa380a2b9b7efe1b10f5ffd5d88293e8314db3967286aaa9ed"
+        },
+        {
+          "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/retained-schema.json",
+          "sha256": "c1795f3718b025b7eac934443971822cdd4a218218e1c5a8c3c0f58994131127"
+        }
+      ]
+    },
+    "superseded_by_successful_workflow_execution": true
+  },
+  "transport_abort_reporting_correction": {
+    "scope": "D15 tooling/tests/evidence only",
+    "matching": "Exact trusted frozen SQL compiled with actual connection dialect; no incoming percent or whitespace rewrite; no DDL parameters or executemany",
+    "teardown": "Explicit committed-upgrade flag; abort requires verified entry catalog and empty fixture tables; no repair operation",
+    "reporting": "Independent setup/call/teardown outcomes; phase counts match pytest and exclusive case_counts retained; factual row-retention/end-state fields",
+    "synthetic_pytest_SQLite_cases_in_guard_count": 3,
+    "live_correction_attempt_executed": true,
+    "live_outcome": "Ten workflow cases passed, with all phases passing and cleanup verified"
+  },
+  "PG18_guard_correction": {
+    "scope": "D15 guard/tests/docs only; no database connection or application change",
+    "fixture": "docs/testing/dashboard-d15/fixtures/pg18-constraint-inventory.json",
+    "validation": "All 76 NOT NULL bindings/definitions and validation/enforcement flags checked; duplicate/inconsistent/other-type constraints rejected; complete records fingerprinted",
+    "older_versions": "Catalog reader handles pre18 conenforced absence; exact D15 live guard still requires PostgreSQL18",
+    "resume_command": ".\\.venv\\Scripts\\python.exe -B docs/testing/dashboard-d15/run_workflows.py --execute",
+    "resume_executed": true,
+    "resume_outcome": "Retained PG18 gate passed in retest and successful final workflow execution"
+  },
+  "operator_read_only_preflights": [
+    {
+      "path": "docs/testing/dashboard-d15/20261025T153542972324+0800-read-only-preflight/result.json",
+      "record": {
+        "kind": "D15 read-only PostgreSQL preflight",
+        "observer": "LOCAL_OPERATOR_EXECUTION",
+        "started_at": "2026-10-25T15:35:41.735052+08:00",
+        "finished_at": "2026-10-25T15:35:42.972310+08:00",
+        "command": [
+          ".venv/Scripts/python.exe",
+          "-B",
+          "docs/testing/dashboard-d15/preflight.py",
+          "--read-only"
+        ],
+        "scope": "One exact-target SELECT-only connection; no migrations, fixtures or cleanup DDL",
+        "credential_handling": "D15_TEST_DATABASE_URL read privately from this process; no URL/password retained",
+        "exit_code": 0,
+        "result": {
+          "status": "READ_ONLY_PREFLIGHT_PASSED",
+          "database": "ccs_ga_d15_test",
+          "session_user": "ccs_ga_d15_tester",
+          "current_user": "ccs_ga_d15_tester",
+          "host": "127.0.0.1",
+          "port": 5432,
+          "schema": "public",
+          "owner": "ccs_ga_d15_tester",
+          "server_version": "18.6",
+          "read_only": true,
+          "empty": true,
+          "role_restrictions_verified": true,
+          "object_inventory_verified": true,
+          "writes_performed": false,
+          "scope": "Pristine read-only preflight only; migrations and acceptance not executed"
+        }
+      }
+    }
+  ],
+  "PostgreSQL": {
+    "successful_read_only_preflights": 1,
+    "Codex_connections_attempted": 0,
+    "Phase4C_owned_physical_connections": 22,
+    "connections_attempted": "Operator evidence: preflight, Phase4C22, first workflow1, second workflow3, final workflow168 physical connections; two further READ ONLY diagnoses USER_REPORTED",
+    "migration_scope_executed": "Committed through d13_0001 on exact disposable D15 target; rollback-only migration and statement-failure rehearsals passed",
+    "tests_executed": 28,
+    "passed": 27,
+    "failed": 1,
+    "setup_errors": 1,
+    "teardown_errors": 1,
+    "skipped_during_execution": 0,
+    "Phase4C_collected": 17,
+    "Phase4C_blocked_NOT_RUN": 0,
+    "collected_case_ids": [
+      "tests/academic/test_academic_postgresql.py::test_online_revision_and_exact_inventory",
+      "tests/academic/test_academic_postgresql.py::test_direct_identity_and_revision_mutations_rejected[AcademicScope-changes0]",
+      "tests/academic/test_academic_postgresql.py::test_direct_identity_and_revision_mutations_rejected[AcademicCourse-changes1]",
+      "tests/academic/test_academic_postgresql.py::test_direct_identity_and_revision_mutations_rejected[AcademicSection-changes2]",
+      "tests/academic/test_academic_postgresql.py::test_direct_identity_and_revision_mutations_rejected[AcademicCourseOffering-changes3]",
+      "tests/academic/test_academic_postgresql.py::test_direct_identity_and_revision_mutations_rejected[AcademicYear-changes4]",
+      "tests/academic/test_academic_postgresql.py::test_calendar_containment_and_year_shrink",
+      "tests/academic/test_academic_postgresql.py::test_timezone_archive_and_delete_guards",
+      "tests/academic/test_academic_postgresql.py::test_cross_term_fk_and_offering_key",
+      "tests/academic/test_academic_postgresql.py::test_populated_downgrade_refuses_without_losing_rows",
+      "tests/academic/test_academic_postgresql.py::test_failed_upgrade_rolls_back_all_ddl",
+      "tests/academic/test_academic_postgresql.py::test_concurrent_writer_rejected_then_retry_after_rollback",
+      "tests/academic/test_academic_postgresql.py::test_higher_isolation_writes_rejected",
+      "tests/academic/test_academic_postgresql.py::test_read_only_snapshot_and_no_default_term",
+      "tests/academic/test_academic_postgresql.py::test_empty_downgrade_upgrade_roundtrip_keeps_identity_revision",
+      "tests/academic/test_academic_postgresql.py::test_calendar_writer_race_is_fail_closed",
+      "tests/academic/test_academic_postgresql.py::test_locked_parent_rejects_even_inactive_new_child"
+    ],
+    "D9_D13_online_acceptance": "PASS: final ten cases, all phases and owned cleanup; two historical failed attempts retained",
+    "actual_connected_server_version": {
+      "value": "18.6",
+      "observer": "LOCAL_OPERATOR_EXECUTION; artifact inspected by Codex"
+    },
+    "successful_acceptance_cases": 27,
+    "latest_workflow_counts": {
+      "PASSED": 10,
+      "FAILED": 0,
+      "ERROR": 0,
+      "SKIPPED": 0,
+      "NOT_RUN": 0
+    },
+    "latest_workflow_revision": "d13_0001",
+    "successful_workflow_owned_physical_connections": 168
+  },
+  "preservation": {
+    "baseline_files_byte_identical": 1295,
+    "academic_data_files_byte_identical": 23,
+    "protected_preferences_unchanged": true,
+    "Git_index_HEAD_origin_unchanged": true,
+    "GA_V1_V2_sources_checkpoints_saved_results_D14_evidence_unchanged": true,
+    "existing_application_files_modified": 0
+  },
+  "privacy": {
+    "findings": 0,
+    "methods": [
+      "Pre-write whole sensitive assignment/header and receipt filtering",
+      "Independent full/truncated receipt, bearer, URI and private key scans",
+      "Decoded JSON and all failure/output fields scanned",
+      "Private faculty names compared locally without exporting values"
+    ],
+    "screenshots_browser_traces_raw_databases_or_session_payloads_archived": false
+  },
+  "historical_nonzero_commands_retained": [
+    {
+      "path": "docs/testing/dashboard-d15/20261025T162110510706+0800-d15-workflow-rehearsal/command.json",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T162145100261+0800-d15-workflow-rehearsal/command.json",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/command.json",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/command.json",
+      "exit_code": 1
+    }
+  ],
+  "continuation": {
+    "recorded_at": "2026-10-25T15:18:15.548448+08:00",
+    "observer": "USER_CONFIRMED for pgAdmin identity; CODEX_ENVIRONMENT_INSPECTION for credential availability",
+    "user_reported_target": {
+      "server_version": "18.6",
+      "host": "127.0.0.1",
+      "port": 5432,
+      "database": "ccs_ga_d15_test",
+      "session_user": "ccs_ga_d15_tester",
+      "current_user": "ccs_ga_d15_tester",
+      "owner": "ccs_ga_d15_tester",
+      "role_login": true,
+      "role_superuser": false,
+      "role_createdb": false,
+      "role_createrole": false,
+      "role_connection_limit": 20
+    },
+    "user_reported_isolation_warning": "Tester can CONNECT to existing development database; role identity alone is insufficient isolation",
+    "environment_presence_only": {
+      "D15_TEST_DATABASE_URL": false,
+      "D15_POSTGRESQL_APPROVAL": false,
+      "PHASE4C_TEST_DATABASE_URL": false,
+      "PHASE4C_POSTGRESQL_APPROVAL": false,
+      "PGPASSWORD": false,
+      "PGPASSFILE": false
+    },
+    "credential_state": "No dedicated credential is available to this tool process. No private credential-store search or credential recovery attempted. PgAdmin session is not a credential handoff.",
+    "current_stop": "Secure credential setup required; no PostgreSQL connection attempted",
+    "PostgreSQL_connections_attempted": 0,
+    "PostgreSQL_tests_executed": 0,
+    "new_tests_executed": 0,
+    "remaining_required_preflight": [
+      "Actual connected database, session/current user, host/port and owner",
+      "Nonprivileged flags including replication and bypass-RLS, membership and public schema/database privileges",
+      "Pristine unexpected-object inventory",
+      "Same exact gate on every migration, fixture, recovery and any cleanup connection"
+    ],
+    "private_execution_plan": "Get-Credential in dedicated user-owned PowerShell; process-only D15_TEST_DATABASE_URL; future gated commands run in that same terminal. No environment inheritance into the Codex process is assumed."
+  },
+  "guard_readiness": {
+    "private_terminal_ready": "USER CONFIRMED",
+    "read_only_guard": "Operator execution passed; original artifact retained",
+    "write_guard": "Default pristine academic guard preserved. WorkflowRun adds explicit retained 4c contract, schema fingerprint checks, frozen additive DDL and academic DML/drop/truncate rejection; inherits exact identity/barrier/connection lifecycle",
+    "Codex_has_private_terminal_credentials": false,
+    "prepared_command": null,
+    "controlled_scope": "Exact retained 4c empty-fixture profile; rollback upgrade rehearsals then committed additive D9-D13 upgrades; 10 ordered acceptance cases; no reset/automatic retry; retain all new fictional rows",
+    "next_action": "No more database operations. Separate Git checkpoint authorization only; do not rerun against populated retained d13_0001."
+  },
+  "limitations": [
+    "Disposable PostgreSQL acceptance with fictional resources/providers; genuine institutional authority and production deployment remain BLOCKED",
+    "Codex reviewed saved local-operator evidence; no PostgreSQL connection, test rerun or new live diagnostic during final review",
+    "Retained d13_0001 schema and 25 fictional rows remain; no reset, disposal or rerun authorized",
+    "Failure injection/transaction rollback and lock release are not physical outage, service crash/restart or cross-process recovery acceptance",
+    "No fresh browser verification, production build, broad performance or production-readiness claim",
+    "Five final workflow dependency/configuration warnings retained; no general dependency cleanup",
+    "Historical audit_evidence.py main is a preparation-stage manifest writer, not the final-review updater; it was not run",
+    "main matches last-fetched origin/main; no remote fetch performed and no new remote-state guarantee",
+    "Manifest hashes raw artifacts excluding itself; hashes establish identity, not institutional authority"
+  ],
+  "hash_convention": "Raw-byte SHA-256 of new D15 artifacts; manifest excludes itself. Hashes do not establish live database correctness.",
+  "artifacts": [
+    {
+      "path": "docs/dashboard-d15-postgresql-acceptance.md",
+      "bytes": 74939,
+      "sha256": "5c1b70d7fbd9cfbdae0fe6c1fa7b786f5a6ef5fc6b787a27685714d83eb93005"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T025753803887+0800-postgres-collection/command.json",
+      "bytes": 2792,
+      "sha256": "d7538c02744ab96946c58d8f2e8f05ebdd611794ac867cccc6f343d80b5f0038"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T025754994679+0800-academic-offline/command.json",
+      "bytes": 2037,
+      "sha256": "70b21a682a525b5ea2693aed9751e938dcdf9e0eae59bb966de839e10ba1060a"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T025756136494+0800-backend/command.json",
+      "bytes": 2714,
+      "sha256": "6370d3305c4c2e99bb0d66ba3af48e9f9fa3de9445046d032a198ec047c419b9"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T025829583597+0800-v2-api/command.json",
+      "bytes": 2106,
+      "sha256": "2f9f960055a80dca4a9504cd88893a939bed63aefe6ce7c55a92a99efa2dbcaf"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T025830599003+0800-v2-engine/command.json",
+      "bytes": 1209,
+      "sha256": "51bd00571b2b1e71024ed4378424d71fe0a6a5d8c7bd2681c92419949710bd18"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T025831818994+0800-d11-backend/command.json",
+      "bytes": 2738,
+      "sha256": "44ec41c9026c3516a50be13dd931ca7a22e04e14352b4c273fff86174634574f"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T025914668669+0800-d13-backend/command.json",
+      "bytes": 2793,
+      "sha256": "bf7e683065f56e7dd168643699b8c5564ebe2c04f3e3e331c4d0cb8e47c126c7"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T025914751444+0800-d12-backend/command.json",
+      "bytes": 2769,
+      "sha256": "2cfcbb3c9cfdd4b73fed577c4213491d62572424d481d1658c40efda552c5982"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T025915484597+0800-focused/command.json",
+      "bytes": 2111,
+      "sha256": "741f05592fe7f9254f44f58221dc03ae221c72c1e696d5ec3891db9ec760e50c"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T152803425452+0800-d15-guard/command.json",
+      "bytes": 1276,
+      "sha256": "4f3a73470864a8f954083b117d90d7cb4e302aecc94f8ab8cff46f9e02b3e0ab"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T152919899682+0800-d15-guard/command.json",
+      "bytes": 1274,
+      "sha256": "c87d867d4b6d1694df6723ac7efa20ac595b198a9368b12e7060a1389a43fd67"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T153042027709+0800-d15-guard/command.json",
+      "bytes": 1276,
+      "sha256": "3cbb7a05f3c6ae1f6869a9acb0efa1773687bd396db061498c00af11d0050813"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T153542972324+0800-read-only-preflight/result.json",
+      "bytes": 1098,
+      "sha256": "ed2df5eadcf0b71e0695bd5e70372cd64b1e49226f4a34c8282ee39bc5516826"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T154918707463+0800-d15-write-guard/command.json",
+      "bytes": 1434,
+      "sha256": "f572a67ba156bd87f935cbc82a56995b752c24337ecca49896ad4fb4e733c661"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T155416476220+0800-d15-write-guard/command.json",
+      "bytes": 1515,
+      "sha256": "2bb4118afcf12ef37aedd2db29630dd8be0a87bf478367b1869b6e7da210acd5"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T155632444459+0800-d15-write-guard/command.json",
+      "bytes": 1515,
+      "sha256": "10dc03467704acba1fd70ec6c470f8a2880cf6b9e083e73088c7ec6709998340"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T155633200135+0800-d15-phase4c-collection/command.json",
+      "bytes": 2884,
+      "sha256": "2e820d6de0fdf3645dd139dd1ff1bd3fa805659f9bc51089eb9f87189cfb9eb5"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T155743894943+0800-d15-write-guard/command.json",
+      "bytes": 1515,
+      "sha256": "d76aa68b1d9df290ccb01995d7de1ebaa731fafe2330c3fdbff798b4cef6b332"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T155911727911+0800-d15-write-guard/command.json",
+      "bytes": 1515,
+      "sha256": "c7011046e7d7704954c53db6f8a5bbd4cd456ad7aaef9eb265132b749f388348"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T160018333458+0800-d15-write-guard/command.json",
+      "bytes": 1515,
+      "sha256": "3c09041dec1a22e933470c9b6c86466a16abf586e482a33c13d3000557c04dcf"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T160918219600+0800-phase4c-postgresql/command.json",
+      "bytes": 2092,
+      "sha256": "1f5efcfaaf3ff0193e86dc13b4af27080ceccfa0886446a3c3218b667996df78"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T160918219600+0800-phase4c-postgresql/connection-guard-summary.json",
+      "bytes": 305,
+      "sha256": "f412aa08a15d5ef44a720989cb22bb5a25e77b62ee35416bb1b5cf9932f2bb00"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T160918219600+0800-phase4c-postgresql/pytest-results.json",
+      "bytes": 2966,
+      "sha256": "23e6ab54e8287aa489038ce7d76aeafa18562390eb9f9c4e0dec65470f5198d1"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T162100780015+0800-d15-workflow-guard/command.json",
+      "bytes": 1663,
+      "sha256": "0658f7a14cd83a109ef4517849ba64b46a663a84b9c2f792f8b0327424109520"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T162110510706+0800-d15-workflow-rehearsal/command.json",
+      "bytes": 7108,
+      "sha256": "d1211fb5aed3fcf5b8265b6c64ac46b2c7464d35a58506dc7976ce336edcd258"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T162110940652+0800-d15-workflow-collection/command.json",
+      "bytes": 2234,
+      "sha256": "64d5bb369f38d8a4696751a2fcb6fa6a5ebffd2d20a166cc07c638491f03a907"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T162145100261+0800-d15-workflow-rehearsal/command.json",
+      "bytes": 3630,
+      "sha256": "174e1fea5067f33c857e94f92e00136d3b79708900dfe236783c108b5233ba35"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T162237295661+0800-d15-workflow-rehearsal/command.json",
+      "bytes": 2294,
+      "sha256": "746b226fb6d92cac6e034034b025acc3cdebfd8163a5e7f2c944b5653d57bae1"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T162541849252+0800-d15-workflow-guard/command.json",
+      "bytes": 1663,
+      "sha256": "d7fec85c7447eb6fc400b380901373056f31b231f777258e3907f29106532dd5"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/command.json",
+      "bytes": 1575,
+      "sha256": "a231edd759da4e17d84d3dcfcc5cf2b1981994f5fc00b049dcf20b217207e0a9"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/connection-guard-summary.json",
+      "bytes": 344,
+      "sha256": "c2493ada58fc11a5ac93cc6817560cb96a6a5d76282acaab946b7909ec3f983e"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/pytest-results.json",
+      "bytes": 2126,
+      "sha256": "331afcaa9542ad15f29942a995de7817f711d373960a32dbdf52c94ea979be34"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T165138467218+0800-d15-workflow-guard/command.json",
+      "bytes": 1744,
+      "sha256": "29d0b67f8e3026a664ff05b3e4a955bb16a0c82afd659001baf687dcbab4bdde"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T165207587096+0800-d15-workflow-rehearsal/command.json",
+      "bytes": 2295,
+      "sha256": "624fac485657c9a757ba309dd8b843a114c58c23ed27f27ce275a657040ac72f"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T165207643544+0800-d15-workflow-collection/command.json",
+      "bytes": 2233,
+      "sha256": "77b18bfb3a1c512d8a2be89a7d3d3d23fc5efacb99b617dd8e957d8eeb810138"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/command.json",
+      "bytes": 2305,
+      "sha256": "ded6185fa33de8139453299085d9bd1d4b3a722405597bea35e897187430efb1"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/connection-guard-summary.json",
+      "bytes": 346,
+      "sha256": "d4fb2a7b6d851f1c8f64a3b0d970b07f79cdd24904e313bc446d3f5518630923"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/pytest-results.json",
+      "bytes": 2127,
+      "sha256": "01c8681803f660aa380a2b9b7efe1b10f5ffd5d88293e8314db3967286aaa9ed"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/retained-schema.json",
+      "bytes": 63148,
+      "sha256": "c1795f3718b025b7eac934443971822cdd4a218218e1c5a8c3c0f58994131127"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T172629093011+0800-d15-workflow-guard/command.json",
+      "bytes": 1888,
+      "sha256": "e8d562944776c39ec0b3df50e90e8a6d99df753b23208e66d17fb13dc847c33a"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T172802017835+0800-d15-workflow-guard/command.json",
+      "bytes": 1888,
+      "sha256": "2482603f37bd6c17079d99194606673519f96ff09e3439f9b8ff5bd45fb040e4"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T172900027377+0800-d15-workflow-rehearsal/command.json",
+      "bytes": 2296,
+      "sha256": "69b2fb3df0233040c6e8d874c3b632f8c8c6c1362c30f63025d28f842939f30d"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T172900623569+0800-d15-workflow-collection/command.json",
+      "bytes": 2234,
+      "sha256": "b0fa3211a423e7b75083825f12be4dae26de8d3e4247a53e42e400be79e2de16"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T172940483974+0800-d15-workflow-guard/command.json",
+      "bytes": 1888,
+      "sha256": "030039d2b87248141aedae1ecf670116f4c38d9f6f581395794e31ac772218c8"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/command.json",
+      "bytes": 3049,
+      "sha256": "28a88b44ff0aab2a417bb6620db6a2f56444371fd65cdd89de96344df9b7e45e"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/connection-guard-summary.json",
+      "bytes": 1296,
+      "sha256": "1e61236bff5d98e326cbf9c4344903f44a3c035ba83656e926ad155587f6abfc"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/pytest-results.json",
+      "bytes": 4308,
+      "sha256": "d5e3c9317ebd4e58106f5ee81eddadb45f1cd19204c200b3c197ca50cd3af2da"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/retained-schema.json",
+      "bytes": 63148,
+      "sha256": "c1795f3718b025b7eac934443971822cdd4a218218e1c5a8c3c0f58994131127"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/upgraded-schema.json",
+      "bytes": 123665,
+      "sha256": "1b1d493da1ea85b48076eca15723095734118a752d824e32712fa36bbf8a2f96"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/audit_evidence.py",
+      "bytes": 20494,
+      "sha256": "67369af3746a3c71004e0bd101c2d378ddda1b68790e42e382d832553be6077d"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/credential-readiness.json",
+      "bytes": 1930,
+      "sha256": "8b894d37ddd144a2af1ec849db53c70d71d14b1212196f971e9020f6da9da209"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/d15_phase4c_plugin.py",
+      "bytes": 2668,
+      "sha256": "374f4b1e3fb9c2c40fe09e44b165f1022e10e1095df3e39b1f17416c1b9cf7aa"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/d15_target_guard.py",
+      "bytes": 9271,
+      "sha256": "323ee067c7a4737671682bac3eb4a736c8bae8704ab194c3944c40d816442967"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/d15_workflow_guard.py",
+      "bytes": 15602,
+      "sha256": "ede2e09ca9577302573cff10066f27b842b78806ccf57d79bfa3c71e4ff8b4d3"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/d15_workflow_plugin.py",
+      "bytes": 4694,
+      "sha256": "d8b5025c11b138b1ff513db9ecbe14785f662dacbca7f55dd42edb57ac0e2895"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/d15_write_guard.py",
+      "bytes": 15730,
+      "sha256": "623c32c1e783766ca09b401a482cb54aa588630db2c77248d2b3654230f9d79a"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/environment-inspection.json",
+      "bytes": 1060,
+      "sha256": "4f9140cf312b2bc352161633f46df17fa0e21de8416506eb589da4f399d96e26"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/fixtures/pg18-constraint-inventory.json",
+      "bytes": 32324,
+      "sha256": "b60ef19755c1722d576045aa7857509e7a52dc1c573364699379c2161c76cd18"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/operator-pg18-diagnosis.json",
+      "bytes": 1902,
+      "sha256": "7383441dbd9f4ac79ffe0587bef4d230a4b91c9a1cfc928bb5caef0215dda08c"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/operator-post-abort-diagnosis.json",
+      "bytes": 1877,
+      "sha256": "1637fdc3843cb7b297d268f922b8df8d6bcb330caa5f311518bbf08253063fba"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/preflight.py",
+      "bytes": 3076,
+      "sha256": "0eab961400c98a06bb61982784ee6c7404fbac1440088ded6e2f46a0b36a58d2"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/preservation-baseline.json",
+      "bytes": 181967,
+      "sha256": "9f55e4bf3525fab805fe86032038b4dcb20ad00aafbadcba497b9cbbf1385b09"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/run_offline_checks.py",
+      "bytes": 5709,
+      "sha256": "4e1e6106874c35a94baa19c6207bad76ba548053c998235ed47c697211031013"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/run_phase4c.py",
+      "bytes": 6145,
+      "sha256": "3cff0b6733cafa8ef3e403e32116968a379c8e6469ae296725604c5721a1f3b8"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/run_workflows.py",
+      "bytes": 7313,
+      "sha256": "9013b1c699079e984e15a9ad3c4046dd980d833d48809d0cc1332e0a85623865"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/static-inspection.json",
+      "bytes": 2356,
+      "sha256": "cfab66a57de5c40d3261ac6a92bff956623bcaf1a47c34006ca474010d13f484"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/test_d15_target_guard.py",
+      "bytes": 11333,
+      "sha256": "eab93fd449d71f47c2ba7d92eb0b9cc07a8e24152705c01ad4a2aff6cd85f1bc"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/test_d15_workflow_guard.py",
+      "bytes": 12721,
+      "sha256": "7f2c4330d060877e2af0216bdbea7fc57b64a9aabefdec16ed55d227d2d1851c"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/test_d15_workflow_tooling.py",
+      "bytes": 16107,
+      "sha256": "d4530e3ca24f0fc7343d62eb19f6299d5bff95cda23b9f5c68e95e40ca1d76cc"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/test_d15_write_guard.py",
+      "bytes": 16778,
+      "sha256": "5a06bafa66f15d1789d6b19c760fc64e51c2aa86997abca193b86171bef30c11"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/test_phase4c_d15.py",
+      "bytes": 1873,
+      "sha256": "e14dc9008d8c9e598b0cdc4a71b77a90ffc49f8d985027f1262e3041f0298af3"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/test_workflow_rehearsal.py",
+      "bytes": 2517,
+      "sha256": "925cb0ec07e749ab5584ff1a0d9c711f0fd098df8f28cc55d6fbaff01c65cc15"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/test_workflows_d15.py",
+      "bytes": 16553,
+      "sha256": "322b1bbb037121a2864b992532feb71a17c9da1b9a8b5e90981fe8c4df5ae560"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/workflow_fixture.py",
+      "bytes": 10319,
+      "sha256": "bfc5933469bf6663de4558067871d7f637cb985edfcc050217d6e4332ae089f7"
+    }
+  ],
+  "workflow_PostgreSQL_success": {
+    "observer": "LOCAL_OPERATOR_EXECUTION; saved artifacts inspected by Codex, no Codex PostgreSQL connection",
+    "path": "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql",
+    "outcomes": {
+      "scope": "Actual D15 PostgreSQL D9-D13 services, migrations and fictional trust providers; in-process FastAPI, not browser evidence",
+      "collected": 10,
+      "exit_code": 0,
+      "counts": {
+        "PASSED": 10,
+        "FAILED": 0,
+        "ERROR": 0,
+        "SKIPPED": 0,
+        "NOT_RUN": 0
+      },
+      "case_counts": {
+        "PASSED": 10,
+        "FAILED": 0,
+        "ERROR": 0,
+        "SKIPPED": 0,
+        "NOT_RUN": 0
+      },
+      "cases": [
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_01_additive_upgrade_atomic_rollback_then_commit",
+          "phases": {
+            "setup": {
+              "outcome": "PASSED"
+            },
+            "call": {
+              "outcome": "PASSED"
+            },
+            "teardown": {
+              "outcome": "PASSED"
+            }
+          },
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_02_durable_confirmation_revision_and_concurrent_one_winner",
+          "phases": {
+            "setup": {
+              "outcome": "PASSED"
+            },
+            "call": {
+              "outcome": "PASSED"
+            },
+            "teardown": {
+              "outcome": "PASSED"
+            }
+          },
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_03_postgresql_ledger_triggers_and_row_lock_recovery",
+          "phases": {
+            "setup": {
+              "outcome": "PASSED"
+            },
+            "call": {
+              "outcome": "PASSED"
+            },
+            "teardown": {
+              "outcome": "PASSED"
+            }
+          },
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_04_actual_v2_generation_from_postgresql_heads",
+          "phases": {
+            "setup": {
+              "outcome": "PASSED"
+            },
+            "call": {
+              "outcome": "PASSED"
+            },
+            "teardown": {
+              "outcome": "PASSED"
+            }
+          },
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_05_owned_request_submit_unauthorized_and_idempotency",
+          "phases": {
+            "setup": {
+              "outcome": "PASSED"
+            },
+            "call": {
+              "outcome": "PASSED"
+            },
+            "teardown": {
+              "outcome": "PASSED"
+            }
+          },
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_06_independent_chair_concurrency_and_no_schedule_mutation",
+          "phases": {
+            "setup": {
+              "outcome": "PASSED"
+            },
+            "call": {
+              "outcome": "PASSED"
+            },
+            "teardown": {
+              "outcome": "PASSED"
+            }
+          },
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_07_application_failure_rolls_back_and_same_command_recovers",
+          "phases": {
+            "setup": {
+              "outcome": "PASSED"
+            },
+            "call": {
+              "outcome": "PASSED"
+            },
+            "teardown": {
+              "outcome": "PASSED"
+            }
+          },
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_08_independent_applications_publish_once_and_retry_is_idempotent",
+          "phases": {
+            "setup": {
+              "outcome": "PASSED"
+            },
+            "call": {
+              "outcome": "PASSED"
+            },
+            "teardown": {
+              "outcome": "PASSED"
+            }
+          },
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_09_immutable_publication_history_own_view_and_new_connections",
+          "phases": {
+            "setup": {
+              "outcome": "PASSED"
+            },
+            "call": {
+              "outcome": "PASSED"
+            },
+            "teardown": {
+              "outcome": "PASSED"
+            }
+          },
+          "status": "PASSED"
+        },
+        {
+          "id": "docs/testing/dashboard-d15/test_workflows_d15.py::test_10_revocation_blocks_fresh_v2_scope_and_preserves_history",
+          "phases": {
+            "setup": {
+              "outcome": "PASSED"
+            },
+            "call": {
+              "outcome": "PASSED"
+            },
+            "teardown": {
+              "outcome": "PASSED"
+            }
+          },
+          "status": "PASSED"
+        }
+      ],
+      "count_semantics": "pytest phase reports; a call failure and teardown error count separately; case_counts are exclusive",
+      "credentials_or_exception_payloads_recorded": false
+    },
+    "connection_guard": {
+      "guard": "d15-retained-workflow-write.1",
+      "target": "ccs_ga_d15_test",
+      "role": "ccs_ga_d15_tester",
+      "counts": {
+        "physical_connections": 168,
+        "identity_checks": 1551,
+        "guarded_statements": 884
+      },
+      "owned_connections_closed": true,
+      "owned_connection_cleanup_verified": true,
+      "schema_retained": true,
+      "migration_commit_completed": true,
+      "fixture_preparation_started": true,
+      "fictional_rows_retained": true,
+      "end_state_verification": {
+        "status": "COMPLETED_UPGRADE_VERIFIED",
+        "revision": "d13_0001",
+        "retained_schema_matches_entry": true,
+        "row_counts": {
+          "academic_course_offerings": 0,
+          "academic_courses": 0,
+          "academic_faculty_legacy_codes": 0,
+          "academic_scopes": 0,
+          "academic_sections": 0,
+          "academic_terms": 0,
+          "academic_years": 0,
+          "faculty_adjustment_decisions": 1,
+          "faculty_adjustment_events": 2,
+          "faculty_adjustment_requests": 1,
+          "faculty_identities": 3,
+          "gec_events": 3,
+          "gec_records": 1,
+          "gec_revisions": 2,
+          "login_sessions": 2,
+          "published_schedule_heads": 1,
+          "published_schedule_versions": 2,
+          "schedule_adjustment_applications": 1,
+          "users": 6
+        },
+        "fictional_rows_retained": true
+      },
+      "cleanup_DDL_executed": false
+    },
+    "started_at": "2026-10-25T17:35:52.806839+08:00",
+    "finished_at": "2026-10-25T17:36:44.641150+08:00",
+    "runner_elapsed_seconds": 51.831,
+    "pytest_seconds": 49.38,
+    "canonical_schema_hashes_verified": true,
+    "retained_projection_independently_verified": true,
+    "retained_entry_byte_identical_to_previous_retest": true,
+    "warnings": {
+      "total": 5,
+      "alembic_path_separator": 3,
+      "starlette_HTTPX_TestClient": 1,
+      "anyio_BlockingPortal_alias": 1
+    },
+    "status_spelling": "Saved artifact uses COMPLETED_UPGRADE_VERIFIED; user transcription omitted the final D in COMPLETED; no artifact mismatch"
+  },
+  "checkpoint_file_inventory": {
+    "count": 76,
+    "extension_counts": {
+      ".py": 18,
+      ".json": 57,
+      ".md": 1
+    },
+    "paths": [
+      "docs/dashboard-d15-postgresql-acceptance.md",
+      "docs/testing/dashboard-d15/20261025T025753803887+0800-postgres-collection/command.json",
+      "docs/testing/dashboard-d15/20261025T025754994679+0800-academic-offline/command.json",
+      "docs/testing/dashboard-d15/20261025T025756136494+0800-backend/command.json",
+      "docs/testing/dashboard-d15/20261025T025829583597+0800-v2-api/command.json",
+      "docs/testing/dashboard-d15/20261025T025830599003+0800-v2-engine/command.json",
+      "docs/testing/dashboard-d15/20261025T025831818994+0800-d11-backend/command.json",
+      "docs/testing/dashboard-d15/20261025T025914668669+0800-d13-backend/command.json",
+      "docs/testing/dashboard-d15/20261025T025914751444+0800-d12-backend/command.json",
+      "docs/testing/dashboard-d15/20261025T025915484597+0800-focused/command.json",
+      "docs/testing/dashboard-d15/20261025T152803425452+0800-d15-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T152919899682+0800-d15-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T153042027709+0800-d15-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T153542972324+0800-read-only-preflight/result.json",
+      "docs/testing/dashboard-d15/20261025T154918707463+0800-d15-write-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T155416476220+0800-d15-write-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T155632444459+0800-d15-write-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T155633200135+0800-d15-phase4c-collection/command.json",
+      "docs/testing/dashboard-d15/20261025T155743894943+0800-d15-write-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T155911727911+0800-d15-write-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T160018333458+0800-d15-write-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T160918219600+0800-phase4c-postgresql/command.json",
+      "docs/testing/dashboard-d15/20261025T160918219600+0800-phase4c-postgresql/connection-guard-summary.json",
+      "docs/testing/dashboard-d15/20261025T160918219600+0800-phase4c-postgresql/pytest-results.json",
+      "docs/testing/dashboard-d15/20261025T162100780015+0800-d15-workflow-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T162110510706+0800-d15-workflow-rehearsal/command.json",
+      "docs/testing/dashboard-d15/20261025T162110940652+0800-d15-workflow-collection/command.json",
+      "docs/testing/dashboard-d15/20261025T162145100261+0800-d15-workflow-rehearsal/command.json",
+      "docs/testing/dashboard-d15/20261025T162237295661+0800-d15-workflow-rehearsal/command.json",
+      "docs/testing/dashboard-d15/20261025T162541849252+0800-d15-workflow-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/command.json",
+      "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/connection-guard-summary.json",
+      "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/pytest-results.json",
+      "docs/testing/dashboard-d15/20261025T165138467218+0800-d15-workflow-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T165207587096+0800-d15-workflow-rehearsal/command.json",
+      "docs/testing/dashboard-d15/20261025T165207643544+0800-d15-workflow-collection/command.json",
+      "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/command.json",
+      "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/connection-guard-summary.json",
+      "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/pytest-results.json",
+      "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/retained-schema.json",
+      "docs/testing/dashboard-d15/20261025T172629093011+0800-d15-workflow-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T172802017835+0800-d15-workflow-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T172900027377+0800-d15-workflow-rehearsal/command.json",
+      "docs/testing/dashboard-d15/20261025T172900623569+0800-d15-workflow-collection/command.json",
+      "docs/testing/dashboard-d15/20261025T172940483974+0800-d15-workflow-guard/command.json",
+      "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/command.json",
+      "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/connection-guard-summary.json",
+      "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/pytest-results.json",
+      "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/retained-schema.json",
+      "docs/testing/dashboard-d15/20261025T173552806839+0800-workflows-postgresql/upgraded-schema.json",
+      "docs/testing/dashboard-d15/audit_evidence.py",
+      "docs/testing/dashboard-d15/credential-readiness.json",
+      "docs/testing/dashboard-d15/d15_phase4c_plugin.py",
+      "docs/testing/dashboard-d15/d15_target_guard.py",
+      "docs/testing/dashboard-d15/d15_workflow_guard.py",
+      "docs/testing/dashboard-d15/d15_workflow_plugin.py",
+      "docs/testing/dashboard-d15/d15_write_guard.py",
+      "docs/testing/dashboard-d15/environment-inspection.json",
+      "docs/testing/dashboard-d15/fixtures/pg18-constraint-inventory.json",
+      "docs/testing/dashboard-d15/manifest.json",
+      "docs/testing/dashboard-d15/operator-pg18-diagnosis.json",
+      "docs/testing/dashboard-d15/operator-post-abort-diagnosis.json",
+      "docs/testing/dashboard-d15/preflight.py",
+      "docs/testing/dashboard-d15/preservation-baseline.json",
+      "docs/testing/dashboard-d15/run_offline_checks.py",
+      "docs/testing/dashboard-d15/run_phase4c.py",
+      "docs/testing/dashboard-d15/run_workflows.py",
+      "docs/testing/dashboard-d15/static-inspection.json",
+      "docs/testing/dashboard-d15/test_d15_target_guard.py",
+      "docs/testing/dashboard-d15/test_d15_workflow_guard.py",
+      "docs/testing/dashboard-d15/test_d15_workflow_tooling.py",
+      "docs/testing/dashboard-d15/test_d15_write_guard.py",
+      "docs/testing/dashboard-d15/test_phase4c_d15.py",
+      "docs/testing/dashboard-d15/test_workflow_rehearsal.py",
+      "docs/testing/dashboard-d15/test_workflows_d15.py",
+      "docs/testing/dashboard-d15/workflow_fixture.py"
+    ],
+    "excluded_protected_modification": "backend/data/faculty_preferences.json",
+    "all_paths_new_relative_to_baseline": true
+  },
+  "final_review": {
+    "status": "PASS",
+    "safe_to_propose_checkpoint": true,
+    "Git_checkpoint_authorized": false,
+    "files_updated_during_review": [
+      "docs/dashboard-d15-postgresql-acceptance.md",
+      "docs/testing/dashboard-d15/manifest.json"
+    ],
+    "baseline_files_verified": 1295,
+    "previous_manifest_artifacts_verified_before_updates": 70,
+    "current_artifacts_hashed": 75,
+    "privacy_findings": 0,
+    "database_operations": 0,
+    "test_reruns": 0,
+    "git_mutations": 0,
+    "production_authority": "BLOCKED",
+    "methods": [
+      "Prior raw SHA256 baseline and artifact verification",
+      "Independent canonical catalog hashes and retained-schema projection",
+      "Exact case IDs and every setup/call/teardown outcome",
+      "Guard cleanup and observed retained row counts",
+      "Full/truncated secrets/receipts scans, decoded JSON and private faculty-name comparison",
+      "AST parse and whitespace checks; Git inventory/index/HEAD inspection"
+    ]
+  }
+}

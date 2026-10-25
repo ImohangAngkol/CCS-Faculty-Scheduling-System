@@ -1,0 +1,30 @@
+{
+  "check": "d15-workflow-rehearsal",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "--noconftest",
+    "docs/testing/dashboard-d15/test_workflow_rehearsal.py",
+    "-q",
+    "-x",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d15-offline-20261025T162237295661+0800-d15-workflow-rehearsal"
+  ],
+  "cwd": ".",
+  "started_at": "2026-10-25T16:22:37.297007+08:00",
+  "finished_at": "2026-10-25T16:22:46.843762+08:00",
+  "elapsed_seconds": 9.547,
+  "exit_code": 0,
+  "stdout": ".......                                                                  [100%]\n============================== warnings summary ===============================\ndocs/testing/dashboard-d15/test_workflow_rehearsal.py::test_02_durable_confirmation_revision_and_concurrent_one_winner\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\ndocs/testing/dashboard-d15/test_workflow_rehearsal.py::test_02_durable_confirmation_revision_and_concurrent_one_winner\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n7 passed, 2 warnings in 7.78s\n",
+  "stderr": "",
+  "scope": "Owned fictional SQLite rehearsal of new workflow fixtures; NOT PostgreSQL migration, trigger or locking evidence",
+  "database_scope": "Offline/owned fictional SQLite only; no live PostgreSQL operation",
+  "environment": "Whitelisted OS variables only; all database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignments/headers, full/truncated receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

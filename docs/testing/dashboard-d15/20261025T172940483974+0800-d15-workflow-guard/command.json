@@ -1,0 +1,32 @@
+{
+  "check": "d15-workflow-guard",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "--noconftest",
+    "docs/testing/dashboard-d15/test_d15_target_guard.py",
+    "docs/testing/dashboard-d15/test_d15_write_guard.py",
+    "docs/testing/dashboard-d15/test_d15_workflow_guard.py",
+    "docs/testing/dashboard-d15/test_d15_workflow_tooling.py",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d15-offline-20261025T172940483974+0800-d15-workflow-guard"
+  ],
+  "cwd": ".",
+  "started_at": "2026-10-25T17:29:40.485555+08:00",
+  "finished_at": "2026-10-25T17:29:47.982313+08:00",
+  "elapsed_seconds": 7.497,
+  "exit_code": 0,
+  "stdout": "........................................................................ [ 15%]\n........................................................................ [ 30%]\n........................................................................ [ 46%]\n........................................................................ [ 61%]\n........................................................................ [ 76%]\n........................................................................ [ 92%]\n.....................................                                    [100%]\n469 passed in 6.24s\n",
+  "stderr": "",
+  "scope": "Offline D15 target/write guard; fake DBAPI catalogs and blocked real connectors",
+  "database_scope": "Offline/owned fictional SQLite only; no live PostgreSQL operation",
+  "environment": "Whitelisted OS variables only; all database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignments/headers, full/truncated receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

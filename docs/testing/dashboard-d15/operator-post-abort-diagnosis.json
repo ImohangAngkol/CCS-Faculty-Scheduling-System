@@ -1,0 +1,40 @@
+{
+  "kind": "Post-failure read-only recovery diagnostic supplied by user",
+  "attribution": "USER_REPORTED in chat; no raw terminal artifact or original execution timestamp supplied. Codex did not execute this diagnostic.",
+  "recorded_at": "2026-10-25T17:30:36.759890+08:00",
+  "original_execution_timestamp": null,
+  "result": {
+    "status": "READ_ONLY_DIAGNOSTIC_COMPLETE",
+    "database": "ccs_ga_d15_test",
+    "session_user": "ccs_ga_d15_tester",
+    "current_user": "ccs_ga_d15_tester",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "verified_revision": "4c_0001",
+    "retained_schema_guard_passed": true,
+    "all_ten_fixture_tables_empty": true,
+    "schema_matches_retest_entry": true,
+    "read_only_enforcement_verified": true,
+    "writes_performed": false,
+    "owned_connection_cleanup_verified": true
+  },
+  "conclusion": "User-reported diagnostic confirms failed D9 transaction rolled back and retained catalog matches retest entry; no new live diagnostic performed during this correction.",
+  "retest_artifacts": [
+    {
+      "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/command.json",
+      "sha256": "ded6185fa33de8139453299085d9bd1d4b3a722405597bea35e897187430efb1"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/connection-guard-summary.json",
+      "sha256": "d4fb2a7b6d851f1c8f64a3b0d970b07f79cdd24904e313bc446d3f5518630923"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/pytest-results.json",
+      "sha256": "01c8681803f660aa380a2b9b7efe1b10f5ffd5d88293e8314db3967286aaa9ed"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T170223852944+0800-workflows-postgresql/retained-schema.json",
+      "sha256": "c1795f3718b025b7eac934443971822cdd4a218218e1c5a8c3c0f58994131127"
+    }
+  ]
+}

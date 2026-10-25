@@ -1,0 +1,49 @@
+{
+  "kind": "PostgreSQL 18 constraint diagnostic supplied by user",
+  "attribution": "USER_REPORTED in chat; no original terminal JSON file or original diagnostic timestamps supplied; Codex did not execute the diagnostic",
+  "recorded_at": "2026-10-25T16:52:50.833500+08:00",
+  "original_execution_timestamp": null,
+  "environment": {
+    "server_version": "18.6",
+    "database": "ccs_ga_d15_test",
+    "session_user": "ccs_ga_d15_tester",
+    "current_user": "ccs_ga_d15_tester",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "revision": "4c_0001"
+  },
+  "constraint_type_counts": {
+    "n": 76,
+    "p": 11,
+    "c": 37,
+    "f": 11,
+    "u": 18
+  },
+  "differences": {
+    "missing_non_not_null_constraints": [],
+    "unexpected_non_not_null_constraints": [],
+    "missing_not_null_columns": [],
+    "unexpected_not_null_columns": [],
+    "unvalidated_or_unenforced": []
+  },
+  "academic_identity_table_count": 10,
+  "all_academic_identity_table_row_counts_zero": true,
+  "read_only_enforcement_verified": true,
+  "writes_performed": false,
+  "owned_connection_cleanup_verified": true,
+  "authorized_correction": "D15 guard-only PostgreSQL18 NOT NULL validation and independent offline tests; no database write execution from Codex",
+  "prior_failure_artifacts": [
+    {
+      "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/command.json",
+      "sha256": "a231edd759da4e17d84d3dcfcc5cf2b1981994f5fc00b049dcf20b217207e0a9"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/connection-guard-summary.json",
+      "sha256": "c2493ada58fc11a5ac93cc6817560cb96a6a5d76282acaab946b7909ec3f983e"
+    },
+    {
+      "path": "docs/testing/dashboard-d15/20261025T163206495077+0800-workflows-postgresql/pytest-results.json",
+      "sha256": "331afcaa9542ad15f29942a995de7817f711d373960a32dbdf52c94ea979be34"
+    }
+  ]
+}

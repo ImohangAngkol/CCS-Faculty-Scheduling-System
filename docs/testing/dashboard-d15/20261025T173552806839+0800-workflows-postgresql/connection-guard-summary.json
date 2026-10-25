@@ -1,0 +1,44 @@
+{
+  "guard": "d15-retained-workflow-write.1",
+  "target": "ccs_ga_d15_test",
+  "role": "ccs_ga_d15_tester",
+  "counts": {
+    "physical_connections": 168,
+    "identity_checks": 1551,
+    "guarded_statements": 884
+  },
+  "owned_connections_closed": true,
+  "owned_connection_cleanup_verified": true,
+  "schema_retained": true,
+  "migration_commit_completed": true,
+  "fixture_preparation_started": true,
+  "fictional_rows_retained": true,
+  "end_state_verification": {
+    "status": "COMPLETED_UPGRADE_VERIFIED",
+    "revision": "d13_0001",
+    "retained_schema_matches_entry": true,
+    "row_counts": {
+      "academic_course_offerings": 0,
+      "academic_courses": 0,
+      "academic_faculty_legacy_codes": 0,
+      "academic_scopes": 0,
+      "academic_sections": 0,
+      "academic_terms": 0,
+      "academic_years": 0,
+      "faculty_adjustment_decisions": 1,
+      "faculty_adjustment_events": 2,
+      "faculty_adjustment_requests": 1,
+      "faculty_identities": 3,
+      "gec_events": 3,
+      "gec_records": 1,
+      "gec_revisions": 2,
+      "login_sessions": 2,
+      "published_schedule_heads": 1,
+      "published_schedule_versions": 2,
+      "schedule_adjustment_applications": 1,
+      "users": 6
+    },
+    "fictional_rows_retained": true
+  },
+  "cleanup_DDL_executed": false
+}

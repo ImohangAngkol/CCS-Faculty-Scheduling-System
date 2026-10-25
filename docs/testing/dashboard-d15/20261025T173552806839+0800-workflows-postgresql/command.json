@@ -1,0 +1,32 @@
+{
+  "check": "workflows-postgresql",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-p",
+    "d15_workflow_plugin",
+    "--noconftest",
+    "docs/testing/dashboard-d15/test_workflows_d15.py",
+    "-q",
+    "-x",
+    "--tb=no",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d15-postgresql-20261025T173552806839+0800-workflows-postgresql"
+  ],
+  "cwd": ".",
+  "started_at": "2026-10-25T17:35:52.806839+08:00",
+  "finished_at": "2026-10-25T17:36:44.641150+08:00",
+  "elapsed_seconds": 51.831,
+  "exit_code": 0,
+  "stdout": "..........                                                               [100%]\n============================== warnings summary ===============================\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_01_additive_upgrade_atomic_rollback_then_commit\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_01_additive_upgrade_atomic_rollback_then_commit\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_01_additive_upgrade_atomic_rollback_then_commit\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\alembic\\config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.\n    util.warn_deprecated(\n\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_02_durable_confirmation_revision_and_concurrent_one_winner\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\ndocs/testing/dashboard-d15/test_workflows_d15.py::test_02_durable_confirmation_revision_and_concurrent_one_winner\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n10 passed, 5 warnings in 49.38s\n",
+  "stderr": "",
+  "infrastructure_error": null,
+  "scope": "Actual PostgreSQL only: retained 4c SELECT-only compatibility gate, additive D9-D13 migrations, real FastAPI services, fictional authority/resources, actual V2 generation and independent transactions; no browser run",
+  "environment": "Whitelisted OS plus dedicated private D15 URL and controlled runner flags; no DATABASE_URL or PG defaults inherited",
+  "cleanup": "No reset/drop/truncate/reseed/cleanup DDL. Rollback-only upgrade rehearsals precede committed additive upgrades. All new fictional rows and schema retained."
+}

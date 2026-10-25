@@ -1,0 +1,75 @@
+{
+  "inspection": "Static AST/source only; SQL functions/triggers not compiled or executed online",
+  "migrations": [
+    {
+      "path": "backend/migrations/versions/4a_0001_identity.py",
+      "revision": "4a_0001",
+      "down_revision": null
+    },
+    {
+      "path": "backend/migrations/versions/4c_0001_academic_foundation.py",
+      "revision": "4c_0001",
+      "down_revision": "4a_0001"
+    },
+    {
+      "path": "backend/migrations/versions/d11_0001_faculty_adjustments.py",
+      "revision": "d11_0001",
+      "down_revision": "d9_0001"
+    },
+    {
+      "path": "backend/migrations/versions/d12_0001_chair_decisions.py",
+      "revision": "d12_0001",
+      "down_revision": "d11_0001"
+    },
+    {
+      "path": "backend/migrations/versions/d13_0001_schedule_application.py",
+      "revision": "d13_0001",
+      "down_revision": "d12_0001"
+    },
+    {
+      "path": "backend/migrations/versions/d9_0001_confirmation_ledger.py",
+      "revision": "d9_0001",
+      "down_revision": "4c_0001"
+    }
+  ],
+  "tables_by_models": {
+    "backend/identity_models.py": [
+      "faculty_identities",
+      "users",
+      "login_sessions"
+    ],
+    "backend/academic_models.py": [
+      "academic_scopes",
+      "academic_years",
+      "academic_terms",
+      "academic_faculty_legacy_codes",
+      "academic_courses",
+      "academic_sections",
+      "academic_course_offerings"
+    ],
+    "backend/confirmation_models.py": [
+      "gec_records",
+      "gec_revisions",
+      "gec_events"
+    ],
+    "backend/adjustment_models.py": [
+      "faculty_adjustment_requests",
+      "faculty_adjustment_events"
+    ],
+    "backend/chair_models.py": [
+      "faculty_adjustment_decisions"
+    ],
+    "backend/application_models.py": [
+      "published_schedule_versions",
+      "published_schedule_heads",
+      "schedule_adjustment_applications"
+    ]
+  },
+  "expected_table_count_including_alembic_version": 20,
+  "configuration_findings": {
+    "runtime_identity": "DATABASE_URL explicit PostgreSQL only; not invoked",
+    "alembic": "Caller-owned Config.attributes connection avoids URL lookup; bare CLI uses DATABASE_URL, so prohibited for acceptance without exact gated wrapper",
+    "original_Phase4C_gate": "Exact original Phase4C name/role; will not accept proposed D15 target; no override or weakening performed"
+  },
+  "database_operations": 0
+}

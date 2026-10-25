@@ -1,0 +1,14 @@
+{
+  "guard": "d15-retained-workflow-write.1",
+  "target": "ccs_ga_d15_test",
+  "role": "ccs_ga_d15_tester",
+  "counts": {
+    "physical_connections": 1,
+    "identity_checks": 1,
+    "guarded_statements": 0
+  },
+  "owned_connections_closed": true,
+  "schema_retained": true,
+  "fictional_rows_retained": true,
+  "cleanup_DDL_executed": false
+}
