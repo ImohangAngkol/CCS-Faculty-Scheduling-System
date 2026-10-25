@@ -17,4 +17,4 @@ export async function applicationAccess(signal?:AbortSignal){return access.parse
 export async function applicationQueue(include_applied=false,signal?:AbortSignal){return queue.parse((await apiClient.get(base,{params:{include_applied},signal})).data);}
 export async function applicationPreview(id:string){return preview.parse((await apiClient.get(`${base}/${encodeURIComponent(id)}/preview`)).data);}
 export async function applyAdjustment(row:ApplicationPreview,operation_id:string){if(!row.command)throw new Error("Preview required");return applicationSchema.parse((await apiClient.post(`${base}/${row.request.id}/apply`,{...row.command,operation_id})).data);}
-export async function publishedVersions(version_id?:string){return versions.parse((await apiClient.get(base+"/versions",{params:{version_id}})).data);}
+export async function publishedVersions(version_id?:string,signal?:AbortSignal){return versions.parse((await apiClient.get(base+"/versions",{params:{version_id},signal})).data);}
