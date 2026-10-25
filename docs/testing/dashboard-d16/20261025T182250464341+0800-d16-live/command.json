@@ -1,0 +1,28 @@
+{
+  "check": "d16-live",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/dashboard/test_readiness_live.py",
+    "-q",
+    "-s",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\d16-pytest-20261025T182250464341+0800-d16-live"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-25T18:22:50.466396+08:00",
+  "finished_at": "2026-10-25T18:23:26.898917+08:00",
+  "elapsed_seconds": 36.433,
+  "exit_code": 1,
+  "stdout": "\u2716 D16 actual HTTP/Edge whole system journey using actual constrained generation and fictional institutional providers (25644.4769ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 0\n\u2139 fail 1\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 25652.3891\n\n\u2716 failing tests:\n\ntest at tests\\functionalReadiness.live.mjs:18:1\n\u2716 D16 actual HTTP/Edge whole system journey using actual constrained generation and fictional institutional providers (25644.4769ms)\n  Error: Browser command timeout: Runtime.enable\n      at Timeout._onTimeout (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/functionalReadiness.live.mjs:21:136)\n      at listOnTimeout (node:internal/timers:605:17)\n      at process.processTimers (node:internal/timers:541:7)\n\nF\n================================== FAILURES ===================================\n___________________ test_readiness_edge_fastapi_sqlite_flow ___________________\ntests\\dashboard\\test_readiness_live.py:73: in test_readiness_edge_fastapi_sqlite_flow\n    assert result.returncode==0,\"Live D16 fixture failed; sanitized scenario evidence retained\"\nE   AssertionError: Live D16 fixture failed; sanitized scenario evidence retained\nE   assert 1 == 0\nE    +  where 1 = CompletedProcess(args=['node', 'tests/functionalReadiness.live.mjs'], returncode=1, stdout='\u2716 D16 actual HTTP/Edge who...listOnTimeout (node:internal/timers:605:17)\\n      at process.processTimers (node:internal/timers:541:7)\\n', stderr='').returncode\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/dashboard/test_readiness_live.py::test_readiness_edge_fastapi_sqlite_flow\n1 failed, 2 warnings in 34.24s\n",
+  "stderr": "",
+  "scope": "D16 actual Edge/React to owned FastAPI/SQLite with real authentication, GA generation, confirmation, decisions and application; all institutional providers/resources explicitly fictional",
+  "environment": "Whitelisted OS variables only; database URLs/credentials/approval flags excluded",
+  "sanitization": "Whole sensitive assignment/header lines, full/truncated signed receipts, [REDACTED_SESSION_RECEIPT] credential URIs and private keys filtered before writing"
+}

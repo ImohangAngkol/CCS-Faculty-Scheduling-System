@@ -1,0 +1,1153 @@
+{
+  "milestone": "D16",
+  "recorded_at": "2026-10-25T18:37:36.495883+08:00",
+  "status": "PASS within isolated fictional demonstration; institutional production activation BLOCKED",
+  "source_commit": "2de39fb92eed6ac68036f45b1c82c8fb5fafe791",
+  "feature_matrix": [
+    {
+      "feature": "Login, logout, session recovery and role/owner checks",
+      "status": "WORKING",
+      "evidence_and_limit": "Fresh auth/control tests and live browser login/logout/denial; genuine authentication, no principal bypass in D16 journeys."
+    },
+    {
+      "feature": "Faculty dashboard/profile and subject catalog",
+      "status": "WORKING",
+      "evidence_and_limit": "D1 synthetic HTTP browser regressions, metadata/contracts and live subject view. Profile is read-only metadata."
+    },
+    {
+      "feature": "Faculty preferences",
+      "status": "WORKING",
+      "evidence_and_limit": "Real HTTP save/full reload in owned temporary storage; invalid input and cross-owner tests. Production preferences untouched."
+    },
+    {
+      "feature": "Faculty own timetable and applied status/history",
+      "status": "WORKING",
+      "evidence_and_limit": "Live generated own view, APPLIED request and version-2 timetable; foreign faculty reads denied."
+    },
+    {
+      "feature": "Faculty draft/validate/submit/withdraw requests",
+      "status": "WORKING",
+      "evidence_and_limit": "D11 and new generated-source negative tests; immutable original content/history."
+    },
+    {
+      "feature": "Chair department filtering while a request is pending",
+      "status": "FIXED",
+      "evidence_and_limit": "Deliberately held real HTTP filter request reproduced stale actionable rows; final D16-L03 verifies clearing and D16-F01 screenshot shows loading without stale rows."
+    },
+    {
+      "feature": "Chair approve/reject and immutable decision history",
+      "status": "WORKING",
+      "evidence_and_limit": "D12 tests and live independent approval/rejection. Approval does not publish."
+    },
+    {
+      "feature": "Application preview, rollback, retry and concurrent application",
+      "status": "WORKING",
+      "evidence_and_limit": "D13 tests; live injected rollback plus two real competing requests, one success/one conflict."
+    },
+    {
+      "feature": "Published history after a full page reload with no pending requests",
+      "status": "FIXED",
+      "evidence_and_limit": "Previously absent until opening a request; final D16-L06 and D16-F02 capture show both versions without a queue selection."
+    },
+    {
+      "feature": "History read failure/retry independent of queue",
+      "status": "WORKING",
+      "evidence_and_limit": "D16-F03 injects a FastAPI history-service failure: authorized queue remains usable, retry restores history and clears the error."
+    },
+    {
+      "feature": "GEC manual/CSV/XLSX intake, review calendar and reconciliation",
+      "status": "WORKING",
+      "evidence_and_limit": "Fresh 327-case backend selection and D3-D8 synthetic HTTP browser regressions. Temporary review is not confirmation."
+    },
+    {
+      "feature": "GEC review handoff/print CSS",
+      "status": "WORKING",
+      "evidence_and_limit": "Existing frontend/browser regression fixture; native print dialog/physical output NOT TESTED in D16."
+    },
+    {
+      "feature": "Fictional durable GEC confirmation and revision trust",
+      "status": "WORKING",
+      "evidence_and_limit": "Real API fixture confirmation, live ledger inspection and backend confirmation/evidence tests. Initial confirmation is fixture-prepared, not created by D16 browser UI."
+    },
+    {
+      "feature": "V2 constrained generation, schedule and original fitness",
+      "status": "WORKING",
+      "evidence_and_limit": "Actual live UI generation, backend kernel/API tests; complete current confirmation-head checks and original operators preserved."
+    },
+    {
+      "feature": "V1 current-release creation/continuation",
+      "status": "WORKING",
+      "evidence_and_limit": "Four actual V1 fixture tests; strict fingerprints and existing compatibility policy unchanged."
+    },
+    {
+      "feature": "GA monitoring, saved/history/fitness viewers",
+      "status": "WORKING",
+      "evidence_and_limit": "51 synthetic HTTP GA browser scenarios and contracts. No production-sized GA performance claim."
+    },
+    {
+      "feature": "Persistence across reload/reconnection/fresh login",
+      "status": "WORKING",
+      "evidence_and_limit": "Browser reload, owned engine pool disposal/new TestClient login and separate read-only Python/SQLite row-count verification."
+    },
+    {
+      "feature": "Academic identity foundation and import planning",
+      "status": "WORKING",
+      "evidence_and_limit": "85 offline academic cases; seven-table model, read-only repository and identity-only dry-run planner inspected."
+    },
+    {
+      "feature": "End-user academic resource CRUD/import-to-runtime catalog",
+      "status": "INCOMPLETE",
+      "evidence_and_limit": "Current subject/faculty/room pages are viewers. Phase4C foundation is not a complete catalog-management UI or an automatically activated GA source. Fictional fixture prepares explicit resources instead."
+    },
+    {
+      "feature": "Initial GA proposal to first published source through production UI",
+      "status": "INCOMPLETE",
+      "evidence_and_limit": "Existing guarded provider boundary requires an independently authorized published source. D16 uses the existing explicit fictional handoff; no automatic promotion or new policy invented."
+    },
+    {
+      "feature": "Genuine GEC issuer/confirmation, complete term/resource catalog, Chair and publisher mandates",
+      "status": "BLOCKED",
+      "evidence_and_limit": "Existing institutional providers are unconfigured. Account role alone cannot replace them. No demo provider installed in deployment."
+    },
+    {
+      "feature": "New PostgreSQL acceptance",
+      "status": "NOT TESTED",
+      "evidence_and_limit": "D15's 17+10 recorded passes remain historical and byte-identical; no D16 PostgreSQL connection or database operation."
+    },
+    {
+      "feature": "Full backend process restart with production providers, physical outage/crash recovery",
+      "status": "NOT TESTED",
+      "evidence_and_limit": "Pool reconnection, fresh clients, separate read-only process and controlled owned HTTP shutdown tested; these do not prove production process/crash recovery."
+    },
+    {
+      "feature": "Native print, other browsers/platforms, load/quality studies and deployment",
+      "status": "NOT TESTED",
+      "evidence_and_limit": "No claims from the small fictional demonstration."
+    }
+  ],
+  "environment": {
+    "Python": "3.14.2",
+    "SQLite": "3.50.4",
+    "Node": "v24.11.1",
+    "Edge": "Edg/155.0.4283.62",
+    "fastapi": "0.141.1",
+    "starlette": "1.6.0",
+    "sqlalchemy": "2.0.52",
+    "alembic": "1.19.2"
+  },
+  "latest_commands": {
+    "d16-live": {
+      "path": "docs/testing/dashboard-d16/20261025T183158054647+0800-d16-live/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 44.455,
+      "scope": "D16 actual Edge/React to owned FastAPI/SQLite with real authentication, GA generation, confirmation, decisions and application; all institutional providers/resources explicitly fictional"
+    },
+    "focused": {
+      "path": "docs/testing/dashboard-d16/20261025T182350005602+0800-focused/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 25.423,
+      "scope": "D16 cross-milestone actual FastAPI/SQLite with real operators and fictional guarded institutional resources/providers"
+    },
+    "contracts": {
+      "path": "docs/testing/dashboard-d16/20261025T182846118798+0800-contracts/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 3.875,
+      "scope": "Frontend API/model contracts, not rendered UI or live backend authorization"
+    },
+    "continuous": {
+      "path": "docs/testing/dashboard-d16/20261025T182503246120+0800-continuous/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 42.723,
+      "scope": "D14 cross-milestone actual FastAPI/SQLite with real operators and fictional guarded institutional resources/providers"
+    },
+    "d12-backend": {
+      "path": "docs/testing/dashboard-d16/20261025T182620315226+0800-d12-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 78.511,
+      "scope": "D12 real FastAPI authentication/transactions with explicit fictional Chair and schedule providers; owned SQLite only, PostgreSQL rendering offline"
+    },
+    "d11-backend": {
+      "path": "docs/testing/dashboard-d16/20261025T182620358672+0800-d11-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 32.866,
+      "scope": "D11 real FastAPI sessions/ownership and SQLAlchemy transactions, fictional guarded schedule/catalog and owned SQLite; offline PostgreSQL SQL rendering only"
+    },
+    "d13-backend": {
+      "path": "docs/testing/dashboard-d16/20261025T182621276370+0800-d13-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 123.358,
+      "scope": "D13 actual FastAPI/auth/transactional SQLite with fictional independent publisher, Chair and published schedule; PostgreSQL SQL rendering only"
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-d16/20261025T183217855921+0800-lint/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 7.486,
+      "scope": "Focused ESLint; existing warnings are retained without changing legacy page logic"
+    },
+    "build": {
+      "path": "docs/testing/dashboard-d16/20261025T183217710585+0800-build/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 13.493,
+      "scope": "Production frontend compilation/bundling, not browser or database acceptance"
+    },
+    "backend-regressions": {
+      "path": "docs/testing/dashboard-d16/20261025T183105718262+0800-backend-regressions/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 45.052,
+      "scope": "Existing auth and GA control regression fixtures, no production database"
+    },
+    "backend": {
+      "path": "docs/testing/dashboard-d16/20261025T182840680089+0800-backend/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 53.209,
+      "scope": "Existing D2-D9 FastAPI/validation regressions using fictional fixtures and SQLite"
+    },
+    "v2-engine": {
+      "path": "docs/testing/dashboard-d16/20261025T182840836000+0800-v2-engine/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 31.577,
+      "scope": "Fictional V2 kernel, constraints and checkpoint tests; authority doubles are unit boundaries, not institutional verification"
+    },
+    "v1-fixtures": {
+      "path": "docs/testing/dashboard-d16/20261025T182841652303+0800-v1-fixtures/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 128.554,
+      "scope": "Fictional current-release V1 fixtures with original operators and actual checkpoint I/O/continuation"
+    },
+    "v2-api": {
+      "path": "docs/testing/dashboard-d16/20261025T182842698909+0800-v2-api/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 32.361,
+      "scope": "Actual FastAPI ASGI auth and D8/D9 transactions against owned SQLite with fictional resources/providers; no browser or PostgreSQL"
+    },
+    "ga-resource-regressions": {
+      "path": "docs/testing/dashboard-d16/20261025T182843771346+0800-ga-resource-regressions/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 8.91,
+      "scope": "Original preassignment/reset/resource regression fixtures; current academic inputs read internally, never modified"
+    },
+    "academic-offline": {
+      "path": "docs/testing/dashboard-d16/20261025T182845002036+0800-academic-offline/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 8.013,
+      "scope": "Academic foundation offline tests only; no PostgreSQL cases selected"
+    },
+    "ga-browser": {
+      "path": "docs/testing/dashboard-d16/20261025T182940163649+0800-ga-browser/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 80.004,
+      "scope": "Existing GA actual Edge/React regressions with synthetic HTTP replies"
+    },
+    "browser-regressions": {
+      "path": "docs/testing/dashboard-d16/20261025T183000911951+0800-browser-regressions/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 92.097,
+      "scope": "Existing D1-D8 actual Edge/React regressions with synthetic HTTP replies"
+    },
+    "v2-browser": {
+      "path": "docs/testing/dashboard-d16/20261025T183013206729+0800-v2-browser/command.json",
+      "exit_code": 0,
+      "elapsed_seconds": 9.399,
+      "scope": "Actual Edge/React with synthetic HTTP replies; no live FastAPI authorization or GA execution"
+    }
+  },
+  "backend_case_counts": {
+    "focused": 3,
+    "continuous": 6,
+    "backend": 327,
+    "d11-backend": 33,
+    "d12-backend": 42,
+    "d13-backend": 47,
+    "backend-regressions": 46,
+    "academic-offline": 85,
+    "v1-fixtures": 4,
+    "v2-engine": 30,
+    "v2-api": 18,
+    "ga-resource-regressions": 3
+  },
+  "backend_pytest_cases_passed": 644,
+  "frontend_contracts_passed": 207,
+  "synthetic_HTTP_browser_scenarios": {
+    "D1_D8": 125,
+    "GA": 51,
+    "V2": 12
+  },
+  "actual_Edge_FastAPI_SQLite_scenarios": 21,
+  "browser_parent_and_pytest_wrapper_excluded_from_scenario_counts": true,
+  "auth_browser_wrapper_in_46_backend_cases_not_added_separately": true,
+  "actual_browser_evidence": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/browser-results.json",
+  "failed_commands_preserved": [
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182250464341+0800-d16-live/command.json",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182401311073+0800-d16-live/command.json",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182446735950+0800-d16-live/command.json",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182533892225+0800-d16-live/command.json",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182840541607+0800-backend-regressions/command.json",
+      "exit_code": 1
+    }
+  ],
+  "failure_interpretation": "Two sandbox D16 CDP startup timeouts and one embedded auth CDP timeout; two unrestricted D16 runs reproduced F01 and F02. Later supervised unrestricted runs pass. No arbitrary timeout change.",
+  "defects_fixed": {
+    "D16-F01": "Clear stale actionable queue during Chair filter loading",
+    "D16-F02": "Fetch protected published history without selecting a pending request"
+  },
+  "demo": {
+    "command": ".\\.venv\\Scripts\\python.exe -B docs/testing/dashboard-d16/run_checks.py d16-live",
+    "kind": "Automated headless local demonstration, fresh fictional fixtures, no PostgreSQL",
+    "resources_and_initial_GEC_confirmation": "Prepared by existing real-service test fixture",
+    "initial_publication": "Explicit test-only provider/file handoff; no production promotion API",
+    "authority": "Fictional scoped providers only; production defaults unchanged"
+  },
+  "preservation": {
+    "baseline_files": 1371,
+    "byte_identical": 1368,
+    "intentional_frontend_changes": [
+      "frontend/src/api/scheduleApplications.ts",
+      "frontend/src/pages/admin/ScheduleApplications.tsx",
+      "frontend/src/pages/chair/Requests.tsx"
+    ],
+    "academic_data_files_preserved": 23,
+    "protected_preference_local_bytes_preserved": true,
+    "Git_index_HEAD_origin_unchanged": true,
+    "D15_artifact_hashes_preserved": 75,
+    "original_GA_migrations_checkpoints_schedules_prior_evidence_preserved": true,
+    "PostgreSQL_connections_or_operations": 0,
+    "staging_commits_pushes": 0
+  },
+  "privacy": {
+    "findings": 0,
+    "decoded_text_and_PNG_metadata_scanned": true,
+    "complete_and_partial_receipts_URIs_keys_headers_scanned": true,
+    "private_faculty_names_compared_locally_without_export": true,
+    "raw_DB_HAR_cookie_header_or_credential_handoffs_archived": false
+  },
+  "screenshots": [
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I01-real-preference-persistence.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I01-real-preference-persistence.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-L04-validated-application-preview.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-L05-rollback-blocked.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-L06-applied-version-history.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I01-real-preference-persistence.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I05-empty-published-timetable.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I06-owned-backend-unavailable.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L04-validated-application-preview.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L05-rollback-blocked.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L06-applied-version-history.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L07-faculty-published-timetable.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L11-trust-unavailable-blocked.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L13-mobile-preserved-version.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-F01-filter-loading.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-F02-history-after-reload.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I01-real-preference-persistence.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I05-empty-published-timetable.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I06-owned-backend-unavailable.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L04-validated-application-preview.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L05-rollback-blocked.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L06-applied-version-history.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L07-faculty-published-timetable.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L11-trust-unavailable-blocked.png",
+      "dimensions": [
+        1366,
+        1100
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L13-mobile-preserved-version.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "visually_reviewed": true
+    }
+  ],
+  "exact_changed_and_new_file_inventory": [
+    "backend/tests/dashboard/test_functional_readiness.py",
+    "backend/tests/dashboard/test_readiness_live.py",
+    "docs/dashboard-d16-functional-readiness.md",
+    "docs/screenshots/dashboard-d16/20261025T182250464341+0800-d16-live/browser-results.json",
+    "docs/screenshots/dashboard-d16/20261025T182401311073+0800-d16-live/browser-results.json",
+    "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I01-real-preference-persistence.png",
+    "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+    "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+    "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+    "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/browser-results.json",
+    "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I01-real-preference-persistence.png",
+    "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+    "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+    "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+    "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-L04-validated-application-preview.png",
+    "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-L05-rollback-blocked.png",
+    "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-L06-applied-version-history.png",
+    "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/browser-results.json",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I01-real-preference-persistence.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I05-empty-published-timetable.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I06-owned-backend-unavailable.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L04-validated-application-preview.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L05-rollback-blocked.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L06-applied-version-history.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L07-faculty-published-timetable.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L11-trust-unavailable-blocked.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L13-mobile-preserved-version.png",
+    "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/browser-results.json",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-F01-filter-loading.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-F02-history-after-reload.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I01-real-preference-persistence.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I05-empty-published-timetable.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I06-owned-backend-unavailable.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L04-validated-application-preview.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L05-rollback-blocked.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L06-applied-version-history.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L07-faculty-published-timetable.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L11-trust-unavailable-blocked.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L13-mobile-preserved-version.png",
+    "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/browser-results.json",
+    "docs/testing/dashboard-d16/20261025T182250464341+0800-d16-live/command.json",
+    "docs/testing/dashboard-d16/20261025T182350005602+0800-focused/command.json",
+    "docs/testing/dashboard-d16/20261025T182401311073+0800-d16-live/command.json",
+    "docs/testing/dashboard-d16/20261025T182446735950+0800-d16-live/command.json",
+    "docs/testing/dashboard-d16/20261025T182503092274+0800-contracts/command.json",
+    "docs/testing/dashboard-d16/20261025T182503246120+0800-continuous/command.json",
+    "docs/testing/dashboard-d16/20261025T182533892225+0800-d16-live/command.json",
+    "docs/testing/dashboard-d16/20261025T182620315226+0800-d12-backend/command.json",
+    "docs/testing/dashboard-d16/20261025T182620358672+0800-d11-backend/command.json",
+    "docs/testing/dashboard-d16/20261025T182621276370+0800-d13-backend/command.json",
+    "docs/testing/dashboard-d16/20261025T182705931478+0800-d16-live/command.json",
+    "docs/testing/dashboard-d16/20261025T182726573700+0800-lint/command.json",
+    "docs/testing/dashboard-d16/20261025T182726659492+0800-build/command.json",
+    "docs/testing/dashboard-d16/20261025T182726809216+0800-contracts/command.json",
+    "docs/testing/dashboard-d16/20261025T182840541607+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-d16/20261025T182840680089+0800-backend/command.json",
+    "docs/testing/dashboard-d16/20261025T182840836000+0800-v2-engine/command.json",
+    "docs/testing/dashboard-d16/20261025T182841652303+0800-v1-fixtures/command.json",
+    "docs/testing/dashboard-d16/20261025T182842698909+0800-v2-api/command.json",
+    "docs/testing/dashboard-d16/20261025T182843771346+0800-ga-resource-regressions/command.json",
+    "docs/testing/dashboard-d16/20261025T182845002036+0800-academic-offline/command.json",
+    "docs/testing/dashboard-d16/20261025T182846118798+0800-contracts/command.json",
+    "docs/testing/dashboard-d16/20261025T182940163649+0800-ga-browser/command.json",
+    "docs/testing/dashboard-d16/20261025T183000911951+0800-browser-regressions/command.json",
+    "docs/testing/dashboard-d16/20261025T183013206729+0800-v2-browser/command.json",
+    "docs/testing/dashboard-d16/20261025T183105718262+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-d16/20261025T183158054647+0800-d16-live/command.json",
+    "docs/testing/dashboard-d16/20261025T183217710585+0800-build/command.json",
+    "docs/testing/dashboard-d16/20261025T183217855921+0800-lint/command.json",
+    "docs/testing/dashboard-d16/audit-preparation.json",
+    "docs/testing/dashboard-d16/audit_evidence.py",
+    "docs/testing/dashboard-d16/manifest.json",
+    "docs/testing/dashboard-d16/preservation-baseline.json",
+    "docs/testing/dashboard-d16/run_checks.py",
+    "frontend/src/api/scheduleApplications.ts",
+    "frontend/src/pages/admin/ScheduleApplications.tsx",
+    "frontend/src/pages/chair/Requests.tsx",
+    "frontend/tests/functionalReadiness.live.mjs",
+    "frontend/tests/functionalReadiness.test.mjs"
+  ],
+  "preexisting_protected_modification_excluded": "backend/data/faculty_preferences.json",
+  "limitations": [
+    "Genuine institutional authority and production publication remain BLOCKED",
+    "Academic resource CRUD/import-to-runtime and first-publication UI remain incomplete",
+    "Native printing, physical outage, whole-production-process restart and scale/quality studies not tested",
+    "Some viewport captures omit below-fold preference/empty-state labels; assertions establish those results",
+    "D15 PostgreSQL results historical, not rerun; its populated target untouched",
+    "No persistent attended demo launcher; verified one-command headless demonstration only"
+  ],
+  "hash_convention": "Raw SHA256, manifest excludes itself; hashes do not prove institutional authority",
+  "artifacts": [
+    {
+      "path": "backend/tests/dashboard/test_functional_readiness.py",
+      "bytes": 4318,
+      "sha256": "f9d76ab913ec8da48c2301cbf995af1b909e9beafd58a0952c40c764d812d0ff"
+    },
+    {
+      "path": "backend/tests/dashboard/test_readiness_live.py",
+      "bytes": 5166,
+      "sha256": "94ca6c17ae0ad015decdf76c1618b03f47d80abae3cec43bada862097444557b"
+    },
+    {
+      "path": "docs/dashboard-d16-functional-readiness.md",
+      "bytes": 22442,
+      "sha256": "5a7c7630ecbacaf455a2089c6e881676669152b2970b23dac22726a718c83d0f"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182250464341+0800-d16-live/browser-results.json",
+      "bytes": 643,
+      "sha256": "a97d6822600fa600a4305dc98a28b251d76f46f820fde7456a7c36b06689fcbe"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182401311073+0800-d16-live/browser-results.json",
+      "bytes": 643,
+      "sha256": "a97d6822600fa600a4305dc98a28b251d76f46f820fde7456a7c36b06689fcbe"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I01-real-preference-persistence.png",
+      "bytes": 100145,
+      "sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+      "bytes": 79886,
+      "sha256": "7ed7d4002d830a8f40ccaad0c020c1eeb6fb2e1dff14da575cf55b0482171b22"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+      "bytes": 106373,
+      "sha256": "67c5935cf065854f5d70d44a1431d8de61ffbdb90aeae82087960bff27dc17ec"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+      "bytes": 116399,
+      "sha256": "503197108e52d8825312aaa00c4125579859c78ec2ab3f06fa19274995e79285"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182446735950+0800-d16-live/browser-results.json",
+      "bytes": 3712,
+      "sha256": "0193e25d1df143f5a4d58cdc77c96f14ed91611e486aa5e4ff004fee326c6b0d"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I01-real-preference-persistence.png",
+      "bytes": 100145,
+      "sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+      "bytes": 82085,
+      "sha256": "f648e213b0fa59eb52f0541344b433e3b63d604c6ecf5e5435b79b2fff3bcf04"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+      "bytes": 113007,
+      "sha256": "53f217e467b6e1fcd0d8a00408b58667f14aab23ae164f15c89254fdf7472d31"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+      "bytes": 116431,
+      "sha256": "be8e3d70a8fc35fa5df4cb548037ff466452951c29a3ca4c52fd87d493efa419"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-L04-validated-application-preview.png",
+      "bytes": 86902,
+      "sha256": "8f290f21cb4d8d4ac9bfd746be1eb6d520999be6d62e64c65bbd2ff5e38e7498"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-L05-rollback-blocked.png",
+      "bytes": 49827,
+      "sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/D16-L06-applied-version-history.png",
+      "bytes": 81262,
+      "sha256": "d8f05d9f5c1a68d6d757469ae3d2f2655738cec460d1a727c6cf716a853b737b"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182533892225+0800-d16-live/browser-results.json",
+      "bytes": 5317,
+      "sha256": "2538b3b72311c00b426a9f0bc3159ec185e8a4d417e3a2b37ab8be2b03a52517"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I01-real-preference-persistence.png",
+      "bytes": 100145,
+      "sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+      "bytes": 82632,
+      "sha256": "c99b95a9e34233e4a652a9a89f25fea914307b4222da131f47e632efa8a96698"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+      "bytes": 112941,
+      "sha256": "b891faadd06feafed83de9b00045f42e1bb1cf49ce20cc78686fa9a6f51fb733"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+      "bytes": 116682,
+      "sha256": "5fe381fe4ccc0e4232c124229b5580f83d1338f5b4ede5842ab9a979b3635ac6"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I05-empty-published-timetable.png",
+      "bytes": 39806,
+      "sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-I06-owned-backend-unavailable.png",
+      "bytes": 7643,
+      "sha256": "336c83f8c074262adf984dacf1cff0f95eb51a9d38e771533de089a8805fdb26"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L04-validated-application-preview.png",
+      "bytes": 86848,
+      "sha256": "019a6fcf59b651cd6d33b049b64fbb09aeccb0595c0263eb7be2f358941a9afe"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L05-rollback-blocked.png",
+      "bytes": 49827,
+      "sha256": "9eb1dfb5aa23c8cba0b1039270ea2cf01a198694e87c27366a1bca56c975a103"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L06-applied-version-history.png",
+      "bytes": 81403,
+      "sha256": "040457c1a3e41b42c3fd1eb414996295982b4789d969f64ff7c3f16f6557ca7f"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L07-faculty-published-timetable.png",
+      "bytes": 88582,
+      "sha256": "6e92a8c69965fd2e72ec74db36ae629663f439295fa8cbadbeaf0d7d60b80d7b"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L11-trust-unavailable-blocked.png",
+      "bytes": 49721,
+      "sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/D16-L13-mobile-preserved-version.png",
+      "bytes": 31209,
+      "sha256": "7987a38695eaf8c4fca33a0cf13cc322b61fa4b297e04544e04216ac4a01c2d3"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T182705931478+0800-d16-live/browser-results.json",
+      "bytes": 9225,
+      "sha256": "a9d35f10e946984e634df9d7d099af5eae37069317d22634dc31de6f8f3a86aa"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-F01-filter-loading.png",
+      "bytes": 40430,
+      "sha256": "5a17078258f439c04487bd3de92fb91c3e3543bf46aee42b27265873abb6d174"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-F02-history-after-reload.png",
+      "bytes": 46179,
+      "sha256": "d3ceba7c60d99608c5a9c00bc20b355c59fabec5ebc7ddd926b6585b6121b362"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I01-real-preference-persistence.png",
+      "bytes": 100145,
+      "sha256": "9f3c0a0c361cc7ba2eb92ccb98a8116f0eff824860671a335b07fa8a0e664133"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I02-real-confirmed-ledger.png",
+      "bytes": 82865,
+      "sha256": "8f6abc7713fd65efafffb5c201abdc33c48c3b2ad0102ee726e701b4c118ba67"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I04-actual-constrained-proposal.png",
+      "bytes": 106421,
+      "sha256": "c17111027a4431ec0ed1835512d60c0cc759a9d0168a922c311455571062142f"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I04-actual-fitness-analysis.png",
+      "bytes": 116437,
+      "sha256": "ea20ec9de3fc3d2c0d13ab0945a31b4736447a3d16ab16bafce462644ce1441a"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I05-empty-published-timetable.png",
+      "bytes": 39806,
+      "sha256": "bd092690081bca53acbe1c3da4e88016c96bd8148a4100db77e905c7a752543d"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-I06-owned-backend-unavailable.png",
+      "bytes": 7643,
+      "sha256": "336c83f8c074262adf984dacf1cff0f95eb51a9d38e771533de089a8805fdb26"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L04-validated-application-preview.png",
+      "bytes": 86878,
+      "sha256": "5938721e03e552dde8ca9d122bf17564dbc9b4cc307fe513502b3e76f8202ffc"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L05-rollback-blocked.png",
+      "bytes": 49829,
+      "sha256": "628fab2fd58b80043c1896665010a20e37fb19332ef923684d9e112d14436ea5"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L06-applied-version-history.png",
+      "bytes": 81107,
+      "sha256": "5fac83a7c115126ab8b82d7c364df99ac9c3c61eee85676468156c7c9818706a"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L07-faculty-published-timetable.png",
+      "bytes": 88560,
+      "sha256": "34fdd304ef18e8e752ecc55c59f5daa4fc86cc53c6ac60284451e5dbcd1632df"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L11-trust-unavailable-blocked.png",
+      "bytes": 49721,
+      "sha256": "6af11097246a27327ad1c5f9064854c50a373dacbbb812385e145b7661e1d480"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/D16-L13-mobile-preserved-version.png",
+      "bytes": 31113,
+      "sha256": "b3c6b0d4499dfb25cea90940198e322fc07cf1fd0bcc0e6751a407b0700f81de"
+    },
+    {
+      "path": "docs/screenshots/dashboard-d16/20261025T183158054647+0800-d16-live/browser-results.json",
+      "bytes": 10032,
+      "sha256": "2c46f7bc74d4c0d2d19b0ace6a7ac9f25597ea5728e197674ec496c0d8f0e031"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182250464341+0800-d16-live/command.json",
+      "bytes": 3767,
+      "sha256": "de4987fa802c4daabca2e378d614256dbf814d01f711a55864e819b0c6748329"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182350005602+0800-focused/command.json",
+      "bytes": 2059,
+      "sha256": "ff80fbb737e268cd0028bec0585b895533cd87251842f56a9edad16ba2559f7b"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182401311073+0800-d16-live/command.json",
+      "bytes": 3767,
+      "sha256": "7d3e53e28f36738d166795eb2aa6d36fbb27f97b59ab67279665e85be9b2bec6"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182446735950+0800-d16-live/command.json",
+      "bytes": 6328,
+      "sha256": "d89da16e36ecfccee5fc8f241b0bae8a3bed69f8da98ee4ecd4a5b28e6d9d2e0"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182503092274+0800-contracts/command.json",
+      "bytes": 19721,
+      "sha256": "ef70ce8fcaa0df0c5a7653fe90dedc0a011221f2935e743c4d6915f6510611e3"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182503246120+0800-continuous/command.json",
+      "bytes": 2062,
+      "sha256": "0c1b3d84ba242d5342b3d77726d6b424bfd83c5f99228e9ed1fb93400a54ddaa"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182533892225+0800-d16-live/command.json",
+      "bytes": 6733,
+      "sha256": "891493572fca4b726f59e28763c5505d5c7361f43d43e432f61fe3b777993d2c"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182620315226+0800-d12-backend/command.json",
+      "bytes": 2715,
+      "sha256": "d8beb48a1bc4094153da59f47f465ebe72764f02dbd7a223a682956287a9ce10"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182620358672+0800-d11-backend/command.json",
+      "bytes": 2683,
+      "sha256": "dc3aaa9c9d400fdcaccd18fec457e4e0f6f39c997febf3527756193255f8e942"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182621276370+0800-d13-backend/command.json",
+      "bytes": 2739,
+      "sha256": "24ad2df0c44644280ad0b314f327f8b9a2af9250390b598d33006bccc7ab9bf8"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182705931478+0800-d16-live/command.json",
+      "bytes": 5550,
+      "sha256": "561f1fd74c2c6c440f176893a85931fa6018fe485b100f5c5aa8c7964c12bfac"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182726573700+0800-lint/command.json",
+      "bytes": 1203,
+      "sha256": "e44e6ab627e108e9435db8ba8646dffd662a0466ed5b7dd4d139ccc9007834a5"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182726659492+0800-build/command.json",
+      "bytes": 1980,
+      "sha256": "876201150d6e6cbebc3904338878c72542b6d255d644122981987d4faa323d05"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182726809216+0800-contracts/command.json",
+      "bytes": 19739,
+      "sha256": "7b0dd8a30b902eefb17492106894f6a2af4abe34c541f60a6cc7aa220a1e5b80"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182840541607+0800-backend-regressions/command.json",
+      "bytes": 4101,
+      "sha256": "06fe4996dd6eeda2326f3cfa87aff48191d64d01e21ad5b1da719a51de85b362"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182840680089+0800-backend/command.json",
+      "bytes": 2664,
+      "sha256": "c4b4880cff61627ee96311676643e7e815f3d602bf8faa412b718a942e500d87"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182840836000+0800-v2-engine/command.json",
+      "bytes": 1154,
+      "sha256": "70fff1c3a5ab40000cd73f4a8963bb7b38d2ac2edaef1fdf5e0f148735bf8b61"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182841652303+0800-v1-fixtures/command.json",
+      "bytes": 1147,
+      "sha256": "693c4e18583c6417b83c6fa2187c2860cef7afaaa1eb8122e96920b9f65c848b"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182842698909+0800-v2-api/command.json",
+      "bytes": 2050,
+      "sha256": "821e51be9856ca359918cde5180842715d447b4d8526324095580c176e2ea912"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182843771346+0800-ga-resource-regressions/command.json",
+      "bytes": 1378,
+      "sha256": "0d08918766242fbe5f8123d78bd2ad364efdc0dc423b7069ff7dc1889e8e3a00"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182845002036+0800-academic-offline/command.json",
+      "bytes": 1982,
+      "sha256": "d7a2a5be747530c5920b2bb15f960c506b45e180a293982bbd4b4ca3991f9b0e"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182846118798+0800-contracts/command.json",
+      "bytes": 19960,
+      "sha256": "f3161954f6ac99d911eb4b4f68c82b2f8fb460cda63189a122ee25231000e29f"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T182940163649+0800-ga-browser/command.json",
+      "bytes": 6217,
+      "sha256": "87605acb49b8e1777b5ab394e798d04fa64b06ea64112f2f8f11548dba496ae0"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T183000911951+0800-browser-regressions/command.json",
+      "bytes": 14133,
+      "sha256": "923c2deaa773e1c4734020c8f09a196a48a65c5f212fc7938f591b8afaa991cc"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T183013206729+0800-v2-browser/command.json",
+      "bytes": 1841,
+      "sha256": "c8c318582092742704cb5e9eb21a78084c195d0dc8b7e82eb67551d1a42ce5ee"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T183105718262+0800-backend-regressions/command.json",
+      "bytes": 2511,
+      "sha256": "e8055dd8687710b204c08fd1efb43edd5f4abedbfe526359a56fdb9a08017ed7"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T183158054647+0800-d16-live/command.json",
+      "bytes": 5689,
+      "sha256": "ddde2681206a2b1b592da333b50a5f621cdb825c368063c77f099e402a558f29"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T183217710585+0800-build/command.json",
+      "bytes": 1980,
+      "sha256": "4be43d1ef539ab89d77ebe4e54f783ee462c455af6c64c4a3140ab2b3dcf5c65"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/20261025T183217855921+0800-lint/command.json",
+      "bytes": 1202,
+      "sha256": "353e85f3f24ae3f4953d857f3d4adfe7bb13b3221f97200371d69ae0daeb80cc"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/audit-preparation.json",
+      "bytes": 394,
+      "sha256": "d2bde8431f2598361031063de5485c9c2a120bfed003bbcf76655558d99a4281"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/audit_evidence.py",
+      "bytes": 12346,
+      "sha256": "b03fbd8fc732c5c46ef2b921f47ce3d06ace54ac5109042227251a5a8976ab89"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/preservation-baseline.json",
+      "bytes": 194528,
+      "sha256": "49a0712e12ed7155e35ba940c3a896e422ed9c4aec7b7d1e1fc80e7b9fab0f39"
+    },
+    {
+      "path": "docs/testing/dashboard-d16/run_checks.py",
+      "bytes": 4379,
+      "sha256": "86d42cabfb8503970b283a28b294fc1cd09ef38d450c1b9b1df6e1ccc63431e6"
+    },
+    {
+      "path": "frontend/src/api/scheduleApplications.ts",
+      "bytes": 3559,
+      "sha256": "3db8c13d6ae653b5a97070a7753d02846fe3a33495a48fe0f1c66f6ee447f440"
+    },
+    {
+      "path": "frontend/src/pages/admin/ScheduleApplications.tsx",
+      "bytes": 9391,
+      "sha256": "78d74a5c04f31872d99d6d82641df9954bdae85efc56b8be1540f512d4aeecb0"
+    },
+    {
+      "path": "frontend/src/pages/chair/Requests.tsx",
+      "bytes": 9560,
+      "sha256": "be0e967d9d4aee2045fa8e64cd517ba1fb933451e197f11dc4752594ea1b75f5"
+    },
+    {
+      "path": "frontend/tests/functionalReadiness.live.mjs",
+      "bytes": 29009,
+      "sha256": "5cef62a92cb2ed9326a84036fc2a2f94a09b582bf4ca40c4e473dc9b3020237d"
+    },
+    {
+      "path": "frontend/tests/functionalReadiness.test.mjs",
+      "bytes": 1238,
+      "sha256": "9b71f7c2e946e9e522481be8ee4e23a9f7d32862f65d925663093dcf17ae3529"
+    }
+  ]
+}

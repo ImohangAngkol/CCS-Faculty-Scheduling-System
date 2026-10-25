@@ -1,0 +1,297 @@
+{
+  "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real authentication, original GA execution, actual D8-D10 ledger revalidation, Chair decisions and application transactions. Independent publisher, Chair, evidence issuer, confirmer, catalog and capacity providers are explicitly fictional; source publication is an explicit owned test handoff, not a production promotion feature. The initial GEC confirmation is created through the real API by fixture setup. Storage and trust faults are fixture injections. No PostgreSQL or institutional approval.",
+  "browser": "Edg/155.0.4283.62",
+  "node": "v24.11.1",
+  "scenarios": [
+    {
+      "id": "D16-L01",
+      "title": "anonymous application API and route deny access",
+      "started_at": "2026-10-25T18:32:04.742+08:00",
+      "finished_at": "2026-10-25T18:32:05.743+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I01",
+      "title": "real faculty preference write and full reload preserve Compact / Very High",
+      "started_at": "2026-10-25T18:32:05.745+08:00",
+      "finished_at": "2026-10-25T18:32:07.134+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I02",
+      "title": "administrator catalog and durable fictional GEC confirmation history use real APIs",
+      "started_at": "2026-10-25T18:32:07.134+08:00",
+      "finished_at": "2026-10-25T18:32:08.408+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I03",
+      "title": "real UI starts original constrained engine against this exact confirmed ledger",
+      "started_at": "2026-10-25T18:32:08.408+08:00",
+      "finished_at": "2026-10-25T18:32:11.857+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I04",
+      "title": "real generated timetable and original fitness precede explicit fictional publication designation",
+      "started_at": "2026-10-25T18:32:11.858+08:00",
+      "finished_at": "2026-10-25T18:32:13.295+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L02",
+      "title": "faculty submits proposed change against explicit fictional published source",
+      "started_at": "2026-10-25T18:32:13.296+08:00",
+      "finished_at": "2026-10-25T18:32:15.470+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L03",
+      "title": "Chair approval remains pending and does not grant publishing",
+      "started_at": "2026-10-25T18:32:15.471+08:00",
+      "finished_at": "2026-10-25T18:32:17.212+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-F03",
+      "title": "history read failure keeps the authorized queue usable and retry recovers",
+      "started_at": "2026-10-25T18:32:17.213+08:00",
+      "finished_at": "2026-10-25T18:32:18.163+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L04",
+      "title": "independent scheduler previews before/after and complete rules without writing versions",
+      "started_at": "2026-10-25T18:32:18.163+08:00",
+      "finished_at": "2026-10-25T18:32:19.120+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L05",
+      "title": "injected persistence failure rolls back version, head and application together",
+      "started_at": "2026-10-25T18:32:19.120+08:00",
+      "finished_at": "2026-10-25T18:32:19.530+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L06",
+      "title": "recovery publishes one new version after explicit confirmation",
+      "started_at": "2026-10-25T18:32:19.531+08:00",
+      "finished_at": "2026-10-25T18:32:21.292+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L07",
+      "title": "faculty sees APPLIED audit and new published timetable after refresh",
+      "started_at": "2026-10-25T18:32:21.293+08:00",
+      "finished_at": "2026-10-25T18:32:22.921+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L08",
+      "title": "another faculty identity cannot read private request or application history",
+      "started_at": "2026-10-25T18:32:22.921+08:00",
+      "finished_at": "2026-10-25T18:32:23.442+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L09",
+      "title": "rejected request cannot be applied through the real API",
+      "started_at": "2026-10-25T18:32:23.443+08:00",
+      "finished_at": "2026-10-25T18:32:27.308+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L10",
+      "title": "new request uses current published revision and receives a new approval",
+      "started_at": "2026-10-25T18:32:27.309+08:00",
+      "finished_at": "2026-10-25T18:32:33.848+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L11",
+      "title": "injected current GEC trust loss blocks application while retaining current version",
+      "started_at": "2026-10-25T18:32:33.849+08:00",
+      "finished_at": "2026-10-25T18:32:35.254+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L12",
+      "title": "concurrent HTTP application attempts retain one final publication",
+      "started_at": "2026-10-25T18:32:35.255+08:00",
+      "finished_at": "2026-10-25T18:32:36.097+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L13",
+      "title": "mobile retained published versions are read-only and contained",
+      "started_at": "2026-10-25T18:32:36.098+08:00",
+      "finished_at": "2026-10-25T18:32:37.421+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L14",
+      "title": "ordinary authenticated account has no publication controls or cached private review",
+      "started_at": "2026-10-25T18:32:37.421+08:00",
+      "finished_at": "2026-10-25T18:32:38.519+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I05",
+      "title": "bound faculty without assignments receives an honest empty published timetable",
+      "started_at": "2026-10-25T18:32:38.519+08:00",
+      "finished_at": "2026-10-25T18:32:39.748+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I06",
+      "title": "stopping only the owned backend clears the portal and exposes session retry",
+      "started_at": "2026-10-25T18:32:39.748+08:00",
+      "finished_at": "2026-10-25T18:32:40.225+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D16-I01-real-preference-persistence.png",
+      "captured_at": "2026-10-25T18:32:07.123+08:00",
+      "url": "http://localhost:61246/faculty/preferences",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-I02-real-confirmed-ledger.png",
+      "captured_at": "2026-10-25T18:32:08.405+08:00",
+      "url": "http://localhost:61246/admin/external-schedules",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-I04-actual-constrained-proposal.png",
+      "captured_at": "2026-10-25T18:32:12.568+08:00",
+      "url": "http://localhost:61246/admin/schedules",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-I04-actual-fitness-analysis.png",
+      "captured_at": "2026-10-25T18:32:13.288+08:00",
+      "url": "http://localhost:61246/admin/analysis",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-F01-filter-loading.png",
+      "captured_at": "2026-10-25T18:32:16.287+08:00",
+      "url": "http://localhost:61246/chair/requests",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L04-validated-application-preview.png",
+      "captured_at": "2026-10-25T18:32:19.116+08:00",
+      "url": "http://localhost:61246/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L05-rollback-blocked.png",
+      "captured_at": "2026-10-25T18:32:19.526+08:00",
+      "url": "http://localhost:61246/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L06-applied-version-history.png",
+      "captured_at": "2026-10-25T18:32:20.768+08:00",
+      "url": "http://localhost:61246/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-F02-history-after-reload.png",
+      "captured_at": "2026-10-25T18:32:21.289+08:00",
+      "url": "http://localhost:61246/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L07-faculty-published-timetable.png",
+      "captured_at": "2026-10-25T18:32:22.918+08:00",
+      "url": "http://localhost:61246/faculty/schedule",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L11-trust-unavailable-blocked.png",
+      "captured_at": "2026-10-25T18:32:35.250+08:00",
+      "url": "http://localhost:61246/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L13-mobile-preserved-version.png",
+      "captured_at": "2026-10-25T18:32:37.418+08:00",
+      "url": "http://localhost:61246/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "D16-I05-empty-published-timetable.png",
+      "captured_at": "2026-10-25T18:32:39.745+08:00",
+      "url": "http://localhost:61246/faculty/schedule",
+      "query_omitted": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "D16-I06-owned-backend-unavailable.png",
+      "captured_at": "2026-10-25T18:32:40.223+08:00",
+      "url": "http://localhost:61246/faculty/schedule",
+      "query_omitted": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "runtime_errors": []
+}

@@ -1,0 +1,7 @@
+{
+  "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real authentication, original GA execution, actual D8-D10 ledger revalidation, Chair decisions and application transactions. Independent publisher, Chair, evidence issuer, confirmer, catalog and capacity providers are explicitly fictional; source publication is an explicit owned test handoff, not a production promotion feature. The initial GEC confirmation is created through the real API by fixture setup. Storage and trust faults are fixture injections. No PostgreSQL or institutional approval.",
+  "node": "v24.11.1",
+  "scenarios": [],
+  "captures": [],
+  "runtime_errors": []
+}

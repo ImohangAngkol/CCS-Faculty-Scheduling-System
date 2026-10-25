@@ -1,0 +1,151 @@
+{
+  "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real authentication, original GA execution, actual D8-D10 ledger revalidation, Chair decisions and application transactions. Independent publisher, Chair, evidence issuer, confirmer, catalog and capacity providers are explicitly fictional; source publication is an explicit owned test handoff, not a production promotion feature. The initial GEC confirmation is created through the real API by fixture setup. Storage and trust faults are fixture injections. No PostgreSQL or institutional approval.",
+  "browser": "Edg/155.0.4283.62",
+  "node": "v24.11.1",
+  "scenarios": [
+    {
+      "id": "D16-L01",
+      "title": "anonymous application API and route deny access",
+      "started_at": "2026-10-25T18:25:41.580+08:00",
+      "finished_at": "2026-10-25T18:25:42.939+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I01",
+      "title": "real faculty preference write and full reload preserve Compact / Very High",
+      "started_at": "2026-10-25T18:25:42.942+08:00",
+      "finished_at": "2026-10-25T18:25:44.804+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I02",
+      "title": "administrator catalog and durable fictional GEC confirmation history use real APIs",
+      "started_at": "2026-10-25T18:25:44.805+08:00",
+      "finished_at": "2026-10-25T18:25:46.360+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I03",
+      "title": "real UI starts original constrained engine against this exact confirmed ledger",
+      "started_at": "2026-10-25T18:25:46.362+08:00",
+      "finished_at": "2026-10-25T18:25:50.026+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I04",
+      "title": "real generated timetable and original fitness precede explicit fictional publication designation",
+      "started_at": "2026-10-25T18:25:50.027+08:00",
+      "finished_at": "2026-10-25T18:25:51.627+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L02",
+      "title": "faculty submits proposed change against explicit fictional published source",
+      "started_at": "2026-10-25T18:25:51.627+08:00",
+      "finished_at": "2026-10-25T18:25:54.153+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L03",
+      "title": "Chair approval remains pending and does not grant publishing",
+      "started_at": "2026-10-25T18:25:54.154+08:00",
+      "finished_at": "2026-10-25T18:25:55.876+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L04",
+      "title": "independent scheduler previews before/after and complete rules without writing versions",
+      "started_at": "2026-10-25T18:25:55.877+08:00",
+      "finished_at": "2026-10-25T18:25:57.339+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L05",
+      "title": "injected persistence failure rolls back version, head and application together",
+      "started_at": "2026-10-25T18:25:57.340+08:00",
+      "finished_at": "2026-10-25T18:25:57.866+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L06",
+      "title": "recovery publishes one new version after explicit confirmation",
+      "started_at": "2026-10-25T18:25:57.867+08:00",
+      "finished_at": "2026-10-25T18:26:29.362+08:00",
+      "result": "FAIL",
+      "error": "Missing live UI text: Published version history"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D16-I01-real-preference-persistence.png",
+      "captured_at": "2026-10-25T18:25:44.793+08:00",
+      "url": "http://localhost:56769/faculty/preferences",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-I02-real-confirmed-ledger.png",
+      "captured_at": "2026-10-25T18:25:46.356+08:00",
+      "url": "http://localhost:56769/admin/external-schedules",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-I04-actual-constrained-proposal.png",
+      "captured_at": "2026-10-25T18:25:50.757+08:00",
+      "url": "http://localhost:56769/admin/schedules",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-I04-actual-fitness-analysis.png",
+      "captured_at": "2026-10-25T18:25:51.617+08:00",
+      "url": "http://localhost:56769/admin/analysis",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L04-validated-application-preview.png",
+      "captured_at": "2026-10-25T18:25:57.334+08:00",
+      "url": "http://localhost:56769/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L05-rollback-blocked.png",
+      "captured_at": "2026-10-25T18:25:57.862+08:00",
+      "url": "http://localhost:56769/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L06-applied-version-history.png",
+      "captured_at": "2026-10-25T18:25:59.003+08:00",
+      "url": "http://localhost:56769/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    }
+  ],
+  "runtime_errors": []
+}
