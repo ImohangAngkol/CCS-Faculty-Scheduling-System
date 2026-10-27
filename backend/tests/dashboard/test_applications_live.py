@@ -42,7 +42,16 @@ def test_actual_edge_fastapi_sqlite_application_flow(application,monkeypatch,tmp
     monkeypatch.setenv("AUTH_ALLOWED_ORIGINS",origin)
     owned=socket.socket();owned.bind(("127.0.0.1",0));owned.listen(128);port=owned.getsockname()[1]
     wrapper=CORSMiddleware(app,allow_origins=[origin],allow_credentials=True,allow_methods=["GET","POST","OPTIONS"],allow_headers=["Content-Type","X-CSRF-Token"])
-    server=uvicorn.Server(uvicorn.Config(wrapper,host="127.0.0.1",port=port,log_level="error",access_log=False))
+    server = uvicorn.Server(
+        uvicorn.Config(
+            wrapper,
+            host="127.0.0.1",
+            port=port,
+            log_level="error",
+            access_log=False,
+            timeout_graceful_shutdown=5,
+        )
+    )
     worker=threading.Thread(target=lambda:server.run(sockets=[owned]),daemon=True)
     try:
         worker.start();end=time.monotonic()+10
