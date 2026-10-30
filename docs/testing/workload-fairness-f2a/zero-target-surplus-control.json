@@ -1,0 +1,25 @@
+{
+  "scope": "Arithmetic-only unapproved denominator convention; not generated schedules or production policy",
+  "targets": [
+    0,
+    4
+  ],
+  "allocation_a": [
+    2,
+    14
+  ],
+  "score_a": {
+    "exact": "29",
+    "decimal": 29.0
+  },
+  "allocation_b": [
+    0,
+    16
+  ],
+  "score_b": {
+    "exact": "36",
+    "decimal": 36.0
+  },
+  "finding": "Prototype may assign teaching to a zero-target member under surplus; no hard zero-target exclusion is implied",
+  "institutional_decision_required": true
+}

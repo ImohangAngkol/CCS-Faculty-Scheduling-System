@@ -1,0 +1,63 @@
+{
+  "settings": "Fictional GASetting defaults; no local settings parsed",
+  "preferences": "No submitted preferences; disabled/missing contributions remain zero",
+  "schedules": [
+    {
+      "name": "balanced",
+      "units": [
+        2,
+        2
+      ],
+      "targets": [
+        24,
+        24
+      ],
+      "total": 500,
+      "components": {
+        "subject_preference": 0,
+        "time_preference": 0,
+        "day_preference": 0,
+        "schedule_style": 0,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 500,
+        "daily_teaching_load": 0
+      },
+      "original_admitted": true,
+      "independent_conflicts": {
+        "faculty": 0,
+        "room": 0,
+        "section": 0
+      }
+    },
+    {
+      "name": "concentrated",
+      "units": [
+        4,
+        0
+      ],
+      "targets": [
+        24,
+        24
+      ],
+      "total": 475,
+      "components": {
+        "subject_preference": 0,
+        "time_preference": 0,
+        "day_preference": 0,
+        "schedule_style": 0,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 475,
+        "daily_teaching_load": 0
+      },
+      "original_admitted": true,
+      "independent_conflicts": {
+        "faculty": 0,
+        "room": 0,
+        "section": 0
+      }
+    }
+  ],
+  "policy_approval": "UNAPPROVED"
+}

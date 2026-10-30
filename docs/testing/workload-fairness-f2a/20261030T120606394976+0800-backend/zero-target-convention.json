@@ -1,0 +1,7 @@
+{
+  "denominator_for_zero_target": 1,
+  "units": "one fictional teaching credit",
+  "policy": "UNAPPROVED_CONVENTION",
+  "zero_target_assignment_allowed_by_existing_hard_policy": true,
+  "zero_target_fulfillment": null
+}

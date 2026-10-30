@@ -1,0 +1,21 @@
+{
+  "selection": "contract",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\fitness-policy-f2c\\run_checks.py",
+    "contract",
+    "--worker",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\fitness-policy-f2c\\20261030T230008542355+0800-contract",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\f2c-20261030T230008542355+0800-contract"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-30T23:00:08.542355+08:00",
+  "finished_at": "2026-10-30T23:00:09.599243+08:00",
+  "elapsed_seconds": 1.0546987999987323,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "........................................................................ [ 90%]\n........                                                                 [100%]\n80 passed in 0.24s\n",
+  "stderr": "",
+  "scope": "F2C executable specification or unchanged default-mode regression; no experimental production scoring/authority/database/browser."
+}

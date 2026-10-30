@@ -1,0 +1,33 @@
+{
+  "part": "ownership",
+  "jobs": [
+    {
+      "name": "ownership-small-retain_last",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "ownership-small-final_only",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "ownership-medium-retain_last",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "ownership-medium-final_only",
+      "status": "SUCCESS"
+    }
+  ],
+  "baseline_preserved": 1509,
+  "database_operations": 0,
+  "production_GC_or_allocator_settings_changed": false,
+  "parameters": {
+    "population_size": 2,
+    "generations": 1,
+    "fresh_chromosomes": 1,
+    "crossover_attempts": 1,
+    "mutation_attempts": 1,
+    "max_restarts": 5,
+    "candidate_attempts": 3
+  }
+}

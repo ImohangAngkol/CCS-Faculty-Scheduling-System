@@ -1,0 +1,40 @@
+{
+  "name": "moderate_overload_and_shortfall",
+  "loads": [
+    26,
+    22
+  ],
+  "targets": [
+    24,
+    24
+  ],
+  "original_default_workload": 35,
+  "linear_relative": {
+    "exact": "185/6",
+    "decimal": 30.833333333333332
+  },
+  "squared_relative": {
+    "exact": "845/72",
+    "decimal": 11.73611111111111
+  },
+  "overload_shortage_spread": [
+    {
+      "exact": "10",
+      "decimal": 10.0
+    },
+    {
+      "exact": "2",
+      "decimal": 2.0
+    },
+    {
+      "exact": "1/72",
+      "decimal": 0.013888888888888888
+    }
+  ],
+  "underload_units": 2,
+  "overload_units": 2,
+  "zero_assignments": 0,
+  "above_warning": 0,
+  "teaching_ceiling_valid": true,
+  "scope": "Analytical allocation only; not a timetable or a complete hard-validity result"
+}

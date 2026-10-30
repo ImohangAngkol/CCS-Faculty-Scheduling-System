@@ -1,0 +1,2547 @@
+{
+  "version": "scaled-fictional-python.1",
+  "scope": "Entirely fictional, non-publishing kernel experiment; no institutional acceptance or C++",
+  "started_at": "2026-10-28T11:32:22.654085+08:00",
+  "finished_at": "2026-10-28T11:32:47.510848+08:00",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "logical_cpus": 16,
+  "hash_seed": "0 in each worker",
+  "parameters": {
+    "population_size": 4,
+    "generations": 2,
+    "fresh_chromosomes": 1,
+    "mutation_attempts": 2,
+    "max_restarts": 5,
+    "candidate_attempts": 3,
+    "crossover_attempts": 2
+  },
+  "seeds": [
+    714
+  ],
+  "repetitions": 1,
+  "wall_deadline_seconds_per_worker": 90,
+  "command": [
+    "backend/benchmarks/scaled_python.py",
+    "--scenario",
+    "small",
+    "--seeds",
+    "714",
+    "--population",
+    "4",
+    "--generations",
+    "2",
+    "--fresh",
+    "1",
+    "--operator-attempts",
+    "2",
+    "--trial-timeout",
+    "90"
+  ],
+  "import_time_excluded_from_engine_seconds": true,
+  "results": {
+    "small": {
+      "warmup_excluded": {
+        "scenario": "small",
+        "seed": 714,
+        "mode": "timing",
+        "status": "SUCCESS",
+        "history": [
+          {
+            "generation": 0,
+            "generation_best_fitness": 6160.0,
+            "best_ever_fitness": 6160.0
+          },
+          {
+            "generation": 1,
+            "generation_best_fitness": 5585.0,
+            "best_ever_fitness": 5585.0
+          },
+          {
+            "generation": 2,
+            "generation_best_fitness": 4930.0,
+            "best_ever_fitness": 4930.0
+          }
+        ],
+        "persistence": "NONE; no callback writes",
+        "persistence_seconds": null,
+        "configuration": {
+          "version": "fictional-scaled-fixtures.1",
+          "scenario": "small",
+          "dimensions": {
+            "faculty": 6,
+            "offerings": 12,
+            "sections": 3,
+            "lecture_rooms": 2,
+            "laboratory_rooms": 2,
+            "unqualified_last_member": true
+          },
+          "scope": "Fictional kernel benchmark; no institutional approval or publication",
+          "subjects": [
+            {
+              "code": "BENCH000",
+              "section": "BENCH-SEC-00",
+              "units": 3,
+              "lec_hours": 3,
+              "lab_hours": 0
+            },
+            {
+              "code": "BENCH001",
+              "section": "BENCH-SEC-00",
+              "units": 3,
+              "lec_hours": 2,
+              "lab_hours": 3
+            },
+            {
+              "code": "BENCH002",
+              "section": "BENCH-SEC-00",
+              "units": 3,
+              "lec_hours": 3,
+              "lab_hours": 0
+            },
+            {
+              "code": "BENCH003",
+              "section": "BENCH-SEC-00",
+              "units": 3,
+              "lec_hours": 2,
+              "lab_hours": 3
+            },
+            {
+              "code": "BENCH004",
+              "section": "BENCH-SEC-01",
+              "units": 3,
+              "lec_hours": 3,
+              "lab_hours": 0
+            },
+            {
+              "code": "BENCH005",
+              "section": "BENCH-SEC-01",
+              "units": 3,
+              "lec_hours": 2,
+              "lab_hours": 3
+            },
+            {
+              "code": "BENCH006",
+              "section": "BENCH-SEC-01",
+              "units": 3,
+              "lec_hours": 3,
+              "lab_hours": 0
+            },
+            {
+              "code": "BENCH007",
+              "section": "BENCH-SEC-01",
+              "units": 3,
+              "lec_hours": 2,
+              "lab_hours": 3
+            },
+            {
+              "code": "BENCH008",
+              "section": "BENCH-SEC-02",
+              "units": 3,
+              "lec_hours": 3,
+              "lab_hours": 0
+            },
+            {
+              "code": "BENCH009",
+              "section": "BENCH-SEC-02",
+              "units": 3,
+              "lec_hours": 2,
+              "lab_hours": 3
+            },
+            {
+              "code": "BENCH010",
+              "section": "BENCH-SEC-02",
+              "units": 3,
+              "lec_hours": 3,
+              "lab_hours": 0
+            },
+            {
+              "code": "BENCH011",
+              "section": "BENCH-SEC-02",
+              "units": 3,
+              "lec_hours": 2,
+              "lab_hours": 3
+            }
+          ],
+          "faculty": [
+            {
+              "code": 990100,
+              "admin": 6,
+              "research": 3,
+              "extension": 3,
+              "target": 12,
+              "eligible": [
+                "BENCH000",
+                "BENCH003",
+                "BENCH004",
+                "BENCH005",
+                "BENCH008",
+                "BENCH009",
+                "BENCH010"
+              ]
+            },
+            {
+              "code": 990101,
+              "admin": 4,
+              "research": 2,
+              "extension": 3,
+              "target": 15,
+              "eligible": [
+                "BENCH000",
+                "BENCH001",
+                "BENCH004",
+                "BENCH005",
+                "BENCH006",
+                "BENCH009",
+                "BENCH010",
+                "BENCH011"
+              ]
+            },
+            {
+              "code": 990102,
+              "admin": 3,
+              "research": 1,
+              "extension": 2,
+              "target": 18,
+              "eligible": [
+                "BENCH000",
+                "BENCH001",
+                "BENCH002",
+                "BENCH005",
+                "BENCH006",
+                "BENCH007",
+                "BENCH010",
+                "BENCH011"
+              ]
+            },
+            {
+              "code": 990103,
+              "admin": 1,
+              "research": 1,
+              "extension": 1,
+              "target": 21,
+              "eligible": [
+                "BENCH001",
+                "BENCH002",
+                "BENCH003",
+                "BENCH006",
+                "BENCH007",
+                "BENCH008",
+                "BENCH011"
+              ]
+            },
+            {
+              "code": 990104,
+              "admin": 0,
+              "research": 0,
+              "extension": 0,
+              "target": 24,
+              "eligible": [
+                "BENCH002",
+                "BENCH003",
+                "BENCH004",
+                "BENCH007",
+                "BENCH008",
+                "BENCH009"
+              ]
+            },
+            {
+              "code": 990105,
+              "admin": 7,
+              "research": 4,
+              "extension": 4,
+              "target": 9,
+              "eligible": []
+            }
+          ],
+          "preferences": [
+            {
+              "faculty_code": 990100,
+              "faculty_priority": 1,
+              "preferred_subjects": [
+                "BENCH000",
+                "BENCH003"
+              ],
+              "use_subject_preference": true,
+              "subject_importance": 1,
+              "preferred_days": [
+                "M",
+                "W"
+              ],
+              "use_day_preference": true,
+              "day_importance": 1,
+              "preferred_start_time": "08:00",
+              "preferred_end_time": "12:00",
+              "use_time_preference": true,
+              "time_importance": 1,
+              "gap_preference": "Compact",
+              "use_gap_preference": true,
+              "gap_importance": 2
+            },
+            {
+              "faculty_code": 990101,
+              "faculty_priority": 2,
+              "preferred_subjects": [
+                "BENCH001",
+                "BENCH004"
+              ],
+              "use_subject_preference": true,
+              "subject_importance": 2,
+              "preferred_days": [
+                "T",
+                "TH"
+              ],
+              "use_day_preference": true,
+              "day_importance": 2,
+              "preferred_start_time": "13:00",
+              "preferred_end_time": "17:00",
+              "use_time_preference": true,
+              "time_importance": 2,
+              "gap_preference": "Scattered",
+              "use_gap_preference": true,
+              "gap_importance": 3
+            },
+            {
+              "faculty_code": 990102,
+              "faculty_priority": 3,
+              "preferred_subjects": [
+                "BENCH000",
+                "BENCH001"
+              ],
+              "use_subject_preference": true,
+              "subject_importance": 3,
+              "preferred_days": [
+                "F",
+                "S"
+              ],
+              "use_day_preference": true,
+              "day_importance": 3,
+              "preferred_start_time": "08:00",
+              "preferred_end_time": "12:00",
+              "use_time_preference": true,
+              "time_importance": 3,
+              "gap_preference": "Compact",
+              "use_gap_preference": true,
+              "gap_importance": 4
+            },
+            {
+              "faculty_code": 990103,
+              "faculty_priority": 1,
+              "preferred_subjects": [
+                "BENCH002",
+                "BENCH003"
+              ],
+              "use_subject_preference": true,
+              "subject_importance": 4,
+              "preferred_days": [
+                "M",
+                "W"
+              ],
+              "use_day_preference": true,
+              "day_importance": 4,
+              "preferred_start_time": "13:00",
+              "preferred_end_time": "17:00",
+              "use_time_preference": true,
+              "time_importance": 1,
+              "gap_preference": "Scattered",
+              "use_gap_preference": true,
+              "gap_importance": 2
+            },
+            {
+              "faculty_code": 990104,
+              "faculty_priority": 2,
+              "preferred_subjects": [
+                "BENCH002",
+                "BENCH003"
+              ],
+              "use_subject_preference": true,
+              "subject_importance": 5,
+              "preferred_days": [
+                "T",
+                "TH"
+              ],
+              "use_day_preference": true,
+              "day_importance": 1,
+              "preferred_start_time": "08:00",
+              "preferred_end_time": "12:00",
+              "use_time_preference": true,
+              "time_importance": 2,
+              "gap_preference": "Compact",
+              "use_gap_preference": true,
+              "gap_importance": 3
+            },
+            {
+              "faculty_code": 990105,
+              "faculty_priority": 3,
+              "preferred_subjects": [],
+              "use_subject_preference": true,
+              "subject_importance": 1,
+              "preferred_days": [
+                "F",
+                "S"
+              ],
+              "use_day_preference": true,
+              "day_importance": 2,
+              "preferred_start_time": "13:00",
+              "preferred_end_time": "17:00",
+              "use_time_preference": true,
+              "time_importance": 3,
+              "gap_preference": "Scattered",
+              "use_gap_preference": true,
+              "gap_importance": 4
+            }
+          ],
+          "settings": {
+            "subject_penalty": 70,
+            "time_penalty": 10,
+            "day_penalty": 5,
+            "preparation_penalty": 10,
+            "load_balance_penalty": 10,
+            "daily_load_penalty": 10,
+            "gap_penalty": 10,
+            "lecture_lab_penalty": 5,
+            "max_preparations": 3,
+            "total_workload_target": 24,
+            "regular_teaching_load": 24,
+            "absolute_max_teaching_load": 40,
+            "overload_warning_threshold": 30,
+            "underload_penalty": 25,
+            "overload_penalty": 10,
+            "heavy_overload_penalty": 25,
+            "workload_step_units": 3,
+            "target_teaching_load": 12,
+            "load_tolerance": 3,
+            "max_daily_teaching_minutes": 360,
+            "daily_load_step_minutes": 60
+          },
+          "weekly_calendar": "Original 07:30-22:00 Monday-Saturday",
+          "total_offered_units": 36,
+          "total_target_units": 99,
+          "synthetic_input_sha256": "56a64b442ddb982d078fd317e70e886660e14273e17604b651938e9a696b4c97"
+        },
+        "parameters": {
+          "population_size": 4,
+          "generations": 2,
+          "fresh_chromosomes": 1,
+          "mutation_attempts": 2,
+          "max_restarts": 5,
+          "candidate_attempts": 3,
+          "crossover_attempts": 2
+        },
+        "engine_version": "ga-constrained-v2.1",
+        "engine_sha256": "0821747e30eb56e9e4c070f369e733bc4b59ec184d2e2cb4c211ffa6fa5c1555",
+        "repository_input_sha256": "3ee2262e80b4e0462361096aab3228790fce89401b6d43bcb49041102a2ababc",
+        "static_snapshot_sha256": "88a30edddf62262386ddd9d79a20545ab84430ab496379ff4211be2b5fe9bb8f",
+        "feasibility": "CONSTRUCTIVE_WITNESS_VALIDATED; not used as a search seed",
+        "preprocessing_seconds": 0.7387614000181202,
+        "engine_seconds": 7.254633700009435,
+        "operator_call_attempts": {
+          "construction_calls": 6,
+          "crossover_calls": 13,
+          "mutation_calls": 2
+        },
+        "final_fitness": 4930.0,
+        "fitness_breakdown": {
+          "subject_preference": 2975.0,
+          "time_preference": 580,
+          "day_preference": 0,
+          "schedule_style": 400,
+          "lecture_lab_preference": 0,
+          "number_of_preparations": 0,
+          "teaching_load_balance": 975,
+          "daily_teaching_load": 0
+        },
+        "best_ever_monotone": true,
+        "diagnostics": {
+          "construction:ACCEPTED": 6,
+          "crossover:NO_CANDIDATE": 7,
+          "crossover:ACCEPTED": 6,
+          "mutation:NO_CANDIDATE": 1,
+          "survivor:ACCEPTED": 17,
+          "mutation:ACCEPTED": 1
+        },
+        "workload": {
+          "faculty": [
+            {
+              "faculty": 990100,
+              "teaching_units": 9,
+              "target": 12,
+              "admin": 6,
+              "research": 3,
+              "extension": 3,
+              "non_teaching_fixed_units": 12,
+              "total_workload_units": 21,
+              "underload": 3,
+              "overload": 0,
+              "above_30_warning": false,
+              "target_fulfillment": 0.75
+            },
+            {
+              "faculty": 990101,
+              "teaching_units": 9,
+              "target": 15,
+              "admin": 4,
+              "research": 2,
+              "extension": 3,
+              "non_teaching_fixed_units": 9,
+              "total_workload_units": 18,
+              "underload": 6,
+              "overload": 0,
+              "above_30_warning": false,
+              "target_fulfillment": 0.6
+            },
+            {
+              "faculty": 990102,
+              "teaching_units": 9,
+              "target": 18,
+              "admin": 3,
+              "research": 1,
+              "extension": 2,
+              "non_teaching_fixed_units": 6,
+              "total_workload_units": 15,
+              "underload": 9,
+              "overload": 0,
+              "above_30_warning": false,
+              "target_fulfillment": 0.5
+            },
+            {
+              "faculty": 990103,
+              "teaching_units": 3,
+              "target": 21,
+              "admin": 1,
+              "research": 1,
+              "extension": 1,
+              "non_teaching_fixed_units": 3,
+              "total_workload_units": 6,
+              "underload": 18,
+              "overload": 0,
+              "above_30_warning": false,
+              "target_fulfillment": 0.14285714285714285
+            },
+            {
+              "faculty": 990104,
+              "teaching_units": 6,
+              "target": 24,
+              "admin": 0,
+              "research": 0,
+              "extension": 0,
+              "non_teaching_fixed_units": 0,
+              "total_workload_units": 6,
+              "underload": 18,
+              "overload": 0,
+              "above_30_warning": false,
+              "target_fulfillment": 0.25
+            },
+            {
+              "faculty": 990105,
+              "teaching_units": 0,
+              "target": 9,
+              "admin": 7,
+              "research": 4,
+              "extension": 4,
+              "non_teaching_fixed_units": 15,
+              "total_workload_units": 15,
+              "underload": 9,
+              "overload": 0,
+              "above_30_warning": false,
+              "target_fulfillment": 0.0
+            }
+          ],
+          "total_teaching_units": 36,
+          "total_target_units": 99,
+          "underload_units": 63,
+          "overload_units": 0,
+          "zero_assignment_count": 1,
+          "target_fulfillment_population_stdev": 0.2636306768698364
+        },
+        "hard_constraints": "PASS: original admit/reconstruction, external conflicts, every final population member and best",
+        "subject_coverage": "EXACT",
+        "faculty_eligibility": "PASS",
+        "best_assignment_sha256": "30ea6e3424d6977c459a7b253a63acd7ba6bbed561092c07ccfeac7ed761730c",
+        "best_assignments": [
+          {
+            "subject": "BENCH000",
+            "section": "BENCH-SEC-00",
+            "faculty": 990100,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-01",
+                "blocks": [
+                  [
+                    "F",
+                    "16:30",
+                    "17:00"
+                  ],
+                  [
+                    "F",
+                    "17:00",
+                    "17:30"
+                  ],
+                  [
+                    "F",
+                    "17:30",
+                    "18:00"
+                  ],
+                  [
+                    "T",
+                    "16:30",
+                    "17:00"
+                  ],
+                  [
+                    "T",
+                    "17:00",
+                    "17:30"
+                  ],
+                  [
+                    "T",
+                    "17:30",
+                    "18:00"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": null,
+                "blocks": []
+              }
+            ]
+          },
+          {
+            "subject": "BENCH001",
+            "section": "BENCH-SEC-00",
+            "faculty": 990102,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-01",
+                "blocks": [
+                  [
+                    "S",
+                    "17:30",
+                    "18:00"
+                  ],
+                  [
+                    "S",
+                    "18:00",
+                    "18:30"
+                  ],
+                  [
+                    "S",
+                    "18:30",
+                    "19:00"
+                  ],
+                  [
+                    "S",
+                    "19:00",
+                    "19:30"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": "BENCH-LAB-00",
+                "blocks": [
+                  [
+                    "S",
+                    "10:30",
+                    "11:00"
+                  ],
+                  [
+                    "S",
+                    "11:00",
+                    "11:30"
+                  ],
+                  [
+                    "S",
+                    "11:30",
+                    "12:00"
+                  ],
+                  [
+                    "S",
+                    "12:00",
+                    "12:30"
+                  ],
+                  [
+                    "S",
+                    "12:30",
+                    "13:00"
+                  ],
+                  [
+                    "S",
+                    "13:00",
+                    "13:30"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "subject": "BENCH002",
+            "section": "BENCH-SEC-00",
+            "faculty": 990104,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-00",
+                "blocks": [
+                  [
+                    "T",
+                    "13:30",
+                    "14:00"
+                  ],
+                  [
+                    "T",
+                    "14:00",
+                    "14:30"
+                  ],
+                  [
+                    "T",
+                    "14:30",
+                    "15:00"
+                  ],
+                  [
+                    "T",
+                    "15:00",
+                    "15:30"
+                  ],
+                  [
+                    "T",
+                    "15:30",
+                    "16:00"
+                  ],
+                  [
+                    "T",
+                    "16:00",
+                    "16:30"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": null,
+                "blocks": []
+              }
+            ]
+          },
+          {
+            "subject": "BENCH003",
+            "section": "BENCH-SEC-00",
+            "faculty": 990104,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-00",
+                "blocks": [
+                  [
+                    "M",
+                    "11:30",
+                    "12:00"
+                  ],
+                  [
+                    "M",
+                    "12:00",
+                    "12:30"
+                  ],
+                  [
+                    "M",
+                    "12:30",
+                    "13:00"
+                  ],
+                  [
+                    "M",
+                    "13:00",
+                    "13:30"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": "BENCH-LAB-00",
+                "blocks": [
+                  [
+                    "T",
+                    "10:30",
+                    "11:00"
+                  ],
+                  [
+                    "T",
+                    "11:00",
+                    "11:30"
+                  ],
+                  [
+                    "T",
+                    "11:30",
+                    "12:00"
+                  ],
+                  [
+                    "T",
+                    "12:00",
+                    "12:30"
+                  ],
+                  [
+                    "T",
+                    "12:30",
+                    "13:00"
+                  ],
+                  [
+                    "T",
+                    "13:00",
+                    "13:30"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "subject": "BENCH004",
+            "section": "BENCH-SEC-01",
+            "faculty": 990100,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-01",
+                "blocks": [
+                  [
+                    "M",
+                    "07:30",
+                    "08:00"
+                  ],
+                  [
+                    "M",
+                    "08:00",
+                    "08:30"
+                  ],
+                  [
+                    "M",
+                    "08:30",
+                    "09:00"
+                  ],
+                  [
+                    "TH",
+                    "07:30",
+                    "08:00"
+                  ],
+                  [
+                    "TH",
+                    "08:00",
+                    "08:30"
+                  ],
+                  [
+                    "TH",
+                    "08:30",
+                    "09:00"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": null,
+                "blocks": []
+              }
+            ]
+          },
+          {
+            "subject": "BENCH005",
+            "section": "BENCH-SEC-01",
+            "faculty": 990102,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-01",
+                "blocks": [
+                  [
+                    "W",
+                    "07:30",
+                    "08:00"
+                  ],
+                  [
+                    "W",
+                    "08:00",
+                    "08:30"
+                  ],
+                  [
+                    "W",
+                    "08:30",
+                    "09:00"
+                  ],
+                  [
+                    "W",
+                    "09:00",
+                    "09:30"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": "BENCH-LAB-01",
+                "blocks": [
+                  [
+                    "F",
+                    "13:30",
+                    "14:00"
+                  ],
+                  [
+                    "F",
+                    "14:00",
+                    "14:30"
+                  ],
+                  [
+                    "F",
+                    "14:30",
+                    "15:00"
+                  ],
+                  [
+                    "F",
+                    "15:00",
+                    "15:30"
+                  ],
+                  [
+                    "F",
+                    "15:30",
+                    "16:00"
+                  ],
+                  [
+                    "F",
+                    "16:00",
+                    "16:30"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "subject": "BENCH006",
+            "section": "BENCH-SEC-01",
+            "faculty": 990101,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-00",
+                "blocks": [
+                  [
+                    "F",
+                    "16:30",
+                    "17:00"
+                  ],
+                  [
+                    "F",
+                    "17:00",
+                    "17:30"
+                  ],
+                  [
+                    "F",
+                    "17:30",
+                    "18:00"
+                  ],
+                  [
+                    "T",
+                    "16:30",
+                    "17:00"
+                  ],
+                  [
+                    "T",
+                    "17:00",
+                    "17:30"
+                  ],
+                  [
+                    "T",
+                    "17:30",
+                    "18:00"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": null,
+                "blocks": []
+              }
+            ]
+          },
+          {
+            "subject": "BENCH007",
+            "section": "BENCH-SEC-01",
+            "faculty": 990103,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-01",
+                "blocks": [
+                  [
+                    "T",
+                    "09:30",
+                    "10:00"
+                  ],
+                  [
+                    "T",
+                    "10:00",
+                    "10:30"
+                  ],
+                  [
+                    "T",
+                    "10:30",
+                    "11:00"
+                  ],
+                  [
+                    "T",
+                    "11:00",
+                    "11:30"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": "BENCH-LAB-00",
+                "blocks": [
+                  [
+                    "S",
+                    "16:30",
+                    "17:00"
+                  ],
+                  [
+                    "S",
+                    "17:00",
+                    "17:30"
+                  ],
+                  [
+                    "S",
+                    "17:30",
+                    "18:00"
+                  ],
+                  [
+                    "S",
+                    "18:00",
+                    "18:30"
+                  ],
+                  [
+                    "S",
+                    "18:30",
+                    "19:00"
+                  ],
+                  [
+                    "S",
+                    "19:00",
+                    "19:30"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "subject": "BENCH008",
+            "section": "BENCH-SEC-02",
+            "faculty": 990100,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-00",
+                "blocks": [
+                  [
+                    "S",
+                    "10:30",
+                    "11:00"
+                  ],
+                  [
+                    "S",
+                    "11:00",
+                    "11:30"
+                  ],
+                  [
+                    "S",
+                    "11:30",
+                    "12:00"
+                  ],
+                  [
+                    "S",
+                    "12:00",
+                    "12:30"
+                  ],
+                  [
+                    "S",
+                    "12:30",
+                    "13:00"
+                  ],
+                  [
+                    "S",
+                    "13:00",
+                    "13:30"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": null,
+                "blocks": []
+              }
+            ]
+          },
+          {
+            "subject": "BENCH009",
+            "section": "BENCH-SEC-02",
+            "faculty": 990101,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-00",
+                "blocks": [
+                  [
+                    "F",
+                    "07:30",
+                    "08:00"
+                  ],
+                  [
+                    "F",
+                    "08:00",
+                    "08:30"
+                  ],
+                  [
+                    "F",
+                    "08:30",
+                    "09:00"
+                  ],
+                  [
+                    "F",
+                    "09:00",
+                    "09:30"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": "BENCH-LAB-00",
+                "blocks": [
+                  [
+                    "M",
+                    "16:30",
+                    "17:00"
+                  ],
+                  [
+                    "M",
+                    "17:00",
+                    "17:30"
+                  ],
+                  [
+                    "M",
+                    "17:30",
+                    "18:00"
+                  ],
+                  [
+                    "M",
+                    "18:00",
+                    "18:30"
+                  ],
+                  [
+                    "M",
+                    "18:30",
+                    "19:00"
+                  ],
+                  [
+                    "M",
+                    "19:00",
+                    "19:30"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "subject": "BENCH010",
+            "section": "BENCH-SEC-02",
+            "faculty": 990102,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-00",
+                "blocks": [
+                  [
+                    "W",
+                    "10:30",
+                    "11:00"
+                  ],
+                  [
+                    "W",
+                    "11:00",
+                    "11:30"
+                  ],
+                  [
+                    "W",
+                    "11:30",
+                    "12:00"
+                  ],
+                  [
+                    "W",
+                    "12:00",
+                    "12:30"
+                  ],
+                  [
+                    "W",
+                    "12:30",
+                    "13:00"
+                  ],
+                  [
+                    "W",
+                    "13:00",
+                    "13:30"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": null,
+                "blocks": []
+              }
+            ]
+          },
+          {
+            "subject": "BENCH011",
+            "section": "BENCH-SEC-02",
+            "faculty": 990101,
+            "credit_units": 3,
+            "components": [
+              {
+                "component": "lecture",
+                "room": "BENCH-LEC-00",
+                "blocks": [
+                  [
+                    "TH",
+                    "15:30",
+                    "16:00"
+                  ],
+                  [
+                    "TH",
+                    "16:00",
+                    "16:30"
+                  ],
+                  [
+                    "TH",
+                    "16:30",
+                    "17:00"
+                  ],
+                  [
+                    "TH",
+                    "17:00",
+                    "17:30"
+                  ]
+                ]
+              },
+              {
+                "component": "laboratory",
+                "room": "BENCH-LAB-00",
+                "blocks": [
+                  [
+                    "W",
+                    "13:30",
+                    "14:00"
+                  ],
+                  [
+                    "W",
+                    "14:00",
+                    "14:30"
+                  ],
+                  [
+                    "W",
+                    "14:30",
+                    "15:00"
+                  ],
+                  [
+                    "W",
+                    "15:00",
+                    "15:30"
+                  ],
+                  [
+                    "W",
+                    "15:30",
+                    "16:00"
+                  ],
+                  [
+                    "W",
+                    "16:00",
+                    "16:30"
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "validation_and_breakdown_seconds": 0.2816060000041034,
+        "admission_observations": {
+          "accepted": 30,
+          "rejected_or_no_candidate": 8,
+          "construction_search_failures": 0,
+          "semantics": "Admission events, not unique candidates; survivor checks can repeat. Operator internal attempts are not instrumented."
+        },
+        "end_to_end_worker_seconds": 12.721878800017294
+      },
+      "trials": [
+        {
+          "scenario": "small",
+          "seed": 714,
+          "mode": "timing",
+          "status": "SUCCESS",
+          "history": [
+            {
+              "generation": 0,
+              "generation_best_fitness": 6160.0,
+              "best_ever_fitness": 6160.0
+            },
+            {
+              "generation": 1,
+              "generation_best_fitness": 5585.0,
+              "best_ever_fitness": 5585.0
+            },
+            {
+              "generation": 2,
+              "generation_best_fitness": 4930.0,
+              "best_ever_fitness": 4930.0
+            }
+          ],
+          "persistence": "NONE; no callback writes",
+          "persistence_seconds": null,
+          "configuration": {
+            "version": "fictional-scaled-fixtures.1",
+            "scenario": "small",
+            "dimensions": {
+              "faculty": 6,
+              "offerings": 12,
+              "sections": 3,
+              "lecture_rooms": 2,
+              "laboratory_rooms": 2,
+              "unqualified_last_member": true
+            },
+            "scope": "Fictional kernel benchmark; no institutional approval or publication",
+            "subjects": [
+              {
+                "code": "BENCH000",
+                "section": "BENCH-SEC-00",
+                "units": 3,
+                "lec_hours": 3,
+                "lab_hours": 0
+              },
+              {
+                "code": "BENCH001",
+                "section": "BENCH-SEC-00",
+                "units": 3,
+                "lec_hours": 2,
+                "lab_hours": 3
+              },
+              {
+                "code": "BENCH002",
+                "section": "BENCH-SEC-00",
+                "units": 3,
+                "lec_hours": 3,
+                "lab_hours": 0
+              },
+              {
+                "code": "BENCH003",
+                "section": "BENCH-SEC-00",
+                "units": 3,
+                "lec_hours": 2,
+                "lab_hours": 3
+              },
+              {
+                "code": "BENCH004",
+                "section": "BENCH-SEC-01",
+                "units": 3,
+                "lec_hours": 3,
+                "lab_hours": 0
+              },
+              {
+                "code": "BENCH005",
+                "section": "BENCH-SEC-01",
+                "units": 3,
+                "lec_hours": 2,
+                "lab_hours": 3
+              },
+              {
+                "code": "BENCH006",
+                "section": "BENCH-SEC-01",
+                "units": 3,
+                "lec_hours": 3,
+                "lab_hours": 0
+              },
+              {
+                "code": "BENCH007",
+                "section": "BENCH-SEC-01",
+                "units": 3,
+                "lec_hours": 2,
+                "lab_hours": 3
+              },
+              {
+                "code": "BENCH008",
+                "section": "BENCH-SEC-02",
+                "units": 3,
+                "lec_hours": 3,
+                "lab_hours": 0
+              },
+              {
+                "code": "BENCH009",
+                "section": "BENCH-SEC-02",
+                "units": 3,
+                "lec_hours": 2,
+                "lab_hours": 3
+              },
+              {
+                "code": "BENCH010",
+                "section": "BENCH-SEC-02",
+                "units": 3,
+                "lec_hours": 3,
+                "lab_hours": 0
+              },
+              {
+                "code": "BENCH011",
+                "section": "BENCH-SEC-02",
+                "units": 3,
+                "lec_hours": 2,
+                "lab_hours": 3
+              }
+            ],
+            "faculty": [
+              {
+                "code": 990100,
+                "admin": 6,
+                "research": 3,
+                "extension": 3,
+                "target": 12,
+                "eligible": [
+                  "BENCH000",
+                  "BENCH003",
+                  "BENCH004",
+                  "BENCH005",
+                  "BENCH008",
+                  "BENCH009",
+                  "BENCH010"
+                ]
+              },
+              {
+                "code": 990101,
+                "admin": 4,
+                "research": 2,
+                "extension": 3,
+                "target": 15,
+                "eligible": [
+                  "BENCH000",
+                  "BENCH001",
+                  "BENCH004",
+                  "BENCH005",
+                  "BENCH006",
+                  "BENCH009",
+                  "BENCH010",
+                  "BENCH011"
+                ]
+              },
+              {
+                "code": 990102,
+                "admin": 3,
+                "research": 1,
+                "extension": 2,
+                "target": 18,
+                "eligible": [
+                  "BENCH000",
+                  "BENCH001",
+                  "BENCH002",
+                  "BENCH005",
+                  "BENCH006",
+                  "BENCH007",
+                  "BENCH010",
+                  "BENCH011"
+                ]
+              },
+              {
+                "code": 990103,
+                "admin": 1,
+                "research": 1,
+                "extension": 1,
+                "target": 21,
+                "eligible": [
+                  "BENCH001",
+                  "BENCH002",
+                  "BENCH003",
+                  "BENCH006",
+                  "BENCH007",
+                  "BENCH008",
+                  "BENCH011"
+                ]
+              },
+              {
+                "code": 990104,
+                "admin": 0,
+                "research": 0,
+                "extension": 0,
+                "target": 24,
+                "eligible": [
+                  "BENCH002",
+                  "BENCH003",
+                  "BENCH004",
+                  "BENCH007",
+                  "BENCH008",
+                  "BENCH009"
+                ]
+              },
+              {
+                "code": 990105,
+                "admin": 7,
+                "research": 4,
+                "extension": 4,
+                "target": 9,
+                "eligible": []
+              }
+            ],
+            "preferences": [
+              {
+                "faculty_code": 990100,
+                "faculty_priority": 1,
+                "preferred_subjects": [
+                  "BENCH000",
+                  "BENCH003"
+                ],
+                "use_subject_preference": true,
+                "subject_importance": 1,
+                "preferred_days": [
+                  "M",
+                  "W"
+                ],
+                "use_day_preference": true,
+                "day_importance": 1,
+                "preferred_start_time": "08:00",
+                "preferred_end_time": "12:00",
+                "use_time_preference": true,
+                "time_importance": 1,
+                "gap_preference": "Compact",
+                "use_gap_preference": true,
+                "gap_importance": 2
+              },
+              {
+                "faculty_code": 990101,
+                "faculty_priority": 2,
+                "preferred_subjects": [
+                  "BENCH001",
+                  "BENCH004"
+                ],
+                "use_subject_preference": true,
+                "subject_importance": 2,
+                "preferred_days": [
+                  "T",
+                  "TH"
+                ],
+                "use_day_preference": true,
+                "day_importance": 2,
+                "preferred_start_time": "13:00",
+                "preferred_end_time": "17:00",
+                "use_time_preference": true,
+                "time_importance": 2,
+                "gap_preference": "Scattered",
+                "use_gap_preference": true,
+                "gap_importance": 3
+              },
+              {
+                "faculty_code": 990102,
+                "faculty_priority": 3,
+                "preferred_subjects": [
+                  "BENCH000",
+                  "BENCH001"
+                ],
+                "use_subject_preference": true,
+                "subject_importance": 3,
+                "preferred_days": [
+                  "F",
+                  "S"
+                ],
+                "use_day_preference": true,
+                "day_importance": 3,
+                "preferred_start_time": "08:00",
+                "preferred_end_time": "12:00",
+                "use_time_preference": true,
+                "time_importance": 3,
+                "gap_preference": "Compact",
+                "use_gap_preference": true,
+                "gap_importance": 4
+              },
+              {
+                "faculty_code": 990103,
+                "faculty_priority": 1,
+                "preferred_subjects": [
+                  "BENCH002",
+                  "BENCH003"
+                ],
+                "use_subject_preference": true,
+                "subject_importance": 4,
+                "preferred_days": [
+                  "M",
+                  "W"
+                ],
+                "use_day_preference": true,
+                "day_importance": 4,
+                "preferred_start_time": "13:00",
+                "preferred_end_time": "17:00",
+                "use_time_preference": true,
+                "time_importance": 1,
+                "gap_preference": "Scattered",
+                "use_gap_preference": true,
+                "gap_importance": 2
+              },
+              {
+                "faculty_code": 990104,
+                "faculty_priority": 2,
+                "preferred_subjects": [
+                  "BENCH002",
+                  "BENCH003"
+                ],
+                "use_subject_preference": true,
+                "subject_importance": 5,
+                "preferred_days": [
+                  "T",
+                  "TH"
+                ],
+                "use_day_preference": true,
+                "day_importance": 1,
+                "preferred_start_time": "08:00",
+                "preferred_end_time": "12:00",
+                "use_time_preference": true,
+                "time_importance": 2,
+                "gap_preference": "Compact",
+                "use_gap_preference": true,
+                "gap_importance": 3
+              },
+              {
+                "faculty_code": 990105,
+                "faculty_priority": 3,
+                "preferred_subjects": [],
+                "use_subject_preference": true,
+                "subject_importance": 1,
+                "preferred_days": [
+                  "F",
+                  "S"
+                ],
+                "use_day_preference": true,
+                "day_importance": 2,
+                "preferred_start_time": "13:00",
+                "preferred_end_time": "17:00",
+                "use_time_preference": true,
+                "time_importance": 3,
+                "gap_preference": "Scattered",
+                "use_gap_preference": true,
+                "gap_importance": 4
+              }
+            ],
+            "settings": {
+              "subject_penalty": 70,
+              "time_penalty": 10,
+              "day_penalty": 5,
+              "preparation_penalty": 10,
+              "load_balance_penalty": 10,
+              "daily_load_penalty": 10,
+              "gap_penalty": 10,
+              "lecture_lab_penalty": 5,
+              "max_preparations": 3,
+              "total_workload_target": 24,
+              "regular_teaching_load": 24,
+              "absolute_max_teaching_load": 40,
+              "overload_warning_threshold": 30,
+              "underload_penalty": 25,
+              "overload_penalty": 10,
+              "heavy_overload_penalty": 25,
+              "workload_step_units": 3,
+              "target_teaching_load": 12,
+              "load_tolerance": 3,
+              "max_daily_teaching_minutes": 360,
+              "daily_load_step_minutes": 60
+            },
+            "weekly_calendar": "Original 07:30-22:00 Monday-Saturday",
+            "total_offered_units": 36,
+            "total_target_units": 99,
+            "synthetic_input_sha256": "56a64b442ddb982d078fd317e70e886660e14273e17604b651938e9a696b4c97"
+          },
+          "parameters": {
+            "population_size": 4,
+            "generations": 2,
+            "fresh_chromosomes": 1,
+            "mutation_attempts": 2,
+            "max_restarts": 5,
+            "candidate_attempts": 3,
+            "crossover_attempts": 2
+          },
+          "engine_version": "ga-constrained-v2.1",
+          "engine_sha256": "0821747e30eb56e9e4c070f369e733bc4b59ec184d2e2cb4c211ffa6fa5c1555",
+          "repository_input_sha256": "3ee2262e80b4e0462361096aab3228790fce89401b6d43bcb49041102a2ababc",
+          "static_snapshot_sha256": "88a30edddf62262386ddd9d79a20545ab84430ab496379ff4211be2b5fe9bb8f",
+          "feasibility": "CONSTRUCTIVE_WITNESS_VALIDATED; not used as a search seed",
+          "preprocessing_seconds": 0.44075740000698715,
+          "engine_seconds": 7.235964699997567,
+          "operator_call_attempts": {
+            "construction_calls": 6,
+            "crossover_calls": 13,
+            "mutation_calls": 2
+          },
+          "final_fitness": 4930.0,
+          "fitness_breakdown": {
+            "subject_preference": 2975.0,
+            "time_preference": 580,
+            "day_preference": 0,
+            "schedule_style": 400,
+            "lecture_lab_preference": 0,
+            "number_of_preparations": 0,
+            "teaching_load_balance": 975,
+            "daily_teaching_load": 0
+          },
+          "best_ever_monotone": true,
+          "diagnostics": {
+            "construction:ACCEPTED": 6,
+            "crossover:NO_CANDIDATE": 7,
+            "crossover:ACCEPTED": 6,
+            "mutation:NO_CANDIDATE": 1,
+            "survivor:ACCEPTED": 17,
+            "mutation:ACCEPTED": 1
+          },
+          "workload": {
+            "faculty": [
+              {
+                "faculty": 990100,
+                "teaching_units": 9,
+                "target": 12,
+                "admin": 6,
+                "research": 3,
+                "extension": 3,
+                "non_teaching_fixed_units": 12,
+                "total_workload_units": 21,
+                "underload": 3,
+                "overload": 0,
+                "above_30_warning": false,
+                "target_fulfillment": 0.75
+              },
+              {
+                "faculty": 990101,
+                "teaching_units": 9,
+                "target": 15,
+                "admin": 4,
+                "research": 2,
+                "extension": 3,
+                "non_teaching_fixed_units": 9,
+                "total_workload_units": 18,
+                "underload": 6,
+                "overload": 0,
+                "above_30_warning": false,
+                "target_fulfillment": 0.6
+              },
+              {
+                "faculty": 990102,
+                "teaching_units": 9,
+                "target": 18,
+                "admin": 3,
+                "research": 1,
+                "extension": 2,
+                "non_teaching_fixed_units": 6,
+                "total_workload_units": 15,
+                "underload": 9,
+                "overload": 0,
+                "above_30_warning": false,
+                "target_fulfillment": 0.5
+              },
+              {
+                "faculty": 990103,
+                "teaching_units": 3,
+                "target": 21,
+                "admin": 1,
+                "research": 1,
+                "extension": 1,
+                "non_teaching_fixed_units": 3,
+                "total_workload_units": 6,
+                "underload": 18,
+                "overload": 0,
+                "above_30_warning": false,
+                "target_fulfillment": 0.14285714285714285
+              },
+              {
+                "faculty": 990104,
+                "teaching_units": 6,
+                "target": 24,
+                "admin": 0,
+                "research": 0,
+                "extension": 0,
+                "non_teaching_fixed_units": 0,
+                "total_workload_units": 6,
+                "underload": 18,
+                "overload": 0,
+                "above_30_warning": false,
+                "target_fulfillment": 0.25
+              },
+              {
+                "faculty": 990105,
+                "teaching_units": 0,
+                "target": 9,
+                "admin": 7,
+                "research": 4,
+                "extension": 4,
+                "non_teaching_fixed_units": 15,
+                "total_workload_units": 15,
+                "underload": 9,
+                "overload": 0,
+                "above_30_warning": false,
+                "target_fulfillment": 0.0
+              }
+            ],
+            "total_teaching_units": 36,
+            "total_target_units": 99,
+            "underload_units": 63,
+            "overload_units": 0,
+            "zero_assignment_count": 1,
+            "target_fulfillment_population_stdev": 0.2636306768698364
+          },
+          "hard_constraints": "PASS: original admit/reconstruction, external conflicts, every final population member and best",
+          "subject_coverage": "EXACT",
+          "faculty_eligibility": "PASS",
+          "best_assignment_sha256": "30ea6e3424d6977c459a7b253a63acd7ba6bbed561092c07ccfeac7ed761730c",
+          "best_assignments": [
+            {
+              "subject": "BENCH000",
+              "section": "BENCH-SEC-00",
+              "faculty": 990100,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-01",
+                  "blocks": [
+                    [
+                      "F",
+                      "16:30",
+                      "17:00"
+                    ],
+                    [
+                      "F",
+                      "17:00",
+                      "17:30"
+                    ],
+                    [
+                      "F",
+                      "17:30",
+                      "18:00"
+                    ],
+                    [
+                      "T",
+                      "16:30",
+                      "17:00"
+                    ],
+                    [
+                      "T",
+                      "17:00",
+                      "17:30"
+                    ],
+                    [
+                      "T",
+                      "17:30",
+                      "18:00"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": null,
+                  "blocks": []
+                }
+              ]
+            },
+            {
+              "subject": "BENCH001",
+              "section": "BENCH-SEC-00",
+              "faculty": 990102,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-01",
+                  "blocks": [
+                    [
+                      "S",
+                      "17:30",
+                      "18:00"
+                    ],
+                    [
+                      "S",
+                      "18:00",
+                      "18:30"
+                    ],
+                    [
+                      "S",
+                      "18:30",
+                      "19:00"
+                    ],
+                    [
+                      "S",
+                      "19:00",
+                      "19:30"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": "BENCH-LAB-00",
+                  "blocks": [
+                    [
+                      "S",
+                      "10:30",
+                      "11:00"
+                    ],
+                    [
+                      "S",
+                      "11:00",
+                      "11:30"
+                    ],
+                    [
+                      "S",
+                      "11:30",
+                      "12:00"
+                    ],
+                    [
+                      "S",
+                      "12:00",
+                      "12:30"
+                    ],
+                    [
+                      "S",
+                      "12:30",
+                      "13:00"
+                    ],
+                    [
+                      "S",
+                      "13:00",
+                      "13:30"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "subject": "BENCH002",
+              "section": "BENCH-SEC-00",
+              "faculty": 990104,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-00",
+                  "blocks": [
+                    [
+                      "T",
+                      "13:30",
+                      "14:00"
+                    ],
+                    [
+                      "T",
+                      "14:00",
+                      "14:30"
+                    ],
+                    [
+                      "T",
+                      "14:30",
+                      "15:00"
+                    ],
+                    [
+                      "T",
+                      "15:00",
+                      "15:30"
+                    ],
+                    [
+                      "T",
+                      "15:30",
+                      "16:00"
+                    ],
+                    [
+                      "T",
+                      "16:00",
+                      "16:30"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": null,
+                  "blocks": []
+                }
+              ]
+            },
+            {
+              "subject": "BENCH003",
+              "section": "BENCH-SEC-00",
+              "faculty": 990104,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-00",
+                  "blocks": [
+                    [
+                      "M",
+                      "11:30",
+                      "12:00"
+                    ],
+                    [
+                      "M",
+                      "12:00",
+                      "12:30"
+                    ],
+                    [
+                      "M",
+                      "12:30",
+                      "13:00"
+                    ],
+                    [
+                      "M",
+                      "13:00",
+                      "13:30"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": "BENCH-LAB-00",
+                  "blocks": [
+                    [
+                      "T",
+                      "10:30",
+                      "11:00"
+                    ],
+                    [
+                      "T",
+                      "11:00",
+                      "11:30"
+                    ],
+                    [
+                      "T",
+                      "11:30",
+                      "12:00"
+                    ],
+                    [
+                      "T",
+                      "12:00",
+                      "12:30"
+                    ],
+                    [
+                      "T",
+                      "12:30",
+                      "13:00"
+                    ],
+                    [
+                      "T",
+                      "13:00",
+                      "13:30"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "subject": "BENCH004",
+              "section": "BENCH-SEC-01",
+              "faculty": 990100,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-01",
+                  "blocks": [
+                    [
+                      "M",
+                      "07:30",
+                      "08:00"
+                    ],
+                    [
+                      "M",
+                      "08:00",
+                      "08:30"
+                    ],
+                    [
+                      "M",
+                      "08:30",
+                      "09:00"
+                    ],
+                    [
+                      "TH",
+                      "07:30",
+                      "08:00"
+                    ],
+                    [
+                      "TH",
+                      "08:00",
+                      "08:30"
+                    ],
+                    [
+                      "TH",
+                      "08:30",
+                      "09:00"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": null,
+                  "blocks": []
+                }
+              ]
+            },
+            {
+              "subject": "BENCH005",
+              "section": "BENCH-SEC-01",
+              "faculty": 990102,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-01",
+                  "blocks": [
+                    [
+                      "W",
+                      "07:30",
+                      "08:00"
+                    ],
+                    [
+                      "W",
+                      "08:00",
+                      "08:30"
+                    ],
+                    [
+                      "W",
+                      "08:30",
+                      "09:00"
+                    ],
+                    [
+                      "W",
+                      "09:00",
+                      "09:30"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": "BENCH-LAB-01",
+                  "blocks": [
+                    [
+                      "F",
+                      "13:30",
+                      "14:00"
+                    ],
+                    [
+                      "F",
+                      "14:00",
+                      "14:30"
+                    ],
+                    [
+                      "F",
+                      "14:30",
+                      "15:00"
+                    ],
+                    [
+                      "F",
+                      "15:00",
+                      "15:30"
+                    ],
+                    [
+                      "F",
+                      "15:30",
+                      "16:00"
+                    ],
+                    [
+                      "F",
+                      "16:00",
+                      "16:30"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "subject": "BENCH006",
+              "section": "BENCH-SEC-01",
+              "faculty": 990101,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-00",
+                  "blocks": [
+                    [
+                      "F",
+                      "16:30",
+                      "17:00"
+                    ],
+                    [
+                      "F",
+                      "17:00",
+                      "17:30"
+                    ],
+                    [
+                      "F",
+                      "17:30",
+                      "18:00"
+                    ],
+                    [
+                      "T",
+                      "16:30",
+                      "17:00"
+                    ],
+                    [
+                      "T",
+                      "17:00",
+                      "17:30"
+                    ],
+                    [
+                      "T",
+                      "17:30",
+                      "18:00"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": null,
+                  "blocks": []
+                }
+              ]
+            },
+            {
+              "subject": "BENCH007",
+              "section": "BENCH-SEC-01",
+              "faculty": 990103,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-01",
+                  "blocks": [
+                    [
+                      "T",
+                      "09:30",
+                      "10:00"
+                    ],
+                    [
+                      "T",
+                      "10:00",
+                      "10:30"
+                    ],
+                    [
+                      "T",
+                      "10:30",
+                      "11:00"
+                    ],
+                    [
+                      "T",
+                      "11:00",
+                      "11:30"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": "BENCH-LAB-00",
+                  "blocks": [
+                    [
+                      "S",
+                      "16:30",
+                      "17:00"
+                    ],
+                    [
+                      "S",
+                      "17:00",
+                      "17:30"
+                    ],
+                    [
+                      "S",
+                      "17:30",
+                      "18:00"
+                    ],
+                    [
+                      "S",
+                      "18:00",
+                      "18:30"
+                    ],
+                    [
+                      "S",
+                      "18:30",
+                      "19:00"
+                    ],
+                    [
+                      "S",
+                      "19:00",
+                      "19:30"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "subject": "BENCH008",
+              "section": "BENCH-SEC-02",
+              "faculty": 990100,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-00",
+                  "blocks": [
+                    [
+                      "S",
+                      "10:30",
+                      "11:00"
+                    ],
+                    [
+                      "S",
+                      "11:00",
+                      "11:30"
+                    ],
+                    [
+                      "S",
+                      "11:30",
+                      "12:00"
+                    ],
+                    [
+                      "S",
+                      "12:00",
+                      "12:30"
+                    ],
+                    [
+                      "S",
+                      "12:30",
+                      "13:00"
+                    ],
+                    [
+                      "S",
+                      "13:00",
+                      "13:30"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": null,
+                  "blocks": []
+                }
+              ]
+            },
+            {
+              "subject": "BENCH009",
+              "section": "BENCH-SEC-02",
+              "faculty": 990101,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-00",
+                  "blocks": [
+                    [
+                      "F",
+                      "07:30",
+                      "08:00"
+                    ],
+                    [
+                      "F",
+                      "08:00",
+                      "08:30"
+                    ],
+                    [
+                      "F",
+                      "08:30",
+                      "09:00"
+                    ],
+                    [
+                      "F",
+                      "09:00",
+                      "09:30"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": "BENCH-LAB-00",
+                  "blocks": [
+                    [
+                      "M",
+                      "16:30",
+                      "17:00"
+                    ],
+                    [
+                      "M",
+                      "17:00",
+                      "17:30"
+                    ],
+                    [
+                      "M",
+                      "17:30",
+                      "18:00"
+                    ],
+                    [
+                      "M",
+                      "18:00",
+                      "18:30"
+                    ],
+                    [
+                      "M",
+                      "18:30",
+                      "19:00"
+                    ],
+                    [
+                      "M",
+                      "19:00",
+                      "19:30"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "subject": "BENCH010",
+              "section": "BENCH-SEC-02",
+              "faculty": 990102,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-00",
+                  "blocks": [
+                    [
+                      "W",
+                      "10:30",
+                      "11:00"
+                    ],
+                    [
+                      "W",
+                      "11:00",
+                      "11:30"
+                    ],
+                    [
+                      "W",
+                      "11:30",
+                      "12:00"
+                    ],
+                    [
+                      "W",
+                      "12:00",
+                      "12:30"
+                    ],
+                    [
+                      "W",
+                      "12:30",
+                      "13:00"
+                    ],
+                    [
+                      "W",
+                      "13:00",
+                      "13:30"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": null,
+                  "blocks": []
+                }
+              ]
+            },
+            {
+              "subject": "BENCH011",
+              "section": "BENCH-SEC-02",
+              "faculty": 990101,
+              "credit_units": 3,
+              "components": [
+                {
+                  "component": "lecture",
+                  "room": "BENCH-LEC-00",
+                  "blocks": [
+                    [
+                      "TH",
+                      "15:30",
+                      "16:00"
+                    ],
+                    [
+                      "TH",
+                      "16:00",
+                      "16:30"
+                    ],
+                    [
+                      "TH",
+                      "16:30",
+                      "17:00"
+                    ],
+                    [
+                      "TH",
+                      "17:00",
+                      "17:30"
+                    ]
+                  ]
+                },
+                {
+                  "component": "laboratory",
+                  "room": "BENCH-LAB-00",
+                  "blocks": [
+                    [
+                      "W",
+                      "13:30",
+                      "14:00"
+                    ],
+                    [
+                      "W",
+                      "14:00",
+                      "14:30"
+                    ],
+                    [
+                      "W",
+                      "14:30",
+                      "15:00"
+                    ],
+                    [
+                      "W",
+                      "15:00",
+                      "15:30"
+                    ],
+                    [
+                      "W",
+                      "15:30",
+                      "16:00"
+                    ],
+                    [
+                      "W",
+                      "16:00",
+                      "16:30"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ],
+          "validation_and_breakdown_seconds": 0.29138460001558997,
+          "admission_observations": {
+            "accepted": 30,
+            "rejected_or_no_candidate": 8,
+            "construction_search_failures": 0,
+            "semantics": "Admission events, not unique candidates; survivor checks can repeat. Operator internal attempts are not instrumented."
+          },
+          "end_to_end_worker_seconds": 12.133257299981778,
+          "repetition": 1
+        }
+      ],
+      "summary": {
+        "attempted_trials": 1,
+        "completed_trials": 1,
+        "failed_trials": 0,
+        "mean_seconds": 7.235964699997567,
+        "median_seconds": 7.235964699997567,
+        "min_seconds": 7.235964699997567,
+        "max_seconds": 7.235964699997567,
+        "sample_standard_deviation_seconds": null,
+        "population_cv": 0.0,
+        "scope": "Successful uninstrumented engine.run calls only; failed/time-limited trials retained separately. Includes internal validation, fingerprint reads and lightweight counters; not pure operator CPU time."
+      },
+      "separate_instrumented_runs": {}
+    }
+  }
+}

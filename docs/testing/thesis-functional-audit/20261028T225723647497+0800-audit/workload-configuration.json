@@ -1,0 +1,8 @@
+{
+  "fictional_requested_target": 18,
+  "fictional_requested_ceiling": 20,
+  "actual_model_target": 24,
+  "actual_model_ceiling": 40,
+  "settings_file_read_or_changed": false,
+  "meaning": "Settings fields are not authority to replace Faculty model constants"
+}

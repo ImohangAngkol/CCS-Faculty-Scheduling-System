@@ -1,0 +1,960 @@
+{
+  "phase": "Phase 6 isolated reconstruction/copying feasibility",
+  "recorded_at": "2026-10-28T17:21:21.975830+08:00",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "logical_processors": 16,
+  "baseline_paths_preserved": 1550,
+  "academic_files_preserved": 23,
+  "existing_files_modified": 0,
+  "original_GA_scoring_RNG_workload_migrations_checkpoints_schedules_prior_evidence_preserved": true,
+  "protected_preferences_and_settings_preserved": true,
+  "Git_index_HEAD_preserved": true,
+  "new_file_inventory": [
+    "backend/benchmarks/reconstruction_benchmark.py",
+    "backend/benchmarks/reconstruction_operations.py",
+    "backend/benchmarks/reconstruction_phase6.py",
+    "backend/tests/performance/test_reconstruction_phase6.py",
+    "docs/ga-reconstruction-phase6.md",
+    "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/000-small-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/001-medium-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/002-large-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/validity.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/000-small-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/001-small-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/002-small-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/003-medium-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/004-medium-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/005-medium-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/006-large-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/007-large-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/008-large-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155439002979+0800-profile-canary/canary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/000-small-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/001-small-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/002-small-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/003-medium-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/004-medium-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/005-medium-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/006-large-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/007-large-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/008-large-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/000-small-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/001-small-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/002-small-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/003-small-calendar_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/004-small-baseline-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/005-small-parse_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/006-small-baseline-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/007-small-parse_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/008-small-calendar_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/009-small-calendar_cache-714-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/010-small-baseline-714-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/011-small-parse_cache-714-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/012-small-baseline-715-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/013-small-parse_cache-715-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/014-small-calendar_cache-715-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/015-small-parse_cache-716-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/016-small-calendar_cache-716-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/017-small-baseline-716-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/018-medium-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/019-medium-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/020-medium-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/021-medium-calendar_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/022-medium-baseline-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/023-medium-parse_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/024-medium-baseline-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/025-medium-parse_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/026-medium-calendar_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/027-medium-calendar_cache-714-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/028-medium-baseline-714-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/029-medium-parse_cache-714-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/030-medium-baseline-715-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/031-medium-parse_cache-715-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/032-medium-calendar_cache-715-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/033-medium-parse_cache-716-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/034-medium-calendar_cache-716-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/035-medium-baseline-716-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/036-large-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/037-large-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/038-large-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/039-large-calendar_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/040-large-baseline-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/041-large-parse_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/042-large-baseline-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/043-large-parse_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/044-large-calendar_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/045-large-calendar_cache-714-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/046-large-baseline-714-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/047-large-parse_cache-714-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/048-large-baseline-715-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/049-large-parse_cache-715-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/050-large-calendar_cache-715-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/051-large-parse_cache-716-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/052-large-calendar_cache-716-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/053-large-baseline-716-r2.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/000-small-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/001-small-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/002-small-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/003-small-parse_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/004-small-calendar_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/005-small-baseline-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/006-small-calendar_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/007-small-baseline-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/008-small-parse_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/009-medium-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/010-medium-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/011-medium-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/012-medium-parse_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/013-medium-calendar_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/014-medium-baseline-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/015-medium-calendar_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/016-medium-baseline-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/017-medium-parse_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/018-large-baseline-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/019-large-parse_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/020-large-calendar_cache-714-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/021-large-parse_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/022-large-calendar_cache-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/023-large-baseline-715-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/024-large-calendar_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/025-large-baseline-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/026-large-parse_cache-716-r1.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T164602526157+0800-phase6/command.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T164910750108+0800-contract-diagnosis/failure.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165028694021+0800-contract-diagnosis/diagnosis.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165110121110+0800-phase6/command.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/large-baseline.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/large-calendar_cache.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/large-parse_cache.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/medium-baseline.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/medium-calendar_cache.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/medium-parse_cache.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/small-baseline.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/small-calendar_cache.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/small-parse_cache.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T170127456771+0800-regressions/command.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T170140885904+0800-analysis/analysis.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T170352147163+0800-phase5/command.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T170426978967+0800-v1/command.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T171211756299+0800-v1-mirror/command.json",
+    "docs/testing/ga-reconstruction-phase6/analyze.py",
+    "docs/testing/ga-reconstruction-phase6/audit.py",
+    "docs/testing/ga-reconstruction-phase6/diagnose_contracts.py",
+    "docs/testing/ga-reconstruction-phase6/manifest.json",
+    "docs/testing/ga-reconstruction-phase6/preservation-baseline.json",
+    "docs/testing/ga-reconstruction-phase6/profile_canary.py",
+    "docs/testing/ga-reconstruction-phase6/run_checks.py",
+    "docs/testing/ga-reconstruction-phase6/v1_fixture.py"
+  ],
+  "artifacts": [
+    {
+      "path": "backend/benchmarks/reconstruction_benchmark.py",
+      "sha256": "7eb936290240d93b65b539f96f2577f8ac34ca08b9faf7a98250ad6848bbed16",
+      "bytes": 14670
+    },
+    {
+      "path": "backend/benchmarks/reconstruction_operations.py",
+      "sha256": "34376be05b211095649d864f55ff045f2c33b494b2368c9a1e9faa5fa06f8b69",
+      "bytes": 7785
+    },
+    {
+      "path": "backend/benchmarks/reconstruction_phase6.py",
+      "sha256": "fd7e12bc57a59d30bb562e428b20b4a46c5ee00bd501c26e7ce8be79755a0030",
+      "bytes": 9551
+    },
+    {
+      "path": "backend/tests/performance/test_reconstruction_phase6.py",
+      "sha256": "c07066705787f85e77c9a356b6b1aac200f8569c8c8d7ba3ede030bb33fb8778",
+      "bytes": 15694
+    },
+    {
+      "path": "docs/ga-reconstruction-phase6.md",
+      "sha256": "38d1184218e6a2b9affa6c6acf5db03d88ed0692df1bc88b8fc6c0ee66e2c4ad",
+      "bytes": 40201
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/000-small-baseline-714-r1.json",
+      "sha256": "6934f65016c64720ae06c59dd3ac94f736854a7d873c83551abb10cc0c6c9b10",
+      "bytes": 942601
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/001-medium-baseline-714-r1.json",
+      "sha256": "d29a1712d2a9e0219659b08379e1f7ed5c1f8cc908d1866ac59a7cdf09fdd42f",
+      "bytes": 1022508
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/002-large-baseline-714-r1.json",
+      "sha256": "c0009c5646acc674fc7a3e12ffcd3aac86639d8c604b86d514e53108d6b3e42f",
+      "bytes": 1042738
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/summary.json",
+      "sha256": "8ab005824cf072a8b840b6c8082269c58ad8fdce752583f3f9b57178e8a410c2",
+      "bytes": 539
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/validity.json",
+      "sha256": "b80ff59d50c6484feb7599a8bb2fc833665c8bfaa971580991834ec6aff1ff69",
+      "bytes": 460
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/000-small-baseline-714-r1.json",
+      "sha256": "53a7099fd3ba608a11e8ab75445d217daacac671a9d4dc6ff06ce8cea4420043",
+      "bytes": 7509
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/001-small-parse_cache-714-r1.json",
+      "sha256": "0974d94c96d09dd4f8f72c7e5c0a515167b49685daf3b719d4caeeebeb938a21",
+      "bytes": 7533
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/002-small-calendar_cache-714-r1.json",
+      "sha256": "5ce6e5b878eb30c74310fff54fd653fd9e673814d920c3ce8912bda440a7d572",
+      "bytes": 7546
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/003-medium-baseline-714-r1.json",
+      "sha256": "62f2cfbfa6b189546079522cbfc05d2cee8352f8453ec99ec11aa8c47b9924f7",
+      "bytes": 10049
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/004-medium-parse_cache-714-r1.json",
+      "sha256": "cf50088f6928730e08e03216a36dc88894ef8db228c5d152df51eac1312f30d2",
+      "bytes": 10074
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/005-medium-calendar_cache-714-r1.json",
+      "sha256": "681ee552b06f433dda2acdb57c03f7b3a5e1b971a2847ed55930dfc23e1ce9f5",
+      "bytes": 10084
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/006-large-baseline-714-r1.json",
+      "sha256": "e78b6ec5f4f923f9c470d76c1429f0e470bdb7b4a2286e5d83f6d9250b84ae5a",
+      "bytes": 15076
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/007-large-parse_cache-714-r1.json",
+      "sha256": "aa11b34fbdcd82ec6fa1389bf04a9b749a580fee036fbca1034e9740fe2809e3",
+      "bytes": 15099
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/008-large-calendar_cache-714-r1.json",
+      "sha256": "67269d025675694ff70b47e9e7a38be3b18003d7bf136fbb428f8c013b243e4f",
+      "bytes": 15110
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/summary.json",
+      "sha256": "cb474876a2012a47d9c634afe1d666dfe43e269723d5fa8f08ecf758381e3ab4",
+      "bytes": 1551
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155439002979+0800-profile-canary/canary.json",
+      "sha256": "15a2faefa3dbb51cc1389c249c48fb197c5a8c9a6eb0cfabc2ffec4480ed6724",
+      "bytes": 650
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/000-small-baseline-714-r1.json",
+      "sha256": "0adbc278de11b292731e37ed1ee2972e55374bf7c6c02fc2cb2298355df62c98",
+      "bytes": 661983
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/001-small-parse_cache-714-r1.json",
+      "sha256": "79b86a00dffb9fb279fd3c99e1685076e2cd6c11880e0c8e8c9d37b4e5870690",
+      "bytes": 667749
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/002-small-calendar_cache-714-r1.json",
+      "sha256": "dd8a909445255b668f78f5ef0e8777b873b114cd20826bba28280ec805cd3d31",
+      "bytes": 669373
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/003-medium-baseline-714-r1.json",
+      "sha256": "efff4827d9fda55231dfb47cadd4dc3541f2cd33280c83192cf62a5e68f8dddb",
+      "bytes": 669077
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/004-medium-parse_cache-714-r1.json",
+      "sha256": "11f719913be7d53b23f62aa71dfeb5ac5e54a663a378797a996607bd48a1bfbf",
+      "bytes": 675893
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/005-medium-calendar_cache-714-r1.json",
+      "sha256": "d895b70c7ee4b4f8be9acf969ce0f471a6eccb7c1d5a64a3f39b5e82cfca8e48",
+      "bytes": 678418
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/006-large-baseline-714-r1.json",
+      "sha256": "81e454817653937342c09d8965c5de0f08654d6d836338de33d62d58894e24e1",
+      "bytes": 671978
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/007-large-parse_cache-714-r1.json",
+      "sha256": "c8697e2101c0b3587cb4ceb0bd9db3565ee9cac9093350ac28674a87cab4707a",
+      "bytes": 678326
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/008-large-calendar_cache-714-r1.json",
+      "sha256": "0a2016d961ac822878aea52418661241fcf679e544d75a8e2ecd80de2ea80f22",
+      "bytes": 680435
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/summary.json",
+      "sha256": "29fee8bf0a6d3c066d6003358162b5c2b6af8cab97562cfba142ac94a00fa88f",
+      "bytes": 1531
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/000-small-parse_cache-714-r1.json",
+      "sha256": "f4f438968148249f060d4a665ecc3f34165537fb1b2fd696b49a22f5f3d2cd12",
+      "bytes": 11035
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/001-small-calendar_cache-714-r1.json",
+      "sha256": "373a5272d32e91e781a0a2e4f23e3310a712f4463b84097faefe98a65b198ea2",
+      "bytes": 11047
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/002-small-baseline-714-r1.json",
+      "sha256": "6f7f3cbacceb26972250e18da913c88aeb40c144054b4c8f32b0ffb3f261ed69",
+      "bytes": 11007
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/003-small-calendar_cache-715-r1.json",
+      "sha256": "ccf3ab077e18faf34ec6eb44c09e33afc9f8c45f74b5c5fa7627119ed562b52c",
+      "bytes": 11045
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/004-small-baseline-715-r1.json",
+      "sha256": "27f53dd502855136c290fbfae6d8b82e3b5ee6e5b7c9b0a0f699cf69dd528794",
+      "bytes": 11010
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/005-small-parse_cache-715-r1.json",
+      "sha256": "d1c4eb1d1706b96248feb92db34e25f92e8c1be23d1ce703bdfb168ab6b11b42",
+      "bytes": 11034
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/006-small-baseline-716-r1.json",
+      "sha256": "ced599cdc5e2741676750cd4fd46ca78c7bcf78c075807d9823ac87ee01727c2",
+      "bytes": 11008
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/007-small-parse_cache-716-r1.json",
+      "sha256": "e636a3a5638a96be265fbb7232e1513dbc005c320637f4264b36ffd06da46469",
+      "bytes": 11034
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/008-small-calendar_cache-716-r1.json",
+      "sha256": "c38d5cfe2eeed681e636a2efdc59d9dad663343c4077a4fd768b1db1940927ae",
+      "bytes": 11047
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/009-small-calendar_cache-714-r2.json",
+      "sha256": "f796a49be7bd4918ba11b9ed41daf174eaf0a1a7b1d9d22e3b3d9da2d9474f81",
+      "bytes": 11048
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/010-small-baseline-714-r2.json",
+      "sha256": "8e51df73f54c36bdcc2ace8fa6ddd9ba646a9de5b3846a760cf317c286980173",
+      "bytes": 11011
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/011-small-parse_cache-714-r2.json",
+      "sha256": "389b3590cd9740200de66f40ad69c986465041b9deb028ecbe1f9fc4127051cc",
+      "bytes": 11035
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/012-small-baseline-715-r2.json",
+      "sha256": "46eb1de6a09d05e254dfabed1833ffb4687a5a2a8836f1157782b17a40197d24",
+      "bytes": 11009
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/013-small-parse_cache-715-r2.json",
+      "sha256": "4828b458a06f4aa7f3676aad6893e8b1cf1a0a48e869a1cd4d06d78216d6b89f",
+      "bytes": 11034
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/014-small-calendar_cache-715-r2.json",
+      "sha256": "0ace6b814422b55e4869bbe49aee847e7703f73f7091b3ac56441bfcbc920e16",
+      "bytes": 11044
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/015-small-parse_cache-716-r2.json",
+      "sha256": "c44f9109d022bd734d049897c59cce54ecb618462266dea9b63aaee827ff079c",
+      "bytes": 11034
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/016-small-calendar_cache-716-r2.json",
+      "sha256": "a5dcd8a6b8d40e3e4b0675ff67250b57d0b6db7c4ddc8c0ba6414ce35aef4fbf",
+      "bytes": 11046
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/017-small-baseline-716-r2.json",
+      "sha256": "f42f0d45a0ba0fe2f2dd1067dabf3de00beddfdb2272564d471a5f913b5621a1",
+      "bytes": 11009
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/018-medium-parse_cache-714-r1.json",
+      "sha256": "02749067e64bdf8209322f095be02dfdfd1a761a6b0c840a247d9a5de66df71c",
+      "bytes": 16096
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/019-medium-calendar_cache-714-r1.json",
+      "sha256": "0d967917cd3f7676bcbb9822a79e24a2cd2390e9e3c78ebeac440fcdd63a4003",
+      "bytes": 16107
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/020-medium-baseline-714-r1.json",
+      "sha256": "303acdc5ee45b6e68bcbeb3655dd4b9c7aaca4207a46d5c68b0630b899c5607a",
+      "bytes": 16070
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/021-medium-calendar_cache-715-r1.json",
+      "sha256": "d6fb28fd99687eaaa93a804e8b9dbbb8ca6f2f9d75c327df91af08a45349aba4",
+      "bytes": 16070
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/022-medium-baseline-715-r1.json",
+      "sha256": "cda95896582bed26118be4484e0508d6f411923b1a692aa6c1e2bd1650d4ee4e",
+      "bytes": 16031
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/023-medium-parse_cache-715-r1.json",
+      "sha256": "d5b632b7b709398d244b4cd2fbdc4aec7884494a3650dbfc1ca36be9d234e0ec",
+      "bytes": 16057
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/024-medium-baseline-716-r1.json",
+      "sha256": "46715abfc37fa816e9e31076fa5f0ccb49b41c0b8e952f8f333c1a821561a44a",
+      "bytes": 16064
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/025-medium-parse_cache-716-r1.json",
+      "sha256": "b869ab6f64ed143b1c09805c55d5523562502df2e89c1462c7a3b89620aa4fc5",
+      "bytes": 16089
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/026-medium-calendar_cache-716-r1.json",
+      "sha256": "4aaac9f9bcd6f80d4f6187e28831b5e7c7569d00358e0cb7f0ef8a1149c0ae50",
+      "bytes": 16100
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/027-medium-calendar_cache-714-r2.json",
+      "sha256": "e14d98bfab4a4a1863a5ee872aa93249d4ce46c3004762cf7e852889327ba609",
+      "bytes": 16108
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/028-medium-baseline-714-r2.json",
+      "sha256": "97b434d832c09ffde9fbce527be617aa828227076e082dbb2aad5a75b9be541f",
+      "bytes": 16071
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/029-medium-parse_cache-714-r2.json",
+      "sha256": "1cf202366d3a2b61472219ffa11a805bd1722a4f5d2a120fe590da0b666e76e2",
+      "bytes": 16094
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/030-medium-baseline-715-r2.json",
+      "sha256": "020c9ff7265cfd7af6f7411dc9617e23092c814ac7b3335648edf0f85b5deab0",
+      "bytes": 16033
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/031-medium-parse_cache-715-r2.json",
+      "sha256": "f273b216048233802326e8ad127006180a3f7b71c9720e098b93fa2a9db8786c",
+      "bytes": 16057
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/032-medium-calendar_cache-715-r2.json",
+      "sha256": "5106a6d54862cb88dd395fc5b49d7d46f4bcf3e213541da757ab91f8a04eb4ac",
+      "bytes": 16068
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/033-medium-parse_cache-716-r2.json",
+      "sha256": "de7b09108c34e086f056b86bdd645342b9b4baa36811edfbc82742b9fb49dab5",
+      "bytes": 16089
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/034-medium-calendar_cache-716-r2.json",
+      "sha256": "04e3be50759abdf0b78da450205072dd1d8ba2a885293692d53069f93a0376db",
+      "bytes": 16100
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/035-medium-baseline-716-r2.json",
+      "sha256": "9b452affabb3560b5332aa585f6d6458e7be77249ad61ea6c18ecb68f7549004",
+      "bytes": 16062
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/036-large-parse_cache-714-r1.json",
+      "sha256": "aade4ec8c4fc1f7db4d1402b0709632cd065ac5185cea6e60a2d2bb09db5caa4",
+      "bytes": 26076
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/037-large-calendar_cache-714-r1.json",
+      "sha256": "e9f365ac8c3939b4a311dfaada3acf75b94e3a210ef94614475557f461210934",
+      "bytes": 26088
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/038-large-baseline-714-r1.json",
+      "sha256": "e17e8f725f3fccba7145c12140bbdee4a5f06531ea36c2cfd5b5f36a96a90fd1",
+      "bytes": 26051
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/039-large-calendar_cache-715-r1.json",
+      "sha256": "e458c0923cc0f412e0c15e4fbf41433006b2fbac9e21db7a260b2b4f380c5297",
+      "bytes": 26087
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/040-large-baseline-715-r1.json",
+      "sha256": "a335ee0c60e2adbb9b8be8e24005f0394852fd4b459f509222d51c2aead58ea3",
+      "bytes": 26048
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/041-large-parse_cache-715-r1.json",
+      "sha256": "953bbdae02737d7dbf5ada6eff72dca3aa11824a99d63809548f9288534e3905",
+      "bytes": 26072
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/042-large-baseline-716-r1.json",
+      "sha256": "bfaac8a7c1d029501b3e496d8869bc7be9433dbbb1ec20f726b8baed614ad59a",
+      "bytes": 26082
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/043-large-parse_cache-716-r1.json",
+      "sha256": "99ea593d6667aeb9893f2174c4ca2853030c9ccf8241ea69f7593d07e3d4806b",
+      "bytes": 26107
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/044-large-calendar_cache-716-r1.json",
+      "sha256": "81dfcc6f005d5d40bdc6c3d13d1fea3086014d0d88ca672ca1c5dc05dffd3869",
+      "bytes": 26120
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/045-large-calendar_cache-714-r2.json",
+      "sha256": "0fd2a8131f10736fb45640c2e688a25309e82f00f4e4a1a38c475caa444b6250",
+      "bytes": 26089
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/046-large-baseline-714-r2.json",
+      "sha256": "4edcaef98cf83a39be23b971656fdc4ee31bb66b02401eeb91eb11ff561bde6d",
+      "bytes": 26053
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/047-large-parse_cache-714-r2.json",
+      "sha256": "e00fa61b20afa30a62eb6cb5629ae6e1ae8ce31841062f78fae0f459345c8ad5",
+      "bytes": 26076
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/048-large-baseline-715-r2.json",
+      "sha256": "33f064c4b9d992f54820c8e1b9049ef741d276d01cad99631633046533a737a1",
+      "bytes": 26049
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/049-large-parse_cache-715-r2.json",
+      "sha256": "ce43396d9b6881c1b98844da75baa9dc0518ced6a1f024a61160918b0b7c2778",
+      "bytes": 26073
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/050-large-calendar_cache-715-r2.json",
+      "sha256": "e3a78797ad63139e10e818738adb8dd9f25c07e48c202612aa982ff914dc9b66",
+      "bytes": 26086
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/051-large-parse_cache-716-r2.json",
+      "sha256": "53390007856c80e85ae24c7d734d2b51b57ee84a7017cce76417d802c830cdaf",
+      "bytes": 26108
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/052-large-calendar_cache-716-r2.json",
+      "sha256": "6d07bdf57cb5e974dc1ce3f2f3adc283d4ce6c8b79ee201dbe159aed5f66419e",
+      "bytes": 26119
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/053-large-baseline-716-r2.json",
+      "sha256": "594994336f6ec33ac7d7851c3a688fc13315c4353931b137f521211df605113d",
+      "bytes": 26082
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/summary.json",
+      "sha256": "c9cf2e505429774c0961595201e9c5a74c5775e259bd23daf14673162cf2c2d5",
+      "bytes": 8916
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/000-small-baseline-714-r1.json",
+      "sha256": "2f10ecfa9f76009ce5dc8e886917b46dcec4736c30b60ccf3126cc79f61230cb",
+      "bytes": 14785
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/001-small-parse_cache-714-r1.json",
+      "sha256": "823eb2cc74f505a4ee924d78bff998548f86290e1daf2d6b9500c225ed43374b",
+      "bytes": 14820
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/002-small-calendar_cache-714-r1.json",
+      "sha256": "38abe030eae5599e3894facd9470a8ecab7634be3ca95688d4e71d1f699f1f5f",
+      "bytes": 14762
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/003-small-parse_cache-715-r1.json",
+      "sha256": "73ead0219c57526ea1afdcfeb5ca6ef50759c8bb1c47448eab784e29854fc7db",
+      "bytes": 14809
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/004-small-calendar_cache-715-r1.json",
+      "sha256": "dbdd35f9b73f3d3dd20f5c4fb763d7a6262d82c260405228b7228fe9e860ce20",
+      "bytes": 14795
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/005-small-baseline-715-r1.json",
+      "sha256": "0381bd29e4cef2f972e88b7a425322023cffc6e3a9817325f2a4f3e056289bf4",
+      "bytes": 14788
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/006-small-calendar_cache-716-r1.json",
+      "sha256": "270c816ef5b95b87f3a59d1be1389ed4c26d836d35829472686632f567d610d1",
+      "bytes": 14759
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/007-small-baseline-716-r1.json",
+      "sha256": "8d90482af908e0fdcb0ef6474fd88381c25c3bf39b44a5fee913ad5c4fa4975c",
+      "bytes": 14783
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/008-small-parse_cache-716-r1.json",
+      "sha256": "bc3f7129135f401ed99c5a5e42f802b67b4be4c1e5eb6ee4b8e7f97d62c615b3",
+      "bytes": 14810
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/009-medium-baseline-714-r1.json",
+      "sha256": "93e0111170d5c0e5c9250c6f4fb14c7e2b68438fb4bf825ef3e20d51f12e20a2",
+      "bytes": 19848
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/010-medium-parse_cache-714-r1.json",
+      "sha256": "251899856c89a7f6bbc381bd5cbb7de8884bf08adacbfcc53fc284a665a03c34",
+      "bytes": 19872
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/011-medium-calendar_cache-714-r1.json",
+      "sha256": "a74a12db9c102bd4dae5e9c70428e69c4063cfb5d4a834b278f47233f47d71b2",
+      "bytes": 19824
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/012-medium-parse_cache-715-r1.json",
+      "sha256": "097cb50a72b836c75f7a4b7f5b5d36da8353d47c895753240b86323c428b0fd5",
+      "bytes": 19840
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/013-medium-calendar_cache-715-r1.json",
+      "sha256": "f2773019e8badd3a43e7e0b4cdb76737a938ff6344d6dc23fff6d71296bd865f",
+      "bytes": 19801
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/014-medium-baseline-715-r1.json",
+      "sha256": "0708f637e6dddf718d76f14edf0e15a9e6766fa2b55909f2267075a3a04480c2",
+      "bytes": 19808
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/015-medium-calendar_cache-716-r1.json",
+      "sha256": "a66146f3a467c13da787a7313d4a71648eebf5fa3691a3ab453375642de72c1c",
+      "bytes": 19850
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/016-medium-baseline-716-r1.json",
+      "sha256": "40a9ebd86453264cbabfa46d32d7d79111cebf79286a4293f0c6003b85d155b1",
+      "bytes": 19831
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/017-medium-parse_cache-716-r1.json",
+      "sha256": "49688e7c0ce56c346639051685f0ed17a86f277baf6f38ffa76cf78720514e9b",
+      "bytes": 19879
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/018-large-baseline-714-r1.json",
+      "sha256": "727db2c76860af15e357e96f548df234f53d92fdf9c1c40196c838479793c50b",
+      "bytes": 29840
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/019-large-parse_cache-714-r1.json",
+      "sha256": "97d2231bc3dc2ac4dffd1201a58749b5443ee2d46fe3df6ed9e8cb251c432743",
+      "bytes": 29867
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/020-large-calendar_cache-714-r1.json",
+      "sha256": "499759cd58e020b89ac27792ffd98f6d5893a9d79d12b3883da3eb744c3430b0",
+      "bytes": 29818
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/021-large-parse_cache-715-r1.json",
+      "sha256": "7c0305f7a3636ae6ea323a065469cc769d4db2e1b4741acbbba1a409d46e7cdd",
+      "bytes": 29845
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/022-large-calendar_cache-715-r1.json",
+      "sha256": "54cfa21ba6aedd104d340ab539496aaa30452fc887e1441abd69aad3ee489a24",
+      "bytes": 29828
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/023-large-baseline-715-r1.json",
+      "sha256": "cd7e2308dc94f9da396a7d0fd90cbbc4f53b0cb08e0d9502fbbecf0afdd6bdcb",
+      "bytes": 29837
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/024-large-calendar_cache-716-r1.json",
+      "sha256": "29e89e13505e7649ed85a31ce77d7c90e34041e492c973fb6be2b3f8c2893539",
+      "bytes": 29846
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/025-large-baseline-716-r1.json",
+      "sha256": "02170cfb459563a280df4af59ae2b5436973402920617f86b9e47085f3631f9d",
+      "bytes": 29880
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/026-large-parse_cache-716-r1.json",
+      "sha256": "d290ef4acaaa9d8f9bfd486a431740e86f0ce7afc74bab340447b6d083038105",
+      "bytes": 29889
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/summary.json",
+      "sha256": "e9d2ce25372f3ebf2f024da15298eca3959683c945bd037769ec71a3a24d09e2",
+      "bytes": 4479
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T164602526157+0800-phase6/command.json",
+      "sha256": "f5e7a7ee7272dd28b0385538dac7afba8e6204a0380083742cfc3aab36ce231a",
+      "bytes": 5243
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T164910750108+0800-contract-diagnosis/failure.json",
+      "sha256": "6553f0c1714bd6f10bc7790be22d242ad72014af7ccaa9c52f0a3e9d9e65c504",
+      "bytes": 324
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165028694021+0800-contract-diagnosis/diagnosis.json",
+      "sha256": "e9f9429cddc5d711cd31b0415bbbddc31570ef7ec305e63d3e2905cc8c05f4e7",
+      "bytes": 779
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165110121110+0800-phase6/command.json",
+      "sha256": "f2cd88d9597756e09d69b03f803c21bee8ab6ecc39c6723ca965ac3c54937520",
+      "bytes": 1339
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/large-baseline.json",
+      "sha256": "8d5ec15865cad127d80fe903d585d759066aaa34e4a5078cf1ed05dc0884cb5d",
+      "bytes": 25356
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/large-calendar_cache.json",
+      "sha256": "0a4242df8ad86b305ba95314365af40c9a64e6f1f65dc66d44b7c4fd63db6ad3",
+      "bytes": 25371
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/large-parse_cache.json",
+      "sha256": "13c3a1dd72cdf0533596cc6bb208beb493d6b632b27f1d03a1a030812e95bb96",
+      "bytes": 25364
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/medium-baseline.json",
+      "sha256": "97ba7be9b016088850c2043382b371ee78442688a058f3b7cef3a1baa77c1f36",
+      "bytes": 20392
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/medium-calendar_cache.json",
+      "sha256": "937a4b456a95f68ff6015c983dd2a20a1b6f66846373259de6c75ab822792b60",
+      "bytes": 20416
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/medium-parse_cache.json",
+      "sha256": "f491542b37b8e3a871713a03f18b9370125c3acd36a930105bf621ceb55b1e0f",
+      "bytes": 20401
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/small-baseline.json",
+      "sha256": "00cdf2f88acec35a62716507efdb0f88403fc12eeb3f4fac0162379cddcd272b",
+      "bytes": 17823
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/small-calendar_cache.json",
+      "sha256": "8f6363fa6eecf2dfefffd1b4e3a304b19fd8befb8fb453d2e30397929959f29d",
+      "bytes": 17846
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/small-parse_cache.json",
+      "sha256": "985cdbcb70dfc4332e74e01e26da9f054d8455b2ea68726ec23a73c5f160e8d3",
+      "bytes": 17834
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/summary.json",
+      "sha256": "1257c9ca1f2e60dd54d81fe5f4c699544eb4e3f1c56ab04b1a4df3876b866a93",
+      "bytes": 931
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T170127456771+0800-regressions/command.json",
+      "sha256": "20028cf5095593d8aca705dfe0e7ce1c803014bf144479136efd876dafc40269",
+      "bytes": 2181
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T170140885904+0800-analysis/analysis.json",
+      "sha256": "fd91309288a4e499695a0254873722ade355bbd3122def1d33e3ca5d7b66ff77",
+      "bytes": 348228
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T170352147163+0800-phase5/command.json",
+      "sha256": "bcad8c33a546f908dd6e472a21d16c6ad27ebae5a684c50d8255bee1802cae8f",
+      "bytes": 1339
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T170426978967+0800-v1/command.json",
+      "sha256": "9fb352bbead09ebdf5225f7d882dadc33d2b441a0a50e9391732ebb6d7234083",
+      "bytes": 7886
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T171211756299+0800-v1-mirror/command.json",
+      "sha256": "53a39685779918df6cdbee7c4dd85374d289eae7ffd599294ea0f6cffa83712a",
+      "bytes": 980
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/analyze.py",
+      "sha256": "e6a41d28f283463f0957352a7546246a35439a154b07b1dea1c00ff407db9ca5",
+      "bytes": 9898
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/audit.py",
+      "sha256": "4032c2db3655f34a1340703d765bbe2d8b463fce8b60789345828d6cd4a30509",
+      "bytes": 8054
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/diagnose_contracts.py",
+      "sha256": "bf8ed169fc54e9123b80530f46c87be17e00888039fc0ce31197757d5b3892b2",
+      "bytes": 4958
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/preservation-baseline.json",
+      "sha256": "525cb1a8f02834fa4fe3fc2dcd13e837a6a522187d7da528b7cb6e68cee95e7d",
+      "bytes": 219699
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/profile_canary.py",
+      "sha256": "31cc0812183fc36de9109a6cc59f694f9b2ca3dcef71b2bb17470c8f2e792bf4",
+      "bytes": 1606
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/run_checks.py",
+      "sha256": "239e4af55052f375fe623b03bb753d85a7aa41e057f62f1977f0285c8379db19",
+      "bytes": 3684
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/v1_fixture.py",
+      "sha256": "edf06c2456c16829e7c1f75a89827d765273c1c97461887887e8352a97bc7140",
+      "bytes": 7367
+    }
+  ],
+  "all_test_attempts": [
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T164602526157+0800-phase6/command.json",
+      "selection": "phase6",
+      "exit_code": 1,
+      "pytest_summary": "5 failed, 62 passed, 4 warnings in 30.03s"
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165110121110+0800-phase6/command.json",
+      "selection": "phase6",
+      "exit_code": 0,
+      "pytest_summary": "67 passed, 1 warning in 37.15s"
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T170127456771+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "pytest_summary": "81 passed, 3 warnings in 130.60s (0:02:10)"
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T170352147163+0800-phase5/command.json",
+      "selection": "phase5",
+      "exit_code": 0,
+      "pytest_summary": "11 passed, 1 warning in 29.58s"
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T170426978967+0800-v1/command.json",
+      "selection": "v1",
+      "exit_code": 1,
+      "pytest_summary": "3 failed, 1 passed, 1 warning in 97.78s (0:01:37)"
+    },
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T171211756299+0800-v1-mirror/command.json",
+      "selection": "v1-mirror",
+      "exit_code": 0,
+      "pytest_summary": "4 passed in 113.49s (0:01:53)"
+    }
+  ],
+  "final_successful_tests": {
+    "phase6": {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T165110121110+0800-phase6/command.json",
+      "passed": 67
+    },
+    "regressions": {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T170127456771+0800-regressions/command.json",
+      "passed": 81
+    },
+    "phase5": {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T170352147163+0800-phase5/command.json",
+      "passed": 11
+    },
+    "v1-mirror": {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T171211756299+0800-v1-mirror/command.json",
+      "passed": 4
+    }
+  },
+  "direct_workspace_V1_archive_block": "Three direct V1 tests failed closed before academic text access; unchanged tests separately pass in fully fictional source-byte-identical mirror. Original guard never relaxed.",
+  "fictional_V1_mirror": {
+    "verified_fictional_checkpoint_archives": 3,
+    "source_files_byte_identical": 133,
+    "engine_fingerprint_matches_original_current_release": true,
+    "actual_owned_input_fingerprint_verified": true,
+    "fingerprint_functions_replaced": false
+  },
+  "fresh_final_tests_passed": 163,
+  "completed_experiment_workers": {
+    "reference": 9,
+    "profile": 9,
+    "timing": 54,
+    "memory": 27,
+    "operations": 9
+  },
+  "all_experiment_summaries_preserved": [
+    "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155138331924+0800-reference/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T155719422228+0800-profile/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T160251173619+0800-timing/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T162152952727+0800-memory/summary.json",
+    "docs/testing/ga-reconstruction-phase6/20261028T165236548615+0800-operations/summary.json"
+  ],
+  "invalid_preliminary_profile_evidence_preserved": [
+    {
+      "path": "docs/testing/ga-reconstruction-phase6/20261028T154827722456+0800-baseline-profile/validity.json",
+      "record": {
+        "status": "INVALID_FOR_ATTRIBUTION",
+        "reason": "Observed impossible cross-thread caller edges; independently reproduced by profile_canary.py",
+        "preservation": "All original profile records retained unchanged",
+        "use": "Do not use these cumulative/exclusive values or caller edges for optimization claims",
+        "correction": "New profile workers exclude background Python threads and check caller/count consistency; timing/memory runs remain separate"
+      }
+    }
+  ],
+  "privacy_findings": 0,
+  "privacy_scope": "Structural fictional fixtures, sanitized logs, complete/truncated encoded receipts and credential patterns. No institutional rows/names parsed.",
+  "production_optimization": false,
+  "production_symbols_replaced": false,
+  "production_GC_allocator_settings_changed": false,
+  "PostgreSQL_operations": 0,
+  "dependencies_installed": 0,
+  "staging_commit_push_operations": 0,
+  "hash_scope": "Raw bytes; manifest excludes itself. Existing 1550 files independently compared before creation."
+}

@@ -1,0 +1,40 @@
+{
+  "name": "unequal_targets_equal_units",
+  "loads": [
+    6,
+    6
+  ],
+  "targets": [
+    12,
+    24
+  ],
+  "original_default_workload": 325,
+  "linear_relative": {
+    "exact": "625/2",
+    "decimal": 312.5
+  },
+  "squared_relative": {
+    "exact": "1625/8",
+    "decimal": 203.125
+  },
+  "overload_shortage_spread": [
+    {
+      "exact": "0",
+      "decimal": 0.0
+    },
+    {
+      "exact": "24",
+      "decimal": 24.0
+    },
+    {
+      "exact": "1/32",
+      "decimal": 0.03125
+    }
+  ],
+  "underload_units": 24,
+  "overload_units": 0,
+  "zero_assignments": 0,
+  "above_warning": 0,
+  "teaching_ceiling_valid": true,
+  "scope": "Analytical allocation only; not a timetable or a complete hard-validity result"
+}

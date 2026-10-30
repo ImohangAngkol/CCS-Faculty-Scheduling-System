@@ -1,0 +1,18 @@
+{
+  "original_engine": "ga-constrained-v2.1",
+  "adapter_source": "FICTIONAL_TEST_ONLY",
+  "same_seed_and_resumed_results_equal": true,
+  "final_rng_equal": true,
+  "original_checkpoint_read_write": true,
+  "best_ever_history": [
+    250.0,
+    250.0,
+    250.0
+  ],
+  "best_graph_independent": true,
+  "hard_conflicts": {
+    "faculty": 0,
+    "room": 0,
+    "section": 0
+  }
+}

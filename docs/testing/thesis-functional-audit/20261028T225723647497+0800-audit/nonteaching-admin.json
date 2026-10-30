@@ -1,0 +1,13 @@
+{
+  "release_kind": "admin",
+  "hypothetical_release_units_each": 22,
+  "teaching_units_each": 2,
+  "target_without_release": 24,
+  "target_with_release": 2,
+  "workload_penalty_without_release": 500,
+  "workload_penalty_with_release": 0,
+  "active_fixed_input": true,
+  "scheduled_non_teaching_activity": false,
+  "scope_alignment": "CONFLICT_WITH_WORKING_EXCLUSION_UNLESS_FIXED_RELEASE_INPUTS_ARE_EXPLICITLY_ALLOWED",
+  "formal_adviser_alignment": "UNVERIFIED"
+}

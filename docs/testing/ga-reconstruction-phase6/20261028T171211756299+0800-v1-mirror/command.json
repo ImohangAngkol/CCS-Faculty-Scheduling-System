@@ -1,0 +1,17 @@
+{
+  "selection": "v1-mirror",
+  "exit_code": 0,
+  "stdout": "....                                                                     [100%]\n4 passed in 113.49s (0:01:53)\n",
+  "stderr": "",
+  "verified_fictional_checkpoint_archives": 3,
+  "source_files_byte_identical": 133,
+  "engine_fingerprint_matches_original_current_release": true,
+  "engine_fingerprint": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+  "fictional_input_fingerprint": "b803fa98ae3a527e7c020e17173063e190a1c55ca37f3de17c7c6f1f61415e95",
+  "actual_owned_input_fingerprint_verified": true,
+  "original_academic_access_permitted": false,
+  "fingerprint_functions_replaced": false,
+  "scope": "Original V1 source and four original tests unchanged in owned temporary mirror. Actual source_inputs archives equal generated fictional files. No workspace academic reads or PostgreSQL.",
+  "started_at": "2026-10-28T17:12:11.756299+08:00",
+  "finished_at": "2026-10-28T17:14:15.652072+08:00"
+}

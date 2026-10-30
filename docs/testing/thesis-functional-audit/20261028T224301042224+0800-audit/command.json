@@ -1,0 +1,18 @@
+{
+  "selection": "audit",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\thesis-functional-audit\\run_checks.py",
+    "audit",
+    "--worker",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\thesis-audit-tests-20261028T224301042224+0800-audit"
+  ],
+  "started_at": "2026-10-28T22:43:01.042224+08:00",
+  "finished_at": "2026-10-28T22:43:10.172073+08:00",
+  "elapsed_seconds": 9.125388599990401,
+  "exit_code": 0,
+  "stdout": ".......................                                                  [100%]\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; anyio\n    self._mark_plugins_for_rewrite(hook, disable_autoload)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n23 passed, 1 warning in 1.38s\n",
+  "stderr": "",
+  "scope": "Schema-only academic import bootstrap and fictional fixtures; no parsed institutional records or PostgreSQL; genuine binary fingerprints unchanged"
+}

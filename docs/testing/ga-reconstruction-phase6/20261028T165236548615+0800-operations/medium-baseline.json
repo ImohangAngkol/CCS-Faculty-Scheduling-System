@@ -1,0 +1,561 @@
+{
+  "started_at": "2026-10-28T16:54:02.926981+08:00",
+  "finished_at": "2026-10-28T16:54:59.330595+08:00",
+  "worker_wall_seconds": 56.403617699979804,
+  "result": {
+    "status": "SUCCESS",
+    "scenario": "medium",
+    "variant": "baseline",
+    "seed": 714,
+    "parameters": {
+      "population_size": 2,
+      "generations": 1,
+      "fresh_chromosomes": 0,
+      "crossover_attempts": 1,
+      "mutation_attempts": 1,
+      "max_restarts": 5,
+      "candidate_attempts": 3
+    },
+    "correctness": {
+      "assignment_sha256": "53b5b91366371d9ef7b173843c04e7e6437907ecf72fe94c045e0cec50cfc62c",
+      "state_availability_workload_aliases_sha256": "6c5aff9495a2065ce0498a24e252c83d8d4d1b3488b012583419007252efcae9",
+      "history": [
+        {
+          "generation": 0,
+          "generation_best_fitness": 11470.0,
+          "best_ever_fitness": 11470.0
+        },
+        {
+          "generation": 1,
+          "generation_best_fitness": 10395.0,
+          "best_ever_fitness": 10395.0
+        }
+      ],
+      "final_fitness": 10395.0,
+      "fitness_breakdown": {
+        "subject_preference": 6650.0,
+        "time_preference": 1050,
+        "day_preference": 0,
+        "schedule_style": 720,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 1975,
+        "daily_teaching_load": 0
+      },
+      "workload": {
+        "faculty": [
+          {
+            "faculty": 990100,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990101,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990102,
+            "teaching_units": 6,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990103,
+            "teaching_units": 9,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.42857142857142855
+          },
+          {
+            "faculty": 990104,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990105,
+            "teaching_units": 3,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990106,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990107,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990108,
+            "teaching_units": 6,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990109,
+            "teaching_units": 3,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 6,
+            "underload": 18,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.14285714285714285
+          },
+          {
+            "faculty": 990110,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990111,
+            "teaching_units": 3,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          }
+        ],
+        "total_teaching_units": 72,
+        "total_target_units": 198,
+        "underload_units": 126,
+        "overload_units": 0,
+        "zero_assignment_count": 0,
+        "target_fulfillment_population_stdev": 0.08945860685613186
+      },
+      "final_rng_sha256": "2c67c4b2621f569cdd5efc5a740b7dd8ecba071188c59e919091c03bbcd338b8",
+      "hard_constraints": "PASS: original admit on every final member and best",
+      "scope": "Full graph projection normalizes only the distinct experimental engine identity for comparison; no validation/continuation identity is spoofed"
+    },
+    "operations": {
+      "component_validation": [
+        {
+          "uninstrumented_seconds": 0.03090050001628697,
+          "traced_seconds_NOT_wall_baseline": 0.3451820000191219,
+          "traced_peak_bytes_NOT_RSS": 71583,
+          "traced_current_return_held_bytes": 34274,
+          "post_release_GC_traced_bytes": 4354,
+          "tracer_metadata_bytes": 52400,
+          "process_before": {
+            "working_set_bytes": 250290176,
+            "process_lifetime_peak_working_set_bytes": 256098304,
+            "private_commit_bytes_NOT_RSS": 728760320
+          },
+          "process_after": {
+            "working_set_bytes": 250318848,
+            "process_lifetime_peak_working_set_bytes": 256098304,
+            "private_commit_bytes_NOT_RSS": 728760320
+          }
+        },
+        {
+          "uninstrumented_seconds": 0.032390300009865314,
+          "traced_seconds_NOT_wall_baseline": 0.2991215999936685,
+          "traced_peak_bytes_NOT_RSS": 68300,
+          "traced_current_return_held_bytes": 30967,
+          "post_release_GC_traced_bytes": 1047,
+          "tracer_metadata_bytes": 50544,
+          "process_before": {
+            "working_set_bytes": 250318848,
+            "process_lifetime_peak_working_set_bytes": 256098304,
+            "private_commit_bytes_NOT_RSS": 728760320
+          },
+          "process_after": {
+            "working_set_bytes": 250322944,
+            "process_lifetime_peak_working_set_bytes": 256098304,
+            "private_commit_bytes_NOT_RSS": 728760320
+          }
+        },
+        {
+          "uninstrumented_seconds": 0.05592469999101013,
+          "traced_seconds_NOT_wall_baseline": 0.31592180000734515,
+          "traced_peak_bytes_NOT_RSS": 67880,
+          "traced_current_return_held_bytes": 30494,
+          "post_release_GC_traced_bytes": 574,
+          "tracer_metadata_bytes": 50288,
+          "process_before": {
+            "working_set_bytes": 250322944,
+            "process_lifetime_peak_working_set_bytes": 256098304,
+            "private_commit_bytes_NOT_RSS": 728760320
+          },
+          "process_after": {
+            "working_set_bytes": 250322944,
+            "process_lifetime_peak_working_set_bytes": 256098304,
+            "private_commit_bytes_NOT_RSS": 728760320
+          }
+        }
+      ],
+      "payload_reconstruction": [
+        {
+          "uninstrumented_seconds": 0.20199219998903573,
+          "traced_seconds_NOT_wall_baseline": 0.8743441000115126,
+          "traced_peak_bytes_NOT_RSS": 1625688,
+          "traced_current_return_held_bytes": 1564743,
+          "post_release_GC_traced_bytes": 1334,
+          "tracer_metadata_bytes": 665904,
+          "process_before": {
+            "working_set_bytes": 250359808,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          },
+          "process_after": {
+            "working_set_bytes": 250339328,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          }
+        },
+        {
+          "uninstrumented_seconds": 0.1812056000053417,
+          "traced_seconds_NOT_wall_baseline": 0.7246698999952059,
+          "traced_peak_bytes_NOT_RSS": 1625291,
+          "traced_current_return_held_bytes": 1564346,
+          "post_release_GC_traced_bytes": 937,
+          "tracer_metadata_bytes": 665712,
+          "process_before": {
+            "working_set_bytes": 250339328,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          },
+          "process_after": {
+            "working_set_bytes": 250335232,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          }
+        },
+        {
+          "uninstrumented_seconds": 0.14726369999698363,
+          "traced_seconds_NOT_wall_baseline": 0.7073995000100695,
+          "traced_peak_bytes_NOT_RSS": 1626703,
+          "traced_current_return_held_bytes": 1565758,
+          "post_release_GC_traced_bytes": 2349,
+          "tracer_metadata_bytes": 666480,
+          "process_before": {
+            "working_set_bytes": 250335232,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          },
+          "process_after": {
+            "working_set_bytes": 250339328,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          }
+        }
+      ],
+      "candidate_admission": [
+        {
+          "uninstrumented_seconds": 0.18505530001129955,
+          "traced_seconds_NOT_wall_baseline": 0.7355176999990363,
+          "traced_peak_bytes_NOT_RSS": 1651890,
+          "traced_current_return_held_bytes": 1575944,
+          "post_release_GC_traced_bytes": 9343,
+          "tracer_metadata_bytes": 674224,
+          "process_before": {
+            "working_set_bytes": 250368000,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          },
+          "process_after": {
+            "working_set_bytes": 250339328,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          }
+        },
+        {
+          "uninstrumented_seconds": 0.25319009998929687,
+          "traced_seconds_NOT_wall_baseline": 0.5559603000001516,
+          "traced_peak_bytes_NOT_RSS": 1650049,
+          "traced_current_return_held_bytes": 1574103,
+          "post_release_GC_traced_bytes": 7502,
+          "tracer_metadata_bytes": 673200,
+          "process_before": {
+            "working_set_bytes": 250339328,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          },
+          "process_after": {
+            "working_set_bytes": 250343424,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          }
+        },
+        {
+          "uninstrumented_seconds": 0.14571770001202822,
+          "traced_seconds_NOT_wall_baseline": 0.6110477000183892,
+          "traced_peak_bytes_NOT_RSS": 1653765,
+          "traced_current_return_held_bytes": 1577819,
+          "post_release_GC_traced_bytes": 11218,
+          "tracer_metadata_bytes": 675248,
+          "process_before": {
+            "working_set_bytes": 250343424,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          },
+          "process_after": {
+            "working_set_bytes": 250335232,
+            "process_lifetime_peak_working_set_bytes": 259682304,
+            "private_commit_bytes_NOT_RSS": 728797184
+          }
+        }
+      ],
+      "fitness_evaluation_original": [
+        {
+          "uninstrumented_seconds": 0.005015900009311736,
+          "traced_seconds_NOT_wall_baseline": 0.02987040000152774,
+          "traced_peak_bytes_NOT_RSS": 68905,
+          "traced_current_return_held_bytes": 35133,
+          "post_release_GC_traced_bytes": 1677,
+          "tracer_metadata_bytes": 90512,
+          "process_before": {
+            "working_set_bytes": 252125184,
+            "process_lifetime_peak_working_set_bytes": 259735552,
+            "private_commit_bytes_NOT_RSS": 730546176
+          },
+          "process_after": {
+            "working_set_bytes": 252129280,
+            "process_lifetime_peak_working_set_bytes": 259735552,
+            "private_commit_bytes_NOT_RSS": 730546176
+          }
+        },
+        {
+          "uninstrumented_seconds": 0.005670699989423156,
+          "traced_seconds_NOT_wall_baseline": 0.03754650001064874,
+          "traced_peak_bytes_NOT_RSS": 68758,
+          "traced_current_return_held_bytes": 34986,
+          "post_release_GC_traced_bytes": 1530,
+          "tracer_metadata_bytes": 90416,
+          "process_before": {
+            "working_set_bytes": 252129280,
+            "process_lifetime_peak_working_set_bytes": 259735552,
+            "private_commit_bytes_NOT_RSS": 730546176
+          },
+          "process_after": {
+            "working_set_bytes": 252129280,
+            "process_lifetime_peak_working_set_bytes": 259735552,
+            "private_commit_bytes_NOT_RSS": 730546176
+          }
+        },
+        {
+          "uninstrumented_seconds": 0.017717400012770668,
+          "traced_seconds_NOT_wall_baseline": 0.03645210000104271,
+          "traced_peak_bytes_NOT_RSS": 68447,
+          "traced_current_return_held_bytes": 34731,
+          "post_release_GC_traced_bytes": 1275,
+          "tracer_metadata_bytes": 90192,
+          "process_before": {
+            "working_set_bytes": 252129280,
+            "process_lifetime_peak_working_set_bytes": 259735552,
+            "private_commit_bytes_NOT_RSS": 730546176
+          },
+          "process_after": {
+            "working_set_bytes": 252129280,
+            "process_lifetime_peak_working_set_bytes": 259735552,
+            "private_commit_bytes_NOT_RSS": 730546176
+          }
+        }
+      ],
+      "deepcopy_original": [
+        {
+          "uninstrumented_seconds": 0.1560495000157971,
+          "traced_seconds_NOT_wall_baseline": 0.4927583000098821,
+          "traced_peak_bytes_NOT_RSS": 5090276,
+          "traced_current_return_held_bytes": 2667248,
+          "post_release_GC_traced_bytes": 120,
+          "tracer_metadata_bytes": 1039920,
+          "process_before": {
+            "working_set_bytes": 252129280,
+            "process_lifetime_peak_working_set_bytes": 259739648,
+            "private_commit_bytes_NOT_RSS": 730546176
+          },
+          "process_after": {
+            "working_set_bytes": 250515456,
+            "process_lifetime_peak_working_set_bytes": 259739648,
+            "private_commit_bytes_NOT_RSS": 729047040
+          }
+        },
+        {
+          "uninstrumented_seconds": 0.10972629999741912,
+          "traced_seconds_NOT_wall_baseline": 0.7221399999980349,
+          "traced_peak_bytes_NOT_RSS": 5090276,
+          "traced_current_return_held_bytes": 2667248,
+          "post_release_GC_traced_bytes": 120,
+          "tracer_metadata_bytes": 1039920,
+          "process_before": {
+            "working_set_bytes": 250515456,
+            "process_lifetime_peak_working_set_bytes": 259739648,
+            "private_commit_bytes_NOT_RSS": 729047040
+          },
+          "process_after": {
+            "working_set_bytes": 249405440,
+            "process_lifetime_peak_working_set_bytes": 259739648,
+            "private_commit_bytes_NOT_RSS": 728424448
+          }
+        },
+        {
+          "uninstrumented_seconds": 0.15913529999670573,
+          "traced_seconds_NOT_wall_baseline": 0.7260909999895375,
+          "traced_peak_bytes_NOT_RSS": 5090276,
+          "traced_current_return_held_bytes": 2667248,
+          "post_release_GC_traced_bytes": 120,
+          "tracer_metadata_bytes": 1039920,
+          "process_before": {
+            "working_set_bytes": 249405440,
+            "process_lifetime_peak_working_set_bytes": 259739648,
+            "private_commit_bytes_NOT_RSS": 728424448
+          },
+          "process_after": {
+            "working_set_bytes": 248991744,
+            "process_lifetime_peak_working_set_bytes": 259739648,
+            "private_commit_bytes_NOT_RSS": 727707648
+          }
+        }
+      ]
+    },
+    "full_input_graph_and_rng_unchanged": true,
+    "admission_diagnostics": {
+      "construction:ACCEPTED": 2,
+      "crossover:NO_CANDIDATE": 15,
+      "crossover:ACCEPTED": 1,
+      "mutation:ACCEPTED": 1,
+      "survivor:ACCEPTED": 5
+    },
+    "unobserved_engine_controls": [
+      {
+        "engine_seconds": 6.775416499993298,
+        "process_before": {
+          "working_set_bytes": 225562624,
+          "process_lifetime_peak_working_set_bytes": 248848384,
+          "private_commit_bytes_NOT_RSS": 704872448
+        },
+        "process_after": {
+          "working_set_bytes": 245542912,
+          "process_lifetime_peak_working_set_bytes": 248848384,
+          "private_commit_bytes_NOT_RSS": 724807680
+        }
+      },
+      {
+        "engine_seconds": 6.339101900026435,
+        "process_before": {
+          "working_set_bytes": 241958912,
+          "process_lifetime_peak_working_set_bytes": 255569920,
+          "private_commit_bytes_NOT_RSS": 720449536
+        },
+        "process_after": {
+          "working_set_bytes": 245403648,
+          "process_lifetime_peak_working_set_bytes": 255569920,
+          "private_commit_bytes_NOT_RSS": 724643840
+        }
+      },
+      {
+        "engine_seconds": 6.75830680000945,
+        "process_before": {
+          "working_set_bytes": 246755328,
+          "process_lifetime_peak_working_set_bytes": 255569920,
+          "private_commit_bytes_NOT_RSS": 725237760
+        },
+        "process_after": {
+          "working_set_bytes": 246775808,
+          "process_lifetime_peak_working_set_bytes": 255569920,
+          "private_commit_bytes_NOT_RSS": 725237760
+        }
+      }
+    ],
+    "excluded_engine_warmup_seconds": 6.177895500004524,
+    "scope": "One seed per fresh variant/scale worker. Three warm engine repetitions with no sampler/watchdog Python threads, profiler or tracer; separately three operation repetitions. No timing categories pooled."
+  }
+}

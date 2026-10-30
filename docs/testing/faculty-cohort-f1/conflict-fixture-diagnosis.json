@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-10-29T09:12:50.160864+08:00",
+  "failed_attempt": "20261029T091026603914+0800-cohort/command.json",
+  "observed_counts": {
+    "passed": 91,
+    "failed": 2
+  },
+  "stage": "New test controls, not application correction",
+  "cause": "Controls inferred first assigned room from room-list order; original get_available_rooms shuffles candidates. Room control could be nonconflicting and section control could also have a room collision.",
+  "source": "backend/genetic_algorithm/utils/Functions.py:853",
+  "correction": "Read actual first assignment room from generated fictional payload; choose same room only for room conflict, distinct room for other conflict controls.",
+  "production_source_modified": false,
+  "historical_failure_preserved": true
+}

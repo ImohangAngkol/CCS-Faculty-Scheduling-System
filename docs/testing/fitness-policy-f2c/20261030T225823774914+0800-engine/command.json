@@ -1,0 +1,21 @@
+{
+  "selection": "engine",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\fitness-policy-f2c\\run_checks.py",
+    "engine",
+    "--worker",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\fitness-policy-f2c\\20261030T225823774914+0800-engine",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\f2c-20261030T225823774914+0800-engine"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-30T22:58:23.774914+08:00",
+  "finished_at": "2026-10-30T22:58:52.320449+08:00",
+  "elapsed_seconds": 28.543426999996882,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "..............................                                           [100%]\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; anyio\n    self._mark_plugins_for_rewrite(hook, disable_autoload)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n30 passed, 1 warning in 21.66s\n",
+  "stderr": "",
+  "scope": "F2C executable specification or unchanged default-mode regression; no experimental production scoring/authority/database/browser."
+}

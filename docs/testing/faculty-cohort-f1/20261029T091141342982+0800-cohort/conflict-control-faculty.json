@@ -1,0 +1,7 @@
+{
+  "target": "Faculty",
+  "original_reconstruction_rejected": true,
+  "control_room_source": "Actual first assignment room; never infer from room-list order",
+  "requested_overlap": "Monday 07:30-09:30",
+  "error_resource": "Faculty"
+}

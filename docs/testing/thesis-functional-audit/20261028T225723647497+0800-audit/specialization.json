@@ -1,0 +1,6 @@
+{
+  "hard_rule": "EXPLICIT_COURSE_ELIGIBILITY",
+  "specialization_only_changes_fitness": false,
+  "specialization_component_present": false,
+  "strict_specialization_fallback": "NO_AUTOMATIC_ELIGIBILITY_RELAXATION"
+}

@@ -1,0 +1,318 @@
+{
+  "recorded_at": "2026-10-30T13:52:43.097573+08:00",
+  "scope": "Fresh exact algebra only, not new GA/scorer integration or actual nonzero-preference scheduling trials",
+  "positive_target_formula": "sum((A-T)^2/T)",
+  "balanced_D": "121/3",
+  "concentrated_D": "122/3",
+  "original_overload_both": 0,
+  "coefficient_policy": "No production coefficient chosen",
+  "threshold": "For a hypothetical extra penalty p on balanced: balanced wins iff coefficient > 3*p",
+  "synthetic_defaults": {
+    "subject_penalty": 70,
+    "time_penalty": 10,
+    "day_penalty": 5,
+    "preparation_penalty": 10,
+    "daily_load_penalty": 10,
+    "gap_penalty": 10,
+    "lecture_lab_penalty": 5
+  },
+  "assumptions": "One penalty unit/step; preference importance and priority multiplier each1 where applicable. Relative component differences only, not a claim that lecture-only counterexample can incur lab penalty. Real trial calibration is BLOCKED.",
+  "rows": [
+    {
+      "coefficient": "1",
+      "hypothetical_extra_component": "subject_preference",
+      "extra_penalty": 70,
+      "total_balanced_minus_concentrated": "209/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "1",
+      "hypothetical_extra_component": "time_preference",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "29/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "1",
+      "hypothetical_extra_component": "day_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "14/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "1",
+      "hypothetical_extra_component": "number_of_preparations",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "29/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "1",
+      "hypothetical_extra_component": "daily_teaching_load",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "29/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "1",
+      "hypothetical_extra_component": "schedule_style",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "29/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "1",
+      "hypothetical_extra_component": "lecture_lab_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "14/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "5",
+      "hypothetical_extra_component": "subject_preference",
+      "extra_penalty": 70,
+      "total_balanced_minus_concentrated": "205/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "5",
+      "hypothetical_extra_component": "time_preference",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "25/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "5",
+      "hypothetical_extra_component": "day_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "10/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "5",
+      "hypothetical_extra_component": "number_of_preparations",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "25/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "5",
+      "hypothetical_extra_component": "daily_teaching_load",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "25/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "5",
+      "hypothetical_extra_component": "schedule_style",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "25/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "5",
+      "hypothetical_extra_component": "lecture_lab_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "10/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "125/12",
+      "hypothetical_extra_component": "subject_preference",
+      "extra_penalty": 70,
+      "total_balanced_minus_concentrated": "2395/36",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "125/12",
+      "hypothetical_extra_component": "time_preference",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "235/36",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "125/12",
+      "hypothetical_extra_component": "day_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "55/36",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "125/12",
+      "hypothetical_extra_component": "number_of_preparations",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "235/36",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "125/12",
+      "hypothetical_extra_component": "daily_teaching_load",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "235/36",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "125/12",
+      "hypothetical_extra_component": "schedule_style",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "235/36",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "125/12",
+      "hypothetical_extra_component": "lecture_lab_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "55/36",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "25",
+      "hypothetical_extra_component": "subject_preference",
+      "extra_penalty": 70,
+      "total_balanced_minus_concentrated": "185/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "25",
+      "hypothetical_extra_component": "time_preference",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "5/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "25",
+      "hypothetical_extra_component": "day_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "-10/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "25",
+      "hypothetical_extra_component": "number_of_preparations",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "5/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "25",
+      "hypothetical_extra_component": "daily_teaching_load",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "5/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "25",
+      "hypothetical_extra_component": "schedule_style",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "5/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "25",
+      "hypothetical_extra_component": "lecture_lab_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "-10/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "100",
+      "hypothetical_extra_component": "subject_preference",
+      "extra_penalty": 70,
+      "total_balanced_minus_concentrated": "110/3",
+      "preferred": "concentrated"
+    },
+    {
+      "coefficient": "100",
+      "hypothetical_extra_component": "time_preference",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "-70/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "100",
+      "hypothetical_extra_component": "day_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "-85/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "100",
+      "hypothetical_extra_component": "number_of_preparations",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "-70/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "100",
+      "hypothetical_extra_component": "daily_teaching_load",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "-70/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "100",
+      "hypothetical_extra_component": "schedule_style",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "-70/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "100",
+      "hypothetical_extra_component": "lecture_lab_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "-85/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "250",
+      "hypothetical_extra_component": "subject_preference",
+      "extra_penalty": 70,
+      "total_balanced_minus_concentrated": "-40/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "250",
+      "hypothetical_extra_component": "time_preference",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "-220/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "250",
+      "hypothetical_extra_component": "day_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "-235/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "250",
+      "hypothetical_extra_component": "number_of_preparations",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "-220/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "250",
+      "hypothetical_extra_component": "daily_teaching_load",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "-220/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "250",
+      "hypothetical_extra_component": "schedule_style",
+      "extra_penalty": 10,
+      "total_balanced_minus_concentrated": "-220/3",
+      "preferred": "balanced"
+    },
+    {
+      "coefficient": "250",
+      "hypothetical_extra_component": "lecture_lab_preference",
+      "extra_penalty": 5,
+      "total_balanced_minus_concentrated": "-235/3",
+      "preferred": "balanced"
+    }
+  ],
+  "overload_tradeoff": "For positive targets above target, full D and preserved original overload both penalize excess; not silently removing or approving double-counting",
+  "zero_target_positive": "Unsupported proposed deviation convention; activation remains blocked"
+}

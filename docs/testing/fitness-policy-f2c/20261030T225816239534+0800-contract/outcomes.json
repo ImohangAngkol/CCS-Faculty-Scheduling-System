@@ -1,0 +1,11 @@
+{
+  "selection": "contract",
+  "counts": {
+    "passed": 73,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0
+  },
+  "collected": 73,
+  "exit_code": 0
+}

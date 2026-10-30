@@ -1,0 +1,9 @@
+{
+  "actual_improved_child": true,
+  "fitness_before": 640,
+  "fitness_after": 500.0,
+  "subject_section_day_time_room_geometry_unchanged": true,
+  "parent_unchanged": true,
+  "original_publication_passed": true,
+  "meaning": "Original mutation swaps faculty, not times/rooms; fresh constructors supply new timetable geometry"
+}

@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-10-29T08:27:37.142036+08:00",
+  "command": ".\\.venv\\Scripts\\python.exe -B docs/testing/faculty-policy-qualification/audit_evidence.py",
+  "exit_code": 1,
+  "stage": "New verifier report-link check before manifest creation",
+  "exception_type": "AssertionError",
+  "message": "testing/faculty-policy-qualification/manifest.json",
+  "cause": "Verifier checked its own not-yet-created output as an existing report link",
+  "preservation_check_before_failure": "PASSED",
+  "production_or_protected_file_change": false,
+  "correction": "Allow only own manifest output during pre-write link check; verify existence after writing",
+  "test_results_unaffected": true,
+  "scope": "Verifier diagnostic; not a failed policy or GA case; captured from actual command output"
+}

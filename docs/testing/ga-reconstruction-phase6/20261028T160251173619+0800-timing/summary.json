@@ -1,0 +1,437 @@
+{
+  "part": "timing",
+  "results": [
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "parse_cache",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "calendar_cache",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "baseline",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "calendar_cache",
+      "seed": 715,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "baseline",
+      "seed": 715,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "parse_cache",
+      "seed": 715,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "baseline",
+      "seed": 716,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "parse_cache",
+      "seed": 716,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "calendar_cache",
+      "seed": 716,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "calendar_cache",
+      "seed": 714,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "baseline",
+      "seed": 714,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "parse_cache",
+      "seed": 714,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "baseline",
+      "seed": 715,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "parse_cache",
+      "seed": 715,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "calendar_cache",
+      "seed": 715,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "parse_cache",
+      "seed": 716,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "calendar_cache",
+      "seed": 716,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "small",
+      "variant": "baseline",
+      "seed": 716,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "parse_cache",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "calendar_cache",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "baseline",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "calendar_cache",
+      "seed": 715,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "baseline",
+      "seed": 715,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "parse_cache",
+      "seed": 715,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "baseline",
+      "seed": 716,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "parse_cache",
+      "seed": 716,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "calendar_cache",
+      "seed": 716,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "calendar_cache",
+      "seed": 714,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "baseline",
+      "seed": 714,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "parse_cache",
+      "seed": 714,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "baseline",
+      "seed": 715,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "parse_cache",
+      "seed": 715,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "calendar_cache",
+      "seed": 715,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "parse_cache",
+      "seed": 716,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "calendar_cache",
+      "seed": 716,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "baseline",
+      "seed": 716,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "parse_cache",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "calendar_cache",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "baseline",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "calendar_cache",
+      "seed": 715,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "baseline",
+      "seed": 715,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "parse_cache",
+      "seed": 715,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "baseline",
+      "seed": 716,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "parse_cache",
+      "seed": 716,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "calendar_cache",
+      "seed": 716,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "calendar_cache",
+      "seed": 714,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "baseline",
+      "seed": 714,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "parse_cache",
+      "seed": 714,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "baseline",
+      "seed": 715,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "parse_cache",
+      "seed": 715,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "calendar_cache",
+      "seed": 715,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "parse_cache",
+      "seed": 716,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "calendar_cache",
+      "seed": 716,
+      "repetition": 2,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "timing",
+      "scenario": "large",
+      "variant": "baseline",
+      "seed": 716,
+      "repetition": 2,
+      "status": "SUCCESS"
+    }
+  ]
+}

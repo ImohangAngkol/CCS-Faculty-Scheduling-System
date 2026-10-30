@@ -1,0 +1,6 @@
+{
+  "exact_oracle_type": "Fraction",
+  "current_checkpoint_rejects_type": true,
+  "current_report_rejects_type": true,
+  "meaning": "No implicit lossy conversion or silent storage-format extension attempted; future float/fixed/exact representation needs ranking and provenance tests"
+}

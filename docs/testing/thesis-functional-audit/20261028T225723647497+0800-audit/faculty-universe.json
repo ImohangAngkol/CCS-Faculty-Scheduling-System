@@ -1,0 +1,6 @@
+{
+  "eligible_without_preference_count": 2,
+  "unassigned_faculty_count": 2,
+  "zero_assignment_workload_penalty": 500,
+  "meaning": "No guarantee of an assignment when supply, eligibility or calendars prevent it"
+}

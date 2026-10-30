@@ -1,0 +1,28 @@
+{
+  "results": [
+    {
+      "mode": "deny_all",
+      "result": "RuntimeError",
+      "message": "NETWORK_REJECTED"
+    },
+    {
+      "mode": "owned_selfpipe",
+      "result": "LOOP_CREATED_AND_CLOSED"
+    }
+  ],
+  "events": [
+    {
+      "mode": "deny_all",
+      "caller_function": "_fallback_socketpair",
+      "caller_file": "socket.py",
+      "owned_socketpair_allowed": false
+    },
+    {
+      "mode": "owned_selfpipe",
+      "caller_function": "_fallback_socketpair",
+      "caller_file": "socket.py",
+      "owned_socketpair_allowed": true
+    }
+  ],
+  "scope": "Stdlib Windows asyncio only; no database, credentials or application requests"
+}

@@ -1,0 +1,15 @@
+{
+  "targets": [
+    0,
+    0
+  ],
+  "assigned": [
+    2,
+    2
+  ],
+  "legacy_workload": 20,
+  "zero_assigned_workload": 0,
+  "current_hard_ceiling": 40,
+  "new_deviation_formula": "UNDEFINED_AT_TARGET_ZERO",
+  "new_mode_zero_target_positive": "REQUIRES_EXPLICIT_SCORING_CONVENTION; no new hard prohibition invented"
+}

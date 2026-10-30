@@ -1,0 +1,15 @@
+{
+  "observations": [
+    {
+      "unrecognized_field_supplied": false,
+      "balanced": 500,
+      "concentrated": 475
+    },
+    {
+      "unrecognized_field_supplied": true,
+      "balanced": 500,
+      "concentrated": 475
+    }
+  ],
+  "meaning": "Extra context field is ignored by current scorer, not a supported experimental mode; no persistent context modified"
+}

@@ -1,0 +1,25 @@
+{
+  "selection": "v1-mirror",
+  "exit_code": 0,
+  "stdout": "....                                                                     [100%]\n4 passed in 128.82s (0:02:08)\n",
+  "stderr": "",
+  "verified_fictional_checkpoint_archives": 3,
+  "source_files_byte_identical": 133,
+  "engine_fingerprint_matches_original_current_release": true,
+  "engine_fingerprint": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+  "fictional_input_fingerprint": "b803fa98ae3a527e7c020e17173063e190a1c55ca37f3de17c7c6f1f61415e95",
+  "actual_owned_input_fingerprint_verified": true,
+  "original_academic_access_permitted": false,
+  "fingerprint_functions_replaced": false,
+  "scope": "Unchanged default current-release V1 continuation in owned source-byte-identical fictional mirror; no F2B scoring dispatch implemented",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\workload-fairness-f2b\\verify_v1.py",
+    "--worker",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\f2b-v1-source-xemsrlln"
+  ],
+  "started_at": "2026-10-30T13:49:00.506824+08:00",
+  "finished_at": "2026-10-30T13:51:20.765586+08:00",
+  "elapsed_seconds": 135.92607220000355
+}

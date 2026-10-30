@@ -1,0 +1,24 @@
+{
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\faculty-cohort-f1-5\\test_source_qualification.py",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\faculty-source-qualification-20261029T093813148555+0800-tests"
+  ],
+  "cwd": "repository root",
+  "started_at": "2026-10-29T09:38:13.148555+08:00",
+  "finished_at": "2026-10-29T09:38:14.676971+08:00",
+  "elapsed_seconds": 1.5261466000010842,
+  "exit_code": 0,
+  "stdout": "...............                                                          [100%]\n15 passed in 0.14s\n",
+  "stderr": "",
+  "scope": "New fictional CSV/ZIP/XML aggregate controls only; no GA, DB, authority, IS faculty or institutional fixtures"
+}

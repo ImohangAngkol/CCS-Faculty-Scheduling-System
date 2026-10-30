@@ -1,0 +1,51 @@
+{
+  "scope": "Original legacy AST loop versus FICTIONAL adapter; no production source activation",
+  "approved_policy": "USER_REPORTED; no documentary approval supplied",
+  "active_roster_members": 3,
+  "eligible_for_at_least_one_offering": 2,
+  "legacy_runtime_members": 1,
+  "legacy_eligible_members_included": 1,
+  "adapter_runtime_members": 3,
+  "adapter_eligible_members_included": 2,
+  "excluded": [
+    {
+      "faculty_code": 990004,
+      "included": false,
+      "reason": "OUTSIDE_REQUESTED_TERM"
+    },
+    {
+      "faculty_code": 990005,
+      "included": false,
+      "reason": "FICTIONAL_TERM_LEAVE"
+    }
+  ],
+  "adapter_excluded_count": 2,
+  "legacy_excluded_active_members": [
+    {
+      "faculty_code": 990002,
+      "reason": "ABSENT_LEGACY_PREFERENCE_KEY"
+    },
+    {
+      "faculty_code": 990003,
+      "reason": "ABSENT_LEGACY_PREFERENCE_KEY"
+    }
+  ],
+  "missing_preferences_in_legacy_runtime": 0,
+  "missing_preferences_in_adapter": 2,
+  "legacy_zero_assignments": 0,
+  "adapter_zero_assignments": 1,
+  "zero_assignment_reason": "One included member has no explicit eligible offerings",
+  "legacy_unassigned_offerings": 0,
+  "adapter_unassigned_offerings": 0,
+  "hard_conflicts_before": {
+    "faculty": 0,
+    "room": 0,
+    "section": 0
+  },
+  "hard_conflicts_after": {
+    "faculty": 0,
+    "room": 0,
+    "section": 0
+  },
+  "inclusion_guarantees_assignment": false
+}

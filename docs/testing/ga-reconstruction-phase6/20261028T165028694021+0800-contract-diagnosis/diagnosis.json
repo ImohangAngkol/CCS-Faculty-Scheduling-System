@@ -1,0 +1,24 @@
+{
+  "status": "DIAGNOSED",
+  "original_continuation": {
+    "same_root_node_count_and_RNG": true,
+    "different_nodes": [
+      {
+        "node_index": 7879,
+        "left_kind": "set",
+        "right_kind": "set",
+        "only_primitive_set_iteration_order_differs": true
+      }
+    ],
+    "all_other_nodes_including_alias_refs_equal": true,
+    "production_codec_changed": false
+  },
+  "adjacency_fixture": {
+    "unreduced_candidate_error": {
+      "type": "ValueError",
+      "message": "Publication rejected: ('SYN101', 'SYN-A') fixed institutional schedule changed."
+    },
+    "candidate_from_reduced_templates": "ORIGINAL_VALIDATOR_PASSED"
+  },
+  "scope": "Original unmodified engine/codec only; fictional inputs; no checkpoint files, database or publication write"
+}

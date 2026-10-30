@@ -1,0 +1,798 @@
+{
+  "part": "alloc",
+  "scenario": "large",
+  "started_at": "2026-10-28T12:35:33.295122+08:00",
+  "finished_at": "2026-10-28T12:39:31.053307+08:00",
+  "worker_wall_seconds": 237.7590681000147,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\backend\\benchmarks\\memory_study.py",
+    "--worker",
+    "--part",
+    "alloc",
+    "--scenario",
+    "large"
+  ],
+  "result": {
+    "status": "SUCCESS",
+    "scenario": "large",
+    "seed": 714,
+    "parameters": {
+      "population_size": 4,
+      "generations": 3,
+      "fresh_chromosomes": 1,
+      "mutation_attempts": 2,
+      "max_restarts": 5,
+      "candidate_attempts": 3,
+      "crossover_attempts": 2
+    },
+    "history": [
+      {
+        "generation": 0,
+        "generation_best_fitness": 22465.0,
+        "best_ever_fitness": 22465.0
+      },
+      {
+        "generation": 1,
+        "generation_best_fitness": 21920.0,
+        "best_ever_fitness": 21920.0
+      },
+      {
+        "generation": 2,
+        "generation_best_fitness": 21735.0,
+        "best_ever_fitness": 21735.0
+      },
+      {
+        "generation": 3,
+        "generation_best_fitness": 21735.0,
+        "best_ever_fitness": 21735.0
+      }
+    ],
+    "best_assignment_sha256": "b797066df5b056ed5844956391f227ac5fd7327d38d05ed4368c4a62bf5fd233",
+    "phase2_output_matches": true,
+    "hard_constraints": "PASS: original admission",
+    "before_engine_process": {
+      "working_set_bytes": 180887552,
+      "process_lifetime_peak_working_set_bytes": 182919168,
+      "private_commit_bytes_NOT_RSS": 659738624
+    },
+    "after_engine_process": {
+      "working_set_bytes": 491913216,
+      "process_lifetime_peak_working_set_bytes": 680951808,
+      "private_commit_bytes_NOT_RSS": 989933568
+    },
+    "engine_peak_point": {
+      "traced_current_bytes": 178542522,
+      "traced_peak_bytes_NOT_RSS": 206703110,
+      "tracer_metadata_bytes": 65838960,
+      "process": {
+        "working_set_bytes": 491913216,
+        "process_lifetime_peak_working_set_bytes": 680951808,
+        "private_commit_bytes_NOT_RSS": 989933568
+      }
+    },
+    "generation_points": [
+      {
+        "generation": 0,
+        "process": {
+          "working_set_bytes": 303149056,
+          "process_lifetime_peak_working_set_bytes": 303149056,
+          "private_commit_bytes_NOT_RSS": 785104896
+        },
+        "traced_current_bytes": 66480376,
+        "traced_peak_bytes_NOT_RSS": 66599303,
+        "tracer_metadata_bytes": 35387472,
+        "live_allocations": {
+          "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+          "top": [
+            {
+              "bytes": 22931840,
+              "blocks": 162842,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 249
+                }
+              ]
+            },
+            {
+              "bytes": 18234816,
+              "blocks": 125610,
+              "traceback": [
+                {
+                  "file": "copyreg.py",
+                  "line": 104
+                }
+              ]
+            },
+            {
+              "bytes": 6678400,
+              "blocks": 16696,
+              "traceback": [
+                {
+                  "file": "backend/genetic_algorithm/utils/Functions.py",
+                  "line": 1287
+                }
+              ]
+            },
+            {
+              "bytes": 6160656,
+              "blocks": 156300,
+              "traceback": [
+                {
+                  "file": "backend/services/ga_checkpoint_service.py",
+                  "line": 136
+                }
+              ]
+            },
+            {
+              "bytes": 2780800,
+              "blocks": 6952,
+              "traceback": [
+                {
+                  "file": "backend/genetic_algorithm/utils/Functions.py",
+                  "line": 1262
+                }
+              ]
+            },
+            {
+              "bytes": 1942800,
+              "blocks": 16190,
+              "traceback": [
+                {
+                  "file": "backend/services/ga_checkpoint_service.py",
+                  "line": 135
+                }
+              ]
+            },
+            {
+              "bytes": 1603584,
+              "blocks": 6912,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 642
+                }
+              ]
+            },
+            {
+              "bytes": 1112256,
+              "blocks": 4507,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 177
+                }
+              ]
+            },
+            {
+              "bytes": 561536,
+              "blocks": 8774,
+              "traceback": [
+                {
+                  "file": "backend/services/ga_checkpoint_service.py",
+                  "line": 128
+                }
+              ]
+            },
+            {
+              "bytes": 561472,
+              "blocks": 8773,
+              "traceback": [
+                {
+                  "file": "backend/services/ga_checkpoint_service.py",
+                  "line": 139
+                }
+              ]
+            },
+            {
+              "bytes": 497664,
+              "blocks": 3456,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 620
+                }
+              ]
+            },
+            {
+              "bytes": 410312,
+              "blocks": 7327,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 173
+                }
+              ]
+            }
+          ],
+          "positive_net_bytes": 66480568,
+          "positive_net_bytes_with_copy_frame": 24794256
+        }
+      },
+      {
+        "generation": 1,
+        "process": {
+          "working_set_bytes": 401252352,
+          "process_lifetime_peak_working_set_bytes": 420446208,
+          "private_commit_bytes_NOT_RSS": 885252096
+        },
+        "traced_current_bytes": 141695303,
+        "traced_peak_bytes_NOT_RSS": 141778449,
+        "tracer_metadata_bytes": 43952688,
+        "live_allocations": {
+          "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+          "top": [
+            {
+              "bytes": 79213920,
+              "blocks": 431391,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 249
+                }
+              ]
+            },
+            {
+              "bytes": 40328328,
+              "blocks": 277805,
+              "traceback": [
+                {
+                  "file": "copyreg.py",
+                  "line": 104
+                }
+              ]
+            },
+            {
+              "bytes": 8348000,
+              "blocks": 20870,
+              "traceback": [
+                {
+                  "file": "backend/genetic_algorithm/utils/Functions.py",
+                  "line": 1287
+                }
+              ]
+            },
+            {
+              "bytes": 3476000,
+              "blocks": 8690,
+              "traceback": [
+                {
+                  "file": "backend/genetic_algorithm/utils/Functions.py",
+                  "line": 1262
+                }
+              ]
+            },
+            {
+              "bytes": 2614784,
+              "blocks": 12515,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 177
+                }
+              ]
+            },
+            {
+              "bytes": 2435072,
+              "blocks": 10496,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 642
+                }
+              ]
+            },
+            {
+              "bytes": 1058344,
+              "blocks": 18899,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 173
+                }
+              ]
+            },
+            {
+              "bytes": 755712,
+              "blocks": 5248,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 620
+                }
+              ]
+            },
+            {
+              "bytes": 688064,
+              "blocks": 10751,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 191
+                }
+              ]
+            },
+            {
+              "bytes": 605696,
+              "blocks": 1664,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 234
+                }
+              ]
+            },
+            {
+              "bytes": 482816,
+              "blocks": 10496,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 528
+                }
+              ]
+            },
+            {
+              "bytes": 335872,
+              "blocks": 5248,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 664
+                }
+              ]
+            }
+          ],
+          "positive_net_bytes": 141695303,
+          "positive_net_bytes_with_copy_frame": 84252056
+        }
+      },
+      {
+        "generation": 2,
+        "process": {
+          "working_set_bytes": 481337344,
+          "process_lifetime_peak_working_set_bytes": 575442944,
+          "private_commit_bytes_NOT_RSS": 969883648
+        },
+        "traced_current_bytes": 171539634,
+        "traced_peak_bytes_NOT_RSS": 199669183,
+        "tracer_metadata_bytes": 63783216,
+        "live_allocations": {
+          "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+          "top": [
+            {
+              "bytes": 105739776,
+              "blocks": 512640,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 249
+                }
+              ]
+            },
+            {
+              "bytes": 42910656,
+              "blocks": 295584,
+              "traceback": [
+                {
+                  "file": "copyreg.py",
+                  "line": 104
+                }
+              ]
+            },
+            {
+              "bytes": 10017600,
+              "blocks": 25044,
+              "traceback": [
+                {
+                  "file": "backend/genetic_algorithm/utils/Functions.py",
+                  "line": 1287
+                }
+              ]
+            },
+            {
+              "bytes": 4171200,
+              "blocks": 10428,
+              "traceback": [
+                {
+                  "file": "backend/genetic_algorithm/utils/Functions.py",
+                  "line": 1262
+                }
+              ]
+            },
+            {
+              "bytes": 2900480,
+              "blocks": 15281,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 177
+                }
+              ]
+            },
+            {
+              "bytes": 1261680,
+              "blocks": 22530,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 173
+                }
+              ]
+            },
+            {
+              "bytes": 1179520,
+              "blocks": 18430,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 191
+                }
+              ]
+            },
+            {
+              "bytes": 890880,
+              "blocks": 3840,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 642
+                }
+              ]
+            },
+            {
+              "bytes": 646464,
+              "blocks": 1776,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 234
+                }
+              ]
+            },
+            {
+              "bytes": 340864,
+              "blocks": 5470,
+              "traceback": [
+                {
+                  "file": "backend/genetic_algorithm/utils/Functions.py",
+                  "line": 779
+                }
+              ]
+            },
+            {
+              "bytes": 276480,
+              "blocks": 1920,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 620
+                }
+              ]
+            },
+            {
+              "bytes": 176640,
+              "blocks": 3840,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 528
+                }
+              ]
+            }
+          ],
+          "positive_net_bytes": 171539634,
+          "positive_net_bytes_with_copy_frame": 111859416
+        }
+      },
+      {
+        "generation": 3,
+        "process": {
+          "working_set_bytes": 493805568,
+          "process_lifetime_peak_working_set_bytes": 643420160,
+          "private_commit_bytes_NOT_RSS": 992612352
+        },
+        "traced_current_bytes": 184144645,
+        "traced_peak_bytes_NOT_RSS": 206703110,
+        "tracer_metadata_bytes": 67149264,
+        "live_allocations": {
+          "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+          "top": [
+            {
+              "bytes": 117201536,
+              "blocks": 574844,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 249
+                }
+              ]
+            },
+            {
+              "bytes": 48708464,
+              "blocks": 335524,
+              "traceback": [
+                {
+                  "file": "copyreg.py",
+                  "line": 104
+                }
+              ]
+            },
+            {
+              "bytes": 5008800,
+              "blocks": 12522,
+              "traceback": [
+                {
+                  "file": "backend/genetic_algorithm/utils/Functions.py",
+                  "line": 1287
+                }
+              ]
+            },
+            {
+              "bytes": 3274016,
+              "blocks": 17072,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 177
+                }
+              ]
+            },
+            {
+              "bytes": 2085600,
+              "blocks": 5214,
+              "traceback": [
+                {
+                  "file": "backend/genetic_algorithm/utils/Functions.py",
+                  "line": 1262
+                }
+              ]
+            },
+            {
+              "bytes": 1940448,
+              "blocks": 8364,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 642
+                }
+              ]
+            },
+            {
+              "bytes": 1406048,
+              "blocks": 25108,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 173
+                }
+              ]
+            },
+            {
+              "bytes": 1249536,
+              "blocks": 19524,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 191
+                }
+              ]
+            },
+            {
+              "bytes": 731640,
+              "blocks": 2010,
+              "traceback": [
+                {
+                  "file": "copy.py",
+                  "line": 234
+                }
+              ]
+            },
+            {
+              "bytes": 602208,
+              "blocks": 4182,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 620
+                }
+              ]
+            },
+            {
+              "bytes": 384744,
+              "blocks": 8364,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 528
+                }
+              ]
+            },
+            {
+              "bytes": 267904,
+              "blocks": 4186,
+              "traceback": [
+                {
+                  "file": "backend/services/chromosome_service.py",
+                  "line": 664
+                }
+              ]
+            }
+          ],
+          "positive_net_bytes": 184144645,
+          "positive_net_bytes_with_copy_frame": 124014560
+        }
+      }
+    ],
+    "instrumented_seconds_NOT_performance_baseline": 225.14300260000164,
+    "mode": "alloc",
+    "startup_process": {
+      "working_set_bytes": 32329728,
+      "process_lifetime_peak_working_set_bytes": 35155968,
+      "private_commit_bytes_NOT_RSS": 22876160
+    },
+    "after_import_process": {
+      "working_set_bytes": 164958208,
+      "process_lifetime_peak_working_set_bytes": 166514688,
+      "private_commit_bytes_NOT_RSS": 644239360
+    },
+    "process_sampling": {
+      "sampled_interval_peak_working_set_bytes": 584089600,
+      "sample_count": 2616,
+      "poll_interval_seconds": 0.05,
+      "scope": "Sampled peak may miss short spikes; OS lifetime peak is separately reported"
+    },
+    "before_release_collection": {
+      "traced_current_bytes": 131492529,
+      "traced_peak_bytes_NOT_RSS": 206703110,
+      "tracer_metadata_bytes": 61531888,
+      "process": {
+        "working_set_bytes": 495173632,
+        "process_lifetime_peak_working_set_bytes": 680951808,
+        "private_commit_bytes_NOT_RSS": 993398784
+      }
+    },
+    "after_release_collection": {
+      "traced_current_bytes": 113362,
+      "traced_peak_bytes_NOT_RSS": 206703110,
+      "tracer_metadata_bytes": 649648,
+      "process": {
+        "working_set_bytes": 331448320,
+        "process_lifetime_peak_working_set_bytes": 680951808,
+        "private_commit_bytes_NOT_RSS": 827539456
+      }
+    },
+    "gc_collected": 519804,
+    "representative_model_weakrefs_alive_after_gc": 0,
+    "post_release_live_allocations": {
+      "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+      "top": [
+        {
+          "bytes": 19692,
+          "blocks": 138,
+          "traceback": [
+            {
+              "file": "<frozen importlib._bootstrap_external>",
+              "line": 511
+            }
+          ]
+        },
+        {
+          "bytes": 12600,
+          "blocks": 105,
+          "traceback": [
+            {
+              "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+              "line": 445
+            }
+          ]
+        },
+        {
+          "bytes": 11244,
+          "blocks": 137,
+          "traceback": [
+            {
+              "file": "<frozen abc>",
+              "line": 123
+            }
+          ]
+        },
+        {
+          "bytes": 8526,
+          "blocks": 174,
+          "traceback": [
+            {
+              "file": ".venv/Lib/site-packages/pandas/core/internals/blocks.py",
+              "line": 2395
+            }
+          ]
+        },
+        {
+          "bytes": 4854,
+          "blocks": 79,
+          "traceback": [
+            {
+              "file": "backend/benchmarks/scaled_python.py",
+              "line": 117
+            }
+          ]
+        },
+        {
+          "bytes": 4350,
+          "blocks": 87,
+          "traceback": [
+            {
+              "file": ".venv/Lib/site-packages/pandas/core/algorithms.py",
+              "line": 306
+            }
+          ]
+        },
+        {
+          "bytes": 4224,
+          "blocks": 96,
+          "traceback": [
+            {
+              "file": "backend/benchmarks/memory_study.py",
+              "line": 116
+            }
+          ]
+        },
+        {
+          "bytes": 3776,
+          "blocks": 64,
+          "traceback": [
+            {
+              "file": "backend/services/ga_v2_constraints.py",
+              "line": 106
+            }
+          ]
+        },
+        {
+          "bytes": 3444,
+          "blocks": 63,
+          "traceback": [
+            {
+              "file": "backend/services/chromosome_service.py",
+              "line": 692
+            }
+          ]
+        },
+        {
+          "bytes": 3226,
+          "blocks": 59,
+          "traceback": [
+            {
+              "file": "backend/benchmarks/scaled_python.py",
+              "line": 115
+            }
+          ]
+        },
+        {
+          "bytes": 3072,
+          "blocks": 48,
+          "traceback": [
+            {
+              "file": "backend/benchmarks/memory_study.py",
+              "line": 114
+            }
+          ]
+        },
+        {
+          "bytes": 3072,
+          "blocks": 48,
+          "traceback": [
+            {
+              "file": "backend/benchmarks/memory_study.py",
+              "line": 105
+            }
+          ]
+        }
+      ],
+      "positive_net_bytes": 114178,
+      "positive_net_bytes_with_copy_frame": 0
+    },
+    "scope": "Traced allocations with probe overhead"
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "prototype_scope": "IT_ONLY_USER_REPORTED; not all CCS",
+  "institutional_authority": "UNVERIFIED_BLOCKED",
+  "registry": {
+    "identities": 11,
+    "explicit_department_fields": false,
+    "explicit_term_fields": false
+  },
+  "csv_inventory": [
+    {
+      "file": "Best_chromosome.csv",
+      "columns": [
+        "",
+        "Faculty_Code",
+        "Faculty_Priority",
+        "Assigned Schedule",
+        "Assigned Subjects",
+        "Days"
+      ],
+      "rows": 61,
+      "active_legacy_import": false,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "BSIT_Consolidated_Subject_Schedules.csv",
+      "columns": [
+        "Year Level",
+        "Section",
+        "Course Number",
+        "Schedule"
+      ],
+      "rows": 32,
+      "active_legacy_import": true,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "BSIT_Consolidated_Subject_Schedules_test.csv",
+      "columns": [
+        "Year Level",
+        "Section",
+        "Course Number",
+        "Schedule"
+      ],
+      "rows": 34,
+      "active_legacy_import": false,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "BSIT_GEC.csv",
+      "columns": [
+        "Year Level",
+        "Section",
+        "Course Number",
+        "Schedule"
+      ],
+      "rows": 34,
+      "active_legacy_import": false,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "Faculty Admin, Research and Extension.csv",
+      "columns": [
+        "",
+        "Faculty",
+        "Admin Load",
+        "Research Load",
+        "Extension Load",
+        "Teaching Load"
+      ],
+      "rows": 9,
+      "active_legacy_import": true,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "Faculty Preferences V2.csv",
+      "columns": [
+        "Faculty",
+        "Subject",
+        "New Schedule",
+        "Schedule",
+        "Room Assignment",
+        "Day(s)"
+      ],
+      "rows": 131,
+      "active_legacy_import": true,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "Faculty Preferences.csv",
+      "columns": [
+        "Faculty",
+        "Subject",
+        "New Schedule",
+        "Schedule",
+        "Room Assignment",
+        "Day(s)"
+      ],
+      "rows": 159,
+      "active_legacy_import": false,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "Faculty.csv",
+      "columns": [
+        "",
+        "Faculty",
+        "Admin Load",
+        "Research Load",
+        "Extension Load"
+      ],
+      "rows": 12,
+      "active_legacy_import": false,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "faculty_load.csv",
+      "columns": [
+        "x`",
+        "course_no",
+        "section",
+        "schedule",
+        "room",
+        "units",
+        "number_of_students"
+      ],
+      "rows": 39,
+      "active_legacy_import": false,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "Faculty_preferences.csv",
+      "columns": [
+        "",
+        "Faculty_Code",
+        "Faculty_Prio",
+        "PreferredSchedule",
+        "Preferred Subjects",
+        "Preferred Day(s)"
+      ],
+      "rows": 131,
+      "active_legacy_import": false,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "faculty_qualifications.csv",
+      "columns": [
+        "faculty_code",
+        "faculty_name",
+        "specializations",
+        "auto_qualify_by_specialization",
+        "source",
+        "notes"
+      ],
+      "rows": 11,
+      "active_legacy_import": true,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "faculty_subject_eligibility.csv",
+      "columns": [
+        "faculty_code",
+        "faculty_name",
+        "course_no",
+        "eligibility_status",
+        "eligibility_basis",
+        "source",
+        "notes"
+      ],
+      "rows": 39,
+      "active_legacy_import": true,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "first_sem_bsit_subjects.csv",
+      "columns": [
+        "course no.",
+        "course title",
+        "units",
+        "num of lec hours/week",
+        "num of lab hours/week",
+        "year_level"
+      ],
+      "rows": 19,
+      "active_legacy_import": true,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "preferences.csv",
+      "columns": [
+        "",
+        "Faculty",
+        "Subject",
+        "New Schedule",
+        "Schedule",
+        "Room Assignment",
+        "Day(s)"
+      ],
+      "rows": 499,
+      "active_legacy_import": false,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "second_sem_bsit_subjects.csv",
+      "columns": [
+        "course no.",
+        "course title",
+        "units",
+        "num of lec hours/week",
+        "num of lab hours/week"
+      ],
+      "rows": 55,
+      "active_legacy_import": false,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "subject_domains.csv",
+      "columns": [
+        "course_no",
+        "course_title",
+        "primary_domain",
+        "secondary_domains",
+        "offered_first_sem",
+        "offered_second_sem",
+        "domain_mapping_status",
+        "notes"
+      ],
+      "rows": 56,
+      "active_legacy_import": true,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    },
+    {
+      "file": "test.csv",
+      "columns": [
+        "",
+        "subject",
+        "section",
+        "lecture_assigned",
+        "lecture_room",
+        "laboratory_assigned",
+        "laboratory_room"
+      ],
+      "rows": 110,
+      "active_legacy_import": false,
+      "explicit_term_fields": false,
+      "explicit_department_fields": false
+    }
+  ],
+  "faculty_source_coverage": {
+    "Faculty.csv": {
+      "rows": 12,
+      "distinct_labels": 12,
+      "matched_registry_members": 10,
+      "unresolved_labels": 2,
+      "registry_members_not_represented": 1
+    },
+    "Faculty Admin, Research and Extension.csv": {
+      "rows": 9,
+      "distinct_labels": 9,
+      "matched_registry_members": 9,
+      "unresolved_labels": 0,
+      "registry_members_not_represented": 2
+    },
+    "Faculty Preferences V2.csv": {
+      "rows": 131,
+      "distinct_labels": 11,
+      "matched_registry_members": 11,
+      "unresolved_labels": 0,
+      "registry_members_not_represented": 0
+    },
+    "Faculty Preferences.csv": {
+      "rows": 159,
+      "distinct_labels": 13,
+      "matched_registry_members": 11,
+      "unresolved_labels": 2,
+      "registry_members_not_represented": 0
+    },
+    "preferences.csv": {
+      "rows": 499,
+      "distinct_labels": 23,
+      "matched_registry_members": 11,
+      "unresolved_labels": 12,
+      "registry_members_not_represented": 0
+    }
+  },
+  "qualifications": {
+    "rows": 11,
+    "distinct_codes": 11,
+    "unknown_codes": 0,
+    "registry_missing": 0,
+    "duplicate_code_rows": 0,
+    "blank_specializations": 0,
+    "degree_or_credential_columns_present": false,
+    "review_marker_rows": 3
+  },
+  "eligibility": {
+    "rows": 39,
+    "distinct_faculty": 11,
+    "unknown_codes": 0,
+    "duplicate_faculty_course_pairs": 0,
+    "status_counts": {
+      "eligible": 39
+    },
+    "degrees_or_term_department_fields": false,
+    "approval_verification": "NOT_ESTABLISHED_FROM_NONEMPTY_SOURCE_OR_BASIS"
+  },
+  "workload_source_comparison": {
+    "matched_identity_intersection": 8,
+    "comparable_numeric_vectors": 3,
+    "different_numeric_allowance_vectors": 1,
+    "unknown_numeric_vectors": 5,
+    "formatting_only_different_vectors": 0,
+    "raw_text_different_vectors": 6,
+    "active_non_numeric_allowance_cells": 0,
+    "resolution": "Unresolved source/version disagreement; no precedence inferred, no values exported or changed"
+  },
+  "course_eligibility_coverage": {
+    "first_distinct_courses": 19,
+    "second_distinct_courses": 55,
+    "course_intersection": 18,
+    "first_with_normal_eligibility": 18,
+    "first_without_normal_eligibility": 1,
+    "first_without_normal_eligibility_but_preassigned": 1,
+    "first_without_either_normal_eligibility_or_preassignment": 0,
+    "second_with_normal_eligibility": 20,
+    "second_without_normal_eligibility": 35,
+    "interpretation": "Course-key coverage only; not offered-section, calendar feasibility, term approval or full institutional qualification"
+  },
+  "preassignments": {
+    "assignments": 2,
+    "external_instructors": 1,
+    "declared_fields": [
+      "course_no",
+      "instructor_id",
+      "room",
+      "section"
+    ],
+    "fixed_meeting_times_present": false,
+    "external_department_known": false
+  },
+  "section_label_categories": {
+    "faculty_load.csv": {
+      "IT": 35,
+      "OTHER_UNRESOLVED": 4
+    },
+    "BSIT_GEC.csv": {
+      "UNSCOPED_YEAR_SECTION": 34
+    },
+    "BSIT_Consolidated_Subject_Schedules.csv": {
+      "UNSCOPED_YEAR_SECTION": 32
+    }
+  },
+  "workbooks": [
+    {
+      "file": "Tentative load 1st sem.2026-2027 (2).xlsx",
+      "counts": {
+        "sheets": 29,
+        "formula_cells": 328,
+        "IS_section_rows": 188,
+        "IS_section_rows_with_runtime_room": 141,
+        "IT_section_rows": 575,
+        "IT_section_rows_with_runtime_room": 455,
+        "sheets_with_both_section_styles": 10,
+        "faculty_labeled_sheets_with_both_styles": 7
+      },
+      "shared_string_markers": {
+        "first_semester": 1,
+        "second_semester": 0,
+        "year_2026_2027": 1,
+        "tentative": 2,
+        "degree_header": 0,
+        "it_department_phrase": 1,
+        "approval_role_label": 15
+      },
+      "exact_registry_alias_matches_in_cells": 5,
+      "registry_not_exactly_matched": 6,
+      "runtime_rooms_with_both_section_styles": 5,
+      "course_codes_with_both_section_styles": 5,
+      "interpretation": "String/row/sheet cooccurrence, not verified identities, IS roster, resource ownership, approved meetings, conflicts or activation",
+      "formulas": "Stored/cached cells read without evaluation; no recalculation or workbook modification"
+    },
+    {
+      "file": "Tentative Load First Sem 2026-2027.xlsx",
+      "counts": {
+        "sheets": 29,
+        "formula_cells": 314,
+        "IS_section_rows": 176,
+        "IS_section_rows_with_runtime_room": 130,
+        "IT_section_rows": 567,
+        "IT_section_rows_with_runtime_room": 447,
+        "sheets_with_both_section_styles": 10,
+        "faculty_labeled_sheets_with_both_styles": 7
+      },
+      "shared_string_markers": {
+        "first_semester": 1,
+        "second_semester": 0,
+        "year_2026_2027": 1,
+        "tentative": 2,
+        "degree_header": 0,
+        "it_department_phrase": 1,
+        "approval_role_label": 15
+      },
+      "exact_registry_alias_matches_in_cells": 5,
+      "registry_not_exactly_matched": 6,
+      "runtime_rooms_with_both_section_styles": 5,
+      "course_codes_with_both_section_styles": 5,
+      "interpretation": "String/row/sheet cooccurrence, not verified identities, IS roster, resource ownership, approved meetings, conflicts or activation",
+      "formulas": "Stored/cached cells read without evaluation; no recalculation or workbook modification"
+    }
+  ],
+  "authority_limits": [
+    "Adviser-supplied data is user-reported provenance, not institutional authorization",
+    "No complete verified IT semester roster established; no IS roster built or inferred",
+    "Shared-resource indicators require reconciliation and confirmation, not automatic activation"
+  ],
+  "protected_preferences_and_settings_parsed": false,
+  "GA_executed": false,
+  "database_operations": 0
+}

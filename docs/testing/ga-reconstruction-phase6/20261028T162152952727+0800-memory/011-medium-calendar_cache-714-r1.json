@@ -1,0 +1,657 @@
+{
+  "started_at": "2026-10-28T16:27:22.962696+08:00",
+  "finished_at": "2026-10-28T16:28:22.419807+08:00",
+  "worker_wall_seconds": 59.45713339999202,
+  "config": {
+    "mode": "memory",
+    "scenario": "medium",
+    "variant": "calendar_cache",
+    "seed": 714,
+    "repetition": 1
+  },
+  "result": {
+    "status": "SUCCESS",
+    "config": {
+      "mode": "memory",
+      "scenario": "medium",
+      "variant": "calendar_cache",
+      "seed": 714,
+      "repetition": 1
+    },
+    "parameters": {
+      "population_size": 2,
+      "generations": 1,
+      "fresh_chromosomes": 0,
+      "crossover_attempts": 1,
+      "mutation_attempts": 1,
+      "max_restarts": 5,
+      "candidate_attempts": 3
+    },
+    "provenance": {
+      "variant": "calendar_cache",
+      "version": "phase6-reconstruction.1:calendar_cache",
+      "engine_identity": "4d4912fbadb3608f91a737481f4a63c9bb7a6de5231cd8d35b9effcdac36f3dc",
+      "production_identity": "0821747e30eb56e9e4c070f369e733bc4b59ec184d2e2cb4c211ffa6fa5c1555",
+      "prototype_source_sha256": "fd7e12bc57a59d30bb562e428b20b4a46c5ee00bd501c26e7ce8be79755a0030",
+      "original_component_source_sha256": "87ddb9f5ac58f5a3fc29b7346216d390a75bf3a00f49bdaf7008dee954e10bc6",
+      "source_locations": {
+        "components": 681,
+        "payload": 731
+      },
+      "production_symbols_replaced": false,
+      "deepcopy_implementation_changed": false,
+      "cache_lifetime": "Single validation call; no checkpoint/store/global cache"
+    },
+    "warmup_excluded": {
+      "assignment_sha256": "53b5b91366371d9ef7b173843c04e7e6437907ecf72fe94c045e0cec50cfc62c",
+      "state_availability_workload_aliases_sha256": "6c5aff9495a2065ce0498a24e252c83d8d4d1b3488b012583419007252efcae9",
+      "history": [
+        {
+          "generation": 0,
+          "generation_best_fitness": 11470.0,
+          "best_ever_fitness": 11470.0
+        },
+        {
+          "generation": 1,
+          "generation_best_fitness": 10395.0,
+          "best_ever_fitness": 10395.0
+        }
+      ],
+      "final_fitness": 10395.0,
+      "fitness_breakdown": {
+        "subject_preference": 6650.0,
+        "time_preference": 1050,
+        "day_preference": 0,
+        "schedule_style": 720,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 1975,
+        "daily_teaching_load": 0
+      },
+      "workload": {
+        "faculty": [
+          {
+            "faculty": 990100,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990101,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990102,
+            "teaching_units": 6,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990103,
+            "teaching_units": 9,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.42857142857142855
+          },
+          {
+            "faculty": 990104,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990105,
+            "teaching_units": 3,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990106,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990107,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990108,
+            "teaching_units": 6,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990109,
+            "teaching_units": 3,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 6,
+            "underload": 18,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.14285714285714285
+          },
+          {
+            "faculty": 990110,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990111,
+            "teaching_units": 3,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          }
+        ],
+        "total_teaching_units": 72,
+        "total_target_units": 198,
+        "underload_units": 126,
+        "overload_units": 0,
+        "zero_assignment_count": 0,
+        "target_fulfillment_population_stdev": 0.08945860685613186
+      },
+      "final_rng_sha256": "2c67c4b2621f569cdd5efc5a740b7dd8ecba071188c59e919091c03bbcd338b8",
+      "hard_constraints": "PASS: original admit on every final member and best",
+      "scope": "Full graph projection normalizes only the distinct experimental engine identity for comparison; no validation/continuation identity is spoofed",
+      "engine_seconds": 7.729129399987869
+    },
+    "measurement": {
+      "engine_seconds": 36.15482920000795,
+      "process_before": {
+        "working_set_bytes": 229896192,
+        "process_lifetime_peak_working_set_bytes": 254279680,
+        "private_commit_bytes_NOT_RSS": 709443584
+      },
+      "process_after": {
+        "working_set_bytes": 295772160,
+        "process_lifetime_peak_working_set_bytes": 295792640,
+        "private_commit_bytes_NOT_RSS": 777203712
+      },
+      "process_sampling": {
+        "sampled_interval_peak_working_set_bytes": 295792640,
+        "sample_count": 419,
+        "poll_interval_seconds": 0.05,
+        "scope": "Sampled peak may miss short spikes; OS lifetime peak is separately reported"
+      },
+      "engine_allocation_point": {
+        "traced_current_bytes": 46807763,
+        "traced_peak_bytes_NOT_RSS": 75727757,
+        "tracer_metadata_bytes": 19656112,
+        "process": {
+          "working_set_bytes": 295772160,
+          "process_lifetime_peak_working_set_bytes": 295792640,
+          "private_commit_bytes_NOT_RSS": 777203712
+        }
+      },
+      "history": [
+        {
+          "generation": 0,
+          "generation_best_fitness": 11470.0,
+          "best_ever_fitness": 11470.0
+        },
+        {
+          "generation": 1,
+          "generation_best_fitness": 10395.0,
+          "best_ever_fitness": 10395.0
+        }
+      ],
+      "profile": null
+    },
+    "correctness": {
+      "assignment_sha256": "53b5b91366371d9ef7b173843c04e7e6437907ecf72fe94c045e0cec50cfc62c",
+      "state_availability_workload_aliases_sha256": "6c5aff9495a2065ce0498a24e252c83d8d4d1b3488b012583419007252efcae9",
+      "history": [
+        {
+          "generation": 0,
+          "generation_best_fitness": 11470.0,
+          "best_ever_fitness": 11470.0
+        },
+        {
+          "generation": 1,
+          "generation_best_fitness": 10395.0,
+          "best_ever_fitness": 10395.0
+        }
+      ],
+      "final_fitness": 10395.0,
+      "fitness_breakdown": {
+        "subject_preference": 6650.0,
+        "time_preference": 1050,
+        "day_preference": 0,
+        "schedule_style": 720,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 1975,
+        "daily_teaching_load": 0
+      },
+      "workload": {
+        "faculty": [
+          {
+            "faculty": 990100,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990101,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990102,
+            "teaching_units": 6,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990103,
+            "teaching_units": 9,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.42857142857142855
+          },
+          {
+            "faculty": 990104,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990105,
+            "teaching_units": 3,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990106,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990107,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990108,
+            "teaching_units": 6,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990109,
+            "teaching_units": 3,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 6,
+            "underload": 18,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.14285714285714285
+          },
+          {
+            "faculty": 990110,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990111,
+            "teaching_units": 3,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          }
+        ],
+        "total_teaching_units": 72,
+        "total_target_units": 198,
+        "underload_units": 126,
+        "overload_units": 0,
+        "zero_assignment_count": 0,
+        "target_fulfillment_population_stdev": 0.08945860685613186
+      },
+      "final_rng_sha256": "2c67c4b2621f569cdd5efc5a740b7dd8ecba071188c59e919091c03bbcd338b8",
+      "hard_constraints": "PASS: original admit on every final member and best",
+      "scope": "Full graph projection normalizes only the distinct experimental engine identity for comparison; no validation/continuation identity is spoofed"
+    },
+    "post_verification_seconds_excluded": 6.559021299995948,
+    "transient_copy_control": {
+      "incremental_live_bytes": 2666768,
+      "incremental_peak_bytes": 5089796,
+      "scope": "Original deepcopy only; separate from saved engine peak, input best remains held"
+    },
+    "post_release": {
+      "traced_current_bytes": 86849,
+      "traced_peak_bytes_NOT_RSS": 13649101,
+      "tracer_metadata_bytes": 482608,
+      "process": {
+        "working_set_bytes": 274944000,
+        "process_lifetime_peak_working_set_bytes": 326225920,
+        "private_commit_bytes_NOT_RSS": 758566912
+      }
+    },
+    "post_release_live_allocations": {
+      "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+      "top": [
+        {
+          "bytes": 33016,
+          "blocks": 374,
+          "traceback": [
+            {
+              "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+              "line": 633
+            }
+          ]
+        },
+        {
+          "bytes": 11904,
+          "blocks": 123,
+          "traceback": [
+            {
+              "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+              "line": 676
+            }
+          ]
+        },
+        {
+          "bytes": 5696,
+          "blocks": 25,
+          "traceback": [
+            {
+              "file": "backend/benchmarks/scaled_python.py",
+              "line": 136
+            }
+          ]
+        },
+        {
+          "bytes": 4731,
+          "blocks": 77,
+          "traceback": [
+            {
+              "file": "backend/benchmarks/scaled_python.py",
+              "line": 117
+            }
+          ]
+        },
+        {
+          "bytes": 4410,
+          "blocks": 90,
+          "traceback": [
+            {
+              "file": ".venv/Lib/site-packages/pandas/core/internals/blocks.py",
+              "line": 2395
+            }
+          ]
+        },
+        {
+          "bytes": 3717,
+          "blocks": 63,
+          "traceback": [
+            {
+              "file": "backend/services/ga_v2_constraints.py",
+              "line": 106
+            }
+          ]
+        },
+        {
+          "bytes": 3167,
+          "blocks": 58,
+          "traceback": [
+            {
+              "file": "backend/benchmarks/scaled_python.py",
+              "line": 115
+            }
+          ]
+        },
+        {
+          "bytes": 2787,
+          "blocks": 51,
+          "traceback": [
+            {
+              "file": "components.py",
+              "line": 692
+            }
+          ]
+        },
+        {
+          "bytes": 2277,
+          "blocks": 37,
+          "traceback": [
+            {
+              "file": "components.py",
+              "line": 691
+            }
+          ]
+        },
+        {
+          "bytes": 1473,
+          "blocks": 24,
+          "traceback": [
+            {
+              "file": "backend/services/ga_v2_constraints.py",
+              "line": 221
+            }
+          ]
+        },
+        {
+          "bytes": 1458,
+          "blocks": 27,
+          "traceback": [
+            {
+              "file": "backend/services/ga_v2_constraints.py",
+              "line": 218
+            }
+          ]
+        },
+        {
+          "bytes": 1233,
+          "blocks": 20,
+          "traceback": [
+            {
+              "file": "backend/services/ga_publication_service.py",
+              "line": 30
+            }
+          ]
+        }
+      ],
+      "positive_net_bytes": 87161,
+      "positive_net_bytes_with_copy_frame": 0
+    },
+    "sampled_model_weakrefs_alive": 0,
+    "cache_diagnostics_profile_only": null,
+    "bootstrap": {
+      "used": true,
+      "csv_reads_substituted": 7,
+      "json_reads_substituted": 2
+    },
+    "production_GC_allocator_settings_changed": false,
+    "database_or_publication_operations": 0
+  }
+}

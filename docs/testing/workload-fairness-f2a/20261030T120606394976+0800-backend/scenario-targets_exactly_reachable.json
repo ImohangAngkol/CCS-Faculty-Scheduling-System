@@ -1,0 +1,797 @@
+{
+  "scenario": "targets_exactly_reachable",
+  "targets": [
+    4,
+    8
+  ],
+  "allowances": [
+    {
+      "admin": 20,
+      "research": 0,
+      "extension": 0
+    },
+    {
+      "admin": 16,
+      "research": 0,
+      "extension": 0
+    }
+  ],
+  "offered_teaching_units": 12,
+  "combined_targets": 12,
+  "faculty_count": 2,
+  "faculty_with_no_eligible_offerings": 0,
+  "fixed_geometry_assignment_space": 64,
+  "explicitly_eligible_assignments_checked": 64,
+  "unique_workload_vectors": 7,
+  "exhaustive_boundary": "All explicit eligible assignments on fixed fictional geometry, not all possible timetables or a GA-quality campaign",
+  "all_original_hard_valid": true,
+  "all_seven_other_components_zero": true,
+  "winners": {
+    "original_workload": [
+      [
+        4,
+        8
+      ]
+    ],
+    "absolute": [
+      [
+        4,
+        8
+      ]
+    ],
+    "squared": [
+      [
+        4,
+        8
+      ]
+    ],
+    "person_relative": [
+      [
+        4,
+        8
+      ]
+    ],
+    "target_relative": [
+      [
+        4,
+        8
+      ]
+    ],
+    "relative_with_original_overload": [
+      [
+        4,
+        8
+      ]
+    ]
+  },
+  "rows": [
+    {
+      "actual": [
+        12,
+        0
+      ],
+      "original_total": 280,
+      "original_components": {
+        "subject_preference": 0,
+        "time_preference": 0,
+        "day_preference": 0,
+        "schedule_style": 0,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 280,
+        "daily_teaching_load": 0
+      },
+      "scores": {
+        "original_workload": 280,
+        "absolute": {
+          "exact": "16",
+          "decimal": 16.0
+        },
+        "squared": {
+          "exact": "128",
+          "decimal": 128.0
+        },
+        "person_relative": {
+          "exact": "5",
+          "decimal": 5.0
+        },
+        "target_relative": {
+          "exact": "24",
+          "decimal": 24.0
+        },
+        "relative_with_original_overload": {
+          "exact": "280",
+          "decimal": 280.0
+        }
+      },
+      "metrics": {
+        "actual": [
+          12,
+          0
+        ],
+        "targets": [
+          4,
+          8
+        ],
+        "signed_deviation": [
+          8,
+          -8
+        ],
+        "relative_deviation": [
+          {
+            "exact": "2",
+            "decimal": 2.0
+          },
+          {
+            "exact": "-1",
+            "decimal": -1.0
+          }
+        ],
+        "fulfillment": [
+          {
+            "exact": "3",
+            "decimal": 3.0
+          },
+          {
+            "exact": "0",
+            "decimal": 0.0
+          }
+        ],
+        "underload_units": [
+          0,
+          8
+        ],
+        "overload_units": [
+          8,
+          0
+        ],
+        "total_underload": 8,
+        "total_overload": 8,
+        "zero_assignment_count": 1,
+        "positive_target_eligible_zero_count": 1,
+        "no_eligible_offering_count": 0,
+        "fulfillment_spread": {
+          "exact": "3",
+          "decimal": 3.0
+        },
+        "fulfillment_variance": {
+          "exact": "9/4",
+          "decimal": 2.25
+        },
+        "above_warning_count": 0,
+        "hard_ceiling_passed": true
+      },
+      "original_hard_admitted": true,
+      "unassigned_offerings": 0,
+      "hard_conflicts": {
+        "faculty": 0,
+        "room": 0,
+        "section": 0
+      }
+    },
+    {
+      "actual": [
+        10,
+        2
+      ],
+      "original_total": 220,
+      "original_components": {
+        "subject_preference": 0,
+        "time_preference": 0,
+        "day_preference": 0,
+        "schedule_style": 0,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 220,
+        "daily_teaching_load": 0
+      },
+      "scores": {
+        "original_workload": 220,
+        "absolute": {
+          "exact": "12",
+          "decimal": 12.0
+        },
+        "squared": {
+          "exact": "72",
+          "decimal": 72.0
+        },
+        "person_relative": {
+          "exact": "45/16",
+          "decimal": 2.8125
+        },
+        "target_relative": {
+          "exact": "27/2",
+          "decimal": 13.5
+        },
+        "relative_with_original_overload": {
+          "exact": "1285/8",
+          "decimal": 160.625
+        }
+      },
+      "metrics": {
+        "actual": [
+          10,
+          2
+        ],
+        "targets": [
+          4,
+          8
+        ],
+        "signed_deviation": [
+          6,
+          -6
+        ],
+        "relative_deviation": [
+          {
+            "exact": "3/2",
+            "decimal": 1.5
+          },
+          {
+            "exact": "-3/4",
+            "decimal": -0.75
+          }
+        ],
+        "fulfillment": [
+          {
+            "exact": "5/2",
+            "decimal": 2.5
+          },
+          {
+            "exact": "1/4",
+            "decimal": 0.25
+          }
+        ],
+        "underload_units": [
+          0,
+          6
+        ],
+        "overload_units": [
+          6,
+          0
+        ],
+        "total_underload": 6,
+        "total_overload": 6,
+        "zero_assignment_count": 0,
+        "positive_target_eligible_zero_count": 0,
+        "no_eligible_offering_count": 0,
+        "fulfillment_spread": {
+          "exact": "9/4",
+          "decimal": 2.25
+        },
+        "fulfillment_variance": {
+          "exact": "81/64",
+          "decimal": 1.265625
+        },
+        "above_warning_count": 0,
+        "hard_ceiling_passed": true
+      },
+      "original_hard_admitted": true,
+      "unassigned_offerings": 0,
+      "hard_conflicts": {
+        "faculty": 0,
+        "room": 0,
+        "section": 0
+      }
+    },
+    {
+      "actual": [
+        8,
+        4
+      ],
+      "original_total": 145,
+      "original_components": {
+        "subject_preference": 0,
+        "time_preference": 0,
+        "day_preference": 0,
+        "schedule_style": 0,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 145,
+        "daily_teaching_load": 0
+      },
+      "scores": {
+        "original_workload": 145,
+        "absolute": {
+          "exact": "8",
+          "decimal": 8.0
+        },
+        "squared": {
+          "exact": "32",
+          "decimal": 32.0
+        },
+        "person_relative": {
+          "exact": "5/4",
+          "decimal": 1.25
+        },
+        "target_relative": {
+          "exact": "6",
+          "decimal": 6.0
+        },
+        "relative_with_original_overload": {
+          "exact": "165/2",
+          "decimal": 82.5
+        }
+      },
+      "metrics": {
+        "actual": [
+          8,
+          4
+        ],
+        "targets": [
+          4,
+          8
+        ],
+        "signed_deviation": [
+          4,
+          -4
+        ],
+        "relative_deviation": [
+          {
+            "exact": "1",
+            "decimal": 1.0
+          },
+          {
+            "exact": "-1/2",
+            "decimal": -0.5
+          }
+        ],
+        "fulfillment": [
+          {
+            "exact": "2",
+            "decimal": 2.0
+          },
+          {
+            "exact": "1/2",
+            "decimal": 0.5
+          }
+        ],
+        "underload_units": [
+          0,
+          4
+        ],
+        "overload_units": [
+          4,
+          0
+        ],
+        "total_underload": 4,
+        "total_overload": 4,
+        "zero_assignment_count": 0,
+        "positive_target_eligible_zero_count": 0,
+        "no_eligible_offering_count": 0,
+        "fulfillment_spread": {
+          "exact": "3/2",
+          "decimal": 1.5
+        },
+        "fulfillment_variance": {
+          "exact": "9/16",
+          "decimal": 0.5625
+        },
+        "above_warning_count": 0,
+        "hard_ceiling_passed": true
+      },
+      "original_hard_admitted": true,
+      "unassigned_offerings": 0,
+      "hard_conflicts": {
+        "faculty": 0,
+        "room": 0,
+        "section": 0
+      }
+    },
+    {
+      "actual": [
+        6,
+        6
+      ],
+      "original_total": 85,
+      "original_components": {
+        "subject_preference": 0,
+        "time_preference": 0,
+        "day_preference": 0,
+        "schedule_style": 0,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 85,
+        "daily_teaching_load": 0
+      },
+      "scores": {
+        "original_workload": 85,
+        "absolute": {
+          "exact": "4",
+          "decimal": 4.0
+        },
+        "squared": {
+          "exact": "8",
+          "decimal": 8.0
+        },
+        "person_relative": {
+          "exact": "5/16",
+          "decimal": 0.3125
+        },
+        "target_relative": {
+          "exact": "3/2",
+          "decimal": 1.5
+        },
+        "relative_with_original_overload": {
+          "exact": "205/8",
+          "decimal": 25.625
+        }
+      },
+      "metrics": {
+        "actual": [
+          6,
+          6
+        ],
+        "targets": [
+          4,
+          8
+        ],
+        "signed_deviation": [
+          2,
+          -2
+        ],
+        "relative_deviation": [
+          {
+            "exact": "1/2",
+            "decimal": 0.5
+          },
+          {
+            "exact": "-1/4",
+            "decimal": -0.25
+          }
+        ],
+        "fulfillment": [
+          {
+            "exact": "3/2",
+            "decimal": 1.5
+          },
+          {
+            "exact": "3/4",
+            "decimal": 0.75
+          }
+        ],
+        "underload_units": [
+          0,
+          2
+        ],
+        "overload_units": [
+          2,
+          0
+        ],
+        "total_underload": 2,
+        "total_overload": 2,
+        "zero_assignment_count": 0,
+        "positive_target_eligible_zero_count": 0,
+        "no_eligible_offering_count": 0,
+        "fulfillment_spread": {
+          "exact": "3/4",
+          "decimal": 0.75
+        },
+        "fulfillment_variance": {
+          "exact": "9/64",
+          "decimal": 0.140625
+        },
+        "above_warning_count": 0,
+        "hard_ceiling_passed": true
+      },
+      "original_hard_admitted": true,
+      "unassigned_offerings": 0,
+      "hard_conflicts": {
+        "faculty": 0,
+        "room": 0,
+        "section": 0
+      }
+    },
+    {
+      "actual": [
+        4,
+        8
+      ],
+      "original_total": 0,
+      "original_components": {
+        "subject_preference": 0,
+        "time_preference": 0,
+        "day_preference": 0,
+        "schedule_style": 0,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 0,
+        "daily_teaching_load": 0
+      },
+      "scores": {
+        "original_workload": 0,
+        "absolute": {
+          "exact": "0",
+          "decimal": 0.0
+        },
+        "squared": {
+          "exact": "0",
+          "decimal": 0.0
+        },
+        "person_relative": {
+          "exact": "0",
+          "decimal": 0.0
+        },
+        "target_relative": {
+          "exact": "0",
+          "decimal": 0.0
+        },
+        "relative_with_original_overload": {
+          "exact": "0",
+          "decimal": 0.0
+        }
+      },
+      "metrics": {
+        "actual": [
+          4,
+          8
+        ],
+        "targets": [
+          4,
+          8
+        ],
+        "signed_deviation": [
+          0,
+          0
+        ],
+        "relative_deviation": [
+          {
+            "exact": "0",
+            "decimal": 0.0
+          },
+          {
+            "exact": "0",
+            "decimal": 0.0
+          }
+        ],
+        "fulfillment": [
+          {
+            "exact": "1",
+            "decimal": 1.0
+          },
+          {
+            "exact": "1",
+            "decimal": 1.0
+          }
+        ],
+        "underload_units": [
+          0,
+          0
+        ],
+        "overload_units": [
+          0,
+          0
+        ],
+        "total_underload": 0,
+        "total_overload": 0,
+        "zero_assignment_count": 0,
+        "positive_target_eligible_zero_count": 0,
+        "no_eligible_offering_count": 0,
+        "fulfillment_spread": {
+          "exact": "0",
+          "decimal": 0.0
+        },
+        "fulfillment_variance": {
+          "exact": "0",
+          "decimal": 0.0
+        },
+        "above_warning_count": 0,
+        "hard_ceiling_passed": true
+      },
+      "original_hard_admitted": true,
+      "unassigned_offerings": 0,
+      "hard_conflicts": {
+        "faculty": 0,
+        "room": 0,
+        "section": 0
+      }
+    },
+    {
+      "actual": [
+        2,
+        10
+      ],
+      "original_total": 135,
+      "original_components": {
+        "subject_preference": 0,
+        "time_preference": 0,
+        "day_preference": 0,
+        "schedule_style": 0,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 135,
+        "daily_teaching_load": 0
+      },
+      "scores": {
+        "original_workload": 135,
+        "absolute": {
+          "exact": "4",
+          "decimal": 4.0
+        },
+        "squared": {
+          "exact": "8",
+          "decimal": 8.0
+        },
+        "person_relative": {
+          "exact": "5/16",
+          "decimal": 0.3125
+        },
+        "target_relative": {
+          "exact": "3/2",
+          "decimal": 1.5
+        },
+        "relative_with_original_overload": {
+          "exact": "205/8",
+          "decimal": 25.625
+        }
+      },
+      "metrics": {
+        "actual": [
+          2,
+          10
+        ],
+        "targets": [
+          4,
+          8
+        ],
+        "signed_deviation": [
+          -2,
+          2
+        ],
+        "relative_deviation": [
+          {
+            "exact": "-1/2",
+            "decimal": -0.5
+          },
+          {
+            "exact": "1/4",
+            "decimal": 0.25
+          }
+        ],
+        "fulfillment": [
+          {
+            "exact": "1/2",
+            "decimal": 0.5
+          },
+          {
+            "exact": "5/4",
+            "decimal": 1.25
+          }
+        ],
+        "underload_units": [
+          2,
+          0
+        ],
+        "overload_units": [
+          0,
+          2
+        ],
+        "total_underload": 2,
+        "total_overload": 2,
+        "zero_assignment_count": 0,
+        "positive_target_eligible_zero_count": 0,
+        "no_eligible_offering_count": 0,
+        "fulfillment_spread": {
+          "exact": "3/4",
+          "decimal": 0.75
+        },
+        "fulfillment_variance": {
+          "exact": "9/64",
+          "decimal": 0.140625
+        },
+        "above_warning_count": 0,
+        "hard_ceiling_passed": true
+      },
+      "original_hard_admitted": true,
+      "unassigned_offerings": 0,
+      "hard_conflicts": {
+        "faculty": 0,
+        "room": 0,
+        "section": 0
+      }
+    },
+    {
+      "actual": [
+        0,
+        12
+      ],
+      "original_total": 270,
+      "original_components": {
+        "subject_preference": 0,
+        "time_preference": 0,
+        "day_preference": 0,
+        "schedule_style": 0,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 270,
+        "daily_teaching_load": 0
+      },
+      "scores": {
+        "original_workload": 270,
+        "absolute": {
+          "exact": "8",
+          "decimal": 8.0
+        },
+        "squared": {
+          "exact": "32",
+          "decimal": 32.0
+        },
+        "person_relative": {
+          "exact": "5/4",
+          "decimal": 1.25
+        },
+        "target_relative": {
+          "exact": "6",
+          "decimal": 6.0
+        },
+        "relative_with_original_overload": {
+          "exact": "165/2",
+          "decimal": 82.5
+        }
+      },
+      "metrics": {
+        "actual": [
+          0,
+          12
+        ],
+        "targets": [
+          4,
+          8
+        ],
+        "signed_deviation": [
+          -4,
+          4
+        ],
+        "relative_deviation": [
+          {
+            "exact": "-1",
+            "decimal": -1.0
+          },
+          {
+            "exact": "1/2",
+            "decimal": 0.5
+          }
+        ],
+        "fulfillment": [
+          {
+            "exact": "0",
+            "decimal": 0.0
+          },
+          {
+            "exact": "3/2",
+            "decimal": 1.5
+          }
+        ],
+        "underload_units": [
+          4,
+          0
+        ],
+        "overload_units": [
+          0,
+          4
+        ],
+        "total_underload": 4,
+        "total_overload": 4,
+        "zero_assignment_count": 1,
+        "positive_target_eligible_zero_count": 1,
+        "no_eligible_offering_count": 0,
+        "fulfillment_spread": {
+          "exact": "3/2",
+          "decimal": 1.5
+        },
+        "fulfillment_variance": {
+          "exact": "9/16",
+          "decimal": 0.5625
+        },
+        "above_warning_count": 0,
+        "hard_ceiling_passed": true
+      },
+      "original_hard_admitted": true,
+      "unassigned_offerings": 0,
+      "hard_conflicts": {
+        "faculty": 0,
+        "room": 0,
+        "section": 0
+      }
+    }
+  ]
+}

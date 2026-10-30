@@ -1,0 +1,8 @@
+{
+  "scope": "Sanitized harness-only diagnosis; historical failed record retained",
+  "exact_exception": "AttributeError: getset_descriptor object has no attribute startswith",
+  "stage": "GC census before first GA execution",
+  "root_cause": "Arbitrary GC object types need not expose a string __module__ attribute",
+  "correction": "Use a type-safe model census; production modules unchanged",
+  "GA_executions_before_error": 0
+}

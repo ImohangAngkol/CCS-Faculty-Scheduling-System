@@ -1,0 +1,20 @@
+{
+  "current_frozen_keys": [
+    "input_fingerprint",
+    "preference_scoring_version",
+    "preferences",
+    "settings",
+    "system_faculty"
+  ],
+  "current_report_keys": [
+    "faculty",
+    "input_fingerprint",
+    "preference_scoring_version",
+    "preferences",
+    "scorer_sha256",
+    "settings",
+    "version"
+  ],
+  "workload_mode_identity_present": false,
+  "meaning": "Preference policy version is not a new workload policy version; default capture still unchanged"
+}

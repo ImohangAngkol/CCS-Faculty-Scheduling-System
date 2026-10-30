@@ -1,0 +1,22 @@
+{
+  "finding": "CHARACTERIZED_GAP_NOT_FAIRNESS_ACCEPTANCE",
+  "target_units_each": 24,
+  "balanced_units": [
+    2,
+    2
+  ],
+  "concentrated_units": [
+    4,
+    0
+  ],
+  "workload_penalty_balanced": 500,
+  "workload_penalty_concentrated": 475,
+  "overall_balanced": 500,
+  "overall_concentrated": 475,
+  "both_original_admitted": true,
+  "independent_conflicts_each": {
+    "faculty": 0,
+    "room": 0,
+    "section": 0
+  }
+}

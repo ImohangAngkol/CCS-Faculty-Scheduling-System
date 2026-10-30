@@ -1,0 +1,137 @@
+{
+  "part": "ram",
+  "scenario": "medium",
+  "started_at": "2026-10-28T12:30:51.063602+08:00",
+  "finished_at": "2026-10-28T12:31:15.861416+08:00",
+  "worker_wall_seconds": 24.797914599999785,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\backend\\benchmarks\\memory_study.py",
+    "--worker",
+    "--part",
+    "ram",
+    "--scenario",
+    "medium"
+  ],
+  "result": {
+    "status": "SUCCESS",
+    "scenario": "medium",
+    "seed": 714,
+    "parameters": {
+      "population_size": 4,
+      "generations": 3,
+      "fresh_chromosomes": 1,
+      "mutation_attempts": 2,
+      "max_restarts": 5,
+      "candidate_attempts": 3,
+      "crossover_attempts": 2
+    },
+    "history": [
+      {
+        "generation": 0,
+        "generation_best_fitness": 10825.0,
+        "best_ever_fitness": 10825.0
+      },
+      {
+        "generation": 1,
+        "generation_best_fitness": 10685.0,
+        "best_ever_fitness": 10685.0
+      },
+      {
+        "generation": 2,
+        "generation_best_fitness": 10505.0,
+        "best_ever_fitness": 10505.0
+      },
+      {
+        "generation": 3,
+        "generation_best_fitness": 10290.0,
+        "best_ever_fitness": 10290.0
+      }
+    ],
+    "best_assignment_sha256": "104c2044f1fd1166ab5bdee16c4795b1d439e14b6ece3366e7f61b9d265e9ebc",
+    "phase2_output_matches": true,
+    "hard_constraints": "PASS: original admission",
+    "before_engine_process": {
+      "working_set_bytes": 174333952,
+      "process_lifetime_peak_working_set_bytes": 175517696,
+      "private_commit_bytes_NOT_RSS": 653799424
+    },
+    "after_engine_process": {
+      "working_set_bytes": 305373184,
+      "process_lifetime_peak_working_set_bytes": 308969472,
+      "private_commit_bytes_NOT_RSS": 783925248
+    },
+    "engine_peak_point": null,
+    "generation_points": [
+      {
+        "generation": 0,
+        "process": {
+          "working_set_bytes": 199458816,
+          "process_lifetime_peak_working_set_bytes": 199458816,
+          "private_commit_bytes_NOT_RSS": 677810176
+        }
+      },
+      {
+        "generation": 1,
+        "process": {
+          "working_set_bytes": 241311744,
+          "process_lifetime_peak_working_set_bytes": 241311744,
+          "private_commit_bytes_NOT_RSS": 719835136
+        }
+      },
+      {
+        "generation": 2,
+        "process": {
+          "working_set_bytes": 278753280,
+          "process_lifetime_peak_working_set_bytes": 278753280,
+          "private_commit_bytes_NOT_RSS": 757657600
+        }
+      },
+      {
+        "generation": 3,
+        "process": {
+          "working_set_bytes": 305360896,
+          "process_lifetime_peak_working_set_bytes": 305381376,
+          "private_commit_bytes_NOT_RSS": 783925248
+        }
+      }
+    ],
+    "instrumented_seconds_NOT_performance_baseline": 19.335325300024124,
+    "mode": "ram",
+    "startup_process": {
+      "working_set_bytes": 32047104,
+      "process_lifetime_peak_working_set_bytes": 35008512,
+      "private_commit_bytes_NOT_RSS": 22568960
+    },
+    "after_import_process": {
+      "working_set_bytes": 164712448,
+      "process_lifetime_peak_working_set_bytes": 166137856,
+      "private_commit_bytes_NOT_RSS": 644116480
+    },
+    "process_sampling": {
+      "sampled_interval_peak_working_set_bytes": 305377280,
+      "sample_count": 236,
+      "poll_interval_seconds": 0.05,
+      "scope": "Sampled peak may miss short spikes; OS lifetime peak is separately reported"
+    },
+    "before_release_collection": {
+      "process": {
+        "working_set_bytes": 305360896,
+        "process_lifetime_peak_working_set_bytes": 308969472,
+        "private_commit_bytes_NOT_RSS": 783867904
+      }
+    },
+    "after_release_collection": {
+      "process": {
+        "working_set_bytes": 256086016,
+        "process_lifetime_peak_working_set_bytes": 308969472,
+        "private_commit_bytes_NOT_RSS": 734539776
+      }
+    },
+    "gc_collected": 347440,
+    "representative_model_weakrefs_alive_after_gc": 0,
+    "post_release_live_allocations": null,
+    "scope": "OS process RAM without tracemalloc; no accelerated engine"
+  }
+}

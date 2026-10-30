@@ -1,0 +1,7 @@
+{
+  "original_source_verified": true,
+  "hypothetical_changed_source_rejected": true,
+  "source_file_written": false,
+  "fingerprint_bypass": false,
+  "meaning": "Bridge requires an explicitly verified source-compatibility extension; existing bridge is not changed"
+}

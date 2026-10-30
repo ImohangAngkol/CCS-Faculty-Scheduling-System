@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ccs:fictional-f2c:proposed-fitness-policy:1",
+  "title": "F2C proposed policy descriptor; NOT an application configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["descriptor_version", "status", "workload_policy", "preference_policy", "assignment_policy", "implementation_digest", "numeric", "cohort_contract", "workload_weight", "overload", "zero_target"],
+  "properties": {
+    "descriptor_version": {"const": 1},
+    "status": {"const": "PROPOSAL_NOT_ACTIVATABLE"},
+    "workload_policy": {"const": "target-weighted-squared-deviation/proposed-1"},
+    "preference_policy": {"type": "integer", "enum": [1, 2]},
+    "assignment_policy": {"const": "option-b-fixed-allowances/proposed-1"},
+    "implementation_digest": {"$ref": "#/$defs/digest"},
+    "cohort_contract": {"const": "explicit-frozen-universe-including-unassigned/proposed-1"},
+    "numeric": {
+      "type": "object", "additionalProperties": false,
+      "required": ["version", "input_domain", "comparison", "serialization", "aggregation"],
+      "properties": {
+        "version": {"const": "exact-rational/proposed-1"},
+        "input_domain": {"const": "integer-teaching-units-A-0-40-T-0-24"},
+        "comparison": {"const": "exact-minimize-stable-ties"},
+        "serialization": {"const": "reduced-integer-strings-positive-denominator"},
+        "aggregation": {"enum": ["UNRESOLVED", "exact-existing-binary64-components-plus-exact-workload"]}
+      }
+    },
+    "workload_weight": {
+      "oneOf": [{"const": "UNRESOLVED"}, {"$ref": "#/$defs/nonnegativeRatio"}]
+    },
+    "overload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["strategy", "warning_units", "hard_ceiling_units"],
+      "properties": {
+        "strategy": {"enum": ["UNRESOLVED", "D-plus-legacy-overload-bands", "D-replaces-workload-bands"]},
+        "warning_units": {"const": 30},
+        "hard_ceiling_units": {"const": 40}
+      }
+    },
+    "zero_target": {
+      "type": "object", "additionalProperties": false,
+      "required": ["admission_version", "zero_assignment", "positive_assignment", "capability", "authorized_numeric_strategy", "approval_record_version"],
+      "properties": {
+        "admission_version": {"const": "developer-option-A/proposed-1"},
+        "zero_assignment": {"const": "ALLOWED_ZERO_CONTRIBUTION"},
+        "positive_assignment": {"const": "EXPLICIT_AUTHORIZATION_REQUIRED"},
+        "capability": {"const": "zero_target_workload_exception.authorize"},
+        "authorized_numeric_strategy": {"enum": ["UNRESOLVED", "legacy-overload-only", "approved-positive-denominator-plus-overload"]},
+        "approval_record_version": {"const": "separate-scoped-immutable-exception/proposed-1"}
+      }
+    }
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "nonnegativeRatio": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "string", "maxLength": 1234, "pattern": "^(0|[1-9][0-9]*)$"},
+        "denominator": {"type": "string", "maxLength": 1234, "pattern": "^[1-9][0-9]*$"}
+      }
+    }
+  }
+}

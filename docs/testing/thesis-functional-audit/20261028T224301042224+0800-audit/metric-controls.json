@@ -1,0 +1,15 @@
+{
+  "valid_schedule_conflicting_slot_pairs": {
+    "faculty": 0,
+    "room": 0,
+    "section": 0
+  },
+  "valid_unassigned_offerings": 0,
+  "required_offerings": 2,
+  "invalid_duplicate_control_pairs": {
+    "faculty": 1,
+    "room": 1,
+    "section": 1
+  },
+  "denominator": "Unordered same-resource/day half-hour slot pairs; not a unique-meeting conflict percentage"
+}

@@ -1,0 +1,21 @@
+{
+  "selection": "inventory",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\fitness-policy-f2c\\run_checks.py",
+    "inventory",
+    "--worker",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\fitness-policy-f2c\\20261030T225816240468+0800-inventory",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\f2c-20261030T225816240468+0800-inventory"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-30T22:58:16.240468+08:00",
+  "finished_at": "2026-10-30T22:58:16.894529+08:00",
+  "elapsed_seconds": 0.6515353000140749,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\"indexed_files\": 31, \"calls\": 154}\n",
+  "stderr": "",
+  "scope": "F2C executable specification or unchanged default-mode regression; no experimental production scoring/authority/database/browser."
+}

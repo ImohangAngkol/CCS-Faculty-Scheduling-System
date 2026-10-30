@@ -1,0 +1,19 @@
+{
+  "selection": "workflow",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\thesis-functional-audit\\run_checks.py",
+    "workflow",
+    "--worker",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\thesis-audit-tests-20261028T224824638506+0800-workflow"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-28T22:48:24.638506+08:00",
+  "finished_at": "2026-10-28T22:50:12.957917+08:00",
+  "elapsed_seconds": 108.3160835999879,
+  "exit_code": 1,
+  "stdout": "..............................................F.                         [100%]\n================================== FAILURES ===================================\n_________________ test_request_survives_fresh_python_process __________________\ntests\\dashboard\\test_adjustments.py:267: in test_request_survives_fresh_python_process\n    assert child.returncode==0,'Fresh-process read failed; no private payload emitted'\nE   AssertionError: Fresh-process read failed; no private payload emitted\nE   assert 1 == 0\nE    +  where 1 = CompletedProcess(args=['C:\\\\Users\\\\User\\\\Desktop\\\\Genetic-Algorithm Dashboard\\\\.venv\\\\Scripts\\\\python.exe', '-B', 'C:\\...events.py\", line 778, in _close_self_pipe\\nAttributeError: \\'ProactorEventLoop\\' object has no attribute \\'_ssock\\'\\n').returncode\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; anyio\n    self._mark_plugins_for_rewrite(hook, disable_autoload)\n\n..\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/dashboard/test_adjustments.py::test_request_survives_fresh_python_process\n1 failed, 47 passed, 3 warnings in 99.59s (0:01:39)\n",
+  "stderr": "",
+  "scope": "Schema-only academic import bootstrap and fictional fixtures; no parsed institutional records or PostgreSQL; genuine binary fingerprints unchanged"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "ceiling_boundary",
+  "loads": [
+    40,
+    8
+  ],
+  "targets": [
+    24,
+    24
+  ],
+  "original_default_workload": 295,
+  "linear_relative": {
+    "exact": "860/3",
+    "decimal": 286.6666666666667
+  },
+  "squared_relative": {
+    "exact": "2080/9",
+    "decimal": 231.11111111111111
+  },
+  "overload_shortage_spread": [
+    {
+      "exact": "120",
+      "decimal": 120.0
+    },
+    {
+      "exact": "16",
+      "decimal": 16.0
+    },
+    {
+      "exact": "8/9",
+      "decimal": 0.8888888888888888
+    }
+  ],
+  "underload_units": 16,
+  "overload_units": 16,
+  "zero_assignments": 0,
+  "above_warning": 1,
+  "teaching_ceiling_valid": true,
+  "scope": "Analytical allocation only; not a timetable or a complete hard-validity result"
+}

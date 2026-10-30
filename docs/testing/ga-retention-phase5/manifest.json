@@ -1,0 +1,371 @@
+{
+  "phase": "Phase 5 retention/copy ownership investigation",
+  "recorded_at": "2026-10-28T14:47:24.506581+08:00",
+  "baseline_paths_preserved": 1509,
+  "academic_files_preserved": 23,
+  "existing_files_modified": 0,
+  "original_GA_scoring_RNG_workload_checkpoints_preserved": true,
+  "protected_preferences_and_settings_preserved": true,
+  "Git_index_HEAD_preserved": true,
+  "new_file_inventory": [
+    "backend/benchmarks/retention_child.py",
+    "backend/benchmarks/retention_ownership.py",
+    "backend/benchmarks/retention_phase5.py",
+    "backend/benchmarks/retention_runtime.py",
+    "backend/tests/performance/test_retention_phase5.py",
+    "docs/ga-retention-phase5.md",
+    "docs/testing/ga-retention-phase5/20261028T140646547233+0800/diagnosis.json",
+    "docs/testing/ga-retention-phase5/20261028T140646547233+0800/reference-small.json",
+    "docs/testing/ga-retention-phase5/20261028T140646547233+0800/summary.json",
+    "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-large.json",
+    "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-medium.json",
+    "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-small.json",
+    "docs/testing/ga-retention-phase5/20261028T140922478406+0800/summary.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/light-medium.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/light-small.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/observer-medium.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/observer-small.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-large.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-medium-A.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-medium-B.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-small-A.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-small-B.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/summary.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-large.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-medium.json",
+    "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-small.json",
+    "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-medium-final_only.json",
+    "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-medium-retain_last.json",
+    "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-small-final_only.json",
+    "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-small-retain_last.json",
+    "docs/testing/ga-retention-phase5/20261028T143243221229+0800/summary.json",
+    "docs/testing/ga-retention-phase5/20261028T143822354811+0800-checkpoint-ownership/medium.json",
+    "docs/testing/ga-retention-phase5/20261028T143822354811+0800-checkpoint-ownership/small.json",
+    "docs/testing/ga-retention-phase5/20261028T143832395567+0800-analysis/analysis.json",
+    "docs/testing/ga-retention-phase5/20261028T143944126822+0800-phase5/command.json",
+    "docs/testing/ga-retention-phase5/20261028T143945215287+0800-regressions/command.json",
+    "docs/testing/ga-retention-phase5/analyze.py",
+    "docs/testing/ga-retention-phase5/audit.py",
+    "docs/testing/ga-retention-phase5/manifest.json",
+    "docs/testing/ga-retention-phase5/preservation-baseline.json",
+    "docs/testing/ga-retention-phase5/run_checks.py"
+  ],
+  "artifacts": [
+    {
+      "path": "backend/benchmarks/retention_child.py",
+      "sha256": "c1c4d58b84b0795a71846f06d79fe07b75d0d58d828513256578b07ca344853c",
+      "bytes": 864
+    },
+    {
+      "path": "backend/benchmarks/retention_ownership.py",
+      "sha256": "467d27ca144367501b57747520d4582a3c3ab03b4499e51b98de68e4bee267d6",
+      "bytes": 8105
+    },
+    {
+      "path": "backend/benchmarks/retention_phase5.py",
+      "sha256": "b8598b4fe961c98b8abcb9237309da7694f3674c17783885377491466e5ee8ba",
+      "bytes": 14684
+    },
+    {
+      "path": "backend/benchmarks/retention_runtime.py",
+      "sha256": "29b7cb64b57b09428b19f0aa2d8a4a9f5a0c13ac10e91c4cb8a3ace422dbdcd8",
+      "bytes": 3744
+    },
+    {
+      "path": "backend/tests/performance/test_retention_phase5.py",
+      "sha256": "96a25164b83281b9a27cb762cd2c8726a5f33334e12b0888d68d78973d6b8f4d",
+      "bytes": 5293
+    },
+    {
+      "path": "docs/ga-retention-phase5.md",
+      "sha256": "d496b6094440387fed7a7d0bbbfecd2e7b12a993650ff7bd9ba9d26e4d9f763c",
+      "bytes": 22606
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140646547233+0800/diagnosis.json",
+      "sha256": "bbeb168da4c9f1f302b9d7f28afd21cb9bcda812c0b0b1d4b74b59616b3471cf",
+      "bytes": 432
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140646547233+0800/reference-small.json",
+      "sha256": "1cf80938f2a1c15efbceb22e6deb2e8cf1c71440b318777dccbc0c115b4dc4ee",
+      "bytes": 453
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140646547233+0800/summary.json",
+      "sha256": "e1b1c13f855587500d602df8b1dd909052699b17afba5f6008bec16654c8857a",
+      "bytes": 448
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-large.json",
+      "sha256": "2dcc70c724909b8f6ae3d40f13c58a34c40849e7cb9a14af5b3538efb58609cb",
+      "bytes": 8416
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-medium.json",
+      "sha256": "17917348356b81f0c0b6cb7a397cb60d475df02d08397f73670575837cb1a3ef",
+      "bytes": 8418
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-small.json",
+      "sha256": "48ce844aa0cd925490c717bd7c6e2e91dbe85b1c9c5c46fb25c9a16633f1aa51",
+      "bytes": 8392
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140922478406+0800/summary.json",
+      "sha256": "ed20c51cb6f8bb8c0d528d6139d28057c89e9ca7adf28813bf2aebe7eb99fe19",
+      "bytes": 580
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/light-medium.json",
+      "sha256": "ba69adc1f485243ab1926b3a0f44d2149097e0b2fc418e2e1e27f3308f124f38",
+      "bytes": 30476
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/light-small.json",
+      "sha256": "f1b17dbda9a541ce5bdd409bc735d2eecc217df2aecc005a86bee4046db0adba",
+      "bytes": 30377
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/observer-medium.json",
+      "sha256": "4d40953e0498b7ba5a8375bc4462fdd19629dca9ca3c3246306cdf3247429e96",
+      "bytes": 26862
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/observer-small.json",
+      "sha256": "397d321669982041d82ed9803cad9821a22fe9b90fa10fe3506c83de05d17b3f",
+      "bytes": 26719
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-large.json",
+      "sha256": "984816d23b52da2f707d4cc1e03b482383906fcfde33a1c77d507cc3a3d64530",
+      "bytes": 15984
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-medium-A.json",
+      "sha256": "1e8966ccf6a6fc3598fbea0a9d36421553115b43b325edd079476139ccbf2db2",
+      "bytes": 65353
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-medium-B.json",
+      "sha256": "76696f5a1c0a272a38e5ea2cc841cb3b521fbcf528e39c414ac4d97dd58fa8dc",
+      "bytes": 65354
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-small-A.json",
+      "sha256": "778ee42bd3a000af74f96485fbb6983d809aaa53f388384af413b87659720800",
+      "bytes": 65094
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-small-B.json",
+      "sha256": "cb36b0ac63eb851b542cfc5209ead64ab5fa0bca51d65dce99c97c3bf7ea14ac",
+      "bytes": 65097
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/summary.json",
+      "sha256": "c5960353557797ead2088e737fb3207845b9fd9ad218753e47d76fb80e8c5c9a",
+      "bytes": 1188
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-large.json",
+      "sha256": "ae8a686e5c14e67a2ccde022994346a4233581bc0979262bfccdbbb0966ab3e2",
+      "bytes": 15772
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-medium.json",
+      "sha256": "27cc4aa2c8b579dd4ad2ea6cf09f0eae6e187fd529669c4d9cf19f662425b738",
+      "bytes": 46835
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-small.json",
+      "sha256": "d8bf6a2257a66ecdf30a972f91f62b3466dbffc9ff2c3257acbe0f5af45cd789",
+      "bytes": 46670
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-medium-final_only.json",
+      "sha256": "de165b072ff423ff255d43a8116130b767b028a196afd3cd9413a65c54455101",
+      "bytes": 26540
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-medium-retain_last.json",
+      "sha256": "b63e82c10f1943888ce0df188fde6aa3d74f044ea93b087fa8bf111897e83cc1",
+      "bytes": 26546
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-small-final_only.json",
+      "sha256": "a2b39b68ccf2eb3992dfcb6fbee6cacda7cd5b9daf1dd638be82ba0555667aef",
+      "bytes": 26452
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-small-retain_last.json",
+      "sha256": "ba3e351905957958e5a20f5045e1e684daa0dc2223b01f21c324a021e2a1dd5c",
+      "bytes": 26456
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/summary.json",
+      "sha256": "64d006f54a576670894d2e15ed004e1405a74f96713f7ffcc8d28ad56b2eeda8",
+      "bytes": 699
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143822354811+0800-checkpoint-ownership/medium.json",
+      "sha256": "60e5c9a980bea6c4b7cfebfead65fa9aa61e0d48fddd74476ff02a93136734ec",
+      "bytes": 3346
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143822354811+0800-checkpoint-ownership/small.json",
+      "sha256": "cece084d238952b19230249298f37ef47591510f243ef6a6d58f19ff1ea11be3",
+      "bytes": 3326
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143832395567+0800-analysis/analysis.json",
+      "sha256": "64b5a2505eab8c051de98085d09ffd4724071ccb7930fb1bcc6fd7aeba8d6be7",
+      "bytes": 17200
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143944126822+0800-phase5/command.json",
+      "sha256": "0f92e909ec37f98c8b546f87209b731394719213aa6e4e7d7b446e1862b20f86",
+      "bytes": 1334
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143945215287+0800-regressions/command.json",
+      "sha256": "e115f1e7c222c3ac614347350bcb6be6ab36531b364d6d4881af00b625970f00",
+      "bytes": 2176
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/analyze.py",
+      "sha256": "baa9cc7f54fd0e7a6d9202846df61f0c476f8bde855808cf2862f673625c6606",
+      "bytes": 5304
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/audit.py",
+      "sha256": "cdfdb4fe4c2de1848a9bdcd38bb428a1619121b9b264775c6e120a52dcce0382",
+      "bytes": 8684
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/preservation-baseline.json",
+      "sha256": "c43f54ad5306e28d236b4d01c6c037ab2d62f27bce0ae704ae74c43ce7e92db9",
+      "bytes": 213798
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/run_checks.py",
+      "sha256": "e78662b39dfd6b4a2143f40eab07c310227db6002772ef345d23a77e8d33d47c",
+      "bytes": 3500
+    }
+  ],
+  "tests": {
+    "phase5": {
+      "path": "docs/testing/ga-retention-phase5/20261028T143944126822+0800-phase5/command.json",
+      "passed": 11,
+      "failed": 0
+    },
+    "regressions": {
+      "path": "docs/testing/ga-retention-phase5/20261028T143945215287+0800-regressions/command.json",
+      "passed": 81,
+      "failed": 0
+    }
+  },
+  "fresh_tests_passed": 92,
+  "successful_jobs": [
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-large.json",
+      "name": "reference-large"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-medium.json",
+      "name": "reference-medium"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-small.json",
+      "name": "reference-small"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/light-medium.json",
+      "name": "light-medium"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/light-small.json",
+      "name": "light-small"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/observer-medium.json",
+      "name": "observer-medium"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/observer-small.json",
+      "name": "observer-small"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-large.json",
+      "name": "ram-large"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-medium-A.json",
+      "name": "ram-medium-A"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-medium-B.json",
+      "name": "ram-medium-B"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-small-A.json",
+      "name": "ram-small-A"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-small-B.json",
+      "name": "ram-small-B"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-large.json",
+      "name": "trace-large"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-medium.json",
+      "name": "trace-medium"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-small.json",
+      "name": "trace-small"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-medium-final_only.json",
+      "name": "ownership-medium-final_only"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-medium-retain_last.json",
+      "name": "ownership-medium-retain_last"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-small-final_only.json",
+      "name": "ownership-small-final_only"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-small-retain_last.json",
+      "name": "ownership-small-retain_last"
+    }
+  ],
+  "historical_failed_jobs": [
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140646547233+0800/reference-small.json",
+      "status": "STOP_REVIEW_REQUIRED",
+      "exit_code": 1
+    }
+  ],
+  "measured_engine_runs": 92,
+  "warmup_engine_runs": 28,
+  "all_released_sampled_roots_alive": 0,
+  "all_post_release_model_counts_match_prepared_baseline": true,
+  "cross_worker_seed_assignment_history_rng_parity": true,
+  "checkpoint_ownership_records": [
+    "docs/testing/ga-retention-phase5/20261028T143822354811+0800-checkpoint-ownership/medium.json",
+    "docs/testing/ga-retention-phase5/20261028T143822354811+0800-checkpoint-ownership/small.json"
+  ],
+  "privacy_findings": 0,
+  "privacy_scope": "Structural fictional inputs, sanitized logs and secret/receipt patterns; institutional names/rows are not parsed by the audit",
+  "benchmark_database_or_publication_operations": 0,
+  "regression_scope": "Owned fictional SQLite/checkpoint fixtures; no PostgreSQL",
+  "production_GC_allocator_settings_changed": false,
+  "dependencies_installed": 0,
+  "production_optimization": false,
+  "limits": "900-second series workers; 768 MiB sampled working set and 1536 MiB private commit; 300-second checkpoint workers. Polling may overshoot.",
+  "hash_scope": "Raw bytes; manifest excludes itself"
+}

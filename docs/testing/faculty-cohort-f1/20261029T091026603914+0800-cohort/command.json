@@ -1,0 +1,19 @@
+{
+  "selection": "cohort",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\faculty-cohort-f1\\run_checks.py",
+    "cohort",
+    "--worker",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\faculty-cohort-f1-20261029T091026603914+0800-cohort"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-29T09:10:26.603914+08:00",
+  "finished_at": "2026-10-29T09:10:47.955691+08:00",
+  "elapsed_seconds": 21.348257999998168,
+  "exit_code": 1,
+  "stdout": "...........................FF........................................... [ 77%]\n.....................                                                    [100%]\n================================== FAILURES ===================================\n_ test_adapter_profiles_do_not_weaken_original_resource_conflict_checks[Room] _\ntests\\f1\\test_cohort.py:226: in test_adapter_profiles_do_not_weaken_original_resource_conflict_checks\n    with data_guard(),bench.no_io(),pytest.raises(ValueError) as caught:payload_to_chromosome(payload,*values)\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE ValueError\n_ test_adapter_profiles_do_not_weaken_original_resource_conflict_checks[Section] _\ntests\\f1\\test_cohort.py:227: in test_adapter_profiles_do_not_weaken_original_resource_conflict_checks\n    assert kind.lower()+' conflict' in str(caught.value).lower()\nE   AssertionError: assert ('section' + ' conflict') in 'baseline chromosome is invalid: room conflict detected.'\nE    +  where 'section' = <built-in method lower of str object at 0x000002190F7EBB40>()\nE    +    where <built-in method lower of str object at 0x000002190F7EBB40> = 'Section'.lower\nE    +  and   'baseline chromosome is invalid: room conflict detected.' = <built-in method lower of str object at 0x0000021936E7C7B0>()\nE    +    where <built-in method lower of str object at 0x0000021936E7C7B0> = 'Baseline chromosome is invalid: room conflict detected.'.lower\nE    +      where 'Baseline chromosome is invalid: room conflict detected.' = str(ValueError('Baseline chromosome is invalid: room conflict detected.'))\nE    +        where ValueError('Baseline chromosome is invalid: room conflict detected.') = <ExceptionInfo ValueError('Baseline chromosome is invalid: room conflict detected.') tblen=2>.value\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; anyio\n    self._mark_plugins_for_rewrite(hook, disable_autoload)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/f1/test_cohort.py::test_adapter_profiles_do_not_weaken_original_resource_conflict_checks[Room]\nFAILED tests/f1/test_cohort.py::test_adapter_profiles_do_not_weaken_original_resource_conflict_checks[Section]\n2 failed, 91 passed, 1 warning in 16.61s\n",
+  "stderr": "",
+  "scope": "Fictional F1 adapter; original source byte-identical. Workflow uses real in-process FastAPI/auth and owned SQLite with fictional authority; frontend uses Node contracts, not a browser."
+}

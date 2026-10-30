@@ -1,0 +1,683 @@
+{
+  "scenario": "small",
+  "worker_wall_seconds": 21.736886800004868,
+  "result": {
+    "status": "SUCCESS",
+    "scenario": "small",
+    "seed": 714,
+    "phase2_output_matches": true,
+    "best_assignment_sha256": "30ea6e3424d6977c459a7b253a63acd7ba6bbed561092c07ccfeac7ed761730c",
+    "graphs": {
+      "best": {
+        "unique_objects": 6617,
+        "estimated_unique_shallow_bytes_NOT_RSS": 1216526,
+        "object_type_counts": {
+          "list": 173,
+          "Subject": 12,
+          "dict": 2120,
+          "str": 1997,
+          "int": 19,
+          "Section": 3,
+          "TimeBlock": 2084,
+          "NoneType": 1,
+          "bool": 2,
+          "Faculty": 5,
+          "tuple": 192,
+          "Room": 4,
+          "set": 5
+        },
+        "unassigned_TimeBlocks": 1892,
+        "root_Subject_objects": 12,
+        "reachable_nonroot_Subject_objects": 0,
+        "extra_Subject_objects_for_repeated_offering_keys": 0,
+        "reachable_faculty_identity_count": 5,
+        "root_assigned_faculty_identity_count": 5,
+        "interpretation": "Reachable does not mean unnecessary; full calendars/metadata can be required for validation and copying semantics"
+      },
+      "population": {
+        "unique_objects": 20412,
+        "estimated_unique_shallow_bytes_NOT_RSS": 4585782,
+        "object_type_counts": {
+          "list": 693,
+          "Subject": 48,
+          "dict": 8480,
+          "str": 1997,
+          "int": 19,
+          "Section": 12,
+          "TimeBlock": 8336,
+          "NoneType": 1,
+          "bool": 2,
+          "Faculty": 20,
+          "tuple": 768,
+          "Room": 16,
+          "set": 20
+        },
+        "unassigned_TimeBlocks": 7568,
+        "root_Subject_objects": 0,
+        "reachable_nonroot_Subject_objects": 48,
+        "extra_Subject_objects_for_repeated_offering_keys": 36,
+        "reachable_faculty_identity_count": 5,
+        "root_assigned_faculty_identity_count": 0,
+        "interpretation": "Reachable does not mean unnecessary; full calendars/metadata can be required for validation and copying semantics"
+      },
+      "individual_0": {
+        "unique_objects": 6617,
+        "estimated_unique_shallow_bytes_NOT_RSS": 1216526,
+        "object_type_counts": {
+          "list": 173,
+          "Subject": 12,
+          "dict": 2120,
+          "str": 1997,
+          "int": 19,
+          "Section": 3,
+          "TimeBlock": 2084,
+          "NoneType": 1,
+          "bool": 2,
+          "Faculty": 5,
+          "tuple": 192,
+          "Room": 4,
+          "set": 5
+        },
+        "unassigned_TimeBlocks": 1892,
+        "root_Subject_objects": 12,
+        "reachable_nonroot_Subject_objects": 0,
+        "extra_Subject_objects_for_repeated_offering_keys": 0,
+        "reachable_faculty_identity_count": 5,
+        "root_assigned_faculty_identity_count": 5,
+        "interpretation": "Reachable does not mean unnecessary; full calendars/metadata can be required for validation and copying semantics"
+      },
+      "individual_1": {
+        "unique_objects": 6617,
+        "estimated_unique_shallow_bytes_NOT_RSS": 1216526,
+        "object_type_counts": {
+          "list": 173,
+          "Subject": 12,
+          "dict": 2120,
+          "str": 1997,
+          "int": 19,
+          "Section": 3,
+          "TimeBlock": 2084,
+          "NoneType": 1,
+          "bool": 2,
+          "Faculty": 5,
+          "tuple": 192,
+          "Room": 4,
+          "set": 5
+        },
+        "unassigned_TimeBlocks": 1892,
+        "root_Subject_objects": 12,
+        "reachable_nonroot_Subject_objects": 0,
+        "extra_Subject_objects_for_repeated_offering_keys": 0,
+        "reachable_faculty_identity_count": 5,
+        "root_assigned_faculty_identity_count": 5,
+        "interpretation": "Reachable does not mean unnecessary; full calendars/metadata can be required for validation and copying semantics"
+      },
+      "individual_2": {
+        "unique_objects": 6617,
+        "estimated_unique_shallow_bytes_NOT_RSS": 1216526,
+        "object_type_counts": {
+          "list": 173,
+          "Subject": 12,
+          "dict": 2120,
+          "str": 1997,
+          "int": 19,
+          "Section": 3,
+          "TimeBlock": 2084,
+          "NoneType": 1,
+          "bool": 2,
+          "Faculty": 5,
+          "tuple": 192,
+          "Room": 4,
+          "set": 5
+        },
+        "unassigned_TimeBlocks": 1892,
+        "root_Subject_objects": 12,
+        "reachable_nonroot_Subject_objects": 0,
+        "extra_Subject_objects_for_repeated_offering_keys": 0,
+        "reachable_faculty_identity_count": 5,
+        "root_assigned_faculty_identity_count": 5,
+        "interpretation": "Reachable does not mean unnecessary; full calendars/metadata can be required for validation and copying semantics"
+      },
+      "individual_3": {
+        "unique_objects": 6617,
+        "estimated_unique_shallow_bytes_NOT_RSS": 1216526,
+        "object_type_counts": {
+          "list": 173,
+          "Subject": 12,
+          "dict": 2120,
+          "str": 1997,
+          "int": 19,
+          "Section": 3,
+          "TimeBlock": 2084,
+          "NoneType": 1,
+          "bool": 2,
+          "Faculty": 5,
+          "tuple": 192,
+          "Room": 4,
+          "set": 5
+        },
+        "unassigned_TimeBlocks": 1892,
+        "root_Subject_objects": 12,
+        "reachable_nonroot_Subject_objects": 0,
+        "extra_Subject_objects_for_repeated_offering_keys": 0,
+        "reachable_faculty_identity_count": 5,
+        "root_assigned_faculty_identity_count": 5,
+        "interpretation": "Reachable does not mean unnecessary; full calendars/metadata can be required for validation and copying semantics"
+      }
+    },
+    "deepcopy": {
+      "operation": "deepcopy_actual_final_best",
+      "incremental_traced_peak_bytes": 2542788,
+      "incremental_traced_live_bytes": 1336352,
+      "tracer_metadata_bytes": 532048,
+      "allocation_snapshot": {
+        "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+        "top": [
+          {
+            "bytes": 915520,
+            "blocks": 3952,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 240
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 177
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 249
+              }
+            ]
+          },
+          {
+            "bytes": 285952,
+            "blocks": 1980,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 240
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 177
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 234
+              },
+              {
+                "file": "copyreg.py",
+                "line": 104
+              }
+            ]
+          },
+          {
+            "bytes": 51968,
+            "blocks": 224,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 177
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 182
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 249
+              }
+            ]
+          },
+          {
+            "bytes": 19424,
+            "blocks": 90,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 240
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 177
+              }
+            ]
+          },
+          {
+            "bytes": 16128,
+            "blocks": 112,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 177
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 182
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 234
+              },
+              {
+                "file": "copyreg.py",
+                "line": 104
+              }
+            ]
+          },
+          {
+            "bytes": 12288,
+            "blocks": 192,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 240
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 177
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 191
+              }
+            ]
+          },
+          {
+            "bytes": 6608,
+            "blocks": 118,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 240
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 173
+              }
+            ]
+          },
+          {
+            "bytes": 4800,
+            "blocks": 75,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 177
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 240
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 199
+              }
+            ]
+          },
+          {
+            "bytes": 3640,
+            "blocks": 10,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 240
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 234
+              }
+            ]
+          },
+          {
+            "bytes": 3024,
+            "blocks": 54,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 177
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 240
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 173
+              }
+            ]
+          },
+          {
+            "bytes": 2240,
+            "blocks": 35,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 177
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 240
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 177
+              }
+            ]
+          },
+          {
+            "bytes": 1944,
+            "blocks": 7,
+            "traceback": [
+              {
+                "file": "copy.py",
+                "line": 182
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 240
+              },
+              {
+                "file": "copy.py",
+                "line": 131
+              },
+              {
+                "file": "copy.py",
+                "line": 202
+              },
+              {
+                "file": "copy.py",
+                "line": 157
+              },
+              {
+                "file": "copy.py",
+                "line": 234
+              },
+              {
+                "file": "copyreg.py",
+                "line": 104
+              }
+            ]
+          }
+        ],
+        "positive_net_bytes": 1337184,
+        "positive_net_bytes_with_copy_frame": 1336280
+      },
+      "result_scalar": null,
+      "copied_graph": {
+        "unique_objects": 6617,
+        "estimated_unique_shallow_bytes_NOT_RSS": 1216526,
+        "object_type_counts": {
+          "list": 173,
+          "Subject": 12,
+          "dict": 2120,
+          "str": 1997,
+          "int": 19,
+          "Section": 3,
+          "TimeBlock": 2084,
+          "NoneType": 1,
+          "bool": 2,
+          "Faculty": 5,
+          "tuple": 192,
+          "Room": 4,
+          "set": 5
+        },
+        "unassigned_TimeBlocks": 1892,
+        "root_Subject_objects": 12,
+        "reachable_nonroot_Subject_objects": 0,
+        "extra_Subject_objects_for_repeated_offering_keys": 0,
+        "reachable_faculty_identity_count": 5,
+        "root_assigned_faculty_identity_count": 5,
+        "interpretation": "Reachable does not mean unnecessary; full calendars/metadata can be required for validation and copying semantics"
+      },
+      "process_before": {
+        "working_set_bytes": 268918784,
+        "process_lifetime_peak_working_set_bytes": 274800640,
+        "private_commit_bytes_NOT_RSS": 747347968
+      },
+      "process_after_result": {
+        "working_set_bytes": 269185024,
+        "process_lifetime_peak_working_set_bytes": 274800640,
+        "private_commit_bytes_NOT_RSS": 747618304
+      },
+      "process_after_drop_gc": {
+        "working_set_bytes": 269185024,
+        "process_lifetime_peak_working_set_bytes": 274800640,
+        "private_commit_bytes_NOT_RSS": 747618304
+      },
+      "instrumented_seconds_NOT_performance_baseline": 0.7085174999956507,
+      "scope": "8-frame standalone operation; peak includes freed temporaries, snapshot only net live blocks; inputs were allocated before tracing"
+    },
+    "scope": "Actual final engine graph, original parameters and hard admission; graph census outside engine measurement; no optimized or pruned candidate"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "part": "operations",
+  "results": [
+    {
+      "scenario": "small",
+      "variant": "baseline",
+      "status": "SUCCESS"
+    },
+    {
+      "scenario": "small",
+      "variant": "parse_cache",
+      "status": "SUCCESS"
+    },
+    {
+      "scenario": "small",
+      "variant": "calendar_cache",
+      "status": "SUCCESS"
+    },
+    {
+      "scenario": "medium",
+      "variant": "baseline",
+      "status": "SUCCESS"
+    },
+    {
+      "scenario": "medium",
+      "variant": "parse_cache",
+      "status": "SUCCESS"
+    },
+    {
+      "scenario": "medium",
+      "variant": "calendar_cache",
+      "status": "SUCCESS"
+    },
+    {
+      "scenario": "large",
+      "variant": "baseline",
+      "status": "SUCCESS"
+    },
+    {
+      "scenario": "large",
+      "variant": "parse_cache",
+      "status": "SUCCESS"
+    },
+    {
+      "scenario": "large",
+      "variant": "calendar_cache",
+      "status": "SUCCESS"
+    }
+  ]
+}

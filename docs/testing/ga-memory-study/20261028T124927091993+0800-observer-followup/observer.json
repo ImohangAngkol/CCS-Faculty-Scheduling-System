@@ -1,0 +1,2792 @@
+{
+  "scope": "Post-GC diagnostic complements, does not overwrite focused pre-GC snapshots",
+  "results": {
+    "small": {
+      "scenario": "small",
+      "status": "SUCCESS",
+      "cases": [
+        {
+          "observer_enabled": false,
+          "copies_scored": 3,
+          "before_gc": {
+            "traced_current_bytes": 4005126,
+            "traced_peak_bytes_NOT_RSS": 5198148,
+            "tracer_metadata_bytes": 1280656,
+            "process": {
+              "working_set_bytes": 178991104,
+              "process_lifetime_peak_working_set_bytes": 178991104,
+              "private_commit_bytes_NOT_RSS": 657661952
+            }
+          },
+          "after_gc_result_kept": {
+            "traced_current_bytes": 5206,
+            "traced_peak_bytes_NOT_RSS": 5198148,
+            "tracer_metadata_bytes": 90160,
+            "process": {
+              "working_set_bytes": 179253248,
+              "process_lifetime_peak_working_set_bytes": 179253248,
+              "private_commit_bytes_NOT_RSS": 657928192
+            }
+          },
+          "representative_clones_alive_after_gc_result_kept": 0,
+          "after_observer_clear_gc": {
+            "traced_current_bytes": 30175,
+            "traced_peak_bytes_NOT_RSS": 5198148,
+            "tracer_metadata_bytes": 115920,
+            "process": {
+              "working_set_bytes": 179261440,
+              "process_lifetime_peak_working_set_bytes": 179261440,
+              "private_commit_bytes_NOT_RSS": 657928192
+            }
+          },
+          "representative_clones_alive_after_clear_gc": 0,
+          "live_allocations_result_kept": {
+            "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+            "top": [
+              {
+                "bytes": 784,
+                "blocks": 16,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 211
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/tools/numeric.py",
+                    "line": 193
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/series.py",
+                    "line": 787
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 2202
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/blocks.py",
+                    "line": 205
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/blocks.py",
+                    "line": 2395
+                  }
+                ]
+              },
+              {
+                "bytes": 496,
+                "blocks": 4,
+                "traceback": [
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/groupby.py",
+                    "line": 1095
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/grouper.py",
+                    "line": 892
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/frame.py",
+                    "line": 4354
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/frame.py",
+                    "line": 4970
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/frame.py",
+                    "line": 4313
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 1238
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              },
+              {
+                "bytes": 368,
+                "blocks": 4,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 755
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 448
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 783
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 676
+                  }
+                ]
+              },
+              {
+                "bytes": 328,
+                "blocks": 1,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 40
+                  },
+                  {
+                    "file": "tracemalloc.py",
+                    "line": 560
+                  },
+                  {
+                    "file": "tracemalloc.py",
+                    "line": 423
+                  }
+                ]
+              },
+              {
+                "bytes": 328,
+                "blocks": 1,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 40
+                  },
+                  {
+                    "file": "tracemalloc.py",
+                    "line": 560
+                  }
+                ]
+              },
+              {
+                "bytes": 312,
+                "blocks": 5,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 45
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_study.py",
+                    "line": 168
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_study.py",
+                    "line": 69
+                  }
+                ]
+              },
+              {
+                "bytes": 272,
+                "blocks": 4,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 42
+                  }
+                ]
+              },
+              {
+                "bytes": 248,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 45
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_study.py",
+                    "line": 167
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/utils/FitnessObservation.py",
+                    "line": 12
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 753
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 755
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 448
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 753
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 783
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 676
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/ops.py",
+                    "line": 1254
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/ops.py",
+                    "line": 1260
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 4087
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 755
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 448
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              }
+            ],
+            "positive_net_bytes": 5990,
+            "positive_net_bytes_with_copy_frame": 0
+          }
+        },
+        {
+          "observer_enabled": true,
+          "copies_scored": 3,
+          "before_gc": {
+            "traced_current_bytes": 4006012,
+            "traced_peak_bytes_NOT_RSS": 5198745,
+            "tracer_metadata_bytes": 1281104,
+            "process": {
+              "working_set_bytes": 179040256,
+              "process_lifetime_peak_working_set_bytes": 179261440,
+              "private_commit_bytes_NOT_RSS": 657862656
+            }
+          },
+          "after_gc_result_kept": {
+            "traced_current_bytes": 3977212,
+            "traced_peak_bytes_NOT_RSS": 5198745,
+            "tracer_metadata_bytes": 1265872,
+            "process": {
+              "working_set_bytes": 179040256,
+              "process_lifetime_peak_working_set_bytes": 179261440,
+              "private_commit_bytes_NOT_RSS": 657862656
+            }
+          },
+          "representative_clones_alive_after_gc_result_kept": 3,
+          "after_observer_clear_gc": {
+            "traced_current_bytes": 31967,
+            "traced_peak_bytes_NOT_RSS": 5198745,
+            "tracer_metadata_bytes": 133552,
+            "process": {
+              "working_set_bytes": 178061312,
+              "process_lifetime_peak_working_set_bytes": 181616640,
+              "private_commit_bytes_NOT_RSS": 657100800
+            }
+          },
+          "representative_clones_alive_after_clear_gc": 0,
+          "live_allocations_result_kept": {
+            "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+            "top": [
+              {
+                "bytes": 2731056,
+                "blocks": 11787,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 249
+                  }
+                ]
+              },
+              {
+                "bytes": 852360,
+                "blocks": 5904,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 171216,
+                "blocks": 738,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 182
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 249
+                  }
+                ]
+              },
+              {
+                "bytes": 58848,
+                "blocks": 279,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  }
+                ]
+              },
+              {
+                "bytes": 53136,
+                "blocks": 369,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 182
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 36864,
+                "blocks": 576,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 191
+                  }
+                ]
+              },
+              {
+                "bytes": 20832,
+                "blocks": 372,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 173
+                  }
+                ]
+              },
+              {
+                "bytes": 10920,
+                "blocks": 30,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  }
+                ]
+              },
+              {
+                "bytes": 8064,
+                "blocks": 144,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 173
+                  }
+                ]
+              },
+              {
+                "bytes": 6288,
+                "blocks": 24,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 182
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 6144,
+                "blocks": 96,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  }
+                ]
+              },
+              {
+                "bytes": 4704,
+                "blocks": 24,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              }
+            ],
+            "positive_net_bytes": 3978028,
+            "positive_net_bytes_with_copy_frame": 3969456
+          }
+        }
+      ],
+      "scope": "Explicit optional observer experiment; direct V2 benchmark leaves this observer disabled. Strong references while enabled are intentional, not a demonstrated production leak."
+    },
+    "medium": {
+      "scenario": "medium",
+      "status": "SUCCESS",
+      "cases": [
+        {
+          "observer_enabled": false,
+          "copies_scored": 3,
+          "before_gc": {
+            "traced_current_bytes": 8001751,
+            "traced_peak_bytes_NOT_RSS": 10403751,
+            "tracer_metadata_bytes": 2519632,
+            "process": {
+              "working_set_bytes": 190464000,
+              "process_lifetime_peak_working_set_bytes": 190464000,
+              "private_commit_bytes_NOT_RSS": 669061120
+            }
+          },
+          "after_gc_result_kept": {
+            "traced_current_bytes": 6039,
+            "traced_peak_bytes_NOT_RSS": 10403751,
+            "tracer_metadata_bytes": 142448,
+            "process": {
+              "working_set_bytes": 186531840,
+              "process_lifetime_peak_working_set_bytes": 190988288,
+              "private_commit_bytes_NOT_RSS": 665882624
+            }
+          },
+          "representative_clones_alive_after_gc_result_kept": 0,
+          "after_observer_clear_gc": {
+            "traced_current_bytes": 31057,
+            "traced_peak_bytes_NOT_RSS": 10403751,
+            "tracer_metadata_bytes": 168240,
+            "process": {
+              "working_set_bytes": 186548224,
+              "process_lifetime_peak_working_set_bytes": 190988288,
+              "private_commit_bytes_NOT_RSS": 665890816
+            }
+          },
+          "representative_clones_alive_after_clear_gc": 0,
+          "live_allocations_result_kept": {
+            "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+            "top": [
+              {
+                "bytes": 1617,
+                "blocks": 33,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 211
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/tools/numeric.py",
+                    "line": 193
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/series.py",
+                    "line": 787
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 2202
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/blocks.py",
+                    "line": 205
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/blocks.py",
+                    "line": 2395
+                  }
+                ]
+              },
+              {
+                "bytes": 496,
+                "blocks": 4,
+                "traceback": [
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/groupby.py",
+                    "line": 1095
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/grouper.py",
+                    "line": 892
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/frame.py",
+                    "line": 4354
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/frame.py",
+                    "line": 4970
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/frame.py",
+                    "line": 4313
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 1238
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              },
+              {
+                "bytes": 368,
+                "blocks": 4,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 755
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 448
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 783
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 676
+                  }
+                ]
+              },
+              {
+                "bytes": 328,
+                "blocks": 1,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 40
+                  },
+                  {
+                    "file": "tracemalloc.py",
+                    "line": 560
+                  },
+                  {
+                    "file": "tracemalloc.py",
+                    "line": 423
+                  }
+                ]
+              },
+              {
+                "bytes": 328,
+                "blocks": 1,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 40
+                  },
+                  {
+                    "file": "tracemalloc.py",
+                    "line": 560
+                  }
+                ]
+              },
+              {
+                "bytes": 312,
+                "blocks": 5,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 45
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_study.py",
+                    "line": 168
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_study.py",
+                    "line": 69
+                  }
+                ]
+              },
+              {
+                "bytes": 272,
+                "blocks": 4,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 42
+                  }
+                ]
+              },
+              {
+                "bytes": 248,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 45
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_study.py",
+                    "line": 167
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/utils/FitnessObservation.py",
+                    "line": 12
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 753
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 755
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 448
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 753
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 783
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 676
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/ops.py",
+                    "line": 1254
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/ops.py",
+                    "line": 1260
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 4087
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 755
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 448
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              }
+            ],
+            "positive_net_bytes": 6823,
+            "positive_net_bytes_with_copy_frame": 0
+          }
+        },
+        {
+          "observer_enabled": true,
+          "copies_scored": 3,
+          "before_gc": {
+            "traced_current_bytes": 8002730,
+            "traced_peak_bytes_NOT_RSS": 10404355,
+            "tracer_metadata_bytes": 2519984,
+            "process": {
+              "working_set_bytes": 191193088,
+              "process_lifetime_peak_working_set_bytes": 191193088,
+              "private_commit_bytes_NOT_RSS": 669925376
+            }
+          },
+          "after_gc_result_kept": {
+            "traced_current_bytes": 7963842,
+            "traced_peak_bytes_NOT_RSS": 10404355,
+            "tracer_metadata_bytes": 2500048,
+            "process": {
+              "working_set_bytes": 191193088,
+              "process_lifetime_peak_working_set_bytes": 191193088,
+              "private_commit_bytes_NOT_RSS": 669925376
+            }
+          },
+          "representative_clones_alive_after_gc_result_kept": 3,
+          "after_observer_clear_gc": {
+            "traced_current_bytes": 32750,
+            "traced_peak_bytes_NOT_RSS": 10404355,
+            "tracer_metadata_bytes": 185776,
+            "process": {
+              "working_set_bytes": 188817408,
+              "process_lifetime_peak_working_set_bytes": 197160960,
+              "private_commit_bytes_NOT_RSS": 668336128
+            }
+          },
+          "representative_clones_alive_after_clear_gc": 0,
+          "live_allocations_result_kept": {
+            "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+            "top": [
+              {
+                "bytes": 5488176,
+                "blocks": 23682,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 249
+                  }
+                ]
+              },
+              {
+                "bytes": 1711440,
+                "blocks": 11859,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 321552,
+                "blocks": 1386,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 182
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 249
+                  }
+                ]
+              },
+              {
+                "bytes": 121152,
+                "blocks": 615,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  }
+                ]
+              },
+              {
+                "bytes": 99792,
+                "blocks": 693,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 182
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 73728,
+                "blocks": 1152,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 191
+                  }
+                ]
+              },
+              {
+                "bytes": 46368,
+                "blocks": 828,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 173
+                  }
+                ]
+              },
+              {
+                "bytes": 26208,
+                "blocks": 72,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  }
+                ]
+              },
+              {
+                "bytes": 13176,
+                "blocks": 45,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 182
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 13104,
+                "blocks": 234,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 173
+                  }
+                ]
+              },
+              {
+                "bytes": 11280,
+                "blocks": 54,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 9024,
+                "blocks": 141,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  }
+                ]
+              }
+            ],
+            "positive_net_bytes": 7964658,
+            "positive_net_bytes_with_copy_frame": 7954392
+          }
+        }
+      ],
+      "scope": "Explicit optional observer experiment; direct V2 benchmark leaves this observer disabled. Strong references while enabled are intentional, not a demonstrated production leak."
+    },
+    "large": {
+      "scenario": "large",
+      "status": "SUCCESS",
+      "cases": [
+        {
+          "observer_enabled": false,
+          "copies_scored": 3,
+          "before_gc": {
+            "traced_current_bytes": 15338715,
+            "traced_peak_bytes_NOT_RSS": 19971151,
+            "tracer_metadata_bytes": 4796528,
+            "process": {
+              "working_set_bytes": 212905984,
+              "process_lifetime_peak_working_set_bytes": 212905984,
+              "private_commit_bytes_NOT_RSS": 691924992
+            }
+          },
+          "after_gc_result_kept": {
+            "traced_current_bytes": 7411,
+            "traced_peak_bytes_NOT_RSS": 19971151,
+            "tracer_metadata_bytes": 155120,
+            "process": {
+              "working_set_bytes": 202977280,
+              "process_lifetime_peak_working_set_bytes": 213958656,
+              "private_commit_bytes_NOT_RSS": 682385408
+            }
+          },
+          "representative_clones_alive_after_gc_result_kept": 0,
+          "after_observer_clear_gc": {
+            "traced_current_bytes": 32379,
+            "traced_peak_bytes_NOT_RSS": 19971151,
+            "tracer_metadata_bytes": 176784,
+            "process": {
+              "working_set_bytes": 202989568,
+              "process_lifetime_peak_working_set_bytes": 213958656,
+              "private_commit_bytes_NOT_RSS": 682389504
+            }
+          },
+          "representative_clones_alive_after_clear_gc": 0,
+          "live_allocations_result_kept": {
+            "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+            "top": [
+              {
+                "bytes": 2989,
+                "blocks": 61,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 211
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/tools/numeric.py",
+                    "line": 193
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/series.py",
+                    "line": 787
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 2202
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/blocks.py",
+                    "line": 205
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/blocks.py",
+                    "line": 2395
+                  }
+                ]
+              },
+              {
+                "bytes": 496,
+                "blocks": 4,
+                "traceback": [
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/groupby.py",
+                    "line": 1095
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/grouper.py",
+                    "line": 892
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/frame.py",
+                    "line": 4354
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/frame.py",
+                    "line": 4970
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/frame.py",
+                    "line": 4313
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 1238
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              },
+              {
+                "bytes": 368,
+                "blocks": 4,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 755
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 448
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 783
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 676
+                  }
+                ]
+              },
+              {
+                "bytes": 328,
+                "blocks": 1,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 40
+                  },
+                  {
+                    "file": "tracemalloc.py",
+                    "line": 560
+                  },
+                  {
+                    "file": "tracemalloc.py",
+                    "line": 423
+                  }
+                ]
+              },
+              {
+                "bytes": 328,
+                "blocks": 1,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 40
+                  },
+                  {
+                    "file": "tracemalloc.py",
+                    "line": 560
+                  }
+                ]
+              },
+              {
+                "bytes": 312,
+                "blocks": 5,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 45
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_study.py",
+                    "line": 168
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_study.py",
+                    "line": 69
+                  }
+                ]
+              },
+              {
+                "bytes": 272,
+                "blocks": 4,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 42
+                  }
+                ]
+              },
+              {
+                "bytes": 248,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 94
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 72
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_observer.py",
+                    "line": 45
+                  },
+                  {
+                    "file": "backend/benchmarks/memory_study.py",
+                    "line": 167
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/utils/FitnessObservation.py",
+                    "line": 12
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 753
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 755
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 448
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 1034
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 463
+                  },
+                  {
+                    "file": "backend/genetic_algorithm/operators/FitnessFunction.py",
+                    "line": 169
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 753
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 783
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 676
+                  }
+                ]
+              },
+              {
+                "bytes": 240,
+                "blocks": 3,
+                "traceback": [
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/ops.py",
+                    "line": 1254
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/groupby/ops.py",
+                    "line": 1260
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 4087
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/generic.py",
+                    "line": 6651
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 755
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/internals/managers.py",
+                    "line": 448
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/base.py",
+                    "line": 1106
+                  },
+                  {
+                    "file": ".venv/Lib/site-packages/pandas/core/indexes/range.py",
+                    "line": 633
+                  }
+                ]
+              }
+            ],
+            "positive_net_bytes": 8195,
+            "positive_net_bytes_with_copy_frame": 0
+          }
+        },
+        {
+          "observer_enabled": true,
+          "copies_scored": 3,
+          "before_gc": {
+            "traced_current_bytes": 15340857,
+            "traced_peak_bytes_NOT_RSS": 19972421,
+            "tracer_metadata_bytes": 4797168,
+            "process": {
+              "working_set_bytes": 212996096,
+              "process_lifetime_peak_working_set_bytes": 213958656,
+              "private_commit_bytes_NOT_RSS": 692228096
+            }
+          },
+          "after_gc_result_kept": {
+            "traced_current_bytes": 15283209,
+            "traced_peak_bytes_NOT_RSS": 19972421,
+            "tracer_metadata_bytes": 4768432,
+            "process": {
+              "working_set_bytes": 212996096,
+              "process_lifetime_peak_working_set_bytes": 213958656,
+              "private_commit_bytes_NOT_RSS": 692228096
+            }
+          },
+          "representative_clones_alive_after_gc_result_kept": 3,
+          "after_observer_clear_gc": {
+            "traced_current_bytes": 34677,
+            "traced_peak_bytes_NOT_RSS": 19972421,
+            "tracer_metadata_bytes": 194704,
+            "process": {
+              "working_set_bytes": 203726848,
+              "process_lifetime_peak_working_set_bytes": 225251328,
+              "private_commit_bytes_NOT_RSS": 682754048
+            }
+          },
+          "representative_clones_alive_after_clear_gc": 0,
+          "live_allocations_result_kept": {
+            "scope": "Positive NET LIVE allocation differences, not total churn or exclusive function allocation",
+            "top": [
+              {
+                "bytes": 10472256,
+                "blocks": 45189,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 249
+                  }
+                ]
+              },
+              {
+                "bytes": 3265752,
+                "blocks": 22629,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 668160,
+                "blocks": 2880,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 182
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 249
+                  }
+                ]
+              },
+              {
+                "bytes": 234240,
+                "blocks": 1212,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  }
+                ]
+              },
+              {
+                "bytes": 207360,
+                "blocks": 1440,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 182
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 147456,
+                "blocks": 2304,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 191
+                  }
+                ]
+              },
+              {
+                "bytes": 92736,
+                "blocks": 1656,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 173
+                  }
+                ]
+              },
+              {
+                "bytes": 52416,
+                "blocks": 144,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  }
+                ]
+              },
+              {
+                "bytes": 27264,
+                "blocks": 96,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 182
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 24192,
+                "blocks": 432,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 173
+                  }
+                ]
+              },
+              {
+                "bytes": 23568,
+                "blocks": 111,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 234
+                  },
+                  {
+                    "file": "copyreg.py",
+                    "line": 104
+                  }
+                ]
+              },
+              {
+                "bytes": 16896,
+                "blocks": 264,
+                "traceback": [
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 157
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 240
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 202
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 131
+                  },
+                  {
+                    "file": "copy.py",
+                    "line": 177
+                  }
+                ]
+              }
+            ],
+            "positive_net_bytes": 15284025,
+            "positive_net_bytes_with_copy_frame": 15266976
+          }
+        }
+      ],
+      "scope": "Explicit optional observer experiment; direct V2 benchmark leaves this observer disabled. Strong references while enabled are intentional, not a demonstrated production leak."
+    }
+  }
+}

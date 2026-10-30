@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-10-29T09:12:50.160068+08:00",
+  "policy_approval": "USER_REPORTED_ADVISER_DEPARTMENT; documentary evidence not supplied",
+  "official_term_roster_provider": "NOT_CONFIGURED_IN_INSPECTED_REPOSITORY",
+  "database_inspection_performed": false,
+  "findings": [
+    {
+      "path": "backend/genetic_algorithm/utils/Functions.py",
+      "finding": "Runtime normal faculty list iterates dct_fac_subj keys derived from legacy preference rows"
+    },
+    {
+      "path": "backend/academic_models.py",
+      "finding": "AcademicFacultyLegacyCode maps identity to numeric code without term participation; seven-table foundation has no faculty-term roster"
+    },
+    {
+      "path": "backend/repositories/academic_repository.py",
+      "finding": "Read-only identity projection, not complete term-specific faculty participation/profile source"
+    },
+    {
+      "path": "backend/services/metadata_service.py",
+      "finding": "Faculty listing and normal lookup project existing runtime pool"
+    },
+    {
+      "path": "backend/services/ga_v2_service.py",
+      "finding": "institutional_deployment returns None; templates must come from a server-owned provider"
+    },
+    {
+      "path": "backend/identity_models.py",
+      "finding": "Login account/binding does not construct scheduling participation"
+    },
+    {
+      "path": "backend/routers/preferences.py",
+      "finding": "Global preference storage and normal faculty lookup, not a term-specific roster source"
+    }
+  ],
+  "decision": "Implement fictional adapter/tests only; do not change production source or institutional authority"
+}

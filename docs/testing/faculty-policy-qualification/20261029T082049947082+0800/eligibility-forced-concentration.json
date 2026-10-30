@@ -1,0 +1,15 @@
+{
+  "eligible_instructors_for_both_offerings": 1,
+  "cohort_members": 2,
+  "hard_valid_units": [
+    4,
+    0
+  ],
+  "balanced_candidate_rejected": true,
+  "eligible_candidate_conflicts": {
+    "faculty": 0,
+    "room": 0,
+    "section": 0
+  },
+  "meaning": "A lower proposed soft score never authorizes an ineligible assignment; unavoidable shortage remains visible"
+}

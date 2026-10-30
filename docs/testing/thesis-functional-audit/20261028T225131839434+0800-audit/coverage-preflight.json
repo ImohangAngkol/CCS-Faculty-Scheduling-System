@@ -1,0 +1,6 @@
+{
+  "aggregate_capacity_passed": true,
+  "eligible_instructors_per_offering": 0,
+  "construction_error": "SEARCH_EXHAUSTED",
+  "gap": "Per-offering qualification impossibility is not separately diagnosed by aggregate preflight"
+}

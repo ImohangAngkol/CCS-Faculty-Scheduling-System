@@ -1,0 +1,263 @@
+{
+  "scope": "Isolated fictional Python memory investigation; no optimization or native implementation",
+  "recorded_at": "2026-10-28T12:57:12.083565+08:00",
+  "main_study": "docs/testing/ga-memory-study/20261028T123029720068+0800/summary.json",
+  "observer_followup": "docs/testing/ga-memory-study/20261028T124927091993+0800-observer-followup/observer.json",
+  "actual_graph_records": [
+    "docs/testing/ga-memory-study/20261028T125041818961+0800-actual-graphs/large.json",
+    "docs/testing/ga-memory-study/20261028T125041818961+0800-actual-graphs/medium.json",
+    "docs/testing/ga-memory-study/20261028T125041818961+0800-actual-graphs/small.json"
+  ],
+  "baseline_paths_preserved": 1481,
+  "original_baseline_paths_preserved": 1454,
+  "previous_Phase2_Phase3_files_preserved": 27,
+  "academic_files_preserved": 23,
+  "protected_preferences_and_settings_preserved": true,
+  "Git_index_HEAD_preserved": true,
+  "existing_files_modified": 0,
+  "new_file_inventory": [
+    "backend/benchmarks/memory_graphs.py",
+    "backend/benchmarks/memory_observer.py",
+    "backend/benchmarks/memory_study.py",
+    "backend/tests/performance/test_memory_study.py",
+    "docs/ga-memory-study.md",
+    "docs/testing/ga-memory-study/20261028T122940244378+0800/focused-small.json",
+    "docs/testing/ga-memory-study/20261028T122940244378+0800/summary.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/alloc-large.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/alloc-medium.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/alloc-small.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/focused-large.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/focused-medium.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/focused-small.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/ram-large.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/ram-medium.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/ram-small.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/retention-small.json",
+    "docs/testing/ga-memory-study/20261028T123029720068+0800/summary.json",
+    "docs/testing/ga-memory-study/20261028T124927091993+0800-observer-followup/observer.json",
+    "docs/testing/ga-memory-study/20261028T125041818961+0800-actual-graphs/large.json",
+    "docs/testing/ga-memory-study/20261028T125041818961+0800-actual-graphs/medium.json",
+    "docs/testing/ga-memory-study/20261028T125041818961+0800-actual-graphs/small.json",
+    "docs/testing/ga-memory-study/20261028T125227703737+0800-memory/command.json",
+    "docs/testing/ga-memory-study/20261028T125228493190+0800-regressions/command.json",
+    "docs/testing/ga-memory-study/audit.py",
+    "docs/testing/ga-memory-study/manifest.json",
+    "docs/testing/ga-memory-study/preservation-baseline.json",
+    "docs/testing/ga-memory-study/run_checks.py"
+  ],
+  "artifacts": [
+    {
+      "path": "backend/benchmarks/memory_graphs.py",
+      "sha256": "e613001a8d0126b2d8ad4a251fd42d2e294d355b116beaa72fac0e45cb776d25",
+      "bytes": 4274
+    },
+    {
+      "path": "backend/benchmarks/memory_observer.py",
+      "sha256": "9d4ee2a3bc566659294211987596b569b607f96b3cb4dcc5edfb0c7b5c19a0a1",
+      "bytes": 5484
+    },
+    {
+      "path": "backend/benchmarks/memory_study.py",
+      "sha256": "42a896790cd689b543856f9b22185e293baa754db278904c39eec2ec987c7152",
+      "bytes": 20965
+    },
+    {
+      "path": "backend/tests/performance/test_memory_study.py",
+      "sha256": "e7187c965e11130146d908f9eb126126833b5f4c1999ea865451e6e35d8f657c",
+      "bytes": 6325
+    },
+    {
+      "path": "docs/ga-memory-study.md",
+      "sha256": "c37ce51da1be87f813422709225d959fadcbf63a8e44b943bcb975512e60599d",
+      "bytes": 22500
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T122940244378+0800/focused-small.json",
+      "sha256": "8d355d6e30c54a8ec3673a635ac2512f1a1e1e0f6b95f08869c67ada266fcbb9",
+      "bytes": 144657
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T122940244378+0800/summary.json",
+      "sha256": "62ad8fe9ea054d0b259f1119844fa2ddc5624c6267197ebfcabf091b95899892",
+      "bytes": 705
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/alloc-large.json",
+      "sha256": "7cc79f5d6b111b2f03453154b43979508544076867bc65fa2f3620988ef66dd6",
+      "bytes": 21730
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/alloc-medium.json",
+      "sha256": "ba731e641f352cf0a3612e793ce9b7657c93d83fd2b8805fa9363034db662abf",
+      "bytes": 21705
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/alloc-small.json",
+      "sha256": "f4bbce1edc2bdaf23c00a4291b0fc88bb1b85867df7e8b0eb04106531787361b",
+      "bytes": 21658
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/focused-large.json",
+      "sha256": "242f31d74e382c5deef681c5fd8f103e18311078027dbfc14cbe782d2280e0d2",
+      "bytes": 144298
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/focused-medium.json",
+      "sha256": "6a89ceec00b76fbabf9132ffdefead4bae06a988ca517c95904a3c5f85187005",
+      "bytes": 144262
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/focused-small.json",
+      "sha256": "24af3351d0dee6133f568f436adeed2bd0aec0ed66fd5540b18ca020b6811299",
+      "bytes": 144657
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/ram-large.json",
+      "sha256": "9af1e308ce4259364a956b2128e91dde8bd32ad247461b43b046b09e56d69e8b",
+      "bytes": 4187
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/ram-medium.json",
+      "sha256": "610883442422bb319a3628ba0c0b0a27b14e6c1db8327ac145e3ccf36ae93c44",
+      "bytes": 4191
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/ram-small.json",
+      "sha256": "88b2f8091fc9b23fff54346a7953e49d0f6ab2949f81bc097e702d3064d05133",
+      "bytes": 4180
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/retention-small.json",
+      "sha256": "9f2cd0ce93e623b676abd2625f83cedf6981b99908e978e676da4c5707cc500f",
+      "bytes": 9080
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T123029720068+0800/summary.json",
+      "sha256": "57bb5363d31a38f34e1194c82941727432ee4ae3f06fcb474cbba01efef45694",
+      "bytes": 1511
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T124927091993+0800-observer-followup/observer.json",
+      "sha256": "bba1c7a4e6eaab392af5eb8fb2457a04761f71a2403f9f4597208fe849b43f5b",
+      "bytes": 88878
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T125041818961+0800-actual-graphs/large.json",
+      "sha256": "8f891d6a2023c593b66ebb18d81eadb8cfb2de5f7463bf4fea1071c547a0a0de",
+      "bytes": 18762
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T125041818961+0800-actual-graphs/medium.json",
+      "sha256": "36601b31830952db47035fd9d1306cb40c1152879f382b7a3437aaae264cb6f7",
+      "bytes": 18744
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T125041818961+0800-actual-graphs/small.json",
+      "sha256": "75a6785323b1e1ac6e861bf8defaad46260e4537f14ad2b34ae50703849709c7",
+      "bytes": 18698
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T125227703737+0800-memory/command.json",
+      "sha256": "31de48031ddebf032aba7cd965f764a87abd92f02e473ac9e6f43ae217abd7dd",
+      "bytes": 821
+    },
+    {
+      "path": "docs/testing/ga-memory-study/20261028T125228493190+0800-regressions/command.json",
+      "sha256": "13644f7f9b258062a1dd9a26192ccc0b87b46001697a9f094a9c8b32236aff37",
+      "bytes": 1976
+    },
+    {
+      "path": "docs/testing/ga-memory-study/audit.py",
+      "sha256": "2778ce05c716b091f71496660ba9a9908521db0d2bb453bb721944e7b6dbfb40",
+      "bytes": 7798
+    },
+    {
+      "path": "docs/testing/ga-memory-study/preservation-baseline.json",
+      "sha256": "15d732b30b7988e134a5649f4b58a12b9b778f85eb4ee694bf434c040b08119a",
+      "bytes": 209955
+    },
+    {
+      "path": "docs/testing/ga-memory-study/run_checks.py",
+      "sha256": "b9f22090e574eee1d7a76e8741dcd667af80c43872b606cd27e4cf5f6d28c6f9",
+      "bytes": 2328
+    }
+  ],
+  "test_evidence": {
+    "memory": {
+      "path": "docs/testing/ga-memory-study/20261028T125227703737+0800-memory/command.json",
+      "passed": 12,
+      "failed": 0
+    },
+    "regressions": {
+      "path": "docs/testing/ga-memory-study/20261028T125228493190+0800-regressions/command.json",
+      "passed": 105,
+      "failed": 0
+    }
+  },
+  "fresh_tests_passed": 117,
+  "main_worker_results": [
+    {
+      "part": "ram",
+      "scenario": "small",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "ram",
+      "scenario": "medium",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "ram",
+      "scenario": "large",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "alloc",
+      "scenario": "small",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "alloc",
+      "scenario": "medium",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "alloc",
+      "scenario": "large",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "focused",
+      "scenario": "small",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "focused",
+      "scenario": "medium",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "focused",
+      "scenario": "large",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "retention",
+      "scenario": "small",
+      "status": "SUCCESS"
+    }
+  ],
+  "privacy_findings": 0,
+  "whitespace": "PASS",
+  "production_symbols_replaced": 0,
+  "benchmark_database_or_publication_operations": 0,
+  "regression_database_scope": "Owned fictional SQLite/store fixtures only; no PostgreSQL or institutional publication",
+  "dependencies_installed": 0,
+  "limitations": [
+    "Traced peaks are not RSS; private commit is not resident RAM",
+    "Snapshots are net live allocations, not cumulative allocation churn",
+    "One seed per scale and five repeated Small executions do not establish absence of all leaks",
+    "Forced post-run GC and benchmark callback retention differ from an application server lifecycle"
+  ],
+  "hash_scope": "Raw bytes, manifest excludes itself"
+}

@@ -1,0 +1,20 @@
+{
+  "started_at": "2026-10-28T14:06:46.550035+08:00",
+  "finished_at": "2026-10-28T14:06:56.004525+08:00",
+  "status": "STOP_REVIEW_REQUIRED",
+  "exit_code": 1,
+  "worker_wall_seconds": 9.454489299998386,
+  "config": {
+    "name": "reference-small",
+    "scenario": "small",
+    "seeds": [
+      714
+    ],
+    "warmup": [],
+    "trace": false,
+    "reference": true
+  },
+  "events": [],
+  "raw_error_withheld": true,
+  "worker_deadline_seconds": 900
+}

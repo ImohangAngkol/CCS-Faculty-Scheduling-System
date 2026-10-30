@@ -1,0 +1,40 @@
+{
+  "name": "warning_boundary",
+  "loads": [
+    30,
+    18
+  ],
+  "targets": [
+    24,
+    24
+  ],
+  "original_default_workload": 95,
+  "linear_relative": {
+    "exact": "165/2",
+    "decimal": 82.5
+  },
+  "squared_relative": {
+    "exact": "285/8",
+    "decimal": 35.625
+  },
+  "overload_shortage_spread": [
+    {
+      "exact": "20",
+      "decimal": 20.0
+    },
+    {
+      "exact": "6",
+      "decimal": 6.0
+    },
+    {
+      "exact": "1/8",
+      "decimal": 0.125
+    }
+  ],
+  "underload_units": 6,
+  "overload_units": 6,
+  "zero_assignments": 0,
+  "above_warning": 0,
+  "teaching_ceiling_valid": true,
+  "scope": "Analytical allocation only; not a timetable or a complete hard-validity result"
+}

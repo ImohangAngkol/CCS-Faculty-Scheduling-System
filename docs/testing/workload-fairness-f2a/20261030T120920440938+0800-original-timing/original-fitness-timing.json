@@ -1,0 +1,54 @@
+{
+  "started_at": "2026-10-30T12:09:20.440938+08:00",
+  "finished_at": "2026-10-30T12:09:20.669850+08:00",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "original_function": "genetic_algorithm.operators.FitnessFunction.faculty_preference_fitness",
+  "return_breakdown": true,
+  "faculty": 2,
+  "offerings": 2,
+  "teaching_units": [
+    2,
+    2
+  ],
+  "targets": [
+    24,
+    24
+  ],
+  "original_total": 500,
+  "components": {
+    "subject_preference": 0,
+    "time_preference": 0,
+    "day_preference": 0,
+    "schedule_style": 0,
+    "lecture_lab_preference": 0,
+    "number_of_preparations": 0,
+    "teaching_load_balance": 500,
+    "daily_teaching_load": 0
+  },
+  "cold_us": 883.0,
+  "warmup_calls": 100,
+  "repetitions": 7,
+  "calls_per_repetition": 100,
+  "us_per_call": [
+    101.99799999999999,
+    100.501,
+    85.661,
+    88.01899999999999,
+    91.73,
+    85.43700000000001,
+    97.904
+  ],
+  "median_us": 91.73,
+  "sample_stdev_us": 7.0563498995416785,
+  "mean_us": 93.03571428571429,
+  "min_us": 85.43700000000001,
+  "max_us": 101.99799999999999,
+  "global_rng_restored": true,
+  "scope": "Original full eight-component scorer with already frozen fictional inputs. Preparation, construction, admission, freezing and evidence writes excluded; no candidate scorer integrated and no engine speedup measured.",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\workload-fairness-f2a\\measure_original_fitness.py"
+  ]
+}

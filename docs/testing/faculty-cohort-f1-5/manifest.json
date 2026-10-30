@@ -1,0 +1,154 @@
+{
+  "milestone": "F1.5 IT prototype cohort and cross-department qualification",
+  "recorded_at": "2026-10-29T09:49:06.055619+08:00",
+  "source_HEAD": "1423812e13a5791a550c893ef6b17bfef4b4ebfb",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "intended_population": "IT_ONLY_USER_REPORTED; no IS or full CCS evaluation claim",
+  "source_authority": "NOT_INSTITUTIONALLY_VERIFIED",
+  "production_cohort_integration": "BLOCKED",
+  "source_qualification": "COMPLETE_WITH_DOCUMENTED_GAPS",
+  "formal_thesis_alignment": "UNVERIFIED",
+  "new_file_inventory": [
+    "docs/faculty-cohort-f1-5-it-qualification.md",
+    "docs/testing/faculty-cohort-f1-5/20261029T093525057672+0800/command.json",
+    "docs/testing/faculty-cohort-f1-5/20261029T093525057672+0800/summary.json",
+    "docs/testing/faculty-cohort-f1-5/20261029T093813148555+0800-tests/command.json",
+    "docs/testing/faculty-cohort-f1-5/20261029T093957033099+0800-tests/command.json",
+    "docs/testing/faculty-cohort-f1-5/20261029T093958377377+0800/command.json",
+    "docs/testing/faculty-cohort-f1-5/20261029T093958377377+0800/summary.json",
+    "docs/testing/faculty-cohort-f1-5/20261029T094455234089+0800/command.json",
+    "docs/testing/faculty-cohort-f1-5/20261029T094455234089+0800/summary.json",
+    "docs/testing/faculty-cohort-f1-5/analysis-refinement.json",
+    "docs/testing/faculty-cohort-f1-5/audit_evidence.py",
+    "docs/testing/faculty-cohort-f1-5/inspect_sources.py",
+    "docs/testing/faculty-cohort-f1-5/manifest.json",
+    "docs/testing/faculty-cohort-f1-5/preservation-baseline.json",
+    "docs/testing/faculty-cohort-f1-5/run_tests.py",
+    "docs/testing/faculty-cohort-f1-5/test_source_qualification.py"
+  ],
+  "new_file_type_counts": {
+    ".md": 1,
+    ".json": 11,
+    ".py": 4
+  },
+  "artifacts": [
+    {
+      "path": "docs/faculty-cohort-f1-5-it-qualification.md",
+      "sha256": "8a81876aaaa202e8c8972945cdff8ae042a12d68dfbe75e2b1d491ff95d80958",
+      "bytes": 22094
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/20261029T093525057672+0800/command.json",
+      "sha256": "d892cf7f70af4aaec0e9913731d65d304d10cc8b303f7a7c71d000370b5d59af",
+      "bytes": 735
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/20261029T093525057672+0800/summary.json",
+      "sha256": "b94386e01c30e4b85745ca502c43774b2e5c73c6bc0cb15363fcc0653672ce47",
+      "bytes": 12292
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/20261029T093813148555+0800-tests/command.json",
+      "sha256": "b5efafb42374ff49d9793c165e627a988a3e713baa80d9456b51a62026d1f88f",
+      "bytes": 958
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/20261029T093957033099+0800-tests/command.json",
+      "sha256": "e92f99b8ced175539acff1b74b99931865d3429de148d05040a655ac36ce957f",
+      "bytes": 958
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/20261029T093958377377+0800/command.json",
+      "sha256": "147239b1efc65478688f3e91ad4cac0bb0ea5b5aa19f1a6d8115ccac31152e36",
+      "bytes": 734
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/20261029T093958377377+0800/summary.json",
+      "sha256": "18606373bc31e729f8b79e7afc70a3d075c5e26673a86ff8bc4cc3d3e557fb32",
+      "bytes": 12456
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/20261029T094455234089+0800/command.json",
+      "sha256": "b92317db04d7cb2b73b5d210cbcc060e3e3eb439117fc80cc96e22592f78d508",
+      "bytes": 735
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/20261029T094455234089+0800/summary.json",
+      "sha256": "60e06b083091f2d8a66c9b0787bf807bfeb58bdb950bfa11c730cd055214a9f6",
+      "bytes": 12611
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/analysis-refinement.json",
+      "sha256": "97021f6da7e15d68c775ed3c7e60c94151b8d6ef6c92b02a9574ec4c8898e275",
+      "bytes": 999
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/audit_evidence.py",
+      "sha256": "f69db8d2e20dfcc5b62b4a0d0c87186ec9e9fe81eea1799779586d553030503f",
+      "bytes": 8600
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/inspect_sources.py",
+      "sha256": "6d5e846da641eb6ca5726f5b3b76b880b403df574d19fd8e76cb34329afd6de5",
+      "bytes": 14154
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/preservation-baseline.json",
+      "sha256": "e4a03d6c0b77eb03f6a9101c3622abe1b061a765cd2576ef4c1aa422848ea178",
+      "bytes": 261152
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/run_tests.py",
+      "sha256": "43a47cbcc8124650b16f7de8683ed71f34ea530b40dfa6b696e32a802e9cdd87",
+      "bytes": 1844
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1-5/test_source_qualification.py",
+      "sha256": "6baf6d1e8200ca1fecf4b866eb7291b66aafee2bdb325dba5b6d74de4d3dbd92",
+      "bytes": 4188
+    }
+  ],
+  "baseline_files_preserved": 1790,
+  "academic_files_preserved": 23,
+  "existing_files_modified": 0,
+  "protected_preferences_and_existing_settings_unchanged": true,
+  "Git_index_HEAD_preserved": true,
+  "latest_source_summary": "docs/testing/faculty-cohort-f1-5/20261029T094455234089+0800/summary.json",
+  "read_only_extraction_attempts": [
+    "docs/testing/faculty-cohort-f1-5/20261029T093525057672+0800/command.json",
+    "docs/testing/faculty-cohort-f1-5/20261029T093958377377+0800/command.json",
+    "docs/testing/faculty-cohort-f1-5/20261029T094455234089+0800/command.json"
+  ],
+  "latest_test_command": "docs/testing/faculty-cohort-f1-5/20261029T093957033099+0800-tests/command.json",
+  "new_fictional_tests": {
+    "passed": 18,
+    "failed": 0,
+    "skipped": 0
+  },
+  "earlier_test_attempts_preserved": [
+    "docs/testing/faculty-cohort-f1-5/20261029T093813148555+0800-tests/command.json"
+  ],
+  "historical_artifact_entries_reverified": 403,
+  "analysis_refinement": "Initial raw text disagreement retained; final finite numeric/unknown/format distinctions verified",
+  "private_record_exported": false,
+  "private_label_scan": "PASS_NO_LABELS_OR_LABEL_DERIVATIVES_RECORDED",
+  "privacy_findings": 0,
+  "private_source_scope": "CSV and two XLSX read locally; aggregate schema/counts only. Protected preference JSON and settings not parsed.",
+  "GA_runs": 0,
+  "production_code_or_policy_changes": 0,
+  "database_operations": 0,
+  "dependencies_installed": 0,
+  "actual_browser": "NOT_RUN_READ_ONLY_QUALIFICATION",
+  "frontend_build_lint": "NOT_RUN_NO_PRODUCTION_CHANGES",
+  "staged_files": 0,
+  "commits_pushes": 0,
+  "limitations": [
+    "No independently complete approved IT semester roster",
+    "Qualification/eligibility/load applicability and authority require owner reconciliation",
+    "Cross-department row/sheet indicators are not confirmed meetings or an IS roster",
+    "No workbook formula execution or verified fresh calculated totals",
+    "Shared teaching-credit accounting and scoped production providers remain unqualified"
+  ],
+  "hash_convention": "Raw bytes; manifest excludes itself; all prior evidence retained"
+}

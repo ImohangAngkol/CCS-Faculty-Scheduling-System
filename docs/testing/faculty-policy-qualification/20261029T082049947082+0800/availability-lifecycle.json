@@ -1,0 +1,7 @@
+{
+  "original_template_unchanged": true,
+  "cloned_faculty_boolean_reopened": true,
+  "cloned_room_boolean_reopened": true,
+  "cloned_section_boolean_reopened": false,
+  "conclusion": "Boolean closure flags cannot encode persistent faculty/room restrictions across reset; V2 removed slots tested separately"
+}

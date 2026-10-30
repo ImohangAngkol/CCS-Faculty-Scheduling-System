@@ -1,0 +1,40 @@
+{
+  "name": "invalid_above_ceiling",
+  "loads": [
+    41,
+    7
+  ],
+  "targets": [
+    24,
+    24
+  ],
+  "original_default_workload": 320,
+  "linear_relative": {
+    "exact": "3565/12",
+    "decimal": 297.0833333333333
+  },
+  "squared_relative": {
+    "exact": "70685/288",
+    "decimal": 245.43402777777777
+  },
+  "overload_shortage_spread": [
+    {
+      "exact": "120",
+      "decimal": 120.0
+    },
+    {
+      "exact": "17",
+      "decimal": 17.0
+    },
+    {
+      "exact": "289/288",
+      "decimal": 1.0034722222222223
+    }
+  ],
+  "underload_units": 17,
+  "overload_units": 17,
+  "zero_assignments": 0,
+  "above_warning": 1,
+  "teaching_ceiling_valid": false,
+  "scope": "Analytical allocation only; not a timetable or a complete hard-validity result"
+}

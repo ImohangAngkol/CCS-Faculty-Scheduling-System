@@ -1,0 +1,7 @@
+{
+  "status": "INVALID_FOR_ATTRIBUTION",
+  "reason": "Observed impossible cross-thread caller edges; independently reproduced by profile_canary.py",
+  "preservation": "All original profile records retained unchanged",
+  "use": "Do not use these cumulative/exclusive values or caller edges for optimization claims",
+  "correction": "New profile workers exclude background Python threads and check caller/count consistency; timing/memory runs remain separate"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "zero_target_unassigned",
+  "loads": [
+    0,
+    2
+  ],
+  "targets": [
+    0,
+    24
+  ],
+  "original_default_workload": 250,
+  "linear_relative": {
+    "exact": "1375/6",
+    "decimal": 229.16666666666666
+  },
+  "squared_relative": {
+    "exact": "15125/72",
+    "decimal": 210.06944444444446
+  },
+  "overload_shortage_spread": [
+    {
+      "exact": "0",
+      "decimal": 0.0
+    },
+    {
+      "exact": "22",
+      "decimal": 22.0
+    },
+    {
+      "exact": "0",
+      "decimal": 0.0
+    }
+  ],
+  "underload_units": 22,
+  "overload_units": 0,
+  "zero_assignments": 1,
+  "above_warning": 0,
+  "teaching_ceiling_valid": true,
+  "scope": "Analytical allocation only; not a timetable or a complete hard-validity result"
+}

@@ -1,0 +1,199 @@
+{
+  "milestone": "Faculty Cohort, Workload Scope and Evaluation-Policy Qualification",
+  "date": "2026-10-29",
+  "timezone": "Asia/Manila",
+  "allowed_classifications": [
+    "Already verified",
+    "Recommended but unapproved",
+    "Requires institutional confirmation",
+    "Requires adviser confirmation",
+    "Requires implementation",
+    "Requires additional testing"
+  ],
+  "policy_decisions_approved": 0,
+  "production_institutional_activation": "BLOCKED",
+  "rows": [
+    {
+      "id": "PQ01",
+      "current_evidence": "Legacy preference keys control normal runtime membership; supplied eligible faculty need not submit preferences.",
+      "decision": "R1 roster-first term/scope snapshot; optional preference overlay. Department identifies participants/exclusion reasons, authoritative profiles and order; adviser approves cohort in evaluation.",
+      "classifications": [
+        "Already verified",
+        "Recommended but unapproved",
+        "Requires institutional confirmation",
+        "Requires adviser confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified (current gap); Recommended but unapproved; Requires institutional confirmation; Requires adviser confirmation; Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ02",
+      "current_evidence": "User creation binds login identity, not GA participation; read-only metadata projects the existing pool.",
+      "decision": "Keep accounts, faculty identity, term participation and scheduling eligibility distinct. Do not enroll/un-enroll based on preference or login activity.",
+      "classifications": [
+        "Already verified",
+        "Recommended but unapproved",
+        "Requires institutional confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified (separate paths); Recommended but unapproved; Requires institutional confirmation; Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ03",
+      "current_evidence": "OptionB allowances actively lower targets; non-teaching activities are not scheduled.",
+      "decision": "Explicit W-B versus W-T decision; no implicit institutional/adviser approval. Thesis scope, inputs/outputs and method must match the chosen rule.",
+      "classifications": [
+        "Already verified",
+        "Requires institutional confirmation",
+        "Requires adviser confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified (software); Requires institutional confirmation; Requires adviser confirmation; Requires implementation (if changes chosen); Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ04",
+      "current_evidence": "Model target24 minus allowances; warning30 and ceiling40; overlapping settings are not normal-model authority. Missing release rows default zero.",
+      "decision": "Confirm limits, credit units, missing/invalid/fractional values, zero targets and configuration precedence. Replace unknown defaults only under approved data contract.",
+      "classifications": [
+        "Already verified",
+        "Requires institutional confirmation",
+        "Requires adviser confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified (current behavior); Requires institutional confirmation; Requires adviser confirmation; Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ05",
+      "current_evidence": "Original full fitness500 balanced versus475 concentrated; all other components zero and both hard-valid.",
+      "decision": "Retire claims that rounded bands guarantee equity. Select independent approved fairness definition before scorer changes.",
+      "classifications": [
+        "Already verified",
+        "Recommended but unapproved",
+        "Requires institutional confirmation",
+        "Requires adviser confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified; Recommended but unapproved; Requires institutional confirmation; Requires adviser confirmation; Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ06",
+      "current_evidence": "L ties the equal-target pair; Q and V improve its fairness ordering but disagree for unequal targets.",
+      "decision": "L insufficient alone; compare Q squared relative shortfall with V overload/shortage/fulfillment-spread ordering. Weight/priority and preference tradeoffs remain undecided.",
+      "classifications": [
+        "Already verified",
+        "Requires institutional confirmation",
+        "Requires adviser confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified (analytical controls only); Requires institutional confirmation; Requires adviser confirmation; Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ07",
+      "current_evidence": "Eligibility-forced `[4,0]` passes, balanced ineligible assignment rejects, regardless of proposed lower score.",
+      "decision": "Keep eligibility, fixed commitments, completeness, hard ceilings and conflict checks mandatory; expose unavoidable imbalance without automatic relaxation.",
+      "classifications": [
+        "Already verified",
+        "Recommended but unapproved",
+        "Requires institutional confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified; Recommended but unapproved (diagnostics); Requires institutional confirmation; Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ08",
+      "current_evidence": "Specialization is descriptive; explicit course eligibility is hard.",
+      "decision": "Keep permission separate; select reporting-only/tie-break/weighted soft alignment among eligible instructors, approved taxonomy and exception authority.",
+      "classifications": [
+        "Already verified",
+        "Recommended but unapproved",
+        "Requires institutional confirmation",
+        "Requires adviser confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified; Recommended but unapproved; Requires institutional confirmation; Requires adviser confirmation; Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ09",
+      "current_evidence": "Retained faculty/room false flags reopen on reset; section flags and V2 removed slots survive.",
+      "decision": "Separate immutable effective availability from mutable occupancy. Confirm closure sources/recurrence and revocation before implementing.",
+      "classifications": [
+        "Already verified",
+        "Recommended but unapproved",
+        "Requires institutional confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified; Recommended but unapproved; Requires institutional confirmation; Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ10",
+      "current_evidence": "Existing hard validators and descriptive reports are not a complete quality evaluation protocol.",
+      "decision": "Freeze cohort/denominators, unknown/external scope, scarcity labels, independent fairness/alignment metrics, comparators and all-attempt outcomes.",
+      "classifications": [
+        "Already verified",
+        "Recommended but unapproved",
+        "Requires institutional confirmation",
+        "Requires adviser confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified (audit boundary); Recommended but unapproved; Requires adviser confirmation; Requires institutional confirmation (data/policy); Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ11",
+      "current_evidence": "Current V1/V2 checkpoint validation binds source/input/policy; retained historical artifacts stay unchanged.",
+      "decision": "Any future roster/score/calendar change needs explicit versioning and strict compatibility tests; no fingerprint spoofing, rescoring or silent migration.",
+      "classifications": [
+        "Already verified",
+        "Recommended but unapproved",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified (current D10 continuation plus preserved prior V1 evidence); Recommended but unapproved (future policy); Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    },
+    {
+      "id": "PQ12",
+      "current_evidence": "Genuine institutional providers remain unconfigured.",
+      "decision": "Keep production blocked. No fictional policy test, printout, Chair role label or disposable PostgreSQL pass supplies real institutional authority.",
+      "classifications": [
+        "Already verified",
+        "Requires institutional confirmation",
+        "Requires implementation",
+        "Requires additional testing"
+      ],
+      "qualifiers": "Already verified; Requires institutional confirmation; Requires implementation; Requires additional testing.",
+      "approved": false,
+      "formal_thesis_alignment": "UNVERIFIED"
+    }
+  ]
+}

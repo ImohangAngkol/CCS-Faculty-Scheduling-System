@@ -1,0 +1,509 @@
+{
+  "started_at": "2026-10-28T16:11:29.397955+08:00",
+  "finished_at": "2026-10-28T16:11:47.119100+08:00",
+  "worker_wall_seconds": 17.721149699995294,
+  "config": {
+    "mode": "timing",
+    "scenario": "medium",
+    "variant": "parse_cache",
+    "seed": 715,
+    "repetition": 2
+  },
+  "result": {
+    "status": "SUCCESS",
+    "config": {
+      "mode": "timing",
+      "scenario": "medium",
+      "variant": "parse_cache",
+      "seed": 715,
+      "repetition": 2
+    },
+    "parameters": {
+      "population_size": 2,
+      "generations": 1,
+      "fresh_chromosomes": 0,
+      "crossover_attempts": 1,
+      "mutation_attempts": 1,
+      "max_restarts": 5,
+      "candidate_attempts": 3
+    },
+    "provenance": {
+      "variant": "parse_cache",
+      "version": "phase6-reconstruction.1:parse_cache",
+      "engine_identity": "887fa730d063e6f07fadf9906524e5fb05ae237ead81bbb3762f3ba151b8398a",
+      "production_identity": "0821747e30eb56e9e4c070f369e733bc4b59ec184d2e2cb4c211ffa6fa5c1555",
+      "prototype_source_sha256": "fd7e12bc57a59d30bb562e428b20b4a46c5ee00bd501c26e7ce8be79755a0030",
+      "original_component_source_sha256": "87ddb9f5ac58f5a3fc29b7346216d390a75bf3a00f49bdaf7008dee954e10bc6",
+      "source_locations": {
+        "components": 681,
+        "payload": 731
+      },
+      "production_symbols_replaced": false,
+      "deepcopy_implementation_changed": false,
+      "cache_lifetime": "Single validation call; no checkpoint/store/global cache"
+    },
+    "warmup_excluded": {
+      "assignment_sha256": "1ff7fd711a24a55d39a25f056efeeb92d189268bbd35ba896a83d4d1783573d3",
+      "state_availability_workload_aliases_sha256": "5a51d3e57e3b62002da98476576090bebf4ed811d9bcc8de642a52c1014b4267",
+      "history": [
+        {
+          "generation": 0,
+          "generation_best_fitness": 11995.0,
+          "best_ever_fitness": 11995.0
+        },
+        {
+          "generation": 1,
+          "generation_best_fitness": 11855.0,
+          "best_ever_fitness": 11855.0
+        }
+      ],
+      "final_fitness": 11855.0,
+      "fitness_breakdown": {
+        "subject_preference": 8085.0,
+        "time_preference": 1090,
+        "day_preference": 0,
+        "schedule_style": 680,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 2000,
+        "daily_teaching_load": 0
+      },
+      "workload": {
+        "faculty": [
+          {
+            "faculty": 990100,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990101,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990102,
+            "teaching_units": 6,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990103,
+            "teaching_units": 6,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.2857142857142857
+          },
+          {
+            "faculty": 990104,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990105,
+            "teaching_units": 6,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 21,
+            "underload": 3,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.6666666666666666
+          },
+          {
+            "faculty": 990106,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990107,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990108,
+            "teaching_units": 6,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990109,
+            "teaching_units": 6,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.2857142857142857
+          },
+          {
+            "faculty": 990110,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990111,
+            "teaching_units": 0,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.0
+          }
+        ],
+        "total_teaching_units": 72,
+        "total_target_units": 198,
+        "underload_units": 126,
+        "overload_units": 0,
+        "zero_assignment_count": 1,
+        "target_fulfillment_population_stdev": 0.1520526235056166
+      },
+      "final_rng_sha256": "57294ae65036bcb16dde6706a87b12430a4d9bd5cbd96661cce264a3e6463ba7",
+      "hard_constraints": "PASS: original admit on every final member and best",
+      "scope": "Full graph projection normalizes only the distinct experimental engine identity for comparison; no validation/continuation identity is spoofed",
+      "engine_seconds": 4.072169599996414
+    },
+    "measurement": {
+      "engine_seconds": 4.122728299989831,
+      "process_before": {
+        "working_set_bytes": 218501120,
+        "process_lifetime_peak_working_set_bytes": 240168960,
+        "private_commit_bytes_NOT_RSS": 696840192
+      },
+      "process_after": {
+        "working_set_bytes": 220090368,
+        "process_lifetime_peak_working_set_bytes": 240168960,
+        "private_commit_bytes_NOT_RSS": 698462208
+      },
+      "process_sampling": {
+        "sampled_interval_peak_working_set_bytes": 220119040,
+        "sample_count": 53,
+        "poll_interval_seconds": 0.05,
+        "scope": "Sampled peak may miss short spikes; OS lifetime peak is separately reported"
+      },
+      "engine_allocation_point": null,
+      "history": [
+        {
+          "generation": 0,
+          "generation_best_fitness": 11995.0,
+          "best_ever_fitness": 11995.0
+        },
+        {
+          "generation": 1,
+          "generation_best_fitness": 11855.0,
+          "best_ever_fitness": 11855.0
+        }
+      ],
+      "profile": null
+    },
+    "correctness": {
+      "assignment_sha256": "1ff7fd711a24a55d39a25f056efeeb92d189268bbd35ba896a83d4d1783573d3",
+      "state_availability_workload_aliases_sha256": "5a51d3e57e3b62002da98476576090bebf4ed811d9bcc8de642a52c1014b4267",
+      "history": [
+        {
+          "generation": 0,
+          "generation_best_fitness": 11995.0,
+          "best_ever_fitness": 11995.0
+        },
+        {
+          "generation": 1,
+          "generation_best_fitness": 11855.0,
+          "best_ever_fitness": 11855.0
+        }
+      ],
+      "final_fitness": 11855.0,
+      "fitness_breakdown": {
+        "subject_preference": 8085.0,
+        "time_preference": 1090,
+        "day_preference": 0,
+        "schedule_style": 680,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 2000,
+        "daily_teaching_load": 0
+      },
+      "workload": {
+        "faculty": [
+          {
+            "faculty": 990100,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990101,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990102,
+            "teaching_units": 6,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990103,
+            "teaching_units": 6,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.2857142857142857
+          },
+          {
+            "faculty": 990104,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990105,
+            "teaching_units": 6,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 21,
+            "underload": 3,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.6666666666666666
+          },
+          {
+            "faculty": 990106,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990107,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990108,
+            "teaching_units": 6,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 12,
+            "underload": 12,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990109,
+            "teaching_units": 6,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.2857142857142857
+          },
+          {
+            "faculty": 990110,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990111,
+            "teaching_units": 0,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.0
+          }
+        ],
+        "total_teaching_units": 72,
+        "total_target_units": 198,
+        "underload_units": 126,
+        "overload_units": 0,
+        "zero_assignment_count": 1,
+        "target_fulfillment_population_stdev": 0.1520526235056166
+      },
+      "final_rng_sha256": "57294ae65036bcb16dde6706a87b12430a4d9bd5cbd96661cce264a3e6463ba7",
+      "hard_constraints": "PASS: original admit on every final member and best",
+      "scope": "Full graph projection normalizes only the distinct experimental engine identity for comparison; no validation/continuation identity is spoofed"
+    },
+    "post_verification_seconds_excluded": 1.1076383000181522,
+    "transient_copy_control": null,
+    "post_release": null,
+    "post_release_live_allocations": null,
+    "sampled_model_weakrefs_alive": 0,
+    "cache_diagnostics_profile_only": null,
+    "bootstrap": {
+      "used": true,
+      "csv_reads_substituted": 7,
+      "json_reads_substituted": 2
+    },
+    "production_GC_allocator_settings_changed": false,
+    "database_or_publication_operations": 0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-10-30T23:07:53.552655+08:00",
+  "timestamp_scope": "Recorded after observed tool completion; exact audit start/end not recorded",
+  "command": ".\\.venv\\Scripts\\python.exe -B docs/testing/fitness-policy-f2c/audit_evidence.py",
+  "exit_code": 1,
+  "failure_stage": "F2C new audit tooling historical engine-identity field lookup",
+  "exception_type": "KeyError",
+  "exception_message": "v2_engine_fingerprint",
+  "location": "audit_evidence.py:90",
+  "cause": "New audit referenced a nonexistent key in the preserved F2B evidence. Actual existing key is current_V2_fingerprint.",
+  "correction": "Updated only the new F2C audit lookup; did not alter prior evidence or hashes.",
+  "manifest_written": false,
+  "pytest_failure": false,
+  "protected_file_mismatch_found": false,
+  "retained_diagnostic": "Git emitted a pre-existing LF-to-CRLF warning naming protected preferences; no write/normalization operation was performed.",
+  "scope": "Audit harness error, not a contract or application failure."
+}

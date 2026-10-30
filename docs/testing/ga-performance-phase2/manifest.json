@@ -1,0 +1,182 @@
+{
+  "phase": "Scaled Fictional Python GA Performance Evaluation \u2014 Phase 2",
+  "recorded_at": "2026-10-28T12:02:09.463792+08:00",
+  "source_commit": "1423812e13a5791a550c893ef6b17bfef4b4ebfb",
+  "full_experiment": "docs/testing/ga-performance-phase2/20261028T113836085281+0800/results.json",
+  "trial_statuses": {
+    "small": {
+      "SUCCESS": 5
+    },
+    "medium": {
+      "SUCCESS": 5
+    },
+    "large": {
+      "SUCCESS": 5
+    }
+  },
+  "allocation_only_followups": [
+    {
+      "path": "docs/testing/ga-performance-phase2/20261028T115407034419+0800-large-allocation-followup/allocation-followup.json",
+      "status": "SUCCESS",
+      "deadline_seconds": 300,
+      "peak_python_allocated_bytes_NOT_RSS": 211407145
+    }
+  ],
+  "latest_tests": {
+    "benchmark": {
+      "path": "docs/testing/ga-performance-phase2/20261028T115234385862+0800-benchmark/command.json",
+      "exit_code": 0
+    },
+    "fitness": {
+      "path": "docs/testing/ga-performance-phase2/20261028T113712827371+0800-fitness/command.json",
+      "exit_code": 0
+    },
+    "d10": {
+      "path": "docs/testing/ga-performance-phase2/20261028T113712828648+0800-d10/command.json",
+      "exit_code": 0
+    }
+  },
+  "tests_passed": {
+    "new_benchmark": 21,
+    "existing_D10": 48,
+    "fitness_resources": 36
+  },
+  "timing_and_memory_profile_workers_separate": true,
+  "all_successful_outputs_validated_and_monotone": true,
+  "instrumented_seed_matches_timed_seed_when_successful": true,
+  "existing_files_modified": 0,
+  "baseline_paths_preserved": 1454,
+  "academic_data_paths_preserved": 23,
+  "protected_preference_and_user_settings_preserved": true,
+  "tiny_user_script_preserved": true,
+  "Git_index_HEAD_preserved": true,
+  "benchmark_database_or_API_publication_operations": 0,
+  "existing_D10_API_tests": "Owned fictional SQLite and test-only providers, not benchmark publication or production authorization",
+  "PostgreSQL_operations": 0,
+  "dependencies_installed": 0,
+  "privacy_findings": 0,
+  "exact_new_file_inventory": [
+    "backend/benchmarks/__init__.py",
+    "backend/benchmarks/scaled_python.py",
+    "backend/benchmarks/scenarios.py",
+    "backend/tests/performance/test_scaled_python.py",
+    "docs/ga-performance-phase2.md",
+    "docs/testing/ga-performance-phase2/20261028T113222652314+0800/results.json",
+    "docs/testing/ga-performance-phase2/20261028T113520969966+0800-benchmark/command.json",
+    "docs/testing/ga-performance-phase2/20261028T113653419683+0800-benchmark/command.json",
+    "docs/testing/ga-performance-phase2/20261028T113712827371+0800-fitness/command.json",
+    "docs/testing/ga-performance-phase2/20261028T113712828648+0800-d10/command.json",
+    "docs/testing/ga-performance-phase2/20261028T113836085281+0800/results.json",
+    "docs/testing/ga-performance-phase2/20261028T115234385862+0800-benchmark/command.json",
+    "docs/testing/ga-performance-phase2/20261028T115407034419+0800-large-allocation-followup/allocation-followup.json",
+    "docs/testing/ga-performance-phase2/audit.py",
+    "docs/testing/ga-performance-phase2/manifest.json",
+    "docs/testing/ga-performance-phase2/preservation-baseline.json",
+    "docs/testing/ga-performance-phase2/run_checks.py"
+  ],
+  "unrelated_preexisting_changes_excluded": [
+    "backend/ga_v2_fictional_python_baseline.py",
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json"
+  ],
+  "scope": "Static fictional kernel inputs, not D8/D9 authority acceptance or institutional schedules; no C++ implementation",
+  "hash_convention": "Raw working bytes and expected Git-clean blob SHA256 both recorded; manifest excludes itself",
+  "artifacts": [
+    {
+      "path": "backend/benchmarks/__init__.py",
+      "bytes": 78,
+      "sha256": "7704033387c7a96bb456cbde3500e34c9196243ecd96d9cb6dc8cf037794c864",
+      "LF_text_sha256": "7704033387c7a96bb456cbde3500e34c9196243ecd96d9cb6dc8cf037794c864"
+    },
+    {
+      "path": "backend/benchmarks/scaled_python.py",
+      "bytes": 21313,
+      "sha256": "f2b2f05c3311d237eb17cf237bc1f0d4384c0d46fbc67518ea73501ac09ea21c",
+      "LF_text_sha256": "f2b2f05c3311d237eb17cf237bc1f0d4384c0d46fbc67518ea73501ac09ea21c"
+    },
+    {
+      "path": "backend/benchmarks/scenarios.py",
+      "bytes": 6553,
+      "sha256": "e95eab56b77b415b50027bd9afc3d6e1385a4e5f97396bef40d0054aab91643a",
+      "LF_text_sha256": "e95eab56b77b415b50027bd9afc3d6e1385a4e5f97396bef40d0054aab91643a"
+    },
+    {
+      "path": "backend/tests/performance/test_scaled_python.py",
+      "bytes": 8522,
+      "sha256": "66bd540cfc3b935e7d50996a1f170c4e27c1499da4ebd262ebcaa0971a8e5bce",
+      "LF_text_sha256": "66bd540cfc3b935e7d50996a1f170c4e27c1499da4ebd262ebcaa0971a8e5bce"
+    },
+    {
+      "path": "docs/ga-performance-phase2.md",
+      "bytes": 20298,
+      "sha256": "627fe76f23c87022fb9e1b7467fb886d155cd1542e5609e6c345d2f8185a263b",
+      "LF_text_sha256": "627fe76f23c87022fb9e1b7467fb886d155cd1542e5609e6c345d2f8185a263b"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/20261028T113222652314+0800/results.json",
+      "bytes": 73448,
+      "sha256": "a18f69904201b610aad306c438e98b53f9ddcf8ef97a0f8cde84b20f098a7222",
+      "LF_text_sha256": "a18f69904201b610aad306c438e98b53f9ddcf8ef97a0f8cde84b20f098a7222"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/20261028T113520969966+0800-benchmark/command.json",
+      "bytes": 941,
+      "sha256": "942b9be74cafec630e7accadfdf85e45893389e00c71d66fe27c692e7296ae02",
+      "LF_text_sha256": "942b9be74cafec630e7accadfdf85e45893389e00c71d66fe27c692e7296ae02"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/20261028T113653419683+0800-benchmark/command.json",
+      "bytes": 940,
+      "sha256": "8af06b76db4456e41e706b91237068bd88a87c2a4f0d9cb6540407d5f165ed00",
+      "LF_text_sha256": "8af06b76db4456e41e706b91237068bd88a87c2a4f0d9cb6540407d5f165ed00"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/20261028T113712827371+0800-fitness/command.json",
+      "bytes": 1873,
+      "sha256": "c8a6b706edf5e16c97e4393a165b4a7a7bbd091ae848855b2cbcff83b51a78e7",
+      "LF_text_sha256": "c8a6b706edf5e16c97e4393a165b4a7a7bbd091ae848855b2cbcff83b51a78e7"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/20261028T113712828648+0800-d10/command.json",
+      "bytes": 1848,
+      "sha256": "0987874d03220b767b694a6c6a185f4eff1c7702ce26c0b095c3ff94203534c6",
+      "LF_text_sha256": "0987874d03220b767b694a6c6a185f4eff1c7702ce26c0b095c3ff94203534c6"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/20261028T113836085281+0800/results.json",
+      "bytes": 1800804,
+      "sha256": "703f7a9eba22e9387532f4585b0d6d7e82bd13228dd32bbe20988394087f21d9",
+      "LF_text_sha256": "703f7a9eba22e9387532f4585b0d6d7e82bd13228dd32bbe20988394087f21d9"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/20261028T115234385862+0800-benchmark/command.json",
+      "bytes": 941,
+      "sha256": "0548bfb1914624a22d039cc51aa6ae91f6a00191d369e2b0641fdfe4d7b0de45",
+      "LF_text_sha256": "0548bfb1914624a22d039cc51aa6ae91f6a00191d369e2b0641fdfe4d7b0de45"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/20261028T115407034419+0800-large-allocation-followup/allocation-followup.json",
+      "bytes": 106272,
+      "sha256": "3f607274d9d845b2018b02f73a616457801d5433afbd7fcf028872a9a625104d",
+      "LF_text_sha256": "3f607274d9d845b2018b02f73a616457801d5433afbd7fcf028872a9a625104d"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/audit.py",
+      "bytes": 9842,
+      "sha256": "49b0291e6a8cbaf23c39eabaaf71659d79565d8b91705c04cbe622a12247ab47",
+      "LF_text_sha256": "49b0291e6a8cbaf23c39eabaaf71659d79565d8b91705c04cbe622a12247ab47"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/preservation-baseline.json",
+      "bytes": 206353,
+      "sha256": "339325175cbaf54cbb54d3f8e1a6275ba25fae2a3707faf11cb4744e027b3de0",
+      "LF_text_sha256": "339325175cbaf54cbb54d3f8e1a6275ba25fae2a3707faf11cb4744e027b3de0"
+    },
+    {
+      "path": "docs/testing/ga-performance-phase2/run_checks.py",
+      "bytes": 2700,
+      "sha256": "7ab4192866fd83efe586bd3feb5b5b1e110c8817aabe903a22b57d859ec4fc70",
+      "LF_text_sha256": "7ab4192866fd83efe586bd3feb5b5b1e110c8817aabe903a22b57d859ec4fc70"
+    }
+  ]
+}

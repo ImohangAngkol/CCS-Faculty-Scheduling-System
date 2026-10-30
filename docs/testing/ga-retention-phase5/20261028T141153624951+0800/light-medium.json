@@ -1,0 +1,1083 @@
+{
+  "started_at": "2026-10-28T14:30:32.744057+08:00",
+  "finished_at": "2026-10-28T14:31:41.072255+08:00",
+  "status": "SUCCESS",
+  "exit_code": 0,
+  "worker_wall_seconds": 68.32832200001576,
+  "config": {
+    "name": "light-medium",
+    "scenario": "medium",
+    "seeds": [
+      714,
+      714,
+      714,
+      715,
+      715,
+      715
+    ],
+    "warmup": [
+      714,
+      715
+    ],
+    "trace": false,
+    "light": true
+  },
+  "events": [
+    {
+      "event": "run",
+      "record": {
+        "seed": 714,
+        "best_assignment_sha256": "0229266a78b84956bb042f329729e5b17c73331e74480a6c4185f67ef3e3adee",
+        "history": [
+          {
+            "generation": 0,
+            "generation_best_fitness": 11470.0,
+            "best_ever_fitness": 11470.0
+          },
+          {
+            "generation": 1,
+            "generation_best_fitness": 10250.0,
+            "best_ever_fitness": 10250.0
+          }
+        ],
+        "final_fitness": 10250.0,
+        "final_rng_sha256": "b39303066cae13d8e8fd6d24622630fcf18b843c911c3617de25ff70bf1a67aa",
+        "hard_constraints": "PASS: every final population member and best",
+        "engine_seconds_with_instrumentation": 6.619015200005379,
+        "during": [
+          {
+            "generation": 0
+          },
+          {
+            "generation": 1
+          }
+        ],
+        "chromosome_root_tracking": "Plain lists do not support weakref; reporting Lease proxies plus model weakrefs are sampled",
+        "label": "warmup",
+        "observer_enabled": false,
+        "before": {
+          "process": {
+            "working_set_bytes": 172761088,
+            "process_lifetime_peak_working_set_bytes": 174710784,
+            "private_commit_bytes_NOT_RSS": 652726272
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            103,
+            0,
+            0
+          ]
+        },
+        "before_gc": {
+          "process": {
+            "working_set_bytes": 242663424,
+            "process_lifetime_peak_working_set_bytes": 243634176,
+            "private_commit_bytes_NOT_RSS": 722087936
+          },
+          "model_counts": {
+            "Faculty": 252,
+            "Room": 132,
+            "Section": 134,
+            "Subject": 504,
+            "TimeBlock": 135748
+          },
+          "gc_counts": [
+            2,
+            0,
+            0
+          ]
+        },
+        "after_gc_while_observer_held": {
+          "process": {
+            "working_set_bytes": 223682560,
+            "process_lifetime_peak_working_set_bytes": 250097664,
+            "private_commit_bytes_NOT_RSS": 702156800
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "roots_while_observer_held": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        },
+        "observed_candidate_roots": 0,
+        "after_release_gc": {
+          "process": {
+            "working_set_bytes": 223682560,
+            "process_lifetime_peak_working_set_bytes": 250097664,
+            "private_commit_bytes_NOT_RSS": 702156800
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            7,
+            0,
+            0
+          ]
+        },
+        "released_roots": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        }
+      }
+    },
+    {
+      "event": "run",
+      "record": {
+        "seed": 715,
+        "best_assignment_sha256": "1ff7fd711a24a55d39a25f056efeeb92d189268bbd35ba896a83d4d1783573d3",
+        "history": [
+          {
+            "generation": 0,
+            "generation_best_fitness": 11995.0,
+            "best_ever_fitness": 11995.0
+          },
+          {
+            "generation": 1,
+            "generation_best_fitness": 11855.0,
+            "best_ever_fitness": 11855.0
+          }
+        ],
+        "final_fitness": 11855.0,
+        "final_rng_sha256": "5c22551cf4d07741ff8e7a59040039123d7d5273076cad773aa576b4c49303b7",
+        "hard_constraints": "PASS: every final population member and best",
+        "engine_seconds_with_instrumentation": 4.556842400023015,
+        "during": [
+          {
+            "generation": 0
+          },
+          {
+            "generation": 1
+          }
+        ],
+        "chromosome_root_tracking": "Plain lists do not support weakref; reporting Lease proxies plus model weakrefs are sampled",
+        "label": "warmup",
+        "observer_enabled": false,
+        "before": {
+          "process": {
+            "working_set_bytes": 223686656,
+            "process_lifetime_peak_working_set_bytes": 250097664,
+            "private_commit_bytes_NOT_RSS": 702156800
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "before_gc": {
+          "process": {
+            "working_set_bytes": 233947136,
+            "process_lifetime_peak_working_set_bytes": 250097664,
+            "private_commit_bytes_NOT_RSS": 712650752
+          },
+          "model_counts": {
+            "Faculty": 306,
+            "Room": 162,
+            "Section": 164,
+            "Subject": 624,
+            "TimeBlock": 156716
+          },
+          "gc_counts": [
+            2,
+            0,
+            0
+          ]
+        },
+        "after_gc_while_observer_held": {
+          "process": {
+            "working_set_bytes": 229761024,
+            "process_lifetime_peak_working_set_bytes": 250097664,
+            "private_commit_bytes_NOT_RSS": 708456448
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "roots_while_observer_held": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        },
+        "observed_candidate_roots": 0,
+        "after_release_gc": {
+          "process": {
+            "working_set_bytes": 229761024,
+            "process_lifetime_peak_working_set_bytes": 250097664,
+            "private_commit_bytes_NOT_RSS": 708456448
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            7,
+            0,
+            0
+          ]
+        },
+        "released_roots": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        }
+      }
+    },
+    {
+      "event": "run",
+      "record": {
+        "seed": 714,
+        "best_assignment_sha256": "0229266a78b84956bb042f329729e5b17c73331e74480a6c4185f67ef3e3adee",
+        "history": [
+          {
+            "generation": 0,
+            "generation_best_fitness": 11470.0,
+            "best_ever_fitness": 11470.0
+          },
+          {
+            "generation": 1,
+            "generation_best_fitness": 10250.0,
+            "best_ever_fitness": 10250.0
+          }
+        ],
+        "final_fitness": 10250.0,
+        "final_rng_sha256": "b39303066cae13d8e8fd6d24622630fcf18b843c911c3617de25ff70bf1a67aa",
+        "hard_constraints": "PASS: every final population member and best",
+        "engine_seconds_with_instrumentation": 6.73516589999781,
+        "during": [
+          {
+            "generation": 0
+          },
+          {
+            "generation": 1
+          }
+        ],
+        "chromosome_root_tracking": "Plain lists do not support weakref; reporting Lease proxies plus model weakrefs are sampled",
+        "label": "measured",
+        "observer_enabled": false,
+        "before": {
+          "process": {
+            "working_set_bytes": 229761024,
+            "process_lifetime_peak_working_set_bytes": 250097664,
+            "private_commit_bytes_NOT_RSS": 708456448
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "before_gc": {
+          "process": {
+            "working_set_bytes": 247046144,
+            "process_lifetime_peak_working_set_bytes": 250097664,
+            "private_commit_bytes_NOT_RSS": 726290432
+          },
+          "model_counts": {
+            "Faculty": 228,
+            "Room": 120,
+            "Section": 122,
+            "Subject": 456,
+            "TimeBlock": 127020
+          },
+          "gc_counts": [
+            2,
+            0,
+            0
+          ]
+        },
+        "after_gc_while_observer_held": {
+          "process": {
+            "working_set_bytes": 239706112,
+            "process_lifetime_peak_working_set_bytes": 253661184,
+            "private_commit_bytes_NOT_RSS": 718950400
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "roots_while_observer_held": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        },
+        "observed_candidate_roots": 0,
+        "after_release_gc": {
+          "process": {
+            "working_set_bytes": 239706112,
+            "process_lifetime_peak_working_set_bytes": 253661184,
+            "private_commit_bytes_NOT_RSS": 718950400
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "released_roots": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        }
+      }
+    },
+    {
+      "event": "run",
+      "record": {
+        "seed": 714,
+        "best_assignment_sha256": "0229266a78b84956bb042f329729e5b17c73331e74480a6c4185f67ef3e3adee",
+        "history": [
+          {
+            "generation": 0,
+            "generation_best_fitness": 11470.0,
+            "best_ever_fitness": 11470.0
+          },
+          {
+            "generation": 1,
+            "generation_best_fitness": 10250.0,
+            "best_ever_fitness": 10250.0
+          }
+        ],
+        "final_fitness": 10250.0,
+        "final_rng_sha256": "b39303066cae13d8e8fd6d24622630fcf18b843c911c3617de25ff70bf1a67aa",
+        "hard_constraints": "PASS: every final population member and best",
+        "engine_seconds_with_instrumentation": 6.812249100010376,
+        "during": [
+          {
+            "generation": 0
+          },
+          {
+            "generation": 1
+          }
+        ],
+        "chromosome_root_tracking": "Plain lists do not support weakref; reporting Lease proxies plus model weakrefs are sampled",
+        "label": "measured",
+        "observer_enabled": false,
+        "before": {
+          "process": {
+            "working_set_bytes": 239706112,
+            "process_lifetime_peak_working_set_bytes": 253661184,
+            "private_commit_bytes_NOT_RSS": 718950400
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "before_gc": {
+          "process": {
+            "working_set_bytes": 247058432,
+            "process_lifetime_peak_working_set_bytes": 253661184,
+            "private_commit_bytes_NOT_RSS": 726290432
+          },
+          "model_counts": {
+            "Faculty": 226,
+            "Room": 120,
+            "Section": 122,
+            "Subject": 453,
+            "TimeBlock": 126646
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "after_gc_while_observer_held": {
+          "process": {
+            "working_set_bytes": 246009856,
+            "process_lifetime_peak_working_set_bytes": 253673472,
+            "private_commit_bytes_NOT_RSS": 725241856
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "roots_while_observer_held": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        },
+        "observed_candidate_roots": 0,
+        "after_release_gc": {
+          "process": {
+            "working_set_bytes": 246009856,
+            "process_lifetime_peak_working_set_bytes": 253673472,
+            "private_commit_bytes_NOT_RSS": 725241856
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "released_roots": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        }
+      }
+    },
+    {
+      "event": "run",
+      "record": {
+        "seed": 714,
+        "best_assignment_sha256": "0229266a78b84956bb042f329729e5b17c73331e74480a6c4185f67ef3e3adee",
+        "history": [
+          {
+            "generation": 0,
+            "generation_best_fitness": 11470.0,
+            "best_ever_fitness": 11470.0
+          },
+          {
+            "generation": 1,
+            "generation_best_fitness": 10250.0,
+            "best_ever_fitness": 10250.0
+          }
+        ],
+        "final_fitness": 10250.0,
+        "final_rng_sha256": "b39303066cae13d8e8fd6d24622630fcf18b843c911c3617de25ff70bf1a67aa",
+        "hard_constraints": "PASS: every final population member and best",
+        "engine_seconds_with_instrumentation": 6.476630799996201,
+        "during": [
+          {
+            "generation": 0
+          },
+          {
+            "generation": 1
+          }
+        ],
+        "chromosome_root_tracking": "Plain lists do not support weakref; reporting Lease proxies plus model weakrefs are sampled",
+        "label": "measured",
+        "observer_enabled": false,
+        "before": {
+          "process": {
+            "working_set_bytes": 246009856,
+            "process_lifetime_peak_working_set_bytes": 253673472,
+            "private_commit_bytes_NOT_RSS": 725241856
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "before_gc": {
+          "process": {
+            "working_set_bytes": 247808000,
+            "process_lifetime_peak_working_set_bytes": 253673472,
+            "private_commit_bytes_NOT_RSS": 726290432
+          },
+          "model_counts": {
+            "Faculty": 234,
+            "Room": 126,
+            "Section": 127,
+            "Subject": 469,
+            "TimeBlock": 130078
+          },
+          "gc_counts": [
+            2,
+            0,
+            0
+          ]
+        },
+        "after_gc_while_observer_held": {
+          "process": {
+            "working_set_bytes": 247808000,
+            "process_lifetime_peak_working_set_bytes": 255242240,
+            "private_commit_bytes_NOT_RSS": 726290432
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "roots_while_observer_held": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        },
+        "observed_candidate_roots": 0,
+        "after_release_gc": {
+          "process": {
+            "working_set_bytes": 247808000,
+            "process_lifetime_peak_working_set_bytes": 255242240,
+            "private_commit_bytes_NOT_RSS": 726290432
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "released_roots": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        }
+      }
+    },
+    {
+      "event": "run",
+      "record": {
+        "seed": 715,
+        "best_assignment_sha256": "1ff7fd711a24a55d39a25f056efeeb92d189268bbd35ba896a83d4d1783573d3",
+        "history": [
+          {
+            "generation": 0,
+            "generation_best_fitness": 11995.0,
+            "best_ever_fitness": 11995.0
+          },
+          {
+            "generation": 1,
+            "generation_best_fitness": 11855.0,
+            "best_ever_fitness": 11855.0
+          }
+        ],
+        "final_fitness": 11855.0,
+        "final_rng_sha256": "5c22551cf4d07741ff8e7a59040039123d7d5273076cad773aa576b4c49303b7",
+        "hard_constraints": "PASS: every final population member and best",
+        "engine_seconds_with_instrumentation": 5.2877722999837715,
+        "during": [
+          {
+            "generation": 0
+          },
+          {
+            "generation": 1
+          }
+        ],
+        "chromosome_root_tracking": "Plain lists do not support weakref; reporting Lease proxies plus model weakrefs are sampled",
+        "label": "measured",
+        "observer_enabled": false,
+        "before": {
+          "process": {
+            "working_set_bytes": 247529472,
+            "process_lifetime_peak_working_set_bytes": 255242240,
+            "private_commit_bytes_NOT_RSS": 726290432
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "before_gc": {
+          "process": {
+            "working_set_bytes": 248451072,
+            "process_lifetime_peak_working_set_bytes": 255242240,
+            "private_commit_bytes_NOT_RSS": 727207936
+          },
+          "model_counts": {
+            "Faculty": 306,
+            "Room": 162,
+            "Section": 164,
+            "Subject": 624,
+            "TimeBlock": 156716
+          },
+          "gc_counts": [
+            2,
+            0,
+            0
+          ]
+        },
+        "after_gc_while_observer_held": {
+          "process": {
+            "working_set_bytes": 246489088,
+            "process_lifetime_peak_working_set_bytes": 255901696,
+            "private_commit_bytes_NOT_RSS": 725241856
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "roots_while_observer_held": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        },
+        "observed_candidate_roots": 0,
+        "after_release_gc": {
+          "process": {
+            "working_set_bytes": 246489088,
+            "process_lifetime_peak_working_set_bytes": 255901696,
+            "private_commit_bytes_NOT_RSS": 725241856
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "released_roots": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        }
+      }
+    },
+    {
+      "event": "run",
+      "record": {
+        "seed": 715,
+        "best_assignment_sha256": "1ff7fd711a24a55d39a25f056efeeb92d189268bbd35ba896a83d4d1783573d3",
+        "history": [
+          {
+            "generation": 0,
+            "generation_best_fitness": 11995.0,
+            "best_ever_fitness": 11995.0
+          },
+          {
+            "generation": 1,
+            "generation_best_fitness": 11855.0,
+            "best_ever_fitness": 11855.0
+          }
+        ],
+        "final_fitness": 11855.0,
+        "final_rng_sha256": "5c22551cf4d07741ff8e7a59040039123d7d5273076cad773aa576b4c49303b7",
+        "hard_constraints": "PASS: every final population member and best",
+        "engine_seconds_with_instrumentation": 5.218771099986043,
+        "during": [
+          {
+            "generation": 0
+          },
+          {
+            "generation": 1
+          }
+        ],
+        "chromosome_root_tracking": "Plain lists do not support weakref; reporting Lease proxies plus model weakrefs are sampled",
+        "label": "measured",
+        "observer_enabled": false,
+        "before": {
+          "process": {
+            "working_set_bytes": 246489088,
+            "process_lifetime_peak_working_set_bytes": 255901696,
+            "private_commit_bytes_NOT_RSS": 725241856
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "before_gc": {
+          "process": {
+            "working_set_bytes": 247402496,
+            "process_lifetime_peak_working_set_bytes": 255901696,
+            "private_commit_bytes_NOT_RSS": 726159360
+          },
+          "model_counts": {
+            "Faculty": 306,
+            "Room": 162,
+            "Section": 164,
+            "Subject": 624,
+            "TimeBlock": 156716
+          },
+          "gc_counts": [
+            2,
+            0,
+            0
+          ]
+        },
+        "after_gc_while_observer_held": {
+          "process": {
+            "working_set_bytes": 246419456,
+            "process_lifetime_peak_working_set_bytes": 255901696,
+            "private_commit_bytes_NOT_RSS": 725118976
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "roots_while_observer_held": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        },
+        "observed_candidate_roots": 0,
+        "after_release_gc": {
+          "process": {
+            "working_set_bytes": 246419456,
+            "process_lifetime_peak_working_set_bytes": 255901696,
+            "private_commit_bytes_NOT_RSS": 725118976
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "released_roots": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        }
+      }
+    },
+    {
+      "event": "run",
+      "record": {
+        "seed": 715,
+        "best_assignment_sha256": "1ff7fd711a24a55d39a25f056efeeb92d189268bbd35ba896a83d4d1783573d3",
+        "history": [
+          {
+            "generation": 0,
+            "generation_best_fitness": 11995.0,
+            "best_ever_fitness": 11995.0
+          },
+          {
+            "generation": 1,
+            "generation_best_fitness": 11855.0,
+            "best_ever_fitness": 11855.0
+          }
+        ],
+        "final_fitness": 11855.0,
+        "final_rng_sha256": "5c22551cf4d07741ff8e7a59040039123d7d5273076cad773aa576b4c49303b7",
+        "hard_constraints": "PASS: every final population member and best",
+        "engine_seconds_with_instrumentation": 4.5577844999788795,
+        "during": [
+          {
+            "generation": 0
+          },
+          {
+            "generation": 1
+          }
+        ],
+        "chromosome_root_tracking": "Plain lists do not support weakref; reporting Lease proxies plus model weakrefs are sampled",
+        "label": "measured",
+        "observer_enabled": false,
+        "before": {
+          "process": {
+            "working_set_bytes": 246419456,
+            "process_lifetime_peak_working_set_bytes": 255901696,
+            "private_commit_bytes_NOT_RSS": 725118976
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "before_gc": {
+          "process": {
+            "working_set_bytes": 246427648,
+            "process_lifetime_peak_working_set_bytes": 255901696,
+            "private_commit_bytes_NOT_RSS": 725118976
+          },
+          "model_counts": {
+            "Faculty": 306,
+            "Room": 162,
+            "Section": 164,
+            "Subject": 624,
+            "TimeBlock": 156716
+          },
+          "gc_counts": [
+            6,
+            0,
+            0
+          ]
+        },
+        "after_gc_while_observer_held": {
+          "process": {
+            "working_set_bytes": 246427648,
+            "process_lifetime_peak_working_set_bytes": 255901696,
+            "private_commit_bytes_NOT_RSS": 725118976
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "roots_while_observer_held": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        },
+        "observed_candidate_roots": 0,
+        "after_release_gc": {
+          "process": {
+            "working_set_bytes": 246427648,
+            "process_lifetime_peak_working_set_bytes": 255901696,
+            "private_commit_bytes_NOT_RSS": 725118976
+          },
+          "model_counts": {
+            "Faculty": 12,
+            "Room": 12,
+            "Section": 14,
+            "Subject": 24,
+            "TimeBlock": 50772
+          },
+          "gc_counts": [
+            3,
+            0,
+            0
+          ]
+        },
+        "released_roots": {
+          "sampled_models_alive": {},
+          "sampled_model_count_alive": 0,
+          "reporting_leases_alive": 0
+        }
+      }
+    },
+    {
+      "event": "summary",
+      "status": "SUCCESS",
+      "config": {
+        "name": "light-medium",
+        "scenario": "medium",
+        "seeds": [
+          714,
+          714,
+          714,
+          715,
+          715,
+          715
+        ],
+        "warmup": [
+          714,
+          715
+        ],
+        "trace": false,
+        "light": true
+      },
+      "parameters": {
+        "population_size": 2,
+        "generations": 1,
+        "fresh_chromosomes": 1,
+        "mutation_attempts": 1,
+        "max_restarts": 5,
+        "candidate_attempts": 3,
+        "crossover_attempts": 1
+      },
+      "cold_process": {
+        "working_set_bytes": 32382976,
+        "process_lifetime_peak_working_set_bytes": 35377152,
+        "private_commit_bytes_NOT_RSS": 22794240
+      },
+      "post_warmup_baseline": {
+        "process": {
+          "working_set_bytes": 229761024,
+          "process_lifetime_peak_working_set_bytes": 250097664,
+          "private_commit_bytes_NOT_RSS": 708456448
+        },
+        "model_counts": {
+          "Faculty": 12,
+          "Room": 12,
+          "Section": 14,
+          "Subject": 24,
+          "TimeBlock": 50772
+        },
+        "gc_counts": [
+          3,
+          0,
+          0
+        ]
+      },
+      "end": {
+        "process": {
+          "working_set_bytes": 246427648,
+          "process_lifetime_peak_working_set_bytes": 255901696,
+          "private_commit_bytes_NOT_RSS": 725118976
+        },
+        "model_counts": {
+          "Faculty": 12,
+          "Room": 12,
+          "Section": 14,
+          "Subject": 24,
+          "TimeBlock": 50772
+        },
+        "gc_counts": [
+          2,
+          0,
+          0
+        ]
+      },
+      "post_gc_live_differences": null,
+      "bootstrap": {
+        "used": true,
+        "csv_reads_substituted": 7,
+        "json_reads_substituted": 2
+      },
+      "sampled_worker_peak_working_set_bytes": 252190720,
+      "report_buffer_release": null,
+      "sample_count": 654,
+      "working_set_limit_bytes": 805306368,
+      "private_commit_limit_bytes": 1610612736,
+      "scope": "Probe dictionaries/history/digests remain retained; snapshots are net live, not allocation churn. GC forced only between runs, not inside GA."
+    }
+  ],
+  "raw_error_withheld": false,
+  "worker_deadline_seconds": 900
+}

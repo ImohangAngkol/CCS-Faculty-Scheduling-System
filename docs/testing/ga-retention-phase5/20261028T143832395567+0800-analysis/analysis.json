@@ -1,0 +1,558 @@
+{
+  "scope": "Phase 5 descriptive analysis; no leak inference or production speedup/savings claim implied",
+  "endpoints": {
+    "reference-large": {
+      "runs": 1,
+      "seeds": [
+        714
+      ],
+      "working_set_start_bytes": 308207616,
+      "working_set_end_bytes": 308207616,
+      "working_set_delta_bytes": 0,
+      "private_commit_delta_bytes": 0,
+      "traced_start_bytes": null,
+      "traced_end_bytes": null,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "reference-medium": {
+      "runs": 1,
+      "seeds": [
+        714
+      ],
+      "working_set_start_bytes": 267755520,
+      "working_set_end_bytes": 267755520,
+      "working_set_delta_bytes": 0,
+      "private_commit_delta_bytes": 0,
+      "traced_start_bytes": null,
+      "traced_end_bytes": null,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "reference-small": {
+      "runs": 1,
+      "seeds": [
+        714
+      ],
+      "working_set_start_bytes": 253370368,
+      "working_set_end_bytes": 253370368,
+      "working_set_delta_bytes": 0,
+      "private_commit_delta_bytes": 0,
+      "traced_start_bytes": null,
+      "traced_end_bytes": null,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "light-medium": {
+      "runs": 6,
+      "seeds": [
+        714,
+        714,
+        714,
+        715,
+        715,
+        715
+      ],
+      "working_set_start_bytes": 239706112,
+      "working_set_end_bytes": 246427648,
+      "working_set_delta_bytes": 6721536,
+      "private_commit_delta_bytes": 6168576,
+      "traced_start_bytes": null,
+      "traced_end_bytes": null,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "light-small": {
+      "runs": 6,
+      "seeds": [
+        714,
+        714,
+        714,
+        715,
+        715,
+        715
+      ],
+      "working_set_start_bytes": 199958528,
+      "working_set_end_bytes": 199397376,
+      "working_set_delta_bytes": -561152,
+      "private_commit_delta_bytes": 0,
+      "traced_start_bytes": null,
+      "traced_end_bytes": null,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "observer-medium": {
+      "runs": 3,
+      "seeds": [
+        714,
+        715,
+        716
+      ],
+      "working_set_start_bytes": 267014144,
+      "working_set_end_bytes": 274124800,
+      "working_set_delta_bytes": 7110656,
+      "private_commit_delta_bytes": 7925760,
+      "traced_start_bytes": 88906,
+      "traced_end_bytes": 116074,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "observer-small": {
+      "runs": 3,
+      "seeds": [
+        714,
+        715,
+        716
+      ],
+      "working_set_start_bytes": 216547328,
+      "working_set_end_bytes": 220880896,
+      "working_set_delta_bytes": 4333568,
+      "private_commit_delta_bytes": 4317184,
+      "traced_start_bytes": 49876,
+      "traced_end_bytes": 98344,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "ram-large": {
+      "runs": 2,
+      "seeds": [
+        714,
+        715
+      ],
+      "working_set_start_bytes": 232390656,
+      "working_set_end_bytes": 237649920,
+      "working_set_delta_bytes": 5259264,
+      "private_commit_delta_bytes": 5242880,
+      "traced_start_bytes": null,
+      "traced_end_bytes": null,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "ram-medium-A": {
+      "runs": 12,
+      "seeds": [
+        714,
+        714,
+        714,
+        714,
+        714,
+        714,
+        715,
+        716,
+        717,
+        718,
+        715,
+        716
+      ],
+      "working_set_start_bytes": 240336896,
+      "working_set_end_bytes": 246534144,
+      "working_set_delta_bytes": 6197248,
+      "private_commit_delta_bytes": 6152192,
+      "traced_start_bytes": null,
+      "traced_end_bytes": null,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "ram-medium-B": {
+      "runs": 12,
+      "seeds": [
+        714,
+        714,
+        714,
+        714,
+        714,
+        714,
+        715,
+        716,
+        717,
+        718,
+        715,
+        716
+      ],
+      "working_set_start_bytes": 240644096,
+      "working_set_end_bytes": 246284288,
+      "working_set_delta_bytes": 5640192,
+      "private_commit_delta_bytes": 5595136,
+      "traced_start_bytes": null,
+      "traced_end_bytes": null,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "ram-small-A": {
+      "runs": 12,
+      "seeds": [
+        714,
+        714,
+        714,
+        714,
+        714,
+        714,
+        715,
+        716,
+        717,
+        718,
+        715,
+        716
+      ],
+      "working_set_start_bytes": 199933952,
+      "working_set_end_bytes": 201011200,
+      "working_set_delta_bytes": 1077248,
+      "private_commit_delta_bytes": 933888,
+      "traced_start_bytes": null,
+      "traced_end_bytes": null,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "ram-small-B": {
+      "runs": 12,
+      "seeds": [
+        714,
+        714,
+        714,
+        714,
+        714,
+        714,
+        715,
+        716,
+        717,
+        718,
+        715,
+        716
+      ],
+      "working_set_start_bytes": 199770112,
+      "working_set_end_bytes": 201011200,
+      "working_set_delta_bytes": 1241088,
+      "private_commit_delta_bytes": 933888,
+      "traced_start_bytes": null,
+      "traced_end_bytes": null,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "trace-large": {
+      "runs": 1,
+      "seeds": [
+        714
+      ],
+      "working_set_start_bytes": 267595776,
+      "working_set_end_bytes": 267595776,
+      "working_set_delta_bytes": 0,
+      "private_commit_delta_bytes": 0,
+      "traced_start_bytes": 64127,
+      "traced_end_bytes": 64127,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "trace-medium": {
+      "runs": 6,
+      "seeds": [
+        714,
+        714,
+        714,
+        715,
+        716,
+        717
+      ],
+      "working_set_start_bytes": 268382208,
+      "working_set_end_bytes": 281546752,
+      "working_set_delta_bytes": 13164544,
+      "private_commit_delta_bytes": 13115392,
+      "traced_start_bytes": 63696,
+      "traced_end_bytes": 169367,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "trace-small": {
+      "runs": 6,
+      "seeds": [
+        714,
+        714,
+        714,
+        715,
+        716,
+        717
+      ],
+      "working_set_start_bytes": 217739264,
+      "working_set_end_bytes": 221704192,
+      "working_set_delta_bytes": 3964928,
+      "private_commit_delta_bytes": 4861952,
+      "traced_start_bytes": 52029,
+      "traced_end_bytes": 156471,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "ownership-medium-final_only": {
+      "runs": 2,
+      "seeds": [
+        714,
+        715
+      ],
+      "working_set_start_bytes": 267558912,
+      "working_set_end_bytes": 271876096,
+      "working_set_delta_bytes": 4317184,
+      "private_commit_delta_bytes": 4104192,
+      "traced_start_bytes": 62637,
+      "traced_end_bytes": 96228,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "ownership-medium-retain_last": {
+      "runs": 2,
+      "seeds": [
+        714,
+        715
+      ],
+      "working_set_start_bytes": 267436032,
+      "working_set_end_bytes": 274817024,
+      "working_set_delta_bytes": 7380992,
+      "private_commit_delta_bytes": 7770112,
+      "traced_start_bytes": 62386,
+      "traced_end_bytes": 95092,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "ownership-small-final_only": {
+      "runs": 2,
+      "seeds": [
+        714,
+        715
+      ],
+      "working_set_start_bytes": 215048192,
+      "working_set_end_bytes": 218370048,
+      "working_set_delta_bytes": 3321856,
+      "private_commit_delta_bytes": 3309568,
+      "traced_start_bytes": 51575,
+      "traced_end_bytes": 75848,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    },
+    "ownership-small-retain_last": {
+      "runs": 2,
+      "seeds": [
+        714,
+        715
+      ],
+      "working_set_start_bytes": 215089152,
+      "working_set_end_bytes": 218476544,
+      "working_set_delta_bytes": 3387392,
+      "private_commit_delta_bytes": 3309568,
+      "traced_start_bytes": 50729,
+      "traced_end_bytes": 74134,
+      "post_release_models_constant": true,
+      "sampled_models_and_leases_released": true
+    }
+  },
+  "instrumentation_overhead": {
+    "small": {
+      "seed": 714,
+      "counter_runs": {
+        "n": 12,
+        "mean": 2.821849033335942,
+        "median": 2.8138962000084575,
+        "min": 2.619798500003526,
+        "max": 3.0323135999788065,
+        "sample_sd": 0.1319264745915059
+      },
+      "light_callback": {
+        "n": 3,
+        "mean": 2.367561899998691,
+        "median": 2.3567692000069655,
+        "min": 2.304457899997942,
+        "max": 2.441458599991165,
+        "sample_sd": 0.06913508320304397
+      },
+      "traced_runs": {
+        "n": 3,
+        "mean": 13.226211933341498,
+        "median": 13.193299600010505,
+        "min": 13.144596600002842,
+        "max": 13.340739600011148,
+        "sample_sd": 0.10212950297065164
+      },
+      "counter_over_light_ratio": 1.1918797279756455,
+      "trace_over_counter_ratio": 4.687072829585676,
+      "scope": "Descriptive matched-seed ratios across sequential fresh cohorts; not randomized causal timing estimates"
+    },
+    "medium": {
+      "seed": 714,
+      "counter_runs": {
+        "n": 12,
+        "mean": 7.460219991667448,
+        "median": 7.373533550009597,
+        "min": 7.004409700020915,
+        "max": 8.445305600005668,
+        "sample_sd": 0.3880368590683146
+      },
+      "light_callback": {
+        "n": 3,
+        "mean": 6.674681933334796,
+        "median": 6.73516589999781,
+        "min": 6.476630799996201,
+        "max": 6.812249100010376,
+        "sample_sd": 0.17579432156236086
+      },
+      "traced_runs": {
+        "n": 3,
+        "mean": 39.1432112333326,
+        "median": 39.296006799995666,
+        "min": 38.706671100022504,
+        "max": 39.42695579997962,
+        "sample_sd": 0.3836826503009948
+      },
+      "counter_over_light_ratio": 1.1176892121869517,
+      "trace_over_counter_ratio": 5.2469245246189615,
+      "scope": "Descriptive matched-seed ratios across sequential fresh cohorts; not randomized causal timing estimates"
+    }
+  },
+  "ownership_prototype": {
+    "small": {
+      "pairs": [
+        {
+          "seed": 714,
+          "retain_last_peak_bytes": 30560318,
+          "final_only_peak_bytes": 30708284,
+          "peak_delta_bytes_prototype_minus_prior": 147966,
+          "assignment_history_rng_parity": true
+        },
+        {
+          "seed": 715,
+          "retain_last_peak_bytes": 31005391,
+          "final_only_peak_bytes": 30715513,
+          "peak_delta_bytes_prototype_minus_prior": -289878,
+          "assignment_history_rng_parity": true
+        }
+      ],
+      "report_buffer_release": {
+        "retain_last": {
+          "worker_records_dropped": 4,
+          "traced_before_drop_bytes": 73679,
+          "traced_after_drop_bytes": 58784,
+          "traced_delta_bytes_after_minus_before": -14895
+        },
+        "final_only": {
+          "worker_records_dropped": 4,
+          "traced_before_drop_bytes": 75041,
+          "traced_after_drop_bytes": 60365,
+          "traced_delta_bytes_after_minus_before": -14676
+        }
+      },
+      "scope": "Isolated reporting ownership, no engine copy/scoring changes; execution+validation+probe peaks, two seeds only"
+    },
+    "medium": {
+      "pairs": [
+        {
+          "seed": 714,
+          "retain_last_peak_bytes": 75755643,
+          "final_only_peak_bytes": 75724864,
+          "peak_delta_bytes_prototype_minus_prior": -30779,
+          "assignment_history_rng_parity": true
+        },
+        {
+          "seed": 715,
+          "retain_last_peak_bytes": 65984880,
+          "final_only_peak_bytes": 65985696,
+          "peak_delta_bytes_prototype_minus_prior": 816,
+          "assignment_history_rng_parity": true
+        }
+      ],
+      "report_buffer_release": {
+        "retain_last": {
+          "worker_records_dropped": 4,
+          "traced_before_drop_bytes": 94696,
+          "traced_after_drop_bytes": 79468,
+          "traced_delta_bytes_after_minus_before": -15228
+        },
+        "final_only": {
+          "worker_records_dropped": 4,
+          "traced_before_drop_bytes": 95582,
+          "traced_after_drop_bytes": 80394,
+          "traced_delta_bytes_after_minus_before": -15188
+        }
+      },
+      "scope": "Isolated reporting ownership, no engine copy/scoring changes; execution+validation+probe peaks, two seeds only"
+    }
+  },
+  "historical_failures": [
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140646547233+0800/reference-small.json",
+      "status": "STOP_REVIEW_REQUIRED"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-large.json",
+      "sha256": "2dcc70c724909b8f6ae3d40f13c58a34c40849e7cb9a14af5b3538efb58609cb"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-medium.json",
+      "sha256": "17917348356b81f0c0b6cb7a397cb60d475df02d08397f73670575837cb1a3ef"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T140922478406+0800/reference-small.json",
+      "sha256": "48ce844aa0cd925490c717bd7c6e2e91dbe85b1c9c5c46fb25c9a16633f1aa51"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/light-medium.json",
+      "sha256": "ba69adc1f485243ab1926b3a0f44d2149097e0b2fc418e2e1e27f3308f124f38"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/light-small.json",
+      "sha256": "f1b17dbda9a541ce5bdd409bc735d2eecc217df2aecc005a86bee4046db0adba"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/observer-medium.json",
+      "sha256": "4d40953e0498b7ba5a8375bc4462fdd19629dca9ca3c3246306cdf3247429e96"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/observer-small.json",
+      "sha256": "397d321669982041d82ed9803cad9821a22fe9b90fa10fe3506c83de05d17b3f"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-large.json",
+      "sha256": "984816d23b52da2f707d4cc1e03b482383906fcfde33a1c77d507cc3a3d64530"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-medium-A.json",
+      "sha256": "1e8966ccf6a6fc3598fbea0a9d36421553115b43b325edd079476139ccbf2db2"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-medium-B.json",
+      "sha256": "76696f5a1c0a272a38e5ea2cc841cb3b521fbcf528e39c414ac4d97dd58fa8dc"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-small-A.json",
+      "sha256": "778ee42bd3a000af74f96485fbb6983d809aaa53f388384af413b87659720800"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/ram-small-B.json",
+      "sha256": "cb36b0ac63eb851b542cfc5209ead64ab5fa0bca51d65dce99c97c3bf7ea14ac"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-large.json",
+      "sha256": "ae8a686e5c14e67a2ccde022994346a4233581bc0979262bfccdbbb0966ab3e2"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-medium.json",
+      "sha256": "27cc4aa2c8b579dd4ad2ea6cf09f0eae6e187fd529669c4d9cf19f662425b738"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T141153624951+0800/trace-small.json",
+      "sha256": "d8bf6a2257a66ecdf30a972f91f62b3466dbffc9ff2c3257acbe0f5af45cd789"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-medium-final_only.json",
+      "sha256": "de165b072ff423ff255d43a8116130b767b028a196afd3cd9413a65c54455101"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-medium-retain_last.json",
+      "sha256": "b63e82c10f1943888ce0df188fde6aa3d74f044ea93b087fa8bf111897e83cc1"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-small-final_only.json",
+      "sha256": "a2b39b68ccf2eb3992dfcb6fbee6cacda7cd5b9daf1dd638be82ba0555667aef"
+    },
+    {
+      "path": "docs/testing/ga-retention-phase5/20261028T143243221229+0800/ownership-small-retain_last.json",
+      "sha256": "ba3e351905957958e5a20f5045e1e684daa0dc2223b01f21c324a021e2a1dd5c"
+    }
+  ]
+}

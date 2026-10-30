@@ -1,0 +1,444 @@
+{
+  "milestone": "Thesis objectives and functional correctness audit",
+  "recorded_at": "2026-10-28T23:12:58.723926+08:00",
+  "source_HEAD": "1423812e13a5791a550c893ef6b17bfef4b4ebfb",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "formal_thesis_alignment": "UNVERIFIED",
+  "adviser_approval_claimed": false,
+  "working_requirements_source": "User current clarification and project documents, not approved manuscript",
+  "planned_methodology": "DSRM",
+  "working_scope_discrepancy": "Admin/research/extension loads are active fixed inputs despite the user-stated exclusion; no policy change authorized or made",
+  "preserved_preexisting_paths": 1691,
+  "protected_academic_files_preserved": 23,
+  "existing_files_modified_by_audit": 0,
+  "preexisting_tracked_modifications_unchanged": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json"
+  ],
+  "Git_index_HEAD_preserved": true,
+  "new_file_inventory": [
+    "backend/tests/audit/test_thesis_correctness.py",
+    "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/availability-reset.json",
+    "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/command.json",
+    "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/coverage-preflight.json",
+    "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/faculty-universe.json",
+    "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/fairness-counterexample.json",
+    "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/legacy-roster-coverage.json",
+    "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/metric-controls.json",
+    "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/specialization.json",
+    "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/workload-configuration.json",
+    "docs/testing/thesis-functional-audit/20261028T224410000005+0800-engine/command.json",
+    "docs/testing/thesis-functional-audit/20261028T224411189349+0800-workflow/command.json",
+    "docs/testing/thesis-functional-audit/20261028T224412331131+0800-metrics/command.json",
+    "docs/testing/thesis-functional-audit/20261028T224413702916+0800-frontend/command.json",
+    "docs/testing/thesis-functional-audit/20261028T224824638506+0800-workflow/command.json",
+    "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/availability-reset.json",
+    "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/command.json",
+    "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/coverage-preflight.json",
+    "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/faculty-universe.json",
+    "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/fairness-counterexample.json",
+    "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/legacy-roster-coverage.json",
+    "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/metric-controls.json",
+    "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/operator-search-space.json",
+    "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/specialization.json",
+    "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/workload-configuration.json",
+    "docs/testing/thesis-functional-audit/20261028T225721619267+0800-restart-diagnosis/diagnosis.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/availability-reset.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/command.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/coverage-preflight.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/faculty-universe.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/fairness-counterexample.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/legacy-roster-coverage.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/metric-controls.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/nonteaching-admin.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/nonteaching-extension.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/nonteaching-research.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/operator-search-space.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/specialization.json",
+    "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/workload-configuration.json",
+    "docs/testing/thesis-functional-audit/20261028T225724516782+0800-workflow/command.json",
+    "docs/testing/thesis-functional-audit/audit_evidence.py",
+    "docs/testing/thesis-functional-audit/manifest.json",
+    "docs/testing/thesis-functional-audit/preservation-baseline.json",
+    "docs/testing/thesis-functional-audit/restart_child.py",
+    "docs/testing/thesis-functional-audit/run_checks.py",
+    "docs/testing/thesis-functional-audit/traceability.json",
+    "docs/thesis-functional-correctness-audit.md",
+    "docs/thesis-objective-traceability.md"
+  ],
+  "new_file_type_counts": {
+    ".json": 42,
+    ".md": 2,
+    ".py": 4
+  },
+  "artifacts": [
+    {
+      "path": "backend/tests/audit/test_thesis_correctness.py",
+      "sha256": "5138174757779d4ed9447e8795c63661ef95d1d73edf8b52fe645d7af7ffe1f9",
+      "bytes": 17444
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/availability-reset.json",
+      "sha256": "660609aa4d400f60312e78dc71088292db5611be9b2d4938905252077b50a470",
+      "bytes": 243
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/command.json",
+      "sha256": "95f4a5b714db5fe1969cd26ace2a35f95dfebea77e24cefdf7524e4576e3bf1c",
+      "bytes": 1340
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/coverage-preflight.json",
+      "sha256": "4d1fe93f043e5bd4d73c339d63ab94394a0af7dbde108754b94a7a22e50ff167",
+      "bytes": 234
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/faculty-universe.json",
+      "sha256": "c650a501532d262348c82dfcad886a5633d27e61264ac75938c567dcd51f45eb",
+      "bytes": 220
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/fairness-counterexample.json",
+      "sha256": "10bbd70b8eac260b2fc321c5acde42baef66dd11c2082d3d3d74d1ac09c0d619",
+      "bytes": 449
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/legacy-roster-coverage.json",
+      "sha256": "839c533253441a07e553de8b864678491ab4f4a4e16142606aaaceb2bb7c66e1",
+      "bytes": 504
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/metric-controls.json",
+      "sha256": "ceb3cab99b106ac704ffe4aac845d4f14eeee13ac2dea7d07869f21eebda8f41",
+      "bytes": 383
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/specialization.json",
+      "sha256": "1af20fcfe670ce95fd65722985275c6b3559a8a1674238314e764622b43a2508",
+      "bytes": 221
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/workload-configuration.json",
+      "sha256": "14377c1678af98750750a90b4e2824f0b361a9fe1fda2d98dfce0e28675267bf",
+      "bytes": 268
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224410000005+0800-engine/command.json",
+      "sha256": "90e784ec84cf5eb45841d37bfb8f3bba1494117dc0159e92f51998fb5e76a78a",
+      "bytes": 2192
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224411189349+0800-workflow/command.json",
+      "sha256": "67b5ad29fbdff8c8a6c1bc5826396f82985b46eff7dfaab1d7861eaed7d792a0",
+      "bytes": 3202
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224412331131+0800-metrics/command.json",
+      "sha256": "b8e535f31339c911be81d024155dd0369d4a57f35b1d7699ad767c84f520a073",
+      "bytes": 2102
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224413702916+0800-frontend/command.json",
+      "sha256": "88277298ba5f79c480e5083b772e960e825e4d4a6a28d6da5b9436716c4b46cd",
+      "bytes": 9234
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224824638506+0800-workflow/command.json",
+      "sha256": "1a646811dbf4279701d9d743804ac34bd6b9f6f8190d7ad426035a26e0cf6655",
+      "bytes": 3021
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/availability-reset.json",
+      "sha256": "660609aa4d400f60312e78dc71088292db5611be9b2d4938905252077b50a470",
+      "bytes": 243
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/command.json",
+      "sha256": "9037d9cb8f1217a67647d12b6b770d70983b7690b4b2bd91c45605f3142f2624",
+      "bytes": 1358
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/coverage-preflight.json",
+      "sha256": "4d1fe93f043e5bd4d73c339d63ab94394a0af7dbde108754b94a7a22e50ff167",
+      "bytes": 234
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/faculty-universe.json",
+      "sha256": "c650a501532d262348c82dfcad886a5633d27e61264ac75938c567dcd51f45eb",
+      "bytes": 220
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/fairness-counterexample.json",
+      "sha256": "10bbd70b8eac260b2fc321c5acde42baef66dd11c2082d3d3d74d1ac09c0d619",
+      "bytes": 449
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/legacy-roster-coverage.json",
+      "sha256": "839c533253441a07e553de8b864678491ab4f4a4e16142606aaaceb2bb7c66e1",
+      "bytes": 504
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/metric-controls.json",
+      "sha256": "ceb3cab99b106ac704ffe4aac845d4f14eeee13ac2dea7d07869f21eebda8f41",
+      "bytes": 383
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/operator-search-space.json",
+      "sha256": "3f81e2e8557f1f872d9e1863218e51485314d11c55f056d57bac47e4888496fe",
+      "bytes": 336
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/specialization.json",
+      "sha256": "1af20fcfe670ce95fd65722985275c6b3559a8a1674238314e764622b43a2508",
+      "bytes": 221
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/workload-configuration.json",
+      "sha256": "14377c1678af98750750a90b4e2824f0b361a9fe1fda2d98dfce0e28675267bf",
+      "bytes": 268
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225721619267+0800-restart-diagnosis/diagnosis.json",
+      "sha256": "fff9ff52c82411222f7713e44cd13f0c6ea84d59da8f9f85f99876537a4885ff",
+      "bytes": 655
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/availability-reset.json",
+      "sha256": "660609aa4d400f60312e78dc71088292db5611be9b2d4938905252077b50a470",
+      "bytes": 243
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/command.json",
+      "sha256": "39b8ce6b4eec401442e5141b7aea0488d71fe8c9afb6896e32ad295874997561",
+      "bytes": 1360
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/coverage-preflight.json",
+      "sha256": "4d1fe93f043e5bd4d73c339d63ab94394a0af7dbde108754b94a7a22e50ff167",
+      "bytes": 234
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/faculty-universe.json",
+      "sha256": "c650a501532d262348c82dfcad886a5633d27e61264ac75938c567dcd51f45eb",
+      "bytes": 220
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/fairness-counterexample.json",
+      "sha256": "10bbd70b8eac260b2fc321c5acde42baef66dd11c2082d3d3d74d1ac09c0d619",
+      "bytes": 449
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/legacy-roster-coverage.json",
+      "sha256": "839c533253441a07e553de8b864678491ab4f4a4e16142606aaaceb2bb7c66e1",
+      "bytes": 504
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/metric-controls.json",
+      "sha256": "ceb3cab99b106ac704ffe4aac845d4f14eeee13ac2dea7d07869f21eebda8f41",
+      "bytes": 383
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/nonteaching-admin.json",
+      "sha256": "267743242d781c20218c48c06223283218bb334fc356128e77740246219b0c92",
+      "bytes": 476
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/nonteaching-extension.json",
+      "sha256": "ad78fbc92e9de17a7dcd90fa0e182a66203cd2d4048cededc81834391964018a",
+      "bytes": 480
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/nonteaching-research.json",
+      "sha256": "02b9207deb550406c9b62f00a1cefa62949bf8baf46540698241e9f84ccff5a7",
+      "bytes": 479
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/operator-search-space.json",
+      "sha256": "3f81e2e8557f1f872d9e1863218e51485314d11c55f056d57bac47e4888496fe",
+      "bytes": 336
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/specialization.json",
+      "sha256": "1af20fcfe670ce95fd65722985275c6b3559a8a1674238314e764622b43a2508",
+      "bytes": 221
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/workload-configuration.json",
+      "sha256": "14377c1678af98750750a90b4e2824f0b361a9fe1fda2d98dfce0e28675267bf",
+      "bytes": 268
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225724516782+0800-workflow/command.json",
+      "sha256": "3e2a030d60ee816d61dc4747bfa2dd49fbe3ed110f2a36cc9bcd65c459d0b402",
+      "bytes": 2116
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/audit_evidence.py",
+      "sha256": "eef923d08c455cb3690cce2948824dff9e916f84e33dc89b16c8454981e44ba8",
+      "bytes": 8971
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/preservation-baseline.json",
+      "sha256": "2fa4d9e4fba5c4a5764d7848526880b8226042835f5565c56823ee7a1b523d17",
+      "bytes": 243964
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/restart_child.py",
+      "sha256": "b13e185047da185682445240aa24b853122183f0baf9f0bc340ce078143791f9",
+      "bytes": 1916
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/run_checks.py",
+      "sha256": "7c7f097ec89796fc0d3e8094d29a5c707291ecb0efe56d19b1c628265a9e88c7",
+      "bytes": 5586
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/traceability.json",
+      "sha256": "ce92cba304ddafa6b1ebbeb61b45831f209ea721bb3636ad84da1f4330474987",
+      "bytes": 37639
+    },
+    {
+      "path": "docs/thesis-functional-correctness-audit.md",
+      "sha256": "92ddc479100afb9360e71450ac6064460477913798746de62546895f6236b5e0",
+      "bytes": 30146
+    },
+    {
+      "path": "docs/thesis-objective-traceability.md",
+      "sha256": "ae04658c9abf21fc1b8601fd7ac3424960a15475f6e9952c5fc939150929854a",
+      "bytes": 19568
+    }
+  ],
+  "historical_artifact_entries_reverified": 307,
+  "final_tests": {
+    "audit": {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/command.json",
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Fictional/schema-only; audit includes explicit gap characterizations"
+    },
+    "engine": {
+      "path": "docs/testing/thesis-functional-audit/20261028T224410000005+0800-engine/command.json",
+      "passed": 83,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Fictional/schema-only; audit includes explicit gap characterizations"
+    },
+    "workflow": {
+      "path": "docs/testing/thesis-functional-audit/20261028T225724516782+0800-workflow/command.json",
+      "passed": 48,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Fictional/schema-only; audit includes explicit gap characterizations"
+    },
+    "metrics": {
+      "path": "docs/testing/thesis-functional-audit/20261028T224412331131+0800-metrics/command.json",
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Fictional/schema-only; audit includes explicit gap characterizations"
+    },
+    "frontend": {
+      "path": "docs/testing/thesis-functional-audit/20261028T224413702916+0800-frontend/command.json",
+      "passed": 99,
+      "failed": 0,
+      "scope": "Node contracts, no browser or live HTTP"
+    }
+  },
+  "backend_passed": 187,
+  "frontend_contracts_passed": 99,
+  "all_test_attempts": [
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224301042224+0800-audit/command.json",
+      "selection": "audit",
+      "exit_code": 0,
+      "summary": "23 passed, 1 warning in 1.38s"
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224410000005+0800-engine/command.json",
+      "selection": "engine",
+      "exit_code": 0,
+      "summary": "83 passed, 3 warnings in 100.30s (0:01:40)"
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224411189349+0800-workflow/command.json",
+      "selection": "workflow",
+      "exit_code": 1,
+      "summary": "1 failed, 47 passed, 3 warnings in 100.50s (0:01:40)"
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224412331131+0800-metrics/command.json",
+      "selection": "metrics",
+      "exit_code": 0,
+      "summary": "23 passed, 3 warnings in 1.58s"
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224413702916+0800-frontend/command.json",
+      "selection": "frontend",
+      "exit_code": 0,
+      "summary": "Node summary preserved in command.json"
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224824638506+0800-workflow/command.json",
+      "selection": "workflow",
+      "exit_code": 1,
+      "summary": "1 failed, 47 passed, 3 warnings in 99.59s (0:01:39)"
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225131839434+0800-audit/command.json",
+      "selection": "audit",
+      "exit_code": 0,
+      "summary": "30 passed, 1 warning in 1.19s"
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225723647497+0800-audit/command.json",
+      "selection": "audit",
+      "exit_code": 0,
+      "summary": "33 passed, 1 warning in 1.68s"
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T225724516782+0800-workflow/command.json",
+      "selection": "workflow",
+      "exit_code": 0,
+      "summary": "48 passed, 3 warnings in 102.25s (0:01:42)"
+    }
+  ],
+  "historical_nonzero_attempts_preserved": [
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224411189349+0800-workflow/command.json",
+      "selection": "workflow",
+      "exit_code": 1,
+      "summary": "1 failed, 47 passed, 3 warnings in 100.50s (0:01:40)"
+    },
+    {
+      "path": "docs/testing/thesis-functional-audit/20261028T224824638506+0800-workflow/command.json",
+      "selection": "workflow",
+      "exit_code": 1,
+      "summary": "1 failed, 47 passed, 3 warnings in 99.59s (0:01:39)"
+    }
+  ],
+  "traceability_status_counts": {
+    "Implemented and verified": 23,
+    "Partially implemented": 15,
+    "Missing": 4
+  },
+  "gap_probes_are_not_requirement_acceptance": true,
+  "privacy_findings": 0,
+  "privacy_scope": "No institutional row parsing. New records are fictional numeric/structural findings; complete/truncated receipt, key and credential patterns scanned. No private stdin/session copied.",
+  "production_algorithm_settings_policy_changes": 0,
+  "PostgreSQL_operations": 0,
+  "dependencies_installed": 0,
+  "staged_files": 0,
+  "commits_pushes": 0,
+  "actual_browser_verification": "NOT_RUN",
+  "production_build_lint": "NOT_RUN_NO_FRONTEND_OR_PRODUCTION_EDIT",
+  "institutional_activation": "BLOCKED",
+  "remaining_limitations": [
+    "Approved manuscript and policy thresholds unavailable",
+    "Roster AST probe is not a real roster import",
+    "No institutional quality/usability study",
+    "Fictional in-process FastAPI/SQLite and Node contracts, no fresh browser or PostgreSQL acceptance"
+  ],
+  "hash_convention": "Raw bytes; manifest excludes itself; no prior artifacts rewritten"
+}

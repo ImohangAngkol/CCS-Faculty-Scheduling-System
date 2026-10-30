@@ -1,0 +1,10 @@
+{
+  "registry_entries": 2,
+  "preference_source_members": 1,
+  "runtime_members_from_original_loop": 1,
+  "registered_missing_member_count": 1,
+  "source_line": 395,
+  "source_sha256": "d557d16af45089d5267468e56fd1fc73b511dcae5a61134fcae8609e06efecf5",
+  "scope": "Original AST roster loop with explicit fictional dictionaries and test-only metadata resolver; no real roster parsed",
+  "meaning": "Missing dashboard preferences differs from absence in legacy preference-derived runtime roster"
+}

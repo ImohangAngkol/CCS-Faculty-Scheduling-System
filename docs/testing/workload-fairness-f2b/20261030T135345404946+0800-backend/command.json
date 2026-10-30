@@ -1,0 +1,19 @@
+{
+  "selection": "backend",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\workload-fairness-f2b\\run_checks.py",
+    "backend",
+    "--worker",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\f2b-boundary-20261030T135345404946+0800-backend"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-30T13:53:45.404946+08:00",
+  "finished_at": "2026-10-30T13:54:11.329427+08:00",
+  "elapsed_seconds": 25.92263450002065,
+  "exit_code": 0,
+  "stdout": "........................................                                 [100%]\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; anyio\n    self._mark_plugins_for_rewrite(hook, disable_autoload)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n40 passed, 1 warning in 20.77s\n",
+  "stderr": "",
+  "scope": "F2B compatibility stop characterization and unchanged default V2 regressions, not experimental integration. Node contracts not browser tests."
+}

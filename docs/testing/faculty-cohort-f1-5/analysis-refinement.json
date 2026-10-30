@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-10-29T09:41:16.113161+08:00",
+  "initial_summary": "20261029T093525057672+0800/summary.json",
+  "initial_measure": "Raw stripped text vectors differed for six of eight matched identities; this was not yet numeric conflict classification",
+  "correction": "Compare finite Decimal vectors, distinguish missing/nonfinite values and formatting-only differences. No zero substitution or data edit.",
+  "final_summary": "20261029T093958377377+0800/summary.json",
+  "final_counts": {
+    "matched_identity_intersection": 8,
+    "comparable_numeric_vectors": 3,
+    "different_numeric_allowance_vectors": 1,
+    "unknown_numeric_vectors": 5,
+    "formatting_only_different_vectors": 0,
+    "raw_text_different_vectors": 6,
+    "active_non_numeric_allowance_cells": 0,
+    "resolution": "Unresolved source/version disagreement; no precedence inferred, no values exported or changed"
+  },
+  "prior_evidence_preserved": true,
+  "production_or_data_changes": false
+}

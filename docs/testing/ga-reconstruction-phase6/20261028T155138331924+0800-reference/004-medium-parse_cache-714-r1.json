@@ -1,0 +1,321 @@
+{
+  "started_at": "2026-10-28T15:53:23.288397+08:00",
+  "finished_at": "2026-10-28T15:53:52.141478+08:00",
+  "worker_wall_seconds": 28.853089100011857,
+  "config": {
+    "mode": "reference",
+    "scenario": "medium",
+    "variant": "parse_cache",
+    "seed": 714,
+    "repetition": 1
+  },
+  "result": {
+    "status": "SUCCESS",
+    "config": {
+      "mode": "reference",
+      "scenario": "medium",
+      "variant": "parse_cache",
+      "seed": 714,
+      "repetition": 1
+    },
+    "parameters": {
+      "population_size": 4,
+      "generations": 3,
+      "fresh_chromosomes": 1,
+      "mutation_attempts": 2,
+      "max_restarts": 5,
+      "candidate_attempts": 3,
+      "crossover_attempts": 2
+    },
+    "provenance": {
+      "variant": "parse_cache",
+      "version": "phase6-reconstruction.1:parse_cache",
+      "engine_identity": "887fa730d063e6f07fadf9906524e5fb05ae237ead81bbb3762f3ba151b8398a",
+      "production_identity": "0821747e30eb56e9e4c070f369e733bc4b59ec184d2e2cb4c211ffa6fa5c1555",
+      "prototype_source_sha256": "fd7e12bc57a59d30bb562e428b20b4a46c5ee00bd501c26e7ce8be79755a0030",
+      "original_component_source_sha256": "87ddb9f5ac58f5a3fc29b7346216d390a75bf3a00f49bdaf7008dee954e10bc6",
+      "source_locations": {
+        "components": 681,
+        "payload": 731
+      },
+      "production_symbols_replaced": false,
+      "deepcopy_implementation_changed": false,
+      "cache_lifetime": "Single validation call; no checkpoint/store/global cache"
+    },
+    "warmup_excluded": null,
+    "measurement": {
+      "engine_seconds": 19.925276800000574,
+      "process_before": {
+        "working_set_bytes": 174788608,
+        "process_lifetime_peak_working_set_bytes": 177684480,
+        "private_commit_bytes_NOT_RSS": 654344192
+      },
+      "process_after": {
+        "working_set_bytes": 304463872,
+        "process_lifetime_peak_working_set_bytes": 304484352,
+        "private_commit_bytes_NOT_RSS": 784031744
+      },
+      "process_sampling": {
+        "sampled_interval_peak_working_set_bytes": 304484352,
+        "sample_count": 230,
+        "poll_interval_seconds": 0.05,
+        "scope": "Sampled peak may miss short spikes; OS lifetime peak is separately reported"
+      },
+      "engine_allocation_point": null,
+      "history": [
+        {
+          "generation": 0,
+          "generation_best_fitness": 10825.0,
+          "best_ever_fitness": 10825.0
+        },
+        {
+          "generation": 1,
+          "generation_best_fitness": 10685.0,
+          "best_ever_fitness": 10685.0
+        },
+        {
+          "generation": 2,
+          "generation_best_fitness": 10505.0,
+          "best_ever_fitness": 10505.0
+        },
+        {
+          "generation": 3,
+          "generation_best_fitness": 10290.0,
+          "best_ever_fitness": 10290.0
+        }
+      ],
+      "profile": null
+    },
+    "correctness": {
+      "assignment_sha256": "104c2044f1fd1166ab5bdee16c4795b1d439e14b6ece3366e7f61b9d265e9ebc",
+      "state_availability_workload_aliases_sha256": "77a77cd2196b8dd018b6a9a3c2f3555b676eeee73adf98db64c7a3123b5523c5",
+      "history": [
+        {
+          "generation": 0,
+          "generation_best_fitness": 10825.0,
+          "best_ever_fitness": 10825.0
+        },
+        {
+          "generation": 1,
+          "generation_best_fitness": 10685.0,
+          "best_ever_fitness": 10685.0
+        },
+        {
+          "generation": 2,
+          "generation_best_fitness": 10505.0,
+          "best_ever_fitness": 10505.0
+        },
+        {
+          "generation": 3,
+          "generation_best_fitness": 10290.0,
+          "best_ever_fitness": 10290.0
+        }
+      ],
+      "final_fitness": 10290.0,
+      "fitness_breakdown": {
+        "subject_preference": 7140.0,
+        "time_preference": 1130,
+        "day_preference": 0,
+        "schedule_style": 0,
+        "lecture_lab_preference": 0,
+        "number_of_preparations": 0,
+        "teaching_load_balance": 2000,
+        "daily_teaching_load": 20
+      },
+      "workload": {
+        "faculty": [
+          {
+            "faculty": 990100,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990101,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990102,
+            "teaching_units": 9,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990103,
+            "teaching_units": 6,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.2857142857142857
+          },
+          {
+            "faculty": 990104,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990105,
+            "teaching_units": 3,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          },
+          {
+            "faculty": 990106,
+            "teaching_units": 6,
+            "target": 12,
+            "admin": 6,
+            "research": 3,
+            "extension": 3,
+            "non_teaching_fixed_units": 12,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.5
+          },
+          {
+            "faculty": 990107,
+            "teaching_units": 6,
+            "target": 15,
+            "admin": 4,
+            "research": 2,
+            "extension": 3,
+            "non_teaching_fixed_units": 9,
+            "total_workload_units": 15,
+            "underload": 9,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.4
+          },
+          {
+            "faculty": 990108,
+            "teaching_units": 3,
+            "target": 18,
+            "admin": 3,
+            "research": 1,
+            "extension": 2,
+            "non_teaching_fixed_units": 6,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.16666666666666666
+          },
+          {
+            "faculty": 990109,
+            "teaching_units": 6,
+            "target": 21,
+            "admin": 1,
+            "research": 1,
+            "extension": 1,
+            "non_teaching_fixed_units": 3,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.2857142857142857
+          },
+          {
+            "faculty": 990110,
+            "teaching_units": 9,
+            "target": 24,
+            "admin": 0,
+            "research": 0,
+            "extension": 0,
+            "non_teaching_fixed_units": 0,
+            "total_workload_units": 9,
+            "underload": 15,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.375
+          },
+          {
+            "faculty": 990111,
+            "teaching_units": 3,
+            "target": 9,
+            "admin": 7,
+            "research": 4,
+            "extension": 4,
+            "non_teaching_fixed_units": 15,
+            "total_workload_units": 18,
+            "underload": 6,
+            "overload": 0,
+            "above_30_warning": false,
+            "target_fulfillment": 0.3333333333333333
+          }
+        ],
+        "total_teaching_units": 72,
+        "total_target_units": 198,
+        "underload_units": 126,
+        "overload_units": 0,
+        "zero_assignment_count": 0,
+        "target_fulfillment_population_stdev": 0.09607867310726093
+      },
+      "final_rng_sha256": "bcbcda4d6ea3dc2f3ede39d46c6bd5b5d41e6e78cf9071224a87d1b7415be094",
+      "hard_constraints": "PASS: original admit on every final member and best",
+      "scope": "Full graph projection normalizes only the distinct experimental engine identity for comparison; no validation/continuation identity is spoofed"
+    },
+    "post_verification_seconds_excluded": 1.542698199977167,
+    "transient_copy_control": null,
+    "post_release": null,
+    "post_release_live_allocations": null,
+    "sampled_model_weakrefs_alive": 0,
+    "cache_diagnostics_profile_only": null,
+    "bootstrap": {
+      "used": true,
+      "csv_reads_substituted": 7,
+      "json_reads_substituted": 2
+    },
+    "production_GC_allocator_settings_changed": false,
+    "database_or_publication_operations": 0
+  }
+}

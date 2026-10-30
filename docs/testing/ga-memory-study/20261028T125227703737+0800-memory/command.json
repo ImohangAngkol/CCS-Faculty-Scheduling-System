@@ -1,0 +1,24 @@
+{
+  "selection": "memory",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/performance/test_memory_study.py",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\ga-memory-tests-20261028T125227703737+0800-memory"
+  ],
+  "started_at": "2026-10-28T12:52:27.703737+08:00",
+  "finished_at": "2026-10-28T12:52:53.776043+08:00",
+  "elapsed_seconds": 26.070054199983133,
+  "exit_code": 0,
+  "stdout": "............                                                             [100%]\n12 passed in 24.10s\n",
+  "stderr": "",
+  "scope": "Fictional Python memory probes and owned regression fixtures; no PostgreSQL or optimization"
+}

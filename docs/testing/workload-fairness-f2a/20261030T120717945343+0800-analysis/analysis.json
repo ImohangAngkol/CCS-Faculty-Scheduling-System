@@ -1,0 +1,1237 @@
+{
+  "source_command": "20261030T120606394976+0800-backend/command.json",
+  "source_artifact_hashes": [
+    {
+      "path": "20261030T120606394976+0800-backend/scenario-above_combined_targets.json",
+      "sha256": "676b099af1e5fc57e9deb439fb84054d3f2ed1528adf64a55e919db1c7179131"
+    },
+    {
+      "path": "20261030T120606394976+0800-backend/scenario-allowance_shortage.json",
+      "sha256": "79c32c73130d1b7d653f522fcfc2785f38350576c1f64c0d2c0379a70a792974"
+    },
+    {
+      "path": "20261030T120606394976+0800-backend/scenario-equal_shortage.json",
+      "sha256": "0fa52954e1a2e65a06bd073c7829107268964a41306403cc1232d3c75578e4c8"
+    },
+    {
+      "path": "20261030T120606394976+0800-backend/scenario-indivisible_zero_assignment.json",
+      "sha256": "3e735d54b4b9c4f4ab9905a0a07580317ddf68302380a3707821b5e2e24aff97"
+    },
+    {
+      "path": "20261030T120606394976+0800-backend/scenario-limited_eligibility.json",
+      "sha256": "2fd7703c727763ebd696f281ef2fa4d22d3d109cbb8a250ac4afd64dbc42a969"
+    },
+    {
+      "path": "20261030T120606394976+0800-backend/scenario-no_eligible_member.json",
+      "sha256": "19b667389e103afaf78c417e602df3e261c71a2838c12167f0938b9314047bc2"
+    },
+    {
+      "path": "20261030T120606394976+0800-backend/scenario-targets_exactly_reachable.json",
+      "sha256": "f0056336dc71de3919c24bb245f78ee75c2e14473e8ffc8d2245f58612b009f0"
+    },
+    {
+      "path": "20261030T120606394976+0800-backend/scenario-unequal_shortage.json",
+      "sha256": "366d56e991461353506d7cf2511b06c9cd7e928d490770dbf12e06ab188e6b42"
+    },
+    {
+      "path": "20261030T120606394976+0800-backend/scenario-zero_target_member.json",
+      "sha256": "c1b83f983ac16e35e4eaae43d17473cdd79c131c530d030a49843edf365e3c0b"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "above_combined_targets",
+      "targets": [
+        4,
+        8
+      ],
+      "offered_units": 16,
+      "hard_valid_assignments_checked": 256,
+      "unique_vectors": 9,
+      "winners": {
+        "original_workload": [
+          [
+            8,
+            8
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            4,
+            12
+          ]
+        ],
+        "absolute": [
+          [
+            8,
+            8
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            4,
+            12
+          ]
+        ],
+        "squared": [
+          [
+            6,
+            10
+          ]
+        ],
+        "person_relative": [
+          [
+            4,
+            12
+          ]
+        ],
+        "target_relative": [
+          [
+            6,
+            10
+          ]
+        ],
+        "relative_with_original_overload": [
+          [
+            6,
+            10
+          ]
+        ]
+      },
+      "pairwise_ranking_vs_original": {
+        "original_workload": {
+          "agree": 33,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 3
+        },
+        "absolute": {
+          "agree": 30,
+          "opposite": 1,
+          "original_tie_only": 0,
+          "candidate_tie_only": 2,
+          "both_tie": 3
+        },
+        "squared": {
+          "agree": 30,
+          "opposite": 1,
+          "original_tie_only": 2,
+          "candidate_tie_only": 2,
+          "both_tie": 1
+        },
+        "person_relative": {
+          "agree": 28,
+          "opposite": 5,
+          "original_tie_only": 3,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "target_relative": {
+          "agree": 30,
+          "opposite": 3,
+          "original_tie_only": 3,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "relative_with_original_overload": {
+          "agree": 30,
+          "opposite": 3,
+          "original_tie_only": 3,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        }
+      },
+      "zero_penalty_sensitivity": {
+        "0": [
+          [
+            6,
+            10
+          ]
+        ],
+        "1": [
+          [
+            6,
+            10
+          ]
+        ],
+        "5": [
+          [
+            6,
+            10
+          ]
+        ],
+        "25": [
+          [
+            6,
+            10
+          ]
+        ]
+      },
+      "zero_penalty_scope": "Unapproved coefficient in raw target_relative units; only positive-target members with explicit eligible offerings counted. This is not proof of feasible assignment opportunity."
+    },
+    {
+      "scenario": "allowance_shortage",
+      "targets": [
+        4,
+        8
+      ],
+      "offered_units": 6,
+      "hard_valid_assignments_checked": 8,
+      "unique_vectors": 4,
+      "winners": {
+        "original_workload": [
+          [
+            4,
+            2
+          ]
+        ],
+        "absolute": [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "squared": [
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "person_relative": [
+          [
+            2,
+            4
+          ]
+        ],
+        "target_relative": [
+          [
+            2,
+            4
+          ]
+        ],
+        "relative_with_original_overload": [
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "pairwise_ranking_vs_original": {
+        "original_workload": {
+          "agree": 6,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "absolute": {
+          "agree": 2,
+          "opposite": 1,
+          "original_tie_only": 0,
+          "candidate_tie_only": 3,
+          "both_tie": 0
+        },
+        "squared": {
+          "agree": 2,
+          "opposite": 3,
+          "original_tie_only": 0,
+          "candidate_tie_only": 1,
+          "both_tie": 0
+        },
+        "person_relative": {
+          "agree": 4,
+          "opposite": 2,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "target_relative": {
+          "agree": 3,
+          "opposite": 2,
+          "original_tie_only": 0,
+          "candidate_tie_only": 1,
+          "both_tie": 0
+        },
+        "relative_with_original_overload": {
+          "agree": 3,
+          "opposite": 2,
+          "original_tie_only": 0,
+          "candidate_tie_only": 1,
+          "both_tie": 0
+        }
+      },
+      "zero_penalty_sensitivity": {
+        "0": [
+          [
+            2,
+            4
+          ]
+        ],
+        "1": [
+          [
+            2,
+            4
+          ]
+        ],
+        "5": [
+          [
+            2,
+            4
+          ]
+        ],
+        "25": [
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "zero_penalty_scope": "Unapproved coefficient in raw target_relative units; only positive-target members with explicit eligible offerings counted. This is not proof of feasible assignment opportunity."
+    },
+    {
+      "scenario": "equal_shortage",
+      "targets": [
+        24,
+        24
+      ],
+      "offered_units": 4,
+      "hard_valid_assignments_checked": 4,
+      "unique_vectors": 3,
+      "winners": {
+        "original_workload": [
+          [
+            4,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "absolute": [
+          [
+            4,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "squared": [
+          [
+            2,
+            2
+          ]
+        ],
+        "person_relative": [
+          [
+            2,
+            2
+          ]
+        ],
+        "target_relative": [
+          [
+            2,
+            2
+          ]
+        ],
+        "relative_with_original_overload": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "pairwise_ranking_vs_original": {
+        "original_workload": {
+          "agree": 2,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 1
+        },
+        "absolute": {
+          "agree": 0,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 2,
+          "both_tie": 1
+        },
+        "squared": {
+          "agree": 0,
+          "opposite": 2,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 1
+        },
+        "person_relative": {
+          "agree": 0,
+          "opposite": 2,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 1
+        },
+        "target_relative": {
+          "agree": 0,
+          "opposite": 2,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 1
+        },
+        "relative_with_original_overload": {
+          "agree": 0,
+          "opposite": 2,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 1
+        }
+      },
+      "zero_penalty_sensitivity": {
+        "0": [
+          [
+            2,
+            2
+          ]
+        ],
+        "1": [
+          [
+            2,
+            2
+          ]
+        ],
+        "5": [
+          [
+            2,
+            2
+          ]
+        ],
+        "25": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "zero_penalty_scope": "Unapproved coefficient in raw target_relative units; only positive-target members with explicit eligible offerings counted. This is not proof of feasible assignment opportunity."
+    },
+    {
+      "scenario": "indivisible_zero_assignment",
+      "targets": [
+        12,
+        24
+      ],
+      "offered_units": 2,
+      "hard_valid_assignments_checked": 2,
+      "unique_vectors": 2,
+      "winners": {
+        "original_workload": [
+          [
+            2,
+            0
+          ]
+        ],
+        "absolute": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "squared": [
+          [
+            0,
+            2
+          ]
+        ],
+        "person_relative": [
+          [
+            2,
+            0
+          ]
+        ],
+        "target_relative": [
+          [
+            0,
+            2
+          ]
+        ],
+        "relative_with_original_overload": [
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "pairwise_ranking_vs_original": {
+        "original_workload": {
+          "agree": 1,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "absolute": {
+          "agree": 0,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 1,
+          "both_tie": 0
+        },
+        "squared": {
+          "agree": 0,
+          "opposite": 1,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "person_relative": {
+          "agree": 1,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "target_relative": {
+          "agree": 0,
+          "opposite": 1,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "relative_with_original_overload": {
+          "agree": 0,
+          "opposite": 1,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        }
+      },
+      "zero_penalty_sensitivity": {
+        "0": [
+          [
+            0,
+            2
+          ]
+        ],
+        "1": [
+          [
+            0,
+            2
+          ]
+        ],
+        "5": [
+          [
+            0,
+            2
+          ]
+        ],
+        "25": [
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "zero_penalty_scope": "Unapproved coefficient in raw target_relative units; only positive-target members with explicit eligible offerings counted. This is not proof of feasible assignment opportunity."
+    },
+    {
+      "scenario": "limited_eligibility",
+      "targets": [
+        12,
+        24
+      ],
+      "offered_units": 12,
+      "hard_valid_assignments_checked": 4,
+      "unique_vectors": 3,
+      "winners": {
+        "original_workload": [
+          [
+            12,
+            0
+          ]
+        ],
+        "absolute": [
+          [
+            12,
+            0
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "squared": [
+          [
+            8,
+            4
+          ]
+        ],
+        "person_relative": [
+          [
+            8,
+            4
+          ]
+        ],
+        "target_relative": [
+          [
+            8,
+            4
+          ]
+        ],
+        "relative_with_original_overload": [
+          [
+            8,
+            4
+          ]
+        ]
+      },
+      "pairwise_ranking_vs_original": {
+        "original_workload": {
+          "agree": 3,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "absolute": {
+          "agree": 0,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 3,
+          "both_tie": 0
+        },
+        "squared": {
+          "agree": 0,
+          "opposite": 3,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "person_relative": {
+          "agree": 0,
+          "opposite": 3,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "target_relative": {
+          "agree": 0,
+          "opposite": 3,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "relative_with_original_overload": {
+          "agree": 0,
+          "opposite": 3,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        }
+      },
+      "zero_penalty_sensitivity": {
+        "0": [
+          [
+            8,
+            4
+          ]
+        ],
+        "1": [
+          [
+            8,
+            4
+          ]
+        ],
+        "5": [
+          [
+            8,
+            4
+          ]
+        ],
+        "25": [
+          [
+            8,
+            4
+          ]
+        ]
+      },
+      "zero_penalty_scope": "Unapproved coefficient in raw target_relative units; only positive-target members with explicit eligible offerings counted. This is not proof of feasible assignment opportunity."
+    },
+    {
+      "scenario": "no_eligible_member",
+      "targets": [
+        12,
+        24,
+        6
+      ],
+      "offered_units": 12,
+      "hard_valid_assignments_checked": 64,
+      "unique_vectors": 7,
+      "winners": {
+        "original_workload": [
+          [
+            12,
+            0,
+            0
+          ]
+        ],
+        "absolute": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            10,
+            2,
+            0
+          ],
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            6,
+            6,
+            0
+          ],
+          [
+            4,
+            8,
+            0
+          ],
+          [
+            2,
+            10,
+            0
+          ],
+          [
+            0,
+            12,
+            0
+          ]
+        ],
+        "squared": [
+          [
+            0,
+            12,
+            0
+          ]
+        ],
+        "person_relative": [
+          [
+            8,
+            4,
+            0
+          ]
+        ],
+        "target_relative": [
+          [
+            4,
+            8,
+            0
+          ]
+        ],
+        "relative_with_original_overload": [
+          [
+            4,
+            8,
+            0
+          ]
+        ]
+      },
+      "pairwise_ranking_vs_original": {
+        "original_workload": {
+          "agree": 19,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 2
+        },
+        "absolute": {
+          "agree": 0,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 19,
+          "both_tie": 2
+        },
+        "squared": {
+          "agree": 0,
+          "opposite": 19,
+          "original_tie_only": 2,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "person_relative": {
+          "agree": 13,
+          "opposite": 6,
+          "original_tie_only": 2,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "target_relative": {
+          "agree": 3,
+          "opposite": 14,
+          "original_tie_only": 2,
+          "candidate_tie_only": 2,
+          "both_tie": 0
+        },
+        "relative_with_original_overload": {
+          "agree": 3,
+          "opposite": 14,
+          "original_tie_only": 2,
+          "candidate_tie_only": 2,
+          "both_tie": 0
+        }
+      },
+      "zero_penalty_sensitivity": {
+        "0": [
+          [
+            4,
+            8,
+            0
+          ]
+        ],
+        "1": [
+          [
+            4,
+            8,
+            0
+          ]
+        ],
+        "5": [
+          [
+            4,
+            8,
+            0
+          ]
+        ],
+        "25": [
+          [
+            4,
+            8,
+            0
+          ]
+        ]
+      },
+      "zero_penalty_scope": "Unapproved coefficient in raw target_relative units; only positive-target members with explicit eligible offerings counted. This is not proof of feasible assignment opportunity."
+    },
+    {
+      "scenario": "targets_exactly_reachable",
+      "targets": [
+        4,
+        8
+      ],
+      "offered_units": 12,
+      "hard_valid_assignments_checked": 64,
+      "unique_vectors": 7,
+      "winners": {
+        "original_workload": [
+          [
+            4,
+            8
+          ]
+        ],
+        "absolute": [
+          [
+            4,
+            8
+          ]
+        ],
+        "squared": [
+          [
+            4,
+            8
+          ]
+        ],
+        "person_relative": [
+          [
+            4,
+            8
+          ]
+        ],
+        "target_relative": [
+          [
+            4,
+            8
+          ]
+        ],
+        "relative_with_original_overload": [
+          [
+            4,
+            8
+          ]
+        ]
+      },
+      "pairwise_ranking_vs_original": {
+        "original_workload": {
+          "agree": 21,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "absolute": {
+          "agree": 18,
+          "opposite": 1,
+          "original_tie_only": 0,
+          "candidate_tie_only": 2,
+          "both_tie": 0
+        },
+        "squared": {
+          "agree": 18,
+          "opposite": 1,
+          "original_tie_only": 0,
+          "candidate_tie_only": 2,
+          "both_tie": 0
+        },
+        "person_relative": {
+          "agree": 18,
+          "opposite": 1,
+          "original_tie_only": 0,
+          "candidate_tie_only": 2,
+          "both_tie": 0
+        },
+        "target_relative": {
+          "agree": 18,
+          "opposite": 1,
+          "original_tie_only": 0,
+          "candidate_tie_only": 2,
+          "both_tie": 0
+        },
+        "relative_with_original_overload": {
+          "agree": 18,
+          "opposite": 1,
+          "original_tie_only": 0,
+          "candidate_tie_only": 2,
+          "both_tie": 0
+        }
+      },
+      "zero_penalty_sensitivity": {
+        "0": [
+          [
+            4,
+            8
+          ]
+        ],
+        "1": [
+          [
+            4,
+            8
+          ]
+        ],
+        "5": [
+          [
+            4,
+            8
+          ]
+        ],
+        "25": [
+          [
+            4,
+            8
+          ]
+        ]
+      },
+      "zero_penalty_scope": "Unapproved coefficient in raw target_relative units; only positive-target members with explicit eligible offerings counted. This is not proof of feasible assignment opportunity."
+    },
+    {
+      "scenario": "unequal_shortage",
+      "targets": [
+        12,
+        24
+      ],
+      "offered_units": 12,
+      "hard_valid_assignments_checked": 64,
+      "unique_vectors": 7,
+      "winners": {
+        "original_workload": [
+          [
+            12,
+            0
+          ]
+        ],
+        "absolute": [
+          [
+            12,
+            0
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            0,
+            12
+          ]
+        ],
+        "squared": [
+          [
+            0,
+            12
+          ]
+        ],
+        "person_relative": [
+          [
+            8,
+            4
+          ]
+        ],
+        "target_relative": [
+          [
+            4,
+            8
+          ]
+        ],
+        "relative_with_original_overload": [
+          [
+            4,
+            8
+          ]
+        ]
+      },
+      "pairwise_ranking_vs_original": {
+        "original_workload": {
+          "agree": 19,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 2
+        },
+        "absolute": {
+          "agree": 0,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 19,
+          "both_tie": 2
+        },
+        "squared": {
+          "agree": 0,
+          "opposite": 19,
+          "original_tie_only": 2,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "person_relative": {
+          "agree": 13,
+          "opposite": 6,
+          "original_tie_only": 2,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "target_relative": {
+          "agree": 3,
+          "opposite": 14,
+          "original_tie_only": 2,
+          "candidate_tie_only": 2,
+          "both_tie": 0
+        },
+        "relative_with_original_overload": {
+          "agree": 3,
+          "opposite": 14,
+          "original_tie_only": 2,
+          "candidate_tie_only": 2,
+          "both_tie": 0
+        }
+      },
+      "zero_penalty_sensitivity": {
+        "0": [
+          [
+            4,
+            8
+          ]
+        ],
+        "1": [
+          [
+            4,
+            8
+          ]
+        ],
+        "5": [
+          [
+            4,
+            8
+          ]
+        ],
+        "25": [
+          [
+            4,
+            8
+          ]
+        ]
+      },
+      "zero_penalty_scope": "Unapproved coefficient in raw target_relative units; only positive-target members with explicit eligible offerings counted. This is not proof of feasible assignment opportunity."
+    },
+    {
+      "scenario": "zero_target_member",
+      "targets": [
+        0,
+        4
+      ],
+      "offered_units": 4,
+      "hard_valid_assignments_checked": 4,
+      "unique_vectors": 3,
+      "winners": {
+        "original_workload": [
+          [
+            0,
+            4
+          ]
+        ],
+        "absolute": [
+          [
+            0,
+            4
+          ]
+        ],
+        "squared": [
+          [
+            0,
+            4
+          ]
+        ],
+        "person_relative": [
+          [
+            0,
+            4
+          ]
+        ],
+        "target_relative": [
+          [
+            0,
+            4
+          ]
+        ],
+        "relative_with_original_overload": [
+          [
+            0,
+            4
+          ]
+        ]
+      },
+      "pairwise_ranking_vs_original": {
+        "original_workload": {
+          "agree": 3,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "absolute": {
+          "agree": 3,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "squared": {
+          "agree": 3,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "person_relative": {
+          "agree": 3,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "target_relative": {
+          "agree": 3,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        },
+        "relative_with_original_overload": {
+          "agree": 3,
+          "opposite": 0,
+          "original_tie_only": 0,
+          "candidate_tie_only": 0,
+          "both_tie": 0
+        }
+      },
+      "zero_penalty_sensitivity": {
+        "0": [
+          [
+            0,
+            4
+          ]
+        ],
+        "1": [
+          [
+            0,
+            4
+          ]
+        ],
+        "5": [
+          [
+            0,
+            4
+          ]
+        ],
+        "25": [
+          [
+            0,
+            4
+          ]
+        ]
+      },
+      "zero_penalty_scope": "Unapproved coefficient in raw target_relative units; only positive-target members with explicit eligible offerings counted. This is not proof of feasible assignment opportunity."
+    }
+  ],
+  "total_hard_valid_fixed_geometry_assignments": 470,
+  "total_unique_workload_vectors": 45,
+  "policy": "User-reported target-relative fairness and Option B; exact function/weights/zero-target convention not independently approved",
+  "interpretation": "Pairwise agreement is descriptive, not accuracy against a trusted fairness oracle. Enumeration does not cover alternate meeting geometries.",
+  "recommendation": "target_relative is suitable for conditional F2 consideration, not production integration approval",
+  "production_integration": false
+}

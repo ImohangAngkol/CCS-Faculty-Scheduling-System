@@ -1,0 +1,28 @@
+{
+  "request_extra_field_rejected": true,
+  "unknown_settings_field_not_retained": true,
+  "engine_has_fitness_callback": false,
+  "default_setting_snapshot": {
+    "subject_penalty": 70,
+    "time_penalty": 10,
+    "day_penalty": 5,
+    "preparation_penalty": 10,
+    "load_balance_penalty": 10,
+    "daily_load_penalty": 10,
+    "gap_penalty": 10,
+    "lecture_lab_penalty": 5,
+    "max_preparations": 3,
+    "total_workload_target": 24,
+    "regular_teaching_load": 24,
+    "absolute_max_teaching_load": 40,
+    "overload_warning_threshold": 30,
+    "underload_penalty": 25,
+    "overload_penalty": 10,
+    "heavy_overload_penalty": 25,
+    "workload_step_units": 3,
+    "target_teaching_load": 12,
+    "load_tolerance": 3,
+    "max_daily_teaching_minutes": 360,
+    "daily_load_step_minutes": 60
+  }
+}

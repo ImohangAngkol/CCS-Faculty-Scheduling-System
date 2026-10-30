@@ -1,0 +1,40 @@
+{
+  "units": [
+    2,
+    2
+  ],
+  "fictional_allowances_each": {
+    "admin": 4,
+    "research": 3,
+    "extension": 1
+  },
+  "option_b_targets": [
+    16,
+    16
+  ],
+  "teaching_only_assumption_targets": [
+    24,
+    24
+  ],
+  "original_option_b_components": {
+    "subject_preference": 0,
+    "time_preference": 0,
+    "day_preference": 0,
+    "schedule_style": 0,
+    "lecture_lab_preference": 0,
+    "number_of_preparations": 0,
+    "teaching_load_balance": 450,
+    "daily_teaching_load": 0
+  },
+  "zero_allowance_control_components": {
+    "subject_preference": 0,
+    "time_preference": 0,
+    "day_preference": 0,
+    "schedule_style": 0,
+    "lecture_lab_preference": 0,
+    "number_of_preparations": 0,
+    "teaching_load_balance": 500,
+    "daily_teaching_load": 0
+  },
+  "warning": "Zero-allowance control is not a production teaching-only implementation or an approved target policy"
+}

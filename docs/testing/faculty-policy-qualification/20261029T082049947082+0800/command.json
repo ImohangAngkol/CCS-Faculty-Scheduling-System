@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\faculty-policy-qualification\\run_checks.py",
+    "--worker",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\faculty-policy-tests-20261029T082049947082+0800"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-10-29T08:20:49.947082+08:00",
+  "finished_at": "2026-10-29T08:21:27.632881+08:00",
+  "elapsed_seconds": 37.683175800000754,
+  "exit_code": 0,
+  "stdout": "........................................................................ [ 81%]\n................                                                         [100%]\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; anyio\n    self._mark_plugins_for_rewrite(hook, disable_autoload)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n88 passed, 1 warning in 24.56s\n",
+  "stderr": "",
+  "scope": "Fictional in-memory policy controls and existing audit/D10 regressions; no live database or production corrections"
+}

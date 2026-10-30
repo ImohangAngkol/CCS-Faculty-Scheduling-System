@@ -1,0 +1,7 @@
+{
+  "current_aliases_identical": true,
+  "internal_operator_improvement_uses_original": true,
+  "current_engine_fingerprint": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+  "current_V2_fingerprint": "0821747e30eb56e9e4c070f369e733bc4b59ec184d2e2cb4c211ffa6fa5c1555",
+  "meaning": "A post-hoc component replacement cannot change original operator decisions and checkpoint validation coherently"
+}

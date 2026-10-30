@@ -1,0 +1,228 @@
+{
+  "milestone": "Faculty Cohort, Workload Scope and Evaluation-Policy Qualification",
+  "recorded_at": "2026-10-29T08:28:33.149210+08:00",
+  "source_HEAD": "1423812e13a5791a550c893ef6b17bfef4b4ebfb",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "formal_thesis_alignment": "UNVERIFIED",
+  "institutional_activation": "BLOCKED",
+  "policy_decisions_approved": 0,
+  "functional_corrections_implemented": 0,
+  "production_scoring_changes": 0,
+  "new_file_inventory": [
+    "docs/faculty-policy-decision-matrix.md",
+    "docs/faculty-policy-qualification.md",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-above_warning.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-all_zero.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-ceiling_boundary.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-equal_shortage_balanced.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-equal_shortage_concentrated.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-invalid_above_ceiling.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-moderate_overload_and_shortfall.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-targets_met.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-unequal_targets_equal_fulfillment.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-unequal_targets_equal_units.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-warning_boundary.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-zero_target_assigned.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-zero_target_unassigned.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/availability-lifecycle.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/command.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/eligibility-forced-concentration.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/fairness-exact-breakdown.json",
+    "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/scope-comparison.json",
+    "docs/testing/faculty-policy-qualification/audit-attempt-01.json",
+    "docs/testing/faculty-policy-qualification/audit_evidence.py",
+    "docs/testing/faculty-policy-qualification/decisions.json",
+    "docs/testing/faculty-policy-qualification/manifest.json",
+    "docs/testing/faculty-policy-qualification/policy_experiments.py",
+    "docs/testing/faculty-policy-qualification/preservation-baseline.json",
+    "docs/testing/faculty-policy-qualification/run_checks.py",
+    "docs/testing/faculty-policy-qualification/test_policy_qualification.py"
+  ],
+  "new_file_type_counts": {
+    ".md": 2,
+    ".json": 22,
+    ".py": 4
+  },
+  "artifacts": [
+    {
+      "path": "docs/faculty-policy-decision-matrix.md",
+      "sha256": "6c838941a7f8cfd6f7ec0b5c9f37c2f9c3acf800452e65c326740140c88d05d4",
+      "bytes": 6468
+    },
+    {
+      "path": "docs/faculty-policy-qualification.md",
+      "sha256": "84bfe01de0780ecd3342ddf4b1a3622f2aa4293e42a5bc73cf213029c81e9e71",
+      "bytes": 33626
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-above_warning.json",
+      "sha256": "b5027c61878105977136bffdf08d1a34161a4ffd43983f8304a336d6a8b56ee4",
+      "bytes": 789
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-all_zero.json",
+      "sha256": "d87a64c69a43e61348c9211e4919f25656c08a4d19989180b0c2b3f0c3d7d6ef",
+      "bytes": 728
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-ceiling_boundary.json",
+      "sha256": "b5b7868932a597833bac8101346c0a716bec294211e4ef807c8892d1a9c74b9a",
+      "bytes": 789
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-equal_shortage_balanced.json",
+      "sha256": "0e0e0cb18962df133b1aaf4781bcfb2ba682db9d204516cad08bad6699023c90",
+      "bytes": 775
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-equal_shortage_concentrated.json",
+      "sha256": "7b959a485e65826ae606b44a4687c844ec843456684abd8c7391a7fcb81956a3",
+      "bytes": 798
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-invalid_above_ceiling.json",
+      "sha256": "b028f8af244a2d00c5195c8617cdbf19a75f920d168d54661c2604f12d6aa993",
+      "bytes": 804
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-moderate_overload_and_shortfall.json",
+      "sha256": "6c04112ef5f895151859df2a216245101a554b94f546c9344cbd6809d3a755b1",
+      "bytes": 801
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-targets_met.json",
+      "sha256": "fd5626045963c42ed27aa48ba9a972c2ba1cbd37b6baf5954151d651b47479a3",
+      "bytes": 720
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-unequal_targets_equal_fulfillment.json",
+      "sha256": "d58a91b7e67858063bf9bcf95fa03926e3873a1ead12bbaa14bfd132820af755",
+      "bytes": 784
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-unequal_targets_equal_units.json",
+      "sha256": "0aa8fa2cb3d2611f223d680d1bf916991af1634eb325309608daa9e90922ede3",
+      "bytes": 761
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-warning_boundary.json",
+      "sha256": "e75f949c3079ba8d3916e09a098978de06143fe04049931c72e09dbacab66b9f",
+      "bytes": 744
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-zero_target_assigned.json",
+      "sha256": "a2c89a21e8b2f244a1e3e19e47c34ed015bc05e54b1d355c77383c1b0397ba40",
+      "bytes": 741
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/allocation-zero_target_unassigned.json",
+      "sha256": "febe3f733fdd591f9546b04289d40e426b4eb8e9e23f524762c5d8628f721455",
+      "bytes": 775
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/availability-lifecycle.json",
+      "sha256": "2c654c35303640f20b65932b9d9698cbb1750b89fe5338be3b1da45e78bb6e74",
+      "bytes": 317
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/command.json",
+      "sha256": "3638755a2300ecbf574969de133046e19a19b428461e199409c952edbf7bec73",
+      "bytes": 1392
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/eligibility-forced-concentration.json",
+      "sha256": "9f2c5968e85562a8a281d6f9dd9b5cfa191c4143ed44659041529455423ff4fb",
+      "bytes": 385
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/fairness-exact-breakdown.json",
+      "sha256": "58d63971a38c655b5aafdd9c50e620b6578dd6609204237129d7f3420c1fba0c",
+      "bytes": 1467
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/scope-comparison.json",
+      "sha256": "6af87872a57113fd9229064971a2b7dbb08b5980d218a19321b00d5892b34398",
+      "bytes": 942
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/audit-attempt-01.json",
+      "sha256": "432bc77a5fda82673783af6fcd538fa3933405def2dc9bf12336ed6e9b75d4bc",
+      "bytes": 806
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/audit_evidence.py",
+      "sha256": "ba4d4c92a4d19c1f076f52bf2600507808f343998440adc7e5e3e86c626a4698",
+      "bytes": 8183
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/decisions.json",
+      "sha256": "ae95c0d2a54c11f4b63dda5271c5f3a1d4a7e1e5e431e0542f26360c3ebf993e",
+      "bytes": 10534
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/policy_experiments.py",
+      "sha256": "c83c7d3393d35489dee2c3f27c035bceceb4bdaa4f0a276c6de849b8ceaa47b5",
+      "bytes": 2881
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/preservation-baseline.json",
+      "sha256": "8ff8307c647d8f3e600053d81a15abb7269959dc5e3f8289b8fd489ce387c274",
+      "bytes": 253275
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/run_checks.py",
+      "sha256": "b0b04b642883c69c3eadc7b6dac2d6d9907583040246a27d4013ea8a9d7ed240",
+      "bytes": 3106
+    },
+    {
+      "path": "docs/testing/faculty-policy-qualification/test_policy_qualification.py",
+      "sha256": "9cb41309617669c1b5dbd6a195190201e411f599ab1c4efeea53f8a5921e559c",
+      "bytes": 7150
+    }
+  ],
+  "baseline_files_preserved": 1739,
+  "academic_files_preserved": 23,
+  "existing_files_modified": 0,
+  "protected_preferences_and_existing_settings_unchanged": true,
+  "Git_index_HEAD_preserved": true,
+  "preexisting_tracked_modifications": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json"
+  ],
+  "tests": {
+    "latest_command": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/command.json",
+    "passed": 88,
+    "failed": 0,
+    "skipped": 0,
+    "new_policy_cases": 25,
+    "existing_audit_cases": 33,
+    "existing_D10_cases": 30,
+    "warnings": 1
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/faculty-policy-qualification/20261029T082049947082+0800/command.json",
+      "exit_code": 0
+    }
+  ],
+  "historical_artifact_entries_reverified": 354,
+  "preserved_verifier_diagnostic": "docs/testing/faculty-policy-qualification/audit-attempt-01.json",
+  "verifier_correction": "Own manifest link creation order only; no preservation or policy test failure",
+  "privacy_findings": 0,
+  "privacy_scope": "Fictional numerical records only; no institutional rows parsed. Credential/key/complete and truncated encoded patterns and log sensitivity scanned; no auth/session evidence or screenshots created.",
+  "actual_browser": "NOT_RUN_POLICY_QUALIFICATION_ONLY",
+  "frontend_build_lint": "NOT_RUN_NO_FRONTEND_CHANGES",
+  "database_operations": 0,
+  "dependencies_installed": 0,
+  "staged_files": 0,
+  "commits_pushes": 0,
+  "limitations": [
+    "Formal manuscript unavailable; all choices pending approval",
+    "13 allocation controls are analytical, not generated hard-valid schedules",
+    "No alternative scorer integrated or GA-quality/convergence comparison performed",
+    "No actual institutional cohort reconciliation or persistent closure inventory",
+    "D10 authority is fictional; no live HTTP/PostgreSQL or institutional validation"
+  ],
+  "hash_convention": "Raw bytes; manifest excludes itself; previous evidence unchanged"
+}

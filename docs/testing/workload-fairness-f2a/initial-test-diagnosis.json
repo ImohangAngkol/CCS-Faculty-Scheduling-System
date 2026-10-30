@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-10-30T12:06:03.460727+08:00",
+  "attempt": "20261030T120414709074+0800-backend/command.json",
+  "observed_passed": 117,
+  "observed_failed": 1,
+  "failing_test": "test_softly_better_ineligible_allocation_is_rejected_by_original_assignment",
+  "cause": "New test incorrectly expected low-level assignment helper to enforce explicit eligibility. Eligibility is enforced by original constructor ranking and publication/admission reconstruction.",
+  "correction": "Keep adversarial candidate construction; require unchanged original engine.admit to reject INVALID_CANDIDATE before any scoring or selection.",
+  "production_files_changed": false,
+  "historical_evidence_preserved": true
+}

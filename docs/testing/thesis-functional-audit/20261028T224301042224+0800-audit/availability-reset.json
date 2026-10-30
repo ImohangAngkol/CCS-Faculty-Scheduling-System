@@ -1,0 +1,6 @@
+{
+  "room_boolean_reopened": true,
+  "faculty_boolean_reopened": true,
+  "section_boolean_reopened": false,
+  "meaning": "Characterization of ordinary availability flags, not a bypass of V2 reduced-calendar or fixed-section enforcement"
+}

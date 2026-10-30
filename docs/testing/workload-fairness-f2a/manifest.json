@@ -1,0 +1,318 @@
+{
+  "milestone": "F2A workload fairness correction prototype",
+  "recorded_at": "2026-10-30T12:17:01.343913+08:00",
+  "source_HEAD": "1423812e13a5791a550c893ef6b17bfef4b4ebfb",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "scope": "Fictional IT-intended prototype; no institutional population, no IS/full CCS claim",
+  "policy": "USER_REPORTED target-relative fairness and Option B approval; exact function/weight/conventions remain unapproved",
+  "recommendation": "target_relative suitable for conditional F2 consideration, not production integration",
+  "institutional_activation": "BLOCKED",
+  "F1_production_roster": "BLOCKED_UNCHANGED",
+  "production_integration": false,
+  "new_file_inventory": [
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/command.json",
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-above_combined_targets.json",
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-allowance_shortage.json",
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-equal_shortage.json",
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-indivisible_zero_assignment.json",
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-limited_eligibility.json",
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-no_eligible_member.json",
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-targets_exactly_reachable.json",
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-unequal_shortage.json",
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-zero_target_member.json",
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/zero-target-convention.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/command.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-above_combined_targets.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-allowance_shortage.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-equal_shortage.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-indivisible_zero_assignment.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-limited_eligibility.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-no_eligible_member.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-targets_exactly_reachable.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-unequal_shortage.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-zero_target_member.json",
+    "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/zero-target-convention.json",
+    "docs/testing/workload-fairness-f2a/20261030T120658774259+0800-frontend/command.json",
+    "docs/testing/workload-fairness-f2a/20261030T120717945343+0800-analysis/analysis.json",
+    "docs/testing/workload-fairness-f2a/20261030T120720971631+0800-timing/timing.json",
+    "docs/testing/workload-fairness-f2a/20261030T120920440938+0800-original-timing/original-fitness-timing.json",
+    "docs/testing/workload-fairness-f2a/analyze_results.py",
+    "docs/testing/workload-fairness-f2a/audit_evidence.py",
+    "docs/testing/workload-fairness-f2a/fairness_models.py",
+    "docs/testing/workload-fairness-f2a/fictional_schedules.py",
+    "docs/testing/workload-fairness-f2a/initial-test-diagnosis.json",
+    "docs/testing/workload-fairness-f2a/manifest.json",
+    "docs/testing/workload-fairness-f2a/measure_kernels.py",
+    "docs/testing/workload-fairness-f2a/measure_original_fitness.py",
+    "docs/testing/workload-fairness-f2a/preservation-baseline.json",
+    "docs/testing/workload-fairness-f2a/run_checks.py",
+    "docs/testing/workload-fairness-f2a/test_fairness.py",
+    "docs/testing/workload-fairness-f2a/zero-target-surplus-control.json",
+    "docs/workload-fairness-f2a-prototype.md"
+  ],
+  "new_file_type_counts": {
+    ".json": 30,
+    ".py": 8,
+    ".md": 1
+  },
+  "artifacts": [
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/command.json",
+      "sha256": "8ac64bcf75c038d003b16ae771fc73a8c92ea1d9115b84f08add395b9dec2ff6",
+      "bytes": 2981
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-above_combined_targets.json",
+      "sha256": "676b099af1e5fc57e9deb439fb84054d3f2ed1528adf64a55e919db1c7179131",
+      "bytes": 22835
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-allowance_shortage.json",
+      "sha256": "79c32c73130d1b7d653f522fcfc2785f38350576c1f64c0d2c0379a70a792974",
+      "bytes": 10842
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-equal_shortage.json",
+      "sha256": "0fa52954e1a2e65a06bd073c7829107268964a41306403cc1232d3c75578e4c8",
+      "bytes": 8826
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-indivisible_zero_assignment.json",
+      "sha256": "3e735d54b4b9c4f4ab9905a0a07580317ddf68302380a3707821b5e2e24aff97",
+      "bytes": 6270
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-limited_eligibility.json",
+      "sha256": "2fd7703c727763ebd696f281ef2fa4d22d3d109cbb8a250ac4afd64dbc42a969",
+      "bytes": 8633
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-no_eligible_member.json",
+      "sha256": "19b667389e103afaf78c417e602df3e261c71a2838c12167f0938b9314047bc2",
+      "bytes": 20660
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-targets_exactly_reachable.json",
+      "sha256": "f0056336dc71de3919c24bb245f78ee75c2e14473e8ffc8d2245f58612b009f0",
+      "bytes": 17811
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-unequal_shortage.json",
+      "sha256": "366d56e991461353506d7cf2511b06c9cd7e928d490770dbf12e06ab188e6b42",
+      "bytes": 18524
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/scenario-zero_target_member.json",
+      "sha256": "c1b83f983ac16e35e4eaae43d17473cdd79c131c530d030a49843edf365e3c0b",
+      "bytes": 7909
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/zero-target-convention.json",
+      "sha256": "7b3503601615e27f3a831ac1c0545e40fe9d4358c2de000b36f506792c64e46e",
+      "bytes": 228
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/command.json",
+      "sha256": "c1df4819600cab9090384dfe5a3dba63a239f8124cb07a0a8ed105730afc41aa",
+      "bytes": 2200
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-above_combined_targets.json",
+      "sha256": "676b099af1e5fc57e9deb439fb84054d3f2ed1528adf64a55e919db1c7179131",
+      "bytes": 22835
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-allowance_shortage.json",
+      "sha256": "79c32c73130d1b7d653f522fcfc2785f38350576c1f64c0d2c0379a70a792974",
+      "bytes": 10842
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-equal_shortage.json",
+      "sha256": "0fa52954e1a2e65a06bd073c7829107268964a41306403cc1232d3c75578e4c8",
+      "bytes": 8826
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-indivisible_zero_assignment.json",
+      "sha256": "3e735d54b4b9c4f4ab9905a0a07580317ddf68302380a3707821b5e2e24aff97",
+      "bytes": 6270
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-limited_eligibility.json",
+      "sha256": "2fd7703c727763ebd696f281ef2fa4d22d3d109cbb8a250ac4afd64dbc42a969",
+      "bytes": 8633
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-no_eligible_member.json",
+      "sha256": "19b667389e103afaf78c417e602df3e261c71a2838c12167f0938b9314047bc2",
+      "bytes": 20660
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-targets_exactly_reachable.json",
+      "sha256": "f0056336dc71de3919c24bb245f78ee75c2e14473e8ffc8d2245f58612b009f0",
+      "bytes": 17811
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-unequal_shortage.json",
+      "sha256": "366d56e991461353506d7cf2511b06c9cd7e928d490770dbf12e06ab188e6b42",
+      "bytes": 18524
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/scenario-zero_target_member.json",
+      "sha256": "c1b83f983ac16e35e4eaae43d17473cdd79c131c530d030a49843edf365e3c0b",
+      "bytes": 7909
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/zero-target-convention.json",
+      "sha256": "7b3503601615e27f3a831ac1c0545e40fe9d4358c2de000b36f506792c64e46e",
+      "bytes": 228
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120658774259+0800-frontend/command.json",
+      "sha256": "3e9b7d2459c8a6a60a5184971f5f2f34d0b253ad774a00dfe0c1db80157005cd",
+      "bytes": 4488
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120717945343+0800-analysis/analysis.json",
+      "sha256": "73211b91b05b666e4ec2787c58bdd27fdc4f0b2735bfdf9a8a0855ce9277c9d3",
+      "bytes": 27624
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120720971631+0800-timing/timing.json",
+      "sha256": "79cdeb1170ac142be81d5d14f125f3e7ad4534ec75ac9ed0aa3d4804e6815320",
+      "bytes": 17369
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120920440938+0800-original-timing/original-fitness-timing.json",
+      "sha256": "b5db5eebf08a1f527322bbc3129f7c6e1fff75e9dea161d10bbcf63c8e8a898e",
+      "bytes": 1716
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/analyze_results.py",
+      "sha256": "d98d6ce06ea5c5dbc191952e011e18753590e6a97ea3605b0a553112515d061e",
+      "bytes": 3783
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/audit_evidence.py",
+      "sha256": "fa5a66386ef6d3e559727d15d00cb8a36f2fc387767a7aa109c4ba034fe453d5",
+      "bytes": 9934
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/fairness_models.py",
+      "sha256": "26b281a6fc1539391df9029b08a9a218c8fa340c936c5c79e13e9b68c7385d0d",
+      "bytes": 4198
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/fictional_schedules.py",
+      "sha256": "7c1adddc6088f9d57523b962dadc95188bbce2cbb0cdd05b5b72dcc97db51f91",
+      "bytes": 7425
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/initial-test-diagnosis.json",
+      "sha256": "41ecbcaba27ea19b1453853b1b03d564fa0bbfc278bdaddab85205efa01496a1",
+      "bytes": 720
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/measure_kernels.py",
+      "sha256": "1347d344cc50436e7b4e1d2e9179ff682b0853934055b9a20da018595bcee443",
+      "bytes": 2652
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/measure_original_fitness.py",
+      "sha256": "bb2629fdfcab824d09e9d8c041dd0f638afce32cc60381453ebd919bb1c576f9",
+      "bytes": 3275
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/preservation-baseline.json",
+      "sha256": "04503a3413cfb70f98f34f8db8ee43671658d8a9f84942eafe604ba771ae5f94",
+      "bytes": 263353
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/run_checks.py",
+      "sha256": "8c63794693570affb862a8c9a8d755a9d176453224acdcdd77dace8dd663db4f",
+      "bytes": 4445
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/test_fairness.py",
+      "sha256": "ae4f95752ce04c02b86fdd5d8e4bbd605abd120e084f7a9da6f7e108766ee3f5",
+      "bytes": 6728
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/zero-target-surplus-control.json",
+      "sha256": "978959b3b2eccf1a331e70f4011d6ade76a8e117b9ec6aae8fc802549b822c92",
+      "bytes": 536
+    },
+    {
+      "path": "docs/workload-fairness-f2a-prototype.md",
+      "sha256": "12ad28ceff953c7242033f4d413fc738f78854fa674d36f74400ec5617180d31",
+      "bytes": 25794
+    }
+  ],
+  "baseline_files_preserved": 1806,
+  "academic_files_preserved": 23,
+  "existing_files_modified": 0,
+  "protected_preferences_settings_unchanged": true,
+  "Git_index_HEAD_preserved": true,
+  "preexisting_tracked_modifications": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json"
+  ],
+  "tests": {
+    "backend_command": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/command.json",
+    "backend_passed": 118,
+    "new_F2A_cases": 32,
+    "existing_audit": 33,
+    "existing_D10": 30,
+    "existing_reporting": 23,
+    "frontend_command": "docs/testing/workload-fairness-f2a/20261030T120658774259+0800-frontend/command.json",
+    "frontend_contracts_passed": 42,
+    "final_failed": 0,
+    "final_skipped": 0
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120606394976+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2a/20261030T120658774259+0800-frontend/command.json",
+      "selection": "frontend",
+      "exit_code": 0
+    }
+  ],
+  "retained_unsuccessful_attempts": [
+    "docs/testing/workload-fairness-f2a/20261030T120414709074+0800-backend/command.json"
+  ],
+  "failure_diagnosis": "New test corrected to assert qualification at original admission gate, not resource assignment helper",
+  "analysis_path": "docs/testing/workload-fairness-f2a/20261030T120717945343+0800-analysis/analysis.json",
+  "hard_valid_fixed_geometry_assignments": 470,
+  "unique_vectors": 45,
+  "reconciled_candidate_score_rows": 45,
+  "arithmetic_timing": "docs/testing/workload-fairness-f2a/20261030T120720971631+0800-timing/timing.json",
+  "full_original_scorer_timing": "docs/testing/workload-fairness-f2a/20261030T120920440938+0800-original-timing/original-fitness-timing.json",
+  "historical_artifact_entries_verified": 418,
+  "privacy_findings": 0,
+  "privacy_scope": "Only fictional numeric/structural findings; credential URI/key/token/complete and truncated receipt patterns plus sensitive logs scanned; no private rows/preferences/sessions archived",
+  "candidate_policy_GA_runs": 0,
+  "original_GA_regressions": "Actual D10 engine and checkpoint continuation on fictional fixtures",
+  "database_operations": 0,
+  "dependencies_installed": 0,
+  "staged_files": 0,
+  "commits_pushes": 0,
+  "actual_browser": "NOT_RUN_NO_UI_INTEGRATION",
+  "frontend_build_lint": "NOT_RUN_NO_PRODUCTION_EDIT",
+  "limitations": [
+    "Fixed geometry enumeration, not a full GA quality campaign",
+    "Exact weights, overload/zero-target/coverage tradeoffs pending explicit policy specification",
+    "Pure arithmetic and full original scorer timing scopes differ; no measured integrated/engine speedup",
+    "No new-policy checkpoint/report/operator integration; current behavior preserved",
+    "No formal manuscript or institutional IT source authorization established"
+  ],
+  "hash_convention": "Raw bytes; manifest excludes itself; all historical artifacts retained"
+}

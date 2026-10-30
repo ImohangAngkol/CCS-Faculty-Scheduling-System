@@ -1,0 +1,285 @@
+{
+  "milestone": "F2C versioned fitness policy contract",
+  "source_HEAD": "1423812e13a5791a550c893ef6b17bfef4b4ebfb",
+  "branch": "main",
+  "recorded_at": "2026-10-30T23:08:55.638498+08:00",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "status": "CONTRACT_INVESTIGATION_COMPLETE_NO_PRODUCTION_INTEGRATION",
+  "recommendation": "CONTRACT_REVIEW_GO_PRODUCTION_INTEGRATION_NO_GO_PENDING_RELEASE_AND_POLICY_GATES",
+  "new_file_inventory": [
+    "docs/fitness-policy-f2c-call-paths.md",
+    "docs/fitness-policy-f2c-contract.md",
+    "docs/testing/fitness-policy-f2c/20261030T225816239413+0800-numeric/command.json",
+    "docs/testing/fitness-policy-f2c/20261030T225816239413+0800-numeric/numeric.json",
+    "docs/testing/fitness-policy-f2c/20261030T225816239534+0800-contract/command.json",
+    "docs/testing/fitness-policy-f2c/20261030T225816239534+0800-contract/outcomes.json",
+    "docs/testing/fitness-policy-f2c/20261030T225816240468+0800-inventory/call-paths.json",
+    "docs/testing/fitness-policy-f2c/20261030T225816240468+0800-inventory/command.json",
+    "docs/testing/fitness-policy-f2c/20261030T225823774914+0800-engine/command.json",
+    "docs/testing/fitness-policy-f2c/20261030T225823774914+0800-engine/engine-identity.json",
+    "docs/testing/fitness-policy-f2c/20261030T225823774914+0800-engine/outcomes.json",
+    "docs/testing/fitness-policy-f2c/20261030T230008542355+0800-contract/command.json",
+    "docs/testing/fitness-policy-f2c/20261030T230008542355+0800-contract/outcomes.json",
+    "docs/testing/fitness-policy-f2c/audit-initial-error.json",
+    "docs/testing/fitness-policy-f2c/audit_evidence.py",
+    "docs/testing/fitness-policy-f2c/contract_model.py",
+    "docs/testing/fitness-policy-f2c/inventory_calls.py",
+    "docs/testing/fitness-policy-f2c/manifest.json",
+    "docs/testing/fitness-policy-f2c/numeric_study.py",
+    "docs/testing/fitness-policy-f2c/policy-contract.schema.json",
+    "docs/testing/fitness-policy-f2c/preservation-baseline.json",
+    "docs/testing/fitness-policy-f2c/run_checks.py",
+    "docs/testing/fitness-policy-f2c/test_contract.py"
+  ],
+  "new_file_type_counts": {
+    ".md": 2,
+    ".json": 15,
+    ".py": 6
+  },
+  "artifacts": [
+    {
+      "path": "docs/fitness-policy-f2c-call-paths.md",
+      "sha256": "e54f0d85011e61de39def34be3def5bbcf52a8b0af02e68f20233fa735e7ea6e",
+      "bytes": 12475
+    },
+    {
+      "path": "docs/fitness-policy-f2c-contract.md",
+      "sha256": "a623687183b8e81fe8c80aa0c5c378e6bb9f2862f51700a5de7018b3763f6498",
+      "bytes": 32587
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225816239413+0800-numeric/command.json",
+      "sha256": "74eafa3086ba21d54583703503a14f21d8c6c8906316e3d40c961dedcce04d9d",
+      "bytes": 1090
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225816239413+0800-numeric/numeric.json",
+      "sha256": "8eb136e37a78d1d6722cf4920c56bb599a96a987c935a29b135a8c61328717a3",
+      "bytes": 8485
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225816239534+0800-contract/command.json",
+      "sha256": "18caaedb0df4ca25b31e6285d496890c6c284e18fe8ed9b4c6ae13b18d372637",
+      "bytes": 1095
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225816239534+0800-contract/outcomes.json",
+      "sha256": "2b0f2fb6fb6c987b9f8798c6b45aeef56f99f6353f6e71d6c39259e204b8a9bc",
+      "bytes": 166
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225816240468+0800-inventory/call-paths.json",
+      "sha256": "2b3d56f8f7ff4646672d93791088aa71e1b4af491001c8bad718f6d485a75c56",
+      "bytes": 56311
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225816240468+0800-inventory/command.json",
+      "sha256": "8dc39a12be6915d943d264746d40941b25f748a2d5f6bf9a89024a42abd8d4bb",
+      "bytes": 958
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225823774914+0800-engine/command.json",
+      "sha256": "8b721c0d9268517c8d82c675de9e4781212e10f21141065e2c26734b99b28c7d",
+      "bytes": 1502
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225823774914+0800-engine/engine-identity.json",
+      "sha256": "ffb69ef884bf9efad84abef22e4db8dfb08c33ef7b664e316cc4764f9ff0b19b",
+      "bytes": 251
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225823774914+0800-engine/outcomes.json",
+      "sha256": "9cd1af76178eed23b2727049c598483ce8998d5b0482f3afffb34b45dbcf3d46",
+      "bytes": 164
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T230008542355+0800-contract/command.json",
+      "sha256": "dd3c7b8c16b30aed446f55c9c362e4766104e5a7fee875b111625fb7bbec911a",
+      "bytes": 1095
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T230008542355+0800-contract/outcomes.json",
+      "sha256": "1c50c781eb5611f8697beecff8a82ec7aa2e7ceb1b0ea2003584aa397f6636c3",
+      "bytes": 166
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/audit-initial-error.json",
+      "sha256": "254962f26cae7f54077c40ab8aff7bd217688525ee134aeb67d2f44aaaa4e517",
+      "bytes": 1045
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/audit_evidence.py",
+      "sha256": "bd76cd3d7c2fcb8db06ef570207a8ae3afb0620bb6c1d5543c03d28a1cac27f2",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/contract_model.py",
+      "sha256": "ad666fee62af7be0c043b3c40da352b099446ee669f2ee48df171ff49e6b9f48",
+      "bytes": 7720
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/inventory_calls.py",
+      "sha256": "af7c39bda24ba4631744e644ef246df816c5345c09b1fefbfac8b24a9f132c52",
+      "bytes": 2987
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/numeric_study.py",
+      "sha256": "a88b90dfc31f0c9a0423edfafb604cb84e3b456e1210bda79fcfe682fd7a4642",
+      "bytes": 4266
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/policy-contract.schema.json",
+      "sha256": "45f620b5b98007e8da0609d7acc0c13e82cf466588f7c29df720022c93679a2c",
+      "bytes": 3244
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/preservation-baseline.json",
+      "sha256": "04d072d68e59a069cde9dfb1cb9b1d3d8f0e96cd3c88f43455b10f06f30f7349",
+      "bytes": 273426
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/run_checks.py",
+      "sha256": "958c570d37cf56441fb691f4ba4e8088ec17d2ab0d86a4ffcb5a984f3e816282",
+      "bytes": 5217
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/test_contract.py",
+      "sha256": "0a9b95397a3d3752cd032331c25734a7fa43a77d19a00d66c0d9186077d53bde",
+      "bytes": 12593
+    }
+  ],
+  "commands": [
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225816239413+0800-numeric/command.json",
+      "selection": "numeric",
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225816239534+0800-contract/command.json",
+      "selection": "contract",
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225816240468+0800-inventory/command.json",
+      "selection": "inventory",
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T225823774914+0800-engine/command.json",
+      "selection": "engine",
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "path": "docs/testing/fitness-policy-f2c/20261030T230008542355+0800-contract/command.json",
+      "selection": "contract",
+      "exit_code": 0,
+      "timed_out": false
+    }
+  ],
+  "pytest_outcomes": {
+    "docs/testing/fitness-policy-f2c/20261030T225816239534+0800-contract/outcomes.json": {
+      "selection": "contract",
+      "counts": {
+        "passed": 73,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "collected": 73,
+      "exit_code": 0
+    },
+    "docs/testing/fitness-policy-f2c/20261030T225823774914+0800-engine/outcomes.json": {
+      "selection": "engine",
+      "counts": {
+        "passed": 30,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "collected": 30,
+      "exit_code": 0
+    },
+    "docs/testing/fitness-policy-f2c/20261030T230008542355+0800-contract/outcomes.json": {
+      "selection": "contract",
+      "counts": {
+        "passed": 80,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "collected": 80,
+      "exit_code": 0
+    }
+  },
+  "final_tests": {
+    "contract": 80,
+    "unchanged_D10_V2": 30,
+    "total": 110,
+    "failed": 0,
+    "skipped": 0,
+    "earlier_contract_selection": 73,
+    "earlier_selection_not_added": true
+  },
+  "warning": "One PytestAssertRewriteWarning: anyio already imported during existing schema-only bootstrap.",
+  "intermediate_audit": {
+    "failed_attempts": 1,
+    "cause": "New audit used wrong F2B field name; corrected new tooling only.",
+    "preserved_record": "docs/testing/fitness-policy-f2c/audit-initial-error.json",
+    "protected_hash_mismatch": false
+  },
+  "arithmetic_study": {
+    "random_pairs": 3000,
+    "sampled_order_disagreements": 0,
+    "exact_integer_fast_path_agrees": true,
+    "not_GA_or_production_performance": true
+  },
+  "current_engine_fingerprints": {
+    "v1": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+    "v2": "0821747e30eb56e9e4c070f369e733bc4b59ec184d2e2cb4c211ffa6fa5c1555",
+    "scope": "Unmodified supported default engine, schema-only imports and fictional tests"
+  },
+  "preservation": {
+    "baseline_files": 1870,
+    "all_match": true,
+    "academic_files": 23,
+    "protected_preferences_and_settings_unchanged": true,
+    "git_index_unchanged": true,
+    "GA_operators_scoring_RNG_migrations_checkpoints_schedules_prior_evidence_unchanged": true,
+    "previous_artifact_entries_verified": 480
+  },
+  "privacy": {
+    "status": "PASS",
+    "complete_and_partial_encoded_fragments_checked": true,
+    "credential_URI_and_key_and_header_patterns_checked": true,
+    "log_sensitive_assignment_patterns_checked": true,
+    "fictional_numeric_and_authority_fixtures_only": true,
+    "academic_data_text_not_parsed_or_exported": true
+  },
+  "whitespace": {
+    "new_text_files_checked": true,
+    "git_diff_check": true,
+    "cached_diff_check": true
+  },
+  "activity": {
+    "application_files_modified": 0,
+    "PostgreSQL_operations": 0,
+    "experimental_production_scoring": false,
+    "checkpoint_rewrites": false,
+    "dependency_installations": 0,
+    "staging": false,
+    "commits": false,
+    "push": false
+  },
+  "limitations": [
+    "Contract models are not production dispatch/authority/codec integration.",
+    "V1 mirror tests and other prior milestones reviewed as historical evidence, not fresh F2C runs.",
+    "Institutional workload-exception authority absent; authorized-zero numeric policy/weight/overload composition unsettled.",
+    "No new-mode GA/checkpoint/API/browser or PostgreSQL acceptance performed.",
+    "Manifest excludes itself; hashes establish bytes, not institutional authorization."
+  ]
+}

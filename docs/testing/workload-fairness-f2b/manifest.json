@@ -1,0 +1,231 @@
+{
+  "milestone": "F2B controlled fairness integration compatibility stop",
+  "recorded_at": "2026-10-30T13:59:45.490874+08:00",
+  "source_HEAD": "1423812e13a5791a550c893ef6b17bfef4b4ebfb",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "status": "BLOCKED_BEFORE_APPLICATION_IMPLEMENTATION",
+  "F2B_complete": false,
+  "recommendation": "NO_GO_PENDING_VERSIONED_DISPATCH_CONTINUATION_REPORTING_CONTRACT",
+  "authority_scope": "IT prototype; institutional activation and production F1 remain BLOCKED",
+  "policy_approval": "Developer-approved direction per user; no invented adviser documentation",
+  "application_files_modified": 0,
+  "scoring_mode_implemented": false,
+  "default_behavior_unchanged": true,
+  "new_file_inventory": [
+    "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/command.json",
+    "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/configuration_boundary.json",
+    "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/legacy_bridge_boundary.json",
+    "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/no_activation_hook.json",
+    "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/provenance_boundary.json",
+    "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/shared_scorer_boundary.json",
+    "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/zero_target_boundary.json",
+    "docs/testing/workload-fairness-f2b/20261030T134900506824+0800-v1-mirror/command.json",
+    "docs/testing/workload-fairness-f2b/20261030T134901860331+0800-frontend/command.json",
+    "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/command.json",
+    "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/configuration_boundary.json",
+    "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/legacy_bridge_boundary.json",
+    "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/no_activation_hook.json",
+    "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/numeric_boundary.json",
+    "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/provenance_boundary.json",
+    "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/shared_scorer_boundary.json",
+    "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/zero_target_boundary.json",
+    "docs/testing/workload-fairness-f2b/audit_evidence.py",
+    "docs/testing/workload-fairness-f2b/calibration-algebra.json",
+    "docs/testing/workload-fairness-f2b/manifest.json",
+    "docs/testing/workload-fairness-f2b/preservation-baseline.json",
+    "docs/testing/workload-fairness-f2b/run_checks.py",
+    "docs/testing/workload-fairness-f2b/test_integration_boundary.py",
+    "docs/testing/workload-fairness-f2b/verify_v1.py",
+    "docs/workload-fairness-f2b-implementation.md"
+  ],
+  "new_file_type_counts": {
+    ".json": 20,
+    ".py": 4,
+    ".md": 1
+  },
+  "artifacts": [
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/command.json",
+      "sha256": "19372154fb6f0ca1452d633a0a8e854889a8b19401bc983ad1ba4b298c668322",
+      "bytes": 1373
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/configuration_boundary.json",
+      "sha256": "6d1fc5c1f45a2d8c4f0889a6e5c09acf61a33e5753b7dec8a9d04f452dee81f0",
+      "bytes": 834
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/legacy_bridge_boundary.json",
+      "sha256": "1a286319a2d63e3614467bf1231c3fa93bbba6143fb3f6e940163fb284f937ca",
+      "bytes": 275
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/no_activation_hook.json",
+      "sha256": "d84e37832518215992a7404c707af44db7d8341499627687e3ee51c4d6e46356",
+      "bytes": 385
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/provenance_boundary.json",
+      "sha256": "18f44081d9c6e9a483824ee8d01adc7536d264a1bfd97b620951c0fa51e38f54",
+      "bytes": 501
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/shared_scorer_boundary.json",
+      "sha256": "b9c494077f8136ff7142ecdd2c37dac41fcfbae7f492d09fb3c04d91c0028ed3",
+      "bytes": 426
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/zero_target_boundary.json",
+      "sha256": "f3200d21d2b798551e4b9b763762970f08efaa6fbc7150d66ce418d4e0b7db0c",
+      "bytes": 335
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134900506824+0800-v1-mirror/command.json",
+      "sha256": "134f494a167a108be2b8d7cd84c1a6f6d02dd32130284418483cdd1f9b82c624",
+      "bytes": 1311
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134901860331+0800-frontend/command.json",
+      "sha256": "5498c56027e6b0566c4024e133f0546661947b62c11df4dfddc5d5c097ee35f5",
+      "bytes": 4480
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/command.json",
+      "sha256": "1a8e6d5d46fe684b05fa01881f60c05916bf24e37301309a07204e8f3394460c",
+      "bytes": 1373
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/configuration_boundary.json",
+      "sha256": "6d1fc5c1f45a2d8c4f0889a6e5c09acf61a33e5753b7dec8a9d04f452dee81f0",
+      "bytes": 834
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/legacy_bridge_boundary.json",
+      "sha256": "1a286319a2d63e3614467bf1231c3fa93bbba6143fb3f6e940163fb284f937ca",
+      "bytes": 275
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/no_activation_hook.json",
+      "sha256": "d84e37832518215992a7404c707af44db7d8341499627687e3ee51c4d6e46356",
+      "bytes": 385
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/numeric_boundary.json",
+      "sha256": "97e7afc1fae7f077d8d7ca2859800217281d92eb41bb7af3a7835288dd0318c0",
+      "bytes": 292
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/provenance_boundary.json",
+      "sha256": "18f44081d9c6e9a483824ee8d01adc7536d264a1bfd97b620951c0fa51e38f54",
+      "bytes": 501
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/shared_scorer_boundary.json",
+      "sha256": "b9c494077f8136ff7142ecdd2c37dac41fcfbae7f492d09fb3c04d91c0028ed3",
+      "bytes": 426
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/zero_target_boundary.json",
+      "sha256": "f3200d21d2b798551e4b9b763762970f08efaa6fbc7150d66ce418d4e0b7db0c",
+      "bytes": 335
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/audit_evidence.py",
+      "sha256": "2f25d5e277b7986c863dda0c48c598ec719f52704f30501b29f467cc98b1a3d2",
+      "bytes": 9306
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/calibration-algebra.json",
+      "sha256": "8204ffc93a6e910fb86a722508c41c0d8b6833fd0556bb1c614ee92938ecb706",
+      "bytes": 10425
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/preservation-baseline.json",
+      "sha256": "eae9b2fb42ea0cb20a438ea98567f2decfa23577f894cfb612ca7e5fbfcd31ee",
+      "bytes": 269561
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/run_checks.py",
+      "sha256": "51e5128ada1e0cd55d7844835e850e6c567250319058a83732519abb64a903ea",
+      "bytes": 3291
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/test_integration_boundary.py",
+      "sha256": "fe25fb7ae8f13fc78e73f73743756992254153d024b2aedcdaa97ded1baa57e8",
+      "bytes": 7145
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/verify_v1.py",
+      "sha256": "2077dfc134ccef9f216c9de9ff5733a15b7f768ccf78baa3b030b25d537a0369",
+      "bytes": 4769
+    },
+    {
+      "path": "docs/workload-fairness-f2b-implementation.md",
+      "sha256": "c89e74e37f40930c798663cb823a2235ff7f636352fe4c750dbe198ee771c1b7",
+      "bytes": 20201
+    }
+  ],
+  "preserved_existing_paths": 1845,
+  "protected_academic_files_preserved": 23,
+  "existing_files_modified": 0,
+  "protected_preferences_settings_unchanged": true,
+  "Git_index_HEAD_preserved": true,
+  "tests": {
+    "final_boundary_and_default_V2_path": "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/command.json",
+    "boundary_passed": 10,
+    "current_default_V2_passed": 30,
+    "current_default_V1_path": "docs/testing/workload-fairness-f2b/20261030T134900506824+0800-v1-mirror/command.json",
+    "current_default_V1_passed": 4,
+    "verified_fictional_V1_checkpoint_archives": 3,
+    "source_byte_identical_mirror_files": 133,
+    "backend_total_passed": 44,
+    "frontend_path": "docs/testing/workload-fairness-f2b/20261030T134901860331+0800-frontend/command.json",
+    "frontend_contracts_passed": 42,
+    "failed": 0,
+    "skipped": 0
+  },
+  "all_attempts_preserved": [
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134723083374+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134900506824+0800-v1-mirror/command.json",
+      "selection": "v1-mirror",
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T134901860331+0800-frontend/command.json",
+      "selection": "frontend",
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/workload-fairness-f2b/20261030T135345404946+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0
+    }
+  ],
+  "calibration": "42 exact algebra cells only; no actual integrated calibration trials",
+  "experimental_multigeneration_runs": "NOT_RUN_NO_SUPPORTED_MODE",
+  "experimental_checkpoint_acceptance": "BLOCKED_NOT_IMPLEMENTED",
+  "experimental_GA_performance_memory_quality": "NOT_RUN_NOT_FABRICATED",
+  "historical_artifact_entries_verified": 456,
+  "privacy_findings": 0,
+  "privacy_scope": "Fictional structural/numeric results only. Credential URIs, keys, complete/partial encoded token patterns and sensitive logs scanned; no raw faculty data, private contexts, sessions or checkpoints archived.",
+  "database_operations": 0,
+  "dependencies_installed": 0,
+  "staged_files": 0,
+  "commits_pushes": 0,
+  "actual_browser": "NOT_RUN_NO_NEW_UI",
+  "production_build_lint": "NOT_RUN_NO_APPLICATION_EDIT",
+  "limitations": [
+    "No integrated experimental workload mode",
+    "Changing scorer without a reviewed source-compatibility strategy would invalidate current default continuation identity",
+    "No workload-policy identity/weight/numeric convention captured in current requests, frozen state or reports",
+    "Positive teaching at zero target needs an explicit new deviation convention or unsupported-case block",
+    "No candidate-mode GA, memory, quality or performance claim"
+  ],
+  "hash_convention": "Raw bytes; manifest excludes itself; all previous artifacts and unsuccessful historical evidence retained"
+}

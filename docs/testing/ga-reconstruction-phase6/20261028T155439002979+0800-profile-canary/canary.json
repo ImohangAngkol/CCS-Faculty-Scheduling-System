@@ -1,0 +1,24 @@
+{
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "results": [
+    {
+      "threaded": true,
+      "leaf_calls": 200000,
+      "recorded_callers": [
+        "caller",
+        "<method 'acquire' of '_thread.lock' objects>",
+        "<built-in method time.sleep>"
+      ],
+      "caller_contract_valid": false
+    },
+    {
+      "threaded": false,
+      "leaf_calls": 200000,
+      "recorded_callers": [
+        "caller"
+      ],
+      "caller_contract_valid": true
+    }
+  ],
+  "scope": "Local profiler attribution diagnosis, no assertion of an identified upstream bug; no production or GA failure"
+}

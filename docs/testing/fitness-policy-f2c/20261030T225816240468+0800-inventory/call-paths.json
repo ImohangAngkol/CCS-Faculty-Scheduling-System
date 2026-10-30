@@ -1,0 +1,2174 @@
+{
+  "scope": "Static name-based index; curated report explains active paths, storage, observers and alternate scorers. Not dynamic coverage.",
+  "files": [
+    {
+      "path": "backend/genetic_algorithm/analysis/AnalyzeResult.py",
+      "sha256": "d3531d67e9302fbd5143a53d09c68438e3861bd6187a71e6aceeb67bfd8b34ca",
+      "definitions": [],
+      "scoring_related_imports": [],
+      "calls": [
+        {
+          "line": 1152,
+          "caller": "analyze_faculty_preferences",
+          "callee": "detail_df.groupby(['Faculty_Code', 'Faculty_Priority']).agg(Subjects_Assigned=('Subject', 'count'), Subject_Match=('Subject_Match', 'mean'), Day_Match=('Day_Match', 'mean'), Time_Match=('Time_Match_Score', 'mean')).reset_index"
+        }
+      ],
+      "comparisons": []
+    },
+    {
+      "path": "backend/genetic_algorithm/analysis/FacultyFitnessVisualization.py",
+      "sha256": "b1fbe7d158df2d57f4c30445acfae2a6fa19e7eec272b14ce1f4c4b52b8f3575",
+      "definitions": [
+        {
+          "line": 21,
+          "function": "analyze_faculty_fitness"
+        },
+        {
+          "line": 372,
+          "function": "visualize_faculty_fitness"
+        },
+        {
+          "line": 514,
+          "function": "display_faculty_fitness_summary"
+        }
+      ],
+      "scoring_related_imports": [
+        {
+          "line": 7,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 345,
+          "caller": "analyze_faculty_fitness",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 386,
+          "caller": "visualize_faculty_fitness",
+          "callee": "analyze_faculty_fitness"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 363,
+          "caller": "analyze_faculty_fitness",
+          "variables": [
+            "abs",
+            "total_fitness",
+            "total_from_rows"
+          ],
+          "keys": [],
+          "operators": [
+            "Gt"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/genetic_algorithm/analysis/FacultySelectedChromosomeDashboard.py",
+      "sha256": "1cfc7aee2519f438342c786a17eb58e4208a469984d95be6422876d1cb554430",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 35,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 768,
+          "caller": "analyze_selected_chromosome",
+          "callee": "faculty_preference_fitness"
+        }
+      ],
+      "comparisons": []
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/CreatePopulation.py",
+      "sha256": "2246770113c766220f2dc7e79389feff5a7993a5a46177954eb80da4809b10ff",
+      "definitions": [
+        {
+          "line": 22,
+          "function": "sort_population_by_fitness"
+        }
+      ],
+      "scoring_related_imports": [
+        {
+          "line": 4,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 34,
+          "caller": "sort_population_by_fitness",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 164,
+          "caller": "create_new_population",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 173,
+          "caller": "create_new_population",
+          "callee": "population_with_fitness.sort"
+        },
+        {
+          "line": 207,
+          "caller": "get_top_population",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 216,
+          "caller": "get_top_population",
+          "callee": "population_with_fitness.sort"
+        }
+      ],
+      "comparisons": []
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/FitnessFunction.py",
+      "sha256": "e679e3e649a70c504fcc3d4c10cf749bcc2c92a3a812a0bd5b31e2f3ca0b5ff1",
+      "definitions": [
+        {
+          "line": 814,
+          "function": "_score_exact_subject_schedule_blocks"
+        },
+        {
+          "line": 984,
+          "function": "faculty_preference_fitness"
+        }
+      ],
+      "scoring_related_imports": [
+        {
+          "line": 6,
+          "module": "genetic_algorithm.utils.FitnessObservation",
+          "name": "record_fitness",
+          "alias": null
+        },
+        {
+          "line": 7,
+          "module": "genetic_algorithm.utils.FrozenInputs",
+          "name": "scoring_inputs",
+          "alias": null
+        },
+        {
+          "line": 8,
+          "module": "services.preference_scoring_policy",
+          "name": "scoring_version",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 52,
+          "caller": "_load_ga_settings",
+          "callee": "scoring_inputs.get"
+        },
+        {
+          "line": 80,
+          "caller": "_load_dashboard_preferences",
+          "callee": "scoring_inputs.get"
+        },
+        {
+          "line": 891,
+          "caller": "_score_exact_subject_schedule_blocks",
+          "callee": "scoring_inputs.get"
+        },
+        {
+          "line": 892,
+          "caller": "_score_exact_subject_schedule_blocks",
+          "callee": "scoring_version"
+        },
+        {
+          "line": 1124,
+          "caller": "faculty_preference_fitness",
+          "callee": "scoring_inputs.get"
+        },
+        {
+          "line": 1334,
+          "caller": "faculty_preference_fitness",
+          "callee": "_score_exact_subject_schedule_blocks"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 892,
+          "caller": "_score_exact_subject_schedule_blocks",
+          "variables": [
+            "frozen",
+            "scoring_version"
+          ],
+          "keys": [],
+          "operators": [
+            "Eq"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/mutation.py",
+      "sha256": "bee483d6e55923bcf1a04c4f76a91c58dc55fe6a4edcb1e645be104b15504061",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 162,
+          "caller": "mutate_by_swapping_faculty_subjects",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 211,
+          "caller": "mutate_by_swapping_faculty_subjects",
+          "callee": "faculty_preference_fitness"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 215,
+          "caller": "mutate_by_swapping_faculty_subjects",
+          "variables": [
+            "child_fitness",
+            "original_fitness"
+          ],
+          "keys": [],
+          "operators": [
+            "Lt"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/Swap.py",
+      "sha256": "14ba9ea2c1f7339a38146390d89ad849e9f6893f9d4e67c9f4cd1234a1043098",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 13,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 256,
+          "caller": "create_child_by_faculty_swap",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 261,
+          "caller": "create_child_by_faculty_swap",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 663,
+          "caller": "create_child_by_faculty_swap",
+          "callee": "faculty_preference_fitness"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 282,
+          "caller": "create_child_by_faculty_swap",
+          "variables": [
+            "parent1_fitness",
+            "parent2_fitness"
+          ],
+          "keys": [],
+          "operators": [
+            "LtE"
+          ]
+        },
+        {
+          "line": 678,
+          "caller": "create_child_by_faculty_swap",
+          "variables": [
+            "child_fitness",
+            "parent1_fitness"
+          ],
+          "keys": [],
+          "operators": [
+            "Lt"
+          ]
+        },
+        {
+          "line": 681,
+          "caller": "create_child_by_faculty_swap",
+          "variables": [
+            "child_fitness",
+            "parent2_fitness"
+          ],
+          "keys": [],
+          "operators": [
+            "Lt"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/TournamentSelection.py",
+      "sha256": "f7ef9cf318d4252338ac3a99d54cd7a5ae25f20bf02c0c1a79cc328d4ad61993",
+      "definitions": [],
+      "scoring_related_imports": [],
+      "calls": [
+        {
+          "line": 92,
+          "caller": "select_parent_pair",
+          "callee": "remaining_fitness_scores.append"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 37,
+          "caller": "tournament_selection",
+          "variables": [
+            "fitness_scores",
+            "len",
+            "population"
+          ],
+          "keys": [],
+          "operators": [
+            "NotEq"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/FitnessObservation.py",
+      "sha256": "e47537d695b9df17a67929c4fdde6bb3ecbc8c034f9b4fb53b691ae0517829b8",
+      "definitions": [
+        {
+          "line": 9,
+          "function": "record_fitness"
+        },
+        {
+          "line": 23,
+          "function": "collect_run_scores"
+        }
+      ],
+      "scoring_related_imports": [],
+      "calls": [
+        {
+          "line": 13,
+          "caller": "record_fitness.wrapped",
+          "callee": "observed_scores.get"
+        },
+        {
+          "line": 27,
+          "caller": "collect_run_scores.wrapped",
+          "callee": "observed_scores.set"
+        },
+        {
+          "line": 31,
+          "caller": "collect_run_scores.wrapped",
+          "callee": "observed_scores.reset"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 15,
+          "caller": "record_fitness.wrapped",
+          "variables": [
+            "scores"
+          ],
+          "keys": [],
+          "operators": [
+            "IsNot"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/FrozenInputs.py",
+      "sha256": "e407d686e2ee95eccca80761c77a2fec6e5d90bef302a8ebe9621268b1f8bf3a",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 10,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_load_ga_settings",
+          "alias": null
+        },
+        {
+          "line": 10,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_load_dashboard_preferences",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 28,
+          "caller": "with_frozen_inputs.wrapped",
+          "callee": "scoring_inputs.set"
+        },
+        {
+          "line": 32,
+          "caller": "with_frozen_inputs.wrapped",
+          "callee": "scoring_inputs.reset"
+        }
+      ],
+      "comparisons": []
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/Functions.py",
+      "sha256": "d28af9197d38957eb5ace526aa243e4448c68bd475efd89337e1d2c4742f555b",
+      "definitions": [
+        {
+          "line": 1350,
+          "function": "faculty_subject_preference_score"
+        },
+        {
+          "line": 3429,
+          "function": "faculty_preference_fitness"
+        }
+      ],
+      "scoring_related_imports": [],
+      "calls": [
+        {
+          "line": 1491,
+          "caller": "get_ranked_faculty_candidates.workload_rank",
+          "callee": "faculty_subject_preference_score"
+        }
+      ],
+      "comparisons": []
+    },
+    {
+      "path": "backend/main.py",
+      "sha256": "baf9f95f0eb2f02c6c146a22b705709230b64bb989b5aaee499fb34d328cf17a",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 10,
+          "module": "routers",
+          "name": "fitness_analysis",
+          "alias": null
+        }
+      ],
+      "calls": [],
+      "comparisons": []
+    },
+    {
+      "path": "backend/routers/fitness_analysis.py",
+      "sha256": "2d1eb8b9aeffd4d68dcf92e49599335a500823d2a09795ea09f43bebd180bfa4",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 5,
+          "module": "services",
+          "name": "fitness_reporting_service",
+          "alias": "reports"
+        }
+      ],
+      "calls": [
+        {
+          "line": 33,
+          "caller": "exported",
+          "callee": "history.checkpoints.canonical"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 33,
+          "caller": "exported",
+          "variables": [
+            "section"
+          ],
+          "keys": [
+            "fitness"
+          ],
+          "operators": [
+            "Eq"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/routers/ga_history.py",
+      "sha256": "48c59de46ec69ce20c4cd07c20260a2360c2f10782978aff33bd3be1d5df7a49",
+      "definitions": [],
+      "scoring_related_imports": [],
+      "calls": [
+        {
+          "line": 133,
+          "caller": "export_candidate.operation",
+          "callee": "history.checkpoints.canonical"
+        },
+        {
+          "line": 162,
+          "caller": "export_comparison.operation",
+          "callee": "history.checkpoints.canonical"
+        }
+      ],
+      "comparisons": []
+    },
+    {
+      "path": "backend/routers/genetic_algorithm.py",
+      "sha256": "0e5795649ca233f4204b78c9e1b7c77f18de6fb6a1ef517c0943a74e66fe68d0",
+      "definitions": [
+        {
+          "line": 259,
+          "function": "_checkpoint_error"
+        },
+        {
+          "line": 277,
+          "function": "get_checkpoint_status"
+        }
+      ],
+      "scoring_related_imports": [
+        {
+          "line": 12,
+          "module": "services",
+          "name": "ga_checkpoint_service",
+          "alias": "checkpoints"
+        },
+        {
+          "line": 280,
+          "module": "services.ga_checkpoint_verification",
+          "name": "checkpoint_status",
+          "alias": null
+        },
+        {
+          "line": 307,
+          "module": "services.ga_checkpoint_verification",
+          "name": "load_checkpoint",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 75,
+          "caller": "_admit_execution",
+          "callee": "checkpoints.write_marker"
+        },
+        {
+          "line": 281,
+          "caller": "get_checkpoint_status",
+          "callee": "checkpoint_status"
+        },
+        {
+          "line": 289,
+          "caller": "get_checkpoint_status",
+          "callee": "_checkpoint_error"
+        },
+        {
+          "line": 301,
+          "caller": "_launch_resume",
+          "callee": "checkpoints.read_marker"
+        },
+        {
+          "line": 303,
+          "caller": "_launch_resume",
+          "callee": "checkpoints.CheckpointError"
+        },
+        {
+          "line": 308,
+          "caller": "_launch_resume",
+          "callee": "load_checkpoint"
+        },
+        {
+          "line": 310,
+          "caller": "_launch_resume",
+          "callee": "checkpoints.read_marker"
+        },
+        {
+          "line": 349,
+          "caller": "_launch_resume",
+          "callee": "_checkpoint_error"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 260,
+          "caller": "_checkpoint_error",
+          "variables": [
+            "error"
+          ],
+          "keys": [
+            "GA_CHECKPOINT_UNAVAILABLE"
+          ],
+          "operators": [
+            "Eq"
+          ]
+        },
+        {
+          "line": 260,
+          "caller": "_checkpoint_error",
+          "variables": [
+            "error"
+          ],
+          "keys": [
+            "GA_CHECKPOINT_INCOMPATIBLE",
+            "GA_CHECKPOINT_INPUT_CHANGED"
+          ],
+          "operators": [
+            "In"
+          ]
+        },
+        {
+          "line": 286,
+          "caller": "get_checkpoint_status",
+          "variables": [
+            "control",
+            "verified"
+          ],
+          "keys": [
+            "checkpoint"
+          ],
+          "operators": [
+            "Eq"
+          ]
+        },
+        {
+          "line": 312,
+          "caller": "_launch_resume",
+          "variables": [
+            "checkpoint",
+            "control"
+          ],
+          "keys": [],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 313,
+          "caller": "_launch_resume",
+          "variables": [
+            "checkpoint",
+            "marker"
+          ],
+          "keys": [
+            "checkpoint"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/services/chromosome_analysis_service.py",
+      "sha256": "b5323b3410c5999abb8aca8d5f4dafdbcd5755b7a218f53dcccf0e7a7e5d1822",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 1,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 60,
+          "caller": "analyze_chromosome_payload",
+          "callee": "faculty_preference_fitness"
+        }
+      ],
+      "comparisons": []
+    },
+    {
+      "path": "backend/services/chromosome_service.py",
+      "sha256": "92f8b858806fc7fc1070ef169f86d34f089a1d6fa299751eaa5926c178826740",
+      "definitions": [],
+      "scoring_related_imports": [],
+      "calls": [],
+      "comparisons": [
+        {
+          "line": 448,
+          "caller": "save_best_if_better",
+          "variables": [
+            "old_fitness"
+          ],
+          "keys": [],
+          "operators": [
+            "Is"
+          ]
+        },
+        {
+          "line": 453,
+          "caller": "save_best_if_better",
+          "variables": [
+            "fitness",
+            "float",
+            "old_fitness"
+          ],
+          "keys": [],
+          "operators": [
+            "Lt"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/services/faculty_analysis_service.py",
+      "sha256": "0e903b2d3b6ba8c075d330df1f736d6a63c18c032af5f5fe4f562ce1b908d815",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        },
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_build_effective_preferences",
+          "alias": null
+        },
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_get_importance",
+          "alias": null
+        },
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_load_ga_settings",
+          "alias": null
+        },
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_subject_components",
+          "alias": null
+        },
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_time_to_minutes",
+          "alias": null
+        },
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_unpack_block",
+          "alias": null
+        },
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_normalize_schedule_day",
+          "alias": null
+        },
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_subject_schedule_preference_blocks",
+          "alias": null
+        },
+        {
+          "line": 12,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_component_intervals",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 204,
+          "caller": "_subject_satisfaction",
+          "callee": "scores.append"
+        },
+        {
+          "line": 227,
+          "caller": "_subject_satisfaction",
+          "callee": "scores.append"
+        },
+        {
+          "line": 802,
+          "caller": "build_faculty_analysis",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 1111,
+          "caller": "build_faculty_analysis",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 1205,
+          "caller": "build_faculty_analysis",
+          "callee": "fitness_breakdown.items"
+        }
+      ],
+      "comparisons": []
+    },
+    {
+      "path": "backend/services/fitness_reporting_service.py",
+      "sha256": "fa73b85fec995c34ac39050f91e33552db7580a2d885e1943d1b5fb3f93a0cfa",
+      "definitions": [
+        {
+          "line": 33,
+          "function": "scorer_hash"
+        }
+      ],
+      "scoring_related_imports": [
+        {
+          "line": 34,
+          "module": "services.preference_scoring_policy",
+          "name": "legacy_source",
+          "alias": null
+        },
+        {
+          "line": 44,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_build_effective_preferences",
+          "alias": null
+        },
+        {
+          "line": 61,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "_component_intervals",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 54,
+          "caller": "capture_context",
+          "callee": "history.checkpoints.scoring_version"
+        },
+        {
+          "line": 55,
+          "caller": "capture_context",
+          "callee": "scorer_hash"
+        },
+        {
+          "line": 249,
+          "caller": "build_report",
+          "callee": "scorer_hash"
+        },
+        {
+          "line": 250,
+          "caller": "build_report",
+          "callee": "history.checkpoints.evaluation_fingerprint"
+        },
+        {
+          "line": 324,
+          "caller": "build_report",
+          "callee": "history.checkpoints.canonical"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 250,
+          "caller": "build_report",
+          "variables": [
+            "captured_engine",
+            "history",
+            "policy"
+          ],
+          "keys": [
+            "preference_scoring_version"
+          ],
+          "operators": [
+            "Eq"
+          ]
+        },
+        {
+          "line": 289,
+          "caller": "build_report",
+          "variables": [
+            "context",
+            "current_scorer_hash"
+          ],
+          "keys": [
+            "scorer_sha256"
+          ],
+          "operators": [
+            "Eq"
+          ]
+        },
+        {
+          "line": 373,
+          "caller": "latest_report",
+          "variables": [
+            "data",
+            "selected"
+          ],
+          "keys": [
+            "best_fitness"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/services/ga_checkpoint_service.py",
+      "sha256": "03264366f062bcf09412b99a5bb91cb0b2a88ad9e5e0797a2a72c7007d80248b",
+      "definitions": [
+        {
+          "line": 286,
+          "function": "save_checkpoint"
+        },
+        {
+          "line": 312,
+          "function": "load_checkpoint"
+        },
+        {
+          "line": 347,
+          "function": "checkpoint_status"
+        }
+      ],
+      "scoring_related_imports": [
+        {
+          "line": 26,
+          "module": "services.preference_scoring_policy",
+          "name": "scoring_version",
+          "alias": null
+        },
+        {
+          "line": 26,
+          "module": "services.preference_scoring_policy",
+          "name": "legacy_source",
+          "alias": null
+        },
+        {
+          "line": 26,
+          "module": "services.preference_scoring_policy",
+          "name": "MANIFEST",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 69,
+          "caller": "engine_fingerprint",
+          "callee": "Path(__file__).with_name('preference_scoring_policy.py').read_bytes"
+        },
+        {
+          "line": 79,
+          "caller": "run_directory",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 84,
+          "caller": "evaluation_fingerprint",
+          "callee": "scoring_version"
+        },
+        {
+          "line": 126,
+          "caller": "encode_graph.encode",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 138,
+          "caller": "encode_graph.encode",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 148,
+          "caller": "decode_graph",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 163,
+          "caller": "decode_graph",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 169,
+          "caller": "decode_graph.decode",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 174,
+          "caller": "decode_graph.decode",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 177,
+          "caller": "decode_graph.decode",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 181,
+          "caller": "decode_graph.decode",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 198,
+          "caller": "decode_graph",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 224,
+          "caller": "validate_state",
+          "callee": "scoring_version"
+        },
+        {
+          "line": 231,
+          "caller": "validate_state",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 233,
+          "caller": "validate_state",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 235,
+          "caller": "validate_state",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 239,
+          "caller": "validate_state",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 255,
+          "caller": "validate_state",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 257,
+          "caller": "validate_state",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 271,
+          "caller": "read_marker",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 302,
+          "caller": "save_checkpoint",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 308,
+          "caller": "save_checkpoint",
+          "callee": "load_checkpoint"
+        },
+        {
+          "line": 318,
+          "caller": "load_checkpoint",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 322,
+          "caller": "load_checkpoint",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 326,
+          "caller": "load_checkpoint",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 329,
+          "caller": "load_checkpoint",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 331,
+          "caller": "load_checkpoint",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 334,
+          "caller": "load_checkpoint",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 339,
+          "caller": "load_checkpoint",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 344,
+          "caller": "load_checkpoint",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 350,
+          "caller": "checkpoint_status",
+          "callee": "CheckpointError"
+        },
+        {
+          "line": 355,
+          "caller": "checkpoint_status",
+          "callee": "load_checkpoint"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 84,
+          "caller": "evaluation_fingerprint",
+          "variables": [
+            "inputs",
+            "scoring_version"
+          ],
+          "keys": [],
+          "operators": [
+            "Eq"
+          ]
+        },
+        {
+          "line": 234,
+          "caller": "validate_state",
+          "variables": [
+            "state"
+          ],
+          "keys": [
+            "scoring_inputs"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 278,
+          "caller": "write_marker",
+          "variables": [
+            "checkpoint"
+          ],
+          "keys": [],
+          "operators": [
+            "IsNot"
+          ]
+        },
+        {
+          "line": 333,
+          "caller": "load_checkpoint",
+          "variables": [
+            "evaluation_fingerprint",
+            "payload",
+            "state"
+          ],
+          "keys": [
+            "scoring_inputs"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/services/ga_checkpoint_verification.py",
+      "sha256": "eba5a6847ef55a57c609ea15d65722cc54c8d867c7aac258eeb0dcce182ecfea",
+      "definitions": [
+        {
+          "line": 22,
+          "function": "load_checkpoint"
+        },
+        {
+          "line": 52,
+          "function": "checkpoint_status"
+        }
+      ],
+      "scoring_related_imports": [
+        {
+          "line": 15,
+          "module": "services",
+          "name": "ga_checkpoint_service",
+          "alias": "checkpoints"
+        }
+      ],
+      "calls": [
+        {
+          "line": 25,
+          "caller": "load_checkpoint",
+          "callee": "checkpoints.load_checkpoint"
+        },
+        {
+          "line": 27,
+          "caller": "load_checkpoint",
+          "callee": "checkpoints.CheckpointError"
+        },
+        {
+          "line": 31,
+          "caller": "identity",
+          "callee": "checkpoints.read_marker"
+        },
+        {
+          "line": 33,
+          "caller": "identity",
+          "callee": "checkpoints.CheckpointError"
+        },
+        {
+          "line": 35,
+          "caller": "identity",
+          "callee": "checkpoints.Path"
+        },
+        {
+          "line": 37,
+          "caller": "identity",
+          "callee": "checkpoints.CheckpointError"
+        },
+        {
+          "line": 38,
+          "caller": "identity",
+          "callee": "checkpoints.run_directory"
+        },
+        {
+          "line": 45,
+          "caller": "identity",
+          "callee": "checkpoints.CheckpointError"
+        },
+        {
+          "line": 47,
+          "caller": "identity",
+          "callee": "hashlib.sha256(checkpoints.canonical(checkpoints.encode_graph(templates))).hexdigest"
+        },
+        {
+          "line": 47,
+          "caller": "identity",
+          "callee": "checkpoints.canonical"
+        },
+        {
+          "line": 47,
+          "caller": "identity",
+          "callee": "checkpoints.encode_graph"
+        },
+        {
+          "line": 49,
+          "caller": "identity",
+          "callee": "checkpoints.engine_fingerprint"
+        },
+        {
+          "line": 49,
+          "caller": "identity",
+          "callee": "checkpoints.input_fingerprint"
+        },
+        {
+          "line": 53,
+          "caller": "checkpoint_status",
+          "callee": "checkpoints.read_marker"
+        },
+        {
+          "line": 55,
+          "caller": "checkpoint_status",
+          "callee": "checkpoints.checkpoint_status"
+        },
+        {
+          "line": 69,
+          "caller": "checkpoint_status",
+          "callee": "checkpoints.CheckpointError"
+        },
+        {
+          "line": 78,
+          "caller": "checkpoint_status",
+          "callee": "checkpoints.checkpoint_status"
+        },
+        {
+          "line": 84,
+          "caller": "checkpoint_status",
+          "callee": "checkpoints.CheckpointError"
+        },
+        {
+          "line": 95,
+          "caller": "checkpoint_status",
+          "callee": "checkpoints.CheckpointError"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 35,
+          "caller": "identity",
+          "variables": [
+            "checkpoints",
+            "filename"
+          ],
+          "keys": [],
+          "operators": [
+            "NotEq"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/services/ga_control_service.py",
+      "sha256": "9a2899e104483e89ee23afe786eb46330fd2fcca2b1487eaeed7b861b0130c3f",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 93,
+          "module": "services.ga_checkpoint_service",
+          "name": "write_marker",
+          "alias": null
+        },
+        {
+          "line": 149,
+          "module": "services.ga_checkpoint_service",
+          "name": "write_marker",
+          "alias": null
+        },
+        {
+          "line": 263,
+          "module": "services.ga_checkpoint_service",
+          "name": "CHECKPOINTS_DIR",
+          "alias": null
+        },
+        {
+          "line": 263,
+          "module": "services.ga_checkpoint_service",
+          "name": "read_marker",
+          "alias": null
+        },
+        {
+          "line": 305,
+          "module": "services.ga_checkpoint_service",
+          "name": "write_marker",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 264,
+          "caller": "discover",
+          "callee": "CHECKPOINTS_DIR.exists"
+        },
+        {
+          "line": 266,
+          "caller": "discover",
+          "callee": "CHECKPOINTS_DIR.iterdir"
+        }
+      ],
+      "comparisons": []
+    },
+    {
+      "path": "backend/services/ga_history_service.py",
+      "sha256": "92b36d7feeb2d3bb11d7def42eea2d49886183dc44859ec30bc50115ce75761c",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 21,
+          "module": "genetic_algorithm.utils.FitnessObservation",
+          "name": "observed_scores",
+          "alias": null
+        },
+        {
+          "line": 22,
+          "module": "services",
+          "name": "ga_checkpoint_service",
+          "alias": "checkpoints"
+        },
+        {
+          "line": 143,
+          "module": "services.fitness_reporting_service",
+          "name": "capture_assignments",
+          "alias": null
+        },
+        {
+          "line": 194,
+          "module": "services.fitness_reporting_service",
+          "name": "capture_assignments",
+          "alias": null
+        },
+        {
+          "line": 194,
+          "module": "services.fitness_reporting_service",
+          "name": "capture_context",
+          "alias": null
+        },
+        {
+          "line": 195,
+          "module": "genetic_algorithm.utils.FrozenInputs",
+          "name": "scoring_inputs",
+          "alias": null
+        },
+        {
+          "line": 219,
+          "module": "genetic_algorithm.utils.FrozenInputs",
+          "name": "scoring_inputs",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 55,
+          "caller": "write_document",
+          "callee": "checkpoints.canonical"
+        },
+        {
+          "line": 57,
+          "caller": "write_document",
+          "callee": "checkpoints.canonical"
+        },
+        {
+          "line": 58,
+          "caller": "write_document",
+          "callee": "checkpoints.atomic_write"
+        },
+        {
+          "line": 66,
+          "caller": "read_document",
+          "callee": "hashlib.sha256(checkpoints.canonical(data)).hexdigest"
+        },
+        {
+          "line": 66,
+          "caller": "read_document",
+          "callee": "checkpoints.canonical"
+        },
+        {
+          "line": 93,
+          "caller": "candidate_id",
+          "callee": "hashlib.sha256(checkpoints.canonical({'schedule': payload['schedule'], 'subject_keys': payload['subject_keys']})).hexdigest"
+        },
+        {
+          "line": 93,
+          "caller": "candidate_id",
+          "callee": "checkpoints.canonical"
+        },
+        {
+          "line": 134,
+          "caller": "__init__",
+          "callee": "checkpoints.engine_fingerprint"
+        },
+        {
+          "line": 134,
+          "caller": "__init__",
+          "callee": "checkpoints.evaluation_fingerprint"
+        },
+        {
+          "line": 140,
+          "caller": "__init__",
+          "callee": "checkpoints.dataframe_from_state"
+        },
+        {
+          "line": 196,
+          "caller": "capture",
+          "callee": "scoring_inputs.get"
+        },
+        {
+          "line": 202,
+          "caller": "capture",
+          "callee": "observed_scores.get"
+        },
+        {
+          "line": 220,
+          "caller": "capture",
+          "callee": "scoring_inputs.get"
+        },
+        {
+          "line": 253,
+          "caller": "_write_jobs",
+          "callee": "checkpoints.canonical"
+        },
+        {
+          "line": 325,
+          "caller": "commit",
+          "callee": "checkpoints.canonical"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 66,
+          "caller": "read_document",
+          "variables": [
+            "checkpoints",
+            "data",
+            "envelope",
+            "hashlib"
+          ],
+          "keys": [],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 205,
+          "caller": "capture",
+          "variables": [
+            "metrics",
+            "penalty"
+          ],
+          "keys": [
+            "generation_best_fitness"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 208,
+          "caller": "capture",
+          "variables": [
+            "metrics",
+            "self"
+          ],
+          "keys": [
+            "best_ever_fitness",
+            "best_fitness"
+          ],
+          "operators": [
+            "Lt"
+          ]
+        },
+        {
+          "line": 209,
+          "caller": "capture",
+          "variables": [
+            "metrics",
+            "penalty"
+          ],
+          "keys": [
+            "best_ever_fitness"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 213,
+          "caller": "capture",
+          "variables": [
+            "metrics",
+            "self"
+          ],
+          "keys": [
+            "best_ever_fitness",
+            "best_fitness"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 251,
+          "caller": "_write_jobs",
+          "variables": [
+            "data",
+            "row"
+          ],
+          "keys": [
+            "best_ever_id"
+          ],
+          "operators": [
+            "In"
+          ]
+        },
+        {
+          "line": 275,
+          "caller": "record_result",
+          "variables": [
+            "result",
+            "self"
+          ],
+          "keys": [
+            "best_fitness"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 295,
+          "caller": "commit",
+          "variables": [
+            "data",
+            "kind",
+            "metric"
+          ],
+          "keys": [
+            "best_fitness"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 317,
+          "caller": "commit",
+          "variables": [
+            "data",
+            "existing"
+          ],
+          "keys": [
+            "best_ever",
+            "best_ever_id"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 322,
+          "caller": "commit",
+          "variables": [
+            "data",
+            "previous"
+          ],
+          "keys": [
+            "best_ever_fitness"
+          ],
+          "operators": [
+            "Gt"
+          ]
+        },
+        {
+          "line": 417,
+          "caller": "get_generation",
+          "variables": [
+            "data",
+            "kind",
+            "metric"
+          ],
+          "keys": [
+            "best_fitness"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 430,
+          "caller": "analysis",
+          "variables": [
+            "extra",
+            "selected"
+          ],
+          "keys": [
+            "best_fitness",
+            "fitness"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/services/ga_input_validation_service.py",
+      "sha256": "1559681bb3e83f289f01bec8645d6cfd177025d3f866774a1574f6eff644c4c5",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 91,
+          "module": "genetic_algorithm.operators",
+          "name": "FitnessFunction",
+          "alias": "fitness"
+        }
+      ],
+      "calls": [],
+      "comparisons": []
+    },
+    {
+      "path": "backend/services/ga_progress_service.py",
+      "sha256": "262c52a742f03938ae7f7653389e7b9d7bb88fe9c0df18b47b44c31e5f00c7a4",
+      "definitions": [
+        {
+          "line": 113,
+          "function": "checkpoint_state"
+        }
+      ],
+      "scoring_related_imports": [
+        {
+          "line": 11,
+          "module": "genetic_algorithm.utils.FitnessObservation",
+          "name": "observed_scores",
+          "alias": null
+        },
+        {
+          "line": 63,
+          "module": "genetic_algorithm.utils.FrozenInputs",
+          "name": "scoring_inputs",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 64,
+          "caller": "check_inputs",
+          "callee": "scoring_inputs.get"
+        },
+        {
+          "line": 82,
+          "caller": "report",
+          "callee": "observed_scores.get"
+        },
+        {
+          "line": 111,
+          "caller": "report",
+          "callee": "scores.clear"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 83,
+          "caller": "report",
+          "variables": [
+            "scores"
+          ],
+          "keys": [],
+          "operators": [
+            "Is"
+          ]
+        },
+        {
+          "line": 83,
+          "caller": "report",
+          "variables": [
+            "candidate",
+            "id",
+            "scores"
+          ],
+          "keys": [],
+          "operators": [
+            "NotIn"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/services/ga_service.py",
+      "sha256": "d2decf9f0a623b76cf3ede54a11267e3843d9484f083dadc1cfd9d562518d4d9",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 3,
+          "module": "genetic_algorithm.utils.FrozenInputs",
+          "name": "scoring_inputs",
+          "alias": null
+        },
+        {
+          "line": 4,
+          "module": "services.ga_checkpoint_service",
+          "name": "PausedRun",
+          "alias": null
+        },
+        {
+          "line": 4,
+          "module": "services.ga_checkpoint_service",
+          "name": "save_checkpoint",
+          "alias": null
+        },
+        {
+          "line": 4,
+          "module": "services.ga_checkpoint_service",
+          "name": "validate_state",
+          "alias": null
+        },
+        {
+          "line": 4,
+          "module": "services.ga_checkpoint_service",
+          "name": "dataframe_to_state",
+          "alias": null
+        },
+        {
+          "line": 4,
+          "module": "services.ga_checkpoint_service",
+          "name": "dataframe_from_state",
+          "alias": null
+        },
+        {
+          "line": 5,
+          "module": "genetic_algorithm.utils.FitnessObservation",
+          "name": "collect_run_scores",
+          "alias": null
+        },
+        {
+          "line": 21,
+          "module": "genetic_algorithm.operators.CreatePopulation",
+          "name": "sort_population_by_fitness",
+          "alias": null
+        },
+        {
+          "line": 26,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        },
+        {
+          "line": 53,
+          "module": "genetic_algorithm.operators.CreatePopulation",
+          "name": "sort_population_by_fitness",
+          "alias": null
+        },
+        {
+          "line": 58,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 266,
+          "caller": "generate_schedule",
+          "callee": "sort_population_by_fitness"
+        },
+        {
+          "line": 274,
+          "caller": "generate_schedule",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 453,
+          "caller": "run_genetic_algorithm",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 532,
+          "caller": "run_genetic_algorithm",
+          "callee": "sort_population_by_fitness"
+        },
+        {
+          "line": 543,
+          "caller": "run_genetic_algorithm",
+          "callee": "sort_population_by_fitness"
+        },
+        {
+          "line": 557,
+          "caller": "run_genetic_algorithm",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 604,
+          "caller": "run_genetic_algorithm.pause_boundary",
+          "callee": "monitor.checkpoint_state"
+        },
+        {
+          "line": 608,
+          "caller": "run_genetic_algorithm.pause_boundary",
+          "callee": "scoring_inputs.get"
+        },
+        {
+          "line": 611,
+          "caller": "run_genetic_algorithm.pause_boundary",
+          "callee": "save_checkpoint"
+        },
+        {
+          "line": 640,
+          "caller": "run_genetic_algorithm",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 669,
+          "caller": "run_genetic_algorithm",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 844,
+          "caller": "run_genetic_algorithm",
+          "callee": "sort_population_by_fitness"
+        },
+        {
+          "line": 855,
+          "caller": "run_genetic_algorithm",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 931,
+          "caller": "run_genetic_algorithm",
+          "callee": "faculty_preference_fitness"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 866,
+          "caller": "run_genetic_algorithm",
+          "variables": [
+            "best_ever_fitness",
+            "current_best_fitness"
+          ],
+          "keys": [],
+          "operators": [
+            "Lt"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/services/ga_v2_constraints.py",
+      "sha256": "2c465e6c56f551bc7229f2713d3bc4410e0d558b46a5a72c85046e1999ce9ae6",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 110,
+          "module": "services.ga_checkpoint_service",
+          "name": "encode_graph",
+          "alias": null
+        }
+      ],
+      "calls": [],
+      "comparisons": []
+    },
+    {
+      "path": "backend/services/ga_v2_engine.py",
+      "sha256": "cdb84cceb978818e5a8137f98ddfed7af5fc3787bff918c28503a7348ca448dc",
+      "definitions": [
+        {
+          "line": 167,
+          "function": "run.score"
+        },
+        {
+          "line": 224,
+          "function": "run.checkpoint"
+        }
+      ],
+      "scoring_related_imports": [
+        {
+          "line": 13,
+          "module": "genetic_algorithm.utils.FrozenInputs",
+          "name": "scoring_inputs",
+          "alias": null
+        },
+        {
+          "line": 14,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        },
+        {
+          "line": 19,
+          "module": "services.ga_checkpoint_service",
+          "name": "dataframe_to_state",
+          "alias": null
+        },
+        {
+          "line": 19,
+          "module": "services.ga_checkpoint_service",
+          "name": "dataframe_from_state",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 96,
+          "caller": "freeze",
+          "callee": "scoring_inputs.set"
+        },
+        {
+          "line": 100,
+          "caller": "freeze",
+          "callee": "scoring_inputs.reset"
+        },
+        {
+          "line": 138,
+          "caller": "validate_state",
+          "callee": "scoring_inputs.set"
+        },
+        {
+          "line": 140,
+          "caller": "validate_state",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 144,
+          "caller": "validate_state",
+          "callee": "scoring_inputs.reset"
+        },
+        {
+          "line": 163,
+          "caller": "run",
+          "callee": "scoring_inputs.set"
+        },
+        {
+          "line": 168,
+          "caller": "run.score",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 214,
+          "caller": "run",
+          "callee": "score"
+        },
+        {
+          "line": 231,
+          "caller": "run.checkpoint",
+          "callee": "score"
+        },
+        {
+          "line": 237,
+          "caller": "run",
+          "callee": "checkpoint"
+        },
+        {
+          "line": 241,
+          "caller": "run",
+          "callee": "checkpoint"
+        },
+        {
+          "line": 247,
+          "caller": "run",
+          "callee": "score"
+        },
+        {
+          "line": 249,
+          "caller": "run",
+          "callee": "score"
+        },
+        {
+          "line": 270,
+          "caller": "run",
+          "callee": "score"
+        },
+        {
+          "line": 271,
+          "caller": "run",
+          "callee": "score"
+        },
+        {
+          "line": 273,
+          "caller": "run",
+          "callee": "checkpoint"
+        },
+        {
+          "line": 278,
+          "caller": "run",
+          "callee": "scoring_inputs.reset"
+        }
+      ],
+      "comparisons": [
+        {
+          "line": 116,
+          "caller": "validate_state",
+          "variables": [
+            "input_fingerprint",
+            "state"
+          ],
+          "keys": [
+            "scoring_inputs"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 141,
+          "caller": "validate_state",
+          "variables": [
+            "score",
+            "state"
+          ],
+          "keys": [
+            "best_fitness"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 141,
+          "caller": "validate_state",
+          "variables": [
+            "score",
+            "state"
+          ],
+          "keys": [
+            "best_ever_fitness"
+          ],
+          "operators": [
+            "NotEq"
+          ]
+        },
+        {
+          "line": 270,
+          "caller": "run",
+          "variables": [
+            "best_fitness",
+            "population",
+            "score"
+          ],
+          "keys": [],
+          "operators": [
+            "Lt"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "backend/services/ga_v2_service.py",
+      "sha256": "2ec7d183398a8c0d370d56d03d8a9b39d73f69597892df59392fe36d8095d7d1",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 19,
+          "module": "services.ga_checkpoint_service",
+          "name": "dataframe_to_state",
+          "alias": null
+        },
+        {
+          "line": 21,
+          "module": "genetic_algorithm.operators.FitnessFunction",
+          "name": "faculty_preference_fitness",
+          "alias": null
+        },
+        {
+          "line": 22,
+          "module": "genetic_algorithm.utils.FrozenInputs",
+          "name": "scoring_inputs",
+          "alias": null
+        },
+        {
+          "line": 64,
+          "module": "services.ga_checkpoint_service",
+          "name": "dataframe_from_state",
+          "alias": null
+        }
+      ],
+      "calls": [
+        {
+          "line": 62,
+          "caller": "result_for",
+          "callee": "scoring_inputs.set"
+        },
+        {
+          "line": 66,
+          "caller": "result_for",
+          "callee": "faculty_preference_fitness"
+        },
+        {
+          "line": 68,
+          "caller": "result_for",
+          "callee": "scoring_inputs.reset"
+        }
+      ],
+      "comparisons": []
+    },
+    {
+      "path": "backend/services/ga_v2_store.py",
+      "sha256": "53805381a80283f281d158626d149c53be7cb532774e452a14b1f91df0a1ad19",
+      "definitions": [],
+      "scoring_related_imports": [
+        {
+          "line": 11,
+          "module": "services",
+          "name": "ga_checkpoint_service",
+          "alias": "legacy"
+        }
+      ],
+      "calls": [],
+      "comparisons": []
+    },
+    {
+      "path": "backend/services/preference_scoring_policy.py",
+      "sha256": "bdde95c6fb5cf9a47e49ad37c8a3d87805e4aa97e4947f7d7ebbf361db3b642b",
+      "definitions": [
+        {
+          "line": 11,
+          "function": "scoring_version"
+        }
+      ],
+      "scoring_related_imports": [],
+      "calls": [],
+      "comparisons": []
+    }
+  ]
+}

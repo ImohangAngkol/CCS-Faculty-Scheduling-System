@@ -1,0 +1,137 @@
+{
+  "part": "ram",
+  "scenario": "small",
+  "started_at": "2026-10-28T12:30:29.722640+08:00",
+  "finished_at": "2026-10-28T12:30:51.061556+08:00",
+  "worker_wall_seconds": 21.339008299983107,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\backend\\benchmarks\\memory_study.py",
+    "--worker",
+    "--part",
+    "ram",
+    "--scenario",
+    "small"
+  ],
+  "result": {
+    "status": "SUCCESS",
+    "scenario": "small",
+    "seed": 714,
+    "parameters": {
+      "population_size": 4,
+      "generations": 3,
+      "fresh_chromosomes": 1,
+      "mutation_attempts": 2,
+      "max_restarts": 5,
+      "candidate_attempts": 3,
+      "crossover_attempts": 2
+    },
+    "history": [
+      {
+        "generation": 0,
+        "generation_best_fitness": 6160.0,
+        "best_ever_fitness": 6160.0
+      },
+      {
+        "generation": 1,
+        "generation_best_fitness": 5585.0,
+        "best_ever_fitness": 5585.0
+      },
+      {
+        "generation": 2,
+        "generation_best_fitness": 4930.0,
+        "best_ever_fitness": 4930.0
+      },
+      {
+        "generation": 3,
+        "generation_best_fitness": 4930.0,
+        "best_ever_fitness": 4930.0
+      }
+    ],
+    "best_assignment_sha256": "30ea6e3424d6977c459a7b253a63acd7ba6bbed561092c07ccfeac7ed761730c",
+    "phase2_output_matches": true,
+    "hard_constraints": "PASS: original admission",
+    "before_engine_process": {
+      "working_set_bytes": 172052480,
+      "process_lifetime_peak_working_set_bytes": 172052480,
+      "private_commit_bytes_NOT_RSS": 650571776
+    },
+    "after_engine_process": {
+      "working_set_bytes": 267108352,
+      "process_lifetime_peak_working_set_bytes": 270704640,
+      "private_commit_bytes_NOT_RSS": 745627648
+    },
+    "engine_peak_point": null,
+    "generation_points": [
+      {
+        "generation": 0,
+        "process": {
+          "working_set_bytes": 187531264,
+          "process_lifetime_peak_working_set_bytes": 187531264,
+          "private_commit_bytes_NOT_RSS": 666824704
+        }
+      },
+      {
+        "generation": 1,
+        "process": {
+          "working_set_bytes": 218673152,
+          "process_lifetime_peak_working_set_bytes": 218673152,
+          "private_commit_bytes_NOT_RSS": 697290752
+        }
+      },
+      {
+        "generation": 2,
+        "process": {
+          "working_set_bytes": 237871104,
+          "process_lifetime_peak_working_set_bytes": 237887488,
+          "private_commit_bytes_NOT_RSS": 717254656
+        }
+      },
+      {
+        "generation": 3,
+        "process": {
+          "working_set_bytes": 267091968,
+          "process_lifetime_peak_working_set_bytes": 270610432,
+          "private_commit_bytes_NOT_RSS": 745627648
+        }
+      }
+    ],
+    "instrumented_seconds_NOT_performance_baseline": 16.036580699990736,
+    "mode": "ram",
+    "startup_process": {
+      "working_set_bytes": 32223232,
+      "process_lifetime_peak_working_set_bytes": 35020800,
+      "private_commit_bytes_NOT_RSS": 22716416
+    },
+    "after_import_process": {
+      "working_set_bytes": 165167104,
+      "process_lifetime_peak_working_set_bytes": 166658048,
+      "private_commit_bytes_NOT_RSS": 644902912
+    },
+    "process_sampling": {
+      "sampled_interval_peak_working_set_bytes": 269262848,
+      "sample_count": 204,
+      "poll_interval_seconds": 0.05,
+      "scope": "Sampled peak may miss short spikes; OS lifetime peak is separately reported"
+    },
+    "before_release_collection": {
+      "process": {
+        "working_set_bytes": 267096064,
+        "process_lifetime_peak_working_set_bytes": 270704640,
+        "private_commit_bytes_NOT_RSS": 745570304
+      }
+    },
+    "after_release_collection": {
+      "process": {
+        "working_set_bytes": 253464576,
+        "process_lifetime_peak_working_set_bytes": 270704640,
+        "private_commit_bytes_NOT_RSS": 731926528
+      }
+    },
+    "gc_collected": 172384,
+    "representative_model_weakrefs_alive_after_gc": 0,
+    "post_release_live_allocations": null,
+    "scope": "OS process RAM without tracemalloc; no accelerated engine"
+  }
+}

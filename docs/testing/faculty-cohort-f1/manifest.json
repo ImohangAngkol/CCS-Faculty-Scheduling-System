@@ -1,0 +1,225 @@
+{
+  "milestone": "F1 faculty cohort correction",
+  "recorded_at": "2026-10-29T09:17:39.947675+08:00",
+  "source_HEAD": "1423812e13a5791a550c893ef6b17bfef4b4ebfb",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "policy_approval": "USER_REPORTED_ADVISER_DEPARTMENT_ROSTER_FIRST_PRINCIPLE; no documentary approval evidence supplied",
+  "institutional_activation": "BLOCKED",
+  "production_cohort_correction": "BLOCKED_NO_TRUSTWORTHY_TERM_ROSTER_PROFILE_PROVIDER",
+  "fictional_adapter_review": "READY",
+  "production_files_modified": 0,
+  "existing_files_modified": 0,
+  "new_file_inventory": [
+    "backend/tests/f1/cohort_adapter.py",
+    "backend/tests/f1/test_cohort.py",
+    "docs/faculty-cohort-f1-implementation.md",
+    "docs/testing/faculty-cohort-f1/20261029T090759402192+0800-cohort/adapter-engine-continuation.json",
+    "docs/testing/faculty-cohort-f1/20261029T090759402192+0800-cohort/command.json",
+    "docs/testing/faculty-cohort-f1/20261029T090759402192+0800-cohort/coverage-before-after.json",
+    "docs/testing/faculty-cohort-f1/20261029T090818074621+0800-workflow/command.json",
+    "docs/testing/faculty-cohort-f1/20261029T090818090607+0800-frontend/command.json",
+    "docs/testing/faculty-cohort-f1/20261029T091026603914+0800-cohort/adapter-engine-continuation.json",
+    "docs/testing/faculty-cohort-f1/20261029T091026603914+0800-cohort/command.json",
+    "docs/testing/faculty-cohort-f1/20261029T091026603914+0800-cohort/coverage-before-after.json",
+    "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/adapter-engine-continuation.json",
+    "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/command.json",
+    "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/conflict-control-faculty.json",
+    "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/conflict-control-room.json",
+    "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/conflict-control-section.json",
+    "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/coverage-before-after.json",
+    "docs/testing/faculty-cohort-f1/audit_evidence.py",
+    "docs/testing/faculty-cohort-f1/conflict-fixture-diagnosis.json",
+    "docs/testing/faculty-cohort-f1/manifest.json",
+    "docs/testing/faculty-cohort-f1/preservation-baseline.json",
+    "docs/testing/faculty-cohort-f1/run_checks.py",
+    "docs/testing/faculty-cohort-f1/source-inspection.json"
+  ],
+  "new_file_type_counts": {
+    ".py": 4,
+    ".md": 1,
+    ".json": 18
+  },
+  "artifacts": [
+    {
+      "path": "backend/tests/f1/cohort_adapter.py",
+      "sha256": "8799df6e0f29e0cc027c6fa13679db9799f848e92d10cc750a4dbb5289d512b5",
+      "bytes": 8015
+    },
+    {
+      "path": "backend/tests/f1/test_cohort.py",
+      "sha256": "21dbaa1f324ad0aba5c18f644d8c5baad5ee13d6dbdbf74c8dfef76784caa4af",
+      "bytes": 17984
+    },
+    {
+      "path": "docs/faculty-cohort-f1-implementation.md",
+      "sha256": "dc2d0119d14c536226136879bd9dcef58b0c70e03e7b0c328f321ef0f8af4950",
+      "bytes": 20157
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T090759402192+0800-cohort/adapter-engine-continuation.json",
+      "sha256": "10ed3777848f1fcfb096752b49c7b31b4790348615d82a867b8e72a44caff605",
+      "bytes": 397
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T090759402192+0800-cohort/command.json",
+      "sha256": "0dc648b52bc66935504af909524cc232e6b58b14d6279cf4abc219ac4b5939fd",
+      "bytes": 1496
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T090759402192+0800-cohort/coverage-before-after.json",
+      "sha256": "d4b75eeb0fb0e6c72d954ab6051e07489cbb2de44868c54c8c07b0cfc4f577a1",
+      "bytes": 1187
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T090818074621+0800-workflow/command.json",
+      "sha256": "2dc6d040b3b7cd91353e8a372790a33e1c93aa2a13b51653449eb122c6fbdcea",
+      "bytes": 2165
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T090818090607+0800-frontend/command.json",
+      "sha256": "9d59e165ee312d04b5bb015290e653b455112519cb5ac775ab54da7e502ded51",
+      "bytes": 9291
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091026603914+0800-cohort/adapter-engine-continuation.json",
+      "sha256": "10ed3777848f1fcfb096752b49c7b31b4790348615d82a867b8e72a44caff605",
+      "bytes": 397
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091026603914+0800-cohort/command.json",
+      "sha256": "11c3186d06ab995d3e7752cf7c7decf4e3dec6c46d586cf0d64075cbaa3787e3",
+      "bytes": 3469
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091026603914+0800-cohort/coverage-before-after.json",
+      "sha256": "2319d0850c56334bb3747674ed0ec236f6f4b7bbd77666ef18212d431bc641c4",
+      "bytes": 1451
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/adapter-engine-continuation.json",
+      "sha256": "10ed3777848f1fcfb096752b49c7b31b4790348615d82a867b8e72a44caff605",
+      "bytes": 397
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/command.json",
+      "sha256": "a02741c6f191ad0dc0b0264e41b86847f40e820188b2984b7b82f5a22e2c034f",
+      "bytes": 1496
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/conflict-control-faculty.json",
+      "sha256": "91b4002c1feeeb6ef8d353f83af884ec986387e8da5c1a59ae5b0c5b755e1215",
+      "bytes": 244
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/conflict-control-room.json",
+      "sha256": "f9e14089f02ef9f97ce8156a9c095bf962313bbb5c221ceb5e867cd5eb4f7545",
+      "bytes": 238
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/conflict-control-section.json",
+      "sha256": "c22e770fcab25cec48bf13d1a6cd6acf7627d097966377310c8837b08bc4d7f5",
+      "bytes": 244
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/coverage-before-after.json",
+      "sha256": "2319d0850c56334bb3747674ed0ec236f6f4b7bbd77666ef18212d431bc641c4",
+      "bytes": 1451
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/audit_evidence.py",
+      "sha256": "7ec13b6846dfb467e388240da39d6634757b740e8dea27ed486651e9497791f2",
+      "bytes": 9394
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/conflict-fixture-diagnosis.json",
+      "sha256": "68bd534d77d8b887b853c32ff1768f6fdd0c4ef2fec6511b5f2795ab886d5522",
+      "bytes": 791
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/preservation-baseline.json",
+      "sha256": "867441d649da0e0cd6d542d3b7a32422798fc9a8ec8d48d4919d0238f9306fed",
+      "bytes": 257782
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/run_checks.py",
+      "sha256": "955002d7b8057826559facfd9dbd1c671d8c43429d14eead5c064a2b087e2b13",
+      "bytes": 4192
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/source-inspection.json",
+      "sha256": "1293aabd7aebc18ec5065de33138a89e48323c6ded0fc5d0fa24caf3e354a318",
+      "bytes": 1653
+    }
+  ],
+  "baseline_files_preserved": 1767,
+  "academic_files_preserved": 23,
+  "protected_preferences_and_existing_settings_unchanged": true,
+  "Git_index_HEAD_preserved": true,
+  "preexisting_tracked_modifications": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json"
+  ],
+  "tests": {
+    "latest_cohort_command": "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/command.json",
+    "new_F1_passed": 30,
+    "existing_audit_passed": 33,
+    "existing_D10_engine_passed": 30,
+    "latest_workflow_command": "docs/testing/faculty-cohort-f1/20261029T090818074621+0800-workflow/command.json",
+    "workflow_passed": 48,
+    "backend_total_passed": 141,
+    "latest_frontend_command": "docs/testing/faculty-cohort-f1/20261029T090818090607+0800-frontend/command.json",
+    "frontend_contracts_passed": 99,
+    "final_failed": 0,
+    "final_skipped": 0
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T090759402192+0800-cohort/command.json",
+      "selection": "cohort",
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T090818074621+0800-workflow/command.json",
+      "selection": "workflow",
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T090818090607+0800-frontend/command.json",
+      "selection": "frontend",
+      "exit_code": 0
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091026603914+0800-cohort/command.json",
+      "selection": "cohort",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/faculty-cohort-f1/20261029T091141342982+0800-cohort/command.json",
+      "selection": "cohort",
+      "exit_code": 0
+    }
+  ],
+  "unsuccessful_attempts_preserved": [
+    "docs/testing/faculty-cohort-f1/20261029T091026603914+0800-cohort/command.json"
+  ],
+  "failure_diagnosis": "New conflict fixture assumed assigned room from list position; original scheduler shuffles. Corrected by reading actual first assigned room; no application edit.",
+  "historical_artifact_entries_reverified": 381,
+  "privacy_findings": 0,
+  "privacy_scope": "Fictional records only; credential/key/complete and partial encoded receipt patterns plus sensitive log fields checked. No private faculty data, request/session payload or checkpoint archived.",
+  "PostgreSQL_operations": 0,
+  "SQLite_scope": "Owned isolated workflow fixtures only; no existing database accessed",
+  "actual_browser": "NOT_RUN_NO_PRODUCTION_INTEGRATION",
+  "frontend_build_lint": "NOT_RUN_NO_FRONTEND_EDIT",
+  "dependencies_installed": 0,
+  "staged_files": 0,
+  "commits_pushes": 0,
+  "limitations": [
+    "No trustworthy institutional semester roster/profile source configured",
+    "Fictional adapter is not imported by application; current legacy membership remains unchanged",
+    "Preference business validation, authorization and term applicability still require trusted metadata integration",
+    "Cohort digest is not yet installed in production run/checkpoint provenance",
+    "No genuine institutional authority or full formal thesis compliance established"
+  ],
+  "hash_convention": "Raw bytes; manifest excludes itself; old evidence and artifacts unchanged"
+}

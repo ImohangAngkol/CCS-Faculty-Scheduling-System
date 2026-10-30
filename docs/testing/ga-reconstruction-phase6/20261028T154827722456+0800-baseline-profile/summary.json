@@ -1,0 +1,29 @@
+{
+  "part": "baseline-profile",
+  "results": [
+    {
+      "mode": "profile",
+      "scenario": "small",
+      "variant": "baseline",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "profile",
+      "scenario": "medium",
+      "variant": "baseline",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "mode": "profile",
+      "scenario": "large",
+      "variant": "baseline",
+      "seed": 714,
+      "repetition": 1,
+      "status": "SUCCESS"
+    }
+  ]
+}

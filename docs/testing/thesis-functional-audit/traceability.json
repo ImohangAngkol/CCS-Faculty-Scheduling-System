@@ -1,0 +1,697 @@
+{
+  "audit": "Thesis objectives and functional correctness",
+  "formal_alignment": "UNVERIFIED",
+  "working_objectives": {
+    "WR1": "Generate conflict-free faculty/room/section schedules",
+    "WR2": "Consider specialization, explicit eligibility and preferences",
+    "WR3": "Promote balanced teaching workloads under academic policy",
+    "WR4": "Preference/request/admin workflows with final Chair approval",
+    "WR5": "Evaluate conflicts, preference satisfaction, workload balance, time and unassigned courses"
+  },
+  "source_attribution": "User working requirements, repository documentation and current source. Not verbatim approved thesis objectives.",
+  "planned_methodology": "DSRM",
+  "working_scope_exclusion": "Administrative, research and extension workloads excluded in latest user-stated thesis scope",
+  "status_definitions": {
+    "Implemented and verified": "Implemented plus named verified scope; fictional success is not institutional acceptance",
+    "Implemented but insufficiently tested": "Implementation inspected but evidence insufficient for stated requirement",
+    "Partially implemented": "Implemented portion plus an evidenced gap or blocked integration",
+    "Missing": "Absent requirement/function or unavailable audit input; see row scope",
+    "Conflicting with thesis methodology": "Not assigned as a formal verdict without the approved manuscript. Confirmed working-scope discrepancies are explicit in research_alignment."
+  },
+  "rows": [
+    {
+      "id": "H01",
+      "working_objectives": [
+        "WR1"
+      ],
+      "area": "Hard constraints",
+      "requirement": "Prevent faculty meeting overlaps",
+      "status": "Implemented and verified",
+      "source": "backend/services/chromosome_service.py:1228; backend/genetic_algorithm/utils/Functions.py:3041",
+      "evidence": "audit::independent_conflict_and_completeness_metrics; engine; workflow",
+      "limitations": "Verified on fictional fixtures, not every institutional catalog.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_independent_conflict_and_completeness_metrics_have_explicit_denominators"
+      ]
+    },
+    {
+      "id": "H02",
+      "working_objectives": [
+        "WR1"
+      ],
+      "area": "Hard constraints",
+      "requirement": "Prevent assigned-room overlaps",
+      "status": "Implemented and verified",
+      "source": "backend/genetic_algorithm/utils/Functions.py:1663; backend/services/chromosome_service.py:1228",
+      "evidence": "audit::independent_conflict_and_completeness_metrics; engine; workflow",
+      "limitations": "Occupancy conflict prevention is distinct from durable room closures.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_independent_conflict_and_completeness_metrics_have_explicit_denominators"
+      ]
+    },
+    {
+      "id": "H03",
+      "working_objectives": [
+        "WR1"
+      ],
+      "area": "Hard constraints",
+      "requirement": "Prevent section overlaps and fixed-section collisions",
+      "status": "Implemented and verified",
+      "source": "backend/genetic_algorithm/utils/Functions.py:895; backend/genetic_algorithm/utils/Functions.py:956",
+      "evidence": "engine::all_resources_and_partial_overlap; engine::adjacent_half_open_interval; workflow",
+      "limitations": "External section constraints need complete trusted mappings.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/d10/test_v2_engine.py::test_adjacent_half_open_interval_is_allowed_and_nonmutating",
+        "backend/tests/d10/test_v2_engine.py::test_all_resources_and_partial_overlap_are_admitted_before_scoring"
+      ]
+    },
+    {
+      "id": "H04",
+      "working_objectives": [
+        "WR1"
+      ],
+      "area": "Hard constraints",
+      "requirement": "Validate time grids, required minutes, lab continuity and room type",
+      "status": "Implemented and verified",
+      "source": "backend/services/chromosome_service.py:681; backend/services/ga_v2_engine.py:61",
+      "evidence": "audit::original_publication_rejects_incomplete_or_invalid_candidates; engine",
+      "limitations": "Supported patterns only; arbitrary component hours/dates are not inferred.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_original_publication_rejects_incomplete_or_invalid_candidates"
+      ]
+    },
+    {
+      "id": "H05",
+      "working_objectives": [
+        "WR1"
+      ],
+      "area": "Hard constraints",
+      "requirement": "Retain persistent faculty/room unavailability through restarts",
+      "status": "Partially implemented",
+      "source": "backend/genetic_algorithm/utils/Functions.py:1254; backend/genetic_algorithm/utils/Functions.py:1269",
+      "evidence": "audit::room_and_faculty_boolean_closures; audit::closed_room_slot; audit::removed_calendar_slots",
+      "limitations": "Ordinary availability flags reopen. Omitted slots and V2 fixed reservations survive. A general closure lifecycle/catalog is absent.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_closed_room_slot_can_be_assigned_after_original_reset",
+        "backend/tests/audit/test_thesis_correctness.py::test_removed_calendar_slots_and_V2_fixed_commitments_survive_restarts",
+        "backend/tests/audit/test_thesis_correctness.py::test_room_and_faculty_boolean_closures_reopen_at_reset_but_section_closure_remains"
+      ]
+    },
+    {
+      "id": "H06",
+      "working_objectives": [
+        "WR1",
+        "WR5"
+      ],
+      "area": "Hard constraints",
+      "requirement": "Require exact offering and component completeness",
+      "status": "Implemented and verified",
+      "source": "backend/services/ga_publication_service.py:8; backend/services/chromosome_service.py:908",
+      "evidence": "audit::original_publication_rejects_incomplete_or_invalid_candidates; engine",
+      "limitations": "Includes duplicate/missing rejection; not proof all input offerings were sourced correctly.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_original_publication_rejects_incomplete_or_invalid_candidates"
+      ]
+    },
+    {
+      "id": "H07",
+      "working_objectives": [
+        "WR1",
+        "WR4"
+      ],
+      "area": "Hard constraints",
+      "requirement": "Pin confirmed GEC faculty, room and section commitments",
+      "status": "Implemented and verified",
+      "source": "backend/services/ga_v2_constraints.py; backend/services/ga_v2_engine.py:28",
+      "evidence": "engine; workflow::actual_confirmed_generation_request_approval_application_and_history",
+      "limitations": "Verified with fictional trusted providers; genuine deployment remains blocked.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/dashboard/test_system_acceptance.py::test_actual_confirmed_generation_request_approval_application_and_history"
+      ]
+    },
+    {
+      "id": "H08",
+      "working_objectives": [
+        "WR1"
+      ],
+      "area": "Hard constraints",
+      "requirement": "Use authoritative room capacity/enrollment when required",
+      "status": "Partially implemented",
+      "source": "backend/services/published_schedule_source.py:54; backend/genetic_algorithm/models/Room.py:3",
+      "evidence": "workflow; D13 historical acceptance",
+      "limitations": "Publication/application validates required metadata; ordinary GA Room construction has no capacity/enrollment contract. Thesis applicability requires confirmation.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "F01",
+      "working_objectives": [
+        "WR2",
+        "WR3"
+      ],
+      "area": "Faculty coverage",
+      "requirement": "Include runtime faculty with and without submitted dashboard preferences",
+      "status": "Implemented and verified",
+      "source": "backend/genetic_algorithm/operators/FitnessFunction.py:1113; backend/genetic_algorithm/utils/Functions.py:1381",
+      "evidence": "audit::missing_preferences_do_not_remove_eligible_faculty; engine::same_seed_matches_history",
+      "limitations": "No preference is not a reason to exclude an already-present runtime member. No guaranteed teaching assignment.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_missing_preferences_do_not_remove_eligible_faculty_or_zero_assignment_underload",
+        "backend/tests/performance/test_scaled_python.py::test_same_seed_matches_history_assignments_and_diagnostics_and_restores_rng"
+      ]
+    },
+    {
+      "id": "F02",
+      "working_objectives": [
+        "WR2",
+        "WR3"
+      ],
+      "area": "Faculty coverage",
+      "requirement": "Cover the complete approved faculty roster independently of preference participation",
+      "status": "Partially implemented",
+      "source": "backend/genetic_algorithm/utils/Functions.py:219; backend/genetic_algorithm/utils/Functions.py:318; backend/genetic_algorithm/utils/Functions.py:395",
+      "evidence": "audit::original_legacy_roster_loop; legacy-roster-coverage.json",
+      "limitations": "Original loop loads only preference-derived keys. Synthetic AST replay returned one of two supplied identities. Real roster completeness was not inspected.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_original_legacy_roster_loop_omits_registered_faculty_absent_from_preference_rows"
+      ]
+    },
+    {
+      "id": "F03",
+      "working_objectives": [
+        "WR2"
+      ],
+      "area": "Faculty coverage",
+      "requirement": "Enforce explicit course-level eligibility",
+      "status": "Implemented and verified",
+      "source": "backend/genetic_algorithm/utils/Functions.py:1359; backend/services/chromosome_service.py:1248",
+      "evidence": "audit::specialization_is_not_hard_eligibility; audit::original_publication_rejects; engine",
+      "limitations": "Specialization alone grants no permission; missing eligibility fails closed.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_original_publication_rejects_incomplete_or_invalid_candidates",
+        "backend/tests/audit/test_thesis_correctness.py::test_specialization_is_not_hard_eligibility_or_a_scorer_term"
+      ]
+    },
+    {
+      "id": "F04",
+      "working_objectives": [
+        "WR2",
+        "WR5"
+      ],
+      "area": "Faculty coverage",
+      "requirement": "Consider specialization and quantify assignment alignment",
+      "status": "Partially implemented",
+      "source": "backend/genetic_algorithm/models/Faculty.py:126; backend/services/metadata_service.py:51; backend/genetic_algorithm/operators/FitnessFunction.py:1080",
+      "evidence": "audit::specialization_changes_alone_do_not_change_fitness; specialization.json",
+      "limitations": "Tags/domain metadata exist, but do not affect ranking/fitness; no standardized specialization-alignment metric was found. Working WR2 is only partially fulfilled.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_specialization_changes_alone_do_not_change_fitness"
+      ]
+    },
+    {
+      "id": "F05",
+      "working_objectives": [
+        "WR2"
+      ],
+      "area": "Faculty coverage",
+      "requirement": "Provide an approved exception process when strict specialization/eligibility is infeasible",
+      "status": "Missing",
+      "source": "backend/genetic_algorithm/utils/Functions.py:1359; docs/phase-4c1-academic-data-contract.md",
+      "evidence": "audit::no_eligible_instructor_is_not_detected; source inspection",
+      "limitations": "There is no strict-specialization optimization rule or automatic eligibility relaxation. Whether an exception workflow is required is an adviser/department decision.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_no_eligible_instructor_is_not_detected_by_aggregate_capacity_preflight"
+      ]
+    },
+    {
+      "id": "F06",
+      "working_objectives": [
+        "WR1",
+        "WR2"
+      ],
+      "area": "Faculty coverage",
+      "requirement": "Diagnose per-offering qualification impossibility before search",
+      "status": "Partially implemented",
+      "source": "backend/genetic_algorithm/utils/Functions.py:1721; backend/services/ga_v2_engine.py:51",
+      "evidence": "audit::no_eligible_instructor_is_not_detected_by_aggregate_capacity_preflight",
+      "limitations": "Aggregate capacity passes a zero-qualified-instructor fixture; construction returns SEARCH_EXHAUSTED rather than a specific missing-qualification diagnosis.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_no_eligible_instructor_is_not_detected_by_aggregate_capacity_preflight"
+      ]
+    },
+    {
+      "id": "W01",
+      "working_objectives": [
+        "WR3"
+      ],
+      "area": "Workload",
+      "requirement": "Apply current Option B targets and hard ceiling",
+      "status": "Implemented and verified",
+      "source": "backend/genetic_algorithm/models/Faculty.py:68; backend/genetic_algorithm/utils/Functions.py:1598",
+      "evidence": "audit::workload_policy_uses_fixed_hypothetical_release_inputs; audit::underload_is_soft_and_model_hard_ceiling_is_exact",
+      "limitations": "Target=max(0,24-admin-research-extension), warning above 30, hard teaching maximum 40. This verifies software behavior, not thesis-scope approval.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_underload_is_soft_and_model_hard_ceiling_is_exact",
+        "backend/tests/audit/test_thesis_correctness.py::test_workload_policy_uses_fixed_hypothetical_release_inputs"
+      ]
+    },
+    {
+      "id": "W02",
+      "working_objectives": [
+        "WR3"
+      ],
+      "area": "Workload",
+      "requirement": "Score underload, overload and zero-assignment faculty",
+      "status": "Implemented and verified",
+      "source": "backend/genetic_algorithm/operators/FitnessFunction.py:1113; backend/genetic_algorithm/operators/FitnessFunction.py:1892",
+      "evidence": "audit::missing_preferences; audit::equal_target_fairness_counterexample; metrics",
+      "limitations": "Zero-assignment members of the supplied universe are counted. Synthetic default weights, not protected local settings, were used. Boundary overload formulas inspected; not every numeric setting combination tested.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_equal_target_fairness_counterexample_is_hard_valid_but_lower_penalty_for_concentration",
+        "backend/tests/audit/test_thesis_correctness.py::test_missing_preferences_do_not_remove_eligible_faculty_or_zero_assignment_underload"
+      ]
+    },
+    {
+      "id": "W03",
+      "working_objectives": [
+        "WR3",
+        "WR5"
+      ],
+      "area": "Workload",
+      "requirement": "Promote equitable teaching allocations",
+      "status": "Partially implemented",
+      "source": "backend/genetic_algorithm/operators/FitnessFunction.py:2047; backend/genetic_algorithm/utils/Functions.py:1381",
+      "evidence": "audit::equal_target_fairness_counterexample; fairness-counterexample.json",
+      "limitations": "With equal 24-unit targets, valid [2,2] scores 500 while [4,0] scores 475. Rounded underload bands can reward concentration; constructor heuristics do not prove a monotone fairness objective.",
+      "research_alignment": "CONFLICT_WITH_WORKING_BALANCE_INTENT; FORMAL_ALIGNMENT_UNVERIFIED",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_equal_target_fairness_counterexample_is_hard_valid_but_lower_penalty_for_concentration"
+      ]
+    },
+    {
+      "id": "W04",
+      "working_objectives": [
+        "WR3"
+      ],
+      "area": "Workload",
+      "requirement": "Make configuration authority unambiguous",
+      "status": "Partially implemented",
+      "source": "backend/genetic_algorithm/models/ga_setting.py:36; backend/genetic_algorithm/models/Faculty.py:68",
+      "evidence": "audit::general_settings_do_not_reconfigure_model_workload_limits",
+      "limitations": "Synthetic settings accept target18/ceiling20 while normal Faculty retains24/40. Those settings are not authoritative replacements for model constants. Do not silently change policy.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_general_settings_do_not_reconfigure_model_workload_limits"
+      ]
+    },
+    {
+      "id": "W05",
+      "working_objectives": [
+        "WR3"
+      ],
+      "area": "Workload",
+      "requirement": "Retain non-teaching loads as fixed inputs rather than scheduled GA activities",
+      "status": "Implemented and verified",
+      "source": "backend/genetic_algorithm/models/Faculty.py:57; backend/services/metadata_service.py:45; backend/services/faculty_analysis_service.py",
+      "evidence": "audit::each_non_teaching_release_is_an_active_fitness_input",
+      "limitations": "All three loads reduce targets and affect fitness. They are not generated timetable activities.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_each_non_teaching_release_is_an_active_fitness_input_despite_working_thesis_exclusion"
+      ]
+    },
+    {
+      "id": "W06",
+      "working_objectives": [
+        "WR3"
+      ],
+      "area": "Workload",
+      "requirement": "Respect the newly stated thesis exclusion of admin/research/extension workload",
+      "status": "Partially implemented",
+      "source": "backend/genetic_algorithm/models/Faculty.py:57; backend/genetic_algorithm/operators/FitnessFunction.py:1963",
+      "evidence": "audit::each_non_teaching_release_is_an_active_fitness_input; nonteaching-admin.json; nonteaching-research.json; nonteaching-extension.json",
+      "limitations": "Each separate hypothetical 22-unit release changes the same [2,2] allocation workload penalty from500 to0. Fixed-input inclusion still conflicts with the exclusion as stated unless the adviser explicitly permits release allowances.",
+      "research_alignment": "CONFLICT_WITH_USER_STATED_WORKING_SCOPE; ADVISER_ALIGNMENT_UNVERIFIED",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_each_non_teaching_release_is_an_active_fitness_input_despite_working_thesis_exclusion"
+      ]
+    },
+    {
+      "id": "G01",
+      "working_objectives": [
+        "WR1",
+        "WR2",
+        "WR3"
+      ],
+      "area": "GA behavior",
+      "requirement": "Construct bounded valid populations and report search exhaustion",
+      "status": "Implemented and verified",
+      "source": "backend/services/ga_v2_engine.py:51; backend/genetic_algorithm/operators/CreatePopulation.py",
+      "evidence": "engine; audit::no_eligible_instructor",
+      "limitations": "Constructor supports original component patterns and retries. Search exhaustion is not a mathematical infeasibility proof.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_no_eligible_instructor_is_not_detected_by_aggregate_capacity_preflight"
+      ]
+    },
+    {
+      "id": "G02",
+      "working_objectives": [
+        "WR1",
+        "WR3"
+      ],
+      "area": "GA behavior",
+      "requirement": "Select lower-penalty parents and independent elites",
+      "status": "Implemented and verified",
+      "source": "backend/genetic_algorithm/operators/TournamentSelection.py; backend/genetic_algorithm/operators/ElitisimSelection.py",
+      "evidence": "engine::test_tournament_selection; D10 engine tests",
+      "limitations": "Tournament/elitism semantics verified; not evidence of optimal global fairness.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/test_tournament_selection.py"
+      ]
+    },
+    {
+      "id": "G03",
+      "working_objectives": [
+        "WR1",
+        "WR2"
+      ],
+      "area": "GA behavior",
+      "requirement": "Preserve constraints during actual crossover and mutation",
+      "status": "Implemented and verified",
+      "source": "backend/genetic_algorithm/operators/Swap.py:202; backend/genetic_algorithm/operators/mutation.py:142; backend/services/ga_v2_engine.py:28",
+      "evidence": "engine; audit::actual_improving_mutation_changes_faculty_but_not_meeting_geometry",
+      "limitations": "D10 admission checks descendants before selection/best. Operators may return None; this is not whole-run failure.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_actual_improving_mutation_changes_faculty_but_not_meeting_geometry"
+      ]
+    },
+    {
+      "id": "G04",
+      "working_objectives": [
+        "WR2"
+      ],
+      "area": "GA behavior",
+      "requirement": "Describe the actual evolutionary search space",
+      "status": "Partially implemented",
+      "source": "backend/genetic_algorithm/operators/Swap.py:475; backend/genetic_algorithm/operators/mutation.py:170",
+      "evidence": "audit::actual_improving_mutation_changes_faculty_but_not_meeting_geometry; operator-search-space.json",
+      "limitations": "Operators change faculty assignments; existing meeting geometry/rooms remain fixed. Fresh constructors explore new times/rooms. No dedicated time/room mutation; no claim that the approved methodology requires one.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_actual_improving_mutation_changes_faculty_but_not_meeting_geometry"
+      ]
+    },
+    {
+      "id": "G05",
+      "working_objectives": [
+        "WR1",
+        "WR3"
+      ],
+      "area": "GA behavior",
+      "requirement": "Preserve best-ever score and graph independence",
+      "status": "Implemented and verified",
+      "source": "backend/services/ga_v2_engine.py:214; backend/services/ga_v2_engine.py:263",
+      "evidence": "engine; preserved Phase5/6 ownership/parity evidence",
+      "limitations": "Best-ever history is non-increasing; generation-best need not imply convergence or optimum.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "G06",
+      "working_objectives": [
+        "WR1",
+        "WR4"
+      ],
+      "area": "GA behavior",
+      "requirement": "Recover checkpoints with strict engine/input/provenance checks",
+      "status": "Implemented and verified",
+      "source": "backend/services/ga_v2_engine.py:107; backend/services/ga_v2_store.py; backend/services/ga_checkpoint_service.py:309",
+      "evidence": "engine::feasible_actual_operators_checkpoint_and_exact_v2_continuation; preserved Phase6 V1 mirror",
+      "limitations": "Fresh V2 persistent continuation verified. V1 fictional source-identical mirror is historical verified evidence, not rerun here. Six old artifacts remain historical incompatible limitations.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/d10/test_v2_engine.py::test_feasible_actual_operators_checkpoint_and_exact_v2_continuation"
+      ]
+    },
+    {
+      "id": "G07",
+      "working_objectives": [
+        "WR1",
+        "WR5"
+      ],
+      "area": "GA behavior",
+      "requirement": "Support reproducibility across separate generation runs",
+      "status": "Implemented and verified",
+      "source": "backend/benchmarks/scaled_python.py; backend/services/ga_v2_service.py",
+      "evidence": "engine::same_seed_matches_history_assignments_and_diagnostics_and_restores_rng",
+      "limitations": "Identical fixtures/settings/seeds reproduce tested results. Ordinary UI runs are stochastic, not guaranteed identical; no production multi-worker proof.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/performance/test_scaled_python.py::test_same_seed_matches_history_assignments_and_diagnostics_and_restores_rng"
+      ]
+    },
+    {
+      "id": "G08",
+      "working_objectives": [
+        "WR5"
+      ],
+      "area": "GA behavior",
+      "requirement": "Use truthful stopping and convergence semantics",
+      "status": "Partially implemented",
+      "source": "backend/services/ga_v2_engine.py:243; backend/services/ga_service.py; backend/services/ga_progress_service.py",
+      "evidence": "source inspection; engine; preserved Phase2 histories",
+      "limitations": "Configured generations/manual pause-stop are implemented. No automatic stagnation/optimum proof; no requirement for such a policy inferred without adviser approval.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "D01",
+      "working_objectives": [
+        "WR4"
+      ],
+      "area": "Decision support",
+      "requirement": "Submit and persist owned faculty preferences",
+      "status": "Implemented and verified",
+      "source": "backend/routers/preferences.py; backend/services/preference_authorization.py",
+      "evidence": "workflow::owned_preferences_round_trip_identity_and_invalid_input; frontend",
+      "limitations": "Actual FastAPI/SQLite/temporary JSON fixture and contract evidence; real institutional preference storage untouched.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/dashboard/test_system_acceptance.py::test_owned_preferences_round_trip_identity_and_invalid_input"
+      ]
+    },
+    {
+      "id": "D02",
+      "working_objectives": [
+        "WR4"
+      ],
+      "area": "Decision support",
+      "requirement": "Submit owned revision-bound adjustment requests with history",
+      "status": "Implemented and verified",
+      "source": "backend/services/adjustment_service.py; backend/services/adjustment_schedule_service.py",
+      "evidence": "workflow::test_adjustments; frontend",
+      "limitations": "Real auth/CSRF/ownership, duplicates, stale revisions and fresh-process persistence; fictional authoritative source only.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "D03",
+      "working_objectives": [
+        "WR4"
+      ],
+      "area": "Decision support",
+      "requirement": "Keep Chair approval distinct from administrative account role",
+      "status": "Implemented and verified",
+      "source": "backend/services/chair_authority_service.py; backend/services/chair_review_service.py",
+      "evidence": "workflow::test_chair_trust; frontend::chairReviews",
+      "limitations": "Scope/capability and fresh trust required. Genuine department mandates remain unavailable.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "D04",
+      "working_objectives": [
+        "WR4"
+      ],
+      "area": "Decision support",
+      "requirement": "Apply only exact Chair-approved changes with rollback/history",
+      "status": "Implemented and verified",
+      "source": "backend/services/schedule_application_service.py; backend/services/schedule_version_store.py",
+      "evidence": "workflow::test_system_acceptance; workflow::test_application_trust; frontend",
+      "limitations": "Scheduler capability cannot substitute for approval; complete validation and immutable versions exercised on owned SQLite.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "D05",
+      "working_objectives": [
+        "WR4"
+      ],
+      "area": "Decision support",
+      "requirement": "Publish an initial proposal through a complete authorized institutional journey",
+      "status": "Partially implemented",
+      "source": "backend/services/published_schedule_source.py:26; backend/services/ga_v2_service.py:37",
+      "evidence": "source inspection; D16 report; workflow explicit fictional handoff",
+      "limitations": "First authoritative publication/source and genuine GEC/Chair/application providers are unconfigured. Test handoff is not a production UI/API approval action.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "D06",
+      "working_objectives": [
+        "WR4"
+      ],
+      "area": "Decision support",
+      "requirement": "Provide authoritative academic resource preparation/administration",
+      "status": "Partially implemented",
+      "source": "frontend/src/pages/admin/SubjectManagement.tsx; backend/repositories/academic_repository.py; docs/dashboard-d16-functional-readiness.md",
+      "evidence": "source inspection; D16 historical report",
+      "limitations": "Read-only catalog pages/foundation exist; end-user term-aware CRUD/import-to-runtime/catalog activation remains incomplete.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "E01",
+      "working_objectives": [
+        "WR5"
+      ],
+      "area": "Evaluation",
+      "requirement": "Report constraint satisfaction and a defined conflict-rate metric",
+      "status": "Partially implemented",
+      "source": "backend/services/ga_publication_service.py; backend/services/fitness_reporting_service.py",
+      "evidence": "audit::independent_conflict_and_completeness_metrics_have_explicit_denominators",
+      "limitations": "Hard validators exist; no standardized cross-run conflict-rate evaluation protocol/denominator found. Audit slot-pair control is not a new product metric.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_independent_conflict_and_completeness_metrics_have_explicit_denominators"
+      ]
+    },
+    {
+      "id": "E02",
+      "working_objectives": [
+        "WR5"
+      ],
+      "area": "Evaluation",
+      "requirement": "Distinguish preference satisfaction percentages from fitness",
+      "status": "Implemented and verified",
+      "source": "backend/services/fitness_reporting_service.py:160; backend/services/faculty_analysis_service.py:143",
+      "evidence": "metrics; frontend::fitnessReporting",
+      "limitations": "Descriptive indicators are available; disabled/missing preferences must not be counted as 100 percent satisfaction. No institutional satisfaction study performed.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "E03",
+      "working_objectives": [
+        "WR2",
+        "WR5"
+      ],
+      "area": "Evaluation",
+      "requirement": "Measure specialization alignment against approved criteria",
+      "status": "Missing",
+      "source": "backend/services/metadata_service.py:51; backend/services/fitness_reporting_service.py:10",
+      "evidence": "source inspection; audit::specialization_changes_alone_do_not_change_fitness",
+      "limitations": "No alignment formula, treatment of secondary domains, exception labels or institutional quality campaign found.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_specialization_changes_alone_do_not_change_fitness"
+      ]
+    },
+    {
+      "id": "E04",
+      "working_objectives": [
+        "WR3",
+        "WR5"
+      ],
+      "area": "Evaluation",
+      "requirement": "Measure workload equity independently of rounded penalties",
+      "status": "Partially implemented",
+      "source": "backend/services/fitness_reporting_service.py:300; backend/benchmarks/scaled_python.py",
+      "evidence": "metrics; fairness-counterexample.json",
+      "limitations": "Per-faculty target/actual/difference exist; an agreed cohort-level fairness metric and acceptance threshold are absent.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "E05",
+      "working_objectives": [
+        "WR5"
+      ],
+      "area": "Evaluation",
+      "requirement": "Measure execution time reproducibly",
+      "status": "Implemented and verified",
+      "source": "backend/benchmarks/scaled_python.py; docs/ga-performance-phase2.md; docs/ga-reconstruction-phase6.md",
+      "evidence": "preserved Phase2-6 evidence; engine benchmark tests",
+      "limitations": "Fictional bounded performance, not institutional capacity; no native implementation or production optimization.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "E06",
+      "working_objectives": [
+        "WR1",
+        "WR5"
+      ],
+      "area": "Evaluation",
+      "requirement": "Record unassigned offerings and failure outcomes in a thesis dataset",
+      "status": "Partially implemented",
+      "source": "backend/services/ga_publication_service.py:13; backend/services/ga_v2_engine.py:199",
+      "evidence": "audit::independent_conflict_and_completeness_metrics; engine",
+      "limitations": "Success requires completeness; a standardized all-attempts evaluation export with missing/duplicate/component counts is not a complete product/research pipeline.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": [
+        "backend/tests/audit/test_thesis_correctness.py::test_independent_conflict_and_completeness_metrics_have_explicit_denominators"
+      ]
+    },
+    {
+      "id": "E07",
+      "working_objectives": [
+        "WR5"
+      ],
+      "area": "Evaluation",
+      "requirement": "Establish adviser-approved comparative quality/DSRM evaluation",
+      "status": "Missing",
+      "source": "docs/thesis-evidence/README.md; docs/ga-performance-phase2.md",
+      "evidence": "document/source inventory; user clarification",
+      "limitations": "No approved manuscript/protocol, manual/comparator baseline, validated metric thresholds or stakeholder evaluation results supplied. Functional tests and benchmarks do not substitute.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    },
+    {
+      "id": "T01",
+      "working_objectives": [
+        "WR1",
+        "WR2",
+        "WR3",
+        "WR4",
+        "WR5"
+      ],
+      "area": "Thesis traceability",
+      "requirement": "Verify formal adviser-approved objectives and methodology",
+      "status": "Missing",
+      "source": "USER_CLARIFICATION_MANUSCRIPT_OUTSIDE_REPOSITORY",
+      "evidence": "User supplied working requirements and planned DSRM only",
+      "limitations": "Formal alignment is UNVERIFIED for every row. No claim of adviser approval or complete thesis fulfillment.",
+      "research_alignment": "NOT_ESTABLISHED_AGAINST_FORMAL_MANUSCRIPT",
+      "exact_test_references_resolved_from_shorthand": []
+    }
+  ]
+}

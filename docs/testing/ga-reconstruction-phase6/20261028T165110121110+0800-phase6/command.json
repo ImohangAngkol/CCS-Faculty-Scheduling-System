@@ -1,0 +1,18 @@
+{
+  "selection": "phase6",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\ga-reconstruction-phase6\\run_checks.py",
+    "phase6",
+    "--worker",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\phase6-tests-20261028T165110121110+0800-phase6"
+  ],
+  "started_at": "2026-10-28T16:51:10.121110+08:00",
+  "finished_at": "2026-10-28T16:51:52.666907+08:00",
+  "elapsed_seconds": 42.54358050000155,
+  "exit_code": 0,
+  "stdout": "...................................................................      [100%]\n============================== warnings summary ===============================\n..\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\_pytest\\config\\__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; anyio\n    self._mark_plugins_for_rewrite(hook, disable_autoload)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n67 passed, 1 warning in 37.15s\n",
+  "stderr": "",
+  "scope": "Schema-only academic import bootstrap and fictional fixtures; no parsed institutional records or PostgreSQL; genuine binary fingerprints unchanged"
+}

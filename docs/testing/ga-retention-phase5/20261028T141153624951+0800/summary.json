@@ -1,0 +1,65 @@
+{
+  "part": "retention",
+  "jobs": [
+    {
+      "name": "ram-small-A",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "ram-small-B",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "trace-small",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "observer-small",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "ram-medium-A",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "ram-medium-B",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "trace-medium",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "observer-medium",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "ram-large",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "trace-large",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "light-small",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "light-medium",
+      "status": "SUCCESS"
+    }
+  ],
+  "baseline_preserved": 1509,
+  "database_operations": 0,
+  "production_GC_or_allocator_settings_changed": false,
+  "parameters": {
+    "population_size": 2,
+    "generations": 1,
+    "fresh_chromosomes": 1,
+    "crossover_attempts": 1,
+    "mutation_attempts": 1,
+    "max_restarts": 5,
+    "candidate_attempts": 3
+  }
+}

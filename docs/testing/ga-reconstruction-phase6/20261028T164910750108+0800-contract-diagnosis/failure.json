@@ -1,0 +1,8 @@
+{
+  "status": "DIAGNOSTIC_OUTPUT_PROTOCOL_FAILED",
+  "exception_type": "JSONDecodeError",
+  "child_exit_code": 0,
+  "cause": "Original fictional scheduling console output preceded the structured JSON; no production failure.",
+  "raw_console_output_not_retained": true,
+  "original_engine_and_codec_changed": false
+}

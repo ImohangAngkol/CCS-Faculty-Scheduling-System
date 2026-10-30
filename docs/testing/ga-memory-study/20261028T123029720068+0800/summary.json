@@ -1,0 +1,63 @@
+{
+  "started_at": "2026-10-28T12:30:29.720068+08:00",
+  "finished_at": "2026-10-28T12:48:32.193189+08:00",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "parameters_source": "docs/testing/ga-performance-phase2/20261028T113836085281+0800/results.json",
+  "parameters_source_sha256": "703f7a9eba22e9387532f4585b0d6d7e82bd13228dd32bbe20988394087f21d9",
+  "statuses": [
+    {
+      "part": "ram",
+      "scenario": "small",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "ram",
+      "scenario": "medium",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "ram",
+      "scenario": "large",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "alloc",
+      "scenario": "small",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "alloc",
+      "scenario": "medium",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "alloc",
+      "scenario": "large",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "focused",
+      "scenario": "small",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "focused",
+      "scenario": "medium",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "focused",
+      "scenario": "large",
+      "status": "SUCCESS"
+    },
+    {
+      "part": "retention",
+      "scenario": "small",
+      "status": "SUCCESS"
+    }
+  ],
+  "preserved_paths": 1481,
+  "database_operations": 0,
+  "production_symbols_replaced": 0,
+  "scope": "Fictional memory study; not timing baseline, optimization or institutional acceptance"
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\faculty-cohort-f1-5\\inspect_sources.py"
+  ],
+  "cwd": "repository root",
+  "started_at": "2026-10-29T09:35:25.057672+08:00",
+  "finished_at": "2026-10-29T09:35:48.230685+08:00",
+  "elapsed_seconds": 23.166614699999627,
+  "exit_code": 0,
+  "status": "READ_ONLY_SOURCE_QUALIFICATION_COMPLETE",
+  "summary_sha256": "b94386e01c30e4b85745ca502c43774b2e5c73c6bc0cb15363fcc0653672ce47",
+  "privacy": "Aggregate counts/schema labels only. No faculty values, sheets names, row payloads, formulas, preferences or credentials exported."
+}

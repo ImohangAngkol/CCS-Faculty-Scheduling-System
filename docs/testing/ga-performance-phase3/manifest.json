@@ -1,0 +1,98 @@
+{
+  "phase": "Phase 3 C++ feasibility: Python analysis complete, native portion BLOCKED",
+  "recorded_at": "2026-10-28T12:17:16.671008+08:00",
+  "source_commit": "1423812e13a5791a550c893ef6b17bfef4b4ebfb",
+  "baseline_paths_preserved": 1471,
+  "original_phase2_baseline_preserved": 1454,
+  "phase2_files_preserved": 17,
+  "academic_files_preserved": 23,
+  "protected_preferences_and_user_settings_unchanged": true,
+  "Git_index_HEAD_unchanged": true,
+  "existing_files_modified": 0,
+  "new_file_inventory": [
+    "backend/benchmarks/native_feasibility.py",
+    "backend/tests/performance/test_native_feasibility.py",
+    "docs/ga-performance-phase3.md",
+    "docs/testing/ga-performance-phase3/20261028T121013926009+0800/study.json",
+    "docs/testing/ga-performance-phase3/20261028T121346399006+0800-oracle/command.json",
+    "docs/testing/ga-performance-phase3/20261028T121347399973+0800-regressions/command.json",
+    "docs/testing/ga-performance-phase3/audit.py",
+    "docs/testing/ga-performance-phase3/manifest.json",
+    "docs/testing/ga-performance-phase3/preservation-baseline.json",
+    "docs/testing/ga-performance-phase3/run_checks.py"
+  ],
+  "study": "docs/testing/ga-performance-phase3/20261028T121013926009+0800/study.json",
+  "test_evidence": {
+    "oracle": {
+      "path": "docs/testing/ga-performance-phase3/20261028T121346399006+0800-oracle/command.json",
+      "passed": 46,
+      "failed": 0,
+      "native_parity": false
+    },
+    "regressions": {
+      "path": "docs/testing/ga-performance-phase3/20261028T121347399973+0800-regressions/command.json",
+      "passed": 105,
+      "failed": 0,
+      "native_parity": false
+    }
+  },
+  "new_python_oracle_cases": 46,
+  "existing_regressions": 105,
+  "profiled_unmodified_engine_runs": 3,
+  "native_parity_cases_executed": 0,
+  "native_builds": 0,
+  "native_or_accelerated_engine_timings": "NOT_MEASURED_NO_COMPILER",
+  "production_integration": false,
+  "database_or_publication_operations": 0,
+  "dependencies_installed": 0,
+  "privacy_findings": 0,
+  "whitespace_check": "PASS",
+  "artifacts": [
+    {
+      "path": "backend/benchmarks/native_feasibility.py",
+      "sha256": "918910feb279472865af7f216c47e0f09720dac6670b9579851b58023b82f471",
+      "bytes": 12122
+    },
+    {
+      "path": "backend/tests/performance/test_native_feasibility.py",
+      "sha256": "a9cd19804778738828bdc6a8e55d14391bcaf0ee2ff9e9654f0f09f6a77ec2d9",
+      "bytes": 5489
+    },
+    {
+      "path": "docs/ga-performance-phase3.md",
+      "sha256": "01adc209effad2ab010a8e323aaa91e1af4ad283338ce188f9d400b728db9723",
+      "bytes": 15439
+    },
+    {
+      "path": "docs/testing/ga-performance-phase3/20261028T121013926009+0800/study.json",
+      "sha256": "cc636e6531e5f82f4fa43740202f5b6171d889caf44f5e9a4cb68dc97a193724",
+      "bytes": 871033
+    },
+    {
+      "path": "docs/testing/ga-performance-phase3/20261028T121346399006+0800-oracle/command.json",
+      "sha256": "da86bc0440d1f1afe7b3884b9cfd8b954e538ad091d9aa3c0d6b7c85cdf10d29",
+      "bytes": 835
+    },
+    {
+      "path": "docs/testing/ga-performance-phase3/20261028T121347399973+0800-regressions/command.json",
+      "sha256": "6ae40608290e06afc781823a20ad6d7e22351aabf9f30f8a705dfa96caf9697b",
+      "bytes": 1985
+    },
+    {
+      "path": "docs/testing/ga-performance-phase3/audit.py",
+      "sha256": "c126adc92f736fb246cda4a7fd09f3e1a7077e5bd99af749e639aa5478106c88",
+      "bytes": 6267
+    },
+    {
+      "path": "docs/testing/ga-performance-phase3/preservation-baseline.json",
+      "sha256": "e8f75cf273de5665316deb8afb72c5a7eabee37e9b810ec3e35194873485d21f",
+      "bytes": 208655
+    },
+    {
+      "path": "docs/testing/ga-performance-phase3/run_checks.py",
+      "sha256": "de5f9523a1fbdd142d3a94502225cd798b1d4ebe1f7229d72c77550f5777f50d",
+      "bytes": 2400
+    }
+  ],
+  "hash_scope": "Raw bytes; manifest excludes itself. Original and Phase 2 files verified, not rewritten."
+}
