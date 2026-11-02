@@ -1,0 +1,13 @@
+.workload-chart { margin-top: 1rem; border: 1px solid #cbd5e1; border-radius: .75rem; padding: 1rem; background: #f8fafc; }
+.workload-chart-list { display: grid; gap: .75rem; margin-top: 1rem; max-height: 34rem; overflow-y: auto; padding: .25rem; }
+.workload-chart-row { min-width: 0; border: 1px solid #e2e8f0; border-radius: .5rem; padding: .75rem; background: white; }
+.workload-chart-row:focus-visible { outline: 3px solid #0f766e; outline-offset: 1px; }
+.workload-track-row { display: grid; grid-template-columns: 3rem minmax(0, 1fr) minmax(3rem, auto); align-items: center; gap: .75rem; margin-top: .4rem; font-size: .75rem; }
+.workload-track { position: relative; height: .8rem; border-left: 1px solid #64748b; background: #f1f5f9; }
+.workload-actual, .workload-target { display: block; height: 100%; box-sizing: border-box; }
+.workload-actual { background: #0f766e; }
+.workload-target { border: 2px solid #9a6700; background: #fef9c3; }
+.workload-zero { border-left: 3px solid #115e59; }
+.workload-target.workload-zero { border-left-color: #9a6700; }
+@media (max-width: 480px) { .workload-track-row { gap: .4rem; grid-template-columns: 2.5rem minmax(0, 1fr) minmax(2.5rem, auto); } }
+@media (forced-colors: active) { .workload-actual { background: Highlight; border: 1px solid Highlight; } .workload-target { border-color: CanvasText; } }

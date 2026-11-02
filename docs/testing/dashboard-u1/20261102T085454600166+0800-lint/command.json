@@ -1,0 +1,25 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/services/resultPresentation.ts",
+    "src/components/schedule/scheduleOrder.ts",
+    "src/components/ga/ConvergenceChart.tsx",
+    "src/components/ga/RecordedProgress.tsx",
+    "src/components/ga/LiveGAMonitor.tsx",
+    "src/pages/admin/ChromosomeViewer.tsx",
+    "src/pages/admin/GenerateSchedule.tsx",
+    "src/pages/admin/ScheduleView.tsx",
+    "src/pages/admin/GenerationHistory.tsx",
+    "src/pages/admin/FitnessAnalysis.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T08:54:54.600678+08:00",
+  "ended_at": "2026-11-02T08:55:05.027019+08:00",
+  "elapsed_seconds": 10.427694100013468,
+  "exit_code": 0,
+  "stdout": "\nC:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\frontend\\src\\pages\\admin\\ScheduleView.tsx\n  72:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 126) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n  72:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 146) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n  72:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 163) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n  72:9  warning  The 'schedule' logical expression could make the dependencies of useMemo Hook (at line 227) change on every render. To fix this, wrap the initialization of 'schedule' in its own useMemo() Hook  react-hooks/exhaustive-deps\n\n✖ 4 problems (0 errors, 4 warnings)\n\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

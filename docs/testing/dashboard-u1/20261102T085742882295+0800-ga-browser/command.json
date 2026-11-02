@@ -1,0 +1,16 @@
+{
+  "selection": "ga-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/gaMonitoring.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T08:57:42.882854+08:00",
+  "ended_at": "2026-11-02T08:58:02.322280+08:00",
+  "elapsed_seconds": 19.441906299965922,
+  "exit_code": 1,
+  "stdout": "✖ Live GA dashboard updates before final result and distinguishes disconnect (16348.7253ms)\nℹ tests 1\nℹ suites 0\nℹ pass 0\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 19368.7131\n\n✖ failing tests:\n\ntest at tests\\gaMonitoring.browser.test.mjs:41:1\n✖ Live GA dashboard updates before final result and distinguishes disconnect (16348.7253ms)\n  Error: Browser command timed out: Runtime.enable\n      at Timeout._onTimeout (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/gaMonitoring.browser.test.mjs:25:153)\n      at listOnTimeout (node:internal/timers:605:17)\n      at process.processTimers (node:internal/timers:541:7)\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

@@ -1,0 +1,122 @@
+{
+  "browser": "Edg/156.0.4314.50",
+  "node": "v24.11.1",
+  "scope": "Actual headless Edge React DOM; CDP-intercepted fictional API responses. No FastAPI, GA generation or database acceptance.",
+  "scenarios": [],
+  "captures": [],
+  "requests": [
+    {
+      "path": "/src/api/faculty.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/adjustments.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/faculty.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/faculty.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/faculty.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/adjustments.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/externalSchedules.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/chairReviews.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/scheduleApplications.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/faculty.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/adjustments.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/externalSchedules.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/chairReviews.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/scheduleApplications.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/faculty.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/adjustments.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/chairReviews.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/externalSchedules.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/faculty.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/adjustments.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/externalSchedules.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/chairReviews.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/scheduleApplications.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/faculty.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/adjustments.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/externalSchedules.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/chairReviews.ts",
+      "method": "GET"
+    },
+    {
+      "path": "/src/api/scheduleApplications.ts",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": []
+}

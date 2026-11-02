@@ -1,0 +1,1271 @@
+{
+  "schema_version": 1,
+  "milestone": "U2",
+  "head": "f5262637acfb2d4d063cad1b0de80779a10bcba3",
+  "branch": "main",
+  "scope": "Frontend presentation; no live backend, GA generation, database or institutional acceptance.",
+  "compatibility": "U1 classification and authority boundaries unchanged",
+  "baseline_files": 2778,
+  "unchanged_baseline_files": 2772,
+  "academic_files": 23,
+  "protected_preferences_and_settings": "BYTE_IDENTICAL_TO_LOCAL_ENTRY_STATE; unstaged",
+  "git_index_and_head": "UNCHANGED",
+  "production_ga_and_historical_artifacts": "UNCHANGED",
+  "modified_files": [
+    "frontend/src/components/common/Sidebar.tsx",
+    "frontend/src/layouts/AdminLayout.tsx",
+    "frontend/src/layouts/FacultyLayout.tsx",
+    "frontend/src/components/faculty/FacultyPreferenceEditor.tsx",
+    "frontend/src/components/faculty/preferences.css",
+    "frontend/tests/preferences.browser.test.mjs"
+  ],
+  "new_files": [
+    "docs/dashboard-u2-navigation-preferences.md",
+    "docs/testing/dashboard-u2/20261102T101943196543+0800-focused/command.json",
+    "docs/testing/dashboard-u2/20261102T101943694646+0800-lint/command.json",
+    "docs/testing/dashboard-u2/20261102T102231817364+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T102231817364+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102240854180+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102253126217+0800-regressions/command.json",
+    "docs/testing/dashboard-u2/20261102T102255090904+0800-build/command.json",
+    "docs/testing/dashboard-u2/20261102T102303855166+0800-bundle/command.json",
+    "docs/testing/dashboard-u2/20261102T102342512790+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T102342512790+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102506242578+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T102506242578+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/U2-B02-short-sidebar.png",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/U2-B05-subjects.png",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B02-short-sidebar.png",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B05-subjects.png",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B13-segments.png",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B15-mobile-segments.png",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102924445130+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T103006778825+0800-u1-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T103017242760+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T103359984355+0800-focused/command.json",
+    "docs/testing/dashboard-u2/20261102T103400325756+0800-lint/command.json",
+    "docs/testing/dashboard-u2/20261102T103405426296+0800-build/command.json",
+    "docs/testing/dashboard-u2/20261102T103411093140+0800-bundle/command.json",
+    "docs/testing/dashboard-u2/20261102T103522516761+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T103829998711+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B02-short-sidebar.png",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B05-subjects.png",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B13-segments.png",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B15-mobile-segments.png",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T104043599680+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T104256227698+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T104552721568+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T105056501904+0800-preferences-baseline/command.json",
+    "docs/testing/dashboard-u2/20261102T105243517484+0800-preferences-baseline/command.json",
+    "docs/testing/dashboard-u2/20261102T105356977994+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T105637474880+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T105637474880+0800-preferences-browser/held-evening-drag.png",
+    "docs/testing/dashboard-u2/20261102T110037945703+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T110037945703+0800-preferences-browser/held-evening-drag.png",
+    "docs/testing/dashboard-u2/20261102T110103316858+0800-focused/command.json",
+    "docs/testing/dashboard-u2/20261102T110103682279+0800-lint/command.json",
+    "docs/testing/dashboard-u2/20261102T110108120072+0800-build/command.json",
+    "docs/testing/dashboard-u2/20261102T110113859342+0800-bundle/command.json",
+    "docs/testing/dashboard-u2/20261102T110311630037+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T110311630037+0800-preferences-browser/held-evening-drag.png",
+    "docs/testing/dashboard-u2/20261102T110907296478+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T110907296478+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T110916414089+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B02-short-sidebar.png",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B05-subjects.png",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B13-segments.png",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B15-mobile-segments.png",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T111057805087+0800-u1-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T111104178469+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T111416016456+0800-focused/command.json",
+    "docs/testing/dashboard-u2/20261102T111416433697+0800-regressions/command.json",
+    "docs/testing/dashboard-u2/20261102T111418455872+0800-lint/command.json",
+    "docs/testing/dashboard-u2/20261102T111423567891+0800-build/command.json",
+    "docs/testing/dashboard-u2/20261102T111429079043+0800-bundle/command.json",
+    "docs/testing/dashboard-u2/audit_evidence.py",
+    "docs/testing/dashboard-u2/baseline_preferences.mjs",
+    "docs/testing/dashboard-u2/manifest.json",
+    "docs/testing/dashboard-u2/preservation-baseline.json",
+    "docs/testing/dashboard-u2/run_checks.py",
+    "frontend/src/components/common/dashboardLayout.css",
+    "frontend/src/components/faculty/PreferenceControls.tsx",
+    "frontend/tests/dashboardControls.browser.test.mjs",
+    "frontend/tests/dashboardControls.test.mjs"
+  ],
+  "exact_u2_inventory": [
+    "docs/dashboard-u2-navigation-preferences.md",
+    "docs/testing/dashboard-u2/20261102T101943196543+0800-focused/command.json",
+    "docs/testing/dashboard-u2/20261102T101943694646+0800-lint/command.json",
+    "docs/testing/dashboard-u2/20261102T102231817364+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T102231817364+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102240854180+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102253126217+0800-regressions/command.json",
+    "docs/testing/dashboard-u2/20261102T102255090904+0800-build/command.json",
+    "docs/testing/dashboard-u2/20261102T102303855166+0800-bundle/command.json",
+    "docs/testing/dashboard-u2/20261102T102342512790+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T102342512790+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102506242578+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T102506242578+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/U2-B02-short-sidebar.png",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/U2-B05-subjects.png",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B02-short-sidebar.png",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B05-subjects.png",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B13-segments.png",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B15-mobile-segments.png",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T102924445130+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T103006778825+0800-u1-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T103017242760+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T103359984355+0800-focused/command.json",
+    "docs/testing/dashboard-u2/20261102T103400325756+0800-lint/command.json",
+    "docs/testing/dashboard-u2/20261102T103405426296+0800-build/command.json",
+    "docs/testing/dashboard-u2/20261102T103411093140+0800-bundle/command.json",
+    "docs/testing/dashboard-u2/20261102T103522516761+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T103829998711+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B02-short-sidebar.png",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B05-subjects.png",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B13-segments.png",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B15-mobile-segments.png",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T104043599680+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T104256227698+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T104552721568+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T105056501904+0800-preferences-baseline/command.json",
+    "docs/testing/dashboard-u2/20261102T105243517484+0800-preferences-baseline/command.json",
+    "docs/testing/dashboard-u2/20261102T105356977994+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T105637474880+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T105637474880+0800-preferences-browser/held-evening-drag.png",
+    "docs/testing/dashboard-u2/20261102T110037945703+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T110037945703+0800-preferences-browser/held-evening-drag.png",
+    "docs/testing/dashboard-u2/20261102T110103316858+0800-focused/command.json",
+    "docs/testing/dashboard-u2/20261102T110103682279+0800-lint/command.json",
+    "docs/testing/dashboard-u2/20261102T110108120072+0800-build/command.json",
+    "docs/testing/dashboard-u2/20261102T110113859342+0800-bundle/command.json",
+    "docs/testing/dashboard-u2/20261102T110311630037+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T110311630037+0800-preferences-browser/held-evening-drag.png",
+    "docs/testing/dashboard-u2/20261102T110907296478+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T110907296478+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T110916414089+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B02-short-sidebar.png",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B05-subjects.png",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B13-segments.png",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B15-mobile-segments.png",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T111057805087+0800-u1-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T111104178469+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u2/20261102T111416016456+0800-focused/command.json",
+    "docs/testing/dashboard-u2/20261102T111416433697+0800-regressions/command.json",
+    "docs/testing/dashboard-u2/20261102T111418455872+0800-lint/command.json",
+    "docs/testing/dashboard-u2/20261102T111423567891+0800-build/command.json",
+    "docs/testing/dashboard-u2/20261102T111429079043+0800-bundle/command.json",
+    "docs/testing/dashboard-u2/audit_evidence.py",
+    "docs/testing/dashboard-u2/baseline_preferences.mjs",
+    "docs/testing/dashboard-u2/manifest.json",
+    "docs/testing/dashboard-u2/preservation-baseline.json",
+    "docs/testing/dashboard-u2/run_checks.py",
+    "frontend/src/components/common/Sidebar.tsx",
+    "frontend/src/components/common/dashboardLayout.css",
+    "frontend/src/components/faculty/FacultyPreferenceEditor.tsx",
+    "frontend/src/components/faculty/PreferenceControls.tsx",
+    "frontend/src/components/faculty/preferences.css",
+    "frontend/src/layouts/AdminLayout.tsx",
+    "frontend/src/layouts/FacultyLayout.tsx",
+    "frontend/tests/dashboardControls.browser.test.mjs",
+    "frontend/tests/dashboardControls.test.mjs",
+    "frontend/tests/preferences.browser.test.mjs"
+  ],
+  "artifact_sha256": {
+    "docs/dashboard-u2-navigation-preferences.md": "76a622aa66dd0558fdf357c75e12127bb114287ff664a1d9495c99e5aaa8a901",
+    "docs/testing/dashboard-u2/20261102T101943196543+0800-focused/command.json": "ca34531b4fb9e465a4d9ce306a9a3c2c2acb9b1365589754bfe39d2cea9b849c",
+    "docs/testing/dashboard-u2/20261102T101943694646+0800-lint/command.json": "9b76bed6c60168474f9553f08a97205dfe1edc49a6c4a1501b72f3c2b1857730",
+    "docs/testing/dashboard-u2/20261102T102231817364+0800-browser/browser-results.json": "fb916997dc5b74e1d545955219e8b18d4a7d31899c533a618b921858c59bf1f1",
+    "docs/testing/dashboard-u2/20261102T102231817364+0800-browser/command.json": "1721be749f8cadfedc7ecd1d4b18f48175e2a59664c1782464686397a7a23c19",
+    "docs/testing/dashboard-u2/20261102T102240854180+0800-preferences-browser/command.json": "9926d479fef912eb54f0d1342110504a63c30e61574c7137cc00940a82415fb2",
+    "docs/testing/dashboard-u2/20261102T102253126217+0800-regressions/command.json": "dc21c5d620f69399c7c333b70712ac6ae178a7ebd001758917221533a1b56bee",
+    "docs/testing/dashboard-u2/20261102T102255090904+0800-build/command.json": "1fce047c808674d501577a3cd69721e18a3e8ba616b07578d785179e17443381",
+    "docs/testing/dashboard-u2/20261102T102303855166+0800-bundle/command.json": "67e0b9e76676316f12567aa0037351021c23038379137f3a94de4d11a9bb170f",
+    "docs/testing/dashboard-u2/20261102T102342512790+0800-browser/browser-results.json": "88b01ae646fcd8a115ad2f2fb3069ffb1503b14a1cfa275de6a0e185b26a87c4",
+    "docs/testing/dashboard-u2/20261102T102342512790+0800-browser/command.json": "1869d46fd382c2b0c6a5942fd5a163baa6a697f78d0aa0c1875abbb5365086d9",
+    "docs/testing/dashboard-u2/20261102T102506242578+0800-browser/browser-results.json": "194ef72a99c784b9a9181bcfb5ef9d6e6d2e470d78e87485e2648827001f09a6",
+    "docs/testing/dashboard-u2/20261102T102506242578+0800-browser/command.json": "d83f51c91441bff07b32b63d997471fd813188c30b6a50f07a519d216a866de2",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/U2-B02-short-sidebar.png": "1c5cdf45a1dd66e5a5612abfe190175def3a6bd10e02cdb788dd0d0ec036a4b1",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/U2-B05-subjects.png": "fbc56d987e86434bb0eded2c52a9e68cd3cb9ae1cb30f84a583d499319caa0ac",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/browser-results.json": "72cc106a94d0b71d86e2a4974c02a5d26562697ad3d99ea2297fb85c0c2cd50a",
+    "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/command.json": "d1b47d6099ce60b9d7fa7160849e17b7e0095a8af2bb07ea5e16c1cc2d5703d1",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B02-short-sidebar.png": "1c5cdf45a1dd66e5a5612abfe190175def3a6bd10e02cdb788dd0d0ec036a4b1",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B05-subjects.png": "fbc56d987e86434bb0eded2c52a9e68cd3cb9ae1cb30f84a583d499319caa0ac",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B13-segments.png": "4e41b6cec6603db04a43c245f5a71636b5bfa3602ad0267ab70bfc1a64145a24",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B15-mobile-segments.png": "9e5e61dbcc00a3c3bb40e64ae7914f93f8d4bb535041d8a407a5ae913a887dd5",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/browser-results.json": "e1304bbb5798def4dc901afaf724699fa6a70287b624d9eea8507339f2a5044f",
+    "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/command.json": "af596d4e4f81a0c3d8dde1c3bfb23f8c41c69834c9fc53a83e3dc43c201309ad",
+    "docs/testing/dashboard-u2/20261102T102924445130+0800-preferences-browser/command.json": "02b7a2f201a18871a89246110157aa233be0d123a1525c7ee97714b96d722d3f",
+    "docs/testing/dashboard-u2/20261102T103006778825+0800-u1-browser/command.json": "58883bdd4c7bcca4a3991ec781664984746f76accb36f0f2f465459585b3c646",
+    "docs/testing/dashboard-u2/20261102T103017242760+0800-ga-browser/command.json": "dcc4ef15a80f3d1a2af68cf0baaf5bc52f6ac68f53faf47b63684a0d58cf68f9",
+    "docs/testing/dashboard-u2/20261102T103359984355+0800-focused/command.json": "cd57cbf7b49a1e1a0d46fd5624e3a9d5714b4d6bd99c04c35784b3b98fdddf25",
+    "docs/testing/dashboard-u2/20261102T103400325756+0800-lint/command.json": "084f638ed2d3b45d32cdb5431a266d618520f739b96e85381ff53a8358d56b09",
+    "docs/testing/dashboard-u2/20261102T103405426296+0800-build/command.json": "39ac1b1d7f4293619722649104efa6b722e58acd5adf65a7523b92bc9c5b1915",
+    "docs/testing/dashboard-u2/20261102T103411093140+0800-bundle/command.json": "576cbbd472900c783cba1c45a06463865545a1dd6943df443143a690f2756d8d",
+    "docs/testing/dashboard-u2/20261102T103522516761+0800-preferences-browser/command.json": "a607cf3ee195e56615b84fc544b7ece048a4deeaa493771bde095f5c979b778a",
+    "docs/testing/dashboard-u2/20261102T103829998711+0800-preferences-browser/command.json": "0d14529871d96721dbac73c821b25dfcb1ea4690c5ac65a06189e5250e7851e4",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B02-short-sidebar.png": "1c5cdf45a1dd66e5a5612abfe190175def3a6bd10e02cdb788dd0d0ec036a4b1",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B05-subjects.png": "fbc56d987e86434bb0eded2c52a9e68cd3cb9ae1cb30f84a583d499319caa0ac",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B13-segments.png": "4e41b6cec6603db04a43c245f5a71636b5bfa3602ad0267ab70bfc1a64145a24",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B15-mobile-segments.png": "9e5e61dbcc00a3c3bb40e64ae7914f93f8d4bb535041d8a407a5ae913a887dd5",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/browser-results.json": "443e73081eaa20c77bd04b30726ae57cf6e0e2d77fe95cfdbd0514224d9e33c3",
+    "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/command.json": "65c1798d6ade395fea7e23fa1ba8da8314ef4efddd8e41168befd1620a2d61fa",
+    "docs/testing/dashboard-u2/20261102T104043599680+0800-preferences-browser/command.json": "8a84866805bf7d1b1effee39de3de8c853f12fdd1baeccd05c1567dc6633f182",
+    "docs/testing/dashboard-u2/20261102T104256227698+0800-preferences-browser/command.json": "f070643fae81b05031a6e6ffe54768368f7a04181e6ca546fc93247e11096f8e",
+    "docs/testing/dashboard-u2/20261102T104552721568+0800-preferences-browser/command.json": "b8ddbfa0660e7bf2f939febcf4683d1c13e317ce318f86afab9ca70056cc6237",
+    "docs/testing/dashboard-u2/20261102T105056501904+0800-preferences-baseline/command.json": "84582a516fb761631e8a9b5d9ffa431ae9febbe5d8ef70b62f3c132edbafd377",
+    "docs/testing/dashboard-u2/20261102T105243517484+0800-preferences-baseline/command.json": "8a4363738747acf93deb821877d06f2e191b01dc24ef79df2395cbdf46462594",
+    "docs/testing/dashboard-u2/20261102T105356977994+0800-preferences-browser/command.json": "7b70b7037bec419222e1241bf6da29262718a49e359e2b2969b5d2041792e120",
+    "docs/testing/dashboard-u2/20261102T105637474880+0800-preferences-browser/command.json": "c45c27a6c56ea01a8746a3b8a36fa9bebe783bc79f2ff0ba900b2f743e7d1023",
+    "docs/testing/dashboard-u2/20261102T105637474880+0800-preferences-browser/held-evening-drag.png": "a067a15c008f928af3ee7e06389905bdeca536523e9052b8032dc5602622dc20",
+    "docs/testing/dashboard-u2/20261102T110037945703+0800-preferences-browser/command.json": "8ba813c84559c1f6000c4fea6e030f9cbec096d7f8e4d6cf55904890aefaae5a",
+    "docs/testing/dashboard-u2/20261102T110037945703+0800-preferences-browser/held-evening-drag.png": "0aea2891dc405d9b8b7b1519cde53b4cea3d52dc734f8c13d41cc9cdbf7d6a3f",
+    "docs/testing/dashboard-u2/20261102T110103316858+0800-focused/command.json": "ac3412a58d29fb318eeca4575c3b3fdb4c84bf6893fb6ff6f35bc98e5abbce76",
+    "docs/testing/dashboard-u2/20261102T110103682279+0800-lint/command.json": "fe52428f23f319aee6b30461138f172d88fc190360e446557742ddfb402d03e4",
+    "docs/testing/dashboard-u2/20261102T110108120072+0800-build/command.json": "fd089c0f558ba16f64a054af810d5a401909e8c6e2de6f84dfd5db974d560c84",
+    "docs/testing/dashboard-u2/20261102T110113859342+0800-bundle/command.json": "0e259feae293efa22462e875adb649ffd832553d6d9dfcb1ceae3aa264c0420f",
+    "docs/testing/dashboard-u2/20261102T110311630037+0800-preferences-browser/command.json": "4dccfd9c71a73254675588075049f1fef4ddf929e35f27714200d012785f9a8a",
+    "docs/testing/dashboard-u2/20261102T110311630037+0800-preferences-browser/held-evening-drag.png": "3518ca74d10091b5186416e30a0bae7346f4dd34ccd9226549922b304626cb05",
+    "docs/testing/dashboard-u2/20261102T110907296478+0800-browser/browser-results.json": "62570130537f60c083936a740b51668539b786748c7efc19d7bd115abe9b9110",
+    "docs/testing/dashboard-u2/20261102T110907296478+0800-browser/command.json": "bfd8be269d01575b8bbd5b270b7135f7a4fb8f923db70e5c85072e12f5b8c4ab",
+    "docs/testing/dashboard-u2/20261102T110916414089+0800-preferences-browser/command.json": "0ce8a10fa3ac540d66933a3927a736f98b1f22c420e858ef77fa3282466f5664",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B02-short-sidebar.png": "df1b4e588e4b161a8e1948195c96f198c03704ce76d0aef785a04d12e3651b45",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B05-subjects.png": "42fab190fa2a9d356152904a58f4bb58e580631c726a9b3e866ce25586737239",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B13-segments.png": "cca106706413a40282cf06e58bcc1c03c2adb63c5e6b0f86d7ff53072e4b35b3",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B15-mobile-segments.png": "1184f0099f1b36c2e34fb7bb68b46aa11babc341fedf909aab3219c00677ece6",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/browser-results.json": "062a0bb98beb1af6939df35b6e43358daa2b3d3fbe33e85eb73315cceecc3eb2",
+    "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/command.json": "cb318fff1089be9c142c22734b4cff3845a0dd08b5ada9a53c02c401ee30f242",
+    "docs/testing/dashboard-u2/20261102T111057805087+0800-u1-browser/command.json": "6f611853a34206404df43768bac9203031b5be74701a10f4eaaacf9bf86098d9",
+    "docs/testing/dashboard-u2/20261102T111104178469+0800-ga-browser/command.json": "87db02f9bf6dc10a7e60044cd15fd6e7dc4356f88f761906b8e9a6fa82113ae0",
+    "docs/testing/dashboard-u2/20261102T111416016456+0800-focused/command.json": "037b0263a80f76ccb36eac553c50c8d06eeb2dd6ca98c2aa2a20dab8a181450b",
+    "docs/testing/dashboard-u2/20261102T111416433697+0800-regressions/command.json": "cd61363573a4ee7c99ddcd77b9107920754ec9ea868557667f0b73fed5d30a1f",
+    "docs/testing/dashboard-u2/20261102T111418455872+0800-lint/command.json": "7625df9c90a1aa1f951c742927c4c2c0a2f353344858646f7f3b274ae840cbe9",
+    "docs/testing/dashboard-u2/20261102T111423567891+0800-build/command.json": "65d25f28a9404a0cd6c88778af16e6b220107ee8bf636d958cc5e3dff2984958",
+    "docs/testing/dashboard-u2/20261102T111429079043+0800-bundle/command.json": "1adb38494e047fb21bb49f9f2d39b5ecf4daf747a7b6d0c1a35547a4767cdd49",
+    "docs/testing/dashboard-u2/audit_evidence.py": "3a232eb3ca2f695e50503ad99701771ab24a91f56f47889fb02cccb76fba47cb",
+    "docs/testing/dashboard-u2/baseline_preferences.mjs": "77c6e67719ea5edf9ad190b17f26e12d16271333d1360fa97807a598cac81923",
+    "docs/testing/dashboard-u2/preservation-baseline.json": "73d0f9d51b5e43d9ee9f0d66e78fe10d752b0bd6d107bd1790760c193370526c",
+    "docs/testing/dashboard-u2/run_checks.py": "d8f7d441b9ed3087baec201a2d48f322336401b3ced64de713c35b1839086c72",
+    "frontend/src/components/common/Sidebar.tsx": "67f19b42d289e5a8d43ef1ede59dc55020724153678bf70b46ffbd910c88cada",
+    "frontend/src/components/common/dashboardLayout.css": "cc34d2aba8da89f89c03e0136e6b41d223c2d6c2aef3672a510694cebe20e11b",
+    "frontend/src/components/faculty/FacultyPreferenceEditor.tsx": "f77e498813cc3ba83e59d68a24e2493707d87d0fd826cb377089fde25b59c926",
+    "frontend/src/components/faculty/PreferenceControls.tsx": "c257ff99aa69025fbf8af628b9431a76e47327dd510eea537b6db2c3ea1caad4",
+    "frontend/src/components/faculty/preferences.css": "aa5217c13f8a56fe2c575e8ba6cb4077e3e68566c3cd6691ea752da77bf59a6e",
+    "frontend/src/layouts/AdminLayout.tsx": "64babb9148f313eb4799c419d2244def43c5cc94a0fc294553dc8d9d7961b7ba",
+    "frontend/src/layouts/FacultyLayout.tsx": "56e2e4bf98fe04a57b9e250bb0488701b6b083c8479d38ea6f3b524350d11c3f",
+    "frontend/tests/dashboardControls.browser.test.mjs": "58e49f916adf6c2a864baf57c51f6cbcbaa42d049f882d5f306db4152901ad60",
+    "frontend/tests/dashboardControls.test.mjs": "717c3d4d29e366a12f5e7ba4d0e42aff65b82d80cb700acbabcd387ec056959e",
+    "frontend/tests/preferences.browser.test.mjs": "65bae90a7314bc2ac767511d57a9f16db89b2a4aff443e374bf79b7e91713b23"
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u2/20261102T101943196543+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T101943694646+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102231817364+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 2,
+        "pass": 0,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102240854180+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 1,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102253126217+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 112,
+        "pass": 112,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102255090904+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102303855166+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102342512790+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 2,
+        "pass": 0,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102506242578+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 2,
+        "pass": 0,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 11,
+        "pass": 9,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102924445130+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 124,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103006778825+0800-u1-browser/command.json",
+      "selection": "u1-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103017242760+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 52,
+        "pass": 52,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103359984355+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103400325756+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103405426296+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103411093140+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103522516761+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 6,
+        "pass": 4,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103829998711+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 9,
+        "pass": 7,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 18,
+        "pass": 18,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T104043599680+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 9,
+        "pass": 7,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T104256227698+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 9,
+        "pass": 7,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T104552721568+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 9,
+        "pass": 7,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T105056501904+0800-preferences-baseline/command.json",
+      "selection": "preferences-baseline",
+      "exit_code": 1,
+      "counts": {
+        "tests": 7,
+        "pass": 5,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T105243517484+0800-preferences-baseline/command.json",
+      "selection": "preferences-baseline",
+      "exit_code": 0,
+      "counts": {
+        "tests": 23,
+        "pass": 23,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T105356977994+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 9,
+        "pass": 7,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T105637474880+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 9,
+        "pass": 7,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T110037945703+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 9,
+        "pass": 7,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T110103316858+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T110103682279+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T110108120072+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T110113859342+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T110311630037+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 9,
+        "pass": 7,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T110907296478+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 2,
+        "pass": 0,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T110916414089+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 23,
+        "pass": 23,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 18,
+        "pass": 18,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111057805087+0800-u1-browser/command.json",
+      "selection": "u1-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111104178469+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 52,
+        "pass": 52,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111416016456+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111416433697+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 112,
+        "pass": 112,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111418455872+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111423567891+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111429079043+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    }
+  ],
+  "final_checks": {
+    "focused": {
+      "path": "docs/testing/dashboard-u2/20261102T111416016456+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-u2/20261102T111418455872+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "browser": {
+      "path": "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 18,
+        "pass": 18,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "preferences-browser": {
+      "path": "docs/testing/dashboard-u2/20261102T110916414089+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 23,
+        "pass": 23,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "regressions": {
+      "path": "docs/testing/dashboard-u2/20261102T111416433697+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 112,
+        "pass": 112,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "build": {
+      "path": "docs/testing/dashboard-u2/20261102T111423567891+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "bundle": {
+      "path": "docs/testing/dashboard-u2/20261102T111429079043+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "u1-browser": {
+      "path": "docs/testing/dashboard-u2/20261102T111057805087+0800-u1-browser/command.json",
+      "selection": "u1-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "ga-browser": {
+      "path": "docs/testing/dashboard-u2/20261102T111104178469+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 52,
+        "pass": 52,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "preferences-baseline": {
+      "path": "docs/testing/dashboard-u2/20261102T105243517484+0800-preferences-baseline/command.json",
+      "selection": "preferences-baseline",
+      "exit_code": 0,
+      "counts": {
+        "tests": 23,
+        "pass": 23,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "png_metadata_audit": [
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/U2-B02-short-sidebar.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102625239185+0800-browser/U2-B05-subjects.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B02-short-sidebar.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B05-subjects.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B13-segments.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T102733974473+0800-browser/U2-B15-mobile-segments.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B02-short-sidebar.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B05-subjects.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B13-segments.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T103933130867+0800-browser/U2-B15-mobile-segments.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T105637474880+0800-preferences-browser/held-evening-drag.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T110037945703+0800-preferences-browser/held-evening-drag.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T110311630037+0800-preferences-browser/held-evening-drag.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B02-short-sidebar.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B05-subjects.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B13-segments.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u2/20261102T111050193482+0800-browser/U2-B15-mobile-segments.png",
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    }
+  ],
+  "visual_privacy_review": "All retained U2 PNGs viewed; fictional account/resources only.",
+  "privacy": "PASS_TEXT_PATTERNS_AND_IN_MEMORY_PRIVATE_NAME_COMPARISON; no cookie/header dumps or signed receipts",
+  "whitespace": "PASS",
+  "failed_attempts_preserved": true,
+  "database_operations": 0,
+  "warnings": [
+    "Vite mixed import and bundle size warnings"
+  ],
+  "browser_scenarios": {
+    "u2": 17,
+    "u1": 12,
+    "existing_ga": 51,
+    "existing_preferences": 22,
+    "not_live_backend": true
+  },
+  "recorded_at": "2026-11-02T11:15:25.677515+08:00"
+}

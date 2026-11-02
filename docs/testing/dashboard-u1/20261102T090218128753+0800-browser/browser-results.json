@@ -1,0 +1,110 @@
+{
+  "browser": "Edg/156.0.4314.50",
+  "node": "v24.11.1",
+  "scope": "Actual headless Edge React DOM; CDP-intercepted fictional API responses. No FastAPI, GA generation or database acceptance.",
+  "scenarios": [
+    {
+      "name": "U1-B01 current saved empty state retains archive/download and blocks unverified baseline",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B02 no saved record displays dash and retains upload",
+      "status": "FAIL",
+      "message": "Expected values to be strictly equal:\n\n'—' !== 'â€”'\n"
+    }
+  ],
+  "captures": [
+    {
+      "file": "U1-B01-saved-archive.png",
+      "observed_at": "2026-11-02T01:02:20.474Z",
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": []
+}

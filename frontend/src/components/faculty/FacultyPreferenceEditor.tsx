@@ -6,6 +6,7 @@ import { getFacultySubjects } from "../../api/subjects";
 import type { AvailableSubject } from "../../api/subjects";
 import type { FacultySummary } from "../../api/faculty";
 import PreferenceCalendar from "./PreferenceCalendar";
+import {PreferenceSwitch, PreferenceChoices} from "./PreferenceControls";
 import { CATEGORIES, IMPORTANCE_OPTIONS, editablePreference, filterSubjects, importanceVisible, isDirty, isEligible, rankSubject, validationIssues, withBlocks } from "./preferenceModel";
 import "./preferences.css";
 
@@ -105,19 +106,19 @@ export default function FacultyPreferenceEditor({ facultyCode, facultyId, adminM
     <fieldset disabled={saving} className="min-w-0 space-y-4">
       <Section number={1} title="Preferred Subjects" description="Choose from subjects you are eligible to teach, then put your favorites first.">
         {faculty.specializations.length > 0 && <div className="mb-3 flex flex-wrap items-center gap-2 text-xs text-slate-500"><span>Expertise</span>{faculty.specializations.map(domain => <span key={domain} className="preference-tag">{domain}</span>)}<span>Eligibility is confirmed for each course.</span></div>}
-        <label className="mb-3 flex items-center gap-2 text-sm"><input type="checkbox" checked={draft.use_subject_preference} onChange={event => change({ use_subject_preference: event.target.checked })} />Consider my subject preferences</label>
+        <div className="mb-3"><PreferenceSwitch label="Consider my subject preferences" checked={draft.use_subject_preference} onChange={checked => change({ use_subject_preference: checked })}/></div>
         <div className="grid items-start gap-5 lg:grid-cols-2">
           <div className="space-y-3">
             <label className="preference-label">Find a subject<input type="search" className="preference-input" placeholder="Search by code or title" value={search} onChange={event => setSearch(event.target.value)} /></label>
             <div className="flex flex-wrap gap-1" role="group" aria-label="Subject categories">{CATEGORIES.map(item => <button key={item} type="button" className="preference-category" aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div>
-            <label className="flex items-center gap-2 text-xs text-slate-600"><input type="checkbox" checked={showAll} onChange={event => { setShowAll(event.target.checked); setBrowsingLoading(event.target.checked && !allSubjects); }} />Show all offered subjects (eligibility still applies)</label>
+            <PreferenceSwitch label="Show all offered subjects (eligibility still applies)" checked={showAll} onChange={checked => { setShowAll(checked); setBrowsingLoading(checked && !allSubjects); }}/>
             {browsingLoading && <p role="status" className="text-sm text-slate-500">Loading offered subjects…</p>}
             {visible.length === 0 ? <p className="preference-empty">{subjects.length === 0 && !showAll ? "No eligible offered subjects are currently available for this faculty member." : "No subjects match these filters."}</p> :
               <ul className="preference-subject-browser divide-y divide-slate-100 rounded-lg border border-slate-200">{visible.map(subject => {
                 const preferred = draft.preferred_subjects.includes(subject.subject_code), eligible = isEligible(subject);
                 return <li key={subject.course_id} className="flex items-start justify-between gap-3 p-3">
                   <div className="min-w-0"><strong className="text-sm">{subject.subject_code}</strong><p className="text-sm text-slate-600">{subject.subject_title}</p>
-                    <div className="mt-1 flex flex-wrap gap-1">{eligible && <span className="preference-tag text-emerald-700">Eligible</span>}{preferred && <span className="preference-tag text-blue-700">Preferred</span>}{subject.preassignment_status !== "none" && <span className="preference-tag">Preassigned{subject.preassignment_status === "some" ? " sections" : ""}</span>}{subject.domains.map(domain => <span key={domain} className="preference-tag">{domain}</span>)}</div>
+                    <div className="mt-1 flex flex-wrap gap-1">{eligible && <span className="preference-eligibility">Eligible</span>}{preferred && <span className="preference-tag text-blue-700">Preferred</span>}{subject.preassignment_status !== "none" && <span className="preference-tag">Preassigned{subject.preassignment_status === "some" ? " sections" : ""}</span>}{subject.domains.map(domain => <span key={domain} className="preference-tag">{domain}</span>)}</div>
                     {!eligible && <p className="mt-1 text-xs text-slate-500">{subject.preassignment_status === "all" ? "Reserved for a preassigned instructor" : "Not eligible for this faculty member"}</p>}
                   </div>
                   <button type="button" className="preference-button shrink-0" disabled={!eligible || preferred} aria-label={`Add ${subject.subject_code} to preferred subjects`} onClick={() => { if (isEligible(subject) && !preferred) change({ preferred_subjects: [...draft.preferred_subjects, subject.subject_code] }); }}>{preferred ? "Added" : "Add"}</button>
@@ -147,11 +148,11 @@ export default function FacultyPreferenceEditor({ facultyCode, facultyId, adminM
       </Section>
       <div className="grid gap-4 lg:grid-cols-2">
         <Section number={3} title="Schedule Style" description="Prefer classes close together, or spread across your teaching day.">
-          <fieldset className="space-y-2"><legend className="sr-only">Schedule style</legend>{[{ value: "No Preference", label: "No Preference" }, { value: "Compact", label: "Compact" }, { value: "Scattered", label: "Spread Out" }].map(option => <label key={option.value} className="flex items-center gap-2 text-sm"><input type="radio" name="schedule-style" value={option.value} checked={(draft.use_gap_preference ? draft.gap_preference : "No Preference") === option.value} onChange={() => change({ gap_preference: option.value as FacultyPreferenceUpdate["gap_preference"], use_gap_preference: option.value !== "No Preference" })} />{option.label}</label>)}</fieldset>
+          <PreferenceChoices label="Schedule style" name="schedule-style" value={draft.use_gap_preference ? draft.gap_preference : "No Preference"} options={[{value: "No Preference", label: "No Preference"}, {value: "Compact", label: "Compact"}, {value: "Scattered", label: "Spread Out"}]} onChange={value => change({gap_preference: value as FacultyPreferenceUpdate["gap_preference"], use_gap_preference: value !== "No Preference"})}/>
           {importanceVisible(draft.use_gap_preference, draft.gap_preference) && <div className="mt-3"><Importance label="Schedule style importance" value={draft.gap_importance} onChange={value => change({ gap_importance: value })} /></div>}
         </Section>
         <Section number={4} title="Lecture & Laboratory Preference" description="For subjects with both components, choose how their days relate.">
-          <fieldset className="space-y-2"><legend className="sr-only">Lecture and laboratory days</legend>{[{ value: "No Preference", label: "No Preference" }, { value: "Same Day", label: "Same Day" }, { value: "Different Day", label: "Different Days" }].map(option => <label key={option.value} className="flex items-center gap-2 text-sm"><input type="radio" name="lecture-lab" value={option.value} checked={(draft.use_lecture_lab_preference ? draft.lecture_lab_preference : "No Preference") === option.value} onChange={() => change({ lecture_lab_preference: option.value as FacultyPreferenceUpdate["lecture_lab_preference"], use_lecture_lab_preference: option.value !== "No Preference" })} />{option.label}</label>)}</fieldset>
+          <PreferenceChoices label="Lecture and laboratory days" name="lecture-lab" value={draft.use_lecture_lab_preference ? draft.lecture_lab_preference : "No Preference"} options={[{value: "No Preference", label: "No Preference"}, {value: "Same Day", label: "Same Day"}, {value: "Different Day", label: "Different Days"}]} onChange={value => change({lecture_lab_preference: value as FacultyPreferenceUpdate["lecture_lab_preference"], use_lecture_lab_preference: value !== "No Preference"})}/>
           {importanceVisible(draft.use_lecture_lab_preference, draft.lecture_lab_preference) && <div className="mt-3"><Importance label="Lecture and laboratory preference importance" value={draft.lecture_lab_importance} onChange={value => change({ lecture_lab_importance: value })} /></div>}
         </Section>
       </div>

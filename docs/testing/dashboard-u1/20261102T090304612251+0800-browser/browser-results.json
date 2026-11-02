@@ -1,0 +1,408 @@
+{
+  "browser": "Edg/156.0.4314.50",
+  "node": "v24.11.1",
+  "scope": "Actual headless Edge React DOM; CDP-intercepted fictional API responses. No FastAPI, GA generation or database acceptance.",
+  "scenarios": [
+    {
+      "name": "U1-B01 current saved empty state retains archive/download and blocks unverified baseline",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B02 no saved record displays dash and retains upload",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B03 saved status error is actionable and never becomes current",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B04 stored saved preference does not auto-select legacy baseline",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B05 history defaults to empty Current Evaluation, not completed/recent status",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B06 archive remains selectable with original state and identity",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B07 improvement preserves deterioration and independent series",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B08 chart toggles raw penalty without changing exact observations",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B09 next page retains generation-zero baseline instead of rebasing",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B10 schedule ordering preserves all lecture/laboratory rows and filters",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B11 history failure remains actionable without showing current runs",
+      "status": "PASS"
+    },
+    {
+      "name": "U1-B12 admin routes retain anonymous and faculty access protection",
+      "status": "FAIL",
+      "message": "Faculty denied"
+    }
+  ],
+  "captures": [
+    {
+      "file": "U1-B01-saved-archive.png",
+      "observed_at": "2026-11-02T01:03:07.558Z",
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    },
+    {
+      "file": "U1-B07-optimization-progress.png",
+      "observed_at": "2026-11-02T01:03:09.510Z",
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    },
+    {
+      "file": "U1-B10-sorted-schedule.png",
+      "observed_at": "2026-11-02T01:03:10.116Z",
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/v2/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chromosomes/best",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/runs/00000000-0000-4000-8000-000000000001/generations",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/runs/00000000-0000-4000-8000-000000000001/generations",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/runs/00000000-0000-4000-8000-000000000001/generations",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/runs/00000000-0000-4000-8000-000000000001/generations",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": []
+}

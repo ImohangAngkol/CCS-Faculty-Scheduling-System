@@ -1,0 +1,73 @@
+{
+  "browser": "Edg/156.0.4314.50",
+  "node": "v24.11.1",
+  "scope": "Actual headless Edge/React. CDP-intercepted fictional preferences, memory-only mocked save/reload; no FastAPI, GA or database operations.",
+  "scenarios": [
+    {
+      "name": "U2-B01 desktop sidebar and header remain visible while only the page scrolls",
+      "status": "FAIL",
+      "message": "{\"mainScroll\":1878,\"sidebarTop\":0,\"windowScroll\":0,\"documentHeight\":2601,\"viewportHeight\":960,\"layout\":[{\"selector\":\"html\",\"top\":0,\"bottom\":960,\"height\":960,\"overflow\":\"visible\",\"scroll\":2601},{\"selector\":\"body\",\"top\":0,\"bottom\":960,\"height\":960,\"overflow\":\"visible\",\"scroll\":960},{\"selector\":\"#root\",\"top\":0,\"bottom\":960,\"height\":960,\"overflow\":\"visible\",\"scroll\":960},{\"selector\":\".dashboard-shell\",\"top\":0,\"bottom\":960,\"height\":960,\"overflow\":\"hidden\",\"scroll\":960},{\"selector\":\".dashboard-content\",\"top\":0,\"bottom\":960,\"height\":960,\"overflow\":\"hidden\",\"scroll\":960},{\"selector\":\"main\",\"top\":111,\"bottom\":960,\"height\":849,\"overflow\":\"auto\",\"scroll\":2727}],\"escaping\":[]}"
+    }
+  ],
+  "captures": [],
+  "requests": [
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/preferences/1",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/fictional-it-1/eligible-subjects",
+      "method": "GET"
+    },
+    {
+      "path": "/preferences/1",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/fictional-it-1/eligible-subjects",
+      "method": "GET"
+    }
+  ],
+  "fictional_put_count": 0,
+  "runtime_errors": []
+}

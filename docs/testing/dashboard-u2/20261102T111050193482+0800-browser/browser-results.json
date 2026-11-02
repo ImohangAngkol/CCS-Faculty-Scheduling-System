@@ -1,0 +1,249 @@
+{
+  "browser": "Edg/156.0.4314.50",
+  "node": "v24.11.1",
+  "scope": "Actual headless Edge/React. CDP-intercepted fictional preferences, memory-only mocked save/reload; no FastAPI, GA or database operations.",
+  "scenarios": [
+    {
+      "name": "U2-B01 desktop sidebar stays visible while content uses one document scrollbar",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B02 short desktop navigation scrolls independently and preserves footer branding",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B03 navigation preserves active route and visible keyboard focus",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B04 mobile disclosure opens by keyboard, closes with Escape, and closes on navigation",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B05 faculty uses the same independent layout and saved preference controls",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B06 subject switch uses Space and updates only the draft without autosaving",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B07 expanded browsing exposes ineligible subjects without granting Add access",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B08 categories stay single-choice and code/title search still filters",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B09 Add/rank stay functional and ineligible clicks cannot enter the ranked list",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B10 schedule style retains exclusive native arrow-key behavior and enum values",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B11 lecture/lab remains single-choice with original Different Day value",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B12 Discard restores all saved selections and ranked subjects",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B13 explicit Save sends original enums/flags and preserves unrelated fields",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B14 actual reload restores mock-saved controls and no automatic save occurs",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B15 narrow preference controls wrap without page overflow and mobile navigation works",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B16 reduced-motion disables control transitions and the skip link focuses the page",
+      "status": "PASS"
+    },
+    {
+      "name": "U2-B17 accessibility tree exposes native switch/radio state and hides collapsed navigation",
+      "status": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "file": "U2-B02-short-sidebar.png",
+      "observed_at": "2026-11-02T03:10:52.578Z",
+      "viewport": {
+        "width": 1280,
+        "height": 500
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    },
+    {
+      "file": "U2-B05-subjects.png",
+      "observed_at": "2026-11-02T03:10:53.161Z",
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    },
+    {
+      "file": "U2-B13-segments.png",
+      "observed_at": "2026-11-02T03:10:54.073Z",
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    },
+    {
+      "file": "U2-B15-mobile-segments.png",
+      "observed_at": "2026-11-02T03:10:54.505Z",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/preferences/1",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/fictional-it-1/eligible-subjects",
+      "method": "GET"
+    },
+    {
+      "path": "/preferences/1",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/fictional-it-1/eligible-subjects",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/preferences/1",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/fictional-it-1/eligible-subjects",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/preferences/1",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/fictional-it-1/eligible-subjects",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/fictional-it-1/eligible-subjects",
+      "method": "GET"
+    },
+    {
+      "path": "/preferences/1",
+      "method": "OPTIONS"
+    },
+    {
+      "path": "/preferences/1",
+      "method": "PUT"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/preferences/1",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/fictional-it-1/eligible-subjects",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/preferences/1",
+      "method": "GET"
+    },
+    {
+      "path": "/api/faculty/fictional-it-1/eligible-subjects",
+      "method": "GET"
+    }
+  ],
+  "fictional_put_count": 1,
+  "runtime_errors": []
+}

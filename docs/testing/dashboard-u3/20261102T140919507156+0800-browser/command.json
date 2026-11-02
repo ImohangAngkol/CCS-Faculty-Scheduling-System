@@ -1,0 +1,17 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T14:09:19.507596+08:00",
+  "ended_at": "2026-11-02T14:09:30.463430+08:00",
+  "elapsed_seconds": 10.955862000002526,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "▶ U3 current evaluation, coverage and workload rendering with fictional APIs\n  ✔ U3-B01 current saved page has zero verified runs, no saved chromosome and no historical penalty (1486.5502ms)\n  ✔ U3-B02 explicit archive preserves the original fitness and existing download/inspection actions (100.2939ms)\n  ✔ U3-B03 zero archived penalty remains a true zero and does not become a current result (333.8219ms)\n  ✔ U3-B04 fresh-evaluation action is visibly unavailable and cannot reset or write records (6.7995ms)\n  ✔ U3-B05 selector includes zero-assignment faculty from captured analysis missing from metadata (429.3715ms)\n  ✔ U3-B06 selecting unassigned faculty shows an honest empty timetable without invented rows (127.4093ms)\n  ✔ U3-B07 roster retry is actionable and fallback report members stay available (412.8103ms)\n  ✔ U3-B08 loaded empty schedule retains cohort choices and zero-assignment messaging (386.5337ms)\n  ✔ U3-B09 workload graphic is above the retained table, naturally sorted and exact for zero/overload (523.7567ms)\n  ✔ U3-B10 workload and faculty filters affect chart and table consistently (81.1877ms)\n  ✔ U3-B11 unavailable targets stay unknown instead of using current metadata/defaults (348.4803ms)\n  ✔ U3-B12 many faculty remain keyboard reachable in the bounded chart list (542.3032ms)\n  ✔ U3-B13 recorded above-ceiling values are visible and warned about, never clipped into a valid result (442.7385ms)\n  ✔ U3-B14 mobile workload stays readable with exact numbers and no horizontal page overflow (561.8823ms)\n  ✔ U3-B15 existing account role restrictions remain in place (611.2366ms)\n✔ U3 current evaluation, coverage and workload rendering with fictional APIs (7955.3286ms)\nℹ tests 16\nℹ suites 0\nℹ pass 16\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10879.1891\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

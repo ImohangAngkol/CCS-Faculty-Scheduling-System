@@ -1,0 +1,21 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/common/Sidebar.tsx",
+    "src/layouts/AdminLayout.tsx",
+    "src/layouts/FacultyLayout.tsx",
+    "src/components/faculty/FacultyPreferenceEditor.tsx",
+    "src/components/faculty/PreferenceControls.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T11:14:18.456619+08:00",
+  "ended_at": "2026-11-02T11:14:23.439624+08:00",
+  "elapsed_seconds": 4.983068100002129,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

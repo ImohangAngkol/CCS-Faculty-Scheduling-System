@@ -1,0 +1,16 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/resultPresentation.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T09:08:34.159060+08:00",
+  "ended_at": "2026-11-02T09:08:34.413648+08:00",
+  "elapsed_seconds": 0.2546285000280477,
+  "exit_code": 0,
+  "stdout": "✔ timestamps, fitness, self-declared compatibility and arbitrary versions never prove currency (0.8526ms)\n✔ current list is empty; archive preserves records, order, values and original lifecycle labels (0.7731ms)\n✔ missing/invalid penalty is a dash; a measured zero remains zero (11.75ms)\n✔ faculty numbers sort numerically including Faculty prefix and legacy decimal codes (0.5071ms)\n✔ subject and section codes use natural ordering (0.3287ms)\n✔ hierarchy is faculty, subject, section, component then day/time/room (0.3968ms)\n✔ all rows and original row identities survive sorting without input mutation or merged lecture/lab (0.1985ms)\n✔ nonnumeric faculty, unknown days, invalid clocks and equal keys have deterministic ordering (0.1652ms)\n✔ each series uses its own starting penalty and raw penalties remain byte-equivalent (0.4987ms)\n✔ zero baseline gives true absolute deterioration without dividing by zero (0.2234ms)\n✔ deterioration is never clamped or forced monotone (0.2119ms)\n✔ first valid finite observation per series skips invalid samples without coercion (0.1983ms)\n✔ negative starting penalty never yields a misleading percentage (0.0691ms)\n✔ run, configuration and input changes are rejected rather than joined (1.0126ms)\n✔ partially supplied identity and explicitly noncomparable observations fail closed (0.2053ms)\n✔ different calls use independent same-run baselines (0.0949ms)\n✔ pagination uses preceding run observations and rejects incompatible prefixes (0.1199ms)\n✔ malformed or out-of-order generation identity is rejected (0.2011ms)\n✔ empty measurements stay empty without fabricated observations (0.0929ms)\n✔ saved page has current empty state and an explicitly gated historical baseline (8.3365ms)\n✔ chart modes, exact values, explanatory labels, accessible points and independent baseline loading are wired (2.7927ms)\nℹ tests 21\nℹ suites 0\nℹ pass 21\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 190.2815\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

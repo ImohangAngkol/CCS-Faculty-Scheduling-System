@@ -1,5 +1,6 @@
 import LiveGAMonitor from "../../components/ga/LiveGAMonitor";
 import ConstrainedRunPanel from "../../components/ga/ConstrainedRunPanel";
+import {isVerifiedCurrent, penaltyLabel} from "../../services/resultPresentation";
 import {
   useEffect,
   useState,
@@ -120,7 +121,6 @@ const [
 
 
       if (
-        preferred === "saved" ||
         preferred === "uploaded"
       ) {
 
@@ -299,11 +299,11 @@ const [
         baselineMode ===
         "saved"
         &&
-        !savedBest.exists
+        !isVerifiedCurrent(savedBest)
       ) {
 
         window.alert(
-          "No saved best chromosome exists yet. " +
+          "Saved baseline compatibility is unverified. " +
           "Run the Genetic Algorithm using Fresh Population first."
         );
 
@@ -641,7 +641,7 @@ const [
                   }
                   disabled={
                     loading ||
-                    !savedBest.exists
+                    !isVerifiedCurrent(savedBest)
                   }
                   onChange={
                     () =>
@@ -688,8 +688,8 @@ const [
                       text-slate-500
                     "
                   >
-                    Seed the population with the best
-                    chromosome previously discovered.
+                    Historical record preserved. Saved-baseline use is disabled
+                    until current engine and fitness-policy compatibility can be verified.
                   </p>
 
 
@@ -701,8 +701,8 @@ const [
                       text-[#115E59]
                     "
                   >
-                    Saved Fitness:{" "}
-                    {savedBest.fitness}
+                    Archived penalty (unverified):{" "}
+                    {penaltyLabel(savedBest.fitness)}
                   </p>
 
                 </>
@@ -1518,8 +1518,8 @@ const [
                   "
                 >
                   This chromosome is now available as
-                  the Saved Best baseline for future
-                  Genetic Algorithm runs.
+                  a historical Saved Best record. Baseline use requires
+                  verified current engine and fitness-policy compatibility.
                 </p>
 
               </div>

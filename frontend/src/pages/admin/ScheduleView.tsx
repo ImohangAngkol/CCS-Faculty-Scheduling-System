@@ -1,3 +1,4 @@
+import {facultyCoverage} from "../../services/facultyCoverage";
 import {
   useEffect,
   useMemo,
@@ -16,6 +17,7 @@ import {
   getAllFaculty,
   type FacultySummary,
 } from "../../api/faculty";
+import {displaySchedule} from "../../components/schedule/scheduleOrder";
 import { facultyKey, formatFacultyName } from "../../components/schedule/facultyDisplay";
 import {useSearchParams} from "react-router-dom";
 import ConstrainedResultPanel from "../../components/ga/ConstrainedResultPanel";
@@ -68,8 +70,10 @@ function LegacyScheduleView() {
   ] = useState<FacultySummary[]>([]);
 
 
-  const schedule =
-    gaData?.schedule ?? [];
+  const schedule = useMemo(() => gaData?.schedule ?? [], [gaData?.schedule]);
+  const [rosterError, setRosterError] = useState(false);
+  const [rosterLoading, setRosterLoading] = useState(true);
+  const [rosterRefresh, setRosterRefresh] = useState(0);
 
 
   useEffect(() => {
@@ -91,13 +95,10 @@ function LegacyScheduleView() {
 
         }
 
-      } catch (error) {
-
-        console.error(
-          "Failed to load faculty list:",
-          error
-        );
-
+      } catch {
+        if (!cancelled) setRosterError(true);
+      } finally {
+        if (!cancelled) setRosterLoading(false);
       }
     }
 
@@ -107,26 +108,12 @@ function LegacyScheduleView() {
       cancelled = true;
     };
 
-  }, []);
+  }, [rosterRefresh]);
 
 
-  const facultyOptions =
-    useMemo(
-      () => {
-
-        return [
-          ...new Set(
-            [...allFaculty.map(faculty => String(faculty.faculty_code)),
-              ...schedule.map(entry => entry.faculty)].map(facultyKey).filter(Boolean)
-          ),
-        ].sort((left, right) => left.localeCompare(right, undefined, {numeric: true}));
-
-      },
-      [
-        allFaculty,
-        schedule,
-      ]
-    );
+  const facultyOptions = useMemo(() => facultyCoverage(allFaculty, schedule, gaData?.faculty_analysis?.faculty ?? []), [allFaculty, schedule, gaData?.faculty_analysis]);
+  const unassigned = facultyOptions.filter(member => !member.external && member.assignments === 0);
+  const selectedFaculty = facultyOptions.find(member => member.key === facultyFilter);
 
 
   const dayOptions =
@@ -232,17 +219,7 @@ function LegacyScheduleView() {
     ]);
 
 
-  const totalFaculty =
-    allFaculty.length > 0
-      ? allFaculty.length
-      : new Set(
-          schedule
-            .map(
-              (entry) =>
-                entry.faculty
-            )
-            .filter(Boolean)
-        ).size;
+  const totalFaculty = facultyOptions.length;
 
 
   const totalSections =
@@ -454,6 +431,14 @@ function LegacyScheduleView() {
       </div>
 
 
+      <section className="rounded-xl border border-teal-200 bg-white p-4 text-sm" aria-label="Faculty assignment coverage">
+        <p className="font-semibold text-teal-900">{unassigned.length} available faculty without displayed assignments</p>
+        <p className="mt-1 text-xs text-slate-500">Selector combines available faculty metadata, this result's recorded faculty analysis, and assigned instructors. It is not a verified semester roster or proof of GA participation.</p>
+        {rosterLoading && <p role="status">Loading faculty metadata...</p>}
+        {rosterError && <div role="alert" className="mt-2 text-amber-900">Faculty metadata unavailable. Recorded analysis and assigned instructors remain available; the list may be incomplete. <button type="button" className="underline" onClick={() => {setRosterError(false); setRosterLoading(true); setRosterRefresh(value => value + 1);}}>Retry roster</button></div>}
+        {unassigned.length > 0 && <p className="mt-2">{unassigned.map(member => member.label).join(", ")}: No assigned subjects. Reasons and feasibility are not established by this display.</p>}
+      </section>
+
       {/* SUMMARY */}
 
       <div
@@ -556,7 +541,7 @@ function LegacyScheduleView() {
               Faculty
             </label>
 
-            <select
+            <select aria-label="Schedule faculty"
               value={facultyFilter}
               onChange={
                 (event) =>
@@ -582,12 +567,12 @@ function LegacyScheduleView() {
               </option>
 
               {facultyOptions.map(
-                (faculty) => (
+                (member) => (
                   <option
-                    key={faculty}
-                    value={faculty}
+                    key={member.key}
+                    value={member.key}
                   >
-                    {formatFacultyName(faculty, schedule.find(entry => facultyKey(entry.faculty) === faculty)?.faculty_name)}
+                    {member.label}{member.assignments === 0 ? " - No assigned subjects" : ""}
                   </option>
                 )
               )}
@@ -809,7 +794,7 @@ function LegacyScheduleView() {
 
               {filteredSchedule.length > 0 ? (
 
-                filteredSchedule.map(
+                displaySchedule(filteredSchedule).map(
                   (
                     entry,
                     index
@@ -907,11 +892,8 @@ function LegacyScheduleView() {
                     "
                   >
                     {
-                      facultyFilter !== "All"
-                      && search.trim() === ""
-                      && dayFilter === "All"
-                      && sectionFilter === "All"
-                        ? `${facultyFilter} has no assigned classes in this generated schedule.`
+                      selectedFaculty?.assignments === 0
+                        ? `${selectedFaculty.label}: No assigned subjects`
                         : "No schedule entries match the selected filters."
                     }
                   </td>

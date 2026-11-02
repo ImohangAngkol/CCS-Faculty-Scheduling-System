@@ -1,0 +1,17 @@
+{
+  "selection": "build",
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "-b"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T11:01:08.120616+08:00",
+  "ended_at": "2026-11-02T11:01:13.715929+08:00",
+  "elapsed_seconds": 5.595390299975406,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

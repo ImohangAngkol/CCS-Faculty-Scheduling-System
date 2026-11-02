@@ -1,0 +1,8 @@
+{
+  "node": "v24.11.1",
+  "scope": "Actual headless Edge React DOM; CDP-intercepted fictional API responses. No FastAPI, GA generation or database acceptance.",
+  "scenarios": [],
+  "captures": [],
+  "requests": [],
+  "runtime_errors": []
+}

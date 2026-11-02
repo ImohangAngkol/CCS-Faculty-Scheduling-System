@@ -1,0 +1,22 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/pages/admin/ChromosomeViewer.tsx",
+    "src/pages/admin/ScheduleView.tsx",
+    "src/pages/admin/FitnessAnalysis.tsx",
+    "src/services/facultyCoverage.ts",
+    "src/services/workloadPresentation.ts",
+    "src/components/ga/WorkloadChart.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T14:22:42.471949+08:00",
+  "ended_at": "2026-11-02T14:22:53.055614+08:00",
+  "elapsed_seconds": 10.583689899998717,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

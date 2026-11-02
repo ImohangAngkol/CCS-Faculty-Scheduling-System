@@ -1,0 +1,16 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/resultPresentation.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T08:54:53.164018+08:00",
+  "ended_at": "2026-11-02T08:54:53.589566+08:00",
+  "elapsed_seconds": 0.4256579000502825,
+  "exit_code": 0,
+  "stdout": "✔ timestamps, fitness, self-declared compatibility and arbitrary versions never prove currency (4.0466ms)\n✔ current list is empty; archive preserves records, order, values and original lifecycle labels (1.4216ms)\n✔ missing/invalid penalty is a dash; a measured zero remains zero (11.9849ms)\n✔ faculty numbers sort numerically including Faculty prefix and legacy decimal codes (22.2963ms)\n✔ subject and section codes use natural ordering (1.9535ms)\n✔ hierarchy is faculty, subject, section, component then day/time/room (1.1419ms)\n✔ all rows and original row identities survive sorting without input mutation or merged lecture/lab (1.5248ms)\n✔ nonnumeric faculty, unknown days, invalid clocks and equal keys have deterministic ordering (0.4001ms)\n✔ each series uses its own starting penalty and raw penalties remain byte-equivalent (1.8085ms)\n✔ zero baseline gives true absolute deterioration without dividing by zero (0.5442ms)\n✔ deterioration is never clamped or forced monotone (0.3566ms)\n✔ first valid finite observation per series skips invalid samples without coercion (0.4ms)\n✔ negative starting penalty never yields a misleading percentage (0.1495ms)\n✔ run, configuration and input changes are rejected rather than joined (1.2445ms)\n✔ different calls use independent same-run baselines (0.3145ms)\n✔ pagination uses preceding run observations and rejects incompatible prefixes (0.2969ms)\n✔ malformed or out-of-order generation identity is rejected (0.3007ms)\n✔ empty measurements stay empty without fabricated observations (0.1982ms)\n✔ saved page has current empty state and an explicitly gated historical baseline (20.3366ms)\n✔ chart modes, exact values, explanatory labels, accessible points and independent baseline loading are wired (5.5279ms)\nℹ tests 20\nℹ suites 0\nℹ pass 20\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 343.3314\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

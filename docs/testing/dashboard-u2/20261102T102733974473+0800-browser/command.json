@@ -1,0 +1,16 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/dashboardControls.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T10:27:33.975352+08:00",
+  "ended_at": "2026-11-02T10:27:41.836194+08:00",
+  "elapsed_seconds": 7.861045000026934,
+  "exit_code": 0,
+  "stdout": "▶ U2 navigation and preference controls with fictional intercepted responses\n  ✔ U2-B01 desktop sidebar and header remain visible while only the page scrolls (1006.8329ms)\n  ✔ U2-B02 short desktop navigation scrolls independently and preserves footer branding (115.587ms)\n  ✔ U2-B03 navigation preserves active route and visible keyboard focus (17.9979ms)\n  ✔ U2-B04 mobile disclosure opens by keyboard, closes with Escape, and closes on navigation (79.4682ms)\n  ✔ U2-B05 faculty uses the same independent layout and saved preference controls (407.1746ms)\n  ✔ U2-B06 subject switch uses Space and updates only the draft without autosaving (45.128ms)\n  ✔ U2-B07 expanded browsing exposes ineligible subjects without granting Add access (89.7363ms)\n  ✔ U2-B08 categories stay single-choice and code/title search still filters (85.0175ms)\n  ✔ U2-B09 Add/rank stay functional and ineligible clicks cannot enter the ranked list (82.6517ms)\n  ✔ U2-B10 schedule style retains exclusive native arrow-key behavior and enum values (300.2801ms)\n  ✔ U2-B11 lecture/lab remains single-choice with original Different Day value (55.6024ms)\n  ✔ U2-B12 Discard restores all saved selections and ranked subjects (22.5003ms)\n  ✔ U2-B13 explicit Save sends original enums/flags and preserves unrelated fields (305.874ms)\n  ✔ U2-B14 actual reload restores mock-saved controls and no automatic save occurs (448.0222ms)\n  ✔ U2-B15 narrow preference controls wrap without page overflow and mobile navigation works (161.4825ms)\n  ✔ U2-B16 reduced-motion disables control transitions and the skip link focuses the page (55.4984ms)\n✔ U2 navigation and preference controls with fictional intercepted responses (4734.0062ms)\nℹ tests 17\nℹ suites 0\nℹ pass 17\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 7768.0116\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

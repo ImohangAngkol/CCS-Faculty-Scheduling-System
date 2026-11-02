@@ -1,3 +1,5 @@
+import {compatibilityNotice, isVerifiedCurrent, penaltyLabel} from "../../services/resultPresentation";
+
 import {
   useEffect,
   useState,
@@ -6,6 +8,7 @@ import {
 
 import {
   useNavigate,
+  useSearchParams,
 } from "react-router-dom";
 
 import {
@@ -45,6 +48,8 @@ type ActionLoading =
 
 
 export default function ChromosomeViewer() {
+  const [params, setParams] = useSearchParams();
+  const archive = params.get("view") === "archive";
 
   const navigate =
     useNavigate();
@@ -132,6 +137,7 @@ export default function ChromosomeViewer() {
 
 
       } catch {
+        setPageError("Saved chromosome status unavailable. Reload this page to retry; no compatibility decision was made.");
 
         setSavedBest({
           exists: false,
@@ -283,6 +289,7 @@ export default function ChromosomeViewer() {
   // ==========================================================
 
   function handleSavedBaseline() {
+    if (!isVerifiedCurrent(savedBest)) return;
 
     /*
      * GenerateSchedule will read this once
@@ -445,6 +452,19 @@ export default function ChromosomeViewer() {
 
       <div>
 
+        {!archive && <section className="mb-6 rounded-xl border border-teal-200 bg-white p-5" aria-label="Current Evaluation">
+          <h2 className="text-lg font-semibold text-teal-900">No Current Best Chromosome</h2>
+          <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-3">
+            <div><dt>Current Runs:</dt><dd className="font-semibold">0</dd></div>
+            <div><dt>Current Best Fitness:</dt><dd className="text-2xl font-bold" aria-label="Current best penalty">—</dd></div>
+            <div><dt>Saved Chromosome:</dt><dd className="font-semibold">None</dd></div>
+          </dl>
+          <p className="mt-2 text-sm">Run the current Genetic Algorithm to generate and save a new best chromosome.</p>
+          <p className="mt-2 text-sm text-amber-900">{compatibilityNotice}</p>
+          <p className="mt-1 text-xs text-slate-500">Counts refer to verified compatible records only. Newly saved results also require a compatibility contract before they can appear here.</p>
+          <button type="button" disabled className="ccs-btn-secondary mt-4" title="A persistent reset needs an approved server-owned evaluation/provenance contract.">Start Fresh Evaluation (not available)</button>
+          <p className="mt-2 text-xs text-slate-500">No reset has occurred. Fresh population generation does not reset or delete saved records.</p>
+        </section>}
         <h1
           className="
             text-2xl
@@ -472,6 +492,11 @@ export default function ChromosomeViewer() {
 
       </div>
 
+
+      <nav aria-label="Saved chromosome evaluation view" className="flex flex-wrap gap-3">
+        <button type="button" className="ccs-btn-secondary" aria-pressed={!archive} onClick={() => setParams({})}>Current Evaluation</button>
+        <button type="button" className="ccs-btn-secondary" aria-pressed={archive} onClick={() => setParams({view: "archive"})}>Historical Archive</button>
+      </nav>
 
       {/* ==================================================== */}
       {/* ERROR */}
@@ -518,7 +543,7 @@ export default function ChromosomeViewer() {
       {/* SAVED BEST */}
       {/* ==================================================== */}
 
-      <section
+      {archive && <section
         className="
           overflow-hidden
           rounded-xl
@@ -564,7 +589,7 @@ export default function ChromosomeViewer() {
                   text-[#115E59]
                 "
               >
-                SYSTEM SAVED BEST
+                HISTORICAL SAVED BEST
               </div>
 
 
@@ -576,7 +601,7 @@ export default function ChromosomeViewer() {
                   text-slate-900
                 "
               >
-                Best Chromosome
+                Historical Archive · Saved Best Chromosome
               </h2>
 
 
@@ -614,7 +639,7 @@ export default function ChromosomeViewer() {
                     text-slate-500
                   "
                 >
-                  Saved Fitness
+                  Archived penalty (compatibility unverified)
                 </p>
 
 
@@ -626,7 +651,7 @@ export default function ChromosomeViewer() {
                     text-[#115E59]
                   "
                 >
-                  {savedBest.fitness}
+                  {penaltyLabel(savedBest.fitness)}
                 </p>
 
               </div>
@@ -709,12 +734,12 @@ export default function ChromosomeViewer() {
                     handleSavedBaseline
                   }
                   disabled={
-                    loadingAction !==
+                    !isVerifiedCurrent(savedBest) || loadingAction !==
                     null
                   }
                   className="ccs-btn-secondary"
                 >
-                  Use as GA Baseline
+                  Baseline unavailable · compatibility unverified
                 </button>
 
 
@@ -777,7 +802,7 @@ export default function ChromosomeViewer() {
 
         </div>
 
-      </section>
+      </section>}
 
 
       {/* ==================================================== */}

@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import WeeklySchedule from "../../components/schedule/WeeklySchedule";
 import { formatFacultyName } from "../../components/schedule/facultyDisplay";
-import { ConvergenceChart } from "../../components/ga/LiveGAMonitor";
+import RecordedProgress from "../../components/ga/RecordedProgress";
+import {compatibilityNotice, evaluationRecords} from "../../services/resultPresentation";
+import {displaySchedule} from "../../components/schedule/scheduleOrder";
 import { compareGenerations, downloadHistory, getHistoricalAnalysis, getHistoricalSchedule, getHistoryGenerations,
   getHistoryRuns, improvementLabel } from "../../services/gaHistory";
 import type { CandidateAnalysis, CandidateKind, HistoricalSchedule, HistoryComparison, HistoryPage, RunPage, Workload } from "../../services/gaHistory";
@@ -20,7 +22,8 @@ function instructorLabel(code: string, rows: ScheduleEntry[]) {
 
 export default function GenerationHistory() {
   const [params, setParams] = useSearchParams();
-  const runId = params.get("run") ?? "";
+  const viewMode = params.get("view") === "archive" || params.has("run") ? "archive" : "current";
+  const runId = viewMode === "archive" ? params.get("run") ?? "" : "";
   const [runs, setRuns] = useState<RunPage | null>(null);
   const [runOffset, setRunOffset] = useState(0);
   const [offset, setOffset] = useState(0);
@@ -82,16 +85,19 @@ export default function GenerationHistory() {
       <p className="mt-1 text-sm text-slate-600">Inspect saved schedule candidates. Lower penalty is better. Viewing history does not change an optimization run.</p></div>
       <button className={button} onClick={() => {setError(null); setRefresh(value => value + 1);}}>Refresh history</button></div>
     {(visibleError || actionError) && <p role="alert" className="rounded-lg bg-red-50 p-4 text-sm text-red-800">{visibleError || actionError}</p>}
-    <section className={box} aria-label="Historical runs">
+    <nav aria-label="Evaluation scope" className="flex flex-wrap gap-3">{(["current", "archive"] as const).map(scope => <button key={scope} className={button} aria-pressed={viewMode === scope} onClick={() => {setParams(scope === "archive" ? {view: "archive"} : {}); setRunOffset(0); setGeneration(null); setOffset(0); setError(null); setActionError("");}}>{scope === "current" ? "Current Evaluation" : "Historical Archive"}</button>)}</nav>
+    <p className="rounded-lg bg-amber-50 p-4 text-sm text-amber-900">{compatibilityNotice}</p>
+    {viewMode === "current" && <section className={box}><h2 className="font-semibold">No Current GA Runs Yet</h2><p className="mt-2 text-sm">Generate a new schedule to begin recording results for the current evaluation.</p><p className="mt-2 text-xs text-slate-500">New runs also remain unclassified until a server-owned compatibility contract is available. Live monitoring remains available.</p><Link className={`${button} mt-3 inline-block`} to="/admin/generate">Generate schedule</Link></section>}
+    {viewMode === "archive" && <section className={box} aria-label="Historical runs">
       <label className="text-sm font-medium">Historical run <select aria-label="Historical run" className="ml-3 max-w-full rounded border p-2" value={runId} onChange={event => {
-        setParams(event.target.value ? {run: event.target.value} : {}); setOffset(0); setGeneration(null); setFaculty("All"); setActionError(""); setError(null);
+        setParams(event.target.value ? {view: "archive", run: event.target.value} : {view: "archive"}); setOffset(0); setGeneration(null); setFaculty("All"); setActionError(""); setError(null);
       }}><option value="">Choose a run</option>{runId && !runs?.items.some(run => run.run_id === runId) && <option value={runId}>{runId}</option>}
-        {runs?.items.map(run => <option key={run.run_id} value={run.run_id}>{new Date(run.created_at).toLocaleString()} · {run.state} · {run.run_id}</option>)}</select></label>
+        {evaluationRecords(runs?.items ?? [], "archive").map(run => <option key={run.run_id} value={run.run_id}>{new Date(run.created_at).toLocaleString()} · {run.state} · {run.run_id}</option>)}</select></label>
       {!runs && !visibleError && <p role="status" className="mt-3 text-sm">Loading historical runs…</p>}
       {runs?.total === 0 && <p className="mt-3 text-sm text-slate-500">No generation history has been recorded yet. Existing checkpoints and Saved Best are separate artifacts.</p>}
       {runs?.errors.map((item, index) => <p role="alert" key={index} className="mt-2 text-sm text-amber-800">{item.message} ({item.code})</p>)}
       {runs && runs.total > 20 && <div className="mt-3 flex gap-2"><button className={button} disabled={!runOffset} onClick={() => setRunOffset(value => Math.max(0, value - 20))}>Previous runs</button><button className={button} disabled={runOffset + 20 >= runs.total} onClick={() => setRunOffset(value => value + 20)}>Next runs</button></div>}
-    </section>
+    </section>}
     {runId && !currentPage && !visibleError && <p role="status">Loading recorded generations…</p>}
     {currentPage && <>
       <section className={box} aria-label="Run history summary"><div className="flex flex-wrap items-center justify-between gap-3"><div>
@@ -104,7 +110,7 @@ export default function GenerationHistory() {
         {currentPage.run.skipped_generations.length > 0 && <p className="mt-2 text-sm text-slate-500">Configured sampling omitted {currentPage.run.skipped_generations.length} generations.</p>}
       </section>
       <section className={box}><p className="mb-3 text-xs text-slate-500">Graph shows recorded generations on this page ({currentPage.items[0]?.generation ?? "none"}–{currentPage.items.at(-1)?.generation ?? "none"}).</p>
-        <ConvergenceChart history={currentPage.items.map(row => row.metrics)} />
+        <RecordedProgress key={runId} runId={runId} rows={currentPage.items} offset={offset} refresh={refresh} />
         <div className="mt-4 overflow-x-auto"><table className="w-full text-left text-sm"><thead className="bg-slate-50"><tr>{["Generation", "Timestamp", "Best", "Best ever", "Average", "Population", "Accepted candidates", "Inspect"].map(label => <th key={label} className="p-2">{label}</th>)}</tr></thead>
           <tbody>{currentPage.items.map(row => <tr key={row.generation} className="border-t"><td className="p-2">{row.generation}</td><td>{new Date(row.timestamp).toLocaleString()}</td><td>{number(row.metrics.generation_best_fitness)}</td><td>{number(row.metrics.best_ever_fitness)}</td><td>{number(row.metrics.average_fitness)}</td><td>{row.metrics.population_actual} / {row.metrics.population_requested}</td><td>{row.metrics.accepted_new_chromosomes_total}</td><td className="p-2"><button className={button} aria-label={`Inspect generation ${row.generation}`} onClick={() => {setGeneration(row.generation); setRight(row.generation); setError(null); setFaculty("All");}}>Inspect</button></td></tr>)}</tbody></table></div>
         {!currentPage.total && <p className="mt-3 text-sm text-slate-500">No completed generations were recorded for this run.</p>}
@@ -147,5 +153,5 @@ function WorkloadTable({rows}: {rows: Workload[]}) {
   return <div className="overflow-x-auto"><table className="w-full text-left text-sm"><thead><tr>{["Faculty", "Target", "Actual", "Difference", "Fulfillment", "Preparations", "Assigned subjects"].map(label => <th key={label} className="p-2">{label}</th>)}</tr></thead><tbody>{rows.map(row => <tr key={row.faculty} className="border-t"><td className="p-2">{row.faculty}</td><td>{number(row.required_teaching_load)}</td><td>{number(row.teaching_units)}</td><td>{number(row.difference)}</td><td>{row.fulfillment_percent === null ? "No teaching target" : `${number(row.fulfillment_percent)}%`}</td><td>{row.preparations}</td><td>{row.assigned_subjects.join(", ")}</td></tr>)}</tbody></table></div>;
 }
 function ScheduleTable({rows}: {rows: ScheduleEntry[]}) {
-  return <div className="mt-3 overflow-x-auto"><table className="w-full text-left text-sm"><thead><tr>{["Subject", "Title", "Section", "Component", "Faculty", "Room", "Day", "Time"].map(label => <th key={label} className="p-2">{label}</th>)}</tr></thead><tbody>{rows.map((row, index) => <tr key={index} className="border-t"><td className="p-2">{row.subject}</td><td>{row.title}</td><td>{row.section}</td><td>{row.type}</td><td>{instructorLabel(row.faculty, rows)}</td><td>{row.room}</td><td>{row.day}</td><td>{row.start}–{row.end}</td></tr>)}</tbody></table></div>;
+  return <div className="mt-3 overflow-x-auto"><table className="w-full text-left text-sm"><thead><tr>{["Subject", "Title", "Section", "Component", "Faculty", "Room", "Day", "Time"].map(label => <th key={label} className="p-2">{label}</th>)}</tr></thead><tbody>{displaySchedule(rows).map((row, index) => <tr key={index} className="border-t"><td className="p-2">{row.subject}</td><td>{row.title}</td><td>{row.section}</td><td>{row.type}</td><td>{instructorLabel(row.faculty, rows)}</td><td>{row.room}</td><td>{row.day}</td><td>{row.start}–{row.end}</td></tr>)}</tbody></table></div>;
 }

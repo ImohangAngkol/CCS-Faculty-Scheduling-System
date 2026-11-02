@@ -133,14 +133,12 @@ export default function AdminLayout() {
 
     <div
       className="
-        flex
-        flex-col
-        md:flex-row
-        min-h-screen
+        dashboard-shell
         bg-slate-50
       "
     >
 
+      <a className="dashboard-skip-link" href="#dashboard-main">Skip to page content</a>
       <Sidebar
         title="CCS Faculty Scheduling"
         role="Admin"
@@ -150,10 +148,7 @@ export default function AdminLayout() {
 
       <div
         className="
-          flex
-          min-w-0
-          flex-1
-          flex-col
+          dashboard-content
         "
       >
 
@@ -220,13 +215,8 @@ export default function AdminLayout() {
         )}
 
 
-        <main
-          className="
-            min-w-0
-            flex-1
-            p-4
-            sm:p-6
-          "
+        <main key={location.pathname} id="dashboard-main" tabIndex={-1} aria-label="Page content"
+          className="dashboard-main p-4 sm:p-6"
         >
 
           <Outlet />

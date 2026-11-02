@@ -1,0 +1,17 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/evaluationCoverage.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T14:22:42.602454+08:00",
+  "ended_at": "2026-11-02T14:22:43.168219+08:00",
+  "elapsed_seconds": 0.5658121000160463,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "✔ roster zero-assignment faculty remain visible in numeric order including Faculty 0 (5.8299ms)\n✔ captured analysis adds an unassigned member missing from metadata or assignments (0.6211ms)\n✔ faculty normalization merges sources without creating assignments or altering rows (0.5673ms)\n✔ external metadata is not treated as an unassigned optimization faculty roster entry (0.3256ms)\n✔ empty and malformed cohort observations do not create anonymous faculty (0.3695ms)\n✔ zero actual teaching is a real observation, distinct from missing actual or target (0.7606ms)\n✔ chart maximum includes actual overload without truncating it at the target or 40 (0.2923ms)\n✔ zero targets avoid division by zero and preserve positive actual observations (0.4423ms)\n✔ invalid numeric observations are unavailable rather than coerced to zero (1.319ms)\n✔ decimal teaching units and targets remain exact inputs and naturally sorted without mutation (1.0846ms)\n✔ inconsistent recorded status is flagged instead of silently accepted (0.5046ms)\n✔ empty workload view has no invented faculty or measured values (0.2679ms)\n✔ unknown saved compatibility cannot become current from a date, title, reset or penalty zero (51.1968ms)\n✔ current saved view is the default; archived card requires an explicit archive selection (30.1672ms)\n✔ schedule empty/result/coverage errors are honest and chart retains keyboard/exact-value access (6.4914ms)\nℹ tests 15\nℹ suites 0\nℹ pass 15\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 443.4068\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
-import { mkdtemp, mkdir, writeFile, rm } from "node:fs/promises";
+import { mkdtemp, mkdir, writeFile, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, join, resolve, sep } from "node:path";
 import { faculty as fixtureFaculty, subjects as fixtureSubjects, preference } from "./preferenceFixtures.mjs";
@@ -30,22 +30,27 @@ function cdp(socket) {
   });
   return {
     on: (name, handler) => listeners.set(name, handler),
-    send: (method, params = {}) => new Promise((resolve, reject) => { const id = ++sequence; pending.set(id, { resolve, reject }); socket.send(JSON.stringify({ id, method, params })); }),
+    send: (method, params = {}) => new Promise((resolve, reject) => { const id = ++sequence; const timer=setTimeout(()=>{pending.delete(id);reject(new Error(`Browser command timed out: ${method}`));},method==="Page.captureScreenshot"?30000:10000); pending.set(id, {resolve:value=>{clearTimeout(timer);resolve(value);},reject:error=>{clearTimeout(timer);reject(error);}}); socket.send(JSON.stringify({ id, method, params })); }),
   };
 }
 
 test("Faculty Preferences browser interactions", { timeout: 120000 }, async t => {
+  async function check(name, action) {
+    let failure;
+    await t.test(name, async () => {try {await action();} catch(error) {failure=error;throw error;}});
+    if(failure)throw new Error(`Preference browser stopped after: ${name}`,{cause:failure});
+  }
   const profile = await mkdtemp(join(tmpdir(), "faculty-preference-browser-"));
   const frontend = new URL("../", import.meta.url);
   const vite = spawn(process.execPath, ["node_modules/vite/bin/vite.js", "--host", "localhost", "--port", "5187", "--strictPort"], { cwd: frontend, windowsHide: true, stdio: "pipe" });
   let serverOutput = ""; vite.stdout.on("data", data => { serverOutput += data; }); vite.stderr.on("data", data => { serverOutput += data; });
   const executable = process.env.PREFERENCE_TEST_BROWSER ?? (process.platform === "win32" ? "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" : "chromium");
-  const edge = spawn(executable, ["--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check", "--remote-debugging-port=9226", `--user-data-dir=${profile}`, "about:blank"], { windowsHide: true, stdio: "ignore" });
+  const edge = spawn(executable, ["--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check", "--remote-debugging-port=0", `--user-data-dir=${profile}`, "about:blank"], { windowsHide: true, stdio: "ignore" });
   let launchError = null; edge.on("error", error => { launchError = error; });
   let socket;
   try {
     await eventually(async () => (await fetch("http://localhost:5187")).ok, `Vite did not start: ${serverOutput}`);
-    const targets = await eventually(async () => { if (launchError) throw launchError; return await (await fetch("http://127.0.0.1:9226/json/list")).json(); }, "Headless browser did not start. Set PREFERENCE_TEST_BROWSER to an installed Chromium browser.");
+    const targets = await eventually(async () => { if (launchError) throw launchError; const port=(await readFile(join(profile,"DevToolsActivePort"),"utf8")).split("\n")[0]; return await (await fetch(`http://127.0.0.1:${port}/json/list`,{signal:AbortSignal.timeout(2000)})).json(); }, "Headless browser did not start. Set PREFERENCE_TEST_BROWSER to an installed Chromium browser.");
     socket = new WebSocket(targets.find(target => target.type === "page").webSocketDebuggerUrl);
     await new Promise((resolve, reject) => { socket.addEventListener("open", resolve, { once: true }); socket.addEventListener("error", reject, { once: true }); });
     const client = cdp(socket);
@@ -130,21 +135,22 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       assert.ok(Math.abs(size.event - size.row * count) <= 3, `Event must span ${count} half-hour rows: ${JSON.stringify(size)}`);
     }
     async function captureSchedule(filename) {
+      await client.send("Page.bringToFront");
       // A tall viewport captures the entire section without the sticky save bar covering rows.
       await client.send("Emulation.setDeviceMetricsOverride", { width: 1366, height: 2200, deviceScaleFactor: 1, mobile: false });
       const wasOpen = await evaluate(`document.querySelector('.preference-meeting-controls').open`);
       await evaluate(`document.querySelector('.preference-meeting-controls').open=false; document.getElementById('preference-section-2').closest('section').scrollIntoView({block:'start'}); new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))`);
       const clip = await evaluate(`var rect=document.getElementById('preference-section-2').closest('section').getBoundingClientRect(); ({x:rect.x+window.scrollX,y:rect.y+window.scrollY,width:rect.width,height:rect.height,scale:1})`);
       assert.ok(clip.height > 1000, "Visual capture must include the entire timetable");
-      await mkdir(new URL("../.cache", import.meta.url), { recursive: true });
+      await mkdir(join(profile,"captures"), { recursive: true });
       const shot = await client.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: true, clip });
-      await writeFile(new URL(`../.cache/${filename}`, import.meta.url), Buffer.from(shot.data, "base64"));
+      await writeFile(join(profile,"captures",filename), Buffer.from(shot.data, "base64"),{flag:"wx"});
       await evaluate(`document.querySelector('.preference-meeting-controls').open=${wasOpen}; true`);
       await client.send("Emulation.setDeviceMetricsOverride", { width: 1366, height: 900, deviceScaleFactor: 1, mobile: false });
     }
     await navigate("/admin/preferences");
 
-    await t.test("private selector, eligibility, categories, search, ineligible disabled", async () => {
+    await check("private selector, eligibility, categories, search, ineligible disabled", async () => {
       assert.deepEqual(await evaluate(`[...ui.field('Select faculty').options].map(el => el.textContent)`), ["Faculty 0", "Faculty 1"]);
       assert.equal(await evaluate(`document.body.textContent.includes('Palad') || document.body.textContent.includes('stable-faculty')`), false);
       assert.equal(await evaluate(`document.querySelectorAll('.preference-subject-browser li').length`), 3);
@@ -155,7 +161,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       await eventually(() => evaluate(`!!ui.button('Add ITE184 to preferred subjects')`), "All courses did not load");
       assert.equal(await evaluate(`ui.button('Add ITE184 to preferred subjects').disabled`), true);
     });
-    await t.test("dedicated compact tray contains only ranked subjects and their real components", async () => {
+    await check("dedicated compact tray contains only ranked subjects and their real components", async () => {
       assert.equal(await evaluate(`document.getElementById('draggable-subject-preferences-title').textContent`), "Draggable Subject Preferences");
       assert.equal(await evaluate(`document.querySelectorAll('.preference-component-tray .preference-component-card').length`), 0);
       assert.equal(await evaluate(`document.querySelector('.preference-component-tray').nextElementSibling.classList.contains('preference-weekly-schedule')`), true);
@@ -173,7 +179,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       assert.deepEqual(await evaluate(`[...document.querySelectorAll('.preference-component-tray .preference-component-card')].map(el=>[el.dataset.subjectCode,el.dataset.componentType])`), [["CCC121", "Lecture"], ["CCC121", "Laboratory"], ["ITD105", "Lecture"], ["ITN102", "Laboratory"]]);
       assert.equal(await evaluate(`!!ui.button('+ Add General Preferred Period').closest('.preference-component-tray')`), false);
     });
-    await t.test("full weekly timetable grows naturally; later times use page scrolling", async () => {
+    await check("full weekly timetable grows naturally; later times use page scrolling", async () => {
       assert.ok(await evaluate(`document.querySelector('.preference-calendar').getBoundingClientRect().height>800`));
       assert.equal(await evaluate(`[...document.querySelectorAll('.preference-calendar .fc-scroller')].every(el=>el.scrollHeight<=el.clientHeight+1)`), true);
       const before = await evaluate(`document.getElementById('preference-section-2').scrollIntoView({block:'start'}); window.scrollY`);
@@ -182,7 +188,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       assert.equal(await evaluate(`document.querySelector('.preference-timetable-end').textContent`), "10:00 PM");
       assert.equal(await evaluate(`[...document.querySelectorAll('.preference-calendar .fc-scroller')].every(el=>el.scrollTop===0)`), true);
     });
-    await t.test("one ranked list and synchronized dropdown and drag order", async () => {
+    await check("one ranked list and synchronized dropdown and drag order", async () => {
       await status("Unsaved changes");
       await evaluate(`ui.set(document.getElementById('rank-ITN102'),'1'); true`);
       assert.deepEqual(await evaluate(`[...document.querySelectorAll('[id^=rank-]')].map(el=>el.id)`), ["rank-ITN102", "rank-CCC121", "rank-ITD105"]);
@@ -191,7 +197,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       assert.equal(await evaluate(`!!ui.button('Add ITD105 Laboratory preference') || !!ui.button('Add ITN102 Lecture preference')`), false);
       assert.equal(await evaluate(`ui.button('Add CCC121 Laboratory preference').parentElement.textContent.includes('3 hours')`), true);
     });
-    await t.test("all half-hour rows are labeled and lower-half drops snap to 30 minutes", async () => {
+    await check("all half-hour rows are labeled and lower-half drops snap to 30 minutes", async () => {
       const labels = await evaluate(`[...document.querySelectorAll('.fc-timegrid-slot-label-cushion')].map(el=>el.textContent)`);
       assert.equal(labels.length, 29);
       assert.deepEqual(labels.slice(0,3), ["07:30–08:00", "08:00–08:30", "08:30–09:00"]); assert.equal(labels.at(-1), "21:30–22:00");
@@ -203,7 +209,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       await eventually(() => evaluate(`!!document.querySelector('details') && document.querySelector('details').textContent.includes('Monday · 10:30–12:30')`), "Lower-half drop created a quarter-hour instead of a half-hour start");
       await click("Remove CCC121 Lecture preference");
     });
-    await t.test("reference acceptance: centered class blocks, exact drops, movement, no bottom resizing and removal", async () => {
+    await check("reference acceptance: centered class blocks, exact drops, movement, no bottom resizing and removal", async () => {
       await dragSource("CCC121", "Lecture", "2026-09-29", "10:30");
       await eventually(() => evaluate(`document.querySelector('details')?.textContent.includes('Tuesday · 10:30–12:30')`), "Reference lecture did not land at Tuesday 10:30");
       await assertEventRows(4);
@@ -233,14 +239,14 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       assert.equal(await evaluate(`document.querySelector(${JSON.stringify(sourceSelector("CCC121", "Laboratory"))}).dataset.componentDrag`), "true");
       await click("Remove CCC121 Lecture preference");
     });
-    await t.test("general period uses a separate neutral block and spans one half-hour row", async () => {
+    await check("general period uses a separate neutral block and spans one half-hour row", async () => {
       await click("+ Add General Preferred Period"); await set("Start time", "18:00"); await set("End time", "18:30"); await click("Add preference");
       assert.equal(await evaluate(`document.querySelector('.preference-block-general').getBoundingClientRect().height >= 35 && document.querySelector('.preference-block-general').getBoundingClientRect().height <= 38`), true);
       assert.deepEqual(await evaluate(`[...document.querySelector('.preference-block-general .preference-block-content').children].map(el=>el.textContent)`), ["General preferred period", "6:00 PM – 6:30 PM"]);
       assert.equal(await evaluate(`getComputedStyle(document.querySelector('.preference-block-general')).backgroundColor`), "rgb(241, 245, 249)");
       await click("Remove general period");
     });
-    await t.test("a held card drag reaches an evening row by scrolling the page", async () => {
+    await check("a held card drag reaches an evening row by scrolling the page", async () => {
       const source = await evaluate(`document.getElementById('preference-section-2').scrollIntoView({block:'start'}); var rect=document.querySelector(${JSON.stringify(sourceSelector("CCC121", "Lecture"))}).getBoundingClientRect(); ({x:rect.x+rect.width/2,y:rect.y+20})`);
       const before = await evaluate(`window.scrollY`);
       await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", ...source });
@@ -260,7 +266,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       assert.equal(await evaluate(`[...document.querySelectorAll('.preference-calendar .fc-scroller')].every(el=>el.scrollTop===0)`), true);
       await click("Remove CCC121 Lecture preference");
     });
-    await t.test("dragging a lecture source uses the dropped start and backend two-hour duration", async () => {
+    await check("dragging a lecture source uses the dropped start and backend two-hour duration", async () => {
       await dragSource("CCC121", "Lecture", "2026-09-29", "10:30");
       await eventually(() => evaluate(`!!document.querySelector('details') && document.querySelector('details').textContent.includes('Tuesday · 10:30–12:30')`), "Lecture drop did not use its exact start and duration");
       await assertEventRows(4);
@@ -270,7 +276,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       assert.equal(await evaluate(`document.querySelector(${JSON.stringify(sourceSelector("CCC121", "Lecture"))}).textContent.includes('✓ Placed')`), true);
       assert.equal(await evaluate(`document.querySelector(${JSON.stringify(sourceSelector("CCC121", "Lecture"))}).getBoundingClientRect().height>0`), true);
     });
-    await t.test("completed sources reject duplicate drags; existing lecture moves without resizing", async () => {
+    await check("completed sources reject duplicate drags; existing lecture moves without resizing", async () => {
       await dragSource("CCC121", "Lecture", "2026-09-29", "10:30");
       assert.equal(await evaluate(`document.querySelectorAll('.fc-event').length`), 1);
       assert.equal(await evaluate(`document.querySelector('.preference-component-card[data-subject-code="CCC121"][data-component-type="Lecture"] button').disabled`), true);
@@ -282,14 +288,14 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       await set("Start time", "13:00"); await click("Move preference");
       assert.equal(await evaluate(`document.querySelector('details').textContent.includes('Thursday · 13:00–15:00')`), true);
     });
-    await t.test("removing a placement re-enables its source and a fresh drop works", async () => {
+    await check("removing a placement re-enables its source and a fresh drop works", async () => {
       await click("Remove CCC121 Lecture preference");
       assert.equal(await evaluate(`document.querySelector(${JSON.stringify(sourceSelector("CCC121", "Lecture"))}).dataset.componentDrag`), "true");
       assert.equal(await evaluate(`ui.button('Add CCC121 Lecture preference').disabled`), false);
       await dragSource("CCC121", "Lecture", "2026-09-28", "10:30");
       await eventually(() => evaluate(`document.querySelector('details').textContent.includes('Monday · 10:30–12:30')`), "Re-enabled source failed to place");
     });
-    await t.test("dragging lab creates one continuous 180-minute block, locked during moves", async () => {
+    await check("dragging lab creates one continuous 180-minute block, locked during moves", async () => {
       await dragSource("CCC121", "Laboratory", "2026-09-29", "13:30");
       await eventually(() => evaluate(`document.querySelector('details').textContent.includes('Tuesday · 13:30–16:30')`), "Laboratory drop did not use 180 minutes");
       assert.equal(await evaluate(`document.querySelectorAll('.fc-event-resizer').length`), 0);
@@ -304,7 +310,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       await assertEventRows(6, "Laboratory");
       await click("Remove CCC121 Lecture preference");
     });
-    await t.test("explicit multi-pattern choice and complete independently movable meetings", async () => {
+    await check("explicit multi-pattern choice and complete independently movable meetings", async () => {
       assert.equal(await evaluate(`document.querySelectorAll('.preference-component-drag[data-subject-code="ITD105"][data-component-drag="true"]').length`), 0);
       await click("Add ITD105 Lecture preference");
       assert.equal(await evaluate(`ui.field('Meeting pattern').value`), "");
@@ -314,7 +320,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       await captureSchedule("preferences-drag-cards.png");
       assert.equal(await evaluate(`document.querySelector('details').textContent.includes('Monday · 09:00–10:30') && document.querySelector('details').textContent.includes('Thursday · 08:00–09:30')`), true);
     });
-    await t.test("selected multi-meeting source cards place one complete fixed-duration pair", async () => {
+    await check("selected multi-meeting source cards place one complete fixed-duration pair", async () => {
       await click("Remove ITD105 Lecture preference");
       await set("Meeting pattern for ITD105 Lecture", "0");
       assert.equal(await evaluate(`document.querySelector('.preference-component-drag[data-subject-code="ITD105"]').dataset.duration`), "180");
@@ -330,7 +336,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       assert.equal(await evaluate(`document.querySelectorAll('.fc-event').length`), 3);
       await click("Move ITD105 Lecture on Monday"); await set("Start time", "09:00"); await click("Move preference");
     });
-    await t.test("actual calendar pointer dragging preserves the three-hour laboratory", async () => {
+    await check("actual calendar pointer dragging preserves the three-hour laboratory", async () => {
       const box = await evaluate(`var event = [...document.querySelectorAll('.fc-event')].find(el=>el.textContent.includes('CCC121')); event.scrollIntoView({block:'center'}); var rect=event.getBoundingClientRect(); var target=document.querySelector('.fc-timegrid-col[data-date="2026-10-01"]').getBoundingClientRect(); ({x:rect.x+rect.width/2,y:rect.y+12,targetX:target.x+target.width/2})`);
       await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: box.x, y: box.y });
       await client.send("Input.dispatchMouseEvent", { type: "mousePressed", x: box.x, y: box.y, button: "left", buttons: 1, clickCount: 1 });
@@ -338,14 +344,14 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: box.targetX, y: box.y, button: "left", clickCount: 1 });
       await eventually(() => evaluate(`document.querySelector('details').textContent.includes('Thursday · 14:00–17:00')`), "Dragged laboratory did not preserve duration");
     });
-    await t.test("importance visibility, internal labels and legacy zero", async () => {
+    await check("importance visibility, internal labels and legacy zero", async () => {
       assert.equal(await evaluate(`!!ui.field('Schedule style importance')`), false);
       await evaluate(`[...document.querySelectorAll('input[name=schedule-style]')].find(el=>el.value==='Scattered').click(); true`);
       assert.equal(await evaluate(`ui.field('Schedule style importance').selectedOptions[0].textContent`), "No weight / informational only");
       await evaluate(`[...document.querySelectorAll('input[name=lecture-lab]')].find(el=>el.value==='Different Day').click(); true`);
       assert.equal(await evaluate(`ui.field('Lecture and laboratory preference importance').value`), "0");
     });
-    await t.test("faculty switching confirms dirty state and cancel preserves draft", async () => {
+    await check("faculty switching confirms dirty state and cancel preserves draft", async () => {
       let prompt = null;
       client.on("Page.javascriptDialogOpening", event => { prompt = event.message; void client.send("Page.handleJavaScriptDialog", { accept: false }); });
       await set("Select faculty", "stable-faculty-1");
@@ -353,7 +359,7 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       assert.match(prompt, /Discard unsaved/);
       assert.equal(await evaluate(`ui.field('Select faculty').value`), "stable-faculty-0");
     });
-    await t.test("failure retains draft, retry saves and reload persists payload", async () => {
+    await check("failure retains draft, retry saves and reload persists payload", async () => {
       failSave = true; await click("Save Preferences"); await status("Saving…");
       assert.equal(await evaluate(`ui.field('Select faculty').disabled`), true);
       await status("Save failed"); assert.equal(await evaluate(`document.querySelectorAll('[id^=rank-]').length`), 3);
@@ -366,20 +372,20 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       assert.equal(await evaluate(`document.querySelector(${JSON.stringify(sourceSelector("CCC121", "Laboratory"))}).textContent.includes('✓ Placed')`), true);
       assert.equal(await evaluate(`ui.field('Meeting pattern for ITD105 Lecture').value`), "1");
     });
-    await t.test("discard restores baseline and each faculty loads its own eligibility", async () => {
+    await check("discard restores baseline and each faculty loads its own eligibility", async () => {
       await click("Remove CCC121 from preferred subjects"); await status("Unsaved changes"); await click("Discard"); await status("No changes");
       await set("Select faculty", "stable-faculty-1"); await eventually(() => evaluate(`document.querySelectorAll('.preference-subject-browser li').length===1`), "Faculty-specific eligibility did not change");
       assert.equal(await evaluate(`document.querySelector('.preference-subject-browser').textContent.includes('ITD105')`), true);
     });
-    await t.test("smaller laptop has a readable form and visible sticky save bar", async () => {
+    await check("smaller laptop has a readable form and visible sticky save bar", async () => {
       await client.send("Emulation.setDeviceMetricsOverride", { width: 1024, height: 768, deviceScaleFactor: 1, mobile: false });
       assert.equal(await evaluate(`document.querySelector('.preference-section').getBoundingClientRect().width > 650`), true);
       assert.equal(await evaluate(`getComputedStyle(document.querySelector('.preference-save-bar')).position`), "sticky");
-      await mkdir(new URL("../.cache", import.meta.url), { recursive: true });
+      await mkdir(join(profile,"captures"), { recursive: true });
       const shot = await client.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
-      await writeFile(new URL("../.cache/preferences-laptop.png", import.meta.url), Buffer.from(shot.data, "base64"));
+      await writeFile(join(profile,"captures","preferences-laptop.png"), Buffer.from(shot.data, "base64"),{flag:"wx"});
     });
-    await t.test("faculty self-service hides priority; small viewport has no horizontal overflow", async () => {
+    await check("faculty self-service hides priority; small viewport has no horizontal overflow", async () => {
       facultyAccount = true;
       await client.send("Page.navigate", {url:"http://localhost:5187/faculty/preferences"});
       await eventually(() => evaluate(`document.body.textContent.includes('Your account has no valid faculty binding.')`), "Unverified faculty identity was not blocked");
@@ -388,11 +394,11 @@ test("Faculty Preferences browser interactions", { timeout: 120000 }, async t =>
       await pause(100);
       assert.equal(await evaluate(`document.documentElement.scrollWidth <= window.innerWidth`), true);
       assert.equal(await evaluate(`document.querySelector('.preference-page').getBoundingClientRect().width >= 350`), true);
-      await mkdir(new URL("../.cache", import.meta.url), { recursive: true });
+      await mkdir(join(profile,"captures"), { recursive: true });
       const shot = await client.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
-      await writeFile(new URL("../.cache/preferences-mobile.png", import.meta.url), Buffer.from(shot.data, "base64"));
+      await writeFile(join(profile,"captures","preferences-mobile.png"), Buffer.from(shot.data, "base64"),{flag:"wx"});
     });
-    await t.test("unauthorized and invalid saves retain the draft and never claim saved", async () => {
+    await check("unauthorized and invalid saves retain the draft and never claim saved", async () => {
       facultyAccount = false;
       await navigate("/admin/preferences");
       await evaluate(`ui.field('Consider my subject preferences').click(); true`);

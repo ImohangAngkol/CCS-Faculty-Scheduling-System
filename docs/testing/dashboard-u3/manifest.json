@@ -1,0 +1,694 @@
+{
+  "schema_version": 1,
+  "milestone": "U3",
+  "head": "f5262637acfb2d4d063cad1b0de80779a10bcba3",
+  "branch": "main",
+  "scope": "Frontend presentation and policy proposals; no live FastAPI, GA generation, database or institutional authority acceptance.",
+  "baseline_files": 2857,
+  "unchanged_baseline_files": 2852,
+  "academic_files": 23,
+  "protected_preferences_and_settings": "BYTE_IDENTICAL_TO_LOCAL_ENTRY_STATE; unstaged; contents not parsed or printed",
+  "git_index_and_head": "UNCHANGED",
+  "production_ga_and_historical_artifacts": "UNCHANGED",
+  "preserved_prior_manifests_and_artifacts": [
+    {
+      "milestone": "U1",
+      "verified": 52,
+      "authorized_source_extensions": [
+        "frontend/src/pages/admin/ChromosomeViewer.tsx",
+        "frontend/src/pages/admin/FitnessAnalysis.tsx",
+        "frontend/src/pages/admin/ScheduleView.tsx",
+        "frontend/tests/resultPresentation.browser.test.mjs"
+      ]
+    },
+    {
+      "milestone": "U2",
+      "verified": 84,
+      "authorized_source_extensions": []
+    }
+  ],
+  "modified_entry_state_files": [
+    "frontend/src/pages/admin/ChromosomeViewer.tsx",
+    "frontend/src/pages/admin/ScheduleView.tsx",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/tests/resultPresentation.browser.test.mjs",
+    "frontend/tests/gaMonitoring.browser.test.mjs"
+  ],
+  "new_files": [
+    "docs/dashboard-u3-evaluation-coverage-authority.md",
+    "docs/testing/dashboard-u3/20261102T140157818131+0800-focused/command.json",
+    "docs/testing/dashboard-u3/20261102T140158769027+0800-lint/command.json",
+    "docs/testing/dashboard-u3/20261102T140704656258+0800-regressions/command.json",
+    "docs/testing/dashboard-u3/20261102T140706951068+0800-build/command.json",
+    "docs/testing/dashboard-u3/20261102T140715312102+0800-bundle/command.json",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B01-current-evaluation.png",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B06-unassigned-faculty.png",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B09-workload-comparison.png",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B01-current-evaluation.png",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B06-unassigned-faculty.png",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B09-workload-comparison.png",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B14-mobile-workload.png",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T141409445456+0800-u1-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T141426804581+0800-u2-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T141525518950+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T141557308867+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T141826287375+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T142242471023+0800-lint/command.json",
+    "docs/testing/dashboard-u3/20261102T142242542969+0800-regressions/command.json",
+    "docs/testing/dashboard-u3/20261102T142242601773+0800-focused/command.json",
+    "docs/testing/dashboard-u3/20261102T142254570735+0800-build/command.json",
+    "docs/testing/dashboard-u3/20261102T142306791189+0800-bundle/command.json",
+    "docs/testing/dashboard-u3/audit_evidence.py",
+    "docs/testing/dashboard-u3/manifest.json",
+    "docs/testing/dashboard-u3/preservation-baseline.json",
+    "docs/testing/dashboard-u3/run_checks.py",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/services/facultyCoverage.ts",
+    "frontend/src/services/workloadPresentation.ts",
+    "frontend/tests/evaluationCoverage.browser.test.mjs",
+    "frontend/tests/evaluationCoverage.fixtures.mjs",
+    "frontend/tests/evaluationCoverage.test.mjs"
+  ],
+  "exact_u3_inventory": [
+    "docs/dashboard-u3-evaluation-coverage-authority.md",
+    "docs/testing/dashboard-u3/20261102T140157818131+0800-focused/command.json",
+    "docs/testing/dashboard-u3/20261102T140158769027+0800-lint/command.json",
+    "docs/testing/dashboard-u3/20261102T140704656258+0800-regressions/command.json",
+    "docs/testing/dashboard-u3/20261102T140706951068+0800-build/command.json",
+    "docs/testing/dashboard-u3/20261102T140715312102+0800-bundle/command.json",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B01-current-evaluation.png",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B06-unassigned-faculty.png",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B09-workload-comparison.png",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B01-current-evaluation.png",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B06-unassigned-faculty.png",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B09-workload-comparison.png",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B14-mobile-workload.png",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T141409445456+0800-u1-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T141426804581+0800-u2-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T141525518950+0800-preferences-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T141557308867+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T141826287375+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u3/20261102T142242471023+0800-lint/command.json",
+    "docs/testing/dashboard-u3/20261102T142242542969+0800-regressions/command.json",
+    "docs/testing/dashboard-u3/20261102T142242601773+0800-focused/command.json",
+    "docs/testing/dashboard-u3/20261102T142254570735+0800-build/command.json",
+    "docs/testing/dashboard-u3/20261102T142306791189+0800-bundle/command.json",
+    "docs/testing/dashboard-u3/audit_evidence.py",
+    "docs/testing/dashboard-u3/manifest.json",
+    "docs/testing/dashboard-u3/preservation-baseline.json",
+    "docs/testing/dashboard-u3/run_checks.py",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/ChromosomeViewer.tsx",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/ScheduleView.tsx",
+    "frontend/src/services/facultyCoverage.ts",
+    "frontend/src/services/workloadPresentation.ts",
+    "frontend/tests/evaluationCoverage.browser.test.mjs",
+    "frontend/tests/evaluationCoverage.fixtures.mjs",
+    "frontend/tests/evaluationCoverage.test.mjs",
+    "frontend/tests/gaMonitoring.browser.test.mjs",
+    "frontend/tests/resultPresentation.browser.test.mjs"
+  ],
+  "prior_tracked_changes_preserved": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "frontend/src/components/common/Sidebar.tsx",
+    "frontend/src/components/faculty/FacultyPreferenceEditor.tsx",
+    "frontend/src/components/faculty/preferences.css",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/layouts/AdminLayout.tsx",
+    "frontend/src/layouts/FacultyLayout.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/GenerationHistory.tsx",
+    "frontend/tests/preferences.browser.test.mjs"
+  ],
+  "artifact_sha256": {
+    "docs/dashboard-u3-evaluation-coverage-authority.md": "93ff90e87121556c96f1614d829c915ce31c947beccc5bbc9d04c13da0bc4d4c",
+    "docs/testing/dashboard-u3/20261102T140157818131+0800-focused/command.json": "c0beec3dba1f8b82327ea43291b3a97890c2e643d826659ad0841c0abd3a67ed",
+    "docs/testing/dashboard-u3/20261102T140158769027+0800-lint/command.json": "238a1feabf18d79db3550f47f708cd22904f7a5b330c6f61de4fe21f567965bd",
+    "docs/testing/dashboard-u3/20261102T140704656258+0800-regressions/command.json": "95c2c4440065b3999a4c81e6b17f5ddad30f642a649f6c45544e8adbd069f8bd",
+    "docs/testing/dashboard-u3/20261102T140706951068+0800-build/command.json": "f37ef39f16a6ed855564fa02f01df7d26cbad769a0167eb2ee3b3f0e8ac4b973",
+    "docs/testing/dashboard-u3/20261102T140715312102+0800-bundle/command.json": "1ace17af9f7626a608dd7047d82a2f4a5cc1c39ce136e7d9b8479c030655ccab",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B01-current-evaluation.png": "6f47e2121eb0a4873e3108c1fc74cb574ca9d7581363172b5db7dc3f34c3f66b",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B06-unassigned-faculty.png": "4fb10c7e7c5acedcfb02d2b85f3bd0fdcac86a3790f0ca54747bcf4bee554cff",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B09-workload-comparison.png": "4c9d3b5acf90c0dcde5ed2e0708686129b9ddb0c70bc476d415ace1f65f5d822",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/browser-results.json": "5d67f4a6e0ae38f38ed7a4b38585d2e290b488555a69813b225200fe7e6e46d4",
+    "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/command.json": "afbdfea21fac6d1ae2e7283daa5546a13c4d758f760b2d57b8a1421113123d03",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B01-current-evaluation.png": "6f47e2121eb0a4873e3108c1fc74cb574ca9d7581363172b5db7dc3f34c3f66b",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B06-unassigned-faculty.png": "bf331db33fc61ba03c11171a9e0ee8cf90e1d76f3d0ec6eb40a41bf147548bde",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B09-workload-comparison.png": "4c9d3b5acf90c0dcde5ed2e0708686129b9ddb0c70bc476d415ace1f65f5d822",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B14-mobile-workload.png": "7470b6f4a00728d9a717c1b093c3f53dd76aee9188c74ca49f62ba291fa96813",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/browser-results.json": "be8fabc91b6e4bc4b79542b7f8024fd308683c685271c5bf2e0e1372bc8d51b8",
+    "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/command.json": "86343fc26759314d654654691f7fc74fe6c2dc5d53c145dbe9a9f6359abe84e0",
+    "docs/testing/dashboard-u3/20261102T141409445456+0800-u1-browser/command.json": "d6b43d6dcc8b8d9bed2cff83c2d57cf605eea6e4e66461900cc5c58c8d1243af",
+    "docs/testing/dashboard-u3/20261102T141426804581+0800-u2-browser/command.json": "097970091777a82f9c275aad97bb983af6c2e10e7dc6841f95d1f930d3236152",
+    "docs/testing/dashboard-u3/20261102T141525518950+0800-preferences-browser/command.json": "293332bf0f2d044fa71b9334003218e83706aafc3a85988aab269c2ab2d8ce6e",
+    "docs/testing/dashboard-u3/20261102T141557308867+0800-ga-browser/command.json": "25017f1d90a9cfd053a36a3566c68aa50be4e9bea36fd95b3d35b3a8568f1243",
+    "docs/testing/dashboard-u3/20261102T141826287375+0800-ga-browser/command.json": "f6a0786a49098fcd1c44fc5c9bd61fe1128c28f70726875ccf61fccd13689067",
+    "docs/testing/dashboard-u3/20261102T142242471023+0800-lint/command.json": "9989d9d3feef9dd425d59e6a8e18661d370c0a3f2b1f624c3269cda034f7c876",
+    "docs/testing/dashboard-u3/20261102T142242542969+0800-regressions/command.json": "b9ddae63118d55ddba22ed0ec907ca7a8f17c6206e8d7c4b02db254ee80430a7",
+    "docs/testing/dashboard-u3/20261102T142242601773+0800-focused/command.json": "516e2831ca1cf7c60e1d55813a4e1a5bfe5486359d2308f8a5e8ac5d1c967e39",
+    "docs/testing/dashboard-u3/20261102T142254570735+0800-build/command.json": "75770f32ad29e8efc83f55e2250f7716a25dffb1f900bcaadc10c8c1869534c6",
+    "docs/testing/dashboard-u3/20261102T142306791189+0800-bundle/command.json": "a46a9a42efa75481603b0a7ff08323e114bccbe419a9fc3f4ee99e0a9d1144f4",
+    "docs/testing/dashboard-u3/audit_evidence.py": "900cb1bcbdc3e155309f82266d6ac7fd143ad22b122dd7b146c771b78cc2c5a9",
+    "docs/testing/dashboard-u3/preservation-baseline.json": "0cb05dba6a091247960e569f6e4fb8814ffded9c794b4ea1fce84e2634688ee0",
+    "docs/testing/dashboard-u3/run_checks.py": "4d74ccfc8f12a0e4ee42c3cc3685fcdf76b3644f1e5ebdd07a6f007cbbcb1f15",
+    "frontend/src/components/ga/WorkloadChart.tsx": "29122f084cc1e4dd04d5b8fc9bb0577f9884ff06a9ff3c4767747c19a684453b",
+    "frontend/src/components/ga/workloadChart.css": "10b8e5a05cebbe75d5095cc15ce4ae8a9f4f1ef748f98e3771b46b89b8da1898",
+    "frontend/src/pages/admin/ChromosomeViewer.tsx": "55100a636c0fc231d834d8a77a7e409c63aa8a294136d939997146353a77c748",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx": "a101e4c3e5b28465cf461a6203662545789119fb7ab85db3f6958d103186602d",
+    "frontend/src/pages/admin/ScheduleView.tsx": "bac3f884c1583492a23219b4627f1fed16f30dad53a684dc769a767c610a0b2d",
+    "frontend/src/services/facultyCoverage.ts": "52c98c7366c9a31c5ba65e540da730e596c88207364955f948482b1ea0abd7db",
+    "frontend/src/services/workloadPresentation.ts": "e3815a76be8ec0af41f8fd0d450e8460d23a66f16c9935be25b02ebb109da5e9",
+    "frontend/tests/evaluationCoverage.browser.test.mjs": "8b4c56af1691beb2866ea35423bf305b25dbbc25a3cf9a269cc5ba569c2cdec6",
+    "frontend/tests/evaluationCoverage.fixtures.mjs": "d2318d820de610fa818ca7882b4cb4c7c6681060512d49da304f6d6cf6276c98",
+    "frontend/tests/evaluationCoverage.test.mjs": "b26b5836ba9b1c84b687ed9046c8390e6b637da8327a80605edbd47789938fa7",
+    "frontend/tests/gaMonitoring.browser.test.mjs": "e0050f65eda8b7d6c9c54c5f74ec7c69ff22b848cae1db5544dc7e3be3729163",
+    "frontend/tests/resultPresentation.browser.test.mjs": "57df23e1056db29c70cbe3a106e7bddee06aa9d12126a7b1bf95574da88581cc"
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140157818131+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140158769027+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140704656258+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 121,
+        "pass": 121,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140706951068+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140715312102+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 15,
+        "pass": 13,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T141409445456+0800-u1-browser/command.json",
+      "selection": "u1-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T141426804581+0800-u2-browser/command.json",
+      "selection": "u2-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 18,
+        "pass": 18,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T141525518950+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 23,
+        "pass": 23,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T141557308867+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 52,
+        "pass": 50,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T141826287375+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 52,
+        "pass": 52,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T142242471023+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T142242542969+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 121,
+        "pass": 121,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T142242601773+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T142254570735+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T142306791189+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    }
+  ],
+  "final_checks": {
+    "focused": {
+      "path": "docs/testing/dashboard-u3/20261102T142242601773+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-u3/20261102T142242471023+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "regressions": {
+      "path": "docs/testing/dashboard-u3/20261102T142242542969+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 121,
+        "pass": 121,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "build": {
+      "path": "docs/testing/dashboard-u3/20261102T142254570735+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "bundle": {
+      "path": "docs/testing/dashboard-u3/20261102T142306791189+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "browser": {
+      "path": "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "u1-browser": {
+      "path": "docs/testing/dashboard-u3/20261102T141409445456+0800-u1-browser/command.json",
+      "selection": "u1-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "u2-browser": {
+      "path": "docs/testing/dashboard-u3/20261102T141426804581+0800-u2-browser/command.json",
+      "selection": "u2-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 18,
+        "pass": 18,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "preferences-browser": {
+      "path": "docs/testing/dashboard-u3/20261102T141525518950+0800-preferences-browser/command.json",
+      "selection": "preferences-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 23,
+        "pass": 23,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "ga-browser": {
+      "path": "docs/testing/dashboard-u3/20261102T141826287375+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 52,
+        "pass": 52,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "png_metadata_audit": [
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B01-current-evaluation.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B06-unassigned-faculty.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140718596002+0800-browser/U3-B09-workload-comparison.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B01-current-evaluation.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B06-unassigned-faculty.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B09-workload-comparison.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u3/20261102T140919507156+0800-browser/U3-B14-mobile-workload.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    }
+  ],
+  "visual_privacy_review": "All seven retained U3 PNGs viewed; fictional account/resources only; no image editing.",
+  "privacy": "PASS_PATTERNS_AND_PRIVATE_NAME_COMPARISON; existing GA browser privacy scan limited to its one added navigation line; no header/cookie dumps or signed receipts",
+  "whitespace": "PASS",
+  "failed_attempts_preserved": true,
+  "database_operations": 0,
+  "warnings": [
+    "Existing Vite mixed import and bundle size warnings"
+  ],
+  "browser_scenarios": {
+    "u3": 15,
+    "u1": 12,
+    "u2": 17,
+    "existing_preferences": 22,
+    "existing_ga": 51,
+    "actual_edge": true,
+    "intercepted_http": true,
+    "live_backend": false
+  },
+  "blockers": [
+    "Server-owned current-evaluation compatibility/reset contract unavailable",
+    "Authoritative semester IT cohort/eligibility/availability not established",
+    "Preparations definition/persistence/scoring require academic and technical approval",
+    "Chair designation lifecycle requires an independently verified institutional mandate; production activation blocked"
+  ],
+  "recorded_at": "2026-11-02T14:24:24.274896+08:00"
+}

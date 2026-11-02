@@ -1,0 +1,17 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/dashboardControls.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T10:39:33.132102+08:00",
+  "ended_at": "2026-11-02T10:39:40.950453+08:00",
+  "elapsed_seconds": 7.818466500029899,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "▶ U2 navigation and preference controls with fictional intercepted responses\n  ✔ U2-B01 desktop sidebar and header remain visible while only the page scrolls (1144.5395ms)\n  ✔ U2-B02 short desktop navigation scrolls independently and preserves footer branding (118.4596ms)\n  ✔ U2-B03 navigation preserves active route and visible keyboard focus (17.9457ms)\n  ✔ U2-B04 mobile disclosure opens by keyboard, closes with Escape, and closes on navigation (78.9492ms)\n  ✔ U2-B05 faculty uses the same independent layout and saved preference controls (373.2776ms)\n  ✔ U2-B06 subject switch uses Space and updates only the draft without autosaving (45.2103ms)\n  ✔ U2-B07 expanded browsing exposes ineligible subjects without granting Add access (82.829ms)\n  ✔ U2-B08 categories stay single-choice and code/title search still filters (102.1644ms)\n  ✔ U2-B09 Add/rank stay functional and ineligible clicks cannot enter the ranked list (108.1825ms)\n  ✔ U2-B10 schedule style retains exclusive native arrow-key behavior and enum values (225.2905ms)\n  ✔ U2-B11 lecture/lab remains single-choice with original Different Day value (69.5439ms)\n  ✔ U2-B12 Discard restores all saved selections and ranked subjects (39.1143ms)\n  ✔ U2-B13 explicit Save sends original enums/flags and preserves unrelated fields (281.9052ms)\n  ✔ U2-B14 actual reload restores mock-saved controls and no automatic save occurs (351.1523ms)\n  ✔ U2-B15 narrow preference controls wrap without page overflow and mobile navigation works (164.3445ms)\n  ✔ U2-B16 reduced-motion disables control transitions and the skip link focuses the page (49.4468ms)\n  ✔ U2-B17 accessibility tree exposes native switch/radio state and hides collapsed navigation (42.9547ms)\n✔ U2 navigation and preference controls with fictional intercepted responses (4624.708ms)\nℹ tests 18\nℹ suites 0\nℹ pass 18\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 7700.6229\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

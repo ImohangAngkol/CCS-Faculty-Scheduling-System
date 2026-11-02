@@ -1,0 +1,16 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/dashboardControls.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T10:19:43.198001+08:00",
+  "ended_at": "2026-11-02T10:19:43.511862+08:00",
+  "elapsed_seconds": 0.3138937000185251,
+  "exit_code": 0,
+  "stdout": "✔ both portals use one viewport shell and a focusable independent page scroller (10.7916ms)\n✔ mobile disclosure preserves NavLink activity, label, expanded state, Escape and focus return (1.6719ms)\n✔ switch is a controlled native checkbox with unchanged boolean callback and explicit accessible name (1.4798ms)\n✔ segmented choices remain native grouped radio inputs, not independent switches (0.7205ms)\n✔ editor preserves existing API enum values and enable flags; browsing does not edit the draft (1.2538ms)\n✔ expanded subject browsing never grants eligibility, including reserved offerings (0.9597ms)\n✔ rank and dirty-state models retain explicit save/discard semantics (0.2959ms)\n✔ focus styling, reduced-motion overrides and narrow wrapping are present (1.9228ms)\n✔ selected text, unselected teal text and OFF track border have sufficient calculated contrast (0.7518ms)\nℹ tests 9\nℹ suites 0\nℹ pass 9\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 216.8045\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

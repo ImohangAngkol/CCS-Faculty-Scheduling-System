@@ -1,0 +1,16 @@
+{
+  "selection": "preferences-baseline",
+  "command": [
+    "node",
+    "../docs/testing/dashboard-u2/baseline_preferences.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T10:52:43.517948+08:00",
+  "ended_at": "2026-11-02T10:53:05.013025+08:00",
+  "elapsed_seconds": 21.49535929999547,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "▶ Faculty Preferences browser interactions\n  ✔ private selector, eligibility, categories, search, ineligible disabled (145.2332ms)\n  ✔ dedicated compact tray contains only ranked subjects and their real components (106.7043ms)\n  ✔ full weekly timetable grows naturally; later times use page scrolling (4.0617ms)\n  ✔ one ranked list and synchronized dropdown and drag order (62.8799ms)\n  ✔ all half-hour rows are labeled and lower-half drops snap to 30 minutes (788.354ms)\n  ✔ reference acceptance: centered class blocks, exact drops, movement, no bottom resizing and removal (3707.7889ms)\n  ✔ general period uses a separate neutral block and spans one half-hour row (106.814ms)\n  ✔ a held card drag reaches an evening row by scrolling the page (319.0101ms)\n  ✔ dragging a lecture source uses the dropped start and backend two-hour duration (786.7847ms)\n  ✔ completed sources reject duplicate drags; existing lecture moves without resizing (1492.2844ms)\n  ✔ removing a placement re-enables its source and a fresh drop works (743.9519ms)\n  ✔ dragging lab creates one continuous 180-minute block, locked during moves (1737.3136ms)\n  ✔ explicit multi-pattern choice and complete independently movable meetings (417.5399ms)\n  ✔ selected multi-meeting source cards place one complete fixed-duration pair (1581.0752ms)\n  ✔ actual calendar pointer dragging preserves the three-hour laboratory (474.9974ms)\n  ✔ importance visibility, internal labels and legacy zero (89.6368ms)\n  ✔ faculty switching confirms dirty state and cancel preserves draft (14.7553ms)\n  ✔ failure retains draft, retry saves and reload persists payload (1076.6789ms)\n  ✔ discard restores baseline and each faculty loads its own eligibility (271.2272ms)\n  ✔ smaller laptop has a readable form and visible sticky save bar (109.2767ms)\n  ✔ faculty self-service hides priority; small viewport has no horizontal overflow (402.5067ms)\n  ✔ unauthorized and invalid saves retain the draft and never claim saved (1238.491ms)\n✔ Faculty Preferences browser interactions (18185.8881ms)\nℹ tests 23\nℹ suites 0\nℹ pass 23\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 21063.759\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

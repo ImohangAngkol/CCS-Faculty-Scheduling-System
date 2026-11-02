@@ -1,0 +1,20 @@
+{
+  "selection": "preferences-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/preferences.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": null,
+  "ended_at": null,
+  "observed_at": "2026-11-02T10:29:24.328421+08:00",
+  "exit_code": 1,
+  "timed_out": true,
+  "timeout_seconds": 300,
+  "stdout": "",
+  "stderr": "subprocess.TimeoutExpired: node --test tests/preferences.browser.test.mjs timed out after 300 seconds.",
+  "counts": null,
+  "limitation": "The original runner raised before writing its record. Captured test output and exact start/end timestamps are unavailable. This is a tool-observed timeout supplement, not a recovered test transcript.",
+  "scope": "Fictional intercepted browser responses. No backend/database execution. Subsequent ownership inspection found no remaining preference test workers; no unrelated process was stopped."
+}

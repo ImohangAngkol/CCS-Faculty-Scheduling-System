@@ -806,7 +806,7 @@ test("Live GA dashboard updates before final result and distinguishes disconnect
       };
     `});
     await t.test('loaded candidate analysis retains original evaluation without extra scoring requests',async()=>{
-      await client.send('Page.navigate',{url:'http://localhost:5188/admin/chromosomes'});
+      await client.send('Page.navigate',{url:'http://localhost:5188/admin/chromosomes?view=archive'});
       await eventually(()=>evaluate(`!![...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='View Results Only'&&!button.disabled)`),'Existing saved-candidate viewing button missing');
       await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()==='View Results Only').click(); true`);
       await eventually(()=>evaluate(`window.location.pathname==='/admin/schedules'`),'Existing load workflow did not complete');

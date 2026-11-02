@@ -1,0 +1,16 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/resultPresentation.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-02T08:57:31.701506+08:00",
+  "ended_at": "2026-11-02T08:57:48.811733+08:00",
+  "elapsed_seconds": 17.11241850000806,
+  "exit_code": 1,
+  "stdout": "✖ U1 rendered results presentation with fictional intercepted responses (16677.4502ms)\nℹ tests 1\nℹ suites 0\nℹ pass 0\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 16991.1872\n\n✖ failing tests:\n\ntest at tests\\resultPresentation.browser.test.mjs:30:1\n✖ U1 rendered results presentation with fictional intercepted responses (16677.4502ms)\n  Error: CDP timeout: Runtime.enable\n      at Timeout._onTimeout (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/resultPresentation.browser.test.mjs:36:117)\n      at listOnTimeout (node:internal/timers:605:17)\n      at process.processTimers (node:internal/timers:541:7)\n",
+  "stderr": "",
+  "scope": "Frontend only; browser API data is fictional/intercepted, no FastAPI or PostgreSQL acceptance."
+}

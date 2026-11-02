@@ -17,14 +17,15 @@ export default function FacultyLayout() {
   const {pathname} = useLocation();
   const title = ({"/faculty": "Faculty Dashboard", "/faculty/preferences": "My Preferences", "/faculty/schedule": "My Schedule", "/faculty/adjustments": "Adjustment Requests", "/faculty/profile": "Faculty Profile"} as Record<string, string>)[pathname] ?? "Faculty Portal";
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50 md:flex-row">
+    <div className="dashboard-shell bg-slate-50">
+      <a className="dashboard-skip-link" href="#dashboard-main">Skip to page content</a>
       <Sidebar
         title="CCS Faculty Scheduling"
         role="Faculty"
         items={facultyItems}
       />
 
-      <div className="flex min-w-0 flex-1 flex-col">
+      <div className="dashboard-content">
         <Topbar
           pageTitle={title}
           userName={user?.faculty?.display_code ?? user?.username}
@@ -32,7 +33,7 @@ export default function FacultyLayout() {
         />
         <AccountMenu />
 
-        <main className="min-w-0 flex-1 p-4 sm:p-6">
+        <main key={pathname} id="dashboard-main" tabIndex={-1} aria-label="Page content" className="dashboard-main p-4 sm:p-6">
           <Outlet />
         </main>
       </div>
