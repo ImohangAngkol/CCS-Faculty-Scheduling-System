@@ -1,0 +1,1379 @@
+{
+  "schema_version": 1,
+  "milestone": "U5A",
+  "implementation_status": "PARTIAL",
+  "head": "705cc44655ba775259ca21c38f4f10959d9fdf78",
+  "branch": "main",
+  "scope": "Read-only V1 result projection and UI. Production CURRENT remains blocked by unestablished academic context. No provenance writes or baseline changes.",
+  "baseline_files": 3039,
+  "unchanged_baseline_files": 3031,
+  "academic_files": 23,
+  "protected_preferences_and_settings": "BYTE_IDENTICAL_TO_LOCAL_ENTRY_STATE; unstaged; raw hashes only",
+  "git_index_and_head": "UNCHANGED",
+  "backend_ga_fingerprints_authority_auth_migrations_checkpoints_schedules": "UNCHANGED",
+  "prior_latest_artifact_hashes_verified": 311,
+  "explicitly_extended_prior_source_files": [
+    "frontend/src/pages/admin/ChromosomeViewer.tsx",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerationHistory.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs",
+    "frontend/tests/evaluationCoverage.test.mjs",
+    "frontend/tests/resultPresentation.browser.test.mjs",
+    "frontend/tests/resultPresentation.test.mjs"
+  ],
+  "modified_from_entry": [
+    "backend/main.py",
+    "frontend/src/pages/admin/ChromosomeViewer.tsx",
+    "frontend/src/pages/admin/GenerationHistory.tsx",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/tests/resultPresentation.test.mjs",
+    "frontend/tests/evaluationCoverage.test.mjs",
+    "frontend/tests/resultPresentation.browser.test.mjs",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "new_files": [
+    "backend/routers/ga_evaluation.py",
+    "backend/services/ga_result_compatibility.py",
+    "backend/tests/test_ga_result_compatibility.py",
+    "docs/dashboard-u5a-current-evaluation-compatibility.md",
+    "docs/testing/dashboard-u5a/20261104T072245641383+0800-backend/command.json",
+    "docs/testing/dashboard-u5a/20261104T072435141320+0800-backend/command.json",
+    "docs/testing/dashboard-u5a/20261104T072446621978+0800-focused/command.json",
+    "docs/testing/dashboard-u5a/20261104T072449584550+0800-regressions/command.json",
+    "docs/testing/dashboard-u5a/20261104T072452708699+0800-build/command.json",
+    "docs/testing/dashboard-u5a/20261104T072811987410+0800-backend/command.json",
+    "docs/testing/dashboard-u5a/20261104T072852279295+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5a/20261104T155808536037+0800-backend/command.json",
+    "docs/testing/dashboard-u5a/20261104T155822532676+0800-focused/command.json",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B01-current-best.png",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B02-provenance.png",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B05-unknown.png",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B13-mobile.png",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T155823877977+0800-build/command.json",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B01-current-best.png",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B02-provenance.png",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B05-unknown.png",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B13-mobile.png",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160110328513+0800-backend/command.json",
+    "docs/testing/dashboard-u5a/20261104T160124055433+0800-focused/command.json",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B01-current-best.png",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B02-provenance.png",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B05-unknown.png",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B13-mobile.png",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160124782700+0800-regressions/command.json",
+    "docs/testing/dashboard-u5a/20261104T160127342366+0800-build/command.json",
+    "docs/testing/dashboard-u5a/20261104T160134728042+0800-bundle/command.json",
+    "docs/testing/dashboard-u5a/20261104T160135418154+0800-u1-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160136293912+0800-lint/command.json",
+    "docs/testing/dashboard-u5a/20261104T160144053709+0800-u3-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160153797790+0800-u4-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160203307579+0800-live-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160436391697+0800-regressions/command.json",
+    "docs/testing/dashboard-u5a/20261104T160438633230+0800-build/command.json",
+    "docs/testing/dashboard-u5a/20261104T160444393375+0800-bundle/command.json",
+    "docs/testing/dashboard-u5a/20261104T160445705135+0800-lint/command.json",
+    "docs/testing/dashboard-u5a/20261104T160450992762+0800-u4-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160500702292+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B01-current-best.png",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B02-provenance.png",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B05-unknown.png",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B13-mobile.png",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160727078768+0800-build/command.json",
+    "docs/testing/dashboard-u5a/20261104T160732707123+0800-bundle/command.json",
+    "docs/testing/dashboard-u5a/20261104T160734086011+0800-lint/command.json",
+    "docs/testing/dashboard-u5a/20261104T160904884620+0800-integrity/command.json",
+    "docs/testing/dashboard-u5a/20261104T160946187575+0800-integrity/command.json",
+    "docs/testing/dashboard-u5a/audit-notes.json",
+    "docs/testing/dashboard-u5a/audit_evidence.py",
+    "docs/testing/dashboard-u5a/manifest.json",
+    "docs/testing/dashboard-u5a/preservation-baseline.json",
+    "docs/testing/dashboard-u5a/run_checks.py",
+    "frontend/src/components/ga/CurrentEvaluation.tsx",
+    "frontend/src/services/currentEvaluation.ts",
+    "frontend/tests/currentEvaluation.browser.test.mjs",
+    "frontend/tests/currentEvaluation.fixtures.mjs",
+    "frontend/tests/currentEvaluation.test.mjs"
+  ],
+  "exact_u5a_inventory": [
+    "backend/main.py",
+    "backend/routers/ga_evaluation.py",
+    "backend/services/ga_result_compatibility.py",
+    "backend/tests/test_ga_result_compatibility.py",
+    "docs/dashboard-u5a-current-evaluation-compatibility.md",
+    "docs/testing/dashboard-u5a/20261104T072245641383+0800-backend/command.json",
+    "docs/testing/dashboard-u5a/20261104T072435141320+0800-backend/command.json",
+    "docs/testing/dashboard-u5a/20261104T072446621978+0800-focused/command.json",
+    "docs/testing/dashboard-u5a/20261104T072449584550+0800-regressions/command.json",
+    "docs/testing/dashboard-u5a/20261104T072452708699+0800-build/command.json",
+    "docs/testing/dashboard-u5a/20261104T072811987410+0800-backend/command.json",
+    "docs/testing/dashboard-u5a/20261104T072852279295+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5a/20261104T155808536037+0800-backend/command.json",
+    "docs/testing/dashboard-u5a/20261104T155822532676+0800-focused/command.json",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B01-current-best.png",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B02-provenance.png",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B05-unknown.png",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B13-mobile.png",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T155823877977+0800-build/command.json",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B01-current-best.png",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B02-provenance.png",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B05-unknown.png",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B13-mobile.png",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160110328513+0800-backend/command.json",
+    "docs/testing/dashboard-u5a/20261104T160124055433+0800-focused/command.json",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B01-current-best.png",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B02-provenance.png",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B05-unknown.png",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B13-mobile.png",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160124782700+0800-regressions/command.json",
+    "docs/testing/dashboard-u5a/20261104T160127342366+0800-build/command.json",
+    "docs/testing/dashboard-u5a/20261104T160134728042+0800-bundle/command.json",
+    "docs/testing/dashboard-u5a/20261104T160135418154+0800-u1-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160136293912+0800-lint/command.json",
+    "docs/testing/dashboard-u5a/20261104T160144053709+0800-u3-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160153797790+0800-u4-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160203307579+0800-live-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160436391697+0800-regressions/command.json",
+    "docs/testing/dashboard-u5a/20261104T160438633230+0800-build/command.json",
+    "docs/testing/dashboard-u5a/20261104T160444393375+0800-bundle/command.json",
+    "docs/testing/dashboard-u5a/20261104T160445705135+0800-lint/command.json",
+    "docs/testing/dashboard-u5a/20261104T160450992762+0800-u4-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160500702292+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B01-current-best.png",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B02-provenance.png",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B05-unknown.png",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B13-mobile.png",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/command.json",
+    "docs/testing/dashboard-u5a/20261104T160727078768+0800-build/command.json",
+    "docs/testing/dashboard-u5a/20261104T160732707123+0800-bundle/command.json",
+    "docs/testing/dashboard-u5a/20261104T160734086011+0800-lint/command.json",
+    "docs/testing/dashboard-u5a/20261104T160904884620+0800-integrity/command.json",
+    "docs/testing/dashboard-u5a/20261104T160946187575+0800-integrity/command.json",
+    "docs/testing/dashboard-u5a/audit-notes.json",
+    "docs/testing/dashboard-u5a/audit_evidence.py",
+    "docs/testing/dashboard-u5a/manifest.json",
+    "docs/testing/dashboard-u5a/preservation-baseline.json",
+    "docs/testing/dashboard-u5a/run_checks.py",
+    "frontend/src/components/ga/CurrentEvaluation.tsx",
+    "frontend/src/pages/admin/ChromosomeViewer.tsx",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerationHistory.tsx",
+    "frontend/src/services/currentEvaluation.ts",
+    "frontend/tests/currentEvaluation.browser.test.mjs",
+    "frontend/tests/currentEvaluation.fixtures.mjs",
+    "frontend/tests/currentEvaluation.test.mjs",
+    "frontend/tests/evaluationCoverage.browser.test.mjs",
+    "frontend/tests/evaluationCoverage.test.mjs",
+    "frontend/tests/resultPresentation.browser.test.mjs",
+    "frontend/tests/resultPresentation.test.mjs"
+  ],
+  "staged_files": [],
+  "tracked_worktree_changes": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "backend/main.py",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/ChromosomeViewer.tsx",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/GenerationHistory.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs",
+    "frontend/tests/evaluationCoverage.test.mjs",
+    "frontend/tests/resultPresentation.browser.test.mjs",
+    "frontend/tests/resultPresentation.test.mjs"
+  ],
+  "existing_untracked_paths_preserved": 958,
+  "artifact_sha256": {
+    "backend/main.py": "593d56e98a88945f067ff013c0f556fd600124ac94c075460da7c4c4aabe498a",
+    "backend/routers/ga_evaluation.py": "9a07edf882de7c5763d99301fc5b0fcc915c9529db14cc1171a68ca20eb04f54",
+    "backend/services/ga_result_compatibility.py": "50d816455fdd9e4704a9e285bd2593e762edbc4552d8cbb470c0de8d40fe8fbf",
+    "backend/tests/test_ga_result_compatibility.py": "f61925f6af114ad940dbd02f2de78019ac84ab956d5a29ecd819506f3fd39cc1",
+    "docs/dashboard-u5a-current-evaluation-compatibility.md": "165089c1a2498c7dd06e73e90b7ecde0f3c5c4a4a1453d78e54af992dc6ced03",
+    "docs/testing/dashboard-u5a/20261104T072245641383+0800-backend/command.json": "723fa57d48d0ec5442176badc96fbf36b6e1d1b56be8b90bdcac9c4d4b7cb6c1",
+    "docs/testing/dashboard-u5a/20261104T072435141320+0800-backend/command.json": "f3875d023822446514ced9bdb190af8a4c268b7134a3796ec3cabf7328f46781",
+    "docs/testing/dashboard-u5a/20261104T072446621978+0800-focused/command.json": "3ea0c60eca722331227774da18e78154588f6c7e33bc12a82e4b4f33e392abb2",
+    "docs/testing/dashboard-u5a/20261104T072449584550+0800-regressions/command.json": "e51f709a37eec04d487dc8bd2d3c9558f333e3dd6a3453a627b440a0b81087bc",
+    "docs/testing/dashboard-u5a/20261104T072452708699+0800-build/command.json": "4790fe7a411bde1b9448c0b737a2b7d3c59c56a7c2361b57cc37652de3e5fc00",
+    "docs/testing/dashboard-u5a/20261104T072811987410+0800-backend/command.json": "3b8864c364d93869b9784f984c05f65e79b46fdb92930acade48240fa328e961",
+    "docs/testing/dashboard-u5a/20261104T072852279295+0800-backend-regressions/command.json": "946257efb130e72559f5000017e6b7ab8c00b1a8f0a1b3327d10ebc08d0e87c7",
+    "docs/testing/dashboard-u5a/20261104T155808536037+0800-backend/command.json": "5bd788658e1f103b3bf97b2d86a840f3381cd3080026b0ec2ca74b8f4a71184c",
+    "docs/testing/dashboard-u5a/20261104T155822532676+0800-focused/command.json": "508f6c25a09fa71e1efc7579029dd5b847337e56e31f337c2de2d7ad0edb6dec",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B01-current-best.png": "6149d8c01cd2f98fc59b7bd1e1e0a794c6d2414fd5340efb8f98e642698bea12",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B02-provenance.png": "f39a991ae6fe2f12e9e74a576e753d11422d29af21e649c48eaf6740776b19d4",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B05-unknown.png": "c11fcb59c268134e08e9b28b9a0090104c76917a411834e2f14c55e24b17848a",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B13-mobile.png": "d29e72e5ccaf7b0d240de38f14db52c0da614d07458d09b28d451276f7c371b1",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/browser-results.json": "a375914efc33c747108287326ed9c76285e1a4f48040b36727cc7905ed48d25e",
+    "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/command.json": "352e252f1130aec4447ae7d860f1085a301fbb6ccfa9d6535791fc551fa39a43",
+    "docs/testing/dashboard-u5a/20261104T155823877977+0800-build/command.json": "39f4f41d962db37459589dd88fdb2f617f5ca3c4e031d664f8ac7a87b71d971d",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B01-current-best.png": "6149d8c01cd2f98fc59b7bd1e1e0a794c6d2414fd5340efb8f98e642698bea12",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B02-provenance.png": "f39a991ae6fe2f12e9e74a576e753d11422d29af21e649c48eaf6740776b19d4",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B05-unknown.png": "c11fcb59c268134e08e9b28b9a0090104c76917a411834e2f14c55e24b17848a",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B13-mobile.png": "d29e72e5ccaf7b0d240de38f14db52c0da614d07458d09b28d451276f7c371b1",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/browser-results.json": "9c22362d411ad799a0020eb1559e220c0b1244d4da63a5d5e0e2d8cdbc074a8e",
+    "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/command.json": "3951f7a906e6f24f688a307db0200c5393e7200d3ffeedbb1ee1c7e4849e621a",
+    "docs/testing/dashboard-u5a/20261104T160110328513+0800-backend/command.json": "06cdab0ccfd355f19834a6dc867b9a5d1b695c574455841f784bee6b7026f40e",
+    "docs/testing/dashboard-u5a/20261104T160124055433+0800-focused/command.json": "a57144ceb99cf9f2dbee6c69f20f74019554e348ba261f56056c1a6e2aab18b9",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B01-current-best.png": "6149d8c01cd2f98fc59b7bd1e1e0a794c6d2414fd5340efb8f98e642698bea12",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B02-provenance.png": "f39a991ae6fe2f12e9e74a576e753d11422d29af21e649c48eaf6740776b19d4",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B05-unknown.png": "c11fcb59c268134e08e9b28b9a0090104c76917a411834e2f14c55e24b17848a",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B13-mobile.png": "d29e72e5ccaf7b0d240de38f14db52c0da614d07458d09b28d451276f7c371b1",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/browser-results.json": "c486d59037e2f10555feb156e6715c44df70fa424ff7f6c4aeb7034dd3456ea5",
+    "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/command.json": "71d438267e3e56ac3f7b6e39249e7bd4fdf1442c1121e1544675beae31e4b1d9",
+    "docs/testing/dashboard-u5a/20261104T160124782700+0800-regressions/command.json": "d412cae7b1b09d0a54132b5667dd88a791f43878e6fa8d863f9a366126eebb23",
+    "docs/testing/dashboard-u5a/20261104T160127342366+0800-build/command.json": "22a2c96e5b31b0fd1848652aa5302d2a9569fd027949e3089579d46da1bf788b",
+    "docs/testing/dashboard-u5a/20261104T160134728042+0800-bundle/command.json": "b8ebd4416e19d3c6f3634990f11ad4cd85e54a7c8574eec3d05d1caa5b20050f",
+    "docs/testing/dashboard-u5a/20261104T160135418154+0800-u1-browser/command.json": "1e613b706b90030c49533940e9b0722a45f6e92e756427fe36c2ef1c694b4552",
+    "docs/testing/dashboard-u5a/20261104T160136293912+0800-lint/command.json": "cada9b386646ded8ddc2d39c8514cbfc9df4fde7092506eeaf84a6a6ffd67349",
+    "docs/testing/dashboard-u5a/20261104T160144053709+0800-u3-browser/command.json": "3aa6316af1da68439bd4607b51ad7f51b457fb8f27f05ab930f2ed730d332aa3",
+    "docs/testing/dashboard-u5a/20261104T160153797790+0800-u4-browser/command.json": "d6a479c20e0c52a4b292a11a200f7a3ba75c347d6e67d254e521309b90b8a8c2",
+    "docs/testing/dashboard-u5a/20261104T160203307579+0800-live-browser/command.json": "dc3e19417dcef83f9fe751689c4c7d580fac8734381514839918c5897670b42a",
+    "docs/testing/dashboard-u5a/20261104T160436391697+0800-regressions/command.json": "3a14b0158f7e5fc7b1041633c31679adebb11f426b7b8802cc55f3cfccf3598f",
+    "docs/testing/dashboard-u5a/20261104T160438633230+0800-build/command.json": "edd2088abb85d914ea2ecaf14a402b6600c68c83afd77ca8f179634ab98dbf8c",
+    "docs/testing/dashboard-u5a/20261104T160444393375+0800-bundle/command.json": "e1e557659901ee7ef01463c4bf3325b6457f15fa6320ee7639834a233f869fad",
+    "docs/testing/dashboard-u5a/20261104T160445705135+0800-lint/command.json": "8f92e36059700e858c593806a150ced19f77df9de51ec32b039cbbba8400f4ae",
+    "docs/testing/dashboard-u5a/20261104T160450992762+0800-u4-browser/command.json": "61b6dce33984fefbb181507175964d22fbd2fc26cb16b77f5d1ca65e10f420f5",
+    "docs/testing/dashboard-u5a/20261104T160500702292+0800-ga-browser/command.json": "eb05458a6d9971c3cfcf632e9fb897f4bbc0526a731cefd2efe497cc83cc9d38",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B01-current-best.png": "31d995e9f9bd65e800ceb4dc8b9a637fa74b51425a97b81214ef6441fbd39391",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B02-provenance.png": "f6a55f76e023fda6f2352381a18073f7721b7cc555455a8b6bcfd1e86830984b",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B05-unknown.png": "c11fcb59c268134e08e9b28b9a0090104c76917a411834e2f14c55e24b17848a",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B13-mobile.png": "50396aff437ccb491ce38f740ad7596de7a6be47bdc449d1078afb729baf8cd5",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/browser-results.json": "2d0401055f7721a331e41da713305abd36b3e0868426e7bd731ac97824ebc63e",
+    "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/command.json": "c80c55e7b90bb0ece6f0004d578fe058cc592646157ba62957778674a07f48e5",
+    "docs/testing/dashboard-u5a/20261104T160727078768+0800-build/command.json": "ef8f25b308b61822a4dd77e6321f351f797936ee23a85fd2c50273e994b56966",
+    "docs/testing/dashboard-u5a/20261104T160732707123+0800-bundle/command.json": "5ba7e02b7153b9cb4026ee891c1dfc19cf6946c242d787ca9aabd1a42d257168",
+    "docs/testing/dashboard-u5a/20261104T160734086011+0800-lint/command.json": "7d33498dd4fb83aa2d00b69e282c4f0235e5df9a13da2463c80ec48672eb7ed3",
+    "docs/testing/dashboard-u5a/20261104T160904884620+0800-integrity/command.json": "97e12047fb8920d6054172c626b3c1ab742d372d43cfaaca58ba35a2fc55adc4",
+    "docs/testing/dashboard-u5a/20261104T160946187575+0800-integrity/command.json": "cd557068c4d92c39e927372434113b17dbabe489819d2d4dbb74fcd9e4df9ca2",
+    "docs/testing/dashboard-u5a/audit-notes.json": "8f3767969f15517e54ebc0a3fd6dbba71251525651921d9f766785f8d167924f",
+    "docs/testing/dashboard-u5a/audit_evidence.py": "c324d7c18d8d14867c8a3b4f7253ef71a7430e8e50512b9281ec6389c36e372f",
+    "docs/testing/dashboard-u5a/preservation-baseline.json": "016e4832763dd65bbf6d2b18525a80f7be0c8ca58135f145a2dba2f7c195383e",
+    "docs/testing/dashboard-u5a/run_checks.py": "20ff37f5f340884d1839c69077b94e69f06a04b9e7ae57231475070b6db8e07e",
+    "frontend/src/components/ga/CurrentEvaluation.tsx": "322618ef3be08a64181095c74282f64364a934c516b4526b7869243d9845d720",
+    "frontend/src/pages/admin/ChromosomeViewer.tsx": "a1e3b5d6da45aacde9090e46c370ec78170c2d6f15b82e5426dfd0548634a2e9",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx": "498168c9c9bae22f39df9bc38f67c5fabbe9e2b97466351a747d717c1f844aa1",
+    "frontend/src/pages/admin/GenerationHistory.tsx": "013c16ab455cbb28e584e1592b3b3a9bf64771d239ba6baca3cfe1506d65eab7",
+    "frontend/src/services/currentEvaluation.ts": "851bbfd8788411b9d7f7b1e829e038f509937a7ec1eee47e8ba487a066a50157",
+    "frontend/tests/currentEvaluation.browser.test.mjs": "de79dbb94bc6d82027714a886a7d433169a150b319dc0b727d86e95369bedc58",
+    "frontend/tests/currentEvaluation.fixtures.mjs": "bfad8d2dbbcd5e745a496773bd918a70864a834216dff59b5a9880a2c8653141",
+    "frontend/tests/currentEvaluation.test.mjs": "f5ce9c8ccc7e3870848ab059e75acee79e1a7d55bbbaa99222510fe0d7855933",
+    "frontend/tests/evaluationCoverage.browser.test.mjs": "1992865b9b36630000e055ad79876e9ceebfa75fbd05bb543bf7215af10c6d0e",
+    "frontend/tests/evaluationCoverage.test.mjs": "d1508b8e7619f15f3e0bf9f1eeddd5732173723aff2fdd91293efa21c4748a55",
+    "frontend/tests/resultPresentation.browser.test.mjs": "b359746beefca8440bf69df0b6ee9f5fe1d3f34324a14f54e4986cd73cff00d2",
+    "frontend/tests/resultPresentation.test.mjs": "dc2a450b984c78bed1c3a51b4d34dd7c14ebceff1607b19b9c9eb64ce69cc3eb"
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T072245641383+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 1,
+      "counts": {
+        "failed": 2,
+        "passed": 15
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T072435141320+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 17
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T072446621978+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T072449584550+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 182,
+        "pass": 182,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T072452708699+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 2,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T072811987410+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 18
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T072852279295+0800-backend-regressions/command.json",
+      "selection": "backend-regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 52
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T155808536037+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 18
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T155822532676+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 15,
+        "pass": 2,
+        "fail": 12,
+        "cancelled": 1,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T155823877977+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 15,
+        "pass": 14,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160110328513+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160124055433+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160124782700+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 182,
+        "pass": 182,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160127342366+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160134728042+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160135418154+0800-u1-browser/command.json",
+      "selection": "u1-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160136293912+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160144053709+0800-u3-browser/command.json",
+      "selection": "u3-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160153797790+0800-u4-browser/command.json",
+      "selection": "u4-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 22,
+        "pass": 22,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160203307579+0800-live-browser/command.json",
+      "selection": "live-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 21,
+        "pass": 21,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160436391697+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 182,
+        "pass": 182,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160438633230+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160444393375+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160445705135+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160450992762+0800-u4-browser/command.json",
+      "selection": "u4-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 22,
+        "pass": 22,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160500702292+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 52,
+        "pass": 52,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160727078768+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160732707123+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160734086011+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160904884620+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 128,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160946187575+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 0,
+      "counts": {}
+    }
+  ],
+  "final_checks": {
+    "backend": {
+      "path": "docs/testing/dashboard-u5a/20261104T160110328513+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20
+      }
+    },
+    "focused": {
+      "path": "docs/testing/dashboard-u5a/20261104T160124055433+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "regressions": {
+      "path": "docs/testing/dashboard-u5a/20261104T160436391697+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 182,
+        "pass": 182,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "build": {
+      "path": "docs/testing/dashboard-u5a/20261104T160727078768+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "backend-regressions": {
+      "path": "docs/testing/dashboard-u5a/20261104T072852279295+0800-backend-regressions/command.json",
+      "selection": "backend-regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 52
+      }
+    },
+    "browser": {
+      "path": "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "bundle": {
+      "path": "docs/testing/dashboard-u5a/20261104T160732707123+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "u1-browser": {
+      "path": "docs/testing/dashboard-u5a/20261104T160135418154+0800-u1-browser/command.json",
+      "selection": "u1-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-u5a/20261104T160734086011+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "u3-browser": {
+      "path": "docs/testing/dashboard-u5a/20261104T160144053709+0800-u3-browser/command.json",
+      "selection": "u3-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "u4-browser": {
+      "path": "docs/testing/dashboard-u5a/20261104T160450992762+0800-u4-browser/command.json",
+      "selection": "u4-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 22,
+        "pass": 22,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "live-browser": {
+      "path": "docs/testing/dashboard-u5a/20261104T160203307579+0800-live-browser/command.json",
+      "selection": "live-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 21,
+        "pass": 21,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "ga-browser": {
+      "path": "docs/testing/dashboard-u5a/20261104T160500702292+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 52,
+        "pass": 52,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "integrity": {
+      "path": "docs/testing/dashboard-u5a/20261104T160946187575+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 0,
+      "counts": {}
+    }
+  },
+  "historical_unsuccessful_attempts": [
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T072245641383+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 1,
+      "counts": {
+        "failed": 2,
+        "passed": 15
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T072452708699+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 2,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 15,
+        "pass": 2,
+        "fail": 12,
+        "cancelled": 1,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 15,
+        "pass": 14,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160904884620+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 128,
+      "counts": {}
+    }
+  ],
+  "png_metadata_audit": [
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B01-current-best.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B02-provenance.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B05-unknown.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T155822987037+0800-browser/U5A-B13-mobile.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B01-current-best.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B02-provenance.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B05-unknown.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160022783888+0800-browser/U5A-B13-mobile.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B01-current-best.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B02-provenance.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B05-unknown.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160124287783+0800-browser/U5A-B13-mobile.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B01-current-best.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B02-provenance.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B05-unknown.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5a/20261104T160715186919+0800-browser/U5A-B13-mobile.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    }
+  ],
+  "unique_images": 7,
+  "visual_privacy_review": "All seven unique PNG contents viewed; sixteen retained images verified by raw hash. No image editing. Fictional resources, term/context and intercepted responses only.",
+  "privacy": "PASS_PATTERNS_AND_IN_MEMORY_PRIVATE_NAME_COMPARISON; no credentials, signed receipts, authorization/cookie dumps or private faculty rows",
+  "whitespace": "PASS",
+  "failed_attempts_preserved": true,
+  "postgresql_operations": 0,
+  "production_ga_executions": 0,
+  "existing_database_changes": 0,
+  "temporary_sqlite_scope_exception": "Earlier D10 API regressions performed fictional SQLite fixture schema/row writes. Exceeds blanket no-database-writes scope; disclosed for owner review. No further SQLite workflow tests after recognition.",
+  "backend_focused_tests": 20,
+  "backend_regressions": 52,
+  "frontend_focused_tests": 16,
+  "frontend_regressions": 182,
+  "user_reported_manual_attempt": {
+    "setup_errors": 11,
+    "deselected": 7,
+    "cause": "WinError 5 at pytest-of-User; user-attributed, not reproduced here"
+  },
+  "fresh_backend_temp_isolation": "Unique verified nonexistent --basetemp path; existing autouse checkpoint/history redirects and V1 Saved Best fixture reviewed; final no cacheprovider",
+  "browser_scenarios": {
+    "u5a": 14,
+    "u1": 12,
+    "u3": 15,
+    "u4": 21,
+    "live_center": 20,
+    "existing_ga": 51,
+    "total": 133,
+    "node_tests_with_parents": 139,
+    "actual_edge": true,
+    "intercepted_http": true,
+    "live_backend": false
+  },
+  "browser": "Edg/156.0.4314.50",
+  "warnings": [
+    "Installed TestClient/httpx and anyio BlockingPortal deprecations",
+    "Existing Vite mixed import and large chunk warnings",
+    "Git fsck dangling objects retained; no corruption reported"
+  ],
+  "blockers": [
+    "No server-established verified academic context or captured V1 term; genuine records cannot be promoted to strict CURRENT",
+    "Saved Best has no captured producer provenance; persistent version-aware comparison requires separate authorization",
+    "No global best across different configuration fingerprints",
+    "V2 aggregation and institutional providers remain separate/unconfigured",
+    "Owner review required for temporary SQLite scope exception before unqualified checkpoint signoff"
+  ],
+  "checkpoint_readiness": "MANUAL_REVIEW_ONLY; no unqualified signoff; no staging/commit/push",
+  "limitations": [
+    "Complete-provenance CURRENT examples are fictional contract tests, not an installed institutional workflow",
+    "No fresh live browser-to-FastAPI or PostgreSQL acceptance",
+    "Full screen-reader/WCAG/device conformance not established"
+  ],
+  "recorded_at": "2026-11-04T16:16:06.491369+08:00"
+}

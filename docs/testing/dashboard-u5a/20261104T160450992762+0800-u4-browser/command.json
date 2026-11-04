@@ -1,0 +1,18 @@
+{
+  "selection": "u4-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/catalogAnalytics.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T16:04:50.993452+08:00",
+  "ended_at": "2026-11-04T16:05:00.551839+08:00",
+  "elapsed_seconds": 9.55843019997701,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "▶ U4 subject drafts, workload views and preference outcomes with fictional APIs\n  ✔ U4-B01 catalog loading retains reference cards and Add Subject opens a focused accessible entry form (1349.0686ms)\n  ✔ U4-B02 missing required fields produce clear draft errors without server writes (8.9399ms)\n  ✔ U4-B03 free manual code, custom BIT prefix and safe imported-like descriptions remain plain text (29.1557ms)\n  ✔ U4-B04 negative hours are rejected and no academic defaults are inserted (28.0621ms)\n  ✔ U4-B05 case-insensitive reference duplicates are rejected (11.0839ms)\n  ✔ U4-B06 complete proposal stays visibly unapproved, isolated and ineligible for scheduling (6.3204ms)\n  ✔ U4-B07 incomplete drafts and local edit revisions remain separate from reference subjects (31.7952ms)\n  ✔ U4-B08 reload clears temporary drafts without changing the reference catalog (642.4802ms)\n  ✔ U4-B09 failed catalog blocks unchecked proposals while explicit incomplete drafts remain possible (355.8493ms)\n  ✔ U4-B10 empty references never manufacture verified tags, academic years or hours (230.3871ms)\n  ✔ U4-B11 workload defaults to one chart and preserves the hidden complete detailed table (395.0559ms)\n  ✔ U4-B12 Table and Both views preserve every original workload field (131.7521ms)\n  ✔ U4-B13 raw zero, overload, tooltips and natural faculty ordering remain exact (3.5851ms)\n  ✔ U4-B14 preference chart separates percentages, status, importance and exact penalties (2.955ms)\n  ✔ U4-B15 preference selection is naturally ordered and respects report faculty filters (46.9477ms)\n  ✔ U4-B16 expandable detailed results retain all original explanations and faculty contributions (4.7573ms)\n  ✔ U4-B17 unknown and denominator-free observations never create false percentages (392.7504ms)\n  ✔ U4-B18 empty and unavailable analysis have honest states and retry (498.3552ms)\n  ✔ U4-B19 mobile subject form and both analytics charts have no page overflow (563.6788ms)\n  ✔ U4-B20 charts offer keyboard focus and exact-value accessible labels (21.9635ms)\n  ✔ U4-B21 existing admin route authorization excludes faculty and anonymous subject actions (443.5962ms)\n✔ U4 subject drafts, workload views and preference outcomes with fictional APIs (6488.3297ms)\nℹ tests 22\nℹ suites 0\nℹ pass 22\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 9496.2023\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use local ASGI/temporary files. No PostgreSQL or institutional acceptance."
+}

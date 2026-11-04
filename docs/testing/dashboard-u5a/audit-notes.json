@@ -1,0 +1,13 @@
+{
+  "status": "FALSE_POSITIVE_DIAGNOSED",
+  "kind": "privacy_header_boundary",
+  "affected_paths": [
+    "frontend/src/services/currentEvaluation.ts",
+    "frontend/tests/currentEvaluation.fixtures.mjs"
+  ],
+  "cause": "Suffix of institutional_authorization DTO field matched header-name regex; no authentication value exposed.",
+  "correction": "Require a non-word boundary before actual header name; retain complete/truncated receipt and other secret detectors.",
+  "positive_header_detection_checks": 2,
+  "status_field_negative_check": 1,
+  "source_or_historical_evidence_redacted": false
+}

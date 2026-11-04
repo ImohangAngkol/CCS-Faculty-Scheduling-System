@@ -1,0 +1,18 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/currentEvaluation.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T15:58:22.533366+08:00",
+  "ended_at": "2026-11-04T15:58:23.718625+08:00",
+  "elapsed_seconds": 1.185282300109975,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "✔ current completed candidate retains exact fitness and producer identity (4.2792ms)\n✔ a measured zero is a current score and not missing (0.6008ms)\n✔ empty current evaluation has zero runs, no best and no saved baseline (0.2013ms)\n✔ legacy and unknown observations cannot contribute raw scores to current selection (0.1897ms)\n✔ missing policy, engine and contract fail closed (0.959ms)\n✔ an alternative policy or a client-declared approval cannot establish equivalence (0.1966ms)\n✔ the best must be an exact completed classified run with its actual score (0.2367ms)\n✔ malformed run IDs, duplicated identities and nonfinite scores are rejected (0.655ms)\n✔ incomplete scans do not make a global current count or best claim (0.508ms)\n✔ baseline admission remains blocked even when current observations exist (0.4437ms)\n✔ JSON object key order does not change result identity (0.3084ms)\n✔ projection validation never mutates source rows or changes archive classification (0.6724ms)\n✔ current UI uses abort cleanup and never invokes score, seed, worker or storage writes (15.2363ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 991.0553\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use local ASGI/temporary files. No PostgreSQL or institutional acceptance."
+}

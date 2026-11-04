@@ -85,7 +85,8 @@ test('malformed or out-of-order generation identity is rejected', () => {
 test('empty measurements stay empty without fabricated observations', () => assert.ok(progressSeries([]).every(line => line.points.length === 0)));
 test('saved page has current empty state and an explicitly gated historical baseline', async () => {
   const source = await readFile(new URL('../src/pages/admin/ChromosomeViewer.tsx', import.meta.url),'utf8');
-  assert.match(source,/No Current Best Chromosome/); assert.match(source,/Run the current Genetic Algorithm to generate/);
+  const current = await readFile(new URL('../src/components/ga/CurrentEvaluation.tsx',import.meta.url),'utf8');
+  assert.match(source,/CurrentEvaluation mode="best"/); assert.match(current,/No Current Best Chromosome/); assert.match(current,/Run the current Genetic Algorithm to generate/);
   assert.match(source,/!isVerifiedCurrent\(savedBest\)/); assert.match(source,/getSavedBestDownloadUrl/); assert.match(source,/analyzeUploadedChromosome/);
   const generate = await readFile(new URL('../src/pages/admin/GenerateSchedule.tsx', import.meta.url),'utf8');
   assert.doesNotMatch(generate,/preferred === "saved"/); assert.match(generate,/!isVerifiedCurrent\(savedBest\)/);
@@ -95,7 +96,7 @@ test('chart modes, exact values, explanatory labels, accessible points and indep
   for (const label of ['Optimization Progress','Penalty Reduction','Generation','Higher improvement indicates a greater reduction in scheduling penalties.','Raw Fitness Penalty','Original penalty','Absolute improvement','Percentage improvement']) assert.ok(source.includes(label));
   assert.match(source,/useState<ChartMode>\("improvement"\)/); assert.match(source,/tabIndex=\{0\}/);
   const history = await readFile(new URL('../src/pages/admin/GenerationHistory.tsx',import.meta.url),'utf8');
-  assert.match(history,/Current Evaluation/); assert.match(history,/Historical Archive/); assert.match(history,/No Current GA Runs Yet/);
+  assert.match(history,/Current Evaluation/); assert.match(history,/Historical Archive/); assert.match(history,/CurrentEvaluation mode="runs"/);
   const prefix = await readFile(new URL('../src/components/ga/RecordedProgress.tsx',import.meta.url),'utf8');
   assert.match(prefix,/start < offset/); assert.match(prefix,/no page-local baseline was substituted/);
 });

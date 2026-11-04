@@ -55,8 +55,10 @@ test('unknown saved compatibility cannot become current from a date, title, rese
 });
 test('current saved view is the default; archived card requires an explicit archive selection',async()=>{
   const source=await readFile(new URL('../src/pages/admin/ChromosomeViewer.tsx',import.meta.url),'utf8');
-  for(const text of ['params.get("view") === "archive"','{archive && <section','{!archive && <section','Current Runs:','Current Best Fitness:','Saved Chromosome:','Start Fresh Evaluation (not available)','No reset has occurred'])assert.ok(source.includes(text));
-  assert.match(source,/type="button" disabled[^>]*>Start Fresh Evaluation/);assert.doesNotMatch(source,/fitness.*\?\? 0/);
+  assert.ok(source.includes('{!archive && <CurrentEvaluation mode="best"'));
+  const current=await readFile(new URL('../src/components/ga/CurrentEvaluation.tsx',import.meta.url),'utf8');
+  for(const text of ['params.get("view") === "archive"','{archive && <section','Current Runs:','Current Best Fitness:','Saved Chromosome:','Start Fresh Evaluation (not available)','No reset has occurred'])assert.ok((source+current).includes(text));
+  assert.match(current,/type="button" disabled[^>]*>Start Fresh Evaluation/);assert.doesNotMatch(source,/fitness.*\?\? 0/);
 });
 test('schedule empty/result/coverage errors are honest and chart retains keyboard/exact-value access',async()=>{
   const source=await readFile(new URL('../src/pages/admin/ScheduleView.tsx',import.meta.url),'utf8');

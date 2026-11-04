@@ -1,0 +1,18 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/currentEvaluation.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T16:01:24.056748+08:00",
+  "ended_at": "2026-11-04T16:01:24.583321+08:00",
+  "elapsed_seconds": 0.5265789999393746,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "✔ current completed candidate retains exact fitness and producer identity (1.4654ms)\n✔ a measured zero is a current score and not missing (0.3495ms)\n✔ finite negative observations retain their exact value (0.3068ms)\n✔ unknown academic context cannot be promoted by a matching engine (0.6337ms)\n✔ different configurations cannot supply one raw-penalty best (22.5926ms)\n✔ empty current evaluation has zero runs, no best and no saved baseline (0.3709ms)\n✔ legacy and unknown observations cannot contribute raw scores to current selection (0.6211ms)\n✔ missing policy, engine and contract fail closed (0.3505ms)\n✔ an alternative policy or a client-declared approval cannot establish equivalence (0.2564ms)\n✔ the best must be an exact completed classified run with its actual score (0.3851ms)\n✔ malformed run IDs, duplicated identities and nonfinite scores are rejected (0.2594ms)\n✔ incomplete scans do not make a global current count or best claim (0.2686ms)\n✔ baseline admission remains blocked even when current observations exist (0.1455ms)\n✔ JSON object key order does not change result identity (0.1648ms)\n✔ projection validation never mutates source rows or changes archive classification (0.3756ms)\n✔ current UI uses abort cleanup and never invokes score, seed, worker or storage writes (13.0783ms)\nℹ tests 16\nℹ suites 0\nℹ pass 16\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 458.1498\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use local ASGI/temporary files. No PostgreSQL or institutional acceptance."
+}

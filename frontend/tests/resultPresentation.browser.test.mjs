@@ -1,3 +1,4 @@
+import {evaluationFixture} from './currentEvaluation.fixtures.mjs';
 // Actual Edge + React DOM, with CDP-intercepted fictional API responses only.
 // No FastAPI, GA execution, PostgreSQL, real credentials or institutional authority.
 import {test} from 'node:test';
@@ -74,7 +75,8 @@ test('U1 rendered results presentation with fictional intercepted responses', {t
       if(path==='/api/auth/me'){
         if(mode.anonymous){status=401;body={detail:'Authentication required'};}
         else body={user:{id:'fictional-admin',username:'admin@fictional.invalid',role:mode.role??'admin',is_active:true,faculty_id:null,faculty:null},csrf_token:'fictional-test-only',expires_at:'2099-01-01T00:00:00Z'};
-      }else if(path==='/api/ga/status')body={control_version:'3c.1',pause_resume_version:'3d.1',process_instance_id:'fictional-process',active_run:null,paused_runs:[]};
+      }else if(path==='/api/ga/current-evaluation')body=evaluationFixture('empty');
+      else if(path==='/api/ga/status')body={control_version:'3c.1',pause_resume_version:'3d.1',process_instance_id:'fictional-process',active_run:null,paused_runs:[]};
       else if(path==='/api/ga/latest')body={status:'success',data:{best_fitness:100,schedule,history:[],fitness_breakdown:{},population_size:4,generations_completed:1}};
       else if(path==='/api/chromosomes/best'){
         status=mode.savedError?503:200;body=mode.savedError?{detail:'Synthetic unavailable'}:{status:'success',data:{exists:!mode.noSaved,fitness:mode.noSaved?null:810,created_at:'2026-01-01T00:00:00Z'}};

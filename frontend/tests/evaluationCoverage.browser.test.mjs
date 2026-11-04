@@ -1,3 +1,4 @@
+import {evaluationFixture} from './currentEvaluation.fixtures.mjs';
 // Actual Edge + React DOM, with CDP-intercepted fictional API responses only.
 // No FastAPI, GA execution, PostgreSQL, real credentials or institutional authority.
 import {test} from 'node:test';
@@ -61,7 +62,8 @@ test('U3 current evaluation, coverage and workload rendering with fictional APIs
       if(path==='/api/auth/me'){
         status=mode.anonymous?401:200;
         body=mode.anonymous?{detail:'Authentication required'}:{user:{id:'fictional-admin',username:'admin@fictional.invalid',role:mode.role??'admin',is_active:true,faculty_id:null,faculty:null},csrf_token:'fictional-test-only',expires_at:'2099-01-01T00:00:00Z'};
-      }else if(path==='/api/ga/status')body={control_version:'3c.1',pause_resume_version:'3d.1',process_instance_id:'fictional-process',active_run:null,paused_runs:[]};
+      }else if(path==='/api/ga/current-evaluation')body=evaluationFixture('empty');
+      else if(path==='/api/ga/status')body={control_version:'3c.1',pause_resume_version:'3d.1',process_instance_id:'fictional-process',active_run:null,paused_runs:[]};
       else if(path==='/api/ga/latest')body={status:'success',data:result(mode.empty)};
       else if(path==='/api/chromosomes/best')body={status:'success',data:{exists:true,fitness:mode.savedZero?0:810,created_at:'2026-01-01T00:00:00Z'}};
       else if(path==='/api/ga/runs')body={schema_version:1,items:[],total:0,offset:0,limit:20,errors:[]};
@@ -69,17 +71,18 @@ test('U3 current evaluation, coverage and workload rendering with fictional APIs
       else if(path==='/api/faculty/'||path==='/api/faculty'){status=mode.rosterError?503:200;body=mode.rosterError?{detail:'Fictional metadata unavailable'}:{data:metadata};}
       else{status=404;body={detail:'No fictional handler'};}
       await command('Fetch.fulfillRequest',{requestId,responseCode:status,responseHeaders:[{name:'Content-Type',value:'application/json'},{name:'Access-Control-Allow-Origin',value:origin},{name:'Access-Control-Allow-Credentials',value:'true'}],body:Buffer.from(JSON.stringify(body)).toString('base64')});
+      if(path==='/api/ga/latest')requestMode.latestReady=true;
     });
     await command('Fetch.enable',{patterns:[{urlPattern:`${process.env.VITE_API_URL??'http://localhost:8000'}/*`,requestStage:'Request'}]});
     const resize=(width,height)=>command('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});await resize(1280,960);
-    async function go(path,settings={}){mode=settings;await command('Page.navigate',{url:origin+path});}
+    async function go(path,settings={}){mode=settings;const previous=await evaluate('performance.timeOrigin');await command('Page.navigate',{url:origin+path});await eventually(()=>evaluate(`performance.timeOrigin!==${previous}&&document.readyState==='complete'`),'Fresh document navigation');if(path==='/admin/analysis'&&!settings.anonymous&&settings.role!=='faculty'){await eventually(()=>mode.latestReady,'Initial latest-result response');await evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))');}}
     const text=label=>eventually(()=>evaluate(`document.body.textContent.includes(${JSON.stringify(label)})`),`Missing text: ${label}`);
     const click=label=>evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent.trim()===${JSON.stringify(label)}).click()`);
     async function select(selector,value){await evaluate(`var el=document.querySelector(${JSON.stringify(selector)});el.value=${JSON.stringify(value)};el.dispatchEvent(new Event('change',{bubbles:true}))`);}
     const scheduleReady=()=>eventually(()=>evaluate(`document.querySelector('select[aria-label="Schedule faculty"]')?.options.length===5`),'Roster selector ready');
     const chartReady=()=>eventually(()=>evaluate(`document.querySelectorAll('.workload-chart-row').length>0`),'Workload chart ready');
     await check('U3-B01 current saved page has zero verified runs, no saved chromosome and no historical penalty',async()=>{
-      await go('/admin/chromosomes');await text('Current Runs:');await text('Saved Chromosome:');
+      await go('/admin/chromosomes');await text('No Current Best Chromosome');await text('Current Runs:');await text('Saved Chromosome:');
       assert.equal(await evaluate(`document.body.textContent.includes('810')`),false);
       assert.equal(await evaluate(`document.querySelector('[aria-label="Current best penalty"]').textContent`),'—');
       assert.ok(await evaluate(`[...document.querySelectorAll('dt')].some(el=>el.textContent==='Current Runs:'&&el.nextElementSibling.textContent==='0')`));

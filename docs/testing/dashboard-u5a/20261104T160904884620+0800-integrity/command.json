@@ -1,0 +1,18 @@
+{
+  "selection": "integrity",
+  "command": [
+    "git",
+    "fsck",
+    "--no-reflogs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T16:09:04.885078+08:00",
+  "ended_at": "2026-11-04T16:09:04.933985+08:00",
+  "elapsed_seconds": 0.048917600070126355,
+  "exit_code": 128,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "",
+  "stderr": "fatal: detected dubious ownership in repository at 'C:/Users/User/Desktop/Genetic-Algorithm Dashboard'\n'C:/Users/User/Desktop/Genetic-Algorithm Dashboard' is owned by:\n\tUSER/User (S-1-5-21-1714657115-2228326307-940865370-1005)\nbut the current user is:\n\tUSER/CodexSandboxOffline (S-1-5-21-1714657115-2228326307-940865370-1009)\nTo add an exception for this directory, call:\n\n\tgit config --global --add safe.directory 'C:/Users/User/Desktop/Genetic-Algorithm Dashboard'\n",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use local ASGI/temporary files. No PostgreSQL or institutional acceptance."
+}

@@ -1,4 +1,5 @@
-import {compatibilityNotice, isVerifiedCurrent, penaltyLabel} from "../../services/resultPresentation";
+import CurrentEvaluation from "../../components/ga/CurrentEvaluation";
+import {isVerifiedCurrent, penaltyLabel} from "../../services/resultPresentation";
 
 import {
   useEffect,
@@ -452,19 +453,7 @@ export default function ChromosomeViewer() {
 
       <div>
 
-        {!archive && <section className="mb-6 rounded-xl border border-teal-200 bg-white p-5" aria-label="Current Evaluation">
-          <h2 className="text-lg font-semibold text-teal-900">No Current Best Chromosome</h2>
-          <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-3">
-            <div><dt>Current Runs:</dt><dd className="font-semibold">0</dd></div>
-            <div><dt>Current Best Fitness:</dt><dd className="text-2xl font-bold" aria-label="Current best penalty">—</dd></div>
-            <div><dt>Saved Chromosome:</dt><dd className="font-semibold">None</dd></div>
-          </dl>
-          <p className="mt-2 text-sm">Run the current Genetic Algorithm to generate and save a new best chromosome.</p>
-          <p className="mt-2 text-sm text-amber-900">{compatibilityNotice}</p>
-          <p className="mt-1 text-xs text-slate-500">Counts refer to verified compatible records only. Newly saved results also require a compatibility contract before they can appear here.</p>
-          <button type="button" disabled className="ccs-btn-secondary mt-4" title="A persistent reset needs an approved server-owned evaluation/provenance contract.">Start Fresh Evaluation (not available)</button>
-          <p className="mt-2 text-xs text-slate-500">No reset has occurred. Fresh population generation does not reset or delete saved records.</p>
-        </section>}
+        {!archive && <CurrentEvaluation mode="best" />}
         <h1
           className="
             text-2xl

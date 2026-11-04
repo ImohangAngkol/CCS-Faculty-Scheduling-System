@@ -7,6 +7,7 @@ from routers import preferences
 from routers import chromosomes
 from routers import subjects
 from routers import ga_history
+from routers import ga_evaluation
 from routers import fitness_analysis
 from routers import auth
 from routers import schedules
@@ -73,6 +74,7 @@ app.include_router(genetic_algorithm.router, dependencies=[Depends(require_admin
 app.include_router(chromosomes.router, dependencies=[Depends(require_admin)])
 app.include_router(subjects.router, dependencies=[Depends(require_principal)])
 app.include_router(ga_history.router, dependencies=[Depends(require_admin)])
+app.include_router(ga_evaluation.router)
 app.include_router(fitness_analysis.router, dependencies=[Depends(require_admin)])
 app.include_router(auth.router)
 app.include_router(schedules.router)

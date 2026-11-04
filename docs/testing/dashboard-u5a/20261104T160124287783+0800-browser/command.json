@@ -1,0 +1,18 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/currentEvaluation.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T16:01:24.288223+08:00",
+  "ended_at": "2026-11-04T16:01:35.254161+08:00",
+  "elapsed_seconds": 10.966033699922264,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "▶ U5A current evaluation with fictional intercepted responses\n  ✔ U5A-B01 current candidate shows exact fitness and recorded history identity (1416.5844ms)\n  ✔ U5A-B02 implementation provenance remains separate from academic approval (118.0807ms)\n  ✔ U5A-B03 zero current runs has dash fitness and no saved chromosome (310.0438ms)\n  ✔ U5A-B04 legacy policy cannot supply a current penalty (357.2803ms)\n  ✔ U5A-B05 absent historical provenance remains unknown (462.2494ms)\n  ✔ U5A-B06 unavailable projection is retryable and never zero-fills a count (399.9627ms)\n  ✔ U5A-B07 a tampered response candidate is rejected (324.5597ms)\n  ✔ U5A-B08 partial archive inspection makes no global best claim (277.4129ms)\n  ✔ U5A-B09 a real measured zero stays zero (284.9649ms)\n  ✔ U5A-B10 current history links inspect the identified run without mixing runs (464.509ms)\n  ✔ U5A-B11 archive saved-best penalty remains unchanged and its baseline stays blocked (390.1064ms)\n  ✔ U5A-B12 loading and route cleanup do not invent current results (383.7099ms)\n  ✔ U5A-B13 mobile current provenance wraps without page overflow (388.0336ms)\n  ✔ U5A-B14 faculty and anonymous routes cannot expose current evaluation (409.1282ms)\n✔ U5A current evaluation with fictional intercepted responses (7842.6417ms)\nℹ tests 15\nℹ suites 0\nℹ pass 15\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10905.2249\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use local ASGI/temporary files. No PostgreSQL or institutional acceptance."
+}

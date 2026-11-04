@@ -1,0 +1,18 @@
+{
+  "selection": "live-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/liveOptimization.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T16:02:03.308126+08:00",
+  "ended_at": "2026-11-04T16:02:16.848482+08:00",
+  "elapsed_seconds": 13.540430499939248,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "▶ Live Optimization Center with fictional intercepted lifecycle responses\n  ✔ LC-B01 backend Running produces exact shared metrics and generation-two progress (1125.3527ms)\n  ✔ LC-B02 Research retains exact U1 raw/improvement modes and keyboard tabs (27.0824ms)\n  ✔ LC-B03 Console preserves true order, duplicate lines and unavailable-history warning (15.421ms)\n  ✔ LC-B04 prefix/search filters and excerpt controls never change logs or backend state (214.7835ms)\n  ✔ LC-B05 tab selection and research mode persist through ordinary updates (38.0918ms)\n  ✔ LC-B06 pending Pause cannot appear Paused before server acknowledgement (768.9934ms)\n  ✔ LC-B07 Resume continues existing run identity and waits for backend Running (1136.9543ms)\n  ✔ LC-B08 Stop preserves backend acknowledgement and authoritative interrupted status (82.217ms)\n  ✔ LC-B09 completed generation budget alone does not mark lifecycle Completed (310.4629ms)\n  ✔ LC-B10 backend completion is labeled Completed without automatic restart (241.0142ms)\n  ✔ LC-B11 backend failure retains metrics without claiming successful final output (317.2262ms)\n  ✔ LC-B12 interrupted run has truthful stale indication and no resume grant (232.4081ms)\n  ✔ LC-B13 disconnected monitoring reconnects through existing reads without worker controls (1372.5078ms)\n  ✔ LC-B14 missing initialization metrics stay unavailable and progress is indeterminate (234.43ms)\n  ✔ LC-B15 unknown generation limit never invents a percentage or ETA (249.7319ms)\n  ✔ LC-B16 deterioration remains a negative exact reduction (241.6748ms)\n  ✔ LC-B17 chart rendering is bounded while original baseline is preserved (496.4656ms)\n  ✔ LC-B18 mobile tabs, cards and console wrap without horizontal page overflow (247.7664ms)\n  ✔ LC-B19 leaving the provider cleans existing polling and tab switching adds no subscriptions (1431.7202ms)\n  ✔ LC-B20 administrator monitoring remains unavailable to faculty and anonymous accounts (468.2877ms)\n✔ Live Optimization Center with fictional intercepted lifecycle responses (10501.9722ms)\nℹ tests 21\nℹ suites 0\nℹ pass 21\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 13481.0579\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use local ASGI/temporary files. No PostgreSQL or institutional acceptance."
+}

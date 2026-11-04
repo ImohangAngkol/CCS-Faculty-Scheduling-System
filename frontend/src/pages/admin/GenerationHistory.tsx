@@ -1,9 +1,10 @@
+import CurrentEvaluation from "../../components/ga/CurrentEvaluation";
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import WeeklySchedule from "../../components/schedule/WeeklySchedule";
 import { formatFacultyName } from "../../components/schedule/facultyDisplay";
 import RecordedProgress from "../../components/ga/RecordedProgress";
-import {compatibilityNotice, evaluationRecords} from "../../services/resultPresentation";
+import {evaluationRecords} from "../../services/resultPresentation";
 import {displaySchedule} from "../../components/schedule/scheduleOrder";
 import { compareGenerations, downloadHistory, getHistoricalAnalysis, getHistoricalSchedule, getHistoryGenerations,
   getHistoryRuns, improvementLabel } from "../../services/gaHistory";
@@ -86,8 +87,8 @@ export default function GenerationHistory() {
       <button className={button} onClick={() => {setError(null); setRefresh(value => value + 1);}}>Refresh history</button></div>
     {(visibleError || actionError) && <p role="alert" className="rounded-lg bg-red-50 p-4 text-sm text-red-800">{visibleError || actionError}</p>}
     <nav aria-label="Evaluation scope" className="flex flex-wrap gap-3">{(["current", "archive"] as const).map(scope => <button key={scope} className={button} aria-pressed={viewMode === scope} onClick={() => {setParams(scope === "archive" ? {view: "archive"} : {}); setRunOffset(0); setGeneration(null); setOffset(0); setError(null); setActionError("");}}>{scope === "current" ? "Current Evaluation" : "Historical Archive"}</button>)}</nav>
-    <p className="rounded-lg bg-amber-50 p-4 text-sm text-amber-900">{compatibilityNotice}</p>
-    {viewMode === "current" && <section className={box}><h2 className="font-semibold">No Current GA Runs Yet</h2><p className="mt-2 text-sm">Generate a new schedule to begin recording results for the current evaluation.</p><p className="mt-2 text-xs text-slate-500">New runs also remain unclassified until a server-owned compatibility contract is available. Live monitoring remains available.</p><Link className={`${button} mt-3 inline-block`} to="/admin/generate">Generate schedule</Link></section>}
+    <p className="rounded-lg bg-amber-50 p-4 text-sm text-amber-900">Historical records retain their original observations. Current Evaluation uses a separate server-owned compatibility projection; archive access alone does not establish current compatibility or baseline admission.</p>
+    {viewMode === "current" && <CurrentEvaluation mode="runs" />}
     {viewMode === "archive" && <section className={box} aria-label="Historical runs">
       <label className="text-sm font-medium">Historical run <select aria-label="Historical run" className="ml-3 max-w-full rounded border p-2" value={runId} onChange={event => {
         setParams(event.target.value ? {view: "archive", run: event.target.value} : {view: "archive"}); setOffset(0); setGeneration(null); setFaculty("All"); setActionError(""); setError(null);
