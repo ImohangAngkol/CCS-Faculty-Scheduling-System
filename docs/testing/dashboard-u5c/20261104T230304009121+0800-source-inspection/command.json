@@ -1,0 +1,18 @@
+{
+  "selection": "source-inspection",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\dashboard-u5c\\inspect_sources.py"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T23:03:04.009775+08:00",
+  "ended_at": "2026-11-04T23:03:08.954000+08:00",
+  "elapsed_seconds": 4.944246000028215,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "{\"default_academic_provider\": \"UNCONFIGURED\", \"observation\": {\"cached_tables\": [{\"cached_model_sha256\": \"f25bafcabeb875ef8946e5619dbc5c6f0ed470ac0352723a79cb9f2bab0325b1\", \"row_count\": 19, \"source\": \"offerings_source\", \"source_model_sha256\": \"f25bafcabeb875ef8946e5619dbc5c6f0ed470ac0352723a79cb9f2bab0325b1\", \"source_sha256\": \"ec79b4b4b24f6d963ec84bdd324bbea83c1b2a2ff12ddb1649536a3325f03775\", \"status\": \"MATCH\"}, {\"cached_model_sha256\": \"93fecbb5f660b739b9671d37f76435e0b525173277e138f6144cd25fa5949bd1\", \"row_count\": 32, \"source\": \"fixed_section_source\", \"source_model_sha256\": \"93fecbb5f660b739b9671d37f76435e0b525173277e138f6144cd25fa5949bd1\", \"source_sha256\": \"f70b0f8d860a9f9f6fd95fb073705bc0a60af4f5df4d0eb8c195945272175c83\", \"status\": \"MATCH\"}, {\"cached_model_sha256\": \"5fadc37311070dfb89a79e85bb1d05d00d8959392542f4df3e420776b4a4d099\", \"row_count\": 11, \"source\": \"qualification_source\", \"source_model_sha256\": \"5fadc37311070dfb89a79e85bb1d05d00d8959392542f4df3e420776b4a4d099\", \"source_sha256\": \"49c1f791e83f310a34c2fc08a30486ce44dc5b497ed1aef87752cd36e87aa82f\", \"status\": \"MATCH\"}, {\"cached_model_sha256\": \"b4f3deebc4006d63560a1f35337776ae36e7fc6ae234ac7df1d2bd479b804255\", \"row_count\": 39, \"source\": \"eligibility_source\", \"source_model_sha256\": \"b4f3deebc4006d63560a1f35337776ae36e7fc6ae234ac7df1d2bd479b804255\", \"source_sha256\": \"153a9beb6a31b4572dcb88314f288852028c6abc3a9b0ff931b730a5c003d808\", \"status\": \"MATCH\"}, {\"cached_model_sha256\": \"1f17dea05470bb65b210e35d3af51c47facd2a1860409620a37a1c8c4046e4ae\", \"row_count\": 56, \"source\": \"domain_source\", \"source_model_sha256\": \"1f17dea05470bb65b210e35d3af51c47facd2a1860409620a37a1c8c4046e4ae\", \"source_sha256\": \"73ba01e2e28975a148359041bfb0b2543e30f0fe3ed470b2c5e815033726f92a\", \"status\": \"MATCH\"}], \"contract\": \"ga-source-qualification-inspection-v1\", \"eligible_for_current\": false, \"file_set_stable_during_inspection\": true, \"input_fingerprint\": \"3ee2262e80b4e0462361096aab3228790fce89401b6d43bcb49041102a2ababc\", \"institutional_approval\": \"NOT_ESTABLISHED\", \"qualification\": \"BLOCKED\", \"reasons\": [\"INSTITUTIONAL_SOURCE_NOT_CONFIGURED\", \"RUN_CONSUMPTION_BINDING_UNAVAILABLE\", \"FULL_TRANSFORMED_MODEL_MAPPING_UNVERIFIED\"], \"scope\": \"Read-only diagnostic; matching caches do not verify full optimizer inputs or authorize CURRENT, Saved Best or publication.\", \"source_metadata\": null}, \"rng_unchanged_during_inspection\": true, \"scope\": \"Read-only observed caches; no GA execution, DB connection or institutional approval.\"}\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

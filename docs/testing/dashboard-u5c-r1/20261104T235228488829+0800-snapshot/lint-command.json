@@ -1,0 +1,21 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/services/currentEvaluation.ts",
+    "src/components/ga/CurrentEvaluation.tsx",
+    "src/components/ga/SourceQualification.tsx",
+    "src/services/sourceQualification.ts",
+    "src/pages/admin/ChromosomeViewer.tsx",
+    "src/pages/admin/GenerationHistory.tsx"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-ew9dxf6k\\repository\\frontend",
+  "started_at": "2026-11-04T23:53:53.922723+08:00",
+  "ended_at": "2026-11-04T23:54:02.140527+08:00",
+  "elapsed_seconds": 8.21775670000352,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "HEAD plus exact U5C overlay; no unrelated source; fictional tests, no institutional services"
+}

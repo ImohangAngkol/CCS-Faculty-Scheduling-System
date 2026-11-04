@@ -10,3 +10,9 @@ router = APIRouter(prefix="/api/ga", tags=["Current Evaluation"], dependencies=[
 @router.get("/current-evaluation")
 def current_evaluation():
     return read(evaluation)
+
+
+@router.get("/source-qualification")
+def source_qualification():
+    from services.ga_source_qualification import status
+    return status()

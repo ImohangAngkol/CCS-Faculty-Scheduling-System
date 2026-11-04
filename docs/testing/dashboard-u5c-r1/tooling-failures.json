@@ -1,0 +1,59 @@
+{
+  "scope": "Retained R1 tooling diagnostics, not application test outcomes",
+  "attempts": [
+    {
+      "status": "PREPARATION_FAILURES",
+      "details": [
+        "An inline release-layout preparation command had an unmatched parenthesis; no recipe was created by that command.",
+        "A snapshot started before the corrected preparation completed stopped with FileNotFoundError for release-byte-layout.json, before running tests.",
+        "The corrected preparation verified all source hashes against the entry baseline and canonical Git content before writing the recipe."
+      ]
+    },
+    {
+      "evidence": "20261104T234403275647+0800-snapshot/backend-command.json",
+      "status": "98_PASSED_1_FAILED",
+      "case": "test_actual_engine_fingerprint_scope_is_unchanged",
+      "exception": "ValueError: Installed source is not the verified legacy-compatible release.",
+      "diagnosis": "Pre-existing supported-release source has mixed LF/CRLF bytes pinned by the unchanged legacy bridge. A canonical Git export changes those bytes. This is a baseline packaging limitation, not a U5C algorithm change.",
+      "correction": "Temporary tests reproduce the exact unchanged release-byte layout from canonical source plus an audited newline-position/hash recipe. Strict legacy checks remain active; no production source, manifest, fingerprint or checkpoint is modified. A plain canonical checkout is still not claimed compatible."
+    },
+    {
+      "evidence": "20261104T234159394697+0800-snapshot/backend-command.json",
+      "status": "COLLECTION_ERRORS",
+      "errors": 3,
+      "tests_executed": 0,
+      "exception": "KeyError: external_instructors",
+      "root_cause": "The first temporary fictional preassignment document omitted the required empty external_instructors object.",
+      "correction": "Completed the fictional bootstrap schema according to the unchanged loader. No production code or data changes."
+    },
+    {
+      "evidence": "20261104T233741022576+0800-snapshot/backend-command.json",
+      "status": "COLLECTION_ERRORS",
+      "errors": 3,
+      "tests_executed": 0,
+      "root_cause": "Private academic CSVs are absent from Git HEAD. Existing backend imports require them before fictional test fixtures are installed.",
+      "correction": "New temporary snapshots exclude all repository academic data and use guarded empty fictional loader tables; existing tests install their own fictional model fixtures. No repository dataset changes."
+    },
+    {
+      "operation": "Historical runner reconstruction in memory",
+      "status": "REJECTED_CANDIDATE",
+      "message": "Initial LF candidate did not match the sealed raw hash; no file was written. The original was subsequently reproduced with CRLF and exactly matched the sealed SHA-256 before archival."
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -B docs/testing/dashboard-u5c-r1/checkpoint_snapshot.py",
+      "exit_code": 1,
+      "stage": "Python parsing; before temporary snapshot creation or tests",
+      "exception": "SyntaxError",
+      "message": "closing parenthesis ')' does not match opening parenthesis '[' on line 75",
+      "correction": "Removed one extra parenthesis in new standalone R1 tooling; no application changes."
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -B docs/testing/dashboard-u5c-r1/checkpoint_snapshot.py",
+      "exit_code": 1,
+      "stage": "Snapshot pre-test content assertion",
+      "exception": "AssertionError",
+      "diagnosis": "git archive inherited core.autocrlf=true. Five inspected snapshot files differed from HEAD blobs only by CRLF expansion; no unrelated content was copied. Snapshot retained; no tests ran.",
+      "correction": "Export new temporary snapshots with per-command core.autocrlf=false and retain exact blob assertions. No original repository file or Git configuration was reset."
+    }
+  ]
+}

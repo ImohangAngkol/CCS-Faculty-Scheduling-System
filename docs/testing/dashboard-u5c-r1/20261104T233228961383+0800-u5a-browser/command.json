@@ -1,0 +1,19 @@
+{
+  "selection": "u5a-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/currentEvaluation.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T23:32:28.962540+08:00",
+  "ended_at": "2026-11-04T23:32:42.187034+08:00",
+  "elapsed_seconds": 13.224540499970317,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "▶ U5A current evaluation with fictional intercepted responses\n  ✔ U5A-B01 current candidate shows exact fitness and recorded history identity (1413.2391ms)\n  ✔ U5A-B02 implementation provenance remains separate from academic approval (142.6338ms)\n  ✔ U5A-B03 zero current runs has dash fitness and no saved chromosome (309.6482ms)\n  ✔ U5A-B04 legacy policy cannot supply a current penalty (499.9045ms)\n  ✔ U5A-B05 absent historical provenance remains unknown (620.2205ms)\n  ✔ U5A-B06 unavailable projection is retryable and never zero-fills a count (691.4973ms)\n  ✔ U5A-B07 a tampered response candidate is rejected (493.8036ms)\n  ✔ U5A-B08 partial archive inspection makes no global best claim (396.2458ms)\n  ✔ U5A-B09 a real measured zero stays zero (475.9583ms)\n  ✔ U5A-B10 current history links inspect the identified run without mixing runs (844.1762ms)\n  ✔ U5A-B11 archive saved-best penalty remains unchanged and its baseline stays blocked (709.3653ms)\n  ✔ U5A-B12 loading and route cleanup do not invent current results (480.4709ms)\n  ✔ U5A-B13 mobile current provenance wraps without page overflow (546.4867ms)\n  ✔ U5A-B14 faculty and anonymous routes cannot expose current evaluation (781.5302ms)\n✔ U5A current evaluation with fictional intercepted responses (9994.6795ms)\nℹ tests 15\nℹ suites 0\nℹ pass 15\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 13129.3978\n",
+  "stderr": "",
+  "execution_context": "Separately recorded by R1; browser checks require the proven unrestricted renderer context",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

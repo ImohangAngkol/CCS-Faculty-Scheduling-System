@@ -1,0 +1,18 @@
+{
+  "selection": "cdp-isolated",
+  "command": [
+    "node",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\dashboard-u5c\\inspect_browser_startup.mjs",
+    "--disable-extensions"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T23:10:53.345898+08:00",
+  "ended_at": "2026-11-04T23:11:21.836226+08:00",
+  "elapsed_seconds": 28.490354000008665,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "{\"scope\":\"Owned blank-page renderer probe only; no application or API loaded.\",\"extensions_disabled\":true,\"browser\":\"Edg/156.0.4314.50\",\"extension_targets\":5,\"observations\":[{\"method\":\"Browser.getVersion\",\"elapsed_ms\":8,\"timed_out\":false,\"error\":null},{\"method\":\"Page.enable\",\"elapsed_ms\":5014,\"timed_out\":true,\"error\":null},{\"method\":\"Runtime.evaluate\",\"elapsed_ms\":5015,\"timed_out\":true,\"error\":null},{\"method\":\"Runtime.enable\",\"elapsed_ms\":5001,\"timed_out\":true,\"error\":null}]}\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

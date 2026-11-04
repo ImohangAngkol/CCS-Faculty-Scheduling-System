@@ -1,0 +1,18 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/sourceQualification.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T23:00:44.623888+08:00",
+  "ended_at": "2026-11-04T23:00:47.029150+08:00",
+  "elapsed_seconds": 2.4052951000630856,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "✔ matching cached tables remain BLOCKED without source authority and run consumption evidence (3.4752ms)\n✔ cache STALE_OR_DIFFERENT_CACHE cannot promote eligibility (0.3877ms)\n✔ cache UNVERIFIABLE cannot promote eligibility (0.1807ms)\n✔ cache CACHE_NOT_LOADED cannot promote eligibility (0.1541ms)\n✔ cache CHANGED_DURING_INSPECTION cannot promote eligibility (0.2538ms)\n✔ invalid eligible_for_current fails closed (0.6726ms)\n✔ invalid qualification fails closed (0.1951ms)\n✔ invalid institutional_approval fails closed (0.2601ms)\n✔ invalid source_metadata fails closed (37.3861ms)\n✔ invalid input_fingerprint fails closed (0.778ms)\n✔ invalid reasons fails closed (0.2897ms)\n✔ unknown sources, duplicate rows and unsafe reason codes are rejected (0.4942ms)\n✔ the UI has observation retry but no authority or dataset editing controls (40.8563ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2191.7557\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

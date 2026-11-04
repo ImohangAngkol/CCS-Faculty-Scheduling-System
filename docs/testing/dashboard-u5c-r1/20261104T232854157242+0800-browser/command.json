@@ -1,0 +1,19 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/sourceQualification.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T23:28:54.157893+08:00",
+  "ended_at": "2026-11-04T23:29:05.122450+08:00",
+  "elapsed_seconds": 10.964565499918535,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "▶ U5C current evaluation with fictional intercepted responses\n  ✔ U5C-B01 matching cache cannot establish institutional approval or CURRENT (1707.8554ms)\n  ✔ U5C-B02 stale source is visible with original current evaluation still separate (679.8523ms)\n  ✔ U5C-B03 source loading does not invent metadata (645.395ms)\n  ✔ U5C-B04 independent unavailable source inspection can retry (572.0205ms)\n  ✔ U5C-B05 tampered eligibility response fails closed (764.0765ms)\n  ✔ U5C-B06 exact zero in separately supplied U5B fixture stays zero (487.5813ms)\n  ✔ U5C-B07 mobile status wraps and offers no authority controls (562.2879ms)\n  ✔ U5C-B08 faculty and unauthenticated users cannot view admin qualification (811.8495ms)\n✔ U5C current evaluation with fictional intercepted responses (7756.8128ms)\nℹ tests 9\nℹ suites 0\nℹ pass 9\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10873.8891\n",
+  "stderr": "",
+  "execution_context": "Separately recorded by R1; browser checks require the proven unrestricted renderer context",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

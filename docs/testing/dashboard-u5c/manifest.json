@@ -1,0 +1,466 @@
+{
+  "schema_version": 1,
+  "milestone": "U5C",
+  "status": "VERIFIED_PARTIAL_READ_ONLY_FOUNDATION",
+  "head": "4bf03c144d5a404889a83cc89befad0495b673e5",
+  "production_qualification": "BLOCKED",
+  "provider": "UNCONFIGURED",
+  "current_eligibility_granted": false,
+  "baseline_paths": 3168,
+  "unchanged_baseline_paths": 3166,
+  "academic_paths": 23,
+  "protected_preferences_and_settings": "BYTE_IDENTICAL_TO_LOCAL_ENTRY_STATE; UNSTAGED; RAW_HASH_ONLY",
+  "git_index_head": "UNCHANGED",
+  "baseline_ga_scoring_rng_fingerprints_migrations_checkpoints_schedules_previous_evidence": "UNCHANGED",
+  "prior_latest_u5a_u5b_hashes_verified": 134,
+  "exact_u5c_inventory": [
+    "backend/routers/ga_evaluation.py",
+    "backend/services/ga_source_qualification.py",
+    "backend/tests/test_ga_source_qualification.py",
+    "docs/dashboard-u5c-institutional-context-qualification.md",
+    "docs/testing/dashboard-u5c/20261104T230028244932+0800-backend/command.json",
+    "docs/testing/dashboard-u5c/20261104T230044564443+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5c/20261104T230044623380+0800-focused/command.json",
+    "docs/testing/dashboard-u5c/20261104T230044679664+0800-regressions/command.json",
+    "docs/testing/dashboard-u5c/20261104T230047413954+0800-build/command.json",
+    "docs/testing/dashboard-u5c/20261104T230049557311+0800-lint/command.json",
+    "docs/testing/dashboard-u5c/20261104T230158813332+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5c/20261104T230158813332+0800-browser/command.json",
+    "docs/testing/dashboard-u5c/20261104T230259284629+0800-bundle/command.json",
+    "docs/testing/dashboard-u5c/20261104T230301506726+0800-integrity/command.json",
+    "docs/testing/dashboard-u5c/20261104T230304009121+0800-source-inspection/command.json",
+    "docs/testing/dashboard-u5c/20261104T230643481251+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5c/20261104T230643481251+0800-browser/command.json",
+    "docs/testing/dashboard-u5c/20261104T231053345424+0800-cdp-isolated/command.json",
+    "docs/testing/dashboard-u5c/20261104T231202498212+0800-cdp-chrome/command.json",
+    "docs/testing/dashboard-u5c/audit_evidence.py",
+    "docs/testing/dashboard-u5c/inspect_browser_startup.mjs",
+    "docs/testing/dashboard-u5c/inspect_sources.py",
+    "docs/testing/dashboard-u5c/manifest.json",
+    "docs/testing/dashboard-u5c/preservation-baseline.json",
+    "docs/testing/dashboard-u5c/run_checks.py",
+    "frontend/src/components/ga/CurrentEvaluation.tsx",
+    "frontend/src/components/ga/SourceQualification.tsx",
+    "frontend/src/services/sourceQualification.ts",
+    "frontend/tests/sourceQualification.browser.test.mjs",
+    "frontend/tests/sourceQualification.fixtures.mjs",
+    "frontend/tests/sourceQualification.test.mjs"
+  ],
+  "modified_from_entry": [
+    "backend/routers/ga_evaluation.py",
+    "frontend/src/components/ga/CurrentEvaluation.tsx"
+  ],
+  "new_files": [
+    "backend/services/ga_source_qualification.py",
+    "backend/tests/test_ga_source_qualification.py",
+    "docs/dashboard-u5c-institutional-context-qualification.md",
+    "docs/testing/dashboard-u5c/20261104T230028244932+0800-backend/command.json",
+    "docs/testing/dashboard-u5c/20261104T230044564443+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5c/20261104T230044623380+0800-focused/command.json",
+    "docs/testing/dashboard-u5c/20261104T230044679664+0800-regressions/command.json",
+    "docs/testing/dashboard-u5c/20261104T230047413954+0800-build/command.json",
+    "docs/testing/dashboard-u5c/20261104T230049557311+0800-lint/command.json",
+    "docs/testing/dashboard-u5c/20261104T230158813332+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5c/20261104T230158813332+0800-browser/command.json",
+    "docs/testing/dashboard-u5c/20261104T230259284629+0800-bundle/command.json",
+    "docs/testing/dashboard-u5c/20261104T230301506726+0800-integrity/command.json",
+    "docs/testing/dashboard-u5c/20261104T230304009121+0800-source-inspection/command.json",
+    "docs/testing/dashboard-u5c/20261104T230643481251+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5c/20261104T230643481251+0800-browser/command.json",
+    "docs/testing/dashboard-u5c/20261104T231053345424+0800-cdp-isolated/command.json",
+    "docs/testing/dashboard-u5c/20261104T231202498212+0800-cdp-chrome/command.json",
+    "docs/testing/dashboard-u5c/audit_evidence.py",
+    "docs/testing/dashboard-u5c/inspect_browser_startup.mjs",
+    "docs/testing/dashboard-u5c/inspect_sources.py",
+    "docs/testing/dashboard-u5c/manifest.json",
+    "docs/testing/dashboard-u5c/preservation-baseline.json",
+    "docs/testing/dashboard-u5c/run_checks.py",
+    "frontend/src/components/ga/SourceQualification.tsx",
+    "frontend/src/services/sourceQualification.ts",
+    "frontend/tests/sourceQualification.browser.test.mjs",
+    "frontend/tests/sourceQualification.fixtures.mjs",
+    "frontend/tests/sourceQualification.test.mjs"
+  ],
+  "preexisting_tracked_modifications": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "staged_files": [],
+  "artifact_sha256": {
+    "backend/routers/ga_evaluation.py": "a6324ee3edc173e55f75d7da4bc7603cf6b546b85b5910758f072bd07f3d9939",
+    "backend/services/ga_source_qualification.py": "51eb50d93b250bca986365145dcf73b6d856373f6dc0f566d295da4dc9defed6",
+    "backend/tests/test_ga_source_qualification.py": "220b58603ec6144c754003b0918a0d139e50fdbade2fd3c4649e739ceddc57b7",
+    "docs/dashboard-u5c-institutional-context-qualification.md": "39075d4b695f349a7d3b99d2e0fde18a6e3071e6c7409cd26e2882c40fbe32e8",
+    "docs/testing/dashboard-u5c/20261104T230028244932+0800-backend/command.json": "0bff1c88781680dc8ad8fd7e53270cec0cf65a195134594112fc047ad74b189b",
+    "docs/testing/dashboard-u5c/20261104T230044564443+0800-backend-regressions/command.json": "bf5f6545886cc7b5038203b85301e6b5ee6e888ae2762c2f5f939dfb31961f6f",
+    "docs/testing/dashboard-u5c/20261104T230044623380+0800-focused/command.json": "417f44fba5b6666691df0e1790fb7d148f04fd8f947d7f3211291dd25db30984",
+    "docs/testing/dashboard-u5c/20261104T230044679664+0800-regressions/command.json": "0ebcc6d178c8f7e2b184ea6dbd94193d761cb58ef90bf1b64d9ed703a2c5ada6",
+    "docs/testing/dashboard-u5c/20261104T230047413954+0800-build/command.json": "cfc8069f0a3083a3cc5fec2665257213549341f7f83fedaa89f99322c61c69b6",
+    "docs/testing/dashboard-u5c/20261104T230049557311+0800-lint/command.json": "0ce64830b00f1e3cb799388726cd7d1778afa454349b847e86278fa6e9ac9302",
+    "docs/testing/dashboard-u5c/20261104T230158813332+0800-browser/browser-results.json": "68f0d15b04e4bd3ca8d5728ee2f7db96c688d2bdcb5aba44f36931a1443c14e5",
+    "docs/testing/dashboard-u5c/20261104T230158813332+0800-browser/command.json": "8fe4e279494a554c1f3a4166929ac9931bb4c4ad145459dbabc94b1f986a8343",
+    "docs/testing/dashboard-u5c/20261104T230259284629+0800-bundle/command.json": "6bd45ee48db49da282fb8cb8c140c5b28f621627ee905f18c3b22da115016595",
+    "docs/testing/dashboard-u5c/20261104T230301506726+0800-integrity/command.json": "cfcfe49aaa37815494ea511f4689e97b61e7738e1053d970a11b487979a46a91",
+    "docs/testing/dashboard-u5c/20261104T230304009121+0800-source-inspection/command.json": "588ac812a7d0f7ed25257b4afd6f89477cea9069d91e09b09b408079ea266b43",
+    "docs/testing/dashboard-u5c/20261104T230643481251+0800-browser/browser-results.json": "68f0d15b04e4bd3ca8d5728ee2f7db96c688d2bdcb5aba44f36931a1443c14e5",
+    "docs/testing/dashboard-u5c/20261104T230643481251+0800-browser/command.json": "ae24f007a2be33a28694a85906ce0287ca10e6b1f9d0e29474d376e11e6961f7",
+    "docs/testing/dashboard-u5c/20261104T231053345424+0800-cdp-isolated/command.json": "f3144436277a6a61bdcbb9e16d1b2c9d9b559318c3f7a7a14e695a9841bc2a2d",
+    "docs/testing/dashboard-u5c/20261104T231202498212+0800-cdp-chrome/command.json": "91d99081e1895b72688559e6c888f9e3afe92f6eaa2e866c99bd13b4d2a65bbd",
+    "docs/testing/dashboard-u5c/audit_evidence.py": "ffa1d038e625ef6488d3175532731ba3e5f2af30c32a2c7ea4aceec386acf11b",
+    "docs/testing/dashboard-u5c/inspect_browser_startup.mjs": "725c85b9bac9ec652af5b02c390c4d590e5e633496ce9dd5a7f178c5d4679dc0",
+    "docs/testing/dashboard-u5c/inspect_sources.py": "a8bf2fa4ca868a51fd98e9ab668cf8cb0ed7c389e85cfe06f28202d5e339b7d6",
+    "docs/testing/dashboard-u5c/preservation-baseline.json": "022408d16da0fff620c89a76b77181af60a5ccad42980fcf118bdea3db598a93",
+    "docs/testing/dashboard-u5c/run_checks.py": "ee959adab1e2807a1e41237c7bd1cfdc3cdd414575bc08884bdf75334cefeec1",
+    "frontend/src/components/ga/CurrentEvaluation.tsx": "338a2155e3a300a57384b549fdc4f82787bfea8ec930ab5ed4f38fd5d1d4d20b",
+    "frontend/src/components/ga/SourceQualification.tsx": "a995d4ec7758c1b78b0d2ae22f2509c73cd7ac8bb3f7ccb8a4672c7f7596493f",
+    "frontend/src/services/sourceQualification.ts": "743565498e972d7b0ade5efab277bb184a9f9b33a7fd4db17e28c51af19cabae",
+    "frontend/tests/sourceQualification.browser.test.mjs": "0f74ccecf67184d9472c5b236f9d80f8810b05ac6b74dbad7d368fa7d5f484d7",
+    "frontend/tests/sourceQualification.fixtures.mjs": "c90a1befe6310791b5f6dbc7714ed721a4a6476dcbad8f1a7724d4cd143e527f",
+    "frontend/tests/sourceQualification.test.mjs": "09b28782b9c24684c22f8e8b11c6f161cc80323171a36ef2677196243429680d"
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230028244932+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 45
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230044564443+0800-backend-regressions/command.json",
+      "selection": "backend-regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 88
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230044623380+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230044679664+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 212,
+        "pass": 212,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230047413954+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230049557311+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230158813332+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 1,
+        "pass": 0,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230259284629+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230301506726+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230304009121+0800-source-inspection/command.json",
+      "selection": "source-inspection",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230643481251+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 1,
+        "pass": 0,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T231053345424+0800-cdp-isolated/command.json",
+      "selection": "cdp-isolated",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T231202498212+0800-cdp-chrome/command.json",
+      "selection": "cdp-chrome",
+      "exit_code": 0,
+      "counts": {}
+    }
+  ],
+  "final_checks": {
+    "backend": {
+      "path": "docs/testing/dashboard-u5c/20261104T230028244932+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 45
+      }
+    },
+    "backend-regressions": {
+      "path": "docs/testing/dashboard-u5c/20261104T230044564443+0800-backend-regressions/command.json",
+      "selection": "backend-regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 88
+      }
+    },
+    "focused": {
+      "path": "docs/testing/dashboard-u5c/20261104T230044623380+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "regressions": {
+      "path": "docs/testing/dashboard-u5c/20261104T230044679664+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 212,
+        "pass": 212,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "build": {
+      "path": "docs/testing/dashboard-u5c/20261104T230047413954+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-u5c/20261104T230049557311+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "browser": {
+      "path": "docs/testing/dashboard-u5c/20261104T230643481251+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 1,
+        "pass": 0,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "bundle": {
+      "path": "docs/testing/dashboard-u5c/20261104T230259284629+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "integrity": {
+      "path": "docs/testing/dashboard-u5c/20261104T230301506726+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "source-inspection": {
+      "path": "docs/testing/dashboard-u5c/20261104T230304009121+0800-source-inspection/command.json",
+      "selection": "source-inspection",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "cdp-isolated": {
+      "path": "docs/testing/dashboard-u5c/20261104T231053345424+0800-cdp-isolated/command.json",
+      "selection": "cdp-isolated",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "cdp-chrome": {
+      "path": "docs/testing/dashboard-u5c/20261104T231202498212+0800-cdp-chrome/command.json",
+      "selection": "cdp-chrome",
+      "exit_code": 0,
+      "counts": {}
+    }
+  },
+  "historical_unsuccessful_attempts": [
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230158813332+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 1,
+        "pass": 0,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5c/20261104T230643481251+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 1,
+        "pass": 0,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "backend_focused": 45,
+  "backend_regressions": 88,
+  "frontend_focused": 13,
+  "frontend_regressions": 212,
+  "browser_scenarios": {
+    "u5c_defined": 8,
+    "u5c_executed": 0,
+    "passes": 0,
+    "initialization_failures": 2,
+    "u5a_u5b_browser_regressions": "NOT_RERUN_DUE_TO_RENDERER_BLOCKER",
+    "live_backend": false
+  },
+  "blank_page_diagnostics": [
+    {
+      "scope": "Owned blank-page renderer probe only; no application or API loaded.",
+      "extensions_disabled": true,
+      "browser": "Edg/156.0.4314.50",
+      "extension_targets": 5,
+      "observations": [
+        {
+          "method": "Browser.getVersion",
+          "elapsed_ms": 8,
+          "timed_out": false,
+          "error": null
+        },
+        {
+          "method": "Page.enable",
+          "elapsed_ms": 5014,
+          "timed_out": true,
+          "error": null
+        },
+        {
+          "method": "Runtime.evaluate",
+          "elapsed_ms": 5015,
+          "timed_out": true,
+          "error": null
+        },
+        {
+          "method": "Runtime.enable",
+          "elapsed_ms": 5001,
+          "timed_out": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "scope": "Owned blank-page renderer probe only; no application or API loaded.",
+      "extensions_disabled": false,
+      "browser": "Chrome/156.0.8078.81",
+      "extension_targets": 1,
+      "observations": [
+        {
+          "method": "Browser.getVersion",
+          "elapsed_ms": 155,
+          "timed_out": false,
+          "error": null
+        },
+        {
+          "method": "Page.enable",
+          "elapsed_ms": 5015,
+          "timed_out": true,
+          "error": null
+        },
+        {
+          "method": "Runtime.evaluate",
+          "elapsed_ms": 5001,
+          "timed_out": true,
+          "error": null
+        },
+        {
+          "method": "Runtime.enable",
+          "elapsed_ms": 5015,
+          "timed_out": true,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "pngs": [],
+  "visual_privacy_review": "No screenshots captured; no application scenario or visual acceptance established.",
+  "privacy": "PASS encoded-fragment/header/credential patterns and in-memory private identity comparison; no source rows exported",
+  "whitespace": "PASS",
+  "failure_history": "RETAINED; two Edge attempts timed out at Runtime.enable before scenarios; Edge and Chrome blank-page renderer commands also timed out; underlying cause unconfirmed",
+  "source_observation": "Five current cached tables match files; full consumed model binding NOT ESTABLISHED",
+  "database_connections": 0,
+  "production_ga_executions": 0,
+  "activation_or_persistence_changes": false,
+  "warnings": [
+    "Existing Starlette/httpx and anyio deprecations",
+    "Existing Vite mixed import and chunk size warnings",
+    "Existing Git dangling objects retained"
+  ],
+  "blockers": [
+    "Institutional owner/authority/approval/effective context source absent",
+    "Actual transformed/frozen/resumed run consumption binding absent",
+    "Current diagnostic not integrated into a future configured provider; production activation prohibited pending reviewed binding and enforcement",
+    "Saved Best persistence and V2 aggregation remain separate"
+  ],
+  "limitations": [
+    "Projection comparison validates supplied complete semantic digests, not actual optimizer consumption",
+    "Cached tables and sampled fingerprints are not an atomic loader receipt",
+    "No live browser-to-FastAPI or fresh database acceptance",
+    "No new source-qualified GA execution or U5C CURRENT classification",
+    "Browser/visual/accessibility/device acceptance not established due to initialization blocker"
+  ],
+  "recorded_at": "2026-11-04T23:14:29.668627+08:00"
+}

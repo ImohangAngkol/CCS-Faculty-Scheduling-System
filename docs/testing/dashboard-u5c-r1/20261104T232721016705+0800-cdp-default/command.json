@@ -1,0 +1,18 @@
+{
+  "selection": "cdp-default",
+  "command": [
+    "node",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\dashboard-u5c\\inspect_browser_startup.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T23:27:21.017249+08:00",
+  "ended_at": "2026-11-04T23:27:50.837939+08:00",
+  "elapsed_seconds": 29.820726600009948,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "{\"scope\":\"Owned blank-page renderer probe only; no application or API loaded.\",\"extensions_disabled\":false,\"browser\":\"Edg/156.0.4314.50\",\"extension_targets\":5,\"observations\":[{\"method\":\"Browser.getVersion\",\"elapsed_ms\":13,\"timed_out\":false,\"error\":null},{\"method\":\"Page.enable\",\"elapsed_ms\":5008,\"timed_out\":true,\"error\":null},{\"method\":\"Runtime.evaluate\",\"elapsed_ms\":5007,\"timed_out\":true,\"error\":null},{\"method\":\"Runtime.enable\",\"elapsed_ms\":5005,\"timed_out\":true,\"error\":null}]}\n",
+  "stderr": "",
+  "execution_context": "Separately recorded by R1; browser checks require the proven unrestricted renderer context",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

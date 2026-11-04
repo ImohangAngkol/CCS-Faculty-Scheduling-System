@@ -1,0 +1,25 @@
+{
+  "selection": "backend",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_ga_source_qualification.py",
+    "tests/test_ga_academic_context.py",
+    "tests/test_ga_result_compatibility.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-vmjxfkot\\pytest-add82a24a75b4600bcfc9d27257f7d60"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-vmjxfkot\\repository\\backend",
+  "started_at": "2026-11-04T23:44:03.299179+08:00",
+  "ended_at": "2026-11-04T23:45:14.512154+08:00",
+  "elapsed_seconds": 71.21288200002164,
+  "exit_code": 1,
+  "stdout": "........................................................................ [ 72%]\n.........................F.                                              [100%]\n================================== FAILURES ===================================\n______________ test_actual_engine_fingerprint_scope_is_unchanged ______________\n\n    def test_actual_engine_fingerprint_scope_is_unchanged():\n        from services import ga_checkpoint_service as checkpoints, ga_v2_store\n>       first=(checkpoints.engine_fingerprint(),checkpoints.engine_fingerprint(1),ga_v2_store.engine_fingerprint())\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\ntests\\test_ga_result_compatibility.py:172: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nservices\\ga_checkpoint_service.py:65: in engine_fingerprint\n    digest.update(legacy_source(path.relative_to(ROOT).as_posix(), content) if preference_policy == 1 else content)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nrelative_path = 'genetic_algorithm/operators/FitnessFunction.py'\ncurrent = b'import json\\nimport math\\nfrom pathlib import Path\\n\\nimport pandas as pd\\nfrom genetic_algorithm.utils.FitnessObser...kdown:\\n\\n        return (\\n            total_penalty,\\n            breakdown\\n        )\\n\\n    return total_penalty\\n'\n\n    def legacy_source(relative_path, current):\n        manifest = json.loads(MANIFEST.read_text(encoding=\"utf-8\"))\n        if hashlib.sha256(Path(__file__).read_bytes()).hexdigest() != manifest.get(\"compatible_policy_helper\"):\n            raise ValueError(\"Legacy policy bridge source differs from the verified release.\")\n        entry = manifest[\"legacy_sources\"].get(relative_path)\n        if entry is None:\n            return current\n        if hashlib.sha256(current).hexdigest() != manifest[\"compatible_sources\"].get(relative_path):\n>           raise ValueError(\"Installed source is not the verified legacy-compatible release.\")\nE           ValueError: Installed source is not the verified legacy-compatible release.\n\nservices\\preference_scoring_policy.py:26: ValueError\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/test_ga_result_compatibility.py::test_actual_engine_fingerprint_scope_is_unchanged\n1 failed, 98 passed, 2 warnings in 68.34s (0:01:08)\n",
+  "stderr": "",
+  "scope": "HEAD plus exact U5C overlay; no unrelated source; fictional tests, no institutional services"
+}

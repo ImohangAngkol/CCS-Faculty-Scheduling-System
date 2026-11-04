@@ -1,0 +1,18 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/sourceQualification.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T23:06:43.481832+08:00",
+  "ended_at": "2026-11-04T23:07:01.307700+08:00",
+  "elapsed_seconds": 17.82588940009009,
+  "exit_code": 1,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "✖ U5C current evaluation with fictional intercepted responses (17405.3939ms)\nℹ tests 1\nℹ suites 0\nℹ pass 0\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 17730.5869\n\n✖ failing tests:\n\ntest at tests\\sourceQualification.browser.test.mjs:32:1\n✖ U5C current evaluation with fictional intercepted responses (17405.3939ms)\n  Error: CDP timeout: Runtime.enable\n      at Timeout._onTimeout (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/sourceQualification.browser.test.mjs:39:117)\n      at listOnTimeout (node:internal/timers:605:17)\n      at process.processTimers (node:internal/timers:541:7)\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

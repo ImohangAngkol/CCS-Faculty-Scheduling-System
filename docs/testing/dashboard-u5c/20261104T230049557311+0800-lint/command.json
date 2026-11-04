@@ -1,0 +1,29 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/ga/LiveGAMonitor.tsx",
+    "src/components/ga/GALiveConsole.tsx",
+    "src/components/ga/ConvergenceChart.tsx",
+    "src/pages/admin/GenerateSchedule.tsx",
+    "src/pages/admin/FitnessAnalysis.tsx",
+    "src/services/liveOptimization.ts",
+    "src/services/currentEvaluation.ts",
+    "src/components/ga/CurrentEvaluation.tsx",
+    "src/components/ga/SourceQualification.tsx",
+    "src/services/sourceQualification.ts",
+    "src/pages/admin/ChromosomeViewer.tsx",
+    "src/pages/admin/GenerationHistory.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T23:00:49.558158+08:00",
+  "ended_at": "2026-11-04T23:01:05.677803+08:00",
+  "elapsed_seconds": 16.119659999967553,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}
