@@ -1,0 +1,1237 @@
+{
+  "schema_version": 1,
+  "milestone": "U5B",
+  "implementation_status": "VERIFIED_CONDITIONAL_FOUNDATION",
+  "head": "2db42c396c6418e722555269354921f178628868",
+  "branch": "main",
+  "scope": "Server-verified academic context contract, immutable fresh-run start records and version-two evaluation. Genuine provider remains unconfigured; no institutional activation.",
+  "baseline_files": 3108,
+  "unchanged_baseline_files": 3103,
+  "academic_files": 23,
+  "protected_preferences_and_settings": "BYTE_IDENTICAL_TO_LOCAL_ENTRY_STATE; unstaged; raw hashes only",
+  "git_index_and_head": "UNCHANGED",
+  "original_ga_scoring_rng_fingerprints_authority_auth_migrations_checkpoints_schedules": "UNCHANGED",
+  "prior_latest_artifact_hashes_verified": 383,
+  "explicitly_extended_prior_source_files": [
+    "backend/routers/ga_evaluation.py",
+    "backend/services/ga_result_compatibility.py",
+    "frontend/src/components/ga/CurrentEvaluation.tsx",
+    "frontend/src/services/currentEvaluation.ts"
+  ],
+  "modified_from_entry": [
+    "backend/routers/genetic_algorithm.py",
+    "backend/routers/ga_evaluation.py",
+    "backend/services/ga_result_compatibility.py",
+    "frontend/src/services/currentEvaluation.ts",
+    "frontend/src/components/ga/CurrentEvaluation.tsx"
+  ],
+  "new_files": [
+    "backend/services/ga_academic_context.py",
+    "backend/services/ga_evaluation_v2.py",
+    "backend/services/ga_run_provenance.py",
+    "backend/tests/test_ga_academic_context.py",
+    "docs/dashboard-u5b-academic-context-provenance.md",
+    "docs/testing/dashboard-u5b/20261104T173411511010+0800-backend/command.json",
+    "docs/testing/dashboard-u5b/20261104T173436179342+0800-focused/command.json",
+    "docs/testing/dashboard-u5b/20261104T173437102194+0800-build/command.json",
+    "docs/testing/dashboard-u5b/20261104T173730333291+0800-backend/command.json",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B01-current-best.png",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B02-provenance.png",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B05-unknown.png",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B13-mobile.png",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B15-unavailable-context.png",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T173756153461+0800-u5a-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T173756600919+0800-regressions/command.json",
+    "docs/testing/dashboard-u5b/20261104T173759392507+0800-bundle/command.json",
+    "docs/testing/dashboard-u5b/20261104T173801395151+0800-lint/command.json",
+    "docs/testing/dashboard-u5b/20261104T173805424789+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5b/20261104T173807916334+0800-u1-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T173817237891+0800-u3-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T173826606176+0800-live-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T174009418813+0800-backend/command.json",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B01-current-best.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B02-provenance.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B05-unknown.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B13-mobile.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B15-unavailable-context.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B17-run-start-provenance.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T174038504758+0800-focused/command.json",
+    "docs/testing/dashboard-u5b/20261104T174039154988+0800-build/command.json",
+    "docs/testing/dashboard-u5b/20261104T174045217065+0800-bundle/command.json",
+    "docs/testing/dashboard-u5b/20261104T174046548028+0800-lint/command.json",
+    "docs/testing/dashboard-u5b/20261104T174115996516+0800-u4-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T174126655606+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T174128465301+0800-integrity/command.json",
+    "docs/testing/dashboard-u5b/20261104T174324593812+0800-build/command.json",
+    "docs/testing/dashboard-u5b/20261104T174331415433+0800-bundle/command.json",
+    "docs/testing/dashboard-u5b/20261104T174332964657+0800-lint/command.json",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B01-current-best.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B02-provenance.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B05-unknown.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B13-mobile.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B15-unavailable-context.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B17-run-start-provenance.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T174549348130+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T175120481592+0800-regressions/command.json",
+    "docs/testing/dashboard-u5b/audit_evidence.py",
+    "docs/testing/dashboard-u5b/manifest.json",
+    "docs/testing/dashboard-u5b/preservation-baseline.json",
+    "docs/testing/dashboard-u5b/run_checks.py",
+    "frontend/tests/academicContext.browser.test.mjs",
+    "frontend/tests/academicContext.fixtures.mjs",
+    "frontend/tests/academicContext.test.mjs"
+  ],
+  "exact_u5b_inventory": [
+    "backend/routers/ga_evaluation.py",
+    "backend/routers/genetic_algorithm.py",
+    "backend/services/ga_academic_context.py",
+    "backend/services/ga_evaluation_v2.py",
+    "backend/services/ga_result_compatibility.py",
+    "backend/services/ga_run_provenance.py",
+    "backend/tests/test_ga_academic_context.py",
+    "docs/dashboard-u5b-academic-context-provenance.md",
+    "docs/testing/dashboard-u5b/20261104T173411511010+0800-backend/command.json",
+    "docs/testing/dashboard-u5b/20261104T173436179342+0800-focused/command.json",
+    "docs/testing/dashboard-u5b/20261104T173437102194+0800-build/command.json",
+    "docs/testing/dashboard-u5b/20261104T173730333291+0800-backend/command.json",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B01-current-best.png",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B02-provenance.png",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B05-unknown.png",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B13-mobile.png",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B15-unavailable-context.png",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T173756153461+0800-u5a-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T173756600919+0800-regressions/command.json",
+    "docs/testing/dashboard-u5b/20261104T173759392507+0800-bundle/command.json",
+    "docs/testing/dashboard-u5b/20261104T173801395151+0800-lint/command.json",
+    "docs/testing/dashboard-u5b/20261104T173805424789+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5b/20261104T173807916334+0800-u1-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T173817237891+0800-u3-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T173826606176+0800-live-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T174009418813+0800-backend/command.json",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B01-current-best.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B02-provenance.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B05-unknown.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B13-mobile.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B15-unavailable-context.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B17-run-start-provenance.png",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T174038504758+0800-focused/command.json",
+    "docs/testing/dashboard-u5b/20261104T174039154988+0800-build/command.json",
+    "docs/testing/dashboard-u5b/20261104T174045217065+0800-bundle/command.json",
+    "docs/testing/dashboard-u5b/20261104T174046548028+0800-lint/command.json",
+    "docs/testing/dashboard-u5b/20261104T174115996516+0800-u4-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T174126655606+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T174128465301+0800-integrity/command.json",
+    "docs/testing/dashboard-u5b/20261104T174324593812+0800-build/command.json",
+    "docs/testing/dashboard-u5b/20261104T174331415433+0800-bundle/command.json",
+    "docs/testing/dashboard-u5b/20261104T174332964657+0800-lint/command.json",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B01-current-best.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B02-provenance.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B05-unknown.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B13-mobile.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B15-unavailable-context.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B17-run-start-provenance.png",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T174549348130+0800-ga-browser/command.json",
+    "docs/testing/dashboard-u5b/20261104T175120481592+0800-regressions/command.json",
+    "docs/testing/dashboard-u5b/audit_evidence.py",
+    "docs/testing/dashboard-u5b/manifest.json",
+    "docs/testing/dashboard-u5b/preservation-baseline.json",
+    "docs/testing/dashboard-u5b/run_checks.py",
+    "frontend/src/components/ga/CurrentEvaluation.tsx",
+    "frontend/src/services/currentEvaluation.ts",
+    "frontend/tests/academicContext.browser.test.mjs",
+    "frontend/tests/academicContext.fixtures.mjs",
+    "frontend/tests/academicContext.test.mjs"
+  ],
+  "staged_files": [],
+  "tracked_worktree_changes": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "backend/routers/ga_evaluation.py",
+    "backend/routers/genetic_algorithm.py",
+    "backend/services/ga_result_compatibility.py",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/CurrentEvaluation.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/src/services/currentEvaluation.ts",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "existing_untracked_paths_preserved": 958,
+  "artifact_sha256": {
+    "backend/routers/ga_evaluation.py": "a58178c16566d8f669d575bbca467d4123ad867c27e684162b89b5e8a03af4e1",
+    "backend/routers/genetic_algorithm.py": "20c97a7792c95654d8525dd046629ce6f229fe4d6df8a1a0d484f84dfd4c9efb",
+    "backend/services/ga_academic_context.py": "0a34944042662c62373fc02597e6c311d5147652f28c24bbe821a3b3cb0e17f4",
+    "backend/services/ga_evaluation_v2.py": "ff5983b44b5acb20e0784cd70ed5cf1d2f79e80fe5e88991fdea90e812518166",
+    "backend/services/ga_result_compatibility.py": "cf967b0116976bf8aca426dc69c042ba76cb4d2cb417ba1f7c165b6b23aebe47",
+    "backend/services/ga_run_provenance.py": "c52f2162eea898e795549e579b8dd8705a6fb3deb0b4e27a465220972fba5278",
+    "backend/tests/test_ga_academic_context.py": "c32d0b7fa5d002a0fd4e7a8f55ee30fb856ed0fa10559278ed8a5051630d624d",
+    "docs/dashboard-u5b-academic-context-provenance.md": "d0c27ee709c9084f4cc8c1a27318d856f2227e6026101c03d78b8b974e405152",
+    "docs/testing/dashboard-u5b/20261104T173411511010+0800-backend/command.json": "6e048cf4b3a3d39dc4acd08e41511791d98edfa23078318552d8cd2d0e313e75",
+    "docs/testing/dashboard-u5b/20261104T173436179342+0800-focused/command.json": "2dadfb312b6f04a509e60057ac0d63fc9c861e91e76c7a08055d242847e39e2c",
+    "docs/testing/dashboard-u5b/20261104T173437102194+0800-build/command.json": "4235138240d4ca4e9911522c099d7be90dbb657eea90dda68ee6fab85f3c951d",
+    "docs/testing/dashboard-u5b/20261104T173730333291+0800-backend/command.json": "ec3159663ce58b6625544058515370166fbd8f841d9f3a42e6e41d5acd820737",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B01-current-best.png": "054e3c750bee1a53b81c96f9f414b5a87f35a620be4ec4328f8b1994dc75215f",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B02-provenance.png": "b07c27b16c73a0a9abc01bb61444e6b2781b3f0543c5c7af9304c24a7f8499ad",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B05-unknown.png": "34c890c04351b18f306ef9a1ce70e7c863dd6172fb1b32e61d27b1f3bd0a1ae3",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B13-mobile.png": "d98184a242d0daad019c606205b871d0340d9a71c0d5941888b66a305a6131cd",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B15-unavailable-context.png": "1b22f55e2394fa0e91f8e3a62cc7fe9777e77b2eafe32730ec33e521156de389",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/browser-results.json": "87034a8e3f99483ab61dfa2ef717f9eab117fd1bad540bc8fcfbd244b0be3fc2",
+    "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/command.json": "9124c21a72de64c0d3aa7f8b04264d9fbf2aaa2097756ed6fcd39e4a4e9920f5",
+    "docs/testing/dashboard-u5b/20261104T173756153461+0800-u5a-browser/command.json": "d2e42d3cc4023dfda92e34ab1d1afdab479f53c8db5cc9f5c1ad3c334c768bcd",
+    "docs/testing/dashboard-u5b/20261104T173756600919+0800-regressions/command.json": "7508d54bdd7492ec9cb5aae7848be08a71d93cc5c359565e0c2b38aeafd3284e",
+    "docs/testing/dashboard-u5b/20261104T173759392507+0800-bundle/command.json": "eb863689bf31bf913a5e6d8f4b67f0cc9d1739de289b62da644797543ccb0afc",
+    "docs/testing/dashboard-u5b/20261104T173801395151+0800-lint/command.json": "059329d64a97ced0fddb7d9184bf7becf930527eb03ac80c40b298f033e65833",
+    "docs/testing/dashboard-u5b/20261104T173805424789+0800-backend-regressions/command.json": "607366b1a74afd1858f12868c44813571f1640fb8d6c5a7f3f438aee3a3785f2",
+    "docs/testing/dashboard-u5b/20261104T173807916334+0800-u1-browser/command.json": "a7ed61e1d824102e1def75d5b0b2bcce3e3c93b9d284b3999408e31ad5a32f4e",
+    "docs/testing/dashboard-u5b/20261104T173817237891+0800-u3-browser/command.json": "c022e20dca1b4d537c5eb134ddf26297654ccce13d6dbae6df92a30244a6ebe5",
+    "docs/testing/dashboard-u5b/20261104T173826606176+0800-live-browser/command.json": "27b7fb1c3d67de96053f68a90106543b084ddbdaaa55621a784cd4c0310e0ffe",
+    "docs/testing/dashboard-u5b/20261104T174009418813+0800-backend/command.json": "afb5c8b46aa641553110120e8a625ef89a4d90b69238deb403c02fb15163c540",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B01-current-best.png": "5a792d01c6a4ba3f924719ce745c5b9da28d88ecb8558d4ef8bd8cefcc0aeb6c",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B02-provenance.png": "1cdbb483272184040df1702e8922729417d8655b68249c87712c740c09f61a31",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B05-unknown.png": "34c890c04351b18f306ef9a1ce70e7c863dd6172fb1b32e61d27b1f3bd0a1ae3",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B13-mobile.png": "f4ecd09f0ac5d896f1978ebf91c64c8a2ef539c02dc531266eba732c17f5927d",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B15-unavailable-context.png": "f830089950e341a540755ac126d03d6312b5c9b42ae218bc45edaa5b7e9b6604",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B17-run-start-provenance.png": "94dca6793f94a939cd6f6e56891d06e847a399bf646841e8bf1530ee31bcfb4f",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/browser-results.json": "caf21ddc43a47db76e76d2a01fbc2e37dc08be74a0145525ee0bbecd688df009",
+    "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/command.json": "7230d6fd43342d3c202c65bec774b71bd6a3dbc2985b59498ed1886bbb484166",
+    "docs/testing/dashboard-u5b/20261104T174038504758+0800-focused/command.json": "d87c2ddd5fb398dc297a18ae503639cc1239c3fe963a4800ad5a31444d7526e2",
+    "docs/testing/dashboard-u5b/20261104T174039154988+0800-build/command.json": "89dc78a5f589e50f5dacfe788d68d25feeabcfafa4e5e07a1d49573214ef4bd5",
+    "docs/testing/dashboard-u5b/20261104T174045217065+0800-bundle/command.json": "3b20bfabd6612c18b686c1df454f4cd68be4bb82b084cf142e8fc2ab1234344f",
+    "docs/testing/dashboard-u5b/20261104T174046548028+0800-lint/command.json": "74f9633777365545b7e947b2905cfd56a66e6c7a1644d703a67115e95438015e",
+    "docs/testing/dashboard-u5b/20261104T174115996516+0800-u4-browser/command.json": "68b84d1c639547fe7da2235972d0acf0f31b62c6afdd4a4d64739e935c684fe7",
+    "docs/testing/dashboard-u5b/20261104T174126655606+0800-ga-browser/command.json": "89f3d92ee62b9ccf78df34af9c68196f3cbac5b1ada93c3812af54a1f992ca72",
+    "docs/testing/dashboard-u5b/20261104T174128465301+0800-integrity/command.json": "6364cb3c1a347fdaddf361e9e4f1605cf05729316d90749bd665ea2b277572d5",
+    "docs/testing/dashboard-u5b/20261104T174324593812+0800-build/command.json": "6b6fcf401d5d33b2bdba5d1b8d413e31f2be0d1e95442f72119c0078c89eb72f",
+    "docs/testing/dashboard-u5b/20261104T174331415433+0800-bundle/command.json": "95f746dcc691e2e01cf73d33b7920797dff64c4e8ee1fdc8d6c8c0adbeb807e8",
+    "docs/testing/dashboard-u5b/20261104T174332964657+0800-lint/command.json": "2930fb16bffd36cf7e4a39428186489e2927178c54ffde4d28af755d64d4df94",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B01-current-best.png": "1d62ffc6c99110262528ff47b04776e0e15b0a559bb9dd0cc30e53bd9781195b",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B02-provenance.png": "a726c89c553f6860a99beea7dc35fc69bb131cbfcd3faa1858b287dbe3ccb8a1",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B05-unknown.png": "92e7d1c5940917d65444a18e76ced71f5211badfc25633947a7204ea3c386568",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B13-mobile.png": "33ed2a208d1f63decdcf1a331fb10ebcc4c160ce24b78efadfed091017865b68",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B15-unavailable-context.png": "a25ce599e3cc9cd584c281566b977df643a8678639c95a23d7a410356a35cb43",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B17-run-start-provenance.png": "a2bc417ba1cac7713df8906d1d0784b6ec3ce7bfd0993df9de6c4a2d72a05a02",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/browser-results.json": "beeb535061ff2bcd0e9d69408ecd6f7efb2168762b257440fc2111da659c447e",
+    "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/command.json": "40689ae22db95f1184cf00e555f265ec699b6dd19161a658a52695a193491366",
+    "docs/testing/dashboard-u5b/20261104T174549348130+0800-ga-browser/command.json": "1da96f8d318aa889b8cdd68e9edbfe3b981bb7737091aa28e0597de891a293ba",
+    "docs/testing/dashboard-u5b/20261104T175120481592+0800-regressions/command.json": "6841a6fd20892db56f7e1fc377ff0e632a740b0a841887dbfbc175b12a7ab375",
+    "docs/testing/dashboard-u5b/audit_evidence.py": "b4c8fbf29b462e3b7f28406a564319f9f750ed3bbe507ee0cf2a35140f6097e8",
+    "docs/testing/dashboard-u5b/preservation-baseline.json": "ebfc9e4d4f2ed40d009d0a2a39262546e10db8646da2af31367394cd539d6041",
+    "docs/testing/dashboard-u5b/run_checks.py": "b732be210f8cd1269374c22dffe0ebe579f79beb9f56b8f68aee152d8a8ce070",
+    "frontend/src/components/ga/CurrentEvaluation.tsx": "2239f1c2cded9314e9922a6dea96baf251aac9c2225c352d1a645479911f0a9d",
+    "frontend/src/services/currentEvaluation.ts": "af19d917c24dfde8901ec8087119bb1de5ea72972cc35de6eb9733e06e794d33",
+    "frontend/tests/academicContext.browser.test.mjs": "8e5e06325b216d05899deea262936a23b891aef37ee200cb34abdad2e59bc16f",
+    "frontend/tests/academicContext.fixtures.mjs": "f0165637824118bacafab6b845fee14b878860e90892c44f39c0705a707833fb",
+    "frontend/tests/academicContext.test.mjs": "682c56131cdbe39ffc0377c417a427fb3836623c7104fe102bb5acc8863d29f6"
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173411511010+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 28
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173436179342+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173437102194+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173730333291+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 33
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173756153461+0800-u5a-browser/command.json",
+      "selection": "u5a-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173756600919+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 198,
+        "pass": 198,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173759392507+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173801395151+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173805424789+0800-backend-regressions/command.json",
+      "selection": "backend-regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 54
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173807916334+0800-u1-browser/command.json",
+      "selection": "u1-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173817237891+0800-u3-browser/command.json",
+      "selection": "u3-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173826606176+0800-live-browser/command.json",
+      "selection": "live-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 21,
+        "pass": 21,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174009418813+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 34
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 18,
+        "pass": 18,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174038504758+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 14,
+        "pass": 14,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174039154988+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174045217065+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174046548028+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174115996516+0800-u4-browser/command.json",
+      "selection": "u4-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 22,
+        "pass": 22,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174126655606+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 52,
+        "pass": 32,
+        "fail": 18,
+        "cancelled": 2,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174128465301+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174324593812+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174331415433+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174332964657+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 18,
+        "pass": 18,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174549348130+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 52,
+        "pass": 52,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T175120481592+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 198,
+        "pass": 198,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "final_checks": {
+    "backend": {
+      "path": "docs/testing/dashboard-u5b/20261104T174009418813+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 34
+      }
+    },
+    "focused": {
+      "path": "docs/testing/dashboard-u5b/20261104T174038504758+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 14,
+        "pass": 14,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "build": {
+      "path": "docs/testing/dashboard-u5b/20261104T174324593812+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "browser": {
+      "path": "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 18,
+        "pass": 18,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "u5a-browser": {
+      "path": "docs/testing/dashboard-u5b/20261104T173756153461+0800-u5a-browser/command.json",
+      "selection": "u5a-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "regressions": {
+      "path": "docs/testing/dashboard-u5b/20261104T175120481592+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 198,
+        "pass": 198,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "bundle": {
+      "path": "docs/testing/dashboard-u5b/20261104T174331415433+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-u5b/20261104T174332964657+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "backend-regressions": {
+      "path": "docs/testing/dashboard-u5b/20261104T173805424789+0800-backend-regressions/command.json",
+      "selection": "backend-regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 54
+      }
+    },
+    "u1-browser": {
+      "path": "docs/testing/dashboard-u5b/20261104T173807916334+0800-u1-browser/command.json",
+      "selection": "u1-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "u3-browser": {
+      "path": "docs/testing/dashboard-u5b/20261104T173817237891+0800-u3-browser/command.json",
+      "selection": "u3-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "live-browser": {
+      "path": "docs/testing/dashboard-u5b/20261104T173826606176+0800-live-browser/command.json",
+      "selection": "live-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 21,
+        "pass": 21,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "u4-browser": {
+      "path": "docs/testing/dashboard-u5b/20261104T174115996516+0800-u4-browser/command.json",
+      "selection": "u4-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 22,
+        "pass": 22,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "ga-browser": {
+      "path": "docs/testing/dashboard-u5b/20261104T174549348130+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 52,
+        "pass": 52,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "integrity": {
+      "path": "docs/testing/dashboard-u5b/20261104T174128465301+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 0,
+      "counts": {}
+    }
+  },
+  "historical_unsuccessful_attempts": [
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174126655606+0800-ga-browser/command.json",
+      "selection": "ga-browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 52,
+        "pass": 32,
+        "fail": 18,
+        "cancelled": 2,
+        "skipped": 0
+      }
+    }
+  ],
+  "png_metadata_audit": [
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B01-current-best.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B02-provenance.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B05-unknown.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B13-mobile.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T173744320706+0800-browser/U5B-B15-unavailable-context.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B01-current-best.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B02-provenance.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B05-unknown.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B13-mobile.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B15-unavailable-context.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174024020717+0800-browser/U5B-B17-run-start-provenance.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B01-current-best.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B02-provenance.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B05-unknown.png",
+      "width": 1280,
+      "height": 960,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B13-mobile.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B15-unavailable-context.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "path": "docs/testing/dashboard-u5b/20261104T174338566561+0800-browser/U5B-B17-run-start-provenance.png",
+      "width": 390,
+      "height": 844,
+      "metadata_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    }
+  ],
+  "unique_images": 16,
+  "visual_privacy_review": "All sixteen unique PNG contents viewed; seventeen retained images verified by raw hash. No image editing. Explicit fictional academic context and provider responses only.",
+  "privacy": "PASS_PATTERNS_AND_IN_MEMORY_PRIVATE_NAME_COMPARISON; no credentials, signed receipts, authorization/cookie dumps or institutional faculty rows",
+  "whitespace": "PASS",
+  "failed_attempts_preserved": true,
+  "database_operations": 0,
+  "postgresql_operations": 0,
+  "production_ga_executions": 0,
+  "backend_focused_tests": 34,
+  "backend_regressions": 54,
+  "frontend_focused_tests": 14,
+  "frontend_regressions": 198,
+  "fresh_backend_temp_isolation": "Unique verified nonexistent --basetemp; existing checkpoint/history and fictional Saved Best redirects; own provenance store under tmp_path; Engine.connect forbidden in focused tests; no cacheprovider",
+  "browser_scenarios": {
+    "u5b": 17,
+    "u5a": 14,
+    "u1": 12,
+    "u3": 15,
+    "u4": 21,
+    "live_center": 20,
+    "existing_ga": 51,
+    "total": 150,
+    "node_tests_with_parents": 157,
+    "actual_edge": true,
+    "intercepted_http": true,
+    "live_backend": false
+  },
+  "browser": "Edg/156.0.4314.50",
+  "warnings": [
+    "Installed TestClient/httpx and anyio BlockingPortal deprecations",
+    "Existing Vite mixed import and large chunk warnings",
+    "Git fsck dangling objects retained; no corruption reported"
+  ],
+  "blockers": [
+    "Genuine academic-context provider, stewardship, dataset-to-loaded-model mapping and storage policy require separate approval",
+    "Saved/uploaded seed provenance, Saved Best persistence and V2 aggregation remain separate",
+    "Existing checkpoint admission/format is unchanged; missing provenance cannot be reconstructed on resume",
+    "Initial GA browser checkpoint-timeout failure did not reproduce; root cause unconfirmed, failed record retained"
+  ],
+  "limitations": [
+    "Complete provenance capture/evaluation exercised only with fictional server providers",
+    "No fresh live browser-to-FastAPI, PostgreSQL or institutional acceptance",
+    "New capture covers monitored fresh V1 run/stream path; legacy helper stays unqualified",
+    "Local checksums and no-clobber storage are not institutional cryptographic signatures",
+    "Full screen-reader/WCAG/device conformance not established"
+  ],
+  "recorded_at": "2026-11-04T17:51:25.710558+08:00"
+}

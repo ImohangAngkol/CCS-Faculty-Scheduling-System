@@ -104,9 +104,11 @@ def classify(index, snapshot, current):
         return result(UNKNOWN, "PROVENANCE_MISSING_OR_MALFORMED")
 
 
-def evaluation():
+def evaluation(*, identity_reader=None, classifier=None):
     from services import ga_history_service as history
-    current = current_identity()
+    identity_reader = identity_reader or current_identity
+    classifier = classifier or classify
+    current = identity_reader()
     runs, issues, complete, scanned = [], [], True, 0
     root = history.SNAPSHOTS_DIR
     if root.exists():
@@ -129,7 +131,7 @@ def evaluation():
                 index = history.manifest(run_id)
                 latest = index["generations"][-1] if index["generations"] else None
                 snapshot = history.get_generation(run_id, latest["generation"]) if latest else {}
-                finding = classify(index, snapshot, current)
+                finding = classifier(index, snapshot, current)
                 current_run = finding["classification"] == CURRENT
                 runs.append({"run_id": run_id, "state": index["state"], **finding,
                     "generation": latest["generation"] if latest else None,
@@ -145,7 +147,7 @@ def evaluation():
                         "reason": "ARCHIVED_RECORD_UNREADABLE", "generation": None,
                         "configuration_fingerprint": None, "fitness": None, "chromosome_id": None})
     # Detect input/source drift during this read instead of publishing a mixed projection.
-    if current_identity() != current:
+    if identity_reader() != current:
         raise history.HistoryError("Implementation or inputs changed during review; retry.", "GA_EVALUATION_CHANGED", 409)
     eligible = [row for row in runs if row["classification"] == CURRENT]
     candidates = [row for row in eligible if row["state"] == "COMPLETED"]

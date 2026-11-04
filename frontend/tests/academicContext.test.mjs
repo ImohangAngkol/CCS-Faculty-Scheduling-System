@@ -1,0 +1,20 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {academicFixture} from './academicContext.fixtures.mjs';
+import {validateCurrentEvaluation} from '../src/services/currentEvaluation.ts';
+
+test('v2 CURRENT needs complete academic context and immutable start provenance',()=>{const data=validateCurrentEvaluation(academicFixture());assert.equal(data.best.classification,'CURRENT');assert.equal(data.best.fitness,12.3456789);});
+test('zero fitness and original decimal precision survive version-two validation',()=>{assert.equal(validateCurrentEvaluation(academicFixture('zero')).best.fitness,0);assert.equal(validateCurrentEvaluation(academicFixture()).best.fitness,12.3456789);});
+test('unavailable server context cannot be replaced by a plausible academic year',()=>{const data=academicFixture('unavailable');assert.equal(validateCurrentEvaluation(data).best,null);data.best=data.runs[0];assert.throws(()=>validateCurrentEvaluation(data));});
+test('missing run-start provenance rejects current eligibility',()=>{const data=academicFixture();delete data.runs[0].provenance;assert.throws(()=>validateCurrentEvaluation(data));});
+test('raw academic labels without run-start context binding are insufficient',()=>{const data=academicFixture();delete data.runs[0].academic_context;assert.throws(()=>validateCurrentEvaluation(data));});
+test('dataset and scope identities must exactly match the server current context',()=>{for(const key of ['dataset_id','dataset_revision','scope_id','academic_year_id','term_id','input_fingerprint']){const data=academicFixture();data.runs[0].academic_context[key]='fictional-tamper';assert.throws(()=>validateCurrentEvaluation(data));}});
+test('a mismatched immutable record or context hash is rejected',()=>{for(const key of ['run_start_sha256','context_sha256','contract','started_at']){const data=academicFixture();data.runs[0].provenance[key]='invalid';assert.throws(()=>validateCurrentEvaluation(data));}});
+test('legacy context revisions and unknown original runs never supply a current fitness',()=>{for(const mode of ['legacy','unknown']){const data=validateCurrentEvaluation(academicFixture(mode));assert.equal(data.best,null);assert.equal(data.current_runs,0);}});
+test('v1 and v2 classification vocabularies cannot be mixed',()=>{const data=academicFixture();data.runs[0].classification='CURRENT_COMPATIBLE';assert.throws(()=>validateCurrentEvaluation(data));});
+test('an unsupported academic-context schema is rejected even for an empty result set',()=>{const data=academicFixture('empty');data.current_identity.academic_context.version=2;assert.throws(()=>validateCurrentEvaluation(data));});
+test('incomplete coverage cannot promote a best even with complete provenance',()=>{const data=academicFixture('incomplete');assert.equal(validateCurrentEvaluation(data).best,null);});
+test('nested JSON property order does not alter provenance identity',()=>{const data=academicFixture();data.best=JSON.parse(JSON.stringify(data.best));data.best.provenance=Object.fromEntries(Object.entries(data.best.provenance).reverse());assert.equal(validateCurrentEvaluation(data).best.fitness,12.3456789);});
+test('a version-two record never grants saved-baseline eligibility',()=>{const data=academicFixture();data.saved_chromosome.baseline_eligible=true;assert.throws(()=>validateCurrentEvaluation(data));});
+test('the shared panel displays verified scope and dataset without academic-context edit controls',async()=>{const source=await readFile(new URL('../src/components/ga/CurrentEvaluation.tsx',import.meta.url),'utf8');for(const value of ['Server-verified scheduling scope','dataset_revision','Server academic context is unavailable','no academic year, term or dataset is inferred'])assert.ok(source.includes(value));assert.doesNotMatch(source,/<input|<select|method:.*POST/);});

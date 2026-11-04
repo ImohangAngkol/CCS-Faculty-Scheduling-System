@@ -1,0 +1,18 @@
+{
+  "selection": "u1-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/resultPresentation.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T17:38:07.916854+08:00",
+  "ended_at": "2026-11-04T17:38:17.104217+08:00",
+  "elapsed_seconds": 9.187394300010055,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "▶ U1 rendered results presentation with fictional intercepted responses\n  ✔ U1-B01 current saved empty state retains archive/download and blocks unverified baseline (1394.0678ms)\n  ✔ U1-B02 empty archive retains upload without inventing a saved penalty (360.3906ms)\n  ✔ U1-B03 saved status error is actionable and never becomes current (396.6398ms)\n  ✔ U1-B04 stored saved preference does not auto-select legacy baseline (320.2949ms)\n  ✔ U1-B05 history defaults to empty Current Evaluation, not completed/recent status (313.6294ms)\n  ✔ U1-B06 archive remains selectable with original state and identity (294.012ms)\n  ✔ U1-B07 improvement preserves deterioration and independent series (141.7381ms)\n  ✔ U1-B08 chart toggles raw penalty without changing exact observations (153.4424ms)\n  ✔ U1-B09 next page retains generation-zero baseline instead of rebasing (75.2711ms)\n  ✔ U1-B10 schedule ordering preserves all lecture/laboratory rows and filters (396.2978ms)\n  ✔ U1-B11 history failure remains actionable without showing current runs (271.3661ms)\n  ✔ U1-B12 admin routes retain anonymous and faculty access protection (570.2192ms)\n✔ U1 rendered results presentation with fictional intercepted responses (6064.818ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 9121.5244\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

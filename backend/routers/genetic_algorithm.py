@@ -50,6 +50,8 @@ ga_service.GenerationMonitor = HistoryGenerationMonitor
 
 def _execute_with_history(control, **parameters):
     validate_ga_inputs()
+    from services.ga_run_provenance import begin
+    begin(control, parameters)
     def warning(message):
         # Complete lines go directly to the thread-safe run buffer, preserving
         # foreground partial-line capture and reconnectable warning delivery.

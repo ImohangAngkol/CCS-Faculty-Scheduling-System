@@ -1,0 +1,18 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/academicContext.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T17:43:38.567012+08:00",
+  "ended_at": "2026-11-04T17:43:51.202191+08:00",
+  "elapsed_seconds": 12.635244300006889,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "▶ U5B current evaluation with fictional intercepted responses\n  ✔ U5B-B01 current candidate shows exact fitness and recorded history identity (1747.9843ms)\n  ✔ U5B-B02 implementation provenance remains separate from academic approval (123.7274ms)\n  ✔ U5B-B03 zero current runs has dash fitness and no saved chromosome (432.4738ms)\n  ✔ U5B-B04 legacy policy cannot supply a current penalty (394.4878ms)\n  ✔ U5B-B05 absent historical provenance remains unknown (494.8893ms)\n  ✔ U5B-B06 unavailable projection is retryable and never zero-fills a count (444.1673ms)\n  ✔ U5B-B07 a tampered response candidate is rejected (313.0018ms)\n  ✔ U5B-B08 partial archive inspection makes no global best claim (288.9257ms)\n  ✔ U5B-B09 a real measured zero stays zero (343.2796ms)\n  ✔ U5B-B10 current history links inspect the identified run without mixing runs (597.3079ms)\n  ✔ U5B-B11 archive saved-best penalty remains unchanged and its baseline stays blocked (516.0768ms)\n  ✔ U5B-B12 loading and route cleanup do not invent current results (419.2388ms)\n  ✔ U5B-B13 mobile current provenance wraps without page overflow (413.4416ms)\n  ✔ U5B-B14 faculty and anonymous routes cannot expose current evaluation (670.2821ms)\n  ✔ U5B-B15 missing server context is explicit and cannot create current results (406.908ms)\n  ✔ U5B-B16 the actual contract uses CURRENT with a verified dataset and original history link (311.1013ms)\n  ✔ U5B-B17 immutable run-start and configuration identities are accessible (91.5626ms)\n✔ U5B current evaluation with fictional intercepted responses (9541.6407ms)\nℹ tests 18\nℹ suites 0\nℹ pass 18\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 12567.7257\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

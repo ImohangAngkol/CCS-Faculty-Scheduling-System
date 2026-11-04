@@ -1,0 +1,18 @@
+{
+  "selection": "u3-browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T17:38:17.238415+08:00",
+  "ended_at": "2026-11-04T17:38:26.468678+08:00",
+  "elapsed_seconds": 9.230282600037754,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "▶ U3 current evaluation, coverage and workload rendering with fictional APIs\n  ✔ U3-B01 current saved page has zero verified runs, no saved chromosome and no historical penalty (1095.09ms)\n  ✔ U3-B02 explicit archive preserves the original fitness and existing download/inspection actions (96.3299ms)\n  ✔ U3-B03 zero archived penalty remains a true zero and does not become a current result (275.7608ms)\n  ✔ U3-B04 fresh-evaluation action is visibly unavailable and cannot reset or write records (4.8517ms)\n  ✔ U3-B05 selector includes zero-assignment faculty from captured analysis missing from metadata (237.3047ms)\n  ✔ U3-B06 selecting unassigned faculty shows an honest empty timetable without invented rows (7.8103ms)\n  ✔ U3-B07 roster retry is actionable and fallback report members stay available (235.7568ms)\n  ✔ U3-B08 loaded empty schedule retains cohort choices and zero-assignment messaging (335.9073ms)\n  ✔ U3-B09 workload graphic is above the retained table, naturally sorted and exact for zero/overload (408.1846ms)\n  ✔ U3-B10 workload and faculty filters affect chart and table consistently (109.4563ms)\n  ✔ U3-B11 unavailable targets stay unknown instead of using current metadata/defaults (423.0459ms)\n  ✔ U3-B12 many faculty remain keyboard reachable in the bounded chart list (485.4024ms)\n  ✔ U3-B13 recorded above-ceiling values are visible and warned about, never clipped into a valid result (340.9368ms)\n  ✔ U3-B14 mobile workload stays readable with exact numbers and no horizontal page overflow (339.979ms)\n  ✔ U3-B15 existing account role restrictions remain in place (507.0343ms)\n✔ U3 current evaluation, coverage and workload rendering with fictional APIs (6138.3644ms)\nℹ tests 16\nℹ suites 0\nℹ pass 16\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 9168.4608\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

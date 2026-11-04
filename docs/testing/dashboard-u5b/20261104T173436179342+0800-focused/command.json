@@ -1,0 +1,18 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/academicContext.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-04T17:34:36.179823+08:00",
+  "ended_at": "2026-11-04T17:34:36.916245+08:00",
+  "elapsed_seconds": 0.7364382999949157,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "✔ v2 CURRENT needs complete academic context and immutable start provenance (22.4151ms)\n✔ zero fitness and original decimal precision survive version-two validation (0.4048ms)\n✔ unavailable server context cannot be replaced by a plausible academic year (0.6748ms)\n✔ missing run-start provenance rejects current eligibility (0.2002ms)\n✔ raw academic labels without run-start context binding are insufficient (0.3719ms)\n✔ dataset and scope identities must exactly match the server current context (0.4626ms)\n✔ a mismatched immutable record or context hash is rejected (0.2938ms)\n✔ legacy context revisions and unknown original runs never supply a current fitness (0.2259ms)\n✔ v1 and v2 classification vocabularies cannot be mixed (0.2668ms)\n✔ incomplete coverage cannot promote a best even with complete provenance (0.3743ms)\n✔ nested JSON property order does not alter provenance identity (0.3863ms)\n✔ a version-two record never grants saved-baseline eligibility (0.1968ms)\n✔ the shared panel displays verified scope and dataset without academic-context edit controls (13.4117ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 554.3565\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}
