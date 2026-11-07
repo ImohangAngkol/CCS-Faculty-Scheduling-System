@@ -1,0 +1,32 @@
+{
+  "head": "5d4d02c52f67b30b6dec13179d0389e5dc46daf5",
+  "source_sha256": {
+    "backend/services/ga_worker_contract.py": "b90013c5e5a92573f8446dc5efd5e0947bea594d687b5891c96653cc4ed1fae5",
+    "backend/services/ga_worker_store.py": "fc58d54b2f3c14fb95e935cec3770bf1d6460f45107a5db09f05fa312626f7c2",
+    "backend/services/ga_worker_child.py": "46444f2781b015c5a85568fb43e8c425dcca882a5ba3ae025f39932e2de49927",
+    "backend/services/ga_bounded_worker.py": "974f49f3cb5714321a163dcb3312d947a7a21869df2e491335b87c111940c3b1",
+    "backend/tests/test_bounded_worker.py": "beaaa74d58b4a60e7441b184cbbd246c4e949ba6a9721b85ded79bf31024c678"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_worker_contract.py": "1cc0165a906ef1a7696c8635f296e80aaec6b5fa",
+    "backend/services/ga_worker_store.py": "4c48847988d9dd4e0ef72d01afab187ad9c968bc",
+    "backend/services/ga_worker_child.py": "68febc4e1334273c3e0ac931288602442797aab2",
+    "backend/services/ga_bounded_worker.py": "f778a578e3b6cfb988ccf009576de704bbed3054",
+    "backend/tests/test_bounded_worker.py": "64617e51340b1b315f37249d6f26a5ca9c8b3c8a"
+  },
+  "results": [
+    {
+      "selection": "smoke",
+      "exit_code": 1
+    }
+  ],
+  "qualified_selections": [
+    "smoke"
+  ],
+  "complete": false,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-gr35x0ug\\repository"
+}

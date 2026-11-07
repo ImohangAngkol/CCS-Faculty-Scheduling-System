@@ -1,0 +1,45 @@
+{
+  "head": "5d4d02c52f67b30b6dec13179d0389e5dc46daf5",
+  "origin_main": "5d4d02c52f67b30b6dec13179d0389e5dc46daf5",
+  "branch": "main",
+  "index_empty": true,
+  "baseline_paths": 3856,
+  "academic_files": 23,
+  "prerequisites": {
+    "u5g": {
+      "artifact_hashes": 33,
+      "report_read": true,
+      "staging_plan_read": true
+    },
+    "u5h": {
+      "artifact_hashes": 76,
+      "report_read": true,
+      "staging_plan_read": true
+    },
+    "u5i": {
+      "artifact_hashes": 65,
+      "report_read": true,
+      "staging_plan_read": true
+    },
+    "u5j": {
+      "artifact_hashes": 57,
+      "report_read": true,
+      "staging_plan_read": true
+    }
+  },
+  "tracked_modifications": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "production_admission": "BLOCKED",
+  "continuous_ui": "DISABLED"
+}

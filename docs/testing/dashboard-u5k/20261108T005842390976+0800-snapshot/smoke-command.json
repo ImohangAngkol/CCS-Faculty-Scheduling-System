@@ -1,0 +1,23 @@
+{
+  "selection": "smoke",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_bounded_worker.py::test_actual_process_initialization_completion_zero_and_cleanup",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-9r6omkds\\pytest-smoke"
+  ],
+  "started_at": "2026-11-08T00:58:42.393298+08:00",
+  "ended_at": "2026-11-08T00:58:55.533026+08:00",
+  "elapsed_seconds": 13.139855300076306,
+  "exit_code": 0,
+  "stdout": ".                                                                        [100%]\n============================ slowest 10 durations =============================\n6.78s call     tests/test_bounded_worker.py::test_actual_process_initialization_completion_zero_and_cleanup\n0.25s setup    tests/test_bounded_worker.py::test_actual_process_initialization_completion_zero_and_cleanup\n\n(1 durations < 0.005s hidden.  Use -vv to show these durations.)\n1 passed in 11.38s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

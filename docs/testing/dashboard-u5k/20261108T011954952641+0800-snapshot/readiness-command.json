@@ -1,0 +1,23 @@
+{
+  "selection": "readiness",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_continuous_readiness.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-00l0xydo\\pytest-readiness"
+  ],
+  "started_at": "2026-11-08T01:19:54.954260+08:00",
+  "ended_at": "2026-11-08T01:20:02.500663+08:00",
+  "elapsed_seconds": 7.546482700039633,
+  "exit_code": 0,
+  "stdout": "....................                                                     [100%]\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n============================ slowest 10 durations =============================\n0.17s call     tests/test_continuous_readiness.py::test_role_does_not_grant_continuous_capability[faculty]\n0.09s call     tests/test_continuous_readiness.py::test_no_continuous_execution_or_control_routes_exist[readiness]\n0.07s call     tests/test_continuous_readiness.py::test_repeated_concurrent_reads_never_admit_discover_or_write\n0.05s setup    tests/test_continuous_readiness.py::test_server_contract_has_no_executable_dataset_or_verified_consumption\n0.01s call     tests/test_continuous_readiness.py::test_client_activation_and_context_inputs_fail_closed[dataset=fictional]\n0.01s call     tests/test_continuous_readiness.py::test_no_continuous_execution_or_control_routes_exist[runs]\n0.01s call     tests/test_continuous_readiness.py::test_get_body_is_not_accepted_as_configuration\n0.01s call     tests/test_continuous_readiness.py::test_role_does_not_grant_continuous_capability[chair]\n0.01s call     tests/test_continuous_readiness.py::test_unauthenticated_request_is_rejected\n0.01s call     tests/test_continuous_readiness.py::test_client_activation_and_context_inputs_fail_closed[mode=continuous]\n20 passed, 2 warnings in 5.40s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}
