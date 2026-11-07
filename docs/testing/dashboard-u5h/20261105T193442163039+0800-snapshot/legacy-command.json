@@ -1,0 +1,23 @@
+{
+  "selection": "legacy",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_ga_input_bundle_checkpoint_qualification.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-90qnh9_9\\pytest-legacy"
+  ],
+  "started_at": "2026-11-05T19:37:46.135229+08:00",
+  "ended_at": "2026-11-05T19:40:26.176970+08:00",
+  "elapsed_seconds": 160.04222859989386,
+  "exit_code": 0,
+  "stdout": "..........                                                               [100%]\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n============================ slowest 10 durations =============================\n36.71s call     tests/test_ga_input_bundle_checkpoint_qualification.py::test_actual_original_v1_continuation_and_rng_parity[0]\n32.64s call     tests/test_ga_input_bundle_checkpoint_qualification.py::test_actual_original_v1_continuation_and_rng_parity[2]\n31.72s call     tests/test_ga_input_bundle_checkpoint_qualification.py::test_actual_original_v1_continuation_and_rng_parity[1]\n24.64s call     tests/test_ga_input_bundle_checkpoint_qualification.py::test_real_pause_restart_discovery_and_checkpoint_resume\n16.65s call     tests/test_ga_input_bundle_checkpoint_qualification.py::test_captured_copy_preserves_original_scoring_and_publication_oracle\n10.02s call     tests/test_ga_input_bundle_checkpoint_qualification.py::test_concurrent_resume_start_and_stop_use_one_actual_fixed_worker\n0.69s call     tests/test_ga_input_bundle_checkpoint_qualification.py::test_original_strict_checkpoint_rejects_actual_fictional_input_drift[weights]\n0.48s call     tests/test_ga_input_bundle_checkpoint_qualification.py::test_original_strict_checkpoint_rejects_actual_fictional_input_drift[preferences]\n0.09s call     tests/test_ga_input_bundle_checkpoint_qualification.py::test_fixed_worker_failure_releases_admission_without_success_claim\n0.02s setup    tests/test_ga_input_bundle_checkpoint_qualification.py::test_actual_original_v1_continuation_and_rng_parity[0]\n10 passed, 2 warnings in 158.25s (0:02:38)\n",
+  "stderr": "",
+  "scope": "HEAD plus U5H-only source; fictional import tables/D10 models. New versioned internal entry consumes the bundle; unchanged legacy entry remains separate. Technical consumption is not institutional authorization. No database access."
+}

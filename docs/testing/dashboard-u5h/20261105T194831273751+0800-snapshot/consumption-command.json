@@ -1,0 +1,23 @@
+{
+  "selection": "consumption",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_ga_bundle_optimizer.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-kuhv3li3\\pytest-consumption"
+  ],
+  "started_at": "2026-11-05T19:48:31.274699+08:00",
+  "ended_at": "2026-11-05T19:50:40.905581+08:00",
+  "elapsed_seconds": 129.63127110002097,
+  "exit_code": 0,
+  "stdout": "......................................                                   [100%]\n============================ slowest 10 durations =============================\n32.17s call     tests/test_ga_bundle_optimizer.py::test_real_temporary_preference_and_weight_changes_do_not_change_resume\n17.83s call     tests/test_ga_bundle_optimizer.py::test_identical_session_resume_and_checkpoint_lineage\n17.57s call     tests/test_ga_bundle_optimizer.py::test_cached_globals_and_dynamic_source_loaders_cannot_change_active_run\n17.37s call     tests/test_ga_bundle_optimizer.py::test_checkpoint_pause_resume_has_exact_rng_best_history_and_schedule_parity\n10.13s call     tests/test_ga_bundle_optimizer.py::test_stale_checkpoint_rejected_against_trusted_latest_tip\n8.40s call     tests/test_ga_bundle_optimizer.py::test_actual_generations_and_best_ever_are_monotone\n4.08s setup    tests/test_ga_bundle_optimizer.py::test_actual_initialization_consumes_bundle_and_never_saves_best\n1.70s call     tests/test_ga_bundle_optimizer.py::test_missing_legacy_and_cross_run_checkpoint_are_not_adopted\n1.09s call     tests/test_ga_bundle_optimizer.py::test_pinned_seed_is_used_without_reading_application_stores[saved]\n1.07s call     tests/test_ga_bundle_optimizer.py::test_pinned_seed_is_used_without_reading_application_stores[uploaded]\n38 passed in 127.31s (0:02:07)\n",
+  "stderr": "",
+  "scope": "HEAD plus U5H-only source; fictional import tables/D10 models. New versioned internal entry consumes the bundle; unchanged legacy entry remains separate. Technical consumption is not institutional authorization. No database access."
+}

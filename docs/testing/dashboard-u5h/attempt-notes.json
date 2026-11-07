@@ -1,0 +1,38 @@
+{
+  "historical_attempts_preserved": true,
+  "first_consumer_failure": {
+    "record": "20261105T192143317650+0800-consumption/command.json",
+    "passed": 14,
+    "failed": 1,
+    "case": "test_early_stop_without_consumption_is_not_verified",
+    "cause": "New Session rejected STOP_REQUESTED before original initialization cancellation boundary.",
+    "correction": "Admit pre-start Stop to original cancellation boundary; no initialization or VERIFIED receipt."
+  },
+  "legacy_observation_warning": {
+    "record": "20261105T193754695033+0800-receipts/command.json",
+    "passed": 35,
+    "failed": 1,
+    "case": "test_distinct_thread_observations_are_isolated_not_a_concurrent_engine_claim",
+    "failure_stage": "ga_input_receipt.directory resolve/junction containment check",
+    "source_changed": false,
+    "isolated_rerun_passed": true,
+    "full_36_case_rerun_passed": true,
+    "root_cause": "UNCONFIRMED_INTERMITTENT_LEGACY_PATH_CHECK",
+    "guard_weakened": false
+  },
+  "scope_metadata_correction": {
+    "records": [
+      "20261105T192143317650+0800-consumption/command.json",
+      "20261105T192444913721+0800-consumption/command.json",
+      "20261105T192758875408+0800-consumption/command.json"
+    ],
+    "explanation": "Copied early scope text described capture-only legacy behavior. These tests executed the separate versioned consumer. Legacy APIs remain unverified; technical consumption does not verify academic sources or institutional authority. Original commands/counts/outcomes are preserved."
+  },
+  "final_review_corrections": [
+    "Reject unknown/scalar mutable global inputs except verified source literals; private input paths fail closed.",
+    "Fingerprint loaded function defaults and model methods; guard immutable resource metadata separately from mutable reservations.",
+    "Hard-validate decoded checkpoint before acknowledging Pause.",
+    "Reject repeated terminal execution without rewriting its successful receipt."
+  ],
+  "qualification_strategy": "Use latest current-source consumer/parity role proofs. Legacy/G-bundle roles use unchanged legacy/G source prerequisites; their SDK overlay versions are irrelevant because those tests do not invoke the SDK. Repeats are not added to unique test counts."
+}

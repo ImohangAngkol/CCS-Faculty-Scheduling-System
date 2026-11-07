@@ -1,0 +1,22 @@
+{
+  "selection": "consumption",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_ga_bundle_optimizer.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\ga-u5h-acdc06aba293428d937e5bf5a701fbfa"
+  ],
+  "started_at": "2026-11-05T19:24:44.916577+08:00",
+  "ended_at": "2026-11-05T19:26:05.526206+08:00",
+  "elapsed_seconds": 80.60991029988509,
+  "exit_code": 0,
+  "stdout": "...............                                                          [100%]\n15 passed in 78.12s (0:01:18)\n",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only; no PostgreSQL. Browser HTTP intercepted, not live GA acceptance. Bundle is captured-only, not consumed by V1."
+}

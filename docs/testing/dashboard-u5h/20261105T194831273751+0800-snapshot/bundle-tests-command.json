@@ -1,0 +1,23 @@
+{
+  "selection": "bundle-tests",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_ga_input_bundle.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-kuhv3li3\\pytest-bundle-tests"
+  ],
+  "started_at": "2026-11-05T19:54:19.311427+08:00",
+  "ended_at": "2026-11-05T19:54:25.026453+08:00",
+  "elapsed_seconds": 5.715082000009716,
+  "exit_code": 0,
+  "stdout": "................................                                         [100%]\n============================ slowest 10 durations =============================\n2.47s setup    tests/test_ga_input_bundle.py::test_canonical_capture_is_repeatable_and_consumes_no_rng\n0.18s call     tests/test_ga_input_bundle.py::test_concurrent_materializations_are_separate_and_cross_run_reuse_fails\n0.06s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[weights]\n0.06s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[cached_fallback]\n0.05s call     tests/test_ga_input_bundle.py::test_seed_is_required_and_captured_without_loading_any_store[saved]\n0.05s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[preferences]\n0.05s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[faculty]\n0.05s call     tests/test_ga_input_bundle.py::test_seed_is_required_and_captured_without_loading_any_store[uploaded]\n0.05s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[legacy_frame]\n0.05s call     tests/test_ga_input_bundle.py::test_private_workspaces_preserve_internal_aliases_without_cross_run_sharing\n32 passed in 4.14s\n",
+  "stderr": "",
+  "scope": "HEAD plus U5H-only source; fictional import tables/D10 models. New versioned internal entry consumes the bundle; unchanged legacy entry remains separate. Technical consumption is not institutional authorization. No database access."
+}

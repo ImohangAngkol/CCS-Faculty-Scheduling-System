@@ -1,0 +1,59 @@
+{
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "branch": "main",
+  "baseline_paths": 3653,
+  "prior_u5g_hashes_verified": 33,
+  "preexisting_tracked_modifications": [
+    ".gitignore",
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "backend/main.py",
+    "backend/routers/ga_evaluation.py",
+    "backend/routers/genetic_algorithm.py",
+    "backend/tests/conftest.py",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "prior_milestones": [
+    {
+      "milestone": "dashboard-u5d",
+      "paths": 24,
+      "committed": false,
+      "overlap": [
+        ".gitignore",
+        "backend/routers/genetic_algorithm.py",
+        "backend/routers/ga_evaluation.py",
+        "backend/tests/conftest.py"
+      ]
+    },
+    {
+      "milestone": "dashboard-u5e/r2",
+      "paths": 268,
+      "committed": false,
+      "overlap": []
+    },
+    {
+      "milestone": "dashboard-u5f",
+      "paths": 80,
+      "committed": false,
+      "overlap": [
+        "backend/main.py",
+        "frontend/src/pages/admin/GenerateSchedule.tsx"
+      ]
+    },
+    {
+      "milestone": "dashboard-u5g",
+      "paths": 34,
+      "committed": false,
+      "overlap": []
+    }
+  ],
+  "scope": "Separate versioned synchronous bundle-consumption entry point. No legacy source changes, API activation, continuous workers or persistent Saved Best."
+}

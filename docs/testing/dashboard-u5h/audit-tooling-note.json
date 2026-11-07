@@ -1,0 +1,9 @@
+{
+  "operation": "Initial U5H audit sealing attempt",
+  "outcome": "TOOLING_ERROR_BEFORE_MANIFEST_CREATION",
+  "error": "The parity-*.json glob also selected parity-command.json, which is a command record without a receipt field.",
+  "correction": "Restrict receipt checks to the exact parity-<generation>-<fresh>.json filename pattern; command records remain validated as command evidence.",
+  "artifact_integrity_mismatch": false,
+  "historical_evidence_modified": false,
+  "test_results_changed": false
+}

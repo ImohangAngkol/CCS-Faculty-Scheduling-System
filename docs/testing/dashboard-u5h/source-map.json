@@ -1,0 +1,91 @@
+{
+  "source_map": [
+    {
+      "path": "backend/routers/genetic_algorithm.py",
+      "sha256": "d38e4e577aca57a040ac00461007cd57dfebad366f52ef6e9c0addaa09534331",
+      "functions": {
+        "_execute_with_history": 51,
+        "_admit_execution": 82,
+        "resume_run": 381,
+        "run_ga": 490,
+        "stream_ga": 561
+      }
+    },
+    {
+      "path": "backend/services/ga_service.py",
+      "sha256": "d2decf9f0a623b76cf3ede54a11267e3843d9484f083dadc1cfd9d562518d4d9",
+      "functions": {
+        "run_genetic_algorithm": 301
+      }
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/FrozenInputs.py",
+      "sha256": "e407d686e2ee95eccca80761c77a2fec6e5d90bef302a8ebe9621268b1f8bf3a",
+      "functions": {
+        "capture_inputs": 9,
+        "with_frozen_inputs": 23
+      }
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/Functions.py",
+      "sha256": "d28af9197d38957eb5ace526aa243e4448c68bd475efd89337e1d2c4742f555b",
+      "functions": {
+        "get_available_rooms": 838,
+        "section_schedule_is_available": 895,
+        "reset_complete_schedule": 1269,
+        "create_schedule_with_minimum_load": 1924
+      }
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/FitnessFunction.py",
+      "sha256": "e679e3e649a70c504fcc3d4c10cf749bcc2c92a3a812a0bd5b31e2f3ca0b5ff1",
+      "functions": {
+        "_load_ga_settings": 51,
+        "_load_dashboard_preferences": 79,
+        "faculty_preference_fitness": 984
+      }
+    },
+    {
+      "path": "backend/services/ga_checkpoint_service.py",
+      "sha256": "03264366f062bcf09412b99a5bb91cb0b2a88ad9e5e0797a2a72c7007d80248b",
+      "functions": {
+        "engine_fingerprint": 53,
+        "validate_state": 223,
+        "save_checkpoint": 286,
+        "load_checkpoint": 312
+      }
+    },
+    {
+      "path": "backend/services/ga_bundle_runtime.py",
+      "sha256": "1c5cdccde689d31d011746324223d0f0165ee9c12b5eea7fc26e7306f5a68198",
+      "functions": {
+        "global_reads": 42,
+        "profile_fingerprint": 56
+      }
+    },
+    {
+      "path": "backend/services/ga_bundle_checkpoint.py",
+      "sha256": "4bc392ea92e65cfa2bd21870920893dd72f14f730036f63a8bc9bd11e833229d",
+      "functions": {
+        "semantic_graph_fingerprint": 17,
+        "encode": 30,
+        "decode": 43
+      }
+    },
+    {
+      "path": "backend/services/ga_bundle_optimizer.py",
+      "sha256": "6872eb6e25d4baed041909768dfd2f6e0928cb359b835bfcd1f7d89040b37a0b",
+      "functions": {
+        "finish_pause": 20,
+        "__init__": 31,
+        "_save_checkpoint": 82,
+        "restore": 103,
+        "run": 127,
+        "receipt": 158
+      }
+    }
+  ],
+  "legacy_sources_modified": false,
+  "new_internal_contract": "ga-bundle-consumer-v1",
+  "legacy_http_routes_switched": false
+}

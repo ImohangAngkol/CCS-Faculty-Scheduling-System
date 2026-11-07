@@ -1,0 +1,47 @@
+{
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "source_sha256": {
+    "backend/services/ga_input_bundle.py": "994cdb45f08c95718138290aa8e3fde53d4ee2657bba11dff61c9cad369a51ce",
+    "backend/tests/test_ga_input_bundle.py": "2df1e59b40c3c3d12cc6e9bb2a331a38624ff8dda8b112975bc062aca9953d06",
+    "backend/tests/test_ga_input_bundle_checkpoint_qualification.py": "c9e58e9cadf7996db7134e0dcd77a30542396706dac6fd55c90de99677759593",
+    "backend/services/ga_bundle_runtime.py": "8340d7e9299de0d8125dc18292849385dbd3cb0282a8757ed7fc39d7f3bb829b",
+    "backend/services/ga_bundle_checkpoint.py": "4bc392ea92e65cfa2bd21870920893dd72f14f730036f63a8bc9bd11e833229d",
+    "backend/services/ga_bundle_optimizer.py": "ca51a4ece2d6efc93f6bc41a8710604c4140b443444cf561f8fb0caca1d7e05e",
+    "backend/tests/test_ga_bundle_optimizer.py": "f57c1e676a826a896072ea17caebe2c20e22cb2a91b271c1d612c2232c99facc",
+    "backend/tests/test_ga_bundle_parity.py": "0013ae868909a51011a380fe0e602e455ad7e0cb818ccea885bf9b40516f5efd"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_input_bundle.py": "ac6445c7c93aa7953b65873a0b2501f9b331e451",
+    "backend/tests/test_ga_input_bundle.py": "b3ed4b2320a17ca3d0009e654bf167d77678e277",
+    "backend/tests/test_ga_input_bundle_checkpoint_qualification.py": "a224b975851a959e761c553ba1ce6efea44b2575",
+    "backend/services/ga_bundle_runtime.py": "f6295b6aded537613a24b09c1a5984f9c0fb2b99",
+    "backend/services/ga_bundle_checkpoint.py": "d6d399e8f313a0c59bd2e1fa24a0b8d6fa0673f6",
+    "backend/services/ga_bundle_optimizer.py": "8a4f0ff8c71fd826d00d86edc869f94f2d6b980d",
+    "backend/tests/test_ga_bundle_optimizer.py": "901be482dfe6bf0188d01d7ae2c15f96bee4f568",
+    "backend/tests/test_ga_bundle_parity.py": "e35f554a91e98889c5e7bc99ca1a10c7c3653f02"
+  },
+  "results": [
+    {
+      "selection": "consumption",
+      "exit_code": 0
+    },
+    {
+      "selection": "parity",
+      "exit_code": 0
+    },
+    {
+      "selection": "legacy",
+      "exit_code": 0
+    },
+    {
+      "selection": "bundle-tests",
+      "exit_code": 0
+    }
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": true,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-90qnh9_9\\repository"
+}

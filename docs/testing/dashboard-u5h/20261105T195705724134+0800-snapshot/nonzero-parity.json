@@ -1,0 +1,42 @@
+{
+  "scope": "Fictional preference/weight variation; unchanged original mathematics",
+  "best_fitness": 455.0,
+  "fitness_breakdown": {
+    "subject_preference": 455.0,
+    "time_preference": 0,
+    "day_preference": 0,
+    "schedule_style": 0,
+    "lecture_lab_preference": 0,
+    "number_of_preparations": 0,
+    "teaching_load_balance": 0,
+    "daily_teaching_load": 0
+  },
+  "schedule_fitness_history_rng_equal": true,
+  "receipt": {
+    "contract": "ga-bundle-consumption-receipt-v1",
+    "run_id": "00000000-0000-4000-8000-000000000811",
+    "verification_scope": "TECHNICAL_CONSUMPTION_OF_CAPTURED_BUNDLE_ONLY",
+    "verification_status": "VERIFIED",
+    "bundle_fingerprint": "eb11defe7184bd1a2864a01626c2c026f4443dcab491043782f4e7a0684a402e",
+    "loaded_model_fingerprint": "b8cd50e353167cd36a9725c7b5ae0445d8e3cb1e29f3df4096b3580b6df9ae75",
+    "consumed_entry_fingerprint": "cfa1460098da62a6cd7567b12944073a77b0ded9de49f472badfd24b1f4a2bc3",
+    "rng_entry_fingerprint": "342bc661df4acd3c27e0c30c011859c2bc11c595ef50d81bdc34fd5cffd49489",
+    "configuration_fingerprint": "361128678ed25d257f8d5237892799c767e274b230080da7b28a247d6606c58a",
+    "scoring_context_fingerprint": "96f0d67d3d2f45256085125264d6d461c706d07daead0fbccb5943b68224c27d",
+    "loader_contract": "ga-captured-input-bundle-v1",
+    "optimizer_version": "ga-bundle-consumer-v1",
+    "optimizer_fingerprint": "a287e0ad93ea249bad327fd67ff6c0b5205a02cba232977afe49203fe5265fb5",
+    "state": "COMPLETED",
+    "checkpoint_fingerprint": null,
+    "checkpoint_sequence": 0,
+    "parent_checkpoint_fingerprint": null,
+    "bound_functions": 120,
+    "function_calls": 190008,
+    "eligible_for_current": false,
+    "institutional_authorization": "NOT_ESTABLISHED",
+    "academic_source_verification": "UNVERIFIED_U5G_CAPTURE_ONLY",
+    "saved_best_promotion": false,
+    "publication": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "selection": "consumption",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_ga_bundle_optimizer.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\ga-u5h-09b0a8250dbe402da9d1ae796d77cc4a"
+  ],
+  "started_at": "2026-11-05T19:21:43.319594+08:00",
+  "ended_at": "2026-11-05T19:23:04.264195+08:00",
+  "elapsed_seconds": 80.94489949999843,
+  "exit_code": 1,
+  "stdout": "..............F                                                          [100%]\n================================== FAILURES ===================================\n_____________ test_early_stop_without_consumption_is_not_verified _____________\n\nmake_bundle = <function make_bundle.<locals>.make at 0x000002122533AA30>\n\n    def test_early_stop_without_consumption_is_not_verified(make_bundle):\n>       session=start(make_bundle());session.control.request_stop();assert session.run() is None\n                                                                           ^^^^^^^^^^^^^\n\ntests\\test_ga_bundle_optimizer.py:154: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <services.ga_bundle_optimizer.Session object at 0x0000021226862030>\ncallback = None\n\n    def run(self, callback=None):\n        if not self._execution.acquire(blocking=False):raise BundleError(\"GA_BUNDLE_EXECUTION_ACTIVE\")\n        try:\n            if self.control.state == \"PAUSED\":self.control.begin_resume()\n            elif self.control.state == \"CREATED\":self.control.start()\n>           else:raise BundleError(\"GA_BUNDLE_EXECUTION_STATE\")\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           services.ga_input_bundle.BundleError: GA_BUNDLE_EXECUTION_STATE\n\nservices\\ga_bundle_optimizer.py:112: BundleError\n=========================== short test summary info ===========================\nFAILED tests/test_ga_bundle_optimizer.py::test_early_stop_without_consumption_is_not_verified\n1 failed, 14 passed in 78.37s (0:01:18)\n",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only; no PostgreSQL. Browser HTTP intercepted, not live GA acceptance. Bundle is captured-only, not consumed by V1."
+}

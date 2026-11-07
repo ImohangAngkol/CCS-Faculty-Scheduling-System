@@ -1,0 +1,694 @@
+{
+  "milestone": "U5H",
+  "status": "INTERNAL_VERSIONED_CONSUMPTION_AND_CHECKPOINT_BINDING_VERIFIED_LEGACY_HTTP_UNCHANGED",
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "exact_checkpoint_inventory": [
+    "backend/services/ga_bundle_checkpoint.py",
+    "backend/services/ga_bundle_optimizer.py",
+    "backend/services/ga_bundle_runtime.py",
+    "backend/tests/test_ga_bundle_optimizer.py",
+    "backend/tests/test_ga_bundle_parity.py",
+    "docs/dashboard-u5h-optimizer-consumption-boundary.md",
+    "docs/testing/dashboard-u5h/20261105T192143317650+0800-consumption/command.json",
+    "docs/testing/dashboard-u5h/20261105T192444913721+0800-consumption/command.json",
+    "docs/testing/dashboard-u5h/20261105T192758875408+0800-consumption/command.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/bundle-tests-command.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/consumption-command.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/fresh-process.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/legacy-command.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-0-0.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-1-0.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-1-1.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-command.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5h/20261105T193750122010+0800-frontend/command.json",
+    "docs/testing/dashboard-u5h/20261105T193753096076+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5h/20261105T193754695033+0800-receipts/command.json",
+    "docs/testing/dashboard-u5h/20261105T194037140777+0800-build/command.json",
+    "docs/testing/dashboard-u5h/20261105T194039453130+0800-receipt-isolation/command.json",
+    "docs/testing/dashboard-u5h/20261105T194040600834+0800-backend/command.json",
+    "docs/testing/dashboard-u5h/20261105T194040914403+0800-analysis/command.json",
+    "docs/testing/dashboard-u5h/20261105T194146365424+0800-consumption/command.json",
+    "docs/testing/dashboard-u5h/20261105T194157278726+0800-bundle/command.json",
+    "docs/testing/dashboard-u5h/20261105T194157289617+0800-lint/command.json",
+    "docs/testing/dashboard-u5h/20261105T194200084971+0800-receipts/command.json",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B01-default.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B07-contract.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B10-fixed-paused.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B12-fixed-stopped.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B16-mobile.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/command.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/bundle-tests-command.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/consumption-command.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/dependency-closure.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/fresh-process.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/legacy-command.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-0-0.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-1-0.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-1-1.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-command.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/dependency-closure.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/fresh-process.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/nonzero-parity.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-0-0.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-1-0.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-1-1.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-command.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5h/20261105T195700959038+0800-snapshot/consumption-command.json",
+    "docs/testing/dashboard-u5h/20261105T195700959038+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/dependency-closure.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/fresh-process.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/nonzero-parity.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-0-0.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-1-0.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-1-1.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-command.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5h/20261105T200306600976+0800-integrity/command.json",
+    "docs/testing/dashboard-u5h/attempt-notes.json",
+    "docs/testing/dashboard-u5h/audit-tooling-note.json",
+    "docs/testing/dashboard-u5h/audit_evidence.py",
+    "docs/testing/dashboard-u5h/checkpoint_snapshot.py",
+    "docs/testing/dashboard-u5h/entry-review.json",
+    "docs/testing/dashboard-u5h/manifest.json",
+    "docs/testing/dashboard-u5h/preservation-baseline.json",
+    "docs/testing/dashboard-u5h/run_checks.py",
+    "docs/testing/dashboard-u5h/screenshot-review.json",
+    "docs/testing/dashboard-u5h/source-map.json",
+    "docs/testing/dashboard-u5h/staging-plan.json"
+  ],
+  "new_paths": [
+    "backend/services/ga_bundle_checkpoint.py",
+    "backend/services/ga_bundle_optimizer.py",
+    "backend/services/ga_bundle_runtime.py",
+    "backend/tests/test_ga_bundle_optimizer.py",
+    "backend/tests/test_ga_bundle_parity.py",
+    "docs/dashboard-u5h-optimizer-consumption-boundary.md",
+    "docs/testing/dashboard-u5h/20261105T192143317650+0800-consumption/command.json",
+    "docs/testing/dashboard-u5h/20261105T192444913721+0800-consumption/command.json",
+    "docs/testing/dashboard-u5h/20261105T192758875408+0800-consumption/command.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/bundle-tests-command.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/consumption-command.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/fresh-process.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/legacy-command.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-0-0.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-1-0.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-1-1.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-command.json",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5h/20261105T193750122010+0800-frontend/command.json",
+    "docs/testing/dashboard-u5h/20261105T193753096076+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5h/20261105T193754695033+0800-receipts/command.json",
+    "docs/testing/dashboard-u5h/20261105T194037140777+0800-build/command.json",
+    "docs/testing/dashboard-u5h/20261105T194039453130+0800-receipt-isolation/command.json",
+    "docs/testing/dashboard-u5h/20261105T194040600834+0800-backend/command.json",
+    "docs/testing/dashboard-u5h/20261105T194040914403+0800-analysis/command.json",
+    "docs/testing/dashboard-u5h/20261105T194146365424+0800-consumption/command.json",
+    "docs/testing/dashboard-u5h/20261105T194157278726+0800-bundle/command.json",
+    "docs/testing/dashboard-u5h/20261105T194157289617+0800-lint/command.json",
+    "docs/testing/dashboard-u5h/20261105T194200084971+0800-receipts/command.json",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B01-default.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B07-contract.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B10-fixed-paused.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B12-fixed-stopped.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B16-mobile.png",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/command.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/bundle-tests-command.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/consumption-command.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/dependency-closure.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/fresh-process.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/legacy-command.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-0-0.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-1-0.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-1-1.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-command.json",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/dependency-closure.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/fresh-process.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/nonzero-parity.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-0-0.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-1-0.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-1-1.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-command.json",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5h/20261105T195700959038+0800-snapshot/consumption-command.json",
+    "docs/testing/dashboard-u5h/20261105T195700959038+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/dependency-closure.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/fresh-process.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/nonzero-parity.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-0-0.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-1-0.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-1-1.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-command.json",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5h/20261105T200306600976+0800-integrity/command.json",
+    "docs/testing/dashboard-u5h/attempt-notes.json",
+    "docs/testing/dashboard-u5h/audit-tooling-note.json",
+    "docs/testing/dashboard-u5h/audit_evidence.py",
+    "docs/testing/dashboard-u5h/checkpoint_snapshot.py",
+    "docs/testing/dashboard-u5h/entry-review.json",
+    "docs/testing/dashboard-u5h/manifest.json",
+    "docs/testing/dashboard-u5h/preservation-baseline.json",
+    "docs/testing/dashboard-u5h/run_checks.py",
+    "docs/testing/dashboard-u5h/screenshot-review.json",
+    "docs/testing/dashboard-u5h/source-map.json",
+    "docs/testing/dashboard-u5h/staging-plan.json"
+  ],
+  "modified_existing_files": [],
+  "baseline_paths": 3653,
+  "unchanged_baseline_paths": 3653,
+  "protected_academic_paths": 23,
+  "preexisting_tracked_modifications": [
+    ".gitignore",
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "backend/main.py",
+    "backend/routers/ga_evaluation.py",
+    "backend/routers/genetic_algorithm.py",
+    "backend/tests/conftest.py",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "prior_u5g_artifact_hashes_verified": 33,
+  "artifact_sha256": {
+    "backend/services/ga_bundle_checkpoint.py": "4bc392ea92e65cfa2bd21870920893dd72f14f730036f63a8bc9bd11e833229d",
+    "backend/services/ga_bundle_optimizer.py": "6872eb6e25d4baed041909768dfd2f6e0928cb359b835bfcd1f7d89040b37a0b",
+    "backend/services/ga_bundle_runtime.py": "1c5cdccde689d31d011746324223d0f0165ee9c12b5eea7fc26e7306f5a68198",
+    "backend/tests/test_ga_bundle_optimizer.py": "ef51bc349376117cc2ac4458fef0bc00edb8abcef83ad593a206bbcb7f955b33",
+    "backend/tests/test_ga_bundle_parity.py": "e9c95d323ed309056997b5f85608204fb622e8bb8527fc9b1dfea3a33443735b",
+    "docs/dashboard-u5h-optimizer-consumption-boundary.md": "58cfdf685c648feb6d0beb3faa7e6902e74560045a3fcc688c6d78c13e46e932",
+    "docs/testing/dashboard-u5h/20261105T192143317650+0800-consumption/command.json": "ddffaae096cdb582c33f4334d7fe2434f04b598c3f8842431c3b48e64db567cb",
+    "docs/testing/dashboard-u5h/20261105T192444913721+0800-consumption/command.json": "6fc5a56d54e3f556668d7e32f7cd07efa091bbaadd94f14a9dde24f6efe07a2b",
+    "docs/testing/dashboard-u5h/20261105T192758875408+0800-consumption/command.json": "ad711087d0402b84cb41c264dea34c56edbeed41ee7acbbaea780b31dcb06d4e",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/bundle-tests-command.json": "13fa4300521e79932c9587a9fd8923eda83207b26720ccf1ca44bc96acbeb774",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/consumption-command.json": "9bc2692f21f015da5fe5e5c38f2b4bd6e30709f7713fdad13486c57bd85b9bb5",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/fresh-process.json": "4c371937ce98cae04a78dca5d8fdc0b4a740be4a44e60563a15190b0841f0ce8",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/legacy-command.json": "23c9b332d29ccce8e1e019d8174379ba5d901b0cbcd068a476e3e667ca975d50",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-0-0.json": "26c45ff2836a342993e0b7db02ce07ef1d393e55f1f5a83ed191850087361495",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-1-0.json": "9f7e8cf716431cedd4a39cab34251d55ba4642ce404a11ff556d5fe5563bf475",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-1-1.json": "2c03ecea79cd9048b75967f7dac5e535819ffd1bce332d9e672a8affd95426c1",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-command.json": "3323c86e970d96d901a3f1e1d7dd37901666ff41d09aac399f671cf065351d9b",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/snapshot-proof.json": "fb9d0434aeb0c561f4d020588e6e914760d86ad8d0ed50e516b88c7afae33d1f",
+    "docs/testing/dashboard-u5h/20261105T193750122010+0800-frontend/command.json": "935825415bc59a9dfc0cf1e989d643cb4da4ab996e8b209fc83967407fc2c5a3",
+    "docs/testing/dashboard-u5h/20261105T193753096076+0800-backend-regressions/command.json": "89f11d13d163166e4cf10937cd5eaf9f8ac4b9d1ed8da40d3e3f62a7aa08dbf3",
+    "docs/testing/dashboard-u5h/20261105T193754695033+0800-receipts/command.json": "cb2cdab9f51203bb347b173699421b441e33a6c26bec8b9ce1ea99da57414a8e",
+    "docs/testing/dashboard-u5h/20261105T194037140777+0800-build/command.json": "1a6dd8337c233335d74f04f755687252defef922dfae6a21a1cfdae17ae66edf",
+    "docs/testing/dashboard-u5h/20261105T194039453130+0800-receipt-isolation/command.json": "b588d4929c722a8b6321ab7d9b7e51e7220e0d4b122e512ed67f3d4772fdefda",
+    "docs/testing/dashboard-u5h/20261105T194040600834+0800-backend/command.json": "805341cb732e5df3dd08eeff1b69a10edef2c984eb46a8d6ac6b8b6fd9791a8b",
+    "docs/testing/dashboard-u5h/20261105T194040914403+0800-analysis/command.json": "baac199cad6338a24c5f4111b25add1a5f938dc05965237a8fb72b9a387885cb",
+    "docs/testing/dashboard-u5h/20261105T194146365424+0800-consumption/command.json": "aa4f19984f841413f67e0a935ccf4585252295f99afe38433309b996c29cc385",
+    "docs/testing/dashboard-u5h/20261105T194157278726+0800-bundle/command.json": "70380fbb8c6b2682a5d6b99183827f454bd37a35a8a9bcdca7f9b05b938b06aa",
+    "docs/testing/dashboard-u5h/20261105T194157289617+0800-lint/command.json": "de09d8c4ebea85fc0b73bc5b5b21f6ff52d37af74523e7e26238b4550f7b70fb",
+    "docs/testing/dashboard-u5h/20261105T194200084971+0800-receipts/command.json": "3cb442d8d0ba58cfd52ef8cfa5f1b2a6e9dc703961d67846a37dc119317e3544",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B01-default.png": "5293c1a9167cfe7a49eb44ac53947b200e0e8ab4053a954651c71c373bd39d62",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B02-blocked.png": "fe149c4d0d12923ae4e2f680efbbfa740e3f3fd87f790ad41289a20aa835d940",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B07-contract.png": "b11713cfe084b86e16e2a1d3145ce9c1ed5d248d112d589233a19268f48c17b5",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B10-fixed-paused.png": "8ff7c957cb0ef608142c11f0a4261ad60572d645cd035d01809d7a2e955a8b5b",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B12-fixed-stopped.png": "4f6e4a6222607107bf1c304a97f6cd9fe615ab4d6c1d8e55c5febceb145347bd",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B16-mobile.png": "214bc6911a7ed708c229721fd4288db67cb1c6c074ef3d465376956944b05fa1",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/browser-results.json": "fafcee2500f10212b7741024d8b3bc0908cd71c1f1e2be658752412f648458cb",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/command.json": "4f231ca2bef081fac012ce41bc8a5abadbc0281c8fd93cc43154687c65900b95",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/bundle-tests-command.json": "5c2efdb6c6e0089b487da5edd0616b70cf9c0bdaa17e7b0f048230b11e45a59e",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/consumption-command.json": "029c720b735e5beb5e759c11f05652c1ec1a56e32573cc1cde0b24769c4a7d68",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/dependency-closure.json": "fa524f38bf150c7f1a68379ab95b0da710bf37be631c548c5fca04e68d97fea6",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/fresh-process.json": "44696d37b902fac5b41a0974fcb6bc6cd0f642c667bcad2735793f510dbf3326",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/legacy-command.json": "f2857c12663cf1f74137590428666d99d446441aaeb9f9d17115ac927dba7461",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-0-0.json": "a326d6f9c437bb772248ceacc74abbf49fffcd12cf631f012bc45c1503f014c3",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-1-0.json": "5d2d733e52c63b8f61fca058ec2298bf3bf5eba0b9afe14b850657240718103e",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-1-1.json": "9914fec52c824e4fb54085e91dafa5df0615ffa0fa5a87ea37050415550862ac",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-command.json": "1f6cb9219fe15a5f1421fa49130c6cc5a0d7cf50ecd37951f82cb327e7f6f777",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/snapshot-proof.json": "e26b8d7806ba88c2651b14026e442d0d4f1f60e65799a2c04ab0a1a4a4d30cec",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/dependency-closure.json": "7a1e555508ea0c5b453b1bba9c7c446d2b715228ef66b6b9bf9544943d477a94",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/fresh-process.json": "4fe27968c97f10195a17ee2a395a37a4e09b91ecb9889deb2060ce4e6165baf2",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/nonzero-parity.json": "e29b847289365fe337878e4f25362f14090deaffbbf76441272252aa4fa3f2fa",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-0-0.json": "ea9631791d68014b55ede7e41d279b9a423d990e91e3a1a9f584f497f7acd3e6",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-1-0.json": "1871200530fe3d32703d01480f8c87c0cfb7194f344160a086e6ab1be98746f1",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-1-1.json": "29caebbc390ed065fdee0cc6d18cbcb4a270686350b1830ed091065058f379e8",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-command.json": "045e2eee21dc62d0a4e102b79c6de2ebff78477bff3bdf2623403abc34d6a4c2",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/snapshot-proof.json": "1a84116295792753c9f27a894d3326bcc0cc3706cab819e0cd86f115778a899c",
+    "docs/testing/dashboard-u5h/20261105T195700959038+0800-snapshot/consumption-command.json": "20a8144af2e6112b241ee56534f98b1f0aeda644283ef0b89101325b1cad610f",
+    "docs/testing/dashboard-u5h/20261105T195700959038+0800-snapshot/snapshot-proof.json": "4b664aef70f0f22b080e9c5aae531b0f9eb3b0dc24aa725dd465e7cedddef87f",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/dependency-closure.json": "65c76f3ccc8324af903d36b9e473a1910d516b315475dac9a69367e9a4bb7208",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/fresh-process.json": "8023f680edd2fed5b02d8ae6b0bb9830884e5aadee1d0b95d10910aea6d729fc",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/nonzero-parity.json": "9d07a88075c4837025bf89addf4a200b08e8acfc70702c4ce360d6397f7264bf",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-0-0.json": "f9e3a678875613b67fa9dee9418976b98eeb91a2e15d8c6138ad344d1cdba289",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-1-0.json": "79ba4d476bbec9418a8a7034f7472f1e33ba9f44ad531ab5d2290d334c27d802",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-1-1.json": "c8dafe1975ad8a10c3347060994971aac0619cfdd3dc0458d6a23fbd24b85f1c",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-command.json": "87229f6eefa8c39d63b5b3dc4d436ff0d992206daf945b9be6bcbd43795738e8",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/snapshot-proof.json": "baba300006f192ba3870908d8a7e30ac4c21b293c8a73f1ca88e95a479399f27",
+    "docs/testing/dashboard-u5h/20261105T200306600976+0800-integrity/command.json": "523a07ba3c89a9d033c17a1d362540c1fce755b786d139453ce21f6891801d3e",
+    "docs/testing/dashboard-u5h/attempt-notes.json": "0445145c6380274585be421a7db837b9d2c8959535188ec50a62ef58f2eeb880",
+    "docs/testing/dashboard-u5h/audit-tooling-note.json": "37671e8b41ad8a4658be6d013f6d6d069c4e0392be55adc656f08b5be2544781",
+    "docs/testing/dashboard-u5h/audit_evidence.py": "a045168703603c9fdb5cceab2b380c3352431865ed589b149421be7dddee37bc",
+    "docs/testing/dashboard-u5h/checkpoint_snapshot.py": "ba78faf09eaa7cca89ac110a7779b05281d5ff4155330f94aeb18358c9a9879e",
+    "docs/testing/dashboard-u5h/entry-review.json": "cc6034ba41e9da93ff02843c3c29688fea6505ae197e0824a1410fc14f645da5",
+    "docs/testing/dashboard-u5h/preservation-baseline.json": "4a1e3251d4aaa57855c827f201fcae65c460fe2a1477fb517f7240d8390df09f",
+    "docs/testing/dashboard-u5h/run_checks.py": "3470c2269b885a6a41667fb4bb59a5bdc1ebad629225f4fafb00122beafe5882",
+    "docs/testing/dashboard-u5h/screenshot-review.json": "6ed4b225eb8850e99beac24043a07151cb77aa8985dcbeba1b1b98ebdb004952",
+    "docs/testing/dashboard-u5h/source-map.json": "146726a5879040220c7e7bc2ac01a381c18ee62cce9cf6918bacc794858d7b2a",
+    "docs/testing/dashboard-u5h/staging-plan.json": "902827b18b01498d1599e03f4a96c6a8f0d6febacd62e8ec7d02a3246826e169"
+  },
+  "proposed_git_blob_oids": {
+    "backend/services/ga_bundle_checkpoint.py": "d6d399e8f313a0c59bd2e1fa24a0b8d6fa0673f6",
+    "backend/services/ga_bundle_optimizer.py": "9055426720b0e59a7c0a55af9afa132debc0ed91",
+    "backend/services/ga_bundle_runtime.py": "1281e1a9c1bfebd3b0e02f7fcd5ca0715b2ec308",
+    "backend/tests/test_ga_bundle_optimizer.py": "c21a25dfc5ae34ef7d595e9af0d7600ca3f3fa60",
+    "backend/tests/test_ga_bundle_parity.py": "c97465f75b673a15a8e30442f2e6a9d3de9db4b4",
+    "docs/dashboard-u5h-optimizer-consumption-boundary.md": "2a30cf4b7b3ff1d01d86cb2de900623536f65ae1",
+    "docs/testing/dashboard-u5h/20261105T192143317650+0800-consumption/command.json": "3a84e29af29bb9cae1d3cda29f0fbb5d7666aa7d",
+    "docs/testing/dashboard-u5h/20261105T192444913721+0800-consumption/command.json": "e4ab5c6f2be25034d20acbfcbe9ff55e5d0088f0",
+    "docs/testing/dashboard-u5h/20261105T192758875408+0800-consumption/command.json": "35756ac240285943a3c5e3c9b6302333e2368583",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/bundle-tests-command.json": "d130acd1f08e642594a424f1e064abc6f90db2d7",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/consumption-command.json": "19cf2129b9a1a53b4479e6867ac613c2b4f69219",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/fresh-process.json": "05fda2f88cad1fae9c2236042ffc6011fb8fe765",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/legacy-command.json": "c7719e506b7516f62c8f104c62c87214829a66ca",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-0-0.json": "a3a17906aff99b4750ba8f7260ac97a62b41d038",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-1-0.json": "147e0576399d27da8b751583d6f81155b613521e",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-1-1.json": "7250676142ade13c7bcae1b348c17e9196e1611d",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-command.json": "250e2323fe99633321c0c4bc1416625965079efd",
+    "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/snapshot-proof.json": "10ecc909017cd1a0134daf5f7e5bf34cf0185b56",
+    "docs/testing/dashboard-u5h/20261105T193750122010+0800-frontend/command.json": "b2ee65a7b371053d5da2a82a06f08836fb6d2572",
+    "docs/testing/dashboard-u5h/20261105T193753096076+0800-backend-regressions/command.json": "0acfdb8c88e3f951d9a5ff656b9bd194c8a048b1",
+    "docs/testing/dashboard-u5h/20261105T193754695033+0800-receipts/command.json": "3e7629e443252e86a67bdefc1a908d777bf75550",
+    "docs/testing/dashboard-u5h/20261105T194037140777+0800-build/command.json": "38fe61acd953c68039008c2564b848ee7a964911",
+    "docs/testing/dashboard-u5h/20261105T194039453130+0800-receipt-isolation/command.json": "35136f0b49ebf65076576dd831d58d52aa7a3e14",
+    "docs/testing/dashboard-u5h/20261105T194040600834+0800-backend/command.json": "dfb41a339e0575bac370bd7f579a5e22735438de",
+    "docs/testing/dashboard-u5h/20261105T194040914403+0800-analysis/command.json": "a529df0921896408696390a05ea219891babb1e2",
+    "docs/testing/dashboard-u5h/20261105T194146365424+0800-consumption/command.json": "1c7206e44d0e295d7cb1739b04dfadc9d36ec9b6",
+    "docs/testing/dashboard-u5h/20261105T194157278726+0800-bundle/command.json": "bcbe71bf5bae7aabf751f0a85c515be9004c58d8",
+    "docs/testing/dashboard-u5h/20261105T194157289617+0800-lint/command.json": "674510851b0a25dd4c902c66287f36a91bce12cf",
+    "docs/testing/dashboard-u5h/20261105T194200084971+0800-receipts/command.json": "d2e12326a9d1bd818735ddda16ad56e4e18c0acd",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B01-default.png": "cb6d5eeec5fced177d81aacd6a170a02f190d057",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B02-blocked.png": "6d8695173c26fa5894fea2f30e154b470a7faa04",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B07-contract.png": "4f6443a4d8d8ed41bce075b338788d46eca9b039",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B10-fixed-paused.png": "f31151109fe1ede39d8e337c9defb8758ba19fa5",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B12-fixed-stopped.png": "50c007f6c090b9024fb67cf0d8e862a919e6b12a",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B16-mobile.png": "3610224effbffeaa15cbc6e0476c22e6f9ac71b4",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/browser-results.json": "f60a61ee3e79272aeabe3fc83fe1487ad791821d",
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/command.json": "0b5e3774c61179b8894cc87abf495d3e461de6a4",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/bundle-tests-command.json": "171105676b17b5915fe1d75f518f14c20cef98d6",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/consumption-command.json": "6f727a2ee92b6971703c9d50e567dbb86946d747",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/dependency-closure.json": "b5a1f96def7f38c4f62ea2277d5514a5dede22ab",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/fresh-process.json": "b9ce18abfce93cd5c3262c46975dfd62710131f6",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/legacy-command.json": "e27ef520f7501159603750d6821d41316b1dd56f",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-0-0.json": "5969a7fc6c4081bcc55ea4df8720dad0f740e11e",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-1-0.json": "d409b4eafa7f042803c8f4a76116f3aa786a30c4",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-1-1.json": "e081b030e9a30bc0a6e7e97ed6f2ceaae801d367",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-command.json": "f16acc4bc65c1548cb92c628caf180e147de28f6",
+    "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/snapshot-proof.json": "246975680f456c533c6e3fea4c5832afc8fe8d29",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/dependency-closure.json": "91be13d74e5b4ab17e7e688d0086768fa9300bea",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/fresh-process.json": "0c3332d26d54b6f53fc034187d2c326ae2479343",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/nonzero-parity.json": "0cf0483bddb25c380e1f268da100a4d407e181a8",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-0-0.json": "5f649018f5049e01c9549eb60e856c1e95a11ff9",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-1-0.json": "c19af9f7b6095e96291ae1a8652b004a81e932b8",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-1-1.json": "0089216a9093aaa7b7a12f0f9ff036354f728eb5",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-command.json": "100619c42b85ae9259e36ec0e0a510dd1371dd79",
+    "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/snapshot-proof.json": "72db09eda52a05e160d120ac13b2fcfec9b5f555",
+    "docs/testing/dashboard-u5h/20261105T195700959038+0800-snapshot/consumption-command.json": "5baf846da0da607d3c972235851303567b6a56a2",
+    "docs/testing/dashboard-u5h/20261105T195700959038+0800-snapshot/snapshot-proof.json": "dc933133d08e7e5276e69877c7ba90f37d6c44a7",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/dependency-closure.json": "b0c55d8b425db39ba2df7a1a430b7302ca5253d2",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/fresh-process.json": "afcfdb454ca4b7746f481a4d7abb9a759f2c3032",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/nonzero-parity.json": "287387d0c137e3130b780ab4fca5fa87a5bed458",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-0-0.json": "87ad8a3fde01e21ef2fce9467fdf37a2976462fc",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-1-0.json": "23aaf900bb4b05c920e0d06d3b2da5f8f48874f7",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-1-1.json": "b53ca74052f3d6eac446a266130f02a65e31ec8b",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-command.json": "1b4ae11593380813b6feea53344220449a096774",
+    "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/snapshot-proof.json": "4921611dcdd0dd96f4a17e75b7b7cf4748e5a83f",
+    "docs/testing/dashboard-u5h/20261105T200306600976+0800-integrity/command.json": "a09ee3a139d787927e9b7d9996453a38652d0f58",
+    "docs/testing/dashboard-u5h/attempt-notes.json": "82c17952b4075d0e2cbada3bfb6a1810da2b09ba",
+    "docs/testing/dashboard-u5h/audit-tooling-note.json": "04204e2b3c172c83d1e5305a348c188aeb24f691",
+    "docs/testing/dashboard-u5h/audit_evidence.py": "8a3526551aed734e30049f6df608bfb3b53c6838",
+    "docs/testing/dashboard-u5h/checkpoint_snapshot.py": "839e33eb632abda626b68aa67630eb5d81731ebc",
+    "docs/testing/dashboard-u5h/entry-review.json": "9932d7e6b24bc01e3e6b7b73552dd88eca28870a",
+    "docs/testing/dashboard-u5h/preservation-baseline.json": "063bdf022d75857aab690b8ff7b3aba72cf9817c",
+    "docs/testing/dashboard-u5h/run_checks.py": "633bcddc6f797c7ffd0e7db9f03baef1e92dcfec",
+    "docs/testing/dashboard-u5h/screenshot-review.json": "c3cb83054aeb6969be0a31343667340ddd6547c3",
+    "docs/testing/dashboard-u5h/source-map.json": "4c3d9277268fb943720ee99c0b230a66e35291ee",
+    "docs/testing/dashboard-u5h/staging-plan.json": "d289fbfb77d205f6d9e8d05f2a5ac4ac480bcdb1"
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T192143317650+0800-consumption/command.json",
+      "selection": "consumption",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 14
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T192444913721+0800-consumption/command.json",
+      "selection": "consumption",
+      "exit_code": 0,
+      "counts": {
+        "passed": 15
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T192758875408+0800-consumption/command.json",
+      "selection": "consumption",
+      "exit_code": 0,
+      "counts": {
+        "passed": 30
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/bundle-tests-command.json",
+      "selection": "bundle-tests",
+      "exit_code": 0,
+      "counts": {
+        "passed": 32
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/consumption-command.json",
+      "selection": "consumption",
+      "exit_code": 0,
+      "counts": {
+        "passed": 33
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/legacy-command.json",
+      "selection": "legacy",
+      "exit_code": 0,
+      "counts": {
+        "passed": 10,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T193442163039+0800-snapshot/parity-command.json",
+      "selection": "parity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 4
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T193750122010+0800-frontend/command.json",
+      "selection": "frontend",
+      "exit_code": 0,
+      "counts": {
+        "tests": 210,
+        "pass": 210,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T193753096076+0800-backend-regressions/command.json",
+      "selection": "backend-regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 99,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T193754695033+0800-receipts/command.json",
+      "selection": "receipts",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 35,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194037140777+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194039453130+0800-receipt-isolation/command.json",
+      "selection": "receipt-isolation",
+      "exit_code": 0,
+      "counts": {
+        "passed": 1,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194040600834+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194040914403+0800-analysis/command.json",
+      "selection": "analysis",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194146365424+0800-consumption/command.json",
+      "selection": "consumption",
+      "exit_code": 0,
+      "counts": {
+        "passed": 33
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194157278726+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194157289617+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194200084971+0800-receipts/command.json",
+      "selection": "receipts",
+      "exit_code": 0,
+      "counts": {
+        "passed": 36,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/bundle-tests-command.json",
+      "selection": "bundle-tests",
+      "exit_code": 0,
+      "counts": {
+        "passed": 32
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/consumption-command.json",
+      "selection": "consumption",
+      "exit_code": 0,
+      "counts": {
+        "passed": 38
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/legacy-command.json",
+      "selection": "legacy",
+      "exit_code": 0,
+      "counts": {
+        "passed": 10,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/parity-command.json",
+      "selection": "parity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 4
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T195252237166+0800-snapshot/parity-command.json",
+      "selection": "parity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 5
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T195700959038+0800-snapshot/consumption-command.json",
+      "selection": "consumption",
+      "exit_code": 0,
+      "counts": {
+        "passed": 39
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/parity-command.json",
+      "selection": "parity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 5
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5h/20261105T200306600976+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 0,
+      "counts": {}
+    }
+  ],
+  "qualified_role_proofs": [
+    {
+      "selection": "consumption",
+      "path": "docs/testing/dashboard-u5h/20261105T195700959038+0800-snapshot/snapshot-proof.json",
+      "passed": 39,
+      "relevant_source_paths": [
+        "backend/services/ga_bundle_runtime.py",
+        "backend/services/ga_bundle_checkpoint.py",
+        "backend/services/ga_bundle_optimizer.py",
+        "backend/tests/test_ga_bundle_optimizer.py",
+        "backend/services/ga_input_bundle.py",
+        "backend/tests/test_ga_input_bundle.py",
+        "backend/tests/test_ga_input_bundle_checkpoint_qualification.py"
+      ]
+    },
+    {
+      "selection": "parity",
+      "path": "docs/testing/dashboard-u5h/20261105T195705724134+0800-snapshot/snapshot-proof.json",
+      "passed": 5,
+      "relevant_source_paths": [
+        "backend/services/ga_bundle_runtime.py",
+        "backend/services/ga_bundle_checkpoint.py",
+        "backend/services/ga_bundle_optimizer.py",
+        "backend/tests/test_ga_bundle_parity.py",
+        "backend/services/ga_input_bundle.py",
+        "backend/tests/test_ga_input_bundle.py",
+        "backend/tests/test_ga_input_bundle_checkpoint_qualification.py"
+      ]
+    },
+    {
+      "selection": "legacy",
+      "path": "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/snapshot-proof.json",
+      "passed": 10,
+      "relevant_source_paths": [
+        "backend/services/ga_input_bundle.py",
+        "backend/tests/test_ga_input_bundle.py",
+        "backend/tests/test_ga_input_bundle_checkpoint_qualification.py"
+      ]
+    },
+    {
+      "selection": "bundle-tests",
+      "path": "docs/testing/dashboard-u5h/20261105T194831273751+0800-snapshot/snapshot-proof.json",
+      "passed": 32,
+      "relevant_source_paths": [
+        "backend/services/ga_input_bundle.py",
+        "backend/tests/test_ga_input_bundle.py",
+        "backend/tests/test_ga_input_bundle_checkpoint_qualification.py"
+      ]
+    }
+  ],
+  "screenshots": {
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B01-default.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B02-blocked.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B07-contract.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B10-fixed-paused.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B12-fixed-stopped.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5h/20261105T194354149781+0800-browser/U5F-B16-mobile.png": {
+      "width": 390,
+      "height": 844,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    }
+  },
+  "unique_python_cases_passed": 261,
+  "frontend_contracts_passed": 210,
+  "browser_scenarios_passed": 16,
+  "nonzero_parity_fitness": 455.0,
+  "legacy_receipt_warning": "One retained directory guard failure; isolated and full reruns passed; exact intermittent cause UNCONFIRMED; guard unchanged.",
+  "privacy": "PASS complete/partial encoded fragments, credential/header/URL patterns, private-name comparison, PNG CRC/metadata and visual review",
+  "whitespace": "PASS",
+  "protected_preferences_settings": "BYTE_IDENTICAL_UNSTAGED_EXCLUDED",
+  "ga_legacy_scoring_rng_fingerprints_migrations_checkpoints_saved_best_history": "UNCHANGED",
+  "git_index_head": "UNCHANGED",
+  "staged_files": [],
+  "internal_consumption_verified": true,
+  "bundle_checkpoint_binding_verified": true,
+  "legacy_http_consumption": "UNVERIFIED_UNCHANGED",
+  "institutional_authorization": "BLOCKED",
+  "continuous_executable": false,
+  "checkpoint_readiness": "CONDITIONAL_ON_U5G_PREREQUISITE_ORDER_AND_REVIEW_OF_LEGACY_WARNING",
+  "recorded_at": "2026-11-05T20:09:35.019774+08:00"
+}

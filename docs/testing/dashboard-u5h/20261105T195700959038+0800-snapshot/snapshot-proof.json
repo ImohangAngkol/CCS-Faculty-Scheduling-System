@@ -1,0 +1,38 @@
+{
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "source_sha256": {
+    "backend/services/ga_input_bundle.py": "994cdb45f08c95718138290aa8e3fde53d4ee2657bba11dff61c9cad369a51ce",
+    "backend/tests/test_ga_input_bundle.py": "2df1e59b40c3c3d12cc6e9bb2a331a38624ff8dda8b112975bc062aca9953d06",
+    "backend/tests/test_ga_input_bundle_checkpoint_qualification.py": "c9e58e9cadf7996db7134e0dcd77a30542396706dac6fd55c90de99677759593",
+    "backend/services/ga_bundle_runtime.py": "1c5cdccde689d31d011746324223d0f0165ee9c12b5eea7fc26e7306f5a68198",
+    "backend/services/ga_bundle_checkpoint.py": "4bc392ea92e65cfa2bd21870920893dd72f14f730036f63a8bc9bd11e833229d",
+    "backend/services/ga_bundle_optimizer.py": "6872eb6e25d4baed041909768dfd2f6e0928cb359b835bfcd1f7d89040b37a0b",
+    "backend/tests/test_ga_bundle_optimizer.py": "ef51bc349376117cc2ac4458fef0bc00edb8abcef83ad593a206bbcb7f955b33",
+    "backend/tests/test_ga_bundle_parity.py": "e9c95d323ed309056997b5f85608204fb622e8bb8527fc9b1dfea3a33443735b"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_input_bundle.py": "ac6445c7c93aa7953b65873a0b2501f9b331e451",
+    "backend/tests/test_ga_input_bundle.py": "b3ed4b2320a17ca3d0009e654bf167d77678e277",
+    "backend/tests/test_ga_input_bundle_checkpoint_qualification.py": "a224b975851a959e761c553ba1ce6efea44b2575",
+    "backend/services/ga_bundle_runtime.py": "1281e1a9c1bfebd3b0e02f7fcd5ca0715b2ec308",
+    "backend/services/ga_bundle_checkpoint.py": "d6d399e8f313a0c59bd2e1fa24a0b8d6fa0673f6",
+    "backend/services/ga_bundle_optimizer.py": "9055426720b0e59a7c0a55af9afa132debc0ed91",
+    "backend/tests/test_ga_bundle_optimizer.py": "c21a25dfc5ae34ef7d595e9af0d7600ca3f3fa60",
+    "backend/tests/test_ga_bundle_parity.py": "c97465f75b673a15a8e30442f2e6a9d3de9db4b4"
+  },
+  "results": [
+    {
+      "selection": "consumption",
+      "exit_code": 0
+    }
+  ],
+  "qualified_selections": [
+    "consumption"
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": true,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-ha99idek\\repository"
+}

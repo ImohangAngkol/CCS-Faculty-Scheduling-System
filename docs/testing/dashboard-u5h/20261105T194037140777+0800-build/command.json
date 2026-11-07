@@ -1,0 +1,15 @@
+{
+  "selection": "build",
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "-b"
+  ],
+  "started_at": "2026-11-05T19:40:37.142502+08:00",
+  "ended_at": "2026-11-05T19:40:53.874841+08:00",
+  "elapsed_seconds": 16.732389600016177,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only; no PostgreSQL. Browser HTTP intercepted, not live GA acceptance. Legacy APIs remain unverified; the new versioned internal entry qualifies technical bundle consumption only, without institutional source authority."
+}
