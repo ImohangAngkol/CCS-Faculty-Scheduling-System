@@ -1,0 +1,48 @@
+{
+  "source_sha256": {
+    "backend/identity_models.py": "3a591024787c48f745f5baeb72780fc712ad7934925615609047aba2785276db",
+    "backend/academic_models.py": "c3e1fa6d3cb34c26774557d5c4bb66fe8e76427ada1ef165994c08a53b7c1671",
+    "backend/services/chair_authority_service.py": "ca0e79f286e332815544daafce2e65cfd7d44c26657a0d99be7781a03935f092",
+    "backend/services/ga_academic_context.py": "0a34944042662c62373fc02597e6c311d5147652f28c24bbe821a3b3cb0e17f4",
+    "backend/services/ga_source_qualification.py": "51eb50d93b250bca986365145dcf73b6d856373f6dc0f566d295da4dc9defed6",
+    "backend/genetic_algorithm/utils/Functions.py": "d28af9197d38957eb5ace526aa243e4448c68bd475efd89337e1d2c4742f555b",
+    "backend/genetic_algorithm/utils/FrozenInputs.py": "e407d686e2ee95eccca80761c77a2fec6e5d90bef302a8ebe9621268b1f8bf3a",
+    "backend/services/ga_input_bundle.py": "994cdb45f08c95718138290aa8e3fde53d4ee2657bba11dff61c9cad369a51ce",
+    "backend/services/ga_bundle_optimizer.py": "6872eb6e25d4baed041909768dfd2f6e0928cb359b835bfcd1f7d89040b37a0b",
+    "backend/services/ga_bundle_runtime.py": "1c5cdccde689d31d011746324223d0f0165ee9c12b5eea7fc26e7306f5a68198",
+    "backend/services/ga_owned_store.py": "b4005daf99cff78db139debe97c286c1e6afa309cf0c617ee5ed0f5331dac75f",
+    "backend/services/ga_trusted_runs.py": "cc5f41a9c7bd877d212b373b7dcc6d6d0430940d2cb6a294c3d311f9a76acd1e",
+    "backend/database.py": "83229f0066bc8c20a798b3594d8b84ba6058d52aa6c8f5d28e85ba3842962bbf",
+    ".vscode/dashboard_dev.py": "dff4a73ddcead99470c13876fc1b60fbfce8a709a4fe2de28072ae7085d08d80"
+  },
+  "authority": {
+    "status": "BLOCKED_IN_PRODUCTION",
+    "accounts": "admin/faculty role and optional faculty binding, no optimization department mandate",
+    "academic_scope": "Modelled academic scope is not account-to-department optimization authority",
+    "chair": "Independent scoped review mandate exists; directory provider returns None; capability cannot be inferred",
+    "new_adapter": "Independent directory plus separate evidence verifier; guarded current mandate and code-bound policy digest; internal audit projection only"
+  },
+  "capture": {
+    "status": "ISOLATED_PREPARED_INPUT_DELIVERY_VERIFIED",
+    "upstream_institutional_transform": "UNQUALIFIED",
+    "legacy": "Import-time frames/models, independently loaded scoring settings/preferences, hard-coded defaults and transforms are not a coherent institutional catalog snapshot",
+    "new_adapter": "Guarded immutable prepared bundle, independent snapshot attestation, exact run rebinding and U5H preflight, no mutable global fallback",
+    "institutional_context": "UNCONFIGURED"
+  },
+  "storage": {
+    "status": "BLOCKED_FOR_DEPLOYMENT",
+    "qualified": "Owned temporary SQLite permission checks, integrity/lineage, restart and offline backup image inspection",
+    "not_qualified": [
+      "approved durable location",
+      "deployment service account permissions",
+      "backup schedule/custody/encryption",
+      "restore epoch/fencing across old and restored instances",
+      "physical filesystem/database/journal/backup quota",
+      "retention disposal authority and audit",
+      "deployment supervisor/restart ownership"
+    ],
+    "cleanup": "No deletion or automatic disposal implemented"
+  },
+  "production_admission": "UNCHANGED_UNAVAILABLE",
+  "continuous_worker": false
+}

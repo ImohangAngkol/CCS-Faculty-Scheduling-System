@@ -1,0 +1,23 @@
+{
+  "selection": "qualification",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_qualified_execution.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-2b_3vyx8\\pytest-qualification"
+  ],
+  "started_at": "2026-11-05T23:12:52.718254+08:00",
+  "ended_at": "2026-11-05T23:13:17.880945+08:00",
+  "elapsed_seconds": 25.1627800000133,
+  "exit_code": 0,
+  "stdout": "...........................................                              [100%]\n============================ slowest 10 durations =============================\n3.38s call     tests/test_qualified_execution.py::test_prepared_capture_to_actual_optimizer_and_restart\n3.38s call     tests/test_qualified_execution.py::test_storage_qualification_and_offline_backup_restore\n2.37s call     tests/test_qualified_execution.py::test_storage_corruption_is_not_a_ready_state\n2.24s call     tests/test_qualified_execution.py::test_retention_boundary_preserves_integrity_but_denies_access\n2.20s call     tests/test_qualified_execution.py::test_policy_revision_cannot_resume_an_earlier_mandate\n1.44s call     tests/test_qualified_execution.py::test_simultaneous_admissions_and_revocation_use_new_adapters\n0.58s call     tests/test_qualified_execution.py::test_missing_storage_never_recreates_user_records\n0.57s setup    tests/test_qualified_execution.py::test_valid_independent_authority_and_audit\n0.56s call     tests/test_qualified_execution.py::test_run_bound_prepared_capture_preserves_actual_model_graph\n0.53s call     tests/test_qualified_execution.py::test_space_and_self_asserted_evidence_cannot_activate_storage\n43 passed in 23.33s\n",
+  "stderr": "",
+  "scope": "HEAD plus U5H-only source; fictional import tables/D10 models. New versioned internal entry consumes the bundle; unchanged legacy entry remains separate. Technical consumption is not institutional authorization. No database access."
+}

@@ -1,0 +1,45 @@
+{
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "baseline_paths": 3796,
+  "prior_milestones": [
+    {
+      "milestone": "u5g",
+      "inventory": 34,
+      "artifact_hashes": 33,
+      "plan_reviewed": true
+    },
+    {
+      "milestone": "u5h",
+      "inventory": 77,
+      "artifact_hashes": 76,
+      "plan_reviewed": true
+    },
+    {
+      "milestone": "u5i",
+      "inventory": 67,
+      "artifact_hashes": 65,
+      "plan_reviewed": true
+    }
+  ],
+  "mixed_paths_preserved": [
+    ".gitignore",
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "backend/main.py",
+    "backend/routers/ga_evaluation.py",
+    "backend/routers/genetic_algorithm.py",
+    "backend/tests/conftest.py",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "production_authority": "UNCONFIGURED",
+  "production_capture": "UNCONFIGURED",
+  "deployment_storage": "UNCONFIGURED"
+}

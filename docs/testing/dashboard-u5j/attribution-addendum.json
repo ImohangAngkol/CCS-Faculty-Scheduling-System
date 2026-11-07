@@ -1,0 +1,11 @@
+{
+  "reason": "Copied command-recorder scope text was narrower than the executed qualification/admission fixtures. Original records and outcomes are preserved.",
+  "affected_records": [
+    "docs/testing/dashboard-u5j/20261105T231252716958+0800-snapshot/qualification-command.json",
+    "docs/testing/dashboard-u5j/20261105T231355843613+0800-snapshot/admission-command.json",
+    "docs/testing/dashboard-u5j/20261105T231534422569+0800-snapshot/qualification-command.json"
+  ],
+  "correct_scope": "Actual U5H optimizer and real owned temporary SQLite operations; fictional authority/catalog/principals. Admission selection also verifies real session/CSRF in isolated identity SQLite and owned loopback HTTP. No PostgreSQL, institutional database or production authority.",
+  "test_results_changed": false,
+  "tool_scope_text_corrected_for_future_runs": true
+}

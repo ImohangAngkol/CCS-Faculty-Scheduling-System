@@ -1,0 +1,23 @@
+{
+  "selection": "parity",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_ga_bundle_parity.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-xgzg_yrs\\pytest-parity"
+  ],
+  "started_at": "2026-11-05T23:13:56.351345+08:00",
+  "ended_at": "2026-11-05T23:15:13.592067+08:00",
+  "elapsed_seconds": 77.24081170000136,
+  "exit_code": 0,
+  "stdout": ".....                                                                    [100%]\n============================ slowest 10 durations =============================\n23.47s call     tests/test_ga_bundle_parity.py::test_unmodified_fixed_engine_schedule_fitness_history_and_rng_parity[1-0]\n22.78s call     tests/test_ga_bundle_parity.py::test_unmodified_fixed_engine_schedule_fitness_history_and_rng_parity[1-1]\n19.35s call     tests/test_ga_bundle_parity.py::test_nonzero_preferences_and_weights_match_original\n4.63s setup    tests/test_ga_bundle_parity.py::test_unmodified_fixed_engine_schedule_fitness_history_and_rng_parity[0-0]\n3.57s call     tests/test_ga_bundle_parity.py::test_checkpoint_restores_in_a_fresh_python_process\n0.82s call     tests/test_ga_bundle_parity.py::test_unmodified_fixed_engine_schedule_fitness_history_and_rng_parity[0-0]\n0.02s setup    tests/test_ga_bundle_parity.py::test_unmodified_fixed_engine_schedule_fitness_history_and_rng_parity[1-0]\n0.02s setup    tests/test_ga_bundle_parity.py::test_unmodified_fixed_engine_schedule_fitness_history_and_rng_parity[1-1]\n0.01s setup    tests/test_ga_bundle_parity.py::test_nonzero_preferences_and_weights_match_original\n0.01s setup    tests/test_ga_bundle_parity.py::test_checkpoint_restores_in_a_fresh_python_process\n5 passed in 74.86s (0:01:14)\n",
+  "stderr": "",
+  "scope": "HEAD plus U5H-only source; fictional import tables/D10 models. New versioned internal entry consumes the bundle; unchanged legacy entry remains separate. Technical consumption is not institutional authorization. No database access."
+}

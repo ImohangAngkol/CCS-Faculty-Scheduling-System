@@ -1,0 +1,23 @@
+{
+  "selection": "qualification",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_qualified_execution.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-rwt0iche\\pytest-qualification"
+  ],
+  "started_at": "2026-11-05T23:15:34.423826+08:00",
+  "ended_at": "2026-11-05T23:16:04.648413+08:00",
+  "elapsed_seconds": 30.22464889998082,
+  "exit_code": 0,
+  "stdout": ".................................................                        [100%]\n============================ slowest 10 durations =============================\n3.68s call     tests/test_qualified_execution.py::test_storage_qualification_and_offline_backup_restore\n2.99s call     tests/test_qualified_execution.py::test_prepared_capture_to_actual_optimizer_and_restart\n2.62s call     tests/test_qualified_execution.py::test_retention_boundary_preserves_integrity_but_denies_access\n2.50s call     tests/test_qualified_execution.py::test_storage_corruption_is_not_a_ready_state\n2.40s call     tests/test_qualified_execution.py::test_policy_revision_cannot_resume_an_earlier_mandate\n1.54s call     tests/test_qualified_execution.py::test_simultaneous_admissions_and_revocation_use_new_adapters\n1.08s call     tests/test_qualified_execution.py::test_missing_storage_never_recreates_user_records\n1.05s call     tests/test_qualified_execution.py::test_space_and_self_asserted_evidence_cannot_activate_storage\n0.64s call     tests/test_qualified_execution.py::test_source_runtime_engine_mismatch_fails_full_preflight\n0.62s call     tests/test_qualified_execution.py::test_read_only_permission_failure_cannot_be_ignored\n49 passed in 28.23s\n",
+  "stderr": "",
+  "scope": "HEAD plus U5H-only source; fictional import tables/D10 models. New versioned internal entry consumes the bundle; unchanged legacy entry remains separate. Technical consumption is not institutional authorization. No database access."
+}

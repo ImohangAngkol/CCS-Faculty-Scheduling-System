@@ -1,0 +1,23 @@
+{
+  "selection": "qualification",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_qualified_execution.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-b7haznnb\\pytest-qualification"
+  ],
+  "started_at": "2026-11-05T23:19:58.499638+08:00",
+  "ended_at": "2026-11-05T23:20:25.545553+08:00",
+  "elapsed_seconds": 27.045966900070198,
+  "exit_code": 0,
+  "stdout": ".................................................                        [100%]\n============================ slowest 10 durations =============================\n3.47s call     tests/test_qualified_execution.py::test_storage_qualification_and_offline_backup_restore\n3.02s call     tests/test_qualified_execution.py::test_prepared_capture_to_actual_optimizer_and_restart\n2.84s call     tests/test_qualified_execution.py::test_retention_boundary_preserves_integrity_but_denies_access\n2.48s call     tests/test_qualified_execution.py::test_storage_corruption_is_not_a_ready_state\n2.19s call     tests/test_qualified_execution.py::test_policy_revision_cannot_resume_an_earlier_mandate\n1.43s call     tests/test_qualified_execution.py::test_simultaneous_admissions_and_revocation_use_new_adapters\n1.06s call     tests/test_qualified_execution.py::test_space_and_self_asserted_evidence_cannot_activate_storage\n0.93s call     tests/test_qualified_execution.py::test_missing_storage_never_recreates_user_records\n0.52s call     tests/test_qualified_execution.py::test_run_bound_prepared_capture_preserves_actual_model_graph\n0.49s call     tests/test_qualified_execution.py::test_read_only_permission_failure_cannot_be_ignored\n49 passed in 25.36s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}
