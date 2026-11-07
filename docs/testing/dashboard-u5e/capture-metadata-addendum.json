@@ -1,0 +1,78 @@
+{
+  "scope": "Metadata correction only; original browser records and PNGs preserved",
+  "cause": "Reused committed U5A/U5B/U5C harness capture helper hardcodes 1280x960 after mobile emulation changes",
+  "interpretation": "Use PNG IHDR for actual artifact pixel dimensions. This addendum does not independently certify CSS viewport; device scale 1 and 390x844 emulation are specified in original test source.",
+  "corrections": [
+    {
+      "record": "docs/testing/dashboard-u5e/20261105T072542027468+0800-u5a-browser/browser-results.json",
+      "file": "U5A-B13-mobile.png",
+      "reported": {
+        "width": 1280,
+        "height": 960
+      },
+      "png_pixels": {
+        "width": 390,
+        "height": 844
+      },
+      "record_sha256": "943a601df90ced8f8b89093b1c34aadf81c1d5c345c3ad8a16d98205b9875075",
+      "png_sha256": "b1c609380dc0c1a46c827f28e22178a203cf18b7d3891a967daf5c5b2c5ae5ac"
+    },
+    {
+      "record": "docs/testing/dashboard-u5e/20261105T072751005298+0800-u5b-browser/browser-results.json",
+      "file": "U5B-B13-mobile.png",
+      "reported": {
+        "width": 1280,
+        "height": 960
+      },
+      "png_pixels": {
+        "width": 390,
+        "height": 844
+      },
+      "record_sha256": "c4c05646b7efd36f34ca0998f223c89947fd629cbfdd56d095c4fe594027a923",
+      "png_sha256": "8f24243c59c098345d225162c5dabef40b3036b0ce3fd11c2f2c3cad132d5c19"
+    },
+    {
+      "record": "docs/testing/dashboard-u5e/20261105T072751005298+0800-u5b-browser/browser-results.json",
+      "file": "U5B-B15-unavailable-context.png",
+      "reported": {
+        "width": 1280,
+        "height": 960
+      },
+      "png_pixels": {
+        "width": 390,
+        "height": 844
+      },
+      "record_sha256": "c4c05646b7efd36f34ca0998f223c89947fd629cbfdd56d095c4fe594027a923",
+      "png_sha256": "8ef2a01fc1b7b5483ada983f34f85ae40e6a44c69a3b67e7cdd332ff89bb5ec9"
+    },
+    {
+      "record": "docs/testing/dashboard-u5e/20261105T072751005298+0800-u5b-browser/browser-results.json",
+      "file": "U5B-B17-run-start-provenance.png",
+      "reported": {
+        "width": 1280,
+        "height": 960
+      },
+      "png_pixels": {
+        "width": 390,
+        "height": 844
+      },
+      "record_sha256": "c4c05646b7efd36f34ca0998f223c89947fd629cbfdd56d095c4fe594027a923",
+      "png_sha256": "ad73f6524f36178567b57ee4c546cde27cd0dbf92f706b7c72744c475e3b9f37"
+    },
+    {
+      "record": "docs/testing/dashboard-u5e/20261105T072941236201+0800-u5c-browser/browser-results.json",
+      "file": "U5C-B07-mobile.png",
+      "reported": {
+        "width": 1280,
+        "height": 960
+      },
+      "png_pixels": {
+        "width": 390,
+        "height": 844
+      },
+      "record_sha256": "2084676c3881c7c38b8a75968c88e0eccfceaaec7e2c58593e5355e47fe12f57",
+      "png_sha256": "1d7a226d78369e8a19d25f9c8edffce7e5f5b74b3f1fb37afbdaa625de389135"
+    }
+  ],
+  "initial_u5e_audit": "Stopped on mismatch before manifest creation. Initial staging-plan.json retained as a superseded draft; staging-plan-final.json is authoritative."
+}

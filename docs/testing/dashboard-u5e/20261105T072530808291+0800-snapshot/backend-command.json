@@ -1,0 +1,22 @@
+{
+  "selection": "backend",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_advanced_ga_analysis.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-2stv0njc\\pytest"
+  ],
+  "scope": "HEAD plus U5E-only overlay; fictional temporary files, no database",
+  "started_at": "2026-11-05T07:25:30.819794+08:00",
+  "ended_at": "2026-11-05T07:25:37.984935+08:00",
+  "elapsed_seconds": 7.1651497998973355,
+  "exit_code": 1,
+  "stdout": "F...................                                                     [100%]\n================================== FAILURES ===================================\n____________ test_seven_graph_inputs_hours_and_missing_preferences ____________\n\n    def test_seven_graph_inputs_hours_and_missing_preferences():\n        fixture();value=advanced.project(RUN,0)\n        a,b=value['faculty']\n        assert a['satisfaction']=={'subject':100,'day':100,'time':100}\n        assert all(v is None for v in b['satisfaction'].values())\n        assert a['preparations']==1 and a['teaching_units']==3 and a['average_deviation']==.5\n        assert a['weekly_hours']==1 and b['hours']['tuesday']==1.5\n        assert value['aggregates']['overall']['count']==1 and value['aggregates']['overall']['value']==100\n>       assert value['receipt']['status']=='UNVERIFIED' and value['compatibility']['classification']!='CURRENT'\nE       AssertionError: assert ('UNAVAILABLE' == 'UNVERIFIED'\nE         \nE         - UNVERIFIED\nE         + UNAVAILABLE)\n\ntests\\test_advanced_ga_analysis.py:62: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/test_advanced_ga_analysis.py::test_seven_graph_inputs_hours_and_missing_preferences\n1 failed, 19 passed, 2 warnings in 5.75s\n",
+  "stderr": ""
+}

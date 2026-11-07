@@ -1,0 +1,16 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/ga/AdvancedAnalysis.tsx",
+    "src/services/analysisChartPresentation.ts"
+  ],
+  "started_at": "2026-11-05T16:39:19.585170+08:00",
+  "ended_at": "2026-11-05T16:39:40.133524+08:00",
+  "elapsed_seconds": 20.548399399966,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only. Browser responses intercepted; no institutional database, live sessions or production authority."
+}

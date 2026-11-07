@@ -1,0 +1,15 @@
+{
+  "selection": "build",
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "-b"
+  ],
+  "scope": "HEAD plus U5E-only overlay; fictional temporary files, no database",
+  "started_at": "2026-11-05T16:48:12.151622+08:00",
+  "ended_at": "2026-11-05T16:48:22.738916+08:00",
+  "elapsed_seconds": 10.587284600012936,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

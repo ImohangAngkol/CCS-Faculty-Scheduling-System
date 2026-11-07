@@ -1,0 +1,20 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/ga/AdvancedAnalysis.tsx",
+    "src/services/advancedAnalysis.ts",
+    "src/pages/admin/FitnessAnalysis.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-05T07:36:00.009508+08:00",
+  "ended_at": "2026-11-05T07:36:06.959275+08:00",
+  "elapsed_seconds": 6.94978240004275,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

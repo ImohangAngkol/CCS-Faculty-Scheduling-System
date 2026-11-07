@@ -1,0 +1,15 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/advancedAnalysis.browser.test.mjs"
+  ],
+  "scope": "HEAD plus U5E-only overlay; fictional temporary files, no database",
+  "started_at": "2026-11-05T07:31:26.466038+08:00",
+  "ended_at": "2026-11-05T07:31:43.815075+08:00",
+  "elapsed_seconds": 17.34905069996603,
+  "exit_code": 0,
+  "stdout": "\u25b6 U5E current evaluation with fictional intercepted responses\n  \u2714 U5E-B01 summary and all seven charts use one recorded chromosome (2872.4814ms)\n  \u2714 U5E-B02 heatmap does not turn missing preferences into zero (161.1266ms)\n  \u2714 U5E-B03 read-only faculty drill-down uses original preferences and assignments (764.3212ms)\n  \u2714 U5E-B04 heatmap sorting has all six explicit options and nulls last (226.4255ms)\n  \u2714 U5E-B05 weekly hours retain lecture/laboratory duration and day legend (133.7511ms)\n  \u2714 U5E-B06 optimization progress displays recorded fitness, satisfaction, violations and coverage (614.5246ms)\n  \u2714 U5E-B07 comparison shows negative and unchanged deltas separately from faculty outcomes (315.3166ms)\n  \u2714 U5E-B08 incompatible comparison fails closed with retryable selection (111.6974ms)\n  \u2714 U5E-B09 generation switching clears previous metrics and updates source identity (1302.214ms)\n  \u2714 U5E-B10 incomplete history has honest unavailable graphs and retained gaps (906.6835ms)\n  \u2714 U5E-B11 zero faculty has no invented results (296.2589ms)\n  \u2714 U5E-B12 one distinct chromosome has an unavailable comparison (945.3198ms)\n  \u2714 U5E-B13 loading, error and independent retry work without starting GA (1887.1288ms)\n  \u2714 U5E-B14 a forged verified receipt is rejected (245.0114ms)\n  \u2714 U5E-B15 empty archive and faculty access restrictions remain explicit (891.9885ms)\n  \u2714 U5E-B16 mobile charts stack with no page overflow (1075.7348ms)\n\u2714 U5E current evaluation with fictional intercepted responses (14171.1129ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 17281.9123\n",
+  "stderr": ""
+}

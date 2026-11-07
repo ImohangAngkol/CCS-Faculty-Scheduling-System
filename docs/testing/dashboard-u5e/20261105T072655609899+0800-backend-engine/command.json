@@ -1,0 +1,26 @@
+{
+  "selection": "backend-engine",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/d10/test_v1_baseline.py",
+    "tests/d10/test_v2_engine.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\ga-u5e-pytest-9189d982bb434183932f8d9b617c0f28"
+  ],
+  "cwd": "backend",
+  "started_at": "2026-11-05T07:26:55.611725+08:00",
+  "ended_at": "2026-11-05T07:28:24.978540+08:00",
+  "elapsed_seconds": 89.36683219997212,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": "C:\\Users\\User\\AppData\\Local\\Temp\\ga-u5e-pytest-9189d982bb434183932f8d9b617c0f28",
+  "stdout": "..................................                                       [100%]\n34 passed in 87.94s (0:01:27)\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

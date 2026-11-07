@@ -1,0 +1,15 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/advancedAnalysis.test.mjs"
+  ],
+  "scope": "HEAD plus U5E-only overlay; fictional temporary files, no database",
+  "started_at": "2026-11-05T07:27:00.718542+08:00",
+  "ended_at": "2026-11-05T07:27:01.395258+08:00",
+  "elapsed_seconds": 0.6767159999581054,
+  "exit_code": 0,
+  "stdout": "\u2714 seven graph inputs preserve cohort, units, contact hours and missing preferences (2.2164ms)\n\u2714 heatmap percentages are real applicable values; disabled is not zero (0.3266ms)\n\u2714 zero observations survive and optimization history does not infer percentages from fitness (40.1813ms)\n\u2714 empty cohort and incomplete historical data remain unavailable (0.6868ms)\n\u2714 one distinct chromosome is not a fabricated comparison (0.3126ms)\n\u2714 malformed run fails validation (0.7113ms)\n\u2714 malformed generation fails validation (0.1714ms)\n\u2714 malformed candidate fails validation (0.1504ms)\n\u2714 malformed chromosome fails validation (0.1564ms)\n\u2714 malformed receipt fails validation (0.2253ms)\n\u2714 malformed percentage fails validation (0.1311ms)\n\u2714 malformed average fails validation (0.1433ms)\n\u2714 malformed hours fails validation (0.1043ms)\n\u2714 coherent comparison preserves negative and unchanged deltas (0.5737ms)\n\u2714 comparison rejects mismatched fingerprints and altered satisfaction changes (0.5319ms)\n\u2714 interface supplies six original plots, hours, three tabs, details and honest limits (7.0456ms)\n\u2139 tests 16\n\u2139 suites 0\n\u2139 pass 16\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 612.3395\n",
+  "stderr": ""
+}

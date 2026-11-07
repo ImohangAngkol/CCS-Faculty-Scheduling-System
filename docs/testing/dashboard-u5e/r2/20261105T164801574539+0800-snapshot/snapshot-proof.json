@@ -1,0 +1,82 @@
+{
+  "base_head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-3t_ggdpx\\repository",
+  "source_sha256": {
+    "backend/main.py": "f65fa0459c0bd5293d393c4221957afcff31b43ccdcebf892073fd16ee222f15",
+    "backend/routers/advanced_ga_analysis.py": "d2aab3ed5b9dfc5ec8b4805fb8d0eafae03f9e473c4fbd8bffd2740c8ba10de1",
+    "backend/services/advanced_ga_analysis.py": "4bd748df5bb01273e08645b92d212c3bece18442498c585a6315e0e4b73c33f0",
+    "backend/tests/test_advanced_ga_analysis.py": "04c707a97c7403fec3d6b2810b32e2ceb89b71a87fe7713ab9a75dd53699b688",
+    "frontend/src/services/advancedAnalysis.ts": "0eb51f34e5853e4b6d98fbf4a1b9bb118cbe52116b565fc59fa99ddd167bae0a",
+    "frontend/src/components/ga/AdvancedAnalysis.tsx": "c159fc6bdaf73abf97d14569f46103534941d9811092bab0bb53413645d50a7f",
+    "frontend/tests/advancedAnalysis.test.mjs": "0985c7871da2b7f16924ee4d72952fba03d70f862f09cccc0511144c7efed847",
+    "frontend/tests/advancedAnalysis.browser.test.mjs": "4d3435a96e7bdb148d049af7789cc7c08ebe1697d5f3451eba9dd50e921ccd13",
+    "frontend/tests/advancedAnalysis.fixtures.mjs": "ab537fcea15d2ae62dc6cc7baffb99cd33d1aa9ad110dfc9c52212ea650cac10",
+    "docs/testing/dashboard-u5e/fictional-api.json": "bac6f9b7fb5a28d84380b86d56e39a956ea8f0578538882e37f2491da240ee39",
+    "frontend/src/services/analysisChartPresentation.ts": "7a8e4b55c81f52219c8256dd9af70b1235ed1cb80f80e5813d7beb88a99e9a90",
+    "frontend/tests/advancedAnalysisInteraction.test.mjs": "c5ff7ca07e5e0dda66565d751c2fcabb76877506b0e0a0ca3c08570c909cf856",
+    "frontend/tests/advancedAnalysisInteraction.browser.test.mjs": "4506189e6b4786fa34de510e9daf8ebfd800054a06d173ac976e883c067cb119",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx": "b2f391d3618db52186f467275ff4a46e3faac63fcbc092b80563643a8c55ea78"
+  },
+  "blob_oids": {
+    "backend/main.py": "333726afb65d6112c5e47874cf04e0129958c088",
+    "backend/routers/advanced_ga_analysis.py": "e22229bb9397e86bd33d18ed189cf10eb1a0abe6",
+    "backend/services/advanced_ga_analysis.py": "9294d6e2b13c5bbc79d697cc47d0b1561c3c89b6",
+    "backend/tests/test_advanced_ga_analysis.py": "faa5bec5d30b9acccde0ab07272ceb8f6a537e2a",
+    "frontend/src/services/advancedAnalysis.ts": "2c3d96862edf0c47186688992f1f74567705e8e2",
+    "frontend/src/components/ga/AdvancedAnalysis.tsx": "f78c97c8b76c74b3364af1548f9bfc5c36affd13",
+    "frontend/tests/advancedAnalysis.test.mjs": "d0a4123e470d6c5aab5d7b818163af14e10726b6",
+    "frontend/tests/advancedAnalysis.browser.test.mjs": "29dbe8f0033d24bb8efaded95f470f42ebd07559",
+    "frontend/tests/advancedAnalysis.fixtures.mjs": "4fbab6e625d91ad1a7d00afcdc3840e1eecfe1af",
+    "docs/testing/dashboard-u5e/fictional-api.json": "9c45a21b2fdee34400ba07bc075b88687cf353b4",
+    "frontend/src/services/analysisChartPresentation.ts": "d7c3044a95c97b1641a55f0f32326c636e6e4453",
+    "frontend/tests/advancedAnalysisInteraction.test.mjs": "e0c80eb3bf9876acdc4dd5650878ddfed1f6fc58",
+    "frontend/tests/advancedAnalysisInteraction.browser.test.mjs": "9ea6f83cb3cd764b745ca8fda8353cf9ac61f648",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx": "31255e260ef2b8cdf97d9b09be102c28c6de33c4"
+  },
+  "fictional_bootstrap_hashes": {
+    "BSIT_Consolidated_Subject_Schedules.csv": "219ddd904b21ad574a788d8da06f3cd2526e1f0013d1f93beef9db6fa5ee3d03",
+    "Faculty Admin, Research and Extension.csv": "ed8cbde3b42a9056bd2d01dc5516a1fdf72b525ff0c77de9b6812238bb67e9de",
+    "Faculty Preferences V2.csv": "a41f03bf06a07b3fd61050f408934bc5865077c9c62087015f732d68be7b091b",
+    "faculty_identities.json": "ddb00a4d633220a7647725e7c28caf8a4e1d71bd441904bb7985b93612fadfb7",
+    "faculty_preferences.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "faculty_qualifications.csv": "eb6a8a4b744cbab1250da378d4b7e18ac5ccde81f3302c5bcd15ca1905cde433",
+    "faculty_subject_eligibility.csv": "83e3b336fcccc74d26b5497af93807f4ab41fdac7fdb543292405766d307a528",
+    "first_sem_bsit_subjects.csv": "810e784853183da1c2d3cf80eb776e9c4f2f3caf3547bf12ed334e46cb7603c4",
+    "ga_settings.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "preassigned_assignments.json": "191b143c7a5fae58a82a55207a9df16c63444e990b34f94bb175f17cce6cd315",
+    "subject_domains.csv": "16a0da4a03b110bf03cc57f9382cdf6037489d7a68a545cf9282ff0f830b08db"
+  },
+  "no_actual_staging": true,
+  "no_u5d_dependency": true,
+  "results": [
+    {
+      "selection": "backend",
+      "exit_code": 0
+    },
+    {
+      "selection": "focused",
+      "exit_code": 0
+    },
+    {
+      "selection": "regressions",
+      "exit_code": 0
+    },
+    {
+      "selection": "build",
+      "exit_code": 0
+    },
+    {
+      "selection": "bundle",
+      "exit_code": 0
+    },
+    {
+      "selection": "lint",
+      "exit_code": 0
+    },
+    {
+      "selection": "browser",
+      "exit_code": 0
+    }
+  ],
+  "complete": true
+}

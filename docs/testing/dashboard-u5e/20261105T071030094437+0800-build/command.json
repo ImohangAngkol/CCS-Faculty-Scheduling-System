@@ -1,0 +1,18 @@
+{
+  "selection": "build",
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "-b"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-05T07:10:30.095022+08:00",
+  "ended_at": "2026-11-05T07:10:33.698095+08:00",
+  "elapsed_seconds": 3.6030873999698088,
+  "exit_code": 2,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "src/components/ga/AdvancedAnalysis.tsx(23,161): error TS1109: Expression expected.\nsrc/components/ga/AdvancedAnalysis.tsx(24,9): error TS2657: JSX expressions must have one parent element.\nsrc/components/ga/AdvancedAnalysis.tsx(25,9): error TS1005: '}' expected.\nsrc/components/ga/AdvancedAnalysis.tsx(25,10): error TS1005: '...' expected.\nsrc/components/ga/AdvancedAnalysis.tsx(26,10): error TS1005: '...' expected.\nsrc/components/ga/AdvancedAnalysis.tsx(27,7): error TS1003: Identifier expected.\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

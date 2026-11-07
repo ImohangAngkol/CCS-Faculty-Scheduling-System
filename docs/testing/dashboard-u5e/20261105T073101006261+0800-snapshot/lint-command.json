@@ -1,0 +1,17 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/ga/AdvancedAnalysis.tsx",
+    "src/services/advancedAnalysis.ts",
+    "src/pages/admin/FitnessAnalysis.tsx"
+  ],
+  "scope": "HEAD plus U5E-only overlay; fictional temporary files, no database",
+  "started_at": "2026-11-05T07:31:19.587913+08:00",
+  "ended_at": "2026-11-05T07:31:26.464924+08:00",
+  "elapsed_seconds": 6.876995499944314,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

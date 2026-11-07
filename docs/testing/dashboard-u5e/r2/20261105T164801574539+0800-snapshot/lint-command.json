@@ -1,0 +1,16 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/ga/AdvancedAnalysis.tsx",
+    "src/services/analysisChartPresentation.ts"
+  ],
+  "scope": "HEAD plus U5E-only overlay; fictional temporary files, no database",
+  "started_at": "2026-11-05T16:48:24.116149+08:00",
+  "ended_at": "2026-11-05T16:48:29.325903+08:00",
+  "elapsed_seconds": 5.209747600019909,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

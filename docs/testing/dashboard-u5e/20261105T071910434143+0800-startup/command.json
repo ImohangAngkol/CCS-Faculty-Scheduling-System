@@ -1,0 +1,17 @@
+{
+  "selection": "startup",
+  "command": [
+    "node",
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\docs\\testing\\dashboard-u5c\\inspect_browser_startup.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-05T07:19:10.434644+08:00",
+  "ended_at": "2026-11-05T07:19:12.712932+08:00",
+  "elapsed_seconds": 2.278303900035098,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "{\"scope\":\"Owned blank-page renderer probe only; no application or API loaded.\",\"extensions_disabled\":false,\"browser\":\"Edg/156.0.4314.50\",\"extension_targets\":5,\"observations\":[{\"method\":\"Browser.getVersion\",\"elapsed_ms\":31,\"timed_out\":false,\"error\":null},{\"method\":\"Page.enable\",\"elapsed_ms\":35,\"timed_out\":false,\"error\":null},{\"method\":\"Runtime.evaluate\",\"elapsed_ms\":15,\"timed_out\":false,\"error\":null},{\"method\":\"Runtime.enable\",\"elapsed_ms\":6,\"timed_out\":false,\"error\":null}]}\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

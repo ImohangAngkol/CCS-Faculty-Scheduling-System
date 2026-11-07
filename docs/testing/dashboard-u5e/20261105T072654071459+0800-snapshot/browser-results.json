@@ -1,0 +1,592 @@
+{
+  "browser": "Edg/156.0.4314.50",
+  "node": "v24.11.1",
+  "scope": "Actual headless Edge React DOM; CDP-intercepted fictional API responses. No FastAPI, GA generation or database acceptance.",
+  "scenarios": [
+    {
+      "name": "U5E-B01 summary and all seven charts use one recorded chromosome",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B02 heatmap does not turn missing preferences into zero",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B03 read-only faculty drill-down uses original preferences and assignments",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B04 heatmap sorting has all six explicit options and nulls last",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B05 weekly hours retain lecture/laboratory duration and day legend",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B06 optimization progress displays recorded fitness, satisfaction, violations and coverage",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B07 comparison shows negative and unchanged deltas separately from faculty outcomes",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B08 incompatible comparison fails closed with retryable selection",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B09 generation switching clears previous metrics and updates source identity",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B10 incomplete history has honest unavailable graphs and retained gaps",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B11 zero faculty has no invented results",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B12 one distinct chromosome has an unavailable comparison",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B13 loading, error and independent retry work without starting GA",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B14 a forged verified receipt is rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B15 empty archive and faculty access restrictions remain explicit",
+      "status": "PASS"
+    },
+    {
+      "name": "U5E-B16 mobile charts stack with no page overflow",
+      "status": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "file": "U5E-B01-charts.png",
+      "observed_at": "2026-11-04T23:27:25.130Z",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    },
+    {
+      "file": "U5E-B02-heatmap.png",
+      "observed_at": "2026-11-04T23:27:25.296Z",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    },
+    {
+      "file": "U5E-B05-hours.png",
+      "observed_at": "2026-11-04T23:27:26.358Z",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    },
+    {
+      "file": "U5E-B06-progress.png",
+      "observed_at": "2026-11-04T23:27:26.969Z",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    },
+    {
+      "file": "U5E-B07-comparison.png",
+      "observed_at": "2026-11-04T23:27:27.309Z",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    },
+    {
+      "file": "U5E-B16-mobile.png",
+      "observed_at": "2026-11-04T23:27:34.880Z",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scope": "Fictional API responses intercepted in Edge. Actual React DOM; no live FastAPI acceptance."
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601/compare",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601/compare",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/advanced-analysis/runs/00000000-0000-4000-8000-000000000601",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/latest",
+      "method": "GET"
+    },
+    {
+      "path": "/api/ga/status",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    }
+  ],
+  "cancelled_old_document_requests": 0,
+  "cancelled_verified_network_requests": 1,
+  "runtime_errors": []
+}

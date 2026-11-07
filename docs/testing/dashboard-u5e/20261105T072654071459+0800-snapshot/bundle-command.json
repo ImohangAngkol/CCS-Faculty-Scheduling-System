@@ -1,0 +1,15 @@
+{
+  "selection": "bundle",
+  "command": [
+    "node",
+    "node_modules/vite/bin/vite.js",
+    "build"
+  ],
+  "scope": "HEAD plus U5E-only overlay; fictional temporary files, no database",
+  "started_at": "2026-11-05T07:27:13.013014+08:00",
+  "ended_at": "2026-11-05T07:27:14.631821+08:00",
+  "elapsed_seconds": 1.6188124000327662,
+  "exit_code": 0,
+  "stdout": "\u001b[36mvite v8.2.2 \u001b[32mbuilding client environment for production...\u001b[36m\u001b[39m\ntransforming...\n\u2713 831 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                     0.45 kB \u2502 gzip:   0.29 kB\ndist/assets/index-C-wAY_Qh.css     47.49 kB \u2502 gzip:  10.37 kB\ndist/assets/index-kEHwLnrc.js   1,419.50 kB \u2502 gzip: 396.60 kB\n\n\u001b[32m\u2713 built in 851ms\u001b[39m\n",
+  "stderr": "\u001b[33m\u001b[33m[INEFFECTIVE_DYNAMIC_IMPORT] \u001b[0msrc/api/externalReadiness.ts is dynamically imported by src/api/externalSchedules.ts but also statically imported by src/api/externalConfirmations.ts, src/components/schedule/ExternalScheduleReadiness.tsx, src/components/schedule/ExternalScheduleReview.tsx, src/components/schedule/ReadinessDocument.tsx, dynamic import will not move module into another chunk.\n\u001b[39m\n\u001b[33m[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n"
+}

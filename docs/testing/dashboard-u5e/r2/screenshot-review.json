@@ -1,0 +1,102 @@
+{
+  "reviewed_at": "2026-11-05T16:52:24.826890+08:00",
+  "method": "Visual inspection of all 12 distinct original R2 PNG groups; identical duplicates verified by raw SHA-256",
+  "images": 67,
+  "unique_images": 12,
+  "private_records_seen": false,
+  "credentials_or_auth_artifacts_seen": false,
+  "scope": "Actual Edge/React, fictional intercepted HTTP only; includes unsuccessful attempts, no edited images",
+  "reviewed_sha256": {
+    "a3c493b853a733bad6ede65b31ba154abb64e071b7440150031eaac9b3c857f7": [
+      "docs/testing/dashboard-u5e/r2/20261105T164028305837+0800-browser/U5E-B01-charts.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164234792893+0800-browser/U5E-B01-charts.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164310105308+0800-snapshot/U5E-B01-charts.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164426702180+0800-browser/U5E-B01-charts.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B01-charts.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164604370193+0800-snapshot/U5E-B01-charts.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B01-charts.png"
+    ],
+    "e1ba09ed770571ac8063c9fd83d5494a2e4fd2f2bc27b9a431bc5df7390a94a5": [
+      "docs/testing/dashboard-u5e/r2/20261105T164028305837+0800-browser/U5E-B01-summary.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164234792893+0800-browser/U5E-B01-summary.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164310105308+0800-snapshot/U5E-B01-summary.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164426702180+0800-browser/U5E-B01-summary.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B01-summary.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164604370193+0800-snapshot/U5E-B01-summary.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B01-summary.png"
+    ],
+    "49c351f2f4db4d78a086bb04883110243d85c5636e610f78b13d5edb698247a8": [
+      "docs/testing/dashboard-u5e/r2/20261105T164028305837+0800-browser/U5E-B02-heatmap.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164028305837+0800-browser/U5E-B05-hours.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164234792893+0800-browser/U5E-B02-heatmap.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164234792893+0800-browser/U5E-B05-hours.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164310105308+0800-snapshot/U5E-B02-heatmap.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164310105308+0800-snapshot/U5E-B05-hours.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164426702180+0800-browser/U5E-B02-heatmap.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164426702180+0800-browser/U5E-B05-hours.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B02-heatmap.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B05-hours.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B20-hours-and-best.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164604370193+0800-snapshot/U5E-B02-heatmap.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164604370193+0800-snapshot/U5E-B05-hours.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B02-heatmap.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B05-hours.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B20-hours-and-best.png"
+    ],
+    "2111cc1f26062b938769be7dc9c8c0e8e6b2094ebd0f5a94afa8fb988d501b11": [
+      "docs/testing/dashboard-u5e/r2/20261105T164028305837+0800-browser/U5E-B03-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164234792893+0800-browser/U5E-B03-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164310105308+0800-snapshot/U5E-B03-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164426702180+0800-browser/U5E-B03-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B03-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164604370193+0800-snapshot/U5E-B03-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B03-details.png"
+    ],
+    "7a7fa77afd4284ace5fb7831d900c4c31d4b9417048cc7f5a618a9ab381ef6f4": [
+      "docs/testing/dashboard-u5e/r2/20261105T164028305837+0800-browser/U5E-B06-progress.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164234792893+0800-browser/U5E-B06-progress.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164310105308+0800-snapshot/U5E-B06-progress.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164426702180+0800-browser/U5E-B06-progress.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B06-progress.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164604370193+0800-snapshot/U5E-B06-progress.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B06-progress.png"
+    ],
+    "aa325c2f30d8e44f9310cef90dd807d8dfc5432db2e9e33e8ee16805c823319d": [
+      "docs/testing/dashboard-u5e/r2/20261105T164028305837+0800-browser/U5E-B07-comparison.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164310105308+0800-snapshot/U5E-B07-comparison.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B07-comparison.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164604370193+0800-snapshot/U5E-B07-comparison.png"
+    ],
+    "da4bf897d84c1a8991b939bf00cc98a114330ea574529e41e4c39bf58e740cab": [
+      "docs/testing/dashboard-u5e/r2/20261105T164028305837+0800-browser/U5E-B16-mobile.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164234792893+0800-browser/U5E-B16-mobile.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164310105308+0800-snapshot/U5E-B16-mobile.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164426702180+0800-browser/U5E-B16-mobile.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B16-mobile.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164604370193+0800-snapshot/U5E-B16-mobile.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B16-mobile.png"
+    ],
+    "149a3d21098a6aa6353fd31e10149eca466ff852a6003f2a12becdf0388ec0db": [
+      "docs/testing/dashboard-u5e/r2/20261105T164028305837+0800-browser/U5E-B17-bar-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164234792893+0800-browser/U5E-B17-bar-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164310105308+0800-snapshot/U5E-B17-bar-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164426702180+0800-browser/U5E-B17-bar-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B17-bar-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164604370193+0800-snapshot/U5E-B17-bar-details.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B17-bar-details.png"
+    ],
+    "d7eb95422dd5168179862fa37d00088b3fc7fad4e5da73194eacd7ac2bbc7a87": [
+      "docs/testing/dashboard-u5e/r2/20261105T164234792893+0800-browser/U5E-B07-comparison.png"
+    ],
+    "2766d69d30c3f130e252aad769aa79715b95a7ab8d219539ec3688ea583c979d": [
+      "docs/testing/dashboard-u5e/r2/20261105T164426702180+0800-browser/U5E-B07-comparison.png"
+    ],
+    "e618121ae9336833226a5922cb8d2fc8a2dea6b00bc24a3cb9d960ce5261c382": [
+      "docs/testing/dashboard-u5e/r2/20261105T164533314584+0800-browser/U5E-B19-percentage-labels.png",
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B19-percentage-labels.png"
+    ],
+    "f5d80fdef725582e723d4916199fce54f7da18b931007b9675f475fffc453c3f": [
+      "docs/testing/dashboard-u5e/r2/20261105T164801574539+0800-snapshot/U5E-B07-comparison.png"
+    ]
+  }
+}

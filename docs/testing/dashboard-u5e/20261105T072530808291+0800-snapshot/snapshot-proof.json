@@ -1,0 +1,52 @@
+{
+  "base_head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-2stv0njc\\repository",
+  "source_sha256": {
+    "backend/main.py": "f65fa0459c0bd5293d393c4221957afcff31b43ccdcebf892073fd16ee222f15",
+    "backend/routers/advanced_ga_analysis.py": "d2aab3ed5b9dfc5ec8b4805fb8d0eafae03f9e473c4fbd8bffd2740c8ba10de1",
+    "backend/services/advanced_ga_analysis.py": "4bd748df5bb01273e08645b92d212c3bece18442498c585a6315e0e4b73c33f0",
+    "backend/tests/test_advanced_ga_analysis.py": "b23ea64ab2a06b70de77ae7fa9cc57136e6fb11b4cfbbbcaff56ac56951e5535",
+    "frontend/src/services/advancedAnalysis.ts": "1a153cb1e3f266f74b22eae10c87d65c17a3a774fd503d523594ae93d37abea0",
+    "frontend/src/components/ga/AdvancedAnalysis.tsx": "8f849b4cbea18f3b86639ec8cff60e96e89bb05c4ca68e2f48df409da2b6e3f2",
+    "frontend/tests/advancedAnalysis.test.mjs": "3689e579e5e341b423dd8b5378a78ab9a5235504dc8afc5c4f2e20b462842d78",
+    "frontend/tests/advancedAnalysis.browser.test.mjs": "95aa3a23a726d2a05027d67405ee336998c022177c918732d2f62ac505f40010",
+    "frontend/tests/advancedAnalysis.fixtures.mjs": "ab537fcea15d2ae62dc6cc7baffb99cd33d1aa9ad110dfc9c52212ea650cac10",
+    "docs/testing/dashboard-u5e/fictional-api.json": "bac6f9b7fb5a28d84380b86d56e39a956ea8f0578538882e37f2491da240ee39",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx": "b2f391d3618db52186f467275ff4a46e3faac63fcbc092b80563643a8c55ea78"
+  },
+  "blob_oids": {
+    "backend/main.py": "333726afb65d6112c5e47874cf04e0129958c088",
+    "backend/routers/advanced_ga_analysis.py": "e22229bb9397e86bd33d18ed189cf10eb1a0abe6",
+    "backend/services/advanced_ga_analysis.py": "9294d6e2b13c5bbc79d697cc47d0b1561c3c89b6",
+    "backend/tests/test_advanced_ga_analysis.py": "6374e5730cc9079ee9b3ae6c48ecfc271a1bcf84",
+    "frontend/src/services/advancedAnalysis.ts": "d9b33635ef960a54f744537da8cbf9bb6e287835",
+    "frontend/src/components/ga/AdvancedAnalysis.tsx": "86d98fd395d7939bcb1df7bc63c737ece57319a1",
+    "frontend/tests/advancedAnalysis.test.mjs": "c868b7729754cabd5c008e6e6de6c542d67a2915",
+    "frontend/tests/advancedAnalysis.browser.test.mjs": "7be7470575812ed46bcb4501adf82aa65dce8579",
+    "frontend/tests/advancedAnalysis.fixtures.mjs": "4fbab6e625d91ad1a7d00afcdc3840e1eecfe1af",
+    "docs/testing/dashboard-u5e/fictional-api.json": "9c45a21b2fdee34400ba07bc075b88687cf353b4",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx": "31255e260ef2b8cdf97d9b09be102c28c6de33c4"
+  },
+  "fictional_bootstrap_hashes": {
+    "BSIT_Consolidated_Subject_Schedules.csv": "219ddd904b21ad574a788d8da06f3cd2526e1f0013d1f93beef9db6fa5ee3d03",
+    "Faculty Admin, Research and Extension.csv": "ed8cbde3b42a9056bd2d01dc5516a1fdf72b525ff0c77de9b6812238bb67e9de",
+    "Faculty Preferences V2.csv": "a41f03bf06a07b3fd61050f408934bc5865077c9c62087015f732d68be7b091b",
+    "faculty_identities.json": "ddb00a4d633220a7647725e7c28caf8a4e1d71bd441904bb7985b93612fadfb7",
+    "faculty_preferences.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "faculty_qualifications.csv": "eb6a8a4b744cbab1250da378d4b7e18ac5ccde81f3302c5bcd15ca1905cde433",
+    "faculty_subject_eligibility.csv": "83e3b336fcccc74d26b5497af93807f4ab41fdac7fdb543292405766d307a528",
+    "first_sem_bsit_subjects.csv": "810e784853183da1c2d3cf80eb776e9c4f2f3caf3547bf12ed334e46cb7603c4",
+    "ga_settings.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "preassigned_assignments.json": "191b143c7a5fae58a82a55207a9df16c63444e990b34f94bb175f17cce6cd315",
+    "subject_domains.csv": "16a0da4a03b110bf03cc57f9382cdf6037489d7a68a545cf9282ff0f830b08db"
+  },
+  "no_actual_staging": true,
+  "no_u5d_dependency": true,
+  "results": [
+    {
+      "selection": "backend",
+      "exit_code": 1
+    }
+  ],
+  "complete": false
+}

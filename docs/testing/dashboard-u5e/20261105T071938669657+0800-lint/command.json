@@ -1,0 +1,20 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/ga/AdvancedAnalysis.tsx",
+    "src/services/advancedAnalysis.ts",
+    "src/pages/admin/FitnessAnalysis.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-05T07:19:38.670178+08:00",
+  "ended_at": "2026-11-05T07:19:50.029225+08:00",
+  "elapsed_seconds": 11.35906749998685,
+  "exit_code": 1,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "\nC:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\frontend\\src\\components\\ga\\AdvancedAnalysis.tsx\n  63:151  error  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions\n  68:106  error  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions\n\nC:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\frontend\\src\\pages\\admin\\FitnessAnalysis.tsx\n  28:44  error  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions\n\n✖ 3 problems (3 errors, 0 warnings)\n\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

@@ -1,0 +1,15 @@
+{
+  "selection": "build",
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "-b"
+  ],
+  "started_at": "2026-11-05T16:39:19.459647+08:00",
+  "ended_at": "2026-11-05T16:39:34.805328+08:00",
+  "elapsed_seconds": 15.345740400021896,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only. Browser responses intercepted; no institutional database, live sessions or production authority."
+}

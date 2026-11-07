@@ -1,0 +1,18 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/advancedAnalysis.browser.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-05T07:28:40.094956+08:00",
+  "ended_at": "2026-11-05T07:28:55.212969+08:00",
+  "elapsed_seconds": 15.11804430000484,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "▶ U5E current evaluation with fictional intercepted responses\n  ✔ U5E-B01 summary and all seven charts use one recorded chromosome (1928.2409ms)\n  ✔ U5E-B02 heatmap does not turn missing preferences into zero (128.8812ms)\n  ✔ U5E-B03 read-only faculty drill-down uses original preferences and assignments (399.6507ms)\n  ✔ U5E-B04 heatmap sorting has all six explicit options and nulls last (136.1175ms)\n  ✔ U5E-B05 weekly hours retain lecture/laboratory duration and day legend (143.3889ms)\n  ✔ U5E-B06 optimization progress displays recorded fitness, satisfaction, violations and coverage (470.7561ms)\n  ✔ U5E-B07 comparison shows negative and unchanged deltas separately from faculty outcomes (375.3929ms)\n  ✔ U5E-B08 incompatible comparison fails closed with retryable selection (90.8717ms)\n  ✔ U5E-B09 generation switching clears previous metrics and updates source identity (1246.8203ms)\n  ✔ U5E-B10 incomplete history has honest unavailable graphs and retained gaps (770.6862ms)\n  ✔ U5E-B11 zero faculty has no invented results (332.4063ms)\n  ✔ U5E-B12 one distinct chromosome has an unavailable comparison (813.3458ms)\n  ✔ U5E-B13 loading, error and independent retry work without starting GA (1729.4917ms)\n  ✔ U5E-B14 a forged verified receipt is rejected (297.6513ms)\n  ✔ U5E-B15 empty archive and faculty access restrictions remain explicit (873.9677ms)\n  ✔ U5E-B16 mobile charts stack with no page overflow (920.8037ms)\n✔ U5E current evaluation with fictional intercepted responses (11935.5253ms)\nℹ tests 17\nℹ suites 0\nℹ pass 17\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 15045.8323\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

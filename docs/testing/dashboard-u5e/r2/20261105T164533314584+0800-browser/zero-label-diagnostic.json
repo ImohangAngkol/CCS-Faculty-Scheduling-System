@@ -1,0 +1,13 @@
+{
+  "scope": "Fictional chart diagnostic only",
+  "svg_text": "",
+  "reference_dots": 1,
+  "labels": [
+    "Faculty identifier",
+    "Satisfaction (%)",
+    "Reference 100",
+    "0%"
+  ],
+  "summary": "Recorded best-so-far penalty at generation 1: 9. Selected snapshot: generation best. Choose Best ever to inspect the preserved best-so-far chromosome.",
+  "heatmap": "Faculty 1: view details100%satisfied0%unmet100%satisfiedFaculty 2: view detailsNot availabledisabledNot availabledisabledNot availabledisabled"
+}

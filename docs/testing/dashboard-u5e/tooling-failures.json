@@ -1,0 +1,24 @@
+{
+  "scope": "U5E tooling setup failures; no successful test claims",
+  "records": [
+    {
+      "operation": "First checkpoint_snapshot.py setup",
+      "exception": "ValueError: Canonical source differs from the recorded baseline",
+      "stage": "Temporary release-byte fixture before test execution",
+      "cause": "The intentional U5E main.py overlay was applied before the unchanged release-byte recipe, which also includes main.py.",
+      "correction": "Apply the verified unchanged release-byte recipe to HEAD first, then overlay U5E source. No fingerprint check or expected hash was changed.",
+      "application_files_modified_by_failure": false,
+      "tests_executed": 0,
+      "temporary_snapshot_retained": true
+    },
+    {
+      "operation": "Second checkpoint_snapshot.py setup",
+      "exception": "ValueError: Canonical source differs from the recorded baseline",
+      "stage": "Temporary release-byte fixture before test execution",
+      "cause": "git archive inherited the local automatic newline conversion instead of producing canonical bytes required by the existing release-byte recipe.",
+      "correction": "Use git -c core.autocrlf=false archive for the temporary HEAD source, as the committed U5C-R1 verifier does. Existing files and fingerprint checks are unchanged.",
+      "tests_executed": 0,
+      "temporary_snapshot_retained": true
+    }
+  ]
+}

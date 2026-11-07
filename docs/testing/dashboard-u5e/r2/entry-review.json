@@ -1,0 +1,15 @@
+{
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "prior_u5e_artifact_hashes_verified": 140,
+  "prior_u5e_checkpoint_inventory": 141,
+  "current_baseline_paths": 3414,
+  "unrelated_runtime_additions": {
+    "backend/run_checkpoints": 1,
+    "backend/saved_chromosomes": 4,
+    "backend/run_input_receipts_v1": 2
+  },
+  "old_audit_stop": "UNEXPECTED_RUNTIME_FILE_STOP; seven files created after old U5E signoff, existing protected content and old U5E artifacts unchanged",
+  "runtime_records_read_for_content": false,
+  "runtime_records_excluded_from_checkpoint": true,
+  "production_changes_authorized": false
+}

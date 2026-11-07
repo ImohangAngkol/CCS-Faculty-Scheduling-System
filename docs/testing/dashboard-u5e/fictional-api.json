@@ -1,0 +1,1330 @@
+{
+  "scope": "Explicitly fictional stored DTO fixtures; real projection code; no GA optimization, database or institutional authorization",
+  "run_id": "00000000-0000-4000-8000-000000000601",
+  "runs": {
+    "schema_version": 1,
+    "items": [
+      {
+        "run_id": "00000000-0000-4000-8000-000000000601",
+        "state": "COMPLETED",
+        "created_at": "2026-11-04T00:00:00+08:00",
+        "generations": 2
+      }
+    ],
+    "offset": 0,
+    "total": 1,
+    "issues": []
+  },
+  "current": {
+    "schema_version": 1,
+    "source": {
+      "run_id": "00000000-0000-4000-8000-000000000601",
+      "generation": 0,
+      "candidate": "generation_best",
+      "chromosome_id": "dfcebe9e13d7838b9268b9430597ac73170cadf572c4bba450362368e6f7a37a",
+      "input_fingerprint": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "engine_fingerprint": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+      "configuration_fingerprint": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    "fitness": 10,
+    "faculty": [
+      {
+        "faculty": "Faculty 1",
+        "teaching_units": 3,
+        "target": 24,
+        "target_deviation": -21,
+        "preparations": 1,
+        "satisfaction": {
+          "subject": 100.0,
+          "day": 100.0,
+          "time": 100.0
+        },
+        "preference_status": {
+          "subject": "satisfied",
+          "day": "satisfied",
+          "time": "satisfied"
+        },
+        "preference_explanations": {
+          "subject": "Ranked match: 100% at first rank; lower ranks receive partial descriptive credit. Scoring is per offering.",
+          "day": "Subject blocks: one mismatch per requested day absent from the component. Otherwise one mismatch per offering with any day outside preferred days.",
+          "time": "Subject blocks: one mismatch for each requested start absent from the raw component blocks, independently of day. Otherwise one mismatch per component extending outside the general preferred window."
+        },
+        "hours": {
+          "monday": 1.0,
+          "tuesday": 0.0,
+          "wednesday": 0.0,
+          "thursday": 0.0,
+          "friday": 0.0,
+          "saturday": 0.0
+        },
+        "weekly_hours": 1.0,
+        "assignments": [
+          {
+            "day": "Monday",
+            "end": "10:00",
+            "faculty": "1",
+            "room": "Fictional room",
+            "section": "FIC-A",
+            "start": "09:00",
+            "subject": "FIC101",
+            "title": "Fictional computing",
+            "type": "Lecture"
+          }
+        ],
+        "preferred": {
+          "preferred_subjects": [
+            "FIC101"
+          ],
+          "preferred_days": [
+            "Monday"
+          ],
+          "preferred_start_time": "09:00",
+          "preferred_end_time": "10:00"
+        },
+        "unavailable_reason": null,
+        "average_deviation": 0.5
+      },
+      {
+        "faculty": "Faculty 2",
+        "teaching_units": 2,
+        "target": 24,
+        "target_deviation": -22,
+        "preparations": 1,
+        "satisfaction": {
+          "subject": null,
+          "day": null,
+          "time": null
+        },
+        "preference_status": {
+          "subject": "disabled",
+          "day": "disabled",
+          "time": "disabled"
+        },
+        "preference_explanations": {
+          "subject": "Ranked match: 100% at first rank; lower ranks receive partial descriptive credit. Scoring is per offering.",
+          "day": "Subject blocks: one mismatch per requested day absent from the component. Otherwise one mismatch per offering with any day outside preferred days.",
+          "time": "Subject blocks: one mismatch for each requested start absent from the raw component blocks, independently of day. Otherwise one mismatch per component extending outside the general preferred window."
+        },
+        "hours": {
+          "monday": 0.0,
+          "tuesday": 1.5,
+          "wednesday": 0.0,
+          "thursday": 0.0,
+          "friday": 0.0,
+          "saturday": 0.0
+        },
+        "weekly_hours": 1.5,
+        "assignments": [
+          {
+            "day": "Tuesday",
+            "end": "11:30",
+            "faculty": "2",
+            "room": "Fictional lab",
+            "section": "FIC-B",
+            "start": "10:00",
+            "subject": "FIC102",
+            "type": "Laboratory"
+          }
+        ],
+        "preferred": null,
+        "unavailable_reason": null,
+        "average_deviation": -0.5
+      }
+    ],
+    "aggregates": {
+      "subject": {
+        "value": 100.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      },
+      "day": {
+        "value": 100.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      },
+      "time": {
+        "value": 100.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      },
+      "overall": {
+        "value": 100.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      }
+    },
+    "captured_faculty_average": 2.5,
+    "load_imbalance": 0.5,
+    "conflicts": 0,
+    "violations": 0,
+    "elapsed_ms": 0,
+    "parameters": {
+      "max_preparations": 2
+    },
+    "recorded_state": "COMPLETED",
+    "recorded_generation_count": 2,
+    "reference_limits": {
+      "preparations": 2,
+      "hard_units": 40
+    },
+    "metric_basis": "CAPTURED_CONTEXT",
+    "compatibility": {
+      "classification": "UNKNOWN_COMPATIBILITY",
+      "reason": "SNAPSHOT_PROVENANCE_INCONSISTENT"
+    },
+    "receipt": {
+      "status": "UNVERIFIED",
+      "record_state": "MISSING",
+      "reasons": [
+        "CONSUMPTION_NOT_ESTABLISHED",
+        "RECEIPT_MISSING"
+      ]
+    },
+    "academic_context": null,
+    "recorded_generations": [
+      0,
+      1
+    ],
+    "progress": [
+      {
+        "generation": 0,
+        "best": 10,
+        "average": 20,
+        "subject": 100.0,
+        "day": 100.0,
+        "time": 100.0,
+        "violations": 0,
+        "elapsed_ms": 0,
+        "subject_count": 1,
+        "day_count": 1,
+        "time_count": 1,
+        "faculty_total": 2
+      },
+      {
+        "generation": 1,
+        "best": 9,
+        "average": 19,
+        "subject": 100.0,
+        "day": 0.0,
+        "time": 100.0,
+        "violations": 0,
+        "elapsed_ms": 1000,
+        "subject_count": 1,
+        "day_count": 1,
+        "time_count": 1,
+        "faculty_total": 2
+      }
+    ],
+    "choices": [
+      {
+        "generation": 0,
+        "candidate": "generation_best",
+        "chromosome_id": "dfcebe9e13d7838b9268b9430597ac73170cadf572c4bba450362368e6f7a37a"
+      },
+      {
+        "generation": 1,
+        "candidate": "generation_best",
+        "chromosome_id": "c6ee3f8f3e4a424a17f14ddcc3f740b969f3d24bde1062c05fbd1230ae4b9efa"
+      }
+    ],
+    "window": {
+      "offset": 0,
+      "total": 2,
+      "older": false,
+      "newer": false
+    },
+    "issues": [],
+    "warnings": [
+      "Historical observations only; no CURRENT promotion or institutional approval.",
+      "Faculty averages describe the captured cohort; roster completeness is unverified.",
+      "Missing/disabled/non-applicable preferences are not zero satisfaction. Aggregate coverage is explicit.",
+      "Recorded violations cover validated snapshots, not rejected search candidates.",
+      "Chair access requires a verified run-to-department binding and is not enabled by this administrator interface."
+    ]
+  },
+  "second": {
+    "schema_version": 1,
+    "source": {
+      "run_id": "00000000-0000-4000-8000-000000000601",
+      "generation": 1,
+      "candidate": "generation_best",
+      "chromosome_id": "c6ee3f8f3e4a424a17f14ddcc3f740b969f3d24bde1062c05fbd1230ae4b9efa",
+      "input_fingerprint": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "engine_fingerprint": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+      "configuration_fingerprint": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    "fitness": 9,
+    "faculty": [
+      {
+        "faculty": "Faculty 1",
+        "teaching_units": 3,
+        "target": 24,
+        "target_deviation": -21,
+        "preparations": 1,
+        "satisfaction": {
+          "subject": 100.0,
+          "day": 0.0,
+          "time": 100.0
+        },
+        "preference_status": {
+          "subject": "satisfied",
+          "day": "unmet",
+          "time": "satisfied"
+        },
+        "preference_explanations": {
+          "subject": "Ranked match: 100% at first rank; lower ranks receive partial descriptive credit. Scoring is per offering.",
+          "day": "Subject blocks: one mismatch per requested day absent from the component. Otherwise one mismatch per offering with any day outside preferred days.",
+          "time": "Subject blocks: one mismatch for each requested start absent from the raw component blocks, independently of day. Otherwise one mismatch per component extending outside the general preferred window."
+        },
+        "hours": {
+          "monday": 0.0,
+          "tuesday": 1.0,
+          "wednesday": 0.0,
+          "thursday": 0.0,
+          "friday": 0.0,
+          "saturday": 0.0
+        },
+        "weekly_hours": 1.0,
+        "assignments": [
+          {
+            "day": "Tuesday",
+            "end": "10:00",
+            "faculty": "1",
+            "room": "Fictional room",
+            "section": "FIC-A",
+            "start": "09:00",
+            "subject": "FIC101",
+            "title": "Fictional computing",
+            "type": "Lecture"
+          }
+        ],
+        "preferred": {
+          "preferred_subjects": [
+            "FIC101"
+          ],
+          "preferred_days": [
+            "Monday"
+          ],
+          "preferred_start_time": "09:00",
+          "preferred_end_time": "10:00"
+        },
+        "unavailable_reason": null,
+        "average_deviation": 0.5
+      },
+      {
+        "faculty": "Faculty 2",
+        "teaching_units": 2,
+        "target": 24,
+        "target_deviation": -22,
+        "preparations": 1,
+        "satisfaction": {
+          "subject": null,
+          "day": null,
+          "time": null
+        },
+        "preference_status": {
+          "subject": "disabled",
+          "day": "disabled",
+          "time": "disabled"
+        },
+        "preference_explanations": {
+          "subject": "Ranked match: 100% at first rank; lower ranks receive partial descriptive credit. Scoring is per offering.",
+          "day": "Subject blocks: one mismatch per requested day absent from the component. Otherwise one mismatch per offering with any day outside preferred days.",
+          "time": "Subject blocks: one mismatch for each requested start absent from the raw component blocks, independently of day. Otherwise one mismatch per component extending outside the general preferred window."
+        },
+        "hours": {
+          "monday": 0.0,
+          "tuesday": 1.5,
+          "wednesday": 0.0,
+          "thursday": 0.0,
+          "friday": 0.0,
+          "saturday": 0.0
+        },
+        "weekly_hours": 1.5,
+        "assignments": [
+          {
+            "day": "Tuesday",
+            "end": "11:30",
+            "faculty": "2",
+            "room": "Fictional lab",
+            "section": "FIC-B",
+            "start": "10:00",
+            "subject": "FIC102",
+            "type": "Laboratory"
+          }
+        ],
+        "preferred": null,
+        "unavailable_reason": null,
+        "average_deviation": -0.5
+      }
+    ],
+    "aggregates": {
+      "subject": {
+        "value": 100.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      },
+      "day": {
+        "value": 0.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      },
+      "time": {
+        "value": 100.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      },
+      "overall": {
+        "value": 66.66666666666667,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      }
+    },
+    "captured_faculty_average": 2.5,
+    "load_imbalance": 0.5,
+    "conflicts": 0,
+    "violations": 0,
+    "elapsed_ms": 1000,
+    "parameters": {
+      "max_preparations": 2
+    },
+    "recorded_state": "COMPLETED",
+    "recorded_generation_count": 2,
+    "reference_limits": {
+      "preparations": 2,
+      "hard_units": 40
+    },
+    "metric_basis": "CAPTURED_CONTEXT",
+    "compatibility": {
+      "classification": "UNKNOWN_COMPATIBILITY",
+      "reason": "SCORING_CONTEXT_INCONSISTENT"
+    },
+    "receipt": {
+      "status": "UNVERIFIED",
+      "record_state": "MISSING",
+      "reasons": [
+        "CONSUMPTION_NOT_ESTABLISHED",
+        "RECEIPT_MISSING"
+      ]
+    },
+    "academic_context": null,
+    "recorded_generations": [
+      0,
+      1
+    ],
+    "progress": [
+      {
+        "generation": 0,
+        "best": 10,
+        "average": 20,
+        "subject": 100.0,
+        "day": 100.0,
+        "time": 100.0,
+        "violations": 0,
+        "elapsed_ms": 0,
+        "subject_count": 1,
+        "day_count": 1,
+        "time_count": 1,
+        "faculty_total": 2
+      },
+      {
+        "generation": 1,
+        "best": 9,
+        "average": 19,
+        "subject": 100.0,
+        "day": 0.0,
+        "time": 100.0,
+        "violations": 0,
+        "elapsed_ms": 1000,
+        "subject_count": 1,
+        "day_count": 1,
+        "time_count": 1,
+        "faculty_total": 2
+      }
+    ],
+    "choices": [
+      {
+        "generation": 0,
+        "candidate": "generation_best",
+        "chromosome_id": "dfcebe9e13d7838b9268b9430597ac73170cadf572c4bba450362368e6f7a37a"
+      },
+      {
+        "generation": 1,
+        "candidate": "generation_best",
+        "chromosome_id": "c6ee3f8f3e4a424a17f14ddcc3f740b969f3d24bde1062c05fbd1230ae4b9efa"
+      }
+    ],
+    "window": {
+      "offset": 0,
+      "total": 2,
+      "older": false,
+      "newer": false
+    },
+    "issues": [],
+    "warnings": [
+      "Historical observations only; no CURRENT promotion or institutional approval.",
+      "Faculty averages describe the captured cohort; roster completeness is unverified.",
+      "Missing/disabled/non-applicable preferences are not zero satisfaction. Aggregate coverage is explicit.",
+      "Recorded violations cover validated snapshots, not rejected search candidates.",
+      "Chair access requires a verified run-to-department binding and is not enabled by this administrator interface."
+    ]
+  },
+  "comparison": {
+    "schema_version": 1,
+    "run_id": "00000000-0000-4000-8000-000000000601",
+    "left": {
+      "run_id": "00000000-0000-4000-8000-000000000601",
+      "generation": 0,
+      "candidate": "generation_best",
+      "chromosome_id": "dfcebe9e13d7838b9268b9430597ac73170cadf572c4bba450362368e6f7a37a",
+      "input_fingerprint": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "engine_fingerprint": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+      "configuration_fingerprint": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    "right": {
+      "run_id": "00000000-0000-4000-8000-000000000601",
+      "generation": 1,
+      "candidate": "generation_best",
+      "chromosome_id": "c6ee3f8f3e4a424a17f14ddcc3f740b969f3d24bde1062c05fbd1230ae4b9efa",
+      "input_fingerprint": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "engine_fingerprint": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+      "configuration_fingerprint": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    "fitness": {
+      "before": 10,
+      "after": 9,
+      "change": -1
+    },
+    "load_imbalance": {
+      "before": 0.5,
+      "after": 0.5,
+      "change": 0.0
+    },
+    "violations": {
+      "before": 0,
+      "after": 0,
+      "change": 0
+    },
+    "faculty": [
+      {
+        "faculty": "Faculty 1",
+        "before": {
+          "faculty": "Faculty 1",
+          "teaching_units": 3,
+          "target": 24,
+          "target_deviation": -21,
+          "preparations": 1,
+          "satisfaction": {
+            "subject": 100.0,
+            "day": 100.0,
+            "time": 100.0
+          },
+          "preference_status": {
+            "subject": "satisfied",
+            "day": "satisfied",
+            "time": "satisfied"
+          },
+          "preference_explanations": {
+            "subject": "Ranked match: 100% at first rank; lower ranks receive partial descriptive credit. Scoring is per offering.",
+            "day": "Subject blocks: one mismatch per requested day absent from the component. Otherwise one mismatch per offering with any day outside preferred days.",
+            "time": "Subject blocks: one mismatch for each requested start absent from the raw component blocks, independently of day. Otherwise one mismatch per component extending outside the general preferred window."
+          },
+          "hours": {
+            "monday": 1.0,
+            "tuesday": 0.0,
+            "wednesday": 0.0,
+            "thursday": 0.0,
+            "friday": 0.0,
+            "saturday": 0.0
+          },
+          "weekly_hours": 1.0,
+          "assignments": [
+            {
+              "day": "Monday",
+              "end": "10:00",
+              "faculty": "1",
+              "room": "Fictional room",
+              "section": "FIC-A",
+              "start": "09:00",
+              "subject": "FIC101",
+              "title": "Fictional computing",
+              "type": "Lecture"
+            }
+          ],
+          "preferred": {
+            "preferred_subjects": [
+              "FIC101"
+            ],
+            "preferred_days": [
+              "Monday"
+            ],
+            "preferred_start_time": "09:00",
+            "preferred_end_time": "10:00"
+          },
+          "unavailable_reason": null,
+          "average_deviation": 0.5
+        },
+        "after": {
+          "faculty": "Faculty 1",
+          "teaching_units": 3,
+          "target": 24,
+          "target_deviation": -21,
+          "preparations": 1,
+          "satisfaction": {
+            "subject": 100.0,
+            "day": 0.0,
+            "time": 100.0
+          },
+          "preference_status": {
+            "subject": "satisfied",
+            "day": "unmet",
+            "time": "satisfied"
+          },
+          "preference_explanations": {
+            "subject": "Ranked match: 100% at first rank; lower ranks receive partial descriptive credit. Scoring is per offering.",
+            "day": "Subject blocks: one mismatch per requested day absent from the component. Otherwise one mismatch per offering with any day outside preferred days.",
+            "time": "Subject blocks: one mismatch for each requested start absent from the raw component blocks, independently of day. Otherwise one mismatch per component extending outside the general preferred window."
+          },
+          "hours": {
+            "monday": 0.0,
+            "tuesday": 1.0,
+            "wednesday": 0.0,
+            "thursday": 0.0,
+            "friday": 0.0,
+            "saturday": 0.0
+          },
+          "weekly_hours": 1.0,
+          "assignments": [
+            {
+              "day": "Tuesday",
+              "end": "10:00",
+              "faculty": "1",
+              "room": "Fictional room",
+              "section": "FIC-A",
+              "start": "09:00",
+              "subject": "FIC101",
+              "title": "Fictional computing",
+              "type": "Lecture"
+            }
+          ],
+          "preferred": {
+            "preferred_subjects": [
+              "FIC101"
+            ],
+            "preferred_days": [
+              "Monday"
+            ],
+            "preferred_start_time": "09:00",
+            "preferred_end_time": "10:00"
+          },
+          "unavailable_reason": null,
+          "average_deviation": 0.5
+        },
+        "changes": {
+          "teaching_units": 0,
+          "preparations": 0,
+          "average_deviation": 0.0,
+          "target_deviation": 0,
+          "weekly_hours": 0.0
+        },
+        "satisfaction_changes": {
+          "subject": 0.0,
+          "day": -100.0,
+          "time": 0.0
+        }
+      },
+      {
+        "faculty": "Faculty 2",
+        "before": {
+          "faculty": "Faculty 2",
+          "teaching_units": 2,
+          "target": 24,
+          "target_deviation": -22,
+          "preparations": 1,
+          "satisfaction": {
+            "subject": null,
+            "day": null,
+            "time": null
+          },
+          "preference_status": {
+            "subject": "disabled",
+            "day": "disabled",
+            "time": "disabled"
+          },
+          "preference_explanations": {
+            "subject": "Ranked match: 100% at first rank; lower ranks receive partial descriptive credit. Scoring is per offering.",
+            "day": "Subject blocks: one mismatch per requested day absent from the component. Otherwise one mismatch per offering with any day outside preferred days.",
+            "time": "Subject blocks: one mismatch for each requested start absent from the raw component blocks, independently of day. Otherwise one mismatch per component extending outside the general preferred window."
+          },
+          "hours": {
+            "monday": 0.0,
+            "tuesday": 1.5,
+            "wednesday": 0.0,
+            "thursday": 0.0,
+            "friday": 0.0,
+            "saturday": 0.0
+          },
+          "weekly_hours": 1.5,
+          "assignments": [
+            {
+              "day": "Tuesday",
+              "end": "11:30",
+              "faculty": "2",
+              "room": "Fictional lab",
+              "section": "FIC-B",
+              "start": "10:00",
+              "subject": "FIC102",
+              "type": "Laboratory"
+            }
+          ],
+          "preferred": null,
+          "unavailable_reason": null,
+          "average_deviation": -0.5
+        },
+        "after": {
+          "faculty": "Faculty 2",
+          "teaching_units": 2,
+          "target": 24,
+          "target_deviation": -22,
+          "preparations": 1,
+          "satisfaction": {
+            "subject": null,
+            "day": null,
+            "time": null
+          },
+          "preference_status": {
+            "subject": "disabled",
+            "day": "disabled",
+            "time": "disabled"
+          },
+          "preference_explanations": {
+            "subject": "Ranked match: 100% at first rank; lower ranks receive partial descriptive credit. Scoring is per offering.",
+            "day": "Subject blocks: one mismatch per requested day absent from the component. Otherwise one mismatch per offering with any day outside preferred days.",
+            "time": "Subject blocks: one mismatch for each requested start absent from the raw component blocks, independently of day. Otherwise one mismatch per component extending outside the general preferred window."
+          },
+          "hours": {
+            "monday": 0.0,
+            "tuesday": 1.5,
+            "wednesday": 0.0,
+            "thursday": 0.0,
+            "friday": 0.0,
+            "saturday": 0.0
+          },
+          "weekly_hours": 1.5,
+          "assignments": [
+            {
+              "day": "Tuesday",
+              "end": "11:30",
+              "faculty": "2",
+              "room": "Fictional lab",
+              "section": "FIC-B",
+              "start": "10:00",
+              "subject": "FIC102",
+              "type": "Laboratory"
+            }
+          ],
+          "preferred": null,
+          "unavailable_reason": null,
+          "average_deviation": -0.5
+        },
+        "changes": {
+          "teaching_units": 0,
+          "preparations": 0,
+          "average_deviation": 0.0,
+          "target_deviation": 0,
+          "weekly_hours": 0.0
+        },
+        "satisfaction_changes": {
+          "subject": null,
+          "day": null,
+          "time": null
+        }
+      }
+    ],
+    "academic_compatibility": "UNKNOWN_COMPATIBILITY",
+    "receipt": {
+      "status": "UNVERIFIED",
+      "record_state": "MISSING",
+      "reasons": [
+        "CONSUMPTION_NOT_ESTABLISHED",
+        "RECEIPT_MISSING"
+      ]
+    },
+    "explanation": "Right minus left. Lower fitness penalty is better; each satisfaction dimension must be inspected separately. This same-run recorded-context comparison does not establish institutional or CURRENT eligibility."
+  },
+  "empty": {
+    "schema_version": 1,
+    "source": {
+      "run_id": "00000000-0000-4000-8000-000000000601",
+      "generation": 0,
+      "candidate": "generation_best",
+      "chromosome_id": "6a05785dac4ebcd836980e995ab413a339e11b3023e9ab84ccad48513e1440f8",
+      "input_fingerprint": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "engine_fingerprint": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+      "configuration_fingerprint": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    "fitness": 10,
+    "faculty": [],
+    "aggregates": {
+      "subject": {
+        "value": null,
+        "count": 0,
+        "total": 0,
+        "contributors": []
+      },
+      "day": {
+        "value": null,
+        "count": 0,
+        "total": 0,
+        "contributors": []
+      },
+      "time": {
+        "value": null,
+        "count": 0,
+        "total": 0,
+        "contributors": []
+      },
+      "overall": {
+        "value": null,
+        "count": 0,
+        "total": 0,
+        "contributors": []
+      }
+    },
+    "captured_faculty_average": null,
+    "load_imbalance": null,
+    "conflicts": 0,
+    "violations": 0,
+    "elapsed_ms": 0,
+    "parameters": {
+      "max_preparations": 2
+    },
+    "recorded_state": "COMPLETED",
+    "recorded_generation_count": 1,
+    "reference_limits": {
+      "preparations": 2,
+      "hard_units": 40
+    },
+    "metric_basis": "CAPTURED_CONTEXT",
+    "compatibility": {
+      "classification": "UNKNOWN_COMPATIBILITY",
+      "reason": "SCORING_CONTEXT_INCONSISTENT"
+    },
+    "receipt": {
+      "status": "UNVERIFIED",
+      "record_state": "MISSING",
+      "reasons": [
+        "CONSUMPTION_NOT_ESTABLISHED",
+        "RECEIPT_MISSING"
+      ]
+    },
+    "academic_context": null,
+    "recorded_generations": [
+      0
+    ],
+    "progress": [
+      {
+        "generation": 0,
+        "best": 10,
+        "average": 20,
+        "subject": null,
+        "day": null,
+        "time": null,
+        "violations": 0,
+        "elapsed_ms": 0,
+        "subject_count": 0,
+        "day_count": 0,
+        "time_count": 0,
+        "faculty_total": 0
+      }
+    ],
+    "choices": [
+      {
+        "generation": 0,
+        "candidate": "generation_best",
+        "chromosome_id": "6a05785dac4ebcd836980e995ab413a339e11b3023e9ab84ccad48513e1440f8"
+      }
+    ],
+    "window": {
+      "offset": 0,
+      "total": 1,
+      "older": false,
+      "newer": false
+    },
+    "issues": [],
+    "warnings": [
+      "Historical observations only; no CURRENT promotion or institutional approval.",
+      "Faculty averages describe the captured cohort; roster completeness is unverified.",
+      "Missing/disabled/non-applicable preferences are not zero satisfaction. Aggregate coverage is explicit.",
+      "Recorded violations cover validated snapshots, not rejected search candidates.",
+      "Chair access requires a verified run-to-department binding and is not enabled by this administrator interface."
+    ]
+  },
+  "legacy": {
+    "schema_version": 1,
+    "source": {
+      "run_id": "00000000-0000-4000-8000-000000000601",
+      "generation": 1,
+      "candidate": "generation_best",
+      "chromosome_id": "c6ee3f8f3e4a424a17f14ddcc3f740b969f3d24bde1062c05fbd1230ae4b9efa",
+      "input_fingerprint": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "engine_fingerprint": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+      "configuration_fingerprint": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    "fitness": 9,
+    "faculty": [
+      {
+        "faculty": "Faculty 1",
+        "teaching_units": 3,
+        "target": 24,
+        "target_deviation": -21,
+        "preparations": 1,
+        "satisfaction": {
+          "subject": null,
+          "day": null,
+          "time": null
+        },
+        "preference_status": {
+          "subject": "unavailable",
+          "day": "unavailable",
+          "time": "unavailable"
+        },
+        "preference_explanations": {
+          "subject": "Not captured",
+          "day": "Not captured",
+          "time": "Not captured"
+        },
+        "hours": {
+          "monday": 0.0,
+          "tuesday": 1.0,
+          "wednesday": 0.0,
+          "thursday": 0.0,
+          "friday": 0.0,
+          "saturday": 0.0
+        },
+        "weekly_hours": 1.0,
+        "assignments": [
+          {
+            "day": "Tuesday",
+            "end": "10:00",
+            "faculty": "1",
+            "room": "Fictional room",
+            "section": "FIC-A",
+            "start": "09:00",
+            "subject": "FIC101",
+            "title": "Fictional computing",
+            "type": "Lecture"
+          }
+        ],
+        "preferred": null,
+        "unavailable_reason": "Captured engine differs; stored indicators are shown where available, without reinterpreting preferences under current rules.",
+        "average_deviation": 0.5
+      },
+      {
+        "faculty": "Faculty 2",
+        "teaching_units": 2,
+        "target": 24,
+        "target_deviation": -22,
+        "preparations": 1,
+        "satisfaction": {
+          "subject": null,
+          "day": null,
+          "time": null
+        },
+        "preference_status": {
+          "subject": "unavailable",
+          "day": "unavailable",
+          "time": "unavailable"
+        },
+        "preference_explanations": {
+          "subject": "Not captured",
+          "day": "Not captured",
+          "time": "Not captured"
+        },
+        "hours": {
+          "monday": 0.0,
+          "tuesday": 1.5,
+          "wednesday": 0.0,
+          "thursday": 0.0,
+          "friday": 0.0,
+          "saturday": 0.0
+        },
+        "weekly_hours": 1.5,
+        "assignments": [
+          {
+            "day": "Tuesday",
+            "end": "11:30",
+            "faculty": "2",
+            "room": "Fictional lab",
+            "section": "FIC-B",
+            "start": "10:00",
+            "subject": "FIC102",
+            "type": "Laboratory"
+          }
+        ],
+        "preferred": null,
+        "unavailable_reason": "Captured engine differs; stored indicators are shown where available, without reinterpreting preferences under current rules.",
+        "average_deviation": -0.5
+      }
+    ],
+    "aggregates": {
+      "subject": {
+        "value": null,
+        "count": 0,
+        "total": 2,
+        "contributors": []
+      },
+      "day": {
+        "value": null,
+        "count": 0,
+        "total": 2,
+        "contributors": []
+      },
+      "time": {
+        "value": null,
+        "count": 0,
+        "total": 2,
+        "contributors": []
+      },
+      "overall": {
+        "value": null,
+        "count": 0,
+        "total": 2,
+        "contributors": []
+      }
+    },
+    "captured_faculty_average": 2.5,
+    "load_imbalance": 0.5,
+    "conflicts": 0,
+    "violations": 0,
+    "elapsed_ms": 1000,
+    "parameters": {},
+    "recorded_state": "COMPLETED",
+    "recorded_generation_count": 2,
+    "reference_limits": {
+      "preparations": null,
+      "hard_units": null
+    },
+    "metric_basis": "RECORDED_INDICATORS_OR_UNAVAILABLE",
+    "compatibility": {
+      "classification": "UNKNOWN_COMPATIBILITY",
+      "reason": "FITNESS_POLICY_NOT_CAPTURED"
+    },
+    "receipt": {
+      "status": "UNVERIFIED",
+      "record_state": "MISSING",
+      "reasons": [
+        "CONSUMPTION_NOT_ESTABLISHED",
+        "RECEIPT_MISSING"
+      ]
+    },
+    "academic_context": null,
+    "recorded_generations": [
+      0,
+      1
+    ],
+    "progress": [
+      {
+        "generation": 0,
+        "best": null,
+        "average": null,
+        "subject": null,
+        "day": null,
+        "time": null,
+        "violations": null,
+        "elapsed_ms": null,
+        "subject_count": null,
+        "day_count": null,
+        "time_count": null,
+        "faculty_total": null
+      },
+      {
+        "generation": 1,
+        "best": null,
+        "average": null,
+        "subject": null,
+        "day": null,
+        "time": null,
+        "violations": null,
+        "elapsed_ms": null,
+        "subject_count": null,
+        "day_count": null,
+        "time_count": null,
+        "faculty_total": null
+      }
+    ],
+    "choices": [
+      {
+        "generation": 1,
+        "candidate": "generation_best",
+        "chromosome_id": "c6ee3f8f3e4a424a17f14ddcc3f740b969f3d24bde1062c05fbd1230ae4b9efa"
+      }
+    ],
+    "window": {
+      "offset": 0,
+      "total": 2,
+      "older": false,
+      "newer": false
+    },
+    "issues": [
+      {
+        "generation": 0,
+        "code": "OBSERVATION_UNAVAILABLE_OR_INCOMPATIBLE"
+      },
+      {
+        "generation": 1,
+        "code": "OBSERVATION_UNAVAILABLE_OR_INCOMPATIBLE"
+      }
+    ],
+    "warnings": [
+      "Historical observations only; no CURRENT promotion or institutional approval.",
+      "Faculty averages describe the captured cohort; roster completeness is unverified.",
+      "Missing/disabled/non-applicable preferences are not zero satisfaction. Aggregate coverage is explicit.",
+      "Recorded violations cover validated snapshots, not rejected search candidates.",
+      "Chair access requires a verified run-to-department binding and is not enabled by this administrator interface."
+    ]
+  },
+  "one": {
+    "schema_version": 1,
+    "source": {
+      "run_id": "00000000-0000-4000-8000-000000000601",
+      "generation": 0,
+      "candidate": "generation_best",
+      "chromosome_id": "dfcebe9e13d7838b9268b9430597ac73170cadf572c4bba450362368e6f7a37a",
+      "input_fingerprint": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "engine_fingerprint": "5dccfbbad87eb42de4bc4fdac2c7a468d857b485e8d6b2149f1f29a43f2ef0b1",
+      "configuration_fingerprint": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    "fitness": 10,
+    "faculty": [
+      {
+        "faculty": "Faculty 1",
+        "teaching_units": 3,
+        "target": 24,
+        "target_deviation": -21,
+        "preparations": 1,
+        "satisfaction": {
+          "subject": 100.0,
+          "day": 100.0,
+          "time": 100.0
+        },
+        "preference_status": {
+          "subject": "satisfied",
+          "day": "satisfied",
+          "time": "satisfied"
+        },
+        "preference_explanations": {
+          "subject": "Ranked match: 100% at first rank; lower ranks receive partial descriptive credit. Scoring is per offering.",
+          "day": "Subject blocks: one mismatch per requested day absent from the component. Otherwise one mismatch per offering with any day outside preferred days.",
+          "time": "Subject blocks: one mismatch for each requested start absent from the raw component blocks, independently of day. Otherwise one mismatch per component extending outside the general preferred window."
+        },
+        "hours": {
+          "monday": 1.0,
+          "tuesday": 0.0,
+          "wednesday": 0.0,
+          "thursday": 0.0,
+          "friday": 0.0,
+          "saturday": 0.0
+        },
+        "weekly_hours": 1.0,
+        "assignments": [
+          {
+            "day": "Monday",
+            "end": "10:00",
+            "faculty": "1",
+            "room": "Fictional room",
+            "section": "FIC-A",
+            "start": "09:00",
+            "subject": "FIC101",
+            "title": "Fictional computing",
+            "type": "Lecture"
+          }
+        ],
+        "preferred": {
+          "preferred_subjects": [
+            "FIC101"
+          ],
+          "preferred_days": [
+            "Monday"
+          ],
+          "preferred_start_time": "09:00",
+          "preferred_end_time": "10:00"
+        },
+        "unavailable_reason": null,
+        "average_deviation": 0.5
+      },
+      {
+        "faculty": "Faculty 2",
+        "teaching_units": 2,
+        "target": 24,
+        "target_deviation": -22,
+        "preparations": 1,
+        "satisfaction": {
+          "subject": null,
+          "day": null,
+          "time": null
+        },
+        "preference_status": {
+          "subject": "disabled",
+          "day": "disabled",
+          "time": "disabled"
+        },
+        "preference_explanations": {
+          "subject": "Ranked match: 100% at first rank; lower ranks receive partial descriptive credit. Scoring is per offering.",
+          "day": "Subject blocks: one mismatch per requested day absent from the component. Otherwise one mismatch per offering with any day outside preferred days.",
+          "time": "Subject blocks: one mismatch for each requested start absent from the raw component blocks, independently of day. Otherwise one mismatch per component extending outside the general preferred window."
+        },
+        "hours": {
+          "monday": 0.0,
+          "tuesday": 1.5,
+          "wednesday": 0.0,
+          "thursday": 0.0,
+          "friday": 0.0,
+          "saturday": 0.0
+        },
+        "weekly_hours": 1.5,
+        "assignments": [
+          {
+            "day": "Tuesday",
+            "end": "11:30",
+            "faculty": "2",
+            "room": "Fictional lab",
+            "section": "FIC-B",
+            "start": "10:00",
+            "subject": "FIC102",
+            "type": "Laboratory"
+          }
+        ],
+        "preferred": null,
+        "unavailable_reason": null,
+        "average_deviation": -0.5
+      }
+    ],
+    "aggregates": {
+      "subject": {
+        "value": 100.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      },
+      "day": {
+        "value": 100.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      },
+      "time": {
+        "value": 100.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      },
+      "overall": {
+        "value": 100.0,
+        "count": 1,
+        "total": 2,
+        "contributors": [
+          "Faculty 1"
+        ]
+      }
+    },
+    "captured_faculty_average": 2.5,
+    "load_imbalance": 0.5,
+    "conflicts": 0,
+    "violations": 0,
+    "elapsed_ms": 0,
+    "parameters": {
+      "max_preparations": 2
+    },
+    "recorded_state": "COMPLETED",
+    "recorded_generation_count": 1,
+    "reference_limits": {
+      "preparations": 2,
+      "hard_units": 40
+    },
+    "metric_basis": "CAPTURED_CONTEXT",
+    "compatibility": {
+      "classification": "UNKNOWN_COMPATIBILITY",
+      "reason": "SCORING_CONTEXT_INCONSISTENT"
+    },
+    "receipt": {
+      "status": "UNVERIFIED",
+      "record_state": "MISSING",
+      "reasons": [
+        "CONSUMPTION_NOT_ESTABLISHED",
+        "RECEIPT_MISSING"
+      ]
+    },
+    "academic_context": null,
+    "recorded_generations": [
+      0
+    ],
+    "progress": [
+      {
+        "generation": 0,
+        "best": 10,
+        "average": 20,
+        "subject": 100.0,
+        "day": 100.0,
+        "time": 100.0,
+        "violations": 0,
+        "elapsed_ms": 0,
+        "subject_count": 1,
+        "day_count": 1,
+        "time_count": 1,
+        "faculty_total": 2
+      }
+    ],
+    "choices": [
+      {
+        "generation": 0,
+        "candidate": "generation_best",
+        "chromosome_id": "dfcebe9e13d7838b9268b9430597ac73170cadf572c4bba450362368e6f7a37a"
+      }
+    ],
+    "window": {
+      "offset": 0,
+      "total": 1,
+      "older": false,
+      "newer": false
+    },
+    "issues": [],
+    "warnings": [
+      "Historical observations only; no CURRENT promotion or institutional approval.",
+      "Faculty averages describe the captured cohort; roster completeness is unverified.",
+      "Missing/disabled/non-applicable preferences are not zero satisfaction. Aggregate coverage is explicit.",
+      "Recorded violations cover validated snapshots, not rejected search candidates.",
+      "Chair access requires a verified run-to-department binding and is not enabled by this administrator interface."
+    ]
+  }
+}

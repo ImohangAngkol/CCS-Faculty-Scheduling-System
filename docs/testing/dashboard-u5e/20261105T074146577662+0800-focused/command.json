@@ -1,0 +1,18 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/advancedAnalysis.test.mjs"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-05T07:41:46.578434+08:00",
+  "ended_at": "2026-11-05T07:41:47.061034+08:00",
+  "elapsed_seconds": 0.48260250000748783,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "✔ seven graph inputs preserve cohort, units, contact hours and missing preferences (2.2572ms)\n✔ heatmap percentages are real applicable values; disabled is not zero (0.7351ms)\n✔ zero observations survive and optimization history does not infer percentages from fitness (16.0562ms)\n✔ empty cohort and incomplete historical data remain unavailable (0.4772ms)\n✔ one distinct chromosome is not a fabricated comparison (0.2797ms)\n✔ progress coverage rejects impossible contributors and nonpercentage satisfaction (0.5024ms)\n✔ malformed run fails validation (0.2153ms)\n✔ malformed generation fails validation (0.1417ms)\n✔ malformed candidate fails validation (0.1394ms)\n✔ malformed chromosome fails validation (0.1846ms)\n✔ malformed receipt fails validation (0.1618ms)\n✔ malformed percentage fails validation (0.1397ms)\n✔ malformed average fails validation (0.1732ms)\n✔ malformed hours fails validation (0.118ms)\n✔ coherent comparison preserves negative and unchanged deltas (0.553ms)\n✔ comparison rejects mismatched fingerprints and altered satisfaction changes (0.5408ms)\n✔ interface supplies six original plots, hours, three tabs, details and honest limits (9.9389ms)\nℹ tests 17\nℹ suites 0\nℹ pass 17\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 411.9398\n",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}
