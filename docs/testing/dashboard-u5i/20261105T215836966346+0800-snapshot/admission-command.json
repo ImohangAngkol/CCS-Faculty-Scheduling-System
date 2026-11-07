@@ -1,0 +1,23 @@
+{
+  "selection": "admission",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_trusted_runs.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-lgj1plwn\\pytest-admission"
+  ],
+  "started_at": "2026-11-05T21:58:36.967397+08:00",
+  "ended_at": "2026-11-05T22:00:23.000394+08:00",
+  "elapsed_seconds": 106.03308179997839,
+  "exit_code": 0,
+  "stdout": ".....................................                                    [100%]\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n============================ slowest 10 durations =============================\n42.35s call     tests/test_trusted_runs.py::test_actual_optimizer_durable_pause_restart_resume_rng_parity\n6.37s call     tests/test_trusted_runs.py::test_fresh_process_can_restore_checkpoint_and_finish\n4.30s call     tests/test_trusted_runs.py::test_corruption_lineage_and_cross_run_reuse_fail_closed\n2.70s call     tests/test_trusted_runs.py::test_expired_execution_lease_fences_old_executor\n2.58s call     tests/test_trusted_runs.py::test_http_protected_versioned_routes_and_real_store\n2.43s call     tests/test_trusted_runs.py::test_changed_external_source_never_replaces_frozen_bundle\n2.26s call     tests/test_trusted_runs.py::test_process_death_rolls_back_checkpoint_tip_together\n1.62s call     tests/test_trusted_runs.py::test_stale_bindings_cannot_claim_or_resume[config_hash-0000000000000000000000000000000000000000000000000000000000000000]\n1.60s call     tests/test_trusted_runs.py::test_stale_bindings_cannot_claim_or_resume[optimizer-0000000000000000000000000000000000000000000000000000000000000000]\n1.43s call     tests/test_trusted_runs.py::test_revocation_policy_change_and_action_denial\n37 passed, 2 warnings in 104.12s (0:01:44)\n",
+  "stderr": "",
+  "scope": "HEAD plus U5H-only source; fictional import tables/D10 models. New versioned internal entry consumes the bundle; unchanged legacy entry remains separate. Technical consumption is not institutional authorization. No database access."
+}

@@ -1,0 +1,53 @@
+{
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "branch": "main",
+  "baseline_paths": 3730,
+  "prior_u5h_hashes_verified": 76,
+  "prior_milestones": [
+    {
+      "milestone": "dashboard-u5d",
+      "inventory": 24,
+      "committed": false
+    },
+    {
+      "milestone": "dashboard-u5e/r2",
+      "inventory": 268,
+      "committed": false
+    },
+    {
+      "milestone": "dashboard-u5f",
+      "inventory": 80,
+      "committed": false
+    },
+    {
+      "milestone": "dashboard-u5g",
+      "inventory": 34,
+      "committed": false
+    },
+    {
+      "milestone": "dashboard-u5h",
+      "inventory": 77,
+      "committed": false
+    }
+  ],
+  "preexisting_tracked_modifications": [
+    ".gitignore",
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "backend/main.py",
+    "backend/routers/ga_evaluation.py",
+    "backend/routers/genetic_algorithm.py",
+    "backend/tests/conftest.py",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "production_authority": "UNAVAILABLE",
+  "production_store": "UNCONFIGURED"
+}

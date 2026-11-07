@@ -1,0 +1,17 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/ga/OptimizationMode.tsx",
+    "src/services/continuousOptimization.ts",
+    "src/pages/admin/GenerateSchedule.tsx"
+  ],
+  "started_at": "2026-11-05T21:57:00.135754+08:00",
+  "ended_at": "2026-11-05T21:57:21.656564+08:00",
+  "elapsed_seconds": 21.520849599968642,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only; no PostgreSQL. Browser HTTP intercepted, not live GA acceptance. Legacy APIs remain unverified; the new versioned internal entry qualifies technical bundle consumption only, without institutional source authority."
+}

@@ -1,0 +1,582 @@
+{
+  "milestone": "U5I",
+  "reviewed_at": "2026-11-05T22:13:18.515909+08:00",
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "status": "ISOLATED_FOUNDATION_VERIFIED; PRODUCTION_AUTHORITY_AND_STORAGE_BLOCKED",
+  "exact_changed_and_new_file_inventory": [
+    "backend/main.py",
+    "backend/routers/ga_trusted_runs.py",
+    "backend/services/ga_owned_store.py",
+    "backend/services/ga_run_authority.py",
+    "backend/services/ga_trusted_runs.py",
+    "backend/tests/test_trusted_runs.py",
+    "backend/tests/trusted_run_support.py",
+    "docs/dashboard-u5i-trusted-run-admission.md",
+    "docs/testing/dashboard-u5i/20261105T215436700023+0800-snapshot/admission-command.json",
+    "docs/testing/dashboard-u5i/20261105T215436700023+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T215700084300+0800-snapshot/admission-command.json",
+    "docs/testing/dashboard-u5i/20261105T215700084300+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T215700096101+0800-frontend/command.json",
+    "docs/testing/dashboard-u5i/20261105T215700127957+0800-build/command.json",
+    "docs/testing/dashboard-u5i/20261105T215700135191+0800-lint/command.json",
+    "docs/testing/dashboard-u5i/20261105T215836966346+0800-snapshot/admission-command.json",
+    "docs/testing/dashboard-u5i/20261105T215836966346+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T215858948721+0800-snapshot/receipts-command.json",
+    "docs/testing/dashboard-u5i/20261105T215858948721+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T215911815336+0800-snapshot/backend-regressions-command.json",
+    "docs/testing/dashboard-u5i/20261105T215911815336+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T220054604080+0800-bundle/command.json",
+    "docs/testing/dashboard-u5i/20261105T220126078390+0800-snapshot/consumption-command.json",
+    "docs/testing/dashboard-u5i/20261105T220126078390+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B01-default.png",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B07-contract.png",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B10-fixed-paused.png",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B12-fixed-stopped.png",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B16-mobile.png",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/command.json",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/dependency-closure.json",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/fresh-process.json",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/nonzero-parity.json",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/parity-0-0.json",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/parity-1-0.json",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/parity-1-1.json",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/parity-command.json",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T220343870340+0800-snapshot/admission-command.json",
+    "docs/testing/dashboard-u5i/20261105T220343870340+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T220434288018+0800-snapshot/legacy-command.json",
+    "docs/testing/dashboard-u5i/20261105T220434288018+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T220448957595+0800-snapshot/bundle-tests-command.json",
+    "docs/testing/dashboard-u5i/20261105T220448957595+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T220502728399+0800-snapshot/analysis-command.json",
+    "docs/testing/dashboard-u5i/20261105T220502728399+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T220516633833+0800-snapshot/readiness-command.json",
+    "docs/testing/dashboard-u5i/20261105T220516633833+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T220531158944+0800-snapshot/receipt-isolation-command.json",
+    "docs/testing/dashboard-u5i/20261105T220531158944+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T220607163649+0800-receipt-path-probe.json",
+    "docs/testing/dashboard-u5i/20261105T220814230515+0800-snapshot/admission-command.json",
+    "docs/testing/dashboard-u5i/20261105T220814230515+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5i/20261105T220944316832+0800-integrity/command.json",
+    "docs/testing/dashboard-u5i/attempt-notes.json",
+    "docs/testing/dashboard-u5i/audit_evidence.py",
+    "docs/testing/dashboard-u5i/checkpoint_snapshot.py",
+    "docs/testing/dashboard-u5i/entry-review.json",
+    "docs/testing/dashboard-u5i/entry/main.py",
+    "docs/testing/dashboard-u5i/investigate_receipt_race.py",
+    "docs/testing/dashboard-u5i/manifest.json",
+    "docs/testing/dashboard-u5i/preservation-baseline.json",
+    "docs/testing/dashboard-u5i/run_checks.py",
+    "docs/testing/dashboard-u5i/screenshot-review.json",
+    "docs/testing/dashboard-u5i/staging-plan.json"
+  ],
+  "modified_existing": [
+    "backend/main.py"
+  ],
+  "new_files": 66,
+  "baseline_paths": 3730,
+  "unchanged_baseline_paths": 3729,
+  "academic_files_preserved": 23,
+  "protected_json_unchanged": true,
+  "git_index_unchanged": true,
+  "main_other_bytes_preserved": true,
+  "prior_u5h_hashes_verified": 76,
+  "selected_test_proofs": [
+    {
+      "role": "admission",
+      "artifact": "docs/testing/dashboard-u5i/20261105T220814230515+0800-snapshot/admission-command.json",
+      "tests": 50
+    },
+    {
+      "role": "consumption",
+      "artifact": "docs/testing/dashboard-u5i/20261105T220126078390+0800-snapshot/consumption-command.json",
+      "tests": 39
+    },
+    {
+      "role": "parity",
+      "artifact": "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/parity-command.json",
+      "tests": 5
+    },
+    {
+      "role": "legacy",
+      "artifact": "docs/testing/dashboard-u5i/20261105T220434288018+0800-snapshot/legacy-command.json",
+      "tests": 10
+    },
+    {
+      "role": "bundle-tests",
+      "artifact": "docs/testing/dashboard-u5i/20261105T220448957595+0800-snapshot/bundle-tests-command.json",
+      "tests": 32
+    },
+    {
+      "role": "receipts",
+      "artifact": "docs/testing/dashboard-u5i/20261105T215858948721+0800-snapshot/receipts-command.json",
+      "tests": 36
+    },
+    {
+      "role": "receipt-isolation",
+      "artifact": "docs/testing/dashboard-u5i/20261105T220531158944+0800-snapshot/receipt-isolation-command.json",
+      "tests": 1
+    },
+    {
+      "role": "analysis",
+      "artifact": "docs/testing/dashboard-u5i/20261105T220502728399+0800-snapshot/analysis-command.json",
+      "tests": 20
+    },
+    {
+      "role": "readiness",
+      "artifact": "docs/testing/dashboard-u5i/20261105T220516633833+0800-snapshot/readiness-command.json",
+      "tests": 20
+    },
+    {
+      "role": "backend-regressions",
+      "artifact": "docs/testing/dashboard-u5i/20261105T215911815336+0800-snapshot/backend-regressions-command.json",
+      "tests": 99
+    }
+  ],
+  "unique_python_tests": 311,
+  "frontend_contracts": 210,
+  "browser_scenarios": 16,
+  "browser_test_runner_counts": 17,
+  "browser_scope": "Real Edge with fictional intercepted HTTP; not live optimizer authorization. New U5I HTTP is tested with real session/CSRF/SQLite and owned loopback; no U5I browser UI added.",
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T215436700023+0800-snapshot/admission-command.json",
+      "selection": "admission",
+      "exit_code": 1,
+      "counts": {
+        "warnings": 2,
+        "errors": 37
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T215700084300+0800-snapshot/admission-command.json",
+      "selection": "admission",
+      "exit_code": 1,
+      "counts": {
+        "warnings": 2,
+        "errors": 37
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T215700096101+0800-frontend/command.json",
+      "selection": "frontend",
+      "exit_code": 0,
+      "counts": {
+        "tests": 210,
+        "pass": 210,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T215700127957+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T215700135191+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T215836966346+0800-snapshot/admission-command.json",
+      "selection": "admission",
+      "exit_code": 0,
+      "counts": {
+        "passed": 37,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T215858948721+0800-snapshot/receipts-command.json",
+      "selection": "receipts",
+      "exit_code": 0,
+      "counts": {
+        "passed": 36,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T215911815336+0800-snapshot/backend-regressions-command.json",
+      "selection": "backend-regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 99,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220054604080+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220126078390+0800-snapshot/consumption-command.json",
+      "selection": "consumption",
+      "exit_code": 0,
+      "counts": {
+        "passed": 39
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/parity-command.json",
+      "selection": "parity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 5
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220343870340+0800-snapshot/admission-command.json",
+      "selection": "admission",
+      "exit_code": 0,
+      "counts": {
+        "passed": 45,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220434288018+0800-snapshot/legacy-command.json",
+      "selection": "legacy",
+      "exit_code": 0,
+      "counts": {
+        "passed": 10,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220448957595+0800-snapshot/bundle-tests-command.json",
+      "selection": "bundle-tests",
+      "exit_code": 0,
+      "counts": {
+        "passed": 32
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220502728399+0800-snapshot/analysis-command.json",
+      "selection": "analysis",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220516633833+0800-snapshot/readiness-command.json",
+      "selection": "readiness",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220531158944+0800-snapshot/receipt-isolation-command.json",
+      "selection": "receipt-isolation",
+      "exit_code": 0,
+      "counts": {
+        "passed": 1,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220814230515+0800-snapshot/admission-command.json",
+      "selection": "admission",
+      "exit_code": 0,
+      "counts": {
+        "passed": 50,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5i/20261105T220944316832+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 0,
+      "counts": {}
+    }
+  ],
+  "python_source_compilation": true,
+  "png_integrity": {
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B01-default.png": [
+      "IHDR",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IEND"
+    ],
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B02-blocked.png": [
+      "IHDR",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IEND"
+    ],
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B07-contract.png": [
+      "IHDR",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IEND"
+    ],
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B10-fixed-paused.png": [
+      "IHDR",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IEND"
+    ],
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B12-fixed-stopped.png": [
+      "IHDR",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IEND"
+    ],
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B16-mobile.png": [
+      "IHDR",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IDAT",
+      "IEND"
+    ]
+  },
+  "privacy": "PASS: textual complete/partial receipt, credentials and key-pattern scan; fictional source snapshots; reviewed screenshots without embedded text/EXIF metadata.",
+  "whitespace": "PASS",
+  "no_postgresql_operations": true,
+  "production_authority": "BLOCKED",
+  "continuous_worker": false,
+  "outstanding": [
+    "Institutional scoped optimization issuer and source catalog not configured",
+    "Production storage/lifecycle/retention not installed",
+    "Historical U5D concurrency root cause remains unconfirmed",
+    "No live PostgreSQL acceptance",
+    "No continuous worker or new frontend"
+  ],
+  "artifact_sha256": {
+    "backend/routers/ga_trusted_runs.py": "1f6fa4e73a3f3b8f8e549c71041674819ffde002a20496c99529b1ba6b53de32",
+    "backend/services/ga_owned_store.py": "b4005daf99cff78db139debe97c286c1e6afa309cf0c617ee5ed0f5331dac75f",
+    "backend/services/ga_run_authority.py": "d6e6d950bd4a8803ab0c319a322dad8b7dc846146c6de5c3ce55e0899c77e3ff",
+    "backend/services/ga_trusted_runs.py": "cc5f41a9c7bd877d212b373b7dcc6d6d0430940d2cb6a294c3d311f9a76acd1e",
+    "backend/tests/test_trusted_runs.py": "4acd4c93347b42c7ed32a8d8c1461c258bbac0cfb7ce0b41a4e3de43e46d8cc4",
+    "backend/tests/trusted_run_support.py": "985a26a68d79d0659ce976ad1d49f1a4dbbfaed8d538c625cfa85e2b5781a3bb",
+    "docs/dashboard-u5i-trusted-run-admission.md": "ff7e541b2cd8e9bc2edc18c0f876b1a51e92d179857e592f56140b2f40ec923c",
+    "docs/testing/dashboard-u5i/20261105T215436700023+0800-snapshot/admission-command.json": "6d6ba6c3920819287befb12be8094a72971e88b3fbc17370cd42443a5c3272a3",
+    "docs/testing/dashboard-u5i/20261105T215436700023+0800-snapshot/snapshot-proof.json": "e60e6e8a25f43d0650f60e88b09022c6052023cb64ca5088ed1c7aecf802fdc2",
+    "docs/testing/dashboard-u5i/20261105T215700084300+0800-snapshot/admission-command.json": "feeda45a85f1a4abf3438d06de6b2d2c40516377c7c682fc5a7d72571de7abe6",
+    "docs/testing/dashboard-u5i/20261105T215700084300+0800-snapshot/snapshot-proof.json": "ceb8b73d24bf7b2df4a2bde814f8ab9d676d26b4d583c26c0db3cd19b2e26c2f",
+    "docs/testing/dashboard-u5i/20261105T215700096101+0800-frontend/command.json": "0ef665d1fa5a3ee4f08b26e3b9badcdaeaf84d241ecdd62edc15a0e9991ad523",
+    "docs/testing/dashboard-u5i/20261105T215700127957+0800-build/command.json": "ee0cf826577d4883579446f725817aeed7a1a22c08d6169bfb902afe7fe8313d",
+    "docs/testing/dashboard-u5i/20261105T215700135191+0800-lint/command.json": "d02f9fc20377a7cc7ad1928753e50ee35ed8c7aecd7b776d35ce65a80f6103bb",
+    "docs/testing/dashboard-u5i/20261105T215836966346+0800-snapshot/admission-command.json": "1233a0775c5a3ea43bd4cccf12739b6c845059df96e4bb961e8b1824cc851547",
+    "docs/testing/dashboard-u5i/20261105T215836966346+0800-snapshot/snapshot-proof.json": "2b476959204b5c3d7b4b5203d9ced98dc37f695cb2d0ad86efdd8ac99455c1a8",
+    "docs/testing/dashboard-u5i/20261105T215858948721+0800-snapshot/receipts-command.json": "0b57000a718267e0083355a07c083b4be4e60d904935b2e7256df096ef4949da",
+    "docs/testing/dashboard-u5i/20261105T215858948721+0800-snapshot/snapshot-proof.json": "a58b399fe60ecae0e820be6bdde76dbbee337482a1509c6c6d24b5f76523d178",
+    "docs/testing/dashboard-u5i/20261105T215911815336+0800-snapshot/backend-regressions-command.json": "d316bb375c4eaa64da7ed129b4645b0b115daf99e4d58018f6a15609bfd6773c",
+    "docs/testing/dashboard-u5i/20261105T215911815336+0800-snapshot/snapshot-proof.json": "303a6f90cc392f1675c25aa38416ca75b8d7063d55c7e8de626083406eff800e",
+    "docs/testing/dashboard-u5i/20261105T220054604080+0800-bundle/command.json": "8418b1732f83d5ae4502881e2ba7a48cfafc10f59c86308880881b4bd37cfe23",
+    "docs/testing/dashboard-u5i/20261105T220126078390+0800-snapshot/consumption-command.json": "a9bedc1e90dfb147fd336c14b8cf246e37aebc64ec537e951e9b8827eb1c3c1b",
+    "docs/testing/dashboard-u5i/20261105T220126078390+0800-snapshot/snapshot-proof.json": "21a2b4f15a957598b88ff6857d30d80a4c8912a95be0212fb11f593b9ce9a81d",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B01-default.png": "5293c1a9167cfe7a49eb44ac53947b200e0e8ab4053a954651c71c373bd39d62",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B02-blocked.png": "fe149c4d0d12923ae4e2f680efbbfa740e3f3fd87f790ad41289a20aa835d940",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B07-contract.png": "b11713cfe084b86e16e2a1d3145ce9c1ed5d248d112d589233a19268f48c17b5",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B10-fixed-paused.png": "8ff7c957cb0ef608142c11f0a4261ad60572d645cd035d01809d7a2e955a8b5b",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B12-fixed-stopped.png": "4f6e4a6222607107bf1c304a97f6cd9fe615ab4d6c1d8e55c5febceb145347bd",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/U5F-B16-mobile.png": "214bc6911a7ed708c229721fd4288db67cb1c6c074ef3d465376956944b05fa1",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/browser-results.json": "8636229a0c42096921807d7d29213c9cf3f4dbb14773cf6837ea69b71bc6d045",
+    "docs/testing/dashboard-u5i/20261105T220137958776+0800-browser/command.json": "0d4894dd674ab1691bdf80c5fcc2e34a4b6a7cd7321e9c59641daa9ae2dcf854",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/dependency-closure.json": "2036becd0788850a96323da6155a3ade86ad11e2a53057df2c222f057ef9dce2",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/fresh-process.json": "afca536dcce97f7c6f542f1d02a3ab3702127460414775bd5fa61d09f55eb821",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/nonzero-parity.json": "6ba96ead9e326a228acd29fa17e55c3337145a700ce7ebb13539b6f682c7c7f1",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/parity-0-0.json": "6b60b69917ac644aa0ecb6c6dfbb34c74aec5e4e0583dc22072455091ac364a7",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/parity-1-0.json": "5abf98e9e1d495e3f0edb84ec6eb0856eac92218d9e1abd077ab10c0f406986e",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/parity-1-1.json": "204829a74e3d936478b3fd15bf8fecf3aa2181dc3b5f82ecbff9d372309d67fb",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/parity-command.json": "52fe6d66750d9655e4eb2a4a588d49f958b394433ed9cc802c4fda2e5afbf71c",
+    "docs/testing/dashboard-u5i/20261105T220138860459+0800-snapshot/snapshot-proof.json": "5141904509744db5adcce53a3d22bc8ac9b69806e8024caa32abb1de9c6d4de6",
+    "docs/testing/dashboard-u5i/20261105T220343870340+0800-snapshot/admission-command.json": "42c3b4269d2015b412d180725be201b8ff7fe92928abb93d1f1ef7b3b66ad78e",
+    "docs/testing/dashboard-u5i/20261105T220343870340+0800-snapshot/snapshot-proof.json": "c4fdc84f7158ff525fdd6ff66a8157f4c32e1dc98a06a8712fa1494433abe2d2",
+    "docs/testing/dashboard-u5i/20261105T220434288018+0800-snapshot/legacy-command.json": "5f23ad475358ef57acb579446c050c697fd90fd1c1864e77092887ea1df42dfe",
+    "docs/testing/dashboard-u5i/20261105T220434288018+0800-snapshot/snapshot-proof.json": "3ba71690dc117b54660c1fe4e3d3831033f2a944412d7e084b6edc589244c44d",
+    "docs/testing/dashboard-u5i/20261105T220448957595+0800-snapshot/bundle-tests-command.json": "bb6f8f016370335d3d3df207bb4d538b6bfc840028b0a644f8ef0066fec85757",
+    "docs/testing/dashboard-u5i/20261105T220448957595+0800-snapshot/snapshot-proof.json": "f445fab8374bcf4347e8f5ac70dfd6b6fd3fbb26fc25b4a9d0b8a9d27a6dfba1",
+    "docs/testing/dashboard-u5i/20261105T220502728399+0800-snapshot/analysis-command.json": "94984b2291d74b5c1c3661400b526a0226a76480411413888d9d3f22360a0179",
+    "docs/testing/dashboard-u5i/20261105T220502728399+0800-snapshot/snapshot-proof.json": "a07866b5513d4605fbd846a1c77727ba80068a86f1fe1d7a642310f8547a5bc1",
+    "docs/testing/dashboard-u5i/20261105T220516633833+0800-snapshot/readiness-command.json": "8a0f6ccd838eaa0ad3ca257ce475136368c52b9a6ccc24b98d3d2e466df6ece5",
+    "docs/testing/dashboard-u5i/20261105T220516633833+0800-snapshot/snapshot-proof.json": "25568ff7d963da5a7261d25ffce75a98f1d5c28f5faf8260b9ca799ab4f0a665",
+    "docs/testing/dashboard-u5i/20261105T220531158944+0800-snapshot/receipt-isolation-command.json": "20a85ca73666ed51fbbaad03f1ea4dece8cfb8b3a3bb27da0e1f9206ddbc0c20",
+    "docs/testing/dashboard-u5i/20261105T220531158944+0800-snapshot/snapshot-proof.json": "0ead848a6c6dca06463894f5c1468e06436f8e9b34e0cb48b57bbd192b8d33d5",
+    "docs/testing/dashboard-u5i/20261105T220607163649+0800-receipt-path-probe.json": "649f6b0e6703fbe18168f109ac2b3142b661185ad4420d50d17ea5dcfede8252",
+    "docs/testing/dashboard-u5i/20261105T220814230515+0800-snapshot/admission-command.json": "e5267722b6ea403798076e4a07c02488d6136f8b08d93e0e4add0fb73566e46d",
+    "docs/testing/dashboard-u5i/20261105T220814230515+0800-snapshot/snapshot-proof.json": "a4aa53ce2aac4e623c10d26b38e8eca05c4870c83e62821f9104c8dd42a3ed62",
+    "docs/testing/dashboard-u5i/20261105T220944316832+0800-integrity/command.json": "23d1930b8d1d746772aa23b36df927afe9ce82dce2179356bdb7a578dedb0be8",
+    "docs/testing/dashboard-u5i/attempt-notes.json": "917134e9d78643795ecfdc5acf697ab38938bfacc5152ebcf7cb22b76e49919b",
+    "docs/testing/dashboard-u5i/audit_evidence.py": "397970c65ffdedf751d8e491206807306f3fe6e399b7ab7cafdab13d6736c9e2",
+    "docs/testing/dashboard-u5i/checkpoint_snapshot.py": "a1fd8501bfea70d2928cf314e81b427b989cf9a0e126634b4923d87575704e76",
+    "docs/testing/dashboard-u5i/entry-review.json": "82f9db64e7aaef874d368f74547257233df1c3c7edf0ca3c5a8c51c18ae06769",
+    "docs/testing/dashboard-u5i/entry/main.py": "940f3d75232bb26fc924564b5e3ec7f889972c44881e972bbaebffb2059c1085",
+    "docs/testing/dashboard-u5i/investigate_receipt_race.py": "9d56716cf099944f998c5f312acc1643478e825c0ed31ed4249c40e9090d81fb",
+    "docs/testing/dashboard-u5i/preservation-baseline.json": "957d5d6d9c8d44e59c9fde08eea72eb69621cdf7f1564319f026cb1ff80d53a0",
+    "docs/testing/dashboard-u5i/run_checks.py": "9d356d3e4cfee6a6f634b61a20f122f245fe3272b3ff09df474c864db44930da",
+    "docs/testing/dashboard-u5i/screenshot-review.json": "56dc4d1c89b81e7f25e5efcff5592c6c3b35a3eef5dfa80ba13139150f66c014",
+    "docs/testing/dashboard-u5i/staging-plan.json": "981558461cda7cac386dfeaab1f244f1a9e2f1602f7633b104886f83f2f2c4fa"
+  }
+}

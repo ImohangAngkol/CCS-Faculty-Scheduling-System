@@ -1,0 +1,15 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/continuousOptimization.browser.test.mjs"
+  ],
+  "started_at": "2026-11-05T22:01:37.959520+08:00",
+  "ended_at": "2026-11-05T22:01:53.555614+08:00",
+  "elapsed_seconds": 15.596115800086409,
+  "exit_code": 0,
+  "stdout": "\u25b6 U5F readiness and existing fixed lifecycle with fictional HTTP\n  \u2714 U5F-B01 Fixed mode remains default without requesting continuous readiness (1974.4207ms)\n  \u2714 U5F-B02 Continuous is visibly blocked and never starts an execution (190.6403ms)\n  \u2714 U5F-B03 Hidden fixed settings cannot submit in continuous view (3.392ms)\n  \u2714 U5F-B04 Forged executable metadata is rejected (441.4157ms)\n  \u2714 U5F-B05 Readiness error retries without GA execution (933.7522ms)\n  \u2714 U5F-B06 Loading has no invented continuous state (724.2061ms)\n  \u2714 U5F-B07 Lifecycle vocabulary and budgets are explicitly not active (165.8554ms)\n  \u2714 U5F-B08 Switching mode preserves fixed parameter values (89.1594ms)\n  \u2714 U5F-B09 Refresh resets only mode selection and never auto-starts (468.2448ms)\n  \u2714 U5F-B10 Existing fixed pause waits for its backend acknowledgement (1779.0145ms)\n  \u2714 U5F-B11 Existing fixed resume retains its run identity (1135.1697ms)\n  \u2714 U5F-B12 Stop cancellation then confirmation preserves backend truth (342.0377ms)\n  \u2714 U5F-B13 Invalid checkpoint cannot enable existing resume (540.3704ms)\n  \u2714 U5F-B14 Interrupted execution does not become completed (499.1794ms)\n  \u2714 U5F-B15 Faculty and anonymous users cannot view privileged controls (906.8165ms)\n  \u2714 U5F-B16 Mobile blocked mode has no document overflow (719.1501ms)\n\u2714 U5F readiness and existing fixed lifecycle with fictional HTTP (12668.5746ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 15508.5465\n",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only; no PostgreSQL. Browser HTTP intercepted, not live GA acceptance. Legacy APIs remain unverified; the new versioned internal entry qualifies technical bundle consumption only, without institutional source authority."
+}

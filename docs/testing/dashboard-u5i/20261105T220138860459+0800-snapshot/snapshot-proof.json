@@ -1,0 +1,51 @@
+{
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "source_sha256": {
+    "backend/services/ga_owned_store.py": "2bc5ac09233351036755e50ea307b3f0e261f5b31fd21e92cd3412b57fc2accb",
+    "backend/services/ga_run_authority.py": "d6e6d950bd4a8803ab0c319a322dad8b7dc846146c6de5c3ce55e0899c77e3ff",
+    "backend/services/ga_trusted_runs.py": "38d38723a92a0e0b4f4e2acfe0bc6e76733f199fd0bf551a41827859267287b1",
+    "backend/routers/ga_trusted_runs.py": "1f6fa4e73a3f3b8f8e549c71041674819ffde002a20496c99529b1ba6b53de32",
+    "backend/tests/test_trusted_runs.py": "d4ccc0ee4c5430a381391310d3a2b6765df906fc35c305a1185b173e1299b43d",
+    "backend/tests/trusted_run_support.py": "985a26a68d79d0659ce976ad1d49f1a4dbbfaed8d538c625cfa85e2b5781a3bb",
+    "backend/services/ga_input_bundle.py": "994cdb45f08c95718138290aa8e3fde53d4ee2657bba11dff61c9cad369a51ce",
+    "backend/tests/test_ga_input_bundle.py": "2df1e59b40c3c3d12cc6e9bb2a331a38624ff8dda8b112975bc062aca9953d06",
+    "backend/tests/test_ga_input_bundle_checkpoint_qualification.py": "c9e58e9cadf7996db7134e0dcd77a30542396706dac6fd55c90de99677759593",
+    "backend/services/ga_bundle_runtime.py": "1c5cdccde689d31d011746324223d0f0165ee9c12b5eea7fc26e7306f5a68198",
+    "backend/services/ga_bundle_checkpoint.py": "4bc392ea92e65cfa2bd21870920893dd72f14f730036f63a8bc9bd11e833229d",
+    "backend/services/ga_bundle_optimizer.py": "6872eb6e25d4baed041909768dfd2f6e0928cb359b835bfcd1f7d89040b37a0b",
+    "backend/tests/test_ga_bundle_optimizer.py": "ef51bc349376117cc2ac4458fef0bc00edb8abcef83ad593a206bbcb7f955b33",
+    "backend/tests/test_ga_bundle_parity.py": "e9c95d323ed309056997b5f85608204fb622e8bb8527fc9b1dfea3a33443735b",
+    "backend/main.py": "28c2fa0c750c273a15dfcd49f565d7f1ff829592e00bb3a97f422d31f5ae75cb"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_owned_store.py": "8940e6e0877a7d1b3f8a42cfe07fd358fdcd5868",
+    "backend/services/ga_run_authority.py": "e3c5e47f7c2ce5ade0219a96701730585c99ec58",
+    "backend/services/ga_trusted_runs.py": "741c5af9326d7dc80d6c2a11f65fe8ad44fd15fb",
+    "backend/routers/ga_trusted_runs.py": "19c81e185cbcd208be7d0f806772722187fea239",
+    "backend/tests/test_trusted_runs.py": "ea251eeaad39627aff41b09774098059c92c6c0a",
+    "backend/tests/trusted_run_support.py": "7d2fe391f1072a5a7564488275cb0fbe585c63e6",
+    "backend/services/ga_input_bundle.py": "ac6445c7c93aa7953b65873a0b2501f9b331e451",
+    "backend/tests/test_ga_input_bundle.py": "b3ed4b2320a17ca3d0009e654bf167d77678e277",
+    "backend/tests/test_ga_input_bundle_checkpoint_qualification.py": "a224b975851a959e761c553ba1ce6efea44b2575",
+    "backend/services/ga_bundle_runtime.py": "1281e1a9c1bfebd3b0e02f7fcd5ca0715b2ec308",
+    "backend/services/ga_bundle_checkpoint.py": "d6d399e8f313a0c59bd2e1fa24a0b8d6fa0673f6",
+    "backend/services/ga_bundle_optimizer.py": "9055426720b0e59a7c0a55af9afa132debc0ed91",
+    "backend/tests/test_ga_bundle_optimizer.py": "c21a25dfc5ae34ef7d595e9af0d7600ca3f3fa60",
+    "backend/tests/test_ga_bundle_parity.py": "c97465f75b673a15a8e30442f2e6a9d3de9db4b4"
+  },
+  "results": [
+    {
+      "selection": "parity",
+      "exit_code": 0
+    }
+  ],
+  "qualified_selections": [
+    "parity"
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": true,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-jhd2ccma\\repository"
+}

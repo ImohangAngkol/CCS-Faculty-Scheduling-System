@@ -1,0 +1,11 @@
+{
+  "attempts": [
+    {
+      "stage": "Initial snapshot setup, before pytest",
+      "outcome": "BLOCKED_SANDBOX_FILESYSTEM",
+      "error": "PermissionError creating OWNED-SNAPSHOT.json in sandbox redirected OS-temp",
+      "test_results": null,
+      "action": "Rerun permitted owned temporary fixture operation outside redirected sandbox; no database/app-data access."
+    }
+  ]
+}
