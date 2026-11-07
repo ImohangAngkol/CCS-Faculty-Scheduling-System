@@ -1,0 +1,29 @@
+{
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "source_sha256": {
+    "backend/services/ga_input_bundle.py": "994cdb45f08c95718138290aa8e3fde53d4ee2657bba11dff61c9cad369a51ce",
+    "backend/tests/test_ga_input_bundle.py": "2df1e59b40c3c3d12cc6e9bb2a331a38624ff8dda8b112975bc062aca9953d06",
+    "backend/tests/test_ga_input_bundle_checkpoint_qualification.py": "c9e58e9cadf7996db7134e0dcd77a30542396706dac6fd55c90de99677759593"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_input_bundle.py": "ac6445c7c93aa7953b65873a0b2501f9b331e451",
+    "backend/tests/test_ga_input_bundle.py": "b3ed4b2320a17ca3d0009e654bf167d77678e277",
+    "backend/tests/test_ga_input_bundle_checkpoint_qualification.py": "a224b975851a959e761c553ba1ce6efea44b2575"
+  },
+  "results": [
+    {
+      "selection": "bundle-tests",
+      "exit_code": 0
+    },
+    {
+      "selection": "fixed",
+      "exit_code": 0
+    }
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": true,
+  "no_actual_staging": true,
+  "consumption_verified": false,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5g-ih73jyk4\\repository"
+}

@@ -1,0 +1,15 @@
+{
+  "selection": "build",
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "-b"
+  ],
+  "started_at": "2026-11-05T18:28:08.565672+08:00",
+  "ended_at": "2026-11-05T18:28:25.625089+08:00",
+  "elapsed_seconds": 17.05944839993026,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only; no PostgreSQL. Browser HTTP intercepted, not live GA acceptance. Bundle is captured-only, not consumed by V1."
+}

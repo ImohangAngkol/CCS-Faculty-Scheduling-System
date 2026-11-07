@@ -1,0 +1,14 @@
+{
+  "reviewed_sha256": [
+    "214bc6911a7ed708c229721fd4288db67cb1c6c074ef3d465376956944b05fa1",
+    "4f6e4a6222607107bf1c304a97f6cd9fe615ab4d6c1d8e55c5febceb145347bd",
+    "5293c1a9167cfe7a49eb44ac53947b200e0e8ab4053a954651c71c373bd39d62",
+    "8ff7c957cb0ef608142c11f0a4261ad60572d645cd035d01809d7a2e955a8b5b",
+    "b11713cfe084b86e16e2a1d3145ce9c1ed5d248d112d589233a19268f48c17b5",
+    "fe149c4d0d12923ae4e2f680efbbfa740e3f3fd87f790ad41289a20aa835d940"
+  ],
+  "capture_count": 6,
+  "private_records_seen": false,
+  "review": "All six original U5F regression screenshots visually inspected in U5G; desktop fixed/blocked/lifecycle/paused/stopped and mobile. Fictional intercepted HTTP only; no U5G optimizer-consumption evidence.",
+  "scope": "Actual Edge/React, fictional.invalid account, predictable fictional run ID; no genuine authentication cookies, faculty rows or institutional authority."
+}

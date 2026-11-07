@@ -1,0 +1,15 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/continuousOptimization.browser.test.mjs"
+  ],
+  "started_at": "2026-11-05T18:29:32.935236+08:00",
+  "ended_at": "2026-11-05T18:29:48.951194+08:00",
+  "elapsed_seconds": 16.01600020006299,
+  "exit_code": 0,
+  "stdout": "\u25b6 U5F readiness and existing fixed lifecycle with fictional HTTP\n  \u2714 U5F-B01 Fixed mode remains default without requesting continuous readiness (1622.9634ms)\n  \u2714 U5F-B02 Continuous is visibly blocked and never starts an execution (279.2601ms)\n  \u2714 U5F-B03 Hidden fixed settings cannot submit in continuous view (12.0323ms)\n  \u2714 U5F-B04 Forged executable metadata is rejected (473.4084ms)\n  \u2714 U5F-B05 Readiness error retries without GA execution (646.3289ms)\n  \u2714 U5F-B06 Loading has no invented continuous state (554.1664ms)\n  \u2714 U5F-B07 Lifecycle vocabulary and budgets are explicitly not active (195.346ms)\n  \u2714 U5F-B08 Switching mode preserves fixed parameter values (117.9652ms)\n  \u2714 U5F-B09 Refresh resets only mode selection and never auto-starts (499.3136ms)\n  \u2714 U5F-B10 Existing fixed pause waits for its backend acknowledgement (1704.8862ms)\n  \u2714 U5F-B11 Existing fixed resume retains its run identity (1162.0357ms)\n  \u2714 U5F-B12 Stop cancellation then confirmation preserves backend truth (1357.3449ms)\n  \u2714 U5F-B13 Invalid checkpoint cannot enable existing resume (603.0154ms)\n  \u2714 U5F-B14 Interrupted execution does not become completed (436.2529ms)\n  \u2714 U5F-B15 Faculty and anonymous users cannot view privileged controls (853.4964ms)\n  \u2714 U5F-B16 Mobile blocked mode has no document overflow (640.9167ms)\n\u2714 U5F readiness and existing fixed lifecycle with fictional HTTP (12791.6334ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 15925.4757\n",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only; no PostgreSQL. Browser HTTP intercepted, not live GA acceptance. Bundle is captured-only, not consumed by V1."
+}

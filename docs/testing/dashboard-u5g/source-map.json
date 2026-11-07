@@ -1,0 +1,128 @@
+{
+  "source_map": [
+    {
+      "path": "backend/routers/genetic_algorithm.py",
+      "sha256": "d38e4e577aca57a040ac00461007cd57dfebad366f52ef6e9c0addaa09534331",
+      "functions": {
+        "_execute_with_history": 51,
+        "_admit_execution": 82,
+        "_templates": 271,
+        "resume_run": 381,
+        "run_ga": 490,
+        "stream_ga": 561
+      }
+    },
+    {
+      "path": "backend/services/ga_service.py",
+      "sha256": "d2decf9f0a623b76cf3ede54a11267e3843d9484f083dadc1cfd9d562518d4d9",
+      "functions": {
+        "validate_saved_result": 232,
+        "run_genetic_algorithm": 301
+      }
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/FrozenInputs.py",
+      "sha256": "e407d686e2ee95eccca80761c77a2fec6e5d90bef302a8ebe9621268b1f8bf3a",
+      "functions": {
+        "capture_inputs": 9,
+        "with_frozen_inputs": 23
+      }
+    },
+    {
+      "path": "backend/genetic_algorithm/utils/Functions.py",
+      "sha256": "d28af9197d38957eb5ace526aa243e4448c68bd475efd89337e1d2c4742f555b",
+      "functions": {
+        "get_available_rooms": 838,
+        "section_schedule_is_available": 895,
+        "reset_complete_schedule": 1269,
+        "create_schedule_with_minimum_load": 1924
+      }
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/FitnessFunction.py",
+      "sha256": "e679e3e649a70c504fcc3d4c10cf749bcc2c92a3a812a0bd5b31e2f3ca0b5ff1",
+      "functions": {
+        "_load_ga_settings": 51,
+        "_load_dashboard_preferences": 79,
+        "faculty_preference_fitness": 984
+      }
+    },
+    {
+      "path": "backend/services/ga_checkpoint_service.py",
+      "sha256": "03264366f062bcf09412b99a5bb91cb0b2a88ad9e5e0797a2a72c7007d80248b",
+      "functions": {
+        "engine_fingerprint": 53,
+        "encode_graph": 109,
+        "decode_graph": 144,
+        "validate_state": 223,
+        "save_checkpoint": 286,
+        "load_checkpoint": 312
+      }
+    },
+    {
+      "path": "backend/services/ga_progress_service.py",
+      "sha256": "262c52a742f03938ae7f7653389e7b9d7bb88fe9c0df18b47b44c31e5f00c7a4",
+      "functions": {
+        "input_fingerprint": 15
+      }
+    },
+    {
+      "path": "backend/services/chromosome_service.py",
+      "sha256": "92f8b858806fc7fc1070ef169f86d34f089a1d6fa299751eaa5926c178826740",
+      "functions": {
+        "load_saved_best_payload": 337,
+        "load_uploaded_payload": 343,
+        "save_best_if_better": 375,
+        "payload_to_chromosome": 731
+      }
+    },
+    {
+      "path": "backend/services/ga_history_service.py",
+      "sha256": "92b36d7feeb2d3bb11d7def42eea2d49886183dc44859ec30bc50115ce75761c",
+      "functions": {
+        "capture_history": 377
+      }
+    },
+    {
+      "path": "backend/services/ga_input_receipt.py",
+      "sha256": "2b418773be9ba119ff39fc87157e28d364462d139eb46b4c12f4a99f18fb5c5e",
+      "functions": {
+        "begin": 256
+      }
+    }
+  ],
+  "uncommitted_milestones": [
+    {
+      "milestone": "U5D",
+      "committed": false,
+      "inventory_paths": 24,
+      "shared_existing_paths": [
+        ".gitignore",
+        "backend/routers/genetic_algorithm.py",
+        "backend/routers/ga_evaluation.py",
+        "backend/tests/conftest.py"
+      ],
+      "staging_plan_read": true
+    },
+    {
+      "milestone": "U5E-R2",
+      "committed": false,
+      "inventory_paths": 268,
+      "shared_existing_paths": [],
+      "staging_plan_read": true
+    },
+    {
+      "milestone": "U5F",
+      "committed": false,
+      "inventory_paths": 80,
+      "shared_existing_paths": [
+        "backend/main.py",
+        "frontend/src/pages/admin/GenerateSchedule.tsx"
+      ],
+      "staging_plan_read": true
+    }
+  ],
+  "bundle_capture_installed_in_v1": false,
+  "checkpoint_version_bridge_installed": false,
+  "source_files_modified": false
+}
