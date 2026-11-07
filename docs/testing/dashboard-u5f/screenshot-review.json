@@ -1,0 +1,21 @@
+{
+  "reviewed_sha256": [
+    "0e7e4804d4901e9ad735e68a8c3a8e739683ed5b0a57b9c989afb18ea4cef623",
+    "11df8df9edbe25b7cb76816a77a2058b3331504b45d57cd8f35f1739ae4adb78",
+    "1e0b3ad6065324bdfa3036cec21710ce5bb7e1bdec713f9e4515f10aefc99e80",
+    "214bc6911a7ed708c229721fd4288db67cb1c6c074ef3d465376956944b05fa1",
+    "4f6e4a6222607107bf1c304a97f6cd9fe615ab4d6c1d8e55c5febceb145347bd",
+    "5293c1a9167cfe7a49eb44ac53947b200e0e8ab4053a954651c71c373bd39d62",
+    "6cf2df69527ea1442c157c18f16bae48fc73cc053cf57ef0fba7a5f7d2a06b2a",
+    "8ff7c957cb0ef608142c11f0a4261ad60572d645cd035d01809d7a2e955a8b5b",
+    "afd9a76eaf12f1c4045304823f7437820a28ab7fa574c9b7543018410e7571b3",
+    "b11713cfe084b86e16e2a1d3145ce9c1ed5d248d112d589233a19268f48c17b5",
+    "ca5ba74c9ac2a63eba93bbc184f055371762f6db059429200caf4030d264491c",
+    "fe149c4d0d12923ae4e2f680efbbfa740e3f3fd87f790ad41289a20aa835d940"
+  ],
+  "capture_count": 17,
+  "review": "Original six worktree states and six proposed-source states visually inspected; failed-attempt captures match reviewed hashes. Native screenshots, no reconstruction/redaction.",
+  "private_records_seen": false,
+  "scope": "Actual Edge/React with intercepted fictional HTTP. Predictable fictional run ID and fictional.invalid account only; no real sessions.",
+  "limits": "Snapshot fixed paused/stopped captures show the original console/lower chart; full lifecycle controls were checked via actual DOM assertions. Images alone do not prove backend execution."
+}

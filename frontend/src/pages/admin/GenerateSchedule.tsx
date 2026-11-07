@@ -1,3 +1,5 @@
+import OptimizationMode from "../../components/ga/OptimizationMode";
+import type {OptimizationMode as Mode} from "../../services/continuousOptimization";
 import LiveGAMonitor from "../../components/ga/LiveGAMonitor";
 import ConstrainedRunPanel from "../../components/ga/ConstrainedRunPanel";
 import {isVerifiedCurrent, penaltyLabel} from "../../services/resultPresentation";
@@ -41,6 +43,7 @@ type SavedBestStatus = {
 
 
 export default function GenerateSchedule() {
+  const [optimizationMode,setOptimizationMode]=useState<Mode>("fixed");
 
   const navigate =
     useNavigate();
@@ -288,6 +291,7 @@ const [
   // ==========================================================
 
   async function handleGenerate() {
+    if(optimizationMode!=="fixed")return; // No continuous execution API exists.
 
     try {
 
@@ -379,7 +383,8 @@ const [
 
     <div className="space-y-6">
 
-      <ConstrainedRunPanel />
+      <OptimizationMode mode={optimizationMode} onChange={setOptimizationMode} population={populationSize} fresh={freshChromosomes} runId={activeRunId}/>
+      <div hidden={optimizationMode!=="fixed"}><ConstrainedRunPanel /></div>
 
       {/* ==================================================== */}
       {/* PAGE HEADER */}
@@ -416,6 +421,7 @@ const [
       {/* SETTINGS CARD */}
       {/* ==================================================== */}
 
+      <fieldset hidden={optimizationMode!=="fixed"} disabled={optimizationMode!=="fixed"} className="min-w-0">
       <div
         className="
           rounded-xl
@@ -1148,9 +1154,11 @@ const [
 
       {/* ==================================================== */}
       {/* RUNNING */}
+      </fieldset>
+
       {/* ==================================================== */}
 
-      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor onPause={pauseGA} onResume={resumeGA} canPause={canPause} canResume={canResume} controlError={controlError} pausedRuns={pausedRuns} onSelectPaused={id => { const run = pausedRuns.find(item => item.run_id === id); if (run) selectPausedRun(run); }} runId={activeRunId} recoveryNotice={recoveryNotice} onStop={stopGA} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={runningPopulationSize} limit={runningGenerations} />}
+      {(loading || executionStatus !== "IDLE") && <LiveGAMonitor onPause={pauseGA} onResume={resumeGA} canPause={canPause} canResume={canResume} controlError={controlError} pausedRuns={pausedRuns} onSelectPaused={id => { const run = pausedRuns.find(item => item.run_id === id); if (run) selectPausedRun(run); }} runId={activeRunId} recoveryNotice={recoveryNotice} onStop={async()=>{if(canStop&&window.confirm("Stop this fixed-generation run? The backend must confirm stopping; only its validated boundary can be preserved."))await stopGA();}} canStop={canStop} stopError={stopError} status={executionStatus} history={progressHistory} elapsedSeconds={elapsedSeconds} population={runningPopulationSize} limit={runningGenerations} />}
 
       {/* ==================================================== */}
       {/* LIVE CONSOLE */}

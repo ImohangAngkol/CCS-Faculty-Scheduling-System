@@ -1,0 +1,15 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/continuousOptimization.browser.test.mjs"
+  ],
+  "started_at": "2026-11-05T17:37:31.965121+08:00",
+  "ended_at": "2026-11-05T17:37:32.054044+08:00",
+  "elapsed_seconds": 0.08901160000823438,
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Could not find 'tests/continuousOptimization.browser.test.mjs'\n",
+  "scope": "Fictional temporary fixtures only. Browser responses intercepted; no institutional database, live sessions or production authority."
+}

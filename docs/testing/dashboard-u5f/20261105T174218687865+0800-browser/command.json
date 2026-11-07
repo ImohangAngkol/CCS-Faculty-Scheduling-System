@@ -1,0 +1,15 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/continuousOptimization.browser.test.mjs"
+  ],
+  "started_at": "2026-11-05T17:42:18.688323+08:00",
+  "ended_at": "2026-11-05T17:42:34.510431+08:00",
+  "elapsed_seconds": 15.822164800018072,
+  "exit_code": 0,
+  "stdout": "\u25b6 U5F readiness and existing fixed lifecycle with fictional HTTP\n  \u2714 U5F-B01 Fixed mode remains default without requesting continuous readiness (1666.0739ms)\n  \u2714 U5F-B02 Continuous is visibly blocked and never starts an execution (199.0386ms)\n  \u2714 U5F-B03 Hidden fixed settings cannot submit in continuous view (5.0653ms)\n  \u2714 U5F-B04 Forged executable metadata is rejected (499.7338ms)\n  \u2714 U5F-B05 Readiness error retries without GA execution (552.1747ms)\n  \u2714 U5F-B06 Loading has no invented continuous state (601.0179ms)\n  \u2714 U5F-B07 Lifecycle vocabulary and budgets are explicitly not active (160.8456ms)\n  \u2714 U5F-B08 Switching mode preserves fixed parameter values (93.6713ms)\n  \u2714 U5F-B09 Refresh resets only mode selection and never auto-starts (536.2734ms)\n  \u2714 U5F-B10 Existing fixed pause waits for its backend acknowledgement (1844.8456ms)\n  \u2714 U5F-B11 Existing fixed resume retains its run identity (1165.2467ms)\n  \u2714 U5F-B12 Stop cancellation then confirmation preserves backend truth (1382.2452ms)\n  \u2714 U5F-B13 Invalid checkpoint cannot enable existing resume (651.9388ms)\n  \u2714 U5F-B14 Interrupted execution does not become completed (445.588ms)\n  \u2714 U5F-B15 Faculty and anonymous users cannot view privileged controls (887.7734ms)\n  \u2714 U5F-B16 Mobile blocked mode has no document overflow (688.7251ms)\n\u2714 U5F readiness and existing fixed lifecycle with fictional HTTP (12761.984ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 15742.6099\n",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only. Browser responses intercepted; no institutional database, live sessions or production authority."
+}

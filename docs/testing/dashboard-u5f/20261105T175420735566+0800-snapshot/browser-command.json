@@ -1,0 +1,15 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/continuousOptimization.browser.test.mjs"
+  ],
+  "started_at": "2026-11-05T17:57:19.370887+08:00",
+  "ended_at": "2026-11-05T17:57:34.119520+08:00",
+  "elapsed_seconds": 14.748686700011604,
+  "exit_code": 0,
+  "stdout": "\u25b6 U5F readiness and existing fixed lifecycle with fictional HTTP\n  \u2714 U5F-B01 Fixed mode remains default without requesting continuous readiness (1505.3563ms)\n  \u2714 U5F-B02 Continuous is visibly blocked and never starts an execution (201.4519ms)\n  \u2714 U5F-B03 Hidden fixed settings cannot submit in continuous view (3.5896ms)\n  \u2714 U5F-B04 Forged executable metadata is rejected (430.6833ms)\n  \u2714 U5F-B05 Readiness error retries without GA execution (434.8976ms)\n  \u2714 U5F-B06 Loading has no invented continuous state (605.4449ms)\n  \u2714 U5F-B07 Lifecycle vocabulary and budgets are explicitly not active (164.7638ms)\n  \u2714 U5F-B08 Switching mode preserves fixed parameter values (56.941ms)\n  \u2714 U5F-B09 Refresh resets only mode selection and never auto-starts (572.0557ms)\n  \u2714 U5F-B10 Existing fixed pause waits for its backend acknowledgement (1906.106ms)\n  \u2714 U5F-B11 Existing fixed resume retains its run identity (1142.0727ms)\n  \u2714 U5F-B12 Stop cancellation then confirmation preserves backend truth (519.7729ms)\n  \u2714 U5F-B13 Invalid checkpoint cannot enable existing resume (579.1155ms)\n  \u2714 U5F-B14 Interrupted execution does not become completed (533.1029ms)\n  \u2714 U5F-B15 Faculty and anonymous users cannot view privileged controls (806.7396ms)\n  \u2714 U5F-B16 Mobile blocked mode has no document overflow (713.568ms)\n\u2714 U5F readiness and existing fixed lifecycle with fictional HTTP (11609.0711ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 14661.4311\n",
+  "stderr": "",
+  "scope": "U5F-only temporary source snapshot, empty fictional import tables and declared fictional model fixtures; no institutional data or DB"
+}

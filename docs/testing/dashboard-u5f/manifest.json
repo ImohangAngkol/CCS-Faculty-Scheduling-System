@@ -1,0 +1,841 @@
+{
+  "milestone": "U5F",
+  "status": "UI_AND_READINESS_FOUNDATION_ONLY_CONTINUOUS_EXECUTION_BLOCKED",
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "exact_checkpoint_inventory": [
+    "backend/main.py",
+    "backend/routers/continuous_optimization.py",
+    "backend/services/continuous_readiness.py",
+    "backend/tests/test_continuous_fixed_qualification.py",
+    "backend/tests/test_continuous_readiness.py",
+    "docs/dashboard-u5f-controlled-continuous-optimization.md",
+    "docs/testing/dashboard-u5f/20261105T173407138034+0800-focused/command.json",
+    "docs/testing/dashboard-u5f/20261105T173407145612+0800-lint/command.json",
+    "docs/testing/dashboard-u5f/20261105T173407145662+0800-build/command.json",
+    "docs/testing/dashboard-u5f/20261105T173423296009+0800-backend/command.json",
+    "docs/testing/dashboard-u5f/20261105T173731964677+0800-browser/command.json",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/U5F-B01-default.png",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/command.json",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B01-default.png",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B07-contract.png",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/command.json",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B01-default.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B07-contract.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B10-fixed-paused.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B12-fixed-stopped.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B16-mobile.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/command.json",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/backend-command.json",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/fixed-command.json",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5f/20261105T174346385787+0800-bundle/command.json",
+    "docs/testing/dashboard-u5f/20261105T174346388250+0800-regressions/command.json",
+    "docs/testing/dashboard-u5f/20261105T174349202195+0800-receipts/command.json",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/backend-command.json",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/fixed-command.json",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B01-default.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B07-contract.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B10-fixed-paused.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B12-fixed-stopped.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B16-mobile.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/backend-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/browser-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/browser-results.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/build-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/bundle-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/fixed-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/focused-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/lint-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/regressions-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5f/20261105T175439431701+0800-u5e-contracts/command.json",
+    "docs/testing/dashboard-u5f/20261105T175442592882+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5f/20261105T175712957449+0800-integrity/command.json",
+    "docs/testing/dashboard-u5f/20261105T180035899721+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+    "docs/testing/dashboard-u5f/audit_evidence.py",
+    "docs/testing/dashboard-u5f/build_browser_harness.py",
+    "docs/testing/dashboard-u5f/checkpoint_snapshot.py",
+    "docs/testing/dashboard-u5f/entry-review.json",
+    "docs/testing/dashboard-u5f/entry/GenerateSchedule.tsx",
+    "docs/testing/dashboard-u5f/entry/main.py",
+    "docs/testing/dashboard-u5f/integration.py",
+    "docs/testing/dashboard-u5f/main-integration.patch",
+    "docs/testing/dashboard-u5f/manifest.json",
+    "docs/testing/dashboard-u5f/preservation-baseline.json",
+    "docs/testing/dashboard-u5f/run_checks.py",
+    "docs/testing/dashboard-u5f/screenshot-review.json",
+    "docs/testing/dashboard-u5f/staging-plan.json",
+    "docs/testing/dashboard-u5f/tooling-failures.json",
+    "frontend/src/components/ga/OptimizationMode.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/services/continuousOptimization.ts",
+    "frontend/tests/continuousOptimization.browser.test.mjs",
+    "frontend/tests/continuousOptimization.fixtures.mjs",
+    "frontend/tests/continuousOptimization.scenarios.mjs",
+    "frontend/tests/continuousOptimization.test.mjs",
+    "frontend/tests/continuousOptimizationRun.fixtures.mjs"
+  ],
+  "modified_from_entry": [
+    "backend/main.py",
+    "frontend/src/pages/admin/GenerateSchedule.tsx"
+  ],
+  "new_paths": [
+    "backend/routers/continuous_optimization.py",
+    "backend/services/continuous_readiness.py",
+    "backend/tests/test_continuous_fixed_qualification.py",
+    "backend/tests/test_continuous_readiness.py",
+    "docs/dashboard-u5f-controlled-continuous-optimization.md",
+    "docs/testing/dashboard-u5f/20261105T173407138034+0800-focused/command.json",
+    "docs/testing/dashboard-u5f/20261105T173407145612+0800-lint/command.json",
+    "docs/testing/dashboard-u5f/20261105T173407145662+0800-build/command.json",
+    "docs/testing/dashboard-u5f/20261105T173423296009+0800-backend/command.json",
+    "docs/testing/dashboard-u5f/20261105T173731964677+0800-browser/command.json",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/U5F-B01-default.png",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/command.json",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B01-default.png",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B07-contract.png",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/command.json",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B01-default.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B07-contract.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B10-fixed-paused.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B12-fixed-stopped.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B16-mobile.png",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/browser-results.json",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/command.json",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/backend-command.json",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/fixed-command.json",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5f/20261105T174346385787+0800-bundle/command.json",
+    "docs/testing/dashboard-u5f/20261105T174346388250+0800-regressions/command.json",
+    "docs/testing/dashboard-u5f/20261105T174349202195+0800-receipts/command.json",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/backend-command.json",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/fixed-command.json",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B01-default.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B02-blocked.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B07-contract.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B10-fixed-paused.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B12-fixed-stopped.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B16-mobile.png",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/backend-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/browser-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/browser-results.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/build-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/bundle-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/fixed-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/focused-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/lint-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/regressions-command.json",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/snapshot-proof.json",
+    "docs/testing/dashboard-u5f/20261105T175439431701+0800-u5e-contracts/command.json",
+    "docs/testing/dashboard-u5f/20261105T175442592882+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5f/20261105T175712957449+0800-integrity/command.json",
+    "docs/testing/dashboard-u5f/20261105T180035899721+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+    "docs/testing/dashboard-u5f/audit_evidence.py",
+    "docs/testing/dashboard-u5f/build_browser_harness.py",
+    "docs/testing/dashboard-u5f/checkpoint_snapshot.py",
+    "docs/testing/dashboard-u5f/entry-review.json",
+    "docs/testing/dashboard-u5f/entry/GenerateSchedule.tsx",
+    "docs/testing/dashboard-u5f/entry/main.py",
+    "docs/testing/dashboard-u5f/integration.py",
+    "docs/testing/dashboard-u5f/main-integration.patch",
+    "docs/testing/dashboard-u5f/manifest.json",
+    "docs/testing/dashboard-u5f/preservation-baseline.json",
+    "docs/testing/dashboard-u5f/run_checks.py",
+    "docs/testing/dashboard-u5f/screenshot-review.json",
+    "docs/testing/dashboard-u5f/staging-plan.json",
+    "docs/testing/dashboard-u5f/tooling-failures.json",
+    "frontend/src/components/ga/OptimizationMode.tsx",
+    "frontend/src/services/continuousOptimization.ts",
+    "frontend/tests/continuousOptimization.browser.test.mjs",
+    "frontend/tests/continuousOptimization.fixtures.mjs",
+    "frontend/tests/continuousOptimization.scenarios.mjs",
+    "frontend/tests/continuousOptimization.test.mjs",
+    "frontend/tests/continuousOptimizationRun.fixtures.mjs"
+  ],
+  "preexisting_tracked_modifications": [
+    ".gitignore",
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "backend/main.py",
+    "backend/routers/ga_evaluation.py",
+    "backend/routers/genetic_algorithm.py",
+    "backend/tests/conftest.py",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "baseline_paths": 3541,
+  "unchanged_baseline_paths": 3539,
+  "protected_academic_paths": 23,
+  "prior_artifact_hashes_verified": {
+    "dashboard-u5d": 23,
+    "dashboard-u5e/r2": 267
+  },
+  "protected_preferences_settings": "BYTE_IDENTICAL_UNSTAGED_EXCLUDED",
+  "ga_scoring_operators_rng_engine_fingerprints_migrations_checkpoints_saved_best_history": "UNCHANGED",
+  "artifact_sha256": {
+    "backend/main.py": "940f3d75232bb26fc924564b5e3ec7f889972c44881e972bbaebffb2059c1085",
+    "backend/routers/continuous_optimization.py": "ecda182b0d4295214cbf613a00af888bc1320b380ecb358542816b4926606801",
+    "backend/services/continuous_readiness.py": "5965577e8fcd41e5b895a6b28b3352f466890801a718d7b0c4421ce2c5dc7ae1",
+    "backend/tests/test_continuous_fixed_qualification.py": "1b6e17dd96764f8eeaa66461b640ccb2aa284bcfd00212257522dec717fc3d4e",
+    "backend/tests/test_continuous_readiness.py": "bde1f2163ba45bcbd90dc0666f41b910ed498f23369f3def9da85de589dfdb7d",
+    "docs/dashboard-u5f-controlled-continuous-optimization.md": "c11443edadb8b7ae66b1c3196764a1280fc406bbcb2632fd566106b6b912d17a",
+    "docs/testing/dashboard-u5f/20261105T173407138034+0800-focused/command.json": "df326d5cd7991d906313ed204f557cd087ed207d3ec33a5b99a97cb407360dfd",
+    "docs/testing/dashboard-u5f/20261105T173407145612+0800-lint/command.json": "fe56cc270e6294025904d761260454a09b41d266ffcf7ae761d9bad471c6b4be",
+    "docs/testing/dashboard-u5f/20261105T173407145662+0800-build/command.json": "6bb3808d50aad4a0cbc1b0ecd05ca1d04ac31dfee15420a557452c4e5b9d779a",
+    "docs/testing/dashboard-u5f/20261105T173423296009+0800-backend/command.json": "952c3dc70ca52647d48c115daa206d923560aa80c3905fe5e275052bb1b14dd8",
+    "docs/testing/dashboard-u5f/20261105T173731964677+0800-browser/command.json": "7929c67dc237035c42a2f67003cbb15662c9820399cadb3091e18b61877a0e81",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/U5F-B01-default.png": "5293c1a9167cfe7a49eb44ac53947b200e0e8ab4053a954651c71c373bd39d62",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/U5F-B02-blocked.png": "fe149c4d0d12923ae4e2f680efbbfa740e3f3fd87f790ad41289a20aa835d940",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/browser-results.json": "9c03e3d9670e4a0d1f873aa0a6dbb2c5f51772543b1486e3f0341bc0a1161274",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/command.json": "0fc3ab2b1f1ce3f9aecb297f41f06e8ed531a52acd77143253f5160c29fe40a0",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B01-default.png": "5293c1a9167cfe7a49eb44ac53947b200e0e8ab4053a954651c71c373bd39d62",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B02-blocked.png": "fe149c4d0d12923ae4e2f680efbbfa740e3f3fd87f790ad41289a20aa835d940",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B07-contract.png": "b11713cfe084b86e16e2a1d3145ce9c1ed5d248d112d589233a19268f48c17b5",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/browser-results.json": "ccb949e633aa650ec463d13d0d59960a522875a714d0e2c68b42224efe84c599",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/command.json": "858bdffb20dc3ed895981b7fec0d8f33bf84714f10d02b4611313917ea29b218",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B01-default.png": "5293c1a9167cfe7a49eb44ac53947b200e0e8ab4053a954651c71c373bd39d62",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B02-blocked.png": "fe149c4d0d12923ae4e2f680efbbfa740e3f3fd87f790ad41289a20aa835d940",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B07-contract.png": "b11713cfe084b86e16e2a1d3145ce9c1ed5d248d112d589233a19268f48c17b5",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B10-fixed-paused.png": "8ff7c957cb0ef608142c11f0a4261ad60572d645cd035d01809d7a2e955a8b5b",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B12-fixed-stopped.png": "4f6e4a6222607107bf1c304a97f6cd9fe615ab4d6c1d8e55c5febceb145347bd",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B16-mobile.png": "214bc6911a7ed708c229721fd4288db67cb1c6c074ef3d465376956944b05fa1",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/browser-results.json": "ec8896e2b41cdbd2c49a505b1f9480d5bbb79f12199ec40ae5f941b25b55bf8e",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/command.json": "05587ad77097f8e30c8a83823c2129788a2c3e7e4e2aa3b96b6e8007b7a2070d",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/backend-command.json": "4bef9b711fda80961725eced0e0b50ffd932f7cf9b5ae39c82b20df90da6c777",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/fixed-command.json": "5cd69d4e8f7dda341df4bd1f74e2e41b5e93dd7899a475c89032226e476f8b37",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/snapshot-proof.json": "ca653628982896da5a1c1a7c6b6f6f19f7a5bebeac9d937d432bbf04b0b6bb81",
+    "docs/testing/dashboard-u5f/20261105T174346385787+0800-bundle/command.json": "ad9260c3ee94639f35fab369641fa4a59cde3cfed735ad5015f693c2f8493680",
+    "docs/testing/dashboard-u5f/20261105T174346388250+0800-regressions/command.json": "105741a2c575d6582b0947e2292f8f1d7eeed49ce66ea68ac7ed315d47938f9d",
+    "docs/testing/dashboard-u5f/20261105T174349202195+0800-receipts/command.json": "8fe6c35710978122a0847d61af08fe0563fdeb23b23d8d432936d5b765ef8e6b",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/backend-command.json": "57871e5294c04722329220888444ad818bed4de9c252150a2eef81456cf35f6c",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/fixed-command.json": "18ef09df808c408013bbef63f9c015a08644625eb5ebd9a15574e937b4cdd54a",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/snapshot-proof.json": "f776bbe57b700e24fd6c358445b4379c70514d84a82a2735f005276034cc88a2",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B01-default.png": "ca5ba74c9ac2a63eba93bbc184f055371762f6db059429200caf4030d264491c",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B02-blocked.png": "afd9a76eaf12f1c4045304823f7437820a28ab7fa574c9b7543018410e7571b3",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B07-contract.png": "11df8df9edbe25b7cb76816a77a2058b3331504b45d57cd8f35f1739ae4adb78",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B10-fixed-paused.png": "6cf2df69527ea1442c157c18f16bae48fc73cc053cf57ef0fba7a5f7d2a06b2a",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B12-fixed-stopped.png": "1e0b3ad6065324bdfa3036cec21710ce5bb7e1bdec713f9e4515f10aefc99e80",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B16-mobile.png": "0e7e4804d4901e9ad735e68a8c3a8e739683ed5b0a57b9c989afb18ea4cef623",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/backend-command.json": "5082c6290e5ce2e56b9261e91dee649cd7b1b2247b2a375f1464524579726d17",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/browser-command.json": "6005ee3dc7c38b14c822ae7f0ede7d024253c4ec31f28809d2769e1e489e8e1e",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/browser-results.json": "f7750a9163e4117a8266229fae5a2fbd46782f4b8b5dbc2b2eeaa48688ce5e01",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/build-command.json": "274e1bd740ed7fd33b8983bc968450a261b4020b7be1e625f772605f154cadba",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/bundle-command.json": "51c4c8b1fa8bb5971302e95b13d377b2806f60292ec819823094927d59be96f8",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/fixed-command.json": "0283b5b72e32ada478b48677db75c92b3a9427ed26148761c48941c593586fa2",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/focused-command.json": "f913a6d17cee0fac6cea7cdbbcaf6036c6dd9c242262f4e1a91db3c640e49f49",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/lint-command.json": "b8beb68d1ebf0782dc536fbaca45ee5772248c8997f1c96400b85ec25919ceca",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/regressions-command.json": "f5cb4f72c8cca3a238a02ccd54f3419b75980f9a5d5abbe9df15c16719a60da7",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/snapshot-proof.json": "c5c2d0e34108b0f02fc4bd6af3a6585c3c3456ee632b3a2d96d0e7388323b187",
+    "docs/testing/dashboard-u5f/20261105T175439431701+0800-u5e-contracts/command.json": "b53e8ef5e951c38f5778745ea1aa72ce220651d8e53e640eab4bec57d509286a",
+    "docs/testing/dashboard-u5f/20261105T175442592882+0800-backend-regressions/command.json": "8159b3e8f0ac6d4a1a69b75a1635f78da4aa5c580f126b4a7bc206e9b0cf8003",
+    "docs/testing/dashboard-u5f/20261105T175712957449+0800-integrity/command.json": "c955115217c2a845a0f93b3f9baddd8a45b58ae62879305c5f8b11bfa3c86a4c",
+    "docs/testing/dashboard-u5f/20261105T180035899721+0800-backend-regressions/command.json": "a52b228776957d5713070073898227aa24afd80cb50d29c7388aa53364556807",
+    "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch": "8d4c95f73cff3b642ebd5d2544092aec5f54199ec6c6653bf47c47fc1657d571",
+    "docs/testing/dashboard-u5f/audit_evidence.py": "b02103cef8be1a9e72ee3a2102bbcc96b500a7a300db4387f098df5ddfa64958",
+    "docs/testing/dashboard-u5f/build_browser_harness.py": "a77c57c8ee30a3c652d3e9acacb0372215ee27ea1d78311ed473af127ca67177",
+    "docs/testing/dashboard-u5f/checkpoint_snapshot.py": "0a2bcb48403881671d414ecaeebb843e37e62d92419b1c26851a6af9d77cf912",
+    "docs/testing/dashboard-u5f/entry-review.json": "4b995ecba7a8fd0a132f5ee6f0e4e06f7cd27427e0c2a5f166f6a0351a83af3e",
+    "docs/testing/dashboard-u5f/entry/GenerateSchedule.tsx": "5eb91ccc848fcbb5b982c77e8c2d9a72f5b969ed2beab1258fa84fc0657ab28d",
+    "docs/testing/dashboard-u5f/entry/main.py": "f65fa0459c0bd5293d393c4221957afcff31b43ccdcebf892073fd16ee222f15",
+    "docs/testing/dashboard-u5f/integration.py": "eee6676fcc2b59d0c2239b6fa152b5f6dfa2977a457771c31ae8633e1931b2f3",
+    "docs/testing/dashboard-u5f/main-integration.patch": "243d84e15fd0e9f0720670fa0c221b5e45bc3570fc9486e123b7489229cf5232",
+    "docs/testing/dashboard-u5f/preservation-baseline.json": "c8ef2f72f7c19fb8c809dec725c4f05c8f427e2e025b3a2f140796c3f638f420",
+    "docs/testing/dashboard-u5f/run_checks.py": "914dc7af983dd4a986388972aae16ab8e4fef628f1756ff8752c2c456f039432",
+    "docs/testing/dashboard-u5f/screenshot-review.json": "03c4949117bec245df51c310feb9c8a82f5c1f543f2f5a2f5722a731ea08bd70",
+    "docs/testing/dashboard-u5f/staging-plan.json": "ae8121c8dc30d7ca36870eb346ad2bc4a5313f6fcee3a3f7a3fc16191863d996",
+    "docs/testing/dashboard-u5f/tooling-failures.json": "e6022e028ae44ac61cc38a9e7e28c77b70fc82edc250792c6d16a3f4748d8a1d",
+    "frontend/src/components/ga/OptimizationMode.tsx": "ccfbc95c3bb94413e8fc23a5666fd9bd97031cd7b2b3683c24f0279742469e5a",
+    "frontend/src/pages/admin/GenerateSchedule.tsx": "a7875829be4f1d937321bf30a7f112e970c216e3036dca68b95cc6b9b4d589d7",
+    "frontend/src/services/continuousOptimization.ts": "438ee613063fff22ceefd031b378a5e2ea367fec8c68fbbd0b3934644498f2b9",
+    "frontend/tests/continuousOptimization.browser.test.mjs": "fea7648d8f34792191b84440866f51a82e68c70f8c00f2a80ab8e475bc118d91",
+    "frontend/tests/continuousOptimization.fixtures.mjs": "899034917a7c44cf121dacd892f62e518fff19a6ee243864970c169ca8eb0edf",
+    "frontend/tests/continuousOptimization.scenarios.mjs": "6bb581f5475a85cfb5294c9d897155e3fb06ae02edcce31094268e929f8cde15",
+    "frontend/tests/continuousOptimization.test.mjs": "bfd895be9aa2c032cbaae51ffc59f44c930bf9a7b711466c5db6a2f6dc41ba24",
+    "frontend/tests/continuousOptimizationRun.fixtures.mjs": "d6256884724c357373a51d189ada066933a6c614271bf68bad7492c87dff1d6e"
+  },
+  "proposed_git_blob_oids": {
+    "backend/main.py": "c39b120c0e4a25ac12aad6ca4bc8ead44151dc53",
+    "backend/routers/continuous_optimization.py": "cbf811c7e18de0541585ad5f8ddb7a0f51e90193",
+    "backend/services/continuous_readiness.py": "22f1c44c21a07633a3a75a294c09b19a43c225e1",
+    "backend/tests/test_continuous_fixed_qualification.py": "999a71c3ec1f8367d74de31789ed104dc081f39d",
+    "backend/tests/test_continuous_readiness.py": "4f84361ed4352ff01829e74f79912eaaf32a1dfe",
+    "docs/dashboard-u5f-controlled-continuous-optimization.md": "7c441b97dc1121749d69318a88bb11f082a9c3b0",
+    "docs/testing/dashboard-u5f/20261105T173407138034+0800-focused/command.json": "250fb43db32105a38c1f689f2f2d4239d8536ad3",
+    "docs/testing/dashboard-u5f/20261105T173407145612+0800-lint/command.json": "2a65c5fe8feb6c1569aa6c8b1d9f8f2ae9ff9727",
+    "docs/testing/dashboard-u5f/20261105T173407145662+0800-build/command.json": "323be27b50fc5506418db5c1041c03993a460df8",
+    "docs/testing/dashboard-u5f/20261105T173423296009+0800-backend/command.json": "4204d17e6aee140d2af1ac101b497dfc3b7dd8b2",
+    "docs/testing/dashboard-u5f/20261105T173731964677+0800-browser/command.json": "81f82f2b8bd4e80e64e2c65484e1654aeeb8ab45",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/U5F-B01-default.png": "cb6d5eeec5fced177d81aacd6a170a02f190d057",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/U5F-B02-blocked.png": "6d8695173c26fa5894fea2f30e154b470a7faa04",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/browser-results.json": "8d3b9c5755dc82d71fdb922d47d668c51457002b",
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/command.json": "b8ccc9c0d5d0f15d32310a5a4aa4499caa662de9",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B01-default.png": "cb6d5eeec5fced177d81aacd6a170a02f190d057",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B02-blocked.png": "6d8695173c26fa5894fea2f30e154b470a7faa04",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B07-contract.png": "4f6443a4d8d8ed41bce075b338788d46eca9b039",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/browser-results.json": "d654d2207b62c9bb0039b6588a5a33d30b9b5f83",
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/command.json": "4e03f803d07aeddf0ef4d1a446a258d554b53895",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B01-default.png": "cb6d5eeec5fced177d81aacd6a170a02f190d057",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B02-blocked.png": "6d8695173c26fa5894fea2f30e154b470a7faa04",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B07-contract.png": "4f6443a4d8d8ed41bce075b338788d46eca9b039",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B10-fixed-paused.png": "f31151109fe1ede39d8e337c9defb8758ba19fa5",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B12-fixed-stopped.png": "50c007f6c090b9024fb67cf0d8e862a919e6b12a",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B16-mobile.png": "3610224effbffeaa15cbc6e0476c22e6f9ac71b4",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/browser-results.json": "c1b5e5dcf8741b6baea77076fed92141b458c39a",
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/command.json": "70263f2dd0e7582d2e3c2f27178d1055a7269c1f",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/backend-command.json": "7e4e5fead969bbd948552571a95b097e48573562",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/fixed-command.json": "b5437fc374e32b5e53830d12ec40f2fb3b93edff",
+    "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/snapshot-proof.json": "3ed7c4edb23782b2d76da7e56caaf7ede96e3f22",
+    "docs/testing/dashboard-u5f/20261105T174346385787+0800-bundle/command.json": "9241920ce7f60cfccc17bfe97c98803d5b564a2c",
+    "docs/testing/dashboard-u5f/20261105T174346388250+0800-regressions/command.json": "b2df0e7bda1ffa746b0b7de61bc4fefc1044fb4f",
+    "docs/testing/dashboard-u5f/20261105T174349202195+0800-receipts/command.json": "ff621693484062a6c77abc8fa9f655e2f367e663",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/backend-command.json": "a7552204d6ec0c2e2851933ff51b56507fe0abff",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/fixed-command.json": "469e687aa28c18679c08845673fc5f1e80c32939",
+    "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/snapshot-proof.json": "a64872405e2ace3a4dbf83ec8042fe6bff5b0947",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B01-default.png": "6d113dc8f2ac982729873b5b132a5049730a35db",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B02-blocked.png": "696bf37c9deb3a64578c0e5604a4b44d932298db",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B07-contract.png": "e9bb47c6ee59a1e7c268a49bb05e677aced91aa3",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B10-fixed-paused.png": "12a4a0cdf4e4f68a451bc3b6d2fcfa673b02b21d",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B12-fixed-stopped.png": "443110750bdca06e660308daa8dc88a1e0156210",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B16-mobile.png": "e130b997e6b2989719359b46c4edb6af1a30e817",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/backend-command.json": "a6939851b9845926c5ecedc30031e665b48fe263",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/browser-command.json": "36733798ea8c584d58087e8fbe8498e94e60a7d8",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/browser-results.json": "cafebe850050b655690e11d2b866893a173cc600",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/build-command.json": "12a9a1af570e657a3d681228548f1dc164979ea4",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/bundle-command.json": "a262c48bb34541cea174590be2a4713ab6fcd591",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/fixed-command.json": "34666bdb6008b7bd4db1aaaffcd2433690969b8c",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/focused-command.json": "eac89686e94dd749061fee618bcd91341cb81dcf",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/lint-command.json": "6f232c3e9e8cf8510c02d9f5636b1a93ae2430c9",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/regressions-command.json": "605e68e286c24e0124d064d945f4082e49817f1b",
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/snapshot-proof.json": "8d9c0b310a9f7db20b48aa91d20077c82637d9f3",
+    "docs/testing/dashboard-u5f/20261105T175439431701+0800-u5e-contracts/command.json": "bf21bdae22df5a5c390711d0c7d01c128a92a188",
+    "docs/testing/dashboard-u5f/20261105T175442592882+0800-backend-regressions/command.json": "4743cc60553cd2313cfb382ff261234c1923ba15",
+    "docs/testing/dashboard-u5f/20261105T175712957449+0800-integrity/command.json": "12065a6fbf89bc673acdd2476669ee45eec6f64b",
+    "docs/testing/dashboard-u5f/20261105T180035899721+0800-backend-regressions/command.json": "034d4984006e765b39fe3a1f4f7092c8aa7c8930",
+    "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch": "f08b82177bd31a0faa77ceb2a7b83ed922b4e7bd",
+    "docs/testing/dashboard-u5f/audit_evidence.py": "f3046fd370b573077152fdc2b2856180dbba5b04",
+    "docs/testing/dashboard-u5f/build_browser_harness.py": "c74c9982dffe15a3077cbf03889ea3f398139865",
+    "docs/testing/dashboard-u5f/checkpoint_snapshot.py": "6a18c70c3202bd8e079576b51383b118017fd8a8",
+    "docs/testing/dashboard-u5f/entry-review.json": "61465d077bba63b9e5eec793946dd3fb3ef7bf02",
+    "docs/testing/dashboard-u5f/entry/GenerateSchedule.tsx": "49a1c363d4bcf72baf902efee696c60d9bb5f6dc",
+    "docs/testing/dashboard-u5f/entry/main.py": "333726afb65d6112c5e47874cf04e0129958c088",
+    "docs/testing/dashboard-u5f/integration.py": "738b3156761a02e1a527cda677474635c599976e",
+    "docs/testing/dashboard-u5f/main-integration.patch": "6c1569b2a68dbfe7b3e846bd0119b4c2928ad68f",
+    "docs/testing/dashboard-u5f/preservation-baseline.json": "9026a40d5ee5d0d67c63f2f649591efd68570f4c",
+    "docs/testing/dashboard-u5f/run_checks.py": "9278613d5202355fad0d795743fbe64b6d833b8c",
+    "docs/testing/dashboard-u5f/screenshot-review.json": "ca7e09c0203559ca63288f6eec2fa9df13bd6431",
+    "docs/testing/dashboard-u5f/staging-plan.json": "800998d0d1af9548074e371cfb5a134dbf7affa8",
+    "docs/testing/dashboard-u5f/tooling-failures.json": "9f2eed7f997fd1b3cce7096a2394a5ec79ecbcfa",
+    "frontend/src/components/ga/OptimizationMode.tsx": "21084170d2585fb884a2841531591f95ace93e93",
+    "frontend/src/pages/admin/GenerateSchedule.tsx": "051c10d72b7db14aca929de97fc661eb93a2ed5b",
+    "frontend/src/services/continuousOptimization.ts": "623e3d366558cfbadc66100cf970ef302b4c340a",
+    "frontend/tests/continuousOptimization.browser.test.mjs": "d6f5f415c083e78399eda7a2ad8ccaa66498cd5b",
+    "frontend/tests/continuousOptimization.fixtures.mjs": "7fb86ea0688d50b8f364279a06e811efc95437c0",
+    "frontend/tests/continuousOptimization.scenarios.mjs": "67f050d9708686e1e43e2fc9704fee0883758801",
+    "frontend/tests/continuousOptimization.test.mjs": "afac9a47ce3a66246fcf32fe50946abbca272b7e",
+    "frontend/tests/continuousOptimizationRun.fixtures.mjs": "e989528120494abeafce8f7cd4bd2db842d09601"
+  },
+  "screenshots": {
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/U5F-B01-default.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/U5F-B02-blocked.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B01-default.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B02-blocked.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/U5F-B07-contract.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B01-default.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B02-blocked.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B07-contract.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B10-fixed-paused.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B12-fixed-stopped.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/U5F-B16-mobile.png": {
+      "width": 390,
+      "height": 844,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B01-default.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B02-blocked.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B07-contract.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B10-fixed-paused.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B12-fixed-stopped.png": {
+      "width": 1366,
+      "height": 1000,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    },
+    "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/U5F-B16-mobile.png": {
+      "width": 390,
+      "height": 844,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T173407138034+0800-focused/command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 14,
+        "pass": 14,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T173407145612+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T173407145662+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T173423296009+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T173731964677+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T173855042658+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 5,
+        "pass": 3,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T174041114201+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 1,
+      "counts": {
+        "tests": 12,
+        "pass": 9,
+        "fail": 2,
+        "cancelled": 1,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T174218687865+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/backend-command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T174318356157+0800-snapshot/fixed-command.json",
+      "selection": "fixed",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 8,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T174346385787+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T174346388250+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T174349202195+0800-receipts/command.json",
+      "selection": "receipts",
+      "exit_code": 0,
+      "counts": {
+        "passed": 36,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/backend-command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T174944275746+0800-snapshot/fixed-command.json",
+      "selection": "fixed",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 8,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/backend-command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/browser-command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/build-command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/bundle-command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/fixed-command.json",
+      "selection": "fixed",
+      "exit_code": 0,
+      "counts": {
+        "passed": 9,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/focused-command.json",
+      "selection": "focused",
+      "exit_code": 0,
+      "counts": {
+        "tests": 14,
+        "pass": 14,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/lint-command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/regressions-command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175439431701+0800-u5e-contracts/command.json",
+      "selection": "u5e-contracts",
+      "exit_code": 0,
+      "counts": {
+        "tests": 30,
+        "pass": 30,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175442592882+0800-backend-regressions/command.json",
+      "selection": "backend-regressions",
+      "exit_code": 124,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T175712957449+0800-integrity/command.json",
+      "selection": "integrity",
+      "exit_code": 0,
+      "counts": {}
+    },
+    {
+      "path": "docs/testing/dashboard-u5f/20261105T180035899721+0800-backend-regressions/command.json",
+      "selection": "backend-regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 99,
+        "warnings": 2
+      }
+    }
+  ],
+  "isolated_snapshot_checks": [
+    {
+      "selection": "backend",
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      },
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/backend-command.json"
+    },
+    {
+      "selection": "browser",
+      "counts": {
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/browser-command.json"
+    },
+    {
+      "selection": "build",
+      "counts": {},
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/build-command.json"
+    },
+    {
+      "selection": "bundle",
+      "counts": {},
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/bundle-command.json"
+    },
+    {
+      "selection": "fixed",
+      "counts": {
+        "passed": 9,
+        "warnings": 2
+      },
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/fixed-command.json"
+    },
+    {
+      "selection": "focused",
+      "counts": {
+        "tests": 14,
+        "pass": 14,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/focused-command.json"
+    },
+    {
+      "selection": "lint",
+      "counts": {},
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/lint-command.json"
+    },
+    {
+      "selection": "regressions",
+      "counts": {
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "path": "docs/testing/dashboard-u5f/20261105T175420735566+0800-snapshot/regressions-command.json"
+    }
+  ],
+  "privacy": "PASS: encoded complete/truncated fragments, credentials/headers, private-name comparison, PNG metadata/CRC and visual review",
+  "whitespace": "PASS",
+  "git_index_head": "UNCHANGED",
+  "staged_files": [],
+  "continuous_datasets": [],
+  "continuous_executable": false,
+  "limitations": [
+    "No continuous worker, checkpoint version, immutable model bundle, scoped Chair mandate or resource enforcement.",
+    "Browser responses intercepted; no live browser-to-GA or institutional database acceptance.",
+    "Fixed cancellation is cooperative at boundaries, not an interrupt within fitness evaluation.",
+    "Historical failures retained; no institutional approval or provider activation."
+  ],
+  "recorded_at": "2026-11-05T18:03:07.603603+08:00"
+}

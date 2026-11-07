@@ -1,0 +1,15 @@
+{
+  "selection": "browser",
+  "command": [
+    "node",
+    "--test",
+    "tests/continuousOptimization.browser.test.mjs"
+  ],
+  "started_at": "2026-11-05T17:40:41.114934+08:00",
+  "ended_at": "2026-11-05T17:41:07.191320+08:00",
+  "elapsed_seconds": 26.076438799966127,
+  "exit_code": 1,
+  "stdout": "\u25b6 U5F readiness and existing fixed lifecycle with fictional HTTP\n  \u2714 U5F-B01 Fixed mode remains default without requesting continuous readiness (2351.3823ms)\n  \u2714 U5F-B02 Continuous is visibly blocked and never starts an execution (225.1407ms)\n  \u2714 U5F-B03 Hidden fixed settings cannot submit in continuous view (3.7713ms)\n  \u2714 U5F-B04 Forged executable metadata is rejected (685.2648ms)\n  \u2714 U5F-B05 Readiness error retries without GA execution (696.6049ms)\n  \u2714 U5F-B06 Loading has no invented continuous state (623.0664ms)\n  \u2714 U5F-B07 Lifecycle vocabulary and budgets are explicitly not active (167.5ms)\n  \u2714 U5F-B08 Switching mode preserves fixed parameter values (110.3863ms)\n  \u2714 U5F-B09 Refresh resets only mode selection and never auto-starts (549.6233ms)\n  \u2716 U5F-B10 Existing fixed pause waits for its backend acknowledgement (15615.1015ms)\n\u2716 U5F readiness and existing fixed lifecycle with fictional HTTP (22528.9078ms)\n\u2716 U5F-B11 Existing fixed resume retains its run identity (5.1622ms)\n\u2139 tests 12\n\u2139 suites 0\n\u2139 pass 9\n\u2139 fail 2\n\u2139 cancelled 1\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 25978.8426\n\n\u2716 failing tests:\n\ntest at tests\\continuousOptimization.browser.test.mjs:47:13\n\u2716 U5F-B10 Existing fixed pause waits for its backend acknowledgement (15615.1015ms)\n  'test did not finish before its parent and was cancelled'\n\ntest at tests\\continuousOptimization.browser.test.mjs:21:1\n\u2716 U5F readiness and existing fixed lifecycle with fictional HTTP (22528.9078ms)\n  Error: Fictional pause acknowledgement\n      at eventually (file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/continuousOptimization.browser.test.mjs:17:9)\n      at runNextTicks (node:internal/process/task_queues:64:5)\n      at listOnTimeout (node:internal/timers:567:9)\n      at process.processTimers (node:internal/timers:541:7)\n      at async file:///C:/Users/User/Desktop/Genetic-Algorithm%20Dashboard/frontend/tests/continuousOptimization.browser.test.mjs:81:79\n\ntest at tests\\continuousOptimization.browser.test.mjs:47:13\n\u2716 U5F-B11 Existing fixed resume retains its run identity (5.1622ms)\n  'test could not be started because its parent finished'\n",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only. Browser responses intercepted; no institutional database, live sessions or production authority."
+}

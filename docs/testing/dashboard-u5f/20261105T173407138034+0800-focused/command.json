@@ -1,0 +1,15 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/continuousOptimization.test.mjs"
+  ],
+  "started_at": "2026-11-05T17:34:07.139448+08:00",
+  "ended_at": "2026-11-05T17:34:08.637998+08:00",
+  "elapsed_seconds": 1.498593800002709,
+  "exit_code": 0,
+  "stdout": "\u2714 foundation cannot supply an executable dataset or verified receipt (6.8088ms)\n\u2714 forged executable cannot activate controls (0.7601ms)\n\u2714 forged availability cannot activate controls (0.1335ms)\n\u2714 forged supported_datasets cannot activate controls (0.1187ms)\n\u2714 forged input_consumption cannot activate controls (0.9926ms)\n\u2714 forged receipt_capability cannot activate controls (0.4121ms)\n\u2714 forged institutional_authorization cannot activate controls (0.2498ms)\n\u2714 forged lifecycle cannot activate controls (0.3039ms)\n\u2714 forged safeguards cannot activate controls (0.3278ms)\n\u2714 forged requirements cannot activate controls (0.4727ms)\n\u2714 duplicated or unknown requirements fail closed (0.4018ms)\n\u2714 noninstalled commands and malformed state vocabulary fail closed (0.2461ms)\n\u2714 selector is a local read-only view with explicit unavailability and no polling (14.842ms)\n\u2714 continuous selection is guarded before upload or fixed engine invocation (6.5143ms)\n\u2139 tests 14\n\u2139 suites 0\n\u2139 pass 14\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1361.2019\n",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only. Browser responses intercepted; no institutional database, live sessions or production authority."
+}

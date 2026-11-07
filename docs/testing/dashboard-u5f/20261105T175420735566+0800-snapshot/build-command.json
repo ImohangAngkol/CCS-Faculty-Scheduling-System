@@ -1,0 +1,15 @@
+{
+  "selection": "build",
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "-b"
+  ],
+  "started_at": "2026-11-05T17:57:00.942571+08:00",
+  "ended_at": "2026-11-05T17:57:10.123883+08:00",
+  "elapsed_seconds": 9.181365499971434,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "U5F-only temporary source snapshot, empty fictional import tables and declared fictional model fixtures; no institutional data or DB"
+}

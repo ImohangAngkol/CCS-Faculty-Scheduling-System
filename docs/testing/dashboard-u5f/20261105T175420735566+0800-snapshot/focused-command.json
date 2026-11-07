@@ -1,0 +1,15 @@
+{
+  "selection": "focused",
+  "command": [
+    "node",
+    "--test",
+    "tests/continuousOptimization.test.mjs"
+  ],
+  "started_at": "2026-11-05T17:56:58.307837+08:00",
+  "ended_at": "2026-11-05T17:56:58.798935+08:00",
+  "elapsed_seconds": 0.4911600999766961,
+  "exit_code": 0,
+  "stdout": "\u2714 foundation cannot supply an executable dataset or verified receipt (2.3112ms)\n\u2714 forged executable cannot activate controls (0.2774ms)\n\u2714 forged availability cannot activate controls (0.0978ms)\n\u2714 forged supported_datasets cannot activate controls (0.0783ms)\n\u2714 forged input_consumption cannot activate controls (0.1114ms)\n\u2714 forged receipt_capability cannot activate controls (0.0805ms)\n\u2714 forged institutional_authorization cannot activate controls (0.0774ms)\n\u2714 forged lifecycle cannot activate controls (0.0845ms)\n\u2714 forged safeguards cannot activate controls (0.0952ms)\n\u2714 forged requirements cannot activate controls (0.1415ms)\n\u2714 duplicated or unknown requirements fail closed (0.1579ms)\n\u2714 noninstalled commands and malformed state vocabulary fail closed (0.1129ms)\n\u2714 selector is a local read-only view with explicit unavailability and no polling (7.2601ms)\n\u2714 continuous selection is guarded before upload or fixed engine invocation (3.5487ms)\n\u2139 tests 14\n\u2139 suites 0\n\u2139 pass 14\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 402.5932\n",
+  "stderr": "",
+  "scope": "U5F-only temporary source snapshot, empty fictional import tables and declared fictional model fixtures; no institutional data or DB"
+}

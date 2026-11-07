@@ -1,0 +1,23 @@
+{
+  "selection": "fixed",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_continuous_fixed_qualification.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5f-8ygx_rtt\\pytest-fixed"
+  ],
+  "started_at": "2026-11-05T17:54:27.672062+08:00",
+  "ended_at": "2026-11-05T17:56:58.305836+08:00",
+  "elapsed_seconds": 150.63382680003997,
+  "exit_code": 0,
+  "stdout": ".........                                                                [100%]\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n============================ slowest 10 durations =============================\n38.84s call     tests/test_continuous_fixed_qualification.py::test_actual_original_v1_continuation_and_rng_parity[0]\n35.75s call     tests/test_continuous_fixed_qualification.py::test_actual_original_v1_continuation_and_rng_parity[1]\n33.62s call     tests/test_continuous_fixed_qualification.py::test_actual_original_v1_continuation_and_rng_parity[2]\n24.44s call     tests/test_continuous_fixed_qualification.py::test_real_pause_restart_discovery_and_checkpoint_resume\n10.39s call     tests/test_continuous_fixed_qualification.py::test_concurrent_resume_start_and_stop_use_one_actual_fixed_worker\n0.67s call     tests/test_continuous_fixed_qualification.py::test_original_strict_checkpoint_rejects_actual_fictional_input_drift[weights]\n0.46s call     tests/test_continuous_fixed_qualification.py::test_original_strict_checkpoint_rejects_actual_fictional_input_drift[preferences]\n0.09s call     tests/test_continuous_fixed_qualification.py::test_fixed_worker_failure_releases_admission_without_success_claim\n0.02s setup    tests/test_continuous_fixed_qualification.py::test_actual_original_v1_continuation_and_rng_parity[0]\n0.02s call     tests/test_continuous_fixed_qualification.py::test_pre_initialization_cancellation_has_no_scoring_or_saved_result\n9 passed, 2 warnings in 147.88s (0:02:27)\n",
+  "stderr": "",
+  "scope": "U5F-only temporary source snapshot, empty fictional import tables and declared fictional model fixtures; no institutional data or DB"
+}

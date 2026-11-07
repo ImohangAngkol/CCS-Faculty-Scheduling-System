@@ -1,0 +1,17 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/ga/OptimizationMode.tsx",
+    "src/services/continuousOptimization.ts",
+    "src/pages/admin/GenerateSchedule.tsx"
+  ],
+  "started_at": "2026-11-05T17:34:07.146860+08:00",
+  "ended_at": "2026-11-05T17:34:26.522998+08:00",
+  "elapsed_seconds": 19.376190899987705,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only. Browser responses intercepted; no institutional database, live sessions or production authority."
+}

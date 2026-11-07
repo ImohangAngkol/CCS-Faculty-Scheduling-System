@@ -1,0 +1,26 @@
+{
+  "selection": "backend-regressions",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_fitness_reporting.py",
+    "tests/test_ga_generation_history.py",
+    "tests/test_ga_source_qualification.py",
+    "tests/test_ga_academic_context.py",
+    "tests/test_ga_result_compatibility.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\ga-u5f-5bfed9126eb94e519e7825447743c778"
+  ],
+  "started_at": "2026-11-05T17:54:42.594635+08:00",
+  "ended_at": "2026-11-05T17:59:42.637452+08:00",
+  "elapsed_seconds": 300.0428639999591,
+  "exit_code": 124,
+  "stdout": "..............................",
+  "stderr": "\nBound exceeded; incomplete result, owned child cleanup must be reviewed.",
+  "scope": "Fictional temporary fixtures only. Browser responses intercepted; no institutional database, live sessions or production authority."
+}

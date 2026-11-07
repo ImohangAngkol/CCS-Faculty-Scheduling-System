@@ -1,0 +1,30 @@
+{
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "branch": "main",
+  "u5d_committed": false,
+  "u5d_paths": 24,
+  "u5e_committed": false,
+  "u5e_paths": 268,
+  "u5e_artifact_hashes_verified": 267,
+  "baseline_paths": 3541,
+  "institutional_continuous_execution": "BLOCKED",
+  "scope": "UI and lifecycle/readiness foundation only; no optimizer or execution adapter changes",
+  "preexisting_tracked_modifications": [
+    ".gitignore",
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "backend/main.py",
+    "backend/routers/ga_evaluation.py",
+    "backend/routers/genetic_algorithm.py",
+    "backend/tests/conftest.py",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ]
+}

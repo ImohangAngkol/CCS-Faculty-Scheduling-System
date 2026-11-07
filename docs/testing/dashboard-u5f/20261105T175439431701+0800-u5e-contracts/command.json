@@ -1,0 +1,16 @@
+{
+  "selection": "u5e-contracts",
+  "command": [
+    "node",
+    "--test",
+    "tests/advancedAnalysis.test.mjs",
+    "tests/advancedAnalysisInteraction.test.mjs"
+  ],
+  "started_at": "2026-11-05T17:54:39.432267+08:00",
+  "ended_at": "2026-11-05T17:54:40.186162+08:00",
+  "elapsed_seconds": 0.7539307000115514,
+  "exit_code": 0,
+  "stdout": "\u2714 seven graph inputs preserve cohort, units, contact hours and missing preferences (3.1944ms)\n\u2714 heatmap percentages are real applicable values; disabled is not zero (0.3888ms)\n\u2714 zero observations survive and optimization history does not infer percentages from fitness (45.1093ms)\n\u2714 empty cohort and incomplete historical data remain unavailable (0.9933ms)\n\u2714 one distinct chromosome is not a fabricated comparison (0.5384ms)\n\u2714 progress coverage rejects impossible contributors and nonpercentage satisfaction (0.7425ms)\n\u2714 malformed run fails validation (0.3218ms)\n\u2714 malformed generation fails validation (0.199ms)\n\u2714 malformed candidate fails validation (0.2106ms)\n\u2714 malformed chromosome fails validation (0.281ms)\n\u2714 malformed receipt fails validation (0.2311ms)\n\u2714 malformed percentage fails validation (0.1818ms)\n\u2714 malformed average fails validation (0.2293ms)\n\u2714 malformed hours fails validation (0.1616ms)\n\u2714 coherent comparison preserves negative and unchanged deltas (0.6595ms)\n\u2714 comparison rejects mismatched fingerprints and altered satisfaction changes (0.6834ms)\n\u2714 interface supplies six original plots, hours, three tabs, details and honest limits (8.5357ms)\n\u2714 unavailable chart value null is never a zero (1.3392ms)\n\u2714 unavailable chart value NaN is never a zero (0.1374ms)\n\u2714 unavailable chart value Infinity is never a zero (0.1387ms)\n\u2714 low satisfaction 0 is descriptive and highlighted (0.2333ms)\n\u2714 low satisfaction 39 is descriptive and highlighted (0.473ms)\n\u2714 low satisfaction 39.99 is descriptive and highlighted (0.1947ms)\n\u2714 satisfaction 40 preserves its normal series color (0.2098ms)\n\u2714 satisfaction 70 preserves its normal series color (0.1081ms)\n\u2714 satisfaction 100 preserves its normal series color (0.1335ms)\n\u2714 preparations highlight only above an explicit captured reference (1.5366ms)\n\u2714 diverging deviations have distinct above below and zero presentations (0.2167ms)\n\u2714 numeric display accepts exact zero without string coercion (0.0866ms)\n\u2714 all faculty charts connect selection without changing progress or scoring (8.3386ms)\n\u2139 tests 30\n\u2139 suites 0\n\u2139 pass 30\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 678.646\n",
+  "stderr": "",
+  "scope": "Fictional temporary fixtures only. Browser responses intercepted; no institutional database, live sessions or production authority."
+}

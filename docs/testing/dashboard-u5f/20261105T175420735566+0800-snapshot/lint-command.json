@@ -1,0 +1,17 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/ga/OptimizationMode.tsx",
+    "src/services/continuousOptimization.ts",
+    "src/pages/admin/GenerateSchedule.tsx"
+  ],
+  "started_at": "2026-11-05T17:57:11.561753+08:00",
+  "ended_at": "2026-11-05T17:57:19.369461+08:00",
+  "elapsed_seconds": 7.807769100065343,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "U5F-only temporary source snapshot, empty fictional import tables and declared fictional model fixtures; no institutional data or DB"
+}

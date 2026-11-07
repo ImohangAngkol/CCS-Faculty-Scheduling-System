@@ -9,6 +9,7 @@ from routers import subjects
 from routers import ga_history
 from routers import ga_evaluation
 from routers import advanced_ga_analysis
+from routers import continuous_optimization
 from routers import fitness_analysis
 from routers import auth
 from routers import schedules
@@ -77,6 +78,7 @@ app.include_router(subjects.router, dependencies=[Depends(require_principal)])
 app.include_router(ga_history.router, dependencies=[Depends(require_admin)])
 app.include_router(ga_evaluation.router)
 app.include_router(advanced_ga_analysis.router)
+app.include_router(continuous_optimization.router)
 app.include_router(fitness_analysis.router, dependencies=[Depends(require_admin)])
 app.include_router(auth.router)
 app.include_router(schedules.router)

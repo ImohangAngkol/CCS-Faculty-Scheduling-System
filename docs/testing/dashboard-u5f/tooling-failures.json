@@ -1,0 +1,54 @@
+{
+  "historical_evidence_preserved": true,
+  "setup_issues": [
+    {
+      "operation": "Browser harness generation",
+      "failure": "Initial finally-anchor did not match unfinished Live Center source; missing-file browser command failed before scenarios.",
+      "correction": "Generated a new standalone test file without changing original work."
+    },
+    {
+      "operation": "First two snapshot preparations",
+      "failure": "HEAD lacks the working-tree Live monitor key/indent anchors. No successful test execution claimed.",
+      "correction": "Exact entry-byte and HEAD transforms support both layouts; cached patch check only, no staging."
+    }
+  ],
+  "browser_corrections": [
+    {
+      "attempt": "20261105T173855042658+0800-browser",
+      "failure": "B04 radio selected before React mounted; B01-B03 passed.",
+      "correction": "Wait for mounted selector."
+    },
+    {
+      "attempt": "20261105T174041114201+0800-browser",
+      "failure": "B10 counted OPTIONS and POST together; B01-B09 passed, subsequent cancellations not passes.",
+      "correction": "Count POST command requests only."
+    }
+  ],
+  "fixed_qualification_failures": [
+    {
+      "attempt": "20261105T174318356157+0800-snapshot",
+      "passed": 8,
+      "failed": 1,
+      "test": "test_real_pause_restart_discovery_and_checkpoint_resume",
+      "failure": "25-second completion assertion expired during finite crossover work; log retains eventual engine completion.",
+      "correction": "Retain original engine/operators; bounded 90-second functional wait with recorded durations. Explicit test mutation=1/restarts=5 alone did not resolve the second attempt."
+    },
+    {
+      "attempt": "20261105T174944275746+0800-snapshot",
+      "passed": 8,
+      "failed": 1,
+      "test": "test_real_pause_restart_discovery_and_checkpoint_resume",
+      "failure": "25-second completion assertion expired during finite crossover work; log retains eventual engine completion.",
+      "correction": "Retain original engine/operators; bounded 90-second functional wait with recorded durations. Explicit test mutation=1/restarts=5 alone did not resolve the second attempt."
+    }
+  ],
+  "interrupted_legacy_selection": {
+    "record": "20261105T175442592882+0800-backend-regressions/command.json",
+    "exit_code": 124,
+    "completed_suite": false,
+    "qualification_credit": false,
+    "record_scope_correction": "The inherited runner scope string incorrectly described this selection as fictional-only. test_fitness_reporting and test_ga_generation_history import legacy academic roster-backed fixtures. This attempt is excluded from fictional acceptance. The retained public output contains only 30 progress dots and timeout text, not faculty rows or names.",
+    "cleanup": "The command exceeded 300 seconds; its two owned pytest launcher/worker processes were subsequently identity-verified and stopped. No unrelated service was stopped.",
+    "follow_up": "Removed both legacy suites from the U5F regression selection; new command selects only inspected source/context/compatibility suites. Preservation rechecked."
+  }
+}

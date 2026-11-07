@@ -1,0 +1,48 @@
+{
+  "head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "source_sha256": {
+    "backend/services/continuous_readiness.py": "5965577e8fcd41e5b895a6b28b3352f466890801a718d7b0c4421ce2c5dc7ae1",
+    "backend/routers/continuous_optimization.py": "ecda182b0d4295214cbf613a00af888bc1320b380ecb358542816b4926606801",
+    "backend/tests/test_continuous_readiness.py": "bde1f2163ba45bcbd90dc0666f41b910ed498f23369f3def9da85de589dfdb7d",
+    "backend/tests/test_continuous_fixed_qualification.py": "2abaaf5ec1b02b0903ca4f95a2ebefa1172d17cdf189506bd60df15281688350",
+    "frontend/src/services/continuousOptimization.ts": "438ee613063fff22ceefd031b378a5e2ea367fec8c68fbbd0b3934644498f2b9",
+    "frontend/src/components/ga/OptimizationMode.tsx": "ccfbc95c3bb94413e8fc23a5666fd9bd97031cd7b2b3683c24f0279742469e5a",
+    "frontend/tests/continuousOptimization.test.mjs": "bfd895be9aa2c032cbaae51ffc59f44c930bf9a7b711466c5db6a2f6dc41ba24",
+    "frontend/tests/continuousOptimization.browser.test.mjs": "fea7648d8f34792191b84440866f51a82e68c70f8c00f2a80ab8e475bc118d91",
+    "frontend/tests/continuousOptimization.fixtures.mjs": "899034917a7c44cf121dacd892f62e518fff19a6ee243864970c169ca8eb0edf",
+    "frontend/tests/continuousOptimizationRun.fixtures.mjs": "d6256884724c357373a51d189ada066933a6c614271bf68bad7492c87dff1d6e",
+    "frontend/tests/continuousOptimization.scenarios.mjs": "6bb581f5475a85cfb5294c9d897155e3fb06ae02edcce31094268e929f8cde15",
+    "backend/main.py": "5d757007f61028097750fea2635dbc571503a5ffc2c9091326525a26097b1493",
+    "frontend/src/pages/admin/GenerateSchedule.tsx": "8c22902084c5d44e12053152997a11b7a1d44e95d7c04513e19206d18fa39a45"
+  },
+  "proposed_blob_oids": {
+    "backend/services/continuous_readiness.py": "22f1c44c21a07633a3a75a294c09b19a43c225e1",
+    "backend/routers/continuous_optimization.py": "cbf811c7e18de0541585ad5f8ddb7a0f51e90193",
+    "backend/tests/test_continuous_readiness.py": "4f84361ed4352ff01829e74f79912eaaf32a1dfe",
+    "backend/tests/test_continuous_fixed_qualification.py": "8862f645ac6e17a63ce1d556f09772b918e7853a",
+    "frontend/src/services/continuousOptimization.ts": "623e3d366558cfbadc66100cf970ef302b4c340a",
+    "frontend/src/components/ga/OptimizationMode.tsx": "21084170d2585fb884a2841531591f95ace93e93",
+    "frontend/tests/continuousOptimization.test.mjs": "afac9a47ce3a66246fcf32fe50946abbca272b7e",
+    "frontend/tests/continuousOptimization.browser.test.mjs": "d6f5f415c083e78399eda7a2ad8ccaa66498cd5b",
+    "frontend/tests/continuousOptimization.fixtures.mjs": "7fb86ea0688d50b8f364279a06e811efc95437c0",
+    "frontend/tests/continuousOptimizationRun.fixtures.mjs": "e989528120494abeafce8f7cd4bd2db842d09601",
+    "frontend/tests/continuousOptimization.scenarios.mjs": "67f050d9708686e1e43e2fc9704fee0883758801",
+    "backend/main.py": "c39b120c0e4a25ac12aad6ca4bc8ead44151dc53",
+    "frontend/src/pages/admin/GenerateSchedule.tsx": "051c10d72b7db14aca929de97fc661eb93a2ed5b"
+  },
+  "results": [
+    {
+      "selection": "backend",
+      "exit_code": 0
+    },
+    {
+      "selection": "fixed",
+      "exit_code": 1
+    }
+  ],
+  "complete": false,
+  "fictional_source_only": true,
+  "no_u5d_u5e_or_live_center_dependency": true,
+  "no_actual_staging": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5f-_3glg7hm\\repository"
+}

@@ -1,0 +1,136 @@
+{
+  "milestone": "U5F checkpoint reconciliation",
+  "authorization": "User approved replacement after stale patch dry-run failed; 2026-11-07 Asia/Manila",
+  "reason": "Original HEAD-only patch did not apply after U5E advanced-analysis registration. Recontextualized exact same two additions; historical evidence unchanged.",
+  "original_patch": "docs/testing/dashboard-u5f/main-integration.patch",
+  "original_patch_sha256": "243d84e15fd0e9f0720670fa0c221b5e45bc3570fc9486e123b7489229cf5232",
+  "original_target_blob": "c39b120c0e4a25ac12aad6ca4bc8ead44151dc53",
+  "replacement_patch": "docs/testing/dashboard-u5f/checkpoint-20261107/main-after-u5e.patch",
+  "replacement_patch_sha256": "8aed7e6aedf70dd1f9401a0c5ef3e87145aa01867147fc2da28cee9693c405a9",
+  "u5e_input_blob": "333726afb65d6112c5e47874cf04e0129958c088",
+  "replacement_target_blob": "90b50d7686635d187d47c2fcced7ef5a1aad89c7",
+  "replacement_target_sha256": "940f3d75232bb26fc924564b5e3ec7f889972c44881e972bbaebffb2059c1085",
+  "u5e_registration_preserved": true,
+  "intended_additions": [
+    "from routers import continuous_optimization",
+    "app.include_router(continuous_optimization.router)"
+  ],
+  "working_file_modified": false,
+  "applied_to_real_index": true,
+  "original_scope_and_metadata_preserved": true,
+  "staged_verification": "PASS_INDEX_ONLY_EXACT_TWO_LINES",
+  "fresh_checks": [
+    {
+      "selection": "backend",
+      "exit_code": 0,
+      "summary": "          [100%]\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n20 passed, 2 warnings in 6.36s\n",
+      "evidence": "C:\\Users\\User\\AppData\\Local\\Temp\\ga-u5e-j-checkpoint-ft0d5yra\\F-backend-command.json"
+    },
+    {
+      "selection": "frontend",
+      "exit_code": 0,
+      "summary": "dataset or verified receipt (3.1671ms)\n\u2714 forged executable cannot activate controls (0.3607ms)\n\u2714 forged availability cannot activate controls (0.1123ms)\n\u2714 forged supported_datasets cannot activate controls (0.0925ms)\n\u2714 forged input_consumption cannot activate controls (0.1392ms)\n\u2714 forged receipt_capability cannot activate controls (0.0949ms)\n\u2714 forged institutional_authorization cannot activate controls (0.0877ms)\n\u2714 forged lifecycle cannot activate controls (0.1075ms)\n\u2714 forged safeguards cannot activate controls (0.1088ms)\n\u2714 forged requirements cannot activate controls (0.1582ms)\n\u2714 duplicated or unknown requirements fail closed (0.1926ms)\n\u2714 noninstalled commands and malformed state vocabulary fail closed (0.1192ms)\n\u2714 selector is a local read-only view with explicit unavailability and no polling (11.3747ms)\n\u2714 continuous selection is guarded before upload or fixed engine invocation (4.33ms)\n\u2139 tests 14\n\u2139 suites 0\n\u2139 pass 14\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 489.3167\n",
+      "evidence": "C:\\Users\\User\\AppData\\Local\\Temp\\ga-u5e-j-checkpoint-ft0d5yra\\F-frontend-command.json"
+    },
+    {
+      "selection": "typescript",
+      "exit_code": 0,
+      "summary": "",
+      "evidence": "C:\\Users\\User\\AppData\\Local\\Temp\\ga-u5e-j-checkpoint-ft0d5yra\\F-typescript-command.json"
+    }
+  ],
+  "actual_staged_target_blob": "90b50d7686635d187d47c2fcced7ef5a1aad89c7",
+  "patch_context_whitespace": {
+    "ordinary_source_and_artifact_whitespace": "PASS",
+    "patch_syntax": [
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 10,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 11,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 14,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 19,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 22,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 24,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 26,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 28,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 32,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 38,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 44,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 50,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      },
+      {
+        "path": "docs/testing/dashboard-u5f/GenerateSchedule-integration.patch",
+        "line": 53,
+        "classification": "REQUIRED_BLANK_UNIFIED_DIFF_CONTEXT_MARKER",
+        "artifact_bytes_preserved": true
+      }
+    ]
+  },
+  "snapshot_fixture_setup_reconciliation": {
+    "status": "FIXTURE_SETUP_STOP_BEFORE_TESTS",
+    "exception": "Canonical source differs from the recorded baseline",
+    "path": "backend/main.py",
+    "cause": "Legacy newline recipe invoked after overlaying approved E main. Existing milestone snapshot tools invoke recipe before integration overlays.",
+    "unexpected_legacy_source_mismatches": [],
+    "approved_staged_main_sha256": "f65fa0459c0bd5293d393c4221957afcff31b43ccdcebf892073fd16ee222f15",
+    "correction": "Reproduce existing recipe first in TEMP and then restore exact staged main bytes; assert identity before tests. No original recipe, fingerprints or production files changed."
+  },
+  "no_protected_or_existing_evidence_bytes_changed": true
+}
