@@ -52,16 +52,31 @@ def _execute_with_history(control, **parameters):
     validate_ga_inputs()
     from services.ga_run_provenance import begin
     begin(control, parameters)
+    from services import ga_input_receipt
+    receipt = ga_input_receipt.begin(control, parameters)
+    original_callback = parameters.get("progress_callback")
+    if receipt is not None and original_callback is not None:
+        def observe(kind, data):
+            receipt.progress(kind, data)
+            return original_callback(kind, data)
+        parameters = {**parameters, "progress_callback": observe}
     def warning(message):
         # Complete lines go directly to the thread-safe run buffer, preserving
         # foreground partial-line capture and reconnectable warning delivery.
         console_print(message)
         store_for(_run_registry).buffer(control.run_id).append(message)
-    with capture_history(control, _templates(), parameters.get("resume_state"), warning) as history:
-        result = run_genetic_algorithm(**parameters)
-        if history is not None and isinstance(result, dict):
-            history.record_result(result)
+    try:
+        with capture_history(control, _templates(), parameters.get("resume_state"), warning) as history:
+            result = run_genetic_algorithm(**parameters)
+            if history is not None and isinstance(result, dict):
+                history.record_result(result)
+        if receipt is not None:
+            receipt.finish("PAUSED" if isinstance(result, checkpoints.PausedRun) else "STOPPED_WITHOUT_RESULT" if result is None else "CALL_RETURNED")
         return result
+    except BaseException:
+        if receipt is not None:
+            receipt.finish("CALL_INTERRUPTED")
+        raise
 
 
 def _admit_execution(cancellable=True, configuration=None):

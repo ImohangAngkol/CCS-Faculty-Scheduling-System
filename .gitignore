@@ -136,6 +136,7 @@ backend/saved_chromosomes/stopped_runs/
 backend/saved_chromosomes/generation_snapshots/
 backend/run_checkpoints/
 backend/constrained_runs_v2/
+backend/run_input_receipts_v1/
 
 
 # ============================================================

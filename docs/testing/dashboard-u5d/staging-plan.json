@@ -1,0 +1,61 @@
+{
+  "base_head": "d6db077793da52b7559351a5d0f8e6d54608cb77",
+  "checkpoint_paths": [
+    ".gitignore",
+    "backend/routers/ga_evaluation.py",
+    "backend/routers/genetic_algorithm.py",
+    "backend/services/ga_input_receipt.py",
+    "backend/tests/conftest.py",
+    "backend/tests/test_ga_input_receipt.py",
+    "docs/dashboard-u5d-run-bound-loader-receipt.md",
+    "docs/testing/dashboard-u5d/20261105T062806307734+0800-backend/command.json",
+    "docs/testing/dashboard-u5d/20261105T063027530500+0800-backend/command.json",
+    "docs/testing/dashboard-u5d/20261105T063029337700+0800-focused/command.json",
+    "docs/testing/dashboard-u5d/20261105T063031307871+0800-regressions/command.json",
+    "docs/testing/dashboard-u5d/20261105T063033965016+0800-build/command.json",
+    "docs/testing/dashboard-u5d/20261105T063036125124+0800-bundle/command.json",
+    "docs/testing/dashboard-u5d/20261105T063038333540+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5d/20261105T063040457714+0800-lint/command.json",
+    "docs/testing/dashboard-u5d/20261105T063537532296+0800-backend/command.json",
+    "docs/testing/dashboard-u5d/20261105T063652771295+0800-backend-regressions/command.json",
+    "docs/testing/dashboard-u5d/20261105T063759965003+0800-backend/command.json",
+    "docs/testing/dashboard-u5d/20261105T064204279065+0800-integrity/command.json",
+    "docs/testing/dashboard-u5d/audit_evidence.py",
+    "docs/testing/dashboard-u5d/manifest.json",
+    "docs/testing/dashboard-u5d/preservation-baseline.json",
+    "docs/testing/dashboard-u5d/run_checks.py",
+    "docs/testing/dashboard-u5d/staging-plan.json"
+  ],
+  "partial_staging_required": [],
+  "excluded_tracked_paths": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "actual_staging": false,
+  "commit_and_push_authorized": false,
+  "per_command_staging_template": [
+    "git",
+    "-c",
+    "core.autocrlf=false",
+    "add",
+    "--",
+    "<one literal checkpoint_paths entry>"
+  ],
+  "recommended_commit_message": "feat(ga): record unverified run-bound input observations",
+  "prerequisites": [
+    "Separate checkpoint authorization and fresh upstream comparison",
+    "Verify raw artifact hashes and exact staged names/count",
+    "Verify index blobs without changing protected local JSON",
+    "Exclude runtime receipts and all unrelated U4/Live/research work"
+  ],
+  "scope": "Partial observation contract only; full optimizer consumption and institutional activation remain blocked"
+}

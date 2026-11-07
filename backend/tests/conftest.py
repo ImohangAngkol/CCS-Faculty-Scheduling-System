@@ -26,3 +26,5 @@ def isolated_checkpoints(monkeypatch, tmp_path):
     monkeypatch.setattr(ga_checkpoint_service, "CHECKPOINTS_DIR", tmp_path / "run_checkpoints")
     from services import ga_history_service
     monkeypatch.setattr(ga_history_service, "SNAPSHOTS_DIR", tmp_path / "generation_snapshots")
+    from services import ga_input_receipt
+    monkeypatch.setattr(ga_input_receipt, "RECEIPTS_DIR", tmp_path / "input_receipts")

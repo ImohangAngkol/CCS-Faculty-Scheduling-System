@@ -16,3 +16,9 @@ def current_evaluation():
 def source_qualification():
     from services.ga_source_qualification import status
     return status()
+
+
+@router.get("/runs/{run_id}/input-receipt")
+def input_receipt(run_id: str):
+    from services.ga_input_receipt import read as receipt
+    return read(lambda: receipt(run_id))

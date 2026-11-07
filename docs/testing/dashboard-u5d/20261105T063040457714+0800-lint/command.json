@@ -1,0 +1,23 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/services/currentEvaluation.ts",
+    "src/components/ga/CurrentEvaluation.tsx",
+    "src/components/ga/SourceQualification.tsx",
+    "src/services/sourceQualification.ts",
+    "src/pages/admin/ChromosomeViewer.tsx",
+    "src/pages/admin/GenerationHistory.tsx"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-05T06:30:40.458561+08:00",
+  "ended_at": "2026-11-05T06:30:56.468599+08:00",
+  "elapsed_seconds": 16.010026199975982,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}

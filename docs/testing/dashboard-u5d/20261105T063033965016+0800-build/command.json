@@ -1,0 +1,18 @@
+{
+  "selection": "build",
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "-b"
+  ],
+  "cwd": "frontend",
+  "started_at": "2026-11-05T06:30:33.965780+08:00",
+  "ended_at": "2026-11-05T06:30:48.458648+08:00",
+  "elapsed_seconds": 14.492875800002366,
+  "exit_code": 0,
+  "timed_out": false,
+  "temporary_base_new": null,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Isolated fictional fixtures; browser HTTP is intercepted, backend tests use ASGI/temporary files, no database writes. No PostgreSQL or institutional acceptance."
+}
