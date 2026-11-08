@@ -1,0 +1,145 @@
+{
+  "scope": "U5M qualification, not institutional deployment authorization",
+  "rows": [
+    {
+      "capability": "Fixed-generation workflow",
+      "status": "Implemented / Verified in isolation",
+      "finding": "Original V1 fixed endpoints unchanged; parity and continuation exercised with fictional inputs",
+      "evidence": "legacy, parity, receipts"
+    },
+    {
+      "capability": "Continuous mode selector/readiness",
+      "status": "Implemented / Blocked",
+      "finding": "Mode selection and retry exist, executable Start remains disabled; readiness is read-only",
+      "evidence": "readiness; 16 intercepted-HTTP Edge scenarios"
+    },
+    {
+      "capability": "Immutable bundles and optimizer consumption",
+      "status": "Implemented / Verified in isolation",
+      "finding": "G canonical bundles and H bound optimizer verified internally; old D receipts remain UNVERIFIED",
+      "evidence": "bundle-tests, consumption, parity"
+    },
+    {
+      "capability": "Trusted academic capture",
+      "status": "Blocked",
+      "finding": "Server-owned J prepared fictional catalogs work; genuine semester/cohort/resource authority is absent",
+      "evidence": "qualification, backend-regressions"
+    },
+    {
+      "capability": "Authenticated principal",
+      "status": "Implemented / Verified in isolation",
+      "finding": "Opaque session DB lookup; active roles, binding, expiry, CSRF and revocation; no client role claims",
+      "evidence": "identity ASGI/SQLite: 16"
+    },
+    {
+      "capability": "Department optimization scope",
+      "status": "Blocked",
+      "finding": "Independent current actor/department/action grants required; Administrator role is insufficient",
+      "evidence": "qualification, admission"
+    },
+    {
+      "capability": "Run owner and recovery operator",
+      "status": "Implemented / Verified in isolation",
+      "finding": "Actor, scope, owner, lineage, configuration and fence checks; no institutional operator deployed",
+      "evidence": "admission, worker, supervised"
+    },
+    {
+      "capability": "Start/pause/resume/stop",
+      "status": "Requires integration",
+      "finding": "Internal K/L finite worker lifecycle works; no continuous execution HTTP/UI bridge",
+      "evidence": "worker, supervised; browser fixed controls are synthetic"
+    },
+    {
+      "capability": "Status and generation progress",
+      "status": "Requires integration",
+      "finding": "Internal run snapshots/sequence/checkpoint progress exist; dashboard not wired to continuous worker",
+      "evidence": "worker, supervised"
+    },
+    {
+      "capability": "Best-so-far and fitness breakdown",
+      "status": "Requires integration",
+      "finding": "H/K best and original breakdown qualified, existing E analysis is separate; no Saved Best promotion",
+      "evidence": "parity, analysis, supervised"
+    },
+    {
+      "capability": "Faculty preference satisfaction and teaching balance",
+      "status": "Implemented / Requires integration",
+      "finding": "Existing read-only analysis metrics tested on fictional results; not proof of approved policy or continuous live transport",
+      "evidence": "analysis, frontend"
+    },
+    {
+      "capability": "Department Chair decisions",
+      "status": "Implemented / Blocked",
+      "finding": "Separate D12 mandate/lifecycle required, Administrator is not Chair; genuine directory unconfigured",
+      "evidence": "chair, chair-trust"
+    },
+    {
+      "capability": "Controlled application/publication",
+      "status": "Implemented / Blocked",
+      "finding": "Separate D13 application authority required; test-only directory never grants production approval",
+      "evidence": "application-trust"
+    },
+    {
+      "capability": "Run audit and checkpoint ownership",
+      "status": "Implemented / Verified in isolation",
+      "finding": "SQLite atomic ownership/bundle/lineage/fence pins, cross-run denial and interrupted writes verified",
+      "evidence": "admission, worker, supervised"
+    },
+    {
+      "capability": "Windows child containment",
+      "status": "Verified in isolation",
+      "finding": "Creation-time nested Jobs, descendants denied, owned tree cleanup and parent death tested; not hostile-code sandbox",
+      "evidence": "native, supervised"
+    },
+    {
+      "capability": "Child CPU and memory",
+      "status": "Verified in isolation",
+      "finding": "Private commitment and periodic user-CPU thresholds only; overshoot measured",
+      "evidence": "native"
+    },
+    {
+      "capability": "Parent/whole-service resource enforcement",
+      "status": "Unsupported",
+      "finding": "Parent providers, reconstruction, validation and SQLite are outside child limits; no RSS/CPU-rate or host budget",
+      "evidence": "source inspection; unsupported configuration negatives"
+    },
+    {
+      "capability": "Cross-session/service recovery",
+      "status": "Unsupported",
+      "finding": "Local-session Jobs and same-store reopening do not qualify multi-session ownership or automatic reattachment",
+      "evidence": "source inspection; supervised"
+    },
+    {
+      "capability": "Deployment storage root and account",
+      "status": "Blocked",
+      "finding": "Only private owned OS-temp profiles; approved service identity/root/ACL policy absent",
+      "evidence": "qualification, supervised"
+    },
+    {
+      "capability": "Database quota and backup inspection",
+      "status": "Verified in isolation",
+      "finding": "SQLite page cap, write rollback, consistent private backup hashes and read-only inspection; no filesystem/journal quota",
+      "evidence": "supervised"
+    },
+    {
+      "capability": "Writable backup restoration",
+      "status": "Blocked",
+      "finding": "No independent anti-rollback freshness/ownership anchor or approved restore authority",
+      "evidence": "supervised rejection tests"
+    },
+    {
+      "capability": "Retention deletion",
+      "status": "Blocked",
+      "finding": "Fence/owner/terminal checks exist but deletion remains disabled; exhaustion fails safely",
+      "evidence": "worker, supervised"
+    },
+    {
+      "capability": "Current eligibility / institutional Saved Best",
+      "status": "Blocked",
+      "finding": "U5D receipt repair never proves consumption or academic approval; no historical records reclassified",
+      "evidence": "receipts, backend-regressions"
+    }
+  ],
+  "production_admission": "BLOCKED",
+  "continuous_execution_ui": "DISABLED"
+}

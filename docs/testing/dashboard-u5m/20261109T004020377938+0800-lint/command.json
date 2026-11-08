@@ -1,0 +1,18 @@
+{
+  "selection": "lint",
+  "head": "b4c8da7942bddfec63564a1e1f8de31e1db3e491",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/components/ga/OptimizationMode.tsx",
+    "src/services/continuousOptimization.ts",
+    "src/pages/admin/GenerateSchedule.tsx"
+  ],
+  "started_at": "2026-11-09T00:40:20.378848+08:00",
+  "ended_at": "2026-11-09T00:40:35.233329+08:00",
+  "elapsed_seconds": 14.854484800016508,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5M worker acceptance. Unrelated working-tree UI changes are not qualified by this check."
+}

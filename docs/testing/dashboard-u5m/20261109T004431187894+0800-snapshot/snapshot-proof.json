@@ -1,0 +1,28 @@
+{
+  "head": "b4c8da7942bddfec63564a1e1f8de31e1db3e491",
+  "source_sha256": {
+    "backend/services/ga_input_receipt.py": "cfd4f645bef767e346f028921c5720af7df81d00f02093578545b9ca079318f9",
+    "backend/tests/test_receipt_concurrency_qualification.py": "abfc9228af9b81c2cf7c492bc39c72fd6788a232f234d4c254f478aeb25ea81c",
+    "backend/tests/test_deployment_identity_qualification.py": "fee167c176cd55a86c27018cb6bde80d1e7cb5ad0efa25ac00d9d89397612493"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_input_receipt.py": "8ccfb7f88596aa66e6213729f05d6e33d226f686",
+    "backend/tests/test_receipt_concurrency_qualification.py": "b851d30884157f7a14508babf4c7cd93fb83013f",
+    "backend/tests/test_deployment_identity_qualification.py": "3cdc2ca41e008e1875a7a1685692e632ba7f652f"
+  },
+  "results": [
+    {
+      "selection": "chair-trust",
+      "exit_code": 0
+    }
+  ],
+  "qualified_selections": [
+    "chair-trust"
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sx4imo4v\\repository"
+}

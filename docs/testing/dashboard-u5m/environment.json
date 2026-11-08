@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-11-09T01:01:34.202253+08:00",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "architecture": "AMD64",
+  "dependencies_installed": false,
+  "database": "Only newly owned disposable SQLite fixtures; no PostgreSQL",
+  "browser": "Edg/156.0.4314.50",
+  "node": "v24.11.1"
+}

@@ -1,0 +1,24 @@
+{
+  "head": "b4c8da7942bddfec63564a1e1f8de31e1db3e491",
+  "source_sha256": {
+    "backend/tests/test_receipt_concurrency_qualification.py": "7e84e7d7d240019df6cc3e4cbc8ae13cb99c3e6e6e335c4102939549065920e0"
+  },
+  "proposed_blob_oids": {
+    "backend/tests/test_receipt_concurrency_qualification.py": "cf343a3f7a58b1a8c1032dd94eb87ecb16212524"
+  },
+  "results": [
+    {
+      "selection": "race",
+      "exit_code": 1
+    }
+  ],
+  "qualified_selections": [
+    "race"
+  ],
+  "complete": false,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-_jnjupyk\\repository"
+}

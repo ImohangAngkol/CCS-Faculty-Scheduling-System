@@ -1,0 +1,23 @@
+{
+  "selection": "supervised",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_supervised_worker.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-kgukkkz1\\pytest-supervised"
+  ],
+  "started_at": "2026-11-09T00:40:03.252057+08:00",
+  "ended_at": "2026-11-09T00:45:46.080312+08:00",
+  "elapsed_seconds": 342.8283180000726,
+  "exit_code": 0,
+  "stdout": ".........................................                                [100%]\n============================ slowest 10 durations =============================\n39.21s call     tests/test_supervised_worker.py::test_nonzero_original_fixed_ga_parity\n27.76s call     tests/test_supervised_worker.py::test_parent_interruption_real_checkpoint_and_explicit_fresh_recovery\n21.04s call     tests/test_supervised_worker.py::test_forced_native_termination_recovers_pinned_best\n21.03s call     tests/test_supervised_worker.py::test_checkpoint_retention_and_corruption\n20.95s call     tests/test_supervised_worker.py::test_backup_inspection_staleness_and_no_restore_activation\n20.74s call     tests/test_supervised_worker.py::test_partial_checkpoint_transaction_rollback\n20.45s call     tests/test_supervised_worker.py::test_restart_recovery_and_two_batches_match_uninterrupted_rng\n12.78s call     tests/test_supervised_worker.py::test_write_failure_old_checkpoint\n12.73s call     tests/test_supervised_worker.py::test_expired_lease_stale_writer_fenced\n11.30s call     tests/test_supervised_worker.py::test_generation_and_active_limits\n41 passed in 340.54s (0:05:40)\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

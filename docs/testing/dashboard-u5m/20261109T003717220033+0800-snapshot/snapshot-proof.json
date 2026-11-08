@@ -1,0 +1,28 @@
+{
+  "head": "b4c8da7942bddfec63564a1e1f8de31e1db3e491",
+  "source_sha256": {
+    "backend/services/ga_input_receipt.py": "cfd4f645bef767e346f028921c5720af7df81d00f02093578545b9ca079318f9",
+    "backend/tests/test_receipt_concurrency_qualification.py": "d14e916c15725b75d13c4ac68e5ec3f1d7f62e97c4f73a1e9565f00a415cb019",
+    "backend/tests/test_deployment_identity_qualification.py": "ac9af42c955f516cfb9740d6d5eb0511c069d4a6a7369e8524cc2cd6d6a56640"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_input_receipt.py": "8ccfb7f88596aa66e6213729f05d6e33d226f686",
+    "backend/tests/test_receipt_concurrency_qualification.py": "f36a4ba09021101a3a2fb3f447c9e87caa757e08",
+    "backend/tests/test_deployment_identity_qualification.py": "eade40b43e605500ed346b06bb78fb0b3bdb4afa"
+  },
+  "results": [
+    {
+      "selection": "identity",
+      "exit_code": 0
+    }
+  ],
+  "qualified_selections": [
+    "identity"
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-08zmkzyq\\repository"
+}

@@ -1,0 +1,76 @@
+{
+  "reports": [
+    {
+      "path": "docs/dashboard-u5d-run-bound-loader-receipt.md",
+      "sha256": "3fe87c0ecce6103ea873f63d28ec6debd54bbe1d44f1a27e6821c4fc6146342a",
+      "scope_lines": [
+        "Focused coverage includes matching observations; faculty/subject/section/room/eligibility changes; preference/settings/cohort changes in active scoring context; stale cache versus changed source fingerprint; configuration drift; cross-run events/record copying; missing/invalid receipts; rehashed forged VERIFIED/missing-field claims; incomplete/interrupted writes; exclusive-start collisions; two independent observer threads; bounded sampling; server-only academic reference; authorization; callback absence; seed limitations; real V1 parity and actual checkpoint pause/resume."
+      ]
+    },
+    {
+      "path": "docs/dashboard-u5e-advanced-ga-analysis.md",
+      "sha256": "268c0fd467e382a47ff88f880c2ce91f06da0fa04c5fd2683e63738b00604aa6",
+      "scope_lines": []
+    },
+    {
+      "path": "docs/dashboard-u5f-controlled-continuous-optimization.md",
+      "sha256": "c11443edadb8b7ae66b1c3196764a1280fc406bbcb2632fd566106b6b912d17a",
+      "scope_lines": [
+        "**PARTIALLY IMPLEMENTED: mode selection, protected read-only readiness, lifecycle contract and fixed-run qualification. Continuous optimization is NOT EXECUTABLE for either institutional or fictional datasets.** This uses the request's explicit Phase 4 fallback: complete the UI and lifecycle foundation when trustworthy immutable consumption cannot be established safely. No continuous engine, worker, checkpoint or optimization progress is fabricated."
+      ]
+    },
+    {
+      "path": "docs/dashboard-u5g-immutable-ga-input-bundle.md",
+      "sha256": "cbedc67cbe6b94772032d7bb9a4cf0524b6b693e4645daae3d90f4ab31cd9faf",
+      "scope_lines": [
+        "**PARTIALLY IMPLEMENTED \u2014 immutable capture/materialization foundation is implemented and tested; actual V1 optimizer consumption is NOT implemented or verified.** U5G's full completion criterion is therefore **not met**. U5D receipts remain UNVERIFIED, Current Evaluation eligibility is unchanged and Continuous Mode remains disabled for institutional and fictional datasets. This uses the explicitly permitted foundation fallback; it does not claim that a frozen container fixes the optimizer's global reads.",
+        "Changes can occur between module import, pre-call observation, independent scoring capture, engine-local binding, seed loading, generation callbacks, pause, resume and finalization. The API's process-local admission lock does not lock every source writer or eliminate ABA races. Existing source fingerprints also cover files that may not be semantically consumed.",
+        "This is a stop at the inspected boundary, not a claim that every injection architecture is impossible. No new V1/V2 branch or compatibility bridge was implemented, and no source fingerprints were spoofed or disabled. Existing algorithms, scoring, RNG operations, termination, hard constraints and Saved Best behavior remain unchanged."
+      ]
+    },
+    {
+      "path": "docs/dashboard-u5h-optimizer-consumption-boundary.md",
+      "sha256": "58cfdf685c648feb6d0beb3faa7e6902e74560045a3fcc688c6d78c13e46e932",
+      "scope_lines": [
+        "**Implemented: a separate, synchronous internal fixed-run optimizer entry that actually consumes U5G bundle working copies, with technically verified consumption receipts and a new bundle-bound checkpoint envelope.** This is not a switch of the existing HTTP APIs. `/run`, `/stream`, their U5D UNVERIFIED observations, CURRENT classification and historical persistence remain unchanged. No continuous worker, institutional provider, Chair mandate or publication capability is activated."
+      ]
+    },
+    {
+      "path": "docs/dashboard-u5i-trusted-run-admission.md",
+      "sha256": "ff7e541b2cd8e9bc2edc18c0f876b1a51e92d179857e592f56140b2f40ec923c",
+      "scope_lines": [
+        "**The isolated foundation is implemented and independently verified. Production admission remains BLOCKED.** A separate synchronous, finite U5H execution path now has server-generated run identities, independently scoped optimization grants, immutable captured inputs, idempotent admission, persistent ownership fencing and atomic SQLite checkpoint/tip persistence. No continuous worker, institutional provider, deployment storage, CURRENT promotion or publication is activated.",
+        "`configured_service()` returns `None`. In normal application operation, authenticated requests to execution/storage endpoints return `GA_TRUSTED_RUNS_UNAVAILABLE` (503). There is no environment bypass, demo activation switch, installed fictional issuer or production-created directory. The readiness response intentionally describes this deployed default rather than pretending that test injection activates production.",
+        "The U5H record of the intermittent U5D path-guard failure remains unchanged. U5I inspected the actual guard (`target.resolve().parent != RECEIPTS_DIR.resolve()`), reran the complete 36-case suite and the isolated concurrency case, and independently tested 500 concurrent pre-directory-creation path comparisons. All fresh tests passed; the probe found zero mismatches. **Root cause remains UNCONFIRMED; no fix is claimed or made to U5D.** The independent path probe is not a full observer/engine reproduction. Continue retaining and investigating any recurrence rather than relaxing the guard."
+      ]
+    },
+    {
+      "path": "docs/dashboard-u5j-authority-capture-storage.md",
+      "sha256": "79b0809b32146a9b59bf82bd86fd3d58faded009ac62cc1cccee88de7803673d",
+      "scope_lines": [
+        "**Isolated contract qualification is implemented and tested. Genuine institutional authority, the institutional input transformation and deployment storage remain unqualified. Production admission remains BLOCKED.** No production provider, route, worker, source loader, storage path or database is activated.",
+        "The adapter yields the exact U5I Grant contract, bound to the current run context and action. Expiry is the earliest of 60 seconds, mandate expiry and attestation expiry. Its stable policy digest binds contract version, adapter source fingerprint, mandate and evidence. Revocation or changed policy/revision prevents a previously admitted run from continuing. Account role and client department labels are not evidence of a mandate.",
+        "The new adapters connect to U5I through constructor injection **only in isolated tests**. No existing file, route or deployment dependency is edited. `configured_service()` remains None, production authenticated execution remains 503/unavailable, and legacy endpoints remain separate. No institutional run is admitted. There is no new UI implying an unsupported capability, no continuous worker and no automatic CURRENT, approval, publication or Saved Best promotion.",
+        "Warnings are the existing Starlette/httpx and anyio TestClient deprecations in applicable suites, plus existing Vite dynamic-import/chunk-size warnings. No dependency change or cleanup was made. Git fsck exited zero with existing dangling objects. The historical intermittent U5D concurrency issue remains root-cause-unconfirmed; the fresh full U5D suite passed, which is not a new fix claim."
+      ]
+    },
+    {
+      "path": "docs/dashboard-u5k-bounded-continuous-worker.md",
+      "sha256": "1a7a2dfc78c38be64bd4bc5ca400a794a1e6fc8cb73e2801d6602f4e2390a353",
+      "scope_lines": [
+        "Implemented 2026-11-08, Asia/Manila, on `main` at `5d4d02c52f67b30b6dec13179d0389e5dc46daf5`. **An isolated, Windows-only worker foundation is implemented. Production admission remains BLOCKED and the existing Continuous Optimization UI remains DISABLED.** No new HTTP route, deployed provider, database migration or frontend activation was introduced.",
+        "U5I production `configured_service()` still returns `None`. U5J has no deployed institutional issuer, source catalog or approved storage location. Administrator role alone is not scoped optimization authority or Department Chair authority. The U5F readiness endpoint and frontend remain the original blocked contract. Existing U5D HTTP receipts remain UNVERIFIED; no receipt or worker result is automatically CURRENT, approved, published or eligible to replace institutional Saved Best."
+      ]
+    },
+    {
+      "path": "docs/dashboard-u5l-windows-supervision-resource-qualification.md",
+      "sha256": "77616a795eef8ecd07b41b5e759e1b2ae3a506db4b4b9907be849a99f2081419",
+      "scope_lines": [
+        "2026-11-08, Asia/Manila. Entry: `main`, `9c3cff0f7fd38c4e595e118db5b0aa4a11b31afa` (pushed U5K). **The isolated Windows supervision profile is implemented and verified. Production admission remains BLOCKED and Continuous Optimization UI remains DISABLED.** Deployment-wide resource safety, institutional storage and publication authority are not established. The existing intermittent U5D receipt path-guard failure recurred; its cause remains unconfirmed despite passing reruns. This is an explicit qualification limitation, not a repaired legacy defect.",
+        "3. A U5D regression run: 35 passed, one failed `test_distinct_thread_observations_are_isolated_not_a_concurrent_engine_claim`, with HistoryError from the original receipt directory/symlink/resolve guard before start-record creation. This matches the previously documented class of intermittent U5H/I/J failure. Two isolated reruns and the later full 36-case suite passed. **The exact race/root cause is still unconfirmed; no U5D correction or relaxed guard is claimed.** Passing reruns do not erase this failure or establish that production receipt concurrency is reliable.",
+        "Each execution creates new evidence; it never overwrites prior attempts. Backend tests use the unchanged release-byte snapshot preparation, restore committed current main before execution, copy the five new L implementation/test files and use empty fictional import tables. Protected/academic data and runtime stores are excluded from source archives. No original source fingerprint is replaced. New stores/backups/checkpoints stay private in OS-temp and are not copied into evidence. Native probes use standard-library Win32 bindings only. The [environment record](testing/dashboard-u5l/environment.json) identifies Windows 11 build 26200, 64-bit Python 3.14.2 and no dependency installation."
+      ]
+    }
+  ],
+  "technical_providers_do_not_establish_institutional_approval": true
+}

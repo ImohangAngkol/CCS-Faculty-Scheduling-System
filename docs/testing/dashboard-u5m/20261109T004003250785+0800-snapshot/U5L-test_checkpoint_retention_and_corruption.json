@@ -1,0 +1,37 @@
+{
+  "scope": "Fictional owned Windows optimizer processes; no institutional acceptance",
+  "observations": [
+    {
+      "active_processes": 0,
+      "created_100ns": 134386297428262306,
+      "creation_time_job_binding": true,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 0,
+      "kernel_seconds": 0.734375,
+      "peak_private_commit_bytes": 623894528,
+      "pid": 38456,
+      "user_seconds": 2.171875
+    },
+    {
+      "active_processes": 0,
+      "created_100ns": 134386297472251210,
+      "creation_time_job_binding": true,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 0,
+      "kernel_seconds": 1.03125,
+      "peak_private_commit_bytes": 738181120,
+      "pid": 32968,
+      "user_seconds": 10.765625
+    }
+  ]
+}

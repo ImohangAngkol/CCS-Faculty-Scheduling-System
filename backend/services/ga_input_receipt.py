@@ -142,14 +142,35 @@ def directory(run_id):
     try:
         if str(UUID(run_id))!=run_id:raise ValueError()
     except (TypeError,ValueError,AttributeError):raise error("Invalid receipt run identity.",status=404)
-    target=RECEIPTS_DIR/run_id
-    if any(p.is_symlink() or p.is_junction() for p in (RECEIPTS_DIR,target)) or target.resolve().parent!=RECEIPTS_DIR.resolve():
+    root_path=RECEIPTS_DIR
+    target=root_path/run_id
+    if any(p.is_symlink() or p.is_junction() for p in (root_path,target)):
+        raise error()
+    parent=target.resolve().parent;root=root_path.resolve()
+    if parent!=root:
+        # Windows can retain an extended namespace prefix during concurrent
+        # creation. Require filesystem identity, never strip arbitrary prefixes.
+        try:
+            if not parent.samefile(root):raise error()
+        except OSError:raise error() from None
+    # Preserve reparse rejection if a path changed while it was resolved.
+    if any(p.is_symlink() or p.is_junction() for p in (root_path,target)):
         raise error()
     return target
 
 
 def write(run_id,name,value):
-    target=directory(run_id);target.mkdir(parents=True,exist_ok=True)
+    # Initialize the writer-owned root before observing its physical identity.
+    # Reads stay non-writing; invalid run IDs must not create even an empty root.
+    try:
+        if str(UUID(run_id))!=run_id:raise ValueError()
+    except (TypeError,ValueError,AttributeError):raise error("Invalid receipt run identity.",status=404)
+    root_path=RECEIPTS_DIR
+    if root_path.is_symlink() or root_path.is_junction():raise error()
+    root_path.mkdir(parents=True,exist_ok=True)
+    target=directory(run_id)
+    if target.parent!=root_path:raise error()
+    target.mkdir(parents=True,exist_ok=True)
     data=value.model_dump();raw=canonical({"data":data,"sha256":digest(data)})
     if len(raw)>MAX_BYTES:raise error()
     fd,temp=tempfile.mkstemp(prefix=".receipt-",suffix=".tmp",dir=target)

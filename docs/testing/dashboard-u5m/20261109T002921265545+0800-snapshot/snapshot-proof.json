@@ -1,0 +1,26 @@
+{
+  "head": "b4c8da7942bddfec63564a1e1f8de31e1db3e491",
+  "source_sha256": {
+    "backend/services/ga_input_receipt.py": "b8af4d20517443e13ed0ac01f2677375bdd4cb17930b395c76582b2cc398daf6",
+    "backend/tests/test_receipt_concurrency_qualification.py": "6803659c61ae8a26155b7e544286e2f198ed70e425d961b2577c9ad72416d4c5"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_input_receipt.py": "d320bbc9a9eb4af9edb535c26d458064f9be4a0b",
+    "backend/tests/test_receipt_concurrency_qualification.py": "d032f0ebad94b5ef26e981dfafb5d131292f4b2b"
+  },
+  "results": [
+    {
+      "selection": "race",
+      "exit_code": 1
+    }
+  ],
+  "qualified_selections": [
+    "race"
+  ],
+  "complete": false,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-xysdgsjk\\repository"
+}
