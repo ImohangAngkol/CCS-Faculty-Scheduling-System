@@ -1,0 +1,30 @@
+{
+  "head": "ed35d620111490d3021567ba7dcc6b26ec93d212",
+  "source_sha256": {
+    "backend/services/ga_recovery_qualification.py": "17ad920f1ba2e110ef99059714f8f3b38732f2c70c002cc286e9e85b6691b3b2",
+    "backend/services/ga_recovery_vault.py": "71a98f0bee43fe6844988df70a7e3facba131e7e7a105a80bce4c29842479d7b",
+    "backend/tests/test_recovery_qualification.py": "b6b40c09cacc0cff6764220a80f8c7289cc8f72edc054fd067ba08b72bd01461",
+    "backend/tests/test_parent_containment_qualification.py": "5ca11f457906929aa813d747ffe74c194cb836ace90bf309eadad8d4f593ee60"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_recovery_qualification.py": "c37416d452e64fd5c26db61ef65c152fac9bb5f9",
+    "backend/services/ga_recovery_vault.py": "f9a071329c53218108744706a5d6314c92ffa53e",
+    "backend/tests/test_recovery_qualification.py": "b59b69e56a90feb6b8540fa5fb719fbdb202093d",
+    "backend/tests/test_parent_containment_qualification.py": "962985502b297498a92ba04db3a9b6d259372d5a"
+  },
+  "results": [
+    {
+      "selection": "admission",
+      "exit_code": 0
+    }
+  ],
+  "qualified_selections": [
+    "admission"
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-hgwh3n16\\repository"
+}

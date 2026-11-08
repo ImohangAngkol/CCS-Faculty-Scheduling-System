@@ -1,0 +1,50 @@
+{
+  "reports": [
+    {
+      "path": "docs/dashboard-u5g-immutable-ga-input-bundle.md",
+      "sha256": "cbedc67cbe6b94772032d7bb9a4cf0524b6b693e4645daae3d90f4ab31cd9faf",
+      "scope": "Historical report read; new U5N execution evidence is separately attributed"
+    },
+    {
+      "path": "docs/dashboard-u5h-optimizer-consumption-boundary.md",
+      "sha256": "58cfdf685c648feb6d0beb3faa7e6902e74560045a3fcc688c6d78c13e46e932",
+      "scope": "Historical report read; new U5N execution evidence is separately attributed"
+    },
+    {
+      "path": "docs/dashboard-u5i-trusted-run-admission.md",
+      "sha256": "ff7e541b2cd8e9bc2edc18c0f876b1a51e92d179857e592f56140b2f40ec923c",
+      "scope": "Historical report read; new U5N execution evidence is separately attributed"
+    },
+    {
+      "path": "docs/dashboard-u5j-authority-capture-storage.md",
+      "sha256": "79b0809b32146a9b59bf82bd86fd3d58faded009ac62cc1cccee88de7803673d",
+      "scope": "Historical report read; new U5N execution evidence is separately attributed"
+    },
+    {
+      "path": "docs/dashboard-u5k-bounded-continuous-worker.md",
+      "sha256": "1a7a2dfc78c38be64bd4bc5ca400a794a1e6fc8cb73e2801d6602f4e2390a353",
+      "scope": "Historical report read; new U5N execution evidence is separately attributed"
+    },
+    {
+      "path": "docs/dashboard-u5l-windows-supervision-resource-qualification.md",
+      "sha256": "77616a795eef8ecd07b41b5e759e1b2ae3a506db4b4b9907be849a99f2081419",
+      "scope": "Historical report read; new U5N execution evidence is separately attributed"
+    },
+    {
+      "path": "docs/dashboard-u5m-reliability-deployment-qualification.md",
+      "sha256": "518f3b2e456f0090d8ad94aa8ae4f8bd9e575ef6590b495a31b784f44ee2b7c5",
+      "scope": "Historical report read; new U5N execution evidence is separately attributed"
+    }
+  ],
+  "prerequisite_order": [
+    "U5G",
+    "U5H",
+    "U5I",
+    "U5J",
+    "U5K",
+    "U5L",
+    "U5M"
+  ],
+  "production_issuers_unavailable": true,
+  "legacy_u5d_receipts": "UNCHANGED_UNVERIFIED"
+}

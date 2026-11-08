@@ -1,0 +1,6 @@
+{
+  "parent_memory_denied": true,
+  "peak_process_commit": 25620480,
+  "per_process_limit": 67108864,
+  "aggregate_limit": false
+}

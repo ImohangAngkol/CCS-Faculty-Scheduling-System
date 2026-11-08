@@ -1,0 +1,23 @@
+{
+  "selection": "worker",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_bounded_worker.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-y2a4wvop\\pytest-worker"
+  ],
+  "started_at": "2026-11-09T01:43:36.412082+08:00",
+  "ended_at": "2026-11-09T01:47:15.850701+08:00",
+  "elapsed_seconds": 219.43867880001199,
+  "exit_code": 0,
+  "stdout": "................................                                         [100%]\n============================ slowest 10 durations =============================\n29.83s call     tests/test_bounded_worker.py::test_pause_resume_exact_saved_population_and_rng\n29.23s call     tests/test_bounded_worker.py::test_nonzero_fitness_original_fixed_engine_parity\n20.55s call     tests/test_bounded_worker.py::test_partial_checkpoint_transaction_rolls_back_tip_and_best\n19.71s call     tests/test_bounded_worker.py::test_storage_write_failure_keeps_previous_checkpoint\n16.69s call     tests/test_bounded_worker.py::test_fresh_process_observes_retained_pause_and_validated_checkpoint\n11.68s call     tests/test_bounded_worker.py::test_expired_owner_is_fenced_and_explicit_recovery_advances\n10.22s call     tests/test_bounded_worker.py::test_retention_cap_and_corruption_fail_closed\n9.37s call     tests/test_bounded_worker.py::test_generation_ceiling_and_active_worker_cap\n8.85s call     tests/test_bounded_worker.py::test_checkpoint_size_and_stored_bytes_limits\n7.72s call     tests/test_bounded_worker.py::test_cross_run_checkpoint_cannot_restore_another_bundle\n32 passed in 217.46s (0:03:37)\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

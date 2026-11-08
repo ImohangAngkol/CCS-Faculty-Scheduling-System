@@ -1,0 +1,6 @@
+{
+  "user_seconds": 5.59375,
+  "exit_code": 3221225540,
+  "nested_worker_dead": true,
+  "scope": "Periodic per-process user CPU, not aggregate CPU rate"
+}

@@ -1,0 +1,23 @@
+{
+  "selection": "identity",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_deployment_identity_qualification.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-tq95k3c1\\pytest-identity"
+  ],
+  "started_at": "2026-11-09T01:48:15.762976+08:00",
+  "ended_at": "2026-11-09T01:48:29.817159+08:00",
+  "elapsed_seconds": 14.05423490004614,
+  "exit_code": 0,
+  "stdout": "................                                                         [100%]\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n============================ slowest 10 durations =============================\n0.41s setup    tests/test_deployment_identity_qualification.py::test_client_role_claims_never_create_identity[headers]\n0.37s call     tests/test_deployment_identity_qualification.py::test_administrator_account_change_revokes_existing_session[password]\n0.34s setup    tests/test_deployment_identity_qualification.py::test_authenticated_administrator_cannot_activate_bound_runs[capabilities]\n0.30s setup    tests/test_deployment_identity_qualification.py::test_credential_lifecycle_rejects_old_session[expired]\n0.30s call     tests/test_deployment_identity_qualification.py::test_login_rotation_revokes_prior_cookie\n0.27s setup    tests/test_deployment_identity_qualification.py::test_csrf_cannot_be_replaced_by_administrator_header\n0.26s call     tests/test_deployment_identity_qualification.py::test_administrator_account_change_revokes_existing_session[role]\n0.25s setup    tests/test_deployment_identity_qualification.py::test_administrator_account_change_revokes_existing_session[role]\n0.24s setup    tests/test_deployment_identity_qualification.py::test_server_binding_beats_headers_and_query\n0.23s setup    tests/test_deployment_identity_qualification.py::test_real_administrator_is_not_institutional_chair_or_optimizer\n16 passed, 2 warnings in 11.92s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

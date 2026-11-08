@@ -1,0 +1,23 @@
+{
+  "selection": "parent",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_parent_containment_qualification.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-hxswyhvg\\pytest-parent"
+  ],
+  "started_at": "2026-11-09T01:46:52.061894+08:00",
+  "ended_at": "2026-11-09T01:47:34.651844+08:00",
+  "elapsed_seconds": 42.59001330006868,
+  "exit_code": 1,
+  "stdout": "F......                                                                  [100%]\n================================== FAILURES ===================================\n_________________ test_venv_redirector_process_slot_diagnosis _________________\n\n    def test_venv_redirector_process_slot_diagnosis():\n        code=\"import os;print(os.getpid(),flush=True);input()\";rows=[]\n        for redirected in [True,False]:\n            p=parent(code,redirector=redirected)\n            try:\n                actual=int(line(p));o=p.observation()\n                # Redirector bookkeeping can briefly include an additional exiting\n                # process; characterize observed counts rather than inventing an\n                # exact two-process topology. The direct interpreter is one PID.\n>               assert o['active_processes']>=2 if redirected else o['active_processes']==1\nE               assert False\n\ntests\\test_parent_containment_qualification.py:59: AssertionError\n============================ slowest 10 durations =============================\n30.44s call     tests/test_parent_containment_qualification.py::test_real_checkpoint_survives_outer_parent_tree_termination\n2.10s call     tests/test_parent_containment_qualification.py::test_parent_cpu_death_kills_nested_worker_handles\n0.69s call     tests/test_parent_containment_qualification.py::test_parent_private_commit_limit_with_nested_worker\n0.64s call     tests/test_parent_containment_qualification.py::test_nested_parent_worker_membership_tree_cleanup_and_unrelated_survival\n0.35s call     tests/test_parent_containment_qualification.py::test_explicit_snapshot_import_boundary\n0.18s call     tests/test_parent_containment_qualification.py::test_venv_redirector_process_slot_diagnosis\n0.16s setup    tests/test_parent_containment_qualification.py::test_venv_redirector_process_slot_diagnosis\n0.13s call     tests/test_parent_containment_qualification.py::test_parent_breakaway_request_rejected\n0.01s setup    tests/test_parent_containment_qualification.py::test_real_checkpoint_survives_outer_parent_tree_termination\n0.01s teardown tests/test_parent_containment_qualification.py::test_real_checkpoint_survives_outer_parent_tree_termination\n=========================== short test summary info ===========================\nFAILED tests/test_parent_containment_qualification.py::test_venv_redirector_process_slot_diagnosis\n1 failed, 6 passed in 40.49s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

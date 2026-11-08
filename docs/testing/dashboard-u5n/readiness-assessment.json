@@ -1,0 +1,48 @@
+{
+  "prototype": {
+    "status": "CONTROLLED_FICTIONAL_COMPONENT_DEMONSTRATION_SUPPORTED",
+    "fixed_workflow": "Existing UI and isolated fixed-engine parity qualified; no fresh complete D16 browser journey claimed",
+    "continuous": "Internal bounded worker qualified; dashboard continuous execution remains disabled",
+    "metrics": [
+      "hard-constraint validation",
+      "nonzero fitness and breakdown",
+      "preference analysis",
+      "workload analysis",
+      "run time observations",
+      "unassigned offering diagnostics"
+    ],
+    "thesis_alignment": "FORMAL_APPROVED_MANUSCRIPT_UNVERIFIED; FICTIONAL RESULTS_NOT_INSTITUTIONAL_EVALUATION"
+  },
+  "production": {
+    "status": "BLOCKED",
+    "requirements": [
+      "Verified institutional identities and current department/Chair appointments",
+      "Independent optimization and recovery issuers",
+      "Authoritative IT term/cohort/resource inputs",
+      "Approved service account and filesystem root/ownership policy",
+      "Parent application-wide and cross-session supervision",
+      "Host/volume/journal/backup quotas",
+      "Independent anti-rollback anchor with original-worker fencing",
+      "Approved restore reconciliation and retention deletion policy",
+      "Separately versioned HTTP/UI integration"
+    ]
+  },
+  "restore": {
+    "status": "WRITABLE_QUARANTINE_ONLY",
+    "frozen_checkpoint_validation": true,
+    "existing_store_overwrite": false,
+    "worker_resume_enabled": false,
+    "institutional_restore_enabled": false,
+    "independent_anchor_scope": "Separate disposable SQLite identity, not independent host/failure domain",
+    "cross_database_commit": "Fail-closed incomplete quarantine requires explicit review; no automatic distributed commit or retry"
+  },
+  "parent": {
+    "status": "ISOLATED_NATIVE_TOPOLOGY_QUALIFIED; DEPLOYMENT_SERVICE_UNAVAILABLE",
+    "per_process_private_commit": true,
+    "per_process_user_cpu": true,
+    "rss_limit": false,
+    "cpu_rate": false,
+    "aggregate_job_memory": false,
+    "automatic_service_reattachment": false
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-11-09T01:55:56.325877+08:00",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "architecture": "AMD64",
+  "dependencies_installed": false,
+  "institutional_database_access": false,
+  "test_storage": "New private disposable SQLite stores only"
+}

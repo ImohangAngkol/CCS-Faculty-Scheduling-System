@@ -1,0 +1,11 @@
+{
+  "scope": "New U5N evidence only; no pre-existing evidence changed",
+  "changes": [
+    {
+      "path": "docs/testing/dashboard-u5n/20261109T014155913388+0800-snapshot/preference-scope-command.json",
+      "original_sha256": "3273222ddcb2b4c5d09156d6993499617ad4a3a566176bb6b2b3fdacc45271c4",
+      "sanitized_sha256": "1646c7fd4bf07bed7c35f441ff9ad909058551c7e0addb1153634a19a9603b5b",
+      "reason": "Pytest bound-call introspection exposed fictional CSRF tokens during wrong-route test failure. Entire values removed; no token fragments retained. Test outcome, traceback, timestamps and scope preserved. No raw original copy retained."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "selection": "recovery",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_recovery_qualification.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-bij1ey2_\\pytest-recovery"
+  ],
+  "started_at": "2026-11-09T01:52:51.176093+08:00",
+  "ended_at": "2026-11-09T01:59:11.296102+08:00",
+  "elapsed_seconds": 380.1200678999303,
+  "exit_code": 0,
+  "stdout": "........................................                                 [100%]\n============================ slowest 10 durations =============================\n26.31s call     tests/test_recovery_qualification.py::test_actual_writable_quarantine_and_exact_continuation\n12.95s call     tests/test_recovery_qualification.py::test_fresh_process_validates_quarantine_with_external_root_approvals\n11.49s call     tests/test_recovery_qualification.py::test_replay_and_existing_run_never_overwrite\n8.99s call     tests/test_recovery_qualification.py::test_real_sqlite_page_quota_rolls_back_without_schema_or_payload_loss\n8.36s call     tests/test_recovery_qualification.py::test_reopened_vault_uses_retained_anchor_and_current_authority\n7.66s call     tests/test_recovery_qualification.py::test_interruption_preserves_uncertain_evidence_without_activation[BEFORE_VAULT_COMMIT]\n7.46s call     tests/test_recovery_qualification.py::test_interruption_preserves_uncertain_evidence_without_activation[AFTER_VAULT_COMMIT]\n6.58s setup    tests/test_recovery_qualification.py::test_actual_writable_quarantine_and_exact_continuation\n6.41s setup    tests/test_recovery_qualification.py::test_disk_headroom_and_permission_change_fail_closed\n6.39s setup    tests/test_recovery_qualification.py::test_filesystem_substitution_fails_closed[marker]\n40 passed in 378.16s (0:06:18)\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

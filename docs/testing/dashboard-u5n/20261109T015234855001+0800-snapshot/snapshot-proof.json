@@ -1,0 +1,32 @@
+{
+  "head": "ed35d620111490d3021567ba7dcc6b26ec93d212",
+  "source_sha256": {
+    "backend/services/ga_recovery_qualification.py": "17ad920f1ba2e110ef99059714f8f3b38732f2c70c002cc286e9e85b6691b3b2",
+    "backend/services/ga_recovery_vault.py": "6160ab654af92c728194d5e19c63d20af90afcf0604717b32dcfb153d1551db2",
+    "backend/tests/test_recovery_qualification.py": "469afe8e2d93e8a05fafedd21e9137d2f57e7005f40565f5d879897d5fb401fd",
+    "backend/tests/test_parent_containment_qualification.py": "68b70e50ada093a912b582b8c8e2a927be391db71c38c66dd9c4d7bb2783a357",
+    "backend/tests/test_preference_scope_qualification.py": "b18106fa483ba09684084dde5aa6afdf61fd1088498f29c55e229bb63944f655"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_recovery_qualification.py": "c37416d452e64fd5c26db61ef65c152fac9bb5f9",
+    "backend/services/ga_recovery_vault.py": "d25817bdb342119171e195431e6b1626c7801390",
+    "backend/tests/test_recovery_qualification.py": "55724a84850ab9478e16f0b7e76293a2cb5df33b",
+    "backend/tests/test_parent_containment_qualification.py": "bd428ee21293ee2f1510d00a90600ca1bc33145f",
+    "backend/tests/test_preference_scope_qualification.py": "53fc83b816a01a4d779010ee63290eca29354eae"
+  },
+  "results": [
+    {
+      "selection": "readiness",
+      "exit_code": 0
+    }
+  ],
+  "qualified_selections": [
+    "readiness"
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-9znz15z4\\repository"
+}

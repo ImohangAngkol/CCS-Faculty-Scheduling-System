@@ -1,0 +1,23 @@
+{
+  "selection": "chair-trust",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/dashboard/test_chair_trust.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-p_7h4_92\\pytest-chair-trust"
+  ],
+  "started_at": "2026-11-09T01:50:20.837720+08:00",
+  "ended_at": "2026-11-09T01:50:43.784251+08:00",
+  "elapsed_seconds": 22.946578199975193,
+  "exit_code": 0,
+  "stdout": "......                                                                   [100%]\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n============================ slowest 10 durations =============================\n1.24s call     tests/dashboard/test_chair_trust.py::test_approval_records_actual_fresh_ledger_heads\n1.11s setup    tests/dashboard/test_chair_trust.py::test_approval_records_actual_fresh_ledger_heads\n1.06s call     tests/dashboard/test_chair_trust.py::test_real_trust_loss_prevents_approval_and_retains_rejection[evidence]\n0.95s call     tests/dashboard/test_chair_trust.py::test_real_trust_loss_prevents_approval_and_retains_rejection[revocation]\n0.92s call     tests/dashboard/test_chair_trust.py::test_real_trust_loss_prevents_approval_and_retains_rejection[confirmer]\n0.86s setup    tests/dashboard/test_chair_trust.py::test_real_trust_loss_prevents_approval_and_retains_rejection[source_digest]\n0.84s call     tests/dashboard/test_chair_trust.py::test_real_trust_loss_prevents_approval_and_retains_rejection[source_digest]\n0.84s call     tests/dashboard/test_chair_trust.py::test_real_trust_loss_prevents_approval_and_retains_rejection[issuer]\n0.81s setup    tests/dashboard/test_chair_trust.py::test_real_trust_loss_prevents_approval_and_retains_rejection[evidence]\n0.72s setup    tests/dashboard/test_chair_trust.py::test_real_trust_loss_prevents_approval_and_retains_rejection[revocation]\n6 passed, 2 warnings in 19.96s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

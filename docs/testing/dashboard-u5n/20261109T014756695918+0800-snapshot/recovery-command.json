@@ -1,0 +1,23 @@
+{
+  "selection": "recovery",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_recovery_qualification.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-c4_06l13\\pytest-recovery"
+  ],
+  "started_at": "2026-11-09T01:47:56.696897+08:00",
+  "ended_at": "2026-11-09T01:53:57.628203+08:00",
+  "elapsed_seconds": 360.93135620001704,
+  "exit_code": 0,
+  "stdout": ".....................................                                    [100%]\n============================ slowest 10 durations =============================\n24.83s call     tests/test_recovery_qualification.py::test_actual_writable_quarantine_and_exact_continuation\n12.22s call     tests/test_recovery_qualification.py::test_fresh_process_validates_quarantine_with_external_root_approvals\n11.72s call     tests/test_recovery_qualification.py::test_replay_and_existing_run_never_overwrite\n8.50s call     tests/test_recovery_qualification.py::test_reopened_vault_uses_retained_anchor_and_current_authority\n8.37s call     tests/test_recovery_qualification.py::test_interruption_preserves_uncertain_evidence_without_activation[BEFORE_VAULT_COMMIT]\n8.19s setup    tests/test_recovery_qualification.py::test_invalid_backup_never_writes[optimizer]\n7.68s call     tests/test_recovery_qualification.py::test_interruption_preserves_uncertain_evidence_without_activation[AFTER_VAULT_COMMIT]\n7.22s setup    tests/test_recovery_qualification.py::test_invalid_backup_never_writes[rng]\n7.16s setup    tests/test_recovery_qualification.py::test_invalid_backup_never_writes[bundle]\n6.79s setup    tests/test_recovery_qualification.py::test_replay_and_existing_run_never_overwrite\n37 passed in 359.17s (0:05:59)\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

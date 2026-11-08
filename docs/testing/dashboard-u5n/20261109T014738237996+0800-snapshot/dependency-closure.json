@@ -1,0 +1,1240 @@
+{
+  "scope": "Fictional qualified function dependency environment; no model values",
+  "function_code_and_defaults": {
+    "services.ga_progress_service:GenerationMonitor.__init__:da97096e959b6a99c093d9a53b13e1fb96384d4c94da81e615719a22c4498edc": {
+      "code": "da97096e959b6a99c093d9a53b13e1fb96384d4c94da81e615719a22c4498edc",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.ga_progress_service:GenerationMonitor.check_inputs:c34117fc15f09f713346e5686d8cd79c16d51c6523e19cc8550545bb121e52e7": {
+      "code": "c34117fc15f09f713346e5686d8cd79c16d51c6523e19cc8550545bb121e52e7",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.ga_progress_service:GenerationMonitor.register_baseline:febb21190f07cc283045b2c4d1f093f0ee535f8e0482404052d7ee28d439c492": {
+      "code": "febb21190f07cc283045b2c4d1f093f0ee535f8e0482404052d7ee28d439c492",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.ga_progress_service:GenerationMonitor.report:e56e15f051c77e71adbb6167530ce693c08e2fccee5b8b8224fd25c7629045e1": {
+      "code": "e56e15f051c77e71adbb6167530ce693c08e2fccee5b8b8224fd25c7629045e1",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.ga_progress_service:GenerationMonitor.checkpoint_state:57133b4a19ea9674784df1b9839174f2b6ffe520fa2b57039e82f90ca19c3882": {
+      "code": "57133b4a19ea9674784df1b9839174f2b6ffe520fa2b57039e82f90ca19c3882",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.ga_progress_service:GenerationMonitor.restore:3087160bf7d2499f30b4f38dcade97b57b67dff1c3eba1ac0bb206dbbaa62d3d": {
+      "code": "3087160bf7d2499f30b4f38dcade97b57b67dff1c3eba1ac0bb206dbbaa62d3d",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.ga_service:run_genetic_algorithm:e32c1ff053ac16859789a35efc05186d2dd6589acef26e91492fe4b68924ae6e": {
+      "code": "e32c1ff053ac16859789a35efc05186d2dd6589acef26e91492fe4b68924ae6e",
+      "defaults": [
+        20,
+        5,
+        5,
+        "fresh",
+        100,
+        300,
+        null,
+        null,
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.ElitisimSelection:elitism_selection:9aad34c09e9ed413888699e59fae29ab8b86b5d11aeef98a517fb83ab9a2202e": {
+      "code": "9aad34c09e9ed413888699e59fae29ab8b86b5d11aeef98a517fb83ab9a2202e",
+      "defaults": [
+        {
+          "float": "0.1"
+        }
+      ],
+      "keyword_defaults": {}
+    },
+    "services.chromosome_service:payload_to_chromosome:0255cbc51953615069d647d871f3019eda5b6c97c36d1208934d97de1f6b60c6": {
+      "code": "0255cbc51953615069d647d871f3019eda5b6c97c36d1208934d97de1f6b60c6",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:get_faculty_day_blocks:2e4950771de699c2fc9a290860c9ae41c9f74fb2a3efa8c05ba3e4196a726be3": {
+      "code": "2e4950771de699c2fc9a290860c9ae41c9f74fb2a3efa8c05ba3e4196a726be3",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:validate_fixed_section_conflicts:ad6bf92a37908a9c7b20a0d76d9c5bbde5c0689222f8f2ddc2122d3484f7993a": {
+      "code": "ad6bf92a37908a9c7b20a0d76d9c5bbde5c0689222f8f2ddc2122d3484f7993a",
+      "defaults": [
+        true
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:convert_time_to_minutes:779830c1f52308253a35496d1b79a78ee103ad972ce4114fc48adc48e11a8ade": {
+      "code": "779830c1f52308253a35496d1b79a78ee103ad972ce4114fc48adc48e11a8ade",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:get_section_day_blocks:5e5a47859d88ae50cd06726d69e195631eb79876725bc15fc21c592e092b80e2": {
+      "code": "5e5a47859d88ae50cd06726d69e195631eb79876725bc15fc21c592e092b80e2",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:validate_minimum_teaching_load:f00e049fe9247c0126ef9a17bd65784586170f9f07059c4374808132c0bff33f": {
+      "code": "f00e049fe9247c0126ef9a17bd65784586170f9f07059c4374808132c0bff33f",
+      "defaults": [
+        true
+      ],
+      "keyword_defaults": {}
+    },
+    "services.chromosome_service:_validate_baseline_components:c7380f73857e4899b929290d558c491018efbf106e12282884cc77fd37de8cb5": {
+      "code": "c7380f73857e4899b929290d558c491018efbf106e12282884cc77fd37de8cb5",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.chromosome_service:get_section_code:a22c9830c758b0ae10377712d5bd2b53c71925abb27b5702f677393670f39486": {
+      "code": "a22c9830c758b0ae10377712d5bd2b53c71925abb27b5702f677393670f39486",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.chromosome_service:subject_section_key:27fa32bb647d4209e4ac08d0cbf809fd7861ab955151fb51e66f176302370854": {
+      "code": "27fa32bb647d4209e4ac08d0cbf809fd7861ab955151fb51e66f176302370854",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:get_room_day_blocks:aff06d2416c0580abf39319451a94d3a32b33d50d2a96507f81f9f2913472d73": {
+      "code": "aff06d2416c0580abf39319451a94d3a32b33d50d2a96507f81f9f2913472d73",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.chromosome_service:time_to_minutes:7bce5029e020f3b142266e15a2d223a0a4c0ae3817307548d83882129071a100": {
+      "code": "7bce5029e020f3b142266e15a2d223a0a4c0ae3817307548d83882129071a100",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.models.PreassignedAssignment:is_preassigned:2149eed4f99254eff71cca83a59fb197b784f7821ed53da350a14e65b73abf80": {
+      "code": "2149eed4f99254eff71cca83a59fb197b784f7821ed53da350a14e65b73abf80",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:validate_faculty_subject_eligibility:e7641545582042d73f5373405135e2d286366db491286915f7db024bbce33c10": {
+      "code": "e7641545582042d73f5373405135e2d286366db491286915f7db024bbce33c10",
+      "defaults": [
+        true
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:faculty_assignment_is_valid:faf9d05f9ad926c2012373e9d2e5caa35bac01af83cf631be6986c104f07c5ed": {
+      "code": "faf9d05f9ad926c2012373e9d2e5caa35bac01af83cf631be6986c104f07c5ed",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:faculty_is_explicitly_eligible_for_subject:cba16ed901246f2a8f1f6425da33efea561e742a4bc8b7ac51212b47acb8de89": {
+      "code": "cba16ed901246f2a8f1f6425da33efea561e742a4bc8b7ac51212b47acb8de89",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.models.PreassignedAssignment:declared_instructor_matches:9127bdab16bf842e59d5a45d897014b4047315d7235a22a3b21aeb44cc0346ab": {
+      "code": "9127bdab16bf842e59d5a45d897014b4047315d7235a22a3b21aeb44cc0346ab",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.chromosome_service:normalize_payload:a916d16b126e589aabe7799f8ec3e93c238953f5c4c3cbef919dcdb86e02e99f": {
+      "code": "a916d16b126e589aabe7799f8ec3e93c238953f5c4c3cbef919dcdb86e02e99f",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:get_subject_schedule_entries:14ba697af4f06a3cdd3ba813df0de2ac18114cfbcbf119e3a3c1744a94bf7bda": {
+      "code": "14ba697af4f06a3cdd3ba813df0de2ac18114cfbcbf119e3a3c1744a94bf7bda",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:collapse_blocks_for_conflict_check:a11105919b5db23243e5f903d52f0235a6b457394290895c232caa7e885e6e82": {
+      "code": "a11105919b5db23243e5f903d52f0235a6b457394290895c232caa7e885e6e82",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:time_to_minutes:eaa7b38acb1f5b8b73253ade7468bd003d529fdcde410d3f5b448bddde1a19ad": {
+      "code": "eaa7b38acb1f5b8b73253ade7468bd003d529fdcde410d3f5b448bddde1a19ad",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.chromosome_service:create_component_blocks:52c5e7fce1b375947976c5bd8f576e31e80950021876722867103d3b0a987c71": {
+      "code": "52c5e7fce1b375947976c5bd8f576e31e80950021876722867103d3b0a987c71",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.chromosome_service:minutes_to_time:e4149074901179546714cb5be0c7a087268d64289c3288faa1551fc211095f1b": {
+      "code": "e4149074901179546714cb5be0c7a087268d64289c3288faa1551fc211095f1b",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:validate_preassigned_assignments:e2f995123ae1cb3f1e4529a6b0e7c32358a67c6ee14ba0e4e67c750703568727": {
+      "code": "e2f995123ae1cb3f1e4529a6b0e7c32358a67c6ee14ba0e4e67c750703568727",
+      "defaults": [
+        true
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.models.PreassignedAssignment:preassigned_schedule_is_valid:ebfa6784716a290a3093ccdaf72e3e0c6ac9c26fd70aea5df4094816413910f7": {
+      "code": "ebfa6784716a290a3093ccdaf72e3e0c6ac9c26fd70aea5df4094816413910f7",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.models.PreassignedAssignment:normalize_room_name:ecc8be34c255e0c4a802ab3bd02fd3a1afd3f6424c6956f27814d155c8deb236": {
+      "code": "ecc8be34c255e0c4a802ab3bd02fd3a1afd3f6424c6956f27814d155c8deb236",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:find_resource_conflicts:f420ffd8711c3c0dd619d547d34e0bc43912b30272c71885c5c951763ee1f15b": {
+      "code": "f420ffd8711c3c0dd619d547d34e0bc43912b30272c71885c5c951763ee1f15b",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:schedules_overlap:cae48b60278eebc5547594345f57917943cb5db500969cf5fe8f84860ceb2b7d": {
+      "code": "cae48b60278eebc5547594345f57917943cb5db500969cf5fe8f84860ceb2b7d",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.ga_publication_service:validate_publication:0909ed1e4d9a89d9234ff7784ff0a2b452e3244a324839dfce72c3207ecefe46": {
+      "code": "0909ed1e4d9a89d9234ff7784ff0a2b452e3244a324839dfce72c3207ecefe46",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.chromosome_service:chromosome_to_payload:1f2069100c280d7e82ae75944c0fb31519ad3cbd99f572600439bf80f367775b": {
+      "code": "1f2069100c280d7e82ae75944c0fb31519ad3cbd99f572600439bf80f367775b",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:get_fixed_section_schedule_entries:8183171073f562e9a5c4fb685b1ebf324a0700aaf88bd6a96095f4352d66aec5": {
+      "code": "8183171073f562e9a5c4fb685b1ebf324a0700aaf88bd6a96095f4352d66aec5",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:time_to_decimal:0fa5a5faf36b6c2089c95fd8cd73b4042cbe5b9c861c3e1de5b733325d2bc124": {
+      "code": "0fa5a5faf36b6c2089c95fd8cd73b4042cbe5b9c861c3e1de5b733325d2bc124",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.FitnessObservation:faculty_preference_fitness:72df7c4cfb3e75fd1da84809cd6b8a31822cc2d4ad07ce1d592b3685adecdf0f": {
+      "code": "72df7c4cfb3e75fd1da84809cd6b8a31822cc2d4ad07ce1d592b3685adecdf0f",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:faculty_preference_fitness:9ce66eb7d4912974e5364011dd737abaababcb33cc32e6cc51e3768d78625d89": {
+      "code": "9ce66eb7d4912974e5364011dd737abaababcb33cc32e6cc51e3768d78625d89",
+      "defaults": [
+        null,
+        null,
+        false,
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_get_importance:119e4d666e5b67fb65774e84912e2ee2d5d0d7807871df22ef1d5c0b564a5093": {
+      "code": "119e4d666e5b67fb65774e84912e2ee2d5d0d7807871df22ef1d5c0b564a5093",
+      "defaults": [
+        1
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_build_effective_preferences:42559c31ba3c6f1c05cf5703a6e925667100b7e5236aaa67db7bdd0852e925d2": {
+      "code": "42559c31ba3c6f1c05cf5703a6e925667100b7e5236aaa67db7bdd0852e925d2",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_legacy_preferences_to_map:19ce3f66523dd4ff3648b6de66188d2724d1342168e001ddf796e30d17939e6e": {
+      "code": "19ce3f66523dd4ff3648b6de66188d2724d1342168e001ddf796e30d17939e6e",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_normalize_dashboard_preference:536ce90b82fda76e1c958b7984c74e7ff7bb51f50c8a112cc3bb632791811f92": {
+      "code": "536ce90b82fda76e1c958b7984c74e7ff7bb51f50c8a112cc3bb632791811f92",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_load_dashboard_preferences:91a3cf4579f3997af896fc4f44ba1a8844d1eb0e87c800d82152f42a41aa7145": {
+      "code": "91a3cf4579f3997af896fc4f44ba1a8844d1eb0e87c800d82152f42a41aa7145",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_score_exact_subject_schedule_blocks:dac0c83b2965beada8baf7ead6bcffdd51a9dc1752fea7b01dcef639cee85f84": {
+      "code": "dac0c83b2965beada8baf7ead6bcffdd51a9dc1752fea7b01dcef639cee85f84",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_time_to_minutes:fbc144bceadb2dda3f5df24947f76fbe722472c009527a9fe9304491fb5c5ca2": {
+      "code": "fbc144bceadb2dda3f5df24947f76fbe722472c009527a9fe9304491fb5c5ca2",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_subject_schedule_preference_blocks:c95d733b08884c3fde4c2002e287f10f91d9c316ce511783a20330a97cdc08de": {
+      "code": "c95d733b08884c3fde4c2002e287f10f91d9c316ce511783a20330a97cdc08de",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_component_intervals:af0abf0f3e6881b8d0d4e1a9237b07cad77c2379079845182a139f258b9864cf": {
+      "code": "af0abf0f3e6881b8d0d4e1a9237b07cad77c2379079845182a139f258b9864cf",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_unpack_block:8ee2d167370d74fd72e0bb9898d53fb5c93ba676d59ffcdf13ed57c1c62bf3aa": {
+      "code": "8ee2d167370d74fd72e0bb9898d53fb5c93ba676d59ffcdf13ed57c1c62bf3aa",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_normalize_schedule_day:e35068be29ead7f278037b87474a85a5803202ef313a07ac8fb222be09c865c3": {
+      "code": "e35068be29ead7f278037b87474a85a5803202ef313a07ac8fb222be09c865c3",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.preference_scoring_policy:scoring_version:cad5ade140b4223435e864c7b95dcb5cda8de34273b6591348628f379699f09f": {
+      "code": "cad5ade140b4223435e864c7b95dcb5cda8de34273b6591348628f379699f09f",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_subject_components:b6bb6c3f65ddde14c507b0bf47f3900f3ac1895609cc8c883ad1da48996c4c21": {
+      "code": "b6bb6c3f65ddde14c507b0bf47f3900f3ac1895609cc8c883ad1da48996c4c21",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_days_from_blocks:6b7e5e897bf8220e62fd3c6dc3cbb7a3882c0ab1dcf5995fd9034e106493c04d": {
+      "code": "6b7e5e897bf8220e62fd3c6dc3cbb7a3882c0ab1dcf5995fd9034e106493c04d",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.FitnessFunction:_load_ga_settings:570143b513c1ae11267d533bb13f7b998097c1d55dcf3ff97a02d1b13e9b1e3b": {
+      "code": "570143b513c1ae11267d533bb13f7b998097c1d55dcf3ff97a02d1b13e9b1e3b",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.Swap:create_child_by_faculty_swap:adcce838516ba3a5a1be11eaf9d06144ec6821abea010430c50f6ccf3735f2fd": {
+      "code": "adcce838516ba3a5a1be11eaf9d06144ec6821abea010430c50f6ccf3735f2fd",
+      "defaults": [
+        100
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.Swap:chromosome_has_conflicts:62aeeac131fd7b4b33867330c0c95a16bf7605e8823c2bad51a42d44ccbb1f0b": {
+      "code": "62aeeac131fd7b4b33867330c0c95a16bf7605e8823c2bad51a42d44ccbb1f0b",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.Swap:chromosome_has_load_violation:65454e1d77841fc3c6a43b7d81f2ac7d0347cfb328f99dae2721e6fc7781369e": {
+      "code": "65454e1d77841fc3c6a43b7d81f2ac7d0347cfb328f99dae2721e6fc7781369e",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.Swap:calculate_faculty_loads:5623464ba647f532c81693155120a6373e55c824dde731a13db0b1ac667e355e": {
+      "code": "5623464ba647f532c81693155120a6373e55c824dde731a13db0b1ac667e355e",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.Swap:chromosome_has_eligibility_violation:f373a138761c1f0990b3ccd94b87f0f020bd65a98a6d31fbfc4500a47e1af263": {
+      "code": "f373a138761c1f0990b3ccd94b87f0f020bd65a98a6d31fbfc4500a47e1af263",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.ga_checkpoint_service:dataframe_to_state:4039f2655424356eb3ab015c25c3708f21d9de23a9a2ae94390086cc324c9d0d": {
+      "code": "4039f2655424356eb3ab015c25c3708f21d9de23a9a2ae94390086cc324c9d0d",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.faculty_analysis_service:build_faculty_analysis:a98f8a1897045b4255e5f66179ea95a60807d35ef713420b7023be4dd325cac3": {
+      "code": "a98f8a1897045b4255e5f66179ea95a60807d35ef713420b7023be4dd325cac3",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.faculty_analysis_service:_faculty_code:245c8cafed44b5d36d1ceb1c4debe63339db68b88c0e161e472b739301d9989d": {
+      "code": "245c8cafed44b5d36d1ceb1c4debe63339db68b88c0e161e472b739301d9989d",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.faculty_analysis_service:_exact_schedule_satisfaction:e94ac92db846688f536fd8f2f79ef530c7df0921111d24ba1cd15d19ce81586d": {
+      "code": "e94ac92db846688f536fd8f2f79ef530c7df0921111d24ba1cd15d19ce81586d",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.faculty_analysis_service:dataframe_to_records:3bee1797439e3331a0efd9d6ce001c9abe745dccb25eeb4f2ce226df590ae526": {
+      "code": "3bee1797439e3331a0efd9d6ce001c9abe745dccb25eeb4f2ce226df590ae526",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.faculty_analysis_service:clean_value:d1c60a0217a5d71b76516b19d8407f53b082beb380d85347f38219cd4d8ecd44": {
+      "code": "d1c60a0217a5d71b76516b19d8407f53b082beb380d85347f38219cd4d8ecd44",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.faculty_analysis_service:_day_satisfaction:09083214575e4d7ea276e6dc5207c1e8b53f188958bed100b4e2a9e4ec53e649": {
+      "code": "09083214575e4d7ea276e6dc5207c1e8b53f188958bed100b4e2a9e4ec53e649",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.faculty_analysis_service:_time_satisfaction:e1532646a811370c0a3a06dca4138850a7de3e06a46ff1214c5908d46ced4e2e": {
+      "code": "e1532646a811370c0a3a06dca4138850a7de3e06a46ff1214c5908d46ced4e2e",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.faculty_analysis_service:_subject_satisfaction:1de66022007dd2f58eafe8c642f9af5eee6cbf6bedbc8e7f97b626929d1a9ffc": {
+      "code": "1de66022007dd2f58eafe8c642f9af5eee6cbf6bedbc8e7f97b626929d1a9ffc",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.analysis.FacultySelectedChromosomeDashboard:analyze_selected_chromosome:41097f002d294a923118570e4a62ea9f7541b835ab7668e9e2a160cf5750320d": {
+      "code": "41097f002d294a923118570e4a62ea9f7541b835ab7668e9e2a160cf5750320d",
+      "defaults": [
+        40,
+        10,
+        4,
+        7,
+        3
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.analysis.FacultySelectedChromosomeDashboard:_subject_components:b0fa5c2a59b60423c4ee4a794fc5f3b10bf8d572ac28bf78f79b951f2f87f022": {
+      "code": "b0fa5c2a59b60423c4ee4a794fc5f3b10bf8d572ac28bf78f79b951f2f87f022",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.analysis.FacultySelectedChromosomeDashboard:_merge_intervals:ca9d6d5cd0f129c9f1a2cd5a2f540ab35bc08ddbfb411d768f44d2d3020a3035": {
+      "code": "ca9d6d5cd0f129c9f1a2cd5a2f540ab35bc08ddbfb411d768f44d2d3020a3035",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.analysis.FacultySelectedChromosomeDashboard:_time_to_minutes:ceacf2a260fea2e02332b09ab772a7faa57599b42e03a38f155c7b478cac89a0": {
+      "code": "ceacf2a260fea2e02332b09ab772a7faa57599b42e03a38f155c7b478cac89a0",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.analysis.FacultySelectedChromosomeDashboard:_unpack_block:81d4101ef992289064412717a6d5e0cf425780a2059cfca160f5d29d63e8bd17": {
+      "code": "81d4101ef992289064412717a6d5e0cf425780a2059cfca160f5d29d63e8bd17",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.analysis.FacultySelectedChromosomeDashboard:_normalize_day:180a7da13adb7c934c62bbcfeca5fdd0dd5971af56e9f89b70289be8f02d4f56": {
+      "code": "180a7da13adb7c934c62bbcfeca5fdd0dd5971af56e9f89b70289be8f02d4f56",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.faculty_analysis_service:_subjects_for_faculty:022e0f0c4ffa1ac7bacb5d15855c42905e4496ce717717517d61ea000af41a72": {
+      "code": "022e0f0c4ffa1ac7bacb5d15855c42905e4496ce717717517d61ea000af41a72",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.TournamentSelection:select_parent_pair:ca738487ad208d4b7b6a822a27ee6178cf272aa81e15fe00de9f1291d5978031": {
+      "code": "ca738487ad208d4b7b6a822a27ee6178cf272aa81e15fe00de9f1291d5978031",
+      "defaults": [
+        3
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.TournamentSelection:tournament_selection:249b7ac5af8940f0b8e0fc86d12107026b43a954f3ce3d0a4d4ce0ac517ecb3e": {
+      "code": "249b7ac5af8940f0b8e0fc86d12107026b43a954f3ce3d0a4d4ce0ac517ecb3e",
+      "defaults": [
+        3
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.CreatePopulation:generate_population:31f494523c66a1203bc1fb9d40a5dc714141bf0f31e4174ad9e51cf50a0d2247": {
+      "code": "31f494523c66a1203bc1fb9d40a5dc714141bf0f31e4174ad9e51cf50a0d2247",
+      "defaults": [
+        300
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:check_all_schedule_conflicts:ff65cdeebe3b2b67b73cd4d2b9b0baa43db9abb6ed2f9a129335dbb138b291ce": {
+      "code": "ff65cdeebe3b2b67b73cd4d2b9b0baa43db9abb6ed2f9a129335dbb138b291ce",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:print_conflicts:adb941ff196572f1b7140f3a51bafde74029a1ccf8f3614da70556f9c834eb61": {
+      "code": "adb941ff196572f1b7140f3a51bafde74029a1ccf8f3614da70556f9c834eb61",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:create_schedule_with_minimum_load:7928e0f05f57f0d30d6043b5d8eb60a1467b96602fd0c9d22a62fc8df522f692": {
+      "code": "7928e0f05f57f0d30d6043b5d8eb60a1467b96602fd0c9d22a62fc8df522f692",
+      "defaults": [
+        null,
+        2000
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:print_final_schedule:dc5e835ba14af61688da01cd3c01db362cc03149c74680ff240cb3c6407ddcd7": {
+      "code": "dc5e835ba14af61688da01cd3c01db362cc03149c74680ff240cb3c6407ddcd7",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:try_assign_complete_subject:afbf3a32a387ab684b82f7ae5a73c950256ee0447a90777c8efa94c24320b5ee": {
+      "code": "afbf3a32a387ab684b82f7ae5a73c950256ee0447a90777c8efa94c24320b5ee",
+      "defaults": [
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:rollback_subject_assignment:21184a8ca060a5040c7a82f0b51b76fd4e4cb991f78b9f67f137a689b7df6809": {
+      "code": "21184a8ca060a5040c7a82f0b51b76fd4e4cb991f78b9f67f137a689b7df6809",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:release_room_blocks:debb02852464e29d3e01247854e73fa7890a33f061bce9e0adda37ef51a3acdd": {
+      "code": "debb02852464e29d3e01247854e73fa7890a33f061bce9e0adda37ef51a3acdd",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:assign_random_two_hour_schedule:3b68e84827bf622707a1416c3bc96a70cec1c0454589e0bf56340e0a53cdb6cd": {
+      "code": "3b68e84827bf622707a1416c3bc96a70cec1c0454589e0bf56340e0a53cdb6cd",
+      "defaults": [
+        100,
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:_assign_random_component:2172ca865322e638ca2d25a4a999a89919dcd2fe6467bdb0b51476f849f5dcfe": {
+      "code": "2172ca865322e638ca2d25a4a999a89919dcd2fe6467bdb0b51476f849f5dcfe",
+      "defaults": [
+        100,
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:assign_schedule_to_faculty:69812af4799633a6909c602ef298383c826d4199f0aeeb753a210efe3e9b6329": {
+      "code": "69812af4799633a6909c602ef298383c826d4199f0aeeb753a210efe3e9b6329",
+      "defaults": [
+        null,
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:schedule_is_available:ff8364ac9bcc795b28f1619b20d499f42a80e3c9bf5ec00912cfe71cb769612e": {
+      "code": "ff8364ac9bcc795b28f1619b20d499f42a80e3c9bf5ec00912cfe71cb769612e",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:get_matching_timeblocks:fb4bbd8c5d18cbf52e87a2d1711479d263bf7c93f19e9be4b9c780ff56459cf0": {
+      "code": "fb4bbd8c5d18cbf52e87a2d1711479d263bf7c93f19e9be4b9c780ff56459cf0",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:_get_matching_blocks:6fef4aa8ff2fb49e302501a8632c1c73e5c4f9485e0e13a233c5854c51a7e01b": {
+      "code": "6fef4aa8ff2fb49e302501a8632c1c73e5c4f9485e0e13a233c5854c51a7e01b",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:parse_day_codes:cd1e224dc3e5d6f4907610e474bac1c059558b4aca8b9572e516eb051803dd74": {
+      "code": "cd1e224dc3e5d6f4907610e474bac1c059558b4aca8b9572e516eb051803dd74",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:_expected_block_count:e687ff1350667cd8491947ee4f9a658c38e882ecf26c93b7e1473d1be1988212": {
+      "code": "e687ff1350667cd8491947ee4f9a658c38e882ecf26c93b7e1473d1be1988212",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:get_available_rooms:1173369d47c97080197c5729b135762739672f864850bf19239d4b8ca56f596f": {
+      "code": "1173369d47c97080197c5729b135762739672f864850bf19239d4b8ca56f596f",
+      "defaults": [
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:room_schedule_is_available:3a0e9a674e9cc675d31ec43e34e09368a224123cb68fd3c6a6a6db6c25b4027a": {
+      "code": "3a0e9a674e9cc675d31ec43e34e09368a224123cb68fd3c6a6a6db6c25b4027a",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:get_matching_room_timeblocks:9299f55939b38f299e529ffada0aec06f030c720b5c8e8849a4f69ab0bad4abc": {
+      "code": "9299f55939b38f299e529ffada0aec06f030c720b5c8e8849a4f69ab0bad4abc",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:section_schedule_is_available:bff9e05ac8f198c0b5289f4638bd7f80b65becd735725f840792f2e21465fb52": {
+      "code": "bff9e05ac8f198c0b5289f4638bd7f80b65becd735725f840792f2e21465fb52",
+      "defaults": [
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:get_matching_section_timeblocks:fb3dd56120c13f509cc9a7c7a4cbdf71a7bc1ae83803a00e25343575e2a27b41": {
+      "code": "fb3dd56120c13f509cc9a7c7a4cbdf71a7bc1ae83803a00e25343575e2a27b41",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:reserve_room:c03a6bc6212ad85fb937b1269063c45b1935037fa817f1cd20d0070a16e08b01": {
+      "code": "c03a6bc6212ad85fb937b1269063c45b1935037fa817f1cd20d0070a16e08b01",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:assign_random_three_hour_schedule:7054e6b5208c2dbd93edcb2d890db491be39f4a8f0dcc4e9e12d77d33aced012": {
+      "code": "7054e6b5208c2dbd93edcb2d890db491be39f4a8f0dcc4e9e12d77d33aced012",
+      "defaults": [
+        100,
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:assign_random_three_hour_lab_schedule:b3126194b6e01eaad03ecfaed4c9558469960abd750fb3d6bafba2b3664b06cc": {
+      "code": "b3126194b6e01eaad03ecfaed4c9558469960abd750fb3d6bafba2b3664b06cc",
+      "defaults": [
+        100,
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:reset_complete_schedule:201fea77f4377e0953a845d03876fc4637f7d6db5350a1ee641efd81aea7b4f7": {
+      "code": "201fea77f4377e0953a845d03876fc4637f7d6db5350a1ee641efd81aea7b4f7",
+      "defaults": [
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:reset_room_schedules:7ba84a06aef8b0ec2a1e941532a996a9a6494967e36a4831459b79d410f78b9a": {
+      "code": "7ba84a06aef8b0ec2a1e941532a996a9a6494967e36a4831459b79d410f78b9a",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:validate_section_conflicts:52ca01696003cfee55c35c4f182f70749776f32669ecda7fa84afaa6813d1a93": {
+      "code": "52ca01696003cfee55c35c4f182f70749776f32669ecda7fa84afaa6813d1a93",
+      "defaults": [
+        true
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:check_minimum_load_feasibility:c4d47fd728332101332473f47bd34888b2ec5cbcced32fc82bd2b701b2b4ef6c": {
+      "code": "c4d47fd728332101332473f47bd34888b2ec5cbcced32fc82bd2b701b2b4ef6c",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:validate_room_conflicts:ac71dd4422b9699310ac5470f5a7e12abd6559d087d3d7e907c353aab571c718": {
+      "code": "ac71dd4422b9699310ac5470f5a7e12abd6559d087d3d7e907c353aab571c718",
+      "defaults": [
+        true
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:get_ranked_faculty_candidates:7399c43c6c372e849707213f83067b0b58f1b4d6d45878d47851b221b256322a": {
+      "code": "7399c43c6c372e849707213f83067b0b58f1b4d6d45878d47851b221b256322a",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.utils.Functions:faculty_subject_preference_score:352b5f0c0fcbd1758aaf1e9fd2e9ffa34c06d6835ee283c1dc4433053e2a1e2f": {
+      "code": "352b5f0c0fcbd1758aaf1e9fd2e9ffa34c06d6835ee283c1dc4433053e2a1e2f",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.ga_checkpoint_service:validate_state:aa1e9bd016502d7478c7efde164a3d388fd213d5bebccd8c6e094241df2a8f39": {
+      "code": "aa1e9bd016502d7478c7efde164a3d388fd213d5bebccd8c6e094241df2a8f39",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.mutation:mutate_by_swapping_faculty_subjects:7acb97afcf1be163672a2114103ddc7f38709e5dcb4a8bbc8e2f64ec356906be": {
+      "code": "7acb97afcf1be163672a2114103ddc7f38709e5dcb4a8bbc8e2f64ec356906be",
+      "defaults": [
+        100,
+        true
+      ],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.mutation:update_subject_faculty_blocks:6fb42adebeda2e0bfb3157cd88f1c2fd81c7652cb92e8f32d73096bf6887301a": {
+      "code": "6fb42adebeda2e0bfb3157cd88f1c2fd81c7652cb92e8f32d73096bf6887301a",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.mutation:chromosome_has_conflicts:267f27a35cc0c97b144bbb56be67a4f9cce547de010f4cfee159d348d4d66613": {
+      "code": "267f27a35cc0c97b144bbb56be67a4f9cce547de010f4cfee159d348d4d66613",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.mutation:get_subject_schedule_entries:baadd0a22bc34a9f9613174d298378ea5486e88dd21f1da231c8a18bf426e251": {
+      "code": "baadd0a22bc34a9f9613174d298378ea5486e88dd21f1da231c8a18bf426e251",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.mutation:chromosome_has_load_violation:5b9356d0ba2a30a6f37c3519342c142dcce632da801135902ac00523934fe852": {
+      "code": "5b9356d0ba2a30a6f37c3519342c142dcce632da801135902ac00523934fe852",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.mutation:calculate_faculty_loads:2d45cf5442aa5ef4c60305fe0d6f28a4d793b31be3af16bffb87aebfea5e73e4": {
+      "code": "2d45cf5442aa5ef4c60305fe0d6f28a4d793b31be3af16bffb87aebfea5e73e4",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.mutation:chromosome_has_eligibility_violation:c36a11871875e83c9d269bc8aa8ec2921c81853c956a795e583f9960e44c5e5b": {
+      "code": "c36a11871875e83c9d269bc8aa8ec2921c81853c956a795e583f9960e44c5e5b",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "services.ga_checkpoint_service:dataframe_from_state:91040180bc5bf0495a2e90070befc99203d8a4557ce12576a3f3323ce80d1782": {
+      "code": "91040180bc5bf0495a2e90070befc99203d8a4557ce12576a3f3323ce80d1782",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "genetic_algorithm.operators.CreatePopulation:sort_population_by_fitness:2e3e37e83988fb9dedfa4d46805081f00492c979f4f18ada5ee95dce3037649c": {
+      "code": "2e3e37e83988fb9dedfa4d46805081f00492c979f4f18ada5ee95dce3037649c",
+      "defaults": [],
+      "keyword_defaults": {}
+    }
+  },
+  "model_method_identities": {
+    "Subject:__init__": {
+      "code": "bf3189201c851d293f3ac6eb4fa8fd708aa0c97fca51fac219843d187aec4a3f",
+      "defaults": [
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "Subject:assignment_type": {
+      "code": "17c1fd21a2bdb245874b7dec3d490ea36366e601c41ff08691b74db72c629e1c",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Subject:__repr__": {
+      "code": "9169fd21dc30ee99051edeb92cf499b9ecc029f9c3f77bdd243918a586a68c92",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Faculty:__init__": {
+      "code": "da1610268f75d8d69de890329a8a97f6507ce12da37833e2c18d7a0d6bf2155c",
+      "defaults": [
+        null,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "Faculty:_normalize_days": {
+      "code": "a484d66c98ef961d03d06d17f2ae5490eff3155afb4cb50a7141304de701c8b8",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Faculty:_create_time_blocks": {
+      "code": "92999bdecc19b7b95730cecde81328e3c5b82949e5e2e8b7460f7a42b66e6026",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Faculty:_time_to_minutes": {
+      "code": "c6b38a92808cd33b392a47f012912d7e4e11dc1cdf8e70c51ccd1863efe7badb",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Faculty:_minutes_to_time": {
+      "code": "29219a11ba51204771d9201a4bd6158ac939a622f8f460c142cebc0dec8b63aa",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Faculty:get_day_map": {
+      "code": "1711548d6a928cebedda9a71cefa4a99fe04030f71354704f4b0e19f553ad59b",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Faculty:reset_preferred_time_blocks": {
+      "code": "063677ea6ba42bfec5751d92493bb5398558a201e6233997bbda08cc2d71d94c",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Faculty:set_preferred_time_blocks": {
+      "code": "ced197d75c45161f803eb5be9adcd4e8eec44ddca9fce96ccf45bc674c37cfd2",
+      "defaults": [
+        null,
+        null,
+        null,
+        true
+      ],
+      "keyword_defaults": {}
+    },
+    "Faculty:get_preferred_blocks": {
+      "code": "7a8641817b795207859a42fbd0cace66ce265006bdcb526259bf2ace39e3a9a7",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Faculty:display_preferred_blocks": {
+      "code": "ff5ffa67d13a0cc12e8ad96ce51d401ee077d1006d6f8d1dbe7112dd94cf1098",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Faculty:__repr__": {
+      "code": "249c7feeed77b01f08797efac89cf7ef0bb9d850fb67c0bbfa557eee9d85ebfb",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Room:__init__": {
+      "code": "48c9e5435ca16bcb4f341a6e6ebce408965a53b0e720b642708f9a66cab1f46d",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Room:__repr__": {
+      "code": "39b076b74d361ae8d88c5cc0fafb70e0b5e9e68221509cc5f207df48499fd64c",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Section:__init__": {
+      "code": "ae6f311d987dd80da4d33b0df464fc23b99ea03aa0478fd8c4d9d443210ac3d0",
+      "defaults": [
+        null,
+        0
+      ],
+      "keyword_defaults": {}
+    },
+    "Section:_create_time_blocks": {
+      "code": "c3653276e46e47026afd56f041fc6d49954dea800e4962a0f0841f0ee25f064c",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Section:_time_to_minutes": {
+      "code": "7aae401f7ccad1b72d4a56f2e969908ab7f9860634fcf0d1fd815a407740d072",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Section:_minutes_to_time": {
+      "code": "6eecf153f08fc84cd953d3005f5e476e42906aba3f53be26a82d92f3e772b666",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Section:get_day_map": {
+      "code": "786f82de23faac23c602857719cb0aa6b33e622dcb8b40ecac4d0d5aece1b572",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Section:num_students": {
+      "code": "470ccc9178319e537c57b98f5ddf8a2a01cb92657799995fac24f409982c4afd",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Section:add_student": {
+      "code": "f8e55a13c3bf223e033b7a536e6bfbf7fd701d59aa06fd641d69529e67ae3f30",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Section:__str__": {
+      "code": "de2c3c00ea59a504b0098db30141eb6feb09964ebf948a3ed08b886b2330d072",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Student:__init__": {
+      "code": "aaa97fbdaed776c601f62d1dc059b8c929caae18a32fbbd1791e073021a861cc",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "Student:__repr__": {
+      "code": "8ad0c8ef8abf08b65920371206b25f5f1a24bc03405c233a40c214a0c05ebbfa",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "TimeBlock:__init__": {
+      "code": "e79e69e4de0444d387f3ed128f9e3fc6827e6c30f58ea953f251b3f5c9393243",
+      "defaults": [
+        true,
+        false,
+        null
+      ],
+      "keyword_defaults": {}
+    },
+    "TimeBlock:__repr__": {
+      "code": "ba405e1d2c98c48b848beb65e7cb4061a0dba8fe0d94e81709095baa5123400d",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "PreassignedAssignment:__annotate_func__": {
+      "code": "2a99ee5750ce1ff46012b89f42e65e1d827deef1e584f65e77716607a3a40f8d",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "PreassignedAssignment:__replace__": {
+      "code": "5828945dc9b33909c05f36198a418919e56520389f5982a87b44a843d117240e",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "PreassignedAssignment:__hash__": {
+      "code": "9d2e5265c505c7e6a6a0c0ff21c1213cd1e3d57595f794f34ee424ccd442c145",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "PreassignedAssignment:__init__": {
+      "code": "d269b251a71538c84b9220ee3a0451ad623e0676d23db0fcf3f8fcdef7548bd0",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "PreassignedAssignment:__repr__": {
+      "code": "74d44ada122a69ef9c441bcea6916684b1304fac8d4ad52db664a9ec1f2c9106",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "PreassignedAssignment:__eq__": {
+      "code": "1474c8160cbd3312e0449307e58e791352c044cb2252bc41e90e23676fc55ba7",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "PreassignedAssignment:__setattr__": {
+      "code": "5bbbd34ba5b102af7b124e38727cb798c88d828cad8cda36712e21c6d72caee7",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "PreassignedAssignment:__delattr__": {
+      "code": "141a100a6daf64b73a4dd0d940113a5506fb882a1540a500a969f1e2ceec18a2",
+      "defaults": [],
+      "keyword_defaults": {}
+    },
+    "ExternalInstructor:__init__": {
+      "code": "c9e54faada56dbcdf70a393aa3d5ea3fcf0643630478f4791b139545f154a9a8",
+      "defaults": [],
+      "keyword_defaults": {}
+    }
+  },
+  "global_names_by_module": {
+    "services.ga_progress_service.bundle": [
+      "df_faculty_pref",
+      "hashlib",
+      "input_fingerprint",
+      "json",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "math",
+      "observed_scores",
+      "time"
+    ],
+    "services.ga_service.bundle": [
+      "GenerationMonitor",
+      "PausedRun",
+      "build_faculty_analysis",
+      "copy",
+      "create_child_by_faculty_swap",
+      "dataframe_from_state",
+      "dataframe_to_state",
+      "df_faculty_pref",
+      "elitism_selection",
+      "faculty_preference_fitness",
+      "generate_population",
+      "get_subject_schedule_entries",
+      "list_faculty",
+      "list_subjects",
+      "load_saved_best_payload",
+      "load_uploaded_payload",
+      "lst_rooms",
+      "lst_subjects",
+      "mutate_by_swapping_faculty_subjects",
+      "payload_to_chromosome",
+      "random",
+      "save_best_if_better",
+      "save_checkpoint",
+      "scoring_inputs",
+      "select_parent_pair",
+      "sort_population_by_fitness",
+      "validate_publication",
+      "validate_state"
+    ],
+    "genetic_algorithm.operators.ElitisimSelection.bundle": [
+      "copy",
+      "df_faculty_pref",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "math"
+    ],
+    "services.chromosome_service.bundle": [
+      "ExternalInstructor",
+      "TimeBlock",
+      "_validate_baseline_components",
+      "create_component_blocks",
+      "datetime",
+      "declared_instructor_matches",
+      "deepcopy",
+      "df_faculty_pref",
+      "find_resource_conflicts",
+      "get_faculty_day_blocks",
+      "get_room_day_blocks",
+      "get_section_code",
+      "get_section_day_blocks",
+      "get_subject_schedule_entries",
+      "is_preassigned",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "minutes_to_time",
+      "normalize_payload",
+      "normalize_room_name",
+      "subject_section_key",
+      "time_to_minutes",
+      "timezone",
+      "validate_faculty_subject_eligibility",
+      "validate_fixed_section_conflicts",
+      "validate_minimum_teaching_load",
+      "validate_preassigned_assignments"
+    ],
+    "genetic_algorithm.utils.Functions.bundle": [
+      "DAY_NAMES",
+      "DEFAULT_TOTAL_WORKLOAD_TARGET",
+      "_assign_random_component",
+      "_expected_block_count",
+      "_get_matching_blocks",
+      "assign_random_three_hour_lab_schedule",
+      "assign_random_three_hour_schedule",
+      "assign_random_two_hour_schedule",
+      "assign_schedule_to_faculty",
+      "check_minimum_load_feasibility",
+      "collapse_blocks_for_conflict_check",
+      "convert_time_to_minutes",
+      "datetime",
+      "declared_instructor_matches",
+      "defaultdict",
+      "defined_three_lab_hours",
+      "defined_three_lec_hours",
+      "defined_two_lec_hours",
+      "df_faculty_pref",
+      "faculty_assignment_is_valid",
+      "faculty_is_explicitly_eligible_for_subject",
+      "faculty_subject_preference_score",
+      "find_resource_conflicts",
+      "get_available_rooms",
+      "get_faculty_day_blocks",
+      "get_matching_room_timeblocks",
+      "get_matching_section_timeblocks",
+      "get_matching_timeblocks",
+      "get_ranked_faculty_candidates",
+      "get_room_day_blocks",
+      "get_section_day_blocks",
+      "get_subject_schedule_entries",
+      "is_preassigned",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "normalize_room_name",
+      "parse_day_codes",
+      "preassigned_schedule_is_valid",
+      "print_conflicts",
+      "print_final_schedule",
+      "random",
+      "release_room_blocks",
+      "reserve_room",
+      "reset_complete_schedule",
+      "reset_room_schedules",
+      "rollback_subject_assignment",
+      "room_schedule_is_available",
+      "schedule_is_available",
+      "schedules_overlap",
+      "section_schedule_is_available",
+      "time_to_decimal",
+      "time_to_minutes",
+      "try_assign_complete_subject",
+      "validate_faculty_subject_eligibility",
+      "validate_fixed_section_conflicts",
+      "validate_minimum_teaching_load",
+      "validate_preassigned_assignments",
+      "validate_room_conflicts",
+      "validate_section_conflicts"
+    ],
+    "genetic_algorithm.models.PreassignedAssignment.bundle": [
+      "declared_instructor_matches",
+      "df_faculty_pref",
+      "is_preassigned",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "normalize_room_name"
+    ],
+    "services.ga_publication_service.bundle": [
+      "Counter",
+      "chromosome_to_payload",
+      "df_faculty_pref",
+      "get_fixed_section_schedule_entries",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "payload_to_chromosome",
+      "validate_preassigned_assignments"
+    ],
+    "genetic_algorithm.utils.FitnessObservation.bundle": [
+      "df_faculty_pref",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "observed_scores"
+    ],
+    "genetic_algorithm.operators.FitnessFunction.bundle": [
+      "Faculty",
+      "GASetting",
+      "GA_SETTINGS_FILE",
+      "PREFERENCE_FILE",
+      "_build_effective_preferences",
+      "_component_intervals",
+      "_days_from_blocks",
+      "_get_importance",
+      "_legacy_preferences_to_map",
+      "_load_dashboard_preferences",
+      "_load_ga_settings",
+      "_normalize_dashboard_preference",
+      "_normalize_schedule_day",
+      "_score_exact_subject_schedule_blocks",
+      "_subject_components",
+      "_subject_schedule_preference_blocks",
+      "_time_to_minutes",
+      "_unpack_block",
+      "copy",
+      "df_faculty_pref",
+      "json",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "math",
+      "pd",
+      "scoring_inputs",
+      "scoring_version"
+    ],
+    "services.preference_scoring_policy.bundle": [
+      "df_faculty_pref",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects"
+    ],
+    "genetic_algorithm.operators.Swap.bundle": [
+      "calculate_faculty_loads",
+      "chromosome_has_conflicts",
+      "chromosome_has_eligibility_violation",
+      "chromosome_has_load_violation",
+      "copy",
+      "df_faculty_pref",
+      "faculty_assignment_is_valid",
+      "faculty_preference_fitness",
+      "find_resource_conflicts",
+      "get_subject_schedule_entries",
+      "is_preassigned",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "random",
+      "validate_preassigned_assignments"
+    ],
+    "services.ga_checkpoint_service.bundle": [
+      "CheckpointError",
+      "df_faculty_pref",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "math",
+      "pd",
+      "random",
+      "scoring_version",
+      "validate_publication"
+    ],
+    "services.faculty_analysis_service.bundle": [
+      "Faculty",
+      "_build_effective_preferences",
+      "_component_intervals",
+      "_day_satisfaction",
+      "_exact_schedule_satisfaction",
+      "_faculty_code",
+      "_get_importance",
+      "_load_ga_settings",
+      "_normalize_schedule_day",
+      "_subject_components",
+      "_subject_satisfaction",
+      "_subjects_for_faculty",
+      "_time_satisfaction",
+      "_time_to_minutes",
+      "_unpack_block",
+      "analyze_selected_chromosome",
+      "clean_value",
+      "dataframe_to_records",
+      "df_faculty_pref",
+      "faculty_preference_fitness",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "math",
+      "np",
+      "pd"
+    ],
+    "genetic_algorithm.analysis.FacultySelectedChromosomeDashboard.bundle": [
+      "DAY_CODE_TO_NAME",
+      "DAY_ORDER",
+      "DAY_SHORT",
+      "Faculty",
+      "_merge_intervals",
+      "_normalize_day",
+      "_subject_components",
+      "_time_to_minutes",
+      "_unpack_block",
+      "df_faculty_pref",
+      "faculty_preference_fitness",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "np",
+      "pd"
+    ],
+    "genetic_algorithm.operators.TournamentSelection.bundle": [
+      "df_faculty_pref",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "random",
+      "tournament_selection"
+    ],
+    "genetic_algorithm.operators.CreatePopulation.bundle": [
+      "check_all_schedule_conflicts",
+      "copy",
+      "create_schedule_with_minimum_load",
+      "df_faculty_pref",
+      "faculty_preference_fitness",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "validate_faculty_subject_eligibility",
+      "validate_preassigned_assignments"
+    ],
+    "genetic_algorithm.operators.mutation.bundle": [
+      "calculate_faculty_loads",
+      "chromosome_has_conflicts",
+      "chromosome_has_eligibility_violation",
+      "chromosome_has_load_violation",
+      "copy",
+      "df_faculty_pref",
+      "faculty_assignment_is_valid",
+      "faculty_preference_fitness",
+      "find_resource_conflicts",
+      "get_subject_schedule_entries",
+      "is_preassigned",
+      "list_faculty",
+      "list_subjects",
+      "lst_rooms",
+      "lst_subjects",
+      "random",
+      "update_subject_faculty_blocks",
+      "validate_preassigned_assignments"
+    ]
+  },
+  "optimizer_fingerprint": "a287e0ad93ea249bad327fd67ff6c0b5205a02cba232977afe49203fe5265fb5",
+  "legacy_sources_modified": false
+}

@@ -1,0 +1,23 @@
+{
+  "selection": "parent",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_parent_containment_qualification.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-o8cpbqpl\\pytest-parent"
+  ],
+  "started_at": "2026-11-09T01:49:04.332645+08:00",
+  "ended_at": "2026-11-09T01:49:33.124871+08:00",
+  "elapsed_seconds": 28.792277100030333,
+  "exit_code": 1,
+  "stdout": "......F                                                                  [100%]\n================================== FAILURES ===================================\n_________ test_real_checkpoint_survives_outer_parent_tree_termination _________\n\nfixture = <function fixture.<locals>.make at 0x000002531D886B90>\n\n    def test_real_checkpoint_survives_outer_parent_tree_termination(fixture):\n        w,run,_=paused(fixture);checkpoint=w.checkpoint(PRINCIPAL,run);best=w.result(PRINCIPAL,run)\n        code=\"\"\"import sys,time,json\n    wire=sys.stdout\n    class Discard:\n     def write(self,s):return len(s)\n     def flush(self):pass\n    sys.stdout=Discard()\n    from services.ga_supervised_worker import Worker\n    from services.ga_trusted_runs import Coordinator\n    from services.ga_owned_store import Store\n    from tests.bounded_worker_support import dependencies\n    from tests.trusted_run_support import PRINCIPAL\n    from tests.test_supervised_worker import blocking_arguments\n    import services.ga_supervised_worker as module\n    a,c,_=dependencies(1)\n    w=Worker(Coordinator(Store(ROOT,IDENTITY,max_runs=4),a,c))\n    module.arguments=blocking_arguments\n    w.resume(PRINCIPAL,RUN)\n    end=time.monotonic()+25\n    while time.monotonic()<end:\n     p=w.processes.get(RUN)\n     with w.storage.connection() as db:\n      registered=db.execute(\"SELECT pid FROM l_processes WHERE run=? AND status='ACTIVE'\",(RUN,)).fetchone()\n     if p and p.handle and p.poll() is None and registered and registered[0]==p.pid:break\n     time.sleep(.02)\n    else:raise RuntimeError('Owned nested worker unavailable')\n    wire.write(json.dumps(dict(pid=p.pid,created=p.identity))+'\\\\n');wire.flush()\n    sys.stdin.readline()\n    \"\"\".replace('ROOT',repr(str(w.storage.root))).replace('IDENTITY',repr(w.storage.store_id)).replace('RUN',repr(run))\n        p=parent(code)\n        try:\n            child=json.loads(line(p));assert member(p,child['pid'])\n>           assert p.close()['active_processes']==0 and not alive(child['pid'],child['created'])\nE           assert (0 == 0 and not True)\nE            +  where True = alive(44640, 134386337709647315)\n\ntests\\test_parent_containment_qualification.py:166: AssertionError\n============================ slowest 10 durations =============================\n14.83s call     tests/test_parent_containment_qualification.py::test_real_checkpoint_survives_outer_parent_tree_termination\n3.75s call     tests/test_parent_containment_qualification.py::test_parent_cpu_death_kills_nested_worker_handles\n0.80s call     tests/test_parent_containment_qualification.py::test_parent_private_commit_limit_with_nested_worker\n0.72s call     tests/test_parent_containment_qualification.py::test_nested_parent_worker_membership_tree_cleanup_and_unrelated_survival\n0.28s call     tests/test_parent_containment_qualification.py::test_explicit_snapshot_import_boundary\n0.21s call     tests/test_parent_containment_qualification.py::test_venv_redirector_process_slot_diagnosis\n0.18s setup    tests/test_parent_containment_qualification.py::test_venv_redirector_process_slot_diagnosis\n0.16s call     tests/test_parent_containment_qualification.py::test_parent_breakaway_request_rejected\n0.02s setup    tests/test_parent_containment_qualification.py::test_real_checkpoint_survives_outer_parent_tree_termination\n0.01s teardown tests/test_parent_containment_qualification.py::test_real_checkpoint_survives_outer_parent_tree_termination\n=========================== short test summary info ===========================\nFAILED tests/test_parent_containment_qualification.py::test_real_checkpoint_survives_outer_parent_tree_termination\n1 failed, 6 passed in 26.76s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}
