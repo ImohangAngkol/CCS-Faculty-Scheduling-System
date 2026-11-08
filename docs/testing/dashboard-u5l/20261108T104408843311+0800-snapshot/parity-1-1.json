@@ -1,0 +1,42 @@
+{
+  "scope": "Fictional original-engine versus versioned bundle consumer; technical verification only",
+  "parameters": {
+    "population_size": 2,
+    "generations": 1,
+    "fresh_chromosomes": 1,
+    "baseline_mode": "fresh",
+    "mutation_attempts": 1,
+    "max_restarts": 5
+  },
+  "legacy_engine_fingerprint": "46bd518ba900fad38b815d1bad418b1090492c82ece5b26afe7661579432db1b",
+  "receipt": {
+    "contract": "ga-bundle-consumption-receipt-v1",
+    "run_id": "00000000-0000-4000-8000-000000000811",
+    "verification_scope": "TECHNICAL_CONSUMPTION_OF_CAPTURED_BUNDLE_ONLY",
+    "verification_status": "VERIFIED",
+    "bundle_fingerprint": "365b05820436283551ee4eb761604ed4658ef9dcce7426aa2b381fd0ceb67278",
+    "loaded_model_fingerprint": "6ebe40dad2fde216c1df889cbc36b279b33e839509ebab6750f0e3311ff3841d",
+    "consumed_entry_fingerprint": "0381c699638a685349d544ffc873197c20e7a6464a167b0c8ae36ceae69a370c",
+    "rng_entry_fingerprint": "342bc661df4acd3c27e0c30c011859c2bc11c595ef50d81bdc34fd5cffd49489",
+    "configuration_fingerprint": "9cf9d4a227eb24fdc48c8ff2494274d37c63ebf3497849669b7cfc78ea2a0ee0",
+    "scoring_context_fingerprint": "9bde1cd9e336cddda4828921eb87b5f5a6fbfc1075f7795ae3c0efa665be02de",
+    "loader_contract": "ga-captured-input-bundle-v1",
+    "optimizer_version": "ga-bundle-consumer-v1",
+    "optimizer_fingerprint": "a287e0ad93ea249bad327fd67ff6c0b5205a02cba232977afe49203fe5265fb5",
+    "state": "COMPLETED",
+    "checkpoint_fingerprint": null,
+    "checkpoint_sequence": 0,
+    "parent_checkpoint_fingerprint": null,
+    "bound_functions": 120,
+    "function_calls": 161883,
+    "eligible_for_current": false,
+    "institutional_authorization": "NOT_ESTABLISHED",
+    "academic_source_verification": "UNVERIFIED_U5G_CAPTURE_ONLY",
+    "saved_best_promotion": false,
+    "publication": false,
+    "reasons": []
+  },
+  "schedule_fitness_history_and_rng_equal": true,
+  "saved_best_promotion": false,
+  "authority": "NOT_ESTABLISHED"
+}

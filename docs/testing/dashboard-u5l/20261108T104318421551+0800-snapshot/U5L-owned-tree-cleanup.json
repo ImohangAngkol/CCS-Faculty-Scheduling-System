@@ -1,0 +1,6 @@
+{
+  "active_after_close": 0,
+  "parent_pid": 17548,
+  "child_pid": 18924,
+  "scope": "Separate two-process primitive probe, not a multi-process GA mode"
+}

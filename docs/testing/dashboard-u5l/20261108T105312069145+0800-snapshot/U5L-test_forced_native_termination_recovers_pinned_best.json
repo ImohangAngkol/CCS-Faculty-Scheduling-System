@@ -1,0 +1,53 @@
+{
+  "scope": "Fictional owned Windows optimizer processes; no institutional acceptance",
+  "observations": [
+    {
+      "active_processes": 0,
+      "created_100ns": 134385801454390861,
+      "creation_time_job_binding": true,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 0,
+      "kernel_seconds": 0.640625,
+      "peak_private_commit_bytes": 623644672,
+      "pid": 37348,
+      "user_seconds": 1.65625
+    },
+    {
+      "active_processes": 0,
+      "created_100ns": 134385801489781015,
+      "creation_time_job_binding": true,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 137,
+      "kernel_seconds": 0.0,
+      "peak_private_commit_bytes": 446464,
+      "pid": 27268,
+      "user_seconds": 0.0
+    },
+    {
+      "active_processes": 0,
+      "created_100ns": 134385801498290858,
+      "creation_time_job_binding": true,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 0,
+      "kernel_seconds": 0.625,
+      "peak_private_commit_bytes": 739434496,
+      "pid": 45880,
+      "user_seconds": 6.90625
+    }
+  ]
+}

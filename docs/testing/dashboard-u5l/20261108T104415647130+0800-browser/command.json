@@ -1,0 +1,16 @@
+{
+  "selection": "browser",
+  "head": "9c3cff0f7fd38c4e595e118db5b0aa4a11b31afa",
+  "command": [
+    "node",
+    "--test",
+    "tests/continuousOptimization.browser.test.mjs"
+  ],
+  "started_at": "2026-11-08T10:44:15.647880+08:00",
+  "ended_at": "2026-11-08T10:44:35.530322+08:00",
+  "elapsed_seconds": 19.883061099913903,
+  "exit_code": 0,
+  "stdout": "\u25b6 U5F readiness and existing fixed lifecycle with fictional HTTP\n  \u2714 U5F-B01 Fixed mode remains default without requesting continuous readiness (4366.7878ms)\n  \u2714 U5F-B02 Continuous is visibly blocked and never starts an execution (304.0424ms)\n  \u2714 U5F-B03 Hidden fixed settings cannot submit in continuous view (8.0122ms)\n  \u2714 U5F-B04 Forged executable metadata is rejected (701.4028ms)\n  \u2714 U5F-B05 Readiness error retries without GA execution (639.8219ms)\n  \u2714 U5F-B06 Loading has no invented continuous state (730.0533ms)\n  \u2714 U5F-B07 Lifecycle vocabulary and budgets are explicitly not active (213.1925ms)\n  \u2714 U5F-B08 Switching mode preserves fixed parameter values (47.737ms)\n  \u2714 U5F-B09 Refresh resets only mode selection and never auto-starts (514.5808ms)\n  \u2714 U5F-B10 Existing fixed pause waits for its backend acknowledgement (1804.4302ms)\n  \u2714 U5F-B11 Existing fixed resume retains its run identity (1191.5021ms)\n  \u2714 U5F-B12 Stop cancellation then confirmation preserves backend truth (1431.6055ms)\n  \u2714 U5F-B13 Invalid checkpoint cannot enable existing resume (567.7845ms)\n  \u2714 U5F-B14 Interrupted execution does not become completed (451.7725ms)\n  \u2714 U5F-B15 Faculty and anonymous users cannot view privileged controls (762.9674ms)\n  \u2714 U5F-B16 Mobile blocked mode has no document overflow (658.969ms)\n\u2714 U5F readiness and existing fixed lifecycle with fictional HTTP (16575.8579ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 19791.0589\n",
+  "stderr": "",
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5L worker acceptance. Unrelated working-tree UI changes are not qualified by this check."
+}

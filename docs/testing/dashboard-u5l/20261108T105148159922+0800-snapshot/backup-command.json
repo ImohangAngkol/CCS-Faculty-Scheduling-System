@@ -1,0 +1,25 @@
+{
+  "selection": "backup",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_supervised_worker.py",
+    "-k",
+    "backup",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-mayef45s\\pytest-backup"
+  ],
+  "started_at": "2026-11-08T10:51:48.160899+08:00",
+  "ended_at": "2026-11-08T10:52:15.290240+08:00",
+  "elapsed_seconds": 27.12993809999898,
+  "exit_code": 0,
+  "stdout": "....                                                                     [100%]\n============================ slowest 10 durations =============================\n16.24s call     tests/test_supervised_worker.py::test_backup_inspection_staleness_and_no_restore_activation\n2.55s call     tests/test_supervised_worker.py::test_backup_manifest_binding_tampering_rejected[bundle]\n2.51s call     tests/test_supervised_worker.py::test_backup_manifest_binding_tampering_rejected[contract]\n0.17s setup    tests/test_supervised_worker.py::test_backup_inspection_staleness_and_no_restore_activation\n0.02s setup    tests/test_supervised_worker.py::test_backup_manifest_binding_tampering_rejected[contract]\n0.01s setup    tests/test_supervised_worker.py::test_backup_manifest_binding_tampering_rejected[bundle]\n0.01s teardown tests/test_supervised_worker.py::test_backup_manifest_binding_tampering_rejected[bundle]\n0.01s teardown tests/test_supervised_worker.py::test_backup_inspection_staleness_and_no_restore_activation\n0.01s teardown tests/test_supervised_worker.py::test_backup_manifest_binding_tampering_rejected[contract]\n\n(1 durations < 0.005s hidden.  Use -vv to show these durations.)\n4 passed, 37 deselected in 25.40s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

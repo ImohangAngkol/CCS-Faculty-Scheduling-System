@@ -1,0 +1,23 @@
+{
+  "selection": "supervised-smoke",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_supervised_worker.py::test_start_zero_original_behavior",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-umj9celv\\pytest-supervised-smoke"
+  ],
+  "started_at": "2026-11-08T10:40:11.352963+08:00",
+  "ended_at": "2026-11-08T10:40:21.757881+08:00",
+  "elapsed_seconds": 10.405283099971712,
+  "exit_code": 1,
+  "stdout": "F                                                                        [100%]\n================================== FAILURES ===================================\n______________________ test_start_zero_original_behavior ______________________\n\nfixture = <function fixture.<locals>.make at 0x0000021054699170>\n\n    def test_actual_process_initialization_completion_zero_and_cleanup(fixture):\n        w,run,_=fixture();before=random.getstate()\n        assert w.start(PRINCIPAL,run)['state'] in {'RUNNING','COMPLETED'}\n>       s=until(w,run,{'COMPLETED','FAILED'});assert s['state']=='COMPLETED',json.dumps(s)\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       AssertionError: {\"contract\": \"ga-bounded-worker-v1\", \"run_id\": \"8895140f-117b-41e3-9039-3bbb61c7685a\", \"owner_id\": \"00000000-0000-4000-8000-000000000901\", \"department_id\": \"00000000-0000-4000-8000-000000000903\", \"state\": \"FAILED\", \"reason\": \"GA_STORE_TRANSACTION_FAILED\", \"generation\": 0, \"initialized\": false, \"total_generations_completed\": 0, \"best_chromosome_id\": null, \"best_fitness\": null, \"fitness_breakdown\": null, \"improvement_history\": [], \"checkpoint_version\": \"ga-bounded-worker-v1\", \"checkpoint_sequence\": 0, \"fence\": 1, \"recovery_required\": false, \"publication\": false, \"saved_best_promotion\": false, \"eligible_for_current\": false, \"source_scope\": \"FICTIONAL_ISOLATED_ONLY\"}\nE       assert 'FAILED' == 'COMPLETED'\nE         \nE         - COMPLETED\nE         + FAILED\n\ntests\\test_bounded_worker.py:52: AssertionError\n============================ slowest 10 durations =============================\n3.64s call     tests/test_supervised_worker.py::test_start_zero_original_behavior\n0.17s setup    tests/test_supervised_worker.py::test_start_zero_original_behavior\n0.01s teardown tests/test_supervised_worker.py::test_start_zero_original_behavior\n=========================== short test summary info ===========================\nFAILED tests/test_supervised_worker.py::test_start_zero_original_behavior - A...\n1 failed in 8.64s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

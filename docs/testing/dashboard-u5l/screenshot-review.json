@@ -1,0 +1,14 @@
+{
+  "privacy_reviewed": true,
+  "observer": "CODEX_VISUAL_REVIEW",
+  "reviewed_at": "2026-11-08T10:55:38.591442+08:00",
+  "scope": "All six actual Edge captures individually viewed; fictional intercepted responses only. No private records, credential dialogs, tokens or unrelated browser chrome. No live U5L HTTP acceptance.",
+  "files": {
+    "docs/testing/dashboard-u5l/20261108T104415647130+0800-browser/U5F-B01-default.png": "ca5ba74c9ac2a63eba93bbc184f055371762f6db059429200caf4030d264491c",
+    "docs/testing/dashboard-u5l/20261108T104415647130+0800-browser/U5F-B02-blocked.png": "afd9a76eaf12f1c4045304823f7437820a28ab7fa574c9b7543018410e7571b3",
+    "docs/testing/dashboard-u5l/20261108T104415647130+0800-browser/U5F-B07-contract.png": "11df8df9edbe25b7cb76816a77a2058b3331504b45d57cd8f35f1739ae4adb78",
+    "docs/testing/dashboard-u5l/20261108T104415647130+0800-browser/U5F-B10-fixed-paused.png": "db86ad1c437a8615644ec6d3028031fea16e0ab8b45a3797e8a61d1894815079",
+    "docs/testing/dashboard-u5l/20261108T104415647130+0800-browser/U5F-B12-fixed-stopped.png": "1e0b3ad6065324bdfa3036cec21710ce5bb7e1bdec713f9e4515f10aefc99e80",
+    "docs/testing/dashboard-u5l/20261108T104415647130+0800-browser/U5F-B16-mobile.png": "75b56b7de21eb98316a5ab5c2dea275a5fa4a926dd10f35abeb682cc9cf2a2b1"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "head": "9c3cff0f7fd38c4e595e118db5b0aa4a11b31afa",
+  "source_sha256": {
+    "backend/services/ga_windows_supervisor.py": "3ea528c7823834105315b854ff1e8fd3a9a6e9a113e09abe8a36f059bdb5b1f7",
+    "backend/services/ga_supervised_storage.py": "5f314461c7b923a26deb2e9cb286d44a9c58719a82619eec6911c5fbb1df19bb",
+    "backend/services/ga_supervised_worker.py": "334f668f6b31ee174a1c1a4671d46ddb8c1f87d46b966bae6b416497d2266cc4",
+    "backend/tests/test_windows_supervision.py": "74e50a135f709ddb62a185c5891541b325e8eb57e30420362a151b3df512e71c",
+    "backend/tests/test_supervised_worker.py": "73e6ec85593921e400730f55213a51bfe790267ff2287e0056f92ca18cb69051"
+  },
+  "proposed_blob_oids": {
+    "backend/services/ga_windows_supervisor.py": "e99aa5a1c85df0854f4b3657edf0d86c80c70576",
+    "backend/services/ga_supervised_storage.py": "e59322053db33cce287a0a817a8672403c72e768",
+    "backend/services/ga_supervised_worker.py": "093552341ed98c34dec9fab7e741e98ab62ca01d",
+    "backend/tests/test_windows_supervision.py": "52e2b1100ff37b4227ca8443eb78bb97ed119d20",
+    "backend/tests/test_supervised_worker.py": "271b3d674ef622d12d392bcf3a38e96087c0b19c"
+  },
+  "results": [
+    {
+      "selection": "parity",
+      "exit_code": 0
+    }
+  ],
+  "qualified_selections": [
+    "parity"
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-mta31qrm\\repository"
+}

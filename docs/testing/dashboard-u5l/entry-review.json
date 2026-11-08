@@ -1,0 +1,23 @@
+{
+  "head": "9c3cff0f7fd38c4e595e118db5b0aa4a11b31afa",
+  "branch": "main",
+  "baseline_paths": 3931,
+  "academic_files": 23,
+  "tracked_modifications": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "index_empty": true,
+  "u5k_hashes_verified": 74,
+  "production_admission": "BLOCKED",
+  "continuous_ui": "DISABLED"
+}

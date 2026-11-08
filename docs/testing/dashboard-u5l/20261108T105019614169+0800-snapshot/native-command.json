@@ -1,0 +1,23 @@
+{
+  "selection": "native",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_windows_supervision.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-suw_89rp\\pytest-native"
+  ],
+  "started_at": "2026-11-08T10:50:19.615452+08:00",
+  "ended_at": "2026-11-08T10:50:27.844988+08:00",
+  "elapsed_seconds": 8.229808800038882,
+  "exit_code": 0,
+  "stdout": "............                                                             [100%]\n============================ slowest 10 durations =============================\n3.90s call     tests/test_windows_supervision.py::test_real_user_cpu_quota_terminates_computation\n1.84s setup    tests/test_windows_supervision.py::test_creation_bound_identity_limits_clean_exit\n0.59s call     tests/test_windows_supervision.py::test_parent_death_closes_noninherited_jobs_and_kills_child\n0.13s call     tests/test_windows_supervision.py::test_explicit_tree_probe_terminates_both_owned_processes\n0.11s call     tests/test_windows_supervision.py::test_descendant_creation_denied_in_single_worker_mode\n0.08s call     tests/test_windows_supervision.py::test_creation_bound_identity_limits_clean_exit\n0.07s call     tests/test_windows_supervision.py::test_real_private_commit_denies_excess_allocation\n\n(3 durations < 0.005s hidden.  Use -vv to show these durations.)\n12 passed in 6.86s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}
