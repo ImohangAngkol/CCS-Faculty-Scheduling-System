@@ -1,0 +1,8 @@
+{
+  "parent_exit": 23,
+  "post_restart_state": "INTERRUPTED",
+  "no_fabricated_completion": true,
+  "active_restore": false,
+  "checkpoint_sequence": 0,
+  "quarantine_required": true
+}

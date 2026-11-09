@@ -1,0 +1,11 @@
+{
+  "artifact": "docs/testing/dashboard-u5pb/20261109T154646946033+0800-http/command.json",
+  "passed": 10,
+  "failed": 1,
+  "case": "test_original_http_and_production_providers_unmodified",
+  "error": "AttributeError: '_IncludedRouter' object has no attribute 'path'",
+  "classification": "TEST_INTROSPECTION_COMPATIBILITY",
+  "correction": "Inspect the effective OpenAPI paths, including nested lazy router registrations, instead of assuming each app.routes object exposes path. No application route is added or removed.",
+  "all_actual_HTTP_acceptance_cases_passed": true,
+  "failed_record_retained": true
+}

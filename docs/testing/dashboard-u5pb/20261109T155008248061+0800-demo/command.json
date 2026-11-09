@@ -1,0 +1,28 @@
+{
+  "selection": "demo",
+  "started_at": "2026-11-09T15:50:08.248894+08:00",
+  "ended_at": "2026-11-09T15:50:29.677081+08:00",
+  "elapsed_seconds": 21.428183800075203,
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "../docs/testing/dashboard-u5pb/research_demo.py",
+    "--fictional-only"
+  ],
+  "stdout": "{\"scope\": \"FICTIONAL_DISPOSABLE_ONLY\", \"run_id\": \"18448872-ebbe-4797-ada9-9c0be9be451f\", \"state\": \"COMPLETED\", \"generations\": 1, \"best_so_far_fitness\": 0, \"context_qualification\": \"TRUSTED_FICTIONAL_CONSUMPTION\", \"context_id\": \"462ce3e6c8f33a0964b92430271f53c3664dde17e4bf9538c4579ae0bc375f19\", \"telemetry_events\": 4, \"checkpoint_sequence\": 2, \"production_admission\": \"BLOCKED\", \"continuous_ui\": \"DISABLED\", \"seven_day\": \"NO_GO\", \"active_restore\": false, \"storage_scope\": \"NEW_OWNED_OS_TEMP\", \"note\": \"Tiny fictional demonstration; zero fitness is not convergence evidence.\", \"cleanup_verified\": true}\n",
+  "stderr": "",
+  "head": "9c3f5c67c534f81a7b26bd6cb8535e5340ce5bf9",
+  "source_sha256": {
+    "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+    "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+    "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+    "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+    "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+    "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-ts25u16z\\repository",
+  "no_staging": true,
+  "completed": true
+}

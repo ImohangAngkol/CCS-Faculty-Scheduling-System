@@ -1,0 +1,8 @@
+{
+  "failed_attempts": 2,
+  "tests_executed": 0,
+  "stage": "historical fixture source preparation",
+  "diagnosis": "The new runner omitted core.autocrlf=false on git archive. On this Windows configuration archive extracted many CRLF sources rather than canonical recipe bytes. Excluding the changed P-A caller alone was insufficient. Initial evidence described only that anticipated caller change; this addendum corrects attribution without overwriting it.",
+  "fix": "Use byte-preserving git -c core.autocrlf=false archive, as established earlier tools do; exclude only intentionally new P-A caller from old recipe, retaining its exact current Git bytes. No GA/checkpoint fingerprint bypass.",
+  "original_recipe_and_application_unchanged": true
+}

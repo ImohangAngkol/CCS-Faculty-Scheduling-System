@@ -1,0 +1,27 @@
+{
+  "failed_pytest_command_records": [
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/command.json",
+      "selection": "native",
+      "exit_code": 1,
+      "failure": "Fixture original-oracle binding"
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T154646946033+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 1,
+      "failure": "Installed FastAPI lazy-router introspection"
+    }
+  ],
+  "pre_test_bootstrap_failures": 2,
+  "pre_test_diagnostics": [
+    "initial-bootstrap-failure.json",
+    "bootstrap-diagnosis-addendum.json"
+  ],
+  "final_reruns_required": true,
+  "historical_records_deleted_or_overwritten": false,
+  "native_failure": "9 pass/1 fail: original 455.0 oracle imported after forbidden-write spy; corrected test binding, no GA change.",
+  "http_failure": "10 pass/1 fail: actual HTTP journeys passed, separate introspection assumed .path on lazy FastAPI router; use effective OpenAPI paths.",
+  "provenance": "Initial bootstrap diagnosis was incomplete. Independent addendum identifies archive newline conversion and new P-A caller handling without editing the first record.",
+  "older_limits": "Frozen U5O expectation mismatch, U5PA unexplained render failures and U5O CPU overrun remain preserved and are not resolved by these new tests."
+}

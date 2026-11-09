@@ -1,0 +1,37 @@
+{
+  "selection": "http",
+  "started_at": "2026-11-09T15:46:46.947007+08:00",
+  "ended_at": "2026-11-09T15:47:30.459206+08:00",
+  "elapsed_seconds": 43.51219050004147,
+  "exit_code": 1,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_bridge.py",
+    "-k",
+    "http",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-ukhz7x7t\\pytest-http"
+  ],
+  "stdout": "F..........                                                              [100%]\n================================== FAILURES ===================================\n___________ test_original_http_and_production_providers_unmodified ____________\ntests\\test_research_bridge.py:221: in test_original_http_and_production_providers_unmodified\n    assert not any(r.path.startswith('/api/research/') for r in app.routes)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests\\test_research_bridge.py:221: in <genexpr>\n    assert not any(r.path.startswith('/api/research/') for r in app.routes)\n                   ^^^^^^\nE   AttributeError: '_IncludedRouter' object has no attribute 'path'\n============================== warnings summary ===============================\ntests/test_research_bridge.py::test_http_authentication_csrf_and_unscoped_admin\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\ntests/test_research_bridge.py::test_http_authentication_csrf_and_unscoped_admin\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/test_research_bridge.py::test_original_http_and_production_providers_unmodified\n1 failed, 10 passed, 40 deselected, 2 warnings in 41.50s\n",
+  "stderr": "",
+  "head": "9c3f5c67c534f81a7b26bd6cb8535e5340ce5bf9",
+  "source_sha256": {
+    "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+    "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+    "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+    "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+    "backend/tests/test_research_bridge.py": "283caa3257408f9d104896a7b1c5e60b1304869875420e196e6ba11fc04a022b",
+    "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-ukhz7x7t\\repository",
+  "no_staging": true,
+  "completed": false
+}

@@ -1,0 +1,31 @@
+{
+  "selection": "build",
+  "head": "9c3f5c67c534f81a7b26bd6cb8535e5340ce5bf9",
+  "ui_mode": "committed-u5pa-baseline",
+  "ui_overlay_sha256": {
+    "frontend/src/pages/admin/ScheduleApplications.tsx": "03696a006d5cc9494b2b40c0d566a39ff3660e40a536f546a17df4aa52e5b99d",
+    "frontend/src/api/scheduleApplications.ts": "5e3aca0820e26af14dd301f4d23d673774c4357ec7caf88d0eae4364d1455412",
+    "frontend/tests/savedBestPreviewRepair.test.mjs": "bcfcc90c10fd790d28e41204ddb61e76916e9d516a0d83b231a997794cbc7757",
+    "frontend/tests/savedBestPreview.browser.test.mjs": "d8e4d1862c035fe08167d4e46cf34dd076301861ad4d4f834f3663eb186c6a8f"
+  },
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "-b"
+  ],
+  "started_at": "2026-11-09T15:35:46.234349+08:00",
+  "ended_at": "2026-11-09T15:35:59.746429+08:00",
+  "elapsed_seconds": 13.512091299984604,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "test_cache_isolation": {
+    "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+    "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+    "test_config_sha256": "aac19b014a71f1ae05f60e6cd7c6cf4f62075e2b7d61d5bdd97deabc9768048a",
+    "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5o-frontend-sb4zn3bm\\vite-cache",
+    "shared_node_modules_cache_used": false,
+    "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+  },
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5PB worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

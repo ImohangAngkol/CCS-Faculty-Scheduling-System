@@ -1,0 +1,622 @@
+{
+  "milestone": "U5P-B",
+  "head": "9c3f5c67c534f81a7b26bd6cb8535e5340ce5bf9",
+  "recorded_at": "2026-11-09T16:10:59.984043+08:00",
+  "status": "ISOLATED_FICTIONAL_CONTEXT_WORKER_HTTP_AND_TELEMETRY_QUALIFIED; PRODUCTION_BLOCKED",
+  "exact_changed_and_new_file_inventory": [
+    "backend/routers/ga_research.py",
+    "backend/services/ga_research_bridge.py",
+    "backend/services/ga_research_context.py",
+    "backend/services/ga_research_ledger.py",
+    "backend/tests/test_research_bridge.py",
+    "docs/dashboard-u5pb-trusted-context-research-bridge.md",
+    "docs/testing/dashboard-u5pb/20261109T152617743386+0800-unit/command.json",
+    "docs/testing/dashboard-u5pb/20261109T152748199420+0800-native/command.json",
+    "docs/testing/dashboard-u5pb/20261109T152748199420+0800-native/native-failure-kinds.json",
+    "docs/testing/dashboard-u5pb/20261109T152748199420+0800-native/native-real-worker.json",
+    "docs/testing/dashboard-u5pb/20261109T152950584849+0800-http/command.json",
+    "docs/testing/dashboard-u5pb/20261109T152950584849+0800-http/real-http-worker-restart.json",
+    "docs/testing/dashboard-u5pb/20261109T153519499503+0800-unit/command.json",
+    "docs/testing/dashboard-u5pb/20261109T153540021173+0800-contracts-all/command.json",
+    "docs/testing/dashboard-u5pb/20261109T153546233627+0800-build/command.json",
+    "docs/testing/dashboard-u5pb/20261109T153559747938+0800-bundle/command.json",
+    "docs/testing/dashboard-u5pb/20261109T153602925866+0800-lint/command.json",
+    "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/command.json",
+    "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/native-failure-kinds.json",
+    "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/native-parent-interruption.json",
+    "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/native-real-worker.json",
+    "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/U5K-nonzero-worker-parity.json",
+    "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/command.json",
+    "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/native-failure-kinds.json",
+    "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/native-parent-interruption.json",
+    "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/native-real-worker.json",
+    "docs/testing/dashboard-u5pb/20261109T154646946033+0800-http/command.json",
+    "docs/testing/dashboard-u5pb/20261109T154646946033+0800-http/real-http-worker-restart.json",
+    "docs/testing/dashboard-u5pb/20261109T154930657549+0800-http/command.json",
+    "docs/testing/dashboard-u5pb/20261109T154930657549+0800-http/real-http-worker-restart.json",
+    "docs/testing/dashboard-u5pb/20261109T155008248061+0800-demo/command.json",
+    "docs/testing/dashboard-u5pb/20261109T155008248061+0800-demo/research-demo.json",
+    "docs/testing/dashboard-u5pb/20261109T155029680231+0800-saved-best/command.json",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/command.json",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/dependency-closure.json",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/fresh-process.json",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/nonzero-parity.json",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/parity-0-0.json",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/parity-1-0.json",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/parity-1-1.json",
+    "docs/testing/dashboard-u5pb/20261109T155137238804+0800-legacy/command.json",
+    "docs/testing/dashboard-u5pb/20261109T155137238804+0800-legacy/fixture-0.json",
+    "docs/testing/dashboard-u5pb/20261109T155137238804+0800-legacy/fixture-1.json",
+    "docs/testing/dashboard-u5pb/20261109T155137238804+0800-legacy/fixture-2.json",
+    "docs/testing/dashboard-u5pb/20261109T155311290249+0800-consumption/command.json",
+    "docs/testing/dashboard-u5pb/20261109T155421885801+0800-race/U5M-full-observer-stress.json",
+    "docs/testing/dashboard-u5pb/20261109T155421885801+0800-race/U5M-receipt-guard-trace.json",
+    "docs/testing/dashboard-u5pb/20261109T155421885801+0800-race/command.json",
+    "docs/testing/dashboard-u5pb/20261109T155507500688+0800-worker/U5K-nonzero-worker-parity.json",
+    "docs/testing/dashboard-u5pb/20261109T155507500688+0800-worker/command.json",
+    "docs/testing/dashboard-u5pb/20261109T155733674301+0800-recovery/command.json",
+    "docs/testing/dashboard-u5pb/20261109T160240487526+0800-authority/command.json",
+    "docs/testing/dashboard-u5pb/20261109T160301128808+0800-regressions/command.json",
+    "docs/testing/dashboard-u5pb/20261109T160336787574+0800-unit/command.json",
+    "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/U5K-nonzero-worker-parity.json",
+    "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/command.json",
+    "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/native-failure-kinds.json",
+    "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/native-parent-interruption.json",
+    "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/native-real-worker.json",
+    "docs/testing/dashboard-u5pb/20261109T160852113215+0800-storage-full/U5L-test_sqlite_page_quota_real_full_rollback.json",
+    "docs/testing/dashboard-u5pb/20261109T160852113215+0800-storage-full/command.json",
+    "docs/testing/dashboard-u5pb/attempt-reconciliation.json",
+    "docs/testing/dashboard-u5pb/audit_evidence.py",
+    "docs/testing/dashboard-u5pb/bootstrap-diagnosis-addendum.json",
+    "docs/testing/dashboard-u5pb/entry-review.json",
+    "docs/testing/dashboard-u5pb/environment.json",
+    "docs/testing/dashboard-u5pb/frontend_checks.py",
+    "docs/testing/dashboard-u5pb/http-route-inspection-diagnosis.json",
+    "docs/testing/dashboard-u5pb/initial-bootstrap-failure.json",
+    "docs/testing/dashboard-u5pb/manifest.json",
+    "docs/testing/dashboard-u5pb/parity-fixture-failure-diagnosis.json",
+    "docs/testing/dashboard-u5pb/preservation-baseline.json",
+    "docs/testing/dashboard-u5pb/research_demo.py",
+    "docs/testing/dashboard-u5pb/run_checks.py",
+    "docs/testing/dashboard-u5pb/staging-plan.json"
+  ],
+  "existing_files_modified": [],
+  "new_files": 75,
+  "final_python_counts": {
+    "unit": 30,
+    "native": 10,
+    "http": 11,
+    "saved-best": 48,
+    "parity": 5,
+    "legacy": 10,
+    "consumption": 39,
+    "race": 19,
+    "worker": 32,
+    "recovery": 40,
+    "authority": 49,
+    "regressions": 99,
+    "storage-full": 1
+  },
+  "selected_python_passes": 393,
+  "frontend_contracts": 342,
+  "TypeScript": "PASS",
+  "production_build": "PASS",
+  "focused_lint": "PASS",
+  "tests_freshly_executed": true,
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T152617743386+0800-unit/command.json",
+      "selection": "unit",
+      "exit_code": 0,
+      "counts": {
+        "passed": 25,
+        "deselected": 17
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "5e1342d004cf7b96885704badb2043616981496ea43a7aca02773c3be02dd577",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "dd98890e42517e00d100d83ef2a96528bff92e16087f94b7f2c07e5458c54460"
+      },
+      "elapsed_seconds": 90.4526002999628
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T152748199420+0800-native/command.json",
+      "selection": "native",
+      "exit_code": 0,
+      "counts": {
+        "passed": 7,
+        "deselected": 35
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "5e1342d004cf7b96885704badb2043616981496ea43a7aca02773c3be02dd577",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "dd98890e42517e00d100d83ef2a96528bff92e16087f94b7f2c07e5458c54460"
+      },
+      "elapsed_seconds": 122.3830050000688
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T152950584849+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 0,
+      "counts": {
+        "passed": 10,
+        "deselected": 32
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "5e1342d004cf7b96885704badb2043616981496ea43a7aca02773c3be02dd577",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "dd98890e42517e00d100d83ef2a96528bff92e16087f94b7f2c07e5458c54460"
+      },
+      "elapsed_seconds": 51.40877460001502
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T153519499503+0800-unit/command.json",
+      "selection": "unit",
+      "exit_code": 0,
+      "counts": {
+        "passed": 30,
+        "deselected": 21
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "aab649a242564bddc5930d52bf3ad32e77f245f22e4bee8b643d125135cd9a85",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 111.08025599992834
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T153540021173+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 0,
+      "counts": {
+        "tests": 342,
+        "pass": 342,
+        "fail": 0,
+        "skipped": 0
+      },
+      "source_sha256": null,
+      "elapsed_seconds": 6.207841300056316
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T153546233627+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {},
+      "source_sha256": null,
+      "elapsed_seconds": 13.512091299984604
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T153559747938+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {},
+      "source_sha256": null,
+      "elapsed_seconds": 3.175627200049348
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T153602925866+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "source_sha256": null,
+      "elapsed_seconds": 12.60216670006048
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/command.json",
+      "selection": "native",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 9,
+        "deselected": 41
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "aab649a242564bddc5930d52bf3ad32e77f245f22e4bee8b643d125135cd9a85",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 167.16969739994965
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/command.json",
+      "selection": "native",
+      "exit_code": 0,
+      "counts": {
+        "passed": 10,
+        "deselected": 41
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "283caa3257408f9d104896a7b1c5e60b1304869875420e196e6ba11fc04a022b",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 140.33337550004944
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T154646946033+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 10,
+        "deselected": 40
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "283caa3257408f9d104896a7b1c5e60b1304869875420e196e6ba11fc04a022b",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 43.51219050004147
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T154930657549+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 0,
+      "counts": {
+        "passed": 11,
+        "deselected": 40
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 37.58825530007016
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T155008248061+0800-demo/command.json",
+      "selection": "demo",
+      "exit_code": 0,
+      "counts": {},
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 21.428183800075203
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T155029680231+0800-saved-best/command.json",
+      "selection": "saved-best",
+      "exit_code": 0,
+      "counts": {
+        "passed": 48
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 22.58089680003468
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/command.json",
+      "selection": "parity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 5
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 44.97306740004569
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T155137238804+0800-legacy/command.json",
+      "selection": "legacy",
+      "exit_code": 0,
+      "counts": {
+        "passed": 10
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 94.04899659997318
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T155311290249+0800-consumption/command.json",
+      "selection": "consumption",
+      "exit_code": 0,
+      "counts": {
+        "passed": 39
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 70.59279769996647
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T155421885801+0800-race/command.json",
+      "selection": "race",
+      "exit_code": 0,
+      "counts": {
+        "passed": 19
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 45.61146849999204
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T155507500688+0800-worker/command.json",
+      "selection": "worker",
+      "exit_code": 0,
+      "counts": {
+        "passed": 32
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 146.17186820006464
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T155733674301+0800-recovery/command.json",
+      "selection": "recovery",
+      "exit_code": 0,
+      "counts": {
+        "passed": 40
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 306.81146990007255
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T160240487526+0800-authority/command.json",
+      "selection": "authority",
+      "exit_code": 0,
+      "counts": {
+        "passed": 49
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 20.639659099979326
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T160301128808+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 99
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 35.6571108000353
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T160336787574+0800-unit/command.json",
+      "selection": "unit",
+      "exit_code": 0,
+      "counts": {
+        "passed": 30,
+        "deselected": 21
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 85.69958699995186
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/command.json",
+      "selection": "native",
+      "exit_code": 0,
+      "counts": {
+        "passed": 10,
+        "deselected": 41
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 143.1343182999408
+    },
+    {
+      "path": "docs/testing/dashboard-u5pb/20261109T160852113215+0800-storage-full/command.json",
+      "selection": "storage-full",
+      "exit_code": 0,
+      "counts": {
+        "passed": 1
+      },
+      "source_sha256": {
+        "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+        "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+        "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+        "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+        "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+        "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975"
+      },
+      "elapsed_seconds": 10.650988699984737
+    }
+  ],
+  "original_fitness": 455.0,
+  "original_assignments_history_breakdown_rng_equal": true,
+  "original_engine_fingerprint": "55f77a5008e842161f057e1f09ca3c33e7577111678808ae504b4359177fa3ad",
+  "current_V1_checkpoint_creation_load_continuation": true,
+  "real_loopback_HTTP_auth_worker_SQLite": true,
+  "API_reconstruction_telemetry_equal": true,
+  "real_parent_interruption_exit": 23,
+  "source_changes_in_existing_files": false,
+  "preservation": {
+    "baseline_paths": 4930,
+    "unchanged": 4930,
+    "academic_files": 23,
+    "protected_JSON_unchanged": true,
+    "index_unchanged": true,
+    "prior_artifact_references": 1303,
+    "original_unrelated_tracked": 11,
+    "original_unrelated_untracked": 958
+  },
+  "privacy": "PASS; no raw bundle/checkpoint/DB/cookie/key/provider payload or signed receipt archived",
+  "whitespace": "PASS",
+  "git_integrity": "PASS",
+  "screenshots": "NOT_CAPTURED; no frontend feature added",
+  "browser_acceptance": "NOT_RUN; real TCP HTTP and native Windows acceptance instead",
+  "limitations": [
+    "API app/server reconstruction tested in one host process; separate actual supervisor-process crash tested, not institutional service failover",
+    "No pause/resume/recovery activation route; expired ownership requires quarantine review",
+    "Per-process CPU/private-commit and existing SQLite page limits preserved; host-wide and filesystem/journal quota qualification absent",
+    "HMAC protects against accidental corruption/tail loss within private owned stores, not malicious OS owner or rollback of all trusted storage",
+    "Background execution revalidates scoped mandate/source; account sessions separately revalidated for every HTTP request",
+    "Historic U5O expectation mismatch and U5PA browser failures preserved; no claim of whole-repository green tests"
+  ],
+  "production_admission": "BLOCKED",
+  "institutional_saved_best_promotion": "BLOCKED",
+  "continuous_UI": "DISABLED",
+  "seven_day": "NO_GO",
+  "active_restore": false,
+  "checkpoint_readiness": "SELECTIVE_REVIEW_READY_FOR_ISOLATED_RESEARCH_SCOPE_ONLY",
+  "artifact_sha256": {
+    "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+    "backend/services/ga_research_bridge.py": "6528610fe7493f29c0018a0831c5408d3aa2fc50610099c305a7d169fa4f06e5",
+    "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+    "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+    "backend/tests/test_research_bridge.py": "df557b1302a86bce39f03573da5ec9ed3bcc1df5231479dbec4e399bbda7ff11",
+    "docs/dashboard-u5pb-trusted-context-research-bridge.md": "ccc4be48207c42f4410210339991469888b6d79144339fb46960d715add4951a",
+    "docs/testing/dashboard-u5pb/20261109T152617743386+0800-unit/command.json": "dc681791b3a6c4c72ba0f83b81c920f8978511213bfc34c885c6de5dc4f8a855",
+    "docs/testing/dashboard-u5pb/20261109T152748199420+0800-native/command.json": "6a4255fbc1d92aafde4fb3335adaab22451d6177ba92c95656f6cce481acc12e",
+    "docs/testing/dashboard-u5pb/20261109T152748199420+0800-native/native-failure-kinds.json": "62f3fb89092f28b85c30e7457d308b153721833a97b7f229db9e495ce8d82435",
+    "docs/testing/dashboard-u5pb/20261109T152748199420+0800-native/native-real-worker.json": "c1fddb2a5561d40e43697421478989c09b5a9f378e4a1b7f3eef0e003681d934",
+    "docs/testing/dashboard-u5pb/20261109T152950584849+0800-http/command.json": "5c6abeb06d27d9ce2981d02ab3b3691fef9d0f167bd79489dc1d5f108ecea7a1",
+    "docs/testing/dashboard-u5pb/20261109T152950584849+0800-http/real-http-worker-restart.json": "2c9c0013f97dddafdc6f5587029ec657fdcdefec063059316409015b71937234",
+    "docs/testing/dashboard-u5pb/20261109T153519499503+0800-unit/command.json": "59d6094e3ced6832bd6cdc8f73ea39dbb873280a2741ae653032d2b5bf7a442d",
+    "docs/testing/dashboard-u5pb/20261109T153540021173+0800-contracts-all/command.json": "17525faa5cc71435930adca19ae0d2eb20c4b0a35ec77ec99182e4b969bb2c63",
+    "docs/testing/dashboard-u5pb/20261109T153546233627+0800-build/command.json": "0baa07316b84cc8b2e3abc27ebdea84e281150f039bfcb5e22bd585a59fa8f68",
+    "docs/testing/dashboard-u5pb/20261109T153559747938+0800-bundle/command.json": "f10dccfd95b3368bb73d43f44fe2626f00bcb04b15074d42590b4257cbfe528a",
+    "docs/testing/dashboard-u5pb/20261109T153602925866+0800-lint/command.json": "86af56177c7cc1c1282fdd5e9f47ebed3711c95c51c9414c94cf2c2829bb2f15",
+    "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/command.json": "e5eac004ccc8111f04c276e4cd6bb1b26e3c74506c31a94450941fb84e7fce8e",
+    "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/native-failure-kinds.json": "62f3fb89092f28b85c30e7457d308b153721833a97b7f229db9e495ce8d82435",
+    "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/native-parent-interruption.json": "f8469c909d29afde16eaf62495c42b2b0bffc069869f1e5d59376041cfeb5d8a",
+    "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/native-real-worker.json": "e8044695ddd3e6915aad18b30bbd4a47ee3c50fe0ad88764665ae4fe8f7857d9",
+    "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/U5K-nonzero-worker-parity.json": "1c3881389755e1057ed7e9f6f9359b0b99b292b7c2e874269c4f48b23fdbd325",
+    "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/command.json": "90d1f6204dc618e9eb291ba413c514e09bae5633671e1458d3b9eb4c0ee67b06",
+    "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/native-failure-kinds.json": "62f3fb89092f28b85c30e7457d308b153721833a97b7f229db9e495ce8d82435",
+    "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/native-parent-interruption.json": "f8469c909d29afde16eaf62495c42b2b0bffc069869f1e5d59376041cfeb5d8a",
+    "docs/testing/dashboard-u5pb/20261109T154426609741+0800-native/native-real-worker.json": "84a719f7ab73e76053718f5bcd3f91e457f6a87acf26df96be8193fc32a425ed",
+    "docs/testing/dashboard-u5pb/20261109T154646946033+0800-http/command.json": "79625cf5dda8f93efd15bf1bcaae5ea4bd91799080592df4a38bc61631abe137",
+    "docs/testing/dashboard-u5pb/20261109T154646946033+0800-http/real-http-worker-restart.json": "2c9c0013f97dddafdc6f5587029ec657fdcdefec063059316409015b71937234",
+    "docs/testing/dashboard-u5pb/20261109T154930657549+0800-http/command.json": "92f65d61bcdb9408b47802a1bf76f38e68a00eee5a4072a0e4d824fe8366b7c5",
+    "docs/testing/dashboard-u5pb/20261109T154930657549+0800-http/real-http-worker-restart.json": "2c9c0013f97dddafdc6f5587029ec657fdcdefec063059316409015b71937234",
+    "docs/testing/dashboard-u5pb/20261109T155008248061+0800-demo/command.json": "ab5074ef43d2a6f66e07a90e53ec30015886b2812338c1d3defffb06b2d50333",
+    "docs/testing/dashboard-u5pb/20261109T155008248061+0800-demo/research-demo.json": "2a959b79a29f10ca184fb1db1c78a1501b93aced3c33096ce5ba0d604d22ffce",
+    "docs/testing/dashboard-u5pb/20261109T155029680231+0800-saved-best/command.json": "5fe6c85ab92097d91a473275321919c7c987e2b3978b5181546742901787711f",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/command.json": "92cfaa6aef21d65a71aa07d608f323994c3c565c0f6b7220db9e3d96ec8be477",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/dependency-closure.json": "38df2c604935f301bd0570f3434b7184369204888d2b336155f46068d562e13d",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/fresh-process.json": "cabda9645a28853f8efc41ad7314124b55dd8dc18c1a5f3a51e1ab7e47a82341",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/nonzero-parity.json": "d07b18cdb427b7bcbc26327c947c6c85d507a163fea2446964ae278874a99164",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/parity-0-0.json": "704f4baca369f43a04670aaa2a56cef13edd5813dab81e8caac60ac24d108e88",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/parity-1-0.json": "5d0d10624e9d9ffcd24a759628e2d86d8179d08166a915cc7fcc41949336b3f8",
+    "docs/testing/dashboard-u5pb/20261109T155052263726+0800-parity/parity-1-1.json": "93ce506617af55bc96aaca9720afbbe52533b93a0db87755f9074ce7be75d4ee",
+    "docs/testing/dashboard-u5pb/20261109T155137238804+0800-legacy/command.json": "b8026e1c23a923215dfe7a5f739f4d71330b3ad43bd95c2163282f5b5dd794a3",
+    "docs/testing/dashboard-u5pb/20261109T155137238804+0800-legacy/fixture-0.json": "82563bae7e0a6fb801897da48f8aed53e1083516973bb56914986fbb4dfec799",
+    "docs/testing/dashboard-u5pb/20261109T155137238804+0800-legacy/fixture-1.json": "fd23ad404de7d1199e1cb699b7f685941053360e0294585cd758309acd0d735b",
+    "docs/testing/dashboard-u5pb/20261109T155137238804+0800-legacy/fixture-2.json": "5ea398e2d164651f10ae7c68554443eef564f6770369e4a8aab3cc1ac54b313c",
+    "docs/testing/dashboard-u5pb/20261109T155311290249+0800-consumption/command.json": "ef1645c4a65097f117076ff70c1b7cf8bb4bab9547e02d9c8d92d289648037dd",
+    "docs/testing/dashboard-u5pb/20261109T155421885801+0800-race/U5M-full-observer-stress.json": "d73b8266c023b8ad35c41b89d412f6f268fe2b78f1e6d5fd633d367ec690395d",
+    "docs/testing/dashboard-u5pb/20261109T155421885801+0800-race/U5M-receipt-guard-trace.json": "6736e76b92b3b5444228b94816ec8aaf7edac4128d1dca3ba4ab081f8a121bbc",
+    "docs/testing/dashboard-u5pb/20261109T155421885801+0800-race/command.json": "fc4ba69cefe16d9253dbfb16d8e315cca48d4cbaf0b9b7128fdbe6c7595f1c4d",
+    "docs/testing/dashboard-u5pb/20261109T155507500688+0800-worker/U5K-nonzero-worker-parity.json": "1c3881389755e1057ed7e9f6f9359b0b99b292b7c2e874269c4f48b23fdbd325",
+    "docs/testing/dashboard-u5pb/20261109T155507500688+0800-worker/command.json": "e9d9c5c67f0260f1a44a4cb960ab4d6b5e1a88b9a54a63d2b955160d9e3dff1d",
+    "docs/testing/dashboard-u5pb/20261109T155733674301+0800-recovery/command.json": "5f2296e74e033914744b0b9afb840d6aeddc38c81a10b085dbd176a6f759ae23",
+    "docs/testing/dashboard-u5pb/20261109T160240487526+0800-authority/command.json": "11a896db05b0f4ec44c4f7e8105fb8d0847b343e5e43a3c98812900b997e744c",
+    "docs/testing/dashboard-u5pb/20261109T160301128808+0800-regressions/command.json": "c7bf30967869c671735f36db7f917f4c1ca51331d3ef76a591beb08a157d2572",
+    "docs/testing/dashboard-u5pb/20261109T160336787574+0800-unit/command.json": "8f6051d7475a1db59c66d28fd0be57190e130514b731cf58570308532fc53b56",
+    "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/U5K-nonzero-worker-parity.json": "1c3881389755e1057ed7e9f6f9359b0b99b292b7c2e874269c4f48b23fdbd325",
+    "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/command.json": "8dd8678b37fc452ccf00bebaeabfc4b083455870710602e73352cef70a1edd81",
+    "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/native-failure-kinds.json": "62f3fb89092f28b85c30e7457d308b153721833a97b7f229db9e495ce8d82435",
+    "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/native-parent-interruption.json": "f8469c909d29afde16eaf62495c42b2b0bffc069869f1e5d59376041cfeb5d8a",
+    "docs/testing/dashboard-u5pb/20261109T160502489539+0800-native/native-real-worker.json": "654e20f90474c8fe4c818b776532e422cd8cf550e5ce5b42732d2b3a53509adc",
+    "docs/testing/dashboard-u5pb/20261109T160852113215+0800-storage-full/U5L-test_sqlite_page_quota_real_full_rollback.json": "7d3c7c637c6c1eaf9635b5c9b185ef2c8d6e6a36ebf86678caa9f910f47c2516",
+    "docs/testing/dashboard-u5pb/20261109T160852113215+0800-storage-full/command.json": "663142d957bcc8f0ad9e1710afee3aafa984f0bee8386b042da3f9cdea5759a4",
+    "docs/testing/dashboard-u5pb/attempt-reconciliation.json": "9842e9855a5642dfa073e6939821e4160042a661675490dcb89394498d78b139",
+    "docs/testing/dashboard-u5pb/audit_evidence.py": "56a8011f2979e0cc1df5afd43b7c679c81c76af35c8f9d5205c806790ca8e746",
+    "docs/testing/dashboard-u5pb/bootstrap-diagnosis-addendum.json": "875d97d01f2f111bec96edbe481918247ece2109261211cc513c0fe5069c315d",
+    "docs/testing/dashboard-u5pb/entry-review.json": "58407b8393ea60bf60c84def51de19a73df1d0a2e0af73bcb3af104be97f4e7c",
+    "docs/testing/dashboard-u5pb/environment.json": "9160b1f69bb1eb86263fd6b698c92d0635b5c0d28bff3925a6b141b063992bcc",
+    "docs/testing/dashboard-u5pb/frontend_checks.py": "184859099fddf868e670809dc3b42d78d3daa359044500cbbea289afad4e761e",
+    "docs/testing/dashboard-u5pb/http-route-inspection-diagnosis.json": "366f4385fc65f933442cb6c61aa5b97d08ea1d04f935ed8dea8a5cdfd35e2f8d",
+    "docs/testing/dashboard-u5pb/initial-bootstrap-failure.json": "ebad5a944bdc01d31bf447297577b4b08ac2e411ffe88d5554535cc9b7c3f59b",
+    "docs/testing/dashboard-u5pb/parity-fixture-failure-diagnosis.json": "73678c723048610d10e21f68263720fafa8c87eb060436af1728b24dbe837df1",
+    "docs/testing/dashboard-u5pb/preservation-baseline.json": "d36a4da69da9e4d5765939a298b7baeffce45ad800dc93cec28632555af4d410",
+    "docs/testing/dashboard-u5pb/research_demo.py": "b9cd7e562fea8b584ceb9c5101096acecb018af232e52a68570c7034faa50975",
+    "docs/testing/dashboard-u5pb/run_checks.py": "6a15eaa94a5d54c2e7297aa3e2683cbe44476bc983e4906a7ba8cebe185b3cbe",
+    "docs/testing/dashboard-u5pb/staging-plan.json": "08b4e4da9730757dff44b6592d3b0a5a6c70b4402d4c62971be0f2825f72bf43"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "selection": "native",
+  "started_at": "2026-11-09T15:27:48.200197+08:00",
+  "ended_at": "2026-11-09T15:29:50.583184+08:00",
+  "elapsed_seconds": 122.3830050000688,
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_bridge.py",
+    "-k",
+    "native",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-abgykywb\\pytest-native"
+  ],
+  "stdout": ".......                                                                  [100%]\n7 passed, 35 deselected in 120.52s (0:02:00)\n",
+  "stderr": "",
+  "head": "9c3f5c67c534f81a7b26bd6cb8535e5340ce5bf9",
+  "source_sha256": {
+    "backend/services/ga_research_context.py": "d205916a9e445f1704ec1e3e66d3ad04375873c7b20e5d5d49133dd504f1f074",
+    "backend/services/ga_research_ledger.py": "c33b200ecfc6ad2da45654ab026dc81e2c07d6fe77e1dcc231ee28a5fe1bce07",
+    "backend/services/ga_research_bridge.py": "5e1342d004cf7b96885704badb2043616981496ea43a7aca02773c3be02dd577",
+    "backend/routers/ga_research.py": "0e43512d12e0a001b37fd9857848321d8f61929c4b602839e41656fb541eb094",
+    "backend/tests/test_research_bridge.py": "dd98890e42517e00d100d83ef2a96528bff92e16087f94b7f2c07e5458c54460"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-abgykywb\\repository",
+  "no_staging": true,
+  "completed": true
+}

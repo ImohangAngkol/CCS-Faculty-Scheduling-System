@@ -1,0 +1,13 @@
+{
+  "artifact": "docs/testing/dashboard-u5pb/20261109T153710583532+0800-native/command.json",
+  "passed": 9,
+  "failed": 1,
+  "case": "test_native_original_455_assignments_history_breakdown_rng",
+  "error": "Failed: Institutional GA storage forbidden",
+  "classification": "TEST_FIXTURE_IMPORT_ORDER",
+  "cause": "Original test module captured ORIGINAL_SAVE_BEST after the new fixture installed its forbidden-write spy. The actual original oracle computed fitness 455.0 then reached that spy before research worker parity execution.",
+  "correction": "Capture actual unconfigured Saved Best function at test module import, before fixture setup; bind the unchanged original oracle to that object. Its path remains owned temporary storage and production verifier remains None. No algorithm or original test changed.",
+  "application_GA_data_mutation": false,
+  "failed_evidence_preserved": true,
+  "rerun_required": true
+}

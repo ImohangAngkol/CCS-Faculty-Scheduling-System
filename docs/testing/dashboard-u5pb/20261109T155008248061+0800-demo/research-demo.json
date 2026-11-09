@@ -1,0 +1,18 @@
+{
+  "scope": "FICTIONAL_DISPOSABLE_ONLY",
+  "run_id": "18448872-ebbe-4797-ada9-9c0be9be451f",
+  "state": "COMPLETED",
+  "generations": 1,
+  "best_so_far_fitness": 0,
+  "context_qualification": "TRUSTED_FICTIONAL_CONSUMPTION",
+  "context_id": "462ce3e6c8f33a0964b92430271f53c3664dde17e4bf9538c4579ae0bc375f19",
+  "telemetry_events": 4,
+  "checkpoint_sequence": 2,
+  "production_admission": "BLOCKED",
+  "continuous_ui": "DISABLED",
+  "seven_day": "NO_GO",
+  "active_restore": false,
+  "storage_scope": "NEW_OWNED_OS_TEMP",
+  "note": "Tiny fictional demonstration; zero fitness is not convergence evidence.",
+  "cleanup_verified": true
+}

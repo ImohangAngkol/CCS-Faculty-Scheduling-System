@@ -1,0 +1,11 @@
+{
+  "status": "FAILED_BEFORE_TESTS",
+  "exception": "ValueError: Canonical source differs from the recorded baseline",
+  "stage": "historical release-byte fixture preparation",
+  "cause": "Committed U5P-A changed chromosome_service.py; U5C historical canonical-source recipe no longer applies to this one caller.",
+  "correction": "Apply historical recipe to unchanged byte-verified files only; keep current P-A caller/helper Git bytes. Strict real engine fingerprints remain unmodified.",
+  "tests_executed": 0,
+  "worker_launched": false,
+  "database_connected": false,
+  "old_recipe_modified": false
+}
