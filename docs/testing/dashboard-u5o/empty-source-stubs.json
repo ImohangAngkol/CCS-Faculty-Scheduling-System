@@ -1,0 +1,61 @@
+{
+  "files": [
+    {
+      "path": "frontend/src/services/api.ts",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/services/facultyService.ts",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/services/preferenceService.ts",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/types/faculty.ts",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/types/preference.ts",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/types/schedule.ts",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/components/common/EmptyState.tsx",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/components/common/LoadingSpinner.tsx",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/components/common/StatCard.tsx",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/components/ga/FitnessCards.tsx",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/components/ga/FitnessChart.tsx",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/components/ga/GenerationHistory.tsx",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/components/schedule/ScheduleFilters.tsx",
+      "reachable_from_main": false
+    },
+    {
+      "path": "frontend/src/components/schedule/ScheduleTable.tsx",
+      "reachable_from_main": false
+    }
+  ],
+  "scope": "Source placeholders only, not visible page count"
+}

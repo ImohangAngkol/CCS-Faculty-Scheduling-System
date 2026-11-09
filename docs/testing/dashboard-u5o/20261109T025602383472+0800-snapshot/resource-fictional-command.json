@@ -1,0 +1,25 @@
+{
+  "selection": "resource-fictional",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_preassigned_assignments.py",
+    "-k",
+    "not authoritative_ite184_config_and_normal_preflight",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-2j2vf415\\pytest-resource-fictional"
+  ],
+  "started_at": "2026-11-09T02:56:02.385429+08:00",
+  "ended_at": "2026-11-09T02:56:07.704655+08:00",
+  "elapsed_seconds": 5.31931750010699,
+  "exit_code": 0,
+  "stdout": "........                                                                 [100%]\n============================ slowest 10 durations =============================\n0.49s setup    tests/test_preassigned_assignments.py::test_external_overlap_and_future_preassignment\n0.40s call     tests/test_preassigned_assignments.py::test_json_roundtrip_and_tampered_locks\n0.16s call     tests/test_preassigned_assignments.py::test_crossover_preserves_locked_resources\n0.11s call     tests/test_preassigned_assignments.py::test_external_is_excluded_from_fitness_and_load_ceiling\n0.06s call     tests/test_preassigned_assignments.py::test_mutation_preserves_locked_resources\n0.05s call     tests/test_preassigned_assignments.py::test_reset_and_rollback_preserve_declarations\n0.03s call     tests/test_preassigned_assignments.py::test_locked_identity_room_duration_and_ga_eligibility\n0.02s call     tests/test_preassigned_assignments.py::test_external_overlap_and_future_preassignment\n0.01s setup    tests/test_preassigned_assignments.py::test_json_roundtrip_and_tampered_locks\n0.01s setup    tests/test_preassigned_assignments.py::test_mutation_preserves_locked_resources\n8 passed, 1 deselected in 3.36s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "Actual legacy save decision with fictional mocked payloads and in-memory writer; no real Saved Best access or mutation",
+  "same_subject_keys": true,
+  "input_and_configuration_differ": true,
+  "lower_numeric_foreign_score_saved": true,
+  "higher_numeric_foreign_score_rejected": true,
+  "provenance_gate_present": false,
+  "classification": "LEGACY_PERSISTENCE_CONTRACT_GAP; NOT_A_NEW_U5O_FIX"
+}

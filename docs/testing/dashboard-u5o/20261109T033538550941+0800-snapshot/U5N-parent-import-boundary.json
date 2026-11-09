@@ -1,0 +1,4 @@
+{
+  "original_isolated_base_python_cannot_import_snapshot_tests": true,
+  "explicit_snapshot_venv_can_import": true
+}

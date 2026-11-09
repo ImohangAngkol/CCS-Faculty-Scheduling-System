@@ -1,0 +1,350 @@
+{
+  "unit": "48 capability groups, distinct from 366 static JSX sites",
+  "scope": "WORKING only in explicitly tested isolated context; institutional authorization remains unavailable",
+  "counts": {
+    "WORKING": 16,
+    "PARTIALLY WORKING": 23,
+    "NOT TESTED": 2,
+    "BROKEN": 2,
+    "INTENTIONALLY DISABLED": 4,
+    "PLACEHOLDER": 1
+  },
+  "rows": [
+    {
+      "id": "F01",
+      "feature": "Login",
+      "status": "WORKING",
+      "evidence": "D16-L01/I01 live Edge/FastAPI/SQLite; identity regressions",
+      "limitation": "Fictional users; not institutional SSO"
+    },
+    {
+      "id": "F02",
+      "feature": "Logout and session reload",
+      "status": "WORKING",
+      "evidence": "Live preference reload, repeated sign-out/login and owned server-loss case",
+      "limitation": "Session lifecycle is not a seven-day research-worker lifetime"
+    },
+    {
+      "id": "F03",
+      "feature": "Role and own-faculty enforcement",
+      "status": "WORKING",
+      "evidence": "100 protected anonymous endpoints return 401; actual cross-faculty live/API denials",
+      "limitation": "Not an exhaustive security assessment or verified department directory"
+    },
+    {
+      "id": "F04",
+      "feature": "Administrator accounts",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Real account list response in route survey; identity lifecycle tests",
+      "limitation": "No fresh full UI account creation/binding journey in U5O"
+    },
+    {
+      "id": "F05",
+      "feature": "Faculty profile",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Own profile GET 200 and route load; dashboard backend metadata cases",
+      "limitation": "Read-only; complete institutional roster/allowance metadata unqualified"
+    },
+    {
+      "id": "F06",
+      "feature": "Faculty preferences save and reload",
+      "status": "WORKING",
+      "evidence": "D16-I01 real Compact/importance write, reload and read",
+      "limitation": "Calendar editing/ranking permutations are not all browser exercised"
+    },
+    {
+      "id": "F07",
+      "feature": "Eligibility metadata and preference validation",
+      "status": "PARTIALLY WORKING",
+      "evidence": "458-case dashboard suite and actual eligible-subject reads",
+      "limitation": "Institutional eligibility completeness is not established"
+    },
+    {
+      "id": "F08",
+      "feature": "Read-only subject catalog",
+      "status": "WORKING",
+      "evidence": "D16-I02 actual API-backed SYN101 displayed",
+      "limitation": "Fictional catalog; not academic CRUD"
+    },
+    {
+      "id": "F09",
+      "feature": "Catalog search, filters and all sort modes",
+      "status": "NOT TESTED",
+      "evidence": "385 contracts and prior intercepted-browser evidence reviewed",
+      "limitation": "Fresh live journey reads catalog; does not click every filter"
+    },
+    {
+      "id": "F10",
+      "feature": "Temporary subject drafts",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Working-tree source and frontend contracts",
+      "limitation": "React page memory only; no server persistence or GA activation"
+    },
+    {
+      "id": "F11",
+      "feature": "Faculty assignment viewer",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Actual route survey and source schedule-derived selector",
+      "limitation": "Not a roster editor; zero-assignment faculty are absent from selector"
+    },
+    {
+      "id": "F12",
+      "feature": "Room assignment viewer",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Actual route survey; WeeklySchedule rendering elsewhere",
+      "limitation": "Not room catalog/closure administration"
+    },
+    {
+      "id": "F13",
+      "feature": "Academic resource preparation",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Phase 4C foundation, metadata APIs, validators and planner",
+      "limitation": "No integrated authoritative resource editing/intake activation journey"
+    },
+    {
+      "id": "F14",
+      "feature": "External CSV/XLSX intake preview",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Dashboard parser, auth and discrepancy regressions; UI contracts",
+      "limitation": "Fresh live journey does not enter/import every preview format"
+    },
+    {
+      "id": "F15",
+      "feature": "External calendar and reconciliation",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Dashboard validation/reconciliation regressions",
+      "limitation": "Not every actual calendar/resource-selection control was clicked"
+    },
+    {
+      "id": "F16",
+      "feature": "Printable handoff",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Preview integrity regressions and existing print stylesheet",
+      "limitation": "Native browser print dialog and physical output NOT TESTED"
+    },
+    {
+      "id": "F17",
+      "feature": "Durable GEC ledger read",
+      "status": "WORKING",
+      "evidence": "D16-I02 real confirmed record selector and history read",
+      "limitation": "Historical trust explicitly NOT_RECHECKED; fictional issuer"
+    },
+    {
+      "id": "F18",
+      "feature": "GEC confirmation/revisions UI writes",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Real API fixture setup and dashboard transaction tests",
+      "limitation": "No fresh complete confirmation authoring UI journey; production providers absent"
+    },
+    {
+      "id": "F19",
+      "feature": "Fixed V1 dashboard execution",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Original engine/checkpoint parity and intercepted control browser tests",
+      "limitation": "No fresh actual V1 stream-to-Live-Center browser run in U5O"
+    },
+    {
+      "id": "F20",
+      "feature": "Fixed constrained V2 execution",
+      "status": "WORKING",
+      "evidence": "D16-I03 actual confirmed scope -> V2 generation UI/API",
+      "limitation": "Explicitly fictional independent trust/capture providers"
+    },
+    {
+      "id": "F21",
+      "feature": "Generated proposal timetable",
+      "status": "WORKING",
+      "evidence": "D16-I04 actual V2 result and timetable rendered",
+      "limitation": "Not every timetable filter/library toolbar action verified"
+    },
+    {
+      "id": "F22",
+      "feature": "Own faculty timetable after application",
+      "status": "WORKING",
+      "evidence": "D16-L07/I05 actual refresh, exact published version and empty-cohort case",
+      "limitation": "Production publication directory unavailable"
+    },
+    {
+      "id": "F23",
+      "feature": "Adjustment draft/submit/status/history",
+      "status": "WORKING",
+      "evidence": "D16-L02/L07 actual UI/HTTP/SQLite lifecycle",
+      "limitation": "No claim that submission approves or changes schedule"
+    },
+    {
+      "id": "F24",
+      "feature": "Withdrawal and reject UI variants",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Backend state/ownership tests; rejection via real API",
+      "limitation": "Not all UI variants clicked"
+    },
+    {
+      "id": "F25",
+      "feature": "Chair filtering and approval",
+      "status": "WORKING",
+      "evidence": "D16-L03 real filtered queue, preview, explanation and confirmation",
+      "limitation": "Independent fictional Chair appointment, not admin authority inference"
+    },
+    {
+      "id": "F26",
+      "feature": "Controlled application and refresh",
+      "status": "WORKING",
+      "evidence": "D16-L04-L12 real rollback, confirmation, concurrency and published versions",
+      "limitation": "First publication source was an explicit fixture handoff"
+    },
+    {
+      "id": "F27",
+      "feature": "Application preview during history outage",
+      "status": "BROKEN",
+      "evidence": "U5O-A01 real HTTP/browser characterization",
+      "limitation": "Ancillary history failure clears valid preview/action controls"
+    },
+    {
+      "id": "F28",
+      "feature": "First publication designation",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Fixture handoff and immutable D13 version chain",
+      "limitation": "No normal production authority/UI designation workflow"
+    },
+    {
+      "id": "F29",
+      "feature": "Advanced analysis and workload charts",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Actual V2 original-fitness view; analysis/contracts tests",
+      "limitation": "No empirical satisfaction or universal continuous-worker analysis bridge"
+    },
+    {
+      "id": "F30",
+      "feature": "Historical comparisons and export",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Backend archive/export regressions and read-only route survey",
+      "limitation": "No complete native download/CSV research-package browser acceptance"
+    },
+    {
+      "id": "F31",
+      "feature": "Live Optimization Center",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Working-tree UI contracts/intercepted browser; source uses GAContext",
+      "limitation": "Presentation over V1; not K/L continuous worker integration"
+    },
+    {
+      "id": "F32",
+      "feature": "Legacy Saved Best cross-context comparison",
+      "status": "BROKEN",
+      "evidence": "Actual save decision with mocked incompatible payloads",
+      "limitation": "No real Saved Best altered; shared-context integrity risk"
+    },
+    {
+      "id": "F33",
+      "feature": "Immutable bundle/H optimizer consumption",
+      "status": "WORKING",
+      "evidence": "Actual engine, strict checkpoint, source and RNG integration tests",
+      "limitation": "Internal contract; not public institutional CURRENT eligibility"
+    },
+    {
+      "id": "F34",
+      "feature": "Continuous HTTP/UI execution",
+      "status": "INTENTIONALLY DISABLED",
+      "evidence": "Readiness GET only; no executable worker bridge configured",
+      "limitation": "Must remain disabled in existing application"
+    },
+    {
+      "id": "F35",
+      "feature": "Bounded K/L worker internals",
+      "status": "WORKING",
+      "evidence": "Native worker, ownership, fencing, SQLite and parity acceptance",
+      "limitation": "Fictional SDK profile, not user-accessible seven-day application"
+    },
+    {
+      "id": "F36",
+      "feature": "Institutional restore/deployment storage",
+      "status": "INTENTIONALLY DISABLED",
+      "evidence": "Missing approved root/issuer/anti-rollback activation contract",
+      "limitation": "Quarantine is not writable restoration of an active worker"
+    },
+    {
+      "id": "F37",
+      "feature": "Authorized quarantine",
+      "status": "PARTIALLY WORKING",
+      "evidence": "U5N recovery acceptance rerun with fictional authority",
+      "limitation": "No active-worker restoration, deletion or automatic reconciliation"
+    },
+    {
+      "id": "F38",
+      "feature": "Institutional academic context/CURRENT",
+      "status": "INTENTIONALLY DISABLED",
+      "evidence": "U5A-C compatibility and default provider source",
+      "limitation": "No verified academic year/term/dataset source; no silent inference"
+    },
+    {
+      "id": "F39",
+      "feature": "Authoritative faculty cohort completeness",
+      "status": "PARTIALLY WORKING",
+      "evidence": "F1/F1.5 and current Functions.py loader",
+      "limitation": "GA pool still comes from legacy preference CSV; not all accounts"
+    },
+    {
+      "id": "F40",
+      "feature": "Current Option B target/load ceiling",
+      "status": "WORKING",
+      "evidence": "Faculty constructor, synthetic scoring/constraint regressions",
+      "limitation": "Developer/project interpretation; no new institutional approval claimed"
+    },
+    {
+      "id": "F41",
+      "feature": "Target-relative fairness",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Preserved policy counterexample and scorer source",
+      "limitation": "Alternative fitness dispatch remains experimental; baseline rounding can favor concentration"
+    },
+    {
+      "id": "F42",
+      "feature": "Specialization objective/metric",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Eligibility enforced; descriptive domains and F3 qualification",
+      "limitation": "No approved alignment rubric or production soft objective"
+    },
+    {
+      "id": "F43",
+      "feature": "Authoritative availability persistence",
+      "status": "PARTIALLY WORKING",
+      "evidence": "F4 qualification, reset source and fictional resource tests",
+      "limitation": "V1 reset clears faculty/room booleans; preassignment is not fixed time"
+    },
+    {
+      "id": "F44",
+      "feature": "Seven-day optimization experiment",
+      "status": "INTENTIONALLY DISABLED",
+      "evidence": "K maximum 600s/20 generations and deployment readiness findings",
+      "limitation": "No 30min/6h/24h/168h gate executed"
+    },
+    {
+      "id": "F45",
+      "feature": "Unreferenced legacy source stubs",
+      "status": "PLACEHOLDER",
+      "evidence": "Fourteen empty TS/TSX modules; import reachability checked",
+      "limitation": "Not fourteen visible placeholder pages; no cleanup in audit"
+    },
+    {
+      "id": "F46",
+      "feature": "Empirical usability/faculty satisfaction",
+      "status": "NOT TESTED",
+      "evidence": "No institutional participants or approved instrument",
+      "limitation": "Preference matching metrics are not empirical satisfaction scores"
+    },
+    {
+      "id": "F47",
+      "feature": "Owned backend outage and retry",
+      "status": "WORKING",
+      "evidence": "D16-I06 actual server stop and protected portal clearing",
+      "limitation": "Not a physical PostgreSQL outage or seven-day reconnect test"
+    },
+    {
+      "id": "F48",
+      "feature": "Complete research-result export package",
+      "status": "PARTIALLY WORKING",
+      "evidence": "Existing per-history JSON/CSV plus research benchmark artifacts",
+      "limitation": "No integrated seed/config/candidate/events/metrics export for continuous worker"
+    }
+  ]
+}

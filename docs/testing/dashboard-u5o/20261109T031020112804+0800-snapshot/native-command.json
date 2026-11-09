@@ -1,0 +1,23 @@
+{
+  "selection": "native",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_windows_supervision.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-jvdj5icf\\pytest-native"
+  ],
+  "started_at": "2026-11-09T03:10:20.113682+08:00",
+  "ended_at": "2026-11-09T03:10:30.328231+08:00",
+  "elapsed_seconds": 10.21295239997562,
+  "exit_code": 1,
+  "stdout": "..F.........                                                             [100%]\n================================== FAILURES ===================================\n_______________ test_real_user_cpu_quota_terminates_computation _______________\n\n    def test_real_user_cpu_quota_terminates_computation():\n        p=launch('while True: pass',Resources(process_user_cpu_seconds=1));start=time.monotonic()\n        try:\n            assert p.wait(15)!=0;o=p.observation()\n>           assert .8<=o['user_seconds']<5 and time.monotonic()-start<15\nE           assert (5.109375 < 5)\n\ntests\\test_windows_supervision.py:44: AssertionError\n============================ slowest 10 durations =============================\n5.32s call     tests/test_windows_supervision.py::test_real_user_cpu_quota_terminates_computation\n1.65s setup    tests/test_windows_supervision.py::test_creation_bound_identity_limits_clean_exit\n0.42s call     tests/test_windows_supervision.py::test_parent_death_closes_noninherited_jobs_and_kills_child\n0.19s call     tests/test_windows_supervision.py::test_descendant_creation_denied_in_single_worker_mode\n0.14s call     tests/test_windows_supervision.py::test_explicit_tree_probe_terminates_both_owned_processes\n0.09s call     tests/test_windows_supervision.py::test_creation_bound_identity_limits_clean_exit\n0.06s call     tests/test_windows_supervision.py::test_real_private_commit_denies_excess_allocation\n0.01s setup    tests/test_windows_supervision.py::test_explicit_tree_probe_terminates_both_owned_processes\n0.01s setup    tests/test_windows_supervision.py::test_invalid_or_unqualified_resource_modes_fail_closed[private_commit_bytes-1099511627776]\n0.01s setup    tests/test_windows_supervision.py::test_invalid_or_unqualified_resource_modes_fail_closed[private_commit_bytes-0]\n=========================== short test summary info ===========================\nFAILED tests/test_windows_supervision.py::test_real_user_cpu_quota_terminates_computation\n1 failed, 11 passed in 8.91s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

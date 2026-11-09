@@ -1,0 +1,20 @@
+{
+  "scope": "One fictional 2-faculty/2-offering H/I run, population 2, one generation. Instrumented durable checkpoint calls include validation/transaction; not a performance benchmark or seven-day extrapolation.",
+  "wall_seconds": 12.326997500029393,
+  "checkpoint_writes": [
+    {
+      "checkpoint_bytes": 150328,
+      "sequence": 1,
+      "write_seconds": 0.010430599912069738
+    }
+  ],
+  "stored_database_bytes": 262144,
+  "paused_checkpoint_bytes": 150328,
+  "initialization_pause_seconds": 0.9359635999426246,
+  "continuation_seconds": 11.391033900086768,
+  "final_fitness": 0,
+  "convergence_claim": false,
+  "initial_rng_saved": true,
+  "seed_exported": false,
+  "production_storage_changed": false
+}

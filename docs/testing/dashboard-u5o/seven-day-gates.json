@@ -1,0 +1,140 @@
+{
+  "current_status": "NO_GO",
+  "gates": [
+    {
+      "name": "30-minute functional",
+      "duration_hours": 0.5,
+      "status": "NOT_RUN; CURRENT_RELEASE_NO_GO",
+      "prerequisites": [
+        "Separately approved fictional research realm and versioned duration/continuation policy",
+        "Prior shorter gate passed",
+        "Measured representative input/host headroom",
+        "Owned persistent storage, telemetry/export and recovery contract",
+        "Reviewed user power/update/restart plan"
+      ],
+      "pass_criteria": [
+        "One continuing population/RNG/best and one owner",
+        "No hard-invalid successful candidate, lost required observations or mixed contexts",
+        "Authorized pause/resume/browser reconnect and process restart where specified",
+        "Bounded memory/disk and exact exported record consistency"
+      ],
+      "stop_conditions": [
+        "Identity/bundle/config/lineage mismatch",
+        "Unauthorized action or unexpected path/database access",
+        "NaN or best-ever regression",
+        "Missing required metrics or corrupt checkpoint",
+        "Resource/disk floor exceeded or unsupported power/resume state"
+      ],
+      "measurements": [
+        "Generation and wall/CPU time",
+        "Process working set and private commit separately",
+        "Checkpoint bytes/write duration",
+        "Disk/telemetry growth and loss",
+        "Interruptions/authority and operator actions"
+      ]
+    },
+    {
+      "name": "6-hour stability",
+      "duration_hours": 6,
+      "status": "NOT_RUN; CURRENT_RELEASE_NO_GO",
+      "prerequisites": [
+        "Separately approved fictional research realm and versioned duration/continuation policy",
+        "Prior shorter gate passed",
+        "Measured representative input/host headroom",
+        "Owned persistent storage, telemetry/export and recovery contract",
+        "Reviewed user power/update/restart plan"
+      ],
+      "pass_criteria": [
+        "One continuing population/RNG/best and one owner",
+        "No hard-invalid successful candidate, lost required observations or mixed contexts",
+        "Authorized pause/resume/browser reconnect and process restart where specified",
+        "Bounded memory/disk and exact exported record consistency"
+      ],
+      "stop_conditions": [
+        "Identity/bundle/config/lineage mismatch",
+        "Unauthorized action or unexpected path/database access",
+        "NaN or best-ever regression",
+        "Missing required metrics or corrupt checkpoint",
+        "Resource/disk floor exceeded or unsupported power/resume state"
+      ],
+      "measurements": [
+        "Generation and wall/CPU time",
+        "Process working set and private commit separately",
+        "Checkpoint bytes/write duration",
+        "Disk/telemetry growth and loss",
+        "Interruptions/authority and operator actions"
+      ]
+    },
+    {
+      "name": "24-hour soak",
+      "duration_hours": 24,
+      "status": "NOT_RUN; CURRENT_RELEASE_NO_GO",
+      "prerequisites": [
+        "Separately approved fictional research realm and versioned duration/continuation policy",
+        "Prior shorter gate passed",
+        "Measured representative input/host headroom",
+        "Owned persistent storage, telemetry/export and recovery contract",
+        "Reviewed user power/update/restart plan"
+      ],
+      "pass_criteria": [
+        "One continuing population/RNG/best and one owner",
+        "No hard-invalid successful candidate, lost required observations or mixed contexts",
+        "Authorized pause/resume/browser reconnect and process restart where specified",
+        "Bounded memory/disk and exact exported record consistency"
+      ],
+      "stop_conditions": [
+        "Identity/bundle/config/lineage mismatch",
+        "Unauthorized action or unexpected path/database access",
+        "NaN or best-ever regression",
+        "Missing required metrics or corrupt checkpoint",
+        "Resource/disk floor exceeded or unsupported power/resume state"
+      ],
+      "measurements": [
+        "Generation and wall/CPU time",
+        "Process working set and private commit separately",
+        "Checkpoint bytes/write duration",
+        "Disk/telemetry growth and loss",
+        "Interruptions/authority and operator actions"
+      ]
+    },
+    {
+      "name": "168-hour research",
+      "duration_hours": 168,
+      "status": "NOT_RUN; CURRENT_RELEASE_NO_GO",
+      "prerequisites": [
+        "Separately approved fictional research realm and versioned duration/continuation policy",
+        "Prior shorter gate passed",
+        "Measured representative input/host headroom",
+        "Owned persistent storage, telemetry/export and recovery contract",
+        "Reviewed user power/update/restart plan"
+      ],
+      "pass_criteria": [
+        "One continuing population/RNG/best and one owner",
+        "No hard-invalid successful candidate, lost required observations or mixed contexts",
+        "Authorized pause/resume/browser reconnect and process restart where specified",
+        "Bounded memory/disk and exact exported record consistency"
+      ],
+      "stop_conditions": [
+        "Identity/bundle/config/lineage mismatch",
+        "Unauthorized action or unexpected path/database access",
+        "NaN or best-ever regression",
+        "Missing required metrics or corrupt checkpoint",
+        "Resource/disk floor exceeded or unsupported power/resume state"
+      ],
+      "measurements": [
+        "Generation and wall/CPU time",
+        "Process working set and private commit separately",
+        "Checkpoint bytes/write duration",
+        "Disk/telemetry growth and loss",
+        "Interruptions/authority and operator actions"
+      ]
+    }
+  ],
+  "engineering_budget_proposals_not_enforced": {
+    "available_physical_memory_start_floor_bytes": 2147483648,
+    "available_disk_start_floor_bytes": 10737418240,
+    "free_disk_floor_bytes": 5368709120,
+    "one_active_worker": true
+  },
+  "limitations": "Provisional engineering floors require representative measurement; no OS setting or worker limit changed. Existing profile supports at most 600s, not even the 30-minute gate."
+}

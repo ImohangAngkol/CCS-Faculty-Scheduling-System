@@ -1,0 +1,321 @@
+{
+  "scope": "Actual Edge -> FastAPI HTTP -> owned SQLite; real authentication, original GA execution, actual D8-D10 ledger revalidation, Chair decisions and application transactions. Independent publisher, Chair, evidence issuer, confirmer, catalog and capacity providers are explicitly fictional; source publication is an explicit owned test handoff, not a production promotion feature. The initial GEC confirmation is created through the real API by fixture setup. Storage and trust faults are fixture injections. No PostgreSQL or institutional approval.",
+  "browser": "Edg/156.0.4314.50",
+  "node": "v24.11.1",
+  "scenarios": [
+    {
+      "id": "D16-L01",
+      "title": "anonymous application API and route deny access",
+      "started_at": "2026-11-09T02:54:28.391+08:00",
+      "finished_at": "2026-11-09T02:54:30.620+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I01",
+      "title": "real faculty preference write and full reload preserve Compact / Very High",
+      "started_at": "2026-11-09T02:54:30.623+08:00",
+      "finished_at": "2026-11-09T02:54:33.198+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I02",
+      "title": "administrator catalog and durable fictional GEC confirmation history use real APIs",
+      "started_at": "2026-11-09T02:54:33.199+08:00",
+      "finished_at": "2026-11-09T02:54:34.991+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I03",
+      "title": "real UI starts original constrained engine against this exact confirmed ledger",
+      "started_at": "2026-11-09T02:54:34.992+08:00",
+      "finished_at": "2026-11-09T02:54:38.740+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I04",
+      "title": "real generated timetable and original fitness precede explicit fictional publication designation",
+      "started_at": "2026-11-09T02:54:38.742+08:00",
+      "finished_at": "2026-11-09T02:54:40.859+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L02",
+      "title": "faculty submits proposed change against explicit fictional published source",
+      "started_at": "2026-11-09T02:54:40.861+08:00",
+      "finished_at": "2026-11-09T02:54:44.093+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L03",
+      "title": "Chair approval remains pending and does not grant publishing",
+      "started_at": "2026-11-09T02:54:44.094+08:00",
+      "finished_at": "2026-11-09T02:54:46.425+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-F03",
+      "title": "history read failure keeps the authorized queue usable and retry recovers",
+      "started_at": "2026-11-09T02:54:46.426+08:00",
+      "finished_at": "2026-11-09T02:54:47.537+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L04",
+      "title": "independent scheduler previews before/after and complete rules without writing versions",
+      "started_at": "2026-11-09T02:54:47.538+08:00",
+      "finished_at": "2026-11-09T02:54:48.840+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "U5O-A01",
+      "title": "characterize valid application preview lost when only history fails",
+      "started_at": "2026-11-09T02:54:48.841+08:00",
+      "finished_at": "2026-11-09T02:54:50.690+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L05",
+      "title": "injected persistence failure rolls back version, head and application together",
+      "started_at": "2026-11-09T02:54:50.691+08:00",
+      "finished_at": "2026-11-09T02:54:51.339+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L06",
+      "title": "recovery publishes one new version after explicit confirmation",
+      "started_at": "2026-11-09T02:54:51.340+08:00",
+      "finished_at": "2026-11-09T02:54:53.512+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L07",
+      "title": "faculty sees APPLIED audit and new published timetable after refresh",
+      "started_at": "2026-11-09T02:54:53.513+08:00",
+      "finished_at": "2026-11-09T02:54:55.583+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L08",
+      "title": "another faculty identity cannot read private request or application history",
+      "started_at": "2026-11-09T02:54:55.583+08:00",
+      "finished_at": "2026-11-09T02:54:56.253+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L09",
+      "title": "rejected request cannot be applied through the real API",
+      "started_at": "2026-11-09T02:54:56.253+08:00",
+      "finished_at": "2026-11-09T02:55:00.938+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L10",
+      "title": "new request uses current published revision and receives a new approval",
+      "started_at": "2026-11-09T02:55:00.938+08:00",
+      "finished_at": "2026-11-09T02:55:06.403+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L11",
+      "title": "injected current GEC trust loss blocks application while retaining current version",
+      "started_at": "2026-11-09T02:55:06.403+08:00",
+      "finished_at": "2026-11-09T02:55:07.529+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L12",
+      "title": "concurrent HTTP application attempts retain one final publication",
+      "started_at": "2026-11-09T02:55:07.529+08:00",
+      "finished_at": "2026-11-09T02:55:08.478+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L13",
+      "title": "mobile retained published versions are read-only and contained",
+      "started_at": "2026-11-09T02:55:08.479+08:00",
+      "finished_at": "2026-11-09T02:55:10.036+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-L14",
+      "title": "ordinary authenticated account has no publication controls or cached private review",
+      "started_at": "2026-11-09T02:55:10.037+08:00",
+      "finished_at": "2026-11-09T02:55:11.074+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I05",
+      "title": "bound faculty without assignments receives an honest empty published timetable",
+      "started_at": "2026-11-09T02:55:11.074+08:00",
+      "finished_at": "2026-11-09T02:55:12.446+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "U5O-A02",
+      "title": "survey all page routes and sanitized HTTP metadata without submitting forms",
+      "started_at": "2026-11-09T02:55:12.447+08:00",
+      "finished_at": "2026-11-09T02:55:28.050+08:00",
+      "result": "PASS"
+    },
+    {
+      "id": "D16-I06",
+      "title": "stopping only the owned backend clears the portal and exposes session retry",
+      "started_at": "2026-11-09T02:55:28.051+08:00",
+      "finished_at": "2026-11-09T02:55:28.623+08:00",
+      "result": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "D16-I01-real-preference-persistence.png",
+      "captured_at": "2026-11-09T02:54:33.188+08:00",
+      "url": "http://localhost:53684/faculty/preferences",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-I02-real-confirmed-ledger.png",
+      "captured_at": "2026-11-09T02:54:34.988+08:00",
+      "url": "http://localhost:53684/admin/external-schedules",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-I04-actual-constrained-proposal.png",
+      "captured_at": "2026-11-09T02:54:39.836+08:00",
+      "url": "http://localhost:53684/admin/schedules",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-I04-actual-fitness-analysis.png",
+      "captured_at": "2026-11-09T02:54:40.843+08:00",
+      "url": "http://localhost:53684/admin/analysis",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-F01-filter-loading.png",
+      "captured_at": "2026-11-09T02:54:45.185+08:00",
+      "url": "http://localhost:53684/chair/requests",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L04-validated-application-preview.png",
+      "captured_at": "2026-11-09T02:54:48.836+08:00",
+      "url": "http://localhost:53684/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "U5O-A01-history-outage-clears-valid-preview.png",
+      "captured_at": "2026-11-09T02:54:50.034+08:00",
+      "url": "http://localhost:53684/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L05-rollback-blocked.png",
+      "captured_at": "2026-11-09T02:54:51.335+08:00",
+      "url": "http://localhost:53684/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L06-applied-version-history.png",
+      "captured_at": "2026-11-09T02:54:52.844+08:00",
+      "url": "http://localhost:53684/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-F02-history-after-reload.png",
+      "captured_at": "2026-11-09T02:54:53.509+08:00",
+      "url": "http://localhost:53684/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L07-faculty-published-timetable.png",
+      "captured_at": "2026-11-09T02:54:55.579+08:00",
+      "url": "http://localhost:53684/faculty/schedule",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L11-trust-unavailable-blocked.png",
+      "captured_at": "2026-11-09T02:55:07.525+08:00",
+      "url": "http://localhost:53684/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 1366,
+        "height": 1100
+      }
+    },
+    {
+      "name": "D16-L13-mobile-preserved-version.png",
+      "captured_at": "2026-11-09T02:55:10.033+08:00",
+      "url": "http://localhost:53684/schedule-applications",
+      "query_omitted": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "D16-I05-empty-published-timetable.png",
+      "captured_at": "2026-11-09T02:55:12.417+08:00",
+      "url": "http://localhost:53684/faculty/schedule",
+      "query_omitted": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "D16-I06-owned-backend-unavailable.png",
+      "captured_at": "2026-11-09T02:55:28.618+08:00",
+      "url": "http://localhost:53684/faculty/schedule",
+      "query_omitted": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "runtime_errors": []
+}

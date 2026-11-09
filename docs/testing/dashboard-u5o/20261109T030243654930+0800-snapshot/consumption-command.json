@@ -1,0 +1,23 @@
+{
+  "selection": "consumption",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_ga_bundle_optimizer.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-62lnn_em\\pytest-consumption"
+  ],
+  "started_at": "2026-11-09T03:02:43.656441+08:00",
+  "ended_at": "2026-11-09T03:04:57.888956+08:00",
+  "elapsed_seconds": 134.21360489993822,
+  "exit_code": 0,
+  "stdout": ".......................................                                  [100%]\n============================ slowest 10 durations =============================\n29.70s call     tests/test_ga_bundle_optimizer.py::test_real_temporary_preference_and_weight_changes_do_not_change_resume\n23.48s call     tests/test_ga_bundle_optimizer.py::test_checkpoint_pause_resume_has_exact_rng_best_history_and_schedule_parity\n22.10s call     tests/test_ga_bundle_optimizer.py::test_identical_session_resume_and_checkpoint_lineage\n13.38s call     tests/test_ga_bundle_optimizer.py::test_cached_globals_and_dynamic_source_loaders_cannot_change_active_run\n10.35s call     tests/test_ga_bundle_optimizer.py::test_actual_generations_and_best_ever_are_monotone\n9.34s call     tests/test_ga_bundle_optimizer.py::test_stale_checkpoint_rejected_against_trusted_latest_tip\n5.81s setup    tests/test_ga_bundle_optimizer.py::test_actual_initialization_consumes_bundle_and_never_saves_best\n1.54s call     tests/test_ga_bundle_optimizer.py::test_missing_legacy_and_cross_run_checkpoint_are_not_adopted\n0.95s call     tests/test_ga_bundle_optimizer.py::test_wrong_checkpoint_binding_and_corruption_fail_closed[parent]\n0.95s call     tests/test_ga_bundle_optimizer.py::test_wrong_checkpoint_binding_and_corruption_fail_closed[pin]\n39 passed in 131.48s (0:02:11)\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

@@ -1,0 +1,243 @@
+{
+  "scope": "Instrumented actual receipt.write/directory; fictional tiny probe envelopes only. Path wrappers are test-local; production code is not modified by instrumentation.",
+  "seed": 17501,
+  "path_checks": 6000,
+  "failures": 0,
+  "failures_by_root_state": {
+    "False": 0,
+    "True": 0
+  },
+  "elapsed_seconds": 37.358787000062875,
+  "source_sha256": "cfd4f645bef767e346f028921c5720af7df81d00f02093578545b9ca079318f9",
+  "first_failures": [],
+  "sample_successes": [
+    {
+      "precreated": false,
+      "index": 0,
+      "trace": [
+        {
+          "operation": "is_symlink",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099400594700
+        },
+        {
+          "operation": "is_junction",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099400767900
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing",
+          "result": null,
+          "at_ns": 961099402833900
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0",
+          "result": null,
+          "at_ns": 961099404123500
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0",
+          "result": null,
+          "at_ns": 961099404144300
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": null,
+          "at_ns": 961099405572000
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": null,
+          "at_ns": 961099405590900
+        },
+        {
+          "operation": "is_symlink",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099406322200
+        },
+        {
+          "operation": "is_junction",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099406826300
+        },
+        {
+          "operation": "is_symlink",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\27fa28a1-cf57-4c98-aeed-281cb590e888",
+          "result": false,
+          "at_ns": 961099407152200
+        },
+        {
+          "operation": "is_junction",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\27fa28a1-cf57-4c98-aeed-281cb590e888",
+          "result": false,
+          "at_ns": 961099407263900
+        },
+        {
+          "operation": "resolve",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\27fa28a1-cf57-4c98-aeed-281cb590e888",
+          "result": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\27fa28a1-cf57-4c98-aeed-281cb590e888",
+          "at_ns": 961099408110800
+        },
+        {
+          "operation": "resolve",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "at_ns": 961099408732800
+        },
+        {
+          "operation": "is_symlink",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099408918800
+        },
+        {
+          "operation": "is_junction",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099409144200
+        },
+        {
+          "operation": "is_symlink",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\27fa28a1-cf57-4c98-aeed-281cb590e888",
+          "result": false,
+          "at_ns": 961099409331500
+        },
+        {
+          "operation": "is_junction",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\27fa28a1-cf57-4c98-aeed-281cb590e888",
+          "result": false,
+          "at_ns": 961099409491900
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\27fa28a1-cf57-4c98-aeed-281cb590e888",
+          "result": null,
+          "at_ns": 961099410724800
+        }
+      ]
+    },
+    {
+      "precreated": false,
+      "index": 0,
+      "trace": [
+        {
+          "operation": "is_symlink",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099400519500
+        },
+        {
+          "operation": "is_junction",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099400699100
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing",
+          "result": null,
+          "at_ns": 961099402653800
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0",
+          "result": null,
+          "at_ns": 961099404253800
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0",
+          "result": null,
+          "at_ns": 961099404273400
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": null,
+          "at_ns": 961099406206500
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": null,
+          "at_ns": 961099406223400
+        },
+        {
+          "operation": "is_symlink",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099406974100
+        },
+        {
+          "operation": "is_junction",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099407316300
+        },
+        {
+          "operation": "is_symlink",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\7d289324-ae23-47ec-be28-1d8ef93e8f69",
+          "result": false,
+          "at_ns": 961099407457500
+        },
+        {
+          "operation": "is_junction",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\7d289324-ae23-47ec-be28-1d8ef93e8f69",
+          "result": false,
+          "at_ns": 961099407596400
+        },
+        {
+          "operation": "resolve",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\7d289324-ae23-47ec-be28-1d8ef93e8f69",
+          "result": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\7d289324-ae23-47ec-be28-1d8ef93e8f69",
+          "at_ns": 961099408519200
+        },
+        {
+          "operation": "resolve",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "at_ns": 961099409292000
+        },
+        {
+          "operation": "is_symlink",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099409562800
+        },
+        {
+          "operation": "is_junction",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts",
+          "result": false,
+          "at_ns": 961099409864700
+        },
+        {
+          "operation": "is_symlink",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\7d289324-ae23-47ec-be28-1d8ef93e8f69",
+          "result": false,
+          "at_ns": 961099410093300
+        },
+        {
+          "operation": "is_junction",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\7d289324-ae23-47ec-be28-1d8ef93e8f69",
+          "result": false,
+          "at_ns": 961099410252200
+        },
+        {
+          "operation": "mkdir",
+          "path": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-sen54rij\\pytest-race\\test_instrumented_writer_direc0\\missing\\0\\input_receipts\\7d289324-ae23-47ec-be28-1d8ef93e8f69",
+          "result": null,
+          "at_ns": 961099411211900
+        }
+      ]
+    }
+  ]
+}

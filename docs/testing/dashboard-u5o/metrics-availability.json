@@ -1,0 +1,130 @@
+{
+  "rows": [
+    {
+      "metric": "Initial fitness",
+      "status": "RECORDED",
+      "current_source": "V1 generation-zero telemetry / H history",
+      "limitation": "Must bind input/policy/config and treat zero exactly"
+    },
+    {
+      "metric": "Best-so-far fitness",
+      "status": "RECORDED",
+      "current_source": "V1/H/K result/history",
+      "limitation": "Not shared Saved Best across incompatible contexts"
+    },
+    {
+      "metric": "Fitness versus generation",
+      "status": "RECORDED",
+      "current_source": "GenerationMonitor/history",
+      "limitation": "UI window is not full history"
+    },
+    {
+      "metric": "Fitness versus elapsed time",
+      "status": "PARTIAL",
+      "current_source": "elapsed_ms and generation_elapsed_ms",
+      "limitation": "Define active/paused/wall/validation time; no continuous export bridge"
+    },
+    {
+      "metric": "Improvement events",
+      "status": "RECORDED_OR_DERIVED",
+      "current_source": "best_ever_improvement and history differences",
+      "limitation": "Stagnation is not proof of optimality"
+    },
+    {
+      "metric": "Generation throughput",
+      "status": "DERIVABLE",
+      "current_source": "Generation and elapsed deltas",
+      "limitation": "Do not call null fitness_evaluations_total an evaluation rate"
+    },
+    {
+      "metric": "Hard-constraint violation count",
+      "status": "PARTIAL",
+      "current_source": "Publication validation / advanced analysis categories",
+      "limitation": "Unknown/unvalidated capacity/source constraints must not become zero"
+    },
+    {
+      "metric": "Unassigned offerings",
+      "status": "PARTIAL",
+      "current_source": "Validated coverage against required captured offerings",
+      "limitation": "Not just displayed schedule row count; failed search is not zero unassigned"
+    },
+    {
+      "metric": "Specialization alignment",
+      "status": "UNAVAILABLE",
+      "current_source": "Descriptive domains and F3 experimental evidence",
+      "limitation": "No approved rubric; eligibility is distinct"
+    },
+    {
+      "metric": "Subject preference satisfaction",
+      "status": "PARTIAL",
+      "current_source": "Candidate-bound advanced analysis",
+      "limitation": "Mechanical matching, not empirical satisfaction; H/K API bridge absent"
+    },
+    {
+      "metric": "Time/day preference satisfaction",
+      "status": "PARTIAL",
+      "current_source": "Frozen preference-context analysis",
+      "limitation": "Never recompute historical quality from changed live preferences"
+    },
+    {
+      "metric": "Teaching-load distribution",
+      "status": "RECORDED",
+      "current_source": "faculty_analysis/workload observations",
+      "limitation": "Denominator is supplied cohort, not automatically all registered faculty"
+    },
+    {
+      "metric": "Workload balance",
+      "status": "PARTIAL",
+      "current_source": "Targets/deviations in analysis and legacy workload score",
+      "limitation": "Legacy score has known fairness counterexample; report policy version"
+    },
+    {
+      "metric": "Convergence/stagnation",
+      "status": "PARTIAL",
+      "current_source": "generations_without_improvement",
+      "limitation": "No global optimality or seven-day evidence"
+    },
+    {
+      "metric": "Approved IT historical comparison",
+      "status": "UNAVAILABLE",
+      "current_source": "Same-context generation comparison exists",
+      "limitation": "Approved complete term-specific comparison schedule unavailable"
+    },
+    {
+      "metric": "Experiment configuration",
+      "status": "PARTIAL",
+      "current_source": "Configuration/input/engine fingerprints and bundles",
+      "limitation": "Academic source qualification and complete experiment manifest absent"
+    },
+    {
+      "metric": "Seed/reproducibility",
+      "status": "PARTIAL",
+      "current_source": "Initial RNG and checkpoint state",
+      "limitation": "No normal seed export/control; keep source release and inputs fixed"
+    },
+    {
+      "metric": "Checkpoint/interruption history",
+      "status": "PARTIAL",
+      "current_source": "I/K/L events, checkpoints and native recovery",
+      "limitation": "Not continuous dashboard telemetry; N restore quarantines only"
+    },
+    {
+      "metric": "Full research CSV/summary",
+      "status": "UNAVAILABLE",
+      "current_source": "Existing history CSV/JSON and independent benchmark reports",
+      "limitation": "No integrated full trial/config/failure/seed/faculty/events package"
+    }
+  ],
+  "proposed_outputs": [
+    "experiment_manifest.json",
+    "generations.csv",
+    "improvements.csv",
+    "faculty_metrics.csv",
+    "violations.csv",
+    "checkpoint_events.csv",
+    "failures.csv",
+    "thesis-summary.md",
+    "plots with axes/units/policy/provenance"
+  ],
+  "proposal_only": true
+}

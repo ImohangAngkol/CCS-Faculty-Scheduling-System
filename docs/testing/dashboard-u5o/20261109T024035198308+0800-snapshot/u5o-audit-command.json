@@ -1,0 +1,23 @@
+{
+  "selection": "u5o-audit",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_full_system_audit.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-pxo40iog\\pytest-u5o-audit"
+  ],
+  "started_at": "2026-11-09T02:40:35.200307+08:00",
+  "ended_at": "2026-11-09T02:40:59.126112+08:00",
+  "elapsed_seconds": 23.925909199984744,
+  "exit_code": 0,
+  "stdout": "...                                                                      [100%]\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n============================ slowest 10 durations =============================\n14.01s call     tests/test_full_system_audit.py::test_tiny_run_checkpoint_sizes_and_write_duration\n1.56s call     tests/test_full_system_audit.py::test_actual_registered_routes_and_unauthenticated_boundaries\n0.34s setup    tests/test_full_system_audit.py::test_actual_registered_routes_and_unauthenticated_boundaries\n0.01s call     tests/test_full_system_audit.py::test_characterize_legacy_saved_best_comparison_without_provenance_gate\n0.01s setup    tests/test_full_system_audit.py::test_tiny_run_checkpoint_sizes_and_write_duration\n\n(4 durations < 0.005s hidden.  Use -vv to show these durations.)\n3 passed, 2 warnings in 21.57s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

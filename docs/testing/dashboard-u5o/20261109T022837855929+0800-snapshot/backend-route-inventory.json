@@ -1,0 +1,2548 @@
+{
+  "scope": "Actual registered APIRoutes, source/dependency inspection and anonymous HTTP handlers; builtin docs separately listed",
+  "endpoint_method_pairs": 103,
+  "rows": [
+    {
+      "method": "GET",
+      "path": "/preferences/ga-settings",
+      "endpoint": "get_ga_settings",
+      "file": "backend/routers/preferences.py",
+      "line": 56,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "_read_ga_settings",
+        "_read_ga_settings().to_dict",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "PUT",
+      "path": "/preferences/ga-settings",
+      "endpoint": "update_ga_settings",
+      "file": "backend/routers/preferences.py",
+      "line": 61,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "GASetting",
+        "GASetting().to_dict",
+        "GASetting.from_dict",
+        "GASetting.from_dict(data).to_dict",
+        "payload.model_dump",
+        "router.put",
+        "storage.update"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/preferences",
+      "endpoint": "get_all_preferences",
+      "file": "backend/routers/preferences.py",
+      "line": 68,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "_read_preferences",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/preferences/{faculty_code}",
+      "endpoint": "get_faculty_preference",
+      "file": "backend/routers/preferences.py",
+      "line": 73,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.authorize_faculty",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "FacultyPreference",
+        "FacultyPreference(faculty_code=faculty_code).to_dict",
+        "HTTPException",
+        "_read_preferences",
+        "next",
+        "resolve_normal_faculty",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "PUT",
+      "path": "/preferences/{faculty_code}",
+      "endpoint": "update_faculty_preference",
+      "file": "backend/routers/preferences.py",
+      "line": 83,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.authorize_faculty",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "FacultyPreference",
+        "FacultyPreference(faculty_code=faculty_code).to_dict",
+        "FacultyPreferenceUpdate.model_validate",
+        "HTTPException",
+        "base.get",
+        "merged.items",
+        "next",
+        "payload.model_dump",
+        "router.put",
+        "storage.update",
+        "str",
+        "submitted.get",
+        "validate_preference_write"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "DELETE",
+      "path": "/preferences/{faculty_code}",
+      "endpoint": "reset_faculty_preference",
+      "file": "backend/routers/preferences.py",
+      "line": 105,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "HTTPException",
+        "len",
+        "resolve_normal_faculty",
+        "router.delete",
+        "storage.update"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/faculty/",
+      "endpoint": "get_all_faculty",
+      "file": "backend/routers/faculty.py",
+      "line": 18,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "FacultyListResponse",
+        "list_faculty_metadata",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/faculty/{faculty_id}",
+      "endpoint": "get_faculty",
+      "file": "backend/routers/faculty.py",
+      "line": 32,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.authorize_faculty_metadata",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "FacultyDetailResponse",
+        "_resolve_faculty",
+        "faculty_metadata",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/faculty/{faculty_id}/eligible-subjects",
+      "endpoint": "get_faculty_subjects",
+      "file": "backend/routers/faculty.py",
+      "line": 40,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.authorize_faculty_metadata",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "FacultySubjectsResponse",
+        "_resolve_faculty",
+        "faculty_metadata",
+        "list_subject_metadata",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/status",
+      "endpoint": "get_ga_status",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 196,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "_run_registry.active",
+        "_run_registry.discover",
+        "_run_registry.paused",
+        "active.snapshot",
+        "control.snapshot",
+        "os.getpid",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}",
+      "endpoint": "get_run_state",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 240,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Header",
+        "_owned_run",
+        "control.snapshot",
+        "getattr",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/logs",
+      "endpoint": "get_run_logs",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 246,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Header",
+        "Query",
+        "_owned_run",
+        "buffer.read",
+        "router.get",
+        "store_for",
+        "store_for(_run_registry).buffer"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ga/runs/{run_id}/stop",
+      "endpoint": "stop_run",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 258,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "Header",
+        "StopConflict",
+        "_launch_resume",
+        "_owned_run",
+        "control.request_stop",
+        "router.post",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ga/runs/{run_id}/pause",
+      "endpoint": "pause_run",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 282,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "Header",
+        "StopConflict",
+        "_owned_run",
+        "control.request_pause",
+        "router.post",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/checkpoint-status",
+      "endpoint": "get_checkpoint_status",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 293,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Header",
+        "_checkpoint_error",
+        "_owned_run",
+        "_templates",
+        "checkpoint_status",
+        "router.get",
+        "verified.update"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ga/runs/{run_id}/resume",
+      "endpoint": "resume_run",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 380,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Header",
+        "_launch_resume",
+        "_owned_run",
+        "control.snapshot",
+        "router.post"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/result",
+      "endpoint": "get_stopped_result",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 391,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "UUID",
+        "ValueError",
+        "_run_registry.discover",
+        "_run_registry.get",
+        "json.loads",
+        "path.read_text",
+        "result.get",
+        "router.get",
+        "str",
+        "validate_saved_result"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/latest",
+      "endpoint": "get_latest_ga_result",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 421,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "_read_latest_result",
+        "router.get",
+        "str",
+        "validate_saved_result"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ga/generate",
+      "endpoint": "generate_ga_schedule",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 445,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "Query",
+        "_admit_execution",
+        "_release_execution",
+        "capture_run_logs",
+        "control.fail",
+        "control.finish",
+        "control.seal",
+        "control.start",
+        "generate_schedule",
+        "router.post",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ga/run",
+      "endpoint": "run_ga",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 489,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "Query",
+        "_admit_execution",
+        "_execute_with_history",
+        "_finish_result",
+        "_release_execution",
+        "capture_run_logs",
+        "control.fail",
+        "control.snapshot",
+        "control.start",
+        "isinstance",
+        "router.post",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ga/stream",
+      "endpoint": "stream_ga",
+      "file": "backend/routers/genetic_algorithm.py",
+      "line": 560,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "EventEmitter",
+        "Header",
+        "Query",
+        "RuntimeError",
+        "StreamingResponse",
+        "_admit_execution",
+        "_execute_with_history",
+        "_finish_result",
+        "_release_execution",
+        "_require_process",
+        "asyncio.to_thread",
+        "capture_run_logs",
+        "control.capture_progress",
+        "control.fail",
+        "control.snapshot",
+        "control.start",
+        "disconnected.is_set",
+        "disconnected.set",
+        "emitter.emit",
+        "event_generator",
+        "event_queue.empty",
+        "event_queue.get",
+        "event_queue.get_nowait",
+        "event_queue.put",
+        "event_queue.put_nowait",
+        "isinstance",
+        "json.dumps",
+        "log",
+        "queue.Queue",
+        "router.post",
+        "str",
+        "terminal",
+        "thread.start",
+        "threading.Event",
+        "threading.Thread"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/chromosomes/best",
+      "endpoint": "get_saved_best",
+      "file": "backend/routers/chromosomes.py",
+      "line": 82,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "get_saved_best_metadata",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/chromosomes/best/download",
+      "endpoint": "download_saved_best",
+      "file": "backend/routers/chromosomes.py",
+      "line": 95,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "Response",
+        "get_best_chromosome_path",
+        "json.loads",
+        "path.exists",
+        "path.read_bytes",
+        "router.get",
+        "str",
+        "validate_saved_result"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/chromosomes/upload",
+      "endpoint": "upload_baseline",
+      "file": "backend/routers/chromosomes.py",
+      "line": 126,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Body",
+        "HTTPException",
+        "len",
+        "normalized.get",
+        "router.post",
+        "save_uploaded_payload",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/chromosomes/latest/analyze",
+      "endpoint": "analyze_latest_ga_result",
+      "file": "backend/routers/chromosomes.py",
+      "line": 176,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "_load_latest_ga_result",
+        "analyze_chromosome_payload",
+        "router.post",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/chromosomes/best/analyze",
+      "endpoint": "analyze_saved_best",
+      "file": "backend/routers/chromosomes.py",
+      "line": 222,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "analyze_chromosome_payload",
+        "load_saved_best_payload",
+        "router.post",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/chromosomes/uploaded/analyze",
+      "endpoint": "analyze_uploaded_chromosome",
+      "file": "backend/routers/chromosomes.py",
+      "line": 265,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "analyze_chromosome_payload",
+        "load_uploaded_payload",
+        "router.post",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/subjects/available",
+      "endpoint": "get_available_subjects",
+      "file": "backend/routers/subjects.py",
+      "line": 13,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "AvailableSubjectsResponse",
+        "list_subject_metadata",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs",
+      "endpoint": "runs",
+      "file": "backend/routers/ga_history.py",
+      "line": 47,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Query",
+        "_run_registry.discover",
+        "errors.append",
+        "history.SNAPSHOTS_DIR.exists",
+        "history.SNAPSHOTS_DIR.iterdir",
+        "history.manifest",
+        "items.append",
+        "items.sort",
+        "len",
+        "lifecycle",
+        "path.is_dir",
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/generations",
+      "endpoint": "generations",
+      "file": "backend/routers/ga_history.py",
+      "line": 69,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Query",
+        "history.manifest",
+        "len",
+        "lifecycle",
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/generations/{generation}",
+      "endpoint": "generation_detail",
+      "file": "backend/routers/ga_history.py",
+      "line": 78,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "history.get_generation",
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/generations/{generation}/schedule",
+      "endpoint": "schedule",
+      "file": "backend/routers/ga_history.py",
+      "line": 91,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "_templates",
+        "history.checked_payload",
+        "history.get_generation",
+        "history.input_fingerprint",
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/generations/{generation}/analysis",
+      "endpoint": "analysis",
+      "file": "backend/routers/ga_history.py",
+      "line": 107,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "history.analysis",
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/compare",
+      "endpoint": "comparison",
+      "file": "backend/routers/ga_history.py",
+      "line": 112,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Query",
+        "history.compare",
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/generations/{generation}/export",
+      "endpoint": "export_candidate",
+      "file": "backend/routers/ga_history.py",
+      "line": 122,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "download",
+        "faculty_label",
+        "history.checkpoints.canonical",
+        "history.csv_content",
+        "history.utc",
+        "read",
+        "router.get",
+        "validated"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/history/export",
+      "endpoint": "export_history",
+      "file": "backend/routers/ga_history.py",
+      "line": 144,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "download",
+        "history.csv_content",
+        "history.manifest",
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/compare/export",
+      "endpoint": "export_comparison",
+      "file": "backend/routers/ga_history.py",
+      "line": 155,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Query",
+        "download",
+        "history.checkpoints.canonical",
+        "history.compare",
+        "read",
+        "router.get",
+        "validated"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/current-evaluation",
+      "endpoint": "current_evaluation",
+      "file": "backend/routers/ga_evaluation.py",
+      "line": 10,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/source-qualification",
+      "endpoint": "source_qualification",
+      "file": "backend/routers/ga_evaluation.py",
+      "line": 15,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "router.get",
+        "status"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/input-receipt",
+      "endpoint": "input_receipt",
+      "file": "backend/routers/ga_evaluation.py",
+      "line": 21,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "read",
+        "receipt",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/bound-runs/capabilities",
+      "endpoint": "capabilities",
+      "file": "backend/routers/ga_trusted_runs.py",
+      "line": 29,
+      "dependencies": [
+        "routers.ga_trusted_runs.private_response",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ga/bound-runs",
+      "endpoint": "admit",
+      "file": "backend/routers/ga_trusted_runs.py",
+      "line": 34,
+      "dependencies": [
+        "routers.ga_trusted_runs.private_response",
+        "routers.ga_trusted_runs.service",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "backend.admit",
+        "perform",
+        "router.post"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/bound-runs/{run_id}",
+      "endpoint": "status",
+      "file": "backend/routers/ga_trusted_runs.py",
+      "line": 38,
+      "dependencies": [
+        "routers.ga_trusted_runs.private_response",
+        "routers.ga_trusted_runs.service",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "backend.status",
+        "perform",
+        "router.get",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ga/bound-runs/{run_id}/{action}",
+      "endpoint": "control",
+      "file": "backend/routers/ga_trusted_runs.py",
+      "line": 42,
+      "dependencies": [
+        "routers.ga_trusted_runs.private_response",
+        "routers.ga_trusted_runs.service",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Body",
+        "Depends",
+        "HTTPException",
+        "backend.command",
+        "backend.execute",
+        "perform",
+        "router.post",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/bound-runs/{run_id}/checkpoint",
+      "endpoint": "checkpoint",
+      "file": "backend/routers/ga_trusted_runs.py",
+      "line": 49,
+      "dependencies": [
+        "routers.ga_trusted_runs.private_response",
+        "routers.ga_trusted_runs.service",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "Response",
+        "backend.checkpoint",
+        "perform",
+        "router.get",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/bound-runs/{run_id}/result",
+      "endpoint": "result",
+      "file": "backend/routers/ga_trusted_runs.py",
+      "line": 53,
+      "dependencies": [
+        "routers.ga_trusted_runs.private_response",
+        "routers.ga_trusted_runs.service",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "backend.result",
+        "perform",
+        "router.get",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/advanced-analysis/runs",
+      "endpoint": "runs",
+      "file": "backend/routers/advanced_ga_analysis.py",
+      "line": 11,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Query",
+        "analysis.runs",
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/advanced-analysis/runs/{run_id}",
+      "endpoint": "project",
+      "file": "backend/routers/advanced_ga_analysis.py",
+      "line": 14,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Query",
+        "analysis.project",
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/advanced-analysis/runs/{run_id}/compare",
+      "endpoint": "compare",
+      "file": "backend/routers/advanced_ga_analysis.py",
+      "line": 18,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Query",
+        "analysis.compare",
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/continuous/readiness",
+      "endpoint": "get_readiness",
+      "file": "backend/routers/continuous_optimization.py",
+      "line": 9,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "HTTPException",
+        "readiness",
+        "request.headers.get",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/fitness-analysis/latest",
+      "endpoint": "latest",
+      "file": "backend/routers/fitness_analysis.py",
+      "line": 14,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "read",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/generations/{generation}/fitness-analysis",
+      "endpoint": "generation",
+      "file": "backend/routers/fitness_analysis.py",
+      "line": 19,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "read",
+        "reports.generation_report",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/fitness-comparison",
+      "endpoint": "comparison",
+      "file": "backend/routers/fitness_analysis.py",
+      "line": 24,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Query",
+        "read",
+        "reports.comparison_report",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/fitness-analysis/latest/export",
+      "endpoint": "latest_export",
+      "file": "backend/routers/fitness_analysis.py",
+      "line": 40,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "exported",
+        "read",
+        "reports.latest_report",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/runs/{run_id}/generations/{generation}/fitness-analysis/export",
+      "endpoint": "generation_export",
+      "file": "backend/routers/fitness_analysis.py",
+      "line": 45,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "exported",
+        "read",
+        "reports.generation_report",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "endpoint": "login",
+      "file": "backend/routers/auth.py",
+      "line": 44,
+      "dependencies": [
+        "database.get_identity_db"
+      ],
+      "direct_calls": [
+        "Depends",
+        "HTTPException",
+        "LoginSession",
+        "auth.LOGIN_LIMITER.check",
+        "auth.check_origin",
+        "auth.cookie_secure",
+        "auth.session_seconds",
+        "auth.token_hash",
+        "auth.user_payload",
+        "auth.verify_password",
+        "commit",
+        "db.add",
+        "db.execute",
+        "db.scalar",
+        "delete",
+        "delete(LoginSession).where",
+        "now",
+        "payload.password.get_secret_value",
+        "request.cookies.get",
+        "response.set_cookie",
+        "router.post",
+        "secrets.token_urlsafe",
+        "select",
+        "select(User).where",
+        "timedelta"
+      ],
+      "status_without_credentials": 422,
+      "anonymous_probe": "PUBLIC_LOGIN_VALIDATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/me",
+      "endpoint": "me",
+      "file": "backend/routers/auth.py",
+      "line": 71,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "auth.user_payload",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/logout",
+      "endpoint": "logout",
+      "file": "backend/routers/auth.py",
+      "line": 79,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "auth.cookie_secure",
+        "commit",
+        "db.execute",
+        "delete",
+        "delete(LoginSession).where",
+        "response.delete_cookie",
+        "router.post"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/users",
+      "endpoint": "users",
+      "file": "backend/routers/auth.py",
+      "line": 88,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "auth.user_payload",
+        "db.scalars",
+        "router.get",
+        "select",
+        "select(User).order_by"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/users",
+      "endpoint": "create_user",
+      "file": "backend/routers/auth.py",
+      "line": 93,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "User",
+        "auth.user_payload",
+        "commit",
+        "db.add",
+        "password_hash",
+        "payload.password.get_secret_value",
+        "router.post",
+        "validate_binding"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/auth/users/{user_id}",
+      "endpoint": "update_user",
+      "file": "backend/routers/auth.py",
+      "line": 103,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "HTTPException",
+        "User.is_active.is_",
+        "any",
+        "auth.user_payload",
+        "commit",
+        "db.execute",
+        "db.get",
+        "db.scalars",
+        "delete",
+        "delete(LoginSession).where",
+        "len",
+        "list",
+        "password_hash",
+        "payload.model_dump",
+        "payload.password.get_secret_value",
+        "router.patch",
+        "select",
+        "select(User).where",
+        "select(User).where(User.role == 'admin', User.is_active.is_(True)).order_by",
+        "select(User).where(User.role == 'admin', User.is_active.is_(True)).order_by(User.id).with_for_update",
+        "setattr",
+        "validate_binding",
+        "values.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/schedules/me",
+      "endpoint": "my_schedule",
+      "file": "backend/routers/schedules.py",
+      "line": 34,
+      "dependencies": [
+        "database.get_identity_db",
+        "routers.schedules.bound_faculty",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "own",
+        "own_schedule",
+        "problem",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/external-schedules/metadata",
+      "endpoint": "metadata",
+      "file": "backend/routers/external_schedules.py",
+      "line": 41,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "router.get",
+        "service.metadata"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external-schedules/preview",
+      "endpoint": "manual_preview",
+      "file": "backend/routers/external_schedules.py",
+      "line": 46,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "ManualPreview.model_validate",
+        "bounded_body",
+        "json.loads",
+        "lifecycle.bind",
+        "request.headers.get",
+        "request.headers.get('content-type', '').split",
+        "request.headers.get('content-type', '').split(';')[0].strip",
+        "router.post",
+        "run_in_threadpool",
+        "service.fail"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external-schedules/preview-file",
+      "endpoint": "file_preview",
+      "file": "backend/routers/external_schedules.py",
+      "line": 59,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "LegacyUpload.model_validate",
+        "base64.b64decode",
+        "bounded_body",
+        "json.loads",
+        "lifecycle.bind",
+        "request.headers.get",
+        "request.headers.get('content-type', '').split",
+        "request.headers.get('content-type', '').split(';')[0].strip",
+        "router.post",
+        "run_in_threadpool",
+        "service.fail",
+        "service.filename_kind"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external-schedules/review",
+      "endpoint": "review",
+      "file": "backend/routers/external_schedules.py",
+      "line": 89,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "lifecycle.invalidate",
+        "lifecycle.owner",
+        "review_payload",
+        "router.post",
+        "run_in_threadpool"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external-schedules/handoff",
+      "endpoint": "handoff",
+      "file": "backend/routers/external_schedules.py",
+      "line": 97,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "lifecycle.current",
+        "lifecycle.owner",
+        "review_payload",
+        "router.post",
+        "run_in_threadpool",
+        "service.fail"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external-schedules/readiness",
+      "endpoint": "readiness",
+      "file": "backend/routers/external_schedules.py",
+      "line": 111,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "lifecycle.owner",
+        "review_payload",
+        "router.post",
+        "run_in_threadpool"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external-schedules/readiness/invalidate",
+      "endpoint": "invalidate_readiness",
+      "file": "backend/routers/external_schedules.py",
+      "line": 118,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "lifecycle.invalidate",
+        "lifecycle.owner",
+        "review_payload",
+        "router.post"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/external-confirmations",
+      "endpoint": "records",
+      "file": "backend/routers/external_confirmations.py",
+      "line": 23,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "ledger.list_records",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/external-confirmations/records/{record_id}",
+      "endpoint": "history",
+      "file": "backend/routers/external_confirmations.py",
+      "line": 27,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "ledger.history",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/external-confirmations/revisions/{revision_id}",
+      "endpoint": "revision",
+      "file": "backend/routers/external_confirmations.py",
+      "line": 31,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "ledger.revision_detail",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external-confirmations/revisions",
+      "endpoint": "propose",
+      "file": "backend/routers/external_confirmations.py",
+      "line": 35,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "ledger.propose",
+        "review_payload",
+        "router.post"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external-confirmations/revisions/{revision_id}/{operation}",
+      "endpoint": "decision",
+      "file": "backend/routers/external_confirmations.py",
+      "line": 41,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "ledger.confirm if operation == 'confirm' else ledger.request_confirmation",
+        "ledger.fail",
+        "review_payload",
+        "router.post"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external-confirmations/records/{record_id}/revoke",
+      "endpoint": "revoke",
+      "file": "backend/routers/external_confirmations.py",
+      "line": 48,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "ledger.revoke",
+        "review_payload",
+        "router.post"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/v2/status",
+      "endpoint": "status",
+      "file": "backend/routers/ga_constrained.py",
+      "line": 23,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/v2/constraints",
+      "endpoint": "constraints",
+      "file": "backend/routers/ga_constrained.py",
+      "line": 29,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "execute",
+        "router.get",
+        "service.constraints"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ga/v2/runs",
+      "endpoint": "start",
+      "file": "backend/routers/ga_constrained.py",
+      "line": 34,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "execute",
+        "review_payload",
+        "router.post",
+        "service.start"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ga/v2/runs/{run_id}",
+      "endpoint": "inspect",
+      "file": "backend/routers/ga_constrained.py",
+      "line": 40,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "execute",
+        "router.get",
+        "service.inspect",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ga/v2/runs/{run_id}/control",
+      "endpoint": "control",
+      "file": "backend/routers/ga_constrained.py",
+      "line": 45,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session",
+        "services.preference_authorization.current_principal",
+        "services.preference_authorization.require_admin",
+        "services.preference_authorization.require_principal"
+      ],
+      "direct_calls": [
+        "execute",
+        "review_payload",
+        "router.post",
+        "service.control",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/adjustment-requests/assignments",
+      "endpoint": "assignments",
+      "file": "backend/routers/adjustments.py",
+      "line": 27,
+      "dependencies": [
+        "routers.schedules.bound_faculty",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "router.get",
+        "service.assignments"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/adjustment-requests/preview",
+      "endpoint": "preview",
+      "file": "backend/routers/adjustments.py",
+      "line": 32,
+      "dependencies": [
+        "routers.schedules.bound_faculty",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "review_payload",
+        "router.post",
+        "service.preview"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/adjustment-requests",
+      "endpoint": "listing",
+      "file": "backend/routers/adjustments.py",
+      "line": 38,
+      "dependencies": [
+        "database.get_identity_db",
+        "routers.schedules.bound_faculty",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "router.get",
+        "service.listing"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/adjustment-requests",
+      "endpoint": "create",
+      "file": "backend/routers/adjustments.py",
+      "line": 43,
+      "dependencies": [
+        "database.get_identity_db",
+        "routers.schedules.bound_faculty",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "review_payload",
+        "router.post",
+        "service.create"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/adjustment-requests/{request_id}",
+      "endpoint": "detail",
+      "file": "backend/routers/adjustments.py",
+      "line": 49,
+      "dependencies": [
+        "database.get_identity_db",
+        "routers.schedules.bound_faculty",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "router.get",
+        "service.detail",
+        "service.owner"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/adjustment-requests/{request_id}/history",
+      "endpoint": "history",
+      "file": "backend/routers/adjustments.py",
+      "line": 54,
+      "dependencies": [
+        "database.get_identity_db",
+        "routers.schedules.bound_faculty",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "detail",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/adjustment-requests/{request_id}/status",
+      "endpoint": "status",
+      "file": "backend/routers/adjustments.py",
+      "line": 59,
+      "dependencies": [
+        "database.get_identity_db",
+        "routers.schedules.bound_faculty",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "detail",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/adjustment-requests/{request_id}/{action}",
+      "endpoint": "transition",
+      "file": "backend/routers/adjustments.py",
+      "line": 65,
+      "dependencies": [
+        "database.get_identity_db",
+        "routers.schedules.bound_faculty",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "problem",
+        "review_payload",
+        "router.post",
+        "service.transition"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/chair-reviews/access",
+      "endpoint": "access",
+      "file": "backend/routers/chair_reviews.py",
+      "line": 25,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "authority.authorized",
+        "authority.recheck",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/chair-reviews",
+      "endpoint": "pending",
+      "file": "backend/routers/chair_reviews.py",
+      "line": 32,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "router.get",
+        "service.pending",
+        "str"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/chair-reviews/{request_id}",
+      "endpoint": "review",
+      "file": "backend/routers/chair_reviews.py",
+      "line": 37,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "router.get",
+        "service.review"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/chair-reviews/{request_id}/history",
+      "endpoint": "history",
+      "file": "backend/routers/chair_reviews.py",
+      "line": 42,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "review",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/chair-reviews/{request_id}/status",
+      "endpoint": "status",
+      "file": "backend/routers/chair_reviews.py",
+      "line": 48,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "review",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/chair-reviews/{request_id}/{action}",
+      "endpoint": "decide",
+      "file": "backend/routers/chair_reviews.py",
+      "line": 54,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "action.upper",
+        "authority.authorized",
+        "execute",
+        "problem",
+        "review_payload",
+        "router.post",
+        "service.decide"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/schedule-applications/access",
+      "endpoint": "access",
+      "file": "backend/routers/schedule_applications.py",
+      "line": 22,
+      "dependencies": [
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "authority.authorized",
+        "authority.recheck",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/schedule-applications",
+      "endpoint": "queue",
+      "file": "backend/routers/schedule_applications.py",
+      "line": 28,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "router.get",
+        "service.queue"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/schedule-applications/versions",
+      "endpoint": "versions",
+      "file": "backend/routers/schedule_applications.py",
+      "line": 32,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "router.get",
+        "service.versions"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/schedule-applications/{request_id}/preview",
+      "endpoint": "preview",
+      "file": "backend/routers/schedule_applications.py",
+      "line": 36,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "execute",
+        "router.get",
+        "service.preview"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/schedule-applications/{request_id}/status",
+      "endpoint": "status",
+      "file": "backend/routers/schedule_applications.py",
+      "line": 40,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "preview",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/schedule-applications/{request_id}/history",
+      "endpoint": "history",
+      "file": "backend/routers/schedule_applications.py",
+      "line": 44,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "preview",
+        "router.get"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "POST",
+      "path": "/api/schedule-applications/{request_id}/apply",
+      "endpoint": "apply",
+      "file": "backend/routers/schedule_applications.py",
+      "line": 49,
+      "dependencies": [
+        "database.get_identity_db",
+        "services.auth_service.authenticated_db",
+        "services.auth_service.authenticated_session"
+      ],
+      "direct_calls": [
+        "Depends",
+        "authority.authorized",
+        "execute",
+        "review_payload",
+        "router.post",
+        "service.apply"
+      ],
+      "status_without_credentials": 401,
+      "anonymous_probe": "DENIED_AUTHENTICATION",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "endpoint": "root",
+      "file": "backend/main.py",
+      "line": 99,
+      "dependencies": [],
+      "direct_calls": [
+        "app.get"
+      ],
+      "status_without_credentials": 200,
+      "anonymous_probe": "PUBLIC_LIVENESS",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "endpoint": "health_check",
+      "file": "backend/main.py",
+      "line": 110,
+      "dependencies": [],
+      "direct_calls": [
+        "app.get"
+      ],
+      "status_without_credentials": 200,
+      "anonymous_probe": "PUBLIC_LIVENESS",
+      "verification": "ACTUAL_FASTAPI_TESTCLIENT_AND_OWNED_SQLITE; NOT_NETWORK_OR_INSTITUTIONAL_ACCEPTANCE"
+    }
+  ],
+  "unexpected": [],
+  "builtin_routes": [
+    {
+      "path": "/openapi.json",
+      "methods": [
+        "GET",
+        "HEAD"
+      ]
+    },
+    {
+      "path": "/docs",
+      "methods": [
+        "GET",
+        "HEAD"
+      ]
+    },
+    {
+      "path": "/docs/oauth2-redirect",
+      "methods": [
+        "GET",
+        "HEAD"
+      ]
+    },
+    {
+      "path": "/redoc",
+      "methods": [
+        "GET",
+        "HEAD"
+      ]
+    }
+  ]
+}

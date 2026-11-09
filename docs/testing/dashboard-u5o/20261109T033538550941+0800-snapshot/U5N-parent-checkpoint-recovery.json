@@ -1,0 +1,6 @@
+{
+  "durable_checkpoint_unchanged_after_outer_termination": true,
+  "explicit_scoped_same_store_recovery_completed": true,
+  "stale_owner_fenced": true,
+  "backup_restore": false
+}

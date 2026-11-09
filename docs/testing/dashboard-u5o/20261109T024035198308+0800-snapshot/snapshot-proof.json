@@ -1,0 +1,26 @@
+{
+  "head": "30af999939146dbf818b9d86caa66646da46c5cf",
+  "source_sha256": {
+    "backend/tests/test_full_system_audit.py": "fc65aab8665b62315a204e050e08879be469fecc3e642eaad7af9253ff09b5e4"
+  },
+  "ui_overlay_sha256": {},
+  "ui_mode": "committed",
+  "proposed_blob_oids": {
+    "backend/tests/test_full_system_audit.py": "422e7ab31034a1d17e224f5835bb5c64c1c3d4b8"
+  },
+  "results": [
+    {
+      "selection": "u5o-audit",
+      "exit_code": 0
+    }
+  ],
+  "qualified_selections": [
+    "u5o-audit"
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-pxo40iog\\repository"
+}

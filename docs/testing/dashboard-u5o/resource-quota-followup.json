@@ -1,0 +1,38 @@
+{
+  "id": "O-P1-09",
+  "severity": "P1",
+  "kind": "INTERMITTENT_RESOURCE_ENFORCEMENT_BOUND_FAILURE",
+  "affected_workflow": "Windows user-CPU limit and long-duration experiment qualification",
+  "expected_behavior": "Configured one-second child CPU budget terminates within the unchanged test bound 0.8 <= user_seconds < 5 and elapsed <15s",
+  "actual_behavior": "First suite measured 5.109375 user seconds and failed; unchanged rerun measured 2.3125 and passed. Both children terminated and final cleanup assertions succeeded.",
+  "root_cause": "Configured JobObject process user-time value is queried back during creation; enforcement and accounting are OS-mediated. Exact reason for overrun is unresolved; not attributable to GA, application rendering or authorization from this evidence.",
+  "evidence": [
+    "20261109T031020112804+0800-snapshot/native-command.json",
+    "20261109T031600168754+0800-snapshot/native-command.json",
+    "20261109T031600168754+0800-snapshot/U5L-cpu-time-termination.json"
+  ],
+  "reproduction_steps": [
+    "Run backend_snapshot.py native in an owned fictional snapshot",
+    "Compare the retained first failure and unchanged rerun; do not change thresholds"
+  ],
+  "proposed_fix": "Further qualify kernel timing and host contention in a separately authorized resource milestone; retain fail-closed supervisor behavior and consider independently reviewed bounded enforcement if evidence requires it. No U5O production fix.",
+  "acceptance_criteria": [
+    "Explain the enforcement/observation interval and allowed overshoot",
+    "Repeatable resource-bound acceptance on intended host",
+    "Owned processes terminate and cleanup remains verifiable",
+    "No disabled test or arbitrary timeout increase"
+  ],
+  "tests_required": [
+    "Identical native quota trials with controlled contention and CPU/wall timestamps",
+    "Parent and child quota distinction",
+    "No orphan/handle leak after forced termination"
+  ],
+  "estimated_complexity": "M-L investigation; solution not selected",
+  "recommended_milestone": "U5P investigation contract, U5R resource gate",
+  "dependencies": [
+    "Windows physical enforcement qualification",
+    "Explicit approval before changing process policy"
+  ],
+  "relationship_to_existing_backlog": "Additional specific finding under O-P1-04; 18 consolidated backlog items plus this one detailed follow-up. Forty-eight capability groups remain unchanged.",
+  "status": "UNRESOLVED_BOUNDEDNESS; SUCCESSFUL_UNCHANGED_RERUN_DOES_NOT_ERASE_FAILURE"
+}

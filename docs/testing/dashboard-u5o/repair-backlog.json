@@ -1,0 +1,515 @@
+{
+  "priority_order": [
+    "P0",
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "new_production_fixes_implemented": false,
+  "issues": [
+    {
+      "id": "O-P0-01",
+      "severity": "P0",
+      "kind": "CONDITIONAL_DATA_INTEGRITY_RISK",
+      "affected_workflow": "Legacy Saved Best",
+      "expected_behavior": "Compare or replace only within a verified compatible evaluation context",
+      "actual_behavior": "Subject-key equality permits comparison across incompatible inputs/configurations",
+      "root_cause": "save_best_if_better checks subject sets and raw numeric fitness, not policy/input/configuration provenance",
+      "reproduction_steps": [
+        "Run u5o-audit; inspect legacy-saved-best-characterization.json",
+        "Same fictional subject keys, different input/configuration fingerprints: score 90 saves against 100; 110 does not"
+      ],
+      "proposed_fix": "Keep new research realm away from legacy stores; separately approve and version persistence eligibility before changing legacy save behavior",
+      "acceptance_criteria": [
+        "No comparison/replacement across incompatible contexts",
+        "Zero preserved exactly",
+        "Existing historical bytes retained"
+      ],
+      "tests_required": [
+        "Mocked decision regression",
+        "Actual compatible/incompatible isolated payload/store tests",
+        "Saved-seed and checkpoint regressions"
+      ],
+      "estimated_complexity": "L",
+      "recommended_milestone": "U5P contract / separate versioned persistence milestone",
+      "dependencies": [
+        "U5B/F2C compatibility contract",
+        "Explicit persistence-change approval"
+      ]
+    },
+    {
+      "id": "O-P1-01",
+      "severity": "P1",
+      "kind": "INTENTIONAL_SAFETY_GATE",
+      "affected_workflow": "Research-demo admission and HTTP/UI",
+      "expected_behavior": "A server-owned fictional realm can run without genuine institutional authority",
+      "actual_behavior": "Public readiness remains disabled; K/L workers are internal; no research operator/profile exists",
+      "root_cause": "configured_service returns None; institutional providers cannot be replaced by role flags",
+      "reproduction_steps": [
+        "GET bound-runs capabilities/readiness in isolated tests",
+        "Inspect worker module registration and mode selector"
+      ],
+      "proposed_fix": "Design a separately gated loopback fictional-only app factory with fresh stores, explicit demo identity and frozen server-created bundle; preserve production defaults",
+      "acceptance_criteria": [
+        "Cannot reach institutional paths, data or issuers",
+        "No main-route redirection or Saved Best promotion",
+        "Persistent fictional banner and finite scope"
+      ],
+      "tests_required": [
+        "Cross-realm/department/owner negatives",
+        "Real browser start/status/pause/resume/stop",
+        "No institutional dependency access"
+      ],
+      "estimated_complexity": "L",
+      "recommended_milestone": "U5P design, U5Q bounded bridge",
+      "dependencies": [
+        "Demo authority contract",
+        "Immutable input capture",
+        "Storage namespace"
+      ]
+    },
+    {
+      "id": "O-P1-02",
+      "severity": "P1",
+      "kind": "LONG_RUN_CONTRACT_GAP",
+      "affected_workflow": "168-hour controller",
+      "expected_behavior": "One continuing population/RNG/best under an explicit bounded experiment deadline",
+      "actual_behavior": "K caps wall at 600 seconds and total generations at 20",
+      "root_cause": "Worker is a short fictional qualification profile, not a seven-day release",
+      "reproduction_steps": [
+        "Inspect Limits.validate and WorkerStore deadlines",
+        "Do not start a seven-day run through fixed-generation controls"
+      ],
+      "proposed_fix": "Specify a separately versioned long-duration continuation/stopping contract; do not fake continuous mode with repeated fresh runs or arbitrarily large generation settings",
+      "acceptance_criteria": [
+        "Deadline/paused time and clock jumps defined",
+        "Exact population/RNG/best continuity",
+        "Bounded safe and forced stop behavior"
+      ],
+      "tests_required": [
+        "Batch equivalence and RNG parity",
+        "Pause/restart/deadline/clock tests",
+        "Increasing stability gates"
+      ],
+      "estimated_complexity": "XL",
+      "recommended_milestone": "U5R",
+      "dependencies": [
+        "U5Q bounded integration",
+        "Version/checkpoint policy review"
+      ]
+    },
+    {
+      "id": "O-P1-03",
+      "severity": "P1",
+      "kind": "LONG_RUN_STORAGE_GAP",
+      "affected_workflow": "Checkpoint/backup/restore retention",
+      "expected_behavior": "Bounded storage with durable fresh recovery for full experiment",
+      "actual_behavior": "K defaults eight checkpoints, L one backup/64 process attempts; N chain at most eight and quarantine only",
+      "root_cause": "No approved rotation/activation or independent host freshness/fencing contract",
+      "reproduction_steps": [
+        "Inspect K/L/N limits and retention-disabled responses"
+      ],
+      "proposed_fix": "Design versioned retention, telemetry and restore reconciliation with independently anchored ownership; never delete old chain elements under current codecs",
+      "acceptance_criteria": [
+        "No invalid lineage or rollback",
+        "Post-commit uncertain quarantine stays inert",
+        "Disk-full recovery and owner fencing"
+      ],
+      "tests_required": [
+        "Real quota exhaustion",
+        "Crash windows",
+        "Concurrent replay/cross-run recovery",
+        "Backup freshness and old-owner denial"
+      ],
+      "estimated_complexity": "XL",
+      "recommended_milestone": "U5R",
+      "dependencies": [
+        "Independent freshness anchor",
+        "Explicit recovery/retention policy"
+      ]
+    },
+    {
+      "id": "O-P1-04",
+      "severity": "P1",
+      "kind": "HOST_READINESS_GAP",
+      "affected_workflow": "Windows seven-day host",
+      "expected_behavior": "Sufficient measured headroom and an approved supervised/power plan",
+      "actual_behavior": "1.69 GiB free RAM at inspection; AC idle hibernate 12h; lid closure sleeps; parent/host quotas unqualified",
+      "root_cause": "Default laptop policy and short child-only resource profile",
+      "reproduction_steps": [
+        "Read machine-readiness.json",
+        "Review U5N parent findings and development --reload launcher"
+      ],
+      "proposed_fix": "Before a later experiment, obtain explicit power/deployment approval, freeze source, budget helper processes and monitor host memory/disk; change no setting in U5O",
+      "acceptance_criteria": [
+        "No unowned process termination",
+        "Lid/sleep/update/restart plan",
+        "Resource thresholds measured on representative fictional fixtures"
+      ],
+      "tests_required": [
+        "Parent/child and helper topology",
+        "RAM/disk pressure",
+        "Interrupted/resumed long-run tests"
+      ],
+      "estimated_complexity": "L",
+      "recommended_milestone": "U5R/U5S",
+      "dependencies": [
+        "User approval for any OS changes",
+        "Representative scale data"
+      ]
+    },
+    {
+      "id": "O-P1-05",
+      "severity": "P1",
+      "kind": "RESEARCH_TELEMETRY_GAP",
+      "affected_workflow": "Continuous research exports",
+      "expected_behavior": "Durable exact generation/configuration/seed/constraint/event metrics and exports",
+      "actual_behavior": "Existing history/analysis APIs target legacy namespaces; K/L are not wired to them; logs truncate",
+      "root_cause": "No continuous DTO/export bridge; fitness evaluation count is null",
+      "reproduction_steps": [
+        "Inspect metrics-availability.json and Worker.status",
+        "Compare K/L store to ga_history/advanced analysis routes"
+      ],
+      "proposed_fix": "Version a read-only metric/export contract over the same bound checkpoint/results with explicit time bases and missing-data semantics",
+      "acceptance_criteria": [
+        "No rescore or incompatible comparison",
+        "Full history despite UI display windows",
+        "Failures and missing observations exported"
+      ],
+      "tests_required": [
+        "Exact zero and monotonicity",
+        "Reload/restart telemetry",
+        "CSV/JSON schema and download parity",
+        "No credential/raw-checkpoint exposure"
+      ],
+      "estimated_complexity": "L",
+      "recommended_milestone": "U5R",
+      "dependencies": [
+        "U5Q HTTP boundary",
+        "Frozen metric definitions"
+      ]
+    },
+    {
+      "id": "O-P1-06",
+      "severity": "P1",
+      "kind": "INSTITUTIONAL_DATA_DEPENDENCY",
+      "affected_workflow": "IT cohort and historical comparator",
+      "expected_behavior": "Approved term-specific IT roster, eligibility, resources and comparison schedule",
+      "actual_behavior": "Legacy preference CSV still determines GA pool; complete IT/IS dependencies and historical comparison are unqualified",
+      "root_cause": "No authoritative roster producer or approved complete benchmark record",
+      "reproduction_steps": [
+        "Read F1/F1.5 and R1 packages",
+        "Inspect Functions.py cohort construction; do not expose faculty rows"
+      ],
+      "proposed_fix": "Obtain and qualify institutional data for thesis/institutional claims; use explicit complete fictional cohorts for demo research meanwhile",
+      "acceptance_criteria": [
+        "No fabricated IS records",
+        "No silent missing allowances or identities",
+        "Term/revision/source bound"
+      ],
+      "tests_required": [
+        "Roster completeness without preferences",
+        "Eligibility edge cases",
+        "Approved historical schedule mapping"
+      ],
+      "estimated_complexity": "L",
+      "recommended_milestone": "Separate data qualification",
+      "dependencies": [
+        "Adviser/department data and use approval; not prerequisite for fictional demo"
+      ]
+    },
+    {
+      "id": "O-P1-07",
+      "severity": "P1",
+      "kind": "POLICY_QUALIFICATION_GAP",
+      "affected_workflow": "Workload fairness and zero-target exceptions",
+      "expected_behavior": "Explicitly approved, versioned workload interpretation and comparisons",
+      "actual_behavior": "Legacy quantized workload score can favor concentration; experimental policy/zero-target authority not integrated",
+      "root_cause": "Original scoring intentionally preserved; shared dispatch/authority integration remains gated",
+      "reproduction_steps": [
+        "Read fairness counterexample and F2C-F2I reports",
+        "Inspect current scorer and Faculty required target calculation"
+      ],
+      "proposed_fix": "Record legacy policy limitations in experiments; integrate only after versioned dispatch, zero-target authority and compatibility approval",
+      "acceptance_criteria": [
+        "No mixed-policy comparisons",
+        "No unauthorized zero-target teaching exception",
+        "No silent academic policy changes"
+      ],
+      "tests_required": [
+        "Unequal targets/underload/overload/zero assignments",
+        "Operators and best/checkpoint consistency"
+      ],
+      "estimated_complexity": "XL",
+      "recommended_milestone": "Separate F2 implementation",
+      "dependencies": [
+        "Adviser/department policy as applicable",
+        "Approved scoring integration"
+      ]
+    },
+    {
+      "id": "O-P1-08",
+      "severity": "P1",
+      "kind": "AVAILABILITY_CONTRACT_GAP",
+      "affected_workflow": "Authoritative room/faculty closures",
+      "expected_behavior": "Permanent commitments survive restart while temporary bookings reset",
+      "actual_behavior": "Legacy reset reopens room/faculty flags; V2 explicit fixed snapshots are separate",
+      "root_cause": "Temporary and authoritative boolean state share legacy calendars",
+      "reproduction_steps": [
+        "Read F4A/F4B and reset helpers",
+        "Compare section blocks and V2 immutable external commitments"
+      ],
+      "proposed_fix": "Implement the reviewed versioned availability contract in a separately authorized milestone; do not treat preassigned resources as fixed meeting times",
+      "acceptance_criteria": [
+        "Faculty/room/section commitments all enforced",
+        "Adjacent intervals allowed",
+        "No grandfathered checkpoint reinterpretation"
+      ],
+      "tests_required": [
+        "All reset/reconstruction/restart/operator boundaries",
+        "Source changes and invalid commitments"
+      ],
+      "estimated_complexity": "L",
+      "recommended_milestone": "Separate F4 integration",
+      "dependencies": [
+        "Approved availability authority and semantics"
+      ]
+    },
+    {
+      "id": "O-P2-01",
+      "severity": "P2",
+      "kind": "REPRODUCED_UI_DEFECT",
+      "affected_workflow": "Schedule application revalidation",
+      "expected_behavior": "History-only failure leaves independently valid preview usable with separate error/retry",
+      "actual_behavior": "open awaits publishedVersions; run catch clears detail and Apply control",
+      "root_cause": "Coupled preview/history request chain in ScheduleApplications.tsx",
+      "reproduction_steps": [
+        "Run d16-live --working-ui",
+        "U5O-A01: inject history-only 503, click Revalidate; API preview still can_apply=true while UI clears it"
+      ],
+      "proposed_fix": "Separate ancillary history state/error/retry from authoritative preview; retain fail-closed behavior for actual preview/authority/staleness failures",
+      "acceptance_criteria": [
+        "History outage does not erase valid review",
+        "Fresh apply command/approval checks remain mandatory",
+        "No stale review after filter/account changes"
+      ],
+      "tests_required": [
+        "Real browser history-only failure and recovery",
+        "Preview/authority failure negatives",
+        "Concurrent revision change"
+      ],
+      "estimated_complexity": "M",
+      "recommended_milestone": "U5P",
+      "dependencies": [
+        "Independent history state"
+      ]
+    },
+    {
+      "id": "O-P2-02",
+      "severity": "P2",
+      "kind": "WORKFLOW_DEPENDENCY",
+      "affected_workflow": "First baseline publication",
+      "expected_behavior": "Clear authorized designation before adjustment/application workflow",
+      "actual_behavior": "D16 uses an explicit fictional file handoff; no normal first-publication UI/provider",
+      "root_cause": "Institutional designation policy/provider intentionally absent",
+      "reproduction_steps": [
+        "Inspect D16-I04 and published source providers"
+      ],
+      "proposed_fix": "Provide explicit fictional-only designation in an isolated demo; obtain real first-publication policy separately",
+      "acceptance_criteria": [
+        "Printing/generation/Chair review never imply publication",
+        "Prior versions immutable"
+      ],
+      "tests_required": [
+        "Unauthorized/replayed designation",
+        "Published head consistency"
+      ],
+      "estimated_complexity": "L",
+      "recommended_milestone": "U5Q demo / separate institutional policy",
+      "dependencies": [
+        "Independent designation authority"
+      ]
+    },
+    {
+      "id": "O-P2-03",
+      "severity": "P2",
+      "kind": "SCOPE_LIMITATION",
+      "affected_workflow": "Faculty/room pages and academic preparation",
+      "expected_behavior": "Users understand catalog/availability versus assigned timetable views",
+      "actual_behavior": "Faculty/rooms derive selectors from GA schedule; draft subjects are memory-only",
+      "root_cause": "Existing pages are result viewers, not authoritative resource administration",
+      "reproduction_steps": [
+        "Visit /admin/faculty and /admin/rooms without GA result",
+        "Inspect SubjectDrafts notice and state"
+      ],
+      "proposed_fix": "Clarify labels and plan bounded read-only cohort/resource overview before approved durable academic CRUD",
+      "acceptance_criteria": [
+        "Zero-assignment faculty not misrepresented as absent roster",
+        "Drafts never imply persistence or eligibility"
+      ],
+      "tests_required": [
+        "Empty/loading/error and complete-cohort view tests"
+      ],
+      "estimated_complexity": "M",
+      "recommended_milestone": "U5P usability / later approved resource work",
+      "dependencies": [
+        "Authoritative metadata for institutional editing"
+      ]
+    },
+    {
+      "id": "O-P2-04",
+      "severity": "P2",
+      "kind": "AUDIT_INFRASTRUCTURE_DEFECT",
+      "affected_workflow": "Endpoint inventory tests",
+      "expected_behavior": "Inventory all included routes and inherited dependencies",
+      "actual_behavior": "Flat app.routes scans miss lazy _IncludedRouter entries in installed FastAPI",
+      "root_cause": "Old APIRoute-only introspection assumption",
+      "reproduction_steps": [
+        "Inspect first failed u5o-audit record",
+        "Compare effective route contexts against OpenAPI: 103 method/path pairs"
+      ],
+      "proposed_fix": "Adopt a shared tested effective-route inventory utility in later test maintenance; U5O uses correct traversal only in its new audit",
+      "acceptance_criteria": [
+        "OpenAPI paths covered",
+        "Inherited auth dependencies preserved",
+        "Absence tests do not vacuously pass"
+      ],
+      "tests_required": [
+        "Installed framework traversal regression"
+      ],
+      "estimated_complexity": "S",
+      "recommended_milestone": "U5P test repair",
+      "dependencies": [
+        "FastAPI version-aware testing"
+      ]
+    },
+    {
+      "id": "O-P2-05",
+      "severity": "P2",
+      "kind": "INTEGRATION_NOT_TESTED",
+      "affected_workflow": "Actual V1 Live Center",
+      "expected_behavior": "Real fixed stream/result reaches Overview/Research/Console under a bound run",
+      "actual_behavior": "Working UI passes 385 contracts and intercepted controls; live journey exercises V2 branch",
+      "root_cause": "V1 GAContext, V2 views and internal continuous worker are separate paths",
+      "reproduction_steps": [
+        "Compare source imports and actual route-survey responses",
+        "Do not interpret intercepted HTTP as live worker evidence"
+      ],
+      "proposed_fix": "Add a complete isolated actual V1 HTTP/browser fixture, then version the continuous bridge without conflating result formats",
+      "acceptance_criteria": [
+        "Actual data/progress/logs/reconnect verified",
+        "No synthetic fallback metrics"
+      ],
+      "tests_required": [
+        "Start/pause/resume/stop, disconnect/reload and result validation"
+      ],
+      "estimated_complexity": "M",
+      "recommended_milestone": "U5Q",
+      "dependencies": [
+        "Complete fictional fixed-input fixture"
+      ]
+    },
+    {
+      "id": "O-P2-06",
+      "severity": "P2",
+      "kind": "METHODOLOGY_DEPENDENCY",
+      "affected_workflow": "Specialization evaluation",
+      "expected_behavior": "Approved rubric distinguishes specialization alignment from eligibility",
+      "actual_behavior": "Hard eligibility exists; no approved soft specialization metric/objective",
+      "root_cause": "F3 policy/data qualification remains incomplete",
+      "reproduction_steps": [
+        "Read F3C and metrics inventory"
+      ],
+      "proposed_fix": "Define rubric/data/denominator with adviser/department; do not fabricate scores or silently change fitness",
+      "acceptance_criteria": [
+        "Unknown stays unavailable",
+        "Alignment not equated with eligibility"
+      ],
+      "tests_required": [
+        "Multiple eligible candidates",
+        "Unknown/ambiguous domain mappings"
+      ],
+      "estimated_complexity": "M",
+      "recommended_milestone": "Separate F3 qualification",
+      "dependencies": [
+        "Adviser/department rubric approval"
+      ]
+    },
+    {
+      "id": "O-P3-01",
+      "severity": "P3",
+      "kind": "UNTESTED_SCALE_USABILITY",
+      "affected_workflow": "Charts/history/console long-run use",
+      "expected_behavior": "Bounded responsive presentation with complete exported evidence",
+      "actual_behavior": "UI windows/log buffers bound visible history; 168h UI behavior untested",
+      "root_cause": "Short-run presentation and retention contracts",
+      "reproduction_steps": [
+        "Inspect Live chart limit 240 and log limits",
+        "Review full versus display-window semantics"
+      ],
+      "proposed_fix": "After correctness, measure long-history rendering and provide clear omitted-data/export affordances",
+      "acceptance_criteria": [
+        "No invented points",
+        "Missing/dropped logs explicit",
+        "No performance claim without measurement"
+      ],
+      "tests_required": [
+        "Large synthetic histories and browser memory/reconnect"
+      ],
+      "estimated_complexity": "M",
+      "recommended_milestone": "After U5R",
+      "dependencies": [
+        "Durable telemetry contract"
+      ]
+    },
+    {
+      "id": "O-P3-02",
+      "severity": "P3",
+      "kind": "USABILITY_GAP",
+      "affected_workflow": "Admin preference metadata error",
+      "expected_behavior": "Consistent retry without losing safe edits",
+      "actual_behavior": "PreferencesReview requires page refresh after initial faculty-load failure",
+      "root_cause": "One-shot effect and refresh text rather than inline retry",
+      "reproduction_steps": [
+        "Inspect PreferencesReview error path"
+      ],
+      "proposed_fix": "Add a guarded explicit retry if separately scoped; preserve dirty/saving protections",
+      "acceptance_criteria": [
+        "Retry does not change faculty binding or discard edits silently"
+      ],
+      "tests_required": [
+        "Error/retry and dirty-form cases"
+      ],
+      "estimated_complexity": "S",
+      "recommended_milestone": "U5P optional",
+      "dependencies": [
+        "No policy change"
+      ]
+    },
+    {
+      "id": "O-P4-01",
+      "severity": "P4",
+      "kind": "UNREFERENCED_PLACEHOLDERS",
+      "affected_workflow": "Legacy source modules",
+      "expected_behavior": "No confusion about unused skeletons",
+      "actual_behavior": "Fourteen empty TS/TSX files; no active placeholder page found",
+      "root_cause": "Unreferenced old scaffolding",
+      "reproduction_steps": [
+        "Read empty-source-stubs.json"
+      ],
+      "proposed_fix": "Leave unchanged now; remove only in later authorized cleanup after import checks",
+      "acceptance_criteria": [
+        "No behavior change"
+      ],
+      "tests_required": [
+        "Import/build regression"
+      ],
+      "estimated_complexity": "S",
+      "recommended_milestone": "Deferred cleanup",
+      "dependencies": [
+        "Separate cleanup authorization"
+      ]
+    }
+  ]
+}

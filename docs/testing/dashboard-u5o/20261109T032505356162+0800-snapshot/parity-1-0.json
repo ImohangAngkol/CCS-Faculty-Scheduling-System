@@ -1,0 +1,42 @@
+{
+  "scope": "Fictional original-engine versus versioned bundle consumer; technical verification only",
+  "parameters": {
+    "population_size": 2,
+    "generations": 1,
+    "fresh_chromosomes": 0,
+    "baseline_mode": "fresh",
+    "mutation_attempts": 1,
+    "max_restarts": 5
+  },
+  "legacy_engine_fingerprint": "46bd518ba900fad38b815d1bad418b1090492c82ece5b26afe7661579432db1b",
+  "receipt": {
+    "contract": "ga-bundle-consumption-receipt-v1",
+    "run_id": "00000000-0000-4000-8000-000000000811",
+    "verification_scope": "TECHNICAL_CONSUMPTION_OF_CAPTURED_BUNDLE_ONLY",
+    "verification_status": "VERIFIED",
+    "bundle_fingerprint": "ad7e35daa81ee2160f21fd022b5fb1a190e7cd74d5b90efe4e3935e9adda6023",
+    "loaded_model_fingerprint": "1677c2bb62dcb6207f763047a0c322ce088e69ad1d070b57317b362bffb6ca2b",
+    "consumed_entry_fingerprint": "6b83c9d3d464986eff4707149335dc8a843d46391b3ac489f59126c7a5a1d2ea",
+    "rng_entry_fingerprint": "342bc661df4acd3c27e0c30c011859c2bc11c595ef50d81bdc34fd5cffd49489",
+    "configuration_fingerprint": "361128678ed25d257f8d5237892799c767e274b230080da7b28a247d6606c58a",
+    "scoring_context_fingerprint": "9bde1cd9e336cddda4828921eb87b5f5a6fbfc1075f7795ae3c0efa665be02de",
+    "loader_contract": "ga-captured-input-bundle-v1",
+    "optimizer_version": "ga-bundle-consumer-v1",
+    "optimizer_fingerprint": "a287e0ad93ea249bad327fd67ff6c0b5205a02cba232977afe49203fe5265fb5",
+    "state": "COMPLETED",
+    "checkpoint_fingerprint": null,
+    "checkpoint_sequence": 0,
+    "parent_checkpoint_fingerprint": null,
+    "bound_functions": 120,
+    "function_calls": 161172,
+    "eligible_for_current": false,
+    "institutional_authorization": "NOT_ESTABLISHED",
+    "academic_source_verification": "UNVERIFIED_U5G_CAPTURE_ONLY",
+    "saved_best_promotion": false,
+    "publication": false,
+    "reasons": []
+  },
+  "schedule_fitness_history_and_rng_equal": true,
+  "saved_best_promotion": false,
+  "authority": "NOT_ESTABLISHED"
+}

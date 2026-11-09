@@ -1,0 +1,23 @@
+{
+  "selection": "resource-regressions",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_preassigned_assignments.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-9h9kiw7z\\pytest-resource-regressions"
+  ],
+  "started_at": "2026-11-09T02:48:16.482681+08:00",
+  "ended_at": "2026-11-09T02:48:21.926383+08:00",
+  "elapsed_seconds": 5.4437601999379694,
+  "exit_code": 1,
+  "stdout": "F........                                                                [100%]\n================================== FAILURES ===================================\n____________ test_authoritative_ite184_config_and_normal_preflight ____________\n\n    def test_authoritative_ite184_config_and_normal_preflight():\n        # Read fresh templates, independent of test fixture resource substitutions.\n        from genetic_algorithm.utils.Functions import list_subjects, list_faculty\n        offerings = [subject for subject in list_subjects if subject.number == \"ITE184\"]\n>       assert {subject.section.code for subject in offerings} == {\"4A\", \"4B\"}\nE       AssertionError: assert set() == {'4A', '4B'}\nE         \nE         Extra items in the right set:\nE         '4A'\nE         '4B'\nE         Use -v to get more diff\n\ntests\\test_preassigned_assignments.py:64: AssertionError\n============================ slowest 10 durations =============================\n0.38s call     tests/test_preassigned_assignments.py::test_json_roundtrip_and_tampered_locks\n0.30s setup    tests/test_preassigned_assignments.py::test_authoritative_ite184_config_and_normal_preflight\n0.07s call     tests/test_preassigned_assignments.py::test_external_is_excluded_from_fitness_and_load_ceiling\n0.07s call     tests/test_preassigned_assignments.py::test_crossover_preserves_locked_resources\n0.05s call     tests/test_preassigned_assignments.py::test_reset_and_rollback_preserve_declarations\n0.05s call     tests/test_preassigned_assignments.py::test_mutation_preserves_locked_resources\n0.02s call     tests/test_preassigned_assignments.py::test_locked_identity_room_duration_and_ga_eligibility\n0.02s call     tests/test_preassigned_assignments.py::test_external_overlap_and_future_preassignment\n0.01s call     tests/test_preassigned_assignments.py::test_room_and_section_conflicts_apply\n0.01s setup    tests/test_preassigned_assignments.py::test_reset_and_rollback_preserve_declarations\n=========================== short test summary info ===========================\nFAILED tests/test_preassigned_assignments.py::test_authoritative_ite184_config_and_normal_preflight\n1 failed, 8 passed in 3.79s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

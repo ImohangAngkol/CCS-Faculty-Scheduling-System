@@ -1,0 +1,36 @@
+{
+  "scope": "One fictional 2-faculty/2-offering H/I run, population 2, one generation. Instrumented durable checkpoint calls include validation/transaction; not a performance benchmark or seven-day extrapolation.",
+  "wall_seconds": 2.503476900048554,
+  "checkpoint_writes": [
+    {
+      "checkpoint_bytes": 150304,
+      "sequence": 1,
+      "write_seconds": 0.015656600007787347
+    }
+  ],
+  "stored_database_bytes": 262144,
+  "paused_checkpoint_bytes": 150304,
+  "initialization_pause_seconds": 1.0622235999908298,
+  "continuation_seconds": 1.4412533000577241,
+  "final_fitness": 0,
+  "convergence_claim": false,
+  "initial_rng_saved": true,
+  "seed_exported": false,
+  "production_storage_changed": false,
+  "memory_before": {
+    "working_set_bytes": 206848000,
+    "process_lifetime_peak_working_set_bytes": 254709760,
+    "private_commit_bytes_NOT_RSS": 684490752
+  },
+  "memory_after": {
+    "working_set_bytes": 218882048,
+    "process_lifetime_peak_working_set_bytes": 254709760,
+    "private_commit_bytes_NOT_RSS": 697024512
+  },
+  "memory_sampling": {
+    "sampled_interval_peak_working_set_bytes": 221507584,
+    "sample_count": 41,
+    "poll_interval_seconds": 0.05,
+    "scope": "Sampled peak may miss short spikes; OS lifetime peak is separately reported"
+  }
+}

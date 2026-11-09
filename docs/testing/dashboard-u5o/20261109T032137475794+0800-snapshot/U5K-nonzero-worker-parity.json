@@ -1,0 +1,30 @@
+{
+  "scope": "Fictional original fixed engine versus process-batched worker; not institutional acceptance",
+  "original_fitness": 455.0,
+  "worker_fitness": 455.0,
+  "fitness_breakdown": {
+    "daily_teaching_load": 0,
+    "day_preference": 0,
+    "lecture_lab_preference": 0,
+    "number_of_preparations": 0,
+    "schedule_style": 0,
+    "subject_preference": 455.0,
+    "teaching_load_balance": 0,
+    "time_preference": 0
+  },
+  "history": [
+    {
+      "best_fitness": 455.0,
+      "generation": 0
+    },
+    {
+      "best_ever_fitness": 455.0,
+      "generation": 1,
+      "generation_best_fitness": 455.0
+    }
+  ],
+  "schedule_fitness_history_breakdown_faculty_and_rng_equal": true,
+  "global_rng_unchanged": true,
+  "saved_best_promotion": false,
+  "checkpoint_sequence": 2
+}

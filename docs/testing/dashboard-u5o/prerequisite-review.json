@@ -1,0 +1,122 @@
+{
+  "reviewed_at": "2026-11-09T02:56:51.118283+08:00",
+  "reports": [
+    {
+      "path": "docs/dashboard-u5a-current-evaluation-compatibility.md",
+      "sha256": "165089c1a2498c7dd06e73e90b7ecde0f3c5c4a4a1453d78e54af992dc6ced03",
+      "characters_reviewed": 24759
+    },
+    {
+      "path": "docs/dashboard-u5b-academic-context-provenance.md",
+      "sha256": "d0c27ee709c9084f4cc8c1a27318d856f2227e6026101c03d78b8b974e405152",
+      "characters_reviewed": 21954
+    },
+    {
+      "path": "docs/dashboard-u5c-institutional-context-qualification.md",
+      "sha256": "c49663071c8066f4c2faa81358175693a569cbae606ac1ae49f7fb91dfe1d347",
+      "characters_reviewed": 34196
+    },
+    {
+      "path": "docs/dashboard-u5d-run-bound-loader-receipt.md",
+      "sha256": "3fe87c0ecce6103ea873f63d28ec6debd54bbe1d44f1a27e6821c4fc6146342a",
+      "characters_reviewed": 18252
+    },
+    {
+      "path": "docs/dashboard-u5e-advanced-ga-analysis.md",
+      "sha256": "268c0fd467e382a47ff88f880c2ce91f06da0fa04c5fd2683e63738b00604aa6",
+      "characters_reviewed": 22380
+    },
+    {
+      "path": "docs/dashboard-u5f-controlled-continuous-optimization.md",
+      "sha256": "c11443edadb8b7ae66b1c3196764a1280fc406bbcb2632fd566106b6b912d17a",
+      "characters_reviewed": 21337
+    },
+    {
+      "path": "docs/dashboard-u5g-immutable-ga-input-bundle.md",
+      "sha256": "cbedc67cbe6b94772032d7bb9a4cf0524b6b693e4645daae3d90f4ab31cd9faf",
+      "characters_reviewed": 22344
+    },
+    {
+      "path": "docs/dashboard-u5h-optimizer-consumption-boundary.md",
+      "sha256": "58cfdf685c648feb6d0beb3faa7e6902e74560045a3fcc688c6d78c13e46e932",
+      "characters_reviewed": 22664
+    },
+    {
+      "path": "docs/dashboard-u5i-trusted-run-admission.md",
+      "sha256": "ff7e541b2cd8e9bc2edc18c0f876b1a51e92d179857e592f56140b2f40ec923c",
+      "characters_reviewed": 23036
+    },
+    {
+      "path": "docs/dashboard-u5j-authority-capture-storage.md",
+      "sha256": "79b0809b32146a9b59bf82bd86fd3d58faded009ac62cc1cccee88de7803673d",
+      "characters_reviewed": 21578
+    },
+    {
+      "path": "docs/dashboard-u5k-bounded-continuous-worker.md",
+      "sha256": "1a7a2dfc78c38be64bd4bc5ca400a794a1e6fc8cb73e2801d6602f4e2390a353",
+      "characters_reviewed": 21809
+    },
+    {
+      "path": "docs/dashboard-u5l-windows-supervision-resource-qualification.md",
+      "sha256": "77616a795eef8ecd07b41b5e759e1b2ae3a506db4b4b9907be849a99f2081419",
+      "characters_reviewed": 22933
+    },
+    {
+      "path": "docs/dashboard-u5m-reliability-deployment-qualification.md",
+      "sha256": "518f3b2e456f0090d8ad94aa8ae4f8bd9e575ef6590b495a31b784f44ee2b7c5",
+      "characters_reviewed": 21299
+    },
+    {
+      "path": "docs/dashboard-u5n-institutional-authority-deployment-recovery.md",
+      "sha256": "a1afba1db27b04426516237333ed14cbed0a7ec810cd9e3c02ebde007a3abb8d",
+      "characters_reviewed": 22819
+    },
+    {
+      "path": "docs/thesis-functional-correctness-audit.md",
+      "sha256": "92ddc479100afb9360e71450ac6064460477913798746de62546895f6236b5e0",
+      "characters_reviewed": 30146
+    },
+    {
+      "path": "docs/thesis-objective-traceability.md",
+      "sha256": "ae04658c9abf21fc1b8601fd7ac3424960a15475f6e9952c5fc939150929854a",
+      "characters_reviewed": 19568
+    },
+    {
+      "path": "docs/faculty-policy-qualification.md",
+      "sha256": "84bfe01de0780ecd3342ddf4b1a3622f2aa4293e42a5bc73cf213029c81e9e71",
+      "characters_reviewed": 33592
+    },
+    {
+      "path": "docs/faculty-cohort-f1-5-it-qualification.md",
+      "sha256": "8a81876aaaa202e8c8972945cdff8ae042a12d68dfbe75e2b1d491ff95d80958",
+      "characters_reviewed": 22080
+    },
+    {
+      "path": "docs/fitness-policy-f2c-contract.md",
+      "sha256": "a623687183b8e81fe8c80aa0c5c378e6bb9f2862f51700a5de7018b3763f6498",
+      "characters_reviewed": 32587
+    },
+    {
+      "path": "docs/faculty-specialization-f3c-policy-readiness.md",
+      "sha256": "a259505170a5cd20844f5181d9c66ac1f7647a0a0ec1577563f7d4fc81b9ffbd",
+      "characters_reviewed": 29160
+    },
+    {
+      "path": "docs/availability-f4b-persistence-contract.md",
+      "sha256": "b41df8c0190ed5a4cfa6e81994df63b0957c46ca34a39d8150819665bc3046ea",
+      "characters_reviewed": 28515
+    },
+    {
+      "path": "docs/ga-memory-study.md",
+      "sha256": "c37ce51da1be87f813422709225d959fadcbf63a8e44b943bcb975512e60599d",
+      "characters_reviewed": 22500
+    },
+    {
+      "path": "docs/ga-live-center-integration-status.md",
+      "sha256": "e18209e9e87ab7bebe051c0a6ddfade288ed5b239d00d24195e1dc26f79dc691",
+      "characters_reviewed": 1002
+    }
+  ],
+  "formal_thesis_alignment": "UNVERIFIED",
+  "historical_test_counts_not_added_to_fresh_results": true
+}

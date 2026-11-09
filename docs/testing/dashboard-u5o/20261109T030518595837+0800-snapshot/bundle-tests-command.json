@@ -1,0 +1,23 @@
+{
+  "selection": "bundle-tests",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_ga_input_bundle.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-oj22fosi\\pytest-bundle-tests"
+  ],
+  "started_at": "2026-11-09T03:05:18.596628+08:00",
+  "ended_at": "2026-11-09T03:05:26.168297+08:00",
+  "elapsed_seconds": 7.57048350002151,
+  "exit_code": 0,
+  "stdout": "................................                                         [100%]\n============================ slowest 10 durations =============================\n4.39s setup    tests/test_ga_input_bundle.py::test_canonical_capture_is_repeatable_and_consumes_no_rng\n0.08s call     tests/test_ga_input_bundle.py::test_concurrent_materializations_are_separate_and_cross_run_reuse_fails\n0.06s call     tests/test_ga_input_bundle.py::test_tampering_or_missing_bundle_is_rejected[materialize]\n0.05s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[configuration]\n0.05s call     tests/test_ga_input_bundle.py::test_seed_is_required_and_captured_without_loading_any_store[saved]\n0.05s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[legacy_frame]\n0.05s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[weights]\n0.04s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[cached_fallback]\n0.04s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[rooms]\n0.04s call     tests/test_ga_input_bundle.py::test_subsequent_source_changes_do_not_mutate_capture[faculty]\n32 passed in 5.95s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

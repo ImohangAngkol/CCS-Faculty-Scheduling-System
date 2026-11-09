@@ -1,0 +1,315 @@
+{
+  "reviewed_at": "2026-11-09T09:01:16.143229+08:00",
+  "attempt_records": 36,
+  "latest_by_selection": {
+    "u5o-audit": {
+      "path": "docs/testing/dashboard-u5o/20261109T024239606450+0800-snapshot/u5o-audit-command.json",
+      "selection": "u5o-audit",
+      "exit_code": 0,
+      "counts": {
+        "passed": 3,
+        "warnings": 2
+      }
+    },
+    "contracts-all": {
+      "path": "docs/testing/dashboard-u5o/20261109T022705810084+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 0,
+      "counts": {
+        "tests": 385,
+        "pass": 385,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "build": {
+      "path": "docs/testing/dashboard-u5o/20261109T022710917157+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "bundle": {
+      "path": "docs/testing/dashboard-u5o/20261109T022726638496+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-u5o/20261109T022729409368+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {}
+    },
+    "browser": {
+      "path": "docs/testing/dashboard-u5o/20261109T022745315790+0800-browser/command.json",
+      "selection": "browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    "d16-live": {
+      "path": "docs/testing/dashboard-u5o/20261109T025415237935+0800-snapshot/d16-live-command.json",
+      "selection": "d16-live",
+      "exit_code": 0,
+      "counts": {
+        "passed": 1,
+        "warnings": 2
+      }
+    },
+    "dashboard-all": {
+      "path": "docs/testing/dashboard-u5o/20261109T024316670786+0800-snapshot/dashboard-all-command.json",
+      "selection": "dashboard-all",
+      "exit_code": 0,
+      "counts": {
+        "passed": 458,
+        "warnings": 8
+      }
+    },
+    "resource-regressions": {
+      "path": "docs/testing/dashboard-u5o/20261109T024816479303+0800-snapshot/resource-regressions-command.json",
+      "selection": "resource-regressions",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 8
+      }
+    },
+    "resource-fictional": {
+      "path": "docs/testing/dashboard-u5o/20261109T025602383472+0800-snapshot/resource-fictional-command.json",
+      "selection": "resource-fictional",
+      "exit_code": 0,
+      "counts": {
+        "passed": 8,
+        "deselected": 1
+      }
+    },
+    "v2-engine": {
+      "path": "docs/testing/dashboard-u5o/20261109T025630339012+0800-snapshot/v2-engine-command.json",
+      "selection": "v2-engine",
+      "exit_code": 0,
+      "counts": {
+        "passed": 30
+      }
+    },
+    "v2-api": {
+      "path": "docs/testing/dashboard-u5o/20261109T025712966152+0800-snapshot/v2-api-command.json",
+      "selection": "v2-api",
+      "exit_code": 0,
+      "counts": {
+        "passed": 18,
+        "warnings": 2
+      }
+    },
+    "backend-regressions": {
+      "path": "docs/testing/dashboard-u5o/20261109T025801510282+0800-snapshot/backend-regressions-command.json",
+      "selection": "backend-regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 99,
+        "warnings": 2
+      }
+    },
+    "race": {
+      "path": "docs/testing/dashboard-u5o/20261109T025942632305+0800-snapshot/race-command.json",
+      "selection": "race",
+      "exit_code": 0,
+      "counts": {
+        "passed": 19,
+        "warnings": 2
+      }
+    },
+    "receipts": {
+      "path": "docs/testing/dashboard-u5o/20261109T030103145281+0800-snapshot/receipts-command.json",
+      "selection": "receipts",
+      "exit_code": 0,
+      "counts": {
+        "passed": 36,
+        "warnings": 2
+      }
+    },
+    "consumption": {
+      "path": "docs/testing/dashboard-u5o/20261109T030243654930+0800-snapshot/consumption-command.json",
+      "selection": "consumption",
+      "exit_code": 0,
+      "counts": {
+        "passed": 39
+      }
+    },
+    "bundle-tests": {
+      "path": "docs/testing/dashboard-u5o/20261109T030518595837+0800-snapshot/bundle-tests-command.json",
+      "selection": "bundle-tests",
+      "exit_code": 0,
+      "counts": {
+        "passed": 32
+      }
+    },
+    "admission": {
+      "path": "docs/testing/dashboard-u5o/20261109T030543478713+0800-snapshot/admission-command.json",
+      "selection": "admission",
+      "exit_code": 0,
+      "counts": {
+        "passed": 50,
+        "warnings": 2
+      }
+    },
+    "qualification": {
+      "path": "docs/testing/dashboard-u5o/20261109T030726612227+0800-snapshot/qualification-command.json",
+      "selection": "qualification",
+      "exit_code": 0,
+      "counts": {
+        "passed": 49
+      }
+    },
+    "identity": {
+      "path": "docs/testing/dashboard-u5o/20261109T030813866717+0800-snapshot/identity-command.json",
+      "selection": "identity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 16,
+        "warnings": 2
+      }
+    },
+    "preference-scope": {
+      "path": "docs/testing/dashboard-u5o/20261109T030849771231+0800-snapshot/preference-scope-command.json",
+      "selection": "preference-scope",
+      "exit_code": 0,
+      "counts": {
+        "passed": 3,
+        "warnings": 2
+      }
+    },
+    "analysis": {
+      "path": "docs/testing/dashboard-u5o/20261109T030921734870+0800-snapshot/analysis-command.json",
+      "selection": "analysis",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      }
+    },
+    "readiness": {
+      "path": "docs/testing/dashboard-u5o/20261109T030951921956+0800-snapshot/readiness-command.json",
+      "selection": "readiness",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20,
+        "warnings": 2
+      }
+    },
+    "native": {
+      "path": "docs/testing/dashboard-u5o/20261109T031600168754+0800-snapshot/native-command.json",
+      "selection": "native",
+      "exit_code": 0,
+      "counts": {
+        "passed": 12
+      }
+    },
+    "supervised": {
+      "path": "docs/testing/dashboard-u5o/20261109T031633961702+0800-snapshot/supervised-command.json",
+      "selection": "supervised",
+      "exit_code": 0,
+      "counts": {
+        "passed": 41
+      }
+    },
+    "worker": {
+      "path": "docs/testing/dashboard-u5o/20261109T032137475794+0800-snapshot/worker-command.json",
+      "selection": "worker",
+      "exit_code": 0,
+      "counts": {
+        "passed": 32
+      }
+    },
+    "parity": {
+      "path": "docs/testing/dashboard-u5o/20261109T032505356162+0800-snapshot/parity-command.json",
+      "selection": "parity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 5
+      }
+    },
+    "legacy": {
+      "path": "docs/testing/dashboard-u5o/20261109T032643212089+0800-snapshot/legacy-command.json",
+      "selection": "legacy",
+      "exit_code": 0,
+      "counts": {
+        "passed": 10,
+        "warnings": 2
+      }
+    },
+    "recovery": {
+      "path": "docs/testing/dashboard-u5o/20261109T032944107538+0800-snapshot/recovery-command.json",
+      "selection": "recovery",
+      "exit_code": 0,
+      "counts": {
+        "passed": 40
+      }
+    },
+    "parent": {
+      "path": "docs/testing/dashboard-u5o/20261109T033538550941+0800-snapshot/parent-command.json",
+      "selection": "parent",
+      "exit_code": 0,
+      "counts": {
+        "passed": 7
+      }
+    }
+  },
+  "failures": [
+    {
+      "path": "docs/testing/dashboard-u5o/20261109T022625414835+0800-snapshot/u5o-audit-command.json",
+      "selection": "u5o-audit",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 1,
+        "warnings": 2
+      },
+      "assessment": "New audit test assumed flat APIRoute registry; corrected effective lazy route traversal. No application change. Final three audit cases pass."
+    },
+    {
+      "path": "docs/testing/dashboard-u5o/20261109T023230676516+0800-snapshot/d16-live-command.json",
+      "selection": "d16-live",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "warnings": 2
+      },
+      "assessment": "Owned snapshot missing node_modules link, causing Vite module lookup failure before scenarios. Added link to existing dependencies, no installation or product change. Final live suite passes."
+    },
+    {
+      "path": "docs/testing/dashboard-u5o/20261109T024816479303+0800-snapshot/resource-regressions-command.json",
+      "selection": "resource-regressions",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 8
+      },
+      "assessment": "One test requires excluded institutional ITE184 section data. Remains failed in its record; eight fictional cases rerun separately, one explicitly deselected. Not a verified institutional preflight."
+    },
+    {
+      "path": "docs/testing/dashboard-u5o/20261109T031020112804+0800-snapshot/native-command.json",
+      "selection": "native",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 11
+      },
+      "assessment": "CPU job-quota child terminated at 5.109375 user seconds, exceeding <5 assertion. Unchanged rerun passed at 2.3125. Root cause of overshoot not established; no timing threshold changed."
+    }
+  ],
+  "result_scope": "Final selected results only; successful repeated attempts are not summed as extra coverage. Live wrapper is one Python case containing 21 original workflow scenarios plus one expected-defect characterization and one twenty-route survey.",
+  "still_unverified": [
+    "Institutional ITE184 data-dependent preflight",
+    "Strict CPU quota timing bound and seven-day host enforcement",
+    "Actual V1 HTTP stream to working Live Center",
+    "All unclicked controls and native print/export dialogs",
+    "All 30-minute, 6-hour, 24-hour and 168-hour duration gates"
+  ],
+  "syntax_note": "Two new draft analysis-generator syntax errors were corrected before any analysis JSON was produced. Those were authoring errors, not failed application tests. Existing evidence was not rewritten."
+}

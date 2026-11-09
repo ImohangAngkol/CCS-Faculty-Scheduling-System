@@ -1,0 +1,26 @@
+{
+  "head": "30af999939146dbf818b9d86caa66646da46c5cf",
+  "source_sha256": {
+    "backend/tests/test_full_system_audit.py": "cd1d2d86f283ecfeb6697eacfa0e0ff279c8ff746b24475b1d1a5ac691cef0d6"
+  },
+  "ui_overlay_sha256": {},
+  "ui_mode": "committed",
+  "proposed_blob_oids": {
+    "backend/tests/test_full_system_audit.py": "9b83069ae70d1190ad2451c8dfcbaddc53ee7cdb"
+  },
+  "results": [
+    {
+      "selection": "resource-regressions",
+      "exit_code": 1
+    }
+  ],
+  "qualified_selections": [
+    "resource-regressions"
+  ],
+  "complete": false,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-9h9kiw7z\\repository"
+}

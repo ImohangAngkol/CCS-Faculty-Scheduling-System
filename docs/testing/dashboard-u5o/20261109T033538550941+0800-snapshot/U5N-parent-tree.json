@@ -1,0 +1,5 @@
+{
+  "parent_and_nested_worker_in_outer_job": true,
+  "active_after_close": 0,
+  "unrelated_owned_sentinel_survived": true
+}
