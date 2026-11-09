@@ -1,0 +1,11 @@
+{
+  "actual_TCP_HTTP": true,
+  "actual_FastAPI_auth_CSRF": true,
+  "actual_Windows_worker": true,
+  "disposable_SQLite": true,
+  "state": "COMPLETED",
+  "telemetry_equal_after_API_reconstruction": true,
+  "event_count": 4,
+  "no_institutional_authority": true,
+  "active_restore_exposed": false
+}

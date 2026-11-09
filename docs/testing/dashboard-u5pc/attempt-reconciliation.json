@@ -1,0 +1,284 @@
+{
+  "recorded_at": "2026-11-09T17:20:30.165338+08:00",
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165424868193+0800-observations/command.json",
+      "selection": "observations",
+      "exit_code": 0,
+      "counts": {
+        "passed": 24
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165516292094+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 1,
+      "counts": {
+        "tests": 343,
+        "pass": 342,
+        "fail": 1,
+        "skipped": 0
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165522361713+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 2,
+      "counts": {},
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165535029480+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {},
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165538720758+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165705102931+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 0,
+      "counts": {
+        "tests": 356,
+        "pass": 356,
+        "fail": 0,
+        "skipped": 0
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165709369107+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {},
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165718487829+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {},
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165720561868+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165727102297+0800-preview-browser/command.json",
+      "selection": "preview-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "skipped": 0
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T165952598793+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170140408261+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 0,
+      "counts": {
+        "passed": 1
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170342855117+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 0,
+      "counts": {
+        "tests": 361,
+        "pass": 361,
+        "fail": 0,
+        "skipped": 0
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170347250301+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {},
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170356410656+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {},
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170358248953+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170405001847+0800-preview-browser/command.json",
+      "selection": "preview-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "skipped": 0
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170421932014+0800-parity/command.json",
+      "selection": "parity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 5
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170515907128+0800-legacy/command.json",
+      "selection": "legacy",
+      "exit_code": 0,
+      "counts": {
+        "passed": 10
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170640148942+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 1
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170701965123+0800-regressions/command.json",
+      "selection": "regressions",
+      "exit_code": 0,
+      "counts": {
+        "passed": 99
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170729019460+0800-preview-browser/command.json",
+      "selection": "preview-browser",
+      "exit_code": 0,
+      "counts": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "skipped": 0
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170751464436+0800-receipts/command.json",
+      "selection": "receipts",
+      "exit_code": 0,
+      "counts": {
+        "passed": 36
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170833793594+0800-consumption/command.json",
+      "selection": "consumption",
+      "exit_code": 0,
+      "counts": {
+        "passed": 39
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T170956556806+0800-bridge/command.json",
+      "selection": "bridge",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 50
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T171137596488+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 0,
+      "counts": {
+        "passed": 2
+      },
+      "historical_evidence_preserved": true
+    },
+    {
+      "path": "docs/testing/dashboard-u5pc/20261109T171536111172+0800-observations/command.json",
+      "selection": "observations",
+      "exit_code": 0,
+      "counts": {
+        "passed": 24
+      },
+      "historical_evidence_preserved": true
+    }
+  ],
+  "final_distinct_selected_python_passes": 265,
+  "remaining_historical_expectation_failures": 1,
+  "frontend_contracts": 361,
+  "real_browser_scenarios": 9,
+  "intercepted_browser_scenarios": 12,
+  "issues": [
+    {
+      "kind": "Snapshot packaging",
+      "cause": "Missing fixture overlay",
+      "correction": "Explicit new fixture copied; contract rerun passed"
+    },
+    {
+      "kind": "TypeScript",
+      "cause": "Optional description",
+      "correction": "Fixed fallback; final tsc/build/lint passed"
+    },
+    {
+      "kind": "Live test selector",
+      "cause": "Chart legend table selected instead of exact-value table",
+      "correction": "Caption-scoped selector; nine scenarios passed"
+    },
+    {
+      "kind": "Standalone handoff tooling",
+      "cause": "Missing backend import path; independently reproduced without running modules",
+      "correction": "Exact owned snapshot backend path and future sanitized error capture; real host start/stop passed"
+    },
+    {
+      "kind": "Historical contract mismatch",
+      "test": "tests/test_research_bridge.py::test_original_http_and_production_providers_unmodified",
+      "outcome": "FAIL retained",
+      "reason": "Asserts no research routes; U5PC intentionally adds four GET-only routes. New test enforces current read-only boundary. No old test edited or skipped."
+    }
+  ],
+  "test_scope": "Final selected outcomes, not sum of reruns; no claim of whole-repository green tests or live PostgreSQL acceptance."
+}

@@ -1,0 +1,85 @@
+{
+  "scope": "Actual Edge/React -> TCP FastAPI -> real sessions and private SQLite. Worker genuinely executed; interruption scenario uses explicitly injected expired-owner metadata.",
+  "scenarios": [
+    {
+      "name": "U5PC-L01 anonymous console redirects to sign-in",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-L02 actual React login with FastAPI session",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-L03 real completed worker provenance and zero history",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-L04 durable worker telemetry and checkpoint metadata",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-L05 not-consumed run truthfully lacks metrics",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-L06 injected expired owner is derived interruption",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-L07 reload and fresh selection retain durable data",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-L08 research reads are GET-only and no operational controls",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-L09 malformed and unauthorized resource probes fail",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/4a4ff507-8e7c-4bae-8c3d-8fb83d2943ac",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/0a502a77-80e8-4968-a9da-e1f97c321a49",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/5585b066-06c1-41a2-bd02-a90d7a66708b",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/4a4ff507-8e7c-4bae-8c3d-8fb83d2943ac",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/not-a-uuid",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": [],
+  "HTTP_interception": false
+}

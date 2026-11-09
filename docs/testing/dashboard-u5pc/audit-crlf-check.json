@@ -1,0 +1,18 @@
+{
+  "default_check_exit_code": 2,
+  "issues": [
+    {
+      "path": "backend/main.py",
+      "line": 23,
+      "issue": "trailing whitespace."
+    },
+    {
+      "path": "backend/main.py",
+      "line": 94,
+      "issue": "trailing whitespace."
+    }
+  ],
+  "CRLF_aware_check_exit_code": 0,
+  "classification": "New exact CRLF registration lines within existing LF files; original bytes proven unchanged by in-memory inverse patch. No working-tree normalization performed.",
+  "historical_stop_preserved": true
+}

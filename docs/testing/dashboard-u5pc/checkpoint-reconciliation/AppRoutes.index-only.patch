@@ -1,0 +1,6 @@
+--- a/frontend/src/routes/AppRoutes.tsx
++++ b/frontend/src/routes/AppRoutes.tsx
+@@ -52,0 +53 @@
++import ResearchConsole from "../pages/ResearchConsole";
+@@ -73,0 +75 @@
++        <Route path="/research/runs" element={<ResearchConsole />} />

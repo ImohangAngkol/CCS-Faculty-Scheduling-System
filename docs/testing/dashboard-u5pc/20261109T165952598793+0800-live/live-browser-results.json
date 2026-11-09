@@ -1,0 +1,34 @@
+{
+  "scope": "Actual Edge/React -> TCP FastAPI -> real sessions and private SQLite. Worker genuinely executed; interruption scenario uses explicitly injected expired-owner metadata.",
+  "scenarios": [
+    {
+      "name": "U5PC-L01 anonymous console redirects to sign-in",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-L02 actual React login with FastAPI session",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-L03 real completed worker provenance and zero history",
+      "status": "FAIL",
+      "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Generation best'\n- '0'\n"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/752fa185-cb80-4c0a-ab40-ce6e51226e47",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": [],
+  "HTTP_interception": false
+}

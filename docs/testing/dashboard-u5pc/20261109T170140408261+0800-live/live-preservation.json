@@ -1,0 +1,8 @@
+{
+  "research_files_byte_identical": true,
+  "API_reconstruction_equal": true,
+  "auth_database_separate": true,
+  "all_research_requests_GET": true,
+  "worker_completed_before_reads": true,
+  "production_authority": false
+}

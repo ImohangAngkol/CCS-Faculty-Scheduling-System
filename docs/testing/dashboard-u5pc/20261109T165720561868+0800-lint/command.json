@@ -1,0 +1,38 @@
+{
+  "selection": "lint",
+  "head": "1299d000a205287dbfc2d306decc427c98c2ee6e",
+  "ui_mode": "committed-u5pb-plus-only-u5pc",
+  "ui_overlay_sha256": {
+    "frontend/src/api/researchObservations.ts": "a48d478b71cd3acf0111d4431fd2253a68b5c5aa75f95f8f48495fccde44050a",
+    "frontend/src/pages/ResearchConsole.tsx": "0e7b888640026c1ae3b69ec388047456eee9be22c3bf114c250949c14d5d3c5c",
+    "frontend/src/routes/AppRoutes.tsx": "546a20c8310dbf613ed64cd7c9f64916975b8022e905990c8f00d81db03c0ea9",
+    "frontend/src/layouts/AdminLayout.tsx": "b38b4df433a5ea9bf50a9fdc726598b9385ed3d067ecb2b72c05c858dca1fe8a",
+    "frontend/tests/researchObservations.test.mjs": "5c207553a4d90037d475c491d62e226ae75aa7a36adf9a26a6e283a6db331d52",
+    "frontend/tests/researchObservations.fixtures.mjs": "3736b2159d8d74a4395837bbcae9a9b46fedc4920856c79838cc18fa7bed1e82",
+    "frontend/tests/researchConsole.driver.mjs": "84d3eef7a467ba5f8db1362c14490c4eba0394c82c3aae032bf3af06bfe01f2c",
+    "frontend/tests/researchConsole.browser.test.mjs": "123e765a6ca97450f11864a97fd4426c6dc2da4bdad05b2b321de6790b03fdb5"
+  },
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/api/researchObservations.ts",
+    "src/pages/ResearchConsole.tsx",
+    "src/routes/AppRoutes.tsx",
+    "src/layouts/AdminLayout.tsx"
+  ],
+  "started_at": "2026-11-09T16:57:20.562313+08:00",
+  "ended_at": "2026-11-09T16:57:27.101337+08:00",
+  "elapsed_seconds": 6.5390362000325695,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "test_cache_isolation": {
+    "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+    "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+    "test_config_sha256": "9fee26a571c86026f267041f8ef82e1a4088f3b73c6f4babdf9f00604191939f",
+    "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5o-frontend-5v1dglih\\vite-cache",
+    "shared_node_modules_cache_used": false,
+    "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+  },
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5PB worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

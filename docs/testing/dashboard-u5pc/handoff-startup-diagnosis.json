@@ -1,0 +1,11 @@
+{
+  "scope": "Read-only Python module-path probe in exact failed owned snapshot; no worker or DB invocation",
+  "probe": {
+    "services_import_resolvable": false,
+    "no_module_executed": true
+  },
+  "root_cause": "Standalone script execution sets sys.path[0] to docs/testing/dashboard-u5pc, not backend; missing explicit owned backend import path",
+  "failure_record": "docs/testing/dashboard-u5pc/20261109T170640148942+0800-live/command.json",
+  "historical_stderr": "Not captured by original failed test; no fabricated traceback",
+  "correction": "Add exact snapshot-relative backend sys.path before services imports; capture sanitized future handoff stderr."
+}

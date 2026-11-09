@@ -1,0 +1,9 @@
+{
+  "status": "PRE_REPAIR_GUARD_STOP",
+  "exception": "AssertionError",
+  "reason": "Draft import line number 54 was incorrect; exact replacement source puts it at line 53. Route remains line 75.",
+  "index_write_performed": false,
+  "HEAD_unchanged": true,
+  "working_tree_unchanged": true,
+  "correction": "Correct metadata to observed line 53; original draft preserved separately. Source and proposed patch bytes unchanged."
+}

@@ -1,0 +1,15 @@
+{
+  "status": "STOPPED_BEFORE_SEAL",
+  "exception": "AssertionError",
+  "code": "WHITESPACE_STOP",
+  "path": "frontend/src/routes/AppRoutes.tsx",
+  "baseline_trailing_whitespace_lines": [
+    126
+  ],
+  "current_trailing_whitespace_lines": [
+    128
+  ],
+  "classification": "Pre-existing whitespace in unchanged portions of clean-at-entry integration file; not introduced by U5PC",
+  "correction": "Check added lines with git diff --check; prove all original bytes by in-memory inversion of only five approved insertions. Whole-file whitespace scan remains mandatory for new artifacts.",
+  "working_tree_not_reformatted": true
+}

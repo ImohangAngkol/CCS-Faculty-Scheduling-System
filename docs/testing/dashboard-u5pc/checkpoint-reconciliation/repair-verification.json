@@ -1,0 +1,11 @@
+{
+  "status": "INDEX_ONLY_REPAIR_VERIFIED",
+  "original_blob": "51747f3f656494aa57f1b0c01aad1db883ae104d",
+  "replacement_blob": "4de8abbdcb5125f22a36ad9cc7278b04cddbaa15",
+  "working_tree_sha256_after": "546a20c8310dbf613ed64cd7c9f64916975b8022e905990c8f00d81db03c0ea9",
+  "other_98_staged_blobs_identical": true,
+  "staged_whitespace_exit_code": 0,
+  "patch_sha256": "5bbfe032b914978bcbcbe7ac044c9c7c57039224bc84409e1144b2d33b6c3627",
+  "current_staged_inventory_count": 99,
+  "HEAD_unchanged": true
+}

@@ -1,0 +1,20 @@
+{
+  "observer": "CODEX_IMAGE_VIEW",
+  "reviewed_at": "2026-11-09T17:20:30.035950+08:00",
+  "privacy_reviewed": true,
+  "files": {
+    "docs/testing/dashboard-u5pc/20261109T165727102297+0800-preview-browser/S03-recorded-zero-history.png": "c60e3b2f6b2caf480fd4ff4373581a6d08465d44025e89244a6fbfd3c56191bf",
+    "docs/testing/dashboard-u5pc/20261109T165727102297+0800-preview-browser/S05-derived-interruption.png": "c60e3b2f6b2caf480fd4ff4373581a6d08465d44025e89244a6fbfd3c56191bf",
+    "docs/testing/dashboard-u5pc/20261109T170140408261+0800-live/L03-real-worker-history.png": "c4aa682214b9caf1322bebcc2f3f0a0ac635a94c19c2565b198d56e357b80858",
+    "docs/testing/dashboard-u5pc/20261109T170140408261+0800-live/L06-injected-expired-owner.png": "febf88c7797de5102294468ada134507a4e86215de703eeb467d1b15cfa16a9c",
+    "docs/testing/dashboard-u5pc/20261109T170405001847+0800-preview-browser/S03-recorded-zero-history.png": "c60e3b2f6b2caf480fd4ff4373581a6d08465d44025e89244a6fbfd3c56191bf",
+    "docs/testing/dashboard-u5pc/20261109T170405001847+0800-preview-browser/S05-derived-interruption.png": "c60e3b2f6b2caf480fd4ff4373581a6d08465d44025e89244a6fbfd3c56191bf",
+    "docs/testing/dashboard-u5pc/20261109T170640148942+0800-live/L03-real-worker-history.png": "1dbd347eb28f12c397d8715ab6d4d2f66c62e7fd94a268683572df5029c884f4",
+    "docs/testing/dashboard-u5pc/20261109T170640148942+0800-live/L06-injected-expired-owner.png": "2b7a98fa365ceda0bb1bdcb977f731d8f780f08e493cdb5d1d6f7c5eb55a116a",
+    "docs/testing/dashboard-u5pc/20261109T170729019460+0800-preview-browser/S03-recorded-zero-history.png": "584b5623ef534e1c5ac4d847e1ebf425a15d0099eba3e5655262213e96fb3ad7",
+    "docs/testing/dashboard-u5pc/20261109T170729019460+0800-preview-browser/S05-derived-interruption.png": "cd565d44b289d06d9f4aa3d54b488012ee250010547d03667f760b428e5625f1",
+    "docs/testing/dashboard-u5pc/20261109T171137596488+0800-live/L03-real-worker-history.png": "848ea26a3b734114d7f177190b83b0498f6cbce1b5d0d8f68ecbc75b31e18ce6",
+    "docs/testing/dashboard-u5pc/20261109T171137596488+0800-live/L06-injected-expired-owner.png": "39ac55f34d66c64a45cb7fc22219b1ad6aded2b95e8d0892de960de7c0d4b474"
+  },
+  "findings": "All twelve genuine PNGs visually inspected. Fictional accounts/run IDs and public context fingerprints only; no login/password/cookie/receipt/key. Six early viewport captures show only the header/list; six later full-page captures show actual detail, chart/timeline or missing-metric interruption. Intercepted and live scopes are distinct in their directories. No image edited."
+}

@@ -1,0 +1,35 @@
+{
+  "selection": "preview-browser",
+  "head": "1299d000a205287dbfc2d306decc427c98c2ee6e",
+  "ui_mode": "committed-u5pb-plus-only-u5pc",
+  "ui_overlay_sha256": {
+    "frontend/src/api/researchObservations.ts": "ce400676960c192703e9521c7fc07cecc084a9fc75a0786a652c6e64b08dab59",
+    "frontend/src/pages/ResearchConsole.tsx": "0e7b888640026c1ae3b69ec388047456eee9be22c3bf114c250949c14d5d3c5c",
+    "frontend/src/routes/AppRoutes.tsx": "546a20c8310dbf613ed64cd7c9f64916975b8022e905990c8f00d81db03c0ea9",
+    "frontend/src/layouts/AdminLayout.tsx": "b38b4df433a5ea9bf50a9fdc726598b9385ed3d067ecb2b72c05c858dca1fe8a",
+    "frontend/tests/researchObservations.test.mjs": "4b819828b5cacdacdc5ff41ebd8e87b3c1fbcd517b8603209165de2efb6d1302",
+    "frontend/tests/researchObservations.fixtures.mjs": "3736b2159d8d74a4395837bbcae9a9b46fedc4920856c79838cc18fa7bed1e82",
+    "frontend/tests/researchConsole.driver.mjs": "54200e440239e23de46443b4afc9ee625af3a92fc4edb039349f53f1877063e0",
+    "frontend/tests/researchConsole.browser.test.mjs": "123e765a6ca97450f11864a97fd4426c6dc2da4bdad05b2b321de6790b03fdb5"
+  },
+  "command": [
+    "node",
+    "--test",
+    "tests/researchConsole.browser.test.mjs"
+  ],
+  "started_at": "2026-11-09T17:07:29.019986+08:00",
+  "ended_at": "2026-11-09T17:08:50.978297+08:00",
+  "elapsed_seconds": 81.95833140006289,
+  "exit_code": 0,
+  "stdout": "\u25b6 U5PC intercepted observation states\n  \u2714 U5PC-S01 loading then empty (2835.769ms)\n  \u2714 U5PC-S02 access error and retry (123.1096ms)\n  \u2714 U5PC-S03 zero fitness chart and provenance (249.3702ms)\n  \u2714 U5PC-S04 missing generation metrics has no fabricated chart (58.7904ms)\n  \u2714 U5PC-S05 interruption derived explicitly (196.683ms)\n  \u2714 U5PC-S06 detail failure clears prior data and retry works (129.5771ms)\n  \u2714 U5PC-S07 stale selection response cannot replace newer run (232.4717ms)\n  \u2714 U5PC-S08 imported text is rendered as text (63.5977ms)\n  \u2714 U5PC-S09 polling cancels after switching to terminal run (10635.5222ms)\n  \u2714 U5PC-S10 reload requires fresh selection (393.5742ms)\n  \u2714 U5PC-S11 research network is GET-only, safety notices visible (2.6948ms)\n  \u2714 U5PC-S12 anonymous session cannot inspect console (271.2377ms)\n\u2714 U5PC intercepted observation states (16997.0686ms)\n\u2139 tests 13\n\u2139 suites 0\n\u2139 pass 13\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 81837.3312\n",
+  "stderr": "",
+  "test_cache_isolation": {
+    "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+    "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+    "test_config_sha256": "84b4cb3ea359dadb831f52d4e9e95de6da69b247e34ab541e45e6168f64b6888",
+    "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5o-frontend-acgcdb8s\\vite-cache",
+    "shared_node_modules_cache_used": false,
+    "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+  },
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5PB worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

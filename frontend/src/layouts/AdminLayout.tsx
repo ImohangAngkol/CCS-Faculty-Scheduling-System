@@ -17,6 +17,7 @@ import {
 
 
 const adminItems = [
+  {label: "Research observations", path: "/research/runs"},
   {label: "External/GEC Schedules", path: "/admin/external-schedules"},
   {label: "Accounts", path: "/admin/accounts"},
 

@@ -1,0 +1,10 @@
+{
+  "observer": "CODEX_IMAGE_VIEW",
+  "reviewed_at": "2026-11-09T18:23:53.092804+08:00",
+  "privacy_reviewed": true,
+  "files": {
+    "docs/testing/dashboard-u5pc/checkpoint-reconciliation/20261109T181907662381+0800-preview-browser/S03-recorded-zero-history.png": "584b5623ef534e1c5ac4d847e1ebf425a15d0099eba3e5655262213e96fb3ad7",
+    "docs/testing/dashboard-u5pc/checkpoint-reconciliation/20261109T181907662381+0800-preview-browser/S05-derived-interruption.png": "cd565d44b289d06d9f4aa3d54b488012ee250010547d03667f760b428e5625f1"
+  },
+  "scope": "Actual Edge/React intercepted fictional HTTP against exact staged AppRoutes bytes; no live FastAPI or new institutional acceptance. Full-page screenshots reviewed: fictional account and public run/context IDs only; no credentials/headers/receipts."
+}

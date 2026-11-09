@@ -20,6 +20,7 @@ from routers import ga_constrained
 from routers import adjustments
 from routers import chair_reviews
 from routers import schedule_applications
+from routers import research_observations
 from services.auth_service import allowed_origins
 from services.preference_authorization import require_admin, require_principal
 from fastapi.exceptions import RequestValidationError
@@ -90,6 +91,7 @@ app.include_router(ga_constrained.router)
 app.include_router(adjustments.router)
 app.include_router(chair_reviews.router)
 app.include_router(schedule_applications.router)
+app.include_router(research_observations.router)
 
 
 # ---------------------------------------------------------

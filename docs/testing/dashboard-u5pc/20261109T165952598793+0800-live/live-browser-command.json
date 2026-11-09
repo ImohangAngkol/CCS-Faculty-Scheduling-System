@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Live console verification failed: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Generation best'\n- '0'\n\n",
+  "scope": "Actual Edge/React/TCP FastAPI/real sessions/private SQLite/real U5L child; interrupted metadata explicitly injected"
+}

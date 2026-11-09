@@ -1,0 +1,41 @@
+{
+  "selection": "observations",
+  "started_at": "2026-11-09T16:54:24.870791+08:00",
+  "ended_at": "2026-11-09T16:56:28.543913+08:00",
+  "elapsed_seconds": 123.67315419996157,
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_observations.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-j0tea9cg\\pytest-observations"
+  ],
+  "stdout": "........................                                                 [100%]\n============================== warnings summary ===============================\ntests/test_research_observations.py::test_http_sessions_authorization_ids_get_only_and_no_mutation\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\ntests/test_research_observations.py::test_http_sessions_authorization_ids_get_only_and_no_mutation\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n24 passed, 2 warnings in 121.10s (0:02:01)\n",
+  "stderr": "",
+  "head": "1299d000a205287dbfc2d306decc427c98c2ee6e",
+  "source_sha256": {
+    "backend/services/ga_research_observation.py": "74b9575f90d41ef538ef1b4a26c51593942d6152a654de83448dff67e5d4a225",
+    "backend/routers/research_observations.py": "5316e7367a7edd0843d4af6554119aefe84b01485b2a0ea2b6fa289ed9fbb68f",
+    "backend/main.py": "06cbcd4f7a6b9a98bf2490bf2e05faddd2d12814fe685091d661056abb3922b5",
+    "backend/tests/test_research_observations.py": "ec24c917654a882a4ddefaaa249194c2cbe696c08549560950a6f8e884d8843d",
+    "backend/tests/test_research_console_live.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/testing/dashboard-u5pc/serve_console.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frontend/src/api/researchObservations.ts": "a48d478b71cd3acf0111d4431fd2253a68b5c5aa75f95f8f48495fccde44050a",
+    "frontend/src/pages/ResearchConsole.tsx": "7759c80bf9760f49ad460bfed07670d5c7185858b20f779a96f3d227b290e16e",
+    "frontend/src/routes/AppRoutes.tsx": "546a20c8310dbf613ed64cd7c9f64916975b8022e905990c8f00d81db03c0ea9",
+    "frontend/src/layouts/AdminLayout.tsx": "b38b4df433a5ea9bf50a9fdc726598b9385ed3d067ecb2b72c05c858dca1fe8a",
+    "frontend/tests/researchObservations.test.mjs": "1166e3eefa08eeb5052d795f5c65d9339157c9e218fa3891c5655ea19f601c37",
+    "frontend/tests/researchConsole.live.mjs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-j0tea9cg\\repository",
+  "no_staging": true,
+  "completed": true
+}
