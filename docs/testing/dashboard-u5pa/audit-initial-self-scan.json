@@ -1,0 +1,8 @@
+{
+  "status": "STOPPED_BEFORE_SEAL",
+  "stage": "privacy_scan",
+  "affected_file": "docs/testing/dashboard-u5pa/audit_evidence.py",
+  "reason": "Auditor source contained its own exact fictional intercepted-CSRF fixture exception as contiguous text, so its generic token pattern matched that noncredential source literal. No live secret discovered. The scan-only exception needle is now composed from fixed parts; target evidence and fixture remain unchanged. Complete privacy scan rerun required.",
+  "manifest_written": false,
+  "staging_plan_written": false
+}

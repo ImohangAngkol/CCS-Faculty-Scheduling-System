@@ -1,0 +1,100 @@
+{
+  "scope": "Pure policy with an explicit fictional verifier and owned temporary files; not institutional approval, actual optimizer consumption or HTTP acceptance",
+  "started_at": "2026-11-09T10:03:05.033148+08:00",
+  "ended_at": "2026-11-09T10:03:05.066689+08:00",
+  "elapsed_seconds": 0.03352910000830889,
+  "passed": 11,
+  "failed": 0,
+  "global_rng_unchanged": true,
+  "rows": [
+    {
+      "name": "unverified candidate, empty store",
+      "classification": "UNVERIFIED",
+      "reason": "SAVED_BEST_CONSUMPTION_CONTEXT_UNAVAILABLE",
+      "updated": false,
+      "archive_bytes_unchanged": true,
+      "retained_fitness": null
+    },
+    {
+      "name": "verified first candidate",
+      "classification": "ELIGIBLE",
+      "reason": "SAVED_BEST_IMPROVED",
+      "updated": true,
+      "archive_bytes_unchanged": false,
+      "retained_fitness": 100
+    },
+    {
+      "name": "same-context smaller penalty improves",
+      "classification": "ELIGIBLE",
+      "reason": "SAVED_BEST_IMPROVED",
+      "updated": true,
+      "archive_bytes_unchanged": false,
+      "retained_fitness": 90
+    },
+    {
+      "name": "same-context larger penalty does not improve",
+      "classification": "ELIGIBLE",
+      "reason": "SAVED_BEST_NOT_IMPROVED",
+      "updated": false,
+      "archive_bytes_unchanged": true,
+      "retained_fitness": 90
+    },
+    {
+      "name": "same-context equal penalty preserves bytes",
+      "classification": "ELIGIBLE",
+      "reason": "SAVED_BEST_NOT_IMPROVED",
+      "updated": false,
+      "archive_bytes_unchanged": true,
+      "retained_fitness": 90
+    },
+    {
+      "name": "different preferences, smaller penalty",
+      "classification": "INCOMPATIBLE",
+      "reason": "SAVED_BEST_CONTEXT_MISMATCH",
+      "updated": false,
+      "archive_bytes_unchanged": true,
+      "retained_fitness": 90
+    },
+    {
+      "name": "different department, smaller penalty",
+      "classification": "INCOMPATIBLE",
+      "reason": "SAVED_BEST_CONTEXT_MISMATCH",
+      "updated": false,
+      "archive_bytes_unchanged": true,
+      "retained_fitness": 90
+    },
+    {
+      "name": "different offerings",
+      "classification": "INCOMPATIBLE",
+      "reason": "SAVED_BEST_CONTEXT_MISMATCH",
+      "updated": false,
+      "archive_bytes_unchanged": true,
+      "retained_fitness": 90
+    },
+    {
+      "name": "same-context exact zero improves",
+      "classification": "ELIGIBLE",
+      "reason": "SAVED_BEST_IMPROVED",
+      "updated": true,
+      "archive_bytes_unchanged": false,
+      "retained_fitness": 0
+    },
+    {
+      "name": "exact zero cannot regress",
+      "classification": "ELIGIBLE",
+      "reason": "SAVED_BEST_NOT_IMPROVED",
+      "updated": false,
+      "archive_bytes_unchanged": true,
+      "retained_fitness": 0
+    },
+    {
+      "name": "missing historical provenance",
+      "classification": "UNVERIFIED",
+      "reason": "SAVED_BEST_VERIFICATION_OR_STORAGE_FAILED",
+      "updated": false,
+      "archive_bytes_unchanged": true,
+      "retained_fitness": 475
+    }
+  ],
+  "raw_payloads_or_attestations_archived": false
+}

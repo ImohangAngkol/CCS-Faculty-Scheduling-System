@@ -1,0 +1,8 @@
+{
+  "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+  "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+  "test_config_sha256": "3ad94d7bad69f30226808e37a01f8eb553df700f84da05258bca0000807d29c7",
+  "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-2ean8kmn\\vite-cache",
+  "shared_node_modules_cache_used": false,
+  "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+}

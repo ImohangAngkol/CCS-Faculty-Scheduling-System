@@ -1,0 +1,22 @@
+{
+  "head": "ec21a67efed82f085d5e2134ef6002cf5ac69eed",
+  "source_sha256": {},
+  "ui_overlay_sha256": {},
+  "ui_mode": "committed",
+  "proposed_blob_oids": {},
+  "results": [
+    {
+      "selection": "u5o-baseline",
+      "exit_code": 0
+    }
+  ],
+  "qualified_selections": [
+    "u5o-baseline"
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-qfnaktq5\\repository"
+}

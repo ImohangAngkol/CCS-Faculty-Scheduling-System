@@ -1,0 +1,23 @@
+{
+  "selection": "admission",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_trusted_runs.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-rhlihjya\\pytest-admission"
+  ],
+  "started_at": "2026-11-09T09:47:38.740245+08:00",
+  "ended_at": "2026-11-09T09:48:39.185490+08:00",
+  "elapsed_seconds": 60.44527089991607,
+  "exit_code": 0,
+  "stdout": "..................................................                       [100%]\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n============================ slowest 10 durations =============================\n4.40s call     tests/test_trusted_runs.py::test_fresh_process_can_restore_checkpoint_and_finish\n3.05s call     tests/test_trusted_runs.py::test_http_protected_versioned_routes_and_real_store\n2.24s call     tests/test_trusted_runs.py::test_actual_optimizer_durable_pause_restart_resume_rng_parity\n1.83s call     tests/test_trusted_runs.py::test_corruption_lineage_and_cross_run_reuse_fail_closed\n1.77s call     tests/test_trusted_runs.py::test_parallel_runs_have_distinct_namespaces_and_rng_isolation\n1.56s call     tests/test_trusted_runs.py::test_expired_execution_lease_fences_old_executor\n1.52s call     tests/test_trusted_runs.py::test_changed_external_source_never_replaces_frozen_bundle\n1.49s call     tests/test_trusted_runs.py::test_actual_retention_capacity_and_run_count_limits\n1.35s call     tests/test_trusted_runs.py::test_real_session_csrf_origin_and_owned_loopback_http\n1.34s call     tests/test_trusted_runs.py::test_process_death_rolls_back_checkpoint_tip_together\n50 passed, 2 warnings in 58.81s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

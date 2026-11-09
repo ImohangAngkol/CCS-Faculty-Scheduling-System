@@ -1,0 +1,23 @@
+{
+  "selection": "u5o-audit",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_full_system_audit.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-899id8ra\\pytest-u5o-audit"
+  ],
+  "started_at": "2026-11-09T09:54:43.453223+08:00",
+  "ended_at": "2026-11-09T09:55:03.351909+08:00",
+  "elapsed_seconds": 19.898719100048766,
+  "exit_code": 1,
+  "stdout": "..F                                                                      [100%]\n================================== FAILURES ===================================\n___ test_characterize_legacy_saved_best_comparison_without_provenance_gate ____\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001312AFEF530>\n\n    def test_characterize_legacy_saved_best_comparison_without_provenance_gate(monkeypatch):\n        fictional_source()\n        from services import chromosome_service as service\n        # Actual decision function, mocked serialized payloads, no disk IO. These\n        # numbers illustrate incompatible contexts, not a measured schedule score.\n        existing={'subject_keys':['FIC101::FIC-A'],'best_fitness':100.0,'input_fingerprint':'a'*64,'configuration_fingerprint':'b'*64}\n        current={'subject_keys':existing['subject_keys'],'input_fingerprint':'c'*64,'configuration_fingerprint':'d'*64}\n        writes=[]\n        monkeypatch.setattr(service,'load_saved_best_payload',lambda:existing)\n        monkeypatch.setattr(service,'chromosome_to_payload',lambda chromosome,score:{**current,'best_fitness':score})\n        monkeypatch.setattr(service,'write_payload',lambda payload,path:writes.append(payload))\n        saved,_=service.save_best_if_better(object(),90.0)\n>       assert saved and len(writes)==1\nE       assert (False)\n\ntests\\test_full_system_audit.py:109: AssertionError\n---------------------------- Captured stdout call -----------------------------\nSaved Best: UNVERIFIED (input consumption context unavailable); archive preserved.\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n..\\..\\..\\..\\..\\..\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n============================ slowest 10 durations =============================\n10.69s call     tests/test_full_system_audit.py::test_tiny_run_checkpoint_sizes_and_write_duration\n1.19s call     tests/test_full_system_audit.py::test_actual_registered_routes_and_unauthenticated_boundaries\n0.28s setup    tests/test_full_system_audit.py::test_actual_registered_routes_and_unauthenticated_boundaries\n0.04s call     tests/test_full_system_audit.py::test_characterize_legacy_saved_best_comparison_without_provenance_gate\n\n(5 durations < 0.005s hidden.  Use -vv to show these durations.)\n=========================== short test summary info ===========================\nFAILED tests/test_full_system_audit.py::test_characterize_legacy_saved_best_comparison_without_provenance_gate\n1 failed, 2 passed, 2 warnings in 17.58s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

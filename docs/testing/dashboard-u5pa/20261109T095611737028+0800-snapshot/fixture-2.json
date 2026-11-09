@@ -1,0 +1,21 @@
+{
+  "fixture": "fictional-v1.1",
+  "seed": 710,
+  "parameters": {
+    "population_size": 2,
+    "generations": 2,
+    "fresh_chromosomes": 0,
+    "mutation_attempts": 1,
+    "max_restarts": 5
+  },
+  "pause_generation": 2,
+  "engine_version": "ga-continuation-v1",
+  "engine_fingerprint": "b0f3950d53932da156a8df47637cb6ad53acea74c3a3e1606dc1c36b3739f8af",
+  "input_fingerprint": "2072086401f3a550ca38f0d3e95ee7ad5b019aab4fa54f91978af85cc6adb640",
+  "fictional_templates_sha256": "cb6e018084679aad80ffcdc6c4dbac25fc91bc0f8e8fda903f2005391781a565",
+  "checkpoint_sha256": "398429feb41463352485377c7199b4936b27be029e422872328ba2ed1a8c9820",
+  "checkpoint_bytes_archived": false,
+  "real_checkpoint_write_load_resume": true,
+  "original_operators_used": true,
+  "RNG_and_schedule_equivalent": true
+}

@@ -1,0 +1,56 @@
+{
+  "head": "ec21a67efed82f085d5e2134ef6002cf5ac69eed",
+  "source_sha256": {
+    "backend/services/saved_best_policy.py": "d90a5fc53b5007137b2b30ca803eec4ad1f7f3a2cbe19dca23691e35787b9132",
+    "backend/services/chromosome_service.py": "ca9d06d2747a98b8c56eec7526fa88116c5896db965fdaa0b3b28b407df98295",
+    "backend/tests/test_saved_best_context.py": "451c7c42d35e8e53a7ac2e77f703e54162cdcc1354f32780857df899c6fd1849",
+    "frontend/src/pages/admin/ScheduleApplications.tsx": "03696a006d5cc9494b2b40c0d566a39ff3660e40a536f546a17df4aa52e5b99d",
+    "frontend/src/api/scheduleApplications.ts": "5e3aca0820e26af14dd301f4d23d673774c4357ec7caf88d0eae4364d1455412"
+  },
+  "ui_overlay_sha256": {
+    "frontend/src/components/ga/ConvergenceChart.tsx": "11e0a778a76ed58b64fe85d83d9c84ad262438d9ec9b21b421e3a923fcbcf179",
+    "frontend/src/components/ga/GALiveConsole.tsx": "178c8c09431d42ed9314a6fbd7d7cc5176745a2bea0e8291271a460b470f2835",
+    "frontend/src/components/ga/LiveGAMonitor.tsx": "6f899ede7e3a574d27c6c1a6726f4d597baa6916bd5eeb3663fa2485c3a0c88e",
+    "frontend/src/components/ga/WorkloadChart.tsx": "943920e0d0d9db491b2fa24540f15898fe8784a0e61d8dff9d5afc4f29e294d6",
+    "frontend/src/components/ga/workloadChart.css": "08264ab480256f22e7631bc9f0428136ce22d4c9ea67285b467887d33c0fe46e",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx": "0251430c27484ad387e53d58c42c68d018edc111f5930727c1bbe776f8aa7d01",
+    "frontend/src/pages/admin/GenerateSchedule.tsx": "a7875829be4f1d937321bf30a7f112e970c216e3036dca68b95cc6b9b4d589d7",
+    "frontend/src/pages/admin/SubjectManagement.tsx": "bd560ad8a2124e7affa176e655fd947bfc3a10fa26f2c8c3fa7dce129ee36746",
+    "frontend/tests/evaluationCoverage.browser.test.mjs": "1992865b9b36630000e055ad79876e9ceebfa75fbd05bb543bf7215af10c6d0e",
+    "frontend/src/components/dashboard/SubjectDrafts.tsx": "f49cacdeb3c4421634bdd29dfa1cac955b5246e389528a3ab9373737e74e84f3",
+    "frontend/src/components/ga/PreferenceOutcomeChart.tsx": "2e35d6f5e69c001b76b73f5fc97bc8f824c40e43a6e7d47afdc6ab2f78b8d55d",
+    "frontend/src/components/ga/liveOptimization.css": "2aad15d296256f14b183351c86aefc5da37336b8cff0da81d028868da8573e2b",
+    "frontend/src/services/liveOptimization.ts": "c114349f9fc094ca229515b6a4a68c7b620af16ce4bc8c5e929c9be131bd9246",
+    "frontend/src/services/preferencePresentation.ts": "82317ddc63e2e2ac77ef58a81f50eb7e35b3e4c609e477598a70d0836f60ed32",
+    "frontend/src/services/subjectDrafts.ts": "201e8a5464759cabfd18cb2daf209774b2b80f7b39159cf7ae25b7b3e3a2fa3d",
+    "frontend/tests/catalogAnalytics.browser.test.mjs": "de0c0fc9b09ac0d710ace46583063a7bc62ff7ce1f026808f6a1b21dabe0235a",
+    "frontend/tests/catalogAnalytics.fixtures.mjs": "a33c4eacfdf95da54737f8d5db0a49bb57bf765d5d568d82ccb7237d4492d7fb",
+    "frontend/tests/catalogAnalytics.test.mjs": "0f0353cbbb3f2137a6f0785178382e78f4d636cf7d21e8a34380c2054365661a",
+    "frontend/tests/liveOptimization.browser.test.mjs": "8533ffd11f4cd68607ebbd98eb52247bb8bca7ed42b8b9792b15b9ea9a989365",
+    "frontend/tests/liveOptimization.fixtures.mjs": "68ba3239d8a00a4bfd0d38d4e4f46d2a3bc98d71b2c2b8e9edf5f7291e3d72cb",
+    "frontend/tests/liveOptimization.test.mjs": "208da6292b9806335f2c0d1df96ca8b11cb4fc9b182c94ad1172757a0a8f277f"
+  },
+  "ui_mode": "working-tree",
+  "proposed_blob_oids": {
+    "backend/services/saved_best_policy.py": "5326904c1e126b4a208379f4a495374af26b85f9",
+    "backend/services/chromosome_service.py": "524b69cf76d9af3044eeefa19f1a34c9e7526fe6",
+    "backend/tests/test_saved_best_context.py": "5f6c420705cb7f2353e16c4c89095e4976d40a47",
+    "frontend/src/pages/admin/ScheduleApplications.tsx": "7f8cdcbc9b8edaf02c216def0f61c51f3b4053d6",
+    "frontend/src/api/scheduleApplications.ts": "be7babd822fcb02afbff7cd7e73286fc60b31404"
+  },
+  "results": [
+    {
+      "selection": "d16-live",
+      "exit_code": 1
+    }
+  ],
+  "qualified_selections": [
+    "d16-live"
+  ],
+  "complete": false,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-9prcjz4g\\repository"
+}

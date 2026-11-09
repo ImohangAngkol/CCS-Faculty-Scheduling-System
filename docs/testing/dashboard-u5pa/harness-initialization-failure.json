@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-11-09T09:38:40.569831+08:00",
+  "command": "backend_snapshot.py d16-live --working-ui",
+  "stage": "Owned snapshot test-harness preparation before browser/backend child execution",
+  "exception_type": "FileNotFoundError",
+  "message": "live-route-survey.mjs was sought in the new U5PA folder instead of reusing the committed U5O fragment",
+  "exit_code": 1,
+  "scenarios_executed": 0,
+  "correction": "Reference the unchanged committed U5O fragment explicitly; do not modify historical evidence"
+}

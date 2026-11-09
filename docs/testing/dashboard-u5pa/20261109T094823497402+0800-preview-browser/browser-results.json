@@ -1,0 +1,17 @@
+{
+  "scope": "Actual Edge/React with fictional intercepted HTTP only; no FastAPI, PostgreSQL, institutional authority or GA execution",
+  "scenarios": [
+    {
+      "name": "U5PA-B01 history failure preserves valid action",
+      "status": "FAIL",
+      "message": "Missing text Approved requests"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/src/api/faculty.ts",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": []
+}

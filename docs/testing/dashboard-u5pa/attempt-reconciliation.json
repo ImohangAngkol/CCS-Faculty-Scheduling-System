@@ -1,0 +1,100 @@
+{
+  "failed_command_records": [
+    {
+      "path": "docs/testing/dashboard-u5pa/20261109T093521221512+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 1,
+      "pytest_or_node_counts": {
+        "error": 1,
+        "warning": 1
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5pa/20261109T093900186928+0800-snapshot/d16-live-command.json",
+      "selection": "d16-live",
+      "exit_code": 1,
+      "pytest_or_node_counts": {
+        "failed": 1,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5pa/20261109T094823497402+0800-preview-browser/command.json",
+      "selection": "preview-browser",
+      "exit_code": 1,
+      "pytest_or_node_counts": {
+        "tests": 2,
+        "pass": 0,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5pa/20261109T095007924870+0800-preview-browser/command.json",
+      "selection": "preview-browser",
+      "exit_code": 1,
+      "pytest_or_node_counts": {
+        "tests": 2,
+        "pass": 0,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5pa/20261109T095206033784+0800-preview-browser/command.json",
+      "selection": "preview-browser",
+      "exit_code": 1,
+      "pytest_or_node_counts": {
+        "tests": 7,
+        "pass": 5,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5pa/20261109T095443451911+0800-snapshot/u5o-audit-command.json",
+      "selection": "u5o-audit",
+      "exit_code": 1,
+      "pytest_or_node_counts": {
+        "failed": 1,
+        "passed": 2,
+        "warnings": 2
+      }
+    },
+    {
+      "path": "docs/testing/dashboard-u5pa/20261109T103010066717+0800-snapshot/repair-live-command.json",
+      "selection": "repair-live",
+      "exit_code": 1,
+      "pytest_or_node_counts": {
+        "failed": 1,
+        "warnings": 2
+      }
+    }
+  ],
+  "failed_command_record_count": 7,
+  "additional_initial_failures": [
+    "initial-environment-failure.json",
+    "harness-initialization-failure.json"
+  ],
+  "historical_failures_preserved": true,
+  "interpretation": {
+    "lint": "Initial React effect/ref lint findings corrected, later lint passes.",
+    "preview-browser": "Three harness attempts: Fetch interception caught Vite source modules; queue fixture contract mismatch; queue loading synchronization. Harness fixed without weakening assertions; final 10 scenarios pass.",
+    "d16-live": "First extended survey run stopped on late route rendering. Unchanged application rerun passed 23 scenarios. Root cause not established.",
+    "repair-live": "First checkpoint-only run stopped on late Approved requests rendering, 18 PASS/1 FAIL, remaining scenarios NOT RUN. Diagnostic rerun passed 22; final owned-cache run passed 22. Root cause not established.",
+    "u5o-audit": "Frozen historical characterization asserts old unguarded Saved Best update. It passes on original U5O baseline (3 tests) and fails on repaired behavior (2 PASS/1 FAIL). Original source and evidence retained; no claim whole repository pytest passes."
+  },
+  "final_source_qualification": {
+    "saved-best": 48,
+    "parity": 5,
+    "legacy": 10,
+    "consumption": 39,
+    "repair-live_scenarios": 22
+  },
+  "broad_suite_scope": "Other successful regression selections were executed against intermediate guard snapshots before final helper source pin/equivalence refinements. The directly affected Saved Best/parity/V1 continuation/U5H consumption/live boundaries were rerun against exact final source bytes. Frontend final code unchanged since contract/build/lint/browser passes.",
+  "cache_isolation": "Disposable snapshot Vite cache explicitly isolated from shared node_modules junction. This fixes an isolation risk; it is not proof of the historical render-timeout cause.",
+  "no_historical_record_rewritten": true
+}

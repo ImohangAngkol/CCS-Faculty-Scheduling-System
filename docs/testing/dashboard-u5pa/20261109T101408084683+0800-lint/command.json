@@ -1,0 +1,24 @@
+{
+  "selection": "lint",
+  "head": "ec21a67efed82f085d5e2134ef6002cf5ac69eed",
+  "ui_mode": "committed-plus-u5pa",
+  "ui_overlay_sha256": {
+    "frontend/src/pages/admin/ScheduleApplications.tsx": "03696a006d5cc9494b2b40c0d566a39ff3660e40a536f546a17df4aa52e5b99d",
+    "frontend/src/api/scheduleApplications.ts": "5e3aca0820e26af14dd301f4d23d673774c4357ec7caf88d0eae4364d1455412",
+    "frontend/tests/savedBestPreviewRepair.test.mjs": "bcfcc90c10fd790d28e41204ddb61e76916e9d516a0d83b231a997794cbc7757",
+    "frontend/tests/savedBestPreview.browser.test.mjs": "d8e4d1862c035fe08167d4e46cf34dd076301861ad4d4f834f3663eb186c6a8f"
+  },
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/pages/admin/ScheduleApplications.tsx",
+    "src/api/scheduleApplications.ts"
+  ],
+  "started_at": "2026-11-09T10:14:08.085299+08:00",
+  "ended_at": "2026-11-09T10:14:17.094698+08:00",
+  "elapsed_seconds": 9.00940380000975,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5O worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

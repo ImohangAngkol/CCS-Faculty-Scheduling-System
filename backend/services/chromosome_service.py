@@ -372,124 +372,32 @@ def save_uploaded_payload(
 # AUTOMATIC BEST-CHROMOSOME SAVE
 # ============================================================
 
-def save_best_if_better(
-    chromosome,
-    fitness,
-):
+def save_best_if_better(chromosome, fitness):
+    """Decline unverified persistence; never rank historical foreign scores.
+
+    The fixed HTTP loader does not yet prove actual input consumption. Only an
+    independently configured server verifier can admit a context-bound record.
+    Archived reads and uploaded-seed validation retain their existing contracts.
     """
-    Save the chromosome when:
-
-    - no saved chromosome exists
-    - current data differs from the saved semester/data
-    - current fitness is LOWER than saved fitness
-
-    LOWER FITNESS = BETTER.
-    """
-
-    current_payload = (
-        chromosome_to_payload(
-            chromosome,
-            fitness,
-        )
-    )
-
-
-    existing_payload = (
-        load_saved_best_payload()
-    )
-
-
-    should_save = False
-
-
-    if existing_payload is None:
-
-        should_save = True
-
-    else:
-
-        current_subjects = set(
-            current_payload.get(
-                "subject_keys",
-                [],
-            )
-        )
-
-        previous_subjects = set(
-            existing_payload.get(
-                "subject_keys",
-                [],
-            )
-        )
-
-
-        # Different semester / offering set.
-        if (
-            current_subjects
-            and
-            previous_subjects
-            and
-            current_subjects
-            !=
-            previous_subjects
-        ):
-
-            should_save = True
-
-        else:
-
-            old_fitness = (
-                existing_payload.get(
-                    "best_fitness"
-                )
-            )
-
-
-            if old_fitness is None:
-
-                should_save = True
-
-            elif (
-                float(fitness)
-                <
-                float(old_fitness)
-            ):
-
-                should_save = True
-
-
-    if should_save:
-
-        write_payload(
-            current_payload,
-            BEST_CHROMOSOME_PATH,
-        )
-
-        print()
-        print("=" * 60)
-        print("BEST CHROMOSOME SAVED")
-        print("=" * 60)
-
-        print(
-            f"Fitness : {fitness}"
-        )
-
-        print(
-            f"File    : "
-            f"{BEST_CHROMOSOME_PATH}"
-        )
-
-
-        return (
-            True,
-            current_payload,
-        )
-
-
-    return (
-        False,
-        existing_payload,
-    )
+    import hashlib
+    # This caller is already part of the strict GA engine fingerprint. Bind its
+    # new dependency explicitly instead of leaving persistence policy unpinned.
+    try:
+        implementation = hashlib.sha256(Path(__file__).with_name("saved_best_policy.py").read_bytes()).hexdigest()
+    except OSError:
+        implementation = None
+    if implementation != "10f59ab35785324b36d7c63ccb40508db9e16af75e4482ae9d6dacf493f342fb":
+        print("Saved Best: UNVERIFIED (storage policy implementation mismatch); archive preserved.")
+        return False, None
+    from services.saved_best_policy import consider, configured_verifier
+    verifier = configured_verifier()
+    if verifier is None:
+        # Avoid even serializing or reading a private archive without evidence.
+        print("Saved Best: UNVERIFIED (input consumption context unavailable); archive preserved.")
+        return False, None
+    decision = consider(BEST_CHROMOSOME_PATH, chromosome_to_payload(chromosome, fitness), verifier)
+    print(f"Saved Best: {decision.classification} ({decision.reason})")
+    return decision.updated, decision.payload
 
 
 # ============================================================

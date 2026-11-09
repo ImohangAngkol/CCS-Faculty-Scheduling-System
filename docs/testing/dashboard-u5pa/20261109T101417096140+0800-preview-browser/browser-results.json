@@ -1,0 +1,228 @@
+{
+  "scope": "Actual Edge/React with fictional intercepted HTTP only; no FastAPI, PostgreSQL, institutional authority or GA execution",
+  "scenarios": [
+    {
+      "name": "U5PA-B01 history failure preserves valid action",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PA-B02 history retry issues no preview request",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PA-B03 switching schedules clears confirmation",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PA-B04 invalid preview has no apply action",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PA-B05 denied preview clears actions",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PA-B06 changed authorized scope cannot retain old preview/history",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PA-B07 old preview completion after unmount cannot replace new selection",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PA-B08 refreshed page requires a fresh selection",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PA-B09 absent application authority has no controls",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PA-B10 anonymous user returns to sign-in",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/versions",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/b0000000-0000-4000-8000-000000000001/preview",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/versions",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/70000000-0000-4000-8000-000000000003/preview",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/b0000000-0000-4000-8000-000000000001/preview",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/b0000000-0000-4000-8000-000000000001/preview",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/versions",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/b0000000-0000-4000-8000-000000000001/preview",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/versions",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/versions",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/70000000-0000-4000-8000-000000000003/preview",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/70000000-0000-4000-8000-000000000003/preview",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/versions",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/b0000000-0000-4000-8000-000000000001/preview",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/versions",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/b0000000-0000-4000-8000-000000000001/preview",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": []
+}

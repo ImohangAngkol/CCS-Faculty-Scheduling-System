@@ -1,0 +1,13 @@
+{
+  "scope": "Owned test harness only; application UI and original harness unchanged",
+  "original_source_sha256": "5cef62a92cb2ed9326a84036fc2a2f94a09b582bf4ca40c4e473dc9b3020237d",
+  "snapshot_harness_sha256": "165dd53de01e7cb5f1cacea9bf67702e89a8fd5e3666b6a7319a0307e31cdaaa",
+  "changes": [
+    "U5O owned capture destination with retained path containment check",
+    "One additional real HTTP browser repaired-history isolation and retry scenario",
+    "One twenty-page render/network metadata survey; no blanket end-to-end claims"
+  ],
+  "expected_original_journey_scenarios": 21,
+  "additional_repair_scenarios": 1,
+  "additional_render_surveys": 1
+}

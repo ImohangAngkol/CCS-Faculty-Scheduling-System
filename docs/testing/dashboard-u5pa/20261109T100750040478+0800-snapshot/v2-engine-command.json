@@ -1,0 +1,23 @@
+{
+  "selection": "v2-engine",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/d10/test_v2_engine.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-aw04lxr1\\pytest-v2-engine"
+  ],
+  "started_at": "2026-11-09T10:07:50.042302+08:00",
+  "ended_at": "2026-11-09T10:08:03.831240+08:00",
+  "elapsed_seconds": 13.788976799929515,
+  "exit_code": 0,
+  "stdout": "..............................                                           [100%]\n============================ slowest 10 durations =============================\n3.84s call     tests/d10/test_v2_engine.py::test_fresh_python_process_restores_v2_checkpoint\n1.32s call     tests/d10/test_v2_engine.py::test_feasible_actual_operators_checkpoint_and_exact_v2_continuation\n0.72s call     tests/d10/test_v2_engine.py::test_real_original_crossover_improvement_cannot_bypass_external_admission\n0.44s call     tests/d10/test_v2_engine.py::test_last_moment_revocation_keeps_previous_checkpoint_atomic\n0.32s call     tests/d10/test_v2_engine.py::test_initial_conflict_replacement_produces_exact_valid_population\n0.22s call     tests/d10/test_v2_engine.py::test_candidate_profile_and_frozen_fitness_tampering_rejected\n0.21s call     tests/d10/test_v2_engine.py::test_checkpoint_corruption_or_incompatibility_rejected[population]\n0.20s call     tests/d10/test_v2_engine.py::test_post_crossover_mutation_and_best_ever_admission\n0.17s call     tests/d10/test_v2_engine.py::test_checkpoint_corruption_or_incompatibility_rejected[engine]\n0.17s call     tests/d10/test_v2_engine.py::test_checkpoint_corruption_or_incompatibility_rejected[partial]\n30 passed in 12.14s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

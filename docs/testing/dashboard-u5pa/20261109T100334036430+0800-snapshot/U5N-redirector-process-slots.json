@@ -1,0 +1,15 @@
+{
+  "observations": [
+    {
+      "venv_redirector": true,
+      "job_active_processes": 3,
+      "actual_python_is_creation_pid": false
+    },
+    {
+      "venv_redirector": false,
+      "job_active_processes": 2,
+      "actual_python_is_creation_pid": true
+    }
+  ],
+  "cap_unchanged": 2
+}

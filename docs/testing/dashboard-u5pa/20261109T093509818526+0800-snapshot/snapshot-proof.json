@@ -1,0 +1,34 @@
+{
+  "head": "ec21a67efed82f085d5e2134ef6002cf5ac69eed",
+  "source_sha256": {
+    "backend/services/saved_best_policy.py": "33d705acf62e8c003eacf2e15ec2a3fcda6911595d45672eadeb722b73b865fb",
+    "backend/services/chromosome_service.py": "ca9d06d2747a98b8c56eec7526fa88116c5896db965fdaa0b3b28b407df98295",
+    "backend/tests/test_saved_best_context.py": "288b6a026125b695393fa37a059805362abe4fb2e92b9bf894635dcf180840b0",
+    "frontend/src/pages/admin/ScheduleApplications.tsx": "4f13e5ee7ad6b28bde2d959b060744de5d05b932c28f8ce68938ca947faea6fe",
+    "frontend/src/api/scheduleApplications.ts": "5e3aca0820e26af14dd301f4d23d673774c4357ec7caf88d0eae4364d1455412"
+  },
+  "ui_overlay_sha256": {},
+  "ui_mode": "committed",
+  "proposed_blob_oids": {
+    "backend/services/saved_best_policy.py": "03a8d1a3a0850068ee73835908afdf1be474b97a",
+    "backend/services/chromosome_service.py": "524b69cf76d9af3044eeefa19f1a34c9e7526fe6",
+    "backend/tests/test_saved_best_context.py": "633ea8448545af8ac54dbe495657346b3974d1a6",
+    "frontend/src/pages/admin/ScheduleApplications.tsx": "0f48fe417947ce8b0f733322e00ef2513ceaab97",
+    "frontend/src/api/scheduleApplications.ts": "be7babd822fcb02afbff7cd7e73286fc60b31404"
+  },
+  "results": [
+    {
+      "selection": "saved-best",
+      "exit_code": 0
+    }
+  ],
+  "qualified_selections": [
+    "saved-best"
+  ],
+  "complete": true,
+  "fictional_source_only": true,
+  "no_u5d_u5e_u5f_app_dependency": false,
+  "no_actual_staging": true,
+  "consumption_verified_in_internal_path": true,
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-lu7jb1ry\\repository"
+}

@@ -1,0 +1,23 @@
+{
+  "selection": "parent",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_parent_containment_qualification.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-l69qwmlt\\pytest-parent"
+  ],
+  "started_at": "2026-11-09T10:03:34.037385+08:00",
+  "ended_at": "2026-11-09T10:04:10.236238+08:00",
+  "elapsed_seconds": 36.198904199991375,
+  "exit_code": 0,
+  "stdout": ".......                                                                  [100%]\n============================ slowest 10 durations =============================\n25.83s call     tests/test_parent_containment_qualification.py::test_real_checkpoint_survives_outer_parent_tree_termination\n3.79s call     tests/test_parent_containment_qualification.py::test_parent_cpu_death_kills_nested_worker_handles\n0.65s call     tests/test_parent_containment_qualification.py::test_nested_parent_worker_membership_tree_cleanup_and_unrelated_survival\n0.56s call     tests/test_parent_containment_qualification.py::test_parent_private_commit_limit_with_nested_worker\n0.24s call     tests/test_parent_containment_qualification.py::test_explicit_snapshot_import_boundary\n0.18s call     tests/test_parent_containment_qualification.py::test_venv_redirector_process_slot_diagnosis\n0.13s setup    tests/test_parent_containment_qualification.py::test_venv_redirector_process_slot_diagnosis\n0.11s call     tests/test_parent_containment_qualification.py::test_parent_breakaway_request_rejected\n0.01s setup    tests/test_parent_containment_qualification.py::test_real_checkpoint_survives_outer_parent_tree_termination\n0.01s teardown tests/test_parent_containment_qualification.py::test_real_checkpoint_survives_outer_parent_tree_termination\n7 passed in 34.54s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

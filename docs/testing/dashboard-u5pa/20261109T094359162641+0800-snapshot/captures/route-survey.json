@@ -1,0 +1,4466 @@
+{
+  "scope": "Actual working-tree frontend in owned snapshot, real loopback FastAPI/SQLite and explicit fictional providers. Values, headers, cookies, bodies and URL queries deliberately omitted. Background reads can appear; per-control causality is not inferred.",
+  "rows": [
+    {
+      "requested_path": "/admin",
+      "fixture_role": "fictional administrator",
+      "path": "/admin",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Run Genetic Algorithm",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/faculty",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/faculty",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/subjects",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/subjects",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "+ Add Subject",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "search",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/subjects/available",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/preferences",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/preferences",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": "switch",
+          "type": "checkbox",
+          "disabled": false,
+          "label": "Consider my subject preferences",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "search",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "ALL",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "CCC",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "ITD",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "ITN",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "ITE",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "ISY",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "OTHER",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": "switch",
+          "type": "checkbox",
+          "disabled": false,
+          "label": "Show all offered subjects (eligibility still applies)",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Add SYN101 to preferred subjects",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "+ Add General Preferred Period",
+          "visible": true
+        },
+        {
+          "tag": "table",
+          "role": "grid",
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "table",
+          "role": "presentation",
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "September 28, 2026",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "September 29, 2026",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "September 30, 2026",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "October 1, 2026",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "October 2, 2026",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "October 3, 2026",
+          "visible": true
+        },
+        {
+          "tag": "table",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "table",
+          "role": "presentation",
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "form",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": false
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "time",
+          "disabled": false,
+          "label": "",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Cancel",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "submit",
+          "disabled": false,
+          "label": "Add preference",
+          "visible": false
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "schedule-style",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "schedule-style",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "schedule-style",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "lecture-lab",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "lecture-lab",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "lecture-lab",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Discard",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Save Preferences",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/20000000-0000-4000-8000-000000000001/eligible-subjects",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/preferences/0",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/20000000-0000-4000-8000-000000000001/eligible-subjects",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/preferences/0",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/rooms",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/rooms",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/generate",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/generate",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "optimizationMode",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "optimizationMode",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "V2 academic year",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "V2 term",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": true,
+          "label": "Check confirmed constraints",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "baselineMode",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": true,
+          "label": "baselineMode",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "baselineMode",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Run configuration / Start",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": "tab",
+          "type": "button",
+          "disabled": false,
+          "label": "Overview",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": "tab",
+          "type": "button",
+          "disabled": false,
+          "label": "Research",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": "tab",
+          "type": "button",
+          "disabled": false,
+          "label": "Console",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "search",
+          "disabled": false,
+          "label": "",
+          "visible": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": false
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "checkbox",
+          "disabled": false,
+          "label": "",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Copy visible logs",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Download visible logs",
+          "visible": false
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/chromosomes/best",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/v2/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chromosomes/best",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/chromosomes",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/chromosomes",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Retry current evaluation",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Retry source inspection",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Persistent reset needs separate authorization.",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Current Evaluation",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Historical Archive",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "file",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": true,
+          "label": "View Results Only",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": true,
+          "label": "Use as GA Baseline",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chromosomes/best",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/chromosomes/best",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/source-qualification",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/current-evaluation",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/schedules",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/schedules",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/analysis",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/analysis",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Advanced faculty analysis",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Refresh analysis",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Current Evaluation",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Analysis source",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": true,
+          "label": "Previous runs",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": true,
+          "label": "More runs",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate a schedule",
+          "visible": true
+        }
+      ],
+      "alerts": 1,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/runs",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/fitness-analysis/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/runs",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/fitness-analysis/latest",
+          "status": 404
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/history",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/history",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Refresh history",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Current Evaluation",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Historical Archive",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Retry current evaluation",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Retry source inspection",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Persistent reset needs separate authorization.",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/runs",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/runs",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/source-qualification",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/current-evaluation",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/accounts",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/accounts",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "form",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "password",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Save account",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/users",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/users",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/admin/external-schedules",
+      "fixture_role": "fictional administrator",
+      "path": "/admin/external-schedules",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "External/GEC Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Accounts",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Faculty",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Subjects",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Room Assignments",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generate Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Saved Chromosomes",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Generation History",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedules",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GA Analysis",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "form",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "disabled": false,
+          "label": "supplier",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "disabled": false,
+          "label": "subject_code",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "disabled": false,
+          "label": "title",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "disabled": false,
+          "label": "academic_term",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "time",
+          "disabled": false,
+          "label": "start",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "time",
+          "disabled": false,
+          "label": "end",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "disabled": false,
+          "label": "room",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "disabled": false,
+          "label": "instructor",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "disabled": false,
+          "label": "source_reference",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "disabled": false,
+          "label": "notes",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "sections",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "checkbox",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "checkbox",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "checkbox",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "checkbox",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "checkbox",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "checkbox",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "submit",
+          "disabled": false,
+          "label": "Add draft row",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Review manual drafts",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Download fictional CSV template",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "file",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Preview selected file",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Reload ledger history",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GEC ledger record",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "GEC decision reason",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Store current review as proposed revision",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Clear temporary workspace",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/external-schedules/metadata",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/external-confirmations",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/status",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/chair/requests",
+      "fixture_role": "fictional independently appointed Chair",
+      "path": "/chair/requests",
+      "heading": "Department Chair request reviews",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Chair request reviews",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Return to dashboard",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Review department",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "checkbox",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Refresh queue",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/schedule-applications",
+      "fixture_role": "fictional independently authorized scheduler",
+      "path": "/schedule-applications",
+      "heading": "Controlled schedule applications",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Schedule applications",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Return to dashboard",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "checkbox",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Refresh applications",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Refresh published history",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/ga/latest",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/versions",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/faculty",
+      "fixture_role": "fictional faculty",
+      "path": "/faculty",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "My Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "My Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Adjustment Requests",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Profile",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "AvailableMy PreferencesReview and save your own teaching preferences.",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Read onlyMy ScheduleView your own assignments from the latest GA-generated proposal.",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Requires verified schedule sourceAdjustment RequestsPrepare, track and withdraw your own proposals without changing your teaching schedule.",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Read onlyMy ProfileView your account, linked faculty identity and available academic metadata.",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 403
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/faculty/preferences",
+      "fixture_role": "fictional faculty",
+      "path": "/faculty/preferences",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "My Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "My Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Adjustment Requests",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Profile",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": "switch",
+          "type": "checkbox",
+          "disabled": false,
+          "label": "Consider my subject preferences",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "search",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "ALL",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "CCC",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "ITD",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "ITN",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "ITE",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "ISY",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "OTHER",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": "switch",
+          "type": "checkbox",
+          "disabled": false,
+          "label": "Show all offered subjects (eligibility still applies)",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Add SYN101 to preferred subjects",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "+ Add General Preferred Period",
+          "visible": true
+        },
+        {
+          "tag": "table",
+          "role": "grid",
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "table",
+          "role": "presentation",
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "September 28, 2026",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "September 29, 2026",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "September 30, 2026",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "October 1, 2026",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "October 2, 2026",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "October 3, 2026",
+          "visible": true
+        },
+        {
+          "tag": "table",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "table",
+          "role": "presentation",
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "form",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": false
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "time",
+          "disabled": false,
+          "label": "",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Cancel",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "submit",
+          "disabled": false,
+          "label": "Add preference",
+          "visible": false
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "schedule-style",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "schedule-style",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "schedule-style",
+          "visible": true
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "lecture-lab",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "lecture-lab",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "radio",
+          "disabled": false,
+          "label": "lecture-lab",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Discard",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": true,
+          "label": "Save Preferences",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/preferences/0",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/20000000-0000-4000-8000-000000000001/eligible-subjects",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/20000000-0000-4000-8000-000000000001/eligible-subjects",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/preferences/0",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/faculty/schedule",
+      "fixture_role": "fictional faculty",
+      "path": "/faculty/schedule",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "My Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "My Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Adjustment Requests",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Profile",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Request an adjustment (verified schedule source required)",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Refresh timetable",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedules/me",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/faculty/profile",
+      "fixture_role": "fictional faculty",
+      "path": "/faculty/profile",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "My Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "My Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Adjustment Requests",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Profile",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/faculty/20000000-0000-4000-8000-000000000001",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/faculty/adjustments",
+      "fixture_role": "fictional faculty",
+      "path": "/faculty/adjustments",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Skip to page content",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Open navigation",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Dashboard",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "My Preferences",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "My Schedule",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Adjustment Requests",
+          "visible": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "Profile",
+          "visible": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "disabled": false,
+          "label": "Sign out",
+          "visible": true
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "View My Schedule",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/chair-reviews/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule-applications/access",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/adjustment-requests/assignments",
+          "status": 200
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    },
+    {
+      "requested_path": "/login",
+      "fixture_role": "anonymous",
+      "path": "/login",
+      "heading": "CCS Faculty Scheduling",
+      "controls": [
+        {
+          "tag": "form",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "input",
+          "role": null,
+          "type": "password",
+          "disabled": false,
+          "label": "",
+          "visible": true
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "disabled": true,
+          "label": "Sign in",
+          "visible": true
+        }
+      ],
+      "alerts": 0,
+      "http_responses": [
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 401
+        }
+      ],
+      "verification": "ACTUAL_EDGE_FASTAPI_SQLITE_RENDER_AND_READS_ONLY; NO_CONTROL_ACTION_OR_PERSISTENCE_PROOF"
+    }
+  ]
+}

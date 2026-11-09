@@ -1,0 +1,63 @@
+{
+  "scope": "Code/registration inspection only, plus separately recorded fictional runtime tests. No notebook outputs or real academic rows exported.",
+  "fitness_direction": "MINIMIZE",
+  "paths": [
+    {
+      "path": "backend/services/ga_service.py",
+      "operation": "Fixed V1 final best -> save_best_if_better; saved/uploaded seed reconstructs and re-scores with current inputs",
+      "classification": "AUTOMATIC_WRITE_GUARDED; STORED_SEED_SCORE_NOT_USED"
+    },
+    {
+      "path": "backend/services/chromosome_service.py",
+      "operation": "Only runtime automatic best-file replacement function; unverified calls now decline without archive IO",
+      "classification": "REPAIRED"
+    },
+    {
+      "path": "backend/services/ga_bundle_runtime.py",
+      "operation": "H internal binding disables legacy Saved Best saving explicitly",
+      "classification": "UNCHANGED_DISABLED"
+    },
+    {
+      "path": "backend/services/ga_v2_service.py",
+      "operation": "Read saved/uploaded seed; reconstruct/validate and use current V2 contract. Versioned results separate from legacy global Best",
+      "classification": "UNCHANGED"
+    },
+    {
+      "path": "backend/routers/chromosomes.py",
+      "operation": "Admin archive metadata/download/analyze and uploaded-baseline endpoints",
+      "classification": "UNCHANGED_READS; UPLOAD_TARGET_IS_DISTINCT"
+    },
+    {
+      "path": "backend/services/chromosome_analysis_service.py",
+      "operation": "Explicit loaded-chromosome analysis reconstructs/re-scores; no optimization or Best replacement",
+      "classification": "UNCHANGED"
+    },
+    {
+      "path": "backend/services/ga_history_service.py",
+      "operation": "Run-specific generation snapshots serialize candidates; not global Saved Best replacement",
+      "classification": "UNCHANGED"
+    },
+    {
+      "path": "backend/genetic_algorithm/operators/BestChromosome.py",
+      "operation": "Legacy analysis/CSV utilities; not the runtime JSON auto-save route",
+      "classification": "UNCHANGED_ORIGINAL_SOURCE"
+    }
+  ],
+  "notebooks": [
+    {
+      "path": "notebooks/main_loopv2.ipynb",
+      "code_cell_count": 12,
+      "saved_best_reference_cells": [
+        1,
+        2,
+        3
+      ],
+      "file_write_call_cells": [
+        3
+      ],
+      "outputs_inspected": false,
+      "scope": "Static source-cell metadata only; notebook not executed or changed"
+    }
+  ],
+  "limitation": "Manual notebook/file exports are outside the FastAPI automatic Saved Best admission contract; original notebook behavior was deliberately preserved. Do not describe the new guard as a filesystem-wide protection against arbitrary manual writes."
+}

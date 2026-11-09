@@ -1,0 +1,23 @@
+{
+  "selection": "saved-best",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_saved_best_context.py",
+    "--durations=10",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-hz3mr9mj\\pytest-saved-best"
+  ],
+  "started_at": "2026-11-09T09:46:15.432901+08:00",
+  "ended_at": "2026-11-09T09:46:20.572825+08:00",
+  "elapsed_seconds": 5.139969500014558,
+  "exit_code": 0,
+  "stdout": "...........................................                              [100%]\n============================ slowest 10 durations =============================\n1.89s setup    tests/test_saved_best_context.py::test_same_context_minimizes_and_preserves_zero[100-90-True]\n0.78s call     tests/test_saved_best_context.py::test_process_restart_and_concurrent_comparison\n0.10s call     tests/test_saved_best_context.py::test_threads_and_repetition_do_not_regress\n0.04s call     tests/test_saved_best_context.py::test_same_context_minimizes_and_preserves_zero[100-90-True]\n0.03s call     tests/test_saved_best_context.py::test_same_context_minimizes_and_preserves_zero[1-0-True]\n0.03s call     tests/test_saved_best_context.py::test_unverified_or_tampered_incumbent_is_never_overwritten[content_hash]\n0.03s call     tests/test_saved_best_context.py::test_unverified_or_tampered_incumbent_is_never_overwritten[attestation]\n0.03s call     tests/test_saved_best_context.py::test_unverified_or_tampered_incumbent_is_never_overwritten[schedule]\n0.02s call     tests/test_saved_best_context.py::test_unverified_or_tampered_incumbent_is_never_overwritten[context_hash]\n0.02s call     tests/test_saved_best_context.py::test_every_changed_context_dimension_declines_without_numeric_ranking[bundle_fingerprint]\n43 passed in 3.63s\n",
+  "stderr": "",
+  "scope": "Owned source snapshot with fictional import tables and D10 models. Qualification/admission tests use new private disposable SQLite stores; other selections use isolated fictional fixtures. No PostgreSQL or institutional database. Technical verification is not institutional authorization."
+}

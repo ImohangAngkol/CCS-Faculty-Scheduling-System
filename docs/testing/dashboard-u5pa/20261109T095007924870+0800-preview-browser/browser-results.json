@@ -1,0 +1,37 @@
+{
+  "scope": "Actual Edge/React with fictional intercepted HTTP only; no FastAPI, PostgreSQL, institutional authority or GA execution",
+  "scenarios": [
+    {
+      "name": "U5PA-B01 history failure preserves valid action",
+      "status": "FAIL",
+      "message": "Missing text Approved requests"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/auth/me",
+      "method": "GET"
+    },
+    {
+      "path": "/api/chair-reviews/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications/access",
+      "method": "GET"
+    },
+    {
+      "path": "/api/schedule-applications",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": []
+}
