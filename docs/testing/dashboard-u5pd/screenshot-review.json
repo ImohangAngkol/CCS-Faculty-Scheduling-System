@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-11-10T08:54:51.161084+08:00",
+  "method": "CODEX_IMAGE_VIEW",
+  "privacy_reviewed": true,
+  "files": {
+    "docs/testing/dashboard-u5pd/20261110T083844349913+0800-live/L02-real-terminal-history.png": "b301d7a91603a1170164ea38f7f9f848924eb7a7d40bcd3be32a52de7cc7680b",
+    "docs/testing/dashboard-u5pd/20261110T083844349913+0800-live/L04-real-HTTP-error-retained-history.png": "728a855d4621ba2d4bf61451f91a4901829601fc610229019d283537e970702c",
+    "docs/testing/dashboard-u5pd/20261110T083845576136+0800-preview-browser/B02-fresh-observations.png": "1fd1aec59b841345e8168018edd69b522b97411a17b00af49a648d9743e5cec5",
+    "docs/testing/dashboard-u5pd/20261110T083845576136+0800-preview-browser/B03-stale-not-terminated.png": "ac46de3439245433a3533eda1e55e81f4324e4291dfc6e1226126e260046cd35",
+    "docs/testing/dashboard-u5pd/20261110T083845576136+0800-preview-browser/B04-history-retained-on-error.png": "bab7a01faacb0c76dabc3244f9ccc5cc9b964774936b018693438ff2073acb84",
+    "docs/testing/dashboard-u5pd/20261110T084018672621+0800-legacy-browser/S03-recorded-zero-history.png": "1898a48797238bf29ebe5957abe769d557e8f97beaa6c177c4995837f4adac53",
+    "docs/testing/dashboard-u5pd/20261110T084018672621+0800-legacy-browser/S05-derived-interruption.png": "0709214ddc917d7a12406522fabdeaf63d0b96bc2d782aadd84e8e94044a94c6",
+    "docs/testing/dashboard-u5pd/20261110T084236332344+0800-preview-browser/B02-fresh-observations.png": "6a770dbdf933e7edc3ea6e186faf87ca282a4515682b0acafb52dde48616e7c7",
+    "docs/testing/dashboard-u5pd/20261110T084236332344+0800-preview-browser/B03-stale-not-terminated.png": "89ceacf08f28cb22ac9603f7574868f9763f8f2a42daf6ecc27adf7a0a8808af",
+    "docs/testing/dashboard-u5pd/20261110T084236332344+0800-preview-browser/B04-history-retained-on-error.png": "adf5de8dbd0d8ff3d171398b9dbd88db785c2b108e6ec11e8b80a26af4b70ac3",
+    "docs/testing/dashboard-u5pd/20261110T084236454125+0800-live/L02-real-terminal-history.png": "93fe39fa1132dacffed64e06f636ab7c45826dd39dc0e857f40e83ce45b63e1b",
+    "docs/testing/dashboard-u5pd/20261110T084236454125+0800-live/L04-real-HTTP-error-retained-history.png": "966d103d17895465b0f8b84d8bfc4be2bbf4c48a73ae1118f4be87d96154e672",
+    "docs/testing/dashboard-u5pd/20261110T084410699053+0800-legacy-browser/S03-recorded-zero-history.png": "139a9b5998e647ad76d02018a9dd0948780f513ac92740dbb5bfde529af55eab",
+    "docs/testing/dashboard-u5pd/20261110T084410699053+0800-legacy-browser/S05-derived-interruption.png": "0766a0ef28c24b5f1351c7585bd8a8f670ad981f0e395aa3a61ac06761da7025"
+  },
+  "scope": "All fourteen retained genuine full-page Edge PNGs individually viewed; fictional account/run/context identifiers only, no login secret, cookie, signed receipt or private faculty record visible.",
+  "intermediate_findings": "Intermediate screenshots retain the documented separator encoding defect. No screenshot was edited. Final screenshots show corrected ASCII separators, source/retrieval distinction, explicit stale/unknown states and retained history with retry.",
+  "limits": "Visual and structural inspection, not OCR proof. Intermediate captures are historical evidence, not final-source screenshots."
+}

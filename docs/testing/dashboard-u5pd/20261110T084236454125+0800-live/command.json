@@ -1,0 +1,41 @@
+{
+  "selection": "live",
+  "started_at": "2026-11-10T08:42:36.517507+08:00",
+  "ended_at": "2026-11-10T08:43:30.878175+08:00",
+  "elapsed_seconds": 54.36067029996775,
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_observation_continuity_live.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-zkfo_uql\\pytest-live"
+  ],
+  "stdout": "..                                                                       [100%]\n2 passed in 52.43s\n",
+  "stderr": "",
+  "head": "3719af0734e395bf2b905a13ab6ccc1ca7dda5f9",
+  "source_sha256": {
+    "backend/services/ga_observation_freshness.py": "2f55c8a6a0a6b043482790c8ce67404e1994efa42b1028d38dd911e2c5353d2b",
+    "backend/services/ga_research_continuity.py": "b21dec864004805ff05afac32d56072b4a51a5057035330a4aa9f3930b8704db",
+    "backend/tests/test_observation_continuity.py": "8bec7802ce28f707df61d2908ed35b7d6343e3ff704be6e188809589648ab573",
+    "backend/tests/test_observation_continuity_live.py": "74e1b4b9295ea9d70b0309d5190747137a37caea4379aaafa90f6d63afc80159",
+    "frontend/src/api/researchObservations.ts": "52aa315f4f4ecaa8c633ecfd673ddd02482f71c82822f43fb6ddab35b4b1bd3a",
+    "frontend/src/pages/ResearchConsole.tsx": "67c4e42bf184cdb0bb66e895163cc65a551265b78d4a102ca3e718da8c55f2f2",
+    "frontend/src/services/researchFreshness.ts": "76170dcd8c16213c44442b72127e7e1168ebe711001e22956bd3d36ce69859ae",
+    "frontend/tests/observationContinuity.test.mjs": "4ee00077572d72c9704402358a500c4fc8c9ec2d0083ca120fa00939fe43c6e0",
+    "frontend/tests/observationContinuity.fixtures.mjs": "5da0c2e84ac618dfab39cec4dfd070e820f1b3636544765bef9130bb7b2907f0",
+    "frontend/tests/observationContinuity.browser.test.mjs": "e3e8acef4ca7e87d61a45ffd962ed5c1a0684fd3d00ac8ecaec52f47c511254d",
+    "frontend/tests/observationContinuity.live.mjs": "5aeaebe7743814e11d2b387e11b573ef9a19e8ef67d96c6738d7d69b9b575815",
+    "docs/testing/dashboard-u5pd/serve_console.py": "0e17451d0cc3d405c60ae53071893b3b8324d17a55b1a6ce863595cb935be7ae"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-zkfo_uql\\repository",
+  "no_staging": true,
+  "completed": true
+}

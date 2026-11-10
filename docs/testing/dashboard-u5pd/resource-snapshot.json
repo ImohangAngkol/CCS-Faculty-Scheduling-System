@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-11-10T08:31:48.744827+08:00",
+  "physical_memory_total_bytes": 16869548032,
+  "physical_memory_available_bytes": 270381056,
+  "memory_load_percent": 98,
+  "system_commit_limit_bytes": 68409155584,
+  "system_commit_available_bytes": 1232244736,
+  "scope": "Read-only host aggregate; no process command lines, credentials or institutional data"
+}

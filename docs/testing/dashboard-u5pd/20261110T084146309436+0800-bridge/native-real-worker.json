@@ -1,0 +1,50 @@
+{
+  "scenarios": "Real U5L child + H optimizer + disposable SQLite; no institutional approval",
+  "state": "COMPLETED",
+  "fitness": 0,
+  "generation": 1,
+  "checkpoint_sequence": 2,
+  "best_values": [
+    0,
+    0
+  ],
+  "telemetry_events": 4,
+  "durable_restart_equal": true,
+  "RNG_unchanged": true,
+  "research_best_tie_bytes_preserved": true,
+  "production_promotion": false,
+  "physical_observations": [
+    {
+      "active_processes": 0,
+      "created_100ns": 134387450007611338,
+      "creation_time_job_binding": true,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 0,
+      "kernel_seconds": 0.734375,
+      "peak_private_commit_bytes": 623165440,
+      "pid": 47400,
+      "user_seconds": 2.375
+    },
+    {
+      "active_processes": 0,
+      "created_100ns": 134387450064472159,
+      "creation_time_job_binding": true,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 0,
+      "kernel_seconds": 0.84375,
+      "peak_private_commit_bytes": 739225600,
+      "pid": 43412,
+      "user_seconds": 6.125
+    }
+  ]
+}

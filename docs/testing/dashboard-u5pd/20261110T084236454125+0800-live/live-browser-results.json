@@ -1,0 +1,105 @@
+{
+  "scope": "Real Edge/React/FastAPI/TCP/session/private SQLite/native worker. Temporary HTTP 503 and expired owner metadata explicitly injected by test harness; not an institutional outage.",
+  "scenarios": [
+    {
+      "name": "U5PD-L01 real session authentication",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-L02 genuine completed worker and confirmed terminal",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-L03 browser reload restores only authorized run selection",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-L04 actual HTTP injected 503 retains history",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-L05 retry after injected fault recovers",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-L06 list failure leaves selected observations mounted",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-L07 missing metrics and injected interruption are truthful",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-L08 no operations and only research GETs",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-L09 unscoped real administrator cannot read",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/f5b9afac-fe2b-4b83-ae98-1a9c91f64505",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/f5b9afac-fe2b-4b83-ae98-1a9c91f64505",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/f5b9afac-fe2b-4b83-ae98-1a9c91f64505",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/f5b9afac-fe2b-4b83-ae98-1a9c91f64505",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/dbfd6038-07aa-436f-88e1-97996040147c",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/20810d6e-c05f-4eaa-9090-3d3956f23e8d",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": [],
+  "HTTP_interception": false
+}

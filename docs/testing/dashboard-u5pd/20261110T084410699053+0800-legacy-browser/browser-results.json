@@ -1,0 +1,124 @@
+{
+  "scope": "Actual Edge/React with intercepted fictional HTTP only; no FastAPI or worker acceptance",
+  "scenarios": [
+    {
+      "name": "U5PC-S01 loading then empty",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S02 access error and retry",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S03 zero fitness chart and provenance",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S04 missing generation metrics has no fabricated chart",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S05 interruption derived explicitly",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S06 detail failure clears prior data and retry works",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S07 stale selection response cannot replace newer run",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S08 imported text is rendered as text",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S09 polling cancels after switching to terminal run",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S10 reload requires fresh selection",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S11 research network is GET-only, safety notices visible",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PC-S12 anonymous session cannot inspect console",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000002",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000002",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000002",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": []
+}

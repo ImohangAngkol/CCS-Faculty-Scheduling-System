@@ -1,0 +1,41 @@
+{
+  "selection": "continuity",
+  "started_at": "2026-11-10T08:29:34.375172+08:00",
+  "ended_at": "2026-11-10T08:30:53.933978+08:00",
+  "elapsed_seconds": 79.55981400003657,
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_observation_continuity.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-w9q21rt1\\pytest-continuity"
+  ],
+  "stdout": "................................                                         [100%]\n============================== warnings summary ===============================\ntests/test_observation_continuity.py::test_v2_http_auth_and_integrity_no_new_routes\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\ntests/test_observation_continuity.py::test_v2_http_auth_and_integrity_no_new_routes\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n32 passed, 2 warnings in 77.63s (0:01:17)\n",
+  "stderr": "",
+  "head": "3719af0734e395bf2b905a13ab6ccc1ca7dda5f9",
+  "source_sha256": {
+    "backend/services/ga_observation_freshness.py": "2f55c8a6a0a6b043482790c8ce67404e1994efa42b1028d38dd911e2c5353d2b",
+    "backend/services/ga_research_continuity.py": "b21dec864004805ff05afac32d56072b4a51a5057035330a4aa9f3930b8704db",
+    "backend/tests/test_observation_continuity.py": "8bec7802ce28f707df61d2908ed35b7d6343e3ff704be6e188809589648ab573",
+    "backend/tests/test_observation_continuity_live.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frontend/src/api/researchObservations.ts": "52aa315f4f4ecaa8c633ecfd673ddd02482f71c82822f43fb6ddab35b4b1bd3a",
+    "frontend/src/pages/ResearchConsole.tsx": "5e5979394a035e29eba6bc53101dca492f76f8a93ffa31251c5659fbf5cf2da2",
+    "frontend/src/services/researchFreshness.ts": "76170dcd8c16213c44442b72127e7e1168ebe711001e22956bd3d36ce69859ae",
+    "frontend/tests/observationContinuity.test.mjs": "4ee00077572d72c9704402358a500c4fc8c9ec2d0083ca120fa00939fe43c6e0",
+    "frontend/tests/observationContinuity.fixtures.mjs": "5da0c2e84ac618dfab39cec4dfd070e820f1b3636544765bef9130bb7b2907f0",
+    "frontend/tests/observationContinuity.browser.test.mjs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frontend/tests/observationContinuity.live.mjs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/testing/dashboard-u5pd/serve_console.py": "0e17451d0cc3d405c60ae53071893b3b8324d17a55b1a6ce863595cb935be7ae"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-w9q21rt1\\repository",
+  "no_staging": true,
+  "completed": true
+}

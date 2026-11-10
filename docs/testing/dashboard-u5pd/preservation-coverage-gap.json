@@ -1,0 +1,63 @@
+{
+  "status": "BLOCKED_PRESERVATION_COVERAGE",
+  "recorded_at": "2026-11-10T08:57:50.489101+08:00",
+  "baseline_recorded_at": "2026-11-10T07:51:40.290408+08:00",
+  "baseline_paths": 5121,
+  "baselined_bytes_verified": true,
+  "authorized_baseline_changes": 2,
+  "omitted_ignored_artifacts": {
+    "backend/saved_chromosomes/generation_snapshots/e2049cdc-fa8d-460f-b505-195a1d30b07e/analysis-cac1a8142c03384e30a6517bce0be80db1271d06cffe5007dd670a111c898fd3.json": {
+      "current_sha256": "ea51033169ff7360a8bacdd52ffbd4c26f66ca9f0c416827813a2feb3e6ceb3a",
+      "bytes": 30693,
+      "created": "2026-11-09T20:02:12.564950+08:00",
+      "modified": "2026-11-09T20:02:12.565946+08:00"
+    },
+    "backend/saved_chromosomes/generation_snapshots/e2049cdc-fa8d-460f-b505-195a1d30b07e/generation-000000.json": {
+      "current_sha256": "37241f4f9a6629ceb375647fbeb6a595953573766e9d1babe24317b587a41b69",
+      "bytes": 57332,
+      "created": "2026-11-09T20:01:26.768948+08:00",
+      "modified": "2026-11-09T20:01:26.859290+08:00"
+    },
+    "backend/saved_chromosomes/generation_snapshots/e2049cdc-fa8d-460f-b505-195a1d30b07e/index.json": {
+      "current_sha256": "8bd928aba03500ab859ed3d53eebec28f580e9878100d517f7be6c23b524433c",
+      "bytes": 1798,
+      "created": "2026-11-09T20:02:25.747547+08:00",
+      "modified": "2026-11-09T20:02:25.753634+08:00"
+    },
+    "backend/saved_chromosomes/stopped_runs/e2049cdc-fa8d-460f-b505-195a1d30b07e.json": {
+      "current_sha256": "b1a8a54a9d229e11e235d53e6786189fbb30a425ea95162938517aea7ddb6b48",
+      "bytes": 29729,
+      "created": "2026-11-09T20:02:25.693039+08:00",
+      "modified": "2026-11-09T20:02:25.697841+08:00"
+    },
+    "backend/run_checkpoints/e2049cdc-fa8d-460f-b505-195a1d30b07e/checkpoint-0-cbf701c4-b71b-4940-8dc2-8a9a4001afb7.json.gz": {
+      "current_sha256": "c51852ea1f406af72dc895111e93e4edeb7bfe856752542898f1f65af513d944",
+      "bytes": 3242039,
+      "created": "2026-11-09T20:01:49.042273+08:00",
+      "modified": "2026-11-09T20:01:49.044322+08:00"
+    },
+    "backend/run_checkpoints/e2049cdc-fa8d-460f-b505-195a1d30b07e/status.json": {
+      "current_sha256": "ed927e40e642b868b97958bb04121eb025cee72aa4ac9eab37e99a82cbe03695",
+      "bytes": 2438,
+      "created": "2026-11-09T20:02:25.724264+08:00",
+      "modified": "2026-11-09T20:02:25.729592+08:00"
+    },
+    "backend/run_input_receipts_v1/e2049cdc-fa8d-460f-b505-195a1d30b07e/end.json": {
+      "current_sha256": "cd3545565862702afe13a35dd30e045026ca3e8eef3f01d7f578d55b2c9e4eb6",
+      "bytes": 1126,
+      "created": "2026-11-09T20:02:13.133799+08:00",
+      "modified": "2026-11-09T20:02:13.133799+08:00"
+    },
+    "backend/run_input_receipts_v1/e2049cdc-fa8d-460f-b505-195a1d30b07e/start.json": {
+      "current_sha256": "184692f17983df5af363ed55644021ff3dc7e4cbec1cceb04cae3890259a3aee",
+      "bytes": 1446,
+      "created": "2026-11-09T20:01:03.649060+08:00",
+      "modified": "2026-11-09T20:01:03.650057+08:00"
+    }
+  },
+  "finding": "Eight ignored artifacts predate entry by filesystem timestamps but were not in the 5121-path baseline assembled from tracked/untracked and prior protected references. No pre-U5PD raw hashes were recorded for these eight. Timestamp evidence is not byte-preservation proof.",
+  "actions": "No protected file or historical evidence changed, removed or repaired. Original baseline remains intact. Current hashes establish only a new observation, not retrospective preservation.",
+  "checkpoint": "BLOCKED pending separately reviewed preservation-scope requalification; do not stage or commit.",
+  "historical_audit_failure": "Second seal attempt rejected saved_chromosomes membership; no seals created. Full membership guard was correct to stop; do not ignore omitted files.",
+  "entry_coverage_cause": "Reused prior protected runtime inventory omitted the later pre-existing run artifacts. No evidence of a new U5PD runtime write; cannot prove omitted bytes unchanged."
+}

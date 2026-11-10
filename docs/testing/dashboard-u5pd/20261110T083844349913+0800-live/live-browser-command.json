@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Actual Edge/React/TCP FastAPI/session/private SQLite/native worker; HTTP faults and expired-owner metadata explicitly injected"
+}

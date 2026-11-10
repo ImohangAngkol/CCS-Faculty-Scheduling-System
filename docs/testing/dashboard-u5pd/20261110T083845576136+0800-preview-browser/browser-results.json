@@ -1,0 +1,247 @@
+{
+  "scope": "Actual Edge/React with fictional intercepted HTTP; no live FastAPI or worker claim",
+  "scenarios": [
+    {
+      "name": "U5PD-B01 loading and empty",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B02 fresh source and distinct retrieval clocks",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B03 stale does not imply terminated",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B04 temporary HTTP failure retains exact historical chart",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B05 retry restores connection without deleting history",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B06 future source timestamp is UNKNOWN",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B07 source ages to stale without HTTP",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B08 old durable terminal is not live telemetry",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B09 tolerated clock skew remains explicit",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B10 list outage preserves selected detail",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B11 old run completion cannot replace new selection",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B12 actual reload preserves run UUID selection only",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B13 automatic polling stops after six refreshes",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B14 switching cancels pending polling",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B15 authoritative denial clears cache; unsafe text stays text",
+      "status": "PASS"
+    },
+    {
+      "name": "U5PD-B16 no controls, GET-only and anonymous denial",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000002",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000002",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/70000000-0000-4000-8000-000000000001",
+      "method": "GET"
+    }
+  ],
+  "runtime_errors": [],
+  "memory_samples": [
+    {
+      "label": "initial-empty",
+      "Documents": 6,
+      "JSEventListeners": 188,
+      "Nodes": 194,
+      "JSHeapUsedSize": 22582004,
+      "JSHeapTotalSize": 31719424,
+      "documents": 6,
+      "nodes": 194,
+      "jsEventListeners": 188
+    },
+    {
+      "label": "terminal-history",
+      "Documents": 1,
+      "JSEventListeners": 200,
+      "Nodes": 400,
+      "JSHeapUsedSize": 25473096,
+      "JSHeapTotalSize": 37224448,
+      "documents": 1,
+      "nodes": 400,
+      "jsEventListeners": 200
+    },
+    {
+      "label": "seven-bounded-reads",
+      "Documents": 1,
+      "JSEventListeners": 179,
+      "Nodes": 373,
+      "JSHeapUsedSize": 23062256,
+      "JSHeapTotalSize": 24641536,
+      "documents": 1,
+      "nodes": 373,
+      "jsEventListeners": 179
+    },
+    {
+      "label": "before-anonymous",
+      "Documents": 1,
+      "JSEventListeners": 225,
+      "Nodes": 790,
+      "JSHeapUsedSize": 24453528,
+      "JSHeapTotalSize": 26476544,
+      "documents": 1,
+      "nodes": 790,
+      "jsEventListeners": 225
+    }
+  ],
+  "memory_scope": "CDP JS heap and DOM counters only, NOT browser process working set/private commit or proof of leak-free long-duration behavior; no forced GC"
+}

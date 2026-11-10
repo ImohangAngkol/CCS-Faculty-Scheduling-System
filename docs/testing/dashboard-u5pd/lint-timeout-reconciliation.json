@@ -1,0 +1,33 @@
+{
+  "initial_exit_code": 124,
+  "initial_elapsed_seconds": 1636.9401510001626,
+  "configured_timeout_seconds": 300,
+  "initial_stdout_stderr": "No diagnostic before timeout; preserved in original command record",
+  "unchanged_snapshot_source_sha256_verified": {
+    "frontend/src/api/researchObservations.ts": "52aa315f4f4ecaa8c633ecfd673ddd02482f71c82822f43fb6ddab35b4b1bd3a",
+    "frontend/src/services/researchFreshness.ts": "76170dcd8c16213c44442b72127e7e1168ebe711001e22956bd3d36ce69859ae",
+    "frontend/src/pages/ResearchConsole.tsx": "5e5979394a035e29eba6bc53101dca492f76f8a93ffa31251c5659fbf5cf2da2"
+  },
+  "per_file_reruns": [
+    {
+      "source": "src/pages/ResearchConsole.tsx",
+      "exit_code": 0,
+      "elapsed_seconds": 6.388151800027117
+    },
+    {
+      "source": "src/services/researchFreshness.ts",
+      "exit_code": 0,
+      "elapsed_seconds": 5.067657500039786
+    },
+    {
+      "source": "src/api/researchObservations.ts",
+      "exit_code": 0,
+      "elapsed_seconds": 6.332049800083041
+    }
+  ],
+  "nearby_resource_snapshot": "docs/testing/dashboard-u5pd/resource-snapshot.json",
+  "resource_intervention": "User reported freeing RAM; subsequent read-only snapshot shows improved headroom. No process was stopped by the assistant.",
+  "root_cause": "Not conclusively established. Resource pressure observed nearby; all unchanged per-file lint checks passed. No reproducible source-specific lint hang was found.",
+  "timeout_not_increased": true,
+  "original_failure_preserved": true
+}

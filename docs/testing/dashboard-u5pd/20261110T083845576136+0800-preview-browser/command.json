@@ -1,0 +1,33 @@
+{
+  "selection": "preview-browser",
+  "head": "3719af0734e395bf2b905a13ab6ccc1ca7dda5f9",
+  "ui_mode": "committed-u5pc-plus-only-u5pd",
+  "ui_overlay_sha256": {
+    "frontend/src/api/researchObservations.ts": "52aa315f4f4ecaa8c633ecfd673ddd02482f71c82822f43fb6ddab35b4b1bd3a",
+    "frontend/src/pages/ResearchConsole.tsx": "c7b032acce76cecc0e63bb0e4a97130e92bac87bca5a0f610398eb232b070a80",
+    "frontend/src/services/researchFreshness.ts": "76170dcd8c16213c44442b72127e7e1168ebe711001e22956bd3d36ce69859ae",
+    "frontend/tests/observationContinuity.test.mjs": "4ee00077572d72c9704402358a500c4fc8c9ec2d0083ca120fa00939fe43c6e0",
+    "frontend/tests/observationContinuity.fixtures.mjs": "5da0c2e84ac618dfab39cec4dfd070e820f1b3636544765bef9130bb7b2907f0",
+    "frontend/tests/observationContinuity.browser.test.mjs": "e3e8acef4ca7e87d61a45ffd962ed5c1a0684fd3d00ac8ecaec52f47c511254d"
+  },
+  "command": [
+    "node",
+    "--test",
+    "tests/observationContinuity.browser.test.mjs"
+  ],
+  "started_at": "2026-11-10T08:38:45.576679+08:00",
+  "ended_at": "2026-11-10T08:40:18.671511+08:00",
+  "elapsed_seconds": 93.09485579980537,
+  "exit_code": 0,
+  "stdout": "\u25b6 U5PD freshness and continuity\n  \u2714 U5PD-B01 loading and empty (2195.4111ms)\n  \u2714 U5PD-B02 fresh source and distinct retrieval clocks (252.7251ms)\n  \u2714 U5PD-B03 stale does not imply terminated (215.0592ms)\n  \u2714 U5PD-B04 temporary HTTP failure retains exact historical chart (187.6069ms)\n  \u2714 U5PD-B05 retry restores connection without deleting history (145.5299ms)\n  \u2714 U5PD-B06 future source timestamp is UNKNOWN (82.0191ms)\n  \u2714 U5PD-B07 source ages to stale without HTTP (163.7995ms)\n  \u2714 U5PD-B08 old durable terminal is not live telemetry (61.1696ms)\n  \u2714 U5PD-B09 tolerated clock skew remains explicit (56.809ms)\n  \u2714 U5PD-B10 list outage preserves selected detail (124.2017ms)\n  \u2714 U5PD-B11 old run completion cannot replace new selection (185.4175ms)\n  \u2714 U5PD-B12 actual reload preserves run UUID selection only (504.9663ms)\n  \u2714 U5PD-B13 automatic polling stops after six refreshes (74408.1113ms)\n  \u2714 U5PD-B14 switching cancels pending polling (10620.8406ms)\n  \u2714 U5PD-B15 authoritative denial clears cache; unsafe text stays text (140.9253ms)\n  \u2714 U5PD-B16 no controls, GET-only and anonymous denial (1634.5126ms)\n\u2714 U5PD freshness and continuity (92457.1733ms)\n\u2139 tests 17\n\u2139 suites 0\n\u2139 pass 17\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 92999.3261\n",
+  "stderr": "",
+  "test_cache_isolation": {
+    "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+    "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+    "test_config_sha256": "6f3823abd0d1926372aabe0d280e82ffb49c07df264adbff4cc4d438e1014007",
+    "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5o-frontend-huddwmsl\\vite-cache",
+    "shared_node_modules_cache_used": false,
+    "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+  },
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5PB worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

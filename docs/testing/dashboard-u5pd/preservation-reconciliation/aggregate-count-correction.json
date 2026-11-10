@@ -1,0 +1,20 @@
+{
+  "reason": "Independent review found the updated manifest inherited the original evidence_file_bytes_excluding_seals aggregate instead of recomputing it for the expanded inventory. Artifact digests and blobs themselves passed. Preserve first seal before correcting the reporting aggregate.",
+  "original_recorded_bytes": 3820382,
+  "first_expanded_content_bytes": 4070386,
+  "preserved_first_seal": {
+    "docs/testing/dashboard-u5pd/manifest.json": {
+      "archive": "docs/testing/dashboard-u5pd/preservation-reconciliation/first-seal-manifest.json",
+      "sha256": "8af38aae6f96fbc4a3f95539c2cbaf1af2db28555b43ab6bc420b3ffa0d8bff9"
+    },
+    "docs/testing/dashboard-u5pd/staging-plan.json": {
+      "archive": "docs/testing/dashboard-u5pd/preservation-reconciliation/first-seal-staging-plan.json",
+      "sha256": "7a1a6ca1cec612c64535d6f6b0e3d4c8780a6f1e88e46142beb3f12e6d0cfe2d"
+    },
+    "docs/testing/dashboard-u5pd/preservation-reconciliation/reconcile.py": {
+      "archive": "docs/testing/dashboard-u5pd/preservation-reconciliation/first-seal-reconcile-source.txt",
+      "sha256": "4131e9c3895fe3684d4cf41c2d30a5e5b4ee09d204e742f5eafa0f430252bed5"
+    }
+  },
+  "correction": "Recompute expanded evidence bytes, retain original package byte count in a separate field, rehash the exact expanded inventory and replay verification. No production/test/historical runtime changes."
+}

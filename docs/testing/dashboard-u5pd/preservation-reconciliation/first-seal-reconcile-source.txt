@@ -1,0 +1,214 @@
+"""Read-only historical investigation and explicit evidence-only resealing.
+
+--collect archives the three superseded evidence documents before their approved
+update. --seal updates only the current manifest/plan; all archives are immutable.
+No application imports, GA execution, database access or Git writes.
+"""
+from datetime import datetime
+from zoneinfo import ZoneInfo
+import csv
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import sys
+
+ROOT=Path(__file__).resolve().parents[4]
+BASE=ROOT/'docs/testing/dashboard-u5pd';HERE=Path(__file__).resolve().parent
+HEAD='3719af0734e395bf2b905a13ab6ccc1ca7dda5f9'
+REPORT='docs/dashboard-u5pd-observation-continuity.md'
+SEALS=['docs/testing/dashboard-u5pd/manifest.json','docs/testing/dashboard-u5pd/staging-plan.json']
+ARCHIVES={REPORT:'original-report.md',SEALS[0]:'original-manifest.json',SEALS[1]:'original-staging-plan.json'}
+RUN='e2049cdc-fa8d-460f-b505-195a1d30b07e'
+PROTECTED=['backend/data/','backend/saved_chromosomes/','backend/run_checkpoints/','backend/generation_snapshots/',
+ 'backend/run_input_receipts_v1/','backend/run_provenance_v1/','backend/constrained_runs_v2/']
+
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def oid(raw):return hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+def git(*args,check=True):
+    result=subprocess.run(['git',*args],cwd=ROOT,env=dict(os.environ,GIT_OPTIONAL_LOCKS='0'),capture_output=True,timeout=180)
+    if check:assert result.returncode==0,'GIT_CHECK_FAILED: '+str(args[:3])
+    return result
+def read(p):return json.loads(p.read_text(encoding='utf-8'))
+def new(p,doc):
+    with p.open('x',encoding='utf-8',newline='\n') as f:json.dump(doc,f,indent=2);f.write('\n')
+def clock():return datetime.now(ZoneInfo('Asia/Manila')).isoformat()
+def invariants():
+    assert git('rev-parse','HEAD').stdout.decode().strip()==HEAD
+    assert git('branch','--show-current').stdout.strip()==b'main'
+    assert not git('diff','--cached','--name-only').stdout.strip()
+    baseline=read(BASE/'preservation-baseline.json');entry=read(BASE/'entry-review.json')
+    changed=[n for n,h in baseline.items() if not (ROOT/n).is_file() or sha(ROOT/n)!=h]
+    modified=['frontend/src/api/researchObservations.ts','frontend/src/pages/ResearchConsole.tsx']
+    assert set(changed)==set(modified) and len(baseline)==5121
+    assert set(git('diff','--name-only').stdout.decode().splitlines())==set(entry['tracked_modifications'])|set(modified)
+    assert sha(ROOT/'.git/index')==baseline['.git/index']
+    return baseline,entry,modified
+
+def collect():
+    baseline,entry,modified=invariants();old=read(BASE/'manifest.json');plan=read(BASE/'staging-plan.json')
+    assert len(old['artifact_sha256'])==98 and len(plan['exact_checkpoint_inventory'])==99
+    for n,h in old['artifact_sha256'].items():assert sha(ROOT/n)==h,'ORIGINAL_ARTIFACT_MISMATCH: '+n
+    for n,h in plan['proposed_blob_oids'].items():assert oid((ROOT/n).read_bytes())==h
+    # Preserve exact evidence before any authorized report/manifest/plan update.
+    for n,dst in ARCHIVES.items():
+        with (HERE/dst).open('xb') as f:f.write((ROOT/n).read_bytes())
+    gap=read(BASE/'preservation-coverage-gap.json');artifacts=[]
+    purposes=['Generation analysis cache','Generation-zero snapshot','Generation snapshot index','Stopped fixed-engine result',
+        'Compressed fixed-engine checkpoint (not restored/deserialized)','Fixed-engine run status','End input-loader receipt','Start input-loader receipt']
+    for (n,item),purpose in zip(gap['omitted_ignored_artifacts'].items(),purposes,strict=True):
+        p=ROOT/n;s=p.stat();assert p.resolve()==p and sha(p)==item['current_sha256']
+        stamp=lambda t:datetime.fromtimestamp(t,ZoneInfo('Asia/Manila')).isoformat()
+        assert stamp(s.st_ctime)==item['created'] and stamp(s.st_mtime)==item['modified']
+        ignore=git('check-ignore','-v','--',n).stdout.decode().strip()
+        assert git('ls-files','--error-unmatch','--',n,check=False).returncode!=0
+        raw=p.read_bytes();blob=oid(raw);obj=git('cat-file','-t',blob,check=False)
+        keys=[];embedded=False;run_field=False
+        if p.suffix=='.json':
+            d=json.loads(raw);assert isinstance(d,dict);keys=list(d);embedded='sha256' in d
+            def contains(v):
+                if isinstance(v,dict):return any(k=='run_id' and x==RUN or contains(x) for k,x in v.items())
+                if isinstance(v,list):return any(contains(x) for x in v)
+                return False
+            run_field=contains(d)
+        else:assert raw[:2]==b'\x1f\x8b'
+        artifacts.append(dict(path=n,current_sha256=sha(p),bytes=s.st_size,created=item['created'],modified=item['modified'],
+            ignored=True,matching_ignore_rule=ignore,purpose=purpose,file_type='gzip' if p.suffix=='.gz' else 'JSON',
+            run_namespace=RUN,owner_contract='Historical fixed-engine run namespace; no principal/department authority established or exported',
+            run_id_field_matches=run_field if keys else 'Not inspected inside compressed checkpoint',
+            top_level_keys=keys,embedded_digest_present=embedded,embedded_digest_is_earlier_trustworthy_raw_hash=False,
+            current_git_blob=blob,current_blob_object_present=obj.returncode==0,
+            classification='CURRENT_STATE_PRESERVED_ONLY',earlier_trustworthy_hash=None,
+            reason='No accepted pre-entry raw hash. Current hash matches original coverage-gap observation; timestamps and embedded digests do not establish prior byte identity.',
+            U5PD_write_path='No path identified in recorded isolated snapshot/fixture executions; not an OS file-write audit'))
+    # Search existing visible text evidence, without exporting its contents.
+    needles=[RUN,*gap['omitted_ignored_artifacts'],*[x['current_sha256'] for x in artifacts]]
+    visible=set(git('ls-files','-co','--exclude-standard','-z').stdout.decode().strip('\0').split('\0'))-{''}
+    matches=[];scanned=0;manifests=[];baselines=[]
+    for n in sorted(visible):
+        if n.startswith('docs/testing/dashboard-u5pd/') or n==REPORT or any(n.startswith(p) for p in PROTECTED):continue
+        p=ROOT/n
+        if not p.is_file() or p.suffix.lower() not in {'.json','.md','.py','.mjs','.ts','.tsx','.txt','.yml','.yaml'}:continue
+        text=p.read_text(encoding='utf-8',errors='replace').replace('\\\\','/').replace('\\','/');scanned+=1
+        if 'manifest' in p.name:manifests.append(n)
+        if 'baseline' in p.name:baselines.append(n)
+        if any(x in text for x in needles):matches.append(n)
+    pattern='|'.join([RUN,*[x['current_sha256'] for x in artifacts]])
+    history=git('log','--all','--format=%H','-G',pattern,'--','docs','backend/tests','frontend/tests','backend/experiments','.vscode')
+    exact=git('log','--all','--format=%H','--',*[x['path'] for x in artifacts])
+    assert not matches and not history.stdout.strip() and not exact.stdout.strip(),'HISTORICAL_CANDIDATE_REQUIRES_REVIEW'
+    for x in artifacts:
+        x.update(prior_evidence_reference='Original U5PD coverage-gap only; no earlier evidence reference found',earlier_hash_search='No match in current evidence or reachable relevant Git history')
+    sources=['docs/testing/dashboard-u5pd/run_checks.py','docs/testing/dashboard-u5pd/frontend_checks.py','docs/testing/dashboard-u5pd/diagnose_lint.py',
+        'docs/testing/dashboard-u5pd/inspect_resources.py','docs/testing/dashboard-u5pd/serve_console.py','docs/testing/dashboard-u5pd/audit_evidence.py',
+        'docs/testing/dashboard-u5pa/isolate_vite_cache.py','docs/testing/dashboard-u5c-r1/fictional_bootstrap.py',
+        'backend/tests/test_observation_continuity.py','backend/tests/test_observation_continuity_live.py',
+        'backend/tests/test_research_bridge.py','backend/tests/research_console_support.py','backend/tests/test_ga_input_bundle_checkpoint_qualification.py']
+    commands=[read(p) for p in sorted(BASE.glob('*/command.json'))]
+    assert all('snapshot' in c or c.get('ui_mode')=='committed-u5pc-plus-only-u5pd' for c in commands)
+    result=dict(recorded_at=clock(),head=HEAD,entry_baseline_paths=5121,unchanged_baseline_paths=5119,artifacts=artifacts,
+        original_99_inventory_verified=True,original_98_hashes_verified=True,original_97_proposed_blobs_verified=True,
+        search=dict(current_text_files=scanned,manifest_paths=manifests,baseline_paths=baselines,current_matches=matches,
+            reachable_relevant_Git_history_matching_commits=history.stdout.decode().splitlines(),exact_artifact_Git_history=exact.stdout.decode().splitlines(),
+            historical_hashes_accepted=0,scope='All visible tracked/untracked text except current U5PD and protected data/runtime; all reachable Git evidence/test/experiment/config history; exact paths and current blob existence. No external backups, cloud logs, unreachable arbitrary content or OS write audit claimed.'),
+        tooling_review=dict(source_sha256={n:sha(ROOT/n) for n in sources},recorded_commands=len(commands),
+            findings=['Backend runner excludes all seven data/runtime roots from Git archive, rejects archive links and runs with owned temporary snapshot/backend cwd.',
+                'Only dependency junctions reused; frontend Vite cache redirected to owned temporary storage. Institutional environment values are not forwarded.',
+                'Fictional research fixtures create private stores; database access allowlisted to fixture engines, institutional best/checkpoint writes forbidden; legacy paths patched into disposable snapshot/tmp fixtures.',
+                'Frontend probes use intercepted HTTP or actual fixture URLs, never the existing production API. Lint diagnoses only the owned snapshot.',
+                'Resource probes query state only. Auditor hashes files and parses PNG/text without application imports. Handoff wrapper was not executed.',
+                'No complete OS write trace exists; these are static call-path and recorded command checks, not retrospective proof that no possible process touched an omitted file.']),
+        archive_sha256={n:sha(HERE/d) for n,d in ARCHIVES.items()},
+        classification_counts={'CURRENT_STATE_PRESERVED_ONLY':8,'VERIFIED_UNCHANGED':0,'POSSIBLY_MODIFIED':0,'CONFIRMED_MODIFIED':0,'UNKNOWN':0},
+        policy='Latest task explicitly permits consideration with disclosed historical uncertainty. No AGENTS.md found or separate universal pre-entry-hash policy established. No full historical byte-preservation signoff or Git action authorized.',
+        recommendation='ELIGIBLE_FOR_SEPARATE_CHECKPOINT_REVIEW_WITH_DISCLOSED_LIMITATION; not blanket preservation proof or commit approval')
+    new(HERE/'investigation.json',result);invariants()
+    print(json.dumps(dict(status='COLLECTED',artifacts=8,historical_hashes_accepted=0,classification='CURRENT_STATE_PRESERVED_ONLY',text_files_scanned=scanned)))
+
+def verify(seal=False):
+    baseline,entry,modified=invariants();old=read(HERE/'original-manifest.json');old_plan=read(HERE/'original-staging-plan.json');finding=read(HERE/'investigation.json')
+    # Independently recorded at the preceding U5PD final Git-blob check.
+    assert oid((HERE/'original-manifest.json').read_bytes())=='1e7c167910c4393f0676f3f20f66e8b64405f13b'
+    assert oid((HERE/'original-staging-plan.json').read_bytes())=='6c7cb4d50225e37bfab118ec2ca2d01045405449'
+    assert oid((HERE/'original-report.md').read_bytes())==old_plan['proposed_blob_oids'][REPORT]
+    assert finding['head']==HEAD and finding['search']['historical_hashes_accepted']==0
+    for n,h in old['artifact_sha256'].items():
+        p=HERE/ARCHIVES[n] if n in ARCHIVES else ROOT/n
+        assert sha(p)==h,'ORIGINAL_EVIDENCE_CHANGED: '+n
+    for n,h in finding['archive_sha256'].items():assert sha(HERE/ARCHIVES[n])==h
+    for n,h in finding['tooling_review']['source_sha256'].items():assert sha(ROOT/n)==h
+    omitted={a['path']:a['current_sha256'] for a in finding['artifacts']}
+    for n,h in omitted.items():assert sha(ROOT/n)==h and n not in baseline
+    for prefix in PROTECTED:
+        actual={p.relative_to(ROOT).as_posix() for p in (ROOT/prefix).rglob('*') if p.is_file()}
+        assert actual=={n for n in baseline if n.startswith(prefix)}|{n for n in omitted if n.startswith(prefix)},'PROTECTED_MEMBERSHIP_CHANGED'
+    extra=[p.relative_to(ROOT).as_posix() for p in HERE.rglob('*') if p.is_file()]
+    inventory=sorted(set(old_plan['exact_checkpoint_inventory'])|set(extra));content=[n for n in inventory if n not in SEALS]
+    untracked=set(git('ls-files','--others','--exclude-standard','-z').stdout.decode().strip('\0').split('\0'))-{''}
+    assert untracked==set(entry['untracked_files'])|(set(inventory)-set(modified)),'UNAPPROVED_UNTRACKED_CHANGE'
+    prior=0
+    for key,total in entry['prior_artifacts'].items():
+        previous=read(BASE.parent/('dashboard-'+key)/'manifest.json');assert len(previous['artifact_sha256'])==total
+        for n,h in previous['artifact_sha256'].items():
+            if sha(ROOT/n)!=h:
+                assert key=='u5pc' and n in modified+['frontend/src/routes/AppRoutes.tsx']
+                assert hashlib.sha256(git('show',HEAD+':'+n).stdout).hexdigest()==h
+        prior+=total
+    assert prior==1495
+    with (ROOT/'backend/data/Faculty.csv').open(encoding='utf-8-sig',newline='') as f:
+        private=[r['Faculty'].strip().casefold() for r in csv.DictReader(f) if len(r.get('Faculty','').strip())>=6]
+    patterns=[r'eyJ[A-Za-z0-9_-]{18,}',r'[A-Za-z0-9_-]{80,}\.[A-Za-z0-9_-]{8,}',r'(?i)postgres(?:ql)?(?:\+\w+)?://[^\s"\']+',
+        r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',r'(?i)bearer\s+[A-Za-z0-9._~-]{20,}',
+        r'''(?i)['"]?(?:X-CSRF-Token|ccs_session|csrf_token|password)['"]?\s*[:=]\s*['"][A-Za-z0-9_-]{24,}''']
+    def privacy(text,n):
+        assert not any(re.search(p,text) for p in patterns),'PRIVACY_STOP: '+n
+        assert not any(x in text.casefold() for x in private),'PRIVATE_NAME_STOP: '+n
+    for n in content:
+        p=ROOT/n
+        if p.suffix=='.png':continue  # Exact previously visually reviewed bytes verified above.
+        text=p.read_text(encoding='utf-8');privacy(text,n)
+        assert all(s.rstrip()==s for s in text.splitlines()),'WHITESPACE_STOP: '+n
+        if p.suffix=='.py':compile(text,n,'exec')
+    git('-c','core.autocrlf=false','-c','core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol','diff','--check','--',*modified)
+    git('diff','--cached','--check')
+    fsck=git('fsck','--no-reflogs').stdout.decode();assert all(s.startswith('dangling ') for s in fsck.splitlines())
+    for n in content:assert git('hash-object','--no-filters','--',n).stdout.decode().strip()==oid((ROOT/n).read_bytes())
+    plan={**old_plan,'exact_checkpoint_inventory':inventory,'new_files':len(inventory)-2,
+        'documentation_tooling_evidence':sorted(set(inventory)-set(old_plan['application_tests'])),
+        'checkpoint_status':'ELIGIBLE_FOR_SEPARATE_REVIEW_WITH_DISCLOSED_PRESERVATION_LIMITATION','staging_authorized':False,
+        'blocker':'No inferred historical byte identity for eight omitted artifacts; separate checkpoint authorization required. Universal pre-entry proof, if required by owner, is unavailable.',
+        'proposed_blob_oids':{n:oid((ROOT/n).read_bytes()) for n in content},
+        'reconciliation':'preservation-reconciliation/investigation.json; original three documents archived verbatim, baseline and gap unchanged'}
+    manifest={**old,'recorded_at':clock(),'status':'FUNCTIONAL_CHECKS_COMPLETE; PRESERVATION_RECONCILED_CURRENT_STATE_ONLY; PRODUCTION_BLOCKED',
+        'exact_changed_and_new_file_inventory':inventory,'new_files':len(inventory)-2,
+        'preservation':{**old['preservation'],'full_preservation_signoff':False,'omitted_bytes_before_after':'Not established before U5PD; eight current hashes match the first gap observation and this reconciliation',
+            'classification_counts':finding['classification_counts'],'current_omitted_artifact_hashes_verified':8},
+        'checkpoint_readiness':plan['checkpoint_status'],'historical_qualification':'CURRENT_STATE_PRESERVED_ONLY for all eight; no pre-U5PD trusted raw hashes found. No application/test changes or test reruns in reconciliation.',
+        'reconciliation_original_documents':{n:dict(archive=(HERE/d).relative_to(ROOT).as_posix(),sha256=sha(HERE/d)) for n,d in ARCHIVES.items()},
+        'artifact_sha256':{n:sha(ROOT/n) for n in content}}
+    if seal:
+        # Explicitly authorized updates, only after verbatim archive validation.
+        for n in SEALS:assert sha(ROOT/n)==finding['archive_sha256'][n]
+        privacy(json.dumps(plan),'new-plan');privacy(json.dumps(manifest),'new-manifest')
+        (ROOT/SEALS[1]).write_text(json.dumps(plan,indent=2)+'\n',encoding='utf-8',newline='\n')
+        manifest['artifact_sha256'][SEALS[1]]=sha(ROOT/SEALS[1])
+        (ROOT/SEALS[0]).write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8',newline='\n')
+    else:
+        saved=read(ROOT/SEALS[0]);saved_plan=read(ROOT/SEALS[1])
+        assert saved['exact_changed_and_new_file_inventory']==inventory and saved_plan['exact_checkpoint_inventory']==inventory
+        for n,h in saved['artifact_sha256'].items():assert sha(ROOT/n)==h
+        assert saved_plan['proposed_blob_oids']==plan['proposed_blob_oids']
+        privacy((ROOT/SEALS[0]).read_text(encoding='utf-8'),'sealed-manifest');privacy((ROOT/SEALS[1]).read_text(encoding='utf-8'),'sealed-plan')
+    for n in SEALS:assert git('hash-object','--no-filters','--',n).stdout.decode().strip()==oid((ROOT/n).read_bytes())
+    invariants()
+    print(json.dumps(dict(status='PASS_WITH_DISCLOSED_HISTORICAL_LIMITATION',checkpoint=plan['checkpoint_status'],inventory=len(inventory),artifact_hashes=len(inventory)-1,
+        new_files=len(inventory)-2,raw_git_blobs=len(inventory),baseline_unchanged=5119,current_state_only=8,prior_references=prior,
+        privacy='PASS',whitespace='PASS',git_integrity='PASS',full_historical_preservation_proven=False,staged=0,tests_rerun=False)))
+
+if __name__=='__main__':
+    if sys.argv[1:]==['--collect']:collect()
+    elif sys.argv[1:]==['--seal']:verify(True)
+    elif not sys.argv[1:]:verify()
+    else:raise SystemExit('Use --collect once, --seal once, or no arguments for read-only audit')

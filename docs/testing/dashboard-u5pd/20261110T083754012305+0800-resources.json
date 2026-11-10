@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-11-10T08:37:53.935681+08:00",
+  "physical_memory_total_bytes": 16869548032,
+  "physical_memory_available_bytes": 3916214272,
+  "memory_load_percent": 76,
+  "system_commit_limit_bytes": 68302114816,
+  "system_commit_available_bytes": 28279316480,
+  "repository_volume_free_bytes": 23668891648,
+  "interpretation": "Instantaneous host resource snapshot only, not process allocation/RSS, enforced filesystem quota, worker feasibility or seven-day safety.",
+  "power_policy_query": {
+    "command": [
+      "powercfg",
+      "/query",
+      "SCHEME_CURRENT",
+      "SUB_SLEEP"
+    ],
+    "exit_code": 0,
+    "stdout": "Power Scheme GUID: 2b851232-23f6-45b2-bb64-38ad406d7411  (Acer)\n  Subgroup GUID: 238c9fa8-0aad-41ed-83f4-97be242c8f20  (Sleep)\n    GUID Alias: SUB_SLEEP\n    Power Setting GUID: 29f6c1db-86da-48c5-9fdb-f2b67b1f44da  (Sleep after)\n      GUID Alias: STANDBYIDLE\n      Minimum Possible Setting: 0x00000000\n      Maximum Possible Setting: 0xffffffff\n      Possible Settings increment: 0x00000001\n      Possible Settings units: Seconds\n    Current AC Power Setting Index: 0x00000000\n    Current DC Power Setting Index: 0x00000000\n\n    Power Setting GUID: 94ac6d29-73ce-41a6-809f-6363ba21b47e  (Allow hybrid sleep)\n      GUID Alias: HYBRIDSLEEP\n      Possible Setting Index: 000\n      Possible Setting Friendly Name: Off\n      Possible Setting Index: 001\n      Possible Setting Friendly Name: On\n    Current AC Power Setting Index: 0x00000000\n    Current DC Power Setting Index: 0x00000000\n\n    Power Setting GUID: 9d7815a6-7ee4-497e-8888-515a05f02364  (Hibernate after)\n      GUID Alias: HIBERNATEIDLE\n      Minimum Possible Setting: 0x00000000\n      Maximum Possible Setting: 0xffffffff\n      Possible Settings increment: 0x00000001\n      Possible Settings units: Seconds\n    Current AC Power Setting Index: 0x00000000\n    Current DC Power Setting Index: 0x00000000\n\n    Power Setting GUID: bd3b718a-0680-4d9d-8ab2-e1d2b4ac806d  (Allow wake timers)\n      GUID Alias: RTCWAKE\n      Possible Setting Index: 000\n      Possible Setting Friendly Name: Disable\n      Possible Setting Index: 001\n      Possible Setting Friendly Name: Enable\n      Possible Setting Index: 002\n      Possible Setting Friendly Name: Important Wake Timers Only\n    Current AC Power Setting Index: 0x00000002\n    Current DC Power Setting Index: 0x00000000\n\n",
+    "stderr": "",
+    "read_only": true
+  }
+}

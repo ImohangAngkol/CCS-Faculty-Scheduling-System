@@ -1,0 +1,25 @@
+{
+  "status": "AUDITOR_LINE_ENDING_REPRESENTATION_DEFECT",
+  "file": "frontend/src/routes/AppRoutes.tsx",
+  "working": {
+    "sha256": "546a20c8310dbf613ed64cd7c9f64916975b8022e905990c8f00d81db03c0ea9",
+    "CRLF": 240,
+    "LF": 248,
+    "bytes": 5773
+  },
+  "HEAD": {
+    "sha256": "0f2855a98b7dd20fddadbbe3bd12f3ecd5fcfc21b308f892c7786254c56ba586",
+    "CRLF": 0,
+    "LF": 248,
+    "bytes": 5533
+  },
+  "baseline_sha256": "546a20c8310dbf613ed64cd7c9f64916975b8022e905990c8f00d81db03c0ea9",
+  "working_matches_entry": true,
+  "default_git_diff_includes_file": false,
+  "autocrlf_false_diff_includes_file": true,
+  "index_blob": "4de8abbdcb5125f22a36ad9cc7278b04cddbaa15",
+  "head_blob": "4de8abbdcb5125f22a36ad9cc7278b04cddbaa15",
+  "audit_stage": "Tracked status comparison after all 5121 raw hashes already passed; no seals written",
+  "correction": "Use entry Git working-tree conversion for tracked-status comparison. Keep raw-byte hashing, explicit AppRoutes exclusion and CRLF-aware whitespace checks. No working-tree or index edit.",
+  "original_assertion": "set(core.autocrlf=false diff names)==entry tracked modifications plus two authorized files"
+}

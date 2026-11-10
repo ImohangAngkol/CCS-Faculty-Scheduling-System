@@ -1,0 +1,33 @@
+{
+  "selection": "build",
+  "head": "3719af0734e395bf2b905a13ab6ccc1ca7dda5f9",
+  "ui_mode": "committed-u5pc-plus-only-u5pd",
+  "ui_overlay_sha256": {
+    "frontend/src/api/researchObservations.ts": "52aa315f4f4ecaa8c633ecfd673ddd02482f71c82822f43fb6ddab35b4b1bd3a",
+    "frontend/src/pages/ResearchConsole.tsx": "5e5979394a035e29eba6bc53101dca492f76f8a93ffa31251c5659fbf5cf2da2",
+    "frontend/src/services/researchFreshness.ts": "76170dcd8c16213c44442b72127e7e1168ebe711001e22956bd3d36ce69859ae",
+    "frontend/tests/observationContinuity.test.mjs": "4ee00077572d72c9704402358a500c4fc8c9ec2d0083ca120fa00939fe43c6e0",
+    "frontend/tests/observationContinuity.fixtures.mjs": "5da0c2e84ac618dfab39cec4dfd070e820f1b3636544765bef9130bb7b2907f0",
+    "frontend/tests/observationContinuity.browser.test.mjs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "-b"
+  ],
+  "started_at": "2026-11-10T08:01:44.847792+08:00",
+  "ended_at": "2026-11-10T08:02:18.224461+08:00",
+  "elapsed_seconds": 33.37668569991365,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "test_cache_isolation": {
+    "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+    "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+    "test_config_sha256": "a8b3ce4c4658ebb62cacb5684e64451d75c3bebc4dc548001972be70ca98bbc8",
+    "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5o-frontend-i2j634al\\vite-cache",
+    "shared_node_modules_cache_used": false,
+    "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+  },
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5PB worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

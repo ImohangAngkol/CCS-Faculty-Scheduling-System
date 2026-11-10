@@ -1,0 +1,35 @@
+{
+  "selection": "lint",
+  "head": "3719af0734e395bf2b905a13ab6ccc1ca7dda5f9",
+  "ui_mode": "committed-u5pc-plus-only-u5pd",
+  "ui_overlay_sha256": {
+    "frontend/src/api/researchObservations.ts": "52aa315f4f4ecaa8c633ecfd673ddd02482f71c82822f43fb6ddab35b4b1bd3a",
+    "frontend/src/pages/ResearchConsole.tsx": "67c4e42bf184cdb0bb66e895163cc65a551265b78d4a102ca3e718da8c55f2f2",
+    "frontend/src/services/researchFreshness.ts": "76170dcd8c16213c44442b72127e7e1168ebe711001e22956bd3d36ce69859ae",
+    "frontend/tests/observationContinuity.test.mjs": "4ee00077572d72c9704402358a500c4fc8c9ec2d0083ca120fa00939fe43c6e0",
+    "frontend/tests/observationContinuity.fixtures.mjs": "5da0c2e84ac618dfab39cec4dfd070e820f1b3636544765bef9130bb7b2907f0",
+    "frontend/tests/observationContinuity.browser.test.mjs": "e3e8acef4ca7e87d61a45ffd962ed5c1a0684fd3d00ac8ecaec52f47c511254d"
+  },
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "src/api/researchObservations.ts",
+    "src/pages/ResearchConsole.tsx",
+    "src/services/researchFreshness.ts"
+  ],
+  "started_at": "2026-11-10T08:42:30.407735+08:00",
+  "ended_at": "2026-11-10T08:42:36.331453+08:00",
+  "elapsed_seconds": 5.923722199862823,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "test_cache_isolation": {
+    "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+    "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+    "test_config_sha256": "611913ca28318cc324d7df97e8f1dc21aecc29003e82b86457e49bf7ad3333c9",
+    "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5o-frontend-e34_ipa7\\vite-cache",
+    "shared_node_modules_cache_used": false,
+    "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+  },
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5PB worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

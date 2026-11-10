@@ -1,0 +1,15 @@
+{
+  "actual_TCP_FastAPI": true,
+  "actual_sessions": true,
+  "actual_SQLite": true,
+  "actual_native_optimizer": true,
+  "API_listener_stopped_before_optimizer_dispatch": true,
+  "test_only_dispatch_barrier": true,
+  "worker_completed_without_API": true,
+  "API_reconstructed": true,
+  "durable_observations_equal": true,
+  "read_only_research_bytes_identical": true,
+  "terminal": "COMPLETED",
+  "fitness": 0,
+  "interpretation": "API reconstruction within one host process; not institutional failover. Actual separate supervisor interruption covered by new native test."
+}

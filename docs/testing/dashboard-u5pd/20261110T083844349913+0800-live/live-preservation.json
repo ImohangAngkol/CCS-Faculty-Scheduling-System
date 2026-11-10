@@ -1,0 +1,7 @@
+{
+  "research_files_byte_identical": true,
+  "auth_database_separate": true,
+  "GET_methods_only": true,
+  "fault_injection": "Private test marker and middleware; not actual database failure",
+  "production_authority": false
+}

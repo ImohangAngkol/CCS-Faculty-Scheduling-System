@@ -1,0 +1,14 @@
+{
+  "detected_by": "Actual live screenshot visual inspection",
+  "problem": "New page separator literals displayed as mojibake after default Windows text decoding during preparation",
+  "scope": "Only separator literals in modified ResearchConsole.tsx; imported/user data untouched",
+  "original_source_sha256": "c7b032acce76cecc0e63bb0e4a97130e92bac87bca5a0f610398eb232b070a80",
+  "corrected_source_sha256": "67c4e42bf184cdb0bb66e895163cc65a551265b78d4a102ca3e718da8c55f2f2",
+  "observed_spans": [
+    "\u00c2\u00b7",
+    "\u00c3\u201a\u00c2\u00b7"
+  ],
+  "correction": "Decode explicitly as UTF-8 and use ASCII vertical-bar separators. No scheduling, API, authority or state behavior change.",
+  "historical_screenshots_preserved": true,
+  "requalification_required": "Fresh frontend and live page tests against corrected source"
+}
