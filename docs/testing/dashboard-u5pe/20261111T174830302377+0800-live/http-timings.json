@@ -1,0 +1,4 @@
+{
+  "requests": [],
+  "scope": "Actual server status/latency only; no headers, bodies, credentials or client-ack claim"
+}

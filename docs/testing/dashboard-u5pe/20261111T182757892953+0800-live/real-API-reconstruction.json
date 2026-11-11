@@ -1,0 +1,8 @@
+{
+  "actual_TCP_listener_restart": true,
+  "worker_completed_with_API_off": true,
+  "request_replayed_without_new_worker": true,
+  "process_batches": 2,
+  "active_restore": false,
+  "scope": "Same-host API reconstruction, not OS restart or institutional failover"
+}

@@ -1,0 +1,55 @@
+{
+  "scope": "Actual Edge/TCP/FastAPI/session/private SQLite/original Windows worker. E11 injects a failed GET; E13 injects a busy error. No fake successful HTTP response.",
+  "scenarios": [
+    {
+      "name": "E01 isolated disabled before login",
+      "status": "PASS"
+    },
+    {
+      "name": "E02 actual authentication and scoped permit",
+      "status": "PASS"
+    },
+    {
+      "name": "E03 actual bounded native start with read-only acknowledgement recovery",
+      "status": "FAIL",
+      "message": "Owned read-only request mapping"
+    }
+  ],
+  "start_recovery": {
+    "initial_ack_received": false,
+    "explicit_readonly_inspection": true,
+    "execution_retried": false
+  },
+  "last_state": {
+    "error": "Request timed out. Execution may still exist; inspect the read-only run directory before retry.",
+    "message": "Connection failure is not worker termination. No automatic retry.",
+    "state": "Verifying session; previous observations cleared.",
+    "password_field_empty": true,
+    "start_disabled": false
+  },
+  "requests": [
+    {
+      "path": "/api/research/operator/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/start",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/requests/c6bcad1a-7956-40ab-b944-b4835d1b9ca5",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/requests/c6bcad1a-7956-40ab-b944-b4835d1b9ca5",
+      "method": "GET"
+    }
+  ],
+  "errors": [],
+  "HTTP_interception": "E11_FAILED_GET_AND_E13_BUSY_ERROR_ONLY",
+  "intercepted_failure_scenarios": [
+    "E11",
+    "E13"
+  ],
+  "mocked_success_responses": 0
+}

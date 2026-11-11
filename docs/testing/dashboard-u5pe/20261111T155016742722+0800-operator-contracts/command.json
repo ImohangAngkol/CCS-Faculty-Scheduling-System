@@ -1,0 +1,18 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "frontend/tests/researchOperator.test.mjs"
+  ],
+  "scope": "Pure fictional JS outcome contracts, no application/store/database imports or writes",
+  "started_at": "2026-11-11T15:50:17.400914+08:00",
+  "elapsed_seconds": 0.6573560999240726,
+  "exit_code": 0,
+  "stdout": "\u2714 No termination invented for CREATED (2.6961ms)\n\u2714 No termination invented for RUNNING (0.1488ms)\n\u2714 No termination invented for STOPPING (0.0889ms)\n\u2714 No termination invented for FAILED (0.0823ms)\n\u2714 No termination invented for INTERRUPTED (0.3044ms)\n\u2714 Bound terminal STOPPED (0.1241ms)\n\u2714 Bound terminal COMPLETED (0.083ms)\n\u2714 Bound terminal FAILED (0.1119ms)\n\u2714 Bound terminal RESOURCE_LIMITED (0.1113ms)\n\u2714 Unavailable/invalid inputs null (0.9062ms)\n\u2714 Unavailable/invalid inputs {} (0.1927ms)\n\u2714 Unavailable/invalid inputs \"research-observation-v2\" (0.1154ms)\n\u2714 Institutional response rejected (0.2409ms)\n\u2714 Safe DOM and cancellation (12.6823ms)\n\u2714 No unsupported controls (2.1708ms)\n\u2139 tests 15\n\u2139 suites 0\n\u2139 pass 15\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 272.7788\n",
+  "stderr": "",
+  "source_sha256": {
+    "frontend/src/researchOperator/console.mjs": "acced37ece78533831e2161688c37c972ded9601cb31d43a652810729c01ad20",
+    "frontend/src/researchOperator/console.html": "28bee4d710e03e3a4711f7913393cfdc79577c74e2dfa87572ee451293d6581b",
+    "frontend/tests/researchOperator.test.mjs": "1d20d8428a8726d1a15316979a9dc9119c7aa16f9caccbfe6e26403832918d37"
+  }
+}

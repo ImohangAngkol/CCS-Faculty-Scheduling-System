@@ -1,0 +1,27 @@
+{
+  "scope": "Actual Edge/TCP/FastAPI/session/private SQLite/original Windows worker. E11 injects a failed GET; E13 injects a busy error. No fake successful HTTP response.",
+  "scenarios": [
+    {
+      "name": "E01 isolated disabled before login",
+      "status": "PASS"
+    },
+    {
+      "name": "E02 actual authentication and scoped permit",
+      "status": "FAIL",
+      "message": "Missing text Authorized fictional context only."
+    }
+  ],
+  "start_recovery": {
+    "initial_ack_received": false,
+    "explicit_readonly_inspection": false,
+    "execution_retried": false
+  },
+  "requests": [],
+  "errors": [],
+  "HTTP_interception": "E11_FAILED_GET_AND_E13_BUSY_ERROR_ONLY",
+  "intercepted_failure_scenarios": [
+    "E11",
+    "E13"
+  ],
+  "mocked_success_responses": 0
+}

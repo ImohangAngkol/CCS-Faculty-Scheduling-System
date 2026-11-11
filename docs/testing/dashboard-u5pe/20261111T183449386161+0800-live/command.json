@@ -1,0 +1,37 @@
+{
+  "selection": "live",
+  "started_at": "2026-11-11T18:34:49.522860+08:00",
+  "ended_at": "2026-11-11T18:40:23.405662+08:00",
+  "elapsed_seconds": 333.8823289000429,
+  "exit_code": 1,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_operator_live.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-o676orfk\\pytest-live"
+  ],
+  "stdout": "F.                                                                       [100%]\n================================== FAILURES ===================================\n___________________________ test_real_edge_operator ___________________________\ntests\\test_research_operator_live.py:45: in test_real_edge_operator\n    result=subprocess.run(['node','tests/researchOperator.live.mjs'],cwd=Path.cwd().parent/'frontend',env=child,input=json.dumps(private)+'\\n',capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=180)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\..\\..\\Python\\pythoncore-3.14-64\\Lib\\subprocess.py:556: in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\..\\..\\Python\\pythoncore-3.14-64\\Lib\\subprocess.py:1220: in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\..\\..\\Python\\pythoncore-3.14-64\\Lib\\subprocess.py:1663: in _communicate\n    raise TimeoutExpired(self.args, orig_timeout)\nE   subprocess.TimeoutExpired: Command '['node', 'tests/researchOperator.live.mjs']' timed out after 180 seconds\n=========================== short test summary info ===========================\nFAILED tests/test_research_operator_live.py::test_real_edge_operator - subpro...\n1 failed, 1 passed in 327.56s (0:05:27)\n",
+  "stderr": "",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "source_sha256": {
+    "backend/services/ga_research_operator.py": "9e505f60b055eb9a0101c6f991a751a7e9d509337e1688faeeba1c1e43b07652",
+    "backend/routers/research_operator.py": "aec32689b19766620a71d2625a624a383f5c82569b8fb725a3c3038e6474bf05",
+    "backend/tests/test_research_operator.py": "290a3aae05d9e206881e6fa5d757878cfea5763ebfe29b954576245be73edcdd",
+    "frontend/src/researchOperator/console.html": "51ff7380937cda340c5b783acc56e02a494cc6ee761059840782e6bef777f2f4",
+    "frontend/src/researchOperator/console.mjs": "a50f0d4626676ef942b69ef2224f9a398b2db35ddc2713f0b6d8fd30b70c88d6",
+    "backend/tests/test_research_operator_live.py": "530743297947648362d19469d979da933ebf4552536c242ecd0e00e60fd8546c",
+    "frontend/tests/researchOperator.live.mjs": "cad380b49c9ea547dd422066ed6db0b18b827d8028e80b62f2b3374853934931",
+    "docs/testing/dashboard-u5pe/serve_operator.py": "9ca643a95d7a1486851033a952ba6c7e177ad3273bac2b1af0fd758b74163694"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-o676orfk\\repository",
+  "no_staging": true,
+  "completed": false
+}

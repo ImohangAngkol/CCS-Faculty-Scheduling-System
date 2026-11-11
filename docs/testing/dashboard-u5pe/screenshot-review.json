@@ -1,0 +1,13 @@
+{
+  "files": {
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/E05-owned-terminal-outcome.png": "7b9a503a6bccde8edc55ad5714ec8c3f2bd344208ec5dc66fa5b408b102f79ff",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/E-failed-operator-state.png": "24f532fb00570588825065fafa8b0dc97202f2f117d499513e0c7a93d547ae1f",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/E-failed-operator-state.png": "dac5d1603b922139ccaa16e09bcf2816a66e3e97fe7d5728e4d6c8d1d561ad80",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/E-failed-operator-state.png": "26981e6214d1f6f7d1f45538d2a283a120ddd6a5dd1f692d06af1ba50dd8290f",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/E05-owned-terminal-outcome.png": "e7be48a67e24e004de85176fbc84f5170ecb12d1cbc2899cec292ce56f95559b",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/E11-client-network-failure-retained-state.png": "e1f44ad9e83edd062c5aabb06acdf095cff4201f3d93cb89cc4e0c6e57214859"
+  },
+  "review": "All six PNGs individually opened and visually inspected. Four historical states retained, two final states. Fictional identity/context only; password fields empty; no cookies, signed receipts, personal faculty records or credentials visible.",
+  "metadata": "PNG chunk validation is independently enforced by audit_evidence.py; no metadata or pixels edited.",
+  "scope": "Named screen state only; not independent proof of native cleanup, authority or institutional approval."
+}

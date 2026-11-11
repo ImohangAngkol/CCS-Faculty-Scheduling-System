@@ -1,0 +1,41 @@
+{
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/auth/me",
+      "status": 401,
+      "elapsed_seconds": 0.006317599909380078
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "status": 200,
+      "elapsed_seconds": 1.1685460000298917
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/capabilities",
+      "status": 200,
+      "elapsed_seconds": 0.09878100012429059
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/requests/c6bcad1a-7956-40ab-b944-b4835d1b9ca5",
+      "status": 409,
+      "elapsed_seconds": 2.575195799814537
+    },
+    {
+      "method": "POST",
+      "path": "/api/research/operator/start",
+      "status": 202,
+      "elapsed_seconds": 11.99596960004419
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/requests/c6bcad1a-7956-40ab-b944-b4835d1b9ca5",
+      "status": 200,
+      "elapsed_seconds": 13.342140200082213
+    }
+  ],
+  "scope": "Actual server status/latency only; no headers, bodies, credentials or client-ack claim"
+}

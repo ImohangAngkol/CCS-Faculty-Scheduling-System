@@ -1,0 +1,35 @@
+{
+  "selection": "lint",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "ui_mode": "committed-u5pd-plus-only-u5pe",
+  "ui_overlay_sha256": {
+    "frontend/src/researchOperator/console.html": "51ff7380937cda340c5b783acc56e02a494cc6ee761059840782e6bef777f2f4",
+    "frontend/src/researchOperator/console.mjs": "a50f0d4626676ef942b69ef2224f9a398b2db35ddc2713f0b6d8fd30b70c88d6",
+    "frontend/tests/researchOperator.test.mjs": "6d8896e8b92fe352f2c7853258c1c94007ea651da96cadff30aa4ef45a8db090",
+    "frontend/tests/researchOperator.live.mjs": "cad380b49c9ea547dd422066ed6db0b18b827d8028e80b62f2b3374853934931"
+  },
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "--config",
+    "operator-eslint.config.mjs",
+    "src/researchOperator/console.mjs",
+    "tests/researchOperator.test.mjs",
+    "tests/researchOperator.live.mjs"
+  ],
+  "started_at": "2026-11-11T18:32:10.548189+08:00",
+  "ended_at": "2026-11-11T18:32:13.366518+08:00",
+  "elapsed_seconds": 2.818360900040716,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "test_cache_isolation": {
+    "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+    "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+    "test_config_sha256": "1d2e9286c1082f1b59181c8469ab081cad894195a6e656cb9d9f04bc729c07f1",
+    "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5o-frontend-2czseea2\\vite-cache",
+    "shared_node_modules_cache_used": false,
+    "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+  },
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5PB worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

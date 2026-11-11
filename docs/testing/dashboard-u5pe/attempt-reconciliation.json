@@ -1,0 +1,90 @@
+{
+  "scope": "Additive interpretation only; every original command, diagnostic and screenshot remains intact. Final accepted records are selected separately in qualification-summary.json.",
+  "attempts": [
+    {
+      "path": "20261111T154311455766+0800-operator/command.json",
+      "outcome": "TIMEOUT_EXIT_124",
+      "counts": "Incomplete run; F...... is not a completed test count.",
+      "interpretation": "600-second harness bound retained. Separate first-case diagnostic reproduced AttributeError for FastAPI _IncludedRouter.path; new test uses OpenAPI. Concurrent diagnostic stack showed runtime binding and mutex waiting, not proof of deadlock. New wrapper source/authority lock ordering was corrected on inspection. Resource pressure observed; exclusive causality unproven."
+    },
+    {
+      "path": "20261111T155749741929+0800-failure-diagnosis/first-case.json",
+      "outcome": "ONE_REPRODUCED_TEST_FAILURE",
+      "interpretation": "Route-inspection test defect, not evidence that production routes changed."
+    },
+    {
+      "path": "20261111T155749741929+0800-failure-diagnosis/concurrency-stack.json",
+      "outcome": "BOUNDED_DIAGNOSTIC_TIMEOUT",
+      "interpretation": "Stack-only diagnostic, no payload locals exported. Does not establish a successful concurrency assertion."
+    },
+    {
+      "path": "20261111T160745918789+0800-operator/command.json",
+      "outcome": "16_PASSED_4_FAILED",
+      "interpretation": "Wrong test principal and native terminal/checkpoint observation failures. The retained early evidence does not independently establish the exact physical cause of every failure."
+    },
+    {
+      "path": "20261111T162401367200+0800-operator/command.json",
+      "outcome": "19_PASSED_1_FAILED",
+      "interpretation": "Active-computation test missed short child window after costly Start response reconstruction. New adapter returns lifecycle-only metadata during execution; original full provenance projection remains mandatory for fitness/results."
+    },
+    {
+      "path": "20261111T162457916273+0800-lint/command.json",
+      "outcome": "THREE_LINT_ERRORS",
+      "interpretation": "New files corrected to retain exception cause and explicitly import Node URL. No rules disabled."
+    },
+    {
+      "path": "20261111T165831427993+0800-live/command.json",
+      "outcome": "1_PASSED_1_FAILED",
+      "interpretation": "Eleven browser scenario assertions passed, but unexpected logout runtime error failed the wrapper. HTTP 204 empty body was parsed as JSON. New response helper handles 204/205; old screenshot and failure remain historical. API reconstruction test passed independently."
+    },
+    {
+      "path": "20261111T165935698772+0800-lint/command.json",
+      "outcome": "ONE_LINT_ERROR",
+      "interpretation": "Removed an unused assignment by scoping credential input parsing. No secure-memory-erasure claim."
+    },
+    {
+      "path": "20261111T170458273901+0800-live/command.json",
+      "outcome": "1_PASSED_1_FAILED",
+      "interpretation": "Browser E03 failed to obtain run identity; E01/E02 passed. Exact acknowledgement-loss cause not proven by old evidence. Added independently tested scoped read-only request mapping and explicit Inspect request, without execution retry or timeout increase. Actual API reconstruction test passed independently. New test host records server status and latency without claiming client acknowledgement."
+    },
+    {
+      "path": "20261111T172743083105+0800-operator/command.json",
+      "outcome": "19_PASSED_2_FAILED",
+      "interpretation": "Both native Stop tests reached full observation with executor still present, so OPERATOR_ACTIVE_OBSERVATION_DEFERRED correctly rejected them. Diagnostics show STOPPING, expired owner lease and EXIT_VERIFIED child; they do not prove a completed Stop. The imported older until helper repeatedly invokes full bridge reconstruction, accepts derived INTERRUPTED and only joins two seconds. Replaced only the new tests' use of that helper with joining the known owned supervisor under the same existing 90-second bound, followed by explicit executor/lease-release assertions. This avoids test-generated heavy active observation; original heartbeat, lease duration, expiry rejection and worker implementation are unchanged. Exact host-pressure contribution is unproven; failed evidence is retained."
+    },
+    {
+      "path": "20261111T174830302377+0800-live/command.json",
+      "outcome": "1_PASSED_1_FAILED",
+      "interpretation": "E01 passed; E02 timed out waiting for authenticated context. No research-control request was recorded and old timing filter excluded sign-in. No browser runtime exception was recorded. API reconstruction test passed independently. Root cause not established by this record; added only status/latency for authentication routes plus whitelisted UI text and empty-password boolean, with no headers, bodies, cookies or credentials."
+    },
+    {
+      "path": "20261111T175550155528+0800-live/command.json",
+      "outcome": "1_PASSED_1_FAILED",
+      "interpretation": "Authentication succeeded (POST 200, 1.393 seconds). E03 failed during acknowledgement recovery. Actual Start returned generic 503 at 23.516 seconds; inspections returned 503 and 404. Code inspection found that the newly added lookup opened a SQLite read snapshot before acquiring authority/source guards, concurrently with source-held admission. Exact original internal exception was not retained by the generic 503. Added bounded bridge-lock serialization and independent no-read-during-admission regression, then consistently ordered all new reads authority/source-before-SQLite. No original journal, lease, worker or verification policy changed."
+    },
+    {
+      "path": "20261111T181101891783+0800-live/command.json",
+      "outcome": "1_PASSED_1_FAILED",
+      "interpretation": "Intermediate serialization-only version: real Start returned 202 in 11.996 seconds; first inspection returned busy 409 after 2.575 seconds and the next returned genuine 200 after 13.342 seconds, later than the unchanged eight-second client deadline. E03 failed, not relabeled as a pass. Final browser workflow uses at most five explicit read-only inspection attempts and verifies module handler readiness, with no execution retry or timeout increase. Final adapter also establishes authority/source guards before SQLite and rejects new admission until prior owned supervisor completion."
+    },
+    {
+      "path": "20261111T182757892953+0800-live/command.json",
+      "outcome": "1_PASSED_1_FAILED",
+      "interpretation": "Final adapter source: E01/E02 passed, E03 recovered the same run through three explicit read-only inspections without execution retry. Test then incorrectly demanded Best penalty: 0 while the UI truthfully reported RUNNING/BATCH_CHECKPOINT with fitness unavailable until full validation. Corrected the new browser assertion to verify admission/lifecycle at E03, and exact zero only after terminal proof at E05. Added real retry-response and fresh-document synchronization. Stop verification uses the existing 60-second worker wall allowance plus five-second cleanup grace as its assertion deadline; the client request, CDP command, worker and 600-second harness limits remain unchanged."
+    },
+    {
+      "path": "20261111T183449386161+0800-live/command.json",
+      "outcome": "1_PASSED_1_FAILED_DESPITE_15_SCENARIO_ASSERTIONS_PASSING",
+      "interpretation": "Node exceeded its unchanged 180-second process bound after writing all fifteen passing scenario assertions and before browser wrapper/cleanup records. Failure stage is post-assertion infrastructure teardown; exact retained handle not captured. Original shared helper starts unused Vite for a standalone FastAPI page. New test-only CDP helper starts no Vite, closes and verifies its own uniquely profiled Edge root, and preserves the original helper unchanged. No force-exit or timeout increase. Final separately executed wrapper passed two cases and records owned Edge root and native GA exits; earlier failure remains intact."
+    }
+  ],
+  "initial_contract_record_caveat": "20261111T155016742722+0800-operator-contracts/command.json records capture time after execution, not an independently established start timestamp. Final snapshot records have explicit start/end timestamps.",
+  "native_stop_requalification": "20261111T174138297899+0800-operator/command.json: 21 passed, zero failed, two dependency warnings; 404.95 seconds pytest / 411.9719887999818 seconds runner. With owned-thread joining and released-ownership assertions, both native Stop diagnostics show STOPPED, USER_STOP, generation 0, sequence 1, lease not expired and EXIT_VERIFIED child. This supports the changed test synchronization; it does not erase previous real expired-lease outcomes or establish host-wide reliability.",
+  "resource_observations": "Initial host pressure approximately 98 percent, 318 MiB available. User elected to free RAM. Later observations approximately 4382 MiB, then 2325 MiB and 1803 MiB available. No user process stopped; memory pressure is not proven as the sole cause of failures.",
+  "historical_limitations_retained": [
+    "Prior CPU-quota overrun and unchanged successful rerun do not prove host-wide resource safety.",
+    "Historical U5D concurrent guard failure evidence remains unchanged, alongside later U5M repair evidence.",
+    "Frozen U5P-B no-research-route expectation predates U5P-C and is not relabeled a current repository-wide pass.",
+    "U5P-D eight-artifact historical uncertainty remains; U5P-E captured their current bytes before tests and applies no preservation exception."
+  ]
+}

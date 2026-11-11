@@ -1,0 +1,24 @@
+{
+  "label": "first-case",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "-o",
+    "faulthandler_timeout=15",
+    "tests/test_research_operator.py::test_factory_not_in_production_and_GET_routes_unchanged",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-x7dl77ae\\diagnostic-first-case"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 39.46217660000548,
+  "stdout": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_factory_not_in_production_and_GET_routes_unchanged ___________\ntests\\test_research_operator.py:23: in test_factory_not_in_production_and_GET_routes_unchanged\n    assert not any(r.path.startswith('/api/research/operator') for r in app.routes)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests\\test_research_operator.py:23: in <genexpr>\n    assert not any(r.path.startswith('/api/research/operator') for r in app.routes)\n                   ^^^^^^\nE   AttributeError: '_IncludedRouter' object has no attribute 'path'\n=========================== short test summary info ===========================\nFAILED tests/test_research_operator.py::test_factory_not_in_production_and_GET_routes_unchanged\n1 failed in 32.38s\n",
+  "stderr": "",
+  "scope": "Frozen failed fictional snapshot only. Stack dump has no local variable payloads. Diagnostic timeout is a failure, not acceptance.",
+  "frozen_operator_sha256": "1a521c6bb102d0d814f5b580f270ccb7773adaac03a233ba5cf062c9ec6020e0"
+}

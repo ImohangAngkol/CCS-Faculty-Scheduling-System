@@ -1,0 +1,215 @@
+{
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/auth/me",
+      "status": 401,
+      "elapsed_seconds": 0.0038383000064641237
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "status": 200,
+      "elapsed_seconds": 1.7250942999962717
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/capabilities",
+      "status": 200,
+      "elapsed_seconds": 0.26445299992337823
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/requests/374b3e24-422a-4b38-83bb-0d40b68d6de6",
+      "status": 409,
+      "elapsed_seconds": 2.4574865999165922
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/requests/374b3e24-422a-4b38-83bb-0d40b68d6de6",
+      "status": 409,
+      "elapsed_seconds": 2.2070593999233097
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/requests/374b3e24-422a-4b38-83bb-0d40b68d6de6",
+      "status": 409,
+      "elapsed_seconds": 2.211967300157994
+    },
+    {
+      "method": "POST",
+      "path": "/api/research/operator/start",
+      "status": 202,
+      "elapsed_seconds": 18.141447799978778
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/requests/374b3e24-422a-4b38-83bb-0d40b68d6de6",
+      "status": 200,
+      "elapsed_seconds": 2.542021800065413
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 0.4380384001415223
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/me",
+      "status": 200,
+      "elapsed_seconds": 0.013577200006693602
+    },
+    {
+      "method": "POST",
+      "path": "/api/research/operator/start",
+      "status": 202,
+      "elapsed_seconds": 0.48785299994051456
+    },
+    {
+      "method": "POST",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51/stop",
+      "status": 202,
+      "elapsed_seconds": 2.6171969999559224
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 0.3459796002134681
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 0.32974439999088645
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 0.12981620011851192
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 0.6032432001084089
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 0.5664425999857485
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 1.9457699998747557
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 2.178452900145203
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 1.9295733000617474
+    },
+    {
+      "method": "POST",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51/stop",
+      "status": 202,
+      "elapsed_seconds": 4.856795799918473
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/me",
+      "status": 200,
+      "elapsed_seconds": 0.013304400024935603
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 0.12433520006015897
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/capabilities",
+      "status": 200,
+      "elapsed_seconds": 0.26271579996682703
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 0.7603317000903189
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/me",
+      "status": 200,
+      "elapsed_seconds": 0.01218360010534525
+    },
+    {
+      "method": "POST",
+      "path": "/api/research/operator/start",
+      "status": 403,
+      "elapsed_seconds": 0.023241200018674135
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/me",
+      "status": 200,
+      "elapsed_seconds": 0.01289150002412498
+    },
+    {
+      "method": "POST",
+      "path": "/api/research/operator/start",
+      "status": 422,
+      "elapsed_seconds": 0.015452800085768104
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 0.41314970003440976
+    },
+    {
+      "method": "POST",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51/stop",
+      "status": 202,
+      "elapsed_seconds": 5.098268000176176
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/logout",
+      "status": 204,
+      "elapsed_seconds": 0.10329629993066192
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/7d3bd927-5437-4fb9-982e-47dcf051fd51",
+      "status": 200,
+      "elapsed_seconds": 0.16475070011802018
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "status": 200,
+      "elapsed_seconds": 0.7126909999642521
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/capabilities",
+      "status": 403,
+      "elapsed_seconds": 0.008427399909123778
+    }
+  ],
+  "scope": "Actual server status/latency only; no headers, bodies, credentials or client-ack claim"
+}

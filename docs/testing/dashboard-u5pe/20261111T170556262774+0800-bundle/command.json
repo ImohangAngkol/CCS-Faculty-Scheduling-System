@@ -1,0 +1,31 @@
+{
+  "selection": "bundle",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "ui_mode": "committed-u5pd-plus-only-u5pe",
+  "ui_overlay_sha256": {
+    "frontend/src/researchOperator/console.html": "32aeedf5c1017fa9f4f49a3cf1ce9972f0581d49dab46dfe936b5e35cb277804",
+    "frontend/src/researchOperator/console.mjs": "22053e7ed29eb718c844b9f11c35e44b0abb80f30d6b545eaa695004b994599c",
+    "frontend/tests/researchOperator.test.mjs": "45ca4f4faeef8fa3271f7c9b2c87168c8e0f569b6eb62e4bbf8865448057c1f1",
+    "frontend/tests/researchOperator.live.mjs": "d44eab61261835cbc0f94adeb33056821437a60d71edac8f733b8ac85bffd29a"
+  },
+  "command": [
+    "node",
+    "node_modules/vite/bin/vite.js",
+    "build"
+  ],
+  "started_at": "2026-11-11T17:05:56.263468+08:00",
+  "ended_at": "2026-11-11T17:05:59.431115+08:00",
+  "elapsed_seconds": 3.1676594999153167,
+  "exit_code": 0,
+  "stdout": "\u001b[36mvite v8.2.2 \u001b[32mbuilding client environment for production...\u001b[36m\u001b[39m\ntransforming...\n\u2713 837 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                     0.45 kB \u2502 gzip:   0.29 kB\ndist/assets/index-C-wAY_Qh.css     47.49 kB \u2502 gzip:  10.37 kB\ndist/assets/index-b6sMdRsA.js   1,452.47 kB \u2502 gzip: 405.95 kB\n\n\u001b[32m\u2713 built in 1.81s\u001b[39m\n",
+  "stderr": "\u001b[33m\u001b[33m[INEFFECTIVE_DYNAMIC_IMPORT] \u001b[0msrc/api/externalReadiness.ts is dynamically imported by src/api/externalSchedules.ts but also statically imported by src/api/externalConfirmations.ts, src/components/schedule/ExternalScheduleReadiness.tsx, src/components/schedule/ExternalScheduleReview.tsx, src/components/schedule/ReadinessDocument.tsx, dynamic import will not move module into another chunk.\n\u001b[39m\n\u001b[33m[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n",
+  "test_cache_isolation": {
+    "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+    "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+    "test_config_sha256": "8c746de6cb80887eb93e840407f91b0daf05666e938a7a7edf79e5c24d55a6c4",
+    "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5o-frontend-mmm644a3\\vite-cache",
+    "shared_node_modules_cache_used": false,
+    "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+  },
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5PB worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

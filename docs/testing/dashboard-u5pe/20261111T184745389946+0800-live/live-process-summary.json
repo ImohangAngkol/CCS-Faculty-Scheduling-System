@@ -1,0 +1,10 @@
+{
+  "actual_Edge": true,
+  "actual_HTTP": true,
+  "actual_SQLite": true,
+  "actual_native_worker": true,
+  "runs": 1,
+  "process_batches": 1,
+  "all_process_exits_verified": true,
+  "production_authority": false
+}

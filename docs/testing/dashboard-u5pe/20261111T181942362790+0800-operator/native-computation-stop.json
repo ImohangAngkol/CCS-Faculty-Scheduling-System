@@ -1,0 +1,31 @@
+{
+  "worker": {
+    "state": "STOPPED",
+    "reason": "USER_STOP",
+    "generation": 0,
+    "sequence": 1
+  },
+  "lease_expired": false,
+  "process_status": [
+    "EXIT_VERIFIED"
+  ],
+  "physical_observations": [
+    {
+      "active_processes": 0,
+      "created_100ns": 134388662913586734,
+      "creation_time_job_binding": true,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 0,
+      "kernel_seconds": 0.765625,
+      "peak_private_commit_bytes": 623599616,
+      "pid": 8972,
+      "user_seconds": 2.953125
+    }
+  ],
+  "scope": "Public fictional worker state/physical cleanup only; no bundles/keys/authentication artifacts"
+}

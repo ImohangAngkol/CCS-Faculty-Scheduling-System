@@ -1,0 +1,131 @@
+{
+  "scope": "Actual Edge/TCP/FastAPI/session/private SQLite/original Windows worker; no intercepted HTTP.",
+  "scenarios": [
+    {
+      "name": "E01 isolated disabled before login",
+      "status": "PASS"
+    },
+    {
+      "name": "E02 actual authentication and scoped permit",
+      "status": "PASS"
+    },
+    {
+      "name": "E03 actual bounded native start",
+      "status": "PASS"
+    },
+    {
+      "name": "E04 duplicate start same run",
+      "status": "PASS"
+    },
+    {
+      "name": "E05 valid Stop is truthful",
+      "status": "PASS"
+    },
+    {
+      "name": "E06 repeated Stop no new run",
+      "status": "PASS"
+    },
+    {
+      "name": "E07 actual reload revalidates session without auto-start",
+      "status": "PASS"
+    },
+    {
+      "name": "E08 actual CSRF rejection",
+      "status": "PASS"
+    },
+    {
+      "name": "E09 client authority fields rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "E10 no unsupported controls and scoped read link",
+      "status": "PASS"
+    },
+    {
+      "name": "E11 unscoped real administrator denied",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/research/operator/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/start",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/start",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345/stop",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345/stop",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/4a5e174a-d1b2-48b9-a804-94ff1baed345",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/start",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/start",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/capabilities",
+      "method": "GET"
+    }
+  ],
+  "errors": [
+    "Unexpected runtime exception"
+  ],
+  "HTTP_interception": false
+}

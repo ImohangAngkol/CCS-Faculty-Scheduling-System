@@ -1,0 +1,34 @@
+{
+  "selection": "operator",
+  "started_at": "2026-11-11T15:43:11.459031+08:00",
+  "ended_at": "2026-11-11T15:53:11.602735+08:00",
+  "elapsed_seconds": 600.145610800013,
+  "exit_code": 124,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_operator.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-x7dl77ae\\pytest-operator"
+  ],
+  "stdout": "F......",
+  "stderr": "\nHARNESS_BOUND_EXCEEDED; owned process review required.",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "source_sha256": {
+    "backend/services/ga_research_operator.py": "1a521c6bb102d0d814f5b580f270ccb7773adaac03a233ba5cf062c9ec6020e0",
+    "backend/routers/research_operator.py": "e77f11414b1b220567ec8b92209a21e1f7635e7413f33d84a4f13a27a02933f4",
+    "backend/tests/test_research_operator.py": "2e5aa5d2ceaeea8c5393efd87a98a54d8240a893acd5e3e793553114348019d7",
+    "frontend/src/researchOperator/console.html": "28bee4d710e03e3a4711f7913393cfdc79577c74e2dfa87572ee451293d6581b",
+    "frontend/src/researchOperator/console.mjs": "0b666a99b2a2ecf32d377affd870352b431575e0dcf5cb62fcbcc4d9a59edf10"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-x7dl77ae\\repository",
+  "no_staging": true,
+  "completed": false
+}

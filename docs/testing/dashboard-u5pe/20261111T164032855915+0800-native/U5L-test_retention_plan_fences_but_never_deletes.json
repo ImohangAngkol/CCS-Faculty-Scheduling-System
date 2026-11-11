@@ -1,0 +1,21 @@
+{
+  "scope": "Fictional owned Windows optimizer processes; no institutional acceptance",
+  "observations": [
+    {
+      "active_processes": 0,
+      "created_100ns": 134388604316207925,
+      "creation_time_job_binding": true,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 0,
+      "kernel_seconds": 1.09375,
+      "peak_private_commit_bytes": 623407104,
+      "pid": 4248,
+      "user_seconds": 3.109375
+    }
+  ]
+}

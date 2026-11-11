@@ -1,0 +1,37 @@
+{
+  "selection": "operator",
+  "started_at": "2026-11-11T16:07:45.946554+08:00",
+  "ended_at": "2026-11-11T16:15:23.732508+08:00",
+  "elapsed_seconds": 457.78729059989564,
+  "exit_code": 1,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_operator.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-09mpjbyh\\pytest-operator"
+  ],
+  "stdout": ".......FFFF.........                                                     [100%]\n================================== FAILURES ===================================\n_________ test_native_idempotent_start_concurrency_and_reconstruction _________\ntests\\test_research_operator.py:56: in test_native_idempotent_start_concurrency_and_reconstruction\n    assert d['replayed'] and d['confirmation']=='DURABLE_TERMINAL_VERIFIED'\nE   AssertionError: assert (True and 'REQUEST_RECO...T_TERMINATION' == 'DURABLE_TERMINAL_VERIFIED'\nE     \nE     - DURABLE_TERMINAL_VERIFIED\nE     + REQUEST_RECORDED_NOT_TERMINATION)\n______________ test_created_stop_replay_cross_owner_and_binding _______________\ntests\\test_research_operator.py:63: in test_created_stop_replay_cross_owner_and_binding\n    with pytest.raises(RunError):o.control(OTHER,request,'stop',run)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nservices\\ga_research_operator.py:81: in control\n    b=self.bridge;b.actor(principal);b.ledger.guard()\n                  ^^^^^^^^^^^^^^^^^^\nservices\\ga_research_bridge.py:62: in actor\n    actor=self.worker.coordinator.actor(principal)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nservices\\ga_trusted_runs.py:38: in actor\n    if principal is None or not principal.user_id:raise RunError('GA_RUN_AUTHENTICATION_REQUIRED',401)\n                                ^^^^^^^^^^^^^^^^^\nE   AttributeError: 'str' object has no attribute 'user_id'\n_______________ test_native_stop_during_checkpoint_publication ________________\ntests\\test_research_operator.py:79: in test_native_stop_during_checkpoint_publication\n    first=o.control(PRINCIPAL,str(uuid4()),'start');run=first['run_id'];assert entered.wait(30)\n                                                                        ^^^^^^^^^^^^^^^^^^^^^^^\nE   assert False\nE    +  where False = wait(30)\nE    +    where wait = <threading.Event at 0x129eefb9670: unset>.wait\n_____________________ test_native_stop_during_computation _____________________\ntests\\test_research_operator.py:99: in test_native_stop_during_computation\n    until(b,run);assert o.status(PRINCIPAL,run)['overview']['freshness']['state']=='TERMINAL'\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   AssertionError: assert 'UNKNOWN' == 'TERMINAL'\nE     \nE     - TERMINAL\nE     + UNKNOWN\n============================== warnings summary ===============================\ntests/test_research_operator.py::test_factory_not_in_production_and_GET_routes_unchanged\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\ntests/test_research_operator.py::test_factory_not_in_production_and_GET_routes_unchanged\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/test_research_operator.py::test_native_idempotent_start_concurrency_and_reconstruction\nFAILED tests/test_research_operator.py::test_created_stop_replay_cross_owner_and_binding\nFAILED tests/test_research_operator.py::test_native_stop_during_checkpoint_publication\nFAILED tests/test_research_operator.py::test_native_stop_during_computation\n4 failed, 16 passed, 2 warnings in 449.01s (0:07:29)\n",
+  "stderr": "",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "source_sha256": {
+    "backend/services/ga_research_operator.py": "a971af244c0981b05672a65c1a363c598f019430ed48aa43e4e92e86374e9e25",
+    "backend/routers/research_operator.py": "5405ec1d3a55fc8dd6346ace7b99a11b1090bfdf632a090889861d52d8c6a566",
+    "backend/tests/test_research_operator.py": "8705df02d3efdedb438c381a6652e1fe5852fdc599ba3067fa9d8a14518353ac",
+    "frontend/src/researchOperator/console.html": "28bee4d710e03e3a4711f7913393cfdc79577c74e2dfa87572ee451293d6581b",
+    "frontend/src/researchOperator/console.mjs": "acced37ece78533831e2161688c37c972ded9601cb31d43a652810729c01ad20",
+    "backend/tests/test_research_operator_live.py": "c441390ebb3dfb68506cc1b819b63c28ed6ef28ddcad0818b1fdab45d51b9694",
+    "frontend/tests/researchOperator.live.mjs": "5653948c893e012ab5e0fc3bf04aa8c9ab89c6964a93c98389506871b0fc7333",
+    "docs/testing/dashboard-u5pe/serve_operator.py": "9ca643a95d7a1486851033a952ba6c7e177ad3273bac2b1af0fd758b74163694"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-09mpjbyh\\repository",
+  "no_staging": true,
+  "completed": false
+}

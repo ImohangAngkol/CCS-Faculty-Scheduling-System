@@ -1,0 +1,8 @@
+{
+  "wall_timeout": "RESOURCE_LIMITED",
+  "wall_reason": "GA_WORKER_TIME_BUDGET",
+  "crash": "FAILED",
+  "crash_reason": "GA_SUPERVISION_CHILD_CRASH",
+  "cleanup_verified": true,
+  "CPU_or_memory_limit_not_inferred_from_crash": true
+}

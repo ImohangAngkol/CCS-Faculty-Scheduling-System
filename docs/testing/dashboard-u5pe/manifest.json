@@ -1,0 +1,981 @@
+{
+  "milestone": "U5P-E",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "recorded_at": "2026-11-11T18:53:22.686054+08:00",
+  "exact_changed_and_new_file_inventory": [
+    "backend/routers/research_operator.py",
+    "backend/services/ga_research_operator.py",
+    "backend/tests/test_research_operator.py",
+    "backend/tests/test_research_operator_live.py",
+    "docs/dashboard-u5pe-operator-control-qualification.md",
+    "docs/testing/dashboard-u5pe/20261111T154311455766+0800-operator/command.json",
+    "docs/testing/dashboard-u5pe/20261111T155016742722+0800-operator-contracts/command.json",
+    "docs/testing/dashboard-u5pe/20261111T155749741929+0800-failure-diagnosis/concurrency-stack.json",
+    "docs/testing/dashboard-u5pe/20261111T155749741929+0800-failure-diagnosis/first-case.json",
+    "docs/testing/dashboard-u5pe/20261111T160608064698+0800-resources.json",
+    "docs/testing/dashboard-u5pe/20261111T160745918789+0800-operator/command.json",
+    "docs/testing/dashboard-u5pe/20261111T162401367200+0800-operator/command.json",
+    "docs/testing/dashboard-u5pe/20261111T162401367200+0800-operator/native-checkpoint-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T162401367200+0800-operator/native-idempotency.json",
+    "docs/testing/dashboard-u5pe/20261111T162415583925+0800-contracts-all/command.json",
+    "docs/testing/dashboard-u5pe/20261111T162434280035+0800-build/command.json",
+    "docs/testing/dashboard-u5pe/20261111T162454121407+0800-bundle/command.json",
+    "docs/testing/dashboard-u5pe/20261111T162457916273+0800-lint/command.json",
+    "docs/testing/dashboard-u5pe/20261111T162600761412+0800-contracts-all/command.json",
+    "docs/testing/dashboard-u5pe/20261111T162641375842+0800-build/command.json",
+    "docs/testing/dashboard-u5pe/20261111T162659935375+0800-bundle/command.json",
+    "docs/testing/dashboard-u5pe/20261111T162702595197+0800-lint/command.json",
+    "docs/testing/dashboard-u5pe/20261111T163727874433+0800-contracts-all/command.json",
+    "docs/testing/dashboard-u5pe/20261111T163752107439+0800-operator/command.json",
+    "docs/testing/dashboard-u5pe/20261111T163752107439+0800-operator/native-checkpoint-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T163752107439+0800-operator/native-computation-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T163752107439+0800-operator/native-idempotency.json",
+    "docs/testing/dashboard-u5pe/20261111T163759057466+0800-build/command.json",
+    "docs/testing/dashboard-u5pe/20261111T163817832637+0800-bundle/command.json",
+    "docs/testing/dashboard-u5pe/20261111T163820795831+0800-lint/command.json",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/U5L-clean-process.json",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/U5L-cpu-time-termination.json",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/U5L-owned-tree-cleanup.json",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/U5L-private-commit-denial.json",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/U5L-supervisor-death.json",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/command.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5K-nonzero-worker-parity.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_actual_readonly_storage_denies_write_without_data_loss.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_backup_inspection_staleness_and_no_restore_activation.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_backup_manifest_binding_tampering_rejected[bundle].json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_backup_manifest_binding_tampering_rejected[contract].json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_bound_physical_checkpoint_pin_cannot_be_changed.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_changed_physical_policy_reopen_fails_closed.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_checkpoint_retention_and_corruption.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_crash_during_initialization_has_no_fabricated_checkpoint.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_cross_run_checkpoint_rejected.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_expired_lease_stale_writer_fenced.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_forced_native_termination_recovers_pinned_best.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_generation_and_active_limits.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_grace_bounded_shutdown_and_cross_owner_rejection.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_idle_shutdown_preserves_paused_checkpoint.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_insufficient_disk_headroom_rejects_before_write.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_invalid_transitions.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_l_metadata_counts_toward_per_run_quota.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_metadata_quota_rollback.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_missing_checkpoint_never_reinitialized.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_native_wall_timeout_stops_owned_computation.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_nonzero_original_fixed_ga_parity.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[checkpoint].json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[pause].json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[result].json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[resume].json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[start].json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[status].json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[stop].json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_parent_interruption_real_checkpoint_and_explicit_fresh_recovery.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_partial_checkpoint_transaction_rollback.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_restart_recovery_and_two_batches_match_uninterrupted_rng.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_retention_plan_fences_but_never_deletes.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_revoked_cross_department.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_sqlite_page_quota_real_full_rollback.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_start_zero_original_behavior.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_stop_idempotent_preserves_best.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_write_failure_old_checkpoint.json",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/command.json",
+    "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/U5K-nonzero-worker-parity.json",
+    "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/command.json",
+    "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/native-failure-kinds.json",
+    "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/native-parent-interruption.json",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/command.json",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/dependency-closure.json",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/fresh-process.json",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/nonzero-parity.json",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/parity-0-0.json",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/parity-1-0.json",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/parity-1-1.json",
+    "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/command.json",
+    "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/fixture-0.json",
+    "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/fixture-1.json",
+    "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/fixture-2.json",
+    "docs/testing/dashboard-u5pe/20261111T165449732948+0800-continuity/command.json",
+    "docs/testing/dashboard-u5pe/20261111T165449732948+0800-continuity/native-parent-interruption.json",
+    "docs/testing/dashboard-u5pe/20261111T165652678176+0800-receipts/command.json",
+    "docs/testing/dashboard-u5pe/20261111T165821337896+0800-handoff-probe/command.json",
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/E05-owned-terminal-outcome.png",
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/browser-command.json",
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/browser-results.json",
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/command.json",
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/real-API-reconstruction.json",
+    "docs/testing/dashboard-u5pe/20261111T165859434932+0800-contracts-all/command.json",
+    "docs/testing/dashboard-u5pe/20261111T165917377200+0800-build/command.json",
+    "docs/testing/dashboard-u5pe/20261111T165934051058+0800-bundle/command.json",
+    "docs/testing/dashboard-u5pe/20261111T165935698772+0800-lint/command.json",
+    "docs/testing/dashboard-u5pe/20261111T170350021911+0800-contracts-all/command.json",
+    "docs/testing/dashboard-u5pe/20261111T170418464755+0800-build/command.json",
+    "docs/testing/dashboard-u5pe/20261111T170458273901+0800-live/browser-command.json",
+    "docs/testing/dashboard-u5pe/20261111T170458273901+0800-live/browser-results.json",
+    "docs/testing/dashboard-u5pe/20261111T170458273901+0800-live/command.json",
+    "docs/testing/dashboard-u5pe/20261111T170458273901+0800-live/real-API-reconstruction.json",
+    "docs/testing/dashboard-u5pe/20261111T170556262774+0800-bundle/command.json",
+    "docs/testing/dashboard-u5pe/20261111T170559433906+0800-lint/command.json",
+    "docs/testing/dashboard-u5pe/20261111T172012434744+0800-contracts-all/command.json",
+    "docs/testing/dashboard-u5pe/20261111T172041678592+0800-build/command.json",
+    "docs/testing/dashboard-u5pe/20261111T172211755582+0800-bundle/command.json",
+    "docs/testing/dashboard-u5pe/20261111T172213816808+0800-lint/command.json",
+    "docs/testing/dashboard-u5pe/20261111T172743083105+0800-operator/command.json",
+    "docs/testing/dashboard-u5pe/20261111T172743083105+0800-operator/native-checkpoint-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T172743083105+0800-operator/native-computation-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T172743083105+0800-operator/native-idempotency.json",
+    "docs/testing/dashboard-u5pe/20261111T174138297899+0800-operator/command.json",
+    "docs/testing/dashboard-u5pe/20261111T174138297899+0800-operator/native-checkpoint-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T174138297899+0800-operator/native-computation-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T174138297899+0800-operator/native-idempotency.json",
+    "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/browser-command.json",
+    "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/browser-results.json",
+    "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/command.json",
+    "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/http-timings.json",
+    "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/real-API-reconstruction.json",
+    "docs/testing/dashboard-u5pe/20261111T175319724692+0800-lint/command.json",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/E-failed-operator-state.png",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/browser-command.json",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/browser-results.json",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/command.json",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/http-timings.json",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/real-API-reconstruction.json",
+    "docs/testing/dashboard-u5pe/20261111T180401670050+0800-operator/command.json",
+    "docs/testing/dashboard-u5pe/20261111T180401670050+0800-operator/native-checkpoint-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T180401670050+0800-operator/native-computation-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T180401670050+0800-operator/native-idempotency.json",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/E-failed-operator-state.png",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/browser-command.json",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/browser-results.json",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/command.json",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/http-timings.json",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/real-API-reconstruction.json",
+    "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/command.json",
+    "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/native-checkpoint-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/native-computation-stop.json",
+    "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/native-idempotency.json",
+    "docs/testing/dashboard-u5pe/20261111T182010057161+0800-lint/command.json",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/E-failed-operator-state.png",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/browser-command.json",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/browser-results.json",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/command.json",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/http-timings.json",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/real-API-reconstruction.json",
+    "docs/testing/dashboard-u5pe/20261111T183210546997+0800-lint/command.json",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/E05-owned-terminal-outcome.png",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/E11-client-network-failure-retained-state.png",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/browser-results.json",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/command.json",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/real-API-reconstruction.json",
+    "docs/testing/dashboard-u5pe/20261111T184513631828+0800-lint/command.json",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/E05-owned-terminal-outcome.png",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/E11-client-network-failure-retained-state.png",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/browser-cleanup.json",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/browser-command.json",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/browser-results.json",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/command.json",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/http-timings.json",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/live-process-summary.json",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/real-API-reconstruction.json",
+    "docs/testing/dashboard-u5pe/attempt-reconciliation.json",
+    "docs/testing/dashboard-u5pe/audit_evidence.py",
+    "docs/testing/dashboard-u5pe/control-authority-matrix.md",
+    "docs/testing/dashboard-u5pe/entry.json",
+    "docs/testing/dashboard-u5pe/frontend_checks.py",
+    "docs/testing/dashboard-u5pe/manifest.json",
+    "docs/testing/dashboard-u5pe/preservation-baseline.json",
+    "docs/testing/dashboard-u5pe/qualification-summary.json",
+    "docs/testing/dashboard-u5pe/qualify_results.py",
+    "docs/testing/dashboard-u5pe/run_checks.py",
+    "docs/testing/dashboard-u5pe/screenshot-review-final.json",
+    "docs/testing/dashboard-u5pe/screenshot-review.json",
+    "docs/testing/dashboard-u5pe/serve_operator.py",
+    "docs/testing/dashboard-u5pe/staging-plan.json",
+    "frontend/src/researchOperator/console.html",
+    "frontend/src/researchOperator/console.mjs",
+    "frontend/tests/researchOperator.driver.mjs",
+    "frontend/tests/researchOperator.live.mjs",
+    "frontend/tests/researchOperator.test.mjs"
+  ],
+  "existing_files_modified": [],
+  "new_files": 191,
+  "qualification": {
+    "status": "QUALIFIED_ISOLATED_FICTIONAL_CONTROLS_ONLY",
+    "backend": {
+      "operator": {
+        "path": "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/command.json",
+        "passed": 22
+      },
+      "physical": {
+        "path": "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/command.json",
+        "passed": 12
+      },
+      "native": {
+        "path": "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/command.json",
+        "passed": 41
+      },
+      "bridge": {
+        "path": "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/command.json",
+        "passed": 4
+      },
+      "parity": {
+        "path": "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/command.json",
+        "passed": 5
+      },
+      "legacy": {
+        "path": "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/command.json",
+        "passed": 10
+      },
+      "continuity": {
+        "path": "docs/testing/dashboard-u5pe/20261111T165449732948+0800-continuity/command.json",
+        "passed": 32
+      },
+      "receipts": {
+        "path": "docs/testing/dashboard-u5pe/20261111T165652678176+0800-receipts/command.json",
+        "passed": 36
+      },
+      "live": {
+        "path": "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/command.json",
+        "passed": 2
+      }
+    },
+    "backend_total_passed": 164,
+    "frontend": {
+      "contracts-all": {
+        "path": "docs/testing/dashboard-u5pe/20261111T172012434744+0800-contracts-all/command.json",
+        "passed": 417
+      },
+      "build": {
+        "path": "docs/testing/dashboard-u5pe/20261111T172041678592+0800-build/command.json"
+      },
+      "bundle": {
+        "path": "docs/testing/dashboard-u5pe/20261111T172211755582+0800-bundle/command.json"
+      },
+      "lint": {
+        "path": "docs/testing/dashboard-u5pe/20261111T184513631828+0800-lint/command.json"
+      }
+    },
+    "browser": {
+      "total": 15,
+      "real_HTTP_scenarios": 13,
+      "injected_error_scenarios": 2,
+      "mocked_success_responses": 0,
+      "nested_in_live_pytest_count": true
+    },
+    "handoff_probe": "docs/testing/dashboard-u5pe/20261111T165821337896+0800-handoff-probe/command.json",
+    "human_handoff": "NOT_PERFORMED",
+    "qualified_source_sha256": {
+      "backend/services/ga_research_operator.py": "9e505f60b055eb9a0101c6f991a751a7e9d509337e1688faeeba1c1e43b07652",
+      "backend/routers/research_operator.py": "aec32689b19766620a71d2625a624a383f5c82569b8fb725a3c3038e6474bf05",
+      "backend/tests/test_research_operator.py": "290a3aae05d9e206881e6fa5d757878cfea5763ebfe29b954576245be73edcdd",
+      "backend/tests/test_research_operator_live.py": "545fdd4a5f4434ae052b6f5dea1b4618e6b7b272c6290811793c7f8715d8a5a7",
+      "frontend/src/researchOperator/console.html": "51ff7380937cda340c5b783acc56e02a494cc6ee761059840782e6bef777f2f4",
+      "frontend/src/researchOperator/console.mjs": "a50f0d4626676ef942b69ef2224f9a398b2db35ddc2713f0b6d8fd30b70c88d6",
+      "frontend/tests/researchOperator.test.mjs": "6d8896e8b92fe352f2c7853258c1c94007ea651da96cadff30aa4ef45a8db090",
+      "frontend/tests/researchOperator.live.mjs": "ffc28d00ebc69f0a10de2d228e197347e8525201a5d435ffaf5c90987a87ece7",
+      "frontend/tests/researchOperator.driver.mjs": "83977ce8b8b74ea7ab8f9e6db46a39a5a89551725e41eaac064ba98c6abef1d1"
+    },
+    "selection_policy": "Most recent record of each selection must pass; earlier failed attempts remain independently archived. Unchanged engine/worker regressions were not repeated after UI/read-only lookup additions.",
+    "production_admission": "BLOCKED",
+    "institutional_saved_best_promotion": "BLOCKED",
+    "continuous_optimization": "DISABLED",
+    "active_restore": "BLOCKED",
+    "seven_day": "NO_GO"
+  },
+  "attempts": [
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T154311455766+0800-operator/command.json",
+      "selection": "operator",
+      "exit_code": 124,
+      "counts": {},
+      "elapsed_seconds": 600.145610800013
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T155016742722+0800-operator-contracts/command.json",
+      "selection": "contracts",
+      "exit_code": 0,
+      "counts": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsed_seconds": 0.6573560999240726
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T160745918789+0800-operator/command.json",
+      "selection": "operator",
+      "exit_code": 1,
+      "counts": {
+        "failed": 4,
+        "passed": 16
+      },
+      "elapsed_seconds": 457.78729059989564
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T162401367200+0800-operator/command.json",
+      "selection": "operator",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 19
+      },
+      "elapsed_seconds": 178.82640330004506
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T162415583925+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 0,
+      "counts": {
+        "tests": 407,
+        "pass": 407,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsed_seconds": 18.6872478001751
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T162434280035+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 19.838684200076386
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T162454121407+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 3.7896935001481324
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T162457916273+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 1,
+      "counts": {
+        "errors": 3
+      },
+      "elapsed_seconds": 3.8415898999664932
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T162600761412+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 0,
+      "counts": {
+        "tests": 407,
+        "pass": 407,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsed_seconds": 40.59483400010504
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T162641375842+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 18.554950600024313
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T162659935375+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 2.65551200020127
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T162702595197+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 1.8946529999375343
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T163727874433+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 0,
+      "counts": {
+        "tests": 408,
+        "pass": 408,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsed_seconds": 31.16996640013531
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T163752107439+0800-operator/command.json",
+      "selection": "operator",
+      "exit_code": 0,
+      "counts": {
+        "passed": 20
+      },
+      "elapsed_seconds": 150.10413399990648
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T163759057466+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 18.770978199783713
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T163817832637+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 2.9596174999605864
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T163820795831+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 2.3224826001096517
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/command.json",
+      "selection": "physical",
+      "exit_code": 0,
+      "counts": {
+        "passed": 12
+      },
+      "elapsed_seconds": 10.626058199908584
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/command.json",
+      "selection": "native",
+      "exit_code": 0,
+      "counts": {
+        "passed": 41
+      },
+      "elapsed_seconds": 449.65284630004317
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/command.json",
+      "selection": "bridge",
+      "exit_code": 0,
+      "counts": {
+        "passed": 4
+      },
+      "elapsed_seconds": 100.42611639993265
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/command.json",
+      "selection": "parity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 5
+      },
+      "elapsed_seconds": 96.7913301999215
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/command.json",
+      "selection": "legacy",
+      "exit_code": 0,
+      "counts": {
+        "passed": 10
+      },
+      "elapsed_seconds": 209.9763466999866
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T165449732948+0800-continuity/command.json",
+      "selection": "continuity",
+      "exit_code": 0,
+      "counts": {
+        "passed": 32
+      },
+      "elapsed_seconds": 122.93673860002309
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T165652678176+0800-receipts/command.json",
+      "selection": "receipts",
+      "exit_code": 0,
+      "counts": {
+        "passed": 36
+      },
+      "elapsed_seconds": 88.65227849991061
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T165821337896+0800-handoff-probe/command.json",
+      "selection": "handoff-probe",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 10.086893300060183
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 1
+      },
+      "elapsed_seconds": 56.78758469992317
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T165859434932+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 0,
+      "counts": {
+        "tests": 411,
+        "pass": 411,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsed_seconds": 17.93599779997021
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T165917377200+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 16.66958440002054
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T165934051058+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 1.6436832000035793
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T165935698772+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 1,
+      "counts": {
+        "error": 1
+      },
+      "elapsed_seconds": 1.193926400039345
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T170350021911+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 0,
+      "counts": {
+        "tests": 413,
+        "pass": 413,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsed_seconds": 28.437477000057697
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T170418464755+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 97.77122480003163
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T170458273901+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 1
+      },
+      "elapsed_seconds": 257.0874948001001
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T170556262774+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 3.1676594999153167
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T170559433906+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 1.7978674999903888
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T172012434744+0800-contracts-all/command.json",
+      "selection": "contracts-all",
+      "exit_code": 0,
+      "counts": {
+        "tests": 417,
+        "pass": 417,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsed_seconds": 29.233984499936923
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T172041678592+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 90.06325770006515
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T172211755582+0800-bundle/command.json",
+      "selection": "bundle",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 2.0548423998989165
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T172213816808+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 1.5381457000039518
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T172743083105+0800-operator/command.json",
+      "selection": "operator",
+      "exit_code": 1,
+      "counts": {
+        "failed": 2,
+        "passed": 19
+      },
+      "elapsed_seconds": 565.5191358001903
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T174138297899+0800-operator/command.json",
+      "selection": "operator",
+      "exit_code": 0,
+      "counts": {
+        "passed": 21
+      },
+      "elapsed_seconds": 411.9719887999818
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 1
+      },
+      "elapsed_seconds": 176.56864479999058
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T175319724692+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 1.5492942000273615
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 1
+      },
+      "elapsed_seconds": 233.3305036998354
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T180401670050+0800-operator/command.json",
+      "selection": "operator",
+      "exit_code": 0,
+      "counts": {
+        "passed": 22
+      },
+      "elapsed_seconds": 420.1756402000319
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 1
+      },
+      "elapsed_seconds": 126.22581129986793
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/command.json",
+      "selection": "operator",
+      "exit_code": 0,
+      "counts": {
+        "passed": 22
+      },
+      "elapsed_seconds": 495.5133036999032
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T182010057161+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 1.7990046001505107
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 1
+      },
+      "elapsed_seconds": 207.23943710001186
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T183210546997+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 2.818360900040716
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 1,
+      "counts": {
+        "failed": 1,
+        "passed": 1
+      },
+      "elapsed_seconds": 333.8823289000429
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T184513631828+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "counts": {},
+      "elapsed_seconds": 1.789071299834177
+    },
+    {
+      "path": "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/command.json",
+      "selection": "live",
+      "exit_code": 0,
+      "counts": {
+        "passed": 2
+      },
+      "elapsed_seconds": 147.8577754998114
+    }
+  ],
+  "preservation": {
+    "entry_paths": 5410,
+    "unchanged": 5410,
+    "ignored_entry_files": 302,
+    "academic_files": 23,
+    "original_tracked": 11,
+    "original_untracked": 958,
+    "historical_eight_captured_before_tests_and_unchanged": true,
+    "previous_U5PD_historical_uncertainty_not_retroactively_resolved": true,
+    "previous_exception_not_applied": true,
+    "complete_workspace_membership_verified": true,
+    "dependency_exclusions": [
+      ".git",
+      ".venv",
+      ".venv-1",
+      "frontend/node_modules",
+      "node_modules"
+    ],
+    "Git_index_HEAD_config_unchanged": true,
+    "prior_artifact_references": 1603
+  },
+  "privacy": "PASS",
+  "whitespace": "PASS",
+  "git_integrity": "PASS",
+  "screenshot_sha256": {
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/E05-owned-terminal-outcome.png": "7b9a503a6bccde8edc55ad5714ec8c3f2bd344208ec5dc66fa5b408b102f79ff",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/E-failed-operator-state.png": "24f532fb00570588825065fafa8b0dc97202f2f117d499513e0c7a93d547ae1f",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/E-failed-operator-state.png": "dac5d1603b922139ccaa16e09bcf2816a66e3e97fe7d5728e4d6c8d1d561ad80",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/E-failed-operator-state.png": "26981e6214d1f6f7d1f45538d2a283a120ddd6a5dd1f692d06af1ba50dd8290f",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/E05-owned-terminal-outcome.png": "e7be48a67e24e004de85176fbc84f5170ecb12d1cbc2899cec292ce56f95559b",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/E11-client-network-failure-retained-state.png": "e1f44ad9e83edd062c5aabb06acdf095cff4201f3d93cb89cc4e0c6e57214859",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/E05-owned-terminal-outcome.png": "5fea7e916773c5609fa36f6fa762c2de5631b2689193ab5b13ef1c587dae3cca",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/E11-client-network-failure-retained-state.png": "4d4f984a3affce39aa63219eafe02f99ec53d7aea95d48f2a6f3f267d2b38986"
+  },
+  "artifact_sha256": {
+    "backend/routers/research_operator.py": "aec32689b19766620a71d2625a624a383f5c82569b8fb725a3c3038e6474bf05",
+    "backend/services/ga_research_operator.py": "9e505f60b055eb9a0101c6f991a751a7e9d509337e1688faeeba1c1e43b07652",
+    "backend/tests/test_research_operator.py": "290a3aae05d9e206881e6fa5d757878cfea5763ebfe29b954576245be73edcdd",
+    "backend/tests/test_research_operator_live.py": "545fdd4a5f4434ae052b6f5dea1b4618e6b7b272c6290811793c7f8715d8a5a7",
+    "docs/dashboard-u5pe-operator-control-qualification.md": "95bc345b5c5d4c42db05297ef3c4b2f9f0f802b748f217db92276d83135f2133",
+    "docs/testing/dashboard-u5pe/20261111T154311455766+0800-operator/command.json": "4d954c28b60b1a01b37899b517c54dffb378e6d98e6f4a50ee02b6a911f43636",
+    "docs/testing/dashboard-u5pe/20261111T155016742722+0800-operator-contracts/command.json": "0e069e01b72a8550f241b13b75c4153193ecc3c0c15fd29c3a0e02ea647aea36",
+    "docs/testing/dashboard-u5pe/20261111T155749741929+0800-failure-diagnosis/concurrency-stack.json": "ebf8e2120a89e314a0a8db97a79a64f025cc4eedfe2a0e0f1eab9fa766bfd7b2",
+    "docs/testing/dashboard-u5pe/20261111T155749741929+0800-failure-diagnosis/first-case.json": "c08206bfcb20e71cfdea92513b3a7b3093593f920a9c94313eb6eaa610dd0255",
+    "docs/testing/dashboard-u5pe/20261111T160608064698+0800-resources.json": "d50f9e129e05c4da195f2c1f423974452696ae10ca90a376e2b743b3809df8af",
+    "docs/testing/dashboard-u5pe/20261111T160745918789+0800-operator/command.json": "7fc36b9bc8d5fa0c2b951b4ad56dcd582c3c0ffad30128a11f2afa2af0c61109",
+    "docs/testing/dashboard-u5pe/20261111T162401367200+0800-operator/command.json": "640000b230fa707b523c59e300a693136f13f23c75b1828947d92c7dad895101",
+    "docs/testing/dashboard-u5pe/20261111T162401367200+0800-operator/native-checkpoint-stop.json": "f7a19e9747894b47bf331ed7f4a5181d8a93ba35458784626b71cc67ec89f744",
+    "docs/testing/dashboard-u5pe/20261111T162401367200+0800-operator/native-idempotency.json": "49cddbf303736710061911df5fed77baeab3042dc8959f635a5439d73574cf3c",
+    "docs/testing/dashboard-u5pe/20261111T162415583925+0800-contracts-all/command.json": "dc9ce9ac594c86530635571f7829d8771594743459289142a74ba21e45f4c049",
+    "docs/testing/dashboard-u5pe/20261111T162434280035+0800-build/command.json": "f28c44067dabab432ff29e871ea5beea17e285d34718da432510f71bd0f1d1ae",
+    "docs/testing/dashboard-u5pe/20261111T162454121407+0800-bundle/command.json": "5999ea1dd75e66b0bf3513324c2a2fc3d1f43b8a7d46fd58dd2834bea9b3d8f2",
+    "docs/testing/dashboard-u5pe/20261111T162457916273+0800-lint/command.json": "231c1259908dcfd2c78eaac1875d4dbec7e8df581ce52e4a75db8449272c78e7",
+    "docs/testing/dashboard-u5pe/20261111T162600761412+0800-contracts-all/command.json": "d322c53d1936b667740d385425f9480e4f4c407337a07bdd5b7fa76a05cce9e9",
+    "docs/testing/dashboard-u5pe/20261111T162641375842+0800-build/command.json": "6987f343fa80683dcca5b053d052caf086e3b654ddaec0197692254575524d04",
+    "docs/testing/dashboard-u5pe/20261111T162659935375+0800-bundle/command.json": "4c94eaca96a5c7d2f15ffc4d35e5a4725829eb9a1a1186b90942ba6c77775678",
+    "docs/testing/dashboard-u5pe/20261111T162702595197+0800-lint/command.json": "78e28a6abcdfd265caa6304025439ca418229bd967430390e3027d770a25b90a",
+    "docs/testing/dashboard-u5pe/20261111T163727874433+0800-contracts-all/command.json": "ef4c516ebf5cfdba8e66d8a69130c728f232b0421f923b8b9c3881f803f3520e",
+    "docs/testing/dashboard-u5pe/20261111T163752107439+0800-operator/command.json": "ae2dcf72085281bf08f71990759fc2e4822aae7f54bc7cfc94865f3e57ab11af",
+    "docs/testing/dashboard-u5pe/20261111T163752107439+0800-operator/native-checkpoint-stop.json": "12a29383a4def24f35c842c63410837d9c9f2821382fb2ec1966ca0cb08f2b77",
+    "docs/testing/dashboard-u5pe/20261111T163752107439+0800-operator/native-computation-stop.json": "26fb8c8d48aa48682c02133fd30132aee023966fb23a6cbcb63ec8b05b66c56a",
+    "docs/testing/dashboard-u5pe/20261111T163752107439+0800-operator/native-idempotency.json": "46a7d728d6d56e40c31f04f18bc16c4ef425c4f36639a2f490a3327082207c5f",
+    "docs/testing/dashboard-u5pe/20261111T163759057466+0800-build/command.json": "b73ddf0a34f3798da5f8727c20cd21618983974cc1a31efca1635526d5a0ffd5",
+    "docs/testing/dashboard-u5pe/20261111T163817832637+0800-bundle/command.json": "18d83b34b6d6bf1bb46c9eb2a99e7a7b4ed53b10b0a35feb52aefa749b83b82d",
+    "docs/testing/dashboard-u5pe/20261111T163820795831+0800-lint/command.json": "cf1e741752ea0b21e01fee097d3d81f986df267404202f5ce060a046c72bc991",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/U5L-clean-process.json": "5ed94643cdbd5c5f9e98e5af9c50fba8b84f624fae3df356628e444acbc9e116",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/U5L-cpu-time-termination.json": "a3e0ac588cc6596f9b23b9f67a9060b9a3301bf211f6b47ffa5d997a03539777",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/U5L-owned-tree-cleanup.json": "96c55f036c53ffbb619b1db8b2710987d24f35af414946ad4f983cfa2c1d4e1d",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/U5L-private-commit-denial.json": "5f698956df6c1fca9cf70139b017e7385fe591c2ee74a2876216cc73ea35fd11",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/U5L-supervisor-death.json": "11a4b2fe33aaf3909a0722b345e1083c62fc0bb91bb60f8d2519ddee952c671e",
+    "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/command.json": "45f6455fa98ef991731c80f894f8b4ebabe9ea9c36da0fc9b64d50168149de61",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5K-nonzero-worker-parity.json": "1c3881389755e1057ed7e9f6f9359b0b99b292b7c2e874269c4f48b23fdbd325",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_actual_readonly_storage_denies_write_without_data_loss.json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_backup_inspection_staleness_and_no_restore_activation.json": "8a93a17f152d1f00842ddade3467c34fdf5f8707bd5d93876af9e6cb7247ec10",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_backup_manifest_binding_tampering_rejected[bundle].json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_backup_manifest_binding_tampering_rejected[contract].json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_bound_physical_checkpoint_pin_cannot_be_changed.json": "e4fa78798e408bad733446b162b507e9cfacd4872283b6a7e5e3e79e0602bc87",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_changed_physical_policy_reopen_fails_closed.json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_checkpoint_retention_and_corruption.json": "dfc4ba0aa5d0135586e7b669445c2bf1ade299cfa659769bbc29bf0345bd8838",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_crash_during_initialization_has_no_fabricated_checkpoint.json": "c4c1ccc0b105c82b075ed192f1b023676d128d0423b9833de712e24757c8af24",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_cross_run_checkpoint_rejected.json": "f89948b44f5320c5760e59d55929f7f57232959ea532ce3164a881f357910324",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_expired_lease_stale_writer_fenced.json": "33c6a45403331685e57502283a3a87b193fd560d6d627833f5750ac0fd03f737",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_forced_native_termination_recovers_pinned_best.json": "809fbb4896bff148b6be51fbc501d659a38ec08af71510bbd9e7cc0c1ec6c337",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_generation_and_active_limits.json": "a0bfbf7da42bcc55b17f697aa37867c946cdda3cda5048ce0478ee84c6957137",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_grace_bounded_shutdown_and_cross_owner_rejection.json": "7ed2bc50471d45e29d2001749b785d13560ed5173d10fc6f03d6444bf286c3a5",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_idle_shutdown_preserves_paused_checkpoint.json": "bb0f0c0c2e619a4c3d5a0d00a794a6a461f71ada6de7564249343198dbc25305",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_insufficient_disk_headroom_rejects_before_write.json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_invalid_transitions.json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_l_metadata_counts_toward_per_run_quota.json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_metadata_quota_rollback.json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_missing_checkpoint_never_reinitialized.json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_native_wall_timeout_stops_owned_computation.json": "9861ecd54ea7a01abd748f8fc15c8be53529191f6cfc70a7f47cc12916bc1f5c",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_nonzero_original_fixed_ga_parity.json": "98536055719912a8ce80ba101d354f05041972162c1f90a6921942ed4ad75840",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[checkpoint].json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[pause].json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[result].json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[resume].json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[start].json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[status].json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_owner_authorization[stop].json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_parent_interruption_real_checkpoint_and_explicit_fresh_recovery.json": "49d4467e5981ef5c4edf8f164bd81acb0d52e9281f260943c71e9e1c5e5e6c60",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_partial_checkpoint_transaction_rollback.json": "b83e2519fc2bd2c87d08356e2461d090f015973c692bbb52828a9114d0318554",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_restart_recovery_and_two_batches_match_uninterrupted_rng.json": "0f90cd701ac53c5b3b3f086cc45a79ae7a3af6e2eada938022f909b02ba92d17",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_retention_plan_fences_but_never_deletes.json": "d3bb0d14c9708441f84f3d41ad26608429a0054dc97740e90ff3f36d979dcdf4",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_revoked_cross_department.json": "0ec42fbf59fa952fd6b6293d451add795153cd0686911f4b323b3274bd81c1fb",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_sqlite_page_quota_real_full_rollback.json": "7126d9da21af012fdb9d07d0c0917931025439affd1ed1b8cde5f561fb7d5b5b",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_start_zero_original_behavior.json": "0dca4c5ff57036f8b88d75d2dd83f0546a23a0723826f0214c2c8e952b7b48d4",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_stop_idempotent_preserves_best.json": "2b014edb89995b030612567a7438c2aa6bea9e13f87314ea295a7b9774a5001a",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/U5L-test_write_failure_old_checkpoint.json": "67e40bad2d4456dce568b6c9776e1fd25a229c346e95af695eb49fcaa795c37f",
+    "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/command.json": "afd2b9fbd9b1b9a4d27c03e65833a6244d282953464d9e2b0b5b0375c342389a",
+    "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/U5K-nonzero-worker-parity.json": "1c3881389755e1057ed7e9f6f9359b0b99b292b7c2e874269c4f48b23fdbd325",
+    "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/command.json": "cd0f56098354be7fec016ca9d81f7e431254de27e5391e70522525098e8aa754",
+    "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/native-failure-kinds.json": "62f3fb89092f28b85c30e7457d308b153721833a97b7f229db9e495ce8d82435",
+    "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/native-parent-interruption.json": "f8469c909d29afde16eaf62495c42b2b0bffc069869f1e5d59376041cfeb5d8a",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/command.json": "d42a547eca14eb019dee0ede788a73f3afaa0855bebef3312a0d37a6fed4e869",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/dependency-closure.json": "5073b766640fee37fc3bf9730d60fb3d2e35fcacd0f9c0e696761e5a69df75ff",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/fresh-process.json": "036592edb8517f191e29aae130e8128ec3b739944af9450819c3d73a0efdc56d",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/nonzero-parity.json": "d98e1feffebf1abae03239d65d078662a4b2da1dfd3cb1c3dcccef2c433c74a2",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/parity-0-0.json": "66a76522d5b3549f88683879212b3201aec981aa4800028c8785d3d22e07699b",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/parity-1-0.json": "d00280d0302f871f9df2130f77f0e18b28f17c489a2709119416ec9879431a3a",
+    "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/parity-1-1.json": "252dc342cd667fb22868cff0748158100f710a331bb41f81904a96fb6ef679da",
+    "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/command.json": "9cf3a446e5bc92320759d6e4fb2adca67325c4540a5ca6fdbb2760ae218596a0",
+    "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/fixture-0.json": "7f6641a414be47f3933a9622aaa936a5fb7daec00639405656b159d720a7b3b8",
+    "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/fixture-1.json": "c9ec615f65acd5f0b4f187dbdd2bab27fb1b8b8812606f513491231a57281de9",
+    "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/fixture-2.json": "f3822243d7d74c923f117fba404f5e9dc98a94e8c03b8f1d306b67b2353faab7",
+    "docs/testing/dashboard-u5pe/20261111T165449732948+0800-continuity/command.json": "9841183fc8bc5a6992e96f9175389dfe1a2e059e2f9b34b2a3d8dcccf023981c",
+    "docs/testing/dashboard-u5pe/20261111T165449732948+0800-continuity/native-parent-interruption.json": "f8469c909d29afde16eaf62495c42b2b0bffc069869f1e5d59376041cfeb5d8a",
+    "docs/testing/dashboard-u5pe/20261111T165652678176+0800-receipts/command.json": "19dd480cb621f84b8bcf41645c682016decba3d5a3d1dbf9ca3b501d9386a60d",
+    "docs/testing/dashboard-u5pe/20261111T165821337896+0800-handoff-probe/command.json": "cf3cd8891b4db48f3fe9e9f238acd1409ab07e481d6f1b28030c273b44f0e8ea",
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/E05-owned-terminal-outcome.png": "7b9a503a6bccde8edc55ad5714ec8c3f2bd344208ec5dc66fa5b408b102f79ff",
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/browser-command.json": "cbdf6e2f2a4b1dcfd720085eb09960a248fe791851b739c30bbfc33413e9dbe7",
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/browser-results.json": "8ca55a00dbb62a2d7f089ae68694127b42b73f2cc07fdd7735d482790e0854a8",
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/command.json": "9a6a187067dba49f7d678be8ca146dfae0c85f5239609d66942398d067576b4e",
+    "docs/testing/dashboard-u5pe/20261111T165831427993+0800-live/real-API-reconstruction.json": "29a9566fbaa033ed2238aa1f47893134d12fceb18f2e47839dc8f38f9bedcc0a",
+    "docs/testing/dashboard-u5pe/20261111T165859434932+0800-contracts-all/command.json": "5792a3e7b0826627ec3e9be2ba284799fad3fb32f01389ccaf32a2e174506799",
+    "docs/testing/dashboard-u5pe/20261111T165917377200+0800-build/command.json": "e354bfffa1b3fcaf8ca4066d7847d8557f4c37550a1091cf720e7263480f9db1",
+    "docs/testing/dashboard-u5pe/20261111T165934051058+0800-bundle/command.json": "ea9fe817fb09d81540beae1ae8cdc348d64ccfd2a38bbe4cd089dfc9f6c7b730",
+    "docs/testing/dashboard-u5pe/20261111T165935698772+0800-lint/command.json": "9d429096a4ffec9ffe440184cf737e7c24610299b76e2b5b971d477014ec9cdb",
+    "docs/testing/dashboard-u5pe/20261111T170350021911+0800-contracts-all/command.json": "8c3d6f02f0ef9f240bdabbfedd8411d78cd2763faf1be0fe9f3ed805ccdfeda0",
+    "docs/testing/dashboard-u5pe/20261111T170418464755+0800-build/command.json": "4b0bbf3328e2cf67a7a5d067ccb6cdb2e3f84881e46c85eab2def44b31d3f698",
+    "docs/testing/dashboard-u5pe/20261111T170458273901+0800-live/browser-command.json": "41fc8d4b18e6b304a41994ddbe5631995061f676b60c8d7dffcecf8d5578a638",
+    "docs/testing/dashboard-u5pe/20261111T170458273901+0800-live/browser-results.json": "08349c58991c1b38ca7fd9839310698b8890e60013f4c54c3a92b13410b46b86",
+    "docs/testing/dashboard-u5pe/20261111T170458273901+0800-live/command.json": "0e229e218a01041880a10a5cf47fedadb26303630be8d9a033a64181c44843b6",
+    "docs/testing/dashboard-u5pe/20261111T170458273901+0800-live/real-API-reconstruction.json": "29a9566fbaa033ed2238aa1f47893134d12fceb18f2e47839dc8f38f9bedcc0a",
+    "docs/testing/dashboard-u5pe/20261111T170556262774+0800-bundle/command.json": "8627d4690c1cc4b07bd0a29e7e3673b71e4fabe9fcc8ffa4031012cd4814edb8",
+    "docs/testing/dashboard-u5pe/20261111T170559433906+0800-lint/command.json": "8d4f19ee36d3e8aa5aaebd0f10e7d2e8b2b57b50cb4678b73f7c1da32c076106",
+    "docs/testing/dashboard-u5pe/20261111T172012434744+0800-contracts-all/command.json": "06aa0448c5f6189ad3e4b26b420a0808e48cc3dd7d7ffa2ff543c971a91c5640",
+    "docs/testing/dashboard-u5pe/20261111T172041678592+0800-build/command.json": "a99db6b2018f8b80a0785ad7314645cdb30d9fd60c9445f83b712d487b811aa1",
+    "docs/testing/dashboard-u5pe/20261111T172211755582+0800-bundle/command.json": "5f35ba74aedf251bb732533c039b05ec40b722481b08c565a44f1db4bdf85396",
+    "docs/testing/dashboard-u5pe/20261111T172213816808+0800-lint/command.json": "3fd10691925079f2f93764060630848defcab061eef44f235524c34616e39fde",
+    "docs/testing/dashboard-u5pe/20261111T172743083105+0800-operator/command.json": "7a5ab8f9f04b53d32786f030731ecada77d1a56aaa60575aa71a72030d9a33ec",
+    "docs/testing/dashboard-u5pe/20261111T172743083105+0800-operator/native-checkpoint-stop.json": "109f4b23c02f0617f471010901982d50d0bcd7404a4ca9bda11b3a42583ab768",
+    "docs/testing/dashboard-u5pe/20261111T172743083105+0800-operator/native-computation-stop.json": "59f3244f63d6180182a582f9f46f308f20e068fb8608676bb05c76bad9d50af0",
+    "docs/testing/dashboard-u5pe/20261111T172743083105+0800-operator/native-idempotency.json": "da1f65166a0257471baf020f89ee4707d3118283716958ad40d0260e77cfab7c",
+    "docs/testing/dashboard-u5pe/20261111T174138297899+0800-operator/command.json": "5fafc2ae8759ad4168f94a79930bed56e10dbda7049655466a5e05bdd611a1b9",
+    "docs/testing/dashboard-u5pe/20261111T174138297899+0800-operator/native-checkpoint-stop.json": "282650d4ce2c8105468643580ab61d0dd44fdaf7fd92d20c1531696fde61ae80",
+    "docs/testing/dashboard-u5pe/20261111T174138297899+0800-operator/native-computation-stop.json": "b3567f5d2d7bdbf7065e0dfce128f8e1a59beda2a1db68381fc938589a098513",
+    "docs/testing/dashboard-u5pe/20261111T174138297899+0800-operator/native-idempotency.json": "9f29ed2be6f775a2b7f440f65746064f16708768d24951269a8377bbca592f65",
+    "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/browser-command.json": "dce5374c7f58079a398e985c3aabb3b2a5b169fdc721b67cef5330eb7a5ecf9b",
+    "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/browser-results.json": "26372c8888b1d4f1def1fc8f02592512f9de810795e11683b8254c1854cd6c13",
+    "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/command.json": "89ff1eaff87fd67da62bbf692f0a266b2d5b744de3ba5436ea9bfb28f71ce82d",
+    "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/http-timings.json": "d73eebcc4a2378c85bac1259b260e92a8976a1c9bd670a5592bd450dd5d026b2",
+    "docs/testing/dashboard-u5pe/20261111T174830302377+0800-live/real-API-reconstruction.json": "29a9566fbaa033ed2238aa1f47893134d12fceb18f2e47839dc8f38f9bedcc0a",
+    "docs/testing/dashboard-u5pe/20261111T175319724692+0800-lint/command.json": "8a75bcbb5c4812768ed4355ea2c3c0b39ada8e4ea2ccebff834c884e147c0e8f",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/E-failed-operator-state.png": "24f532fb00570588825065fafa8b0dc97202f2f117d499513e0c7a93d547ae1f",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/browser-command.json": "99a1ab8331995944ca7900f76c496fe3390cc1d99ce68f57d6fc76ce7f082c9f",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/browser-results.json": "4d3aff57ebcf094debad79c6ab40f7761c73743c6d4ee7cbd5ae8a28dce5b1ec",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/command.json": "d550d4eab3d04eac0bf2553f963cb2bd5ae69d83adbf46d7368f5daa320286c9",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/http-timings.json": "fed1d24d513b1a4be13fe385ce1e84edf943cd3e4b01c215d60be605f76dac5b",
+    "docs/testing/dashboard-u5pe/20261111T175550155528+0800-live/real-API-reconstruction.json": "29a9566fbaa033ed2238aa1f47893134d12fceb18f2e47839dc8f38f9bedcc0a",
+    "docs/testing/dashboard-u5pe/20261111T180401670050+0800-operator/command.json": "3ab61d2969e863f3e2f173d3c8d1270da6f638a02b9012aa79850d4e02e8192f",
+    "docs/testing/dashboard-u5pe/20261111T180401670050+0800-operator/native-checkpoint-stop.json": "200fff32622058988da8626e0a294d438c45f8306978749a2fb21b87ea9b2be1",
+    "docs/testing/dashboard-u5pe/20261111T180401670050+0800-operator/native-computation-stop.json": "8de3f46a46b5aa0c715380ea65d86355cfe6d2546d46ebee504eb29724122b4a",
+    "docs/testing/dashboard-u5pe/20261111T180401670050+0800-operator/native-idempotency.json": "4544921ad93dc5f2789baabc18bd2625a789bf151d2fb152ec524b9f3dd22c8a",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/E-failed-operator-state.png": "dac5d1603b922139ccaa16e09bcf2816a66e3e97fe7d5728e4d6c8d1d561ad80",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/browser-command.json": "99a1ab8331995944ca7900f76c496fe3390cc1d99ce68f57d6fc76ce7f082c9f",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/browser-results.json": "70cbd7a3df19f75e7ebde445f6fd3939a0516a26f7916ff08a882aa07b415955",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/command.json": "315d8fa27dde899417e30a2f74092aee576484e1da920aa635438337de0c4295",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/http-timings.json": "250148412d5a3e29f15534afdb0c21902e7d7cd181d5139323b6beb63a280025",
+    "docs/testing/dashboard-u5pe/20261111T181101891783+0800-live/real-API-reconstruction.json": "29a9566fbaa033ed2238aa1f47893134d12fceb18f2e47839dc8f38f9bedcc0a",
+    "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/command.json": "b158c3190cb8c68f664319eeca18dd20d247a078e7bc559d88d75fffc2d0fe3e",
+    "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/native-checkpoint-stop.json": "7034e6530c5e508561c037ffe4a4543eb2cf259f19c68ff2dacea0f7b589c7d7",
+    "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/native-computation-stop.json": "94e537d8511a15a73cd3b561c3f401d4f1150d8082c1b5a533da453d5f6f8bcd",
+    "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/native-idempotency.json": "7cd9f43db128222b5b2250d7be7ae70e12be66e780c0ab321a252038698cf7f3",
+    "docs/testing/dashboard-u5pe/20261111T182010057161+0800-lint/command.json": "eae3d816a3ddeebc2a1d3dc2f8bd5338f74df48ecfbc95f4f5bd3e5eb96614b1",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/E-failed-operator-state.png": "26981e6214d1f6f7d1f45538d2a283a120ddd6a5dd1f692d06af1ba50dd8290f",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/browser-command.json": "2d59fc8450c648d00425fc6cf72e88693b820477c2e7b50c0fa716a80de37d2b",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/browser-results.json": "216c5c4cd0e3c8665678d2209efc65d70e9f7003f1d762039a6b06d8b2ecc478",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/command.json": "d4e876b8883cb753bddc35e71af505415de88fd241118add404d1c571a15f207",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/http-timings.json": "aff7fda067a175f73580d3a325e3f0f7f52f7be97ca0fe00d60e77cc472fc1cf",
+    "docs/testing/dashboard-u5pe/20261111T182757892953+0800-live/real-API-reconstruction.json": "29a9566fbaa033ed2238aa1f47893134d12fceb18f2e47839dc8f38f9bedcc0a",
+    "docs/testing/dashboard-u5pe/20261111T183210546997+0800-lint/command.json": "7105094f8d764c87d2c7644d0fe365f577fe566ba3470c96d83c7895e44e16cb",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/E05-owned-terminal-outcome.png": "e7be48a67e24e004de85176fbc84f5170ecb12d1cbc2899cec292ce56f95559b",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/E11-client-network-failure-retained-state.png": "e1f44ad9e83edd062c5aabb06acdf095cff4201f3d93cb89cc4e0c6e57214859",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/browser-results.json": "a3fe1f4c21da352cfda1896822e826e4421427c49063064c2b7b965cfa3b3b56",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/command.json": "12de2b376da2ab89d0006436beafc763730caa0ed8c17081e6d2e14307190054",
+    "docs/testing/dashboard-u5pe/20261111T183449386161+0800-live/real-API-reconstruction.json": "29a9566fbaa033ed2238aa1f47893134d12fceb18f2e47839dc8f38f9bedcc0a",
+    "docs/testing/dashboard-u5pe/20261111T184513631828+0800-lint/command.json": "968275b5a5dd51af714bfc8a356e2e8bc003afc03e4d4aced17e1557b43cd6b0",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/E05-owned-terminal-outcome.png": "5fea7e916773c5609fa36f6fa762c2de5631b2689193ab5b13ef1c587dae3cca",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/E11-client-network-failure-retained-state.png": "4d4f984a3affce39aa63219eafe02f99ec53d7aea95d48f2a6f3f267d2b38986",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/browser-cleanup.json": "0f62581c3e6f512ca6ff807927124cf51c791240e62edfbeab43791ca7a8b90a",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/browser-command.json": "efdca097fe49ddddaa5de981391a1875068c5543bc9ec5110b3a7e57f82fe63c",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/browser-results.json": "53cf5a6ef760e6efce053c7e3093d842f88628d97597444940a6e8ce806efa95",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/command.json": "e309bfc1f3c96aa342d1016ddbf043081b8b0fa4101cf6f1748a832d3e7aefec",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/http-timings.json": "44d6dcdcb7e5929b276a013b37163493ffb56832258e3a8d7e28bbf2c93c19e7",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/live-process-summary.json": "616cb290eb46cd2c4ea2c1142f39b266c16e0d46401df6d8d18fffd7fae3b98b",
+    "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/real-API-reconstruction.json": "29a9566fbaa033ed2238aa1f47893134d12fceb18f2e47839dc8f38f9bedcc0a",
+    "docs/testing/dashboard-u5pe/attempt-reconciliation.json": "0f760e85306723d8ac442a83ba7833637b34623b48f26bd20851d71eb0a74c0d",
+    "docs/testing/dashboard-u5pe/audit_evidence.py": "52f5c42d69496688cc7b07b61e3e8f9f65ad68aa2f48a45312faed2c83dad3b4",
+    "docs/testing/dashboard-u5pe/control-authority-matrix.md": "e9eb66c9febfec00282fcba89d9cf515132beb2633a0cb9e860638e79fa1aee8",
+    "docs/testing/dashboard-u5pe/entry.json": "4b7079d151b7ac8431ea6bda3d49f89316fe8864dcd25c037de7c2cb12d71e5d",
+    "docs/testing/dashboard-u5pe/frontend_checks.py": "ef384dc800784f12d892929ec7a7e9cf776dd2dbfa9c73ec2bdad4c0224190ef",
+    "docs/testing/dashboard-u5pe/preservation-baseline.json": "ff0632a7ff071f801c9f222a73151cab6577ba08f7abc1910d3e3a6d3373bd2b",
+    "docs/testing/dashboard-u5pe/qualification-summary.json": "1306f18518221a32f047d45d843995e93aef3e80cc7711ede1facbc69898d30e",
+    "docs/testing/dashboard-u5pe/qualify_results.py": "6d66e326c2a5a301ca4a71cfe5bef6ec1a74fe66aff06996f19039c5bd306967",
+    "docs/testing/dashboard-u5pe/run_checks.py": "4972e0e5afd40cecc4303c186e48212da6f237a4c8a6523e58598aa1a343203f",
+    "docs/testing/dashboard-u5pe/screenshot-review-final.json": "4aa35c1976c6778f6546897ee6293d1eeaa007b0f5f16bc21d65f946b3fbaa08",
+    "docs/testing/dashboard-u5pe/screenshot-review.json": "840cbaa1ea41db2b09c1b2a6ab640ae579a76a8c5f27773da86d9bdacdc90007",
+    "docs/testing/dashboard-u5pe/serve_operator.py": "9ca643a95d7a1486851033a952ba6c7e177ad3273bac2b1af0fd758b74163694",
+    "frontend/src/researchOperator/console.html": "51ff7380937cda340c5b783acc56e02a494cc6ee761059840782e6bef777f2f4",
+    "frontend/src/researchOperator/console.mjs": "a50f0d4626676ef942b69ef2224f9a398b2db35ddc2713f0b6d8fd30b70c88d6",
+    "frontend/tests/researchOperator.driver.mjs": "83977ce8b8b74ea7ab8f9e6db46a39a5a89551725e41eaac064ba98c6abef1d1",
+    "frontend/tests/researchOperator.live.mjs": "ffc28d00ebc69f0a10de2d228e197347e8525201a5d435ffaf5c90987a87ece7",
+    "frontend/tests/researchOperator.test.mjs": "6d8896e8b92fe352f2c7853258c1c94007ea651da96cadff30aa4ef45a8db090",
+    "docs/testing/dashboard-u5pe/staging-plan.json": "a77e5fab589add86f0cb774461b02a5a3f6ffb7af04d7a25768c49760742408e"
+  },
+  "evidence_bytes_excluding_seals": 2416119,
+  "production_admission": "BLOCKED",
+  "institutional_saved_best_promotion": "BLOCKED",
+  "continuous_optimization": "DISABLED",
+  "active_restore": "BLOCKED",
+  "seven_day": "NO_GO"
+}

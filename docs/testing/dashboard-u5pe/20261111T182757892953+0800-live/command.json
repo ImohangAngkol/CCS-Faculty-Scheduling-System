@@ -1,0 +1,37 @@
+{
+  "selection": "live",
+  "started_at": "2026-11-11T18:27:58.078357+08:00",
+  "ended_at": "2026-11-11T18:31:25.318129+08:00",
+  "elapsed_seconds": 207.23943710001186,
+  "exit_code": 1,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_operator_live.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-uwrp78ia\\pytest-live"
+  ],
+  "stdout": "F.                                                                       [100%]\n================================== FAILURES ===================================\n___________________________ test_real_edge_operator ___________________________\ntests\\test_research_operator_live.py:48: in test_real_edge_operator\n    assert result.returncode==0,'Browser failed; sanitized diagnostic retained'\nE   AssertionError: Browser failed; sanitized diagnostic retained\nE   assert 1 == 0\nE    +  where 1 = CompletedProcess(args=['node', 'tests/researchOperator.live.mjs'], returncode=1, stdout='', stderr='Operator browser check failed: Missing text Best penalty: 0\\n').returncode\n=========================== short test summary info ===========================\nFAILED tests/test_research_operator_live.py::test_real_edge_operator - Assert...\n1 failed, 1 passed in 199.21s (0:03:19)\n",
+  "stderr": "",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "source_sha256": {
+    "backend/services/ga_research_operator.py": "9e505f60b055eb9a0101c6f991a751a7e9d509337e1688faeeba1c1e43b07652",
+    "backend/routers/research_operator.py": "aec32689b19766620a71d2625a624a383f5c82569b8fb725a3c3038e6474bf05",
+    "backend/tests/test_research_operator.py": "290a3aae05d9e206881e6fa5d757878cfea5763ebfe29b954576245be73edcdd",
+    "frontend/src/researchOperator/console.html": "51ff7380937cda340c5b783acc56e02a494cc6ee761059840782e6bef777f2f4",
+    "frontend/src/researchOperator/console.mjs": "a50f0d4626676ef942b69ef2224f9a398b2db35ddc2713f0b6d8fd30b70c88d6",
+    "backend/tests/test_research_operator_live.py": "530743297947648362d19469d979da933ebf4552536c242ecd0e00e60fd8546c",
+    "frontend/tests/researchOperator.live.mjs": "16d147cd39c92fb6dc181f2d2249605856c17755f8cec7b97ce199a706505b82",
+    "docs/testing/dashboard-u5pe/serve_operator.py": "9ca643a95d7a1486851033a952ba6c7e177ad3273bac2b1af0fd758b74163694"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-uwrp78ia\\repository",
+  "no_staging": true,
+  "completed": false
+}

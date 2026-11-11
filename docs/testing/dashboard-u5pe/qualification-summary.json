@@ -1,0 +1,83 @@
+{
+  "status": "QUALIFIED_ISOLATED_FICTIONAL_CONTROLS_ONLY",
+  "backend": {
+    "operator": {
+      "path": "docs/testing/dashboard-u5pe/20261111T181942362790+0800-operator/command.json",
+      "passed": 22
+    },
+    "physical": {
+      "path": "docs/testing/dashboard-u5pe/20261111T164022225903+0800-physical/command.json",
+      "passed": 12
+    },
+    "native": {
+      "path": "docs/testing/dashboard-u5pe/20261111T164032855915+0800-native/command.json",
+      "passed": 41
+    },
+    "bridge": {
+      "path": "docs/testing/dashboard-u5pe/20261111T164802517462+0800-bridge/command.json",
+      "passed": 4
+    },
+    "parity": {
+      "path": "docs/testing/dashboard-u5pe/20261111T164942950685+0800-parity/command.json",
+      "passed": 5
+    },
+    "legacy": {
+      "path": "docs/testing/dashboard-u5pe/20261111T165119747117+0800-legacy/command.json",
+      "passed": 10
+    },
+    "continuity": {
+      "path": "docs/testing/dashboard-u5pe/20261111T165449732948+0800-continuity/command.json",
+      "passed": 32
+    },
+    "receipts": {
+      "path": "docs/testing/dashboard-u5pe/20261111T165652678176+0800-receipts/command.json",
+      "passed": 36
+    },
+    "live": {
+      "path": "docs/testing/dashboard-u5pe/20261111T184745389946+0800-live/command.json",
+      "passed": 2
+    }
+  },
+  "backend_total_passed": 164,
+  "frontend": {
+    "contracts-all": {
+      "path": "docs/testing/dashboard-u5pe/20261111T172012434744+0800-contracts-all/command.json",
+      "passed": 417
+    },
+    "build": {
+      "path": "docs/testing/dashboard-u5pe/20261111T172041678592+0800-build/command.json"
+    },
+    "bundle": {
+      "path": "docs/testing/dashboard-u5pe/20261111T172211755582+0800-bundle/command.json"
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-u5pe/20261111T184513631828+0800-lint/command.json"
+    }
+  },
+  "browser": {
+    "total": 15,
+    "real_HTTP_scenarios": 13,
+    "injected_error_scenarios": 2,
+    "mocked_success_responses": 0,
+    "nested_in_live_pytest_count": true
+  },
+  "handoff_probe": "docs/testing/dashboard-u5pe/20261111T165821337896+0800-handoff-probe/command.json",
+  "human_handoff": "NOT_PERFORMED",
+  "qualified_source_sha256": {
+    "backend/services/ga_research_operator.py": "9e505f60b055eb9a0101c6f991a751a7e9d509337e1688faeeba1c1e43b07652",
+    "backend/routers/research_operator.py": "aec32689b19766620a71d2625a624a383f5c82569b8fb725a3c3038e6474bf05",
+    "backend/tests/test_research_operator.py": "290a3aae05d9e206881e6fa5d757878cfea5763ebfe29b954576245be73edcdd",
+    "backend/tests/test_research_operator_live.py": "545fdd4a5f4434ae052b6f5dea1b4618e6b7b272c6290811793c7f8715d8a5a7",
+    "frontend/src/researchOperator/console.html": "51ff7380937cda340c5b783acc56e02a494cc6ee761059840782e6bef777f2f4",
+    "frontend/src/researchOperator/console.mjs": "a50f0d4626676ef942b69ef2224f9a398b2db35ddc2713f0b6d8fd30b70c88d6",
+    "frontend/tests/researchOperator.test.mjs": "6d8896e8b92fe352f2c7853258c1c94007ea651da96cadff30aa4ef45a8db090",
+    "frontend/tests/researchOperator.live.mjs": "ffc28d00ebc69f0a10de2d228e197347e8525201a5d435ffaf5c90987a87ece7",
+    "frontend/tests/researchOperator.driver.mjs": "83977ce8b8b74ea7ab8f9e6db46a39a5a89551725e41eaac064ba98c6abef1d1"
+  },
+  "selection_policy": "Most recent record of each selection must pass; earlier failed attempts remain independently archived. Unchanged engine/worker regressions were not repeated after UI/read-only lookup additions.",
+  "production_admission": "BLOCKED",
+  "institutional_saved_best_promotion": "BLOCKED",
+  "continuous_optimization": "DISABLED",
+  "active_restore": "BLOCKED",
+  "seven_day": "NO_GO"
+}

@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Operator browser check failed: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'Unexpected runtime exception'\n+ ]\n- []\n\n",
+  "scope": "Actual Edge, loopback HTTP, real sessions/private SQLite and original Windows worker. No HTTP interception."
+}

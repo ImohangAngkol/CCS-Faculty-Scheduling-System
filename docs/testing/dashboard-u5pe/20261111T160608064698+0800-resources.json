@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-11-11T16:06:08.064677+08:00",
+  "RAM_load_percent": 98,
+  "physical_available_bytes": 263499776,
+  "system_commit_available_bytes": 7345647616,
+  "scope": "Instantaneous read-only host aggregate; no process command lines or private data. Not an attribution of the first timeout.",
+  "owned_failed_snapshot_process_inspection": "Read-only Win32_Process query found no surviving python.exe command line containing the exact failed snapshot marker after both timeout diagnostics; no process terminated by the assistant.",
+  "user_processes_stopped": false
+}

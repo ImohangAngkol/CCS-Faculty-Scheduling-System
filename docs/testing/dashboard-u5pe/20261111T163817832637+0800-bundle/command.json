@@ -1,0 +1,30 @@
+{
+  "selection": "bundle",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "ui_mode": "committed-u5pd-plus-only-u5pe",
+  "ui_overlay_sha256": {
+    "frontend/src/researchOperator/console.html": "32aeedf5c1017fa9f4f49a3cf1ce9972f0581d49dab46dfe936b5e35cb277804",
+    "frontend/src/researchOperator/console.mjs": "5604eccff40c4a7d62517a4303e825110dca8a605168eadaab18318e3a26a7e3",
+    "frontend/tests/researchOperator.test.mjs": "888ab695a846234ba7b3c03fa14c7d521985156a38b0476c45a7dc152ef99dbb"
+  },
+  "command": [
+    "node",
+    "node_modules/vite/bin/vite.js",
+    "build"
+  ],
+  "started_at": "2026-11-11T16:38:17.834417+08:00",
+  "ended_at": "2026-11-11T16:38:20.794123+08:00",
+  "elapsed_seconds": 2.9596174999605864,
+  "exit_code": 0,
+  "stdout": "\u001b[36mvite v8.2.2 \u001b[32mbuilding client environment for production...\u001b[36m\u001b[39m\ntransforming...\n\u2713 837 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                     0.45 kB \u2502 gzip:   0.29 kB\ndist/assets/index-C-wAY_Qh.css     47.49 kB \u2502 gzip:  10.37 kB\ndist/assets/index-b6sMdRsA.js   1,452.47 kB \u2502 gzip: 405.95 kB\n\n\u001b[32m\u2713 built in 1.34s\u001b[39m\n",
+  "stderr": "\u001b[33m\u001b[33m[INEFFECTIVE_DYNAMIC_IMPORT] \u001b[0msrc/api/externalReadiness.ts is dynamically imported by src/api/externalSchedules.ts but also statically imported by src/api/externalConfirmations.ts, src/components/schedule/ExternalScheduleReadiness.tsx, src/components/schedule/ExternalScheduleReview.tsx, src/components/schedule/ReadinessDocument.tsx, dynamic import will not move module into another chunk.\n\u001b[39m\n\u001b[33m[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n",
+  "test_cache_isolation": {
+    "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+    "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+    "test_config_sha256": "afc8d28f7a46b2487d237a994f5cf7e9ff26612839b6b6ef9ccbeee21eee9d7b",
+    "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5o-frontend-n4xw6u4r\\vite-cache",
+    "shared_node_modules_cache_used": false,
+    "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+  },
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5PB worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

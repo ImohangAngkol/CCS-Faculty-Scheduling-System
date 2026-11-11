@@ -1,0 +1,37 @@
+{
+  "selection": "operator",
+  "started_at": "2026-11-11T18:04:01.711350+08:00",
+  "ended_at": "2026-11-11T18:11:01.888484+08:00",
+  "elapsed_seconds": 420.1756402000319,
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_operator.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-l6vktab4\\pytest-operator"
+  ],
+  "stdout": "......................                                                   [100%]\n============================== warnings summary ===============================\ntests/test_research_operator.py::test_factory_not_in_production_and_GET_routes_unchanged\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\ntests/test_research_operator.py::test_factory_not_in_production_and_GET_routes_unchanged\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n22 passed, 2 warnings in 414.85s (0:06:54)\n",
+  "stderr": "",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "source_sha256": {
+    "backend/services/ga_research_operator.py": "22cfe8ac8de370943b1f794419332e9028ef319684a1f1c6d2688bcc7fd35adc",
+    "backend/routers/research_operator.py": "aec32689b19766620a71d2625a624a383f5c82569b8fb725a3c3038e6474bf05",
+    "backend/tests/test_research_operator.py": "c2c4cdbe5e41e439e762b5ccb085e1ff0d3dd8109f94dfa7726e68b8eb67cb2c",
+    "frontend/src/researchOperator/console.html": "51ff7380937cda340c5b783acc56e02a494cc6ee761059840782e6bef777f2f4",
+    "frontend/src/researchOperator/console.mjs": "a50f0d4626676ef942b69ef2224f9a398b2db35ddc2713f0b6d8fd30b70c88d6",
+    "backend/tests/test_research_operator_live.py": "530743297947648362d19469d979da933ebf4552536c242ecd0e00e60fd8546c",
+    "frontend/tests/researchOperator.live.mjs": "1f8c4d90287c72c2841522b4c58fa1eff73a2a5115c7491acbd94d45cdba7024",
+    "docs/testing/dashboard-u5pe/serve_operator.py": "9ca643a95d7a1486851033a952ba6c7e177ad3273bac2b1af0fd758b74163694"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-l6vktab4\\repository",
+  "no_staging": true,
+  "completed": true
+}

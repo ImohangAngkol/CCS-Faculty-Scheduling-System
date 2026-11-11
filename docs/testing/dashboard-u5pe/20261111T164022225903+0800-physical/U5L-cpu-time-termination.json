@@ -1,0 +1,16 @@
+{
+  "pid": 10704,
+  "created_100ns": 134388600282668442,
+  "kernel_seconds": 0.046875,
+  "user_seconds": 2.234375,
+  "exit_code": 3221225540,
+  "active_processes": 1,
+  "peak_private_commit_bytes": 5996544,
+  "enforced": {
+    "private_commit_bytes": 805306368,
+    "process_user_cpu_seconds": 1,
+    "cpu_rate_percent": null,
+    "grace_seconds": 5
+  },
+  "creation_time_job_binding": true
+}

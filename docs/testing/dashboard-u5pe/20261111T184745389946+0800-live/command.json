@@ -1,0 +1,38 @@
+{
+  "selection": "live",
+  "started_at": "2026-11-11T18:47:45.643921+08:00",
+  "ended_at": "2026-11-11T18:50:13.501906+08:00",
+  "elapsed_seconds": 147.8577754998114,
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_operator_live.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-x1kgrkts\\pytest-live"
+  ],
+  "stdout": "..                                                                       [100%]\n2 passed in 145.18s (0:02:25)\n",
+  "stderr": "",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "source_sha256": {
+    "backend/services/ga_research_operator.py": "9e505f60b055eb9a0101c6f991a751a7e9d509337e1688faeeba1c1e43b07652",
+    "backend/routers/research_operator.py": "aec32689b19766620a71d2625a624a383f5c82569b8fb725a3c3038e6474bf05",
+    "backend/tests/test_research_operator.py": "290a3aae05d9e206881e6fa5d757878cfea5763ebfe29b954576245be73edcdd",
+    "frontend/src/researchOperator/console.html": "51ff7380937cda340c5b783acc56e02a494cc6ee761059840782e6bef777f2f4",
+    "frontend/src/researchOperator/console.mjs": "a50f0d4626676ef942b69ef2224f9a398b2db35ddc2713f0b6d8fd30b70c88d6",
+    "backend/tests/test_research_operator_live.py": "545fdd4a5f4434ae052b6f5dea1b4618e6b7b272c6290811793c7f8715d8a5a7",
+    "frontend/tests/researchOperator.live.mjs": "ffc28d00ebc69f0a10de2d228e197347e8525201a5d435ffaf5c90987a87ece7",
+    "frontend/tests/researchOperator.driver.mjs": "83977ce8b8b74ea7ab8f9e6db46a39a5a89551725e41eaac064ba98c6abef1d1",
+    "docs/testing/dashboard-u5pe/serve_operator.py": "9ca643a95d7a1486851033a952ba6c7e177ad3273bac2b1af0fd758b74163694"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-x1kgrkts\\repository",
+  "no_staging": true,
+  "completed": true
+}

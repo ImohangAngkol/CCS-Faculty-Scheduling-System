@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Operator browser check failed: Run ID\n",
+  "scope": "Actual Edge, loopback HTTP, real sessions/private SQLite and original Windows worker. E11 failed GET and E13 busy error are explicit client fault injections; no mocked success."
+}

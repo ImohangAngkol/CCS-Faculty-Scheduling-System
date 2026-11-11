@@ -1,0 +1,113 @@
+{
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/auth/me",
+      "status": 401,
+      "elapsed_seconds": 0.0051865000277757645
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "status": 200,
+      "elapsed_seconds": 1.7745821999851614
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/capabilities",
+      "status": 200,
+      "elapsed_seconds": 0.20293989987112582
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/requests/16b6f029-cfed-4653-be5f-5c844bea1106",
+      "status": 409,
+      "elapsed_seconds": 2.1340401999186724
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/requests/16b6f029-cfed-4653-be5f-5c844bea1106",
+      "status": 409,
+      "elapsed_seconds": 2.1872527999803424
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/requests/16b6f029-cfed-4653-be5f-5c844bea1106",
+      "status": 409,
+      "elapsed_seconds": 2.0372395999729633
+    },
+    {
+      "method": "POST",
+      "path": "/api/research/operator/start",
+      "status": 202,
+      "elapsed_seconds": 15.670861100079492
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/requests/16b6f029-cfed-4653-be5f-5c844bea1106",
+      "status": 200,
+      "elapsed_seconds": 0.6225211001001298
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "status": 200,
+      "elapsed_seconds": 0.22957069985568523
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "status": 200,
+      "elapsed_seconds": 0.37823259993456304
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "status": 200,
+      "elapsed_seconds": 0.6935725999064744
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "status": 200,
+      "elapsed_seconds": 1.4630825999192894
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "status": 200,
+      "elapsed_seconds": 0.6640290000941604
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "status": 200,
+      "elapsed_seconds": 0.20675210002809763
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "status": 200,
+      "elapsed_seconds": 0.33768290001899004
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "status": 200,
+      "elapsed_seconds": 0.30784919997677207
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "status": 200,
+      "elapsed_seconds": 0.22586779994890094
+    },
+    {
+      "method": "GET",
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "status": 200,
+      "elapsed_seconds": 0.723545900080353
+    }
+  ],
+  "scope": "Actual server status/latency only; no headers, bodies, credentials or client-ack claim"
+}

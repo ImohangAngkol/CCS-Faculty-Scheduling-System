@@ -1,0 +1,101 @@
+{
+  "scope": "Actual Edge/TCP/FastAPI/session/private SQLite/original Windows worker. E11 injects a failed GET; E13 injects a busy error. No fake successful HTTP response.",
+  "scenarios": [
+    {
+      "name": "E01 isolated disabled before login",
+      "status": "PASS"
+    },
+    {
+      "name": "E02 actual authentication and scoped permit",
+      "status": "PASS"
+    },
+    {
+      "name": "E03 actual bounded native start with read-only acknowledgement recovery",
+      "status": "FAIL",
+      "message": "Missing text Best penalty: 0"
+    }
+  ],
+  "start_recovery": {
+    "initial_ack_received": false,
+    "explicit_readonly_inspection": true,
+    "read_only_inspection_attempts": 3,
+    "submit_handler_verified": true,
+    "execution_retried": false
+  },
+  "last_state": {
+    "error": "",
+    "message": "Owned run mapping recovered read-only. Execution was NOT retried.",
+    "state": "Lifecycle metadata state: RUNNING (recorded)\nReason: BATCH_CHECKPOINT\nTermination NOT verified.\nFitness unavailable until full read-only provenance validation.",
+    "password_field_empty": true,
+    "start_disabled": false
+  },
+  "requests": [
+    {
+      "path": "/api/research/operator/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/start",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/requests/16b6f029-cfed-4653-be5f-5c844bea1106",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/requests/16b6f029-cfed-4653-be5f-5c844bea1106",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/requests/16b6f029-cfed-4653-be5f-5c844bea1106",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/requests/16b6f029-cfed-4653-be5f-5c844bea1106",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/caa0bb89-dffb-4e5c-80c8-09bc5852d1da",
+      "method": "GET"
+    }
+  ],
+  "errors": [],
+  "HTTP_interception": "E11_FAILED_GET_AND_E13_BUSY_ERROR_ONLY",
+  "intercepted_failure_scenarios": [
+    "E11",
+    "E13"
+  ],
+  "mocked_success_responses": 0
+}

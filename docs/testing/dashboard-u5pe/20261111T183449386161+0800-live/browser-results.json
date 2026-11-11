@@ -1,0 +1,313 @@
+{
+  "scope": "Actual Edge/TCP/FastAPI/session/private SQLite/original Windows worker. E11 injects a failed GET; E13 injects a busy error. No fake successful HTTP response.",
+  "scenarios": [
+    {
+      "name": "E01 isolated disabled before login",
+      "status": "PASS"
+    },
+    {
+      "name": "E02 actual authentication and scoped permit",
+      "status": "PASS"
+    },
+    {
+      "name": "E03 actual bounded native start with read-only acknowledgement recovery",
+      "status": "PASS"
+    },
+    {
+      "name": "E04 duplicate start same run",
+      "status": "PASS"
+    },
+    {
+      "name": "E05 valid Stop is truthful",
+      "status": "PASS"
+    },
+    {
+      "name": "E06 repeated Stop no new run",
+      "status": "PASS"
+    },
+    {
+      "name": "E07 actual reload revalidates session without auto-start",
+      "status": "PASS"
+    },
+    {
+      "name": "E08 actual CSRF rejection",
+      "status": "PASS"
+    },
+    {
+      "name": "E09 client authority fields rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "E10 no unsupported controls and scoped read link",
+      "status": "PASS"
+    },
+    {
+      "name": "E11 injected client network failure retains verified history",
+      "status": "PASS"
+    },
+    {
+      "name": "E12 real HTTP retry after fault removal",
+      "status": "PASS"
+    },
+    {
+      "name": "E13 injected busy error retains authorized Stop",
+      "status": "PASS"
+    },
+    {
+      "name": "E14 actual Stop retry after injected busy removed",
+      "status": "PASS"
+    },
+    {
+      "name": "E15 unscoped real administrator denied",
+      "status": "PASS"
+    }
+  ],
+  "start_recovery": {
+    "initial_ack_received": false,
+    "explicit_readonly_inspection": true,
+    "read_only_inspection_attempts": 3,
+    "submit_handler_verified": true,
+    "execution_retried": false
+  },
+  "stop_verification": {
+    "bound_seconds": 65,
+    "elapsed_seconds": 26.168,
+    "explicit_observation_retries": 0
+  },
+  "responses": [
+    {
+      "path": "/api/research/operator/capabilities",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/requests/3befe92c-d070-4035-adb9-d79bcd6d9b95",
+      "status": 409
+    },
+    {
+      "path": "/api/research/operator/requests/3befe92c-d070-4035-adb9-d79bcd6d9b95",
+      "status": 409
+    },
+    {
+      "path": "/api/research/operator/requests/3befe92c-d070-4035-adb9-d79bcd6d9b95",
+      "status": 409
+    },
+    {
+      "path": "/api/research/operator/requests/3befe92c-d070-4035-adb9-d79bcd6d9b95",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/start",
+      "status": 202
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e/stop",
+      "status": 202
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/observations/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e/stop",
+      "status": 202
+    },
+    {
+      "path": "/api/research/operator/capabilities",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/observations/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/start",
+      "status": 403
+    },
+    {
+      "path": "/api/research/operator/start",
+      "status": 422
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/observations/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "status": 200
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e/stop",
+      "status": 409
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e/stop",
+      "status": 202
+    },
+    {
+      "path": "/api/research/operator/capabilities",
+      "status": 403
+    }
+  ],
+  "last_state": null,
+  "requests": [
+    {
+      "path": "/api/research/operator/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/start",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/requests/3befe92c-d070-4035-adb9-d79bcd6d9b95",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/requests/3befe92c-d070-4035-adb9-d79bcd6d9b95",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/requests/3befe92c-d070-4035-adb9-d79bcd6d9b95",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/requests/3befe92c-d070-4035-adb9-d79bcd6d9b95",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/start",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e/stop",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e/stop",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/capabilities",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/start",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/start",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/observations/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e/stop",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e/stop",
+      "method": "POST"
+    },
+    {
+      "path": "/api/research/operator/runs/d10bf6e8-917b-4d31-9571-bd197a0e396e",
+      "method": "GET"
+    },
+    {
+      "path": "/api/research/operator/capabilities",
+      "method": "GET"
+    }
+  ],
+  "errors": [],
+  "HTTP_interception": "E11_FAILED_GET_AND_E13_BUSY_ERROR_ONLY",
+  "intercepted_failure_scenarios": [
+    "E11",
+    "E13"
+  ],
+  "mocked_success_responses": 0
+}

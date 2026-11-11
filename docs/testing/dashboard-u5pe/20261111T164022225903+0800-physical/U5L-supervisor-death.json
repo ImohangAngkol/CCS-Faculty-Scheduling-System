@@ -1,0 +1,5 @@
+{
+  "supervisor_exit": 23,
+  "owned_child_dead": true,
+  "job_handles_not_inherited": true
+}

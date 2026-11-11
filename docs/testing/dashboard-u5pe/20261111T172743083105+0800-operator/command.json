@@ -1,0 +1,37 @@
+{
+  "selection": "operator",
+  "started_at": "2026-11-11T17:27:43.093422+08:00",
+  "ended_at": "2026-11-11T17:37:08.615550+08:00",
+  "elapsed_seconds": 565.5191358001903,
+  "exit_code": 1,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_operator.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-j23cu7kq\\pytest-operator"
+  ],
+  "stdout": ".........FF..........                                                    [100%]\n================================== FAILURES ===================================\n_______________ test_native_stop_during_checkpoint_publication ________________\ntests\\test_research_operator.py:103: in test_native_stop_during_checkpoint_publication\n    until(b,run);diagnostic(b,run,'native-checkpoint-stop');assert o.status(PRINCIPAL,run)['overview']['freshness']['state']=='TERMINAL'\n                                                                   ^^^^^^^^^^^^^^^^^^^^^^^\nservices\\ga_research_operator.py:106: in status\n    return self.observer.detail(principal,run)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nservices\\ga_research_operator.py:33: in detail\n    def detail(self,p,run):return self._read(p,'detail',run)\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^\nservices\\ga_research_operator.py:30: in _read\n    try:self._idle(p);return getattr(self.base,method)(p,*args)\n        ^^^^^^^^^^^^^\nservices\\ga_research_operator.py:26: in _idle\n    if db.execute('SELECT COUNT(*) FROM runs WHERE executor IS NOT NULL').fetchone()[0]:raise RunError('OPERATOR_ACTIVE_OBSERVATION_DEFERRED',503)\n                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   services.ga_run_authority.RunError: OPERATOR_ACTIVE_OBSERVATION_DEFERRED\n_____________________ test_native_stop_during_computation _____________________\ntests\\test_research_operator.py:118: in test_native_stop_during_computation\n    until(b,run);diagnostic(b,run,'native-computation-stop');assert o.status(PRINCIPAL,run)['overview']['freshness']['state']=='TERMINAL'\n                                                                    ^^^^^^^^^^^^^^^^^^^^^^^\nservices\\ga_research_operator.py:106: in status\n    return self.observer.detail(principal,run)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nservices\\ga_research_operator.py:33: in detail\n    def detail(self,p,run):return self._read(p,'detail',run)\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^\nservices\\ga_research_operator.py:30: in _read\n    try:self._idle(p);return getattr(self.base,method)(p,*args)\n        ^^^^^^^^^^^^^\nservices\\ga_research_operator.py:26: in _idle\n    if db.execute('SELECT COUNT(*) FROM runs WHERE executor IS NOT NULL').fetchone()[0]:raise RunError('OPERATOR_ACTIVE_OBSERVATION_DEFERRED',503)\n                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   services.ga_run_authority.RunError: OPERATOR_ACTIVE_OBSERVATION_DEFERRED\n============================== warnings summary ===============================\ntests/test_research_operator.py::test_factory_not_in_production_and_GET_routes_unchanged\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\ntests/test_research_operator.py::test_factory_not_in_production_and_GET_routes_unchanged\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/test_research_operator.py::test_native_stop_during_checkpoint_publication\nFAILED tests/test_research_operator.py::test_native_stop_during_computation\n2 failed, 19 passed, 2 warnings in 557.88s (0:09:17)\n",
+  "stderr": "",
+  "head": "e5108dab557c7b274240400e389c144512cbdd54",
+  "source_sha256": {
+    "backend/services/ga_research_operator.py": "24061de516de5f3e805551c9be8999e5e340cf4495a2db7c2d44e1dbbe8887c4",
+    "backend/routers/research_operator.py": "aec32689b19766620a71d2625a624a383f5c82569b8fb725a3c3038e6474bf05",
+    "backend/tests/test_research_operator.py": "e4c1c0026b6d8376e9d9cdf0376886fdd1659fa368a075cf99ce6222e8757a4b",
+    "frontend/src/researchOperator/console.html": "51ff7380937cda340c5b783acc56e02a494cc6ee761059840782e6bef777f2f4",
+    "frontend/src/researchOperator/console.mjs": "a50f0d4626676ef942b69ef2224f9a398b2db35ddc2713f0b6d8fd30b70c88d6",
+    "backend/tests/test_research_operator_live.py": "898030bb4dfe375d0b24bd50e7edc9437b88ddfa6f7c933e233e0db425c49c57",
+    "frontend/tests/researchOperator.live.mjs": "710b678298d8449ce08c2db06801608541a839173d32c8fac3e44995ad18ff6e",
+    "docs/testing/dashboard-u5pe/serve_operator.py": "9ca643a95d7a1486851033a952ba6c7e177ad3273bac2b1af0fd758b74163694"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-j23cu7kq\\repository",
+  "no_staging": true,
+  "completed": false
+}
