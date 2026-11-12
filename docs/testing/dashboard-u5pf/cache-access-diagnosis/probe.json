@@ -1,0 +1,123 @@
+{
+  "schema": "u5pf-targeted-cache-context-diagnosis-v1",
+  "observed_date": "2026-11-12",
+  "timezone": "Asia/Manila",
+  "codex_context": {
+    "account_classification": "CodexSandboxOffline (different account from the operator)",
+    "integrity": "Medium",
+    "enabled_groups": [
+      "CodexSandboxUsers",
+      "Users",
+      "Authenticated Users"
+    ],
+    "administrators_group_present": false,
+    "reported_privileges": [
+      {
+        "name": "SeChangeNotifyPrivilege",
+        "enabled": true
+      }
+    ],
+    "privilege_meaning": "Traverse checking does not grant file read, directory listing or READ_CONTROL",
+    "raw_SIDs_and_machine_account_identifiers_archived": false
+  },
+  "external_operator_context": {
+    "source": "USER_REPORTED_NOT_INDEPENDENTLY_INSPECTED",
+    "account_classification": "Normal repository owner account",
+    "integrity": "Medium",
+    "administrators": "Deny-only",
+    "five_file_reads_and_hashes": "User reports successful; actual external hashes not supplied"
+  },
+  "target": {
+    "path": "backend/.pytest_cache",
+    "directory_metadata": "Get-Item succeeds",
+    "reparse_point": false,
+    "ACL_owner_inheritance": "UNAVAILABLE: Get-Acl raises System.UnauthorizedAccessException",
+    "enumeration": "Get-ChildItem -Force -Recurse -File raises System.UnauthorizedAccessException",
+    "individual_reads": "All five Python open(rb) calls fail with PermissionError errno 13"
+  },
+  "hash_comparisons": [
+    {
+      "path": "backend/.pytest_cache/.gitignore",
+      "original_baseline_sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "R1_baseline_sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "baseline_agreement": true,
+      "error": "PermissionError",
+      "winerror": null,
+      "errno": 13
+    },
+    {
+      "path": "backend/.pytest_cache/CACHEDIR.TAG",
+      "original_baseline_sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "R1_baseline_sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "baseline_agreement": true,
+      "error": "PermissionError",
+      "winerror": null,
+      "errno": 13
+    },
+    {
+      "path": "backend/.pytest_cache/README.md",
+      "original_baseline_sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "R1_baseline_sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "baseline_agreement": true,
+      "error": "PermissionError",
+      "winerror": null,
+      "errno": 13
+    },
+    {
+      "path": "backend/.pytest_cache/v/cache/lastfailed",
+      "original_baseline_sha256": "de1dd2fbd290e5d83ab9de5060504c7a8358eaba172be670c9fb9cf36e9123f2",
+      "R1_baseline_sha256": "de1dd2fbd290e5d83ab9de5060504c7a8358eaba172be670c9fb9cf36e9123f2",
+      "baseline_agreement": true,
+      "error": "PermissionError",
+      "winerror": null,
+      "errno": 13
+    },
+    {
+      "path": "backend/.pytest_cache/v/cache/nodeids",
+      "original_baseline_sha256": "0d42bda6f2b07775c4a1d55491a6bd0bdf6ed706d9d59cfedc1e2ec87d6c9ad7",
+      "R1_baseline_sha256": "0d42bda6f2b07775c4a1d55491a6bd0bdf6ed706d9d59cfedc1e2ec87d6c9ad7",
+      "baseline_agreement": true,
+      "error": "PermissionError",
+      "winerror": null,
+      "errno": 13
+    }
+  ],
+  "classification": "REPRODUCIBLE_IN_CURRENT_CODEX_CONTEXT; CONTEXT_DEPENDENCE_SUPPORTED_BY_DISTINCT_IDENTITIES_AND_USER_REPORTED_EXTERNAL_SUCCESS",
+  "transient_denial": "NOT_SUPPORTED_BY_REPEATED_CURRENT_FAILURES",
+  "precise_DACL_or_sandbox_cause": "UNRESOLVED; insufficient READ_CONTROL to inspect the target ACL; do not assume the root cache owner is also the backend cache owner",
+  "attestation_tool_execution": {
+    "schema": "u5pf-cache-readonly-attestation-v1",
+    "started_at": "2026-11-12T22:20:16.192186+08:00",
+    "path": "backend/.pytest_cache",
+    "tool_sha256": "4ddebabd40d474b499ac7e57a32ec219f2a3aa064143d1ca1b7e06cb517e653d",
+    "baseline_expected_sha256": "a301e0821f6d025e0ae39e8231051d6233665c4f5f4ff59255cb05c6a50ff04b",
+    "writes_performed": false,
+    "full_preservation_audit": false,
+    "acceptance_preflight_qualified": false,
+    "origin_authentication": "REQUIRES_SEPARATE_OPERATOR_VERIFICATION",
+    "status": "STOP_READ_ONLY_ATTESTATION_FAILED",
+    "exception": "PermissionError",
+    "errno": 13,
+    "winerror": 5,
+    "ended_at": "2026-11-12T22:20:16.200873+08:00"
+  },
+  "fresh_scoped_verification": {
+    "previous_artifact_hashes_verified": 60,
+    "previous_F_R1_R2_paths": 61,
+    "selected_known_hashes_verified": 32,
+    "academic_files_verified": 23,
+    "original_tracked_modification_paths": 11,
+    "original_unrelated_untracked_paths": 958,
+    "index_empty": true,
+    "head": "0dcc3e942d0b79c0e6358aa151208c014b307300"
+  },
+  "complete_preservation_audit": false,
+  "acceptance_preflight_qualified": false,
+  "no_elevation": true,
+  "no_permission_changes": true,
+  "no_cache_changes": true,
+  "tests_executed": 0,
+  "native_workers_started": 0,
+  "Edge_scenarios": 0,
+  "no_database_operations": true
+}

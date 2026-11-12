@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-11-12T08:19:34.510379+08:00",
+  "available_physical_bytes": 964587520,
+  "memory_load_percent": 94,
+  "available_commit_bytes": 23346069504,
+  "phase": "Existing continuity regressions running; not idle-host measurement",
+  "decision": "Defer additional F native/browser acceptance until improved headroom; no worker-limit change",
+  "known_failures": [
+    "20261112T074350827106+0800-experiments",
+    "20261112T080259124174+0800-experiments"
+  ],
+  "root_cause_limit": "Wall-time enforcement verified; exact source of elapsed-time overhead remains unresolved",
+  "unrelated_processes_stopped": false,
+  "power_settings_changed": false
+}

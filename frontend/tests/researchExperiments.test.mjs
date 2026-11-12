@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {URL} from 'node:url';
+import {validateView,selection,schema} from '../src/researchExperiments/model.mjs';
+const pending={schema,run_id:'fictional-run',experiment_id:'fictional-experiment',production_admission:'BLOCKED',continuous_ui:'DISABLED',active_restore:false,institutional_saved_best_promotion:false,seven_day:'NO_GO',exportable:false,record:null,record_sha256:null};
+test('Pending metadata never invents metrics',()=>{assert.equal(validateView(pending,'fictional-run').record,null);});
+test('Cross-run response rejected',()=>assert.throws(()=>validateView(pending,'other')));
+test('Current eligibility cannot be inferred',()=>assert.throws(()=>validateView({...pending,production_admission:'CURRENT'},'fictional-run')));
+test('Unverified result rejected',()=>assert.throws(()=>validateView({...pending,record:{}},'fictional-run')));
+test('Verified zero remains zero',()=>{const record={run_id:'fictional-run',experiment_id:'fictional-experiment',final_best_fitness:{value:0}};assert.equal(validateView({...pending,exportable:true,record,record_sha256:'a'.repeat(64),verification:'VERIFIED_RECORDED_FICTIONAL_RESULT'},'fictional-run').record.final_best_fitness.value,0);});
+test('Cross-experiment mapping rejected',()=>assert.throws(()=>validateView({...pending,exportable:true,record:{run_id:'fictional-run',experiment_id:'other'},record_sha256:'a'.repeat(64),verification:'VERIFIED_RECORDED_FICTIONAL_RESULT'},'fictional-run')));
+test('Only single server-bound context supported',()=>{assert.throws(()=>selection({schema,production_admission:'BLOCKED',contexts:[]}));assert.equal(selection({schema,production_admission:'BLOCKED',contexts:[{selection_key:'a'.repeat(64),context:{dataset:'FICTIONAL-DATASET'}}]}).context.dataset,'FICTIONAL-DATASET');});
+test('Safe DOM, finite reads and no new privileged request implementation',async()=>{const source=await readFile(new URL('../src/researchExperiments/console.mjs',import.meta.url),'utf8');assert.ok(source.includes("import '/research/operator.mjs'"));assert.ok(!source.includes('innerHTML'));assert.ok(!source.includes("method:'POST'"));assert.ok(!source.includes('localStorage'));assert.ok(source.includes('AbortSignal.timeout(8000)'));assert.ok(source.includes('key!==epoch'));});

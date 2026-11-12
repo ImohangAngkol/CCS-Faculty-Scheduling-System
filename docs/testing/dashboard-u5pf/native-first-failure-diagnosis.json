@@ -1,0 +1,59 @@
+{
+  "attempt": "20261112T074350827106+0800-experiments",
+  "method": "Read-only owned fictional fixture SQLite; query_only=ON; no connections to institutional storage",
+  "worker_events": [
+    {
+      "state": "CREATED",
+      "reason": null,
+      "at": 1794440645.136644
+    },
+    {
+      "state": "RUNNING",
+      "reason": null,
+      "at": 1794440646.9628356
+    },
+    {
+      "state": "RUNNING",
+      "reason": "BATCH_CHECKPOINT",
+      "at": 1794440656.6991696
+    },
+    {
+      "state": "FAILED",
+      "reason": "GA_WORKER_TIME_BUDGET",
+      "at": 1794440705.332795
+    }
+  ],
+  "physical_processes": [
+    {
+      "active_processes": 0,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 0,
+      "kernel_seconds": 0.875,
+      "peak_private_commit_bytes": 623640576,
+      "user_seconds": 2.6875,
+      "status": "EXIT_VERIFIED"
+    },
+    {
+      "active_processes": 0,
+      "enforced": {
+        "cpu_rate_percent": null,
+        "grace_seconds": 5,
+        "private_commit_bytes": 805306368,
+        "process_user_cpu_seconds": 60
+      },
+      "exit_code": 137,
+      "kernel_seconds": 1.046875,
+      "peak_private_commit_bytes": 699043840,
+      "user_seconds": 9.828125,
+      "status": "EXIT_VERIFIED"
+    }
+  ],
+  "wall_seconds_from_created": 60.1961510181427,
+  "diagnosis": "The unchanged 60-second run budget expired during the second child (first checkpoint generation zero). Child CPU use was below the 60-second CPU cap. Child two was terminated by the existing wall-time guard; both exits were verified. Evidence does not prove whether paging, host scheduling or input search dominated elapsed time. No completed generation is claimed.",
+  "next_action": "One unchanged-input/unchanged-limit rerun with diagnostic captured before assertions; retain this failed attempt."
+}

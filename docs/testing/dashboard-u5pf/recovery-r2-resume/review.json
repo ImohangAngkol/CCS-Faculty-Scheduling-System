@@ -1,0 +1,88 @@
+{
+  "recorded_at": "2026-11-12T21:59:25.457777+08:00",
+  "head": "0dcc3e942d0b79c0e6358aa151208c014b307300",
+  "branch": "main",
+  "index_empty": true,
+  "status": "STOP_CACHE_ACCESS_DENIED",
+  "known_baseline_paths": 5639,
+  "known_baseline_matches": 5634,
+  "inaccessible_baseline_paths": [
+    {
+      "path": "backend/.pytest_cache/.gitignore",
+      "error": "PermissionError",
+      "winerror": null
+    },
+    {
+      "path": "backend/.pytest_cache/CACHEDIR.TAG",
+      "error": "PermissionError",
+      "winerror": null
+    },
+    {
+      "path": "backend/.pytest_cache/README.md",
+      "error": "PermissionError",
+      "winerror": null
+    },
+    {
+      "path": "backend/.pytest_cache/v/cache/lastfailed",
+      "error": "PermissionError",
+      "winerror": null
+    },
+    {
+      "path": "backend/.pytest_cache/v/cache/nodeids",
+      "error": "PermissionError",
+      "winerror": null
+    }
+  ],
+  "changed_baseline_paths": [],
+  "previous_artifact_hashes_verified": 54,
+  "previous_F_R1_R2_paths": 55,
+  "academic_files_verified": 23,
+  "historical_eight_verified": 8,
+  "protected_JSON_unchanged": true,
+  "original_tracked_paths": [
+    "backend/data/faculty_preferences.json",
+    "backend/data/ga_settings.json",
+    "frontend/src/components/ga/ConvergenceChart.tsx",
+    "frontend/src/components/ga/GALiveConsole.tsx",
+    "frontend/src/components/ga/LiveGAMonitor.tsx",
+    "frontend/src/components/ga/WorkloadChart.tsx",
+    "frontend/src/components/ga/workloadChart.css",
+    "frontend/src/pages/admin/FitnessAnalysis.tsx",
+    "frontend/src/pages/admin/GenerateSchedule.tsx",
+    "frontend/src/pages/admin/SubjectManagement.tsx",
+    "frontend/tests/evaluationCoverage.browser.test.mjs"
+  ],
+  "original_unrelated_untracked_count": 958,
+  "strict_enumeration_error": {
+    "path": "backend/.pytest_cache",
+    "error": "PermissionError",
+    "winerror": 5
+  },
+  "partial_enumeration_count": 25,
+  "ignored_directories_observed_before_stop": [
+    ".pytest_cache",
+    ".pytest_cache/v/cache",
+    ".vscode"
+  ],
+  "dependency_build_exclusions": [
+    ".git",
+    ".venv",
+    ".venv-1",
+    "node_modules",
+    "frontend/node_modules",
+    "frontend/dist"
+  ],
+  "complete_preservation_baseline_established": false,
+  "inaccessible_files_classified_as_preserved": false,
+  "tests_executed": 0,
+  "native_workers_launched": 0,
+  "Edge_scenarios_executed": 0,
+  "no_permission_changes": true,
+  "no_elevation": true,
+  "no_PostgreSQL_operations": true,
+  "production_admission": "BLOCKED",
+  "continuous_optimization": "DISABLED",
+  "active_restore": "BLOCKED",
+  "seven_day_readiness": "NO_GO",
+  "checkpoint_ready": false
+}

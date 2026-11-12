@@ -1,0 +1,53 @@
+{
+  "measurement_timestamp": "2026-11-12T21:55:47.453945+08:00",
+  "total_physical_bytes": 16869548032,
+  "available_physical_bytes": 4176592896,
+  "available_physical_GiB": 3.8898,
+  "memory_load_percent": 75,
+  "disk_free_bytes": 118625402880,
+  "disk_free_GiB": 110.4785,
+  "required_available_physical_bytes": 3221225472,
+  "RAM_gate_passed": true,
+  "measurement_method": "Windows GlobalMemoryStatusEx through stdlib ctypes; shutil.disk_usage; read-only, without elevation",
+  "root_cache": {
+    "path": ".pytest_cache",
+    "directory_exists": true,
+    "reparse_point": false,
+    "owner_classification": "Offline sandbox execution account; account identifier omitted",
+    "ACL_inheritance_disabled": true,
+    "ACL_entries": [
+      {"principal": "OWNER RIGHTS", "rights": "FullControl", "type": "Allow", "inherited": false, "applies_to": "ContainerInherit, ObjectInherit"},
+      {"principal": "SYSTEM", "rights": "FullControl", "type": "Allow", "inherited": false, "applies_to": "ContainerInherit, ObjectInherit"},
+      {"principal": "Administrators", "rights": "FullControl", "type": "Allow", "inherited": false, "applies_to": "ContainerInherit, ObjectInherit"}
+    ],
+    "current_Get_Item": "PASS",
+    "current_Get_Acl": "PASS",
+    "current_recursive_Get_ChildItem_and_file_hashing": "PASS: five files read",
+    "previous_denial_exact_cause": "UNPROVEN: restricted owner-based ACL is consistent with execution-identity-dependent access, but prior identity and ACL transition are not established",
+    "permissions_changed_by_this_attempt": false
+  },
+  "backend_cache": {
+    "path": "backend/.pytest_cache",
+    "directory_exists": true,
+    "reparse_point": false,
+    "Get_Item": "PASS",
+    "Get_Acl": "System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.",
+    "Get_ChildItem": "System.UnauthorizedAccessException: Access to the backend/.pytest_cache path is denied.",
+    "strict_os_walk": "PermissionError: WinError 5: Access is denied",
+    "known_file_hash_reads": "PermissionError on all five known cache files",
+    "owner": "UNAVAILABLE",
+    "ACL_entries": "UNAVAILABLE",
+    "inheritance": "UNAVAILABLE",
+    "reproducibility": "Reproduced with PowerShell enumeration, Python strict traversal and individual file reads",
+    "exact_permission_root_cause": "UNRESOLVED: ownership/ACL cannot be read in the current unprivileged execution context"
+  },
+  "stop_gate": "COMPLETE_PRESERVATION_BASELINE_BLOCKED_BY_CACHE_READ_ACCESS",
+  "permissions_changed": false,
+  "elevation_used": false,
+  "cache_deleted_or_cleared": false,
+  "processes_terminated": false,
+  "native_workers_started": 0,
+  "Edge_started": 0,
+  "tests_executed": 0,
+  "PostgreSQL_operations": 0
+}

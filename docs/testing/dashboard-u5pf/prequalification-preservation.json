@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "baselined_paths": 5594,
+  "prior_artifact_references": 1793,
+  "academic_files": 23,
+  "historical_eight": 8,
+  "index_unchanged": true,
+  "protected_preferences_unchanged": true,
+  "protected_settings_unchanged": true,
+  "scope": "Interim byte verification only; no institutional database queried"
+}

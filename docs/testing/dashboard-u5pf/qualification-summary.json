@@ -1,0 +1,66 @@
+{
+  "status": "PARTIAL_RESOURCE_BLOCKED",
+  "checkpoint_ready": false,
+  "backend": {
+    "offline": {
+      "path": "docs/testing/dashboard-u5pf/20261112T081053658493+0800-offline/command.json",
+      "passed": 11
+    },
+    "continuity": {
+      "path": "docs/testing/dashboard-u5pf/20261112T081236134550+0800-continuity/command.json",
+      "passed": 32
+    },
+    "receipts": {
+      "path": "docs/testing/dashboard-u5pf/20261112T081936128911+0800-receipts/command.json",
+      "passed": 36
+    }
+  },
+  "backend_total_passed": 79,
+  "frontend": {
+    "contracts-all": {
+      "path": "docs/testing/dashboard-u5pf/20261112T074053406140+0800-contracts-all/command.json",
+      "passed": 425
+    },
+    "build": {
+      "path": "docs/testing/dashboard-u5pf/20261112T074110173986+0800-build/command.json"
+    },
+    "bundle": {
+      "path": "docs/testing/dashboard-u5pf/20261112T074128993786+0800-bundle/command.json"
+    },
+    "lint": {
+      "path": "docs/testing/dashboard-u5pf/20261112T074131804238+0800-lint/command.json"
+    }
+  },
+  "handoff_probe": "docs/testing/dashboard-u5pf/20261112T082543652212+0800-handoff-probe/command.json",
+  "browser_scenarios_executed": 0,
+  "browser_scenarios_planned": 11,
+  "full_native_export_test_passed": false,
+  "reviewed_source_sha256": {
+    "backend/services/ga_research_experiments.py": "8b23ee790982b289d93e9a35a73b55faa3f098b9fa603662ca8a87735b272563",
+    "backend/routers/research_experiments.py": "9ab44a881342e585f45dd408cee14a10ace98aaf6afa925b976156830be21c8e",
+    "backend/tests/test_research_experiments.py": "f3eb1b677343bd6890990251361f0b041ef67772be2a28d12ed2b4a013c014d3",
+    "backend/tests/test_research_experiments_live.py": "8110127f99bcee27cdba580a095dbd1f91e1f08ae62ee469ca93abad40caf790",
+    "frontend/src/researchExperiments/panel.html": "b017a47bad8254a9447421afc330063c30cabe49e9faa3b8257e897f15aec3d3",
+    "frontend/src/researchExperiments/console.mjs": "180989b16e26e5fecd5b4c353a1a4b818a36f3f61ca68db0b3dbda7a09645d20",
+    "frontend/src/researchExperiments/model.mjs": "6efa3f1717f18733c069f609b4fb0afddee27fcdc1c462074fa14e0362c58492",
+    "frontend/tests/researchExperiments.test.mjs": "94766ac8a2e1f78eb2ea420d4e947bf7519aa4841ecf7fede515b23170d210e4",
+    "frontend/tests/researchExperiments.live.mjs": "97b714f2848d7687187d4afd8b2f4ec08f4991a0589d7b79e489080ac9cff9fa"
+  },
+  "source_qualification_notes": "Reviewed hashes are inventory identities, not a claim every source path executed. Current offline main-test/service/router/verifier bytes are checked against the passing command. Live host/browser script remain unexecuted.",
+  "remaining_unverified": [
+    "Complete one-generation U5PF native export acceptance: two wall-budget failures and one test-expectation failure retained; last corrected full test has not passed.",
+    "All 11 real Edge/FastAPI/SQLite/native F workflow scenarios and actual F factory TCP-reconstruction acceptance.",
+    "Fresh F-selected operator/physical/bridge/original 455 parity/legacy checkpoint suites: queued sequence stopped on the failed F test. Existing E proofs remain historical, byte-preserved evidence.",
+    "Human operator handoff: automatic no-worker lifecycle probe passed; no human demonstration claimed."
+  ],
+  "limitations": [
+    "Host still at 93 percent memory load after tests, about 1.06 GiB available; no further unchanged-condition native retries. Exact cause of elapsed-time overhead remains unresolved.",
+    "No fresh statistically meaningful performance, convergence, satisfaction or host-wide safety claim.",
+    "Two existing Starlette/httpx and anyio deprecation warnings retained; no dependency installation."
+  ],
+  "production_admission": "BLOCKED",
+  "institutional_saved_best_promotion": "BLOCKED",
+  "continuous_optimization": "DISABLED",
+  "active_restore": "BLOCKED",
+  "seven_day": "NO_GO"
+}

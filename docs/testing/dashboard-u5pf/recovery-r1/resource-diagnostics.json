@@ -1,0 +1,386 @@
+{
+  "recorded_at": "2026-11-12T08:41:25.7578722+08:00",
+  "available_physical_bytes": 1644720128,
+  "total_physical_bytes": 16869548032,
+  "disk_free_bytes": 17907912704,
+  "processes": [
+    {
+      "pid": 28604,
+      "parent_pid": 14284,
+      "name": "msedge.exe",
+      "created_at": "2026-10-29T15:10:19.3960640+08:00",
+      "working_set_bytes": 392450048,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 36468,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-10-29T15:10:19.5321930+08:00",
+      "working_set_bytes": 82173952,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 31472,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-10-29T15:10:19.5851980+08:00",
+      "working_set_bytes": 26566656,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 38404,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-10-29T15:10:19.7775160+08:00",
+      "working_set_bytes": 29270016,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 35888,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-10-29T15:10:24.4350840+08:00",
+      "working_set_bytes": 12439552,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 38836,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-10-29T15:10:24.4362470+08:00",
+      "working_set_bytes": 9830400,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 39464,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-10-29T15:11:19.5979240+08:00",
+      "working_set_bytes": 9756672,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 32096,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-10-29T21:49:51.1360020+08:00",
+      "working_set_bytes": 11866112,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 8572,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-10-29T21:50:11.8921340+08:00",
+      "working_set_bytes": 43577344,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 42652,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-10-29T21:50:11.9475800+08:00",
+      "working_set_bytes": 6811648,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 6312,
+      "parent_pid": 12112,
+      "name": "python.exe",
+      "created_at": "2026-11-02T08:17:44.9560110+08:00",
+      "working_set_bytes": 6852608,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 44148,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-05T06:16:45.7265060+08:00",
+      "working_set_bytes": 2367488,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 30176,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-05T10:09:25.6630260+08:00",
+      "working_set_bytes": 72994816,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 35616,
+      "parent_pid": 42272,
+      "name": "python.exe",
+      "created_at": "2026-11-05T17:08:09.8959750+08:00",
+      "working_set_bytes": 716800,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 3972,
+      "parent_pid": 35616,
+      "name": "python.exe",
+      "created_at": "2026-11-05T17:08:09.9876320+08:00",
+      "working_set_bytes": 1167360,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 39808,
+      "parent_pid": 42272,
+      "name": "python.exe",
+      "created_at": "2026-11-05T17:08:19.1355700+08:00",
+      "working_set_bytes": 729088,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 49004,
+      "parent_pid": 39808,
+      "name": "python.exe",
+      "created_at": "2026-11-05T17:08:19.2084470+08:00",
+      "working_set_bytes": 2035712,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 19920,
+      "parent_pid": 49004,
+      "name": "python.exe",
+      "created_at": "2026-11-05T17:12:22.5836180+08:00",
+      "working_set_bytes": 741376,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 2684,
+      "parent_pid": 19920,
+      "name": "python.exe",
+      "created_at": "2026-11-05T17:12:22.5971840+08:00",
+      "working_set_bytes": 6656000,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 17240,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-11T19:00:30.9672990+08:00",
+      "working_set_bytes": 203030528,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 46560,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-11T19:00:32.0218110+08:00",
+      "working_set_bytes": 45129728,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 17220,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-11T23:09:54.6995850+08:00",
+      "working_set_bytes": 584359936,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 19868,
+      "parent_pid": 2684,
+      "name": "python.exe",
+      "created_at": "2026-11-12T08:08:06.1850600+08:00",
+      "working_set_bytes": 6193152,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 24760,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-12T08:33:20.9728380+08:00",
+      "working_set_bytes": 241381376,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 25668,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-12T08:33:23.2093060+08:00",
+      "working_set_bytes": 19087360,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 35172,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-12T08:33:24.7783850+08:00",
+      "working_set_bytes": 66351104,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 52884,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-12T08:34:05.0388940+08:00",
+      "working_set_bytes": 424292352,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 40148,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-12T08:34:49.4816470+08:00",
+      "working_set_bytes": 19460096,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 38556,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-12T08:37:53.6900850+08:00",
+      "working_set_bytes": 73060352,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 54432,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-12T08:37:56.9728700+08:00",
+      "working_set_bytes": 81989632,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    },
+    {
+      "pid": 45152,
+      "parent_pid": 28604,
+      "name": "msedge.exe",
+      "created_at": "2026-11-12T08:37:56.9802920+08:00",
+      "working_set_bytes": 35373056,
+      "same_windows_user": true,
+      "isolated_snapshot_marker_in_command": false,
+      "worker_module_in_command": false,
+      "milestone_ownership": "NOT_ESTABLISHED_DO_NOT_TERMINATE"
+    }
+  ],
+  "process_owner_account_names_omitted": true,
+  "power_queries": {
+    "STANDBYIDLE": {
+      "exit_code": 0,
+      "output": "Power Scheme GUID: 2b851232-23f6-45b2-bb64-38ad406d7411  (Acer)\r\n  Subgroup GUID: 238c9fa8-0aad-41ed-83f4-97be242c8f20  (Sleep)\r\n    GUID Alias: SUB_SLEEP\r\n    Power Setting GUID: 29f6c1db-86da-48c5-9fdb-f2b67b1f44da  (Sleep after)\r\n      GUID Alias: STANDBYIDLE\r\n      Minimum Possible Setting: 0x00000000\r\n      Maximum Possible Setting: 0xffffffff\r\n      Possible Settings increment: 0x00000001\r\n      Possible Settings units: Seconds\r\n    Current AC Power Setting Index: 0x00000000\r\n    Current DC Power Setting Index: 0x00000000\r\n\r\n"
+    },
+    "HIBERNATEIDLE": {
+      "exit_code": 0,
+      "output": "Power Scheme GUID: 2b851232-23f6-45b2-bb64-38ad406d7411  (Acer)\r\n  Subgroup GUID: 238c9fa8-0aad-41ed-83f4-97be242c8f20  (Sleep)\r\n    GUID Alias: SUB_SLEEP\r\n    Power Setting GUID: 9d7815a6-7ee4-497e-8888-515a05f02364  (Hibernate after)\r\n      GUID Alias: HIBERNATEIDLE\r\n      Minimum Possible Setting: 0x00000000\r\n      Maximum Possible Setting: 0xffffffff\r\n      Possible Settings increment: 0x00000001\r\n      Possible Settings units: Seconds\r\n    Current AC Power Setting Index: 0x00000000\r\n    Current DC Power Setting Index: 0x00000000\r\n\r\n"
+    }
+  },
+  "configured_job_limits": {
+    "grace_seconds": 5,
+    "normal_job_active_processes": 1,
+    "private_commit_bytes": 805306368,
+    "process_user_cpu_seconds": 60,
+    "cpu_rate_percent": null
+  },
+  "live_owned_job_query_performed": false,
+  "job_limit_basis": "Unchanged supervisor Resources source and retained actual owned-process observations",
+  "worker_wall_limit_seconds": 60,
+  "harness_timeout_seconds": 600,
+  "native_workers_started": 0,
+  "processes_terminated": 0,
+  "system_settings_changed": false,
+  "status": "STOP_RESOURCES_AND_BASELINE_COVERAGE",
+  "recommended_operator_action": "Save work and close unused applications/tabs manually; aim for at least 3 GiB available RAM before repeating the native-plus-Edge workflow. This is a conservative test precondition, not a sufficiency guarantee or a worker-limit change.",
+  "preservation_coverage": {
+    "known_paths_hash_verified": 5639,
+    "original_U5PF_files_unchanged": 45,
+    "full_fresh_baseline_complete": false,
+    "restricted_directory": ".pytest_cache",
+    "read_only_probe_exception": "UnauthorizedAccessException",
+    "probe_attempted_in_standard_and_escalated_execution": true,
+    "no_permissions_changed": true,
+    "unknown_contents_not_excluded_or_assumed_empty": true
+  }
+}
