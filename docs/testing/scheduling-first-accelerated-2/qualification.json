@@ -1,0 +1,56 @@
+{
+  "recorded_at": "2026-11-15T16:19:25.696804+08:00",
+  "final_core": 20,
+  "existing_parity": 5,
+  "API_case": 1,
+  "added_revision_case": 1,
+  "distinct_Python_cases": 27,
+  "not_one_combined_suite": true,
+  "frontend": 34,
+  "new_frontend": 8,
+  "actual_Node_HTTP": 29,
+  "actual_Node_HTTP_after_listener_reconstruction": 11,
+  "mocked_HTTP": 0,
+  "native_workers": 0,
+  "Edge": 0,
+  "OS_process_restart": false,
+  "final_source_identities_verified": true,
+  "source_test_AST_qualification": "Only separately executed version2 function added after20-case core; all previous functions unchanged",
+  "genuine_minimum24": {
+    "path": "docs/testing/scheduling-first-accelerated-2/20261115T155206641040+0800-minimum24/genuine-minimum24-result.json",
+    "assigned_units": [
+      12,
+      24
+    ],
+    "fitness": 125,
+    "generations_completed": 1,
+    "fitness_history": [
+      125,
+      125
+    ],
+    "hard_and_minimum_validation": true,
+    "native": false,
+    "browser": false,
+    "constructed": false
+  },
+  "segmented_vs_uninterrupted_schedule_score_history_analysis_RNG": "PASS",
+  "same_approved_exports_after_listener_reconstruction": true,
+  "failed_attempts": [
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T151408934141+0800-core/command.json",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T151708197626+0800-core/command.json",
+      "exit_code": 1
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T152114053670+0800-core/command.json",
+      "exit_code": 1
+    }
+  ],
+  "source_rng_diagnostic_redaction": "Explicit addendum; originalfailed counts retained; known synthetic RNG values removed",
+  "readable_baseline_verified": 5761,
+  "full_preservation_qualification": false,
+  "seven_day": "NO_GO"
+}

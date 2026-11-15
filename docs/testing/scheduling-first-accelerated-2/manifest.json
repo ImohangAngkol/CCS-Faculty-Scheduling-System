@@ -1,0 +1,499 @@
+{
+  "schema": "scheduling-first-accelerated-2-evidence-v1",
+  "recorded_at": "2026-11-15T16:23:55.192221+08:00",
+  "head": "2315689196875621288939fde4a3268932305d8d",
+  "branch": "wip/u5pf-experiment-exports",
+  "exact_new_file_inventory": [
+    "backend/routers/prototype_cycle.py",
+    "backend/services/prototype_cycle.py",
+    "backend/services/prototype_tip_witness.py",
+    "backend/tests/test_prototype_cycle.py",
+    "backend/tests/test_prototype_cycle_api.py",
+    "docs/testing/scheduling-first-accelerated-2/20261115T151408934141+0800-core/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T151708197626+0800-core/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152114053670+0800-core/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152114053670+0800-core/genuine-minimum24-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152737503280+0800-core/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152737503280+0800-core/genuine-inprocess-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152737503280+0800-core/genuine-minimum24-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152942387120+0800-api/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152958539197+0800-parity/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152958934178+0800-frontend/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153000603329+0800-lint/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153312154480+0800-http/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153335950668+0800-lint/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153611651265+0800-faults/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153611651265+0800-faults/genuine-inprocess-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153637886141+0800-api/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153943836185+0800-minimum24/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153943836185+0800-minimum24/genuine-minimum24-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154009920245+0800-http/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154339178470+0800-faults/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154339178470+0800-faults/genuine-inprocess-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154402356418+0800-minimum24/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154402356418+0800-minimum24/genuine-minimum24-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154427529876+0800-api/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154445763535+0800-http/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154635775866+0800-faults/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154635775866+0800-faults/genuine-inprocess-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154703895836+0800-minimum24/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154703895836+0800-minimum24/genuine-minimum24-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154730978097+0800-api/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154749447133+0800-http/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155128573866+0800-faults/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155128573866+0800-faults/genuine-inprocess-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155206641040+0800-minimum24/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155206641040+0800-minimum24/genuine-minimum24-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155233919627+0800-api/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155252285424+0800-http/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T160756885780+0800-core/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T160756885780+0800-core/genuine-inprocess-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T160756885780+0800-core/genuine-minimum24-result.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T161043102719+0800-frontend/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T161044646937+0800-lint/command.json",
+    "docs/testing/scheduling-first-accelerated-2/20261115T161354495601+0800-revision/command.json",
+    "docs/testing/scheduling-first-accelerated-2/audit_evidence.py",
+    "docs/testing/scheduling-first-accelerated-2/entry.json",
+    "docs/testing/scheduling-first-accelerated-2/http_probe.py",
+    "docs/testing/scheduling-first-accelerated-2/manifest.json",
+    "docs/testing/scheduling-first-accelerated-2/qualification.json",
+    "docs/testing/scheduling-first-accelerated-2/rng-diagnostic-redaction.json",
+    "docs/testing/scheduling-first-accelerated-2/run_checks.py",
+    "docs/thesis-deadline-accelerated-increment-2.md",
+    "frontend/src/prototypeCycle/console.mjs",
+    "frontend/src/prototypeCycle/index.html",
+    "frontend/src/prototypeCycle/model.mjs",
+    "frontend/tests/prototypeCycle.live.mjs",
+    "frontend/tests/prototypeCycle.test.mjs"
+  ],
+  "new_files": 61,
+  "file_types": {
+    ".py": 8,
+    ".json": 47,
+    ".md": 1,
+    ".mjs": 4,
+    ".html": 1
+  },
+  "existing_files_modified": [],
+  "artifact_sha256": {
+    "backend/routers/prototype_cycle.py": "54978403137a3cef79cb07482fe38494e1edfbd9f92fc764c38e762ce04cf3b1",
+    "backend/services/prototype_cycle.py": "9522797618f8113c20fabd4d02b7c53514d424a93a444c6ff132cbbca3bcd4fd",
+    "backend/services/prototype_tip_witness.py": "2ec8e659f4d182fded69a700f809518e610bfe728469b6dafc13fed601b042e2",
+    "backend/tests/test_prototype_cycle.py": "587b9e2024916cb593cc3832e48250043469c6bfe833fc4eb93502bd5dbf924d",
+    "backend/tests/test_prototype_cycle_api.py": "c23daf5989fe5fa86bec40013473787392e8b8c6be113978f8c4d59dfb2c187c",
+    "docs/testing/scheduling-first-accelerated-2/20261115T151408934141+0800-core/command.json": "d505eca04285c6450d99f8b4856b1b0483ca6041c94f7cce35b4db72e31e97bd",
+    "docs/testing/scheduling-first-accelerated-2/20261115T151708197626+0800-core/command.json": "2f1fe5d168fb90895d623bf24d123a95f6370d5c2df2626af548d8ca174e50d1",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152114053670+0800-core/command.json": "bade33ac3840a3e203c838eb9dc0d6c29998c25d6d3cca757c51aeddba4e6d8d",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152114053670+0800-core/genuine-minimum24-result.json": "d29f590375f57043857cd9a81cfd90371fb80a7f0deecc9b5aa55d6c16c64643",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152737503280+0800-core/command.json": "abf3a4ee3b17a91a78abcaa3fb5663179d0ef34ba76ada9c48a0ffe445d8081d",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152737503280+0800-core/genuine-inprocess-result.json": "65b64b39137a2fb57749b5a278ed781325a4a7941b9d795225c6948b84bf76db",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152737503280+0800-core/genuine-minimum24-result.json": "5b07c1f3fae70fc5162366f366fd4edd53d3aba9e0a6d6658dd9e93d48f0b846",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152942387120+0800-api/command.json": "f96a695e9ce1deedef675113a86f97bbbb30291986343437214b1fb6e74e6ebc",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152958539197+0800-parity/command.json": "82ef1f5bb6a0f548cb35baffd0bf05589396168150fa9c752409d5f2cac4c3d2",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152958934178+0800-frontend/command.json": "88f98a2dfb0b0c290f0f05a835b41a3b45f3abfb124c72eca959a93f2b4cd295",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153000603329+0800-lint/command.json": "0f3c6fd9739ca6bc9252e6a35ad56602f17ff3bd10319d74445aa46752d79183",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153312154480+0800-http/command.json": "e3a87db36d3a87dec8c6840ef59abb046331237f5482929ed2b7b1b6637aa086",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153335950668+0800-lint/command.json": "4238c1b87c97fbe82fdb66eb50e5fae9d03ffec6e4c052ed451c87332ab976a4",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153611651265+0800-faults/command.json": "933def612a4945be0674e549acd47955a7c7a951c99af02385f415fb3ee5c6fa",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153611651265+0800-faults/genuine-inprocess-result.json": "b42a4d96415f3fda4734637195e42a292c62c96cd30146b036bde8989309845b",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153637886141+0800-api/command.json": "51b02c59e392067ec2133043f70e11bc6467f23a632df0647de7ab83f0b0c1ec",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153943836185+0800-minimum24/command.json": "38254e6198ec3b138974eb379e2f345c742b129c7fb38f720865058ea2182e6d",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153943836185+0800-minimum24/genuine-minimum24-result.json": "f58432016bce6bc5d455de137300c11eaa0ff1a90fbe7350b6586d5994891f99",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154009920245+0800-http/command.json": "0e358bb20a23dd714ef842d49cee5c4ed0a3ca5ad81ac5453b014464755b39ad",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154339178470+0800-faults/command.json": "234c3cda1eae4bd2e8c3aab2d62c95aa2475e819e24fbd4068a75dc8e39b4ccf",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154339178470+0800-faults/genuine-inprocess-result.json": "aa3cbe43c1c0c221fb67a097e537b09c309c5f9463f486b5afb4706701e42b4c",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154402356418+0800-minimum24/command.json": "44cc599822320523f867c03b6a4058f409848b296619b416ac10081c2d9fc384",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154402356418+0800-minimum24/genuine-minimum24-result.json": "166eecbee4b960d146c3a3e0cf869abbee9742c96b87d925410b36a655844e4e",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154427529876+0800-api/command.json": "910589632b77ad61267c8283ff7884b5cf1b939af529214ce9b84b0c48dde895",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154445763535+0800-http/command.json": "e1e4f117de9f3322a19fe434b0fd718e1f01553cdbaebf4b3270cd8e971b7e6c",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154635775866+0800-faults/command.json": "316d394db37324003089aa90dcac416a890e60d619604d0e04d0828b3f82f5f4",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154635775866+0800-faults/genuine-inprocess-result.json": "e99d41a84147ff41ac06c2bdb2dd2f98e1f6562d4a5519b9d0c5d230d5bd61e7",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154703895836+0800-minimum24/command.json": "f577ce4fa250067bb428c5e6f1ba27107a1a23a814a274a43771f07ca701536c",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154703895836+0800-minimum24/genuine-minimum24-result.json": "5eae17c65c6f91c35f54d829f7b118cded5239e80c7e01e4adbb2fe1f78eda9d",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154730978097+0800-api/command.json": "d1a35c059bddb8b13b04bf7ff0745b2f441831682b85d7593777c1f9574a4347",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154749447133+0800-http/command.json": "7d59e79b1baea2ef62f7ea4e9f22d5a3be3d47bdc2a4f25db437e483eb19e679",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155128573866+0800-faults/command.json": "17322b04199e40682d227df1674ecf0cc3e52dc6e0ba5a89cac981d06a5f73b3",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155128573866+0800-faults/genuine-inprocess-result.json": "7a85736f00b258790935aa104cc4c2f0b1fb76886427e55aa9021d583c62674f",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155206641040+0800-minimum24/command.json": "aa8489445cc455bb04f380a73aa278c465dec35beae241b0a8f5ac9c9b3d68fa",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155206641040+0800-minimum24/genuine-minimum24-result.json": "37f1abd7d6c25be589bbaf2d333ce7eebdd27e2d689167894ec9edf833369181",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155233919627+0800-api/command.json": "1e83ecaffac34a258c490f93fb51524c575b5016205897a6943a634e3a97cad3",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155252285424+0800-http/command.json": "a6057088d2a2c2f270ab5b32bc968b570ca2bceb58f2c5f4e3f5d36d5961411d",
+    "docs/testing/scheduling-first-accelerated-2/20261115T160756885780+0800-core/command.json": "ad43a6c44fc83411aee1541e104c7d76dd95d125e52194d266a75c8d04fbe096",
+    "docs/testing/scheduling-first-accelerated-2/20261115T160756885780+0800-core/genuine-inprocess-result.json": "c5f00acb49ffe63fbc24b51fcdab66cf00017aaa2c40012ca33f9a86b67ec319",
+    "docs/testing/scheduling-first-accelerated-2/20261115T160756885780+0800-core/genuine-minimum24-result.json": "2b8fc3ada3297fec6301ef2d08c45c2d554e7bbcd2af10adb39daab7f21e781a",
+    "docs/testing/scheduling-first-accelerated-2/20261115T161043102719+0800-frontend/command.json": "d873164e93f2fc58e6a08799c659b16e8ed4a8fc9a5edaf117a82080e76d47cf",
+    "docs/testing/scheduling-first-accelerated-2/20261115T161044646937+0800-lint/command.json": "b9e28e92bb0b9ca8e717ab9f9f8ee29d82d0c912abddd0c862593ad5c3610c0a",
+    "docs/testing/scheduling-first-accelerated-2/20261115T161354495601+0800-revision/command.json": "f1c8a165812b45fe5a47b9e867ec963e761b6b3f52d354e6d9cd5133ebc8a737",
+    "docs/testing/scheduling-first-accelerated-2/audit_evidence.py": "4a0832de18dad08ffcbf06945e1132783a3a7e87c74f0be333899538328331e1",
+    "docs/testing/scheduling-first-accelerated-2/entry.json": "7eea3ca875e3b5c5b941b147a1292443bd6502a8a877a99703fb413305ac2160",
+    "docs/testing/scheduling-first-accelerated-2/http_probe.py": "a82ebb8d7d48acc20c07af5890053342986c8be801828ab133a5f56d80edd1a1",
+    "docs/testing/scheduling-first-accelerated-2/qualification.json": "0b18e42bbe80e7de591529d6ae5505bf96c72d2f1f28ca69147f40312dd16596",
+    "docs/testing/scheduling-first-accelerated-2/rng-diagnostic-redaction.json": "4df21ff9c11c27db579c1a711ac9b81fe7cd0a712a30ea32375cc3ea2e2c76e7",
+    "docs/testing/scheduling-first-accelerated-2/run_checks.py": "5285f47b05e2836d88c11b0c202dcafe285f615099aa0b5ac4fb6bd6a609bef5",
+    "docs/thesis-deadline-accelerated-increment-2.md": "e0149b787666ccf1fc60925cefb41b6fab763e7c82b9ba66f386e559cb11f806",
+    "frontend/src/prototypeCycle/console.mjs": "5b6f691aba33bc036b2316ef3b03340ec6f338fdce174680a9d68bb4ff131e34",
+    "frontend/src/prototypeCycle/index.html": "4a524a3cb1d481054cb584cda05b5f4baf6457a77465dffd61c87d6f6803bf7c",
+    "frontend/src/prototypeCycle/model.mjs": "e147a49562fddf242d63eebda64101546c80e54d95d460ac589e2d59585be4a6",
+    "frontend/tests/prototypeCycle.live.mjs": "4905691a7ccb3fc73cece34277cf37595e132c402a357f644ea1580d55a66bfa",
+    "frontend/tests/prototypeCycle.test.mjs": "fe87bdccb934be4edf0c171ec95f3918ea5a3dbe62b04666d0a56bc852007143"
+  },
+  "proposed_raw_blob_oids": {
+    "backend/routers/prototype_cycle.py": "fe850b706b9e39af3c3408edce67241017e448dc",
+    "backend/services/prototype_cycle.py": "4aa7400ca63fadd207eef1b84912aa313c3122be",
+    "backend/services/prototype_tip_witness.py": "3fa97aef23131635181919c5dd25421b490c375f",
+    "backend/tests/test_prototype_cycle.py": "7b81d13510b8d9ce0dfc1a45b88f6c3a1498180b",
+    "backend/tests/test_prototype_cycle_api.py": "a65a6caa48b0b07bac06f5fb07a94b66bf828152",
+    "docs/testing/scheduling-first-accelerated-2/20261115T151408934141+0800-core/command.json": "6f0d408ba55c8a207b9ab6700ea3e0a5afc2c758",
+    "docs/testing/scheduling-first-accelerated-2/20261115T151708197626+0800-core/command.json": "362b4f10e8afb22b227d7304452d0ad2e760824b",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152114053670+0800-core/command.json": "dbe1b11c73ff370077f8202d6940b7bcbb50b697",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152114053670+0800-core/genuine-minimum24-result.json": "be2e66605682d7a776fa983d855581e2fad453a1",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152737503280+0800-core/command.json": "0e7f61475721cb7bcd69e393aff7d3d35b3b0c8e",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152737503280+0800-core/genuine-inprocess-result.json": "76f0fa091ff121de6a880c5981c214bd1d7a8401",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152737503280+0800-core/genuine-minimum24-result.json": "dcde1aaed909528d8987e697cf6231ed160dba2f",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152942387120+0800-api/command.json": "6c3c6e04ffb54d6c2d258dbd9e85e549e83cc3c1",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152958539197+0800-parity/command.json": "65e5a8ce87a656e3a2a99e61ab969b1cee782f8e",
+    "docs/testing/scheduling-first-accelerated-2/20261115T152958934178+0800-frontend/command.json": "5f9b314742b040761ea6022519563e01ec7f2a8f",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153000603329+0800-lint/command.json": "7753447a92cfcd6550af784c4238d2251abaf26e",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153312154480+0800-http/command.json": "f38b8f33080126850615da8cdb2e1a8d5eeb3dc5",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153335950668+0800-lint/command.json": "e6574116497824c76ec104a10476f5ddacbcbf35",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153611651265+0800-faults/command.json": "107889a008da22cdbb9b2abf4972e7ed5faa729b",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153611651265+0800-faults/genuine-inprocess-result.json": "089f0601c15b1d4e0141d7dfde4e0ad80bb8755c",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153637886141+0800-api/command.json": "9baa6e2a49cd51c110068c2dd491fac67224c663",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153943836185+0800-minimum24/command.json": "2a703afa93bda698848e097bba016488d590a9fe",
+    "docs/testing/scheduling-first-accelerated-2/20261115T153943836185+0800-minimum24/genuine-minimum24-result.json": "531027875986c4fc48679bce1eb612f9e0ce3283",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154009920245+0800-http/command.json": "69009924027316fb92d4e891c8a2029dd0643ea0",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154339178470+0800-faults/command.json": "b1a5fa91c89e530ab86ef72a90c1b5da3fcdbc06",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154339178470+0800-faults/genuine-inprocess-result.json": "9c76ab73c6fe7bf02bdfc36e9ef3af2cedd68abe",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154402356418+0800-minimum24/command.json": "652e7957c320f8d0a7dc09dc089d9a62668e098b",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154402356418+0800-minimum24/genuine-minimum24-result.json": "43747e02ecddacea9581a2c8bfc216f72e64cbcb",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154427529876+0800-api/command.json": "ccd60ee174a5e83b3b69236c7f9e23774a0db88f",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154445763535+0800-http/command.json": "964d51cf2a7a9859e583409fe69b9ad48939e834",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154635775866+0800-faults/command.json": "3571a8e8c14f2f5e7009dfb8cdfe54953eeb02b5",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154635775866+0800-faults/genuine-inprocess-result.json": "b434faca859d77b177beff630ac278236607e3d2",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154703895836+0800-minimum24/command.json": "8956c658beacca1d8f945d39049134ebc36341a8",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154703895836+0800-minimum24/genuine-minimum24-result.json": "b110ba2116da94f60731e520516ccc0e2ffd5766",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154730978097+0800-api/command.json": "b94b3de3877a91ad6839201b2d8d228a3dc5db97",
+    "docs/testing/scheduling-first-accelerated-2/20261115T154749447133+0800-http/command.json": "5876d8c427821f9e1fb5fc187c21a99515596f3b",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155128573866+0800-faults/command.json": "79b7a2d1e467d4eebe0378cd49cfd7c42d32a2f1",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155128573866+0800-faults/genuine-inprocess-result.json": "4969002a76f112dd2bbc4eebbac7564fd7bcd5aa",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155206641040+0800-minimum24/command.json": "85156d135cfb5dd6a96fe4de71f01cfba99faf73",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155206641040+0800-minimum24/genuine-minimum24-result.json": "f5bfc398bd0e67e42b4cc8c68c9ed0f1991aa8f4",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155233919627+0800-api/command.json": "5e337eee5858dbece000340a6bd866266682cfc1",
+    "docs/testing/scheduling-first-accelerated-2/20261115T155252285424+0800-http/command.json": "4e9da0dd2e4734fa9cfdd76387d853f346ba7880",
+    "docs/testing/scheduling-first-accelerated-2/20261115T160756885780+0800-core/command.json": "bb08b138b72a8a52fb237375c78d98b23f5573ed",
+    "docs/testing/scheduling-first-accelerated-2/20261115T160756885780+0800-core/genuine-inprocess-result.json": "d1611d4b6d7e7ea71ec5822e13927ff9c9a7e484",
+    "docs/testing/scheduling-first-accelerated-2/20261115T160756885780+0800-core/genuine-minimum24-result.json": "8ae07f09cac08be4b3bcaa3ed3e9873e97ce9e05",
+    "docs/testing/scheduling-first-accelerated-2/20261115T161043102719+0800-frontend/command.json": "7962878fc7d83e1d276036e8e1cbb720dc3cd603",
+    "docs/testing/scheduling-first-accelerated-2/20261115T161044646937+0800-lint/command.json": "5d886f0e2b118f40ebc8e20956dca7b7e74b14e0",
+    "docs/testing/scheduling-first-accelerated-2/20261115T161354495601+0800-revision/command.json": "207d2c2c47878b44baf3ca58599582bcae6d09a4",
+    "docs/testing/scheduling-first-accelerated-2/audit_evidence.py": "f3a5842faaf6040532c59f2125b6f93130b0ad60",
+    "docs/testing/scheduling-first-accelerated-2/entry.json": "f4203137a051cacd755741912e982fc5e6fe3ebd",
+    "docs/testing/scheduling-first-accelerated-2/http_probe.py": "10cb8fa16a54629b8c5a397ed4d237b50217be40",
+    "docs/testing/scheduling-first-accelerated-2/qualification.json": "80c41a7d798a187e55dc193ac954c3ae78321222",
+    "docs/testing/scheduling-first-accelerated-2/rng-diagnostic-redaction.json": "14789c24ea5adbbbfceb46359bda8aae66ca6c1a",
+    "docs/testing/scheduling-first-accelerated-2/run_checks.py": "4d69cea4158cb31b3aa11a82576d05f7d7efd76e",
+    "docs/thesis-deadline-accelerated-increment-2.md": "783cde2754d3103aa820e37554dff58acb8725fb",
+    "frontend/src/prototypeCycle/console.mjs": "cfffea16a98291138c30cb823c03e65856a9bdfd",
+    "frontend/src/prototypeCycle/index.html": "c77197e6eb9ebd4fcd63f79e0c8121cae77599e9",
+    "frontend/src/prototypeCycle/model.mjs": "4742922a152b116ea3bc3acfdecc5ece1b1af789",
+    "frontend/tests/prototypeCycle.live.mjs": "de7d7b7ccfd2ea1af31608a86bfce7934319f176",
+    "frontend/tests/prototypeCycle.test.mjs": "6865419d7c8254c2e926076d127719288ea9e446"
+  },
+  "self_hash_excluded": true,
+  "attempts": [
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T151408934141+0800-core/command.json",
+      "selection": "core",
+      "exit_code": 1,
+      "elapsed_seconds": 29.546045800001593
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T151708197626+0800-core/command.json",
+      "selection": "core",
+      "exit_code": 1,
+      "elapsed_seconds": 41.322541000001365
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T152114053670+0800-core/command.json",
+      "selection": "core",
+      "exit_code": 1,
+      "elapsed_seconds": 130.24492569998256
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T152737503280+0800-core/command.json",
+      "selection": "core",
+      "exit_code": 0,
+      "elapsed_seconds": 140.04201759997522
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T152942387120+0800-api/command.json",
+      "selection": "api",
+      "exit_code": 0,
+      "elapsed_seconds": 15.583056400006171
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T152958539197+0800-parity/command.json",
+      "selection": "parity",
+      "exit_code": 0,
+      "elapsed_seconds": 58.373523000016576
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T152958934178+0800-frontend/command.json",
+      "selection": "frontend",
+      "exit_code": 0,
+      "elapsed_seconds": 0.4889353000035044
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T153000603329+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "elapsed_seconds": 2.6855745000066236
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T153312154480+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 0,
+      "elapsed_seconds": 22.70661409999593
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T153335950668+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "elapsed_seconds": 1.4194083999900613
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T153611651265+0800-faults/command.json",
+      "selection": "faults",
+      "exit_code": 0,
+      "elapsed_seconds": 25.02062140000635
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T153637886141+0800-api/command.json",
+      "selection": "api",
+      "exit_code": 0,
+      "elapsed_seconds": 18.067759300000034
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T153943836185+0800-minimum24/command.json",
+      "selection": "minimum24",
+      "exit_code": 0,
+      "elapsed_seconds": 24.708602099999553
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T154009920245+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 0,
+      "elapsed_seconds": 21.834391799988225
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T154339178470+0800-faults/command.json",
+      "selection": "faults",
+      "exit_code": 0,
+      "elapsed_seconds": 22.0552787000197
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T154402356418+0800-minimum24/command.json",
+      "selection": "minimum24",
+      "exit_code": 0,
+      "elapsed_seconds": 24.14266090001911
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T154427529876+0800-api/command.json",
+      "selection": "api",
+      "exit_code": 0,
+      "elapsed_seconds": 17.066124100005254
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T154445763535+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 0,
+      "elapsed_seconds": 21.601099099993007
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T154635775866+0800-faults/command.json",
+      "selection": "faults",
+      "exit_code": 0,
+      "elapsed_seconds": 27.000074599985965
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T154703895836+0800-minimum24/command.json",
+      "selection": "minimum24",
+      "exit_code": 0,
+      "elapsed_seconds": 25.797403200005647
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T154730978097+0800-api/command.json",
+      "selection": "api",
+      "exit_code": 0,
+      "elapsed_seconds": 17.361492299998645
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T154749447133+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 0,
+      "elapsed_seconds": 21.7155792999838
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T155128573866+0800-faults/command.json",
+      "selection": "faults",
+      "exit_code": 0,
+      "elapsed_seconds": 36.8305546999909
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T155206641040+0800-minimum24/command.json",
+      "selection": "minimum24",
+      "exit_code": 0,
+      "elapsed_seconds": 26.14123780000955
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T155233919627+0800-api/command.json",
+      "selection": "api",
+      "exit_code": 0,
+      "elapsed_seconds": 17.2290931000025
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T155252285424+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 0,
+      "elapsed_seconds": 22.049742500006687
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T160756885780+0800-core/command.json",
+      "selection": "core",
+      "exit_code": 0,
+      "elapsed_seconds": 152.2919438999961
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T161043102719+0800-frontend/command.json",
+      "selection": "frontend",
+      "exit_code": 0,
+      "elapsed_seconds": 0.32109710000804625
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T161044646937+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "elapsed_seconds": 1.6131014999991748
+    },
+    {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T161354495601+0800-revision/command.json",
+      "selection": "revision",
+      "exit_code": 0,
+      "elapsed_seconds": 19.458258500002557
+    }
+  ],
+  "results": {
+    "recorded_at": "2026-11-15T16:19:25.696804+08:00",
+    "final_core": 20,
+    "existing_parity": 5,
+    "API_case": 1,
+    "added_revision_case": 1,
+    "distinct_Python_cases": 27,
+    "not_one_combined_suite": true,
+    "frontend": 34,
+    "new_frontend": 8,
+    "actual_Node_HTTP": 29,
+    "actual_Node_HTTP_after_listener_reconstruction": 11,
+    "mocked_HTTP": 0,
+    "native_workers": 0,
+    "Edge": 0,
+    "OS_process_restart": false,
+    "final_source_identities_verified": true,
+    "source_test_AST_qualification": "Only separately executed version2 function added after20-case core; all previous functions unchanged",
+    "genuine_minimum24": {
+      "path": "docs/testing/scheduling-first-accelerated-2/20261115T155206641040+0800-minimum24/genuine-minimum24-result.json",
+      "assigned_units": [
+        12,
+        24
+      ],
+      "fitness": 125,
+      "generations_completed": 1,
+      "fitness_history": [
+        125,
+        125
+      ],
+      "hard_and_minimum_validation": true,
+      "native": false,
+      "browser": false,
+      "constructed": false
+    },
+    "segmented_vs_uninterrupted_schedule_score_history_analysis_RNG": "PASS",
+    "same_approved_exports_after_listener_reconstruction": true,
+    "failed_attempts": [
+      {
+        "path": "docs/testing/scheduling-first-accelerated-2/20261115T151408934141+0800-core/command.json",
+        "exit_code": 1
+      },
+      {
+        "path": "docs/testing/scheduling-first-accelerated-2/20261115T151708197626+0800-core/command.json",
+        "exit_code": 1
+      },
+      {
+        "path": "docs/testing/scheduling-first-accelerated-2/20261115T152114053670+0800-core/command.json",
+        "exit_code": 1
+      }
+    ],
+    "source_rng_diagnostic_redaction": "Explicit addendum; originalfailed counts retained; known synthetic RNG values removed",
+    "readable_baseline_verified": 5761,
+    "full_preservation_qualification": false,
+    "seven_day": "NO_GO"
+  },
+  "preservation": {
+    "readable_baseline_verified": 5761,
+    "mismatches": [],
+    "academic_files_verified": 23,
+    "original_tracked_modifications_preserved": 11,
+    "entry_untracked_preserved": 1059,
+    "protected_JSON": "UNCHANGED_UNSTAGED",
+    "GA_sources_and_fingerprint_sources": "UNCHANGED",
+    "prior_artifact_references_verified": 83,
+    "git_index_HEAD_config_unchanged": true,
+    "ignored_historical_runtime_groups": {
+      "backend/run_checkpoints": 21,
+      "backend/saved_chromosomes": 83,
+      "backend/data": 23,
+      ".pytest_cache": 5
+    },
+    "excluded_dependency_build_roots": [
+      ".git",
+      ".venv",
+      ".venv-1",
+      "frontend/dist",
+      "frontend/node_modules",
+      "node_modules"
+    ],
+    "inaccessible_directories": [
+      "backend/.pytest_cache"
+    ],
+    "owner_cache_attestation": "UNAUTHENTICATED_NOT_PROMOTED",
+    "full_preservation_qualification": false,
+    "prior_evidence_preserved": true,
+    "current_attempt_rng_redaction": "EXPLICIT_REDACTION_ADDENDUM_RETAINED"
+  },
+  "privacy": {
+    "encoded_credential_fragment_scan": "PASS",
+    "private_faculty_name_local_comparison": "PASS",
+    "fixture_review": "FICTIONAL_ONLY",
+    "raw_RNG_checkpoint_key_exported": false,
+    "limitation": "Pattern/name scans do not prove absence of all possible secrets"
+  },
+  "whitespace": "PASS_CRLF_AWARE",
+  "git_integrity": "PASS",
+  "native_workers": 0,
+  "Edge": 0,
+  "OS_process_restart": false,
+  "institutional_database_operations": 0,
+  "dependency_installations": 0,
+  "ordinary_React_types_build": "NOT_RERUN_NO_EXISTING_REACT_OR_TS_INPUT_CHANGES",
+  "production_admission": "BLOCKED",
+  "institutional_promotion": "BLOCKED",
+  "institutional_continuous_optimization": "DISABLED",
+  "active_institutional_restore": "BLOCKED",
+  "seven_day": "NO_GO",
+  "native_and_browser_acceptance": "BLOCKED_PRESERVATION_AND_RESOURCE_GATES",
+  "staged": false,
+  "committed": false,
+  "pushed": false,
+  "deployed": false,
+  "checkpoint_ready": false
+}

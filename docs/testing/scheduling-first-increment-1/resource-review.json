@@ -1,0 +1,11 @@
+{
+  "captured_at": "2026-11-15T10:36:20.943255+08:00",
+  "total_physical_bytes": 16869548032,
+  "available_physical_bytes": 2856587264,
+  "available_GiB": 2.6604042053222656,
+  "required_GiB": 3,
+  "Edge_gate_passed": false,
+  "disk_free_bytes": 65092161536,
+  "processes_terminated": false,
+  "system_settings_changed": false
+}

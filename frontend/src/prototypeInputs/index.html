@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fictional scheduling input preparation</title><link rel="stylesheet" href="/prototype/workload/style.css"></head>
+<body><main><h1>Fictional scheduling input preparation</h1>
+<p>Isolated prototype. Faculty edit their own preferences; a separately authorized Department Chair approves coefficients; a scheduler freezes inputs. Account role alone does not grant these actions. Preparing inputs does not start the GA or approve a schedule.</p>
+<form id="login"><label>Username <input id="username" autocomplete="username" required></label><label>Password <input id="password" type="password" autocomplete="current-password" required></label><button>Sign in</button></form>
+<p id="status" role="status" aria-live="polite">Sign in with an explicitly granted fictional account.</p>
+<h2>Faculty preferences</h2><label>Your faculty code <input id="faculty" type="number" min="0" step="1"></label><button id="load-preference">Load own preference</button>
+<label>Preference fields (JSON; exact meeting-block editing is unavailable)<textarea id="preference" rows="10" spellcheck="false"></textarea></label><button id="save-preference" disabled>Save own preference revision</button>
+<h2>Chair-controlled coefficients</h2><button id="load-weights">Load current weights</button><label>Original penalty coefficients (JSON)<textarea id="weights" rows="10" spellcheck="false"></textarea></label><button id="approve-weights" disabled>Approve coefficient revision as Chair</button>
+<h2>Scheduler input snapshot</h2><button id="selection">Load server selection</button><button id="prepare" disabled>Freeze selected inputs</button><button id="reload-prepared" disabled>Reload saved preparation</button>
+<p>No native Start, schedule approval, Saved Best promotion or checkpoint restoration is enabled here. Cross-owner actions are rejected by the server.</p><pre id="result">No recorded result selected.</pre>
+</main><script type="module" src="/prototype/inputs/console.mjs"></script></body></html>

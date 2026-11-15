@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fictional scheduling prototype</title><link rel="stylesheet" href="/prototype/workload/style.css"></head>
+<body><main><h1>Fictional scheduling prototype</h1><p>Isolated research only. Institutional admission and Saved Best promotion are blocked. Minimums qualify results; they do not change GA search.</p>
+<form id="login"><label>Prototype username <input id="username" autocomplete="username" required></label><label>Password <input id="password" type="password" autocomplete="current-password" required></label><button>Sign in</button></form>
+<p><a href="/prototype/workload">Configure individual minimums</a></p>
+<button id="context">Refresh scheduling context</button><pre id="context-view">Context unavailable.</pre>
+<button id="start" disabled>Start bounded fictional run</button><button id="refresh" disabled>Refresh run status</button><button id="new" disabled>Prepare a separate run after terminal result</button>
+<p id="status" role="status" aria-live="polite">Sign in to continue.</p><h2>Run provenance and result</h2><pre id="result">No run selected.</pre></main><script type="module" src="/prototype/scheduling/console.mjs"></script></body></html>

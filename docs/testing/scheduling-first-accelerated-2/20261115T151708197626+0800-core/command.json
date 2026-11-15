@@ -1,0 +1,34 @@
+{
+  "selection": "core",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "tests/test_prototype_cycle.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-g71n90oa\\pytest"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-g71n90oa\\repository\\backend",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-g71n90oa\\repository",
+  "started_at": "2026-11-15T15:17:08.198194+08:00",
+  "ended_at": "2026-11-15T15:17:49.520688+08:00",
+  "elapsed_seconds": 41.322541000001365,
+  "exit_code": 1,
+  "stdout": "F...........                                                             [100%]\n================================== FAILURES ===================================\n_______ test_genuine_frozen_consumption_qualification_and_resume_parity _______\ntests\\test_prototype_cycle.py:109: in test_genuine_frozen_consumption_qualification_and_resume_parity\n    assert len(result['schedule']) == 2 and result['generations_completed'] == 1\nE   AssertionError: assert (3 == 2)\nE    +  where 3 = len([{'day': 'W', 'end': '18:00', 'faculty': '1', 'room': 'Fictional prototype room', ...}, {'day': 'S', 'end': '18:00', '...Fictional prototype room', ...}, {'day': 'T', 'end': '10:30', 'faculty': '2', 'room': 'Fictional prototype room', ...}])\n=========================== short test summary info ===========================\nFAILED tests/test_prototype_cycle.py::test_genuine_frozen_consumption_qualification_and_resume_parity\n1 failed, 11 passed in 39.72s\n",
+  "stderr": "",
+  "source_sha256": {
+    "backend/services/prototype_cycle.py": "1c331ad8616c1d00c22856301e39eb14cdc0f92d0e67811f76f73d833d84c6cf",
+    "backend/services/prototype_inputs.py": "f7dd26dbe5e591b526a434431635aafd68817a0beb049e52cd36068a9616b9f1",
+    "backend/services/prototype_tip_witness.py": "2ec8e659f4d182fded69a700f809518e610bfe728469b6dafc13fed601b042e2",
+    "backend/routers/prototype_inputs.py": "8d396082200e4bc16398fb08c5defdd4f7d80dcb7768f11baf9cf7aeea03cc89",
+    "backend/tests/test_prototype_cycle.py": "037bcb975e6bcd94368e8b4302736606cfb6b45e14814419a97c580ed28a9846",
+    "backend/tests/test_prototype_inputs.py": "131a411685b63b690b065d671435715b6cd453c2cf9b4812ce0b2ab289afc661"
+  },
+  "scope": "Fictional original GA in-process qualification only; private SQLite and original codec; no native worker, browser, ACL changes or institutional operations"
+}

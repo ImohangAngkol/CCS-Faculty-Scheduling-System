@@ -1,0 +1,156 @@
+{
+  "recorded_at": "2026-11-15T11:39:36.564716+08:00",
+  "checks": [
+    {
+      "selection": "backend",
+      "record": "docs/testing/scheduling-first-increment-2/20261115T113536100563+0800-backend/command.json",
+      "exit_code": 0,
+      "matching_source_paths": [
+        "backend/services/prototype_run_store.py",
+        "backend/services/prototype_scheduling.py",
+        "backend/services/prototype_workload.py",
+        "backend/routers/prototype_scheduling.py",
+        "backend/routers/prototype_workload.py",
+        "backend/tests/test_prototype_scheduling.py",
+        "backend/tests/test_prototype_scheduling_native.py",
+        "backend/tests/test_prototype_workload.py",
+        "frontend/src/prototypeScheduling/console.mjs",
+        "frontend/src/prototypeScheduling/index.html",
+        "frontend/src/prototypeScheduling/model.mjs",
+        "frontend/src/prototypeWorkload/console.mjs",
+        "frontend/src/prototypeWorkload/index.html",
+        "frontend/src/prototypeWorkload/model.mjs",
+        "frontend/src/prototypeWorkload/style.css",
+        "frontend/tests/prototypeScheduling.test.mjs",
+        "frontend/tests/prototypeWorkload.live.mjs",
+        "frontend/tests/prototypeWorkload.test.mjs"
+      ],
+      "subsequently_changed_source_paths": []
+    },
+    {
+      "selection": "frontend",
+      "record": "docs/testing/scheduling-first-increment-2/20261115T113808486602+0800-frontend/command.json",
+      "exit_code": 0,
+      "matching_source_paths": [
+        "backend/services/prototype_run_store.py",
+        "backend/services/prototype_scheduling.py",
+        "backend/services/prototype_workload.py",
+        "backend/routers/prototype_scheduling.py",
+        "backend/routers/prototype_workload.py",
+        "backend/tests/test_prototype_scheduling.py",
+        "backend/tests/test_prototype_scheduling_native.py",
+        "backend/tests/test_prototype_workload.py",
+        "frontend/src/prototypeScheduling/console.mjs",
+        "frontend/src/prototypeScheduling/index.html",
+        "frontend/src/prototypeScheduling/model.mjs",
+        "frontend/src/prototypeWorkload/console.mjs",
+        "frontend/src/prototypeWorkload/index.html",
+        "frontend/src/prototypeWorkload/model.mjs",
+        "frontend/src/prototypeWorkload/style.css",
+        "frontend/tests/prototypeScheduling.test.mjs",
+        "frontend/tests/prototypeWorkload.live.mjs",
+        "frontend/tests/prototypeWorkload.test.mjs"
+      ],
+      "subsequently_changed_source_paths": []
+    },
+    {
+      "selection": "types",
+      "record": "docs/testing/scheduling-first-increment-2/20261115T113243556135+0800-types/command.json",
+      "exit_code": 0,
+      "matching_source_paths": [
+        "backend/services/prototype_run_store.py",
+        "backend/services/prototype_scheduling.py",
+        "backend/services/prototype_workload.py",
+        "backend/routers/prototype_scheduling.py",
+        "backend/routers/prototype_workload.py",
+        "backend/tests/test_prototype_scheduling_native.py",
+        "backend/tests/test_prototype_workload.py",
+        "frontend/src/prototypeScheduling/model.mjs",
+        "frontend/src/prototypeWorkload/console.mjs",
+        "frontend/src/prototypeWorkload/index.html",
+        "frontend/src/prototypeWorkload/model.mjs",
+        "frontend/src/prototypeWorkload/style.css",
+        "frontend/tests/prototypeWorkload.live.mjs",
+        "frontend/tests/prototypeWorkload.test.mjs"
+      ],
+      "subsequently_changed_source_paths": [
+        "backend/tests/test_prototype_scheduling.py",
+        "frontend/src/prototypeScheduling/console.mjs",
+        "frontend/src/prototypeScheduling/index.html",
+        "frontend/tests/prototypeScheduling.test.mjs"
+      ]
+    },
+    {
+      "selection": "build",
+      "record": "docs/testing/scheduling-first-increment-2/20261115T113253752884+0800-build/command.json",
+      "exit_code": 0,
+      "matching_source_paths": [
+        "backend/services/prototype_run_store.py",
+        "backend/services/prototype_scheduling.py",
+        "backend/services/prototype_workload.py",
+        "backend/routers/prototype_scheduling.py",
+        "backend/routers/prototype_workload.py",
+        "backend/tests/test_prototype_scheduling_native.py",
+        "backend/tests/test_prototype_workload.py",
+        "frontend/src/prototypeScheduling/model.mjs",
+        "frontend/src/prototypeWorkload/console.mjs",
+        "frontend/src/prototypeWorkload/index.html",
+        "frontend/src/prototypeWorkload/model.mjs",
+        "frontend/src/prototypeWorkload/style.css",
+        "frontend/tests/prototypeWorkload.live.mjs",
+        "frontend/tests/prototypeWorkload.test.mjs"
+      ],
+      "subsequently_changed_source_paths": [
+        "backend/tests/test_prototype_scheduling.py",
+        "frontend/src/prototypeScheduling/console.mjs",
+        "frontend/src/prototypeScheduling/index.html",
+        "frontend/tests/prototypeScheduling.test.mjs"
+      ]
+    },
+    {
+      "selection": "lint",
+      "record": "docs/testing/scheduling-first-increment-2/20261115T113811429401+0800-lint/command.json",
+      "exit_code": 0,
+      "matching_source_paths": [
+        "backend/services/prototype_run_store.py",
+        "backend/services/prototype_scheduling.py",
+        "backend/services/prototype_workload.py",
+        "backend/routers/prototype_scheduling.py",
+        "backend/routers/prototype_workload.py",
+        "backend/tests/test_prototype_scheduling.py",
+        "backend/tests/test_prototype_scheduling_native.py",
+        "backend/tests/test_prototype_workload.py",
+        "frontend/src/prototypeScheduling/console.mjs",
+        "frontend/src/prototypeScheduling/index.html",
+        "frontend/src/prototypeScheduling/model.mjs",
+        "frontend/src/prototypeWorkload/console.mjs",
+        "frontend/src/prototypeWorkload/index.html",
+        "frontend/src/prototypeWorkload/model.mjs",
+        "frontend/src/prototypeWorkload/style.css",
+        "frontend/tests/prototypeScheduling.test.mjs",
+        "frontend/tests/prototypeWorkload.live.mjs",
+        "frontend/tests/prototypeWorkload.test.mjs"
+      ],
+      "subsequently_changed_source_paths": []
+    }
+  ],
+  "syntax_only_files": [
+    "backend/routers/prototype_scheduling.py",
+    "backend/services/prototype_run_store.py",
+    "backend/services/prototype_scheduling.py",
+    "backend/tests/test_prototype_scheduling.py",
+    "backend/tests/test_prototype_scheduling_native.py",
+    "docs/testing/scheduling-first-increment-2/audit_evidence.py",
+    "docs/testing/scheduling-first-increment-2/run_checks.py"
+  ],
+  "native_test_executed": false,
+  "Edge_executed": false,
+  "types_and_build_scope": "Existing React application compatibility; standalone prototype assets use final frontend contracts and focused lint; no browser acceptance",
+  "final_backend_passed": 42,
+  "final_frontend_passed": 32,
+  "final_new_backend_tests": 19,
+  "original_bundle_parity_and_continuation_passed": 5,
+  "prior_workload_regressions_passed": 18,
+  "new_frontend_contracts": 12,
+  "prior_frontend_regressions": 20
+}

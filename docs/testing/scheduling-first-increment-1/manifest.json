@@ -1,0 +1,271 @@
+{
+  "milestone": "Scheduling-first functional completion, increment1",
+  "recorded_at": "2026-11-15T10:45:08.865316+08:00",
+  "status": "FIRST_INCREMENT_TESTED_BROWSER_BLOCKED_COMPLETE_SYSTEM_INCOMPLETE",
+  "head": "2315689196875621288939fde4a3268932305d8d",
+  "branch": "wip/u5pf-experiment-exports",
+  "main_unchanged": "0dcc3e942d0b79c0e6358aa151208c014b307300",
+  "exact_new_file_inventory": [
+    "backend/routers/prototype_workload.py",
+    "backend/services/prototype_workload.py",
+    "backend/tests/test_prototype_workload.py",
+    "docs/scheduling-first-functional-completion.md",
+    "docs/testing/scheduling-first-increment-1/20261115T102402586192+0800-backend/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T102552549775+0800-backend/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T102953007735+0800-backend/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T103055889044+0800-frontend/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T103059039375+0800-types/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T103109152805+0800-build/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T103231051488+0800-build/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T103233334966+0800-lint/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T103236427437+0800-http/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T103453226887+0800-backend/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T103554792850+0800-http/command.json",
+    "docs/testing/scheduling-first-increment-1/20261115T103703407552+0800-http/command.json",
+    "docs/testing/scheduling-first-increment-1/entry.json",
+    "docs/testing/scheduling-first-increment-1/http_probe.py",
+    "docs/testing/scheduling-first-increment-1/manifest.json",
+    "docs/testing/scheduling-first-increment-1/preservation-baseline.json",
+    "docs/testing/scheduling-first-increment-1/resource-review.json",
+    "docs/testing/scheduling-first-increment-1/run_checks.py",
+    "docs/testing/scheduling-first-increment-1/source-qualification-review.json",
+    "frontend/src/prototypeWorkload/console.mjs",
+    "frontend/src/prototypeWorkload/index.html",
+    "frontend/src/prototypeWorkload/model.mjs",
+    "frontend/src/prototypeWorkload/style.css",
+    "frontend/tests/prototypeWorkload.live.mjs",
+    "frontend/tests/prototypeWorkload.test.mjs"
+  ],
+  "new_files": 29,
+  "file_types": {
+    ".py": 5,
+    ".md": 1,
+    ".json": 17,
+    ".mjs": 4,
+    ".html": 1,
+    ".css": 1
+  },
+  "existing_files_modified": [],
+  "attempts": [
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T102402586192+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 1,
+      "elapsed_seconds": 41.523258500004886
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T102552549775+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "elapsed_seconds": 53.759001700003864
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T102953007735+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "elapsed_seconds": 62.885519399977056
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103055889044+0800-frontend/command.json",
+      "selection": "frontend",
+      "exit_code": 0,
+      "elapsed_seconds": 3.1470243000076152
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103059039375+0800-types/command.json",
+      "selection": "types",
+      "exit_code": 0,
+      "elapsed_seconds": 10.112519799993606
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103109152805+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 1,
+      "elapsed_seconds": 2.7263193000108004
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103231051488+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "elapsed_seconds": 2.28089959998033
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103233334966+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "elapsed_seconds": 3.090257500007283
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103236427437+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 0,
+      "elapsed_seconds": 8.005390400008764
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103453226887+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "elapsed_seconds": 61.56940959999338
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103554792850+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 1,
+      "elapsed_seconds": 0.32619429999613203
+    },
+    {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103703407552+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 0,
+      "elapsed_seconds": 8.404159400000935
+    }
+  ],
+  "final_evidence": {
+    "backend": {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103453226887+0800-backend/command.json",
+      "selection": "backend",
+      "exit_code": 0,
+      "elapsed_seconds": 61.56940959999338
+    },
+    "frontend": {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103055889044+0800-frontend/command.json",
+      "selection": "frontend",
+      "exit_code": 0,
+      "elapsed_seconds": 3.1470243000076152
+    },
+    "types": {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103059039375+0800-types/command.json",
+      "selection": "types",
+      "exit_code": 0,
+      "elapsed_seconds": 10.112519799993606
+    },
+    "build": {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103231051488+0800-build/command.json",
+      "selection": "build",
+      "exit_code": 0,
+      "elapsed_seconds": 2.28089959998033
+    },
+    "lint": {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103233334966+0800-lint/command.json",
+      "selection": "lint",
+      "exit_code": 0,
+      "elapsed_seconds": 3.090257500007283
+    },
+    "http": {
+      "path": "docs/testing/scheduling-first-increment-1/20261115T103703407552+0800-http/command.json",
+      "selection": "http",
+      "exit_code": 0,
+      "elapsed_seconds": 8.404159400000935
+    }
+  },
+  "results": {
+    "backend_passed": 23,
+    "new_prototype_cases": 18,
+    "existing_original_GA_parity_cases": 5,
+    "frontend_passed": 20,
+    "new_frontend_cases": 13,
+    "existing_fitness_reporting_cases": 7,
+    "real_TCP_HTTP_scenarios": 19,
+    "mocked_HTTP_responses": 0,
+    "browser_scenarios_executed": 0,
+    "browser_status": "BLOCKED_RAM_BELOW_3_GiB",
+    "types": "PASS",
+    "build": "PASS_WITH_EXISTING_WARNINGS",
+    "focused_lint": "PASS"
+  },
+  "source_qualification": "Final backend/HTTP source identities match; frontend/type/build/lint compare frontend sources only. Earlier backend copies in those frontend records remain unchanged historical evidence.",
+  "preservation": {
+    "readable_paths": 5674,
+    "matched": 5674,
+    "academic_files": 23,
+    "original_tracked": 11,
+    "untracked_at_entry": 972,
+    "original_unrelated_untracked": 958,
+    "previous_minimum_investigation_files": 14,
+    "HEAD_index_config_unchanged": true,
+    "accessible_membership_verified": true,
+    "unreadable_directories": [
+      "backend/.pytest_cache"
+    ],
+    "full_historical_coverage": false,
+    "operator_attestation_not_promoted": true,
+    "original_GA_sources_notebooks_math_operators_RNG_and_stores_unchanged": true
+  },
+  "privacy": "PASS: token/private-name scan; no academic/session payloads exported",
+  "whitespace": "PASS",
+  "git_integrity": "PASS",
+  "artifact_sha256": {
+    "backend/routers/prototype_workload.py": "7e46199af8d0d4c249f12d7f9f1b432240d821defa17df5a7931faf3952a6b3c",
+    "backend/services/prototype_workload.py": "bb409d1ac29af4b2ab5b2a3445856101c89b9664c4c708414c71ba0d21a0b7fd",
+    "backend/tests/test_prototype_workload.py": "4e3cd60bb147646269e27f3a4aeaa2cfdcd5d66ed858643bd6e9e26c446aea21",
+    "docs/scheduling-first-functional-completion.md": "41c57a8778ac00421edc66856bdaedb436ef9659fdda3eb966a3af1974e28b9c",
+    "docs/testing/scheduling-first-increment-1/20261115T102402586192+0800-backend/command.json": "471ae4f39a52a3deaa77356a069b0cefb90e3144f3e8a40f80c625f93a51d6b1",
+    "docs/testing/scheduling-first-increment-1/20261115T102552549775+0800-backend/command.json": "78efbdd606fef369dcf0f5ca4428cb7726a02270b9baafa0f0e39490e766b84c",
+    "docs/testing/scheduling-first-increment-1/20261115T102953007735+0800-backend/command.json": "3775a763f5c01db62e2f933f7df64a8ee84563821db1d1ec5ceae98cbd7d3994",
+    "docs/testing/scheduling-first-increment-1/20261115T103055889044+0800-frontend/command.json": "b6223ebb3f9dae98195b2bdc04381764f1715d1fe0dc0e010f4602e313a3c959",
+    "docs/testing/scheduling-first-increment-1/20261115T103059039375+0800-types/command.json": "c350150af46cddbcd1c972a889089012f8553492ceff8cc57d26f52d06763deb",
+    "docs/testing/scheduling-first-increment-1/20261115T103109152805+0800-build/command.json": "01d9bb6548938e3c4abffc2341309333e74dda0ea257f8f0e1b5c98ba9c2727d",
+    "docs/testing/scheduling-first-increment-1/20261115T103231051488+0800-build/command.json": "1a3b89a265215c1d99d478ecc28152ad67fe9aa374a3f8977be1a60d58b2052c",
+    "docs/testing/scheduling-first-increment-1/20261115T103233334966+0800-lint/command.json": "86bfb7ed0aed91ab507b09d9ca34de0bcc6ed138cf1002f3682efd411faa277b",
+    "docs/testing/scheduling-first-increment-1/20261115T103236427437+0800-http/command.json": "91dc2d471cfbaa9bd9dc9f5f9f28229fb0ab1c3393dd5cdb6cf9f161e3f3bd16",
+    "docs/testing/scheduling-first-increment-1/20261115T103453226887+0800-backend/command.json": "be5ed2cdae15d3c5ba013a706f536b4ef8de1f49e840d512fb319041adedd71e",
+    "docs/testing/scheduling-first-increment-1/20261115T103554792850+0800-http/command.json": "631be46fff20e991dd707e94f5a98cff6d34ed73d1d927464c5d7b4f637e0a92",
+    "docs/testing/scheduling-first-increment-1/20261115T103703407552+0800-http/command.json": "6ab0a9a749a660132c649f0345b4759c99f579ad90e65e709d7231136aa62bba",
+    "docs/testing/scheduling-first-increment-1/entry.json": "772791a54789b277099d0136becb648b9fbf8d1a7581b17c79ff61c85372e3db",
+    "docs/testing/scheduling-first-increment-1/http_probe.py": "432e52f12a3078fdfffe6c912e1db74773bd14739e6f34556783126a5a312880",
+    "docs/testing/scheduling-first-increment-1/preservation-baseline.json": "35a2f7a9bc6c3194c61e4454af8e813b03c4011fe2bde7eca23246920b2ea124",
+    "docs/testing/scheduling-first-increment-1/resource-review.json": "9991330b9baec58700cd3ecbf69814f54b34226cfa03f98caceb48981069637d",
+    "docs/testing/scheduling-first-increment-1/run_checks.py": "06e5ee1616c113316da9e7ba1ef17b26910751e030fbe13f615c7519913caaff",
+    "docs/testing/scheduling-first-increment-1/source-qualification-review.json": "01f60eaa3253ae42f98a01004e59cdfed18d071f5662a420f4a1cc699bfa1391",
+    "frontend/src/prototypeWorkload/console.mjs": "ba1579cebe408b46387351ff9eda99a073fad3325fbda4da6ceaa04fdaebfc18",
+    "frontend/src/prototypeWorkload/index.html": "46b04db7e2f05b788b7d1022ed84d7b0c30c57511cbf88355a803cfda62f29c3",
+    "frontend/src/prototypeWorkload/model.mjs": "0e71554b94e84a47dcbe22a812d9dc6b2ca6d04400f7d9e975b3489ded1ce52e",
+    "frontend/src/prototypeWorkload/style.css": "484ba2e3195953b618342878401f955125eeb93122604e134e67349c56d68768",
+    "frontend/tests/prototypeWorkload.live.mjs": "beab7f49871ba247982a55436cee55917716b4b6e45f301bdc6b31d63fb9b22f",
+    "frontend/tests/prototypeWorkload.test.mjs": "9803545120df0152afcc04bc4a79b40eca5c07f10b6ebc5d8ba14231627c9138"
+  },
+  "proposed_raw_blob_oids": {
+    "backend/routers/prototype_workload.py": "827e97b705b1b32905a056dc1318b28ba68fc137",
+    "backend/services/prototype_workload.py": "c55ebf5f705a19a48d5e46eac097dd8fea179d92",
+    "backend/tests/test_prototype_workload.py": "ae1276a33d1de2737dadbf00ab07055f0abf340b",
+    "docs/scheduling-first-functional-completion.md": "e4db204e29fceea7a4e18eb8354248ed206c6c98",
+    "docs/testing/scheduling-first-increment-1/20261115T102402586192+0800-backend/command.json": "ba83e63f75937747e0b01fed45dda6f4bff70544",
+    "docs/testing/scheduling-first-increment-1/20261115T102552549775+0800-backend/command.json": "762d06f736a3bbdf25fbd82b7261400cdda29b25",
+    "docs/testing/scheduling-first-increment-1/20261115T102953007735+0800-backend/command.json": "5c14b5631e596bd67df40871ba546538c74737d4",
+    "docs/testing/scheduling-first-increment-1/20261115T103055889044+0800-frontend/command.json": "114f98c2014039954cb3f0a6a01d787bce7f562f",
+    "docs/testing/scheduling-first-increment-1/20261115T103059039375+0800-types/command.json": "0e8dd1c3da649b3719f2c1f6d7c8037c639f0910",
+    "docs/testing/scheduling-first-increment-1/20261115T103109152805+0800-build/command.json": "4f7f91e1bf509240691faf65b0a7a1a954aae9e8",
+    "docs/testing/scheduling-first-increment-1/20261115T103231051488+0800-build/command.json": "2b2871c46dea6802104b7297dee1bf46987f383b",
+    "docs/testing/scheduling-first-increment-1/20261115T103233334966+0800-lint/command.json": "ba43c9d3479359d1c42a1c134ab5bfb5cd97cead",
+    "docs/testing/scheduling-first-increment-1/20261115T103236427437+0800-http/command.json": "8380f6ccb71130e69cd7a619183d1cf465be748c",
+    "docs/testing/scheduling-first-increment-1/20261115T103453226887+0800-backend/command.json": "18b4cac886ae3bc6d448643de3fd6b9013bce756",
+    "docs/testing/scheduling-first-increment-1/20261115T103554792850+0800-http/command.json": "913b6d713c06c22ed763b35578a5f6d9f21c6dda",
+    "docs/testing/scheduling-first-increment-1/20261115T103703407552+0800-http/command.json": "4642866da8284f76278004b1d7303246b6348c30",
+    "docs/testing/scheduling-first-increment-1/entry.json": "e658f0dda33c741cd7184825910c822d87a578e8",
+    "docs/testing/scheduling-first-increment-1/http_probe.py": "6ffeb58417aaa1a7d60e970006f69ea91251fbc6",
+    "docs/testing/scheduling-first-increment-1/preservation-baseline.json": "1701cd3f0ba86d87f8dbe3fc8c57078679d690fc",
+    "docs/testing/scheduling-first-increment-1/resource-review.json": "b285dfeb9ea6002079a48a8b251d7ec3d9d3ea5b",
+    "docs/testing/scheduling-first-increment-1/run_checks.py": "569ecfd9896428ca8a2b06d1013c07f29b2e6de6",
+    "docs/testing/scheduling-first-increment-1/source-qualification-review.json": "03836440c97d63d7b1f3ad9ac01867e2c4e537f6",
+    "frontend/src/prototypeWorkload/console.mjs": "6645518fd3dc7a0da5b85a62b9578afb81a5b558",
+    "frontend/src/prototypeWorkload/index.html": "1d063fd1c90a47f70e085a6ef2b758402bb08e41",
+    "frontend/src/prototypeWorkload/model.mjs": "93e4a66abc5c279d5a397eb5f88b5edbd1d77687",
+    "frontend/src/prototypeWorkload/style.css": "d3ee707d84e384627fd687c808606696ac1b8afb",
+    "frontend/tests/prototypeWorkload.live.mjs": "37825239dda0b60fc81f89b9f4c8022abf690efd",
+    "frontend/tests/prototypeWorkload.test.mjs": "8e359099ffe24c6400c416a35469926397345c67"
+  },
+  "staging_authorized": false,
+  "checkpoint_ready": false,
+  "legacy_run_endpoints_minimum_aware": false,
+  "search_enforcement_installed": false,
+  "weight_policy_activated": false,
+  "prototype_minimum_configuration_and_qualification": true,
+  "production_admission": "BLOCKED",
+  "institutional_saved_best": "BLOCKED",
+  "continuous_optimization": "DISABLED",
+  "active_restore": "BLOCKED",
+  "seven_day": "NO_GO",
+  "no_PostgreSQL_operations": true,
+  "no_native_GA_workers": true,
+  "no_dependency_installation": true
+}

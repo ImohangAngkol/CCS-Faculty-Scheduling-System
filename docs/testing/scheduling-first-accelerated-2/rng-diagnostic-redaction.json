@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-11-15T15:26:31.653136+08:00",
+  "affected": "docs/testing/scheduling-first-accelerated-2/20261115T152114053670+0800-core/command.json",
+  "reason": "Remove expanded RNG tuple from failed assertion; public deterministic synthetic fixture seed710, not institutional/session data",
+  "original_sha256": "9c6fae8ae0a0b4f2193246ed27ed0950f21c223e28b87efa2d467f002ab63dda",
+  "sanitized_sha256": "bade33ac3840a3e203c838eb9dc0d6c29998c25d6d3cca757c51aeddba4e6d8d",
+  "redacted_lines": 5,
+  "marker": "[REDACTED_SYNTHETIC_RNG_STATE]",
+  "failure_trace_and_counts_preserved": true,
+  "failed_test_evidence_deleted": false,
+  "prior_milestone_files_modified": false
+}

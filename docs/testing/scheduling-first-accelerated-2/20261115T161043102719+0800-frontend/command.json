@@ -1,0 +1,34 @@
+{
+  "selection": "frontend",
+  "command": [
+    "node",
+    "--test",
+    "tests/prototypeCycle.test.mjs",
+    "tests/prototypeInputs.test.mjs",
+    "tests/prototypeScheduling.test.mjs"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-n4vmmgfa\\repository\\frontend",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-n4vmmgfa\\repository",
+  "started_at": "2026-11-15T16:10:43.103891+08:00",
+  "ended_at": "2026-11-15T16:10:43.424974+08:00",
+  "elapsed_seconds": 0.32109710000804625,
+  "exit_code": 0,
+  "stdout": "\u2714 admission is never presented as generated output (2.3559ms)\n\u2714 real zero fitness remains zero and separate from feasibility (0.3874ms)\n\u2714 constraint violating candidate cannot be approved (1.0994ms)\n\u2714 bound Chair decision APPROVE (0.2712ms)\n\u2714 bound Chair decision REJECT (0.4059ms)\n\u2714 bound Chair decision REQUEST_REVISION (0.1011ms)\n\u2714 unverified or historical decided candidate cannot bypass review binding (0.6114ms)\n\u2714 page has real API calls and no GA execution or restore endpoint (2.2483ms)\n\u2714 Chair command changes only supplied original coefficients with pinned revision (3.1897ms)\n\u2714 reject unsupported coefficient input {\"absolute_max_teaching_load\":99} (0.3215ms)\n\u2714 reject unsupported coefficient input {\"total_workload_target\":12} (0.0974ms)\n\u2714 reject unsupported coefficient input {\"subject_penalty\":-1} (0.0953ms)\n\u2714 reject unsupported coefficient input {\"subject_penalty\":true} (0.1369ms)\n\u2714 reject unsupported coefficient input {\"subject_penalty\":0.5} (0.0985ms)\n\u2714 reject unsupported coefficient input {\"subject_penalty\":100001} (0.0949ms)\n\u2714 reject unsupported coefficient input {} (0.0783ms)\n\u2714 reject unsupported coefficient input [] (0.0979ms)\n\u2714 reject unsupported coefficient input null (0.2434ms)\n\u2714 frozen preparation pins minimum weights and preference versions (0.6705ms)\n\u2714 unverified selection cannot prepare (0.2199ms)\n\u2714 neutral initial editor does not silently activate preferences (0.1961ms)\n\u2714 actual API calls, safe rendering, serialized changes and no native controls (2.1342ms)\n\u2714 submission pins exact server scope revision inputs and configuration (1.9754ms)\n\u2714 missing context cannot start (0.3071ms)\n\u2714 honest state INPUT_INFEASIBLE (0.2736ms)\n\u2714 honest state RESOURCE_BLOCKED (0.0998ms)\n\u2714 honest state RUN_FAILED (0.1145ms)\n\u2714 honest state INTERRUPTED (0.0983ms)\n\u2714 honest state EXECUTION_UNCERTAIN (0.0765ms)\n\u2714 actual zero fitness and feasibility=false (0.1858ms)\n\u2714 actual zero fitness and feasibility=true (0.1166ms)\n\u2714 reject an unsupported feasibility claim (0.2256ms)\n\u2714 reject missing candidate metrics and preserve unavailable status (0.4147ms)\n\u2714 safe rendering and lost-ack reload recovery never repeat Start (1.3031ms)\n\u2139 tests 34\n\u2139 suites 0\n\u2139 pass 34\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 165.6842\n",
+  "stderr": "",
+  "source_sha256": {
+    "backend/services/prototype_cycle.py": "9522797618f8113c20fabd4d02b7c53514d424a93a444c6ff132cbbca3bcd4fd",
+    "backend/services/prototype_inputs.py": "f7dd26dbe5e591b526a434431635aafd68817a0beb049e52cd36068a9616b9f1",
+    "backend/services/prototype_tip_witness.py": "2ec8e659f4d182fded69a700f809518e610bfe728469b6dafc13fed601b042e2",
+    "backend/routers/prototype_cycle.py": "54978403137a3cef79cb07482fe38494e1edfbd9f92fc764c38e762ce04cf3b1",
+    "backend/routers/prototype_inputs.py": "8d396082200e4bc16398fb08c5defdd4f7d80dcb7768f11baf9cf7aeea03cc89",
+    "backend/tests/test_prototype_cycle.py": "f6e75621959345076eb6fe7e94fbfcb4b6c0d9fa98c95903f39451b078202541",
+    "backend/tests/test_prototype_cycle_api.py": "c23daf5989fe5fa86bec40013473787392e8b8c6be113978f8c4d59dfb2c187c",
+    "backend/tests/test_prototype_inputs.py": "131a411685b63b690b065d671435715b6cd453c2cf9b4812ce0b2ab289afc661",
+    "frontend/src/prototypeCycle/console.mjs": "5b6f691aba33bc036b2316ef3b03340ec6f338fdce174680a9d68bb4ff131e34",
+    "frontend/src/prototypeCycle/index.html": "4a524a3cb1d481054cb584cda05b5f4baf6457a77465dffd61c87d6f6803bf7c",
+    "frontend/src/prototypeCycle/model.mjs": "e147a49562fddf242d63eebda64101546c80e54d95d460ac589e2d59585be4a6",
+    "frontend/tests/prototypeCycle.live.mjs": "4905691a7ccb3fc73cece34277cf37595e132c402a357f644ea1580d55a66bfa",
+    "frontend/tests/prototypeCycle.test.mjs": "fe87bdccb934be4edf0c171ec95f3918ea5a3dbe62b04666d0a56bc852007143"
+  },
+  "scope": "Fictional original GA in-process qualification only; private SQLite and original codec; no native worker, browser, ACL changes or institutional operations"
+}

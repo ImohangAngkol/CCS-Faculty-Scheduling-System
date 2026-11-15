@@ -1,0 +1,39 @@
+{
+  "selection": "frontend",
+  "command": [
+    "node",
+    "--test",
+    "tests/prototypeInputs.test.mjs",
+    "tests/prototypeScheduling.test.mjs",
+    "tests/prototypeWorkload.test.mjs",
+    "tests/fitnessReporting.test.mjs"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-ht76wff6\\repository\\frontend",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-ht76wff6\\repository",
+  "started_at": "2026-11-15T12:36:27.818964+08:00",
+  "ended_at": "2026-11-15T12:36:29.722499+08:00",
+  "elapsed_seconds": 1.9035559000039939,
+  "exit_code": 0,
+  "stdout": "\u2714 report provenance, finite observations and component reconciliation are verified (2.0211ms)\n\u2714 missing values remain distinct from real zero and disabled preferences (60.0648ms)\n\u2714 historical and latest reports issue only bounded GET requests (5.2009ms)\n\u2714 comparison source is verified and missing contributions stay null (1.5636ms)\n\u2714 corrupt analysis and unavailable backend are actionable errors (1.1829ms)\n\u2714 loaded candidate retains its existing evaluation without current targets or extra API calls (1.1087ms)\n\u2714 loaded report CSV protects spreadsheet cells and identifies unavailable generation (1.2571ms)\n\u2714 Chair command changes only supplied original coefficients with pinned revision (4.3309ms)\n\u2714 reject unsupported coefficient input {\"absolute_max_teaching_load\":99} (0.6874ms)\n\u2714 reject unsupported coefficient input {\"total_workload_target\":12} (0.1592ms)\n\u2714 reject unsupported coefficient input {\"subject_penalty\":-1} (0.1296ms)\n\u2714 reject unsupported coefficient input {\"subject_penalty\":true} (0.1893ms)\n\u2714 reject unsupported coefficient input {\"subject_penalty\":0.5} (0.1335ms)\n\u2714 reject unsupported coefficient input {\"subject_penalty\":100001} (0.1066ms)\n\u2714 reject unsupported coefficient input {} (0.1268ms)\n\u2714 reject unsupported coefficient input [] (0.1311ms)\n\u2714 reject unsupported coefficient input null (0.2286ms)\n\u2714 frozen preparation pins minimum weights and preference versions (0.4691ms)\n\u2714 unverified selection cannot prepare (0.1984ms)\n\u2714 neutral initial editor does not silently activate preferences (0.2447ms)\n\u2714 actual API calls, safe rendering, serialized changes and no native controls (2.4199ms)\n\u2714 submission pins exact server scope revision inputs and configuration (2.0668ms)\n\u2714 missing context cannot start (0.2915ms)\n\u2714 honest state INPUT_INFEASIBLE (0.3604ms)\n\u2714 honest state RESOURCE_BLOCKED (0.1525ms)\n\u2714 honest state RUN_FAILED (0.4077ms)\n\u2714 honest state INTERRUPTED (0.1616ms)\n\u2714 honest state EXECUTION_UNCERTAIN (0.1246ms)\n\u2714 actual zero fitness and feasibility=false (0.2205ms)\n\u2714 actual zero fitness and feasibility=true (0.1699ms)\n\u2714 reject an unsupported feasibility claim (0.236ms)\n\u2714 reject missing candidate metrics and preserve unavailable status (0.3145ms)\n\u2714 safe rendering and lost-ack reload recovery never repeat Start (1.7044ms)\n\u2714 blank minimum remains unspecified for other faculty (4.0888ms)\n\u2714 zero is an explicit minimum (0.2851ms)\n\u2714 invalid minimum rejected -1 (0.3204ms)\n\u2714 invalid minimum rejected 24.5 (0.1189ms)\n\u2714 invalid minimum rejected NaN (0.1165ms)\n\u2714 invalid minimum rejected 41 (0.1363ms)\n\u2714 invalid minimum rejected true (0.1167ms)\n\u2714 invalid minimum rejected 1e2 (0.1388ms)\n\u2714 read permission does not grant configuration (0.2563ms)\n\u2714 production/optimizer claims rejected (0.4471ms)\n\u2714 duplicate or invalid faculty metadata rejected (0.2429ms)\n\u2714 infeasibility is explicit and sufficient units are not called feasible (0.2265ms)\n\u2714 safe DOM, stale response guard, no unsupported execution controls (14.6011ms)\n\u2139 tests 46\n\u2139 suites 0\n\u2139 pass 46\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1712.3139\n",
+  "stderr": "",
+  "source_sha256": {
+    "backend/services/prototype_inputs.py": "f7dd26dbe5e591b526a434431635aafd68817a0beb049e52cd36068a9616b9f1",
+    "backend/services/prototype_workload.py": "bb409d1ac29af4b2ab5b2a3445856101c89b9664c4c708414c71ba0d21a0b7fd",
+    "backend/routers/prototype_inputs.py": "8d396082200e4bc16398fb08c5defdd4f7d80dcb7768f11baf9cf7aeea03cc89",
+    "backend/routers/prototype_workload.py": "7e46199af8d0d4c249f12d7f9f1b432240d821defa17df5a7931faf3952a6b3c",
+    "backend/tests/test_prototype_inputs.py": "fa457dc1cafa8d433f0da9e2ee2fd6464082e9a6c15d003bf2e9e15b8a8156ef",
+    "backend/tests/test_prototype_workload.py": "4e3cd60bb147646269e27f3a4aeaa2cfdcd5d66ed858643bd6e9e26c446aea21",
+    "frontend/src/prototypeInputs/console.mjs": "0c0c6b13f06a28ff9c2fbcee09f3383c2c00a3e82696d853844c4b4030c1c777",
+    "frontend/src/prototypeInputs/index.html": "3e549a3231ff81db3495d0d8bdb03a1b54f2ecd03922e26210e713325725a8ad",
+    "frontend/src/prototypeInputs/model.mjs": "b5839acf6f865c992b4e1ffda485b4c44097c97a3f5afe7ff32571d9d3a88748",
+    "frontend/src/prototypeWorkload/console.mjs": "ba1579cebe408b46387351ff9eda99a073fad3325fbda4da6ceaa04fdaebfc18",
+    "frontend/src/prototypeWorkload/index.html": "46b04db7e2f05b788b7d1022ed84d7b0c30c57511cbf88355a803cfda62f29c3",
+    "frontend/src/prototypeWorkload/model.mjs": "0e71554b94e84a47dcbe22a812d9dc6b2ca6d04400f7d9e975b3489ded1ce52e",
+    "frontend/src/prototypeWorkload/style.css": "484ba2e3195953b618342878401f955125eeb93122604e134e67349c56d68768",
+    "frontend/tests/prototypeInputs.live.mjs": "c21f4a9be3453bac2842a3c874efcadc4c7cf1659ca09f76e123b699eee67884",
+    "frontend/tests/prototypeInputs.test.mjs": "3ced608d466ca72295918ead968ac2f8b5ce5fa9030f69f3ee847f0f041e2ede",
+    "frontend/tests/prototypeWorkload.live.mjs": "beab7f49871ba247982a55436cee55917716b4b6e45f301bdc6b31d63fb9b22f",
+    "frontend/tests/prototypeWorkload.test.mjs": "9803545120df0152afcc04bc4a79b40eca5c07f10b6ebc5d8ba14231627c9138"
+  },
+  "scope": "Offline fictional input preparation, real original scorer/validators, private SQLite and TestClient; no worker/browser/GA search; no production provider"
+}

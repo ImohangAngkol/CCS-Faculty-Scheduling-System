@@ -1,0 +1,41 @@
+{
+  "selection": "revision",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "tests/test_prototype_cycle.py::test_new_frozen_revision_creates_version2_without_mutating_version1",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-29heq1j_\\pytest-revision"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-29heq1j_\\repository\\backend",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-29heq1j_\\repository",
+  "started_at": "2026-11-15T16:13:54.496693+08:00",
+  "ended_at": "2026-11-15T16:14:13.954946+08:00",
+  "elapsed_seconds": 19.458258500002557,
+  "exit_code": 0,
+  "stdout": ".                                                                        [100%]\n1 passed in 17.33s\n",
+  "stderr": "",
+  "source_sha256": {
+    "backend/services/prototype_cycle.py": "9522797618f8113c20fabd4d02b7c53514d424a93a444c6ff132cbbca3bcd4fd",
+    "backend/services/prototype_inputs.py": "f7dd26dbe5e591b526a434431635aafd68817a0beb049e52cd36068a9616b9f1",
+    "backend/services/prototype_tip_witness.py": "2ec8e659f4d182fded69a700f809518e610bfe728469b6dafc13fed601b042e2",
+    "backend/routers/prototype_cycle.py": "54978403137a3cef79cb07482fe38494e1edfbd9f92fc764c38e762ce04cf3b1",
+    "backend/routers/prototype_inputs.py": "8d396082200e4bc16398fb08c5defdd4f7d80dcb7768f11baf9cf7aeea03cc89",
+    "backend/tests/test_prototype_cycle.py": "587b9e2024916cb593cc3832e48250043469c6bfe833fc4eb93502bd5dbf924d",
+    "backend/tests/test_prototype_cycle_api.py": "c23daf5989fe5fa86bec40013473787392e8b8c6be113978f8c4d59dfb2c187c",
+    "backend/tests/test_prototype_inputs.py": "131a411685b63b690b065d671435715b6cd453c2cf9b4812ce0b2ab289afc661",
+    "frontend/src/prototypeCycle/console.mjs": "5b6f691aba33bc036b2316ef3b03340ec6f338fdce174680a9d68bb4ff131e34",
+    "frontend/src/prototypeCycle/index.html": "4a524a3cb1d481054cb584cda05b5f4baf6457a77465dffd61c87d6f6803bf7c",
+    "frontend/src/prototypeCycle/model.mjs": "e147a49562fddf242d63eebda64101546c80e54d95d460ac589e2d59585be4a6",
+    "frontend/tests/prototypeCycle.live.mjs": "4905691a7ccb3fc73cece34277cf37595e132c402a357f644ea1580d55a66bfa",
+    "frontend/tests/prototypeCycle.test.mjs": "fe87bdccb934be4edf0c171ec95f3918ea5a3dbe62b04666d0a56bc852007143"
+  },
+  "scope": "Fictional original GA in-process qualification only; private SQLite and original codec; no native worker, browser, ACL changes or institutional operations"
+}

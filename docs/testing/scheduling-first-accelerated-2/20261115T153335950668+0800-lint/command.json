@@ -1,0 +1,37 @@
+{
+  "selection": "lint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "--config",
+    "prototype-eslint.config.mjs",
+    "src/prototypeCycle/console.mjs",
+    "src/prototypeCycle/model.mjs",
+    "tests/prototypeCycle.test.mjs",
+    "tests/prototypeCycle.live.mjs"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-h8e52yhg\\repository\\frontend",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-h8e52yhg\\repository",
+  "started_at": "2026-11-15T15:33:35.951796+08:00",
+  "ended_at": "2026-11-15T15:33:37.371210+08:00",
+  "elapsed_seconds": 1.4194083999900613,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "source_sha256": {
+    "backend/services/prototype_cycle.py": "362ab4802537ffead2574b977dcafd937c10429214ade9fec1ae15871db9e1c7",
+    "backend/services/prototype_inputs.py": "f7dd26dbe5e591b526a434431635aafd68817a0beb049e52cd36068a9616b9f1",
+    "backend/services/prototype_tip_witness.py": "2ec8e659f4d182fded69a700f809518e610bfe728469b6dafc13fed601b042e2",
+    "backend/routers/prototype_cycle.py": "54978403137a3cef79cb07482fe38494e1edfbd9f92fc764c38e762ce04cf3b1",
+    "backend/routers/prototype_inputs.py": "8d396082200e4bc16398fb08c5defdd4f7d80dcb7768f11baf9cf7aeea03cc89",
+    "backend/tests/test_prototype_cycle.py": "de3ba77a4877992c6592bf0743792dc0dc5025541c955b42ac8a67930105f4e5",
+    "backend/tests/test_prototype_cycle_api.py": "c23daf5989fe5fa86bec40013473787392e8b8c6be113978f8c4d59dfb2c187c",
+    "backend/tests/test_prototype_inputs.py": "131a411685b63b690b065d671435715b6cd453c2cf9b4812ce0b2ab289afc661",
+    "frontend/src/prototypeCycle/console.mjs": "6fc2136eb1f9a34488d4b5ab79b43e274c014a3f7117498e797b1ae0b61b8534",
+    "frontend/src/prototypeCycle/index.html": "4a524a3cb1d481054cb584cda05b5f4baf6457a77465dffd61c87d6f6803bf7c",
+    "frontend/src/prototypeCycle/model.mjs": "e147a49562fddf242d63eebda64101546c80e54d95d460ac589e2d59585be4a6",
+    "frontend/tests/prototypeCycle.live.mjs": "4905691a7ccb3fc73cece34277cf37595e132c402a357f644ea1580d55a66bfa",
+    "frontend/tests/prototypeCycle.test.mjs": "c6a27b9c04e804bf0de35002f670280238595ac7481021fa8e2edd5dad8a5a65"
+  },
+  "scope": "Fictional original GA in-process qualification only; private SQLite and original codec; no native worker, browser, ACL changes or institutional operations"
+}
