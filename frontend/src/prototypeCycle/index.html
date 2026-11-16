@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fictional schedule review</title><link rel="stylesheet" href="/prototype/workload/style.css"></head><body><main>
+<h1>Fictional schedule review</h1><p>Research qualification only. No native execution, institutional publication, Saved Best promotion or active restore is enabled. Original GA fitness is separate from workload feasibility.</p>
+<form id="login"><label>Username <input id="username" autocomplete="username" required></label><label>Password <input id="password" type="password" autocomplete="current-password" required></label><button>Sign in</button></form>
+<p><a href="/prototype/inputs">Prepare preferences and Chair coefficients</a></p><p id="status" role="status" aria-live="polite">Sign in with a scoped fictional account.</p>
+<h2>Recorded runs</h2><button id="list">Reload recorded runs</button><label>Run ID <input id="run"></label><button id="inspect">Inspect run</button>
+<label>Frozen preparation ID <input id="preparation"></label><button id="admit">Admit frozen preparation (does not execute)</button>
+<button id="stop">Request cooperative Stop</button><p>A Stop request is not verified worker termination.</p>
+<h2>Chair decision</h2><label>Explanation <textarea id="explanation" rows="3"></textarea></label><button id="approve">Approve and apply prototype version</button><button id="reject">Reject</button><button id="revise">Request a new generated revision</button>
+<h2>Comparison and exports</h2><label>Comparison run ID <input id="other"></label><button id="compare">Compare qualified contexts</button><button id="versions">Approved prototype history</button>
+<button id="json">Research JSON</button><button id="csv">Research CSV</button><button id="txt">Research text</button>
+<h2>Faculty refresh</h2><label>Your faculty code <input id="faculty" type="number" min="0" step="1"></label><button id="timetable">Refresh own approved timetable</button>
+<pre id="result">No recorded candidate selected.</pre></main><script type="module" src="/prototype/cycle/console.mjs"></script></body></html>

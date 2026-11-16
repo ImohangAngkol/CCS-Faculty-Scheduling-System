@@ -1,0 +1,32 @@
+{
+  "measurement": "FINITE_FICTIONAL_STORE_ONLY",
+  "segments": 2,
+  "checkpoint_bytes": [
+    1176664,
+    1177579
+  ],
+  "result_bytes": [
+    7168,
+    7305
+  ],
+  "cycle_database_bytes": 2715648,
+  "logical_run_and_segment_bytes": 2647079,
+  "witness_database_bytes": 12288,
+  "raw_checkpoint_cap_bytes": 8388608,
+  "checkpoint_total_cap_bytes": 67108864,
+  "checkpoint_count_cap": 8,
+  "existing_lifetime_seconds": 600,
+  "existing_generation_cap": 20,
+  "offline_generation_cap": 2,
+  "retention": "KEEP_ALL_NO_AUTOMATIC_DELETE",
+  "hypothetical_7day_cadence_seconds": 600,
+  "hypothetical_7day_checkpoint_count": 1008,
+  "constant_largest_checkpoint_bytes_lower_bound": 1186999632,
+  "per_checkpoint_cap_times_count_bytes": 8455716864,
+  "projection_is_not_capacity_or_throughput_qualification": true,
+  "complete_histories_repeat_in_checkpoints": true,
+  "future_generations": null,
+  "physical_recovery_time_seconds": null,
+  "maximum_interruption_loss": "SINCE_LAST_VERIFIED_BOUNDARY_ONLY; NO_NATIVE_TIME_BOUND_PROVEN",
+  "seven_day": "NO_GO"
+}

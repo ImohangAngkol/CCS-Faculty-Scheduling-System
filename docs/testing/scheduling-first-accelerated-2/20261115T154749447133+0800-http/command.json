@@ -1,0 +1,32 @@
+{
+  "selection": "http",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "../docs/testing/scheduling-first-accelerated-2/http_probe.py"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-3q0dznkk\\repository\\backend",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-3q0dznkk\\repository",
+  "started_at": "2026-11-15T15:47:49.447577+08:00",
+  "ended_at": "2026-11-15T15:48:11.163133+08:00",
+  "elapsed_seconds": 21.7155792999838,
+  "exit_code": 0,
+  "stdout": "{\"scope\": \"REAL_NODE_TCP_FRONTEND_MODEL_FASTAPI_SQLITE_OVER_GENUINE_ORIGINAL_IN_PROCESS_GA\", \"records\": [{\"scope\": \"REAL_NODE_HTTP_FRONTEND_MODEL_GENUINE_RECORDED_GA_NO_BROWSER_NO_NATIVE\", \"reopened\": false, \"scenarios\": [{\"name\": \"anonymous recorded-run access denied\", \"status\": \"PASS\"}, {\"name\": \"real scheduler login\", \"status\": \"PASS\"}, {\"name\": \"genuinely generated assignments match durable original result exactly\", \"status\": \"PASS\"}, {\"name\": \"same frozen context comparison preserves minimization and ties\", \"status\": \"PASS\"}, {\"name\": \"original research history JSON export exact\", \"status\": \"PASS\"}, {\"name\": \"original research CSV and text downloads real and bounded\", \"status\": \"PASS\"}, {\"name\": \"scheduler cannot grant own Chair approval\", \"status\": \"PASS\"}, {\"name\": \"no timetable fabricated before prototype approval\", \"status\": \"PASS\"}, {\"name\": \"cross-faculty timetable denied\", \"status\": \"PASS\"}, {\"name\": \"Chair decision requires real CSRF\", \"status\": \"PASS\"}, {\"name\": \"real Chair approval creates immutable prototype version\", \"status\": \"PASS\"}, {\"name\": \"stale duplicate decision cannot overwrite approved version\", \"status\": \"PASS\"}, {\"name\": \"revision request records history without fabricating a revised assignment\", \"status\": \"PASS\"}, {\"name\": \"approved prototype JSON CSV and text exported from recorded version\", \"status\": \"PASS\"}, {\"name\": \"faculty refresh reads applied prototype version\", \"status\": \"PASS\"}, {\"name\": \"real review frontend assets served\", \"status\": \"PASS\"}, {\"name\": \"logout revokes actual session\", \"status\": \"PASS\"}, {\"name\": \"unscoped admin cannot read approved research realm\", \"status\": \"PASS\"}], \"export_sha256\": {\"csv\": \"e7972feff4bb0960d711b4bf2216783d6e4a6d10a7856e60a514cc7ef4ebcaeb\", \"txt\": \"2a033772d275228f50805706072e50a06f65c417b8127badab6db95201ddd55f\", \"approved_json\": \"fadcd156c7874997038e6219ba8feda2a2be3dec0907671bba5903b228b9421f\", \"approved_csv\": \"1fb4f46c9c8687579e9e00dc868776d810ebea90b4ea3c17cac5a3d32bb6f127\", \"approved_txt\": \"42e496719a1b05be843d8bb059b52ea6ccc9067681a64886b9924b462d5536dc\"}, \"actual_original_fitness\": 450, \"mocked_HTTP_responses\": 0}, {\"scope\": \"REAL_NODE_HTTP_FRONTEND_MODEL_GENUINE_RECORDED_GA_NO_BROWSER_NO_NATIVE\", \"reopened\": true, \"scenarios\": [{\"name\": \"anonymous recorded-run access denied\", \"status\": \"PASS\"}, {\"name\": \"real scheduler login\", \"status\": \"PASS\"}, {\"name\": \"genuinely generated assignments match durable original result exactly\", \"status\": \"PASS\"}, {\"name\": \"same frozen context comparison preserves minimization and ties\", \"status\": \"PASS\"}, {\"name\": \"original research history JSON export exact\", \"status\": \"PASS\"}, {\"name\": \"original research CSV and text downloads real and bounded\", \"status\": \"PASS\"}, {\"name\": \"approved prototype JSON CSV and text exported from recorded version\", \"status\": \"PASS\"}, {\"name\": \"listener restart preserves approved timetable and workload\", \"status\": \"PASS\"}, {\"name\": \"real review frontend assets served\", \"status\": \"PASS\"}, {\"name\": \"logout revokes actual session\", \"status\": \"PASS\"}, {\"name\": \"unscoped admin cannot read approved research realm\", \"status\": \"PASS\"}], \"export_sha256\": {\"csv\": \"e7972feff4bb0960d711b4bf2216783d6e4a6d10a7856e60a514cc7ef4ebcaeb\", \"txt\": \"2a033772d275228f50805706072e50a06f65c417b8127badab6db95201ddd55f\", \"approved_json\": \"fadcd156c7874997038e6219ba8feda2a2be3dec0907671bba5903b228b9421f\", \"approved_csv\": \"1fb4f46c9c8687579e9e00dc868776d810ebea90b4ea3c17cac5a3d32bb6f127\", \"approved_txt\": \"42e496719a1b05be843d8bb059b52ea6ccc9067681a64886b9924b462d5536dc\"}, \"actual_original_fitness\": 450, \"mocked_HTTP_responses\": 0}], \"scenario_checks\": 29, \"native_workers\": 0, \"browsers\": 0, \"OS_process_restart\": false, \"actual_service_listener_and_witness_reconstruction\": true, \"owned_API_listener_exits_verified\": true, \"mocked_HTTP_responses\": 0, \"institutional_operations\": false}\n",
+  "stderr": "",
+  "source_sha256": {
+    "backend/services/prototype_cycle.py": "a3c3ef6ada1bac110a0498da111a5253344948cd11e3a4d3cd6e8f75d2862413",
+    "backend/services/prototype_inputs.py": "f7dd26dbe5e591b526a434431635aafd68817a0beb049e52cd36068a9616b9f1",
+    "backend/services/prototype_tip_witness.py": "2ec8e659f4d182fded69a700f809518e610bfe728469b6dafc13fed601b042e2",
+    "backend/routers/prototype_cycle.py": "54978403137a3cef79cb07482fe38494e1edfbd9f92fc764c38e762ce04cf3b1",
+    "backend/routers/prototype_inputs.py": "8d396082200e4bc16398fb08c5defdd4f7d80dcb7768f11baf9cf7aeea03cc89",
+    "backend/tests/test_prototype_cycle.py": "f9a64d59b3a2c00bee639ec66b7cf7a85227d95e919c148061e8a88226ddd868",
+    "backend/tests/test_prototype_cycle_api.py": "c23daf5989fe5fa86bec40013473787392e8b8c6be113978f8c4d59dfb2c187c",
+    "backend/tests/test_prototype_inputs.py": "131a411685b63b690b065d671435715b6cd453c2cf9b4812ce0b2ab289afc661",
+    "frontend/src/prototypeCycle/console.mjs": "6fc2136eb1f9a34488d4b5ab79b43e274c014a3f7117498e797b1ae0b61b8534",
+    "frontend/src/prototypeCycle/index.html": "4a524a3cb1d481054cb584cda05b5f4baf6457a77465dffd61c87d6f6803bf7c",
+    "frontend/src/prototypeCycle/model.mjs": "e147a49562fddf242d63eebda64101546c80e54d95d460ac589e2d59585be4a6",
+    "frontend/tests/prototypeCycle.live.mjs": "4905691a7ccb3fc73cece34277cf37595e132c402a357f644ea1580d55a66bfa",
+    "frontend/tests/prototypeCycle.test.mjs": "c6a27b9c04e804bf0de35002f670280238595ac7481021fa8e2edd5dad8a5a65"
+  },
+  "scope": "Fictional original GA in-process qualification only; private SQLite and original codec; no native worker, browser, ACL changes or institutional operations"
+}

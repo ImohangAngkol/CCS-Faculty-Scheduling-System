@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-11-15T12:47:32.894281+08:00",
+  "full_backend_suite": 79,
+  "new_cases_in_full_suite": 29,
+  "previous_regressions": 50,
+  "additional_demo_case_passed": 1,
+  "distinct_selected_Python_cases_passed": 80,
+  "final_api_rerun": 1,
+  "api_rerun_not_additional_distinct_case": true,
+  "frontend": 46,
+  "new_frontend_cases": 14,
+  "real_HTTP_checks": 30,
+  "real_HTTP_after_listener_reconstruction": 10,
+  "browser": false,
+  "native_worker": false,
+  "GA_search": false,
+  "ordinary_TS_and_build": "NOT_RERUN_NO_REACT_OR_TS_CHANGES",
+  "source_qualification": {
+    "service_matches_full_suite": true,
+    "router_matches_final_HTTP_and_API": true,
+    "all_original_test_function_ASTs_unchanged_except": [
+      "test_real_cookie_HTTP_faculty_self_and_chair_approval"
+    ],
+    "changed_HTTP_case_passed_final_API": true,
+    "new_demo_test_and_helper_match_demo_record": true,
+    "final_frontend_and_lint_source_identities_match": true,
+    "final_real_HTTP_script_and_model_identities_match": true
+  },
+  "failed_records": [
+    "docs/testing/scheduling-first-accelerated-1/20261115T123631420641+0800-lint/command.json"
+  ],
+  "original_GA_parity": "FIVE_PRIOR_PASSES_REVIEWED_NOT_RERUN",
+  "original_engine_source_set_and_bytes_unchanged": true
+}

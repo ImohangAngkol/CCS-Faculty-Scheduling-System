@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-11-15T11:42:58.303745+08:00",
+  "operation": "audit_evidence.py --create",
+  "exit_code": 1,
+  "status": "WHITESPACE_CHECK_HARNESS_FALSE_FAILURE",
+  "stage": "NEW_FILE_RAW_DIFF",
+  "cause": "Inherited core.autocrlf generated LF-to-CRLF warnings; the initial auditor rejected any stderr as whitespace failure",
+  "actual_whitespace_failure_established": false,
+  "fix": "Explicit core.autocrlf=false for raw-byte checks; existing cr-at-eol whitespace policy retained",
+  "application_files_changed": false,
+  "baseline_mismatches": [],
+  "historical_evidence_changed": false
+}

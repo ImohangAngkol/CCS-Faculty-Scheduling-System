@@ -1,0 +1,34 @@
+{
+  "selection": "handoff-probe",
+  "started_at": "2026-11-12T08:25:43.653602+08:00",
+  "ended_at": "2026-11-12T08:26:18.665813+08:00",
+  "elapsed_seconds": 35.014444099972025,
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "../docs/testing/dashboard-u5pf/serve_experiment.py",
+    "--fictional-only",
+    "--probe"
+  ],
+  "stdout": "{\"finite_handoff_closed\": true, \"owned_worker_quiescent\": true, \"private_login_removed\": true, \"production_admission\": \"BLOCKED\"}\n",
+  "stderr": "",
+  "head": "0dcc3e942d0b79c0e6358aa151208c014b307300",
+  "source_sha256": {
+    "backend/services/ga_research_experiments.py": "8b23ee790982b289d93e9a35a73b55faa3f098b9fa603662ca8a87735b272563",
+    "backend/routers/research_experiments.py": "9ab44a881342e585f45dd408cee14a10ace98aaf6afa925b976156830be21c8e",
+    "backend/tests/test_research_experiments.py": "f3eb1b677343bd6890990251361f0b041ef67772be2a28d12ed2b4a013c014d3",
+    "backend/tests/test_research_experiments_live.py": "8110127f99bcee27cdba580a095dbd1f91e1f08ae62ee469ca93abad40caf790",
+    "frontend/src/researchExperiments/panel.html": "b017a47bad8254a9447421afc330063c30cabe49e9faa3b8257e897f15aec3d3",
+    "frontend/src/researchExperiments/console.mjs": "180989b16e26e5fecd5b4c353a1a4b818a36f3f61ca68db0b3dbda7a09645d20",
+    "frontend/src/researchExperiments/model.mjs": "6efa3f1717f18733c069f609b4fb0afddee27fcdc1c462074fa14e0362c58492",
+    "frontend/tests/researchExperiments.test.mjs": "94766ac8a2e1f78eb2ea420d4e947bf7519aa4841ecf7fede515b23170d210e4",
+    "frontend/tests/researchExperiments.live.mjs": "97b714f2848d7687187d4afd8b2f4ec08f4991a0589d7b79e489080ac9cff9fa",
+    "docs/testing/dashboard-u5pf/serve_experiment.py": "1158ce883eba1b5f222165b7baee45223962c0e4f92f37b55ea3d573d4f9672f",
+    "docs/testing/dashboard-u5pf/verify_export.py": "fbaf494152cf712afc04ce0abe3a61dfaa785ac0a8ec8e358e7c6dd0b1261a8d"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-ayu6dsf6\\repository",
+  "no_staging": true,
+  "completed": true
+}

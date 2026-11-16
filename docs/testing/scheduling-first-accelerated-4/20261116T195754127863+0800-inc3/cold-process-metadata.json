@@ -1,0 +1,30 @@
+{
+  "nonce": "0a449de3-fc74-4a8e-a27c-2ea6f199f92d",
+  "checkpoint": {
+    "present": true,
+    "sequence": 2,
+    "generation": 1,
+    "next_generation": 2,
+    "population": 2,
+    "best_ever_present": true,
+    "best_fitness": 450.0,
+    "history_points": 2,
+    "history_fingerprint": "f0f651044f4835b2e6f5d7e043cab1014848b016c8d920889c826a75ab1bb36d",
+    "RNG_fingerprint": "82c09ca0385299113d6e440def72db7f1530024b2cedc52cfcaaa49153cd0f40",
+    "checkpoint_fingerprint": "e50e052471d32b14e7f8cffa4daa2f3119b912727211ce240754f55d5062da9c",
+    "bundle_fingerprint": "c8a577bc599f20e0f8951f9ab37a58983250f9294bb4143bd2603ff787ac735e",
+    "configuration_fingerprint": "a5c59432350ab4fdb921568ce99d673e433503f86d6ac70ad4b42e15607090d9",
+    "optimizer_fingerprint": "1630c61463969e76e682bf657ac1fa8e68aa03189b125fe435c3c23eb7a1714d",
+    "scoring_fingerprint": "9c3ca0075c277a44f1512f969f5429fd17e7f996cce4912fb4baa697f8174fad",
+    "captured_policies_fingerprint": "2e7491f4c09e63024df64b57a3d7822d1fbcd474b7baee4da193904b77996cc0",
+    "original_codec_verified": true,
+    "native_verified": false
+  },
+  "classification": "FRESH_PROCESS_READ_ONLY_BOOTSTRAP_METADATA",
+  "native_workers": 0,
+  "GA_executions": 0,
+  "Session_run_calls": 0,
+  "browsers": 0,
+  "physical_resource_supervision": false,
+  "institutional_authority": false
+}

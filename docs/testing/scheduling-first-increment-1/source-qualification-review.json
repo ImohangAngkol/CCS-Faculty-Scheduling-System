@@ -1,0 +1,17 @@
+{
+  "finding": "SOURCE_QUALIFICATION_SCOPE_CORRECTION_NOT_PROTECTED_CONTENT_MISMATCH",
+  "changed_since_earlier_frontend_run": [
+    "backend/services/prototype_workload.py",
+    "backend/tests/test_prototype_workload.py"
+  ],
+  "reason": "The snapshot runner records every prototype source. Backend authority was intentionally refined after frontend checks, then freshly covered by final backend23 and HTTP19. Earlier frontend/type/build/lint phases did not execute backend service/test modules. Their evidence is preserved unchanged.",
+  "final_backend_unmatched_paths": [],
+  "final_HTTP_unmatched_paths": [],
+  "required_matching_scope": {
+    "backend": "backend/ paths",
+    "frontend_types_build_lint": "frontend/ paths",
+    "http": "backend/ and frontend/ paths"
+  },
+  "original_readable_baseline_mismatches": 0,
+  "historical_evidence_rewritten": false
+}

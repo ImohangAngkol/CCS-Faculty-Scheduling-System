@@ -1,0 +1,37 @@
+{
+  "selection": "backend",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "tests/test_prototype_workload.py",
+    "tests/test_ga_bundle_parity.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-087vi6ws\\pytest"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-087vi6ws\\repository\\backend",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-087vi6ws\\repository",
+  "started_at": "2026-11-15T10:25:52.550195+08:00",
+  "ended_at": "2026-11-15T10:26:46.300867+08:00",
+  "elapsed_seconds": 53.759001700003864,
+  "exit_code": 0,
+  "stdout": "......................                                                   [100%]\n============================== warnings summary ===============================\ntests/test_prototype_workload.py::test_real_sessions_CSRF_scope_and_persisted_HTTP\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\ntests/test_prototype_workload.py::test_real_sessions_CSRF_scope_and_persisted_HTTP\n  C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Lib\\site-packages\\starlette\\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n22 passed, 2 warnings in 51.85s\n",
+  "stderr": "",
+  "source_sha256": {
+    "backend/services/prototype_workload.py": "a14f8cebc9feb01808d8efb1babe2a73f1dac4e00e58143da239a376d5f3ad9c",
+    "backend/routers/prototype_workload.py": "7e46199af8d0d4c249f12d7f9f1b432240d821defa17df5a7931faf3952a6b3c",
+    "backend/tests/test_prototype_workload.py": "cf86bdcf6bf50a0592bd6cbe6ab8660a97811fd8c1492cc4fb262a9b04250eb3",
+    "frontend/src/prototypeWorkload/console.mjs": "ba1579cebe408b46387351ff9eda99a073fad3325fbda4da6ceaa04fdaebfc18",
+    "frontend/src/prototypeWorkload/index.html": "46b04db7e2f05b788b7d1022ed84d7b0c30c57511cbf88355a803cfda62f29c3",
+    "frontend/src/prototypeWorkload/model.mjs": "0664c9781fc15f6ca1837cbc7bbf07ecd10cfbab41ae84e0a659d12028fe03ca",
+    "frontend/src/prototypeWorkload/style.css": "484ba2e3195953b618342878401f955125eeb93122604e134e67349c56d68768",
+    "frontend/tests/prototypeWorkload.test.mjs": "bf415d4f44e2c8ac620abd9152513a4061ef8a9d44ba791d174b8869d49083dd"
+  },
+  "scope": "Owned empty-import tables, fictional captured bundle, private SQLite only; no production provider or worker activation"
+}

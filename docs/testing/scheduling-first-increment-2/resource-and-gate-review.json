@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-11-15T11:38:32.780459+08:00",
+  "available_bytes": 924856320,
+  "required_bytes": 3221225472,
+  "free_disk_bytes": 62000488448,
+  "native_and_Edge": "NOT_RUN",
+  "operator_decision": "Keep native acceptance blocked",
+  "prior_available_GiB": 0.8505325317,
+  "full_preservation_qualified": false,
+  "cache_access": "UNRESOLVED",
+  "no_processes_terminated": true,
+  "no_PostgreSQL_operations": true
+}

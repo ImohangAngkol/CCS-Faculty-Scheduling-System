@@ -1,0 +1,36 @@
+{
+  "recorded_at": "2026-11-16T12:32:37.665842+08:00",
+  "measurement_scope": "ONE_INITIAL_RESOURCE_SAMPLE_NO_WORKER_OR_BROWSER",
+  "available_RAM_GiB": 5.338,
+  "total_RAM_GiB": 15.711,
+  "free_disk_GiB": 57.1,
+  "RAM_gate_passed": true,
+  "RAM_gate_GiB": 3,
+  "resource_sample_not_continuous_monitoring": true,
+  "backend_cache": {
+    "path": "backend/.pytest_cache",
+    "direct_strict_enumeration": "PermissionError",
+    "winerror": 5,
+    "errno": 13,
+    "first_pathlib_rglob_returned_zero": true,
+    "pathlib_result_rejected": "rglob can suppress traversal errors; zero results do not establish emptiness",
+    "origin_authentication": "UNRESOLVED",
+    "owner_attestation": "HISTORICAL_UNAUTHENTICATED_NOT_PROMOTED"
+  },
+  "process_inventory": {
+    "method": "Get-Process read-only",
+    "Python_processes_at_initial_sample": 0,
+    "node_processes": 2,
+    "node_executables": "CODEX_CUA_AND_CODEX_RUNTIME",
+    "processes_stopped": 0,
+    "command_line_or_owner_token_inventory": "NOT_ESTABLISHED",
+    "limitations": "No claim that hidden/inaccessible process identities were verified"
+  },
+  "native": "BLOCKED_PRESERVATION",
+  "Edge": "BLOCKED_PRESERVATION",
+  "full_preservation_qualification": false,
+  "ACL_changes": 0,
+  "ownership_changes": 0,
+  "elevation": 0,
+  "retry_resource_probes": 0
+}

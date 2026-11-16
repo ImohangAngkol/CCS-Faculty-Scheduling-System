@@ -1,0 +1,36 @@
+{
+  "selection": "core",
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "--show-capture=no",
+    "tests/test_prototype_cycle.py",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-7e_sc14q\\pytest"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-7e_sc14q\\repository\\backend",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-7e_sc14q\\repository",
+  "started_at": "2026-11-15T15:21:14.054524+08:00",
+  "ended_at": "2026-11-15T15:23:24.299037+08:00",
+  "elapsed_seconds": 130.24492569998256,
+  "exit_code": 1,
+  "stdout": "F..............                                                          [100%]\n================================== FAILURES ===================================\n_______ test_genuine_frozen_consumption_qualification_and_resume_parity _______\ntests\\test_prototype_cycle.py:121: in test_genuine_frozen_consumption_qualification_and_resume_parity\n    assert restored.runtime.random.getstate() == oracle.runtime.random.getstate()\nE   AssertionError: runtime RNG compared before restored execution; [REDACTED_SYNTHETIC_RNG_STATE]\n=========================== short test summary info ===========================\nFAILED tests/test_prototype_cycle.py::test_genuine_frozen_consumption_qualification_and_resume_parity\n1 failed, 14 passed in 126.14s (0:02:06)\n",
+  "stderr": "",
+  "source_sha256": {
+    "backend/services/prototype_cycle.py": "f70a143e9611289846a9108b013aa3535ac810bf236b8dc0d6afd4b3f89396ca",
+    "backend/services/prototype_inputs.py": "f7dd26dbe5e591b526a434431635aafd68817a0beb049e52cd36068a9616b9f1",
+    "backend/services/prototype_tip_witness.py": "2ec8e659f4d182fded69a700f809518e610bfe728469b6dafc13fed601b042e2",
+    "backend/routers/prototype_cycle.py": "9f9f924c9309404f32c71fa2d7a5b2f26fef3211c4844ac8c7d84760b62367b4",
+    "backend/routers/prototype_inputs.py": "8d396082200e4bc16398fb08c5defdd4f7d80dcb7768f11baf9cf7aeea03cc89",
+    "backend/tests/test_prototype_cycle.py": "1303aa986c43431d2bb6732bc88424ea01ca999036b47622d69b56aebc245062",
+    "backend/tests/test_prototype_inputs.py": "131a411685b63b690b065d671435715b6cd453c2cf9b4812ce0b2ab289afc661"
+  },
+  "scope": "Fictional original GA in-process qualification only; private SQLite and original codec; no native worker, browser, ACL changes or institutional operations",
+  "sanitization_addendum": "../rng-diagnostic-redaction.json"
+}

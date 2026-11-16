@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-11-12T07:42:33.522722+08:00",
+  "available_physical_bytes": 2163953664,
+  "memory_load_percent": 87,
+  "available_commit_bytes": 25023340544,
+  "power_queries": {
+    "STANDBYIDLE": {
+      "exit_code": 0,
+      "stdout": "Power Scheme GUID: 2b851232-23f6-45b2-bb64-38ad406d7411  (Acer)\n  Subgroup GUID: 238c9fa8-0aad-41ed-83f4-97be242c8f20  (Sleep)\n    GUID Alias: SUB_SLEEP\n    Power Setting GUID: 29f6c1db-86da-48c5-9fdb-f2b67b1f44da  (Sleep after)\n      GUID Alias: STANDBYIDLE\n      Minimum Possible Setting: 0x00000000\n      Maximum Possible Setting: 0xffffffff\n      Possible Settings increment: 0x00000001\n      Possible Settings units: Seconds\n    Current AC Power Setting Index: 0x00000000\n    Current DC Power Setting Index: 0x00000000\n\n",
+      "stderr": "",
+      "read_only": true
+    },
+    "HIBERNATEIDLE": {
+      "exit_code": 0,
+      "stdout": "Power Scheme GUID: 2b851232-23f6-45b2-bb64-38ad406d7411  (Acer)\n  Subgroup GUID: 238c9fa8-0aad-41ed-83f4-97be242c8f20  (Sleep)\n    GUID Alias: SUB_SLEEP\n    Power Setting GUID: 9d7815a6-7ee4-497e-8888-515a05f02364  (Hibernate after)\n      GUID Alias: HIBERNATEIDLE\n      Minimum Possible Setting: 0x00000000\n      Maximum Possible Setting: 0xffffffff\n      Possible Settings increment: 0x00000001\n      Possible Settings units: Seconds\n    Current AC Power Setting Index: 0x00000000\n    Current DC Power Setting Index: 0x00000000\n\n",
+      "stderr": "",
+      "read_only": true
+    }
+  },
+  "processes_stopped": false,
+  "power_settings_changed": false,
+  "scope": "Point-in-time host observations, not seven-day or host-wide resource safety qualification"
+}

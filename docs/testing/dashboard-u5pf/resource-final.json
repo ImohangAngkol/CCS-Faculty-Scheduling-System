@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-11-12T08:26:39.881733+08:00",
+  "available_physical_bytes": 1139507200,
+  "memory_load_percent": 93,
+  "available_commit_bytes": 24298254336,
+  "phase": "All U5PF test subprocesses finished; no Edge attempted",
+  "decision": "No more native retries under continuing host pressure; full native/export and browser qualification remain blocked",
+  "no_user_processes_stopped": true,
+  "no_worker_limit_changes": true
+}

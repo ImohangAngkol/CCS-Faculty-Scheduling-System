@@ -1,0 +1,37 @@
+{
+  "selection": "lint",
+  "head": "0dcc3e942d0b79c0e6358aa151208c014b307300",
+  "ui_mode": "committed-u5pe-plus-only-u5pf",
+  "ui_overlay_sha256": {
+    "frontend/src/researchExperiments/panel.html": "b017a47bad8254a9447421afc330063c30cabe49e9faa3b8257e897f15aec3d3",
+    "frontend/src/researchExperiments/console.mjs": "180989b16e26e5fecd5b4c353a1a4b818a36f3f61ca68db0b3dbda7a09645d20",
+    "frontend/src/researchExperiments/model.mjs": "6efa3f1717f18733c069f609b4fb0afddee27fcdc1c462074fa14e0362c58492",
+    "frontend/tests/researchExperiments.test.mjs": "94766ac8a2e1f78eb2ea420d4e947bf7519aa4841ecf7fede515b23170d210e4",
+    "frontend/tests/researchExperiments.live.mjs": "97b714f2848d7687187d4afd8b2f4ec08f4991a0589d7b79e489080ac9cff9fa"
+  },
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "--config",
+    "operator-eslint.config.mjs",
+    "src/researchExperiments/console.mjs",
+    "src/researchExperiments/model.mjs",
+    "tests/researchExperiments.test.mjs",
+    "tests/researchExperiments.live.mjs"
+  ],
+  "started_at": "2026-11-12T07:41:31.807047+08:00",
+  "ended_at": "2026-11-12T07:41:33.219899+08:00",
+  "elapsed_seconds": 1.4130376998800784,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "test_cache_isolation": {
+    "scope": "Owned test config transformation only; plugins, source, API and production config unchanged",
+    "original_config_sha256": "44148104e23eb5fc4b9707358585ee2ae5074f2330e67e9aae44428a7be29f60",
+    "test_config_sha256": "0c2b4842f8cd785ca10ee008711d64d1c9a29c86d01f78ddc477762cf88aa735",
+    "isolated_cache": "C:\\Users\\User\\AppData\\Local\\Temp\\u5o-frontend-2o1xgr96\\vite-cache",
+    "shared_node_modules_cache_used": false,
+    "rationale": "Existing dependency junction otherwise allows different disposable Vite roots to use the same writable dependency cache. This risk is established statically; it is not proven to explain previous render timeouts."
+  },
+  "scope": "Committed frontend source in owned temporary snapshot; dependencies reused without installation. Browser uses actual Edge/React with intercepted fictional HTTP, not live FastAPI or U5PB worker acceptance. Working-tree UI overlays are qualified only when ui_mode says working-tree; no source file is modified."
+}

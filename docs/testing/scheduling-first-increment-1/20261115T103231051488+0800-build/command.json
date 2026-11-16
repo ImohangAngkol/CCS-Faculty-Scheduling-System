@@ -1,0 +1,28 @@
+{
+  "selection": "build",
+  "command": [
+    "node",
+    "node_modules/vite/bin/vite.js",
+    "build"
+  ],
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-oms2jv0c\\repository\\frontend",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-oms2jv0c\\repository",
+  "started_at": "2026-11-15T10:32:31.051944+08:00",
+  "ended_at": "2026-11-15T10:32:33.332589+08:00",
+  "elapsed_seconds": 2.28089959998033,
+  "exit_code": 0,
+  "stdout": "\u001b[36mvite v8.2.2 \u001b[32mbuilding client environment for production...\u001b[36m\u001b[39m\ntransforming...\n\u2713 843 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                     0.45 kB \u2502 gzip:   0.29 kB\ndist/assets/index-DW2ET6eV.css     50.49 kB \u2502 gzip:  10.88 kB\ndist/assets/index-Bt7oWgn9.js   1,479.78 kB \u2502 gzip: 413.28 kB\n\n\u001b[32m\u2713 built in 1.25s\u001b[39m\n",
+  "stderr": "\u001b[33m\u001b[33m[INEFFECTIVE_DYNAMIC_IMPORT] \u001b[0msrc/api/externalReadiness.ts is dynamically imported by src/api/externalSchedules.ts but also statically imported by src/api/externalConfirmations.ts, src/components/schedule/ExternalScheduleReadiness.tsx, src/components/schedule/ExternalScheduleReview.tsx, src/components/schedule/ReadinessDocument.tsx, dynamic import will not move module into another chunk.\n\u001b[39m\n\u001b[33m[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n",
+  "source_sha256": {
+    "backend/services/prototype_workload.py": "7ff06c2b5e64081088a24ff391062421b2b18db4566cfce370eabfd66c2f2923",
+    "backend/routers/prototype_workload.py": "7e46199af8d0d4c249f12d7f9f1b432240d821defa17df5a7931faf3952a6b3c",
+    "backend/tests/test_prototype_workload.py": "cf86bdcf6bf50a0592bd6cbe6ab8660a97811fd8c1492cc4fb262a9b04250eb3",
+    "frontend/src/prototypeWorkload/console.mjs": "ba1579cebe408b46387351ff9eda99a073fad3325fbda4da6ceaa04fdaebfc18",
+    "frontend/src/prototypeWorkload/index.html": "46b04db7e2f05b788b7d1022ed84d7b0c30c57511cbf88355a803cfda62f29c3",
+    "frontend/src/prototypeWorkload/model.mjs": "0e71554b94e84a47dcbe22a812d9dc6b2ca6d04400f7d9e975b3489ded1ce52e",
+    "frontend/src/prototypeWorkload/style.css": "484ba2e3195953b618342878401f955125eeb93122604e134e67349c56d68768",
+    "frontend/tests/prototypeWorkload.live.mjs": "beab7f49871ba247982a55436cee55917716b4b6e45f301bdc6b31d63fb9b22f",
+    "frontend/tests/prototypeWorkload.test.mjs": "9803545120df0152afcc04bc4a79b40eca5c07f10b6ebc5d8ba14231627c9138"
+  },
+  "scope": "Owned empty-import tables, fictional captured bundle, private SQLite only; no production provider or worker activation"
+}

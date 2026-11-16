@@ -1,0 +1,608 @@
+{
+  "scope": "GENUINELY_GENERATED_ORIGINAL_GA_IN_PROCESS_NOT_CONSTRUCTED_NOT_NATIVE",
+  "result": {
+    "contract": "fictional-scheduling-continuation-v1",
+    "prototype_only": true,
+    "production_admission": "BLOCKED",
+    "institutional_promotion": false,
+    "continuous_optimization": "DISABLED",
+    "active_institutional_restore": false,
+    "seven_day": "NO_GO",
+    "run_id": "a5c2e2e7-8893-4809-9224-ae158aa0ae67",
+    "state": "COMPLETED",
+    "sequence": 2,
+    "tip": "77ea28ec8d21db21fe8221328181d3560e05a73e09f4b336b6952baa50809499",
+    "preparation_id": "1a76bb54-04a8-478d-8ac2-1da241e421fe",
+    "provenance": {
+      "base_bundle": "de67964de220d68cc4e8a3d54f3407b3ae1d6a77cd0f403db059e1f99b65c8aa",
+      "contract": "fictional-input-preparation-v1",
+      "minimum_policy": {
+        "actor": "00000000-0000-4000-8000-000000007501",
+        "at": "2026-11-16T04:36:00.369442+00:00",
+        "digest": "4057ff138c0b62c6b37c3122edbdee6e974185b79be3b7b85b4a71f5dea14b14",
+        "minimums": [
+          {
+            "faculty_code": 1,
+            "minimum_teaching_units": 12
+          },
+          {
+            "faculty_code": 2,
+            "minimum_teaching_units": 24
+          }
+        ],
+        "revision": 1
+      },
+      "original_source_dataset": "f8c320fea1a699acb7220d552123d6a4822c2fb163eafb009c84dc1777913523",
+      "preference_revisions": {
+        "1": {
+          "digest": "5e163386e6ae8e139d7712fd6805c13602cfd0e4edbceb775928447fc18b0c91",
+          "revision": 0
+        },
+        "2": {
+          "digest": "25ac40afde226e897b5a60be7a2f3bad4b1b52226306ee8735672cf2b55b8f68",
+          "revision": 0
+        }
+      },
+      "preferences_digest": "8e38979eb4a66b73b811e0e442d5e7aaddc62ffd1588056afb2f14a39ad7ab85",
+      "scope": {
+        "academic_year": "FICTIONAL-YEAR",
+        "catalog_revision": "FICTIONAL-CATALOG-1",
+        "department_id": "00000000-0000-4000-8000-000000007510",
+        "term": "FICTIONAL-TERM"
+      },
+      "weights_policy": {
+        "approval": "BASELINE_UNCHANGED_NO_NEW_APPROVAL",
+        "body": {
+          "absolute_max_teaching_load": 40,
+          "daily_load_penalty": 10,
+          "daily_load_step_minutes": 60,
+          "day_penalty": 5,
+          "gap_penalty": 10,
+          "heavy_overload_penalty": 25,
+          "lecture_lab_penalty": 5,
+          "load_balance_penalty": 10,
+          "load_tolerance": 3,
+          "max_daily_teaching_minutes": 360,
+          "max_preparations": 3,
+          "overload_penalty": 10,
+          "overload_warning_threshold": 30,
+          "preparation_penalty": 10,
+          "regular_teaching_load": 24,
+          "subject_penalty": 70,
+          "target_teaching_load": 12,
+          "time_penalty": 10,
+          "total_workload_target": 24,
+          "underload_penalty": 25,
+          "workload_step_units": 3
+        },
+        "digest": "772e3b53fd4a2abf6c5ebfb5deb004b780aeb4f6229aa5296f6d19396bfe227f",
+        "revision": 0
+      }
+    },
+    "evaluation_fingerprint": "408c44b82079389e901ebba538e556fda72547a0029fe52aafdc04c7233b46b1",
+    "result": {
+      "bundle_fingerprint": "15d79dc172e5ec90d4fd293169ffb5f1d2ca425a8f1286229c44a8bd4f143318",
+      "execution_mode": "ACTUAL_ORIGINAL_GA_OFFLINE_IN_PROCESS",
+      "generated": true,
+      "native_supervision_verified": false,
+      "original_result": {
+        "baseline_source": "fresh",
+        "best_fitness": 125,
+        "faculty_analysis": {
+          "daily_load": [
+            {
+              "Faculty_Code": 1.0,
+              "Fri": 1.5,
+              "Mon": 3.0,
+              "Sat": 4.5,
+              "Thu": 0.0,
+              "Tue": 1.5,
+              "Wed": 1.5
+            },
+            {
+              "Faculty_Code": 2.0,
+              "Fri": 6.0,
+              "Mon": 3.0,
+              "Sat": 1.5,
+              "Thu": 6.0,
+              "Tue": 6.0,
+              "Wed": 1.5
+            }
+          ],
+          "faculty": [
+            {
+              "Absolute_Load_Deviation": 6.0,
+              "Daily_Teaching_Load_Penalty": 0,
+              "Day_Importance": 0,
+              "Day_Penalty": 0,
+              "Day_Satisfaction": null,
+              "Exact_Schedule_Satisfaction": null,
+              "Faculty_Code": 1.0,
+              "Faculty_Priority": 1,
+              "Gap_Importance": 0,
+              "Lecture_Lab_Importance": 0,
+              "Lecture_Lab_Penalty": 0,
+              "Load_Balance_Penalty": 125,
+              "Load_Deviation": -6.0,
+              "Matched_Schedule_Blocks": 0,
+              "Preferred_Schedule_Blocks": 0,
+              "Preparation_Penalty": 0,
+              "Preparations": 1.0,
+              "Priority_Weight": 1,
+              "Schedule_Style_Penalty": 0,
+              "Subject_Importance": 0,
+              "Subject_Penalty": 0,
+              "Subject_Satisfaction": null,
+              "Teaching_Load": 12.0,
+              "Time_Importance": 0,
+              "Time_Penalty": 0,
+              "Time_Satisfaction": null,
+              "Total_Penalty": 125
+            },
+            {
+              "Absolute_Load_Deviation": 6.0,
+              "Daily_Teaching_Load_Penalty": 0,
+              "Day_Importance": 0,
+              "Day_Penalty": 0,
+              "Day_Satisfaction": null,
+              "Exact_Schedule_Satisfaction": null,
+              "Faculty_Code": 2.0,
+              "Faculty_Priority": 1,
+              "Gap_Importance": 0,
+              "Lecture_Lab_Importance": 0,
+              "Lecture_Lab_Penalty": 0,
+              "Load_Balance_Penalty": 0,
+              "Load_Deviation": 6.0,
+              "Matched_Schedule_Blocks": 0,
+              "Preferred_Schedule_Blocks": 0,
+              "Preparation_Penalty": 0,
+              "Preparations": 1.0,
+              "Priority_Weight": 1,
+              "Schedule_Style_Penalty": 0,
+              "Subject_Importance": 0,
+              "Subject_Penalty": 0,
+              "Subject_Satisfaction": null,
+              "Teaching_Load": 24.0,
+              "Time_Importance": 0,
+              "Time_Penalty": 0,
+              "Time_Satisfaction": null,
+              "Total_Penalty": 0
+            }
+          ],
+          "summary": {
+            "average_teaching_load": 18.0,
+            "fitness_breakdown": {
+              "daily_teaching_load": 0,
+              "day_preference": 0,
+              "lecture_lab_preference": 0,
+              "number_of_preparations": 0,
+              "schedule_style": 0,
+              "subject_preference": 0,
+              "teaching_load_balance": 125,
+              "time_preference": 0
+            },
+            "parameters": {
+              "daily_load_penalty": 10,
+              "daily_load_step_minutes": 60,
+              "day_penalty": 5,
+              "gap_penalty": 10,
+              "lecture_lab_penalty": 5,
+              "load_balance_penalty": 10,
+              "load_tolerance": 3,
+              "max_daily_teaching_minutes": 360,
+              "max_preparations": 3,
+              "preparation_penalty": 10,
+              "subject_penalty": 70,
+              "target_teaching_load": 12,
+              "time_penalty": 10
+            },
+            "professor_analysis": {
+              "Average_Teaching_Load": 18.0,
+              "Day_Penalty": 0,
+              "Preparation_Penalty": 0,
+              "Subject_Penalty": 0,
+              "Time_Penalty": 0,
+              "Total_Fitness": 125
+            },
+            "total_fitness": 125
+          }
+        },
+        "fitness_breakdown": {
+          "daily_teaching_load": 0,
+          "day_preference": 0,
+          "lecture_lab_preference": 0,
+          "number_of_preparations": 0,
+          "schedule_style": 0,
+          "subject_preference": 0,
+          "teaching_load_balance": 125,
+          "time_preference": 0
+        },
+        "generations_completed": 1,
+        "history": [
+          {
+            "best_fitness": 125,
+            "generation": 0
+          },
+          {
+            "best_ever_fitness": 125,
+            "generation": 1,
+            "generation_best_fitness": 125
+          }
+        ],
+        "population_size": 2,
+        "saved_best_fitness": null,
+        "saved_best_updated": false,
+        "schedule": [
+          {
+            "day": "W",
+            "end": "10:30",
+            "faculty": "1",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-0",
+            "start": "09:00",
+            "subject": "SYN-WA",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "S",
+            "end": "10:30",
+            "faculty": "1",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-0",
+            "start": "09:00",
+            "subject": "SYN-WA",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "S",
+            "end": "13:30",
+            "faculty": "1",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-1",
+            "start": "10:30",
+            "subject": "SYN-WA",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "T",
+            "end": "13:30",
+            "faculty": "1",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-2",
+            "start": "12:00",
+            "subject": "SYN-WA",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "F",
+            "end": "13:30",
+            "faculty": "1",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-2",
+            "start": "12:00",
+            "subject": "SYN-WA",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "M",
+            "end": "19:30",
+            "faculty": "1",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-3",
+            "start": "16:30",
+            "subject": "SYN-WA",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "T",
+            "end": "09:00",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-4",
+            "start": "07:30",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "F",
+            "end": "09:00",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-4",
+            "start": "07:30",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "T",
+            "end": "10:30",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-5",
+            "start": "09:00",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "F",
+            "end": "10:30",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-5",
+            "start": "09:00",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "T",
+            "end": "15:00",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-6",
+            "start": "13:30",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "F",
+            "end": "15:00",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-6",
+            "start": "13:30",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "TH",
+            "end": "16:30",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-7",
+            "start": "13:30",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "TH",
+            "end": "19:30",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-8",
+            "start": "16:30",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "W",
+            "end": "16:30",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-9",
+            "start": "15:00",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "S",
+            "end": "16:30",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-9",
+            "start": "15:00",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "M",
+            "end": "13:30",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-10",
+            "start": "10:30",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "T",
+            "end": "19:30",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-11",
+            "start": "18:00",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          },
+          {
+            "day": "F",
+            "end": "19:30",
+            "faculty": "2",
+            "room": "Fictional prototype room",
+            "section": "SYN-P-11",
+            "start": "18:00",
+            "subject": "SYN-WB",
+            "title": "Fictional prototype",
+            "type": "Lecture"
+          }
+        ],
+        "starting_baseline_fitness": null
+      },
+      "provenance": {
+        "base_bundle": "de67964de220d68cc4e8a3d54f3407b3ae1d6a77cd0f403db059e1f99b65c8aa",
+        "contract": "fictional-input-preparation-v1",
+        "minimum_policy": {
+          "actor": "00000000-0000-4000-8000-000000007501",
+          "at": "2026-11-16T04:36:00.369442+00:00",
+          "digest": "4057ff138c0b62c6b37c3122edbdee6e974185b79be3b7b85b4a71f5dea14b14",
+          "minimums": [
+            {
+              "faculty_code": 1,
+              "minimum_teaching_units": 12
+            },
+            {
+              "faculty_code": 2,
+              "minimum_teaching_units": 24
+            }
+          ],
+          "revision": 1
+        },
+        "original_source_dataset": "f8c320fea1a699acb7220d552123d6a4822c2fb163eafb009c84dc1777913523",
+        "preference_revisions": {
+          "1": {
+            "digest": "5e163386e6ae8e139d7712fd6805c13602cfd0e4edbceb775928447fc18b0c91",
+            "revision": 0
+          },
+          "2": {
+            "digest": "25ac40afde226e897b5a60be7a2f3bad4b1b52226306ee8735672cf2b55b8f68",
+            "revision": 0
+          }
+        },
+        "preferences_digest": "8e38979eb4a66b73b811e0e442d5e7aaddc62ffd1588056afb2f14a39ad7ab85",
+        "scope": {
+          "academic_year": "FICTIONAL-YEAR",
+          "catalog_revision": "FICTIONAL-CATALOG-1",
+          "department_id": "00000000-0000-4000-8000-000000007510",
+          "term": "FICTIONAL-TERM"
+        },
+        "weights_policy": {
+          "approval": "BASELINE_UNCHANGED_NO_NEW_APPROVAL",
+          "body": {
+            "absolute_max_teaching_load": 40,
+            "daily_load_penalty": 10,
+            "daily_load_step_minutes": 60,
+            "day_penalty": 5,
+            "gap_penalty": 10,
+            "heavy_overload_penalty": 25,
+            "lecture_lab_penalty": 5,
+            "load_balance_penalty": 10,
+            "load_tolerance": 3,
+            "max_daily_teaching_minutes": 360,
+            "max_preparations": 3,
+            "overload_penalty": 10,
+            "overload_warning_threshold": 30,
+            "preparation_penalty": 10,
+            "regular_teaching_load": 24,
+            "subject_penalty": 70,
+            "target_teaching_load": 12,
+            "time_penalty": 10,
+            "total_workload_target": 24,
+            "underload_penalty": 25,
+            "workload_step_units": 3
+          },
+          "digest": "772e3b53fd4a2abf6c5ebfb5deb004b780aeb4f6229aa5296f6d19396bfe227f",
+          "revision": 0
+        }
+      },
+      "qualification": {
+        "faculty": [
+          {
+            "assigned_units": 12,
+            "faculty_code": 1,
+            "maximum_teaching_units": 40,
+            "minimum_deficit": 0,
+            "minimum_teaching_units": 12,
+            "soft_target_teaching_units": 24
+          },
+          {
+            "assigned_units": 24,
+            "faculty_code": 2,
+            "maximum_teaching_units": 40,
+            "minimum_deficit": 0,
+            "minimum_teaching_units": 24,
+            "soft_target_teaching_units": 24
+          }
+        ],
+        "fully_feasible_under_captured_policy": true,
+        "minimum_digest": "4057ff138c0b62c6b37c3122edbdee6e974185b79be3b7b85b4a71f5dea14b14",
+        "minimum_revision": 1,
+        "minimum_status": "EXPLICIT_MINIMA_SATISFIED",
+        "original_hard_constraints": "VALIDATED",
+        "subject_coverage": "COMPLETE"
+      },
+      "receipt": {
+        "academic_source_verification": "UNVERIFIED_U5G_CAPTURE_ONLY",
+        "bound_functions": 120,
+        "bundle_fingerprint": "15d79dc172e5ec90d4fd293169ffb5f1d2ca425a8f1286229c44a8bd4f143318",
+        "checkpoint_fingerprint": "2f1ab71d31e9d597d347d252e59d4347ec8894cd0b68c6964ec40ab66c7c48c1",
+        "checkpoint_sequence": 2,
+        "configuration_fingerprint": "a5c59432350ab4fdb921568ce99d673e433503f86d6ac70ad4b42e15607090d9",
+        "consumed_entry_fingerprint": "d789b901082a69b89f801e94cf92d555b05f96a4b32bc62d32e005042afe52fd",
+        "contract": "ga-bundle-consumption-receipt-v1",
+        "eligible_for_current": false,
+        "function_calls": 376349,
+        "institutional_authorization": "NOT_ESTABLISHED",
+        "loaded_model_fingerprint": "fd65908a18bc9284d458f7a7fb9d1e64d461c4b2e7ee247a574c95b92d8a1a66",
+        "loader_contract": "ga-captured-input-bundle-v1",
+        "optimizer_fingerprint": "1630c61463969e76e682bf657ac1fa8e68aa03189b125fe435c3c23eb7a1714d",
+        "optimizer_version": "ga-bundle-consumer-v1",
+        "parent_checkpoint_fingerprint": "d261e959ee948abbd78d1f5fffa30f6f496627d7f5f06b1306cda384da62194a",
+        "publication": false,
+        "reasons": [],
+        "rng_entry_fingerprint": "e3432f867f9eaee3ef337b5447586a35b793acf43cf424d1ddcf0d33ab4680ce",
+        "run_id": "7f92ebe2-277e-45bd-864a-122bd108dca2",
+        "saved_best_promotion": false,
+        "scoring_context_fingerprint": "870ec391830b22b13ad5ec57b6894810b74fdba58ac8786c76333bdeccb6f901",
+        "state": "PAUSED",
+        "verification_scope": "TECHNICAL_CONSUMPTION_OF_CAPTURED_BUNDLE_ONLY",
+        "verification_status": "VERIFIED"
+      },
+      "schedule_promoted": false
+    },
+    "shortages": [],
+    "latest_candidate_fingerprint": "3ac143f22c2297fd99a3903630e83d28f21e1bd43a4bb8898fe31a8bc5cf535d",
+    "reviews": [],
+    "commands": [],
+    "native_verified": false,
+    "browser_verified": false,
+    "generated": true,
+    "execution_classification": "ACTUAL_ORIGINAL_GA_IN_PROCESS_OFFLINE",
+    "segment_history": [
+      {
+        "elapsed_seconds": 4.132633400033228,
+        "fence": 1,
+        "generation": 0,
+        "inner_fingerprint": "d261e959ee948abbd78d1f5fffa30f6f496627d7f5f06b1306cda384da62194a",
+        "inner_parent": null,
+        "inner_sequence": 1,
+        "original_rng_fingerprint": "e3432f867f9eaee3ef337b5447586a35b793acf43cf424d1ddcf0d33ab4680ce",
+        "parent": null,
+        "result_fingerprint": "860dd66f475f538ecf34134b2bd5d8bc75dc1068590808d5986a7cab711a9856",
+        "run_id": "a5c2e2e7-8893-4809-9224-ae158aa0ae67",
+        "sequence": 1
+      },
+      {
+        "elapsed_seconds": 5.29975290002767,
+        "fence": 2,
+        "generation": 1,
+        "inner_fingerprint": "2f1ab71d31e9d597d347d252e59d4347ec8894cd0b68c6964ec40ab66c7c48c1",
+        "inner_parent": "d261e959ee948abbd78d1f5fffa30f6f496627d7f5f06b1306cda384da62194a",
+        "inner_sequence": 2,
+        "original_rng_fingerprint": "a36a3c92429aa35e1b0d29dda2f751c4fa806053597a6ab3674943b40c9cf572",
+        "parent": "c96da89bb1b359c3f4c2ef166fb31ae8be2c3bd6a841c6fc0958c7a977469197",
+        "result_fingerprint": "3ac143f22c2297fd99a3903630e83d28f21e1bd43a4bb8898fe31a8bc5cf535d",
+        "run_id": "a5c2e2e7-8893-4809-9224-ae158aa0ae67",
+        "sequence": 2
+      }
+    ],
+    "physical_worker_termination": "NOT_ESTABLISHED_NO_NATIVE_WORKER",
+    "checkpoint_witness": "CALLER_SUPPLIED_PROVIDER_NOT_DEPLOYMENT_QUALIFIED"
+  }
+}

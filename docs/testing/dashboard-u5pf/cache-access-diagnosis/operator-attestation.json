@@ -1,0 +1,48 @@
+﻿{
+  "schema": "u5pf-cache-readonly-attestation-v1",
+  "started_at": "2026-11-12T23:26:16.385322+08:00",
+  "path": "backend/.pytest_cache",
+  "tool_sha256": "4ddebabd40d474b499ac7e57a32ec219f2a3aa064143d1ca1b7e06cb517e653d",
+  "baseline_expected_sha256": "a301e0821f6d025e0ae39e8231051d6233665c4f5f4ff59255cb05c6a50ff04b",
+  "writes_performed": false,
+  "full_preservation_audit": false,
+  "acceptance_preflight_qualified": false,
+  "origin_authentication": "REQUIRES_SEPARATE_OPERATOR_VERIFICATION",
+  "files": [
+    {
+      "path": ".gitignore",
+      "actual_sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "baseline_sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "matches": true
+    },
+    {
+      "path": "CACHEDIR.TAG",
+      "actual_sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "baseline_sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "matches": true
+    },
+    {
+      "path": "README.md",
+      "actual_sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "baseline_sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "matches": true
+    },
+    {
+      "path": "v/cache/lastfailed",
+      "actual_sha256": "de1dd2fbd290e5d83ab9de5060504c7a8358eaba172be670c9fb9cf36e9123f2",
+      "baseline_sha256": "de1dd2fbd290e5d83ab9de5060504c7a8358eaba172be670c9fb9cf36e9123f2",
+      "matches": true
+    },
+    {
+      "path": "v/cache/nodeids",
+      "actual_sha256": "0d42bda6f2b07775c4a1d55491a6bd0bdf6ed706d9d59cfedc1e2ec87d6c9ad7",
+      "baseline_sha256": "0d42bda6f2b07775c4a1d55491a6bd0bdf6ed706d9d59cfedc1e2ec87d6c9ad7",
+      "matches": true
+    }
+  ],
+  "status": "SCOPED_CACHE_CONTENT_MATCH",
+  "files_read": 5,
+  "exact_membership_verified": true,
+  "two_snapshots_identical": true,
+  "ended_at": "2026-11-12T23:26:16.400516+08:00"
+}

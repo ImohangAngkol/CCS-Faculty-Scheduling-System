@@ -1,0 +1,40 @@
+{
+  "selection": "metrics",
+  "started_at": "2026-11-12T07:34:03.560951+08:00",
+  "ended_at": "2026-11-12T07:34:31.244351+08:00",
+  "elapsed_seconds": 27.688213700195774,
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\User\\Desktop\\Genetic-Algorithm Dashboard\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--tb=short",
+    "tests/test_research_experiments.py::test_metrics_distinguish_observed_derived_unavailable",
+    "--basetemp",
+    "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-shgcgzvi\\pytest-metrics"
+  ],
+  "stdout": ".......                                                                  [100%]\n7 passed in 22.85s\n",
+  "stderr": "",
+  "head": "0dcc3e942d0b79c0e6358aa151208c014b307300",
+  "source_sha256": {
+    "backend/services/ga_research_experiments.py": "d5be74e8dccbf02a8b1fd0375bf13635553f8d3f2c4dee3fd416a9afb9641bf6",
+    "backend/routers/research_experiments.py": "9ab44a881342e585f45dd408cee14a10ace98aaf6afa925b976156830be21c8e",
+    "backend/tests/test_research_experiments.py": "4bdbd789fde7362beef1f49824dcef6ae5459ebf9aa36443c5d618a8205f4e27",
+    "backend/tests/test_research_experiments_live.py": "b0a6d212528b2f397c75c41ae4b9c116438da3c1092139f25161372c71c647c1",
+    "frontend/src/researchExperiments/panel.html": "b017a47bad8254a9447421afc330063c30cabe49e9faa3b8257e897f15aec3d3",
+    "frontend/src/researchExperiments/console.mjs": "180989b16e26e5fecd5b4c353a1a4b818a36f3f61ca68db0b3dbda7a09645d20",
+    "frontend/src/researchExperiments/model.mjs": "6efa3f1717f18733c069f609b4fb0afddee27fcdc1c462074fa14e0362c58492",
+    "frontend/tests/researchExperiments.test.mjs": "94766ac8a2e1f78eb2ea420d4e947bf7519aa4841ecf7fede515b23170d210e4",
+    "frontend/tests/researchExperiments.live.mjs": "07b9765ca61f6d8891c1b85578fd9b9cf37d703e34f84a8095c39e9c80b96bee",
+    "docs/testing/dashboard-u5pf/serve_experiment.py": "1158ce883eba1b5f222165b7baee45223962c0e4f92f37b55ea3d573d4f9672f",
+    "docs/testing/dashboard-u5pf/verify_export.py": "244e4c14b721e6e266b9db311a37c8ff5cfc534196c13f30b2ee2820524b9f3d"
+  },
+  "scope": "Owned empty import tables + fictional D10/J bundles + private new SQLite; no production database/authority",
+  "snapshot": "C:\\Users\\User\\AppData\\Local\\Temp\\u5c-r1-snapshot-u5h-shgcgzvi\\repository",
+  "no_staging": true,
+  "completed": true
+}
