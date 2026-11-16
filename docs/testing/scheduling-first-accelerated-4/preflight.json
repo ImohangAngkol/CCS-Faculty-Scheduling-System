@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-11-16T19:24:09.346052+08:00",
+  "RAM_available_GiB": 4.314,
+  "RAM_total_GiB": 15.711,
+  "RAM_gate_GiB": 3,
+  "RAM_gate": true,
+  "free_disk_GiB": 59.76,
+  "cache": {
+    "status": "ACCESS_DENIED",
+    "type": "PermissionError",
+    "operation": "STRICT_OS_SCANDIR",
+    "winerror": 5,
+    "errno": 13
+  },
+  "origin": "HISTORICAL_OPERATOR_JSON_UNAUTHENTICATED",
+  "prospective_baseline": "SEPARATE_OPERATOR_APPROVAL_REQUIRED_NOT_ADOPTED",
+  "native_workers": 0,
+  "Edge": 0,
+  "permission_elevation": 0,
+  "ACL_or_cache_changes": 0,
+  "full_preservation_qualification": false
+}
